@@ -1,0 +1,214 @@
+.via-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.via-card {
+  position: relative;
+  padding: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--via-border-soft);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 4px rgba(10, 31, 59, 0.04);
+}
+
+.via-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, transparent);
+  z-index: 3;
+  transition: background 280ms ease;
+}
+
+.via-card:hover {
+  border-color: rgba(10, 31, 59, 0.2);
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 40px -22px rgba(10, 31, 59, 0.22);
+}
+
+.via-card:hover::after {
+  background: linear-gradient(90deg, transparent, rgba(10, 31, 59, 0.32) 50%, transparent);
+}
+
+.via-card h3 {
+  font-family: var(--via-font);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--via-navy);
+  letter-spacing: -0.022em;
+  line-height: 1.18;
+  margin: 4px 0 0;
+}
+
+.via-card .body {
+  font-family: var(--via-font);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--via-text-soft);
+  margin: 0 0 8px;
+}
+
+.via-card .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--via-font);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--via-navy);
+  cursor: pointer;
+  margin-top: auto;
+  transition: gap 200ms ease;
+}
+
+.via-card .link:hover {
+  gap: 10px;
+}
+
+/* Featured — navy mesh with atmospheric */
+.via-card.featured {
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-darker));
+  border-color: rgba(10, 31, 59, 0.12);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 24px 56px -22px rgba(10, 31, 59, 0.45);
+  color: var(--via-white);
+}
+
+.via-card.featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 100% 100%, rgba(10, 31, 59, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.via-card.featured > * {
+  position: relative;
+  z-index: 1;
+}
+
+.via-card.featured h3 {
+  color: var(--via-white);
+}
+
+.via-card.featured .body {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.via-card.featured .link {
+  color: var(--via-gray-300);
+}
+
+/* Stat card · glass premium */
+.via-card-stat-stage {
+  padding: 48px;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(42, 74, 110, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(10, 31, 59, 0.06) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
+  border-radius: var(--via-radius-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.via-card-stat {
+  position: relative;
+  padding: 26px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.6));
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 16px 36px -16px rgba(10, 31, 59, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.via-card-stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent);
+  pointer-events: none;
+}
+
+.via-card-stat > * {
+  position: relative;
+  z-index: 1;
+}
+
+.via-card-stat .num {
+  font-family: var(--via-font);
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--via-navy);
+  line-height: 1;
+  font-feature-settings: 'tnum' 1;
+}
+
+.via-card-stat .suffix {
+  font-family: var(--via-font);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--via-text-soft);
+  text-transform: uppercase;
+  margin-left: 6px;
+}
+
+.via-card-stat .sub {
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  color: var(--via-text-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.via-card-stat .sub em {
+  font-family: var(--via-font);
+  font-style: normal;
+  color: var(--via-navy);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .via-card-stat-stage {
+    grid-template-columns: 1fr;
+  }
+}

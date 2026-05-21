@@ -1,0 +1,629 @@
+/* ============================================
+   Bento grid hero · 7 tiles assimétricos
+   ============================================ */
+
+.vds-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, minmax(180px, auto));
+  gap: 14px;
+}
+
+@media (max-width: 920px) {
+  .vds-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .vds-bento {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vds-bento-card {
+  position: relative;
+  padding: 28px;
+  border-radius: 22px;
+  border: 1px solid var(--via-border-soft);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 4px rgba(10, 31, 59, 0.04);
+}
+
+.vds-bento-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(10, 31, 59, 0.18);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 40px -22px rgba(10, 31, 59, 0.22);
+}
+
+.vds-bento-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(420px 200px at 0% 0%, rgba(10, 31, 59, 0.04), transparent 60%);
+  z-index: -1;
+}
+
+/* ---------- HERO TILE (2x2) ---------- */
+.vds-bento-card.hero {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: var(--via-navy-darker);
+  color: var(--via-white);
+  border-color: rgba(10, 31, 59, 0.11);
+  padding: 40px;
+  min-height: 380px;
+  justify-content: space-between;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 24px 56px -22px rgba(10, 31, 59, 0.5);
+}
+
+.vds-bento-card.hero::before {
+  display: none;
+}
+
+.vds-bento-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.vds-bento-glow {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(10, 31, 59, 0.16), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(20px);
+}
+
+.vds-bento-card.hero > *:not(.vds-bento-bg):not(.vds-bento-glow) {
+  position: relative;
+  z-index: 2;
+}
+
+.vds-bento-card.hero header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vds-bento-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.vds-bento-card.hero .vds-bento-eyebrow {
+  color: var(--via-gray-300);
+}
+
+.vds-bento-eyebrow.alt {
+  color: var(--via-text-soft);
+}
+
+.vds-bento-mark {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.vds-bento-card.hero h1 {
+  font-size: 52px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.0;
+  color: var(--via-white);
+  margin: 0;
+}
+
+.vds-bento-card.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  filter: drop-shadow(0 4px 16px rgba(10, 31, 59, 0.10));
+}
+
+.vds-bento-lede {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 420px;
+}
+
+.vds-bento-cta-row {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.vds-bento-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 200ms ease;
+}
+
+.vds-bento-cta.primary {
+  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  color: var(--via-navy);
+  border-color: rgba(10, 31, 59, 0.20);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 6px 14px -4px rgba(10, 31, 59, 0.23);
+}
+
+.vds-bento-cta.primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 8px 18px -4px rgba(10, 31, 59, 0.28);
+}
+
+.vds-bento-cta.ghost {
+  background: transparent;
+  color: var(--via-white);
+  border-color: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.vds-bento-cta.ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- STAT TILE ---------- */
+.vds-bento-card.stat {
+  grid-column: span 2;
+  background:
+    radial-gradient(420px 220px at 100% 0%, rgba(10, 31, 59, 0.06), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  justify-content: space-between;
+}
+
+.vds-bento-num {
+  margin: 8px 0 0;
+  font-size: 56px;
+  font-weight: 600;
+  color: var(--via-navy);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  font-feature-settings: 'tnum' 1;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.vds-bento-num.small {
+  font-size: 38px;
+}
+
+.vds-bento-num.accent {
+  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(10, 31, 59, 0.12));
+}
+
+.vds-bento-num em {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--via-text-soft);
+  letter-spacing: -0.005em;
+  -webkit-text-fill-color: var(--via-text-soft);
+}
+
+.vds-bento-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px 6px 9px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.06);
+  border: 1px solid rgba(10, 31, 59, 0.12);
+  font-size: 11.5px;
+  color: var(--via-text-soft);
+  letter-spacing: -0.005em;
+  width: fit-content;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-bento-delta strong {
+  color: var(--via-navy);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* ---------- SPARK TILE ---------- */
+.vds-bento-card.spark {
+  grid-column: span 2;
+  justify-content: space-between;
+}
+
+.vds-bento-spark-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vds-bento-tag-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.06);
+  border: 1px solid rgba(10, 31, 59, 0.12);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  color: var(--via-navy);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.vds-bento-dot {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--via-navy);
+}
+
+.vds-bento-dot::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: rgba(10, 31, 59, 0.25);
+  animation: vds-bento-pulse 1.8s ease-out infinite;
+}
+
+@keyframes vds-bento-pulse {
+  0% { transform: scale(0.85); opacity: 0.6; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.vds-bento-spark-svg {
+  width: 100%;
+  height: 40px;
+  margin-top: 6px;
+}
+
+/* ---------- QUOTE TILE ---------- */
+.vds-bento-card.quote {
+  grid-column: span 2;
+  grid-row: span 2;
+  background:
+    radial-gradient(380px 200px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 70%),
+    linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.62));
+  border-color: rgba(10, 31, 59, 0.11);
+  justify-content: space-between;
+}
+
+.vds-bento-card.quote::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 28px;
+  bottom: 28px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 10px rgba(10, 31, 59, 0.20);
+}
+
+.vds-bento-quote-mark {
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  color: var(--via-navy-deep);
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.07);
+  border: 1px solid rgba(10, 31, 59, 0.16);
+  width: fit-content;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.vds-bento-card.quote blockquote {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.32;
+  color: var(--via-navy);
+}
+
+.vds-bento-card.quote blockquote em {
+  font-style: normal;
+  color: rgba(10, 31, 59, 0.55);
+  font-weight: 500;
+}
+
+.vds-bento-card.quote footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(10, 31, 59, 0.11);
+}
+
+.vds-bento-card.quote .av {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 2px solid var(--via-white);
+  box-shadow:
+    0 0 0 1px rgba(10, 31, 59, 0.12),
+    0 4px 10px -3px rgba(10, 31, 59, 0.35);
+}
+
+.vds-bento-card.quote footer strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--via-navy);
+  letter-spacing: -0.008em;
+}
+
+.vds-bento-card.quote footer em {
+  font-style: normal;
+  display: block;
+  font-size: 11px;
+  color: var(--via-text-soft);
+  margin-top: 2px;
+}
+
+/* ---------- LIVE TILE ---------- */
+.vds-bento-card.live {
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-darker));
+  color: var(--via-white);
+  border-color: rgba(10, 31, 59, 0.11);
+  position: relative;
+  overflow: hidden;
+}
+
+.vds-bento-card.live::before {
+  background: radial-gradient(280px 160px at 100% 0%, rgba(10, 31, 59, 0.09), transparent 70%);
+}
+
+.vds-bento-card.live header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vds-bento-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px 4px 9px;
+  border-radius: 999px;
+  background: rgba(184, 92, 92, 0.18);
+  border: 1px solid rgba(184, 92, 92, 0.4);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+  color: var(--via-white);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.vds-bento-live-pill em {
+  font-family: var(--via-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.012em;
+}
+
+.vds-bento-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--via-coral, var(--via-coral));
+  box-shadow: 0 0 8px rgba(255, 95, 87, 0.7);
+  animation: vds-live-rec-pulse 1.4s ease-in-out infinite;
+}
+
+.vds-bento-live-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-bento-live-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--via-gray-300);
+}
+
+.vds-bento-card.live h4 {
+  margin: 4px 0 6px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  color: var(--via-white);
+  line-height: 1.25;
+}
+
+.vds-bento-live-meta {
+  margin: 0;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: -0.005em;
+}
+
+.vds-bento-live-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--via-white);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-decoration: none;
+  width: fit-content;
+  letter-spacing: -0.005em;
+  transition: all 180ms ease;
+}
+
+.vds-bento-live-cta:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------- NEXT (calendar) TILE ---------- */
+.vds-bento-card.next header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--via-text-soft);
+}
+
+.vds-bento-next-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--via-navy);
+  letter-spacing: -0.008em;
+  line-height: 1.4;
+}
+
+.vds-bento-confirmed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--via-border-soft);
+}
+
+.vds-bento-avs {
+  display: inline-flex;
+}
+
+.vds-bento-avs .av {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 2px solid var(--via-white);
+  margin-left: -8px;
+  box-shadow: 0 0 0 1px rgba(10, 31, 59, 0.12);
+}
+
+.vds-bento-avs .av:first-child {
+  margin-left: 0;
+}
+
+.vds-bento-avs .av.more {
+  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  color: var(--via-navy);
+  border: 1.5px solid var(--via-border-soft);
+  font-size: 9px;
+}
+
+.vds-bento-confirmed em {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--via-text-soft);
+  letter-spacing: -0.005em;
+}
+
+/* ---------- ACHIEVEMENT TILE ---------- */
+.vds-bento-card.achievement {
+  background:
+    radial-gradient(280px 160px at 100% 0%, rgba(10, 31, 59, 0.06), transparent 70%),
+    linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.62));
+  border-color: rgba(10, 31, 59, 0.14);
+  justify-content: space-between;
+}
+
+.vds-bento-medal {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 6px 14px -4px rgba(10, 31, 59, 0.28);
+}
+
+.vds-bento-meta {
+  margin: 0;
+  font-size: 11.5px;
+  color: var(--via-text-soft);
+  letter-spacing: -0.005em;
+}

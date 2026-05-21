@@ -1,0 +1,422 @@
+/* ============================================
+   Sticky CTA bar · 3 variantes (enroll / notify / exit)
+   ============================================ */
+.vds-sticky-stage {
+  position: relative;
+  border-radius: 22px;
+  background: linear-gradient(180deg, var(--via-gray-50), var(--via-gray-100));
+  border: 1px solid var(--via-border-soft);
+  overflow: hidden;
+  min-height: 380px;
+  padding: 32px 36px;
+  isolation: isolate;
+  margin-bottom: 4px;
+}
+
+.vds-sticky-page-mock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 120px;
+}
+
+.vds-sticky-page-mock.dim {
+  opacity: 0.52;
+}
+
+.vds-sticky-page-line {
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(10, 31, 59, 0.08), rgba(10, 31, 59, 0.04));
+}
+
+.vds-sticky-page-line.w50 { width: 50%; }
+.vds-sticky-page-line.w60 { width: 60%; }
+.vds-sticky-page-line.w70 { width: 70%; }
+.vds-sticky-page-line.w80 { width: 80%; }
+.vds-sticky-page-line.w90 { width: 90%; }
+
+.vds-sticky-page-block {
+  height: 96px;
+  border-radius: 12px;
+  background: rgba(10, 31, 59, 0.06);
+  margin: 6px 0;
+}
+
+.vds-sticky-page-block.sm {
+  height: 64px;
+}
+
+/* ============================================
+   Sticky bar — base
+   ============================================ */
+.vds-sticky-bar {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  isolation: isolate;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 24px 56px -22px rgba(10, 31, 59, 0.38),
+    0 4px 14px rgba(10, 31, 59, 0.1);
+  animation: vds-sticky-up .42s cubic-bezier(.2,.8,.2,1) backwards;
+}
+
+@keyframes vds-sticky-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.vds-sticky-bar-l {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.vds-sticky-bar-r {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: end;
+  flex-shrink: 0;
+}
+
+.vds-sticky-bar-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Eyebrow */
+.vds-sticky-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--via-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--via-accent);
+  margin-bottom: 4px;
+}
+
+.vds-sticky-bar p {
+  margin: 0;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+}
+
+.vds-sticky-bar.notify p,
+.vds-sticky-bar.exit p {
+  color: var(--via-ink-2);
+}
+
+.vds-sticky-bar.exit .vds-sticky-eyebrow {
+  color: var(--via-accent-warm);
+}
+
+.vds-sticky-bar p strong {
+  color: var(--via-white);
+  font-weight: 600;
+}
+
+.vds-sticky-bar.notify p strong,
+.vds-sticky-bar.exit p strong {
+  color: var(--via-navy);
+}
+
+.vds-sticky-bar p em {
+  font-style: italic;
+  color: var(--via-accent);
+  font-weight: 500;
+}
+
+.vds-sticky-bar.notify p em,
+.vds-sticky-bar.exit p em {
+  color: var(--via-accent-warm);
+}
+
+/* ============================================
+   Enroll variant — navy mesh
+   ============================================ */
+.vds-sticky-bar.enroll {
+  grid-template-columns: 1fr auto auto;
+  color: var(--via-white);
+  border: 1px solid rgba(10, 31, 59, 0.11);
+}
+
+.vds-sticky-bar.enroll::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--via-accent), var(--via-accent-warm), transparent);
+}
+
+@media (max-width: 920px) {
+  .vds-sticky-bar.enroll {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .vds-sticky-bar-c { justify-self: start; }
+  .vds-sticky-bar-r { justify-self: stretch; }
+}
+
+/* Countdown */
+.vds-sticky-countdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(10, 31, 59, 0.09);
+}
+
+.vds-sticky-countdown > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  min-width: 28px;
+}
+
+.vds-sticky-countdown strong {
+  font-family: var(--via-display);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--via-white);
+  letter-spacing: -0.022em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.vds-sticky-countdown em {
+  font-style: normal;
+  font-family: var(--via-mono);
+  font-size: 9px;
+  color: var(--via-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.vds-sticky-countdown .sep {
+  font-family: var(--via-display);
+  font-size: 19px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: -8px;
+}
+
+/* ============================================
+   Notify variant — navy on light
+   ============================================ */
+.vds-sticky-bar.notify {
+  grid-template-columns: 1fr auto;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.82));
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid var(--via-border-soft);
+  padding: 14px 18px;
+}
+
+.vds-sticky-bar.notify::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+}
+
+.vds-sticky-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px -2px rgba(10, 31, 59, 0.3);
+}
+
+.vds-sticky-notify-title {
+  display: block;
+  font-family: var(--via-display);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.014em;
+  margin-bottom: 3px;
+}
+
+.vds-sticky-notify-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-style: normal;
+  font-family: var(--via-mono);
+  font-size: 11px;
+  color: var(--via-ink-3);
+  letter-spacing: 0.01em;
+}
+
+/* ============================================
+   Exit variant — accent
+   ============================================ */
+.vds-sticky-bar.exit {
+  grid-template-columns: 1fr auto;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84));
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(10, 31, 59, 0.16);
+}.vds-sticky-bar.exit::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+}
+
+.vds-sticky-bar.exit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(420px 240px at 0% 100%, rgba(10, 31, 59, 0.05), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.vds-sticky-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-family: var(--via-font);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  border: 1px solid var(--via-border);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--via-navy);
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;
+  white-space: nowrap;
+}
+
+.vds-sticky-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(10, 31, 59, 0.22);
+  transform: translateY(-1px);
+}
+
+.vds-sticky-btn.sm {
+  padding: 8px 14px;
+  font-size: 12px;
+}
+
+.vds-sticky-btn.primary {
+  background: var(--via-navy);
+  border-color: var(--via-navy);
+  color: var(--via-white);
+}
+
+.vds-sticky-btn.primary:hover {
+  background: var(--via-navy-deep);
+  border-color: var(--via-navy-deep);
+  box-shadow: 0 10px 22px -10px rgba(10, 31, 59, 0.5);
+}.vds-sticky-btn.primary.accent {
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  border-color: transparent;
+  color: var(--via-white);
+  box-shadow: 0 8px 18px -8px rgba(10, 31, 59, 0.42);
+}
+
+.vds-sticky-btn.primary.accent:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 12px 24px -10px rgba(10, 31, 59, 0.30);
+}
+
+.vds-sticky-btn.ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--via-ink-2);
+}
+
+.vds-sticky-btn.ghost.on-dark {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.vds-sticky-btn.ghost.on-dark:hover {
+  color: var(--via-white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.vds-sticky-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  color: var(--via-ink-2);
+  text-decoration: none;
+  letter-spacing: -0.006em;
+  transition: color .2s ease;
+}
+
+.vds-sticky-link:hover {
+  color: var(--via-navy);
+}
+
+.vds-sticky-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--via-ink-3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.vds-sticky-close:hover {
+  background: rgba(10, 31, 59, 0.05);
+  color: var(--via-navy);
+  border-color: var(--via-border-soft);
+}
+
+.vds-sticky-bar.enroll .vds-sticky-close {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.vds-sticky-bar.enroll .vds-sticky-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--via-white);
+}

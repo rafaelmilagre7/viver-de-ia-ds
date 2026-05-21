@@ -1,0 +1,187 @@
+.via-nav-stage {
+  padding: 28px;
+  border-radius: var(--via-radius-lg);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.via-nav-stage.light {
+  background:
+    radial-gradient(540px 220px at 15% 0%, rgba(10, 31, 59, 0.04), transparent 60%),
+    linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+  border: 1px solid var(--via-border-soft);
+}
+
+.via-nav-stage.dark {
+  background:
+    radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, rgba(10, 31, 59, 0.05) 0%, transparent 60%),
+    linear-gradient(135deg, var(--via-navy), var(--via-navy-darker));
+  border: 1px solid rgba(10, 31, 59, 0.09);
+}
+
+.via-nav-stage.dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' /%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.12 0 0 0 0 0.23 0 0 0 0.85 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.via-nav-stage > * {
+  position: relative;
+  z-index: 1;
+}
+
+.via-nav-l,
+.via-nav-d {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 24px;
+  border-radius: 999px;
+}
+
+.via-nav-l {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 4px 14px -4px rgba(10, 31, 59, 0.14);
+}
+
+.via-nav-d {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 8px 24px -8px rgba(0, 0, 0, 0.3);
+}
+
+.via-nav-l img,
+.via-nav-d img {
+  height: 24px;
+}
+
+.via-nav-l nav,
+.via-nav-d nav {
+  display: flex;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+}
+
+.via-nav-l a,
+.via-nav-d a {
+  position: relative;
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 200ms ease;
+  padding: 4px 0;
+}
+
+.via-nav-l a::after,
+.via-nav-d a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  right: 50%;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: all 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  opacity: 0;
+}
+
+.via-nav-l a:hover::after,
+.via-nav-l a.active::after,
+.via-nav-d a:hover::after,
+.via-nav-d a.active::after {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.via-nav-l a {
+  color: var(--via-text-soft);
+}
+
+.via-nav-l a:hover,
+.via-nav-l a.active {
+  color: var(--via-navy);
+}
+
+.via-nav-l a.active {
+  font-weight: 600;
+}
+
+.via-nav-d a {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.via-nav-d a:hover,
+.via-nav-d a.active {
+  color: var(--via-white);
+}
+
+.via-nav-d a.active {
+  font-weight: 600;
+}
+
+.via-nav-l button,
+.via-nav-d button {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 180ms ease;
+}
+
+.via-nav-l button {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border-color: var(--via-navy);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 4px 10px -3px rgba(10, 31, 59, 0.4);
+}
+
+.via-nav-l button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 6px 14px -3px rgba(10, 31, 59, 0.5);
+}
+
+.via-nav-d button {
+  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  color: var(--via-navy);
+  border-color: rgba(10, 31, 59, 0.20);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 4px 10px -3px rgba(10, 31, 59, 0.20);
+}
+
+.via-nav-d button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 6px 14px -3px rgba(10, 31, 59, 0.25);
+}

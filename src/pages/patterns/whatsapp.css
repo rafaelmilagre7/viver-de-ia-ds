@@ -1,0 +1,372 @@
+/* ==============================================================
+   WHATSAPP PREVIEW — mockup celular iPhone-like + WA chrome
+   ============================================================== */
+
+.vds-wa-stage {
+  position: relative;
+  padding: 64px 32px;
+  border-radius: 32px;
+  background:
+    radial-gradient(ellipse 65% 70% at 15% 0%, rgba(30,58,95,0.32) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.28) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-300) 0%, var(--via-gray-400) 100%);
+  border: 0.5px solid var(--via-navy-20);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.vds-wa-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ---- Phone frame (iPhone 15 Pro-like) ---- */
+.vds-wa-phone {
+  position: relative;
+  z-index: 1;
+  width: 380px;
+  height: 760px;
+  border-radius: 56px;
+  background: var(--via-black);
+  padding: 14px;
+  box-shadow:
+    inset 0 0 0 2px rgba(60,60,70,0.85),
+    inset 0 0 0 3px rgba(20,20,28,0.95),
+    0 40px 80px rgba(10,31,59,0.40),
+    0 16px 32px rgba(10,31,59,0.30),
+    0 0 0 1px rgba(0,0,0,0.50);
+  overflow: hidden;
+}
+.vds-wa-phone::before {
+  /* moldura metálica brilhante */
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 54px;
+  background: linear-gradient(135deg, rgba(120,125,138,0.4) 0%, transparent 30%, transparent 70%, rgba(120,125,138,0.3) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Inner screen */
+.vds-wa-phone > * {
+  position: relative;
+  z-index: 1;
+}
+.vds-wa-status,
+.vds-wa-h,
+.vds-wa-body,
+.vds-wa-input,
+.vds-wa-home {
+  background: var(--via-gray-200); /* WA bg padrão */
+}
+
+/* Phone screen radius */
+.vds-wa-phone .vds-wa-status { border-top-left-radius: 42px; border-top-right-radius: 42px; }
+.vds-wa-phone .vds-wa-home { border-bottom-left-radius: 42px; border-bottom-right-radius: 42px; }
+.vds-wa-phone {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Status bar */
+.vds-wa-status {
+  position: relative;
+  height: 44px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--via-navy-deep);
+  color: var(--via-white);
+  font-family: var(--via-font);
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 3;
+}
+.vds-wa-status .status-r { display: flex; align-items: center; gap: 6px; }
+
+/* Dynamic Island */
+.vds-wa-island {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 32px;
+  background: var(--via-black);
+  border-radius: 999px;
+  z-index: 5;
+  box-shadow: inset 0 0 0 1px rgba(40,40,50,0.50);
+}
+
+/* WhatsApp header */
+.vds-wa-h {
+  background: var(--via-navy-deep);
+  color: var(--via-white);
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 0.5px solid rgba(0,0,0,0.10);
+}
+.vds-wa-h .back {
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  color: var(--via-white);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.vds-wa-av {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 4px 12px rgba(0,0,0,0.30);
+  flex-shrink: 0;
+}
+.vds-wa-av img { width: 72%; height: 72%; object-fit: contain; }
+.vds-wa-meta strong {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--via-white);
+  letter-spacing: -0.005em;
+}
+.vds-wa-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--via-font);
+  font-size: 12px;
+  color: rgba(255,255,255,0.78);
+  margin-top: 1px;
+}
+.vds-wa-meta .online {
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: var(--via-success);
+  box-shadow: 0 0 6px rgba(31,255,127,0.50);
+}
+.vds-wa-actions { display: flex; gap: 4px; }
+.vds-wa-actions button {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: var(--via-white);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Body & wallpaper */
+.vds-wa-body {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+  padding: 0;
+  min-height: 0;
+}
+.vds-wa-bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--via-gray-200);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(7,94,84,0.04) 1.5px, transparent 2px),
+    radial-gradient(circle at 60% 70%, rgba(7,94,84,0.04) 1.5px, transparent 2px),
+    radial-gradient(circle at 80% 10%, rgba(7,94,84,0.04) 1.5px, transparent 2px),
+    radial-gradient(circle at 30% 90%, rgba(7,94,84,0.04) 1.5px, transparent 2px);
+  background-size: 50px 50px, 70px 70px, 60px 60px, 80px 80px;
+  pointer-events: none;
+}
+.vds-wa-conv {
+  position: relative;
+  z-index: 1;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* System "Hoje · 15:42" */
+.vds-wa-sys {
+  align-self: center;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.55);
+  background: rgba(225,245,254,0.92);
+  padding: 5px 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+}
+
+/* Bubble rows */
+.vds-wa-row { display: flex; max-width: 78%; animation: vds-wa-in 320ms var(--via-ease-out) backwards; }
+.vds-wa-row.them { align-self: flex-start; }
+.vds-wa-row.me { align-self: flex-end; }
+.vds-wa-row:nth-child(2) { animation-delay: 80ms; }
+.vds-wa-row:nth-child(3) { animation-delay: 160ms; }
+.vds-wa-row:nth-child(4) { animation-delay: 240ms; }
+.vds-wa-row:nth-child(5) { animation-delay: 320ms; }
+.vds-wa-row:nth-child(6) { animation-delay: 400ms; }
+@keyframes vds-wa-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bubbles WhatsApp */
+.vds-wa-bubble {
+  position: relative;
+  padding: 7px 10px 6px;
+  border-radius: 8px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.10);
+}
+.vds-wa-bubble.them {
+  background: var(--via-white);
+  border-top-left-radius: 0;
+}
+.vds-wa-bubble.them::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 0;
+  border-color: transparent var(--via-white) transparent transparent;
+}
+.vds-wa-bubble.me {
+  background: linear-gradient(180deg, var(--via-blue), var(--via-navy-deep));
+  color: var(--via-white);
+  border-top-right-radius: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.20);
+}
+.vds-wa-bubble.me::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 8px 8px;
+  border-color: transparent transparent transparent var(--via-navy-deep);
+}
+.vds-wa-bubble p {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: 14px;
+  line-height: 1.4;
+  color: inherit;
+  padding-right: 50px;
+}
+.vds-wa-bubble.them p { color: rgba(0,0,0,0.85); }
+.vds-wa-bubble.me p { color: var(--via-white); }
+.vds-wa-bubble .meta {
+  position: absolute;
+  right: 8px;
+  bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--via-font);
+  font-size: 10px;
+  color: rgba(0,0,0,0.45);
+}
+.vds-wa-bubble.me .meta { color: rgba(255,255,255,0.65); }
+.vds-wa-bubble .check { color: rgba(255,255,255,0.55); }
+.vds-wa-bubble .check.read { color: #5BC0FA; }
+
+/* Input footer */
+.vds-wa-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px 8px;
+  background: var(--via-gray-200);
+}
+.vds-wa-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--via-white);
+  border-radius: 999px;
+  padding: 4px 6px 4px 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+}
+.vds-wa-field .ico {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: rgba(0,0,0,0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.vds-wa-field input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px 4px;
+  font-family: var(--via-font);
+  font-size: 15px;
+  color: rgba(0,0,0,0.85);
+}
+.vds-wa-field input::placeholder { color: rgba(0,0,0,0.40); }
+.vds-wa-send {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--via-success), var(--via-navy-deep));
+  border: none;
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(37,211,102,0.40);
+}
+
+/* Home indicator iOS */
+.vds-wa-home {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--via-gray-200);
+}
+.vds-wa-home::after {
+  content: '';
+  width: 130px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.75);
+}

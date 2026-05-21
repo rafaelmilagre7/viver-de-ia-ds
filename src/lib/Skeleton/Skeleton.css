@@ -1,0 +1,46 @@
+/* ============================================
+   <Skeleton> · placeholder · text | rect | circle
+   ============================================ */
+.via-skeleton {
+  display: block;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 31, 59, 0.05) 0%,
+      rgba(10, 31, 59, 0.10) 50%,
+      rgba(10, 31, 59, 0.05) 100%
+    );
+  background-size: 200% 100%;
+  animation: via-skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+.via-skeleton--text {
+  height: 13px;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
+.via-skeleton--rect {
+  border-radius: 12px;
+}
+
+.via-skeleton--circle {
+  border-radius: 999px;
+  aspect-ratio: 1;
+}
+
+.via-skeleton-group {
+  display: block;
+}
+
+@keyframes via-skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-skeleton {
+    animation: none;
+    background: rgba(10, 31, 59, 0.06);
+  }
+}

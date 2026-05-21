@@ -1,0 +1,88 @@
+/* ============================================
+   <RadioGroup> · editorial · vertical stack
+   ============================================ */
+.via-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-radio {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.via-radio.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.via-radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.via-radio__circle {
+  position: relative;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--via-white);
+  border: 1px solid var(--via-border, #D0D5DD);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.18s ease;
+  margin-top: 1px;
+}
+
+.via-radio__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--via-navy, #0A1F3B);
+  transform: scale(0);
+  transition: transform 0.18s cubic-bezier(.2, .8, .2, 1);
+}
+
+.via-radio__input:checked + .via-radio__circle {
+  border-color: var(--via-navy, #0A1F3B);
+}
+
+.via-radio__input:checked + .via-radio__circle .via-radio__dot {
+  transform: scale(1);
+}
+
+.via-radio__input:focus-visible + .via-radio__circle {
+  outline: 2px solid rgba(10, 31, 59, 0.4);
+  outline-offset: 2px;
+}
+
+.via-radio__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.via-radio__label {
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  color: var(--via-navy, #0A1F3B);
+  line-height: 1.4;
+}
+
+.via-radio__desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--via-ink-2, #5E6B82);
+}

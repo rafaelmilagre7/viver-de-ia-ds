@@ -1,0 +1,107 @@
+.via-toast-bed {
+  padding: 32px;
+  border-radius: var(--via-radius-lg);
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 0%, rgba(10,31,59,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 100% 100%, rgba(10,31,59,0.06) 0%, transparent 60%),
+    linear-gradient(135deg, var(--via-white) 0%, var(--via-gray-200) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.via-toast {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.48));
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(255,255,255,0.40),
+    0 16px 40px rgba(10,31,59,0.12),
+    0 2px 6px rgba(10,31,59,0.05);
+  overflow: hidden;
+  max-width: 560px;
+  animation: vds-toast-in 380ms var(--via-ease-out) backwards;
+}
+.via-toast:nth-child(2) { animation-delay: 80ms; }
+.via-toast:nth-child(3) { animation-delay: 160ms; }
+.via-toast:nth-child(4) { animation-delay: 240ms; }
+@keyframes vds-toast-in {
+  from { opacity: 0; transform: translateY(-14px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.via-toast::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent);
+  border-top-left-radius: 18px;
+  pointer-events: none;
+}
+.via-toast .ico {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10,31,59,0.06);
+  color: var(--via-navy);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.via-toast.success .ico { background: rgba(10, 31, 59, 0.08); color: var(--via-navy); border: 1px solid rgba(10, 31, 59, 0.12); }
+.via-toast.warning .ico { background: rgba(10, 31, 59, 0.07); color: var(--via-navy-deep); border: 1px solid rgba(10, 31, 59, 0.14); }
+.via-toast.danger .ico { background: rgba(184, 92, 92, 0.12); color: var(--via-coral-dark); border: 1px solid rgba(184, 92, 92, 0.26); }
+.via-toast .body { flex: 1; min-width: 0; position: relative; z-index: 1; padding-top: 2px; }
+.via-toast .title {
+  font-family: var(--via-font);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--via-navy);
+}
+.via-toast .desc {
+  font-family: var(--via-font);
+  font-size: 12px;
+  color: var(--via-gray-600);
+  margin-top: 3px;
+  line-height: 1.5;
+}
+.via-toast .action {
+  position: relative;
+  z-index: 1;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.004em;
+  align-self: center;
+  cursor: pointer;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(10,31,59,0.06);
+  border: 1px solid rgba(10,31,59,0.08);
+  white-space: nowrap;
+}
+.via-toast .close {
+  position: relative;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--via-gray-500);
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 4px;
+}

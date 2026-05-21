@@ -1,0 +1,655 @@
+/* ============================================
+   Curriculum · módulos + aulas
+   ============================================ */
+
+/* ---------- Course hero ---------- */
+.vds-course-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 920px) {
+  .vds-course-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vds-course-cover {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--via-white);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 24px 48px -22px rgba(10, 31, 59, 0.4);
+}
+
+.vds-course-eyebrow {
+  display: inline-flex;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 14px;
+}
+
+.vds-course-cover h2 {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.06;
+  color: var(--via-white);
+  margin: 0 0 20px;
+  max-width: 280px;
+}
+
+.vds-course-cover h2 em {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.vds-course-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.vds-course-author .av {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.vds-course-watermark {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+/* Course meta side */
+.vds-course-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
+  border-radius: 22px;
+  border: 1px solid var(--via-border-soft);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 16px 40px -24px rgba(10, 31, 59, 0.16);
+}
+
+.vds-course-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--via-border-soft);
+}
+
+.vds-course-stats .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vds-course-stats .n {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--via-navy);
+  line-height: 1;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-course-stats .l {
+  font-size: 11px;
+  color: var(--via-text-soft);
+  font-weight: 500;
+}
+
+.vds-course-progress .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.vds-course-progress .lbl {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-soft);
+}
+
+.vds-course-progress .val {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--via-navy);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-course-progress .track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+
+.vds-course-progress .track > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
+  border-radius: 999px;
+}
+
+.vds-course-progress .next {
+  margin: 10px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--via-text-soft);
+}
+
+.vds-course-progress .next svg {
+  color: var(--via-navy);
+}
+
+.vds-course-progress .next strong {
+  color: var(--via-navy);
+  font-weight: 600;
+}
+
+.vds-course-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: stretch;
+  margin-top: auto;
+  padding: 14px 20px;
+  background: var(--via-navy);
+  color: var(--via-white);
+  border: 1px solid var(--via-navy);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: -0.005em;
+  box-shadow: 0 8px 18px -8px rgba(10, 31, 59, 0.5);
+  transition: all 180ms ease;
+}
+
+.vds-course-cta:hover {
+  background: var(--via-navy-deep);
+  transform: translateY(-1px);
+}
+
+/* ---------- Modules list ---------- */
+.vds-modules {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.vds-module {
+  border-radius: 16px;
+  border: 1px solid var(--via-border-soft);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 8px 24px -16px rgba(10, 31, 59, 0.1);
+  transition: box-shadow 200ms ease;
+}
+
+.vds-module.open {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 16px 40px -22px rgba(10, 31, 59, 0.16);
+}
+
+.vds-module.done {
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.04), rgba(255, 255, 255, 0.62));
+}
+
+.vds-module-head {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 22px 24px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+.vds-module-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: rgba(10, 31, 59, 0.06);
+  color: var(--via-navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-feature-settings: 'tnum' 1;
+  flex-shrink: 0;
+}
+
+.vds-module.done .vds-module-num {
+  background: var(--via-navy);
+  color: var(--via-white);
+}
+
+.vds-module-text h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--via-navy);
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.vds-module-lede {
+  font-size: 12px;
+  color: var(--via-text-soft);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 540px;
+}
+
+.vds-module-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.vds-module-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.06);
+  color: var(--via-navy);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-module-progress {
+  width: 64px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.08);
+  overflow: hidden;
+}
+
+.vds-module-progress > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
+  border-radius: 999px;
+  transition: width 400ms ease;
+}
+
+.vds-module.done .vds-module-progress > span {
+  background: linear-gradient(90deg, var(--via-navy), var(--via-navy));
+}
+
+.vds-module-chev {
+  color: var(--via-text-soft);
+  transition: transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.vds-module-chev.rot {
+  transform: rotate(180deg);
+  color: var(--via-navy);
+}
+
+/* Lessons */
+.vds-lessons {
+  list-style: none;
+  margin: 0;
+  padding: 0 24px 20px 88px;
+  border-top: 1px solid var(--via-border-soft);
+  padding-top: 12px;
+}
+
+.vds-lesson {
+  display: grid;
+  grid-template-columns: 28px 56px 1fr 100px 64px 30px;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  margin: 0 -14px;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(10, 31, 59, 0.04);
+  font-feature-settings: 'tnum' 1;
+  position: relative;
+  transition: all 160ms ease;
+}
+
+.vds-lesson::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+  background: transparent;
+  transition: background 200ms ease;
+}
+
+.vds-lesson:hover:not(.locked) {
+  background: rgba(10, 31, 59, 0.025);
+}
+
+.vds-lesson:last-child {
+  border-bottom: none;
+}
+
+.vds-lesson.done::before {
+  background: linear-gradient(180deg, var(--via-navy), transparent 80%);
+  opacity: 0.4;
+}
+
+.vds-lesson.playing::before {
+  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(10, 31, 59, 0.20);
+}
+
+.vds-lesson.playing {
+  background:
+    radial-gradient(280px 80px at 0% 50%, rgba(10, 31, 59, 0.07), transparent 70%);
+}
+
+.vds-lesson-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65));
+  border: 1px solid var(--via-border-soft);
+  color: var(--via-text-soft);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+}
+
+.vds-lesson.done .vds-lesson-icon {
+  background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
+  color: var(--via-white);
+  border-color: var(--via-navy);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 2px 6px -2px rgba(10, 31, 59, 0.4);
+}
+
+.vds-lesson.playing .vds-lesson-icon {
+  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+  color: var(--via-white);
+  border-color: rgba(10, 31, 59, 0.25);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 0 0 5px rgba(10, 31, 59, 0.09),
+    0 2px 8px -2px rgba(10, 31, 59, 0.25);
+  animation: vds-lesson-pulse 2s ease-in-out infinite;
+}
+
+@keyframes vds-lesson-pulse {
+  0%, 100% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.2) inset,
+      0 0 0 5px rgba(10, 31, 59, 0.09),
+      0 2px 8px -2px rgba(10, 31, 59, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.2) inset,
+      0 0 0 9px rgba(10, 31, 59, 0.08),
+      0 2px 12px -2px rgba(10, 31, 59, 0.30);
+  }
+}
+
+.vds-lesson.available .vds-lesson-icon {
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.1), rgba(10, 31, 59, 0.04));
+  color: var(--via-navy);
+  border-color: rgba(10, 31, 59, 0.14);
+}
+
+.vds-lesson.locked .vds-lesson-icon {
+  background: rgba(10, 31, 59, 0.025);
+  color: rgba(10, 31, 59, 0.28);
+  border-color: rgba(10, 31, 59, 0.06);
+  box-shadow: none;
+}
+
+.vds-lesson-num {
+  font-family: var(--via-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--via-text-soft);
+  letter-spacing: 0.02em;
+}
+
+.vds-lesson.done .vds-lesson-num {
+  color: var(--via-navy);
+}
+
+.vds-lesson.playing .vds-lesson-num {
+  color: var(--via-navy-deep);
+  font-weight: 700;
+}
+
+.vds-lesson-title {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.005em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vds-lesson.locked .vds-lesson-title,
+.vds-lesson.locked .vds-lesson-num,
+.vds-lesson.locked .vds-lesson-type,
+.vds-lesson.locked .vds-lesson-dur {
+  color: rgba(10, 31, 59, 0.35);
+}
+
+.vds-lesson.playing .vds-lesson-title {
+  color: var(--via-navy);
+  font-weight: 600;
+}
+
+.vds-lesson-type {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--via-text-soft);
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.04);
+  border: 1px solid rgba(10, 31, 59, 0.06);
+  text-align: center;
+  letter-spacing: -0.004em;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.vds-lesson.playing .vds-lesson-type {
+  background: rgba(10, 31, 59, 0.07);
+  border-color: rgba(10, 31, 59, 0.14);
+  color: var(--via-navy-deep);
+}
+
+.vds-lesson-dur {
+  font-family: var(--via-font-mono);
+  font-size: 11px;
+  color: var(--via-text-soft);
+  text-align: right;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.vds-lesson.playing .vds-lesson-dur {
+  color: var(--via-navy-deep);
+}
+
+.vds-lesson-go {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+  color: var(--via-navy);
+  border: 1px solid var(--via-border-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 180ms ease;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset, 0 2px 4px rgba(10, 31, 59, 0.06);
+}
+
+.vds-lesson-go:hover {
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border-color: var(--via-navy);
+  transform: translateX(3px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 4px 10px -3px rgba(10, 31, 59, 0.4);
+}
+
+.vds-lesson.playing .vds-lesson-go {
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
+  color: var(--via-white);
+  border-color: rgba(10, 31, 59, 0.25);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 2px 6px -2px rgba(10, 31, 59, 0.23);
+}
+
+.vds-lesson.playing .vds-lesson-go:hover {
+  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+}
+
+/* Certificate card */
+.vds-cert-card {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px dashed rgba(10, 31, 59, 0.20);
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.06), rgba(10, 31, 59, 0.02));
+  margin-top: 6px;
+}.vds-cert-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px -8px rgba(10, 31, 59, 0.28);
+}
+
+.vds-cert-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--via-navy);
+  margin: 0 0 4px;
+  letter-spacing: -0.005em;
+}
+
+.vds-cert-lede {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--via-text-soft);
+  margin: 0;
+}
+
+.vds-cert-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.07);
+  color: var(--via-navy-deep);
+  white-space: nowrap;
+}
+
+@media (max-width: 820px) {
+  .vds-module-head {
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .vds-module-meta {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+  }
+  .vds-lessons {
+    padding-left: 24px;
+  }
+  .vds-lesson {
+    grid-template-columns: 24px 1fr auto;
+    gap: 10px;
+  }
+  .vds-lesson-num,
+  .vds-lesson-type,
+  .vds-lesson-go {
+    display: none;
+  }
+}

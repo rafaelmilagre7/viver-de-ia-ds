@@ -1,0 +1,67 @@
+/* ============================================
+   <Progress> · barra editorial · 3 tones × 3 sizes
+   ============================================ */
+.via-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+  width: 100%;
+}
+
+.via-progress__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.via-progress__label {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.006em;
+  color: var(--via-navy, #0A1F3B);
+}
+
+.via-progress__value {
+  font-family: var(--via-mono, 'Geist Mono', ui-monospace, monospace);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--via-ink-2, #5E6B82);
+  font-variant-numeric: tabular-nums;
+}
+
+.via-progress__track {
+  position: relative;
+  width: 100%;
+  background: rgba(10, 31, 59, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.via-progress--sm .via-progress__track { height: 4px; }
+.via-progress--md .via-progress__track { height: 6px; }
+.via-progress--lg .via-progress__track { height: 10px; }
+
+.via-progress__fill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.45s cubic-bezier(.2, .8, .2, 1);
+  position: relative;
+}
+
+/* ===== Tones ===== */
+.via-progress--navy .via-progress__fill {
+  background: linear-gradient(90deg, var(--via-navy, #0A1F3B), var(--via-blue, #1E3A5F));
+  box-shadow: 0 0 8px -2px rgba(10, 31, 59, 0.3);
+}
+
+/* "accent" tone agora é apenas um sinônimo editorial pra navy-deep gradient · paleta restrita */
+.via-progress--accent .via-progress__fill {
+  background: linear-gradient(90deg, var(--via-navy-deep), var(--via-navy));
+  box-shadow: 0 0 8px -2px rgba(10, 31, 59, 0.35);
+}
+
+.via-progress--coral .via-progress__fill {
+  background: linear-gradient(90deg, var(--via-coral-dark, #8C2C2C), var(--via-coral, #B85C5C));
+}

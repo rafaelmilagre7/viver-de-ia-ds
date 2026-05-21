@@ -1,0 +1,56 @@
+.via-tt-stage {
+  padding: 64px;
+  border-radius: var(--via-radius-lg);
+  background: linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.via-tt-item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.via-tt-anchor {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--via-white);
+  border: 1px solid var(--via-gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--via-gray-600);
+  position: relative;
+  box-shadow: 0 1px 3px rgba(10,31,59,0.06);
+}
+.via-tt {
+  position: absolute;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(10,31,59,0.30), inset 0 1px 0 rgba(255,255,255,0.10);
+  white-space: nowrap;
+  animation: vds-tt-in 220ms var(--via-ease-out) backwards;
+  animation-delay: 60ms;
+}
+@keyframes vds-tt-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.via-tt.top { bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
+.via-tt.top::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--via-navy); }
+.via-tt.bottom { top: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
+.via-tt.bottom::after { content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-bottom-color: var(--via-navy); }
+.via-tt.right { left: calc(100% + 10px); top: 50%; transform: translateY(-50%); }
+.via-tt.right::after { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--via-navy); }
+.via-tt-pos {
+  font-family: var(--via-font);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--via-gray-400);
+}

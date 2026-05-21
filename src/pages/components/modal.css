@@ -1,0 +1,172 @@
+.via-modal-stage {
+  position: relative;
+  height: 420px;
+  background:
+    radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, rgba(10, 31, 59, 0.05) 0%, transparent 60%),
+    linear-gradient(135deg, rgba(10, 31, 59, 0.7), rgba(6, 21, 40, 0.92));
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.via-modal-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' /%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.12 0 0 0 0 0.23 0 0 0 0.85 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.via-modal-stage .stage-label {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  font-family: var(--via-font);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  z-index: 2;
+}
+
+.via-modal {
+  position: relative;
+  z-index: 2;
+  width: 480px;
+  padding: 34px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.82));
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 22px;
+  animation: vds-modal-in 380ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.via-modal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(440px 200px at 0% 0%, rgba(10, 31, 59, 0.04), transparent 60%);
+  z-index: -1;
+}
+
+@keyframes vds-modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.via-modal-keep {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 32px 80px rgba(0, 0, 0, 0.45),
+    0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.via-modal header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 14px;
+}
+
+.via-modal h3 {
+  font-family: var(--via-font);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--via-navy);
+  letter-spacing: -0.022em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.via-modal .close {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(10, 31, 59, 0.06);
+  border: 1px solid var(--via-border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--via-text-soft);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 160ms ease;
+}
+
+.via-modal .close:hover {
+  background: var(--via-navy);
+  border-color: var(--via-navy);
+  color: var(--via-white);
+}
+
+.via-modal p {
+  font-family: var(--via-font);
+  font-size: 14px;
+  color: var(--via-text-soft);
+  line-height: 1.6;
+  margin: 0 0 26px;
+}
+
+.via-modal footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.via-modal .btn-ghost,
+.via-modal .btn-primary {
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 180ms ease;
+}
+
+.via-modal .btn-ghost {
+  background: transparent;
+  color: var(--via-text-soft);
+  border-color: var(--via-border-soft);
+}
+
+.via-modal .btn-ghost:hover {
+  background: rgba(10, 31, 59, 0.04);
+  color: var(--via-navy);
+}
+
+.via-modal .btn-primary {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border-color: var(--via-navy);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 6px 14px -4px rgba(10, 31, 59, 0.4);
+}
+
+.via-modal .btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 8px 18px -4px rgba(10, 31, 59, 0.5);
+}

@@ -1,0 +1,117 @@
+/* Segmented control · glass pill */
+.via-seg {
+  display: inline-flex;
+  padding: 4px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.82));
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 4px 12px rgba(10, 31, 59, 0.08),
+    0 1px 3px rgba(10, 31, 59, 0.04);
+  gap: 2px;
+}
+
+.via-seg-item {
+  padding: 9px 18px;
+  font-family: var(--via-font);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--via-text-soft);
+  cursor: pointer;
+  transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  position: relative;
+}
+
+.via-seg-item:hover:not(.active) {
+  color: var(--via-navy);
+  background: rgba(10, 31, 59, 0.04);
+}
+
+.via-seg-item.active {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border-color: var(--via-navy);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 4px 12px -3px rgba(10, 31, 59, 0.45);
+}
+
+/* Underline tabs · classic editorial */
+.via-ultabs {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid var(--via-border-soft);
+  position: relative;
+}
+
+.via-ultab {
+  position: relative;
+  padding: 14px 0;
+  font-family: var(--via-font);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--via-text-soft);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-bottom: -1px;
+  transition: color 200ms ease;
+}
+
+.via-ultab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--via-navy) 50%, transparent);
+  border-radius: 2px 2px 0 0;
+  transition: all 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.via-ultab.active {
+  color: var(--via-navy);
+  font-weight: 600;
+}
+
+.via-ultab.active::after {
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 12px rgba(10, 31, 59, 0.3);
+}
+
+.via-ultab:hover {
+  color: var(--via-navy);
+}
+
+.via-ultab .count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  padding: 2px 7px;
+  background: rgba(10, 31, 59, 0.06);
+  border: 1px solid rgba(10, 31, 59, 0.08);
+  color: var(--via-text-soft);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'tnum' 1;
+  min-width: 18px;
+}
+
+.via-ultab.active .count {
+  background: var(--via-navy);
+  border-color: var(--via-navy);
+  color: var(--via-white);
+}

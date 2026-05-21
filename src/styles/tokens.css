@@ -1,0 +1,478 @@
+/* =============================================================
+   VIVER DE IA — Design System
+   White-first · navy + grays + black · glass on light surfaces
+   ============================================================= */
+
+/* Fonts: load via Google Fonts in consuming HTML
+   @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
+*/
+
+:root {
+  /* ========== COLORS ========================================== */
+
+  /* Navy — the brand color. Used for primary text and primary surfaces. */
+  --via-navy:        #0A1F3B;   /* primary navy */
+  --via-navy-deep:   #02162A;   /* deep, used for full-bleed dark moments */
+  --via-navy-darker: #010B1A;   /* darkest, footers / borders */
+  --via-blue:        #1E3A5F;   /* mid azul-escuro */
+  --via-blue-soft:   #2A4A6E;   /* hover state on navy / borders on navy */
+
+  /* Navy transparency stops (for hairlines, hovers, soft surfaces) */
+  --via-navy-80: rgba(10, 31, 59, 0.80);
+  --via-navy-60: rgba(10, 31, 59, 0.60);
+  --via-navy-40: rgba(10, 31, 59, 0.40);
+  --via-navy-20: rgba(10, 31, 59, 0.20);
+  --via-navy-12: rgba(10, 31, 59, 0.12);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+
+  /* Grayscale — the secondary palette */
+  --via-gray-50:  #F7F8FA;   /* page bg (alt) */
+  --via-gray-100: #F0F2F5;   /* subtle surface */
+  --via-gray-200: #E4E7EC;   /* hairline border */
+  --via-gray-300: #D0D5DD;   /* stronger border */
+  --via-gray-400: #98A2B3;   /* muted text on light */
+  --via-gray-500: #667085;   /* secondary text */
+  --via-gray-600: #475467;   /* tertiary text */
+  --via-gray-700: #344054;   /* body emphasis */
+  --via-gray-800: #1D2939;   /* close to navy */
+  --via-gray-900: #101828;   /* near black */
+
+  --via-black: #000000;
+  --via-white: #FFFFFF;
+
+  /* Page / surface tokens — LIGHT-FIRST */
+  --via-bg:           var(--via-white);
+  --via-bg-2:         var(--via-gray-50);
+  --via-bg-3:         var(--via-gray-100);
+  --via-surface:      var(--via-white);
+  --via-surface-elev: var(--via-white);
+
+  /* Semantic text */
+  --via-text-primary:  var(--via-navy);
+  --via-text-body:     var(--via-gray-700);
+  --via-text-muted:    var(--via-gray-500);
+  --via-text-faint:    var(--via-gray-400);
+  --via-text-inverse:  var(--via-white);
+
+  /* Semantic borders */
+  --via-border-hairline: var(--via-gray-200);
+  --via-border:          var(--via-gray-300);
+  --via-border-soft:     rgba(10, 31, 59, 0.08);  /* hairline editorial · 392+ usos */
+  --via-border-strong:   var(--via-navy-40);
+
+  /* Status — desaturated, navy-adjacent */
+  --via-success: #1F8A5B;
+  --via-warning: #0A1F3B;
+  --via-danger:  #B83A3A;
+
+  /* ========== EDITORIAL INK SCALE =============================
+     Aliases curtos · 100% mapeados nos CSS dos componentes (700+ usos)
+     Não remover sem migrar todas as referências.
+     ============================================================ */
+  --via-text:        var(--via-gray-700);   /* corpo padrão */
+  --via-text-soft:   var(--via-gray-500);   /* secondary 289+ usos */
+  --via-ink-2:       #5E6B82;               /* texto secundário editorial · 76+ usos */
+  --via-ink-3:       #6B7891;               /* texto terciário · timestamps · 102+ usos */
+
+  /* ========== ACCENT (navy / cinza · paleta restrita) ==========
+     Paleta canônica VIA: branco · off-white · cinza · azul-escuro · navy · preto.
+     Sem gold/amarelo/dourado em nenhum nível — accent é só intensidade
+     editorial dentro da própria família navy + cinza.
+     ============================================================ */
+  --via-accent:       var(--via-navy);        /* navy primário · CTA · headers fortes */
+  --via-accent-deep:  var(--via-navy-deep);   /* navy mais profundo · gradient stops */
+  --via-accent-soft:  var(--via-gray-300);    /* cinza claro · gradient highlights */
+  --via-accent-warm:  var(--via-navy-deep);   /* alias semântico legado · navy-deep */
+  --via-accent-light: var(--via-gray-300);    /* alias semântico legado · cinza claro */
+
+  /* ========== CORAL (destrutivo only) ========================= */
+  --via-coral:       #B85C5C;               /* destrutivo · cancel · error */
+  --via-coral-dark:  #8C2C2C;               /* destrutivo texto */
+  --via-coral-deep:  #A14848;               /* destrutivo hover */
+
+  /* ========== ALIASES (compat) ================================
+     Aliases curtos pra Geist Display / Mono · 159+ usos
+     ============================================================ */
+  --via-display: var(--via-font-display);
+  --via-mono:    var(--via-font-mono);
+
+  /* ========== BG SOFT (surfaces) ============================== */
+  --via-bg-soft: rgba(10, 31, 59, 0.025);   /* card soft alternate */
+}
+
+/* =============================================================
+   DARK MODE · [data-theme="dark"] no <html>
+   Mantém navy como cor central · troca surfaces white → navy-dark
+   ============================================================= */
+[data-theme="dark"] {
+  /* Surfaces */
+  --via-bg:           #050E1E;    /* canvas mais escuro que navy-deep */
+  --via-bg-2:         #0A1A30;
+  --via-bg-3:         #0E2138;
+  --via-surface:      #0A1F3B;
+  --via-surface-elev: #0E2647;
+  --via-bg-soft:      rgba(255, 255, 255, 0.03);
+
+  /* Text */
+  --via-text-primary: #F4F6FA;
+  --via-text-body:    rgba(255, 255, 255, 0.84);
+  --via-text-muted:   rgba(255, 255, 255, 0.58);
+  --via-text-faint:   rgba(255, 255, 255, 0.4);
+  --via-text-inverse: var(--via-navy);
+
+  --via-text:      rgba(255, 255, 255, 0.84);
+  --via-text-soft: rgba(255, 255, 255, 0.58);
+  --via-ink-2:     rgba(255, 255, 255, 0.7);
+  --via-ink-3:     rgba(255, 255, 255, 0.5);
+
+  /* Borders */
+  --via-border-hairline: rgba(255, 255, 255, 0.06);
+  --via-border:          rgba(255, 255, 255, 0.12);
+  --via-border-soft:     rgba(255, 255, 255, 0.08);
+  --via-border-strong:   rgba(255, 255, 255, 0.22);
+
+  /* Navy stays as accent in dark · transparency stops invert */
+  --via-navy-08: rgba(255, 255, 255, 0.05);
+  --via-navy-04: rgba(255, 255, 255, 0.03);
+  --via-navy-12: rgba(255, 255, 255, 0.08);
+
+  color-scheme: dark;
+}
+
+/* If prefers-color-scheme: dark and no explicit theme set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --via-bg:           #050E1E;
+    --via-bg-2:         #0A1A30;
+    --via-surface:      #0A1F3B;
+    --via-text-primary: #F4F6FA;
+    --via-text-body:    rgba(255, 255, 255, 0.84);
+    --via-text:         rgba(255, 255, 255, 0.84);
+    --via-text-soft:    rgba(255, 255, 255, 0.58);
+    --via-ink-2:        rgba(255, 255, 255, 0.7);
+    --via-ink-3:        rgba(255, 255, 255, 0.5);
+    --via-border-soft:  rgba(255, 255, 255, 0.08);
+    color-scheme: dark;
+  }
+}
+
+/* =============================================================
+   SYSTEM TOKENS · fora de :root principal pra resolver dependência
+   circular com os media queries acima. Tudo abaixo é base do DS.
+   ============================================================= */
+:root {
+  /* ========== TYPOGRAPHY ====================================== */
+
+  /* Single-family system: Geist (variable sans, Vercel).
+     Same family for display + UI. Geist Mono para código.
+     Italic é synthesized em Geist (não tem italic axis) — contraste
+     editorial vem por peso + cor (não por inclinação). */
+  --via-font-display: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+  --via-font:         'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+  --via-font-mono:    'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Weights */
+  --via-fw-light:    300;
+  --via-fw-regular:  400;
+  --via-fw-medium:   500;
+  --via-fw-semibold: 600;
+  --via-fw-bold:     700;
+  --via-fw-black:    900;
+
+  /* Type scale */
+  --via-fs-hero:    5rem;       /* 80px */
+  --via-fs-display: 3.5rem;     /* 56px */
+  --via-fs-h1:      2.5rem;     /* 40px */
+  --via-fs-h2:      2rem;       /* 32px */
+  --via-fs-h3:      1.5rem;     /* 24px */
+  --via-fs-h4:      1.125rem;   /* 18px */
+  --via-fs-body:    1rem;       /* 16px */
+  --via-fs-sm:      0.875rem;   /* 14px */
+  --via-fs-xs:      0.75rem;    /* 12px */
+  --via-fs-label:   0.6875rem;  /* 11px */
+
+  /* Letter-spacing buckets — Geist precisa menos tight no display */
+  --via-ls-brand: 0.32em;
+  --via-ls-mark:  0.22em;
+  --via-ls-label: 0.18em;
+  --via-ls-wide:  0.08em;
+  --via-ls-tight: -0.015em;
+  --via-ls-tighter: -0.025em;
+
+  /* Line heights */
+  --via-lh-tight:  1.02;
+  --via-lh-snug:   1.2;
+  --via-lh-normal: 1.5;
+  --via-lh-loose:  1.65;
+
+  /* ========== SPACING ========================================= */
+  --via-space-1:   4px;
+  --via-space-2:   8px;
+  --via-space-3:   12px;
+  --via-space-4:   16px;
+  --via-space-5:   20px;
+  --via-space-6:   24px;
+  --via-space-8:   32px;
+  --via-space-10:  40px;
+  --via-space-12:  48px;
+  --via-space-16:  64px;
+  --via-space-20:  80px;
+  --via-space-24:  96px;
+  --via-space-32:  128px;
+
+  /* ========== RADII =========================================== */
+  --via-radius-xs:   4px;
+  --via-radius-sm:   8px;
+  --via-radius-md:   12px;
+  --via-radius-lg:   20px;
+  --via-radius-xl:   28px;
+  --via-radius-2xl:  40px;
+  --via-radius-pill: 999px;
+
+  /* ========== BORDERS ========================================= */
+  --via-border-fine:   0.5px solid var(--via-border-hairline);
+  --via-border-1:      1px solid var(--via-border);
+  --via-border-strong: 1px solid var(--via-navy-40);
+
+  /* ========== SHADOWS ========================================= */
+  /* Navy-tinted, gentle. The brand never uses gray-black shadows. */
+  --via-shadow-xs: 0 1px 2px rgba(10,31,59,0.04);
+  --via-shadow-sm: 0 2px 6px rgba(10,31,59,0.05), 0 1px 2px rgba(10,31,59,0.03);
+  --via-shadow-md: 0 6px 18px rgba(10,31,59,0.07), 0 1px 3px rgba(10,31,59,0.04);
+  --via-shadow-lg: 0 16px 40px rgba(10,31,59,0.10), 0 2px 8px rgba(10,31,59,0.05);
+  --via-shadow-xl: 0 32px 80px rgba(10,31,59,0.14), 0 4px 16px rgba(10,31,59,0.06);
+
+  /* Glass-specific shadow: inner highlight + soft outer drop */
+  --via-shadow-glass-light:
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    inset 0 -1px 0 rgba(255,255,255,0.30),
+    0 12px 32px rgba(10,31,59,0.08),
+    0 2px 8px rgba(10,31,59,0.04);
+
+  --via-shadow-glass-dark:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    inset 0 -1px 0 rgba(255,255,255,0.06),
+    0 16px 40px rgba(0,0,0,0.30),
+    0 4px 12px rgba(0,0,0,0.15);
+
+  --via-shadow-focus: 0 0 0 3px rgba(10,31,59,0.15);
+
+  /* ========== BLUR =========================================== */
+  --via-blur-sm: blur(8px)  saturate(140%);
+  --via-blur-md: blur(16px) saturate(160%);
+  --via-blur-lg: blur(28px) saturate(180%);
+  --via-blur-xl: blur(48px) saturate(180%);
+
+  /* ========== MOTION ========================================== */
+  --via-ease:        cubic-bezier(0.32, 0.08, 0.24, 1);
+  --via-ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --via-t-fast:      120ms var(--via-ease);
+  --via-t:           180ms var(--via-ease);
+  --via-t-slow:      360ms var(--via-ease);
+
+  /* ========== LAYOUT ========================================== */
+  --via-container: 1280px;
+  --via-content:   760px;
+  --via-narrow:    560px;
+
+  /* ========== SIGNATURE ATMOSPHERES =========================== */
+  /* Mesh light — base cinza-azulada com 4 stops de cor navy */
+  --via-mesh-light:
+    radial-gradient(ellipse 60% 70% at 12% 0%,  rgba(30,58,95,0.28) 0%,  transparent 55%),
+    radial-gradient(ellipse 50% 60% at 95% 8%,  rgba(46,76,118,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 80% at 100% 100%, rgba(10,31,59,0.30) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 5% 100%, rgba(30,58,95,0.18) 0%, transparent 55%),
+    linear-gradient(135deg, #CCD4DD 0%, #A7B2C0 100%);
+
+  /* Mesh navy — fundo dark dramático com glow azul */
+  --via-mesh-navy:
+    radial-gradient(ellipse 60% 70% at 12% 0%,  rgba(46,76,118,0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 95% 8%,  rgba(30,58,95,0.50)  0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 100% 100%, rgba(2,22,42,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 5% 100%, rgba(46,76,118,0.40) 0%, transparent 55%),
+    linear-gradient(135deg, #0A1F3B 0%, #02162A 100%);
+
+  /* Noise texture: data-URI SVG turbulence em 4% opacity */
+  --via-noise:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+
+  /* Glow navy — aura sutil pra elementos navy sólidos */
+  --via-glow-navy:
+    0 0 0 1px rgba(10,31,59,0.05),
+    0 8px 24px rgba(10,31,59,0.20),
+    0 16px 48px rgba(10,31,59,0.14);
+
+  --via-glow-navy-strong:
+    0 0 0 1px rgba(10,31,59,0.10),
+    0 16px 48px rgba(10,31,59,0.30),
+    0 32px 80px rgba(10,31,59,0.20);
+}
+
+/* =============================================================
+   SIGNATURE UTILITIES
+   ============================================================= */
+
+/* Atmosphere wrappers — drop on any container */
+.via-mesh-light {
+  background: var(--via-mesh-light);
+  position: relative;
+}
+.via-mesh-navy {
+  background: var(--via-mesh-navy);
+  color: var(--via-white);
+  position: relative;
+}
+
+/* Noise overlay — add on top of any mesh */
+.via-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* =============================================================
+   BASE
+   ============================================================= */
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--via-font);
+  font-weight: var(--via-fw-regular);
+  font-size: var(--via-fs-body);
+  line-height: var(--via-lh-loose);
+  color: var(--via-text-body);
+  background: var(--via-bg);
+}
+
+h1, h2, h3, h4 { margin: 0; color: var(--via-text-primary); }
+h1 { font-family: var(--via-font-display); font-weight: 500; font-size: var(--via-fs-h1); line-height: var(--via-lh-tight); letter-spacing: var(--via-ls-tighter); }
+h2 { font-family: var(--via-font-display); font-weight: 500; font-size: var(--via-fs-h2); line-height: var(--via-lh-snug);  letter-spacing: var(--via-ls-tighter); }
+h3 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-size: var(--via-fs-h3); line-height: var(--via-lh-snug); letter-spacing: var(--via-ls-tight); }
+h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-size: var(--via-fs-h4); }
+
+/* Cards/heroes em superfície navy escura — herdam color pra ficarem brancos.
+   Resolve bug onde `h1,h2,h3,h4 { color: var(--via-text-primary) }` global
+   sobrescrevia `color: #fff` setado no container ancestral. */
+.via-mesh-navy h1, .via-mesh-navy h2, .via-mesh-navy h3, .via-mesh-navy h4,
+.via-glass-dark h1, .via-glass-dark h2, .via-glass-dark h3, .via-glass-dark h4 {
+  color: inherit;
+}
+
+p { margin: 0; }
+a { color: var(--via-navy); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* =============================================================
+   GLASS — light-first
+   ============================================================= */
+
+/* Light glass: white-tinted, used on gray-50 / gray-100 surfaces */
+.via-glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.42) 100%);
+  backdrop-filter: var(--via-blur-md);
+  -webkit-backdrop-filter: var(--via-blur-md);
+  border: 1px solid rgba(255,255,255,0.80);
+  border-radius: var(--via-radius-lg);
+  box-shadow: var(--via-shadow-glass-light);
+}
+
+.via-glass-strong {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.58) 100%);
+  backdrop-filter: var(--via-blur-lg);
+  -webkit-backdrop-filter: var(--via-blur-lg);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: var(--via-radius-lg);
+  box-shadow: var(--via-shadow-glass-light);
+}
+
+/* Dark glass: used in the rare full-bleed navy moments (footer, CTA) */
+.via-glass-dark {
+  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 100%);
+  backdrop-filter: var(--via-blur-md);
+  -webkit-backdrop-filter: var(--via-blur-md);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--via-radius-lg);
+  box-shadow: var(--via-shadow-glass-dark);
+  color: var(--via-white);
+}
+
+/* Liquid pill — for status / announcement labels */
+.via-liquid {
+  background: linear-gradient(180deg, rgba(255,255,255,0.80), rgba(255,255,255,0.55));
+  backdrop-filter: var(--via-blur-md);
+  -webkit-backdrop-filter: var(--via-blur-md);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: var(--via-radius-pill);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(10,31,59,0.08);
+}
+
+/* =============================================================
+   SURFACES
+   ============================================================= */
+
+.via-surface {
+  background: var(--via-surface);
+  border: var(--via-border-fine);
+  border-radius: var(--via-radius-md);
+}
+
+.via-card {
+  background: var(--via-white);
+  border: var(--via-border-fine);
+  border-radius: var(--via-radius-lg);
+  padding: var(--via-space-6);
+}
+
+.via-card-dark {
+  background: var(--via-navy);
+  border-radius: var(--via-radius-lg);
+  padding: var(--via-space-6);
+  color: var(--via-white);
+}
+
+/* =============================================================
+   TYPE UTILITIES
+   ============================================================= */
+
+.via-hero {
+  font-family: var(--via-font-display);
+  font-size: clamp(2.5rem, 6vw, var(--via-fs-hero));
+  font-weight: 500;
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+}
+
+.via-display {
+  font-family: var(--via-font-display);
+  font-size: clamp(2rem, 4.5vw, var(--via-fs-display));
+  font-weight: 500;
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+}
+
+.via-label {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.via-wordmark {
+  font-family: var(--via-font);
+  font-weight: 300;
+  letter-spacing: var(--via-ls-brand);
+  text-transform: uppercase;
+  color: currentColor;
+}

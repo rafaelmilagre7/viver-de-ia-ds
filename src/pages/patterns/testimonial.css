@@ -1,0 +1,171 @@
+.vds-testi-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.vds-testi {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--via-border-soft);
+  border-radius: 22px;
+  padding: 36px 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  isolation: isolate;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 4px rgba(10, 31, 59, 0.04);
+}
+
+.vds-testi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.045), transparent 60%);
+  z-index: -1;
+}
+
+.vds-testi::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  bottom: 28px;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  border-radius: 0 2px 2px 0;
+}
+
+/* Quote mark — ornamento tipográfico Geist Display italic */
+.vds-testi .quote-mark {
+  position: absolute;
+  top: 22px;
+  right: 32px;
+  font-family: var(--via-display);
+  font-style: italic;
+  font-size: 64px;
+  font-weight: 500;
+  color: rgba(10, 31, 59, 0.1);
+  line-height: 0.6;
+  pointer-events: none;
+  user-select: none;
+}
+
+.vds-testi .quote {
+  font-family: var(--via-font);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.022em;
+  color: var(--via-navy);
+  margin: 0;
+  position: relative;
+  max-width: 720px;
+}
+
+.vds-testi .quote em {
+  font-style: normal;
+  color: rgba(10, 31, 59, 0.45);
+  font-weight: 500;
+}
+
+.vds-testi .attrib {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 22px;
+  border-top: 1px solid var(--via-border-soft);
+}
+
+.vds-testi .av {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
+  color: var(--via-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--via-font);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  border: 2.5px solid var(--via-white);
+  box-shadow:
+    0 0 0 1px rgba(10, 31, 59, 0.08),
+    0 6px 14px -4px rgba(10, 31, 59, 0.35);
+}
+
+.vds-testi .who {
+  font-family: var(--via-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--via-navy);
+  letter-spacing: -0.008em;
+}
+
+.vds-testi .role {
+  font-family: var(--via-font);
+  font-size: 12px;
+  color: var(--via-text-soft);
+  margin-top: 2px;
+}
+
+.vds-testi .outcome {
+  margin-left: auto;
+  padding: 12px 18px 12px 22px;
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.03), rgba(10, 31, 59, 0.01));
+  border: 1px solid var(--via-border-soft);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+}
+
+.vds-testi .outcome::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.2));
+  border-radius: 0 2px 2px 0;
+}
+
+.vds-testi .outcome .k {
+  font-family: var(--via-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+}
+
+.vds-testi .outcome .v {
+  font-family: var(--via-font);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  color: var(--via-navy);
+  font-feature-settings: 'tnum' 1;
+  margin-top: 4px;
+  line-height: 1;
+}
+
+.vds-testi .outcome em {
+  font-style: normal;
+  color: var(--via-text-soft);
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 2px;
+}

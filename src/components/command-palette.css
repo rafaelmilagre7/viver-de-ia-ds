@@ -1,0 +1,164 @@
+/* ==============================================================
+   COMMAND PALETTE — Cmd+K · modal glass dark sobre scrim navy
+   ============================================================== */
+
+.vds-cmdk {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(2, 22, 42, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 20px 40px;
+  animation: vds-cmdk-scrim-in 200ms var(--via-ease-out);
+}
+@keyframes vds-cmdk-scrim-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.vds-cmdk-inner {
+  width: 100%;
+  max-width: 620px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.82) 100%);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 32px 80px rgba(0,0,0,0.40),
+    0 12px 24px rgba(0,0,0,0.20);
+  overflow: hidden;
+  animation: vds-cmdk-card-in 280ms var(--via-ease-out);
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+}
+@keyframes vds-cmdk-card-in {
+  from { opacity: 0; transform: scale(0.96) translateY(-8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.vds-cmdk-inner header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 0.5px solid var(--via-navy-08);
+  color: var(--via-gray-500);
+}
+.vds-cmdk-inner header input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--via-font);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--via-navy);
+}
+.vds-cmdk-inner header input::placeholder { color: var(--via-gray-400); font-weight: 400; }
+.vds-cmdk-inner header .close {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--via-navy-08);
+  color: var(--via-gray-600);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--via-t);
+}
+.vds-cmdk-inner header .close:hover { background: var(--via-navy-12); color: var(--via-navy); }
+
+.vds-cmdk-inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+  flex: 1;
+}
+.vds-cmdk-inner li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: var(--via-radius-md);
+  cursor: pointer;
+  transition: background 150ms;
+}
+.vds-cmdk-inner li.active {
+  background: linear-gradient(90deg, var(--via-navy-08), var(--via-navy-04));
+}
+.vds-cmdk-inner li.empty {
+  font-family: var(--via-font);
+  font-size: 13px;
+  color: var(--via-gray-500);
+  padding: 32px;
+  text-align: center;
+  justify-content: center;
+}
+.vds-cmdk-inner li .kbd {
+  font-family: var(--via-font);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--via-gray-500);
+  background: var(--via-gray-100);
+  padding: 4px 8px;
+  border-radius: var(--via-radius-xs);
+  min-width: 100px;
+  text-align: center;
+}
+.vds-cmdk-inner li.active .kbd { background: var(--via-navy); color: var(--via-white); }
+.vds-cmdk-inner li .t {
+  flex: 1;
+  font-family: var(--via-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--via-navy);
+}
+.vds-cmdk-inner li .arr { color: var(--via-gray-400); }
+.vds-cmdk-inner li.active .arr { color: var(--via-navy); }
+
+.vds-cmdk-inner footer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 22px;
+  border-top: 0.5px solid var(--via-navy-08);
+  background: var(--via-gray-50);
+}
+.vds-cmdk-inner footer .hint {
+  font-family: var(--via-font);
+  font-size: 10px;
+  color: var(--via-gray-500);
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.vds-cmdk-inner footer kbd {
+  font-family: var(--via-font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-12);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--via-navy);
+}
+.vds-cmdk-inner footer .count {
+  margin-left: auto;
+  font-family: var(--via-font-mono);
+  font-size: 10px;
+  color: var(--via-gray-500);
+  letter-spacing: 0.08em;
+}

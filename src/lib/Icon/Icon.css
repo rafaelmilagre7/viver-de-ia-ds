@@ -1,0 +1,90 @@
+/* ============================================
+   <Icon> · wrapper de Lucide icons
+   ============================================ */
+.via-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.via-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.8;
+}
+
+/* ===== Sizes (icon SVG size · não inclui surface padding) ===== */
+.via-icon--xs svg { width: 10px; height: 10px; }
+.via-icon--sm svg { width: 12px; height: 12px; }
+.via-icon--md svg { width: 14px; height: 14px; }
+.via-icon--lg svg { width: 18px; height: 18px; }
+.via-icon--xl svg { width: 22px; height: 22px; }
+
+/* ===== Tones ===== */
+.via-icon--tone-default { color: currentColor; }
+.via-icon--tone-soft    { color: var(--via-ink-3); }
+.via-icon--tone-navy    { color: var(--via-navy); }
+.via-icon--tone-accent    { color: var(--via-accent); }
+.via-icon--tone-coral   { color: var(--via-coral-dark); }
+.via-icon--tone-inverse { color: var(--via-white); }
+
+/* ===== Surfaces (chip around icon) ===== */
+.via-icon--surface-soft {
+  padding: 8px;
+  border-radius: var(--via-radius-md);
+  background: rgba(10, 31, 59, 0.05);
+  border: 1px solid var(--via-border-soft);
+  color: var(--via-navy);
+}
+
+.via-icon--surface-glass {
+  padding: 8px;
+  border-radius: var(--via-radius-md);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid var(--via-border-soft);
+  color: var(--via-navy);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+}
+
+.via-icon--surface-navy {
+  padding: 8px;
+  border-radius: var(--via-radius-md);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-accent);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 4px 10px -2px rgba(10, 31, 59, 0.3);
+}
+
+.via-icon--surface-accent {
+  padding: 8px;
+  border-radius: var(--via-radius-md);
+  background: linear-gradient(135deg, var(--via-accent), var(--via-accent-light));
+  color: var(--via-navy);
+  box-shadow: 0 4px 10px rgba(10, 31, 59, 0.18);
+}
+
+/* Adjust padding for each size on surface */
+.via-icon--surface-soft.via-icon--xs,
+.via-icon--surface-glass.via-icon--xs,
+.via-icon--surface-navy.via-icon--xs,
+.via-icon--surface-accent.via-icon--xs { padding: 5px; }
+
+.via-icon--surface-soft.via-icon--sm,
+.via-icon--surface-glass.via-icon--sm,
+.via-icon--surface-navy.via-icon--sm,
+.via-icon--surface-accent.via-icon--sm { padding: 6px; }
+
+.via-icon--surface-soft.via-icon--lg,
+.via-icon--surface-glass.via-icon--lg,
+.via-icon--surface-navy.via-icon--lg,
+.via-icon--surface-accent.via-icon--lg { padding: 10px; }
+
+.via-icon--surface-soft.via-icon--xl,
+.via-icon--surface-glass.via-icon--xl,
+.via-icon--surface-navy.via-icon--xl,
+.via-icon--surface-accent.via-icon--xl { padding: 12px; }

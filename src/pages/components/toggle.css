@@ -1,0 +1,38 @@
+.via-switch-stack { display: flex; flex-direction: column; gap: 18px; max-width: 420px; }
+.via-switch-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--via-font);
+  font-size: 14px;
+  color: var(--via-gray-700);
+  cursor: pointer;
+}
+.via-switch-row.dis { opacity: 0.5; cursor: not-allowed; }
+.via-switch-row em { font-family: var(--via-font); font-style: normal; color: var(--via-gray-400); font-size: 12px; }
+
+.via-switch {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--via-gray-300);
+  border: none;
+  cursor: pointer;
+  transition: background 200ms var(--via-ease);
+  padding: 0;
+}
+.via-switch .dot {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--via-white);
+  box-shadow: 0 2px 4px rgba(10,31,59,0.20);
+  transition: left 200ms var(--via-ease);
+}
+.via-switch.on { background: var(--via-navy); }
+.via-switch.on .dot { left: 21px; }
+.via-switch:disabled { cursor: not-allowed; }

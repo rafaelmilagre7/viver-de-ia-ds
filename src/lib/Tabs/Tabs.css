@@ -1,0 +1,106 @@
+/* ============================================
+   <Tabs> · underline · pills
+   ============================================ */
+.via-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.via-tabs__list {
+  display: flex;
+  gap: 4px;
+  position: relative;
+}
+
+.via-tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  cursor: pointer;
+  position: relative;
+  transition: color .22s ease, background .22s ease;
+}
+
+.via-tabs__badge {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ===== Underline variant ===== */
+.via-tabs--underline .via-tabs__list {
+  border-bottom: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
+}
+
+.via-tabs--underline .via-tabs__tab {
+  padding: 12px 16px 14px;
+  color: var(--via-ink-2, #5E6B82);
+}
+
+.via-tabs--underline .via-tabs__tab::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--via-navy, #0A1F3B);
+  border-radius: 2px 2px 0 0;
+  transition: width .26s cubic-bezier(.2, .8, .2, 1), left .26s cubic-bezier(.2, .8, .2, 1);
+}
+
+.via-tabs--underline .via-tabs__tab:hover {
+  color: var(--via-navy, #0A1F3B);
+}
+
+.via-tabs--underline .via-tabs__tab.is-active {
+  color: var(--via-navy, #0A1F3B);
+}
+
+.via-tabs--underline .via-tabs__tab.is-active::after {
+  left: 16px;
+  width: calc(100% - 32px);
+}
+
+/* ===== Pills variant ===== */
+.via-tabs--pills .via-tabs__list {
+  padding: 4px;
+  background: rgba(10, 31, 59, 0.04);
+  border-radius: 11px;
+  align-self: flex-start;
+  gap: 2px;
+}
+
+.via-tabs--pills .via-tabs__tab {
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: var(--via-ink-2, #5E6B82);
+}
+
+.via-tabs--pills .via-tabs__tab:hover {
+  color: var(--via-navy, #0A1F3B);
+}
+
+.via-tabs--pills .via-tabs__tab.is-active {
+  background: var(--via-white);
+  color: var(--via-navy, #0A1F3B);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 3px rgba(10, 31, 59, 0.08);
+}
+
+/* ===== Panel ===== */
+.via-tabs__panel {
+  padding-top: 18px;
+  animation: via-tabs-fade .22s ease;
+}
+
+@keyframes via-tabs-fade {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

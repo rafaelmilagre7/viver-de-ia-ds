@@ -1,0 +1,92 @@
+/* ==============================================================
+   VIVER DE IA — Design System site
+   Fonts + tokens + minimal reset.
+   ============================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
+@import './styles/tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--via-font);
+  font-weight: 400;
+  font-size: var(--via-fs-body);
+  line-height: var(--via-lh-loose);
+  color: var(--via-text-body);
+  background: var(--via-bg);
+}
+
+#root { display: flex; flex-direction: column; min-height: 100%; }
+
+::selection {
+  background: rgba(10, 31, 59, 0.92);
+  color: var(--via-white);
+}
+
+button { font-family: inherit; cursor: pointer; }
+input, textarea { font-family: inherit; }
+
+html { scroll-behavior: smooth; }
+
+/* ============================================
+   Accessible focus rings · keyboard-only navigation
+   Removes outline by default, adds navy ring only for :focus-visible
+   ============================================ */
+*:focus { outline: none; }
+
+*:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--via-white),
+    0 0 0 4px rgba(10, 31, 59, 0.5);
+  border-radius: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--via-white),
+    0 0 0 4px var(--via-navy-60);
+}
+
+/* On dark surfaces, focus ring uses a brighter navy layer */
+.via-mesh-navy *:focus-visible,
+.via-on-dark *:focus-visible,
+[data-on-dark] *:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--via-white),
+    0 0 0 4px var(--via-navy-60);
+}
+
+/* ============================================
+   Reduced motion respect
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

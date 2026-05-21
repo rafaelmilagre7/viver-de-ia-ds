@@ -1,0 +1,646 @@
+/* ==============================================================
+   EMAIL — templates premium com logo composta + glass interno
+   ============================================================== */
+
+/* ---- Email client chrome (Gmail-style) ---- */
+.vds-email-client {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.86));
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 24px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 24px 56px rgba(10,31,59,0.16),
+    0 4px 12px rgba(10,31,59,0.06);
+  overflow: hidden;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.vds-email-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 22px;
+  border-bottom: 0.5px solid var(--via-navy-08);
+}
+.vds-email-toolbar-l { display: flex; gap: 4px; }
+.vds-email-toolbar button {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: var(--via-gray-500);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--via-t);
+}
+.vds-email-toolbar button:hover { background: var(--via-navy-08); color: var(--via-navy); }
+
+.vds-email-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px 12px;
+}
+.vds-email-from { display: flex; align-items: center; gap: 12px; }
+.vds-email-from .av {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.vds-email-from .av img { width: 60%; height: 60%; filter: brightness(0) invert(1); }
+.vds-email-from strong {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--via-navy);
+}
+.vds-email-from span {
+  font-family: var(--via-font);
+  font-size: 11px;
+  color: var(--via-gray-500);
+}
+.vds-email-time {
+  font-family: var(--via-font-mono);
+  font-size: 11px;
+  color: var(--via-gray-500);
+}
+.vds-email-subject {
+  font-family: var(--via-font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 4px 28px 24px;
+  border-bottom: 0.5px solid var(--via-navy-08);
+}
+
+.vds-email-body {
+  padding: 32px;
+  background: var(--via-gray-50);
+}
+
+/* ---- Template base ---- */
+.vds-email-template {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 56px rgba(10,31,59,0.14),
+    0 4px 12px rgba(10,31,59,0.06);
+}
+.vds-email-template.light { background: var(--via-white); }
+.vds-email-template.dark { background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep)); color: var(--via-white); }
+
+/* ---- Header com logo composta + tag pill ---- */
+.vds-email-template .hdr {
+  padding: 28px 36px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 0.5px solid var(--via-navy-08);
+}
+.vds-email-template.dark .hdr { border-bottom-color: rgba(255,255,255,0.10); }
+.vds-email-template .hdr-tag {
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  color: var(--via-gray-500);
+  padding: 6px 12px;
+  background: var(--via-navy-04);
+  border: 0.5px solid var(--via-navy-12);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.vds-email-template.dark .hdr-tag {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.16);
+  color: rgba(255,255,255,0.62);
+}
+
+/* ---- Hero plate · atmosférica navy ---- */
+.vds-email-template .hero-plate {
+  position: relative;
+  padding: 40px 36px 36px;
+  background:
+    radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.50) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 100% 100%, rgba(2,22,42,0.85) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  overflow: hidden;
+}
+.vds-email-template .hero-plate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.vds-email-template .hero-plate > * { position: relative; z-index: 1; }
+
+.vds-email-template .hero-plate .ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.20), rgba(255,255,255,0.06));
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.24);
+  color: var(--via-white);
+  margin-bottom: 18px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.20);
+}
+.vds-email-template .hero-plate .ico-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.28);
+  margin-bottom: 22px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.30), 0 8px 20px rgba(10, 31, 59, 0.36);
+}
+.vds-email-template .hero-plate .ico-dark img { width: 60%; height: 60%; object-fit: contain; }
+
+.vds-email-template .hero-plate .lbl {
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+  margin: 0 0 12px;
+}
+.vds-email-template .hero-plate h1 {
+  font-family: var(--via-font-display);
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--via-white);
+  margin: 0;
+}
+.vds-email-template .hero-plate h1 em {
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(255,255,255,0.62);
+}
+.vds-email-template .hero-plate .lede {
+  font-family: var(--via-font);
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+  margin: 18px 0 0;
+  max-width: 460px;
+}
+
+/* ---- Content ---- */
+.vds-email-template .cnt { padding: 32px 36px 36px; }
+
+.vds-email-template .lede {
+  font-family: var(--via-font);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--via-gray-700);
+  margin: 0 0 28px;
+}
+.vds-email-template.dark .cnt .lede { color: rgba(255,255,255,0.78); }
+.vds-email-template .lede strong { font-weight: 700; color: var(--via-navy); }
+.vds-email-template.dark .cnt .lede strong { color: var(--via-white); }
+
+/* ---- Glass stats (transactional) ---- */
+.vds-email-template .glass-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 0 0 28px;
+}
+.vds-email-template .glass-stats .g-card {
+  position: relative;
+  padding: 18px 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(247,248,250,0.78) 100%);
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 8px 20px rgba(10,31,59,0.10),
+    0 2px 6px rgba(10,31,59,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+.vds-email-template .glass-stats .g-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent);
+  pointer-events: none;
+}
+.vds-email-template .glass-stats .g-card > * { position: relative; z-index: 1; }
+.vds-email-template .glass-stats .g-lbl {
+  font-family: var(--via-font);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--via-gray-500);
+}
+.vds-email-template .glass-stats .g-val {
+  font-family: var(--via-font-display);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--via-navy);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin-top: 2px;
+}
+.vds-email-template .glass-stats .g-sub {
+  font-family: var(--via-font);
+  font-size: 11px;
+  color: var(--via-gray-500);
+  margin-top: 2px;
+}
+
+/* ---- Glass features (marketing dark) ---- */
+.vds-email-template .glass-feats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 28px;
+}
+.vds-email-template .glass-feats .f-card {
+  position: relative;
+  padding: 18px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.vds-email-template .glass-feats .f-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), transparent);
+  pointer-events: none;
+}
+.vds-email-template .glass-feats .f-card > * { position: relative; z-index: 1; }
+.vds-email-template .glass-feats .f-ico {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.12);
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.vds-email-template .glass-feats .f-card h3 {
+  font-family: var(--via-font);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--via-white);
+  margin: 0 0 4px;
+}
+.vds-email-template .glass-feats .f-card p {
+  font-family: var(--via-font);
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+}
+
+/* ---- Urgency strip (dark) ---- */
+.vds-email-template .urgency {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  background: linear-gradient(180deg, rgba(198,139,26,0.18), rgba(198,139,26,0.06));
+  border: 1px solid rgba(198,139,26,0.30);
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--via-gray-300);
+  margin-bottom: 24px;
+}
+.vds-email-template .urgency .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--via-navy);
+  box-shadow: 0 0 0 3px rgba(198,139,26,0.20);
+  animation: mkPulse 2.4s ease-in-out infinite;
+}
+.vds-email-template .urgency strong { color: var(--via-white); font-weight: 700; }
+
+/* ---- Quote card (dark) ---- */
+.vds-email-template .quote-card {
+  margin: 32px 0 0;
+  padding: 24px 26px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.vds-email-template .quote-card::before {
+  content: '"';
+  position: absolute;
+  top: -16px;
+  right: 20px;
+  font-family: var(--via-font-display);
+  font-size: 120px;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+.vds-email-template .quote-card p {
+  font-family: var(--via-font-display);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--via-white);
+  margin: 0 0 16px;
+  position: relative;
+}
+.vds-email-template .quote-card .quote-attr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.vds-email-template .quote-card .av {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+  border: 1px solid rgba(255,255,255,0.22);
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--via-font-display);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.vds-email-template .quote-card strong {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--via-white);
+}
+.vds-email-template .quote-card span {
+  font-family: var(--via-font);
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ---- Glass cases (newsletter) ---- */
+.vds-email-template .glass-cases {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 28px;
+}
+.vds-email-template .glass-cases article {
+  position: relative;
+  padding: 22px 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(247,248,250,0.78) 100%);
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 8px 20px rgba(10,31,59,0.10),
+    0 2px 6px rgba(10,31,59,0.04);
+  overflow: hidden;
+  transition: var(--via-t);
+}
+.vds-email-template .glass-cases article::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 40%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.45), transparent);
+  pointer-events: none;
+}
+.vds-email-template .glass-cases article > * { position: relative; z-index: 1; }
+.vds-email-template .glass-cases article:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 16px 36px rgba(10,31,59,0.14);
+}
+.vds-email-template .glass-cases header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.vds-email-template .glass-cases .sector {
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  color: var(--via-gray-500);
+  padding: 4px 10px;
+  background: var(--via-navy-04);
+  border: 0.5px solid var(--via-navy-12);
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.vds-email-template .glass-cases .stat {
+  font-family: var(--via-font-display);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--via-navy);
+  font-variant-numeric: tabular-nums;
+}
+.vds-email-template .glass-cases .stat em {
+  font-family: var(--via-font);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  color: var(--via-gray-500);
+  text-transform: uppercase;
+  margin-left: 4px;
+}
+.vds-email-template .glass-cases h3 {
+  font-family: var(--via-font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--via-navy);
+  margin: 0 0 8px;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+.vds-email-template .glass-cases p {
+  font-family: var(--via-font);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--via-gray-600);
+  margin: 0 0 10px;
+}
+.vds-email-template .glass-cases a {
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--via-navy);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ---- CTA ---- */
+.vds-email-template .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.vds-email-template.light .cta {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  box-shadow: 0 8px 24px rgba(10,31,59,0.22);
+}
+.vds-email-template.dark .cta {
+  background: linear-gradient(180deg, var(--via-white), var(--via-gray-100));
+  color: var(--via-navy);
+  box-shadow: 0 8px 24px rgba(10, 31, 59, 0.36);
+}
+
+/* ---- PS card ---- */
+.vds-email-template .ps-card {
+  margin: 32px 0 0;
+  padding: 22px 24px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 16px;
+}
+.vds-email-template .ps-eyebrow {
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--via-gray-500);
+  margin: 0 0 12px;
+}
+.vds-email-template .ps-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.vds-email-template .ps-card li {
+  display: flex;
+  gap: 10px;
+  font-family: var(--via-font);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--via-gray-700);
+}
+.vds-email-template .ps-card li span {
+  font-family: var(--via-font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--via-navy);
+  flex-shrink: 0;
+  width: 18px;
+}
+
+/* ---- Footer ---- */
+.vds-email-template .ftr {
+  padding: 28px 36px 32px;
+  background: var(--via-gray-50);
+  border-top: 0.5px solid var(--via-navy-08);
+}
+.vds-email-template.dark .ftr {
+  background: rgba(10, 31, 59, 0.36);
+  border-top-color: rgba(255,255,255,0.10);
+}
+.vds-email-template .ftr-brand { margin-bottom: 14px; }
+.vds-email-template .ftr-line {
+  margin: 0 0 6px;
+  font-family: var(--via-font);
+  font-size: 11px;
+  color: var(--via-gray-600);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.vds-email-template.dark .ftr-line { color: rgba(255,255,255,0.55); }
+.vds-email-template .ftr-meta {
+  margin: 6px 0 0;
+  font-family: var(--via-font);
+  font-size: 11px;
+  color: var(--via-gray-500);
+  line-height: 1.5;
+}
+.vds-email-template.dark .ftr-meta { color: rgba(255,255,255,0.45); }
+.vds-email-template .ftr a {
+  color: var(--via-gray-700);
+  text-decoration: underline;
+  font-weight: 600;
+}
+.vds-email-template.dark .ftr a { color: rgba(255,255,255,0.72); }
+
+@media (max-width: 720px) {
+  .vds-email-template .glass-stats { grid-template-columns: 1fr; gap: 8px; }
+  .vds-email-template .cnt, .vds-email-template .hdr, .vds-email-template .ftr, .vds-email-template .hero-plate {
+    padding-left: 24px; padding-right: 24px;
+  }
+  .vds-email-body { padding: 16px; }
+}

@@ -1,0 +1,57 @@
+/* ============================================
+   <Breadcrumb> · nav hierárquica editorial
+   ============================================ */
+.via-breadcrumb {
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-breadcrumb__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.via-breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  letter-spacing: -0.004em;
+}
+
+.via-breadcrumb__link,
+.via-breadcrumb__link--btn {
+  color: var(--via-ink-2, #5E6B82);
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.via-breadcrumb__link:hover {
+  color: var(--via-navy, #0A1F3B);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.via-breadcrumb__current {
+  color: var(--via-navy, #0A1F3B);
+  font-weight: 500;
+}
+
+.via-breadcrumb__sep {
+  color: var(--via-ink-3, #6B7891);
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.5;
+}

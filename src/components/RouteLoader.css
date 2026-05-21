@@ -1,0 +1,103 @@
+/* ============================================
+   <RouteLoader> · editorial skeleton durante lazy chunk
+   ============================================ */
+.vds-route-loader {
+  max-width: var(--via-container, 1280px);
+  margin: 0 auto;
+  padding: 56px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: vds-loader-fade-in .18s ease-out;
+}
+
+@keyframes vds-loader-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.vds-route-loader__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.vds-route-loader__eyebrow,
+.vds-route-loader__title,
+.vds-route-loader__lede,
+.vds-route-loader__block {
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 31, 59, 0.04) 0%,
+    rgba(10, 31, 59, 0.08) 50%,
+    rgba(10, 31, 59, 0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: vds-shimmer 1.6s linear infinite;
+}
+
+[data-theme="dark"] .vds-route-loader__eyebrow,
+[data-theme="dark"] .vds-route-loader__title,
+[data-theme="dark"] .vds-route-loader__lede,
+[data-theme="dark"] .vds-route-loader__block {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.09) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  background-size: 200% 100%;
+}
+
+.vds-route-loader__eyebrow {
+  height: 12px;
+  width: 240px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.vds-route-loader__title {
+  height: 48px;
+  width: 80%;
+  max-width: 760px;
+}
+
+.vds-route-loader__title--short {
+  width: 60%;
+  max-width: 560px;
+}
+
+.vds-route-loader__lede {
+  height: 16px;
+  width: 70%;
+  max-width: 640px;
+  margin-top: 12px;
+}
+
+.vds-route-loader__lede--short {
+  width: 50%;
+  max-width: 480px;
+}
+
+.vds-route-loader__block {
+  height: 220px;
+  margin-top: 32px;
+  border-radius: 22px;
+}
+
+.vds-route-loader__block--alt {
+  height: 320px;
+  margin-top: 14px;
+}
+
+@keyframes vds-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}

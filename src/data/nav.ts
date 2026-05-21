@@ -1,0 +1,171 @@
+import {
+  Compass,
+  Type,
+  Droplets,
+  Image,
+  Box,
+  Grid3X3,
+  Monitor,
+  ScrollText,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+export type NavItem = {
+  label: string;
+  to: string;
+  eyebrow?: boolean;
+  soon?: boolean;
+};
+
+export type NavGroup = {
+  label: string;
+  icon: LucideIcon;
+  items: NavItem[];
+};
+
+export const navigation: NavGroup[] = [
+  {
+    label: 'Começar',
+    icon: Compass,
+    items: [
+      { label: 'Visão geral', to: '/' },
+      { label: 'Manifesto', to: '/manifesto' },
+    ],
+  },
+  {
+    label: 'Fundamentos',
+    icon: Type,
+    items: [
+      { label: 'Marca', to: '/foundations/brand' },
+      { label: 'Cores', to: '/foundations/color' },
+      { label: 'Tipografia', to: '/foundations/typography' },
+      { label: 'Espaçamento', to: '/foundations/spacing' },
+      { label: 'Raios', to: '/foundations/radii' },
+      { label: 'Sombras', to: '/foundations/shadows' },
+      { label: 'Movimento', to: '/foundations/motion' },
+      { label: 'Filosofia (6 regras não-negociáveis)', to: '/foundations/philosophy' },
+      { label: 'Library (React · tipados · exportáveis)', to: '/foundations/library' },
+    ],
+  },
+  {
+    label: 'Liquid Glass',
+    icon: Droplets,
+    items: [
+      { label: 'Anatomia', to: '/glass/anatomy' },
+      { label: 'Variantes', to: '/glass/variants' },
+      { label: 'Em contexto', to: '/glass/in-context' },
+    ],
+  },
+  {
+    label: 'Iconografia',
+    icon: Image,
+    items: [
+      { label: 'Marcas', to: '/iconography/marks' },
+      { label: 'Ícones (Lucide)', to: '/iconography/icons' },
+      { label: 'Fotografia', to: '/iconography/photography' },
+    ],
+  },
+  {
+    label: 'Componentes',
+    icon: Box,
+    items: [
+      { label: 'Botões', to: '/components/buttons' },
+      { label: 'Pills & tags', to: '/components/tags' },
+      { label: 'Badges', to: '/components/badges' },
+      { label: 'Cards', to: '/components/cards' },
+      { label: 'Formulários', to: '/components/form' },
+      { label: 'Modal', to: '/components/modal' },
+      { label: 'Tabela', to: '/components/table' },
+      { label: 'Tabs', to: '/components/tabs' },
+      { label: 'Toast', to: '/components/toast' },
+      { label: 'Tooltip', to: '/components/tooltip' },
+      { label: 'Acordeão', to: '/components/accordion' },
+      { label: 'Stepper', to: '/components/stepper' },
+      { label: 'Empty state', to: '/components/empty' },
+      { label: 'Avatar', to: '/components/avatar' },
+      { label: 'Breadcrumb', to: '/components/breadcrumb' },
+      { label: 'Paginação', to: '/components/pagination' },
+      { label: 'Toggle', to: '/components/toggle' },
+      { label: 'Slider', to: '/components/slider' },
+      { label: 'Dropdown', to: '/components/dropdown' },
+      { label: 'Busca', to: '/components/search' },
+      { label: 'Upload', to: '/components/upload' },
+      { label: 'Nav', to: '/components/nav' },
+      { label: 'Stats', to: '/components/stats' },
+      { label: 'Case card', to: '/components/case-card' },
+      { label: 'Chat (IA)', to: '/components/chat' },
+      { label: '+ 5 peças (banner, skeleton, notif…)', to: '/components/more' },
+      { label: '+ 5 peças (cookie, newsletter, comments…)', to: '/components/more-2' },
+      { label: 'Media players (áudio + vídeo)', to: '/components/media' },
+      { label: 'Charts (area · bar · donut · funil)', to: '/components/charts' },
+      { label: 'Code · terminal · diff (UI técnica)', to: '/components/code' },
+      { label: 'Form avançado (date · combo · tag · range · rating · cor)', to: '/components/form-advanced' },
+      { label: 'Data viz extra (heatmap · sparklines · gauge)', to: '/components/data-viz-extra' },
+      { label: 'System states (loading · 500/403/manut · empty · success)', to: '/components/states' },
+      { label: 'Overlay system (drawer · sheet · popover · dialog · lightbox)', to: '/components/overlays' },
+      { label: 'Notifications (panel · banners · status · inbox)', to: '/components/notifications' },
+      { label: 'Form power (multi-select · drag-drop · phone · cropper · markdown)', to: '/components/form-power' },
+    ],
+  },
+  {
+    label: 'Padrões',
+    icon: Grid3X3,
+    items: [
+      { label: 'Artigo / editorial', to: '/patterns/article' },
+      { label: 'Grid de features', to: '/patterns/feature-grid' },
+      { label: 'KPI / stat panel', to: '/patterns/kpi' },
+      { label: 'Podcast', to: '/patterns/podcast' },
+      { label: 'Pricing', to: '/patterns/pricing' },
+      { label: 'Depoimentos', to: '/patterns/testimonial' },
+      { label: 'Dashboard', to: '/patterns/dashboard' },
+      { label: 'Onboarding', to: '/patterns/onboarding' },
+      { label: 'Email templates', to: '/patterns/email' },
+      { label: 'WhatsApp preview', to: '/patterns/whatsapp' },
+      { label: 'Social media posts', to: '/patterns/social' },
+      { label: 'Invoice / recibo', to: '/patterns/invoice' },
+      { label: 'Slide deck (apresentação)', to: '/patterns/slides' },
+      { label: 'Curriculum (curso · módulos+aulas)', to: '/patterns/curriculum' },
+      { label: 'Lesson player (aula completa)', to: '/patterns/lesson' },
+      { label: 'Editorial blocks (hero · logo wall · timeline · FAQ · comparison)', to: '/patterns/editorial' },
+      { label: 'People (mentor card · team grid · member list · user popover)', to: '/patterns/people' },
+      { label: 'Admin (settings · API keys · billing · audit log)', to: '/patterns/admin' },
+      { label: 'Achievement (rings · streak · certificate · cohort)', to: '/patterns/achievement' },
+      { label: 'Live class (AO VIVO · countdown · arquivo)', to: '/patterns/live' },
+      { label: 'Bento hero (grid modular · 7 tiles)', to: '/patterns/bento' },
+      { label: 'Course player premium (playlist permanente + notas + capítulos)', to: '/patterns/course-player' },
+      { label: 'Mentor matching (score radial + razões + alternativas)', to: '/patterns/mentor-matching' },
+      { label: 'Changelog / release notes (versão + timeline)', to: '/patterns/changelog' },
+      { label: 'Insights semanais (narrativa + delta + chart inline)', to: '/patterns/insights' },
+      { label: 'Roadmap público (kanban now · next · later)', to: '/patterns/roadmap' },
+      { label: 'Status page (uptime bars + incidentes)', to: '/patterns/status' },
+      { label: 'Conference agenda (Leaders AI · day × track)', to: '/patterns/conference-agenda' },
+      { label: 'Trust signals (logo wall · stats · reviews · awards)', to: '/patterns/trust-signals' },
+      { label: 'Sticky CTA bar (enroll · notify · exit intent)', to: '/patterns/sticky-cta' },
+      { label: 'FAQ (busca · categorias · acordeão)', to: '/patterns/faq' },
+      { label: 'Location card (mapa SVG · venue · sede)', to: '/patterns/location' },
+      { label: 'Cancellation flow (3 passos · sem dark pattern)', to: '/patterns/cancellation' },
+      { label: 'Search results (facets · filters · highlight)', to: '/patterns/search-results' },
+      { label: 'Auth flow (magic link · 2FA · social)', to: '/patterns/auth-flow' },
+    ],
+  },
+  {
+    label: 'Páginas-modelo',
+    icon: Monitor,
+    items: [
+      { label: 'Marketing (viverdeia.ai)', to: '/showcase/marketing' },
+      { label: 'Leaders AI Conference', to: '/showcase/leaders-ai' },
+      { label: 'Área do aluno', to: '/showcase/aluno' },
+      { label: 'Login / autenticação', to: '/showcase/login' },
+      { label: 'Settings · preferências', to: '/showcase/settings' },
+    ],
+  },
+  {
+    label: 'Diretrizes',
+    icon: ScrollText,
+    items: [
+      { label: 'Voz & tom', to: '/guidelines/voice' },
+      { label: 'Copy patterns', to: '/guidelines/copy' },
+      { label: "Do's & Don'ts", to: '/guidelines/dos-donts' },
+    ],
+  },
+];

@@ -1,0 +1,81 @@
+/* ==============================================================
+   404 — atmosférica, com "404" gigante decorativo
+   ============================================================== */
+
+.vds-404 {
+  position: relative;
+  border-radius: 40px;
+  padding: 120px 64px;
+  overflow: hidden;
+  color: var(--via-white);
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+}
+.vds-404-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+}
+.vds-404-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 28px;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.vds-404 h1 {
+  font-family: var(--via-font-display);
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 500;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--via-white);
+  margin: 0 0 24px;
+}
+.vds-404 h1 em {
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(255,255,255,0.62);
+}
+.vds-404 p {
+  font-family: var(--via-font);
+  font-size: 17px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.72);
+  margin: 0 0 40px;
+}
+
+/* "404" gigante decorativo no fundo */
+.vds-404-big {
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+  font-family: var(--via-font-display);
+  font-size: clamp(280px, 30vw, 460px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: rgba(255,255,255,0.04);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+  .vds-404 { padding: 80px 32px; border-radius: 28px; min-height: 420px; }
+  .vds-404-big { font-size: 200px; bottom: -30px; right: -10px; }
+}

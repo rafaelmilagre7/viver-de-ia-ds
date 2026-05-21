@@ -1,0 +1,653 @@
+/* ============================================
+   Philosophy · meta-page das 6 regras DS
+   ============================================ */
+.vds-phil-rule {
+  position: relative;
+  padding: 36px 36px 32px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--via-border-soft);
+  isolation: isolate;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 40px -22px rgba(10, 31, 59, 0.14);
+}
+
+.vds-phil-rule::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.035), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Header — number + h3 + lede */
+.vds-phil-rule > header {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--via-border-soft);
+}
+
+@media (max-width: 720px) {
+  .vds-phil-rule > header { grid-template-columns: 1fr; gap: 14px; }
+}
+
+.vds-phil-num {
+  font-family: var(--via-display);
+  font-size: 56px;
+  font-weight: 500;
+  color: rgba(10, 31, 59, 0.12);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.vds-phil-rule h3 {
+  margin: 0 0 10px;
+  font-family: var(--via-display);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.024em;
+  line-height: 1.18;
+  color: var(--via-navy);
+  max-width: 720px;
+}
+
+.vds-phil-rule h3 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vds-phil-rule > header p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--via-ink-2);
+  max-width: 720px;
+}
+
+.vds-phil-rule > header p strong {
+  color: var(--via-navy);
+  font-weight: 600;
+}
+
+/* ============================================
+   Rule 1 · Accent allow / forbid grid
+   ============================================ */
+.vds-phil-rule-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 820px) {
+  .vds-phil-rule-grid { grid-template-columns: 1fr; }
+}
+
+.vds-phil-allow,
+.vds-phil-forbid {
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-phil-allow {
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.025), rgba(10, 31, 59, 0.01));
+}
+
+.vds-phil-forbid {
+  background: linear-gradient(180deg, rgba(184, 92, 92, 0.04), rgba(184, 92, 92, 0.01));
+  border-color: rgba(184, 92, 92, 0.18);
+}
+
+.vds-phil-allow-eyebrow,
+.vds-phil-forbid-eyebrow {
+  display: inline-block;
+  font-family: var(--via-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--via-navy);
+  margin-bottom: 16px;
+}
+
+.vds-phil-forbid-eyebrow {
+  color: var(--via-coral-dark);
+}
+
+.vds-phil-allow ul,
+.vds-phil-forbid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vds-phil-allow li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.vds-phil-allow-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vds-phil-allow li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.vds-phil-allow strong {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.012em;
+}
+
+.vds-phil-allow em {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--via-ink-2);
+  line-height: 1.5;
+}
+
+.vds-phil-forbid li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--via-coral-dark);
+  line-height: 1.5;
+}
+
+.vds-phil-forbid li::before {
+  content: '×';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--via-coral);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ============================================
+   Rule 2 · Pill demo + code
+   ============================================ */
+.vds-phil-pill-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 22px 24px;
+  border-radius: 14px;
+  background: rgba(10, 31, 59, 0.02);
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-phil-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vds-phil-pill-lbl {
+  min-width: 140px;
+  font-family: var(--via-mono);
+  font-size: 11px;
+  color: var(--via-ink-3);
+  letter-spacing: 0.01em;
+}
+
+.vds-phil-pill-lbl em {
+  font-style: normal;
+  font-size: 10px;
+  color: var(--via-ink-3);
+  margin-left: 4px;
+}
+
+.vds-phil-pill {
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  white-space: nowrap;
+  line-height: 1.4;
+  border: 1px solid;
+}
+
+.vds-phil-pill.default {
+  background: rgba(10, 31, 59, 0.05);
+  border-color: rgba(10, 31, 59, 0.14);
+  color: var(--via-navy);
+}
+
+.vds-phil-pill.attn {
+  background: rgba(10, 31, 59, 0.12);
+  border-color: rgba(10, 31, 59, 0.3);
+  color: var(--via-navy-deep);
+}
+
+.vds-phil-pill.churn {
+  background: rgba(184, 92, 92, 0.08);
+  border-color: rgba(184, 92, 92, 0.28);
+  color: var(--via-coral-dark);
+  font-weight: 600;
+}
+
+.vds-phil-code {
+  margin: 0;
+  padding: 22px 24px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--via-navy-darker), var(--via-navy));
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--via-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  overflow-x: auto;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 12px 28px -16px rgba(10, 31, 59, 0.4);
+}
+
+/* ============================================
+   Rule 3 · Tokens grid
+   ============================================ */
+.vds-phil-tokens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 820px) {
+  .vds-phil-tokens { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .vds-phil-tokens { grid-template-columns: 1fr; }
+}
+
+.vds-phil-token {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(10, 31, 59, 0.015);
+  border: 1px solid var(--via-border-soft);
+  transition: background .22s ease;
+}
+
+.vds-phil-token:hover {
+  background: rgba(10, 31, 59, 0.03);
+}
+
+.vds-phil-token-swatch {
+  height: 56px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--via-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.vds-phil-token > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.vds-phil-token strong {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: 0.01em;
+}
+
+.vds-phil-token em {
+  font-style: normal;
+  font-size: 10.5px;
+  color: var(--via-ink-3);
+  line-height: 1.4;
+}
+
+/* ============================================
+   Rule 4 · Signatures grid
+   ============================================ */
+.vds-phil-sigs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 820px) {
+  .vds-phil-sigs { grid-template-columns: 1fr; }
+}
+
+.vds-phil-sig {
+  padding: 22px 22px 20px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-phil-sig-demo {
+  height: 140px;
+  border-radius: 12px;
+  background: rgba(10, 31, 59, 0.03);
+  border: 1px solid var(--via-border-soft);
+  margin-bottom: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+
+.vds-phil-sig-demo.bar .row {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--via-navy);
+  background: rgba(255, 255, 255, 0.7);
+  position: relative;
+  cursor: pointer;
+  transition: background .22s ease, padding-left .22s ease;
+}
+
+.vds-phil-sig-demo.bar .row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  opacity: 0;
+  transition: opacity .22s ease;
+}
+
+.vds-phil-sig-demo.bar .row:hover {
+  background: var(--via-white);
+  padding-left: 22px;
+}
+
+.vds-phil-sig-demo.bar .row:hover::before {
+  opacity: 1;
+}
+
+.vds-phil-sig-demo.lift {
+  align-items: center;
+  justify-content: center;
+}
+
+.vds-phil-sig-demo.lift .card {
+  padding: 16px 22px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  border: 1px solid var(--via-border-soft);
+  color: var(--via-navy);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform .26s cubic-bezier(.2,.7,.2,1), box-shadow .26s ease;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+}
+
+.vds-phil-sig-demo.lift .card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 36px -16px rgba(10, 31, 59, 0.22);
+}
+
+.vds-phil-sig-demo.atmos {
+  align-items: center;
+  justify-content: center;
+}
+
+.vds-phil-sig-demo.atmos .card {
+  position: relative;
+  padding: 22px 28px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  border: 1px solid var(--via-border-soft);
+  color: var(--via-navy);
+  font-size: 13px;
+  font-weight: 500;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.vds-phil-sig-demo.atmos .card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(240px 140px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 60%),
+    radial-gradient(180px 120px at 100% 100%, rgba(10, 31, 59, 0.06), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.vds-phil-sig h4 {
+  margin: 0 0 6px;
+  font-family: var(--via-display);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.014em;
+  color: var(--via-navy);
+}
+
+.vds-phil-sig p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--via-ink-2);
+}
+
+.vds-phil-sig code {
+  font-family: var(--via-mono);
+  font-size: 10.5px;
+  background: rgba(10, 31, 59, 0.05);
+  color: var(--via-navy);
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid var(--via-border-soft);
+}
+
+/* ============================================
+   Rule 5 · Dot demo
+   ============================================ */
+.vds-phil-dot-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 24px;
+  border-radius: 14px;
+  background: rgba(10, 31, 59, 0.02);
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-phil-dot-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vds-phil-dot-lbl {
+  min-width: 120px;
+  font-family: var(--via-mono);
+  font-size: 11px;
+  color: var(--via-ink-2);
+  letter-spacing: 0.01em;
+}
+
+.vds-phil-pill-bad {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px 4px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  background: rgba(184, 92, 92, 0.05);
+  color: var(--via-coral-dark);
+  border: 1px dashed rgba(184, 92, 92, 0.3);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.vds-phil-pill-bad .bolinha {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--via-coral-dark);
+  opacity: 0.6;
+}
+
+.vds-phil-pill-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px 4px 9px;
+  border-radius: 999px;
+  background: rgba(184, 92, 92, 0.16);
+  border: 1px solid rgba(184, 92, 92, 0.36);
+  color: var(--via-white);
+  font-size: 12px;
+  white-space: nowrap;
+  line-height: 1.4;
+  background-color: var(--via-navy);
+}
+
+.vds-phil-pill-live em {
+  font-family: var(--via-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.94);
+  letter-spacing: -0.012em;
+}
+
+.vds-phil-pill-live .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--via-coral, var(--via-coral));
+  box-shadow: 0 0 8px rgba(255, 95, 87, 0.7);
+  animation: vds-phil-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes vds-phil-pulse {
+  50% { opacity: 0.4; transform: scale(0.9); }
+}
+
+/* ============================================
+   Rule 6 · Voice grid
+   ============================================ */
+.vds-phil-voice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 720px) {
+  .vds-phil-voice-grid { grid-template-columns: 1fr; }
+}
+
+.vds-phil-voice {
+  position: relative;
+  padding: 22px 24px 20px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68));
+  border: 1px solid var(--via-border-soft);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.vds-phil-voice::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+}
+
+.vds-phil-voice.bad::before {
+  background: linear-gradient(180deg, var(--via-coral), rgba(184, 92, 92, 0.3));
+}
+
+.vds-phil-voice-tag {
+  display: inline-block;
+  font-family: var(--via-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+  margin-bottom: 12px;
+}
+
+.vds-phil-voice.bad .vds-phil-voice-tag {
+  color: var(--via-coral-dark);
+}
+
+.vds-phil-voice .quote {
+  margin: 0 0 12px;
+  font-family: var(--via-display);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  line-height: 1.35;
+  color: var(--via-navy);
+}
+
+.vds-phil-voice.bad .quote {
+  color: rgba(140, 44, 44, 0.65);
+}
+
+.vds-phil-voice em {
+  font-style: normal;
+  font-size: 11.5px;
+  color: var(--via-ink-3);
+  line-height: 1.5;
+}

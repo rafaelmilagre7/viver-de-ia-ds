@@ -1,0 +1,112 @@
+/* ============================================
+   <Input> · Viver de IA · field editorial
+   ============================================ */
+.via-input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.via-input__label {
+  font-family: var(--via-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.006em;
+}
+
+.via-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--via-white);
+  border: 1px solid var(--via-border);
+  border-radius: var(--via-radius-md);
+  transition: border-color .22s ease, box-shadow .22s ease, background .22s ease;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 2px rgba(10, 31, 59, 0.04);
+}
+
+.via-input:hover {
+  border-color: rgba(10, 31, 59, 0.22);
+}
+
+.via-input:focus-within {
+  border-color: rgba(10, 31, 59, 0.4);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 3px rgba(10, 31, 59, 0.1);
+}
+
+.via-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--via-navy);
+  font-family: var(--via-font);
+  letter-spacing: -0.008em;
+  width: 100%;
+}
+
+.via-input input::placeholder {
+  color: var(--via-ink-3);
+}
+
+.via-input__icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--via-ink-3);
+  flex-shrink: 0;
+}
+
+/* ===== Sizes ===== */
+.via-input--sm {
+  padding: 7px 11px;
+}
+.via-input--sm input {
+  font-size: 12.5px;
+}
+
+.via-input--md {
+  padding: 10px 14px;
+}
+.via-input--md input {
+  font-size: 14px;
+}
+
+.via-input--lg {
+  padding: 13px 16px;
+}
+.via-input--lg input {
+  font-size: 15px;
+}
+
+/* ===== Variants ===== */
+.via-input--error {
+  border-color: rgba(184, 92, 92, 0.4);
+}
+
+.via-input--error:focus-within {
+  border-color: var(--via-coral);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 3px rgba(184, 92, 92, 0.12);
+}
+
+.via-input--success {
+  border-color: rgba(10, 31, 59, 0.28);
+}
+
+/* ===== Messages ===== */
+.via-input__msg {
+  margin: 0;
+  font-size: 11px;
+  color: var(--via-ink-3);
+  letter-spacing: -0.004em;
+}
+
+.via-input__msg--error {
+  color: var(--via-coral-dark);
+}

@@ -1,0 +1,539 @@
+/* ============================================
+   Charts · area / bar / donut / funnel
+   ============================================ */
+
+.vds-chart-card {
+  position: relative;
+  border-radius: 24px;
+  border: 1px solid var(--via-border-soft);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 24px 48px -28px rgba(10, 31, 59, 0.18),
+    0 2px 8px rgba(10, 31, 59, 0.04);
+  padding: 36px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vds-chart-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(680px 280px at 92% -8%, rgba(10, 31, 59, 0.05), transparent 60%),
+    radial-gradient(420px 200px at -8% 110%, rgba(10, 31, 59, 0.04), transparent 60%);
+  z-index: -1;
+}
+
+.vds-chart-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.vds-chart-head .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--via-text-soft);
+  margin: 0 0 8px;
+}
+
+.vds-chart-head h3 {
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--via-navy);
+  margin: 0 0 6px;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-chart-head h3 .unit {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--via-text-soft);
+  margin-left: 4px;
+  letter-spacing: -0.01em;
+}
+
+.vds-chart-head .lede {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--via-text-soft);
+  margin: 0;
+  max-width: 460px;
+}
+
+.vds-chart-head .lede em {
+  font-style: normal;
+  color: var(--via-navy);
+  font-weight: 600;
+}
+
+.vds-chart-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.06);
+  border: 1px solid rgba(10, 31, 59, 0.1);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--via-navy);
+  white-space: nowrap;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-chart-delta.up {
+  background: rgba(10, 31, 59, 0.06);
+  color: var(--via-navy);
+}
+
+.vds-chart-delta.down {
+  background: rgba(10, 31, 59, 0.05);
+  border-color: rgba(10, 31, 59, 0.10);
+  color: var(--via-navy-deep);
+}
+
+.vds-chart-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--via-border-soft);
+  font-size: 11px;
+  color: var(--via-text-soft);
+  font-weight: 500;
+}
+
+.vds-chart-foot .sep {
+  color: var(--via-border);
+}
+
+.vds-chart-foot .dot-key {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--via-navy);
+}
+
+.vds-chart-foot .dot-key.accent {
+  background: var(--via-navy);
+}
+
+/* ---------- Area chart ---------- */
+.vds-chart-stage {
+  width: 100%;
+  position: relative;
+}
+
+.vds-area-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vds-area-svg .grid {
+  stroke: rgba(10, 31, 59, 0.06);
+  stroke-width: 1;
+  stroke-dasharray: 2 4;
+}
+
+.vds-area-svg .axis-label {
+  font-size: 11px;
+  font-weight: 500;
+  fill: var(--via-text-soft);
+  font-family: inherit;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-area-svg .dot {
+  fill: var(--via-white);
+  stroke: var(--via-navy);
+  stroke-width: 2.5;
+  transition: all 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.vds-area-svg .dot.active {
+  fill: var(--via-navy);
+  stroke: var(--via-white);
+  stroke-width: 3;
+  filter: drop-shadow(0 4px 12px rgba(10, 31, 59, 0.35));
+}
+
+.vds-area-svg .hover-line {
+  stroke: rgba(10, 31, 59, 0.25);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.vds-area-svg .tooltip-bg {
+  fill: var(--via-navy);
+  filter: drop-shadow(0 8px 24px rgba(10, 31, 59, 0.35));
+}
+
+.vds-area-svg .tooltip-label {
+  font-size: 10px;
+  font-weight: 600;
+  fill: rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.vds-area-svg .tooltip-value {
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--via-white);
+  font-family: inherit;
+  font-feature-settings: 'tnum' 1;
+}
+
+/* ---------- Bar chart ---------- */
+.vds-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.vds-bar-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 130px;
+  gap: 20px;
+  align-items: center;
+}
+
+.vds-bar-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.005em;
+}
+
+.vds-bar-track {
+  position: relative;
+  height: 28px;
+  background: rgba(10, 31, 59, 0.04);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vds-bar-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
+  border-radius: 8px;
+  position: relative;
+  animation: vds-bar-grow 800ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  transform-origin: left;
+}
+
+@keyframes vds-bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.vds-bar-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 70%);
+}
+
+.vds-bar-fill.hero {
+  background: linear-gradient(90deg, var(--via-navy), var(--via-navy));
+  box-shadow: 0 4px 16px rgba(10, 31, 59, 0.20);
+}
+
+.vds-bar-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--via-navy);
+  font-feature-settings: 'tnum' 1;
+  letter-spacing: -0.01em;
+}
+
+.vds-bar-value em {
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--via-text-soft);
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.06);
+  letter-spacing: 0;
+}
+
+/* ---------- Donut chart ---------- */
+.vds-donut-stage {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.vds-donut-svg {
+  width: 280px;
+  height: 280px;
+  display: block;
+}
+
+.vds-donut-svg .donut-big {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  fill: var(--via-navy);
+  font-family: inherit;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-donut-svg .donut-pct {
+  font-size: 28px;
+  font-weight: 500;
+  fill: var(--via-text-soft);
+  margin-left: 2px;
+}
+
+.vds-donut-svg .donut-sub {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  fill: var(--via-text-soft);
+  font-family: inherit;
+}
+
+.vds-donut-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.vds-donut-legend li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(10, 31, 59, 0.02);
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-donut-legend .legend-dot {
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.vds-donut-legend .legend-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--via-navy);
+  margin: 0 0 4px;
+  letter-spacing: -0.005em;
+}
+
+.vds-donut-legend .legend-meta {
+  margin: 0;
+  font-size: 12px;
+  color: var(--via-text-soft);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-donut-legend .legend-meta strong {
+  font-weight: 600;
+  color: var(--via-navy);
+  letter-spacing: -0.01em;
+}
+
+.vds-donut-legend .legend-meta span {
+  color: var(--via-border);
+}
+
+/* ---------- Funnel ---------- */
+.vds-funnel {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.vds-funnel-step {
+  width: 100%;
+  transition: width 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: vds-funnel-fade 600ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.vds-funnel-step:nth-child(1) {
+  animation-delay: 0ms;
+}
+.vds-funnel-step:nth-child(2) {
+  animation-delay: 100ms;
+}
+.vds-funnel-step:nth-child(3) {
+  animation-delay: 200ms;
+}
+.vds-funnel-step:nth-child(4) {
+  animation-delay: 300ms;
+}
+.vds-funnel-step:nth-child(5) {
+  animation-delay: 400ms;
+}
+
+@keyframes vds-funnel-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vds-funnel-block {
+  position: relative;
+  background: linear-gradient(135deg, var(--via-navy) 0%, var(--via-blue) 100%);
+  border-radius: 12px;
+  padding: 18px 24px;
+  color: var(--via-white);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 8px 20px -10px rgba(10, 31, 59, 0.4);
+  overflow: hidden;
+}
+
+.vds-funnel-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background:
+    radial-gradient(220px 80px at 0% 0%, rgba(255, 255, 255, 0.12), transparent 60%),
+    radial-gradient(180px 60px at 100% 100%, rgba(10, 31, 59, 0.05), transparent 60%);
+  pointer-events: none;
+}
+
+.vds-funnel-step:nth-child(5) .vds-funnel-block {
+  background: linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy) 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 12px 28px -10px rgba(10, 31, 59, 0.28);
+}
+
+.vds-funnel-step:nth-child(5) .vds-funnel-block::before {
+  background:
+    radial-gradient(220px 80px at 0% 0%, rgba(255, 255, 255, 0.2), transparent 60%);
+}
+
+.vds-funnel-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+}
+
+.vds-funnel-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--via-white);
+}
+
+.vds-funnel-stage .num {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.14);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-funnel-count {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--via-white);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-funnel-rate {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+  position: relative;
+  font-feature-settings: 'tnum' 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .vds-chart-card {
+    padding: 24px 20px;
+  }
+  .vds-chart-head {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .vds-chart-head h3 {
+    font-size: 32px;
+  }
+  .vds-bar-row {
+    grid-template-columns: 90px 1fr 80px;
+    gap: 12px;
+  }
+  .vds-bar-value em {
+    display: none;
+  }
+  .vds-donut-stage {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .vds-donut-svg {
+    margin: 0 auto;
+  }
+}

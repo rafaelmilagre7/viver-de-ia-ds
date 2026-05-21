@@ -1,0 +1,53 @@
+.via-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px 6px 10px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.04);
+  border: 1px solid var(--via-border-soft);
+  color: var(--via-ink-2);
+  font-family: var(--via-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: -0.006em;
+  cursor: pointer;
+  transition:
+    background .22s ease,
+    border-color .22s ease,
+    color .22s ease,
+    transform .2s ease;
+}
+
+.via-theme-toggle:hover {
+  background: rgba(10, 31, 59, 0.08);
+  border-color: rgba(10, 31, 59, 0.18);
+  color: var(--via-navy);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .via-theme-toggle {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.74);
+}
+
+[data-theme="dark"] .via-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--via-white);
+}
+
+.via-theme-toggle__icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--via-accent);
+}
+
+[data-theme="dark"] .via-theme-toggle__icon {
+  color: var(--via-accent-light, var(--via-accent));
+}
+
+.via-theme-toggle__label {
+  letter-spacing: -0.004em;
+}

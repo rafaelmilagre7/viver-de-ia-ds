@@ -1,0 +1,35 @@
+.vds-feat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+.vds-feat {
+  padding: 24px;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-12);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--via-t);
+}
+.vds-feat:hover { border-color: var(--via-navy-40); box-shadow: var(--via-shadow-md); transform: translateY(-1px); }
+.vds-feat .ico {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--via-navy-08);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--via-navy);
+}
+.vds-feat h3 {
+  font-family: var(--via-font-display);
+  font-size: 20px; font-weight: 500;
+  letter-spacing: -0.015em; color: var(--via-navy);
+  margin: 0;
+}
+.vds-feat h3 em { font-style: normal; color: var(--via-gray-500); }
+.vds-feat p {
+  font-family: var(--via-font);
+  font-size: 12px; line-height: 1.5;
+  color: var(--via-gray-600); margin: 0;
+}

@@ -1,0 +1,99 @@
+/* ============================================
+   <Pill> · canônica do Viver de IA
+   11px · weight 500 · letter-spacing -0.004em · nowrap · sem caps lock
+   ============================================ */
+.via-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--via-font);
+  border-radius: var(--via-radius-pill);
+  border: 1px solid;
+  white-space: nowrap;
+  line-height: 1.4;
+  letter-spacing: -0.004em;
+}
+
+/* ===== Sizes ===== */
+.via-pill--sm {
+  padding: 3px 9px;
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+.via-pill--md {
+  padding: 4px 11px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.via-pill__icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+/* ===== Variants ===== */
+
+/* Default · navy soft */
+.via-pill--default {
+  background: rgba(10, 31, 59, 0.05);
+  border-color: rgba(10, 31, 59, 0.14);
+  color: var(--via-navy);
+}
+
+/* Attn · accent soft · SEMÂNTICO (warning real) */
+.via-pill--attn {
+  background: rgba(10, 31, 59, 0.12);
+  border-color: rgba(10, 31, 59, 0.3);
+  color: var(--via-accent-warm);
+}
+
+/* Churn · coral soft · DESTRUTIVO (cancel/error/risk) */
+.via-pill--churn {
+  background: rgba(184, 92, 92, 0.08);
+  border-color: rgba(184, 92, 92, 0.28);
+  color: var(--via-coral-dark);
+  font-weight: 600;
+}
+
+/* Success · navy editorial (sem semáforo verde) */
+.via-pill--success {
+  background: rgba(10, 31, 59, 0.06);
+  border-color: rgba(10, 31, 59, 0.14);
+  color: var(--via-navy);
+  font-weight: 600;
+}
+
+/* ===== Live broadcast pill ===== */
+.via-pill--live {
+  gap: 7px;
+  padding: 4px 12px 4px 9px;
+  background: rgba(184, 92, 92, 0.18);
+  border-color: rgba(184, 92, 92, 0.4);
+  color: var(--via-white);
+  background-color: var(--via-navy);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.via-pill--live em {
+  font-family: var(--via-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.012em;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.via-pill__live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--via-coral, #B85C5C);
+  box-shadow: 0 0 8px rgba(255, 95, 87, 0.7);
+  animation: via-pill-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes via-pill-pulse {
+  50% { opacity: 0.4; transform: scale(0.9); }
+}

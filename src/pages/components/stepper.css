@@ -1,0 +1,112 @@
+.via-stepper {
+  display: flex;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.via-stepper .step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.via-stepper .cell {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.via-stepper .circle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--via-white);
+  border: 1.5px solid rgba(10, 31, 59, 0.18);
+  color: var(--via-text-soft);
+  font-family: var(--via-font);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  z-index: 1;
+  font-feature-settings: 'tnum' 1;
+  transition: all 240ms ease;
+}
+
+.via-stepper .line {
+  flex: 1;
+  height: 2px;
+  background: rgba(10, 31, 59, 0.1);
+  margin: 0 10px;
+  min-width: 24px;
+  border-radius: 999px;
+}
+
+.via-stepper .label {
+  font-family: var(--via-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--via-text-soft);
+  text-align: center;
+  transition: color 240ms ease;
+}
+
+/* DONE — navy gradient solid */
+.via-stepper .step.done .circle {
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border-color: var(--via-navy);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 4px 10px -3px rgba(10, 31, 59, 0.4);
+}
+
+.via-stepper .step.done .line {
+  background: linear-gradient(90deg, var(--via-navy), var(--via-navy));
+}
+
+.via-stepper .step.done .label {
+  color: var(--via-navy);
+}
+
+/* CURRENT — outline navy + dashed ring animado + halo */
+.via-stepper .step.current .circle {
+  border-color: var(--via-navy);
+  color: var(--via-navy);
+  font-weight: 700;
+  box-shadow:
+    0 0 0 6px rgba(10, 31, 59, 0.08),
+    0 4px 14px -3px rgba(10, 31, 59, 0.25);
+}
+
+.via-stepper .step.current .circle::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  border: 1.5px dashed rgba(10, 31, 59, 0.2);
+  animation: vds-stepper-spin 16s linear infinite;
+}
+
+@keyframes vds-stepper-spin {
+  to { transform: rotate(360deg); }
+}
+
+.via-stepper .step.current .label {
+  color: var(--via-navy);
+  font-weight: 700;
+}
+
+.via-stepper .step:last-child .cell .line {
+  display: none;
+}

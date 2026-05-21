@@ -1,0 +1,403 @@
+/* ============================================
+   Data viz extra · heatmap · sparklines · gauges
+   ============================================ */
+
+/* ---------- Shared card ---------- */
+.vds-heatmap-card,
+.vds-spark-card,
+.vds-gauge-card {
+  border-radius: 20px;
+  border: 1px solid var(--via-border-soft);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 16px 40px -24px rgba(10, 31, 59, 0.14);
+  isolation: isolate;
+}
+
+/* ============================================
+   Heatmap · contribution-style
+   ============================================ */
+.vds-heatmap-card {
+  padding: 32px;
+}
+
+.vds-heatmap-card header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.vds-heatmap-card .eyebrow {
+  margin: 0 0 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--via-text-soft);
+}
+
+.vds-heatmap-card h3 {
+  margin: 0 0 6px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--via-navy);
+  line-height: 1.05;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-heatmap-card h3 .unit {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--via-text-soft);
+  margin-left: 4px;
+  letter-spacing: -0.01em;
+}
+
+.vds-heatmap-card .lede {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--via-text-soft);
+  max-width: 480px;
+}
+
+.vds-heatmap-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.06);
+  border: 1px solid rgba(10, 31, 59, 0.1);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--via-navy);
+  white-space: nowrap;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-heatmap-stage {
+  position: relative;
+}
+
+.vds-heatmap-months {
+  position: relative;
+  height: 16px;
+  margin-bottom: 6px;
+  margin-left: 36px;
+}
+
+.vds-heatmap-months span {
+  position: absolute;
+  top: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--via-text-soft);
+}
+
+.vds-heatmap-body {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.vds-heatmap-days {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.vds-heatmap-days span {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--via-text-soft);
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+}
+
+.vds-heatmap-grid {
+  display: flex;
+  gap: 3px;
+  width: 100%;
+}
+
+.vds-heatmap-col {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.vds-heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: rgba(10, 31, 59, 0.05);
+  display: inline-block;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+  cursor: default;
+}
+
+.vds-heatmap-cell:hover {
+  transform: scale(1.4);
+  box-shadow: 0 4px 8px -2px rgba(10, 31, 59, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+.vds-heatmap-cell.i0 { background: rgba(10, 31, 59, 0.05); }
+.vds-heatmap-cell.i1 { background: rgba(10, 31, 59, 0.18); }
+.vds-heatmap-cell.i2 { background: rgba(10, 31, 59, 0.42); }
+.vds-heatmap-cell.i3 { background: rgba(10, 31, 59, 0.68); }
+.vds-heatmap-cell.i4 { background: rgba(10, 31, 59, 0.95); }
+
+.vds-heatmap-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--via-border-soft);
+  font-size: 11px;
+  color: var(--via-text-soft);
+}
+
+.vds-heatmap-streak strong {
+  color: var(--via-navy);
+  font-weight: 600;
+}
+
+.vds-heatmap-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vds-heatmap-legend .vds-heatmap-cell {
+  width: 11px;
+  height: 11px;
+  aspect-ratio: auto;
+  margin: 0 1px;
+}
+
+/* ============================================
+   Sparklines
+   ============================================ */
+.vds-sparks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 920px) {
+  .vds-sparks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .vds-sparks {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vds-spark-card {
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vds-spark-card.hero {
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.95), rgba(10, 31, 59, 1));
+  color: var(--via-white);
+  border-color: transparent;
+  box-shadow: 0 24px 48px -22px rgba(10, 31, 59, 0.4);
+}
+
+.vds-spark-card.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(220px 80px at 0% 0%, rgba(255, 255, 255, 0.08), transparent 60%),
+    radial-gradient(180px 80px at 100% 100%, rgba(10, 31, 59, 0.08), transparent 60%);
+}
+
+.vds-spark-label {
+  margin: 0 0 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-soft);
+  position: relative;
+}
+
+.vds-spark-card.hero .vds-spark-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.vds-spark-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  position: relative;
+}
+
+.vds-spark-value {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--via-navy);
+  line-height: 1.1;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-spark-card.hero .vds-spark-value {
+  color: var(--via-white);
+}
+
+.vds-spark-delta {
+  margin: 4px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-spark-delta.up { color: var(--via-navy); }
+.vds-spark-delta.down { color: var(--via-navy-deep); }
+
+.vds-spark-card.hero .vds-spark-delta.up { color: var(--via-gray-300); }
+.vds-spark-card.hero .vds-spark-delta.down { color: var(--via-coral); }
+
+.vds-spark {
+  width: 120px;
+  height: 36px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.vds-spark .vds-spark-line {
+  stroke: var(--via-navy);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.vds-spark .vds-spark-dot {
+  fill: var(--via-navy);
+}
+
+.vds-spark .vds-spark-bar {
+  fill: var(--via-navy);
+}
+
+.vds-spark.hero .vds-spark-line,
+.vds-spark.hero .vds-spark-dot,
+.vds-spark.hero .vds-spark-bar {
+  stroke: var(--via-gray-300);
+  fill: var(--via-gray-300);
+}
+
+.vds-spark.hero .vds-spark-line {
+  fill: none;
+}
+
+/* ============================================
+   Gauges
+   ============================================ */
+.vds-gauges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 920px) {
+  .vds-gauges {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vds-gauge-card {
+  padding: 28px;
+  text-align: center;
+}
+
+.vds-gauge-card.highlight {
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.08), rgba(10, 31, 59, 0.02));
+  border-color: rgba(10, 31, 59, 0.12);
+}
+
+.vds-gauge-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 14px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-soft);
+  justify-content: center;
+}
+
+.vds-gauge-svg {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.vds-gauge-big {
+  font-family: inherit;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  fill: var(--via-navy);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-gauge-big .unit {
+  font-size: 18px;
+  fill: var(--via-text-soft);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.vds-gauge-label {
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  fill: var(--via-text-soft);
+}
+
+.vds-gauge-meta {
+  margin: 18px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--via-text-soft);
+  text-align: center;
+}
+
+.vds-gauge-meta strong {
+  color: var(--via-navy);
+  font-weight: 600;
+}

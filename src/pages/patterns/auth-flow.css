@@ -1,0 +1,628 @@
+/* ============================================
+   Auth flow · magic link + 2FA + social login
+   ============================================ */
+
+/* Row for paired cards */
+.vds-auth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 820px) {
+  .vds-auth-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Base card */
+.vds-auth-card,
+.vds-auth-card-2fa {
+  position: relative;
+  padding: 36px 32px 32px;
+  border-radius: 22px;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(10, 31, 59, 0.09);
+  color: var(--via-white);
+  box-shadow: 0 24px 56px -22px rgba(10, 31, 59, 0.38);
+}
+
+.vds-auth-card.light {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  border: 1px solid var(--via-border-soft);
+  color: var(--via-navy);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 40px -22px rgba(10, 31, 59, 0.18);
+}
+
+.vds-auth-card.light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(540px 280px at 0% 0%, rgba(10, 31, 59, 0.04), transparent 60%),
+    radial-gradient(420px 220px at 100% 100%, rgba(10, 31, 59, 0.05), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.vds-auth-card > *,
+.vds-auth-card-2fa > * {
+  position: relative;
+  z-index: 1;
+}
+
+.vds-auth-step {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  font-family: var(--via-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--via-accent);
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.07);
+  border: 1px solid rgba(10, 31, 59, 0.14);
+}
+
+.vds-auth-brand {
+  margin-top: 12px;
+  margin-bottom: 32px;
+  display: flex;
+}
+
+.vds-auth-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--via-display);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.024em;
+  line-height: 1.16;
+  color: var(--via-white);
+  max-width: 380px;
+}
+
+.vds-auth-card h3.navy {
+  color: var(--via-navy);
+}
+
+.vds-auth-card h3 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vds-auth-card p {
+  margin: 0 0 20px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 400px;
+}
+
+.vds-auth-card p.navy {
+  color: var(--via-ink-2);
+}
+
+.vds-auth-card p strong {
+  color: var(--via-white);
+  font-weight: 500;
+  font-family: var(--via-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+}
+
+.vds-auth-card.light p strong {
+  color: var(--via-navy);
+}
+
+/* Field input */
+.vds-auth-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin-bottom: 14px;
+  transition: border-color .22s ease, background .22s ease, box-shadow .22s ease;
+}
+
+.vds-auth-field.light {
+  background: var(--via-white);
+  border-color: var(--via-border);
+}
+
+.vds-auth-field:focus-within {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(10, 31, 59, 0.25);
+  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.06);
+}
+
+.vds-auth-field.light:focus-within {
+  background: var(--via-white);
+  border-color: rgba(10, 31, 59, 0.3);
+  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.08);
+}
+
+.vds-auth-field svg {
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.vds-auth-field.light svg {
+  color: var(--via-ink-3);
+}
+
+.vds-auth-field input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--via-white);
+  font-family: var(--via-font);
+  font-size: 14px;
+  letter-spacing: -0.008em;
+}
+
+.vds-auth-field.light input {
+  color: var(--via-navy);
+}
+
+.vds-auth-field input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.vds-auth-field.light input::placeholder {
+  color: var(--via-ink-3);
+}/* CTAs */
+.vds-auth-cta {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border: none;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -6px rgba(10, 31, 59, 0.42);
+  transition: filter .2s ease, transform .2s ease, box-shadow .22s ease;
+  margin-bottom: 16px;
+}
+
+.vds-auth-cta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -8px rgba(10, 31, 59, 0.30);
+}
+
+.vds-auth-cta.ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.86);
+  box-shadow: none;
+}
+
+.vds-auth-cta.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--via-white);
+  filter: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px -6px rgba(255, 255, 255, 0.18);
+}
+
+.vds-auth-cta.navy {
+  background: var(--via-navy);
+  color: var(--via-white);
+  box-shadow: 0 8px 18px -8px rgba(10, 31, 59, 0.42);
+}
+
+.vds-auth-cta.navy:hover {
+  background: var(--via-navy-deep);
+  filter: none;
+  box-shadow: 0 12px 24px -10px rgba(10, 31, 59, 0.52);
+}
+
+/* Foot link */
+.vds-auth-foot-link {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.vds-auth-foot-link.navy {
+  color: var(--via-ink-2);
+}
+
+.vds-auth-foot-link a {
+  color: var(--via-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(10, 31, 59, 0.15);
+  padding-bottom: 1px;
+  transition: border-color .2s ease;
+}
+
+.vds-auth-foot-link.navy a {
+  color: var(--via-navy);
+  border-bottom-color: rgba(10, 31, 59, 0.3);
+}
+
+.vds-auth-foot-link a:hover {
+  border-bottom-color: var(--via-accent);
+}
+
+.vds-auth-foot-link.navy a:hover {
+  border-bottom-color: var(--via-navy);
+}
+
+.vds-auth-terms {
+  margin: 14px 0 0;
+  font-size: 11px;
+  color: var(--via-ink-3);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.vds-auth-terms a {
+  color: var(--via-ink-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Magic link success */
+.vds-auth-card.success {
+  background: linear-gradient(180deg, var(--via-navy) 0%, var(--via-navy-darker) 100%);
+}
+
+.vds-auth-card.success::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(420px 240px at 50% 0%, rgba(10, 31, 59, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.vds-auth-success-ring {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
+  color: var(--via-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(10, 31, 59, 0.20);
+}
+
+.vds-auth-success-ring-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(10, 31, 59, 0.20);
+  animation: vds-auth-pulse 1.6s ease-out infinite;
+}
+
+@keyframes vds-auth-pulse {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.vds-auth-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.vds-auth-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.74);
+  font-family: var(--via-mono);
+  font-size: 11px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.vds-auth-meta-pill strong {
+  color: var(--via-accent);
+  font-weight: 500;
+}
+
+/* ============================================
+   2FA · split layout
+   ============================================ */
+.vds-auth-card-2fa {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 36px;
+  align-items: center;
+  padding: 36px 32px;
+}
+
+@media (max-width: 820px) {
+  .vds-auth-card-2fa {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}.vds-auth-2fa-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px -2px rgba(10, 31, 59, 0.3);
+}
+
+.vds-auth-eyebrow {
+  display: inline-block;
+  font-family: var(--via-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--via-accent);
+  margin-bottom: 12px;
+}
+
+.vds-auth-2fa-l h3 {
+  font-size: 24px;
+  max-width: 360px;
+}
+
+.vds-auth-2fa-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.vds-auth-2fa-actions a {
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  letter-spacing: -0.006em;
+  transition: color .2s ease;
+}
+
+.vds-auth-2fa-actions a:hover {
+  color: var(--via-accent);
+}
+
+/* 2FA inputs */
+.vds-auth-2fa-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 540px) {
+  .vds-auth-2fa-inputs { gap: 6px; }
+}
+
+.vds-auth-2fa-inputs input {
+  width: 54px;
+  height: 64px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--via-white);
+  font-family: var(--via-display);
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: -0.02em;
+  outline: none;
+  transition: background .22s ease, border-color .22s ease, box-shadow .22s ease;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 540px) {
+  .vds-auth-2fa-inputs input { width: 44px; height: 52px; font-size: 22px; }
+}
+
+.vds-auth-2fa-inputs input.filled {
+  background: rgba(10, 31, 59, 0.05);
+  border-color: rgba(10, 31, 59, 0.20);
+  color: var(--via-accent);
+  box-shadow: 0 0 0 1px rgba(10, 31, 59, 0.10) inset;
+}
+
+.vds-auth-2fa-inputs input:focus {
+  background: rgba(10, 31, 59, 0.06);
+  border-color: rgba(10, 31, 59, 0.30);
+  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.07);
+}
+
+.vds-auth-2fa-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--via-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+}
+
+.vds-auth-2fa-timer strong {
+  color: var(--via-accent);
+  font-weight: 500;
+}
+
+.vds-auth-2fa-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.vds-auth-2fa-trust input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vds-auth-2fa-trust-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1.5px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s ease, border-color .2s ease;
+  position: relative;
+}
+
+.vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check {
+  background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
+  border-color: transparent;
+}
+
+.vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check::after {
+  content: '';
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid var(--via-navy);
+  border-bottom: 2px solid var(--via-navy);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.vds-auth-2fa-trust em {
+  font-style: normal;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  letter-spacing: -0.004em;
+}
+
+/* ============================================
+   Social login
+   ============================================ */
+.vds-auth-social {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.vds-auth-social-btn {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--via-border);
+  color: var(--via-navy);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.006em;
+  cursor: pointer;
+  text-align: left;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.vds-auth-social-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(10, 31, 59, 0.22);
+  transform: translateY(-1px);
+}
+
+.vds-auth-social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--via-display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.vds-auth-social-icon.google {
+  background: var(--via-white);
+  border: 1px solid var(--via-border);
+  color: #4285F4;
+}
+
+.vds-auth-social-icon.ms {
+  background: var(--via-white);
+  border: 1px solid var(--via-border);
+  color: var(--via-blue);
+}
+
+.vds-auth-social-icon.apple {
+  background: var(--via-black);
+  color: var(--via-white);
+}
+
+.vds-auth-social-recent {
+  font-size: 9.5px;
+  color: var(--via-accent-warm);
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(10, 31, 59, 0.05);
+  border: 1px solid rgba(10, 31, 59, 0.13);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Separator */
+.vds-auth-sep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0 14px;
+  color: var(--via-ink-3);
+  font-family: var(--via-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.vds-auth-sep::before,
+.vds-auth-sep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--via-border-soft);
+}

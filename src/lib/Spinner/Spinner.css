@@ -1,0 +1,84 @@
+/* ============================================
+   <Spinner> · loader inline · navy | inverse | soft
+   ============================================ */
+.via-spinner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-spinner__svg {
+  flex-shrink: 0;
+  animation: via-spinner-rotate 1.2s linear infinite;
+}
+
+.via-spinner--sm .via-spinner__svg { width: 14px; height: 14px; }
+.via-spinner--md .via-spinner__svg { width: 18px; height: 18px; }
+.via-spinner--lg .via-spinner__svg { width: 28px; height: 28px; }
+
+.via-spinner__track {
+  stroke: currentColor;
+  opacity: 0.16;
+  stroke-width: 3;
+}
+
+.via-spinner__head {
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 62.83;
+  stroke-dashoffset: 47;
+  transform-origin: center;
+  animation: via-spinner-dash 1.5s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+@keyframes via-spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes via-spinner-dash {
+  0% {
+    stroke-dasharray: 1, 62.83;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 44, 62.83;
+    stroke-dashoffset: -16;
+  }
+  100% {
+    stroke-dasharray: 44, 62.83;
+    stroke-dashoffset: -60;
+  }
+}
+
+/* ===== Tones ===== */
+.via-spinner--navy { color: var(--via-navy, #0A1F3B); }
+.via-spinner--inverse { color: var(--via-white); }
+.via-spinner--soft { color: var(--via-ink-2, #5E6B82); }
+
+.via-spinner__label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--via-ink-2, #5E6B82);
+  letter-spacing: -0.006em;
+}
+
+.via-spinner--inverse .via-spinner__label { color: rgba(255, 255, 255, 0.84); }
+
+.via-spinner__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-spinner__svg { animation-duration: 3s; }
+  .via-spinner__head { animation-duration: 4s; }
+}

@@ -1,0 +1,108 @@
+/* ============================================
+   <Tooltip> · editorial · 4 sides
+   ============================================ */
+.via-tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.via-tooltip {
+  position: absolute;
+  z-index: 9998;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: var(--via-navy, #0A1F3B);
+  color: var(--via-white);
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 6px 14px -6px rgba(10, 31, 59, 0.45);
+  animation: via-tip-in .18s cubic-bezier(.2, .8, .2, 1);
+}
+
+@keyframes via-tip-in {
+  from { opacity: 0; transform: var(--via-tip-from); }
+  to   { opacity: 1; transform: var(--via-tip-to); }
+}
+
+.via-tooltip::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Top */
+.via-tooltip--top {
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  --via-tip-from: translate(-50%, 4px);
+  --via-tip-to:   translate(-50%, 0);
+}
+
+.via-tooltip--top::after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px 5px 0 5px;
+  border-color: var(--via-navy, #0A1F3B) transparent transparent transparent;
+}
+
+/* Bottom */
+.via-tooltip--bottom {
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  --via-tip-from: translate(-50%, -4px);
+  --via-tip-to:   translate(-50%, 0);
+}
+
+.via-tooltip--bottom::after {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent var(--via-navy, #0A1F3B) transparent;
+}
+
+/* Left */
+.via-tooltip--left {
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  --via-tip-from: translate(4px, -50%);
+  --via-tip-to:   translate(0, -50%);
+}
+
+.via-tooltip--left::after {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent var(--via-navy, #0A1F3B);
+}
+
+/* Right */
+.via-tooltip--right {
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  --via-tip-from: translate(-4px, -50%);
+  --via-tip-to:   translate(0, -50%);
+}
+
+.via-tooltip--right::after {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 5px 5px 0;
+  border-color: transparent var(--via-navy, #0A1F3B) transparent transparent;
+}

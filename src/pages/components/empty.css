@@ -1,0 +1,99 @@
+.vds-empty {
+  position: relative;
+  padding: 72px 32px 56px;
+  border-radius: 32px;
+  background:
+    radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.08) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-100) 0%, var(--via-gray-300) 100%);
+  border: 0.5px solid var(--via-navy-12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  overflow: hidden;
+}
+.vds-empty::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.vds-empty > * { position: relative; z-index: 1; }
+
+.vds-empty-mark {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin-bottom: 8px;
+  animation: vds-empty-mark-in 800ms var(--via-ease-out);
+}
+@keyframes vds-empty-mark-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.vds-empty h3 {
+  font-family: var(--via-font-display);
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+  max-width: 480px;
+}
+.vds-empty p {
+  font-family: var(--via-font);
+  font-size: 14px;
+  color: var(--via-gray-600);
+  max-width: 460px;
+  line-height: 1.6;
+  margin: 0;
+}
+.vds-empty .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border: none;
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(10,31,59,0.22);
+  transition: all 240ms var(--via-ease);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.vds-empty .cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.20) 50%, transparent 70%);
+  transition: left 700ms var(--via-ease-out);
+}
+.vds-empty .cta:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(10,31,59,0.32); }
+.vds-empty .cta:hover::before { left: 100%; }
+
+.vds-empty.soft {
+  background:
+    radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(10,31,59,0.06) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
+}

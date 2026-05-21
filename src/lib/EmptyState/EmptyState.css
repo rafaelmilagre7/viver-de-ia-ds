@@ -1,0 +1,93 @@
+/* ============================================
+   <EmptyState> · default | soft | navy
+   ============================================ */
+.via-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 48px 32px;
+  border-radius: 16px;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-empty-state--default {
+  background: transparent;
+}
+
+.via-empty-state--soft {
+  background: rgba(10, 31, 59, 0.025);
+  border: 0.5px dashed var(--via-border, #D0D5DD);
+}
+
+.via-empty-state--navy {
+  background: linear-gradient(160deg, var(--via-navy-deep, #02162A), var(--via-navy, #0A1F3B));
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.via-empty-state--navy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(540px 320px at 50% 0%, rgba(46, 76, 118, 0.4), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.via-empty-state__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(10, 31, 59, 0.06);
+  border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
+  color: var(--via-navy, #0A1F3B);
+  margin-bottom: 4px;
+}
+
+.via-empty-state--navy .via-empty-state__icon {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.via-empty-state__title {
+  margin: 0;
+  font-family: var(--via-display, 'Geist', system-ui, sans-serif);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  color: var(--via-navy, #0A1F3B);
+  line-height: 1.3;
+}
+
+.via-empty-state--navy .via-empty-state__title {
+  color: var(--via-white);
+}
+
+.via-empty-state__description {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--via-ink-2, #5E6B82);
+  max-width: 380px;
+}
+
+.via-empty-state--navy .via-empty-state__description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.via-empty-state__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}

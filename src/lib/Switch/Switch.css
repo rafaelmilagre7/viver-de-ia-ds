@@ -1,0 +1,103 @@
+/* ============================================
+   <Switch> · toggle on/off · editorial
+   ============================================ */
+.via-switch {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-switch.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.via-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.via-switch__track {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  background: rgba(10, 31, 59, 0.18);
+  border-radius: 999px;
+  transition: background 0.22s cubic-bezier(.2, .8, .2, 1);
+}
+
+.via-switch--md .via-switch__track {
+  width: 36px;
+  height: 20px;
+}
+
+.via-switch--sm .via-switch__track {
+  width: 30px;
+  height: 17px;
+}
+
+.via-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: var(--via-white);
+  border-radius: 999px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 2px rgba(10, 31, 59, 0.25);
+  transition: transform 0.22s cubic-bezier(.2, .8, .2, 1);
+}
+
+.via-switch--md .via-switch__thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.via-switch--sm .via-switch__thumb {
+  width: 13px;
+  height: 13px;
+}
+
+.via-switch__input:checked + .via-switch__track {
+  background: var(--via-navy, #0A1F3B);
+}
+
+.via-switch--md .via-switch__input:checked + .via-switch__track .via-switch__thumb {
+  transform: translateX(16px);
+}
+
+.via-switch--sm .via-switch__input:checked + .via-switch__track .via-switch__thumb {
+  transform: translateX(13px);
+}
+
+.via-switch__input:focus-visible + .via-switch__track {
+  outline: 2px solid rgba(10, 31, 59, 0.4);
+  outline-offset: 2px;
+}
+
+.via-switch__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.via-switch__label {
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  color: var(--via-navy, #0A1F3B);
+  line-height: 1.35;
+}
+
+.via-switch__desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--via-ink-2, #5E6B82);
+}

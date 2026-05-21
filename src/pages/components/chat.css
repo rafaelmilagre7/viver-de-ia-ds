@@ -1,0 +1,322 @@
+/* ==============================================================
+   CHAT — bubbles liquid glass · identidade Viver de IA
+   ============================================================== */
+
+.vds-chat-stage {
+  position: relative;
+  border-radius: 32px;
+  background:
+    radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.16) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-300) 0%, var(--via-gray-400) 100%);
+  border: 0.5px solid var(--via-navy-20);
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 24px 56px rgba(10,31,59,0.18);
+}
+.vds-chat-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ---- Header ---- */
+.vds-chat-h {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.74));
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 0.5px solid rgba(10,31,59,0.10);
+}
+.vds-chat-h-l { display: flex; align-items: center; gap: 14px; }
+.vds-chat-h strong {
+  display: block;
+  font-family: var(--via-font-display);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.01em;
+}
+.vds-chat-h-l span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--via-font);
+  font-size: 11.5px;
+  color: var(--via-gray-500);
+  margin-top: 2px;
+}
+.vds-chat-presence {
+  width: 7px; height: 7px;
+  border-radius: 999px;
+  background: var(--via-success);
+  box-shadow: 0 0 0 3px rgba(31,138,91,0.18);
+  animation: vds-chat-pulse 2400ms ease-in-out infinite;
+}
+@keyframes vds-chat-pulse {
+  0%,100% { box-shadow: 0 0 0 3px rgba(31,138,91,0.18); }
+  50% { box-shadow: 0 0 0 6px rgba(31,138,91,0.08); }
+}
+.vds-chat-tag {
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  color: var(--via-gray-500);
+  padding: 4px 11px;
+  background: rgba(10,31,59,0.06);
+  border-radius: 999px;
+  border: 0.5px solid rgba(10,31,59,0.10);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+/* ---- Avatar Nina · monograma VIA bem visível ---- */
+.vds-chat-av {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 8px 20px rgba(10,31,59,0.28);
+}
+.vds-chat-av::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 80% at 30% 20%, rgba(46,76,118,0.55), transparent 60%);
+  pointer-events: none;
+}
+.vds-chat-av img {
+  position: relative;
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.vds-chat-av.sm {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+}
+.vds-chat-av.sm img { width: 70%; height: 70%; }
+
+/* ---- Body ---- */
+.vds-chat-body {
+  position: relative;
+  z-index: 1;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 320px;
+}
+
+/* ---- System bubble ---- */
+.vds-bubble-system {
+  align-self: center;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--via-gray-500);
+  background: rgba(10,31,59,0.06);
+  border: 0.5px solid rgba(10,31,59,0.08);
+  padding: 6px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Bubble rows ---- */
+.vds-bubble-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  max-width: 80%;
+  animation: vds-bubble-in 360ms var(--via-ease-out) backwards;
+}
+.vds-bubble-row:nth-child(2) { animation-delay: 100ms; }
+.vds-bubble-row:nth-child(3) { animation-delay: 200ms; }
+.vds-bubble-row:nth-child(4) { animation-delay: 300ms; }
+.vds-bubble-row:nth-child(5) { animation-delay: 400ms; }
+@keyframes vds-bubble-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vds-bubble-row.assistant { align-self: flex-start; }
+.vds-bubble-row.user { align-self: flex-end; flex-direction: row-reverse; }
+.vds-bubble-row.user .vds-bubble-time { text-align: right; }
+
+/* ---- Bubble — liquid glass (assistant) ---- */
+.vds-bubble.assistant {
+  position: relative;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.82));
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 20px 20px 20px 4px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(255,255,255,0.4),
+    0 12px 28px rgba(10,31,59,0.12),
+    0 2px 6px rgba(10,31,59,0.05);
+  font-family: var(--via-font);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--via-navy);
+  font-weight: 450;
+  overflow: hidden;
+  letter-spacing: -0.005em;
+}
+.vds-bubble.assistant::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent);
+  pointer-events: none;
+}
+
+/* ---- Bubble — navy (user) ---- */
+.vds-bubble.user {
+  position: relative;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, var(--via-blue) 0%, var(--via-navy) 45%, var(--via-navy-deep) 100%);
+  color: var(--via-white);
+  border-radius: 20px 20px 4px 20px;
+  font-family: var(--via-font);
+  font-size: 14.5px;
+  line-height: 1.55;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(0,0,0,0.20),
+    0 12px 28px rgba(10,31,59,0.36),
+    0 2px 6px rgba(10,31,59,0.18);
+  overflow: hidden;
+}
+.vds-bubble.user::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 40%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), transparent);
+  pointer-events: none;
+}
+
+.vds-bubble-time {
+  display: block;
+  margin-top: 6px;
+  padding: 0 6px;
+  font-family: var(--via-font-mono);
+  font-size: 10px;
+  color: var(--via-gray-500);
+  letter-spacing: 0.06em;
+}
+
+/* ---- Typing indicator ---- */
+.vds-bubble.typing {
+  display: flex;
+  gap: 5px;
+  padding: 14px 18px;
+}
+.vds-bubble.typing span {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--via-gray-500);
+  animation: vds-typing 1200ms ease-in-out infinite;
+}
+.vds-bubble.typing span:nth-child(2) { animation-delay: 200ms; }
+.vds-bubble.typing span:nth-child(3) { animation-delay: 400ms; }
+@keyframes vds-typing {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* ---- Input ---- */
+.vds-chat-input {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.68));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 0.5px solid rgba(10,31,59,0.10);
+}
+.vds-chat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--via-font);
+  font-size: 14px;
+  color: var(--via-navy);
+  padding: 10px 4px;
+}
+.vds-chat-input input::placeholder { color: var(--via-gray-400); }
+.vds-chat-input .ico {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: var(--via-gray-500);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--via-t);
+}
+.vds-chat-input .ico:hover { background: rgba(10,31,59,0.06); color: var(--via-navy); }
+.vds-chat-input .send {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(10,31,59,0.30);
+  transition: all 200ms var(--via-ease);
+}
+.vds-chat-input .send:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(10,31,59,0.40); }
+
+/* ---- Anatomy showcase ---- */
+.vds-chat-anatomy {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+.vds-chat-anatomy > div { display: flex; flex-direction: column; gap: 12px; }
+.vds-bubble.solo, .vds-bubble-system.solo {
+  max-width: 100%;
+}
+
+@media (max-width: 720px) {
+  .vds-chat-anatomy { grid-template-columns: 1fr; }
+  .vds-bubble-row { max-width: 92%; }
+}
