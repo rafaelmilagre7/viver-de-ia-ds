@@ -375,6 +375,37 @@ h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-siz
   color: inherit;
 }
 
+/* ===============================================================
+   FIX SISTÊMICO · gradient text em containers escuros
+   ===============================================================
+   Quando um <em> dentro de h1-h4 está em container escuro (mesh navy,
+   glass dark, on-dark, ou cards navy customizados), o gradient navy→
+   navy-deep com -webkit-text-fill-color: transparent fica INVISÍVEL
+   (texto escuro sobre fundo escuro).
+
+   Solução: dentro desses containers, qualquer `em` ganha gradient
+   white→gray-200 que contrasta corretamente. Specificity alta (3 níveis)
+   pra sobrescrever a regra do componente.
+   =============================================================== */
+.via-mesh-navy :is(h1, h2, h3, h4) em,
+.via-glass-dark :is(h1, h2, h3, h4) em,
+[data-on-dark] :is(h1, h2, h3, h4) em,
+.vds-bs-promise :is(h1, h2, h3, h4) em,
+.vds-cnx-offer.featured :is(h1, h2, h3, h4) em,
+.vds-wiz-aside :is(h1, h2, h3, h4) em,
+.vds-st-overview :is(h1, h2, h3, h4) em,
+.vds-faq-contact :is(h1, h2, h3, h4) em,
+.vds-auth-card :is(h1, h2, h3, h4) em,
+.vds-auth-card-2fa :is(h1, h2, h3, h4) em,
+.vds-live-hero :is(h1, h2, h3, h4) em,
+.vds-mm :is(h1, h2, h3, h4) em {
+  background: linear-gradient(135deg, var(--via-white) 0%, rgba(255, 255, 255, 0.78) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: var(--via-white); /* fallback se gradient não suportado */
+}
+
 p { margin: 0; }
 a { color: var(--via-navy); text-decoration: none; }
 a:hover { text-decoration: underline; }
