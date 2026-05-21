@@ -56,16 +56,36 @@ const pkg = {
     },
     './style.css': './style.css',
     './tokens.css': './tokens.css',
+    './tokens.json': './tokens.json',
+    './tokens': {
+      types: './types/tokens.d.ts',
+      import: './index.js',
+      require: './index.cjs',
+    },
   },
-  files: ['index.js', 'index.cjs', 'index.js.map', 'index.cjs.map', 'style.css', 'tokens.css', 'types', 'README.md'],
+  files: [
+    'index.js', 'index.cjs', 'index.js.map', 'index.cjs.map',
+    'style.css', 'tokens.css', 'tokens.json',
+    'types', 'README.md',
+  ],
   peerDependencies: {
     react: '^18.0.0 || ^19.0.0',
     'react-dom': '^18.0.0 || ^19.0.0',
     'lucide-react': '*',
   },
   publishConfig: {
-    access: 'restricted',
+    access: 'public',
+    provenance: true,
   },
+  repository: {
+    type: 'git',
+    url: 'git+https://github.com/rafaelmilagre7/viver-de-ia-ds.git',
+    directory: 'src/lib',
+  },
+  bugs: {
+    url: 'https://github.com/rafaelmilagre7/viver-de-ia-ds/issues',
+  },
+  homepage: 'https://github.com/rafaelmilagre7/viver-de-ia-ds#readme',
 };
 
 writeFileSync(resolve(out, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
@@ -78,6 +98,45 @@ if (existsSync(tokensSrc)) {
   console.log('✓ dist/lib/tokens.css');
 } else {
   console.warn('⚠ src/styles/tokens.css não encontrado · skip');
+}
+
+// 2.5 · gerar tokens.json (machine-readable) a partir de tokens.css
+const tokensCssPath = resolve(root, 'src/styles/tokens.css');
+if (existsSync(tokensCssPath)) {
+  const css = readFileSync(tokensCssPath, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  const declRe = /(--[a-z0-9-]+)\s*:\s*([^;]+);/gi;
+  const seen = new Map();
+  for (const match of css.matchAll(declRe)) {
+    seen.set(match[1].trim(), match[2].trim());
+  }
+
+  const cat = (n, v) => {
+    const ln = n.toLowerCase(); const lv = v.toLowerCase();
+    if (ln.includes('font') || ln.includes('display') || ln.includes('mono')) return 'font';
+    if (ln.includes('radius')) return 'radius';
+    if (ln.includes('shadow')) return 'shadow';
+    if (ln.includes('space') || ln.includes('gap') || ln.includes('padding')) return 'spacing';
+    if (ln.includes('motion') || ln.includes('ease') || ln.includes('duration') || ln === '--via-t') return 'motion';
+    if (ln.includes('noise') || ln.includes('mesh') || ln.includes('bg-')) return 'surface';
+    if (/^#[0-9a-f]{3,8}$/i.test(v) || lv.startsWith('rgb') || lv.startsWith('hsl') || lv.startsWith('var(--via-')) return 'color';
+    return 'other';
+  };
+
+  const tokens = [...seen.entries()].map(([full, value]) => ({
+    name: full.replace(/^--/, ''),
+    css: full,
+    value,
+    category: cat(full, value),
+  }));
+  tokens.sort((a, b) => a.category === b.category ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category));
+
+  writeFileSync(resolve(out, 'tokens.json'), JSON.stringify({
+    $version: version,
+    $generated: new Date().toISOString(),
+    $source: 'src/styles/tokens.css',
+    tokens,
+  }, null, 2) + '\n');
+  console.log(`✓ dist/lib/tokens.json (${tokens.length} tokens)`);
 }
 
 // 3 · README · prefere src/lib/README.md (full); fallback pra README curto inline

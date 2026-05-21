@@ -34,6 +34,9 @@ jobs:
       - name: typecheck + build
         run: bun run build
 
+      - name: unit tests
+        run: bun run test:unit
+
       - name: build library
         run: bun run build:lib
 

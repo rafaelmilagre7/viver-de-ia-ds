@@ -22,5 +22,12 @@
     "noFallthroughCasesInSwitch": true,
     "verbatimModuleSyntax": false
   },
-  "include": ["src/lib/**/*"]
+  "include": ["src/lib/**/*"],
+  "exclude": [
+    "src/lib/**/*.test.ts",
+    "src/lib/**/*.test.tsx",
+    "src/lib/**/*.spec.ts",
+    "src/lib/**/*.spec.tsx",
+    "src/lib/**/*.stories.tsx"
+  ]
 }
