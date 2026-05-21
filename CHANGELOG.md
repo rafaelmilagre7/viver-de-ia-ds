@@ -4,6 +4,37 @@ Todas as mudanças notáveis no Viver de IA Design System são documentadas aqui
 
 Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.3.0] · 2026-05-20
+
+### Adicionado
+
+- **Library +6 componentes** (25 → 31 total · "DS de verdade"):
+  - `<Popover>` · floating panel · 4 sides × 3 alignments · ARIA dialog · ESC + outside-click closes
+  - `<Command>` · paleta Cmd+K keyboard-first · filtragem live · groups + shortcuts · ARIA listbox
+  - `<DatePicker>` · single date · month grid editorial · pt-BR · weekStartsOn · min/max · footer Limpar/Hoje
+  - `<Slider>` · range editorial · 3 tones × 3 sizes · marks opcionais · native input pra ARIA valuetext
+  - `<Alert>` · banner persistente · 4 tons (info/attn/danger/success) · dismissible · action inline
+  - `<DataTable>` · sortable · accessor pra derived sort · render pra ReactNode cells · ARIA sort
+- **Fundação git + CI/CD:**
+  - `git init` + 4 commits estruturados (bootstrap → tooling → docs → source)
+  - GitHub Actions `ci.yml`: build · lint · typecheck · visual regression (192) · a11y (96 routes)
+  - GitHub Actions `release.yml`: publish `@viverdeia/design-system` to npm em tag `v*` com provenance
+  - Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds
+- **Showcase Library** atualizada com 6 novas seções demonstrando os componentes
+
+### Modificado
+
+- `--via-gold*` tokens renomeados pra `--via-accent*` (149 usos em 27 arquivos) · semântica limpa
+- Class names `.gold` → `.accent` em CSS + TSX (variants Button, Pill, Icon, Progress + 13 pages)
+- `Philosophy.tsx` corrigido: function name `RuleGoldSection` → `RulePaletteRestritaSection`, texto contraditório removido, tokens stale na paleta atualizados
+- `DosDonts.tsx` linha "Cor": "Gold só como acento ÚNICO" → "navy protagonista · cinza estrutura"
+- Centenas de hexes hardcoded tokenizados:
+  - `#000`/`#FFFFFF` → `var(--via-black)`/`var(--via-white)`
+  - `#0A1F3B` em SVG attrs → `style={{ fill: 'var(--via-navy)' }}` (CSS vars via inline style)
+  - Fine-tunes navy (`#051C36`, `#0E2C57`, `#2A5388`, `#2E4C76`, `#244569`) → tokens existentes
+  - Achievement `Ring` component refatorado pra usar `style` prop em vez de SVG attribute
+- 2 hexes intencionais preservados em production: `#5BC0FA` (WhatsApp check) + `#4285F4` (Google Sign-In)
+
 ## [0.2.0] · 2026-05-20
 
 ### Adicionado

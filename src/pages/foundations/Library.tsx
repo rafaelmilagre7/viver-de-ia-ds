@@ -3,6 +3,7 @@ import {
   ArrowRight, Mail, Search, Bell, Award, Compass,
   MessageCircle, Trash2, Calendar,
   Inbox, MoreHorizontal, Edit, Share2,
+  Filter, Users, FileText, Settings,
 } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
@@ -12,6 +13,7 @@ import {
   Switch, Checkbox, RadioGroup, Select, Progress,
   Drawer, Spinner, Skeleton, Breadcrumb, Pagination,
   Accordion, Stepper, EmptyState, Combobox, DropdownMenu,
+  Popover, Command, DatePicker, Slider, Alert, DataTable,
 } from '../../lib';
 import './library.css';
 
@@ -53,7 +55,237 @@ export default function Library() {
       <LibEmptyStateSection />
       <LibComboboxSection />
       <LibDropdownMenuSection />
+      <LibPopoverSection />
+      <LibCommandSection />
+      <LibDatePickerSection />
+      <LibSliderSection />
+      <LibAlertSection />
+      <LibDataTableSection />
     </>
+  );
+}
+
+/* ---------- Popover ---------- */
+function LibPopoverSection() {
+  const [open, setOpen] = useState(false);
+  return (
+    <Section
+      title="<Popover /> · floating panel · 4 sides × 3 alignments"
+      meta="controlled · ESC closes · outside-click closes · ARIA dialog"
+    >
+      <div className="vds-lib-grid">
+        <div className="vds-lib-row">
+          <Popover
+            open={open}
+            onOpenChange={setOpen}
+            side="bottom"
+            align="end"
+            label="Filtros"
+            trigger={
+              <Button variant="secondary" iconLeft={<Filter size={13} strokeWidth={2.2} />} onClick={() => setOpen((o) => !o)}>
+                Filtros
+              </Button>
+            }
+          >
+            <h4>Filtrar por</h4>
+            <Checkbox label="Concluídos" />
+            <Checkbox label="Em andamento" />
+            <Checkbox label="Pendentes" />
+          </Popover>
+        </div>
+        <pre className="vds-lib-code mono">{`<Popover open={open} onOpenChange={setOpen} side="bottom" align="end"
+  trigger={<Button>Filtros</Button>}>
+  <h4>Filtrar por</h4>
+  <Checkbox label="Concluídos" />
+</Popover>`}</pre>
+      </div>
+    </Section>
+  );
+}
+
+/* ---------- Command (Cmd+K) ---------- */
+function LibCommandSection() {
+  const [open, setOpen] = useState(false);
+  const [last, setLast] = useState<string | null>(null);
+  return (
+    <Section
+      title="<Command /> · paleta Cmd+K · keyboard-first"
+      meta="filtragem live · ↑↓ navega · Enter abre · ESC fecha · ARIA listbox"
+    >
+      <div className="vds-lib-grid">
+        <div className="vds-lib-row">
+          <Button onClick={() => setOpen(true)}>Abrir paleta</Button>
+          {last && <span className="mono" style={{ fontSize: 12, marginLeft: 12, color: 'var(--via-ink-3)' }}>último: {last}</span>}
+        </div>
+        <Command
+          open={open}
+          onClose={() => setOpen(false)}
+          onSelect={(id) => setLast(id)}
+          groups={[
+            {
+              heading: 'Navegação',
+              items: [
+                { id: '/aluno', label: 'Aluno · jornada', hint: 'progressão pessoal', icon: <Compass size={14} /> },
+                { id: '/turma', label: 'Turma 2026.2', hint: '24 operadores ativos', icon: <Users size={14} /> },
+                { id: '/calendario', label: 'Calendário · lives', icon: <Calendar size={14} /> },
+              ],
+            },
+            {
+              heading: 'Ações',
+              items: [
+                { id: 'new-note', label: 'Nova nota', shortcut: 'N', icon: <FileText size={14} /> },
+                { id: 'settings', label: 'Configurações', shortcut: 'G S', icon: <Settings size={14} /> },
+              ],
+            },
+          ]}
+        />
+        <pre className="vds-lib-code mono">{`<Command open={open} onClose={...} onSelect={navigate}
+  groups={[{ heading: 'Navegação', items: [...] }]} />`}</pre>
+      </div>
+    </Section>
+  );
+}
+
+/* ---------- DatePicker ---------- */
+function LibDatePickerSection() {
+  const [d, setD] = useState<Date | null>(null);
+  return (
+    <Section
+      title="<DatePicker /> · single date · month grid editorial"
+      meta="weekStartsOn · min/max · pt-BR · footer com Limpar/Hoje · ARIA dialog"
+    >
+      <div className="vds-lib-grid">
+        <div className="vds-lib-row" style={{ alignItems: 'flex-end' }}>
+          <DatePicker value={d} onChange={setD} label="Data da próxima live" />
+        </div>
+        <pre className="vds-lib-code mono">{`<DatePicker value={date} onChange={setDate} label="Data da live"
+  min={new Date()} max={addMonths(new Date(), 3)} />`}</pre>
+      </div>
+    </Section>
+  );
+}
+
+/* ---------- Slider ---------- */
+function LibSliderSection() {
+  const [vol, setVol] = useState(40);
+  const [level, setLevel] = useState(3);
+  return (
+    <Section
+      title="<Slider /> · range editorial · 3 tones × 3 sizes"
+      meta="native range input · keyboard accessible · marks opcionais · ARIA valuetext"
+    >
+      <div className="vds-lib-grid">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 460 }}>
+          <Slider value={vol} onChange={setVol} label="Volume da live" formatValue={(n) => `${n}%`} />
+          <Slider
+            value={level}
+            onChange={setLevel}
+            min={1}
+            max={5}
+            label="Profundidade do conteúdo"
+            formatValue={(n) => `nível ${n}`}
+            marks={[
+              { value: 1, label: 'intro' },
+              { value: 3, label: 'médio' },
+              { value: 5, label: 'denso' },
+            ]}
+          />
+        </div>
+        <pre className="vds-lib-code mono">{`<Slider value={v} onChange={setV} label="Volume" formatValue={n => \`\${n}%\`}
+  marks={[{ value: 0, label: 'mudo' }, { value: 100, label: 'máx' }]} />`}</pre>
+      </div>
+    </Section>
+  );
+}
+
+/* ---------- Alert ---------- */
+function LibAlertSection() {
+  const [open, setOpen] = useState(true);
+  return (
+    <Section
+      title="<Alert /> · banner persistente · 4 tons"
+      meta="info · attn · danger · success · dismissible opcional · com action"
+    >
+      <div className="vds-lib-grid">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <Alert tone="info" title="Janela de manutenção · sex 22h">
+            Pausa programada de até 8 minutos · sem perda de dados.
+          </Alert>
+          <Alert tone="attn" title="Cobrança próxima · 18 mai" action={<a href="#">Ver detalhes</a>}>
+            Sua próxima fatura será de <strong>R$ 6.000</strong>. Reduza pra plano lite em 1 clique.
+          </Alert>
+          {open && (
+            <Alert tone="danger" title="Falha de sincronização · 4 mensagens" onDismiss={() => setOpen(false)}>
+              Tente novamente em alguns segundos. Se persistir, fale com o time.
+            </Alert>
+          )}
+          <Alert tone="success" title="Entrega salva">
+            Sua nota foi registrada e está aguardando avaliação do mentor.
+          </Alert>
+        </div>
+        <pre className="vds-lib-code mono">{`<Alert tone="attn" title="Próxima janela · domingo 04h"
+  action={<a href="/status">Ver status</a>}>
+  Manutenção programada · pode haver pausa de até 8 minutos.
+</Alert>`}</pre>
+      </div>
+    </Section>
+  );
+}
+
+/* ---------- DataTable ---------- */
+function LibDataTableSection() {
+  type Row = { name: string; streak: number; status: 'ativo' | 'em risco' | 'pausado'; last: string };
+  const rows: Row[] = [
+    { name: 'Caio Ribeiro',    streak: 21, status: 'ativo',    last: '2026-05-19' },
+    { name: 'Camila Moraes',   streak: 14, status: 'ativo',    last: '2026-05-18' },
+    { name: 'Daniel Pinheiro', streak: 4,  status: 'em risco', last: '2026-05-09' },
+    { name: 'Márisson Lage',   streak: 11, status: 'ativo',    last: '2026-05-20' },
+    { name: 'Yago Almeida',    streak: 0,  status: 'pausado',  last: '2026-04-22' },
+  ];
+  return (
+    <Section
+      title="<DataTable /> · sortable · density · zebra opcional"
+      meta="accessor pra sort derivado · render pra cells ReactNode · ARIA sort"
+    >
+      <DataTable<Row>
+        caption="Mentorados · turma 2026.2"
+        columns={[
+          { key: 'name', label: 'Mentorado' },
+          {
+            key: 'streak',
+            label: 'Streak',
+            align: 'right',
+            accessor: (r) => r.streak,
+            render: (r) => <span className="mono">{r.streak}d</span>,
+          },
+          {
+            key: 'status',
+            label: 'Status',
+            render: (r) => (
+              <Pill variant={r.status === 'ativo' ? 'default' : r.status === 'em risco' ? 'churn' : 'attn'}>
+                {r.status}
+              </Pill>
+            ),
+          },
+          {
+            key: 'last',
+            label: 'Última sessão',
+            align: 'right',
+            accessor: (r) => new Date(r.last),
+            render: (r) => (
+              <span className="mono">
+                {new Date(r.last).toLocaleDateString('pt-BR')}
+              </span>
+            ),
+          },
+        ]}
+        data={rows}
+        initialSort={{ key: 'streak', dir: 'desc' }}
+      />
+      <pre className="vds-lib-code mono" style={{ marginTop: 12 }}>{`<DataTable columns={cols} data={rows}
+  initialSort={{ key: 'streak', dir: 'desc' }}
+  onRowClick={row => navigate(\`/mentorados/\${row.id}\`)} />`}</pre>
+    </Section>
   );
 }
 
