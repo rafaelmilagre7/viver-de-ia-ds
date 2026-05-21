@@ -20,7 +20,7 @@
     "test:unit:watch": "vitest",
     "test:unit:coverage": "vitest run --coverage",
     "test:perf": "lhci autorun",
-    "test:smoke": "node scripts/smoke-test-lib.mjs",
+    "build:kit": "node scripts/build-kit.mjs",
     "story": "ladle serve",
     "story:build": "ladle build"
   },
