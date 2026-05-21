@@ -279,7 +279,7 @@ function PromiseSection() {
         </div>
         <span className="vds-bs-promise-eyebrow">Promessa</span>
         <h2>
-          Em <em>90 dias</em>, você sai daqui com pelo menos <em>1 agente IA em produção</em>
+          Em <em>90 dias</em>, você sai daqui com pelo menos <em>1 agente IA em produção</em>{' '}
           dentro da sua operação, construído por você, mantido por você, gerando resultado
           mensurável.
         </h2>

@@ -352,7 +352,11 @@ body {
   background: var(--via-bg);
 }
 
-h1, h2, h3, h4 { margin: 0; color: var(--via-text-primary); }
+/* Headings · color usa :where() pra ter specificity ZERO.
+   Qualquer container com `color: #fff` (cards navy escuros, glass dark, etc)
+   sobrescreve sem precisar de override por classe — o color herda da cadeia. */
+:where(h1, h2, h3, h4) { color: var(--via-text-primary); }
+h1, h2, h3, h4 { margin: 0; }
 h1 { font-family: var(--via-font-display); font-weight: 500; font-size: var(--via-fs-h1); line-height: var(--via-lh-tight); letter-spacing: var(--via-ls-tighter); }
 h2 { font-family: var(--via-font-display); font-weight: 500; font-size: var(--via-fs-h2); line-height: var(--via-lh-snug);  letter-spacing: var(--via-ls-tighter); }
 h3 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-size: var(--via-fs-h3); line-height: var(--via-lh-snug); letter-spacing: var(--via-ls-tight); }
@@ -360,9 +364,14 @@ h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-siz
 
 /* Cards/heroes em superfície navy escura — herdam color pra ficarem brancos.
    Resolve bug onde `h1,h2,h3,h4 { color: var(--via-text-primary) }` global
-   sobrescrevia `color: #fff` setado no container ancestral. */
+   sobrescrevia `color: #fff` setado no container ancestral.
+
+   Cobre: .via-mesh-navy · .via-glass-dark · [data-on-dark] (utility opt-in)
+   e cards específicos que usam fundo navy direto (sem class semântica). */
 .via-mesh-navy h1, .via-mesh-navy h2, .via-mesh-navy h3, .via-mesh-navy h4,
-.via-glass-dark h1, .via-glass-dark h2, .via-glass-dark h3, .via-glass-dark h4 {
+.via-glass-dark h1, .via-glass-dark h2, .via-glass-dark h3, .via-glass-dark h4,
+[data-on-dark] h1, [data-on-dark] h2, [data-on-dark] h3, [data-on-dark] h4,
+.vds-bs-promise h1, .vds-bs-promise h2, .vds-bs-promise h3, .vds-bs-promise h4 {
   color: inherit;
 }
 

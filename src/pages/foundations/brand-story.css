@@ -462,6 +462,7 @@
   margin: 0 0 16px;
   font-weight: 500;
   max-width: 760px;
+  color: inherit;
 }
 .vds-bs-promise h2 em {
   font-style: italic;
