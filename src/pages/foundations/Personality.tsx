@@ -79,32 +79,34 @@ export default function Personality() {
         title="Os 7 atributos · não-negociáveis"
         meta="cada um vem com comportamento e proibição"
       >
-        <div className="vds-pers-grid">
-          {traits.map((t) => {
-            const I = t.icon;
-            return (
-              <article key={t.n} className="vds-pers-card">
-                <header>
-                  <span className="vds-pers-num mono">{t.n}</span>
-                  <div className="vds-pers-icon">
-                    <I size={15} strokeWidth={1.8} />
+        <div className="vds-pers-stage">
+          <div className="vds-pers-grid">
+            {traits.map((t) => {
+              const I = t.icon;
+              return (
+                <article key={t.n} className="vds-pers-card">
+                  <header>
+                    <span className="vds-pers-num">{t.n}</span>
+                    <div className="vds-pers-icon">
+                      <I size={16} strokeWidth={1.6} />
+                    </div>
+                  </header>
+                  <h3>{t.name}</h3>
+                  <p className="vds-pers-sum">{t.summary}</p>
+                  <div className="vds-pers-pair">
+                    <div className="vds-pers-do">
+                      <span className="lbl">Comportamento</span>
+                      <p>{t.behavior}</p>
+                    </div>
+                    <div className="vds-pers-dont">
+                      <span className="lbl">Evita</span>
+                      <p>{t.avoid}</p>
+                    </div>
                   </div>
-                </header>
-                <h3>{t.name}</h3>
-                <p className="vds-pers-sum">{t.summary}</p>
-                <div className="vds-pers-pair">
-                  <div className="vds-pers-do">
-                    <span className="lbl">Comportamento</span>
-                    <p>{t.behavior}</p>
-                  </div>
-                  <div className="vds-pers-dont">
-                    <span className="lbl">Evita</span>
-                    <p>{t.avoid}</p>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+                </article>
+              );
+            })}
+          </div>
         </div>
       </Section>
 

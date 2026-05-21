@@ -1,105 +1,157 @@
-/* ============================================
+/* ==============================================================
    Personality · 7 traits + spectrum + quiz
-   ============================================ */
+   Atmosfera navy + liquid glass cards · editorial premium
+   ============================================================== */
+
+/* ---------- Stage atmosphere · navy mesh + noise envelope ---------- */
+.vds-pers-stage {
+  position: relative;
+  padding: 40px;
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse 72% 60% at 12% 0%, rgba(46,76,118,0.42) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 70% at 100% 100%, rgba(30,58,95,0.32) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
+  color: var(--via-white);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px rgba(10,31,59,0.04),
+    0 24px 56px -16px rgba(10,31,59,0.32);
+}
+.vds-pers-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.42;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+.vds-pers-stage > * { position: relative; z-index: 1; }
 
 /* ---------- Traits grid ---------- */
 .vds-pers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px;
 }
 
+/* ---------- Trait card · liquid glass sobre navy ---------- */
 .vds-pers-card {
   position: relative;
-  padding: 26px 26px 24px;
-  background: var(--via-white);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 16px;
-  transition: var(--via-t);
+  padding: 28px 26px 24px;
+  background:
+    radial-gradient(ellipse 70% 50% at 0% 0%, rgba(255,255,255,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.025) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  color: var(--via-white);
   overflow: hidden;
   isolation: isolate;
+  transition: transform var(--via-t), border-color var(--via-t), box-shadow var(--via-t);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 8px 22px -8px rgba(0,0,0,0.30);
 }
-.vds-pers-card::after {
+/* Bar fade navy signature à esquerda · revela no hover */
+.vds-pers-card::before {
   content: '';
   position: absolute;
   inset: 0 auto 0 0;
   width: 2px;
-  background: linear-gradient(180deg, var(--via-navy), transparent);
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), transparent);
   opacity: 0;
-  transition: var(--via-t);
+  transition: opacity var(--via-t);
 }
 .vds-pers-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--via-navy-20);
-  box-shadow: 0 16px 36px -14px rgba(10, 31, 59, 0.18);
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,0.20);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    0 18px 40px -12px rgba(0,0,0,0.42);
 }
-.vds-pers-card:hover::after { opacity: 1; }
+.vds-pers-card:hover::before { opacity: 1; }
 
+/* ---------- Card header · número grande + ícone glass tile ---------- */
 .vds-pers-card header {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 .vds-pers-num {
-  font-family: var(--via-mono);
-  font-size: 13px;
-  color: var(--via-ink-3);
-  letter-spacing: -0.005em;
+  font-family: var(--via-font-display);
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: rgba(255,255,255,0.36);
+  font-feature-settings: "tnum" 1, "lnum" 1;
 }
 .vds-pers-icon {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9px;
+  border-radius: 10px;
   background:
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45)),
-    linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
-  border: 0.5px solid var(--via-navy-12);
-  color: var(--via-navy);
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.20), rgba(255,255,255,0.06)),
+    rgba(255,255,255,0.04);
+  border: 0.5px solid rgba(255,255,255,0.20);
+  color: var(--via-white);
+  flex-shrink: 0;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    0 1px 2px rgba(10, 31, 59, 0.04);
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 1px 2px rgba(0,0,0,0.18);
 }
 
+/* ---------- Card title + summary ---------- */
 .vds-pers-card h3 {
   font-family: var(--via-font-display);
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: inherit;
   letter-spacing: -0.022em;
-  margin: 0 0 6px;
+  line-height: 1.15;
+  margin: 0 0 8px;
 }
 .vds-pers-sum {
   font-family: var(--via-font-display);
   font-style: italic;
   font-weight: 400;
-  font-size: 14.5px;
-  color: var(--via-ink-3);
-  line-height: 1.45;
-  margin: 0 0 18px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.74);
+  line-height: 1.5;
+  margin: 0 0 20px;
 }
 
+/* ---------- Comportamento / Evita pair ---------- */
 .vds-pers-pair {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-top: 14px;
-  border-top: 0.5px solid var(--via-navy-08);
+  padding-top: 18px;
+  border-top: 0.5px solid rgba(255,255,255,0.12);
 }
 .vds-pers-do,
 .vds-pers-dont {
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
 }
 .vds-pers-do {
-  background: var(--via-navy-04);
-  border-left: 2px solid var(--via-navy);
+  background: rgba(255,255,255,0.05);
+  border-left: 2px solid rgba(255,255,255,0.70);
 }
 .vds-pers-dont {
-  background: rgba(184, 92, 92, 0.05);
+  background: rgba(184, 92, 92, 0.10);
   border-left: 2px solid var(--via-coral);
 }
 .vds-pers-do .lbl,
@@ -110,33 +162,55 @@
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
-.vds-pers-do .lbl  { color: var(--via-navy); }
-.vds-pers-dont .lbl { color: var(--via-coral-dark); }
+.vds-pers-do .lbl  { color: rgba(255,255,255,0.78); }
+.vds-pers-dont .lbl { color: rgba(255, 180, 180, 0.88); }
 .vds-pers-do p,
 .vds-pers-dont p {
   font-family: var(--via-font);
   font-size: 12.5px;
-  color: var(--via-text);
-  line-height: 1.5;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.55;
   margin: 0;
 }
+.vds-pers-dont p { color: rgba(255,255,255,0.72); }
 
-/* ---------- Spectrum (axes) ---------- */
+/* ---------- Spectrum (axes) · glass light card ---------- */
 .vds-pers-spectrum {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  padding: 30px 32px;
-  background: var(--via-gray-50);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 14px;
+  gap: 26px;
+  padding: 36px 38px;
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse 60% 70% at 12% 0%, rgba(10,31,59,0.06) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0.62) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.96);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.86),
+    0 12px 32px -10px rgba(10,31,59,0.14);
+  overflow: hidden;
+}
+.vds-pers-spectrum::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.20;
+  pointer-events: none;
+  border-radius: inherit;
 }
 .vds-pers-axis {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 .vds-pers-axis-label {
   display: grid;
@@ -156,15 +230,19 @@
   font-weight: 500;
   letter-spacing: -0.004em;
   color: var(--via-navy);
-  background: var(--via-white);
-  padding: 3px 10px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72));
+  padding: 4px 12px;
   border-radius: 999px;
-  border: 0.5px solid var(--via-navy-20);
+  border: 0.5px solid var(--via-navy-12);
   white-space: nowrap;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.86),
+    0 1px 3px rgba(10,31,59,0.06);
 }
 .vds-pers-axis-track {
   position: relative;
-  height: 4px;
+  height: 5px;
   background: linear-gradient(90deg, var(--via-navy-08), var(--via-navy-12), var(--via-navy-08));
   border-radius: 999px;
 }
@@ -174,45 +252,79 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--via-navy);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 2px solid var(--via-white);
-  box-shadow: 0 2px 8px rgba(10, 31, 59, 0.32);
+  box-shadow:
+    0 0 0 1px rgba(10,31,59,0.10),
+    0 4px 10px rgba(10,31,59,0.32);
   transform: translate(-50%, -50%);
 }
 
-/* ---------- Quiz ---------- */
+/* ---------- Quiz · liquid glass card por par ---------- */
 .vds-pers-test {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 .vds-pers-quiz {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 12px;
-  padding: 20px 22px;
-  background: var(--via-white);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 14px;
+  gap: 14px;
+  padding: 24px 26px;
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse 70% 50% at 0% 0%, rgba(10,31,59,0.06) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.62) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.96);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.84),
+    0 8px 22px -10px rgba(10,31,59,0.14);
+  overflow: hidden;
+  isolation: isolate;
 }
+.vds-pers-quiz::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.18;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+.vds-pers-quiz > * { position: relative; z-index: 1; }
 @media (max-width: 760px) {
   .vds-pers-quiz { grid-template-columns: 1fr; }
 }
+
 .vds-pers-opt {
-  padding: 16px 18px;
-  border-radius: 10px;
-  background: var(--via-gray-50);
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: var(--via-white);
   border: 0.5px solid var(--via-navy-08);
+  transition: border-color var(--via-t), box-shadow var(--via-t);
 }
 .vds-pers-opt.good {
   border-color: var(--via-navy-40);
   border-left: 2px solid var(--via-navy);
+  background:
+    radial-gradient(ellipse 80% 60% at 0% 0%, rgba(10,31,59,0.04) 0%, transparent 60%),
+    var(--via-white);
+  box-shadow:
+    inset 0 1px 0 var(--via-white),
+    0 4px 14px -6px rgba(10,31,59,0.16);
 }
 .vds-pers-opt.bad {
   border-color: rgba(184, 92, 92, 0.30);
   border-left: 2px solid var(--via-coral);
-  opacity: 0.72;
+  opacity: 0.78;
+  background: rgba(184, 92, 92, 0.03);
 }
 .vds-pers-opt .lbl {
   display: block;
@@ -228,23 +340,40 @@
 .vds-pers-opt p {
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 14.5px;
+  font-size: 15px;
   color: var(--via-navy);
   line-height: 1.5;
   margin: 0;
 }
-.vds-pers-opt.bad p { color: var(--via-ink-3); text-decoration: line-through; text-decoration-color: rgba(184, 92, 92, 0.32); text-decoration-thickness: 1px; }
+.vds-pers-opt.bad p {
+  color: var(--via-ink-3);
+  text-decoration: line-through;
+  text-decoration-color: rgba(184, 92, 92, 0.36);
+  text-decoration-thickness: 1px;
+}
 
 .vds-pers-why {
   grid-column: 1 / -1;
   font-family: var(--via-font);
   font-size: 13px;
   color: var(--via-text);
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   line-height: 1.55;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--via-navy-08);
 }
 .vds-pers-why strong {
   font-family: var(--via-font);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--via-navy);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 720px) {
+  .vds-pers-stage    { padding: 24px; border-radius: 22px; }
+  .vds-pers-spectrum { padding: 26px 24px; }
+  .vds-pers-quiz     { padding: 20px; }
+  .vds-pers-card     { padding: 22px 22px 20px; }
+  .vds-pers-num      { font-size: 28px; }
+  .vds-pers-card h3  { font-size: 20px; }
 }
