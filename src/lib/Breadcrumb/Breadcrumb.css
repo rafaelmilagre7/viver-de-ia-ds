@@ -25,6 +25,7 @@
 
 .via-breadcrumb__link,
 .via-breadcrumb__link--btn {
+  position: relative;
   color: var(--via-ink-2, #5E6B82);
   text-decoration: none;
   font-weight: 500;
@@ -35,13 +36,29 @@
   font-size: inherit;
   letter-spacing: inherit;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.22s ease;
 }
 
-.via-breadcrumb__link:hover {
+.via-breadcrumb__link::after,
+.via-breadcrumb__link--btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -2px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--via-navy), transparent);
+  transition: right 0.32s cubic-bezier(.16, 1, .3, 1);
+}
+
+.via-breadcrumb__link:hover,
+.via-breadcrumb__link--btn:hover {
   color: var(--via-navy, #0A1F3B);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+}
+
+.via-breadcrumb__link:hover::after,
+.via-breadcrumb__link--btn:hover::after {
+  right: 0;
 }
 
 .via-breadcrumb__current {

@@ -35,24 +35,40 @@
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.18s ease;
 }
 
 .via-pagination__page:hover,
 .via-pagination__nav:not(:disabled):hover {
   color: var(--via-navy, #0A1F3B);
-  background: rgba(10, 31, 59, 0.05);
+  background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-03));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .via-pagination__page.is-active {
-  background: var(--via-navy, #0A1F3B);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border-color: var(--via-navy, #0A1F3B);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.10) inset,
+    0 4px 10px -4px var(--via-navy-30);
 }
 
 .via-pagination__page.is-active:hover {
-  background: var(--via-navy-deep, #02162A);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.10) inset,
+    0 6px 14px -4px var(--via-navy-40);
 }
 
 .via-pagination__nav:disabled {
