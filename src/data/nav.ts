@@ -127,6 +127,7 @@ export const navigation: NavGroup[] = [
       { label: 'Email coverage (13 templates editorial)', to: '/patterns/email-coverage' },
       { label: 'WhatsApp preview', to: '/patterns/whatsapp' },
       { label: 'Social media posts', to: '/patterns/social' },
+      { label: 'Social coverage (6 canais · 18 templates)', to: '/patterns/social-coverage' },
       { label: 'Invoice / recibo', to: '/patterns/invoice' },
       { label: 'Slide deck (apresentação)', to: '/patterns/slides' },
       { label: 'Curriculum (curso · módulos+aulas)', to: '/patterns/curriculum' },

@@ -91,6 +91,7 @@ const Email = lazy(() => import('./pages/patterns/Email'));
 const EmailCoverage = lazy(() => import('./pages/patterns/EmailCoverage'));
 const WhatsApp = lazy(() => import('./pages/patterns/WhatsApp'));
 const Social = lazy(() => import('./pages/patterns/Social'));
+const SocialCoverage = lazy(() => import('./pages/patterns/SocialCoverage'));
 const Invoice = lazy(() => import('./pages/patterns/Invoice'));
 const Slides = lazy(() => import('./pages/patterns/Slides'));
 const Curriculum = lazy(() => import('./pages/patterns/Curriculum'));
@@ -221,6 +222,7 @@ export default function App() {
                   <Route path="email-coverage" element={<EmailCoverage />} />
                   <Route path="whatsapp" element={<WhatsApp />} />
                   <Route path="social" element={<Social />} />
+                  <Route path="social-coverage" element={<SocialCoverage />} />
                   <Route path="invoice" element={<Invoice />} />
                   <Route path="slides" element={<Slides />} />
                   <Route path="curriculum" element={<Curriculum />} />

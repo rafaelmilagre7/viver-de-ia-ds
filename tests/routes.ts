@@ -99,6 +99,7 @@ export const routes: Route[] = [
   { path: '/patterns/email-coverage', settleMs: 150 },
   { path: '/patterns/whatsapp' },
   { path: '/patterns/social' },
+  { path: '/patterns/social-coverage', settleMs: 150 },
   { path: '/patterns/invoice' },
   { path: '/patterns/slides' },
   { path: '/patterns/curriculum' },
