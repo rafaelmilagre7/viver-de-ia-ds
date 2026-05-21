@@ -131,6 +131,7 @@ export const navigation: NavGroup[] = [
       { label: 'Paid ads (Meta + Google · 12 creatives)', to: '/patterns/paid-ads' },
       { label: 'Landing elements (hero · CTA · trust · FAQ · countdown · compare)', to: '/patterns/landing-elements' },
       { label: 'Commercial (pitch deck · one-pager · case · proposta · contract)', to: '/patterns/commercial' },
+      { label: 'Editorial / content (newsletter · blog · podcast · YT · tutorial)', to: '/patterns/editorial-content' },
       { label: 'Invoice / recibo', to: '/patterns/invoice' },
       { label: 'Slide deck (apresentação)', to: '/patterns/slides' },
       { label: 'Curriculum (curso · módulos+aulas)', to: '/patterns/curriculum' },
