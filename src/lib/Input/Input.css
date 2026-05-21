@@ -1,5 +1,5 @@
 /* ============================================
-   <Input> · Viver de IA · field editorial
+   <Input> · Viver de IA · field editorial premium
    ============================================ */
 .via-input-wrap {
   display: flex;
@@ -16,27 +16,62 @@
 }
 
 .via-input {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--via-white);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.78));
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border);
   border-radius: var(--via-radius-md);
-  transition: border-color .22s ease, box-shadow .22s ease, background .22s ease;
+  isolation: isolate;
+  transition:
+    border-color .22s ease,
+    box-shadow .22s ease,
+    background .22s ease,
+    transform .22s ease;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 2px rgba(10, 31, 59, 0.04);
+    0 1px 2px var(--via-navy-04);
+}
+
+/* Focus underline · gradient animated · revela bottom-up */
+.via-input::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--via-navy), var(--via-blue), transparent);
+  border-radius: 999px;
+  transition:
+    left .35s cubic-bezier(.2,.7,.2,1),
+    right .35s cubic-bezier(.2,.7,.2,1),
+    opacity .22s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .via-input:hover {
-  border-color: rgba(10, 31, 59, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 250, 0.86));
+  border-color: var(--via-navy-22);
 }
 
 .via-input:focus-within {
-  border-color: rgba(10, 31, 59, 0.4);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.92));
+  border-color: var(--via-navy-40);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 0 0 3px rgba(10, 31, 59, 0.1);
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 3px var(--via-navy-10),
+    0 6px 14px -8px var(--via-navy-12);
+}
+
+.via-input:focus-within::after {
+  left: 8%;
+  right: 8%;
+  opacity: 1;
 }
 
 .via-input input {
@@ -48,10 +83,17 @@
   font-family: var(--via-font);
   letter-spacing: -0.008em;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .via-input input::placeholder {
   color: var(--via-ink-3);
+  transition: color .22s ease;
+}
+
+.via-input:focus-within input::placeholder {
+  color: var(--via-gray-400);
 }
 
 .via-input__icon {
@@ -59,6 +101,13 @@
   align-items: center;
   color: var(--via-ink-3);
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: color .22s ease;
+}
+
+.via-input:focus-within .via-input__icon {
+  color: var(--via-navy);
 }
 
 /* ===== Sizes ===== */
@@ -88,15 +137,20 @@
   border-color: rgba(184, 92, 92, 0.4);
 }
 
+.via-input--error::after {
+  background: linear-gradient(90deg, transparent, var(--via-coral), var(--via-coral-deep), transparent);
+}
+
 .via-input--error:focus-within {
   border-color: var(--via-coral);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 0 0 3px rgba(184, 92, 92, 0.12);
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 3px rgba(184, 92, 92, 0.12),
+    0 6px 14px -8px rgba(184, 92, 92, 0.18);
 }
 
 .via-input--success {
-  border-color: rgba(10, 31, 59, 0.28);
+  border-color: var(--via-navy-25);
 }
 
 /* ===== Messages ===== */
@@ -109,4 +163,11 @@
 
 .via-input__msg--error {
   color: var(--via-coral-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-input::after { display: none; }
+  .via-input,
+  .via-input input::placeholder,
+  .via-input__icon { transition: none !important; }
 }

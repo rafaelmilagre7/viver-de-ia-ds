@@ -1,10 +1,10 @@
 /* ============================================
-   <Card> · Viver de IA · superfície editorial
+   <Card> · Viver de IA · superfície editorial premium
    ============================================ */
 .via-card {
   position: relative;
   border-radius: var(--via-radius-lg);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -15,7 +15,44 @@
     border-color .26s ease;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 10px 24px -16px rgba(10, 31, 59, 0.12);
+    0 10px 24px -16px var(--via-navy-12);
+}
+
+/* Atmosphere radial sutil top-left · signature DS aplicada por default */
+.via-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+  transition: opacity .26s ease;
+}
+.via-card:hover::before {
+  opacity: 1;
+}
+
+/* Shine sweep · líquido editorial · revela no hover dos hoverable */
+.via-card--hoverable::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: left .8s cubic-bezier(.2,.7,.2,1);
+  z-index: 1;
+}
+.via-card--hoverable:hover::after {
+  left: 130%;
 }
 
 .via-card--no-padding {
@@ -35,12 +72,10 @@
 }
 
 .via-card--atmospheric::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.035), transparent 60%);
-  pointer-events: none;
-  z-index: -1;
+  background:
+    radial-gradient(540px 240px at 0% 0%, var(--via-navy-05), transparent 60%),
+    radial-gradient(420px 220px at 100% 100%, var(--via-navy-04), transparent 60%);
+  opacity: 1;
 }
 
 .via-card--featured {
@@ -48,7 +83,13 @@
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 56px -22px rgba(10, 31, 59, 0.18);
+    0 0 0 0.5px var(--via-navy-08),
+    0 24px 56px -22px var(--via-navy-18);
+}
+
+.via-card--featured > * {
+  position: relative;
+  z-index: 1;
 }
 
 .via-card--featured::after {
@@ -59,6 +100,9 @@
   top: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--via-navy), var(--via-blue), transparent);
+  pointer-events: none;
+  transition: none;
+  z-index: 2;
 }
 
 .via-card--dark {
@@ -68,7 +112,24 @@
     radial-gradient(ellipse 50% 60% at 95% 8%, rgba(30,58,95,0.50) 0%, transparent 60%),
     linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
   border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 24px 56px -22px rgba(10, 31, 59, 0.4);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.10) inset,
+    0 24px 56px -22px var(--via-navy-40);
+}
+
+.via-card--dark::before {
+  background: radial-gradient(540px 240px at 0% 0%, rgba(255, 255, 255, 0.06), transparent 60%);
+  opacity: 1;
+}
+
+/* Shine sweep dark variant · branco sutil */
+.via-card--hoverable.via-card--dark::after {
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.10) 50%,
+    transparent 100%
+  );
 }
 
 /* ===== Hoverable ===== */
@@ -77,14 +138,22 @@
 }
 
 .via-card--hoverable:hover {
-  transform: translateY(-2px);
-  border-color: rgba(10, 31, 59, 0.14);
+  transform: translateY(-3px);
+  border-color: var(--via-navy-16);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 38px -18px rgba(10, 31, 59, 0.2);
+    0 0 0 0.5px var(--via-navy-10),
+    0 22px 42px -16px var(--via-navy-22);
 }
 
 .via-card--hoverable.via-card--dark:hover {
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 32px 64px -22px rgba(10, 31, 59, 0.5);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 32px 64px -22px var(--via-navy-60);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-card--hoverable::after { display: none; }
+  .via-card { transition: none !important; }
 }

@@ -1,5 +1,5 @@
 /* ============================================
-   <Avatar> · com initials + status dot
+   <Avatar> · iniciais + status premium
    ============================================ */
 .via-avatar {
   position: relative;
@@ -8,36 +8,47 @@
   justify-content: center;
   flex-shrink: 0;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-accent);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.18), transparent 60%),
+    linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
   font-family: var(--via-font);
   font-weight: 600;
   letter-spacing: 0.02em;
   border: 2px solid var(--via-white);
   box-shadow:
-    0 0 0 1px rgba(10, 31, 59, 0.08),
-    0 2px 6px -2px rgba(10, 31, 59, 0.25);
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12),
+    0 0 0 1px var(--via-navy-08),
+    0 2px 6px -2px var(--via-navy-25);
   overflow: hidden;
+  isolation: isolate;
+  transition: transform .22s cubic-bezier(.2,.7,.2,1), box-shadow .22s ease;
 }
 
 .via-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative;
+  z-index: 1;
 }
 
 .via-avatar__initials {
   user-select: none;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
 }
 
 /* ===== Sizes ===== */
-.via-avatar--xs { width: 20px; height: 20px; font-size: 8px; border-width: 1.5px; }
+.via-avatar--xs { width: 20px; height: 20px; font-size: 8px;  border-width: 1.5px; }
 .via-avatar--sm { width: 28px; height: 28px; font-size: 10px; border-width: 2px; }
 .via-avatar--md { width: 36px; height: 36px; font-size: 12px; border-width: 2px; }
 .via-avatar--lg { width: 52px; height: 52px; font-size: 16px; border-width: 2.5px; }
 .via-avatar--xl { width: 80px; height: 80px; font-size: 24px; border-width: 3px; }
 
-/* ===== Status dot ===== */
+/* ===== Status dot · com glow editorial ===== */
 .via-avatar__status {
   position: absolute;
   bottom: 0;
@@ -48,21 +59,54 @@
   min-height: 8px;
   border-radius: 50%;
   border: 2px solid var(--via-white);
+  z-index: 2;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 1px 2px rgba(0, 0, 0, 0.16);
 }
 
 .via-avatar__status--online {
-  background: #1F8A5B;
-  box-shadow: 0 0 6px rgba(31, 138, 91, 0.5);
+  background: linear-gradient(180deg, #2BA572, #1F8A5B);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.30),
+    0 0 0 2px rgba(31, 138, 91, 0.18),
+    0 0 8px rgba(31, 138, 91, 0.45);
+  animation: via-avatar-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes via-avatar-pulse {
+  0%, 100% { box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.30),
+    0 0 0 2px rgba(31, 138, 91, 0.18),
+    0 0 8px rgba(31, 138, 91, 0.45); }
+  50%      { box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.30),
+    0 0 0 4px rgba(31, 138, 91, 0.10),
+    0 0 12px rgba(31, 138, 91, 0.55); }
 }
 
 .via-avatar__status--away {
-  background: var(--via-accent);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 1px 3px var(--via-navy-30);
 }
 
 .via-avatar__status--busy {
-  background: var(--via-coral);
+  background: linear-gradient(180deg, var(--via-coral), var(--via-coral-deep));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 0 6px rgba(184, 92, 92, 0.45);
 }
 
 .via-avatar__status--offline {
-  background: var(--via-ink-3);
+  background: linear-gradient(180deg, var(--via-gray-400), var(--via-gray-500));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 1px 2px var(--via-navy-12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-avatar__status--online { animation: none !important; }
+  .via-avatar { transition: none !important; }
 }

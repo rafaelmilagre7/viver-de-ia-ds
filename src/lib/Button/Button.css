@@ -1,5 +1,5 @@
 /* ============================================
-   <Button> · Viver de IA Design System
+   <Button> · Viver de IA Design System · premium
    ============================================ */
 .via-btn {
   display: inline-flex;
@@ -14,13 +14,43 @@
   cursor: pointer;
   white-space: nowrap;
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
   transition:
     background .22s ease,
     border-color .22s ease,
     color .22s ease,
-    transform .2s ease,
+    transform .2s cubic-bezier(.2,.7,.2,1),
     box-shadow .22s ease,
     filter .2s ease;
+}
+
+/* Shine sweep · líquido editorial · revela no hover */
+.via-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 45%,
+    rgba(255, 255, 255, 0.06) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: left .65s cubic-bezier(.2,.7,.2,1);
+}
+.via-btn:hover:not(:disabled)::after {
+  left: 120%;
+}
+
+/* Press state · sutil afundar */
+.via-btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+  transition-duration: .1s;
 }
 
 .via-btn:disabled,
@@ -35,12 +65,16 @@
 .via-btn__label {
   display: inline-flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .via-btn__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== Sizes ===== */
@@ -61,46 +95,62 @@
 
 /* ===== Variants ===== */
 
-/* Primary · navy fill */
+/* Primary · navy fill com glow + shine */
 .via-btn--primary {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -6px rgba(10, 31, 59, 0.42);
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.10) inset,
+    0 8px 18px -6px var(--via-navy-40);
 }
 
 .via-btn--primary:hover:not(:disabled) {
   transform: translateY(-1px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.18) inset,
-    0 12px 24px -8px rgba(10, 31, 59, 0.52);
-  filter: brightness(1.05);
+    0 1px 0 rgba(255, 255, 255, 0.22) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.10) inset,
+    0 14px 28px -8px var(--via-navy-60),
+    0 4px 12px -4px var(--via-navy-30);
+  filter: brightness(1.06);
 }
 
-/* Secondary · glass white */
+.via-btn--primary:active:not(:disabled) {
+  box-shadow:
+    0 2px 6px -2px var(--via-navy-40) inset,
+    0 4px 10px -6px var(--via-navy-40);
+}
+
+/* Secondary · liquid glass white */
 .via-btn--secondary {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
-  backdrop-filter: blur(12px) saturate(140%);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  border-color: var(--via-border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-color: rgba(255, 255, 255, 0.96);
   color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 4px 10px -4px rgba(10, 31, 59, 0.12);
+    0 0 0 0.5px var(--via-navy-10),
+    0 4px 10px -4px var(--via-navy-12);
 }
 
 .via-btn--secondary:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(10, 31, 59, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.82));
   transform: translateY(-1px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 8px 18px -6px rgba(10, 31, 59, 0.18);
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 0.5px var(--via-navy-18),
+    0 12px 24px -8px var(--via-navy-18);
 }
 
-/* Ghost · transparent */
+.via-btn--secondary:active:not(:disabled) {
+  box-shadow:
+    0 1px 3px var(--via-navy-12) inset,
+    0 0 0 0.5px var(--via-navy-14);
+}
+
+/* Ghost · transparente · ganha glass sutil no hover */
 .via-btn--ghost {
   background: transparent;
   border-color: transparent;
@@ -108,7 +158,9 @@
 }
 
 .via-btn--ghost:hover:not(:disabled) {
-  background: rgba(10, 31, 59, 0.05);
+  background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-03));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--via-navy);
 }
 
@@ -124,7 +176,14 @@
   border-color: transparent;
   color: var(--via-white);
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px -6px rgba(184, 92, 92, 0.45);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 12px 24px -6px rgba(184, 92, 92, 0.48);
+}
+
+.via-btn--destructive:active:not(:disabled) {
+  box-shadow:
+    0 2px 6px -2px rgba(184, 92, 92, 0.40) inset;
 }
 
 /* Accent · acento singular · USAR COM PARCIMÔNIA */
@@ -132,13 +191,17 @@
   background: linear-gradient(135deg, var(--via-accent), var(--via-accent-light));
   border-color: transparent;
   color: var(--via-navy);
-  box-shadow: 0 8px 18px -6px rgba(10, 31, 59, 0.32);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.32) inset,
+    0 8px 18px -6px var(--via-navy-30);
 }
 
 .via-btn--accent:hover:not(:disabled) {
   filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px -8px rgba(10, 31, 59, 0.42);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.38) inset,
+    0 14px 28px -8px var(--via-navy-40);
 }
 
 /* ===== Loading spinner ===== */
@@ -149,6 +212,8 @@
   border-right-color: transparent;
   border-radius: 50%;
   animation: via-btn-spin .8s linear infinite;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes via-btn-spin {
@@ -157,4 +222,17 @@
 
 .via-btn--loading .via-btn__label {
   opacity: 0.7;
+}
+
+/* Focus-visible · ring editorial */
+.via-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--via-white),
+    0 0 0 4px var(--via-navy-40);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-btn::after { display: none; }
+  .via-btn { transition: none !important; }
 }

@@ -195,9 +195,33 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-navy-02",
+    "css": "--via-navy-02",
+    "value": "rgba(10, 31, 59, 0.02)",
+    "category": "color"
+  },
+  {
+    "name": "via-navy-03",
+    "css": "--via-navy-03",
+    "value": "rgba(10, 31, 59, 0.03)",
+    "category": "color"
+  },
+  {
     "name": "via-navy-04",
     "css": "--via-navy-04",
     "value": "rgba(255, 255, 255, 0.03)",
+    "category": "color"
+  },
+  {
+    "name": "via-navy-05",
+    "css": "--via-navy-05",
+    "value": "rgba(10, 31, 59, 0.05)",
+    "category": "color"
+  },
+  {
+    "name": "via-navy-06",
+    "css": "--via-navy-06",
+    "value": "rgba(10, 31, 59, 0.06)",
     "category": "color"
   },
   {
@@ -207,15 +231,57 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-navy-10",
+    "css": "--via-navy-10",
+    "value": "rgba(10, 31, 59, 0.10)",
+    "category": "color"
+  },
+  {
     "name": "via-navy-12",
     "css": "--via-navy-12",
     "value": "rgba(255, 255, 255, 0.08)",
     "category": "color"
   },
   {
+    "name": "via-navy-14",
+    "css": "--via-navy-14",
+    "value": "rgba(10, 31, 59, 0.14)",
+    "category": "color"
+  },
+  {
+    "name": "via-navy-16",
+    "css": "--via-navy-16",
+    "value": "rgba(10, 31, 59, 0.16)",
+    "category": "color"
+  },
+  {
+    "name": "via-navy-18",
+    "css": "--via-navy-18",
+    "value": "rgba(10, 31, 59, 0.18)",
+    "category": "color"
+  },
+  {
     "name": "via-navy-20",
     "css": "--via-navy-20",
     "value": "rgba(10, 31, 59, 0.20)",
+    "category": "color"
+  },
+  {
+    "name": "via-navy-22",
+    "css": "--via-navy-22",
+    "value": "rgba(10, 31, 59, 0.22)",
+    "category": "color"
+  },
+  {
+    "name": "via-navy-25",
+    "css": "--via-navy-25",
+    "value": "rgba(10, 31, 59, 0.25)",
+    "category": "color"
+  },
+  {
+    "name": "via-navy-30",
+    "css": "--via-navy-30",
+    "value": "rgba(10, 31, 59, 0.30)",
     "category": "color"
   },
   {
@@ -851,10 +917,21 @@ export type TokenName =
   | 'via-ink-2'
   | 'via-ink-3'
   | 'via-navy'
+  | 'via-navy-02'
+  | 'via-navy-03'
   | 'via-navy-04'
+  | 'via-navy-05'
+  | 'via-navy-06'
   | 'via-navy-08'
+  | 'via-navy-10'
   | 'via-navy-12'
+  | 'via-navy-14'
+  | 'via-navy-16'
+  | 'via-navy-18'
   | 'via-navy-20'
+  | 'via-navy-22'
+  | 'via-navy-25'
+  | 'via-navy-30'
   | 'via-navy-40'
   | 'via-navy-60'
   | 'via-navy-80'
