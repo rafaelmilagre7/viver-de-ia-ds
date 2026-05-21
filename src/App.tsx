@@ -88,6 +88,7 @@ const Testimonial = lazy(() => import('./pages/patterns/Testimonial'));
 const Dashboard = lazy(() => import('./pages/patterns/Dashboard'));
 const Onboarding = lazy(() => import('./pages/patterns/Onboarding'));
 const Email = lazy(() => import('./pages/patterns/Email'));
+const EmailCoverage = lazy(() => import('./pages/patterns/EmailCoverage'));
 const WhatsApp = lazy(() => import('./pages/patterns/WhatsApp'));
 const Social = lazy(() => import('./pages/patterns/Social'));
 const Invoice = lazy(() => import('./pages/patterns/Invoice'));
@@ -217,6 +218,7 @@ export default function App() {
                   <Route path="dashboard" element={<Dashboard />} />
                   <Route path="onboarding" element={<Onboarding />} />
                   <Route path="email" element={<Email />} />
+                  <Route path="email-coverage" element={<EmailCoverage />} />
                   <Route path="whatsapp" element={<WhatsApp />} />
                   <Route path="social" element={<Social />} />
                   <Route path="invoice" element={<Invoice />} />

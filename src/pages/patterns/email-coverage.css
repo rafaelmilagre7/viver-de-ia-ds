@@ -1,0 +1,821 @@
+/* ============================================
+   Email coverage · 13 templates editorial
+   ============================================ */
+
+/* ---------- Tab nav ---------- */
+.vds-ec-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 14px;
+  margin-bottom: 40px;
+}
+.vds-ec-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: transparent;
+  border: 0.5px solid transparent;
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--via-ink-3);
+  cursor: pointer;
+  transition: var(--via-t);
+  letter-spacing: -0.004em;
+}
+.vds-ec-nav-btn:hover { color: var(--via-navy); }
+.vds-ec-nav-btn.is-active {
+  background: var(--via-white);
+  border-color: var(--via-navy-20);
+  color: var(--via-navy);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 4px 12px rgba(10, 31, 59, 0.06);
+}
+.vds-ec-nav-btn .mono {
+  font-family: var(--via-mono);
+  font-size: 11px;
+  color: var(--via-ink-3);
+  background: var(--via-navy-04);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.vds-ec-nav-btn.is-active .mono { color: var(--via-navy); }
+
+/* ---------- Email card wrapper ---------- */
+.vds-ec-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.vds-ec-meta {
+  padding: 22px 26px 18px;
+  border-bottom: 0.5px solid var(--via-navy-08);
+  background: var(--via-gray-50);
+}
+.vds-ec-category {
+  display: inline-block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+  margin-bottom: 12px;
+}
+.vds-ec-subject-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.vds-ec-from {
+  font-family: var(--via-font);
+  font-size: 13px;
+  color: var(--via-text);
+  font-weight: 500;
+}
+.vds-ec-time {
+  font-family: var(--via-mono);
+  font-size: 11px;
+  color: var(--via-ink-3);
+}
+.vds-ec-subject {
+  font-family: var(--via-font-display);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.022em;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+.vds-ec-preview {
+  font-family: var(--via-font);
+  font-size: 13px;
+  color: var(--via-ink-3);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Email frame (the actual email) ---------- */
+.vds-ec-frame {
+  background: var(--via-gray-100);
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Email body container · max 600px like Litmus baseline */
+.vds-ec-em-hdr,
+.vds-ec-em-body,
+.vds-ec-em-foot {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--via-white);
+  font-family: var(--via-font);
+}
+
+.vds-ec-em-hdr {
+  padding: 22px 32px;
+  border-radius: 12px 12px 0 0;
+  border: 0.5px solid var(--via-navy-08);
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+}
+
+.vds-ec-em-body {
+  padding: 28px 32px 20px;
+  border-left: 0.5px solid var(--via-navy-08);
+  border-right: 0.5px solid var(--via-navy-08);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--via-text);
+  letter-spacing: -0.004em;
+}
+.vds-ec-em-body > p {
+  margin: 0 0 14px;
+}
+.vds-ec-em-body > p:last-child { margin-bottom: 0; }
+
+.vds-ec-em-body strong {
+  font-weight: 500;
+  color: var(--via-navy);
+}
+.vds-ec-em-body em.mono,
+.vds-ec-em-body .mono {
+  font-family: var(--via-mono);
+  font-style: normal;
+  font-size: 13px;
+  background: var(--via-navy-04);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--via-navy);
+}
+
+.vds-ec-em-greet {
+  font-size: 16px;
+  margin-bottom: 16px !important;
+}
+
+.vds-ec-em-h2-flat {
+  font-family: var(--via-font-display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.022em;
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+.vds-ec-em-h2-flat em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--via-ink-3);
+}
+
+.vds-ec-em-h3 {
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+  margin: 28px 0 14px;
+}
+
+.vds-ec-em-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  counter-reset: step;
+}
+.vds-ec-em-steps li {
+  counter-increment: step;
+  padding-left: 38px;
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--via-text);
+}
+.vds-ec-em-steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--via-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--via-navy);
+  background: var(--via-navy-04);
+  border: 0.5px solid var(--via-navy-12);
+  border-radius: 8px;
+}
+
+/* CTA buttons inside email */
+.vds-ec-em-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  text-decoration: none;
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  border: 1px solid var(--via-navy-deep);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 6px 14px -4px rgba(10, 31, 59, 0.35);
+  margin: 12px 0 16px;
+}
+.vds-ec-em-cta:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 10px 22px -6px rgba(10, 31, 59, 0.45);
+}
+.vds-ec-em-cta.secondary {
+  background: var(--via-white);
+  color: var(--via-navy);
+  border: 1px solid var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 1px 2px rgba(10, 31, 59, 0.04);
+}
+.vds-ec-em-cta.secondary:hover {
+  border-color: var(--via-navy-40);
+  background: var(--via-navy-04);
+}
+
+.vds-ec-em-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0 16px;
+}
+.vds-ec-em-actions .vds-ec-em-cta { margin: 0; }
+
+.vds-ec-em-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--via-font);
+  font-size: 13px;
+  color: var(--via-navy);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--via-navy-20);
+  transition: var(--via-t);
+}
+.vds-ec-em-link-arrow:hover {
+  gap: 8px;
+  border-color: var(--via-navy);
+}
+
+.vds-ec-em-fine {
+  font-size: 12.5px;
+  color: var(--via-ink-3);
+  line-height: 1.55;
+  margin-top: 14px;
+}
+.vds-ec-em-fine strong { color: var(--via-navy); font-weight: 500; }
+
+.vds-ec-em-sign {
+  margin-top: 24px !important;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--via-navy-08);
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+}
+.vds-ec-em-sign strong {
+  font-weight: 500;
+  color: var(--via-navy);
+}
+.vds-ec-em-sign em {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--via-ink-3);
+}
+
+/* ---------- Billing plate ---------- */
+.vds-ec-em-billing-plate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 18px 22px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-12);
+  border-left: 2px solid var(--via-navy);
+  border-radius: 10px;
+  margin: 0 0 18px;
+}
+.vds-ec-em-billing-plate .lbl {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+  margin-bottom: 6px;
+}
+.vds-ec-em-billing-plate strong {
+  font-family: var(--via-mono);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.01em;
+  display: block;
+}
+.vds-ec-em-billing-plate strong.val { font-size: 22px; }
+.vds-ec-em-billing-plate em {
+  font-style: normal;
+  font-size: 11.5px;
+  color: var(--via-ink-3);
+  margin-top: 2px;
+}
+
+/* ---------- Alert block (urgent / billing falhou) ---------- */
+.vds-ec-em-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(184, 92, 92, 0.06);
+  border: 0.5px solid rgba(184, 92, 92, 0.25);
+  border-left: 2px solid var(--via-coral);
+  border-radius: 10px;
+  margin: 0 0 18px;
+}
+.vds-ec-em-alert .ico {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 92, 92, 0.12);
+  border-radius: 8px;
+  color: var(--via-coral-dark);
+  flex-shrink: 0;
+}
+.vds-ec-em-alert strong {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--via-coral-dark);
+  margin-bottom: 4px;
+}
+.vds-ec-em-alert em {
+  font-style: normal;
+  font-size: 12.5px;
+  color: var(--via-text);
+}
+
+/* ---------- Hero plate (newsletter) ---------- */
+.vds-ec-em-hero-plate {
+  position: relative;
+  padding: 28px 28px;
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse 75% 60% at 0% 0%, rgba(46, 76, 118, 0.4) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  margin: 0 0 22px;
+  overflow: hidden;
+}
+.vds-ec-em-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+}
+.vds-ec-em-hero-plate h2 {
+  font-family: var(--via-font-display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  color: var(--via-white);
+  margin: 0 0 12px;
+}
+.vds-ec-em-hero-plate h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+}
+.vds-ec-em-hero-meta {
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Newsletter pull-quote */
+.vds-ec-em-pull {
+  padding: 14px 18px;
+  background: var(--via-navy-04);
+  border-left: 2px solid var(--via-navy);
+  border-radius: 8px;
+  margin: 14px 0 18px;
+}
+.vds-ec-em-pull strong {
+  font-family: var(--via-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.005em;
+}
+
+/* ---------- Recap timeline ---------- */
+.vds-ec-em-recap {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.vds-ec-em-recap li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 10px;
+}
+.vds-ec-em-recap .t {
+  font-family: var(--via-mono);
+  font-size: 12px;
+  color: var(--via-ink-3);
+  background: var(--via-white);
+  padding: 3px 9px;
+  border-radius: 5px;
+  border: 0.5px solid var(--via-navy-12);
+  white-space: nowrap;
+  margin-top: 1px;
+}
+.vds-ec-em-recap strong {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--via-navy);
+  margin-bottom: 3px;
+  letter-spacing: -0.004em;
+}
+.vds-ec-em-recap em {
+  font-style: normal;
+  font-size: 12.5px;
+  color: var(--via-text);
+}
+
+/* ---------- Timeline (ops alert) ---------- */
+.vds-ec-em-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.vds-ec-em-timeline li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.vds-ec-em-timeline .t {
+  font-family: var(--via-mono);
+  font-size: 12px;
+  color: var(--via-navy);
+  font-weight: 500;
+  background: var(--via-navy-04);
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 0.5px solid var(--via-navy-12);
+  white-space: nowrap;
+}
+.vds-ec-em-timeline > li > div {
+  color: var(--via-text);
+}
+
+/* ---------- NPS options ---------- */
+.vds-ec-em-nps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 14px 0 16px;
+}
+.vds-ec-em-nps .opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 10px;
+  font-family: var(--via-font);
+  font-size: 14px;
+  color: var(--via-text);
+  text-decoration: none;
+  transition: var(--via-t);
+}
+.vds-ec-em-nps .opt:hover {
+  border-color: var(--via-navy-20);
+  transform: translateX(2px);
+}
+.vds-ec-em-nps .opt.good { border-left: 2px solid var(--via-success); }
+.vds-ec-em-nps .opt.mid { border-left: 2px solid var(--via-navy); }
+.vds-ec-em-nps .opt.bad { border-left: 2px solid var(--via-coral); }
+
+/* ---------- Event plate ---------- */
+.vds-ec-em-event-plate {
+  position: relative;
+  padding: 28px 28px;
+  border-radius: 14px;
+  color: var(--via-white);
+  overflow: hidden;
+  margin: 0 0 22px;
+}
+.vds-ec-em-event-plate .lbl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 14px;
+}
+.vds-ec-em-event-plate h2 {
+  font-family: var(--via-font-display);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  color: var(--via-white);
+  margin: 0 0 12px;
+}
+.vds-ec-em-event-plate h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+}
+.vds-ec-em-event-plate p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ---------- Launch plate ---------- */
+.vds-ec-em-launch-plate {
+  position: relative;
+  padding: 32px 28px 30px;
+  border-radius: 14px;
+  color: var(--via-white);
+  overflow: hidden;
+  margin: 0 0 22px;
+}
+.vds-ec-em-launch-eyebrow {
+  display: inline-block;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 14px;
+}
+.vds-ec-em-launch-plate h2 {
+  font-family: var(--via-font-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.024em;
+  color: var(--via-white);
+  margin: 0 0 14px;
+}
+.vds-ec-em-launch-plate h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+}
+.vds-ec-em-launch-meta {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ---------- Checklist ---------- */
+.vds-ec-em-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.vds-ec-em-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--via-text);
+}
+.vds-ec-em-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--via-success);
+  flex-shrink: 0;
+}
+
+/* ---------- Drip sequence (visual flow, no email rendered) ---------- */
+.vds-ec-drip {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 28px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 14px;
+}
+.vds-ec-drip-step {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 10px;
+  border-left: 2px solid var(--via-navy);
+}
+.vds-ec-drip-num {
+  font-family: var(--via-mono);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+.vds-ec-drip-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.vds-ec-drip-when {
+  font-family: var(--via-mono);
+  font-size: 11px;
+  color: var(--via-ink-3);
+  letter-spacing: -0.004em;
+}
+.vds-ec-drip-body strong {
+  font-family: var(--via-font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.018em;
+}
+.vds-ec-drip-body p {
+  font-family: var(--via-font);
+  font-size: 13.5px;
+  color: var(--via-text);
+  line-height: 1.55;
+  margin: 4px 0 0;
+}
+.vds-ec-drip-notes {
+  margin: 10px 0 0;
+  padding: 12px 16px;
+  background: var(--via-navy-04);
+  border-left: 2px solid var(--via-navy);
+  border-radius: 8px;
+  font-family: var(--via-font);
+  font-size: 13px;
+  color: var(--via-text);
+  line-height: 1.55;
+}
+.vds-ec-drip-notes strong { color: var(--via-navy); font-weight: 500; }
+
+/* ---------- Footer ---------- */
+.vds-ec-em-foot {
+  padding: 22px 32px 28px;
+  border-radius: 0 0 12px 12px;
+  border: 0.5px solid var(--via-navy-08);
+  border-top: 0.5px solid var(--via-navy-08);
+  text-align: center;
+  font-family: var(--via-font);
+  font-size: 12px;
+  color: var(--via-ink-3);
+  background: var(--via-gray-50);
+}
+.vds-ec-em-foot .mono {
+  width: 22px;
+  height: 22px;
+  margin: 0 auto 8px;
+  display: block;
+  opacity: 0.7;
+}
+.vds-ec-em-foot p {
+  margin: 0 0 6px;
+  line-height: 1.55;
+}
+.vds-ec-em-foot strong {
+  font-weight: 500;
+  color: var(--via-navy);
+}
+.vds-ec-em-foot-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px !important;
+}
+.vds-ec-em-foot-links a {
+  color: var(--via-ink-3);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--via-navy-08);
+}
+.vds-ec-em-foot-links a:hover {
+  color: var(--via-navy);
+  border-color: var(--via-navy-20);
+}
+.vds-ec-em-foot-links span {
+  color: var(--via-navy-12);
+}
+
+/* ---------- Notes (after each email) ---------- */
+.vds-ec-notes {
+  padding: 18px 26px;
+  background: var(--via-white);
+  border-top: 0.5px solid var(--via-navy-08);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.vds-ec-note .lbl {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+  margin-bottom: 6px;
+}
+.vds-ec-note p {
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  color: var(--via-text);
+  line-height: 1.5;
+  margin: 0;
+}
+.vds-ec-note .mono {
+  font-family: var(--via-mono);
+  font-size: 11.5px;
+  color: var(--via-navy);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 720px) {
+  .vds-ec-em-billing-plate { grid-template-columns: 1fr; }
+  .vds-ec-frame { padding: 14px; }
+  .vds-ec-em-hdr,
+  .vds-ec-em-body,
+  .vds-ec-em-foot {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}

@@ -124,6 +124,7 @@ export const navigation: NavGroup[] = [
       { label: 'Dashboard', to: '/patterns/dashboard' },
       { label: 'Onboarding', to: '/patterns/onboarding' },
       { label: 'Email templates', to: '/patterns/email' },
+      { label: 'Email coverage (13 templates editorial)', to: '/patterns/email-coverage' },
       { label: 'WhatsApp preview', to: '/patterns/whatsapp' },
       { label: 'Social media posts', to: '/patterns/social' },
       { label: 'Invoice / recibo', to: '/patterns/invoice' },
