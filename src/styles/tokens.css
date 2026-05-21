@@ -406,6 +406,7 @@ h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-siz
   color: var(--via-white); /* fallback se gradient não suportado */
 }
 
+
 p { margin: 0; }
 a { color: var(--via-navy); text-decoration: none; }
 a:hover { text-decoration: underline; }

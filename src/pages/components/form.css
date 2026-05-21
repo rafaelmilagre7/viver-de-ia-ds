@@ -174,7 +174,7 @@
 }
 .via-field .cue.navy { background: rgba(10,31,59,0.10); color: var(--via-navy); }
 .via-field .cue.danger { background: rgba(184,58,58,0.10); color: var(--via-danger); }
-.via-field .cue.muted { background: var(--via-gray-100); color: var(--via-gray-400); }
+.via-field .cue.muted { background: var(--via-gray-100); color: var(--via-gray-600); }
 
 /* ---- Inputs com prefix/icon/select ---- */
 .val-with-icon, .val-with-prefix {
