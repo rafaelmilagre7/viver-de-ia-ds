@@ -1,5 +1,5 @@
 /* ============================================
-   <Progress> · barra editorial · 3 tones × 3 sizes
+   <Progress> · barra editorial premium
    ============================================ */
 .via-progress {
   display: flex;
@@ -34,9 +34,11 @@
 .via-progress__track {
   position: relative;
   width: 100%;
-  background: rgba(10, 31, 59, 0.08);
+  background:
+    linear-gradient(180deg, var(--via-navy-10), var(--via-navy-06));
   border-radius: 999px;
   overflow: hidden;
+  box-shadow: inset 0 1px 2px var(--via-navy-08);
 }
 
 .via-progress--sm .via-progress__track { height: 4px; }
@@ -46,22 +48,57 @@
 .via-progress__fill {
   height: 100%;
   border-radius: inherit;
-  transition: width 0.45s cubic-bezier(.2, .8, .2, 1);
+  transition: width 0.6s cubic-bezier(.16, 1, .3, 1);
   position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer editorial · light sweep contínuo */
+.via-progress__fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40%;
+  width: 35%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  animation: via-progress-shimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes via-progress-shimmer {
+  0%   { left: -40%; }
+  100% { left: 140%; }
 }
 
 /* ===== Tones ===== */
 .via-progress--navy .via-progress__fill {
   background: linear-gradient(90deg, var(--via-navy, #0A1F3B), var(--via-blue, #1E3A5F));
-  box-shadow: 0 0 8px -2px rgba(10, 31, 59, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 0 10px -2px var(--via-navy-30);
 }
 
-/* "accent" tone agora é apenas um sinônimo editorial pra navy-deep gradient · paleta restrita */
+/* "accent" tone · navy-deep gradient · paleta restrita */
 .via-progress--accent .via-progress__fill {
   background: linear-gradient(90deg, var(--via-navy-deep), var(--via-navy));
-  box-shadow: 0 0 8px -2px rgba(10, 31, 59, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 12px -2px var(--via-navy-40);
 }
 
 .via-progress--coral .via-progress__fill {
   background: linear-gradient(90deg, var(--via-coral-dark, #8C2C2C), var(--via-coral, #B85C5C));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 0 10px -2px rgba(184, 92, 92, 0.32);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-progress__fill::after { animation: none !important; }
+  .via-progress__fill { transition: width 0.2s ease !important; }
 }

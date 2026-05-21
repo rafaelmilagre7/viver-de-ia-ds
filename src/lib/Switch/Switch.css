@@ -27,9 +27,14 @@
   position: relative;
   display: inline-block;
   flex-shrink: 0;
-  background: rgba(10, 31, 59, 0.18);
+  background: linear-gradient(180deg, var(--via-navy-14), var(--via-navy-20));
   border-radius: 999px;
-  transition: background 0.22s cubic-bezier(.2, .8, .2, 1);
+  transition:
+    background 0.32s cubic-bezier(.16, 1, .3, 1),
+    box-shadow 0.32s ease;
+  box-shadow:
+    inset 0 1px 2px var(--via-navy-12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.10);
 }
 
 .via-switch--md .via-switch__track {
@@ -46,12 +51,15 @@
   position: absolute;
   top: 2px;
   left: 2px;
-  background: var(--via-white);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 1), rgba(247, 248, 250, 0.92));
   border-radius: 999px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 2px rgba(10, 31, 59, 0.25);
-  transition: transform 0.22s cubic-bezier(.2, .8, .2, 1);
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 -1px 0 var(--via-navy-08) inset,
+    0 0 0 0.5px var(--via-navy-12),
+    0 1px 3px var(--via-navy-25);
+  transition: transform 0.4s cubic-bezier(.34, 1.56, .64, 1);
 }
 
 .via-switch--md .via-switch__thumb {
@@ -65,7 +73,11 @@
 }
 
 .via-switch__input:checked + .via-switch__track {
-  background: var(--via-navy, #0A1F3B);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  box-shadow:
+    inset 0 1px 2px var(--via-navy-40),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.10),
+    0 0 12px var(--via-navy-22);
 }
 
 .via-switch--md .via-switch__input:checked + .via-switch__track .via-switch__thumb {
