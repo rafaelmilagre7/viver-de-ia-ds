@@ -1,0 +1,135 @@
+/* ============================================
+   <TimePicker> · seletor de horário HH:MM
+   ============================================ */
+.via-tp {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+  min-width: 180px;
+}
+
+.via-tp__label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.006em;
+  color: var(--via-navy, #0A1F3B);
+}
+
+.via-tp__field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px 8px 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.78));
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid var(--via-border, #D0D5DD);
+  border-radius: 10px;
+  transition: border-color .22s ease, background .22s ease, box-shadow .22s ease;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.86) inset,
+    0 1px 2px var(--via-navy-04);
+}
+
+.via-tp--sm .via-tp__field { padding: 6px 8px 6px 10px; }
+
+.via-tp__field:hover {
+  border-color: var(--via-navy-22);
+}
+
+.via-tp__field:focus-within {
+  border-color: var(--via-navy-40);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.92));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 3px var(--via-navy-10),
+    0 6px 14px -8px var(--via-navy-12);
+}
+
+.via-tp__icon {
+  color: var(--via-ink-2, #5E6B82);
+  flex-shrink: 0;
+  transition: color .22s ease;
+}
+.via-tp__field:focus-within .via-tp__icon { color: var(--via-navy); }
+
+.via-tp__cell {
+  width: 32px;
+  text-align: center;
+  font-family: var(--via-font-mono, 'Geist Mono', monospace);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  color: var(--via-navy, #0A1F3B);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-variant-numeric: tabular-nums;
+}
+.via-tp--sm .via-tp__cell { font-size: 13px; width: 28px; }
+
+.via-tp__cell::placeholder {
+  color: var(--via-ink-3, #6B7891);
+}
+
+.via-tp__sep {
+  font-family: var(--via-font-mono, monospace);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--via-ink-2, #5E6B82);
+}
+
+.via-tp__steps {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 4px;
+  gap: 1px;
+}
+.via-tp__steps button {
+  width: 16px;
+  height: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--via-ink-3, #6B7891);
+  font-size: 7px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background .15s ease, color .15s ease;
+  padding: 0;
+  line-height: 1;
+}
+.via-tp__steps button:hover:not(:disabled) {
+  background: var(--via-navy-08);
+  color: var(--via-navy, #0A1F3B);
+}
+
+.via-tp.has-error .via-tp__field { border-color: rgba(184, 92, 92, 0.40); }
+.via-tp.has-error .via-tp__field:focus-within {
+  border-color: var(--via-coral, #B85C5C);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 3px rgba(184, 92, 92, 0.12);
+}
+
+.via-tp.is-disabled .via-tp__field {
+  background: var(--via-gray-100, #F0F2F5);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.via-tp__hint {
+  margin: 0;
+  font-size: 11.5px;
+  color: var(--via-ink-3, #6B7891);
+  letter-spacing: -0.004em;
+  line-height: 1.4;
+}
+.via-tp__hint.is-error { color: var(--via-coral-dark, #8C2C2C); }
+
+@media (prefers-reduced-motion: reduce) {
+  .via-tp__field, .via-tp__icon, .via-tp__steps button { transition: none !important; }
+}

@@ -47,5 +47,12 @@ export { TagInput, type TagInputProps } from './TagInput/TagInput';
 export { Calendar, type CalendarProps } from './Calendar/Calendar';
 export { Carousel, type CarouselProps } from './Carousel/Carousel';
 
+/* Onda 1B · 5 componentes (form + overlay) · maio/2026 */
+export { TimePicker, type TimePickerProps } from './TimePicker/TimePicker';
+export { Sheet, type SheetProps } from './Sheet/Sheet';
+export { ContextMenu, type ContextMenuProps, type ContextMenuOption } from './ContextMenu/ContextMenu';
+export { MultiSelect, type MultiSelectProps, type MultiSelectOption } from './MultiSelect/MultiSelect';
+export { DateRangePicker, type DateRangePickerProps, type DateRange } from './DateRangePicker/DateRangePicker';
+
 /* Tokens · runtime + types · auto-generated from tokens.css */
 export { tokens, tokensList, cssVar, type Token, type TokenName } from './tokens';
