@@ -26,39 +26,39 @@ export default function Achievement() {
 }
 
 /* ---------- Activity Rings · Apple Watch editorial ---------- */
-function ActivityRingsSection() {
-  const Ring = ({ pct, size, stroke, color, id }: { pct: number; size: number; stroke: number; color: string; id: string; glow?: string }) => {
-    const r = (size - stroke) / 2;
-    const c = 2 * Math.PI * r;
-    const dash = pct * c;
-    return (
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-        <defs>
-          <filter id={`glow-${id}`}>
-            <feGaussianBlur stdDeviation="2" result="b" />
-            <feMerge>
-              <feMergeNode in="b" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth={stroke} />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={r}
-          fill="none"
-          strokeWidth={stroke}
-          strokeLinecap="round"
-          strokeDasharray={`${dash} ${c}`}
-          transform={`rotate(-90 ${size / 2} ${size / 2})`}
-          filter={`url(#glow-${id})`}
-          style={{ stroke: color, transition: 'stroke-dasharray 800ms cubic-bezier(0.22, 0.61, 0.36, 1)' }}
-        />
-      </svg>
-    );
-  };
+function Ring({ pct, size, stroke, color, id }: { pct: number; size: number; stroke: number; color: string; id: string; glow?: string }) {
+  const r = (size - stroke) / 2;
+  const c = 2 * Math.PI * r;
+  const dash = pct * c;
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+      <defs>
+        <filter id={`glow-${id}`}>
+          <feGaussianBlur stdDeviation="2" result="b" />
+          <feMerge>
+            <feMergeNode in="b" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth={stroke} />
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={r}
+        fill="none"
+        strokeWidth={stroke}
+        strokeLinecap="round"
+        strokeDasharray={`${dash} ${c}`}
+        transform={`rotate(-90 ${size / 2} ${size / 2})`}
+        filter={`url(#glow-${id})`}
+        style={{ stroke: color, transition: 'stroke-dasharray 800ms cubic-bezier(0.22, 0.61, 0.36, 1)' }}
+      />
+    </svg>
+  );
+}
 
+function ActivityRingsSection() {
   return (
     <Section title="Activity rings · ritmo da semana" meta="3 anéis aninhados · estudo · prática · comunidade">
       <div className="vds-rings-stage via-mesh-navy via-noise">
