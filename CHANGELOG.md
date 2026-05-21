@@ -26,14 +26,11 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
   - `vite.md` · SPA + Geist via CDN + dark mode toggle
   - `remix.md` · SSR + `links()` export + dark mode sem flash via cookie
   - `README.md` · índice + quick start universal
-- **NPM publish prep:**
-  - `RELEASE.md` com checklist completo + setup do `NPM_TOKEN` + provenance + versionamento semântico + rollback
-  - `scripts/smoke-test-lib.mjs` valida bundle (20 checks: package.json, files exist, exports resolve, tokens.json válido, ESM bundle com 35 named exports, types completos)
-  - `finalize-lib.mjs`: `publishConfig.access: 'public'` + `provenance: true` + `repository` + `homepage` + `bugs`
-- **Proof of consumption** (`examples/vite-starter/`):
-  - App Vite mínima que consome `@viverdeia/design-system` via `file:../../dist/lib`
-  - Demonstra 10 componentes reais funcionando como dependency externa
 - **Skill `/viver-de-ia-design` atualizada** com regras consolidadas (paleta restrita endurecida, library 31 componentes, CI/CD)
+
+### Removido
+
+- `examples/vite-starter/`, `.github/workflows/release.yml`, `RELEASE.md`, `scripts/smoke-test-lib.mjs`, tag `v0.4.0` no remote — todos focavam em publicar `@viverdeia/design-system` no npm público. **DS é referência interna** · não publica pro mundo. Mantemos `finalize-lib.mjs` pra gerar o bundle local, mas sem release workflow npm.
 
 ### Modificado
 
