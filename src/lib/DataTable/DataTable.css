@@ -4,10 +4,15 @@
 
 .via-dt {
   width: 100%;
-  background: var(--via-white, #FFFFFF);
-  border: 0.5px solid var(--via-navy-12, rgba(10,31,59,0.12));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 250, 0.78));
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(10, 31, 59, 0.10);
   border-radius: 12px;
   overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.86) inset,
+    0 12px 28px -16px rgba(10, 31, 59, 0.10);
 }
 
 .via-dt__caption {
@@ -18,7 +23,7 @@
   color: var(--via-navy, #0A1F3B);
   letter-spacing: -0.004em;
   border-bottom: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
-  background: var(--via-gray-50, #F7F8FA);
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.03), transparent);
 }
 
 .via-dt__scroll {
@@ -32,7 +37,7 @@
 }
 
 .via-dt thead {
-  background: var(--via-gray-50, #F7F8FA);
+  background: linear-gradient(180deg, rgba(10, 31, 59, 0.04), rgba(10, 31, 59, 0.01));
 }
 .via-dt th {
   padding: 10px 14px;

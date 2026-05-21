@@ -17,8 +17,27 @@
 }
 
 .via-empty-state--soft {
-  background: rgba(10, 31, 59, 0.025);
-  border: 0.5px dashed var(--via-border, #D0D5DD);
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(247, 248, 250, 0.62));
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px dashed rgba(10, 31, 59, 0.18);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.76) inset,
+    0 6px 14px -10px rgba(10, 31, 59, 0.08);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.via-empty-state--soft::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(420px 220px at 0% 0%, rgba(10, 31, 59, 0.04), transparent 60%),
+    radial-gradient(380px 200px at 100% 100%, rgba(10, 31, 59, 0.03), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .via-empty-state--navy {

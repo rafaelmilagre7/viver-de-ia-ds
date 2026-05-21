@@ -3,22 +3,28 @@
    ============================================ */
 
 .via-alert {
-  --via-alert-bg: var(--via-gray-50, #F7F8FA);
-  --via-alert-border: var(--via-navy-12, rgba(10,31,59,0.12));
+  --via-alert-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.78));
+  --via-alert-border: rgba(10, 31, 59, 0.12);
   --via-alert-accent: var(--via-navy, #0A1F3B);
   --via-alert-icon-bg: var(--via-navy-04, rgba(10,31,59,0.04));
 
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 12px;
   background: var(--via-alert-bg);
-  border: 0.5px solid var(--via-alert-border);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--via-alert-border);
   border-left: 2px solid var(--via-alert-accent);
   border-radius: 12px;
   padding: 14px 16px;
   font-family: var(--via-font, inherit);
   color: var(--via-text, #344054);
   line-height: 1.5;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.86) inset,
+    0 6px 14px -10px rgba(10, 31, 59, 0.12);
 }
 
 /* --- Tones --- */
