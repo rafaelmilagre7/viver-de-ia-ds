@@ -1,213 +1,185 @@
 /* ==============================================================
-   Personality · 7 traits + spectrum + quiz
-   Atmosfera navy + liquid glass cards · editorial premium
+   Personality · 7 atributos + spectrum + quiz
+   Padrão editorial Philosophy-style · liquid glass LIGHT
    ============================================================== */
 
-/* ---------- Stage atmosphere · navy mesh + noise envelope ---------- */
-.vds-pers-stage {
+/* ---------- Trait section · 1 article por atributo ---------- */
+.vds-pers-trait {
   position: relative;
-  padding: 40px;
-  border-radius: 28px;
-  background:
-    radial-gradient(ellipse 72% 60% at 12% 0%, rgba(46,76,118,0.42) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 70% at 100% 100%, rgba(30,58,95,0.32) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
-  color: var(--via-white);
-  overflow: hidden;
+  padding: 36px 36px 32px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--via-border-soft);
   isolation: isolate;
+  overflow: hidden;
   box-shadow:
-    0 0 0 1px rgba(10,31,59,0.04),
-    0 24px 56px -16px rgba(10,31,59,0.32);
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 40px -22px rgba(10, 31, 59, 0.14);
 }
-.vds-pers-stage::after {
+.vds-pers-trait::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: var(--via-noise);
-  background-repeat: repeat;
-  mix-blend-mode: overlay;
-  opacity: 0.42;
+  background: radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.035), transparent 60%);
   pointer-events: none;
-  border-radius: inherit;
-  z-index: 0;
+  z-index: -1;
 }
-.vds-pers-stage > * { position: relative; z-index: 1; }
 
-/* ---------- Traits grid ---------- */
-.vds-pers-grid {
+/* Header · número grande + ícone + h3 + summary */
+.vds-pers-trait > header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: 88px 1fr auto;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 30px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--via-border-soft);
+}
+@media (max-width: 720px) {
+  .vds-pers-trait > header {
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+  }
+  .vds-pers-num { grid-row: 2; grid-column: 1 / -1; }
 }
 
-/* ---------- Trait card · liquid glass sobre navy ---------- */
-.vds-pers-card {
-  position: relative;
-  padding: 28px 26px 24px;
-  background:
-    radial-gradient(ellipse 70% 50% at 0% 0%, rgba(255,255,255,0.08) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.025) 100%);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 18px;
-  color: var(--via-white);
-  overflow: hidden;
-  isolation: isolate;
-  transition: transform var(--via-t), border-color var(--via-t), box-shadow var(--via-t);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.10),
-    0 8px 22px -8px rgba(0,0,0,0.30);
-}
-/* Bar fade navy signature à esquerda · revela no hover */
-.vds-pers-card::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 2px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.85), transparent);
-  opacity: 0;
-  transition: opacity var(--via-t);
-}
-.vds-pers-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255,255,255,0.20);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.16),
-    0 18px 40px -12px rgba(0,0,0,0.42);
-}
-.vds-pers-card:hover::before { opacity: 1; }
-
-/* ---------- Card header · número grande + ícone glass tile ---------- */
-.vds-pers-card header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 18px;
-}
 .vds-pers-num {
   font-family: var(--via-font-display);
+  font-size: 56px;
   font-weight: 500;
-  font-size: 34px;
+  color: rgba(10, 31, 59, 0.12);
+  letter-spacing: -0.04em;
   line-height: 1;
-  letter-spacing: -0.025em;
-  color: rgba(255,255,255,0.36);
-  font-feature-settings: "tnum" 1, "lnum" 1;
-}
-.vds-pers-icon {
-  width: 38px;
-  height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.20), rgba(255,255,255,0.06)),
-    rgba(255,255,255,0.04);
-  border: 0.5px solid rgba(255,255,255,0.20);
-  color: var(--via-white);
-  flex-shrink: 0;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.18),
-    0 1px 2px rgba(0,0,0,0.18);
+  font-variant-numeric: tabular-nums;
 }
 
-/* ---------- Card title + summary ---------- */
-.vds-pers-card h3 {
-  font-family: var(--via-font-display);
-  font-size: 22px;
-  font-weight: 500;
-  color: inherit;
-  letter-spacing: -0.022em;
-  line-height: 1.15;
-  margin: 0 0 8px;
+.vds-pers-trait-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
 }
+
+.vds-pers-trait h3 {
+  margin: 0;
+  font-family: var(--via-font-display);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.024em;
+  line-height: 1.14;
+  color: var(--via-navy);
+  max-width: 720px;
+}
+.vds-pers-trait h3 em {
+  font-family: var(--via-font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--via-ink-2);
+}
+
 .vds-pers-sum {
   font-family: var(--via-font-display);
   font-style: italic;
   font-weight: 400;
-  font-size: 15px;
-  color: rgba(255,255,255,0.74);
-  line-height: 1.5;
-  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--via-ink-3);
+  margin: 0;
+  max-width: 640px;
 }
 
-/* ---------- Comportamento / Evita pair ---------- */
-.vds-pers-pair {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-top: 18px;
-  border-top: 0.5px solid rgba(255,255,255,0.12);
+.vds-pers-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.62)),
+    linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
+  border: 0.5px solid var(--via-navy-12);
+  color: var(--via-navy);
+  flex-shrink: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    0 1px 3px rgba(10, 31, 59, 0.06);
 }
+
+/* Pair · Comportamento + Evita ---------- */
+.vds-pers-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 720px) {
+  .vds-pers-pair { grid-template-columns: 1fr; }
+}
+
 .vds-pers-do,
 .vds-pers-dont {
-  padding: 12px 14px;
-  border-radius: 10px;
+  position: relative;
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-08);
+  box-shadow: 0 1px 2px rgba(10, 31, 59, 0.03);
 }
-.vds-pers-do {
-  background: rgba(255,255,255,0.05);
-  border-left: 2px solid rgba(255,255,255,0.70);
-}
-.vds-pers-dont {
-  background: rgba(184, 92, 92, 0.10);
-  border-left: 2px solid var(--via-coral);
-}
-.vds-pers-do .lbl,
+.vds-pers-do  { border-left: 2px solid var(--via-navy); }
+.vds-pers-dont { border-left: 2px solid var(--via-coral); }
+
+.vds-pers-do  .lbl,
 .vds-pers-dont .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
-.vds-pers-do .lbl  { color: rgba(255,255,255,0.78); }
-.vds-pers-dont .lbl { color: rgba(255, 180, 180, 0.88); }
-.vds-pers-do p,
+.vds-pers-do  .lbl { color: var(--via-navy); }
+.vds-pers-dont .lbl { color: var(--via-coral-dark); }
+
+.vds-pers-do  p,
 .vds-pers-dont p {
   font-family: var(--via-font);
-  font-size: 12.5px;
-  color: rgba(255,255,255,0.82);
-  line-height: 1.55;
+  font-size: 13.5px;
+  color: var(--via-text);
+  line-height: 1.6;
   margin: 0;
 }
-.vds-pers-dont p { color: rgba(255,255,255,0.72); }
 
-/* ---------- Spectrum (axes) · glass light card ---------- */
+/* ---------- Spectrum (axes) · liquid glass card ---------- */
 .vds-pers-spectrum {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 28px;
   padding: 36px 38px;
   border-radius: 22px;
-  background:
-    radial-gradient(ellipse 60% 70% at 12% 0%, rgba(10,31,59,0.06) 0%, transparent 55%),
-    linear-gradient(180deg, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0.62) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.96);
+  border: 1px solid var(--via-border-soft);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.86),
-    0 12px 32px -10px rgba(10,31,59,0.14);
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 40px -22px rgba(10, 31, 59, 0.14);
   overflow: hidden;
+  isolation: isolate;
 }
-.vds-pers-spectrum::after {
+.vds-pers-spectrum::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: var(--via-noise);
-  background-repeat: repeat;
-  mix-blend-mode: overlay;
-  opacity: 0.20;
+  background: radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.035), transparent 60%);
   pointer-events: none;
-  border-radius: inherit;
+  z-index: -1;
 }
+
 .vds-pers-axis {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -216,9 +188,9 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: baseline;
-  gap: 18px;
+  gap: 22px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--via-ink-3);
 }
 .vds-pers-axis-label > span:first-child { text-align: left; }
@@ -231,36 +203,36 @@
   letter-spacing: -0.004em;
   color: var(--via-navy);
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72));
-  padding: 4px 12px;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76));
+  padding: 5px 14px;
   border-radius: 999px;
   border: 0.5px solid var(--via-navy-12);
   white-space: nowrap;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.86),
-    0 1px 3px rgba(10,31,59,0.06);
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    0 1px 3px rgba(10, 31, 59, 0.06);
 }
 .vds-pers-axis-track {
   position: relative;
-  height: 5px;
+  height: 6px;
   background: linear-gradient(90deg, var(--via-navy-08), var(--via-navy-12), var(--via-navy-08));
   border-radius: 999px;
 }
 .vds-pers-axis-dot {
   position: absolute;
   top: 50%;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 2px solid var(--via-white);
   box-shadow:
-    0 0 0 1px rgba(10,31,59,0.10),
-    0 4px 10px rgba(10,31,59,0.32);
+    0 0 0 1px rgba(10, 31, 59, 0.10),
+    0 4px 12px rgba(10, 31, 59, 0.32);
   transform: translate(-50%, -50%);
 }
 
-/* ---------- Quiz · liquid glass card por par ---------- */
+/* ---------- Quiz · liquid glass card editorial ---------- */
 .vds-pers-test {
   display: flex;
   flex-direction: column;
@@ -271,41 +243,34 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 14px;
-  padding: 24px 26px;
-  border-radius: 18px;
-  background:
-    radial-gradient(ellipse 70% 50% at 0% 0%, rgba(10,31,59,0.06) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.62) 100%);
+  gap: 16px;
+  padding: 28px 30px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.96);
+  border: 1px solid var(--via-border-soft);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.84),
-    0 8px 22px -10px rgba(10,31,59,0.14);
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 18px 40px -22px rgba(10, 31, 59, 0.14);
   overflow: hidden;
   isolation: isolate;
 }
-.vds-pers-quiz::after {
+.vds-pers-quiz::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: var(--via-noise);
-  background-repeat: repeat;
-  mix-blend-mode: overlay;
-  opacity: 0.18;
+  background: radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.035), transparent 60%);
   pointer-events: none;
-  border-radius: inherit;
-  z-index: 0;
+  z-index: -1;
 }
-.vds-pers-quiz > * { position: relative; z-index: 1; }
 @media (max-width: 760px) {
   .vds-pers-quiz { grid-template-columns: 1fr; }
 }
 
 .vds-pers-opt {
-  padding: 18px 20px;
-  border-radius: 12px;
+  padding: 20px 22px;
+  border-radius: 14px;
   background: var(--via-white);
   border: 0.5px solid var(--via-navy-08);
   transition: border-color var(--via-t), box-shadow var(--via-t);
@@ -313,34 +278,30 @@
 .vds-pers-opt.good {
   border-color: var(--via-navy-40);
   border-left: 2px solid var(--via-navy);
-  background:
-    radial-gradient(ellipse 80% 60% at 0% 0%, rgba(10,31,59,0.04) 0%, transparent 60%),
-    var(--via-white);
   box-shadow:
     inset 0 1px 0 var(--via-white),
-    0 4px 14px -6px rgba(10,31,59,0.16);
+    0 4px 14px -6px rgba(10, 31, 59, 0.16);
 }
 .vds-pers-opt.bad {
-  border-color: rgba(184, 92, 92, 0.30);
   border-left: 2px solid var(--via-coral);
-  opacity: 0.78;
+  opacity: 0.84;
   background: rgba(184, 92, 92, 0.03);
 }
 .vds-pers-opt .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .vds-pers-opt.good .lbl { color: var(--via-navy); }
-.vds-pers-opt.bad .lbl  { color: var(--via-coral-dark); }
+.vds-pers-opt.bad  .lbl { color: var(--via-coral-dark); }
 .vds-pers-opt p {
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 15px;
+  font-size: 15.5px;
   color: var(--via-navy);
   line-height: 1.5;
   margin: 0;
@@ -351,15 +312,14 @@
   text-decoration-color: rgba(184, 92, 92, 0.36);
   text-decoration-thickness: 1px;
 }
-
 .vds-pers-why {
   grid-column: 1 / -1;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--via-text);
   margin: 6px 0 0;
-  line-height: 1.55;
-  padding-top: 14px;
+  line-height: 1.6;
+  padding-top: 16px;
   border-top: 0.5px solid var(--via-navy-08);
 }
 .vds-pers-why strong {
@@ -368,12 +328,12 @@
   color: var(--via-navy);
 }
 
-/* ---------- Mobile ---------- */
+/* ---------- Mobile · respiro reduzido ---------- */
 @media (max-width: 720px) {
-  .vds-pers-stage    { padding: 24px; border-radius: 22px; }
+  .vds-pers-trait    { padding: 26px 24px 22px; }
   .vds-pers-spectrum { padding: 26px 24px; }
-  .vds-pers-quiz     { padding: 20px; }
-  .vds-pers-card     { padding: 22px 22px 20px; }
-  .vds-pers-num      { font-size: 28px; }
-  .vds-pers-card h3  { font-size: 20px; }
+  .vds-pers-quiz     { padding: 22px 22px; }
+  .vds-pers-num      { font-size: 44px; }
+  .vds-pers-trait h3 { font-size: 24px; }
+  .vds-pers-sum      { font-size: 15.5px; }
 }
