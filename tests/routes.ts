@@ -104,6 +104,7 @@ export const routes: Route[] = [
   { path: '/patterns/landing-elements', settleMs: 200 },
   { path: '/patterns/commercial', settleMs: 200 },
   { path: '/patterns/editorial-content', settleMs: 200 },
+  { path: '/patterns/event-collateral', settleMs: 200 },
   { path: '/patterns/invoice' },
   { path: '/patterns/slides' },
   { path: '/patterns/curriculum' },

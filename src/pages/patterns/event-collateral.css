@@ -1,0 +1,193 @@
+/* ============================================
+   Event collateral · Leaders AI guidelines
+   ============================================ */
+
+/* ---------- Brand relation ---------- */
+.vds-ev-relation {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+@media (max-width: 880px) { .vds-ev-relation { grid-template-columns: 1fr; } }
+
+.vds-ev-relation-canvas {
+  position: relative;
+  aspect-ratio: 1.5 / 1;
+  border-radius: 14px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+.vds-ev-relation-monogram {
+  width: 56px;
+  height: auto;
+  opacity: 0.92;
+}
+.vds-ev-relation-plus {
+  font-family: var(--via-font-display);
+  font-size: 32px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+}
+.vds-ev-relation-leaders {
+  height: 80px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.96;
+}
+
+.vds-ev-relation-text h3 {
+  font-family: var(--via-font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.022em;
+  margin: 0 0 14px;
+}
+.vds-ev-relation-text p {
+  font-family: var(--via-font);
+  font-size: 14px;
+  color: var(--via-text);
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+.vds-ev-relation-text p strong { font-weight: 500; color: var(--via-navy); }
+
+/* ---------- Pieces grid ---------- */
+.vds-ev-pieces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 14px;
+}
+.vds-ev-piece {
+  display: flex;
+  flex-direction: column;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.vds-ev-piece header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 0.5px solid var(--via-navy-08);
+}
+.vds-ev-piece-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45)),
+    linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+  border: 0.5px solid var(--via-navy-12);
+  color: var(--via-navy);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 1px 2px rgba(10, 31, 59, 0.04);
+  flex-shrink: 0;
+}
+.vds-ev-piece header strong {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.004em;
+  margin-bottom: 3px;
+}
+.vds-ev-piece header em {
+  font-style: normal;
+  font-size: 11.5px;
+  color: var(--via-ink-3);
+  line-height: 1.4;
+}
+
+.vds-ev-piece-body,
+.vds-ev-piece-mock {
+  padding: 16px 22px;
+}
+.vds-ev-piece-mock {
+  background: var(--via-gray-50);
+  border-top: 0.5px solid var(--via-navy-08);
+  margin-top: auto;
+}
+.vds-ev-piece-eyebrow,
+.vds-ev-piece-mock-eyebrow {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+  margin-bottom: 8px;
+}
+.vds-ev-piece-body p,
+.vds-ev-piece-mock p {
+  font-family: var(--via-font);
+  font-size: 13px;
+  color: var(--via-text);
+  line-height: 1.55;
+  margin: 0;
+}
+.vds-ev-piece-mock p {
+  font-family: var(--via-mono);
+  font-size: 11.5px;
+  color: var(--via-navy);
+}
+
+/* ---------- Rules ---------- */
+.vds-ev-rules {
+  padding: 28px 32px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 14px;
+}
+.vds-ev-rules h4 {
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+  margin: 0 0 18px;
+}
+.vds-ev-rules ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: ev-rule;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.vds-ev-rules li {
+  counter-increment: ev-rule;
+  position: relative;
+  padding-left: 50px;
+  font-family: var(--via-font);
+  font-size: 14.5px;
+  color: var(--via-text);
+  line-height: 1.65;
+}
+.vds-ev-rules li::before {
+  content: counter(ev-rule, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--via-mono);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.01em;
+}
+.vds-ev-rules li strong { font-weight: 500; color: var(--via-navy); }
