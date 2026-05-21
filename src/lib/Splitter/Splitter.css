@@ -1,0 +1,85 @@
+/* ============================================
+   <Splitter> · divisor arrastável editorial
+   ============================================ */
+.via-splitter {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-splitter--horizontal {
+  flex-direction: row;
+}
+
+.via-splitter--vertical {
+  flex-direction: column;
+}
+
+.via-splitter__pane {
+  overflow: auto;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+}
+
+.via-splitter__handle {
+  position: relative;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .22s ease;
+  outline: none;
+}
+
+.via-splitter--horizontal .via-splitter__handle {
+  width: 8px;
+  cursor: col-resize;
+}
+
+.via-splitter--vertical .via-splitter__handle {
+  height: 8px;
+  width: 100%;
+  cursor: row-resize;
+}
+
+.via-splitter__handle:hover {
+  background: var(--via-navy-06);
+}
+
+.via-splitter__handle:focus-visible {
+  background: var(--via-navy-08);
+  box-shadow: 0 0 0 2px var(--via-navy-22);
+}
+
+.via-splitter__grip {
+  background: var(--via-navy-14);
+  border-radius: 2px;
+  transition: background .22s ease, transform .22s cubic-bezier(.16, 1, .3, 1);
+}
+
+.via-splitter--horizontal .via-splitter__grip {
+  width: 3px;
+  height: 28px;
+}
+
+.via-splitter--vertical .via-splitter__grip {
+  height: 3px;
+  width: 28px;
+}
+
+.via-splitter__handle:hover .via-splitter__grip,
+.via-splitter__handle:focus-visible .via-splitter__grip {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  transform: scale(1.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-splitter__handle, .via-splitter__grip { transition: none !important; }
+}

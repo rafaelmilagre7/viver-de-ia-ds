@@ -1,0 +1,123 @@
+/* ============================================
+   <TreeView> · árvore hierárquica
+   ============================================ */
+.via-tv {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-tv ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.via-tv__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 5px 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.006em;
+  color: var(--via-text-body, var(--via-gray-700));
+  text-align: left;
+  border-radius: 6px;
+  transition: background .15s ease, color .15s ease;
+  position: relative;
+}
+
+.via-tv__row:hover {
+  background: var(--via-navy-04);
+  color: var(--via-navy, #0A1F3B);
+}
+
+.via-tv__row.is-selected {
+  background: var(--via-navy-08);
+  color: var(--via-navy, #0A1F3B);
+  font-weight: 600;
+}
+
+.via-tv__row.is-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--via-navy, #0A1F3B);
+  border-radius: 2px;
+}
+
+.via-tv__row.is-highlighted {
+  color: var(--via-coral-dark, #8C2C2C);
+}
+
+.via-tv__chev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: var(--via-ink-3, #6B7891);
+  transition: transform .25s cubic-bezier(.16, 1, .3, 1);
+  flex-shrink: 0;
+}
+
+.via-tv__chev.is-leaf {
+  visibility: hidden;
+}
+
+.via-tv__chev.is-open {
+  transform: rotate(90deg);
+}
+
+.via-tv__icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--via-ink-2, #5E6B82);
+  flex-shrink: 0;
+}
+
+.via-tv__label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.via-tv__count {
+  font-family: var(--via-font-mono, monospace);
+  font-size: 10.5px;
+  color: var(--via-ink-3, #6B7891);
+  padding: 1px 6px;
+  background: var(--via-navy-04);
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.via-tv__children {
+  position: relative;
+}
+
+.via-tv__children::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--via-navy-08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-tv__row, .via-tv__chev { transition: none !important; }
+}

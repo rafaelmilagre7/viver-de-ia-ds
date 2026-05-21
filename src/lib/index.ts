@@ -54,5 +54,12 @@ export { ContextMenu, type ContextMenuProps, type ContextMenuOption } from './Co
 export { MultiSelect, type MultiSelectProps, type MultiSelectOption } from './MultiSelect/MultiSelect';
 export { DateRangePicker, type DateRangePickerProps, type DateRange } from './DateRangePicker/DateRangePicker';
 
+/* Onda 1C · 5 componentes (avançados) · maio/2026 */
+export { TreeView, type TreeViewProps, type TreeNode } from './TreeView/TreeView';
+export { Splitter, type SplitterProps } from './Splitter/Splitter';
+export { VirtualList, type VirtualListProps } from './VirtualList/VirtualList';
+export { Lightbox, type LightboxProps, type LightboxImage } from './Lightbox/Lightbox';
+export { ColorPicker, type ColorPickerProps, type ColorSwatch } from './ColorPicker/ColorPicker';
+
 /* Tokens · runtime + types · auto-generated from tokens.css */
 export { tokens, tokensList, cssVar, type Token, type TokenName } from './tokens';

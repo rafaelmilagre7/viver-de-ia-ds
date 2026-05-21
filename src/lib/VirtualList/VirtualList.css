@@ -1,0 +1,50 @@
+/* ============================================
+   <VirtualList> · lista virtualizada
+   ============================================ */
+.via-vl {
+  position: relative;
+  overflow-y: auto;
+  width: 100%;
+  border-radius: var(--via-radius-md, 10px);
+  border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 250, 0.86));
+  scrollbar-width: thin;
+  scrollbar-color: var(--via-navy-18) transparent;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-vl::-webkit-scrollbar {
+  width: 6px;
+}
+.via-vl::-webkit-scrollbar-track {
+  background: transparent;
+}
+.via-vl::-webkit-scrollbar-thumb {
+  background: var(--via-navy-14);
+  border-radius: 999px;
+}
+.via-vl::-webkit-scrollbar-thumb:hover {
+  background: var(--via-navy-25);
+}
+
+.via-vl--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.via-vl__total {
+  position: relative;
+  width: 100%;
+}
+
+.via-vl__item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.05));
+  transition: background .15s ease;
+}
+
+.via-vl__item:hover {
+  background: var(--via-navy-04);
+}
