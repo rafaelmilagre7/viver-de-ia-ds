@@ -1,0 +1,7 @@
+# Viver de IA · Design System
+# Reference site — públicas todas as rotas
+
+User-agent: *
+Allow: /
+
+Sitemap: https://viverdeia.ai/design/sitemap.xml
