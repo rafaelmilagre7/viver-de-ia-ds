@@ -11,6 +11,11 @@
 .via-spinner__svg {
   flex-shrink: 0;
   animation: via-spinner-rotate 1.2s linear infinite;
+  filter: drop-shadow(0 0 4px var(--via-navy-12));
+}
+
+.via-spinner--inverse .via-spinner__svg {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.32));
 }
 
 .via-spinner--sm .via-spinner__svg { width: 14px; height: 14px; }

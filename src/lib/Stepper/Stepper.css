@@ -91,16 +91,34 @@ button.via-stepper__node:focus-visible {
 }
 
 .via-stepper__indicator.is-current {
-  background: var(--via-navy, #0A1F3B);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy, #0A1F3B);
   color: var(--via-white);
-  box-shadow: 0 0 0 4px rgba(10, 31, 59, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 0 0 4px var(--via-navy-10),
+    0 0 12px var(--via-navy-22);
+  animation: via-stepper-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes via-stepper-pulse {
+  0%, 100% { box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 0 0 4px var(--via-navy-10),
+    0 0 12px var(--via-navy-22); }
+  50%      { box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 0 0 6px var(--via-navy-06),
+    0 0 16px var(--via-navy-30); }
 }
 
 .via-stepper__indicator.is-complete {
-  background: var(--via-navy, #0A1F3B);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy, #0A1F3B);
   color: var(--via-white);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 1px 3px var(--via-navy-22);
 }
 
 /* ===== Copy ===== */

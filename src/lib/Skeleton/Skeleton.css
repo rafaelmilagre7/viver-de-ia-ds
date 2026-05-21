@@ -3,15 +3,39 @@
    ============================================ */
 .via-skeleton {
   display: block;
+  position: relative;
   background:
     linear-gradient(
-      90deg,
-      rgba(10, 31, 59, 0.05) 0%,
-      rgba(10, 31, 59, 0.10) 50%,
-      rgba(10, 31, 59, 0.05) 100%
+      100deg,
+      var(--via-navy-05) 0%,
+      var(--via-navy-08) 30%,
+      var(--via-navy-12) 50%,
+      var(--via-navy-08) 70%,
+      var(--via-navy-05) 100%
     );
-  background-size: 200% 100%;
-  animation: via-skeleton-shimmer 1.6s ease-in-out infinite;
+  background-size: 220% 100%;
+  animation: via-skeleton-shimmer 1.8s cubic-bezier(.4, 0, .6, 1) infinite;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.via-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.10) 50%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  animation: via-skeleton-sweep 1.8s cubic-bezier(.4, 0, .6, 1) infinite;
+}
+
+@keyframes via-skeleton-sweep {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
 }
 
 .via-skeleton--text {
