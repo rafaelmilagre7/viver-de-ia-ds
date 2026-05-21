@@ -55,15 +55,28 @@
   top: calc(100% + 8px);
   left: 0;
   width: 304px;
-  background: var(--via-white, #FFFFFF);
-  border: 0.5px solid var(--via-navy-12, rgba(10,31,59,0.12));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84));
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.96);
   border-radius: 14px;
   padding: 12px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.6) inset,
-    0 24px 56px rgba(10, 31, 59, 0.18),
-    0 4px 12px rgba(10, 31, 59, 0.08);
-  animation: via-dp-in 160ms cubic-bezier(.2,.7,.2,1) both;
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 0.5px var(--via-navy-10),
+    0 24px 56px -16px var(--via-navy-22),
+    0 8px 18px -10px var(--via-navy-14);
+  animation: via-dp-in .26s cubic-bezier(.16, 1, .3, 1) both;
+  isolation: isolate;
+}
+
+.via-dp__pop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(320px 180px at 0% 0%, var(--via-navy-04), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .via-dp__head {

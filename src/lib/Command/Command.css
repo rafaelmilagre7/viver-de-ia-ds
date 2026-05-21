@@ -16,28 +16,45 @@
 .via-cmd-scrim {
   position: absolute;
   inset: 0;
-  background: rgba(10, 31, 59, 0.32);
-  backdrop-filter: blur(8px) saturate(140%);
-  -webkit-backdrop-filter: blur(8px) saturate(140%);
-  animation: via-cmd-scrim-in 160ms ease both;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(10, 31, 59, 0.32), rgba(10, 31, 59, 0.46));
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  animation: via-cmd-scrim-in .26s cubic-bezier(.2,.7,.2,1) both;
 }
 
 .via-cmd {
   position: relative;
   width: 100%;
   max-width: 580px;
-  background: var(--via-white, #FFFFFF);
-  border: 0.5px solid var(--via-navy-12, rgba(10,31,59,0.12));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.86));
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.96);
   border-radius: 18px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.7) inset,
-    0 40px 80px rgba(10, 31, 59, 0.22),
-    0 12px 24px rgba(10, 31, 59, 0.10);
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 0.5px var(--via-navy-10),
+    0 40px 80px -16px var(--via-navy-30),
+    0 16px 32px -12px var(--via-navy-18);
   overflow: hidden;
-  animation: via-cmd-in 180ms cubic-bezier(.2,.7,.2,1) both;
+  animation: via-cmd-in .32s cubic-bezier(.16, 1, .3, 1) both;
   display: flex;
   flex-direction: column;
   max-height: min(72vh, 640px);
+  isolation: isolate;
+}
+
+/* Atmosphere radial */
+.via-cmd::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(420px 220px at 0% 0%, var(--via-navy-04), transparent 60%),
+    radial-gradient(380px 200px at 100% 100%, var(--via-navy-03), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .via-cmd__head {

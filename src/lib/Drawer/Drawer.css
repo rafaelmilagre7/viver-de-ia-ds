@@ -11,16 +11,17 @@
 .via-drawer-scrim {
   position: absolute;
   inset: 0;
-  background: rgba(10, 31, 59, 0.5);
-  backdrop-filter: blur(6px) saturate(120%);
-  -webkit-backdrop-filter: blur(6px) saturate(120%);
-  animation: via-drawer-scrim-in .26s ease;
+  background:
+    radial-gradient(circle at 60% 40%, rgba(10, 31, 59, 0.42), rgba(10, 31, 59, 0.58));
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  animation: via-drawer-scrim-in .3s cubic-bezier(.2,.7,.2,1);
   pointer-events: auto;
 }
 
 @keyframes via-drawer-scrim-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from { opacity: 0; backdrop-filter: blur(0px); }
+  to   { opacity: 1; backdrop-filter: blur(10px) saturate(120%); }
 }
 
 .via-drawer {
@@ -31,11 +32,25 @@
   border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 64px -16px rgba(10, 31, 59, 0.36);
+    0 0 0 0.5px var(--via-navy-08),
+    0 32px 72px -16px var(--via-navy-40),
+    0 16px 32px -12px var(--via-navy-20);
   display: flex;
   flex-direction: column;
   pointer-events: auto;
   isolation: isolate;
+}
+
+/* Atmosphere radial sutil */
+.via-drawer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(420px 280px at 0% 0%, var(--via-navy-04), transparent 60%),
+    radial-gradient(420px 280px at 100% 100%, var(--via-navy-03), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Right (default) */
