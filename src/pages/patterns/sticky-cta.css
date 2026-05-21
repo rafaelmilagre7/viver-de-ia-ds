@@ -248,7 +248,7 @@
   height: 36px;
   border-radius: 11px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-accent);
+  color: var(--via-white);
   display: flex;
   align-items: center;
   justify-content: center;

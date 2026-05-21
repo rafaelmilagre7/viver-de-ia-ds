@@ -339,8 +339,11 @@
   width: 48px;
   height: 48px;
   border-radius: 13px;
-  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-accent);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
+    rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.22);
+  color: var(--via-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -394,7 +397,8 @@
 }
 
 .vds-cnx-offer-meta svg {
-  color: var(--via-accent);
+  color: var(--via-white);
+  opacity: 0.86;
 }.vds-cnx-offer-cta {
   display: inline-flex;
   align-items: center;
@@ -469,15 +473,17 @@
   height: 36px;
   border-radius: 10px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-accent);
+  color: var(--via-white);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px -2px rgba(10, 31, 59, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 4px 10px -2px rgba(10, 31, 59, 0.30);
 }.vds-cnx-alt-icon.accent {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-accent);
+  color: var(--via-white);
   box-shadow: 0 4px 10px -2px rgba(10, 31, 59, 0.3);
 }
 
@@ -554,7 +560,7 @@
   height: 48px;
   border-radius: 13px;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-accent);
+  color: var(--via-white);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -509,7 +509,7 @@
 }.vds-wiz-steps li.current .vds-wiz-step-bullet {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border-color: transparent;
-  color: var(--via-accent);
+  color: var(--via-white);
   box-shadow: 0 4px 10px -2px rgba(10, 31, 59, 0.3);
 }
 
@@ -731,7 +731,7 @@
 }.vds-wiz-opt-icon.gd {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border-color: transparent;
-  color: var(--via-accent);
+  color: var(--via-white);
 }
 
 .vds-wiz-opt-body {

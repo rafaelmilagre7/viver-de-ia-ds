@@ -213,7 +213,7 @@
 .vds-sr-facet-list li.on .vds-sr-facet-icon {
   background: var(--via-navy);
   border-color: var(--via-navy);
-  color: var(--via-accent);
+  color: var(--via-white);
 }
 
 .vds-sr-facet-label {
@@ -238,7 +238,7 @@
 
 .vds-sr-facet-list li.on .vds-sr-facet-count {
   background: var(--via-navy);
-  color: var(--via-accent);
+  color: var(--via-white);
   border-color: transparent;
 }
 

@@ -206,7 +206,7 @@
 .vds-faq-cats li.on .vds-faq-cat-icon {
   background: var(--via-navy);
   border-color: var(--via-navy);
-  color: var(--via-accent);
+  color: var(--via-white);
 }
 
 .vds-faq-cat-label {
@@ -231,7 +231,7 @@
 
 .vds-faq-cats li.on .vds-faq-cat-count {
   background: var(--via-navy);
-  color: var(--via-accent);
+  color: var(--via-white);
   border-color: transparent;
 }
 

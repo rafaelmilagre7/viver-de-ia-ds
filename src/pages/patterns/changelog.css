@@ -213,7 +213,7 @@
   height: 44px;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border-color: transparent;
-  color: var(--via-accent);
+  color: var(--via-white);
   box-shadow: 0 4px 10px -2px rgba(10, 31, 59, 0.3);
 }
 
@@ -228,7 +228,7 @@
 }.vds-cl-hl-icon.gd {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border-color: transparent;
-  color: var(--via-accent);
+  color: var(--via-white);
   box-shadow: 0 4px 10px -2px rgba(10, 31, 59, 0.3);
 }
 
@@ -668,7 +668,7 @@
   flex-shrink: 0;
 }.vds-cl-changes li.new .vds-cl-change-icon {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-accent);
+  color: var(--via-white);
 }
 
 .vds-cl-changes li.improved .vds-cl-change-icon {
