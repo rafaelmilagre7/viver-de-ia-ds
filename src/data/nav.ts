@@ -128,6 +128,7 @@ export const navigation: NavGroup[] = [
       { label: 'WhatsApp preview', to: '/patterns/whatsapp' },
       { label: 'Social media posts', to: '/patterns/social' },
       { label: 'Social coverage (6 canais · 18 templates)', to: '/patterns/social-coverage' },
+      { label: 'Paid ads (Meta + Google · 12 creatives)', to: '/patterns/paid-ads' },
       { label: 'Invoice / recibo', to: '/patterns/invoice' },
       { label: 'Slide deck (apresentação)', to: '/patterns/slides' },
       { label: 'Curriculum (curso · módulos+aulas)', to: '/patterns/curriculum' },
