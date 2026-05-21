@@ -102,6 +102,7 @@ export const routes: Route[] = [
   { path: '/patterns/social-coverage', settleMs: 150 },
   { path: '/patterns/paid-ads', settleMs: 150 },
   { path: '/patterns/landing-elements', settleMs: 200 },
+  { path: '/patterns/commercial', settleMs: 200 },
   { path: '/patterns/invoice' },
   { path: '/patterns/slides' },
   { path: '/patterns/curriculum' },

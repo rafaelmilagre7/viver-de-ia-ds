@@ -94,6 +94,7 @@ const Social = lazy(() => import('./pages/patterns/Social'));
 const SocialCoverage = lazy(() => import('./pages/patterns/SocialCoverage'));
 const PaidAds = lazy(() => import('./pages/patterns/PaidAds'));
 const LandingElements = lazy(() => import('./pages/patterns/LandingElements'));
+const Commercial = lazy(() => import('./pages/patterns/Commercial'));
 const Invoice = lazy(() => import('./pages/patterns/Invoice'));
 const Slides = lazy(() => import('./pages/patterns/Slides'));
 const Curriculum = lazy(() => import('./pages/patterns/Curriculum'));
@@ -227,6 +228,7 @@ export default function App() {
                   <Route path="social-coverage" element={<SocialCoverage />} />
                   <Route path="paid-ads" element={<PaidAds />} />
                   <Route path="landing-elements" element={<LandingElements />} />
+                  <Route path="commercial" element={<Commercial />} />
                   <Route path="invoice" element={<Invoice />} />
                   <Route path="slides" element={<Slides />} />
                   <Route path="curriculum" element={<Curriculum />} />
