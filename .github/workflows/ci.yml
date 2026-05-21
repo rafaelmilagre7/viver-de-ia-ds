@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build:
-    name: build · typecheck
+    name: build · typecheck · lint
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -43,10 +43,31 @@ jobs:
           path: dist
           retention-days: 7
 
-  visual:
-    name: visual regression
+  a11y:
+    name: a11y · WCAG 2.1 AA
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 8
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: install deps
+        run: bun install --frozen-lockfile
+
+      - name: install playwright browsers
+        run: bunx playwright install --with-deps chromium
+
+      - name: axe-core a11y suite
+        run: bun run test:a11y
+
+  visual:
+    name: visual regression (macOS · matches baseline)
+    runs-on: macos-latest
+    timeout-minutes: 14
     needs: build
     steps:
       - uses: actions/checkout@v4
@@ -70,24 +91,3 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 14
-
-  a11y:
-    name: a11y · WCAG 2.1 AA
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    needs: build
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: install deps
-        run: bun install --frozen-lockfile
-
-      - name: install playwright browsers
-        run: bunx playwright install --with-deps chromium
-
-      - name: axe-core a11y suite
-        run: bun run test:a11y
