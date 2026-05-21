@@ -1,0 +1,189 @@
+/* ============================================
+   Voice extended · context-aware voice guide
+   ============================================ */
+
+.vds-ve-context {
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 14px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.vds-ve-context header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.vds-ve-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45)),
+    linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+  border: 0.5px solid var(--via-navy-12);
+  color: var(--via-navy);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 1px 2px rgba(10, 31, 59, 0.04);
+  flex-shrink: 0;
+}
+.vds-ve-eyebrow {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-ink-3);
+  margin-bottom: 4px;
+}
+.vds-ve-rhythm {
+  font-family: var(--via-font-display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--via-navy);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- Samples · good vs bad ---------- */
+.vds-ve-samples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 760px) { .vds-ve-samples { grid-template-columns: 1fr; } }
+
+.vds-ve-sample {
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.vds-ve-sample.good {
+  border-color: var(--via-navy-20);
+  border-left: 2px solid var(--via-navy);
+}
+.vds-ve-sample.bad {
+  border-color: rgba(184, 92, 92, 0.28);
+  border-left: 2px solid var(--via-coral);
+  opacity: 0.85;
+}
+.vds-ve-sample .lbl {
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.vds-ve-sample.good .lbl { color: var(--via-navy); }
+.vds-ve-sample.bad  .lbl { color: var(--via-coral-dark); }
+.vds-ve-sample pre {
+  font-family: var(--via-font);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--via-navy);
+  margin: 0;
+  white-space: pre-wrap;
+  letter-spacing: -0.004em;
+}
+.vds-ve-sample.bad pre {
+  color: var(--via-ink-3);
+}
+
+/* ---------- Rules ---------- */
+.vds-ve-rules {
+  padding: 18px 22px;
+  background: var(--via-navy-04);
+  border: 0.5px solid var(--via-navy-12);
+  border-radius: 10px;
+}
+.vds-ve-rules-eyebrow {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-navy);
+  margin-bottom: 10px;
+}
+.vds-ve-rules ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.vds-ve-rules li {
+  font-family: var(--via-font);
+  font-size: 13px;
+  color: var(--via-text);
+  line-height: 1.55;
+  padding-left: 16px;
+  position: relative;
+}
+.vds-ve-rules li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 1px;
+  background: var(--via-navy);
+}
+
+/* ---------- Spine (5 invariants) ---------- */
+.vds-ve-spine {
+  padding: 36px 40px;
+  background:
+    radial-gradient(ellipse 70% 50% at 0% 0%, rgba(10, 31, 59, 0.04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50), var(--via-white));
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 16px;
+}
+.vds-ve-spine ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  counter-reset: spine;
+}
+.vds-ve-spine li {
+  counter-increment: spine;
+  padding-left: 50px;
+  position: relative;
+  font-family: var(--via-font);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--via-text);
+}
+.vds-ve-spine li::before {
+  content: counter(spine, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--via-mono);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.01em;
+}
+.vds-ve-spine li strong {
+  font-family: var(--via-font);
+  font-weight: 500;
+  color: var(--via-navy);
+}

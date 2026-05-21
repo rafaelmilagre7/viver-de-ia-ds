@@ -1,0 +1,250 @@
+/* ============================================
+   Personality · 7 traits + spectrum + quiz
+   ============================================ */
+
+/* ---------- Traits grid ---------- */
+.vds-pers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.vds-pers-card {
+  position: relative;
+  padding: 26px 26px 24px;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 16px;
+  transition: var(--via-t);
+  overflow: hidden;
+  isolation: isolate;
+}
+.vds-pers-card::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--via-navy), transparent);
+  opacity: 0;
+  transition: var(--via-t);
+}
+.vds-pers-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--via-navy-20);
+  box-shadow: 0 16px 36px -14px rgba(10, 31, 59, 0.18);
+}
+.vds-pers-card:hover::after { opacity: 1; }
+
+.vds-pers-card header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.vds-pers-num {
+  font-family: var(--via-mono);
+  font-size: 13px;
+  color: var(--via-ink-3);
+  letter-spacing: -0.005em;
+}
+.vds-pers-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45)),
+    linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+  border: 0.5px solid var(--via-navy-12);
+  color: var(--via-navy);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 1px 2px rgba(10, 31, 59, 0.04);
+}
+
+.vds-pers-card h3 {
+  font-family: var(--via-font-display);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--via-navy);
+  letter-spacing: -0.022em;
+  margin: 0 0 6px;
+}
+.vds-pers-sum {
+  font-family: var(--via-font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14.5px;
+  color: var(--via-ink-3);
+  line-height: 1.45;
+  margin: 0 0 18px;
+}
+
+.vds-pers-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--via-navy-08);
+}
+.vds-pers-do,
+.vds-pers-dont {
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+.vds-pers-do {
+  background: var(--via-navy-04);
+  border-left: 2px solid var(--via-navy);
+}
+.vds-pers-dont {
+  background: rgba(184, 92, 92, 0.05);
+  border-left: 2px solid var(--via-coral);
+}
+.vds-pers-do .lbl,
+.vds-pers-dont .lbl {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.vds-pers-do .lbl  { color: var(--via-navy); }
+.vds-pers-dont .lbl { color: var(--via-coral-dark); }
+.vds-pers-do p,
+.vds-pers-dont p {
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  color: var(--via-text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Spectrum (axes) ---------- */
+.vds-pers-spectrum {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 30px 32px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 14px;
+}
+.vds-pers-axis {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.vds-pers-axis-label {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  gap: 18px;
+  font-family: var(--via-font);
+  font-size: 12px;
+  color: var(--via-ink-3);
+}
+.vds-pers-axis-label > span:first-child { text-align: left; }
+.vds-pers-axis-label > span:last-child { text-align: right; }
+.vds-pers-axis-label em {
+  font-style: normal;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  color: var(--via-navy);
+  background: var(--via-white);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 0.5px solid var(--via-navy-20);
+  white-space: nowrap;
+}
+.vds-pers-axis-track {
+  position: relative;
+  height: 4px;
+  background: linear-gradient(90deg, var(--via-navy-08), var(--via-navy-12), var(--via-navy-08));
+  border-radius: 999px;
+}
+.vds-pers-axis-dot {
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--via-navy);
+  border: 2px solid var(--via-white);
+  box-shadow: 0 2px 8px rgba(10, 31, 59, 0.32);
+  transform: translate(-50%, -50%);
+}
+
+/* ---------- Quiz ---------- */
+.vds-pers-test {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.vds-pers-quiz {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 12px;
+  padding: 20px 22px;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-navy-08);
+  border-radius: 14px;
+}
+@media (max-width: 760px) {
+  .vds-pers-quiz { grid-template-columns: 1fr; }
+}
+.vds-pers-opt {
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: var(--via-gray-50);
+  border: 0.5px solid var(--via-navy-08);
+}
+.vds-pers-opt.good {
+  border-color: var(--via-navy-40);
+  border-left: 2px solid var(--via-navy);
+}
+.vds-pers-opt.bad {
+  border-color: rgba(184, 92, 92, 0.30);
+  border-left: 2px solid var(--via-coral);
+  opacity: 0.72;
+}
+.vds-pers-opt .lbl {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.vds-pers-opt.good .lbl { color: var(--via-navy); }
+.vds-pers-opt.bad .lbl  { color: var(--via-coral-dark); }
+.vds-pers-opt p {
+  font-family: var(--via-font-display);
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--via-navy);
+  line-height: 1.5;
+  margin: 0;
+}
+.vds-pers-opt.bad p { color: var(--via-ink-3); text-decoration: line-through; text-decoration-color: rgba(184, 92, 92, 0.32); text-decoration-thickness: 1px; }
+
+.vds-pers-why {
+  grid-column: 1 / -1;
+  font-family: var(--via-font);
+  font-size: 13px;
+  color: var(--via-text);
+  margin: 4px 0 0;
+  line-height: 1.55;
+}
+.vds-pers-why strong {
+  font-family: var(--via-font);
+  font-weight: 500;
+  color: var(--via-navy);
+}

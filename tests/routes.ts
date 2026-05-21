@@ -24,6 +24,10 @@ export const routes: Route[] = [
 
   // Foundations
   { path: '/foundations/brand' },
+  { path: '/foundations/brand-story' },
+  { path: '/foundations/personality' },
+  { path: '/foundations/voice-extended' },
+  { path: '/foundations/logo-usage' },
   { path: '/foundations/color' },
   { path: '/foundations/typography' },
   { path: '/foundations/spacing' },

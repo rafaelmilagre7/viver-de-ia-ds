@@ -37,6 +37,10 @@ export const navigation: NavGroup[] = [
     icon: Type,
     items: [
       { label: 'Marca', to: '/foundations/brand' },
+      { label: 'Brand story (mission · vision · values)', to: '/foundations/brand-story' },
+      { label: 'Personality (7 atributos)', to: '/foundations/personality' },
+      { label: 'Voice estendida (9 contextos)', to: '/foundations/voice-extended' },
+      { label: 'Logo usage (clear space · sizes · do/don\'t)', to: '/foundations/logo-usage' },
       { label: 'Cores', to: '/foundations/color' },
       { label: 'Tipografia', to: '/foundations/typography' },
       { label: 'Espaçamento', to: '/foundations/spacing' },

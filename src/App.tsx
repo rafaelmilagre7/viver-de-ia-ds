@@ -25,6 +25,10 @@ const Shadows = lazy(() => import('./pages/foundations/Shadows'));
 const Motion = lazy(() => import('./pages/foundations/Motion'));
 const Philosophy = lazy(() => import('./pages/foundations/Philosophy'));
 const Library = lazy(() => import('./pages/foundations/Library'));
+const BrandStory = lazy(() => import('./pages/foundations/BrandStory'));
+const Personality = lazy(() => import('./pages/foundations/Personality'));
+const VoiceExtended = lazy(() => import('./pages/foundations/VoiceExtended'));
+const LogoUsage = lazy(() => import('./pages/foundations/LogoUsage'));
 
 // Glass
 const GlassAnatomy = lazy(() => import('./pages/glass/Anatomy'));
@@ -137,6 +141,10 @@ export default function App() {
 
                 <Route path="foundations">
                   <Route path="brand" element={<Brand />} />
+                  <Route path="brand-story" element={<BrandStory />} />
+                  <Route path="personality" element={<Personality />} />
+                  <Route path="voice-extended" element={<VoiceExtended />} />
+                  <Route path="logo-usage" element={<LogoUsage />} />
                   <Route path="color" element={<Color />} />
                   <Route path="typography" element={<Typography />} />
                   <Route path="spacing" element={<Spacing />} />
