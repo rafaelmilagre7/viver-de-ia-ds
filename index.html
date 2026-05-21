@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary meta -->
+    <title>Viver de IA · Design System</title>
+    <meta name="description" content="Design System Viver de IA — marca editorial, navy profundo, vidro líquido e tipografia Geist. 49 páginas vivas + library React de 15 componentes core." />
+    <meta name="theme-color" content="#0A1F3B" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://viverdeia.ai/design" />
+
+    <!-- Favicon · ícones (light + dark + apple touch) -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="mask-icon" href="/favicon.png" color="#0A1F3B" />
+
+    <!-- Open Graph · LinkedIn / WhatsApp / Slack / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Viver de IA · Design System" />
+    <meta property="og:title" content="Design System · Viver de IA" />
+    <meta property="og:description" content="Marca editorial, engenharia de precisão. 49 páginas + 15 componentes React publicáveis." />
+    <meta property="og:url" content="https://viverdeia.ai/design" />
+    <meta property="og:image" content="https://viverdeia.ai/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Viver de IA · Design System — hero navy com tipografia Geist editorial." />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@viverdeia" />
+    <meta name="twitter:title" content="Design System · Viver de IA" />
+    <meta name="twitter:description" content="Marca editorial, engenharia de precisão. 49 páginas + 15 componentes React." />
+    <meta name="twitter:image" content="https://viverdeia.ai/og-cover.png" />
+
+    <!-- Preconnect a fonts (caso adicionemos Geist via Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <script>
+      /* Theme bootstrap — runs before paint to avoid FOUC */
+      (function () {
+        try {
+          var stored = localStorage.getItem('via-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored === 'light' || stored === 'dark'
+            ? stored
+            : (prefersDark ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {}
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
