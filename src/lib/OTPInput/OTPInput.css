@@ -1,0 +1,102 @@
+/* ============================================
+   <OTPInput> · código de verificação · 4-6 dígitos
+   ============================================ */
+.via-otp {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+.via-otp__label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--via-navy, #0A1F3B);
+  letter-spacing: -0.006em;
+}
+
+.via-otp__row {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.via-otp__cell {
+  width: 44px;
+  height: 52px;
+  text-align: center;
+  font-family: var(--via-font-display, var(--via-font, 'Geist', system-ui));
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  color: var(--via-navy, #0A1F3B);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.78));
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid var(--via-border, #D0D5DD);
+  border-radius: 10px;
+  outline: none;
+  transition:
+    border-color .22s ease,
+    box-shadow .22s ease,
+    background .22s ease,
+    transform .18s cubic-bezier(.34, 1.56, .64, 1);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 2px var(--via-navy-04);
+  caret-color: var(--via-navy);
+}
+
+.via-otp__cell:hover:not(:disabled) {
+  border-color: var(--via-navy-22);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 2px 6px -2px var(--via-navy-10);
+}
+
+.via-otp__cell:focus {
+  border-color: var(--via-navy);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.92));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 3px var(--via-navy-10),
+    0 6px 14px -8px var(--via-navy-12);
+  transform: translateY(-1px);
+}
+
+.via-otp__cell:not(:placeholder-shown),
+.via-otp__cell[value]:not([value='']) {
+  border-color: var(--via-navy-40);
+}
+
+.via-otp.has-error .via-otp__cell {
+  border-color: rgba(184, 92, 92, 0.40);
+}
+
+.via-otp.has-error .via-otp__cell:focus {
+  border-color: var(--via-coral, #B85C5C);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 3px rgba(184, 92, 92, 0.12);
+}
+
+.via-otp.is-disabled .via-otp__cell {
+  background: var(--via-gray-100, #F0F2F5);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.via-otp__hint {
+  margin: 0;
+  font-size: 11.5px;
+  color: var(--via-ink-3, #6B7891);
+  letter-spacing: -0.004em;
+  line-height: 1.4;
+}
+
+.via-otp__hint.is-error {
+  color: var(--via-coral-dark, #8C2C2C);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-otp__cell { transition: none !important; }
+}

@@ -40,5 +40,12 @@ export { Slider, type SliderProps } from './Slider/Slider';
 export { Alert, type AlertProps } from './Alert/Alert';
 export { DataTable, type DataTableProps, type DataTableColumn, type SortDir } from './DataTable/DataTable';
 
+/* Onda 1A · 5 componentes premium · maio/2026 */
+export { HoverCard, type HoverCardProps } from './HoverCard/HoverCard';
+export { OTPInput, type OTPInputProps } from './OTPInput/OTPInput';
+export { TagInput, type TagInputProps } from './TagInput/TagInput';
+export { Calendar, type CalendarProps } from './Calendar/Calendar';
+export { Carousel, type CarouselProps } from './Carousel/Carousel';
+
 /* Tokens · runtime + types · auto-generated from tokens.css */
 export { tokens, tokensList, cssVar, type Token, type TokenName } from './tokens';
