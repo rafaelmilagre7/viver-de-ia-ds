@@ -89,7 +89,7 @@ export default function Home() {
         {sections.map((s) => (
           <Link key={s.to} to={s.to} className="vds-home-card vds-reveal">
             <p className="vds-eyebrow">{s.eyebrow}</p>
-            <h3 className="vds-home-card-title">{s.title}</h3>
+            <h2 className="vds-home-card-title">{s.title}</h2>
             <p className="vds-home-card-body">{s.body}</p>
             <span className="vds-home-card-arrow" aria-hidden="true">
               <ArrowRight size={14} strokeWidth={2.4} />

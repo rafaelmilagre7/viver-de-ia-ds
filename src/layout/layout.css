@@ -40,7 +40,7 @@
   border-radius: 999px;
   background: transparent;
   border: none;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   cursor: pointer;
   transition: var(--via-t);
 }
@@ -64,7 +64,7 @@
   font-weight: 600;
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   padding: 4px 9px;
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
@@ -85,7 +85,7 @@
   min-width: 260px;
   font-family: var(--via-font);
   font-size: 13px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   background: rgba(255, 255, 255, 0.55);
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
@@ -102,7 +102,7 @@
   font-family: var(--via-font-mono);
   font-size: 10px;
   font-weight: 500;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   padding: 2px 6px;
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-xs);
@@ -115,7 +115,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   text-decoration: none;
   padding: 8px 12px;
   border-radius: var(--via-radius-pill);
@@ -148,7 +148,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-body);
   margin: 0 0 12px;
   padding: 0 10px;
 }
@@ -183,18 +183,18 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   text-decoration: none;
   border-radius: var(--via-radius-sm);
   transition: var(--via-t);
   position: relative;
 }
 .vds-sidebar-link:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
 }
 .vds-sidebar-link.active {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-08);
   font-weight: 600;
 }
@@ -259,7 +259,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   line-height: 1.55;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0;
   max-width: 260px;
 }
@@ -272,7 +272,7 @@
 .vds-footer-col li a {
   font-family: var(--via-font);
   font-size: 13px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   text-decoration: none;
   transition: var(--via-t);
 }
@@ -283,7 +283,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   margin: 0 0 14px;
 }
 
@@ -295,7 +295,7 @@
   flex-wrap: wrap;
   font-family: var(--via-font);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-footer-bottom-dot { color: var(--via-gray-300); }
 .vds-footer-bottom-meta {
@@ -303,7 +303,7 @@
   font-family: var(--via-font-mono);
   font-size: 10px;
   letter-spacing: 0.10em;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 
 /* ---------- MOBILE DRAWER ---------- */
