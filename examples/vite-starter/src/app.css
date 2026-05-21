@@ -1,0 +1,76 @@
+:root {
+  --via-font:         'Geist', system-ui, -apple-system, sans-serif;
+  --via-font-display: 'Geist', system-ui, sans-serif;
+  --via-font-mono:    'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+}
+
+body {
+  margin: 0;
+  font-family: var(--via-font);
+  color: var(--via-navy);
+  background: var(--via-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.page header {
+  margin-bottom: 48px;
+}
+
+.page h1 {
+  font-family: var(--via-font-display);
+  font-size: clamp(32px, 4.5vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
+  color: var(--via-navy);
+}
+
+.page h1 em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--via-gray-500);
+}
+
+.page header p {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--via-gray-600);
+  margin: 0;
+  max-width: 600px;
+}
+
+.section {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 0.5px solid var(--via-navy-12);
+}
+
+.section:first-of-type { border-top: none; padding-top: 0; }
+
+.section h2 {
+  font-family: var(--via-font-display);
+  font-size: 20px;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+  color: var(--via-navy);
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

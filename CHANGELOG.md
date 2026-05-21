@@ -4,6 +4,43 @@ Todas as mudanças notáveis no Viver de IA Design System são documentadas aqui
 
 Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.4.0] · 2026-05-20
+
+### Adicionado
+
+- **Tokens em JSON + TypeScript types** (`@viverdeia/design-system/tokens`):
+  - `scripts/build-tokens.mjs` parseia `tokens.css` → `src/lib/tokens.ts` (132 tokens · runtime + `TokenName` union)
+  - `dist/lib/tokens.json` machine-readable com `$version`, `$generated`, categorização (color/spacing/radius/shadow/font/motion/surface)
+  - Helpers: `tokens['via-navy']`, `cssVar('via-radius-lg')`, type-safe `TokenName`
+  - Subpath exports: `./tokens` (TS), `./tokens.json` (raw), `./tokens.css` (CSS)
+- **Vitest + RTL · unit tests dos hooks e behaviors:**
+  - 28 testes em 4 suites: Modal (ESC/scroll lock/close button), useToasts (CRUD + actions), Tabs (keyboard nav/wrap/Home-End/controlled), DataTable (sort cycle/accessor/empty/onRowClick)
+  - `vitest.config.ts` + jsdom + jest-dom matchers · coverage v8 com threshold 30%
+  - CI workflow roda `test:unit` entre lint e build
+- **Lighthouse CI · perf budget enforcement:**
+  - `.lighthouserc.cjs` com targets desktop (LCP <2.5s · CLS <0.05 · TBT <200ms · perf ≥0.90 · a11y ≥0.95)
+  - `.github/workflows/lighthouse.yml` em push/PR/manual dispatch
+  - Bundle size budget (<600KB total)
+- **Integration guides** (`docs/integration/`):
+  - `nextjs.md` · App Router + Pages Router + `next/font` Geist
+  - `vite.md` · SPA + Geist via CDN + dark mode toggle
+  - `remix.md` · SSR + `links()` export + dark mode sem flash via cookie
+  - `README.md` · índice + quick start universal
+- **NPM publish prep:**
+  - `RELEASE.md` com checklist completo + setup do `NPM_TOKEN` + provenance + versionamento semântico + rollback
+  - `scripts/smoke-test-lib.mjs` valida bundle (20 checks: package.json, files exist, exports resolve, tokens.json válido, ESM bundle com 35 named exports, types completos)
+  - `finalize-lib.mjs`: `publishConfig.access: 'public'` + `provenance: true` + `repository` + `homepage` + `bugs`
+- **Proof of consumption** (`examples/vite-starter/`):
+  - App Vite mínima que consome `@viverdeia/design-system` via `file:../../dist/lib`
+  - Demonstra 10 componentes reais funcionando como dependency externa
+- **Skill `/viver-de-ia-design` atualizada** com regras consolidadas (paleta restrita endurecida, library 31 componentes, CI/CD)
+
+### Modificado
+
+- `tsconfig.lib.json` exclui `*.test.*` e `*.stories.tsx` do declaration build
+- `tsconfig.app.json` adiciona `vitest/globals` e `@testing-library/jest-dom` aos types
+- `package.json` scripts: `test:unit` + `test:unit:watch` + `test:unit:coverage` + `test:perf` + `test:smoke` + `build:tokens`
+
 ## [0.3.0] · 2026-05-20
 
 ### Adicionado
