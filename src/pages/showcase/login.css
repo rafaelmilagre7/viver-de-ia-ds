@@ -231,7 +231,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 4px 12px rgba(10,31,59,0.20);
+  box-shadow: 0 4px 12px var(--via-navy-20);
 }
 .auth-row .link {
   font-family: var(--via-font);

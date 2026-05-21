@@ -9,8 +9,8 @@
   border-radius: 999px;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 4px 12px rgba(10, 31, 59, 0.08),
-    0 1px 3px rgba(10, 31, 59, 0.04);
+    0 4px 12px var(--via-navy-08),
+    0 1px 3px var(--via-navy-04);
   gap: 2px;
 }
 
@@ -31,7 +31,7 @@
 
 .via-seg-item:hover:not(.active) {
   color: var(--via-navy);
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
 }
 
 .via-seg-item.active {
@@ -86,7 +86,7 @@
 .via-ultab.active::after {
   left: 0;
   right: 0;
-  box-shadow: 0 0 12px rgba(10, 31, 59, 0.3);
+  box-shadow: 0 0 12px var(--via-navy-30);
 }
 
 .via-ultab:hover {
@@ -99,8 +99,8 @@
   justify-content: center;
   margin-left: 6px;
   padding: 2px 7px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-08);
   color: var(--via-text-soft);
   border-radius: 999px;
   font-size: 10px;

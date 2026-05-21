@@ -14,7 +14,7 @@
   align-items: center;
   padding: 18px 22px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -59,7 +59,7 @@
   gap: 18px;
   padding: 22px 24px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -78,7 +78,7 @@
   min-width: 0;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.08) inset,
-    0 12px 28px -16px rgba(10, 31, 59, 0.4);
+    0 12px 28px -16px var(--via-navy-40);
 }
 
 @media (max-width: 720px) {

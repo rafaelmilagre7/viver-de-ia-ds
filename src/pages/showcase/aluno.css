@@ -97,16 +97,16 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -6px rgba(10, 31, 59, 0.4);
+    0 8px 18px -6px var(--via-navy-40);
 }
 .al-cta-row .btn.primary:hover {
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 12px 24px -6px rgba(10, 31, 59, 0.5);
+    0 12px 24px -6px var(--via-navy-60);
 }
 .al-cta-row .btn.ghost { background: transparent; color: var(--via-navy); border-color: var(--via-border-soft); }
-.al-cta-row .btn.ghost:hover { background: rgba(10, 31, 59, 0.04); }
+.al-cta-row .btn.ghost:hover { background: var(--via-navy-04); }
 
 .al-progress {
   position: relative;
@@ -124,7 +124,7 @@
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
     inset 0 -1px 0 rgba(255,255,255,0.4),
-    0 16px 40px rgba(10,31,59,0.10);
+    0 16px 40px var(--via-navy-10);
   overflow: hidden;
 }
 .al-progress::before {

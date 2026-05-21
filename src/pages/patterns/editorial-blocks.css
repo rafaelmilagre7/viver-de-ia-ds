@@ -21,7 +21,7 @@
 .vds-hero-card.navy {
   color: var(--via-white);
   border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 24px 56px -22px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 24px 56px -22px var(--via-navy-40);
 }
 
 .vds-hero-card > * {
@@ -51,8 +51,8 @@
   letter-spacing: -0.004em;
   padding: 4px 12px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-10);
   color: var(--via-navy);
   margin-bottom: 18px;
   white-space: nowrap;
@@ -83,7 +83,7 @@
 .vds-hero-card.split h3 em,
 .vds-hero-card.editorial h3 em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.5);
+  color: var(--via-navy-60);
   font-weight: 400;
 }
 
@@ -160,7 +160,7 @@
   padding: 48px;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 40px -24px rgba(10, 31, 59, 0.14);
+    0 16px 40px -24px var(--via-navy-14);
 }
 
 .vds-hero-card.split h3 {
@@ -220,7 +220,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  box-shadow: 0 16px 36px -20px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 16px 36px -20px var(--via-navy-40);
 }
 
 .mock-tag {
@@ -252,7 +252,7 @@
 }
 
 .mock-kpi.alt {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   border-color: rgba(10, 31, 59, 0.11);
 }
 
@@ -392,7 +392,7 @@
 }
 
 .vds-logowall li:hover {
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
 }
 
 .vds-logowall-logo {
@@ -466,23 +466,23 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   border: 3px solid var(--via-white);
-  box-shadow: 0 0 0 1px rgba(10, 31, 59, 0.16);
+  box-shadow: 0 0 0 1px var(--via-navy-16);
   z-index: 2;
   margin-top: 2px;
 }
 
 .vds-tl-item.now .vds-tl-dot {
   background: var(--via-navy);
-  box-shadow: 0 0 0 1px rgba(10, 31, 59, 0.25);
+  box-shadow: 0 0 0 1px var(--via-navy-25);
 }
 
 .vds-tl-pulse {
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  background: rgba(10, 31, 59, 0.16);
+  background: var(--via-navy-16);
   animation: vds-pulse 1.8s ease-out infinite;
   z-index: -1;
 }
@@ -495,7 +495,7 @@
 .vds-tl-line {
   flex: 1;
   width: 2px;
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.14), rgba(10, 31, 59, 0.04));
+  background: linear-gradient(180deg, var(--via-navy-14), var(--via-navy-04));
   margin-top: -2px;
 }
 
@@ -527,7 +527,7 @@
   font-weight: 500;
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-text-soft);
   letter-spacing: -0.004em;
   white-space: nowrap;
@@ -535,7 +535,7 @@
 }
 
 .vds-tl-item.now .vds-tl-tag {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy-deep);
 }
 
@@ -590,8 +590,8 @@
 }
 
 .vds-process-step:hover {
-  border-color: rgba(10, 31, 59, 0.18);
-  box-shadow: 0 12px 28px -16px rgba(10, 31, 59, 0.18);
+  border-color: var(--via-navy-18);
+  box-shadow: 0 12px 28px -16px var(--via-navy-18);
   transform: translateY(-2px);
 }
 
@@ -652,7 +652,7 @@
   justify-content: center;
   color: var(--via-navy);
   z-index: 3;
-  box-shadow: 0 4px 10px -4px rgba(10, 31, 59, 0.18);
+  box-shadow: 0 4px 10px -4px var(--via-navy-18);
 }
 
 @media (max-width: 920px) {
@@ -691,7 +691,7 @@
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.96), rgba(10, 31, 59, 1));
   color: var(--via-white);
   border-color: transparent;
-  box-shadow: 0 24px 48px -22px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 24px 48px -22px var(--via-navy-40);
   transform: scale(1.02);
   isolation: isolate;
 }
@@ -704,7 +704,7 @@
   pointer-events: none;
   background:
     radial-gradient(380px 200px at 0% 0%, rgba(255, 255, 255, 0.08), transparent 60%),
-    radial-gradient(320px 200px at 100% 100%, rgba(10, 31, 59, 0.08), transparent 60%);
+    radial-gradient(320px 200px at 100% 100%, var(--via-navy-08), transparent 60%);
 }
 
 .vds-comparison-col > * {
@@ -726,7 +726,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
-  box-shadow: 0 8px 16px -6px rgba(10, 31, 59, 0.25);
+  box-shadow: 0 8px 16px -6px var(--via-navy-25);
   white-space: nowrap;
   line-height: 1.4;
   z-index: 2;
@@ -814,7 +814,7 @@
 }
 
 .vds-comparison-list .no {
-  color: rgba(10, 31, 59, 0.3);
+  color: var(--via-navy-30);
   flex-shrink: 0;
 }
 
@@ -827,7 +827,7 @@
   font-weight: 600;
   padding: 3px 8px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
   letter-spacing: -0.005em;
   white-space: nowrap;
@@ -845,7 +845,7 @@
 
 .vds-comparison-list li.off .lbl {
   text-decoration: line-through;
-  text-decoration-color: rgba(10, 31, 59, 0.18);
+  text-decoration-color: var(--via-navy-18);
 }
 
 .vds-comparison-cta {
@@ -855,9 +855,9 @@
   gap: 8px;
   padding: 14px 20px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
-  border: 1px solid rgba(10, 31, 59, 0.12);
+  border: 1px solid var(--via-navy-12);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -903,8 +903,8 @@
 }
 
 .vds-faq-item.open {
-  border-color: rgba(10, 31, 59, 0.18);
-  box-shadow: 0 12px 28px -16px rgba(10, 31, 59, 0.14);
+  border-color: var(--via-navy-18);
+  box-shadow: 0 12px 28px -16px var(--via-navy-14);
 }
 
 .vds-faq-q {

@@ -250,7 +250,7 @@ function GaugeArc({ value, max = 100, label, color = "var(--via-navy)", unit = '
           <path
             d={`M ${-R} 0 A ${R} ${R} 0 0 1 ${R} 0`}
             fill="none"
-            stroke="rgba(10,31,59,0.08)"
+            stroke="var(--via-navy-08)"
             strokeWidth={STROKE}
             strokeLinecap="round"
           />

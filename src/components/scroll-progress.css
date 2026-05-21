@@ -10,13 +10,13 @@
   height: 2px;
   z-index: 60;
   pointer-events: none;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
 }
 .vds-scroll-progress-bar {
   height: 100%;
   width: 100%;
   transform-origin: left center;
   background: linear-gradient(90deg, var(--via-navy) 0%, var(--via-blue) 60%, var(--via-blue-soft) 100%);
-  box-shadow: 0 1px 6px rgba(10, 31, 59, 0.30);
+  box-shadow: 0 1px 6px var(--via-navy-30);
   transition: transform 80ms linear;
 }

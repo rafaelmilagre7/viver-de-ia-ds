@@ -18,7 +18,7 @@
   color: var(--via-text-soft);
   padding: 12px 16px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -54,7 +54,7 @@
   background: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 24px 48px -24px rgba(10, 31, 59, 0.4);
+    0 24px 48px -24px var(--via-navy-40);
   isolation: isolate;
 }
 
@@ -318,8 +318,8 @@
   gap: 6px;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-10);
   color: var(--via-navy);
   font-size: 12px;
   font-weight: 500;
@@ -394,7 +394,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 40px -24px rgba(10, 31, 59, 0.16);
+    0 16px 40px -24px var(--via-navy-16);
 }
 
 .vds-lesson-tabs {
@@ -403,7 +403,7 @@
   padding: 6px;
   gap: 4px;
   border-bottom: 1px solid var(--via-border-soft);
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
 }
 
 .vds-lesson-tab {
@@ -427,7 +427,7 @@
 .vds-lesson-tab.on {
   background: var(--via-white);
   color: var(--via-navy);
-  box-shadow: 0 1px 4px rgba(10, 31, 59, 0.08);
+  box-shadow: 0 1px 4px var(--via-navy-08);
 }
 
 .vds-lesson-panel {
@@ -441,7 +441,7 @@
 }
 
 .vds-lesson-panel::-webkit-scrollbar-thumb {
-  background: rgba(10, 31, 59, 0.18);
+  background: var(--via-navy-18);
   border-radius: 999px;
 }
 
@@ -452,7 +452,7 @@
   gap: 8px;
   padding: 8px 12px;
   border-radius: 10px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   margin-bottom: 14px;
 }
@@ -494,16 +494,16 @@
 }
 
 .vds-transcript li:hover {
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
 }
 
 .vds-transcript li.on {
   background:
     radial-gradient(220px 100px at 0% 0%, rgba(10, 31, 59, 0.07), transparent 70%),
-    linear-gradient(180deg, rgba(10, 31, 59, 0.06), rgba(10, 31, 59, 0.02));
-  border: 1px solid rgba(10, 31, 59, 0.14);
+    linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
+  border: 1px solid var(--via-navy-14);
   position: relative;
-  box-shadow: 0 4px 12px -6px rgba(10, 31, 59, 0.12);
+  box-shadow: 0 4px 12px -6px var(--via-navy-12);
 }
 
 .vds-transcript li.on::before {
@@ -515,7 +515,7 @@
   width: 3px;
   background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
   border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 8px rgba(10, 31, 59, 0.20);
+  box-shadow: 0 0 8px var(--via-navy-20);
 }
 
 .vds-transcript .ts {
@@ -523,8 +523,8 @@
   font-size: 10.5px;
   font-weight: 600;
   color: var(--via-text-soft);
-  background: rgba(10, 31, 59, 0.05);
-  border: 1px solid rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-05);
+  border: 1px solid var(--via-navy-08);
   border-radius: 6px;
   padding: 3px 7px;
   cursor: pointer;
@@ -544,8 +544,8 @@
 .vds-transcript li.on .ts {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
   color: var(--via-white);
-  border-color: rgba(10, 31, 59, 0.20);
-  box-shadow: 0 2px 6px -2px rgba(10, 31, 59, 0.25);
+  border-color: var(--via-navy-20);
+  box-shadow: 0 2px 6px -2px var(--via-navy-25);
 }
 
 .vds-transcript p {
@@ -578,13 +578,13 @@
   transition: all 180ms ease;
   background-image:
     linear-gradient(180deg, rgba(255, 250, 240, 0.4), rgba(255, 255, 255, 0.85)),
-    repeating-linear-gradient(180deg, transparent 0px, transparent 23px, rgba(10, 31, 59, 0.04) 23px, rgba(10, 31, 59, 0.04) 24px);
+    repeating-linear-gradient(180deg, transparent 0px, transparent 23px, var(--via-navy-04) 23px, var(--via-navy-04) 24px);
   background-blend-mode: normal;
 }
 
 .vds-notes-input:focus {
-  border-color: rgba(10, 31, 59, 0.3);
-  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.08);
+  border-color: var(--via-navy-30);
+  box-shadow: 0 0 0 3px var(--via-navy-08);
 }
 
 .vds-notes-save {
@@ -602,13 +602,13 @@
   cursor: pointer;
   letter-spacing: -0.005em;
   font-family: inherit;
-  box-shadow: 0 4px 10px -4px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 4px 10px -4px var(--via-navy-40);
   transition: all 180ms ease;
 }
 
 .vds-notes-save:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px -4px rgba(10, 31, 59, 0.5);
+  box-shadow: 0 6px 14px -4px var(--via-navy-60);
 }
 
 .vds-notes-eyebrow {
@@ -627,7 +627,7 @@
   content: '';
   width: 14px;
   height: 1px;
-  background: rgba(10, 31, 59, 0.3);
+  background: var(--via-navy-30);
 }
 
 .vds-notes-list {
@@ -643,8 +643,8 @@
   padding: 12px 14px;
   border-radius: 11px;
   background:
-    radial-gradient(220px 80px at 0% 0%, rgba(10, 31, 59, 0.04), transparent 70%),
-    rgba(10, 31, 59, 0.02);
+    radial-gradient(220px 80px at 0% 0%, var(--via-navy-04), transparent 70%),
+    var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
   display: grid;
   grid-template-columns: 48px 1fr;
@@ -655,16 +655,16 @@
 
 .vds-notes-list li:hover {
   background:
-    radial-gradient(220px 80px at 0% 0%, rgba(10, 31, 59, 0.06), transparent 70%),
-    rgba(10, 31, 59, 0.04);
-  border-color: rgba(10, 31, 59, 0.18);
+    radial-gradient(220px 80px at 0% 0%, var(--via-navy-06), transparent 70%),
+    var(--via-navy-04);
+  border-color: var(--via-navy-18);
 }
 
 .vds-notes-list .ts {
   font-size: 10px;
   font-weight: 600;
   color: var(--via-text-soft);
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   border-radius: 5px;
   padding: 3px 6px;
   letter-spacing: 0.02em;
@@ -717,7 +717,7 @@
 }
 
 .vds-material li:hover {
-  border-color: rgba(10, 31, 59, 0.18);
+  border-color: var(--via-navy-18);
   transform: translateX(2px);
   box-shadow: 0 6px 14px -8px rgba(10, 31, 59, 0.15);
 }
@@ -738,7 +738,7 @@
   justify-content: center;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -4px rgba(10, 31, 59, 0.4);
+    0 4px 10px -4px var(--via-navy-40);
 }
 
 /* dot accent decorativo removido — icon glass + peso da typography sustentam o componente */
@@ -766,8 +766,8 @@
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  background: rgba(10, 31, 59, 0.08);
-  border: 1px solid rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-08);
+  border: 1px solid var(--via-navy-10);
   color: var(--via-navy);
   cursor: pointer;
   display: inline-flex;
@@ -781,7 +781,7 @@
   border-color: var(--via-navy);
   color: var(--via-white);
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px -3px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 4px 10px -3px var(--via-navy-40);
 }
 
 /* Discussion — editorial thread */
@@ -807,16 +807,16 @@
 
 .vds-discussion > li:last-child {
   background:
-    radial-gradient(280px 120px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 70%),
+    radial-gradient(280px 120px at 0% 0%, var(--via-navy-08), transparent 70%),
     linear-gradient(180deg, rgba(255, 250, 240, 0.6), rgba(255, 255, 255, 0.5));
-  border-color: rgba(10, 31, 59, 0.14);
+  border-color: var(--via-navy-14);
 }
 
 .vds-discussion .av {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(10, 31, 59, 0.12), rgba(10, 31, 59, 0.06));
+  background: linear-gradient(135deg, var(--via-navy-12), var(--via-navy-06));
   color: var(--via-navy);
   display: inline-flex;
   align-items: center;
@@ -826,8 +826,8 @@
   letter-spacing: 0.02em;
   border: 2px solid var(--via-white);
   box-shadow:
-    0 0 0 1px rgba(10, 31, 59, 0.08),
-    0 2px 6px rgba(10, 31, 59, 0.1);
+    0 0 0 1px var(--via-navy-08),
+    0 2px 6px var(--via-navy-10);
 }
 
 .vds-discussion .av.light {
@@ -835,8 +835,8 @@
   color: var(--via-white);
   border-color: var(--via-white);
   box-shadow:
-    0 0 0 1px rgba(10, 31, 59, 0.20),
-    0 4px 10px -3px rgba(10, 31, 59, 0.4);
+    0 0 0 1px var(--via-navy-20),
+    0 4px 10px -3px var(--via-navy-40);
 }
 
 .vds-disc-meta {
@@ -913,7 +913,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 40px -24px rgba(10, 31, 59, 0.14);
+    0 16px 40px -24px var(--via-navy-14);
 }
 
 .vds-quiz-eyebrow {
@@ -958,7 +958,7 @@
   padding: 16px 18px;
   border-radius: 12px;
   border: 1px solid var(--via-border-soft);
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   text-align: left;
   cursor: pointer;
   transition: all 180ms ease;
@@ -967,8 +967,8 @@
 }
 
 .vds-quiz-option:hover:not(:disabled) {
-  background: rgba(10, 31, 59, 0.05);
-  border-color: rgba(10, 31, 59, 0.18);
+  background: var(--via-navy-05);
+  border-color: var(--via-navy-18);
 }
 
 .vds-quiz-option:disabled {
@@ -979,7 +979,7 @@
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
   display: inline-flex;
   align-items: center;
@@ -1007,18 +1007,18 @@
   justify-content: center;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px rgba(10, 31, 59, 0.4);
+    0 2px 6px -2px var(--via-navy-40);
 }
 
 .vds-quiz-option.picked {
-  background: rgba(10, 31, 59, 0.04);
-  border-color: rgba(10, 31, 59, 0.2);
+  background: var(--via-navy-04);
+  border-color: var(--via-navy-20);
 }
 
 .vds-quiz-option.correct {
   background:
-    radial-gradient(280px 120px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 70%),
-    rgba(10, 31, 59, 0.03);
+    radial-gradient(280px 120px at 0% 0%, var(--via-navy-08), transparent 70%),
+    var(--via-navy-03);
   border-color: rgba(10, 31, 59, 0.15);
 }
 
@@ -1027,7 +1027,7 @@
   color: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px rgba(10, 31, 59, 0.4);
+    0 2px 6px -2px var(--via-navy-40);
 }
 
 .vds-quiz-option.wrong {
@@ -1049,7 +1049,7 @@
   padding: 14px 18px 14px 22px;
   border-radius: 12px;
   border: 1px solid var(--via-border-soft);
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   position: relative;
   overflow: hidden;
 }
@@ -1066,15 +1066,15 @@
 
 .vds-quiz-feedback.ok {
   background:
-    radial-gradient(380px 160px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 70%),
-    rgba(10, 31, 59, 0.025);
-  border-color: rgba(10, 31, 59, 0.14);
+    radial-gradient(380px 160px at 0% 0%, var(--via-navy-08), transparent 70%),
+    var(--via-navy-03);
+  border-color: var(--via-navy-14);
   color: var(--via-navy);
 }
 
 .vds-quiz-feedback.ok::before {
   background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
-  box-shadow: 0 0 10px rgba(10, 31, 59, 0.20);
+  box-shadow: 0 0 10px var(--via-navy-20);
 }
 
 .vds-quiz-feedback.bad {
@@ -1127,8 +1127,8 @@
 
 .vds-lesson-nav-card:hover {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.78));
-  border-color: rgba(10, 31, 59, 0.18);
-  box-shadow: 0 8px 22px -14px rgba(10, 31, 59, 0.18);
+  border-color: var(--via-navy-18);
+  box-shadow: 0 8px 22px -14px var(--via-navy-18);
 }
 
 .vds-lesson-nav-card.next {
@@ -1182,7 +1182,7 @@
   font-weight: 500;
   cursor: pointer;
   letter-spacing: -0.005em;
-  box-shadow: 0 8px 18px -8px rgba(10, 31, 59, 0.5);
+  box-shadow: 0 8px 18px -8px var(--via-navy-60);
   transition: all 180ms ease;
   font-family: inherit;
 }

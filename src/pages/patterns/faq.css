@@ -9,7 +9,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 40px -22px rgba(10, 31, 59, 0.14);
+    0 18px 40px -22px var(--via-navy-14);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
@@ -18,7 +18,7 @@
   padding: 28px 32px 22px;
   border-bottom: 1px solid var(--via-border-soft);
   background:
-    radial-gradient(540px 220px at 0% 0%, rgba(10, 31, 59, 0.04), transparent 60%),
+    radial-gradient(540px 220px at 0% 0%, var(--via-navy-04), transparent 60%),
     linear-gradient(180deg, rgba(10, 31, 59, 0.015), transparent);
 }
 
@@ -32,17 +32,17 @@
   border: 1px solid var(--via-border);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 8px 18px -10px rgba(10, 31, 59, 0.12);
+    0 8px 18px -10px var(--via-navy-12);
   transition: border-color .22s ease, box-shadow .22s ease;
   margin-bottom: 12px;
 }
 
 .vds-faq-search:focus-within {
-  border-color: rgba(10, 31, 59, 0.3);
+  border-color: var(--via-navy-30);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 8px 18px -8px rgba(10, 31, 59, 0.16),
-    0 0 0 3px rgba(10, 31, 59, 0.08);
+    0 8px 18px -8px var(--via-navy-16),
+    0 0 0 3px var(--via-navy-08);
 }
 
 .vds-faq-search svg {
@@ -70,7 +70,7 @@
   color: var(--via-ink-3);
   padding: 3px 7px;
   border-radius: 6px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   letter-spacing: 0.04em;
   flex-shrink: 0;
@@ -91,7 +91,7 @@
 .vds-faq-help a {
   color: var(--via-navy);
   text-decoration: none;
-  border-bottom: 1px solid rgba(10, 31, 59, 0.3);
+  border-bottom: 1px solid var(--via-navy-30);
   padding-bottom: 1px;
   transition: border-color .2s ease;
 }
@@ -164,7 +164,7 @@
 }
 
 .vds-faq-cats li button:hover {
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
 }
 
 .vds-faq-cats li button::before {
@@ -175,7 +175,7 @@
   bottom: 8px;
   width: 2px;
   border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
   opacity: 0;
   transition: opacity .22s ease;
 }
@@ -183,7 +183,7 @@
 .vds-faq-cats li:hover button::before { opacity: 0.5; }
 
 .vds-faq-cats li.on button {
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
 }
 
 .vds-faq-cats li.on button::before {
@@ -194,7 +194,7 @@
   width: 24px;
   height: 24px;
   border-radius: 7px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   display: flex;
@@ -225,7 +225,7 @@
   letter-spacing: 0.02em;
   padding: 1px 7px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -255,13 +255,13 @@
 }
 
 .vds-faq-item:hover {
-  border-color: rgba(10, 31, 59, 0.16);
+  border-color: var(--via-navy-16);
 }
 
 .vds-faq-item.open {
-  border-color: rgba(10, 31, 59, 0.22);
+  border-color: var(--via-navy-22);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.78));
-  box-shadow: 0 12px 28px -16px rgba(10, 31, 59, 0.18);
+  box-shadow: 0 12px 28px -16px var(--via-navy-18);
 }
 
 .vds-faq-item.open::before {
@@ -272,7 +272,7 @@
   bottom: 18px;
   width: 2px;
   border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
 }
 
 .vds-faq-q {
@@ -309,7 +309,7 @@
   letter-spacing: -0.004em;
   padding: 2px 8px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-accent-warm);
   border: 1px solid rgba(10, 31, 59, 0.11);
   white-space: nowrap;
@@ -334,7 +334,7 @@
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   display: flex;
@@ -386,7 +386,7 @@
 .vds-faq-feedback {
   padding: 6px 12px;
   border-radius: 8px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-ink-2);
   font-family: inherit;
@@ -434,7 +434,7 @@
   color: var(--via-white);
   isolation: isolate;
   overflow: hidden;
-  box-shadow: 0 24px 56px -22px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 24px 56px -22px var(--via-navy-40);
 }
 
 @media (max-width: 920px) {
@@ -523,7 +523,7 @@
 .vds-faq-contact-btn.primary:hover {
   filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px -10px rgba(10, 31, 59, 0.30);
+  box-shadow: 0 12px 24px -10px var(--via-navy-30);
 }
 
 .vds-faq-contact-btn.ghost {

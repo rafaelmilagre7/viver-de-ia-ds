@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   background: var(--via-white);
-  border: 1.5px solid rgba(10, 31, 59, 0.18);
+  border: 1.5px solid var(--via-navy-18);
   color: var(--via-text-soft);
   font-family: var(--via-font);
   font-size: 12px;
@@ -45,7 +45,7 @@
 .via-stepper .line {
   flex: 1;
   height: 2px;
-  background: rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-10);
   margin: 0 10px;
   min-width: 24px;
   border-radius: 999px;
@@ -68,7 +68,7 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -3px rgba(10, 31, 59, 0.4);
+    0 4px 10px -3px var(--via-navy-40);
 }
 
 .via-stepper .step.done .line {
@@ -85,8 +85,8 @@
   color: var(--via-navy);
   font-weight: 700;
   box-shadow:
-    0 0 0 6px rgba(10, 31, 59, 0.08),
-    0 4px 14px -3px rgba(10, 31, 59, 0.25);
+    0 0 0 6px var(--via-navy-08),
+    0 4px 14px -3px var(--via-navy-25);
 }
 
 .via-stepper .step.current .circle::after {
@@ -94,7 +94,7 @@
   position: absolute;
   inset: -4px;
   border-radius: 999px;
-  border: 1.5px dashed rgba(10, 31, 59, 0.2);
+  border: 1.5px dashed var(--via-navy-20);
   animation: vds-stepper-spin 16s linear infinite;
 }
 

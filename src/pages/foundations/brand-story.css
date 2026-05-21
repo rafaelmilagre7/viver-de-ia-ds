@@ -17,7 +17,7 @@
 }
 .vds-bs-statement:not(.via-mesh-navy) {
   background:
-    radial-gradient(ellipse 80% 60% at 0% 0%, rgba(10, 31, 59, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 0% 0%, var(--via-navy-06) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   color: var(--via-navy);
   border: 0.5px solid var(--via-navy-12);
@@ -45,7 +45,7 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 6px 14px rgba(10, 31, 59, 0.30);
+    0 6px 14px var(--via-navy-30);
 }
 .vds-bs-icon--light {
   background: var(--via-navy-04);
@@ -276,7 +276,7 @@
 .vds-bs-value:hover {
   transform: translateY(-2px);
   border-color: var(--via-navy-20);
-  box-shadow: 0 12px 28px -10px rgba(10, 31, 59, 0.18);
+  box-shadow: 0 12px 28px -10px var(--via-navy-18);
 }
 .vds-bs-value:hover::before { opacity: 1; }
 

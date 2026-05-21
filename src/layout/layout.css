@@ -161,7 +161,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 0.5px solid var(--via-navy-20, rgba(10, 31, 59, 0.2));
+  border: 0.5px solid var(--via-navy-20, var(--via-navy-20));
   flex-shrink: 0;
 }
 
@@ -334,7 +334,7 @@
     transform: translateX(-100%);
     transition: transform 320ms var(--via-ease-out);
     z-index: 45;
-    box-shadow: 0 24px 48px rgba(10,31,59,0.20);
+    box-shadow: 0 24px 48px var(--via-navy-20);
     padding: 24px 20px 64px;
     max-height: calc(100vh - 64px);
     overflow-y: auto;

@@ -6,7 +6,7 @@
   padding: 56px;
   border-radius: 28px;
   background:
-    radial-gradient(900px 380px at 50% 0%, rgba(10, 31, 59, 0.05), transparent 70%),
+    radial-gradient(900px 380px at 50% 0%, var(--via-navy-05), transparent 70%),
     linear-gradient(180deg, var(--via-gray-100), var(--via-gray-200));
   border: 1px solid var(--via-border-soft);
   display: flex;
@@ -24,11 +24,11 @@
   background: var(--via-gray-50);
   border-radius: 18px;
   padding: 56px 56px 36px;
-  border: 1px solid rgba(10, 31, 59, 0.08);
+  border: 1px solid var(--via-navy-08);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 48px 96px -36px rgba(10, 31, 59, 0.25),
-    0 4px 16px rgba(10, 31, 59, 0.04);
+    0 48px 96px -36px var(--via-navy-25),
+    0 4px 16px var(--via-navy-04);
   isolation: isolate;
   color: var(--via-text);
 }
@@ -39,8 +39,8 @@
   border-radius: 18px;
   pointer-events: none;
   background:
-    radial-gradient(380px 200px at 0% 0%, rgba(10, 31, 59, 0.04), transparent 60%),
-    radial-gradient(420px 220px at 100% 100%, rgba(10, 31, 59, 0.06), transparent 60%);
+    radial-gradient(380px 200px at 0% 0%, var(--via-navy-04), transparent 60%),
+    radial-gradient(420px 220px at 100% 100%, var(--via-navy-06), transparent 60%);
   z-index: 0;
 }
 
@@ -56,7 +56,7 @@
   justify-content: space-between;
   gap: 32px;
   padding-bottom: 28px;
-  border-bottom: 1px solid rgba(10, 31, 59, 0.08);
+  border-bottom: 1px solid var(--via-navy-08);
   margin-bottom: 28px;
 }
 
@@ -85,8 +85,8 @@
   gap: 6px;
   padding: 5px 12px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.08);
-  border: 1px solid rgba(10, 31, 59, 0.12);
+  background: var(--via-navy-08);
+  border: 1px solid var(--via-navy-12);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
@@ -125,7 +125,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 36px;
   padding-bottom: 28px;
-  border-bottom: 1px solid rgba(10, 31, 59, 0.08);
+  border-bottom: 1px solid var(--via-navy-08);
   margin-bottom: 32px;
 }
 
@@ -169,7 +169,7 @@
   color: var(--via-text-soft);
   text-align: left;
   padding: 0 0 10px;
-  border-bottom: 1px solid rgba(10, 31, 59, 0.12);
+  border-bottom: 1px solid var(--via-navy-12);
 }
 
 .vds-receipt-table thead .col-qty,
@@ -180,7 +180,7 @@
 
 .vds-receipt-table tbody td {
   padding: 18px 0;
-  border-bottom: 1px solid rgba(10, 31, 59, 0.06);
+  border-bottom: 1px solid var(--via-navy-06);
   font-feature-settings: 'tnum' 1;
   vertical-align: top;
 }
@@ -241,7 +241,7 @@
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.96), rgba(10, 31, 59, 1));
   border-radius: 14px;
   color: var(--via-white);
-  box-shadow: 0 16px 32px -16px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 16px 32px -16px var(--via-navy-40);
   position: relative;
   overflow: hidden;
 }
@@ -253,7 +253,7 @@
   pointer-events: none;
   background:
     radial-gradient(220px 80px at 0% 0%, rgba(255, 255, 255, 0.1), transparent 60%),
-    radial-gradient(160px 80px at 100% 100%, rgba(10, 31, 59, 0.08), transparent 60%);
+    radial-gradient(160px 80px at 100% 100%, var(--via-navy-08), transparent 60%);
 }
 
 .vds-receipt-totals-card .row {
@@ -308,8 +308,8 @@
   align-items: center;
   padding: 20px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.03);
-  border: 1px solid rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-03);
+  border: 1px solid var(--via-navy-06);
   margin-bottom: 28px;
 }
 
@@ -329,7 +329,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   padding: 6px 10px;
   border-radius: 8px;
   letter-spacing: -0.01em;
@@ -342,7 +342,7 @@
   width: 18px;
   height: 18px;
   border-radius: 5px;
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   border: none;
   color: var(--via-navy);
   cursor: pointer;
@@ -350,7 +350,7 @@
 }
 
 .vds-receipt-copy:hover {
-  background: rgba(10, 31, 59, 0.16);
+  background: var(--via-navy-16);
 }
 
 .vds-receipt-pay-meta {
@@ -380,7 +380,7 @@
   height: 88px;
   background: var(--via-white);
   border-radius: 12px;
-  border: 1px solid rgba(10, 31, 59, 0.08);
+  border: 1px solid var(--via-navy-08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,7 +404,7 @@
   justify-content: space-between;
   gap: 24px;
   padding-top: 20px;
-  border-top: 1px solid rgba(10, 31, 59, 0.06);
+  border-top: 1px solid var(--via-navy-06);
 }
 
 .vds-receipt-foot p {
@@ -434,7 +434,7 @@
   font-weight: 500;
   padding: 9px 14px;
   border-radius: 10px;
-  border: 1px solid rgba(10, 31, 59, 0.12);
+  border: 1px solid var(--via-navy-12);
   background: transparent;
   color: var(--via-navy);
   cursor: pointer;
@@ -442,14 +442,14 @@
 }
 
 .vds-btn-ghost:hover {
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
 }
 
 .vds-btn-primary {
   background: var(--via-navy);
   color: var(--via-white);
   border-color: var(--via-navy);
-  box-shadow: 0 6px 14px -6px rgba(10, 31, 59, 0.5);
+  box-shadow: 0 6px 14px -6px var(--via-navy-60);
 }
 
 .vds-btn-primary:hover {
@@ -462,11 +462,11 @@
   max-width: 540px;
   background: var(--via-white);
   border-radius: 16px;
-  border: 1px solid rgba(10, 31, 59, 0.08);
+  border: 1px solid var(--via-navy-08);
   padding: 32px;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 48px -28px rgba(10, 31, 59, 0.2);
+    0 24px 48px -28px var(--via-navy-20);
 }
 
 .vds-receipt-mini header {
@@ -475,7 +475,7 @@
   justify-content: space-between;
   gap: 16px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(10, 31, 59, 0.06);
+  border-bottom: 1px solid var(--via-navy-06);
 }
 
 .vds-receipt-mini-pill {
@@ -484,8 +484,8 @@
   gap: 4px;
   padding: 5px 12px 5px 10px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid rgba(10, 31, 59, 0.14);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-14);
   color: var(--via-navy);
   font-size: 11px;
   font-weight: 600;
@@ -546,14 +546,14 @@
   font-weight: 500;
   padding: 14px 16px;
   border-radius: 10px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   color: var(--via-navy);
   text-decoration: none;
   transition: all 160ms ease;
 }
 
 .vds-btn-link:hover {
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
 }
 
 .vds-btn-link span {
@@ -1035,7 +1035,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 40px -22px rgba(10, 31, 59, 0.14);
+    0 16px 40px -22px var(--via-navy-14);
 }
 
 .vds-print-guide::before {
@@ -1043,8 +1043,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(420px 240px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 60%),
-    radial-gradient(360px 220px at 100% 100%, rgba(10, 31, 59, 0.06), transparent 60%);
+    radial-gradient(420px 240px at 0% 0%, var(--via-navy-05), transparent 60%),
+    radial-gradient(360px 220px at 100% 100%, var(--via-navy-06), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
@@ -1127,14 +1127,14 @@
   align-items: start;
   padding: 14px 16px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
   transition: background .22s ease, border-color .22s ease, transform .22s ease;
 }
 
 .vds-print-list li:hover {
-  background: rgba(10, 31, 59, 0.04);
-  border-color: rgba(10, 31, 59, 0.14);
+  background: var(--via-navy-04);
+  border-color: var(--via-navy-14);
   transform: translateY(-1px);
 }
 
@@ -1171,7 +1171,7 @@
 .vds-print-list code {
   font-family: var(--via-mono);
   font-size: 10.5px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
   padding: 1px 5px;
   border-radius: 4px;
@@ -1204,8 +1204,8 @@
   letter-spacing: -0.006em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 2px 4px rgba(10, 31, 59, 0.06),
-    0 0 0 0.5px rgba(10, 31, 59, 0.08);
+    0 2px 4px var(--via-navy-06),
+    0 0 0 0.5px var(--via-navy-08);
 }
 
 .vds-print-tip-plus {
@@ -1233,8 +1233,8 @@
 .vds-receipt-stage[data-print-preview="on"] .vds-receipt {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 32px 60px -20px rgba(10, 31, 59, 0.18),
-    0 4px 8px rgba(10, 31, 59, 0.08);
+    0 32px 60px -20px var(--via-navy-18),
+    0 4px 8px var(--via-navy-08);
   margin: 0 auto;
   width: 210mm;
   min-height: 297mm;

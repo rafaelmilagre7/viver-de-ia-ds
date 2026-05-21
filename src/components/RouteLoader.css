@@ -35,9 +35,9 @@
   border-radius: 8px;
   background: linear-gradient(
     90deg,
-    rgba(10, 31, 59, 0.04) 0%,
-    rgba(10, 31, 59, 0.08) 50%,
-    rgba(10, 31, 59, 0.04) 100%
+    var(--via-navy-04) 0%,
+    var(--via-navy-08) 50%,
+    var(--via-navy-04) 100%
   );
   background-size: 200% 100%;
   animation: vds-shimmer 1.6s linear infinite;

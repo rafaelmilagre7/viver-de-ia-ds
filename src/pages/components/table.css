@@ -13,7 +13,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 4px rgba(10, 31, 59, 0.04);
+    0 1px 4px var(--via-navy-04);
 }
 
 .vds-tbl-wrap::before {
@@ -70,7 +70,7 @@
   gap: 9px;
   padding: 9px 14px;
   border-radius: 10px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   min-width: 320px;
   flex: 1;
@@ -108,7 +108,7 @@
   gap: 6px;
   padding: 8px 14px;
   border-radius: 9px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   font-family: inherit;
@@ -120,7 +120,7 @@
 }
 
 .vds-tbl-tool:hover {
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
 }
 
 .vds-tbl-tool.sm {
@@ -147,7 +147,7 @@
   display: inline-flex;
   padding: 3px;
   border-radius: 9px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   gap: 2px;
 }
@@ -175,7 +175,7 @@
   color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 3px rgba(10, 31, 59, 0.08);
+    0 1px 3px var(--via-navy-08);
 }
 
 /* ---------- Batch toolbar ---------- */
@@ -186,9 +186,9 @@
   gap: 14px;
   padding: 12px 20px;
   background:
-    radial-gradient(540px 80px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 70%),
+    radial-gradient(540px 80px at 0% 0%, var(--via-navy-05), transparent 70%),
     linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.5));
-  border-bottom: 1px solid rgba(10, 31, 59, 0.14);
+  border-bottom: 1px solid var(--via-navy-14);
 }
 
 .vds-tbl-batch-l {
@@ -222,14 +222,14 @@
 .vds-tbl-batch-sep {
   width: 1px;
   height: 16px;
-  background: rgba(10, 31, 59, 0.16);
+  background: var(--via-navy-16);
 }
 
 .vds-tbl-batch-l button:not(.vds-tbl-batch-clear) {
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid rgba(10, 31, 59, 0.12);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-12);
   color: var(--via-navy);
   font-family: inherit;
   font-size: 11.5px;
@@ -263,7 +263,7 @@
 
 .vds-tbl-batch-clear:hover {
   color: var(--via-navy);
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
 }
 
 /* ---------- Table itself ---------- */
@@ -273,7 +273,7 @@
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: rgba(10, 31, 59, 0.18) transparent;
+  scrollbar-color: var(--via-navy-18) transparent;
 }
 
 .vds-tbl-scroll::-webkit-scrollbar {
@@ -281,12 +281,12 @@
 }
 
 .vds-tbl-scroll::-webkit-scrollbar-thumb {
-  background: rgba(10, 31, 59, 0.16);
+  background: var(--via-navy-16);
   border-radius: 999px;
 }
 
 .vds-tbl-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(10, 31, 59, 0.3);
+  background: var(--via-navy-30);
 }
 
 .vds-tbl-scroll::-webkit-scrollbar-track {
@@ -323,7 +323,7 @@
   text-transform: uppercase;
   color: var(--via-text-soft);
   padding: 16px 16px;
-  background: rgba(10, 31, 59, 0.025);
+  background: var(--via-navy-03);
   border-bottom: 1px solid var(--via-border-soft);
   white-space: nowrap;
   position: relative;
@@ -375,13 +375,13 @@
 }
 
 .vds-tbl tbody tr:hover {
-  background: rgba(10, 31, 59, 0.025);
+  background: var(--via-navy-03);
 }
 
 .vds-tbl tbody tr.sel {
   background:
-    radial-gradient(640px 80px at 0% 0%, rgba(10, 31, 59, 0.06), transparent 70%),
-    rgba(10, 31, 59, 0.025);
+    radial-gradient(640px 80px at 0% 0%, var(--via-navy-06), transparent 70%),
+    var(--via-navy-03);
 }
 
 .vds-tbl tbody tr:hover td:first-child::before,
@@ -403,7 +403,7 @@
 .vds-tbl tbody tr.sel td:first-child::before {
   background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
   opacity: 1;
-  box-shadow: 0 0 8px rgba(10, 31, 59, 0.20);
+  box-shadow: 0 0 8px var(--via-navy-20);
 }
 
 .vds-tbl tbody td {
@@ -451,7 +451,7 @@
   height: 18px;
   border-radius: 5px;
   background: var(--via-white);
-  border: 1.5px solid rgba(10, 31, 59, 0.22);
+  border: 1.5px solid var(--via-navy-22);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -469,7 +469,7 @@
   color: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px rgba(10, 31, 59, 0.4);
+    0 2px 6px -2px var(--via-navy-40);
 }
 
 /* Cell · user (avatar + name + role) */
@@ -500,8 +500,8 @@
   letter-spacing: 0.02em;
   border: 2px solid var(--via-white);
   box-shadow:
-    0 0 0 1px rgba(10, 31, 59, 0.1),
-    0 2px 6px -2px rgba(10, 31, 59, 0.25);
+    0 0 0 1px var(--via-navy-10),
+    0 2px 6px -2px var(--via-navy-25);
   flex-shrink: 0;
 }
 
@@ -546,27 +546,27 @@
   letter-spacing: -0.004em;
   padding: 4px 11px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid rgba(10, 31, 59, 0.12);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-12);
   color: var(--via-navy);
   white-space: nowrap;
   line-height: 1.4;
 }
 
 .vds-tbl-plan.mentoria {
-  background: rgba(10, 31, 59, 0.08);
-  border-color: rgba(10, 31, 59, 0.16);
+  background: var(--via-navy-08);
+  border-color: var(--via-navy-16);
 }
 
 .vds-tbl-plan.corporate {
   background: rgba(10, 31, 59, 0.07);
-  border-color: rgba(10, 31, 59, 0.16);
+  border-color: var(--via-navy-16);
   color: var(--via-navy-deep);
 }
 
 .vds-tbl-plan.comunidade {
-  background: rgba(10, 31, 59, 0.04);
-  border-color: rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-04);
+  border-color: var(--via-navy-10);
   color: var(--via-text-soft);
 }
 
@@ -601,7 +601,7 @@
   flex: 1;
   height: 5px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   overflow: hidden;
 }
 
@@ -646,14 +646,14 @@
 }
 
 .vds-tbl-delta.up {
-  background: rgba(10, 31, 59, 0.06);
-  border-color: rgba(10, 31, 59, 0.14);
+  background: var(--via-navy-06);
+  border-color: var(--via-navy-14);
   color: var(--via-navy);
 }
 
 .vds-tbl-delta.down {
-  background: rgba(10, 31, 59, 0.05);
-  border-color: rgba(10, 31, 59, 0.12);
+  background: var(--via-navy-05);
+  border-color: var(--via-navy-12);
   color: var(--via-navy-deep);
 }
 
@@ -676,13 +676,13 @@
 }
 
 .vds-tbl-status.ok {
-  background: rgba(10, 31, 59, 0.05);
-  border-color: rgba(10, 31, 59, 0.14);
+  background: var(--via-navy-05);
+  border-color: var(--via-navy-14);
   color: var(--via-navy);
 }
 
 .vds-tbl-status.attention {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   border-color: rgba(10, 31, 59, 0.15);
   color: var(--via-navy-deep);
 }
@@ -713,7 +713,7 @@
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   display: inline-flex;
@@ -730,7 +730,7 @@
   color: var(--via-white);
   border-color: var(--via-navy);
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px -3px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 4px 10px -3px var(--via-navy-40);
 }
 
 .vds-tbl-action-btn.ghost {
@@ -740,7 +740,7 @@
 }
 
 .vds-tbl-action-btn.ghost:hover {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
 }
 
@@ -752,7 +752,7 @@
   gap: 14px;
   padding: 14px 20px;
   border-top: 1px solid var(--via-border-soft);
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   flex-wrap: wrap;
 }
 
@@ -791,7 +791,7 @@
 }
 
 .vds-tbl-pag button:hover:not(:disabled):not(.active) {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
 }
 
@@ -802,7 +802,7 @@
   font-weight: 600;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px rgba(10, 31, 59, 0.4);
+    0 2px 6px -2px var(--via-navy-40);
 }
 
 .vds-tbl-pag button:disabled {
@@ -830,7 +830,7 @@
   gap: 4px;
   padding: 5px 10px;
   border-radius: 7px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   font-family: inherit;
@@ -861,7 +861,7 @@
 }
 
 .vds-tbl.compact tbody tr:hover {
-  background: rgba(10, 31, 59, 0.025);
+  background: var(--via-navy-03);
 }
 
 .vds-tbl-prio {
@@ -886,12 +886,12 @@
 .vds-tbl-prio.média,
 .vds-tbl-prio.media {
   background: rgba(10, 31, 59, 0.07);
-  border-color: rgba(10, 31, 59, 0.16);
+  border-color: var(--via-navy-16);
   color: var(--via-navy-deep);
 }
 
 .vds-tbl-prio.baixa {
-  background: rgba(10, 31, 59, 0.06);
-  border-color: rgba(10, 31, 59, 0.14);
+  background: var(--via-navy-06);
+  border-color: var(--via-navy-14);
   color: var(--via-navy);
 }

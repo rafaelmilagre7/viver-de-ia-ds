@@ -14,7 +14,7 @@ export default function Swatch({ name, hex, token, border = false }: Props) {
         className="vds-swatch-tile"
         style={{
           background: hex,
-          border: border ? '0.5px solid rgba(10,31,59,0.12)' : '0.5px solid transparent',
+          border: border ? '0.5px solid var(--via-navy-12)' : '0.5px solid transparent',
         }}
       />
       <div className="vds-swatch-meta">

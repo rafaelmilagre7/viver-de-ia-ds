@@ -19,7 +19,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 4px rgba(10, 31, 59, 0.04);
+    0 1px 4px var(--via-navy-04);
 }
 
 .vds-testi::before {
@@ -39,7 +39,7 @@
   bottom: 28px;
   left: 0;
   width: 2px;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
   border-radius: 0 2px 2px 0;
 }
 
@@ -52,7 +52,7 @@
   font-style: italic;
   font-size: 64px;
   font-weight: 500;
-  color: rgba(10, 31, 59, 0.1);
+  color: var(--via-navy-10);
   line-height: 0.6;
   pointer-events: none;
   user-select: none;
@@ -100,7 +100,7 @@
   flex-shrink: 0;
   border: 2.5px solid var(--via-white);
   box-shadow:
-    0 0 0 1px rgba(10, 31, 59, 0.08),
+    0 0 0 1px var(--via-navy-08),
     0 6px 14px -4px rgba(10, 31, 59, 0.35);
 }
 
@@ -122,7 +122,7 @@
 .vds-testi .outcome {
   margin-left: auto;
   padding: 12px 18px 12px 22px;
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.03), rgba(10, 31, 59, 0.01));
+  background: linear-gradient(180deg, var(--via-navy-03), rgba(10, 31, 59, 0.01));
   border: 1px solid var(--via-border-soft);
   border-radius: 12px;
   display: flex;
@@ -138,7 +138,7 @@
   top: 12px;
   bottom: 12px;
   width: 2px;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.2));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-20));
   border-radius: 0 2px 2px 0;
 }
 

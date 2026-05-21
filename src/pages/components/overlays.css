@@ -57,7 +57,7 @@
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: none;
   color: var(--via-navy);
   cursor: pointer;
@@ -107,14 +107,14 @@
 }
 
 .vds-drawer nav li a:hover {
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   color: var(--via-navy);
 }
 
 .vds-drawer nav li.on a {
   background:
-    radial-gradient(220px 60px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 70%),
-    linear-gradient(180deg, rgba(10, 31, 59, 0.07), rgba(10, 31, 59, 0.03));
+    radial-gradient(220px 60px at 0% 0%, var(--via-navy-08), transparent 70%),
+    linear-gradient(180deg, rgba(10, 31, 59, 0.07), var(--via-navy-03));
   color: var(--via-navy);
   font-weight: 600;
 }
@@ -137,7 +137,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(10, 31, 59, 0.18);
+  background: var(--via-navy-18);
   flex-shrink: 0;
   transition: all 180ms ease;
 }
@@ -148,7 +148,7 @@
 
 .vds-drawer nav li.on .vds-drawer-mark {
   background: var(--via-navy);
-  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.1);
+  box-shadow: 0 0 0 3px var(--via-navy-10);
 }
 
 .vds-drawer nav li .vds-drawer-mark.live {
@@ -175,7 +175,7 @@
   letter-spacing: -0.004em;
   padding: 2px 7px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   color: var(--via-navy);
   white-space: nowrap;
   line-height: 1.4;
@@ -291,7 +291,7 @@
   width: 32px;
   height: 32px;
   border-radius: 9px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
   border: none;
   cursor: pointer;
@@ -316,7 +316,7 @@
   gap: 10px;
   padding: 14px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -393,8 +393,8 @@
   padding: 16px 16px 14px 18px;
   border-radius: 12px;
   background:
-    radial-gradient(280px 100px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 70%),
-    linear-gradient(180deg, rgba(10, 31, 59, 0.05), rgba(10, 31, 59, 0.02));
+    radial-gradient(280px 100px at 0% 0%, var(--via-navy-05), transparent 70%),
+    linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
   border: 1px solid rgba(10, 31, 59, 0.11);
   overflow: hidden;
 }
@@ -408,7 +408,7 @@
   width: 3px;
   background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
   border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 10px rgba(10, 31, 59, 0.20);
+  box-shadow: 0 0 10px var(--via-navy-20);
 }
 
 .vds-sheet-note p {
@@ -498,9 +498,9 @@
   isolation: isolate;
   border: 8px solid var(--via-navy);
   box-shadow:
-    0 0 0 2px rgba(10, 31, 59, 0.4),
+    0 0 0 2px var(--via-navy-40),
     0 32px 64px -22px rgba(10, 31, 59, 0.45),
-    0 8px 16px rgba(10, 31, 59, 0.2);
+    0 8px 16px var(--via-navy-20);
 }
 
 /* Phone bg — fake content underneath */
@@ -638,7 +638,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 -16px 40px rgba(10, 31, 59, 0.18);
+    0 -16px 40px var(--via-navy-18);
   animation: vds-bs-up 380ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -662,7 +662,7 @@
   width: 40px;
   height: 4px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.18);
+  background: var(--via-navy-18);
   margin: 10px auto 6px;
   flex-shrink: 0;
 }
@@ -699,7 +699,7 @@
   width: 30px;
   height: 30px;
   border-radius: 9px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   display: inline-flex;
@@ -724,8 +724,8 @@
   padding: 18px 22px;
   border-radius: 14px;
   background:
-    radial-gradient(280px 120px at 100% 0%, rgba(10, 31, 59, 0.06), transparent 70%),
-    linear-gradient(180deg, rgba(10, 31, 59, 0.05), rgba(10, 31, 59, 0.02));
+    radial-gradient(280px 120px at 100% 0%, var(--via-navy-06), transparent 70%),
+    linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
   border: 1px solid rgba(10, 31, 59, 0.11);
   margin-bottom: 18px;
 }
@@ -783,7 +783,7 @@
 
 .vds-bs-title em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.5);
+  color: var(--via-navy-60);
   font-weight: 500;
 }
 
@@ -810,29 +810,29 @@
   gap: 12px;
   padding: 14px 14px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.025);
+  background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   cursor: pointer;
   transition: all 160ms ease;
 }
 
 .vds-bs-options li:hover {
-  background: rgba(10, 31, 59, 0.05);
-  border-color: rgba(10, 31, 59, 0.18);
+  background: var(--via-navy-05);
+  border-color: var(--via-navy-18);
 }
 
 .vds-bs-options li.on {
   background:
-    radial-gradient(280px 100px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 70%),
+    radial-gradient(280px 100px at 0% 0%, var(--via-navy-05), transparent 70%),
     linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.55));
-  border-color: rgba(10, 31, 59, 0.16);
+  border-color: var(--via-navy-16);
 }
 
 .vds-bs-opt-ic {
   width: 32px;
   height: 32px;
   border-radius: 9px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
   border: 1px solid var(--via-border-soft);
   display: inline-flex;
@@ -843,10 +843,10 @@
 .vds-bs-options li.on .vds-bs-opt-ic {
   background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
   color: var(--via-navy);
-  border-color: rgba(10, 31, 59, 0.25);
+  border-color: var(--via-navy-25);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.3) inset,
-    0 2px 6px -2px rgba(10, 31, 59, 0.25);
+    0 2px 6px -2px var(--via-navy-25);
 }
 
 .vds-bs-options strong {
@@ -870,7 +870,7 @@
 .vds-bs footer {
   padding: 16px 22px 20px;
   border-top: 1px solid var(--via-border-soft);
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
 }
 
 .vds-bs-cta {
@@ -929,7 +929,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1.5px solid rgba(10, 31, 59, 0.22);
+  border: 1.5px solid var(--via-navy-22);
   background: var(--via-white);
   display: inline-flex;
   align-items: center;
@@ -973,7 +973,7 @@
   padding: 60px 32px 80px;
   border-radius: 22px;
   background:
-    radial-gradient(620px 280px at 50% 0%, rgba(10, 31, 59, 0.04), transparent 70%),
+    radial-gradient(620px 280px at 50% 0%, var(--via-navy-04), transparent 70%),
     linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
@@ -1006,16 +1006,16 @@
   cursor: pointer;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 6px 14px -6px rgba(10, 31, 59, 0.18);
+    0 6px 14px -6px var(--via-navy-18);
   transition: all 160ms ease;
 }
 
 .vds-pop-anchor:hover {
-  border-color: rgba(10, 31, 59, 0.22);
+  border-color: var(--via-navy-22);
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 8px 18px -6px rgba(10, 31, 59, 0.25);
+    0 8px 18px -6px var(--via-navy-25);
 }
 
 .vds-pop-anchor.pill {
@@ -1040,7 +1040,7 @@
   border-color: transparent;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 6px 14px -4px rgba(10, 31, 59, 0.4);
+    0 6px 14px -4px var(--via-navy-40);
 }
 
 .vds-popover {
@@ -1053,7 +1053,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 24px 56px -22px rgba(10, 31, 59, 0.28),
-    0 2px 8px rgba(10, 31, 59, 0.04);
+    0 2px 8px var(--via-navy-04);
   z-index: 5;
   overflow: hidden;
 }
@@ -1128,7 +1128,7 @@
 }
 
 .vds-popover li a:hover {
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-navy);
 }
 
@@ -1197,7 +1197,7 @@
 }
 
 .vds-pop-section label:hover {
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
 }
 
 .vds-pop-section label .count {
@@ -1209,7 +1209,7 @@
   font-feature-settings: 'tnum' 1;
   padding: 2px 7px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   letter-spacing: 0;
 }
 
@@ -1221,7 +1221,7 @@
   height: 16px;
   border-radius: 5px;
   background: var(--via-white);
-  border: 1.5px solid rgba(10, 31, 59, 0.25);
+  border: 1.5px solid var(--via-navy-25);
   position: relative;
   cursor: pointer;
   flex-shrink: 0;
@@ -1255,7 +1255,7 @@
   justify-content: space-between;
   padding: 10px 14px;
   border-top: 1px solid var(--via-border-soft);
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   gap: 8px;
 }
 
@@ -1288,7 +1288,7 @@
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
-  box-shadow: 0 4px 10px -4px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 4px 10px -4px var(--via-navy-40);
   transition: all 160ms ease;
 }
 
@@ -1305,8 +1305,8 @@
   padding: 16px 14px;
   border-bottom: 1px solid var(--via-border-soft);
   background:
-    radial-gradient(220px 100px at 0% 0%, rgba(10, 31, 59, 0.06), transparent 70%),
-    linear-gradient(180deg, rgba(10, 31, 59, 0.025), transparent);
+    radial-gradient(220px 100px at 0% 0%, var(--via-navy-06), transparent 70%),
+    linear-gradient(180deg, var(--via-navy-03), transparent);
 }
 
 .vds-pop-user-head .av {
@@ -1323,7 +1323,7 @@
   letter-spacing: 0.02em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -4px rgba(10, 31, 59, 0.4);
+    0 4px 10px -4px var(--via-navy-40);
 }
 
 .vds-pop-user-head strong {
@@ -1376,8 +1376,8 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 32px 64px -28px rgba(10, 31, 59, 0.4),
-    0 2px 8px rgba(10, 31, 59, 0.04);
+    0 32px 64px -28px var(--via-navy-40),
+    0 2px 8px var(--via-navy-04);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1393,7 +1393,7 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(380px 200px at 50% 0%, rgba(10, 31, 59, 0.05), transparent 60%);
+    radial-gradient(380px 200px at 50% 0%, var(--via-navy-05), transparent 60%);
   z-index: -1;
 }
 
@@ -1415,7 +1415,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 8px 18px -6px rgba(10, 31, 59, 0.18);
+    0 8px 18px -6px var(--via-navy-18);
 }
 
 .vds-dialog-icon.destructive {
@@ -1445,8 +1445,8 @@
   color: var(--via-text-soft);
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-10);
   margin-top: 4px;
   white-space: nowrap;
   line-height: 1.4;
@@ -1736,7 +1736,7 @@
 }
 
 .vds-lightbox-thumb.on {
-  background: rgba(10, 31, 59, 0.10);
-  border-color: rgba(10, 31, 59, 0.20);
+  background: var(--via-navy-10);
+  border-color: var(--via-navy-20);
   color: var(--via-white);
 }

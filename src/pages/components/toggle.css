@@ -30,7 +30,7 @@
   height: 18px;
   border-radius: 999px;
   background: var(--via-white);
-  box-shadow: 0 2px 4px rgba(10,31,59,0.20);
+  box-shadow: 0 2px 4px var(--via-navy-20);
   transition: left 200ms var(--via-ease);
 }
 .via-switch.on { background: var(--via-navy); }

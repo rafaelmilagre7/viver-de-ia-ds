@@ -10,7 +10,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 4px rgba(10, 31, 59, 0.04);
+    0 1px 4px var(--via-navy-04);
   position: relative;
 }
 
@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(10, 31, 59, 0.12) 50%, transparent);
+  background: linear-gradient(90deg, transparent, var(--via-navy-12) 50%, transparent);
   opacity: 0.5;
 }
 
@@ -71,7 +71,7 @@
   position: relative;
   background:
     radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 60% at 100% 100%, rgba(10, 31, 59, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, var(--via-navy-05) 0%, transparent 60%),
     linear-gradient(135deg, var(--via-navy), var(--via-navy-darker));
   border-radius: var(--via-radius-xl);
   padding: 40px;

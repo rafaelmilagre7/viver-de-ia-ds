@@ -55,7 +55,7 @@ export default function ShowcaseAluno() {
             <span className="vds-eyebrow">Progresso geral</span>
             <div className="ring">
               <svg viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(10,31,59,0.08)" strokeWidth="6" />
+                <circle cx="50" cy="50" r="42" fill="none" stroke="var(--via-navy-08)" strokeWidth="6" />
                 <circle cx="50" cy="50" r="42" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="6"
                   strokeDasharray="264" strokeDashoffset="132"
                   transform="rotate(-90 50 50)"

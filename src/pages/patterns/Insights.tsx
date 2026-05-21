@@ -164,9 +164,9 @@ function InsightsWeeklySection() {
             </defs>
 
             {/* Grid lines */}
-            <line x1="0" y1="50" x2="560" y2="50" stroke="rgba(10,31,59,0.05)" />
-            <line x1="0" y1="100" x2="560" y2="100" stroke="rgba(10,31,59,0.05)" />
-            <line x1="0" y1="150" x2="560" y2="150" stroke="rgba(10,31,59,0.05)" />
+            <line x1="0" y1="50" x2="560" y2="50" stroke="var(--via-navy-05)" />
+            <line x1="0" y1="100" x2="560" y2="100" stroke="var(--via-navy-05)" />
+            <line x1="0" y1="150" x2="560" y2="150" stroke="var(--via-navy-05)" />
 
             {/* Bars */}
             {[42, 56, 48, 72, 84, 92, 108, 138].map((h, i) => {
@@ -175,7 +175,7 @@ function InsightsWeeklySection() {
               return (
                 <g key={i}>
                   <rect x={x} y={y} width="38" height={h} rx="6" fill="url(#bars)" />
-                  <text x={x + 19} y="196" textAnchor="middle" fontSize="9" fill="rgba(10,31,59,0.5)" fontFamily="var(--via-mono)">
+                  <text x={x + 19} y="196" textAnchor="middle" fontSize="9" fill="var(--via-navy-60)" fontFamily="var(--via-mono)">
                     S{13 + i}
                   </text>
                 </g>

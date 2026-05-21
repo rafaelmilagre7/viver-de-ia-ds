@@ -10,7 +10,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 56px -22px rgba(10, 31, 59, 0.18);
+    0 24px 56px -22px var(--via-navy-18);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
@@ -20,8 +20,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(560px 280px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 60%),
-    radial-gradient(420px 260px at 100% 100%, rgba(10, 31, 59, 0.05), transparent 60%);
+    radial-gradient(560px 280px at 0% 0%, var(--via-navy-05), transparent 60%),
+    radial-gradient(420px 260px at 100% 100%, var(--via-navy-05), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
@@ -51,7 +51,7 @@
   height: 6px;
   border-radius: 50%;
   background: var(--via-accent);
-  box-shadow: 0 0 8px rgba(10, 31, 59, 0.30);
+  box-shadow: 0 0 8px var(--via-navy-30);
   animation: vds-ins-pulse 1.8s ease-in-out infinite;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .vds-ins-kpi:hover {
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
 }
 
 .vds-ins-kpi:hover::before {
@@ -132,7 +132,7 @@
   bottom: 16px;
   width: 2px;
   border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
   opacity: 0;
   transition: opacity .22s ease;
 }
@@ -291,7 +291,7 @@
   margin: 18px 0 0;
   padding: 14px 18px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   font-size: 13px;
   line-height: 1.55;
@@ -363,14 +363,14 @@
   transition: transform .26s ease, box-shadow .26s ease;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 8px 18px -12px rgba(10, 31, 59, 0.12);
+    0 8px 18px -12px var(--via-navy-12);
 }
 
 .vds-ins-quote:hover {
   transform: translateY(-2px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 12px 24px -14px rgba(10, 31, 59, 0.18);
+    0 12px 24px -14px var(--via-navy-18);
 }
 
 .vds-ins-quote-mark {
@@ -477,7 +477,7 @@
 
 .vds-ins-foot-list li:hover {
   background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(10, 31, 59, 0.14);
+  border-color: var(--via-navy-14);
   transform: translateY(-1px);
 }
 
@@ -522,7 +522,7 @@
   gap: 10px;
   padding: 14px 16px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   border: 1px solid rgba(10, 31, 59, 0.11);
   position: relative;
 }
@@ -600,28 +600,28 @@
   transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 10px 22px -14px rgba(10, 31, 59, 0.12);
+    0 10px 22px -14px var(--via-navy-12);
 }
 
 .vds-ins-tile:hover {
   transform: translateY(-2px);
-  border-color: rgba(10, 31, 59, 0.14);
+  border-color: var(--via-navy-14);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 32px -16px rgba(10, 31, 59, 0.18);
+    0 16px 32px -16px var(--via-navy-18);
 }
 
 .vds-ins-tile::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(280px 180px at 100% 100%, rgba(10, 31, 59, 0.03), transparent 60%);
+  background: radial-gradient(280px 180px at 100% 100%, var(--via-navy-03), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
 
 .vds-ins-tile.down::before {
-  background: radial-gradient(280px 180px at 100% 100%, rgba(10, 31, 59, 0.05), transparent 60%);
+  background: radial-gradient(280px 180px at 100% 100%, var(--via-navy-05), transparent 60%);
 }
 
 .vds-ins-tile-lbl {
@@ -665,15 +665,15 @@
 }
 
 .vds-ins-tile-delta.up {
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-navy);
-  border: 1px solid rgba(10, 31, 59, 0.12);
+  border: 1px solid var(--via-navy-12);
 }
 
 .vds-ins-tile-delta.down {
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-accent-warm);
-  border: 1px solid rgba(10, 31, 59, 0.12);
+  border: 1px solid var(--via-navy-12);
 }
 
 .vds-ins-tile-mini {
@@ -686,10 +686,10 @@
   position: absolute;
   right: -8px;
   bottom: -8px;
-  color: rgba(10, 31, 59, 0.04);
+  color: var(--via-navy-04);
   pointer-events: none;
 }
 
 .vds-ins-tile.down .vds-ins-tile-ghost {
-  color: rgba(10, 31, 59, 0.08);
+  color: var(--via-navy-08);
 }

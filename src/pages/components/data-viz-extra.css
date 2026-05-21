@@ -13,7 +13,7 @@
   -webkit-backdrop-filter: blur(24px) saturate(140%);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 40px -24px rgba(10, 31, 59, 0.14);
+    0 16px 40px -24px var(--via-navy-14);
   isolation: isolate;
 }
 
@@ -73,8 +73,8 @@
   gap: 4px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-10);
   font-size: 11px;
   font-weight: 600;
   color: var(--via-navy);
@@ -141,7 +141,7 @@
 .vds-heatmap-cell {
   aspect-ratio: 1;
   border-radius: 2px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   display: inline-block;
   transition: transform 140ms ease, box-shadow 140ms ease;
   cursor: default;
@@ -149,13 +149,13 @@
 
 .vds-heatmap-cell:hover {
   transform: scale(1.4);
-  box-shadow: 0 4px 8px -2px rgba(10, 31, 59, 0.3);
+  box-shadow: 0 4px 8px -2px var(--via-navy-30);
   z-index: 2;
   position: relative;
 }
 
-.vds-heatmap-cell.i0 { background: rgba(10, 31, 59, 0.05); }
-.vds-heatmap-cell.i1 { background: rgba(10, 31, 59, 0.18); }
+.vds-heatmap-cell.i0 { background: var(--via-navy-05); }
+.vds-heatmap-cell.i1 { background: var(--via-navy-18); }
 .vds-heatmap-cell.i2 { background: rgba(10, 31, 59, 0.42); }
 .vds-heatmap-cell.i3 { background: rgba(10, 31, 59, 0.68); }
 .vds-heatmap-cell.i4 { background: rgba(10, 31, 59, 0.95); }
@@ -220,7 +220,7 @@
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.95), rgba(10, 31, 59, 1));
   color: var(--via-white);
   border-color: transparent;
-  box-shadow: 0 24px 48px -22px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 24px 48px -22px var(--via-navy-40);
 }
 
 .vds-spark-card.hero::before {
@@ -230,7 +230,7 @@
   pointer-events: none;
   background:
     radial-gradient(220px 80px at 0% 0%, rgba(255, 255, 255, 0.08), transparent 60%),
-    radial-gradient(180px 80px at 100% 100%, rgba(10, 31, 59, 0.08), transparent 60%);
+    radial-gradient(180px 80px at 100% 100%, var(--via-navy-08), transparent 60%);
 }
 
 .vds-spark-label {
@@ -340,8 +340,8 @@
 }
 
 .vds-gauge-card.highlight {
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.08), rgba(10, 31, 59, 0.02));
-  border-color: rgba(10, 31, 59, 0.12);
+  background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-02));
+  border-color: var(--via-navy-12);
 }
 
 .vds-gauge-eyebrow {

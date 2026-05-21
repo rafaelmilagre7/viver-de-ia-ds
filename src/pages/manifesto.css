@@ -76,8 +76,8 @@
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
     inset 0 -1px 0 rgba(255,255,255,0.4),
-    0 16px 40px rgba(10,31,59,0.10),
-    0 2px 8px rgba(10,31,59,0.04);
+    0 16px 40px var(--via-navy-10),
+    0 2px 8px var(--via-navy-04);
   overflow: hidden;
   transition: var(--via-t);
 }
@@ -94,7 +94,7 @@
   transform: translateY(-2px);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
-    0 24px 56px rgba(10,31,59,0.16);
+    0 24px 56px var(--via-navy-16);
 }
 .vds-principle header {
   display: flex;
@@ -118,7 +118,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(10,31,59,0.25);
+  box-shadow: 0 4px 12px var(--via-navy-25);
 }
 .vds-principle h3 {
   font-family: var(--via-font-display);

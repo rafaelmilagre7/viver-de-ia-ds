@@ -13,7 +13,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 40px -22px rgba(10, 31, 59, 0.14);
+    0 18px 40px -22px var(--via-navy-14);
 }
 
 .vds-phil-rule::before {
@@ -44,7 +44,7 @@
   font-family: var(--via-display);
   font-size: 56px;
   font-weight: 500;
-  color: rgba(10, 31, 59, 0.12);
+  color: var(--via-navy-12);
   letter-spacing: -0.04em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -103,7 +103,7 @@
 }
 
 .vds-phil-allow {
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.025), rgba(10, 31, 59, 0.01));
+  background: linear-gradient(180deg, var(--via-navy-03), rgba(10, 31, 59, 0.01));
 }
 
 .vds-phil-forbid {
@@ -204,7 +204,7 @@
   margin-bottom: 22px;
   padding: 22px 24px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -242,14 +242,14 @@
 }
 
 .vds-phil-pill.default {
-  background: rgba(10, 31, 59, 0.05);
-  border-color: rgba(10, 31, 59, 0.14);
+  background: var(--via-navy-05);
+  border-color: var(--via-navy-14);
   color: var(--via-navy);
 }
 
 .vds-phil-pill.attn {
-  background: rgba(10, 31, 59, 0.12);
-  border-color: rgba(10, 31, 59, 0.3);
+  background: var(--via-navy-12);
+  border-color: var(--via-navy-30);
   color: var(--via-navy-deep);
 }
 
@@ -273,7 +273,7 @@
   overflow-x: auto;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.08) inset,
-    0 12px 28px -16px rgba(10, 31, 59, 0.4);
+    0 12px 28px -16px var(--via-navy-40);
 }
 
 /* ============================================
@@ -306,7 +306,7 @@
 }
 
 .vds-phil-token:hover {
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
 }
 
 .vds-phil-token-swatch {
@@ -365,7 +365,7 @@
 .vds-phil-sig-demo {
   height: 140px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   margin-bottom: 16px;
   padding: 12px;
@@ -394,7 +394,7 @@
   bottom: 8px;
   width: 2px;
   border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
   opacity: 0;
   transition: opacity .22s ease;
 }
@@ -430,7 +430,7 @@
   transform: translateY(-3px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 36px -16px rgba(10, 31, 59, 0.22);
+    0 18px 36px -16px var(--via-navy-22);
 }
 
 .vds-phil-sig-demo.atmos {
@@ -456,8 +456,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(240px 140px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 60%),
-    radial-gradient(180px 120px at 100% 100%, rgba(10, 31, 59, 0.06), transparent 60%);
+    radial-gradient(240px 140px at 0% 0%, var(--via-navy-08), transparent 60%),
+    radial-gradient(180px 120px at 100% 100%, var(--via-navy-06), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
@@ -481,7 +481,7 @@
 .vds-phil-sig code {
   font-family: var(--via-mono);
   font-size: 10.5px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-navy);
   padding: 1px 5px;
   border-radius: 4px;
@@ -497,7 +497,7 @@
   gap: 12px;
   padding: 22px 24px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -608,7 +608,7 @@
   bottom: 18px;
   width: 2px;
   border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
 }
 
 .vds-phil-voice.bad::before {

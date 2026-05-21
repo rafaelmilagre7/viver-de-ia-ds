@@ -21,7 +21,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 4px rgba(10, 31, 59, 0.04);
+    0 1px 4px var(--via-navy-04);
 }
 
 .vds-pod::before {
@@ -37,11 +37,11 @@
 }
 
 .vds-pod:hover {
-  border-color: rgba(10, 31, 59, 0.18);
+  border-color: var(--via-navy-18);
   transform: translateY(-2px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 12px 28px -16px rgba(10, 31, 59, 0.2);
+    0 12px 28px -16px var(--via-navy-20);
 }
 
 .vds-pod:hover::before {
@@ -62,7 +62,7 @@
   font-feature-settings: 'tnum' 1;
   padding: 8px 0;
   border-radius: 10px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   opacity: 0.85;
 }
@@ -113,7 +113,7 @@
 
 .vds-pod .title em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.5);
+  color: var(--via-navy-60);
   font-weight: 400;
 }
 
@@ -126,7 +126,7 @@
   padding: 0 6px;
   border-radius: 999px;
   background: rgba(10, 31, 59, 0.07);
-  border: 1px solid rgba(10, 31, 59, 0.14);
+  border: 1px solid var(--via-navy-14);
 }
 
 .vds-pod-wave span {
@@ -180,10 +180,10 @@
 /* Playing state — accent + atmospheric */
 .vds-pod.playing {
   background:
-    radial-gradient(540px 220px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 60%),
-    radial-gradient(420px 200px at 100% 100%, rgba(10, 31, 59, 0.06), transparent 60%),
+    radial-gradient(540px 220px at 0% 0%, var(--via-navy-05), transparent 60%),
+    radial-gradient(420px 200px at 100% 100%, var(--via-navy-06), transparent 60%),
     linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.55));
-  border-color: rgba(10, 31, 59, 0.16);
+  border-color: var(--via-navy-16);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 16px 36px -22px rgba(10, 31, 59, 0.15);
@@ -191,7 +191,7 @@
 
 .vds-pod.playing::before {
   background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
-  box-shadow: 0 0 12px rgba(10, 31, 59, 0.20);
+  box-shadow: 0 0 12px var(--via-navy-20);
   opacity: 1;
 }
 
@@ -202,7 +202,7 @@
   opacity: 1;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -3px rgba(10, 31, 59, 0.4);
+    0 4px 10px -3px var(--via-navy-40);
 }
 
 .vds-pod.playing .num::before {

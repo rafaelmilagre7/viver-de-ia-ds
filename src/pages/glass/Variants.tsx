@@ -134,7 +134,7 @@ export default function GlassVariants() {
               WebkitBackdropFilter: 'blur(16px) saturate(160%)',
               border: '1px solid rgba(255,255,255,0.95)',
               borderRadius: 999,
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(10,31,59,0.08)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px var(--via-navy-08)',
               fontFamily: 'var(--via-font)',
               fontSize: 11, fontWeight: 700, letterSpacing: '0.20em', textTransform: 'uppercase',
               color: 'var(--via-navy)',

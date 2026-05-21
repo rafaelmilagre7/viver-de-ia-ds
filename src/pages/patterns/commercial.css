@@ -156,7 +156,7 @@
   background: var(--via-white);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 4px;
-  box-shadow: 0 24px 56px -16px rgba(10, 31, 59, 0.16);
+  box-shadow: 0 24px 56px -16px var(--via-navy-16);
   aspect-ratio: 1 / 1.41;
   display: flex;
   flex-direction: column;
@@ -316,7 +316,7 @@
   background: var(--via-white);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
-  box-shadow: 0 16px 40px -12px rgba(10, 31, 59, 0.16);
+  box-shadow: 0 16px 40px -12px var(--via-navy-16);
 }
 .vds-com-case > header {
   margin-bottom: 28px;
@@ -485,7 +485,7 @@
   background: var(--via-white);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 4px;
-  box-shadow: 0 24px 56px -16px rgba(10, 31, 59, 0.16);
+  box-shadow: 0 24px 56px -16px var(--via-navy-16);
 }
 .vds-com-proposal > header {
   display: flex;
@@ -663,7 +663,7 @@
   background: var(--via-white);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 4px;
-  box-shadow: 0 24px 56px -16px rgba(10, 31, 59, 0.16);
+  box-shadow: 0 24px 56px -16px var(--via-navy-16);
   font-family: var(--via-font);
 }
 .vds-com-contract > header {

@@ -56,7 +56,7 @@
   border: 0.5px solid var(--via-navy-12);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 6px 18px -6px rgba(10, 31, 59, 0.12);
+  box-shadow: 0 6px 18px -6px var(--via-navy-12);
 }
 .vds-pa-meta-hdr {
   display: flex;
@@ -221,7 +221,7 @@
     radial-gradient(ellipse 70% 55% at 0% 0%, rgba(46, 76, 118, 0.36) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   overflow: hidden;
-  box-shadow: 0 8px 20px -6px rgba(10, 31, 59, 0.22);
+  box-shadow: 0 8px 20px -6px var(--via-navy-22);
 }
 .vds-pa-carousel-card.context {
   background: var(--via-white);
@@ -538,7 +538,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 8px 20px -8px rgba(10, 31, 59, 0.22);
+  box-shadow: 0 8px 20px -8px var(--via-navy-22);
 }
 .vds-pa-gdn-banner img {
   position: absolute;

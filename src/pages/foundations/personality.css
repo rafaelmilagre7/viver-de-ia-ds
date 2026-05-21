@@ -16,7 +16,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 40px -22px rgba(10, 31, 59, 0.14);
+    0 18px 40px -22px var(--via-navy-14);
 }
 .vds-pers-trait::before {
   content: '';
@@ -49,7 +49,7 @@
   font-family: var(--via-font-display);
   font-size: 56px;
   font-weight: 500;
-  color: rgba(10, 31, 59, 0.12);
+  color: var(--via-navy-12);
   letter-spacing: -0.04em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -105,7 +105,7 @@
   flex-shrink: 0;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.86),
-    0 1px 3px rgba(10, 31, 59, 0.06);
+    0 1px 3px var(--via-navy-06);
 }
 
 /* Pair · Comportamento + Evita ---------- */
@@ -125,7 +125,7 @@
   border-radius: 14px;
   background: var(--via-white);
   border: 0.5px solid var(--via-navy-08);
-  box-shadow: 0 1px 2px rgba(10, 31, 59, 0.03);
+  box-shadow: 0 1px 2px var(--via-navy-03);
 }
 .vds-pers-do  { border-left: 2px solid var(--via-navy); }
 .vds-pers-dont { border-left: 2px solid var(--via-coral); }
@@ -166,7 +166,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 40px -22px rgba(10, 31, 59, 0.14);
+    0 18px 40px -22px var(--via-navy-14);
   overflow: hidden;
   isolation: isolate;
 }
@@ -210,7 +210,7 @@
   white-space: nowrap;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.86),
-    0 1px 3px rgba(10, 31, 59, 0.06);
+    0 1px 3px var(--via-navy-06);
 }
 .vds-pers-axis-track {
   position: relative;
@@ -227,7 +227,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 2px solid var(--via-white);
   box-shadow:
-    0 0 0 1px rgba(10, 31, 59, 0.10),
+    0 0 0 1px var(--via-navy-10),
     0 4px 12px rgba(10, 31, 59, 0.32);
   transform: translate(-50%, -50%);
 }
@@ -252,7 +252,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 40px -22px rgba(10, 31, 59, 0.14);
+    0 18px 40px -22px var(--via-navy-14);
   overflow: hidden;
   isolation: isolate;
 }
@@ -280,7 +280,7 @@
   border-left: 2px solid var(--via-navy);
   box-shadow:
     inset 0 1px 0 var(--via-white),
-    0 4px 14px -6px rgba(10, 31, 59, 0.16);
+    0 4px 14px -6px var(--via-navy-16);
 }
 .vds-pers-opt.bad {
   border-left: 2px solid var(--via-coral);

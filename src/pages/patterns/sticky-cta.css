@@ -27,7 +27,7 @@
 .vds-sticky-page-line {
   height: 10px;
   border-radius: 5px;
-  background: linear-gradient(90deg, rgba(10, 31, 59, 0.08), rgba(10, 31, 59, 0.04));
+  background: linear-gradient(90deg, var(--via-navy-08), var(--via-navy-04));
 }
 
 .vds-sticky-page-line.w50 { width: 50%; }
@@ -39,7 +39,7 @@
 .vds-sticky-page-block {
   height: 96px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   margin: 6px 0;
 }
 
@@ -65,7 +65,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.6) inset,
     0 24px 56px -22px rgba(10, 31, 59, 0.38),
-    0 4px 14px rgba(10, 31, 59, 0.1);
+    0 4px 14px var(--via-navy-10);
   animation: vds-sticky-up .42s cubic-bezier(.2,.8,.2,1) backwards;
 }
 
@@ -253,7 +253,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px -2px rgba(10, 31, 59, 0.3);
+  box-shadow: 0 4px 10px -2px var(--via-navy-30);
 }
 
 .vds-sticky-notify-title {
@@ -285,7 +285,7 @@
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84));
   backdrop-filter: blur(24px) saturate(140%);
   -webkit-backdrop-filter: blur(24px) saturate(140%);
-  border: 1px solid rgba(10, 31, 59, 0.16);
+  border: 1px solid var(--via-navy-16);
 }.vds-sticky-bar.exit::before {
   content: '';
   position: absolute;
@@ -301,7 +301,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(420px 240px at 0% 100%, rgba(10, 31, 59, 0.05), transparent 60%);
+    radial-gradient(420px 240px at 0% 100%, var(--via-navy-05), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
@@ -329,7 +329,7 @@
 
 .vds-sticky-btn:hover {
   background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(10, 31, 59, 0.22);
+  border-color: var(--via-navy-22);
   transform: translateY(-1px);
 }
 
@@ -347,7 +347,7 @@
 .vds-sticky-btn.primary:hover {
   background: var(--via-navy-deep);
   border-color: var(--via-navy-deep);
-  box-shadow: 0 10px 22px -10px rgba(10, 31, 59, 0.5);
+  box-shadow: 0 10px 22px -10px var(--via-navy-60);
 }.vds-sticky-btn.primary.accent {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border-color: transparent;
@@ -357,7 +357,7 @@
 
 .vds-sticky-btn.primary.accent:hover {
   filter: brightness(1.08);
-  box-shadow: 0 12px 24px -10px rgba(10, 31, 59, 0.30);
+  box-shadow: 0 12px 24px -10px var(--via-navy-30);
 }
 
 .vds-sticky-btn.ghost {
@@ -406,7 +406,7 @@
 }
 
 .vds-sticky-close:hover {
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-navy);
   border-color: var(--via-border-soft);
 }

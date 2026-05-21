@@ -69,7 +69,7 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -6px rgba(10, 31, 59, 0.4);
+    0 8px 18px -6px var(--via-navy-40);
 }
 
 .via-btn.primary:hover,
@@ -78,7 +78,7 @@
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 12px 24px -6px rgba(10, 31, 59, 0.5);
+    0 12px 24px -6px var(--via-navy-60);
 }
 
 .via-btn.primary:active,
@@ -86,11 +86,11 @@
   transform: translateY(0) scale(0.98);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -4px rgba(10, 31, 59, 0.4);
+    0 4px 10px -4px var(--via-navy-40);
 }
 
 .via-btn.primary:disabled {
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   color: rgba(10, 31, 59, 0.35);
   border-color: transparent;
   box-shadow: none;
@@ -105,22 +105,22 @@
   border-color: var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 4px 10px -4px rgba(10, 31, 59, 0.12);
+    0 4px 10px -4px var(--via-navy-12);
 }
 
 .via-btn.secondary:hover,
 .via-btn.secondary.is-hover {
-  border-color: rgba(10, 31, 59, 0.22);
+  border-color: var(--via-navy-22);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.75));
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 6px 14px -4px rgba(10, 31, 59, 0.18);
+    0 6px 14px -4px var(--via-navy-18);
 }
 
 .via-btn.secondary:active,
 .via-btn.secondary.is-pressed {
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   transform: translateY(0) scale(0.98);
 }
 
@@ -142,11 +142,11 @@
 
 .via-btn.ghost:hover,
 .via-btn.ghost.is-hover {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
 }
 
 .via-btn.ghost:active {
-  background: rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-10);
   transform: scale(0.98);
 }
 
@@ -156,12 +156,12 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 0 0 3px rgba(10, 31, 59, 0.15),
-    0 8px 18px -6px rgba(10, 31, 59, 0.4);
+    0 8px 18px -6px var(--via-navy-40);
 }
 
 .via-btn.secondary:focus-visible,
 .via-btn.ghost:focus-visible {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 0 0 3px rgba(10, 31, 59, 0.12);
+    0 0 0 3px var(--via-navy-12);
 }

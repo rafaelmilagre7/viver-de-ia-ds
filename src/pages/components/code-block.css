@@ -9,8 +9,8 @@
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.86));
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 40px -24px rgba(10, 31, 59, 0.18),
-    0 1px 4px rgba(10, 31, 59, 0.04);
+    0 16px 40px -24px var(--via-navy-18),
+    0 1px 4px var(--via-navy-04);
   isolation: isolate;
 }
 
@@ -19,7 +19,7 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 24px 56px -22px rgba(10, 31, 59, 0.5);
+    0 24px 56px -22px var(--via-navy-60);
 }
 
 /* Header */
@@ -29,8 +29,8 @@
   gap: 10px;
   padding: 12px 18px;
   background:
-    radial-gradient(420px 80px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 70%),
-    linear-gradient(180deg, rgba(10, 31, 59, 0.025), rgba(10, 31, 59, 0.04));
+    radial-gradient(420px 80px at 0% 0%, var(--via-navy-05), transparent 70%),
+    linear-gradient(180deg, var(--via-navy-03), var(--via-navy-04));
   border-bottom: 1px solid var(--via-border-soft);
   position: relative;
 }
@@ -48,7 +48,7 @@
 
 .vds-code-head.dark {
   background:
-    radial-gradient(420px 80px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 70%),
+    radial-gradient(420px 80px at 0% 0%, var(--via-navy-08), transparent 70%),
     rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -58,14 +58,14 @@
 }
 
 .vds-code-head.dark::after {
-  background: linear-gradient(90deg, transparent, rgba(10, 31, 59, 0.20) 50%, transparent);
+  background: linear-gradient(90deg, transparent, var(--via-navy-20) 50%, transparent);
 }
 
 .vds-code-icon {
   width: 22px;
   height: 22px;
   border-radius: 6px;
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   color: var(--via-navy);
   display: inline-flex;
   align-items: center;
@@ -104,7 +104,7 @@
   letter-spacing: -0.004em;
   padding: 3px 8px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   color: var(--via-navy);
   margin-left: auto;
   white-space: nowrap;
@@ -122,7 +122,7 @@
   gap: 5px;
   padding: 5px 10px;
   border-radius: 7px;
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   color: var(--via-navy);
   border: none;
   font-size: 11px;
@@ -134,7 +134,7 @@
 }
 
 .vds-code-copy:hover {
-  background: rgba(10, 31, 59, 0.14);
+  background: var(--via-navy-14);
 }
 
 .vds-code-copy.dark {
@@ -178,7 +178,7 @@
 }
 
 .vds-code-line:hover {
-  background: rgba(10, 31, 59, 0.025);
+  background: var(--via-navy-03);
 }
 
 .vds-code.dark .vds-code-line:hover {
@@ -187,12 +187,12 @@
 
 .vds-code-line.active {
   background:
-    linear-gradient(90deg, rgba(10, 31, 59, 0.05), rgba(10, 31, 59, 0.04));
+    linear-gradient(90deg, var(--via-navy-05), var(--via-navy-04));
   position: relative;
 }
 
 .vds-code.dark .vds-code-line.active {
-  background: linear-gradient(90deg, rgba(10, 31, 59, 0.07), rgba(10, 31, 59, 0.05));
+  background: linear-gradient(90deg, rgba(10, 31, 59, 0.07), var(--via-navy-05));
 }
 
 .vds-code-line.active::before {
@@ -203,7 +203,7 @@
   bottom: 0;
   width: 3px;
   background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
-  box-shadow: 0 0 8px rgba(10, 31, 59, 0.25);
+  box-shadow: 0 0 8px var(--via-navy-25);
 }
 
 .vds-code-line.active .vds-code-ln {
@@ -281,7 +281,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
     0 24px 56px -22px rgba(10, 31, 59, 0.55);
-  border: 1px solid rgba(10, 31, 59, 0.4);
+  border: 1px solid var(--via-navy-40);
   isolation: isolate;
 }
 
@@ -291,7 +291,7 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(420px 200px at 0% 0%, rgba(10, 31, 59, 0.06), transparent 60%),
+    radial-gradient(420px 200px at 0% 0%, var(--via-navy-06), transparent 60%),
     radial-gradient(380px 200px at 100% 100%, rgba(126, 224, 168, 0.04), transparent 60%);
   z-index: 0;
 }
@@ -473,8 +473,8 @@
   background: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 40px -24px rgba(10, 31, 59, 0.18),
-    0 1px 4px rgba(10, 31, 59, 0.04);
+    0 16px 40px -24px var(--via-navy-18),
+    0 1px 4px var(--via-navy-04);
   isolation: isolate;
 }
 
@@ -484,8 +484,8 @@
   gap: 14px;
   padding: 14px 18px;
   background:
-    radial-gradient(420px 80px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 70%),
-    linear-gradient(180deg, rgba(10, 31, 59, 0.025), rgba(10, 31, 59, 0.04));
+    radial-gradient(420px 80px at 0% 0%, var(--via-navy-05), transparent 70%),
+    linear-gradient(180deg, var(--via-navy-03), var(--via-navy-04));
   border-bottom: 1px solid var(--via-border-soft);
   position: relative;
 }
@@ -513,7 +513,7 @@
   flex-shrink: 0;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -4px rgba(10, 31, 59, 0.4);
+    0 4px 10px -4px var(--via-navy-40);
 }
 
 .vds-diff-meta strong {
@@ -585,7 +585,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 14px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -635,7 +635,7 @@
 }
 
 .vds-diff-line:hover {
-  background: rgba(10, 31, 59, 0.025);
+  background: var(--via-navy-03);
 }
 
 .vds-diff-line.add {
@@ -713,7 +713,7 @@
 
 .vds-diff-foot {
   padding: 14px 18px;
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   border-top: 1px solid var(--via-border-soft);
   font-size: 12px;
   color: var(--via-text-soft);

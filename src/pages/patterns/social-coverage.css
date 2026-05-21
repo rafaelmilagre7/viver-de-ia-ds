@@ -51,7 +51,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.7) inset,
-    0 4px 12px rgba(10, 31, 59, 0.06);
+    0 4px 12px var(--via-navy-06);
 }
 .vds-sc-nav-btn.is-active strong { color: var(--via-navy); }
 .vds-sc-nav-btn .mono {
@@ -129,7 +129,7 @@
   border: 0.5px solid var(--via-navy-08);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 16px 36px -14px rgba(10, 31, 59, 0.18);
+  box-shadow: 0 16px 36px -14px var(--via-navy-18);
   max-width: 480px;
 }
 .vds-sc-ig-hdr {
@@ -484,7 +484,7 @@
   border-radius: 8px;
   overflow: hidden;
   max-width: 600px;
-  box-shadow: 0 6px 20px -8px rgba(10, 31, 59, 0.12);
+  box-shadow: 0 6px 20px -8px var(--via-navy-12);
 }
 .vds-sc-li-hdr {
   display: flex;
@@ -707,7 +707,7 @@
     linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   overflow: hidden;
-  box-shadow: 0 8px 20px -6px rgba(10, 31, 59, 0.22);
+  box-shadow: 0 8px 20px -6px var(--via-navy-22);
 }
 .vds-sc-carousel-card.context,
 .vds-sc-carousel-card.fix,

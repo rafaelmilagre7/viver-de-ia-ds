@@ -12,7 +12,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 56px -22px rgba(10, 31, 59, 0.18);
+    0 24px 56px -22px var(--via-navy-18);
   min-height: 520px;
 }
 
@@ -26,7 +26,7 @@
 .vds-loc-map {
   position: relative;
   background:
-    radial-gradient(480px 280px at 0% 0%, rgba(10, 31, 59, 0.06), transparent 60%),
+    radial-gradient(480px 280px at 0% 0%, var(--via-navy-06), transparent 60%),
     linear-gradient(180deg, var(--via-gray-50), var(--via-gray-100));
   border-right: 1px solid var(--via-border-soft);
   overflow: hidden;
@@ -52,7 +52,7 @@
   bottom: 12px;
   right: 14px;
   font-size: 9.5px;
-  color: rgba(10, 31, 59, 0.4);
+  color: var(--via-navy-40);
   letter-spacing: 0.04em;
   padding: 4px 8px;
   border-radius: 6px;
@@ -109,7 +109,7 @@
   gap: 10px;
   padding: 16px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -189,14 +189,14 @@
 
 .vds-loc-access li:hover {
   background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(10, 31, 59, 0.16);
+  border-color: var(--via-navy-16);
 }
 
 .vds-loc-access-icon {
   width: 26px;
   height: 26px;
   border-radius: 7px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   display: flex;
@@ -266,7 +266,7 @@
 
 .vds-loc-btn.ghost:hover {
   background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(10, 31, 59, 0.22);
+  border-color: var(--via-navy-22);
   transform: translateY(-1px);
 }
 
@@ -336,15 +336,15 @@
   transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 10px 22px -14px rgba(10, 31, 59, 0.12);
+    0 10px 22px -14px var(--via-navy-12);
 }
 
 .vds-loc-compact:hover {
   transform: translateY(-2px);
-  border-color: rgba(10, 31, 59, 0.14);
+  border-color: var(--via-navy-14);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 32px -16px rgba(10, 31, 59, 0.18);
+    0 16px 32px -16px var(--via-navy-18);
 }
 
 @media (max-width: 480px) {
@@ -362,7 +362,7 @@
 
 .vds-loc-compact-mini-map.alt {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-darker));
-  border-right-color: rgba(10, 31, 59, 0.10);
+  border-right-color: var(--via-navy-10);
 }
 
 .vds-loc-compact-mini-map svg {
@@ -380,7 +380,7 @@
 
 .vds-loc-compact-body.dark {
   background:
-    radial-gradient(220px 120px at 100% 100%, rgba(10, 31, 59, 0.08), transparent 60%),
+    radial-gradient(220px 120px at 100% 100%, var(--via-navy-08), transparent 60%),
     linear-gradient(180deg, var(--via-navy), var(--via-navy-darker));
   color: var(--via-white);
 }
@@ -416,7 +416,7 @@
   gap: 5px;
   padding: 7px 12px;
   border-radius: 8px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   font-family: var(--via-font);
@@ -437,7 +437,7 @@
 
 .vds-loc-compact-cta.dark {
   background: rgba(10, 31, 59, 0.07);
-  border-color: rgba(10, 31, 59, 0.16);
+  border-color: var(--via-navy-16);
   color: var(--via-accent);
 }.vds-loc-compact-cta.dark:hover {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));

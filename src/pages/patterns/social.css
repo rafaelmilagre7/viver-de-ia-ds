@@ -34,8 +34,8 @@
   background: var(--via-white);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 24px 56px rgba(10,31,59,0.18), 0 4px 12px rgba(10,31,59,0.06);
-  border: 0.5px solid rgba(10,31,59,0.10);
+  box-shadow: 0 24px 56px var(--via-navy-18), 0 4px 12px var(--via-navy-06);
+  border: 0.5px solid var(--via-navy-10);
 }
 
 .ig-h {
@@ -241,7 +241,7 @@
   border-radius: 28px;
   overflow: hidden;
   background: var(--via-black);
-  box-shadow: 0 32px 64px rgba(10,31,59,0.30);
+  box-shadow: 0 32px 64px var(--via-navy-30);
   display: flex;
   flex-direction: column;
 }
@@ -386,7 +386,7 @@
   background: var(--via-white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 24px 56px rgba(10,31,59,0.16), 0 4px 12px rgba(10,31,59,0.06);
+  box-shadow: 0 24px 56px var(--via-navy-16), 0 4px 12px var(--via-navy-06);
   border: 0.5px solid rgba(0,0,0,0.10);
 }
 .li-h {
@@ -404,7 +404,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(10,31,59,0.18);
+  box-shadow: 0 4px 12px var(--via-navy-18);
   flex-shrink: 0;
 }
 .li-av img { width: 70%; height: 70%; object-fit: contain; }

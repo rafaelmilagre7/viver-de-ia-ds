@@ -2,7 +2,7 @@
   position: relative;
   padding: 60px 32px;
   background:
-    radial-gradient(540px 220px at 50% 0%, rgba(10, 31, 59, 0.04), transparent 70%),
+    radial-gradient(540px 220px at 50% 0%, var(--via-navy-04), transparent 70%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
   border: 1.5px dashed rgba(10, 31, 59, 0.28);
   border-radius: var(--via-radius-lg);
@@ -23,7 +23,7 @@
     radial-gradient(540px 220px at 50% 0%, rgba(10, 31, 59, 0.07), transparent 70%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65));
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -16px rgba(10, 31, 59, 0.2);
+  box-shadow: 0 12px 28px -16px var(--via-navy-20);
 }
 
 .via-upload h3 {
@@ -59,7 +59,7 @@
   margin-top: 10px;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 6px 14px -4px rgba(10, 31, 59, 0.4);
+    0 6px 14px -4px var(--via-navy-40);
   transition: all 180ms ease;
 }
 
@@ -67,7 +67,7 @@
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -4px rgba(10, 31, 59, 0.5);
+    0 8px 18px -4px var(--via-navy-60);
 }
 
 .via-upload-list {
@@ -105,7 +105,7 @@
 }
 
 .via-upload-list li:hover {
-  border-color: rgba(10, 31, 59, 0.2);
+  border-color: var(--via-navy-20);
   transform: translateX(2px);
 }
 
@@ -154,7 +154,7 @@
 .via-upload-list .bar {
   width: 100%;
   height: 4px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   border-radius: 999px;
   margin-top: 8px;
   overflow: hidden;
@@ -172,7 +172,7 @@
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-soft);
   display: inline-flex;

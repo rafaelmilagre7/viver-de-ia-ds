@@ -20,7 +20,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 4px rgba(10, 31, 59, 0.04);
+    0 1px 4px var(--via-navy-04);
 }
 
 .via-card::after {
@@ -36,11 +36,11 @@
 }
 
 .via-card:hover {
-  border-color: rgba(10, 31, 59, 0.2);
+  border-color: var(--via-navy-20);
   transform: translateY(-3px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 40px -22px rgba(10, 31, 59, 0.22);
+    0 18px 40px -22px var(--via-navy-22);
 }
 
 .via-card:hover::after {
@@ -86,7 +86,7 @@
 /* Featured — navy mesh with atmospheric */
 .via-card.featured {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-darker));
-  border-color: rgba(10, 31, 59, 0.12);
+  border-color: var(--via-navy-12);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.08) inset,
     0 24px 56px -22px rgba(10, 31, 59, 0.45);
@@ -99,7 +99,7 @@
   inset: 0;
   background:
     radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 100% 100%, rgba(10, 31, 59, 0.05) 0%, transparent 60%);
+    radial-gradient(ellipse 40% 60% at 100% 100%, var(--via-navy-05) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -126,7 +126,7 @@
   padding: 48px;
   background:
     radial-gradient(ellipse at 20% 0%, rgba(42, 74, 110, 0.55) 0%, transparent 55%),
-    radial-gradient(ellipse at 100% 100%, rgba(10, 31, 59, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 100%, var(--via-navy-06) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
   border-radius: var(--via-radius-lg);
   display: grid;
@@ -148,7 +148,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 -1px 0 rgba(255, 255, 255, 0.4) inset,
-    0 16px 36px -16px rgba(10, 31, 59, 0.4);
+    0 16px 36px -16px var(--via-navy-40);
   display: flex;
   flex-direction: column;
   gap: 10px;

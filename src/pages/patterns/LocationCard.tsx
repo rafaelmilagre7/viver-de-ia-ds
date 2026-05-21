@@ -36,7 +36,7 @@ function LocationVenueSection() {
             {/* Grid pattern background */}
             <defs>
               <pattern id="loc-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(10,31,59,0.06)" strokeWidth="0.5" />
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--via-navy-06)" strokeWidth="0.5" />
               </pattern>
               <radialGradient id="loc-pulse" cx="50%" cy="50%">
                 <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.5" />
@@ -46,19 +46,19 @@ function LocationVenueSection() {
             <rect width="400" height="300" fill="url(#loc-grid)" />
 
             {/* Streets (curves) */}
-            <path d="M0,180 Q100,160 200,170 T400,150" stroke="rgba(10,31,59,0.16)" strokeWidth="6" fill="none" strokeLinecap="round" />
-            <path d="M0,100 Q120,110 240,90 T400,70" stroke="rgba(10,31,59,0.1)" strokeWidth="4" fill="none" strokeLinecap="round" />
-            <path d="M80,0 Q100,80 90,160 T100,300" stroke="rgba(10,31,59,0.12)" strokeWidth="5" fill="none" strokeLinecap="round" />
-            <path d="M280,0 Q260,100 290,200 T280,300" stroke="rgba(10,31,59,0.08)" strokeWidth="3" fill="none" strokeLinecap="round" />
+            <path d="M0,180 Q100,160 200,170 T400,150" stroke="var(--via-navy-16)" strokeWidth="6" fill="none" strokeLinecap="round" />
+            <path d="M0,100 Q120,110 240,90 T400,70" stroke="var(--via-navy-10)" strokeWidth="4" fill="none" strokeLinecap="round" />
+            <path d="M80,0 Q100,80 90,160 T100,300" stroke="var(--via-navy-12)" strokeWidth="5" fill="none" strokeLinecap="round" />
+            <path d="M280,0 Q260,100 290,200 T280,300" stroke="var(--via-navy-08)" strokeWidth="3" fill="none" strokeLinecap="round" />
 
             {/* Park / area */}
-            <ellipse cx="320" cy="220" rx="60" ry="40" fill="rgba(10,31,59,0.08)" />
-            <ellipse cx="60" cy="60" rx="40" ry="30" fill="rgba(10,31,59,0.06)" />
+            <ellipse cx="320" cy="220" rx="60" ry="40" fill="var(--via-navy-08)" />
+            <ellipse cx="60" cy="60" rx="40" ry="30" fill="var(--via-navy-06)" />
 
             {/* Building markers (secondary) */}
-            <rect x="140" y="120" width="14" height="14" fill="rgba(10,31,59,0.16)" rx="2" />
-            <rect x="220" y="200" width="16" height="16" fill="rgba(10,31,59,0.16)" rx="2" />
-            <rect x="50" y="200" width="12" height="12" fill="rgba(10,31,59,0.12)" rx="2" />
+            <rect x="140" y="120" width="14" height="14" fill="var(--via-navy-16)" rx="2" />
+            <rect x="220" y="200" width="16" height="16" fill="var(--via-navy-16)" rx="2" />
+            <rect x="50" y="200" width="12" height="12" fill="var(--via-navy-12)" rx="2" />
 
             {/* Pulse ring */}
             <circle cx="200" cy="150" r="40" fill="url(#loc-pulse)">
@@ -76,7 +76,7 @@ function LocationVenueSection() {
 
             {/* Label callout */}
             <g transform="translate(200, 110)">
-              <rect x="-58" y="-22" width="116" height="22" rx="4" fill="var(--via-white)" stroke="rgba(10,31,59,0.16)" />
+              <rect x="-58" y="-22" width="116" height="22" rx="4" fill="var(--via-white)" stroke="var(--via-navy-16)" />
               <text x="0" y="-7" textAnchor="middle" fontSize="11" fontFamily="var(--via-mono)" style={{ fill: "var(--via-navy)" }} letterSpacing="0.02em">
                 Centro de Eventos Frei
               </text>
@@ -192,12 +192,12 @@ function LocationCompactSection() {
             <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice">
               <defs>
                 <pattern id="mini-grid" width="14" height="14" patternUnits="userSpaceOnUse">
-                  <path d="M 14 0 L 0 0 0 14" fill="none" stroke="rgba(10,31,59,0.08)" strokeWidth="0.5" />
+                  <path d="M 14 0 L 0 0 0 14" fill="none" stroke="var(--via-navy-08)" strokeWidth="0.5" />
                 </pattern>
               </defs>
               <rect width="200" height="120" fill="url(#mini-grid)" />
-              <path d="M0,70 Q60,60 120,68 T200,58" stroke="rgba(10,31,59,0.16)" strokeWidth="4" fill="none" strokeLinecap="round" />
-              <path d="M60,0 Q70,40 65,80 T70,120" stroke="rgba(10,31,59,0.12)" strokeWidth="3" fill="none" strokeLinecap="round" />
+              <path d="M0,70 Q60,60 120,68 T200,58" stroke="var(--via-navy-16)" strokeWidth="4" fill="none" strokeLinecap="round" />
+              <path d="M60,0 Q70,40 65,80 T70,120" stroke="var(--via-navy-12)" strokeWidth="3" fill="none" strokeLinecap="round" />
               <g transform="translate(100, 60)">
                 <circle r="11" style={{ fill: "var(--via-navy)" }} />
                 <circle r="11" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" />
@@ -221,7 +221,7 @@ function LocationCompactSection() {
             <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice">
               <defs>
                 <pattern id="mini-grid2" width="14" height="14" patternUnits="userSpaceOnUse">
-                  <path d="M 14 0 L 0 0 0 14" fill="none" stroke="rgba(10,31,59,0.18)" strokeWidth="0.5" />
+                  <path d="M 14 0 L 0 0 0 14" fill="none" stroke="var(--via-navy-18)" strokeWidth="0.5" />
                 </pattern>
               </defs>
               <rect width="200" height="120" fill="url(#mini-grid2)" />

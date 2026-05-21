@@ -256,7 +256,7 @@ function RuleSignaturesSection() {
               <div className="card">Atmosphere radial</div>
             </div>
             <h4>Radial atmosphere</h4>
-            <p><code>radial-gradient(...) at 0% 0%, rgba(10,31,59,0.04), transparent 60%</code> no top-left dos cards principais.</p>
+            <p><code>radial-gradient(...) at 0% 0%, var(--via-navy-04), transparent 60%</code> no top-left dos cards principais.</p>
           </article>
         </div>
       </article>

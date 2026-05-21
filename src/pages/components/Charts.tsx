@@ -277,7 +277,7 @@ function DonutSection() {
           <svg viewBox="0 0 240 240" className="vds-donut-svg">
             <g transform="translate(120,120) rotate(-90)">
               {/* Track */}
-              <circle r={R} cx="0" cy="0" fill="none" stroke="rgba(10,31,59,0.06)" strokeWidth={STROKE} />
+              <circle r={R} cx="0" cy="0" fill="none" stroke="var(--via-navy-06)" strokeWidth={STROKE} />
               {/* Segments */}
               {segments.map((s) => {
                 const len = (s.value / 100) * C;

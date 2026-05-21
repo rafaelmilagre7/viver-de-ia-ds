@@ -4,7 +4,7 @@
   gap: 7px;
   padding: 6px 12px 6px 10px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-ink-2);
   font-family: var(--via-font);
@@ -20,8 +20,8 @@
 }
 
 .via-theme-toggle:hover {
-  background: rgba(10, 31, 59, 0.08);
-  border-color: rgba(10, 31, 59, 0.18);
+  background: var(--via-navy-08);
+  border-color: var(--via-navy-18);
   color: var(--via-navy);
   transform: translateY(-1px);
 }

@@ -566,18 +566,18 @@ function RatingSection() {
 /* ---------- Color picker ---------- */
 function ColorPickerSection() {
   const palette = [
-    { hex: '#0A1F3B', name: 'Navy · primary' },
-    { hex: 'var(--via-blue)', name: 'Navy · 80' },
-    { hex: 'var(--via-blue-soft)', name: 'Navy · 60' },
-    { hex: 'var(--via-blue)', name: 'Navy · 40' },
-    { hex: '#0A1F3B', name: 'Accent · accent' },
-    { hex: '#D0D5DD', name: 'Accent · 80' },
-    { hex: '#F7F8FA', name: 'Cream · surface' },
-    { hex: '#222222', name: 'Ink · text' },
-    { hex: 'var(--via-success)', name: 'Verde · success' },
-    { hex: '#B85C5C', name: 'Coral · danger' },
-    { hex: '#6A2BC2', name: 'Roxo · accent alt' },
-    { hex: '#2466A3', name: 'Azul · info' },
+    { hex: 'var(--via-navy)',        name: 'Navy · marca' },
+    { hex: 'var(--via-navy-deep)',   name: 'Navy deep · hover' },
+    { hex: 'var(--via-blue)',        name: 'Blue · mid' },
+    { hex: 'var(--via-blue-soft)',   name: 'Blue soft · borders dark' },
+    { hex: 'var(--via-gray-900)',    name: 'Gray 900 · near-black' },
+    { hex: 'var(--via-gray-700)',    name: 'Gray 700 · text body' },
+    { hex: 'var(--via-gray-500)',    name: 'Gray 500 · text muted' },
+    { hex: 'var(--via-gray-300)',    name: 'Gray 300 · border' },
+    { hex: 'var(--via-gray-100)',    name: 'Gray 100 · surface' },
+    { hex: 'var(--via-gray-50)',     name: 'Gray 50 · page alt' },
+    { hex: 'var(--via-white)',       name: 'White · canvas' },
+    { hex: 'var(--via-coral)',       name: 'Coral · destrutivo only' },
   ];
   const [picked, setPicked] = useState(palette[0]);
 

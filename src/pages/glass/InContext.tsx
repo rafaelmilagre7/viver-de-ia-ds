@@ -22,7 +22,7 @@ export default function GlassInContext() {
             borderRadius: 'var(--via-radius-lg)',
             overflow: 'hidden',
             background:
-              'linear-gradient(135deg, var(--via-gray-200), var(--via-gray-300)), radial-gradient(ellipse at 80% 0%, rgba(10,31,59,0.08), transparent)',
+              'linear-gradient(135deg, var(--via-gray-200), var(--via-gray-300)), radial-gradient(ellipse at 80% 0%, var(--via-navy-08), transparent)',
             border: '0.5px solid var(--via-navy-12)',
           }}
         >
@@ -34,7 +34,7 @@ export default function GlassInContext() {
               background: 'linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.66))',
               backdropFilter: 'blur(18px) saturate(160%)',
               WebkitBackdropFilter: 'blur(18px) saturate(160%)',
-              borderBottom: '0.5px solid rgba(10,31,59,0.10)',
+              borderBottom: '0.5px solid var(--via-navy-10)',
             }}
           >
             <span style={{ fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.32em', textTransform: 'uppercase', color: 'var(--via-navy)' }}>VIVER DE IA</span>

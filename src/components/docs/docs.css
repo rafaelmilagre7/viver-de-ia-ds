@@ -115,7 +115,7 @@
   border-radius: 28px;
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-10) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-gray-200) 0%, var(--via-gray-300) 100%);
   border: 0.5px solid var(--via-navy-12);
   overflow: hidden;
@@ -149,14 +149,14 @@
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.6),
     inset 0 -1px 0 rgba(0,0,0,0.10),
-    0 8px 20px rgba(10,31,59,0.10),
-    0 2px 6px rgba(10,31,59,0.04);
+    0 8px 20px var(--via-navy-10),
+    0 2px 6px var(--via-navy-04);
   transition: var(--via-t);
 }
 .vds-swatch:hover .vds-swatch-tile {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.6),
-    0 16px 36px rgba(10,31,59,0.16);
+    0 16px 36px var(--via-navy-16);
 }
 .vds-swatch-meta {
   display: flex;
@@ -250,8 +250,8 @@
   border-radius: var(--via-radius-lg);
   padding: 40px;
   background:
-    radial-gradient(ellipse 70% 60% at 20% 10%, rgba(10,31,59,0.04) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 80% at 100% 100%, rgba(10,31,59,0.02) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 20% 10%, var(--via-navy-04) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 80% at 100% 100%, var(--via-navy-02) 0%, transparent 55%),
     var(--via-bg);
   display: flex;
   align-items: center;
@@ -298,7 +298,7 @@
   color: var(--via-gray-600);
   margin: 0;
 }
-.vds-callout.warning { background: rgba(10, 31, 59, 0.04); border-color: rgba(10, 31, 59, 0.25); }
+.vds-callout.warning { background: var(--via-navy-04); border-color: var(--via-navy-25); }
 .vds-callout.warning h4 { color: var(--via-navy-deep); }
 
 /* ---- Inline pill ---- */

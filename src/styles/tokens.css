@@ -21,10 +21,21 @@
   --via-navy-80: rgba(10, 31, 59, 0.80);
   --via-navy-60: rgba(10, 31, 59, 0.60);
   --via-navy-40: rgba(10, 31, 59, 0.40);
+  --via-navy-30: rgba(10, 31, 59, 0.30);
+  --via-navy-25: rgba(10, 31, 59, 0.25);
+  --via-navy-22: rgba(10, 31, 59, 0.22);
   --via-navy-20: rgba(10, 31, 59, 0.20);
+  --via-navy-18: rgba(10, 31, 59, 0.18);
+  --via-navy-16: rgba(10, 31, 59, 0.16);
+  --via-navy-14: rgba(10, 31, 59, 0.14);
   --via-navy-12: rgba(10, 31, 59, 0.12);
+  --via-navy-10: rgba(10, 31, 59, 0.10);
   --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-navy-06: rgba(10, 31, 59, 0.06);
+  --via-navy-05: rgba(10, 31, 59, 0.05);
   --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-03: rgba(10, 31, 59, 0.03);
+  --via-navy-02: rgba(10, 31, 59, 0.02);
 
   /* Grayscale — the secondary palette */
   --via-gray-50:  #F7F8FA;   /* page bg (alt) */

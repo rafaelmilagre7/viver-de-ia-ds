@@ -170,7 +170,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 500;
-  filter: drop-shadow(0 4px 16px rgba(10, 31, 59, 0.10));
+  filter: drop-shadow(0 4px 16px var(--via-navy-10));
 }
 
 .vds-live-lede {
@@ -217,8 +217,8 @@
 }
 
 .vds-live-host .av.guest {
-  background: linear-gradient(135deg, rgba(10, 31, 59, 0.20), rgba(10, 31, 59, 0.09));
-  border-color: rgba(10, 31, 59, 0.25);
+  background: linear-gradient(135deg, var(--via-navy-20), rgba(10, 31, 59, 0.09));
+  border-color: var(--via-navy-25);
   color: var(--via-gray-300);
 }
 
@@ -305,7 +305,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.3) inset,
     0 16px 32px -8px rgba(10, 31, 59, 0.35),
-    0 0 48px rgba(10, 31, 59, 0.20);
+    0 0 48px var(--via-navy-20);
 }
 
 .vds-live-secondary {
@@ -376,7 +376,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 16px 40px -22px rgba(10, 31, 59, 0.14);
+    0 16px 40px -22px var(--via-navy-14);
 }
 
 @media (max-width: 920px) {
@@ -395,7 +395,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.04), transparent 60%);
+  background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
 }
 
 .vds-live-next-l > * {
@@ -419,7 +419,7 @@
 
 .vds-live-next-l h3 em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.5);
+  color: var(--via-navy-60);
   font-weight: 400;
 }
 
@@ -438,7 +438,7 @@
   flex-wrap: wrap;
   padding: 10px 16px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   font-size: 12px;
   color: var(--via-text-soft);
@@ -455,7 +455,7 @@
 .vds-live-next-r {
   padding: 36px;
   background:
-    radial-gradient(ellipse at 100% 0%, rgba(10, 31, 59, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 0%, var(--via-navy-08) 0%, transparent 55%),
     radial-gradient(ellipse at 0% 100%, rgba(46, 76, 118, 0.5) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-navy), var(--via-navy-darker));
   color: var(--via-white);
@@ -470,7 +470,7 @@
   padding: 14px 18px;
   border-radius: 14px;
   background: rgba(10, 31, 59, 0.07);
-  border: 1px solid rgba(10, 31, 59, 0.16);
+  border: 1px solid var(--via-navy-16);
   margin-bottom: 18px;
   text-align: center;
 }
@@ -556,7 +556,7 @@
   padding: 13px 20px;
   border-radius: 12px;
   background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
-  border: 1px solid rgba(10, 31, 59, 0.20);
+  border: 1px solid var(--via-navy-20);
   color: var(--via-navy);
   font-family: inherit;
   font-size: 13px;
@@ -565,7 +565,7 @@
   cursor: pointer;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 6px 14px -4px rgba(10, 31, 59, 0.20);
+    0 6px 14px -4px var(--via-navy-20);
   transition: all 180ms ease;
 }
 
@@ -573,7 +573,7 @@
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 8px 18px -4px rgba(10, 31, 59, 0.25);
+    0 8px 18px -4px var(--via-navy-25);
 }
 
 .vds-live-next-tip {
@@ -603,15 +603,15 @@
   transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 4px rgba(10, 31, 59, 0.04);
+    0 1px 4px var(--via-navy-04);
 }
 
 .vds-live-past-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(10, 31, 59, 0.18);
+  border-color: var(--via-navy-18);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 40px -22px rgba(10, 31, 59, 0.22);
+    0 18px 40px -22px var(--via-navy-22);
 }
 
 .vds-live-past-thumb {
@@ -687,10 +687,10 @@
 
 .vds-live-past-play:hover {
   background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
-  border-color: rgba(10, 31, 59, 0.30);
+  border-color: var(--via-navy-30);
   transform: translate(-50%, -50%) scale(1.06);
   color: var(--via-navy);
-  box-shadow: 0 16px 32px -10px rgba(10, 31, 59, 0.30);
+  box-shadow: 0 16px 32px -10px var(--via-navy-30);
 }
 
 .vds-live-past-dur {

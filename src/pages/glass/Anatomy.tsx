@@ -98,8 +98,8 @@ border-radius: 20px;`}</CodeBlock>
             <CodeBlock>{`box-shadow:
   inset 0 1px 0 rgba(255,255,255,1),
   inset 0 -1px 0 rgba(255,255,255,0.4),
-  0 16px 40px rgba(10,31,59,0.10),
-  0 4px 12px rgba(10,31,59,0.06);`}</CodeBlock>
+  0 16px 40px var(--via-navy-10),
+  0 4px 12px var(--via-navy-06);`}</CodeBlock>
           </li>
         </ol>
       </Section>

@@ -45,8 +45,8 @@
 }
 
 .vds-form-input:focus {
-  border-color: rgba(10, 31, 59, 0.3);
-  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.08);
+  border-color: var(--via-navy-30);
+  box-shadow: 0 0 0 3px var(--via-navy-08);
 }
 
 .vds-form-hint {
@@ -144,8 +144,8 @@
   -webkit-backdrop-filter: blur(28px) saturate(150%);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 56px -28px rgba(10, 31, 59, 0.18),
-    0 2px 8px rgba(10, 31, 59, 0.04);
+    0 24px 56px -28px var(--via-navy-18),
+    0 2px 8px var(--via-navy-04);
   isolation: isolate;
   overflow: hidden;
 }
@@ -155,8 +155,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(380px 200px at 8% 0%, rgba(10, 31, 59, 0.05), transparent 60%),
-    radial-gradient(320px 180px at 100% 100%, rgba(10, 31, 59, 0.04), transparent 60%);
+    radial-gradient(380px 200px at 8% 0%, var(--via-navy-05), transparent 60%),
+    radial-gradient(320px 180px at 100% 100%, var(--via-navy-04), transparent 60%);
   z-index: -1;
 }
 
@@ -194,7 +194,7 @@
   width: 30px;
   height: 30px;
   border-radius: 9px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   display: inline-flex;
@@ -309,7 +309,7 @@
 .vds-dp-presets-row button {
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   font-family: inherit;
@@ -321,7 +321,7 @@
 }
 
 .vds-dp-presets-row button:hover {
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
 }
 
 .vds-dp-presets-row button.active {
@@ -330,7 +330,7 @@
   color: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -3px rgba(10, 31, 59, 0.4);
+    0 4px 10px -3px var(--via-navy-40);
 }
 
 .vds-dp-range {
@@ -343,8 +343,8 @@
   -webkit-backdrop-filter: blur(28px) saturate(150%);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 56px -28px rgba(10, 31, 59, 0.18),
-    0 2px 8px rgba(10, 31, 59, 0.04);
+    0 24px 56px -28px var(--via-navy-18),
+    0 2px 8px var(--via-navy-04);
   isolation: isolate;
   overflow: hidden;
 }
@@ -380,7 +380,7 @@
 
 /* In-range cells */
 .vds-dp-cell.in-range:not(.sel) {
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   border-color: transparent;
 }
 
@@ -392,7 +392,7 @@
 .vds-dp-cell.sel.edge-start,
 .vds-dp-cell.sel.edge-end {
   background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
-  border-color: rgba(10, 31, 59, 0.25);
+  border-color: var(--via-navy-25);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.3) inset,
     0 6px 14px -4px rgba(10, 31, 59, 0.28);
@@ -458,8 +458,8 @@
   padding: 8px 14px 8px 12px;
   border-radius: 999px;
   background:
-    radial-gradient(180px 60px at 0% 0%, rgba(10, 31, 59, 0.06), transparent 70%),
-    rgba(10, 31, 59, 0.04);
+    radial-gradient(180px 60px at 0% 0%, var(--via-navy-06), transparent 70%),
+    var(--via-navy-04);
   border: 1px solid rgba(10, 31, 59, 0.11);
   font-size: 11.5px;
   color: var(--via-text);
@@ -488,7 +488,7 @@
   letter-spacing: -0.005em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 6px 14px -4px rgba(10, 31, 59, 0.4);
+    0 6px 14px -4px var(--via-navy-40);
   transition: all 180ms ease;
 }
 
@@ -496,12 +496,12 @@
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -4px rgba(10, 31, 59, 0.5);
+    0 8px 18px -4px var(--via-navy-60);
 }
 
 .vds-dp-cell:hover:not(.muted):not(.sel) {
-  border-color: rgba(10, 31, 59, 0.18);
-  background: rgba(10, 31, 59, 0.03);
+  border-color: var(--via-navy-18);
+  background: var(--via-navy-03);
 }
 
 /* Today — ring navy sutil, sem fundo dourado */
@@ -552,7 +552,7 @@
   gap: 6px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   font-size: 11px;
@@ -564,7 +564,7 @@
 }
 
 .vds-dp-chip:hover {
-  background: rgba(10, 31, 59, 0.1);
+  background: var(--via-navy-10);
 }
 
 .vds-dp-chip-dot {
@@ -625,7 +625,7 @@
 }
 
 .vds-combobox-trigger:hover {
-  border-color: rgba(10, 31, 59, 0.18);
+  border-color: var(--via-navy-18);
 }
 
 .vds-combobox-trigger .ico {
@@ -674,7 +674,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 56px -22px rgba(10, 31, 59, 0.25);
+    0 24px 56px -22px var(--via-navy-25);
   z-index: 10;
   max-height: 320px;
   overflow-y: auto;
@@ -710,18 +710,18 @@
 }
 
 .vds-combobox-opt:hover {
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
 }
 
 .vds-combobox-opt.on {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
 }
 
 .vds-combobox-mark {
   width: 32px;
   height: 32px;
   border-radius: 9px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
   display: inline-flex;
   align-items: center;
@@ -790,8 +790,8 @@
 }
 
 .vds-taginput:focus-within {
-  border-color: rgba(10, 31, 59, 0.3);
-  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.08);
+  border-color: var(--via-navy-30);
+  box-shadow: 0 0 0 3px var(--via-navy-08);
 }
 
 .vds-tag {
@@ -800,19 +800,19 @@
   gap: 6px;
   padding: 6px 8px 6px 12px;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.08), rgba(10, 31, 59, 0.05));
+  background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-05));
   color: var(--via-navy);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: -0.005em;
-  border: 1px solid rgba(10, 31, 59, 0.08);
+  border: 1px solid var(--via-navy-08);
 }
 
 .vds-tag button {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: rgba(10, 31, 59, 0.16);
+  background: var(--via-navy-16);
   color: var(--via-navy);
   border: none;
   display: inline-flex;
@@ -864,7 +864,7 @@
   margin-top: 12px;
   padding: 14px 16px;
   border-radius: 12px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -891,7 +891,7 @@
   padding: 6px 11px 6px 8px;
   border-radius: 999px;
   background: var(--via-white);
-  border: 1px dashed rgba(10, 31, 59, 0.2);
+  border: 1px dashed var(--via-navy-20);
   color: var(--via-navy);
   font-size: 11.5px;
   font-weight: 500;
@@ -941,7 +941,7 @@
   left: 0;
   right: 0;
   height: 6px;
-  background: rgba(10, 31, 59, 0.08);
+  background: var(--via-navy-08);
   border-radius: 999px;
 }
 
@@ -978,8 +978,8 @@
   border: 2px solid var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 4px 10px -2px rgba(10, 31, 59, 0.3),
-    0 0 0 0 rgba(10, 31, 59, 0.18);
+    0 4px 10px -2px var(--via-navy-30),
+    0 0 0 0 var(--via-navy-18);
   cursor: grab;
   transition: box-shadow 220ms ease, transform 160ms ease;
 }
@@ -988,16 +988,16 @@
   transform: scale(1.08);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 6px 14px -2px rgba(10, 31, 59, 0.4),
-    0 0 0 6px rgba(10, 31, 59, 0.1);
+    0 6px 14px -2px var(--via-navy-40),
+    0 0 0 6px var(--via-navy-10);
 }
 
 .vds-range-track input[type='range']::-webkit-slider-thumb:active {
   cursor: grabbing;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 6px 14px -2px rgba(10, 31, 59, 0.4),
-    0 0 0 10px rgba(10, 31, 59, 0.12);
+    0 6px 14px -2px var(--via-navy-40),
+    0 0 0 10px var(--via-navy-12);
 }
 
 .vds-range-track input[type='range']::-moz-range-thumb {
@@ -1028,7 +1028,7 @@
 .vds-range-ticks .tick {
   width: 1px;
   height: 6px;
-  background: rgba(10, 31, 59, 0.18);
+  background: var(--via-navy-18);
 }
 
 .vds-range-ticks em {
@@ -1046,7 +1046,7 @@
   margin-top: 18px;
   padding: 14px 16px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.04), rgba(10, 31, 59, 0.02));
+  background: linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
   border: 1px solid var(--via-border-soft);
   align-items: end;
 }
@@ -1119,14 +1119,14 @@
   gap: 4px;
   padding: 8px 10px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.04);
+  background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
 }
 
 .vds-star {
   background: transparent;
   border: none;
-  color: rgba(10, 31, 59, 0.18);
+  color: var(--via-navy-18);
   cursor: pointer;
   padding: 4px;
   transition: color 160ms ease, transform 140ms cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1139,7 +1139,7 @@
 
 .vds-star.on {
   color: var(--via-navy);
-  filter: drop-shadow(0 2px 4px rgba(10, 31, 59, 0.20));
+  filter: drop-shadow(0 2px 4px var(--via-navy-20));
 }
 
 .vds-rating-info {
@@ -1219,7 +1219,7 @@
   height: 72px;
   border-radius: 14px;
   flex-shrink: 0;
-  border: 1px solid rgba(10, 31, 59, 0.1);
+  border: 1px solid var(--via-navy-10);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.3) inset,
     0 8px 20px -8px rgba(10, 31, 59, 0.35);
@@ -1256,7 +1256,7 @@
   letter-spacing: 0.14em;
   padding: 3px 7px;
   border-radius: 5px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-text-soft);
 }
 
@@ -1269,7 +1269,7 @@
 .vds-color-cell {
   aspect-ratio: 1;
   border-radius: 11px;
-  border: 1px solid rgba(10, 31, 59, 0.08);
+  border: 1px solid var(--via-navy-08);
   cursor: pointer;
   position: relative;
   display: inline-flex;
@@ -1283,7 +1283,7 @@
   transform: translateY(-2px) scale(1.05);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.2) inset,
-    0 10px 20px -8px rgba(10, 31, 59, 0.3);
+    0 10px 20px -8px var(--via-navy-30);
 }
 
 .vds-color-cell.on {
@@ -1304,8 +1304,8 @@
 }
 
 .vds-color-input-wrap:focus-within {
-  border-color: rgba(10, 31, 59, 0.3);
-  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.08);
+  border-color: var(--via-navy-30);
+  box-shadow: 0 0 0 3px var(--via-navy-08);
 }
 
 .vds-color-input-wrap .prefix {
@@ -1336,5 +1336,5 @@
   color: var(--via-text-soft);
   padding: 3px 8px;
   border-radius: 5px;
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
 }

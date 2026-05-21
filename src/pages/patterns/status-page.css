@@ -17,7 +17,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 24px 56px -22px rgba(10, 31, 59, 0.18);
+    0 24px 56px -22px var(--via-navy-18);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
@@ -27,8 +27,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(560px 320px at 0% 0%, rgba(10, 31, 59, 0.05), transparent 60%),
-    radial-gradient(440px 280px at 100% 100%, rgba(10, 31, 59, 0.05), transparent 60%);
+    radial-gradient(560px 320px at 0% 0%, var(--via-navy-05), transparent 60%),
+    radial-gradient(440px 280px at 100% 100%, var(--via-navy-05), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
@@ -76,13 +76,13 @@
   height: 6px;
   border-radius: 50%;
   background: var(--via-navy);
-  box-shadow: 0 0 8px rgba(10, 31, 59, 0.4);
+  box-shadow: 0 0 8px var(--via-navy-40);
   animation: vds-st-pulse 1.8s ease-in-out infinite;
 }
 
 .vds-st-overview.degraded .vds-st-eyebrow-bullet {
   background: var(--via-accent);
-  box-shadow: 0 0 8px rgba(10, 31, 59, 0.30);
+  box-shadow: 0 0 8px var(--via-navy-30);
 }
 
 @keyframes vds-st-pulse {
@@ -126,7 +126,7 @@
   gap: 14px;
   padding: 18px 20px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.03);
+  background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -168,7 +168,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 12px 28px -16px rgba(10, 31, 59, 0.12);
+    0 12px 28px -16px var(--via-navy-12);
 }
 
 .vds-st-group {
@@ -184,7 +184,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px 12px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -225,7 +225,7 @@
 }
 
 .vds-st-row:hover {
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
 }
 
 .vds-st-row:hover::before {
@@ -240,7 +240,7 @@
   bottom: 14px;
   width: 2px;
   border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
   opacity: 0;
   transition: opacity .22s ease;
 }
@@ -266,7 +266,7 @@
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.05), rgba(10, 31, 59, 0.02));
+  background: linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   display: flex;
@@ -328,15 +328,15 @@
 }
 
 .vds-st-pill.ok {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-navy);
-  border: 1px solid rgba(10, 31, 59, 0.14);
+  border: 1px solid var(--via-navy-14);
 }
 
 .vds-st-pill.degraded {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-accent-warm);
-  border: 1px solid rgba(10, 31, 59, 0.14);
+  border: 1px solid var(--via-navy-14);
 }
 
 .vds-st-pill.down {
@@ -387,7 +387,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 12px 28px -16px rgba(10, 31, 59, 0.12);
+    0 12px 28px -16px var(--via-navy-12);
 }
 
 .vds-st-incidents > header {
@@ -465,7 +465,7 @@
   border: 2px solid var(--via-navy);
   margin-top: 6px;
   z-index: 1;
-  box-shadow: 0 0 0 4px rgba(10, 31, 59, 0.06);
+  box-shadow: 0 0 0 4px var(--via-navy-06);
 }
 
 .vds-st-inc.maintenance .vds-st-inc-dot {
@@ -510,15 +510,15 @@
   bottom: 14px;
   width: 2px;
   border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), rgba(10, 31, 59, 0.3));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
   opacity: 0;
   transition: opacity .22s ease;
 }
 
 .vds-st-inc article:hover {
   transform: translateY(-2px);
-  border-color: rgba(10, 31, 59, 0.14);
-  box-shadow: 0 12px 28px -16px rgba(10, 31, 59, 0.18);
+  border-color: var(--via-navy-14);
+  box-shadow: 0 12px 28px -16px var(--via-navy-18);
 }
 
 .vds-st-inc article:hover::before {
@@ -549,17 +549,17 @@
   letter-spacing: -0.004em;
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-navy);
-  border: 1px solid rgba(10, 31, 59, 0.14);
+  border: 1px solid var(--via-navy-14);
   white-space: nowrap;
   line-height: 1.4;
 }
 
 .vds-st-inc-sev.minor {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
   color: var(--via-accent-warm);
-  border-color: rgba(10, 31, 59, 0.14);
+  border-color: var(--via-navy-14);
 }
 
 .vds-st-inc-sev.major {
@@ -590,7 +590,7 @@
   padding: 12px 14px;
   margin: 0 0 14px;
   border-radius: 10px;
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
   display: flex;
   flex-direction: column;
@@ -628,9 +628,9 @@
   gap: 6px;
   padding: 4px 10px 4px 8px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
   color: var(--via-navy);
-  border: 1px solid rgba(10, 31, 59, 0.12);
+  border: 1px solid var(--via-navy-12);
   font-family: var(--via-mono);
   font-size: 10px;
   font-weight: 500;

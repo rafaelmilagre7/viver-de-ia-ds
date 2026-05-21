@@ -7,7 +7,7 @@
   border-radius: 32px;
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.22) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-18) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-gray-300) 0%, var(--via-gray-400) 100%);
   border: 0.5px solid var(--via-navy-12);
 }
@@ -20,7 +20,7 @@
   border-radius: 32px;
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.22) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-18) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-gray-300) 0%, var(--via-gray-400) 100%);
   border: 0.5px solid var(--via-navy-12);
 }
@@ -35,8 +35,8 @@
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
     inset 0 -1px 0 rgba(255,255,255,0.4),
-    0 12px 32px rgba(10,31,59,0.10),
-    0 2px 8px rgba(10,31,59,0.04);
+    0 12px 32px var(--via-navy-10),
+    0 2px 8px var(--via-navy-04);
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -56,7 +56,7 @@
   transform: translateY(-2px);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
-    0 24px 56px rgba(10,31,59,0.16);
+    0 24px 56px var(--via-navy-16);
 }
 .vds-kpi-tile .lbl {
   font-family: var(--via-font);
@@ -79,8 +79,8 @@
   font-size: 12px; font-weight: 700;
   padding: 3px 8px; border-radius: 999px;
 }
-.vds-kpi-tile .delta.up { color: var(--via-navy); background: rgba(10, 31, 59, 0.06); border: 1px solid rgba(10, 31, 59, 0.12); }
-.vds-kpi-tile .delta.down { color: var(--via-navy-deep); background: rgba(10, 31, 59, 0.05); border: 1px solid rgba(10, 31, 59, 0.12); }
+.vds-kpi-tile .delta.up { color: var(--via-navy); background: var(--via-navy-06); border: 1px solid var(--via-navy-12); }
+.vds-kpi-tile .delta.down { color: var(--via-navy-deep); background: var(--via-navy-05); border: 1px solid var(--via-navy-12); }
 .vds-kpi-tile .spark { width: 100%; height: 40px; }
 .vds-kpi-tile .meta {
   font-family: var(--via-font);

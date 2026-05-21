@@ -10,7 +10,7 @@
   border: 0.5px solid var(--via-navy-08);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 24px 56px -16px rgba(10, 31, 59, 0.18);
+  box-shadow: 0 24px 56px -16px var(--via-navy-18);
 }
 .vds-ed-newsletter > header {
   display: flex;

@@ -87,13 +87,13 @@ export default function Color() {
         <p>
           Usar variantes alpha do navy em vez de cinza puro mantém todo o sistema coerente.
         </p>
-        <CodeBlock>{`--via-navy-04   /* rgba(10,31,59,0.04)  — hover background light */
---via-navy-08   /* rgba(10,31,59,0.08)  — section bg subtle      */
---via-navy-12   /* rgba(10,31,59,0.12)  — hairline border         */
---via-navy-20   /* rgba(10,31,59,0.20)  — divider                 */
---via-navy-40   /* rgba(10,31,59,0.40)  — strong border           */
---via-navy-60   /* rgba(10,31,59,0.60)  — muted scrim             */
---via-navy-80   /* rgba(10,31,59,0.80)  — solid scrim             */`}</CodeBlock>
+        <CodeBlock>{`--via-navy-04   /* var(--via-navy-04)  — hover background light */
+--via-navy-08   /* var(--via-navy-08)  — section bg subtle      */
+--via-navy-12   /* var(--via-navy-12)  — hairline border         */
+--via-navy-20   /* var(--via-navy-20)  — divider                 */
+--via-navy-40   /* var(--via-navy-40)  — strong border           */
+--via-navy-60   /* var(--via-navy-60)  — muted scrim             */
+--via-navy-80   /* var(--via-navy-80)  — solid scrim             */`}</CodeBlock>
       </Section>
 
       <Section title="O que não usar" meta="off-brand">

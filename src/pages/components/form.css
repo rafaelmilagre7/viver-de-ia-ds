@@ -20,7 +20,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(10,31,59,0.10) 0%, transparent 70%);
+  background: radial-gradient(ellipse 50% 60% at 50% 100%, var(--via-navy-10) 0%, transparent 70%);
   pointer-events: none;
 }
 .vds-form-stage.compact { padding: 48px 32px; }
@@ -39,8 +39,8 @@
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
     inset 0 -1px 0 rgba(255,255,255,0.5),
-    0 24px 56px rgba(10,31,59,0.18),
-    0 4px 12px rgba(10,31,59,0.08);
+    0 24px 56px var(--via-navy-18),
+    0 4px 12px var(--via-navy-08);
   overflow: hidden;
 }
 .vds-form-card::before {
@@ -82,14 +82,14 @@
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
     inset 0 -1px 0 rgba(255,255,255,0.4),
-    0 4px 12px rgba(10,31,59,0.06),
-    0 1px 3px rgba(10,31,59,0.04);
+    0 4px 12px var(--via-navy-06),
+    0 1px 3px var(--via-navy-04);
   transition: all 200ms var(--via-ease);
 }
 .via-field:hover:not(.disabled):not(.focused) {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
-    0 6px 16px rgba(10,31,59,0.10);
+    0 6px 16px var(--via-navy-10);
   transform: translateY(-1px);
 }
 .via-field .lbl {
@@ -124,8 +124,8 @@
   border-color: var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.95),
-    0 0 0 4px rgba(10,31,59,0.12),
-    0 6px 18px rgba(10,31,59,0.12);
+    0 0 0 4px var(--via-navy-12),
+    0 6px 18px var(--via-navy-12);
 }
 .via-field.focused .lbl { color: var(--via-navy); }
 
@@ -167,12 +167,12 @@
   letter-spacing: -0.004em;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(10,31,59,0.06);
+  background: var(--via-navy-06);
   color: var(--via-gray-500);
   white-space: nowrap;
   line-height: 1.4;
 }
-.via-field .cue.navy { background: rgba(10,31,59,0.10); color: var(--via-navy); }
+.via-field .cue.navy { background: var(--via-navy-10); color: var(--via-navy); }
 .via-field .cue.danger { background: rgba(184,58,58,0.10); color: var(--via-danger); }
 .via-field .cue.muted { background: var(--via-gray-100); color: var(--via-gray-600); }
 
@@ -235,7 +235,7 @@
   border-radius: 16px;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
-    0 4px 12px rgba(10,31,59,0.05);
+    0 4px 12px var(--via-navy-05);
   cursor: pointer;
   transition: var(--via-t);
 }
@@ -243,12 +243,12 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,1),
-    0 6px 16px rgba(10,31,59,0.10);
+    0 6px 16px var(--via-navy-10);
 }
 .via-radio.on {
   border-color: var(--via-navy);
-  background: linear-gradient(180deg, rgba(10,31,59,0.06), rgba(10,31,59,0.02));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 6px 16px rgba(10,31,59,0.10);
+  background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 6px 16px var(--via-navy-10);
 }
 
 .via-check .box,
@@ -271,7 +271,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 4px 12px rgba(10,31,59,0.20);
+  box-shadow: 0 4px 12px var(--via-navy-20);
 }
 .via-radio .ring.checked { border-color: var(--via-navy); border-width: 1.5px; }
 .via-radio .ring .dot {
