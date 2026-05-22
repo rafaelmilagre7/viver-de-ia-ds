@@ -841,12 +841,12 @@
 }
 
 .vds-bs-options li.on .vds-bs-opt-ic {
-  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
-  color: var(--via-navy);
-  border-color: var(--via-navy-25);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  border-color: var(--via-navy);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.3) inset,
-    0 2px 6px -2px var(--via-navy-25);
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 4px 10px -3px var(--via-navy-40);
 }
 
 .vds-bs-options strong {
