@@ -105,13 +105,14 @@
 }
 
 .vds-live-elapsed {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
   text-transform: none;
   padding-left: 10px;
-  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+  font-feature-settings: 'tnum' 1;
 }
 
 .vds-live-viewers {
@@ -144,19 +145,20 @@
 .vds-live-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  gap: 7px;
+  font-family: var(--via-font-mono, var(--via-font));
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--via-gray-300);
+  color: rgba(255, 255, 255, 0.74);
   margin-bottom: 18px;
 }
 
 .vds-live-hero h1 {
   font-size: 64px;
   font-weight: 500;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.034em;
   line-height: 1.04;
   color: var(--via-white);
   margin: 0 0 20px;
@@ -164,83 +166,89 @@
 }
 
 .vds-live-hero h1 em {
-  font-style: normal;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 500;
-  filter: drop-shadow(0 4px 16px var(--via-navy-10));
+  font-style: italic;
+  color: var(--via-white);
+  font-weight: 400;
+  opacity: 0.78;
+  letter-spacing: -0.030em;
 }
 
 .vds-live-lede {
   margin: 0 0 28px;
   font-size: 16px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 560px;
+  line-height: 1.58;
+  color: rgba(255, 255, 255, 0.84);
+  max-width: 580px;
+  letter-spacing: -0.008em;
 }
 
 /* Hosts */
 .vds-live-hosts {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
-  padding: 14px 18px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  gap: 18px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 8px 22px -8px rgba(0, 0, 0, 0.40);
 }
 
 .vds-live-host {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 
 .vds-live-host .av {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+  border: 1.5px solid rgba(255, 255, 255, 0.26);
   color: var(--via-white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
   flex-shrink: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 4px 10px -3px rgba(0, 0, 0, 0.40);
 }
 
 .vds-live-host .av.guest {
-  background: linear-gradient(135deg, var(--via-navy-20), rgba(10, 31, 59, 0.09));
-  border-color: var(--via-navy-25);
-  color: var(--via-gray-300);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--via-white);
 }
 
 .vds-live-host strong {
   display: block;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 600;
   color: var(--via-white);
-  letter-spacing: -0.008em;
+  letter-spacing: -0.010em;
 }
 
 .vds-live-host em {
   display: block;
   font-style: normal;
-  font-size: 10.5px;
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: -0.005em;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: -0.006em;
+  margin-top: 1px;
 }
 
 .vds-live-host-sep {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.42);
   font-weight: 300;
 }
 
