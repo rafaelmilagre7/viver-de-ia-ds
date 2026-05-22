@@ -35,6 +35,17 @@ const ApiCard = lazy(() => import('./pages/api/ApiCard'));
 const ApiInput = lazy(() => import('./pages/api/ApiInput'));
 const ApiModal = lazy(() => import('./pages/api/ApiModal'));
 const ApiAvatar = lazy(() => import('./pages/api/ApiAvatar'));
+// Onda 2B
+const ApiPill = lazy(() => import('./pages/api/ApiPill'));
+const ApiTabs = lazy(() => import('./pages/api/ApiTabs'));
+const ApiSwitch = lazy(() => import('./pages/api/ApiSwitch'));
+const ApiToast = lazy(() => import('./pages/api/ApiToast'));
+const ApiTooltip = lazy(() => import('./pages/api/ApiTooltip'));
+const ApiSlider = lazy(() => import('./pages/api/ApiSlider'));
+const ApiAlert = lazy(() => import('./pages/api/ApiAlert'));
+const ApiProgress = lazy(() => import('./pages/api/ApiProgress'));
+const ApiDrawer = lazy(() => import('./pages/api/ApiDrawer'));
+const ApiDataTable = lazy(() => import('./pages/api/ApiDataTable'));
 const LogoUsage = lazy(() => import('./pages/foundations/LogoUsage'));
 
 // Glass
@@ -175,6 +186,16 @@ export default function App() {
                   <Route path="input" element={<ApiInput />} />
                   <Route path="modal" element={<ApiModal />} />
                   <Route path="avatar" element={<ApiAvatar />} />
+                  <Route path="pill" element={<ApiPill />} />
+                  <Route path="tabs" element={<ApiTabs />} />
+                  <Route path="switch" element={<ApiSwitch />} />
+                  <Route path="toast" element={<ApiToast />} />
+                  <Route path="tooltip" element={<ApiTooltip />} />
+                  <Route path="slider" element={<ApiSlider />} />
+                  <Route path="alert" element={<ApiAlert />} />
+                  <Route path="progress" element={<ApiProgress />} />
+                  <Route path="drawer" element={<ApiDrawer />} />
+                  <Route path="data-table" element={<ApiDataTable />} />
                 </Route>
 
                 <Route path="glass">
