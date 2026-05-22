@@ -46,6 +46,23 @@ const ApiAlert = lazy(() => import('./pages/api/ApiAlert'));
 const ApiProgress = lazy(() => import('./pages/api/ApiProgress'));
 const ApiDrawer = lazy(() => import('./pages/api/ApiDrawer'));
 const ApiDataTable = lazy(() => import('./pages/api/ApiDataTable'));
+// Onda 2C · batch 1 (form + overlay + nav)
+const ApiCheckbox = lazy(() => import('./pages/api/ApiCheckbox'));
+const ApiRadioGroup = lazy(() => import('./pages/api/ApiRadioGroup'));
+const ApiSelect = lazy(() => import('./pages/api/ApiSelect'));
+const ApiCombobox = lazy(() => import('./pages/api/ApiCombobox'));
+const ApiDropdownMenu = lazy(() => import('./pages/api/ApiDropdownMenu'));
+const ApiPopover = lazy(() => import('./pages/api/ApiPopover'));
+const ApiCommand = lazy(() => import('./pages/api/ApiCommand'));
+const ApiDatePicker = lazy(() => import('./pages/api/ApiDatePicker'));
+const ApiStepper = lazy(() => import('./pages/api/ApiStepper'));
+const ApiAccordion = lazy(() => import('./pages/api/ApiAccordion'));
+const ApiBreadcrumb = lazy(() => import('./pages/api/ApiBreadcrumb'));
+const ApiPagination = lazy(() => import('./pages/api/ApiPagination'));
+const ApiSpinner = lazy(() => import('./pages/api/ApiSpinner'));
+const ApiSkeleton = lazy(() => import('./pages/api/ApiSkeleton'));
+const ApiEmptyState = lazy(() => import('./pages/api/ApiEmptyState'));
+const ApiIcon = lazy(() => import('./pages/api/ApiIcon'));
 const LogoUsage = lazy(() => import('./pages/foundations/LogoUsage'));
 
 // Glass
@@ -196,6 +213,22 @@ export default function App() {
                   <Route path="progress" element={<ApiProgress />} />
                   <Route path="drawer" element={<ApiDrawer />} />
                   <Route path="data-table" element={<ApiDataTable />} />
+                  <Route path="checkbox" element={<ApiCheckbox />} />
+                  <Route path="radio-group" element={<ApiRadioGroup />} />
+                  <Route path="select" element={<ApiSelect />} />
+                  <Route path="combobox" element={<ApiCombobox />} />
+                  <Route path="dropdown-menu" element={<ApiDropdownMenu />} />
+                  <Route path="popover" element={<ApiPopover />} />
+                  <Route path="command" element={<ApiCommand />} />
+                  <Route path="date-picker" element={<ApiDatePicker />} />
+                  <Route path="stepper" element={<ApiStepper />} />
+                  <Route path="accordion" element={<ApiAccordion />} />
+                  <Route path="breadcrumb" element={<ApiBreadcrumb />} />
+                  <Route path="pagination" element={<ApiPagination />} />
+                  <Route path="spinner" element={<ApiSpinner />} />
+                  <Route path="skeleton" element={<ApiSkeleton />} />
+                  <Route path="empty-state" element={<ApiEmptyState />} />
+                  <Route path="icon" element={<ApiIcon />} />
                 </Route>
 
                 <Route path="glass">
