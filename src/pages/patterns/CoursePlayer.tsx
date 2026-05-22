@@ -2,7 +2,8 @@ import { useState } from 'react';
 import {
   Play, Pause, SkipBack, SkipForward, Volume2, Maximize2, Settings,
   Check, Lock, ChevronDown, BookOpen, PenTool, Headphones,
-  ArrowRight, FileText, Bookmark, Layers,
+  ArrowRight, FileText, Bookmark, Layers, Send, Heart, MessageCircle,
+  Hand, Pin,
 } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
@@ -55,10 +56,11 @@ export default function CoursePlayer() {
             Playlist permanente, <em>fluxo cinematográfico</em>.
           </>
         }
-        lede="Player de aula em modo imersivo — vídeo grande dominante, playlist sidebar permanente com módulos colapsáveis, progresso embutido. Como Frontend Masters, mas com cara editorial Viver de IA. O aluno entra e fica."
+        lede="Player de aula em modo imersivo — vídeo grande dominante, playlist sidebar permanente, progresso embutido. Duas variantes editoriais: aula gravada (vídeo + playlist) e aula ao vivo (broadcast + chat + reações). Como Frontend Masters, mas com cara editorial Viver de IA. O aluno entra e fica."
       />
 
       <PlayerSection />
+      <LiveLessonSection />
       <NotesAndProgressSection />
     </>
   );
@@ -73,7 +75,7 @@ function PlayerSection() {
     setOpenModules((p) => (p.includes(n) ? p.filter((x) => x !== n) : [...p, n]));
 
   return (
-    <Section title="Layout completo · vídeo + playlist + breadcrumb" meta="grade 2-col · sidebar 360px · scroll independente">
+    <Section title="Variante principal · aula gravada · vídeo + playlist" meta="grade 2-col · sidebar 360px · scroll independente">
       <div className="vds-cp">
         {/* Sidebar — playlist */}
         <aside className="vds-cp-aside">
@@ -149,6 +151,7 @@ function PlayerSection() {
           <div className="vds-cp-video">
             <div className="vid-bg via-mesh-navy via-noise" />
             <span className="vid-glow" />
+            <span className="vid-aura" />
 
             {!playing && (
               <div className="vid-idle">
@@ -162,7 +165,7 @@ function PlayerSection() {
                 <p>Caio Ribeiro · transcript com timestamps na lateral · 12 notas suas</p>
 
                 <button className="vid-play-big" onClick={() => setPlaying(true)} aria-label="Tocar vídeo">
-                  <Play size={32} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+                  <Play size={30} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
                 </button>
               </div>
             )}
@@ -221,6 +224,196 @@ function PlayerSection() {
           </div>
         </div>
       </div>
+    </Section>
+  );
+}
+
+/* ============================================
+   LIVE LESSON · broadcast em andamento
+   ============================================ */
+
+type ChatMsg = {
+  id: string;
+  av: string;
+  name: string;
+  role?: string;
+  text: string;
+  time: string;
+  own?: boolean;
+  pinned?: boolean;
+  reply?: string;
+};
+
+const CHAT_MSGS: ChatMsg[] = [
+  {
+    id: 'm1',
+    av: 'CR',
+    name: 'Caio Ribeiro',
+    role: 'host',
+    text: 'Daqui a 2 minutos vou rodar a auditoria do prompt do Yago em produção. Já podem mandar perguntas.',
+    time: '21:14',
+    pinned: true,
+  },
+  {
+    id: 'm2',
+    av: 'YA',
+    name: 'Yago Almeida',
+    text: 'Esse few-shot que você ensinou funciona em Cohere também ou só no Anthropic?',
+    time: '21:15',
+  },
+  {
+    id: 'm3',
+    av: 'CM',
+    name: 'Camila Moraes',
+    text: 'Auditar prompt em produção sem quebrar fluxo do cliente: usa shadow ou só dev?',
+    time: '21:16',
+  },
+  {
+    id: 'm4',
+    av: 'DP',
+    name: 'Daniel Pinheiro',
+    text: 'Vou tentar few-shot na Iris semana que vem. Aposto que cai 40% no token de saída.',
+    time: '21:17',
+  },
+  {
+    id: 'm5',
+    av: 'RM',
+    name: 'Você',
+    text: 'Caio, quando faz sentido usar XML tag pra few-shot vs JSON estruturado?',
+    time: '21:18',
+    own: true,
+  },
+];
+
+function LiveLessonSection() {
+  const [msg, setMsg] = useState('');
+  const audience = 248;
+
+  return (
+    <Section
+      title="Variante ao vivo · broadcast + chat + reações"
+      meta="cenário síncrono · live pill pulsante · audience real · chat lateral"
+    >
+      <article className="vds-cp-live">
+        <div className="vds-cp-live-grid">
+          {/* Video — live broadcast */}
+          <div className="vds-cp-live-vid">
+            <div className="vds-cp-live-bg via-mesh-navy via-noise" />
+            <span className="vds-cp-live-aura" />
+
+            {/* Top overlay — live + audience + host */}
+            <div className="vds-cp-live-top">
+              <span className="vds-live-pill">
+                <span className="vds-live-rec-dot" />
+                <em>ao vivo</em>
+              </span>
+              <span className="vds-cp-live-audience">
+                <span className="dot" />
+                <strong>{audience}</strong>
+                <em>conectados agora</em>
+              </span>
+            </div>
+
+            {/* Host card */}
+            <div className="vds-cp-live-host">
+              <div className="host-av">
+                CR
+                <span className="host-ring" />
+              </div>
+              <div>
+                <strong>Caio Ribeiro <span className="host-tag">host</span></strong>
+                <em>Auditando 3 prompts em produção · ao vivo</em>
+              </div>
+              <div className="host-elapsed">
+                <span className="num">17:42</span>
+                <em>elapsed</em>
+              </div>
+            </div>
+
+            {/* Reactions floating overlay */}
+            <div className="vds-cp-live-reactions" aria-hidden="true">
+              <span className="r r1">❤</span>
+              <span className="r r2">🔥</span>
+              <span className="r r3">👏</span>
+              <span className="r r4">❤</span>
+            </div>
+
+            {/* Bottom — minimal controls (live = no scrub) */}
+            <div className="vds-cp-live-controls">
+              <button className="vid-ctrl play live" aria-label="Pausar broadcast">
+                <Pause size={14} strokeWidth={0} style={{ fill: 'var(--via-navy)' }} />
+              </button>
+              <button aria-label="Volume" className="vid-ctrl">
+                <Volume2 size={14} strokeWidth={2.2} />
+              </button>
+              <span className="vds-cp-live-time">
+                <span className="live-dot" />
+                <span>ao vivo · sem replay até 22:00</span>
+              </span>
+              <div className="vds-cp-live-react-bar">
+                <button aria-label="Aplaudir"><Heart size={13} strokeWidth={2.2} /></button>
+                <button aria-label="Mão pra cima"><Hand size={13} strokeWidth={2.2} /></button>
+                <button aria-label="Tela cheia"><Maximize2 size={13} strokeWidth={2} /></button>
+              </div>
+            </div>
+
+            <div className="vid-watermark">
+              <img src={monogramWhite} alt="" />
+            </div>
+          </div>
+
+          {/* Chat lateral */}
+          <aside className="vds-cp-chat">
+            <header className="vds-cp-chat-head">
+              <div>
+                <span className="vds-cp-chat-eyebrow">Chat ao vivo</span>
+                <h4>Tira-dúvidas em tempo real</h4>
+              </div>
+              <span className="vds-cp-chat-count">
+                <MessageCircle size={11} strokeWidth={2.4} />
+                {CHAT_MSGS.length} mensagens
+              </span>
+            </header>
+
+            <ul className="vds-cp-chat-body">
+              {CHAT_MSGS.map((m) => (
+                <li key={m.id} className={`vds-cp-chat-msg ${m.own ? 'own' : ''} ${m.pinned ? 'pinned' : ''} ${m.role === 'host' ? 'host' : ''}`}>
+                  {m.pinned && (
+                    <span className="vds-cp-chat-pin">
+                      <Pin size={9} strokeWidth={2.4} />
+                      fixado pelo host
+                    </span>
+                  )}
+                  <div className="msg-row">
+                    <div className="msg-av">{m.av}</div>
+                    <div className="msg-body">
+                      <div className="msg-meta">
+                        <strong>{m.name}</strong>
+                        {m.role === 'host' && <span className="host-tag">host</span>}
+                        <span className="msg-time">{m.time}</span>
+                      </div>
+                      <p>{m.text}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <footer className="vds-cp-chat-foot">
+              <input
+                type="text"
+                value={msg}
+                onChange={(e) => setMsg(e.target.value)}
+                placeholder="Pergunte ao vivo · Caio responde nos próximos minutos"
+                className="vds-cp-chat-input"
+              />
+              <button className="vds-cp-chat-send" aria-label="Enviar">
+                <Send size={13} strokeWidth={2.2} />
+              </button>
+            </footer>
+          </aside>
+        </div>
+      </article>
     </Section>
   );
 }
