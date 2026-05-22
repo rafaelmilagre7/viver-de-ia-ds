@@ -1,0 +1,489 @@
+/* ==============================================================
+   TWO-FACTOR setup flow · Apple-level liquid glass · v0.5
+   --------------------------------------------------------------
+   Card central flutuante · glass forte · atmosphere radial dupla
+   · stepper editorial · method cards selectable glass · OTP
+   wrapper glass · QR tile com mesh navy · backup codes em mono
+   glass · shadow stack 5-layer · spring physics.
+   ============================================================== */
+
+.vds-2fa {
+  position: relative;
+  isolation: isolate;
+}
+
+.vds-2fa::before {
+  content: '';
+  position: absolute;
+  inset: -100px -40px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(1100px 600px at 0% 0%, rgba(30,58,95,0.10), transparent 55%),
+    radial-gradient(900px 500px at 100% 30%, rgba(10,31,59,0.07), transparent 60%),
+    radial-gradient(700px 400px at 50% 100%, rgba(30,58,95,0.06), transparent 60%);
+  border-radius: 32px;
+}
+
+/* ===== Card principal · liquid glass forte ================== */
+.vds-2fa-card {
+  position: relative;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 36px 36px 32px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.78) 100%);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 26px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(255,255,255,0.5),
+    0 1px 0 0 rgba(10,31,59,0.04),
+    0 30px 64px -24px var(--via-navy-22),
+    0 14px 28px -10px var(--via-navy-10);
+  overflow: hidden;
+  isolation: isolate;
+}
+.vds-2fa-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(560px 280px at 0% 0%, rgba(30,58,95,0.10), transparent 60%),
+    radial-gradient(400px 240px at 100% 0%, rgba(30,58,95,0.06), transparent 60%),
+    radial-gradient(400px 200px at 100% 100%, rgba(10,31,59,0.05), transparent 60%);
+  opacity: 0.8;
+}
+
+/* ===== Header do card · ícone + título da seção ============= */
+.vds-2fa-card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.vds-2fa-card__head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--via-navy-08) 20%, var(--via-navy-08) 80%, transparent);
+}
+.vds-2fa-card__icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 65%, var(--via-navy-deep));
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 0 0 1px rgba(255,255,255,0.85),
+    0 6px 16px -4px var(--via-navy-30),
+    0 2px 6px -2px var(--via-navy-14);
+}
+.vds-2fa-card__icon::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.20), transparent 55%);
+  pointer-events: none;
+}
+.vds-2fa-card__eyebrow {
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+  flex: 1;
+}
+.vds-2fa-card__counter {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.74));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--via-navy-12);
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--via-text-primary);
+  letter-spacing: -0.004em;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+}
+
+/* ===== Step heading ========================================= */
+.vds-2fa-step h3 {
+  margin: 0 0 8px;
+  font-family: var(--via-font-display);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  line-height: 1.2;
+  color: var(--via-text-primary);
+}
+.vds-2fa-step > p.lede {
+  margin: 0 0 22px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--via-text-muted);
+  letter-spacing: -0.008em;
+}
+
+/* ===== Method cards · selectable glass ====================== */
+.vds-2fa-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.vds-2fa-method {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(247,248,250,0.56) 100%);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--via-navy-08);
+  border-radius: 18px;
+  text-align: left;
+  cursor: pointer;
+  isolation: isolate;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    0 1px 2px var(--via-navy-04);
+  transition: all 280ms cubic-bezier(.16, 1, .3, 1);
+}
+.vds-2fa-method::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(280px 100px at 0% 0%, rgba(30,58,95,0.06), transparent 60%),
+    radial-gradient(220px 90px at 100% 100%, rgba(10,31,59,0.04), transparent 60%);
+  opacity: 0;
+  transition: opacity 280ms cubic-bezier(.16, 1, .3, 1);
+}
+.vds-2fa-method:hover {
+  border-color: var(--via-navy-22);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 12px 28px -10px var(--via-navy-14),
+    0 4px 10px -3px var(--via-navy-08);
+}
+.vds-2fa-method:hover::before { opacity: 0.7; }
+.vds-2fa-method:focus-visible {
+  outline: none;
+  border-color: var(--via-navy);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 0 0 4px var(--via-navy-10);
+}
+
+.vds-2fa-method__icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 70%, var(--via-navy-deep));
+  color: var(--via-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 0 0 1px rgba(255,255,255,0.85),
+    0 4px 10px -2px var(--via-navy-22),
+    0 1px 3px -1px var(--via-navy-12);
+}
+.vds-2fa-method__icon::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.22), transparent 55%);
+  pointer-events: none;
+}
+.vds-2fa-method__copy { flex: 1; min-width: 0; }
+.vds-2fa-method__title {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--via-text-primary);
+  letter-spacing: -0.012em;
+  margin-bottom: 3px;
+}
+.vds-2fa-method__sub {
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  color: var(--via-text-muted);
+  letter-spacing: -0.004em;
+  line-height: 1.5;
+}
+.vds-2fa-method__chev {
+  color: var(--via-text-muted);
+  flex-shrink: 0;
+  transition: transform 280ms cubic-bezier(.16, 1, .3, 1);
+}
+.vds-2fa-method:hover .vds-2fa-method__chev { transform: translateX(3px); color: var(--via-text-primary); }
+
+/* ===== QR tile · glass + mesh navy ========================== */
+.vds-2fa-qr-wrap {
+  position: relative;
+  padding: 22px;
+  margin-bottom: 18px;
+  background:
+    radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
+    radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.74), rgba(247,248,250,0.5));
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--via-navy-08);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    0 1px 2px var(--via-navy-04);
+}
+.vds-2fa-qr {
+  width: 148px;
+  height: 148px;
+  border-radius: 14px;
+  position: relative;
+  background:
+    repeating-conic-gradient(var(--via-navy) 0deg 18deg, var(--via-navy-deep) 18deg 36deg) 50% 50%/100% 100%,
+    var(--via-navy);
+  mask:
+    radial-gradient(circle at 50% 50%, transparent 12px, #000 12px) center / 100% 100%,
+    linear-gradient(#fff, #fff);
+  mask-composite: intersect;
+  -webkit-mask:
+    radial-gradient(circle at 50% 50%, transparent 12px, #000 12px) center / 100% 100%,
+    linear-gradient(#fff, #fff);
+  -webkit-mask-composite: source-in;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.85),
+    0 12px 24px -8px var(--via-navy-30),
+    0 4px 10px -3px var(--via-navy-14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vds-2fa-qr::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  background: var(--via-bg);
+  border-radius: 8px;
+  background-image:
+    radial-gradient(circle at 22% 22%, var(--via-navy-deep) 4px, transparent 4px),
+    radial-gradient(circle at 78% 22%, var(--via-navy-deep) 4px, transparent 4px),
+    radial-gradient(circle at 22% 78%, var(--via-navy-deep) 4px, transparent 4px);
+}
+.vds-2fa-qr-caption {
+  font-family: var(--via-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--via-text-muted);
+  text-transform: uppercase;
+}
+
+/* ===== OTP wrap · sub-card ================================== */
+.vds-2fa-otp-wrap {
+  padding: 4px 0 8px;
+  margin-bottom: 16px;
+}
+
+/* ===== Backup codes · mono glass grid ======================= */
+.vds-2fa-backup {
+  position: relative;
+  padding: 22px;
+  margin-bottom: 16px;
+  background:
+    radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
+    radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.74), rgba(247,248,250,0.5));
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--via-navy-08);
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    0 1px 2px var(--via-navy-04);
+}
+.vds-2fa-backup-code {
+  font-family: var(--via-font-mono);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--via-text-primary);
+  padding: 8px 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.95);
+  text-align: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 1px 1px var(--via-navy-04);
+}
+
+/* ===== CTA wide · ocupa o card =============================== */
+.vds-2fa-cta-wide button { width: 100%; margin-top: 4px; }
+.vds-2fa-back { margin-bottom: 14px; }
+
+/* ===== "Done" state · big check glass tile ================== */
+.vds-2fa-done {
+  text-align: center;
+  padding: 8px 0 0;
+}
+.vds-2fa-done__tile {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 65%, var(--via-navy-deep));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--via-white);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 0 0 1px rgba(255,255,255,0.9),
+    0 18px 36px -10px var(--via-navy-30),
+    0 8px 16px -6px var(--via-navy-22);
+}
+.vds-2fa-done__tile::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.22), transparent 55%);
+  pointer-events: none;
+}
+.vds-2fa-done h3 {
+  margin: 0 0 8px;
+  font-family: var(--via-font-display);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  color: var(--via-text-primary);
+}
+.vds-2fa-done p {
+  margin: 0 auto 22px;
+  max-width: 360px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--via-text-muted);
+  letter-spacing: -0.008em;
+}
+
+/* ===== Anatomy cards (rodapé) =============================== */
+.vds-2fa-anatomy {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.vds-2fa-anatomy-card {
+  position: relative;
+  padding: 22px 22px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.74) 100%);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(255,255,255,0.4),
+    0 18px 40px -16px var(--via-navy-14),
+    0 6px 14px -6px var(--via-navy-06);
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 320ms cubic-bezier(.16, 1, .3, 1);
+}
+.vds-2fa-anatomy-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(280px 120px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
+    radial-gradient(240px 110px at 100% 100%, rgba(10,31,59,0.06), transparent 60%);
+  opacity: 0.7;
+  transition: opacity 320ms cubic-bezier(.16, 1, .3, 1);
+}
+.vds-2fa-anatomy-card:hover { transform: translateY(-2px); }
+.vds-2fa-anatomy-card:hover::before { opacity: 1; }
+.vds-2fa-anatomy-card__step {
+  display: inline-block;
+  padding: 3px 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.78));
+  border: 1px solid var(--via-navy-12);
+  border-radius: 999px;
+  font-family: var(--via-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--via-text-primary);
+  letter-spacing: -0.004em;
+  margin-bottom: 14px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+}
+.vds-2fa-anatomy-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--via-font);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  color: var(--via-text-primary);
+}
+.vds-2fa-anatomy-card .purpose {
+  margin: 0 0 8px;
+  font-family: var(--via-font);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--via-text-muted);
+  letter-spacing: -0.004em;
+}
+.vds-2fa-anatomy-card .hint {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--via-text-body);
+  font-style: italic;
+  letter-spacing: -0.004em;
+}
+
+@media (max-width: 600px) {
+  .vds-2fa-card { padding: 28px 22px; }
+  .vds-2fa-backup { grid-template-columns: 1fr; }
+}
