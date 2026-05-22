@@ -65,14 +65,14 @@ function InsightsWeeklySection() {
             </div>
             <svg viewBox="0 0 80 32" className="vds-ins-spark">
               <defs>
-                <linearGradient id="spark1" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.18" />
+                <linearGradient id="sp1" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.28" />
                   <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0" />
                 </linearGradient>
               </defs>
-              <path d="M0,22 L10,20 L20,21 L30,18 L40,17 L50,14 L60,12 L70,8 L80,6" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" />
-              <path d="M0,22 L10,20 L20,21 L30,18 L40,17 L50,14 L60,12 L70,8 L80,6 L80,32 L0,32 Z" fill="url(#spark1)" />
-              <circle cx="80" cy="6" r="2.5" style={{ fill: "var(--via-navy)" }} />
+              <path d="M0,22 L10,20 L20,21 L30,18 L40,17 L50,14 L60,12 L70,8 L80,6 L80,32 L0,32 Z" fill="url(#sp1)" />
+              <path d="M0,22 L10,20 L20,21 L30,18 L40,17 L50,14 L60,12 L70,8 L80,6" fill="none" stroke="var(--via-navy)" strokeOpacity="0.9" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="80" cy="6" r="2.5" fill="var(--via-navy)" />
             </svg>
           </article>
 
@@ -91,8 +91,15 @@ function InsightsWeeklySection() {
               </span>
             </div>
             <svg viewBox="0 0 80 32" className="vds-ins-spark">
-              <path d="M0,18 L10,16 L20,19 L30,14 L40,12 L50,10 L60,11 L70,7 L80,5" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" />
-              <circle cx="80" cy="5" r="2.5" style={{ fill: "var(--via-navy)" }} />
+              <defs>
+                <linearGradient id="sp2" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.28" />
+                  <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path d="M0,18 L10,16 L20,19 L30,14 L40,12 L50,10 L60,11 L70,7 L80,5 L80,32 L0,32 Z" fill="url(#sp2)" />
+              <path d="M0,18 L10,16 L20,19 L30,14 L40,12 L50,10 L60,11 L70,7 L80,5" fill="none" stroke="var(--via-navy)" strokeOpacity="0.9" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="80" cy="5" r="2.5" fill="var(--via-navy)" />
             </svg>
           </article>
 
@@ -111,8 +118,15 @@ function InsightsWeeklySection() {
               </span>
             </div>
             <svg viewBox="0 0 80 32" className="vds-ins-spark">
-              <path d="M0,24 L10,22 L20,23 L30,20 L40,18 L50,12 L60,10 L70,6 L80,4" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" />
-              <circle cx="80" cy="4" r="2.5" style={{ fill: "var(--via-navy)" }} />
+              <defs>
+                <linearGradient id="sp3" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.28" />
+                  <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path d="M0,24 L10,22 L20,23 L30,20 L40,18 L50,12 L60,10 L70,6 L80,4 L80,32 L0,32 Z" fill="url(#sp3)" />
+              <path d="M0,24 L10,22 L20,23 L30,20 L40,18 L50,12 L60,10 L70,6 L80,4" fill="none" stroke="var(--via-navy)" strokeOpacity="0.9" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="80" cy="4" r="2.5" fill="var(--via-navy)" />
             </svg>
           </article>
 
@@ -132,8 +146,15 @@ function InsightsWeeklySection() {
               </span>
             </div>
             <svg viewBox="0 0 80 32" className="vds-ins-spark">
-              <path d="M0,10 L10,8 L20,9 L30,7 L40,8 L50,11 L60,14 L70,16 L80,18" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" />
-              <circle cx="80" cy="18" r="2.5" style={{ fill: "var(--via-navy)" }} />
+              <defs>
+                <linearGradient id="sp4" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stopColor="#B85C5C" stopOpacity="0.22" />
+                  <stop offset="1" stopColor="#B85C5C" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path d="M0,10 L10,8 L20,9 L30,7 L40,8 L50,11 L60,14 L70,16 L80,18 L80,32 L0,32 Z" fill="url(#sp4)" />
+              <path d="M0,10 L10,8 L20,9 L30,7 L40,8 L50,11 L60,14 L70,16 L80,18" fill="none" stroke="#B85C5C" strokeOpacity="0.85" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="80" cy="18" r="2.5" fill="#B85C5C" />
             </svg>
           </article>
         </div>
@@ -151,66 +172,105 @@ function InsightsWeeklySection() {
             </div>
           </header>
 
-          <svg viewBox="0 0 560 200" className="vds-ins-chart-svg" preserveAspectRatio="none">
+          <svg viewBox="0 0 600 240" className="vds-ins-chart-svg" preserveAspectRatio="xMidYMid meet">
             <defs>
-              <linearGradient id="bars" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.85" />
-                <stop offset="1" stopColor="var(--via-blue)" stopOpacity="0.65" />
+              {/* Bar gradient · navy translúcido sutil */}
+              <linearGradient id="ins-bar" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.55" />
+                <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0.12" />
               </linearGradient>
-              <linearGradient id="lineFill" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.18" />
+              {/* Inner highlight pra dar profundidade na bar */}
+              <linearGradient id="ins-bar-shine" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stopColor="#FFFFFF" stopOpacity="0.45" />
+                <stop offset="0.4" stopColor="#FFFFFF" stopOpacity="0.05" />
+                <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
+              </linearGradient>
+              {/* Area fill abaixo da line */}
+              <linearGradient id="ins-area" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.22" />
                 <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0" />
               </linearGradient>
+              {/* Glow no dot final */}
+              <radialGradient id="ins-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.5" />
+                <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0" />
+              </radialGradient>
             </defs>
 
-            {/* Grid lines */}
-            <line x1="0" y1="50" x2="560" y2="50" stroke="var(--via-navy-05)" />
-            <line x1="0" y1="100" x2="560" y2="100" stroke="var(--via-navy-05)" />
-            <line x1="0" y1="150" x2="560" y2="150" stroke="var(--via-navy-05)" />
+            {/* Grid lines · fade nas pontas pra parecer mais leve */}
+            {[60, 110, 160].map((y) => (
+              <line key={y} x1="20" y1={y} x2="580" y2={y}
+                stroke="var(--via-navy)" strokeOpacity="0.06" strokeDasharray="2,4" />
+            ))}
 
-            {/* Bars */}
-            {[42, 56, 48, 72, 84, 92, 108, 138].map((h, i) => {
-              const x = 18 + i * 70;
-              const y = 180 - h;
-              return (
-                <g key={i}>
-                  <rect x={x} y={y} width="38" height={h} rx="6" fill="url(#bars)" />
-                  <text x={x + 19} y="196" textAnchor="middle" fontSize="9" fill="var(--via-navy-60)" fontFamily="var(--via-mono)">
-                    S{13 + i}
-                  </text>
-                </g>
-              );
-            })}
+            {/* Bars · proporção controlada + rounded top · gradient leve */}
+            {(() => {
+              const values = [320, 380, 420, 560, 680, 820, 980, 1842];
+              const max = 1842;
+              const baseY = 200;
+              const maxH = 140;
+              const barW = 36;
+              const slotW = 70;
+              const startX = 30;
+              return values.map((v, i) => {
+                const h = (v / max) * maxH;
+                const x = startX + i * slotW;
+                const y = baseY - h;
+                return (
+                  <g key={i}>
+                    {/* main bar */}
+                    <rect x={x} y={y} width={barW} height={h} rx="5"
+                      fill="url(#ins-bar)" />
+                    {/* inner shine subtle */}
+                    <rect x={x} y={y} width={barW} height={Math.min(h, 28)} rx="5"
+                      fill="url(#ins-bar-shine)" />
+                    {/* week label */}
+                    <text x={x + barW / 2} y="218" textAnchor="middle"
+                      fontSize="9.5" fill="var(--via-text-muted)"
+                      fontFamily="var(--via-font-mono)" letterSpacing="0.04em">
+                      S{13 + i}
+                    </text>
+                  </g>
+                );
+              });
+            })()}
+
+            {/* Area fill abaixo da line */}
+            <path
+              d="M48,150 C100,140 160,130 220,115 S360,80 430,58 L566,32 L566,200 L48,200 Z"
+              fill="url(#ins-area)"
+            />
 
             {/* Line · % resolvido */}
             <path
-              d="M37,90 C90,80 160,76 230,68 S370,52 440,42 L580,32"
+              d="M48,150 C100,140 160,130 220,115 S360,80 430,58 L566,32"
               fill="none"
-              style={{ stroke: "var(--via-navy)" }}
-              strokeWidth="2"
-            />
-            <path
-              d="M37,90 C90,80 160,76 230,68 S370,52 440,42 L580,32 L580,200 L37,200 Z"
-              fill="url(#lineFill)"
+              stroke="var(--via-navy)"
+              strokeOpacity="0.85"
+              strokeWidth="1.8"
+              strokeLinecap="round"
             />
 
             {/* Dots on line */}
             {[
-              { x: 37, y: 90 },
-              { x: 107, y: 82 },
-              { x: 177, y: 78 },
-              { x: 247, y: 68 },
-              { x: 317, y: 62 },
-              { x: 387, y: 52 },
-              { x: 457, y: 42 },
-              { x: 527, y: 28 },
+              { x: 48, y: 150 },
+              { x: 118, y: 140 },
+              { x: 188, y: 124 },
+              { x: 258, y: 110 },
+              { x: 328, y: 90 },
+              { x: 398, y: 68 },
+              { x: 468, y: 50 },
+              { x: 566, y: 32 },
             ].map((d, i) => (
-              <circle key={i} cx={d.x} cy={d.y} r="3" fill="var(--via-white)" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" />
+              <circle key={i} cx={d.x} cy={d.y} r="3"
+                fill="var(--via-bg, #FFFFFF)"
+                stroke="var(--via-navy)" strokeWidth="1.5" />
             ))}
 
-            {/* Latest dot — accent filled */}
-            <circle cx="527" cy="28" r="4" style={{ fill: "var(--via-navy)" }} />
-            <circle cx="527" cy="28" r="8" fill="none" style={{ stroke: "var(--via-navy)" }} strokeOpacity="0.3" strokeWidth="2" />
+            {/* Latest dot · halo + filled */}
+            <circle cx="566" cy="32" r="14" fill="url(#ins-glow)" />
+            <circle cx="566" cy="32" r="4.5" fill="var(--via-navy)" />
+            <circle cx="566" cy="32" r="2" fill="var(--via-bg, #FFFFFF)" />
           </svg>
 
           <p className="vds-ins-chart-note">

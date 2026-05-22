@@ -180,19 +180,15 @@
 }
 .vds-ins-kpi:hover::before { opacity: 1; }
 
+/* Attention · sem bar vertical · só atmosphere coral sutil */
 .vds-ins-kpi.attention {
   background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.78) 100%);
 }
-.vds-ins-kpi.attention::after {
-  content: '';
-  position: absolute;
-  left: 14px;
-  top: 16px;
-  bottom: 16px;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
-  background: linear-gradient(180deg, var(--via-danger, #B85C5C), var(--via-navy));
-  opacity: 0.85;
+.vds-ins-kpi.attention::before {
+  background:
+    radial-gradient(220px 100px at 0% 0%, rgba(184,92,92,0.07), transparent 60%),
+    radial-gradient(180px 80px at 100% 100%, rgba(184,92,92,0.05), transparent 60%);
+  opacity: 1;
 }
 
 .vds-ins-kpi-l {
@@ -252,13 +248,25 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  padding: 3px 9px 3px 7px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.74));
+  border: 1px solid var(--via-navy-08);
+  border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 500;
   letter-spacing: -0.004em;
+  width: fit-content;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
 }
 .vds-ins-kpi-delta.up { color: var(--via-text-primary); }
-.vds-ins-kpi-delta.down { color: var(--via-danger, #B85C5C); }
+.vds-ins-kpi-delta.up svg { opacity: 0.85; }
+.vds-ins-kpi-delta.down {
+  color: #8E3F3F;
+  background: linear-gradient(180deg, rgba(252,243,243,0.94), rgba(247,235,235,0.78));
+  border-color: rgba(184,92,92,0.20);
+}
+.vds-ins-kpi-delta.down svg { color: #B85C5C; }
 
 .vds-ins-spark {
   width: 72px;
@@ -343,16 +351,20 @@
 
 .vds-ins-chart-svg {
   width: 100%;
-  height: 220px;
-  border-radius: 14px;
+  height: 240px;
+  border-radius: 16px;
   position: relative;
   display: block;
   background:
-    radial-gradient(800px 300px at 50% 100%, rgba(30,58,95,0.05), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.5), rgba(247,248,250,0.3));
-  border: 1px solid var(--via-navy-06);
-  padding: 14px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+    radial-gradient(800px 220px at 50% 100%, rgba(30,58,95,0.06), transparent 65%),
+    radial-gradient(400px 200px at 0% 50%, rgba(30,58,95,0.04), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.86), rgba(247,248,250,0.6));
+  border: 1px solid rgba(255,255,255,1);
+  padding: 20px 24px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(255,255,255,0.5),
+    0 4px 14px -6px var(--via-navy-08);
 }
 
 .vds-ins-chart-note {
