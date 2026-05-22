@@ -182,47 +182,77 @@ function StreakSection() {
 /* ---------- Certificate badge final ---------- */
 function CertificateSection() {
   return (
-    <Section title="Certificado · concluído com selo" meta="emissão final · não badge gamer">
+    <Section title="Certificado · concluído com selo" meta="emissão final · peça editorial · não badge gamer">
       <article className="vds-cert">
         <div className="vds-cert-paper via-noise">
-          <span className="vds-cert-aura" />
+          <span className="vds-cert-aura-1" />
+          <span className="vds-cert-aura-2" />
 
-          <header>
-            <img src={monogramWhite} alt="" className="vds-cert-mono" />
-            <span className="vds-cert-tag">Certificado de conclusão</span>
+          {/* Header */}
+          <header className="vds-cert-head">
+            <div className="vds-cert-brand">
+              <img src={monogramWhite} alt="" className="vds-cert-mono" />
+              <div>
+                <span className="vds-cert-brand-eyebrow">Viver de IA</span>
+                <strong>Certificado de conclusão</strong>
+              </div>
+            </div>
+            <span className="vds-cert-issued">
+              <em>emitido em</em>
+              <strong>22 mai 2026</strong>
+            </span>
           </header>
 
+          <span className="vds-cert-rule" />
+
+          {/* Body */}
           <div className="vds-cert-body">
             <p className="vds-cert-pre">Certificamos que</p>
-            <h2>Rafael Milagre</h2>
+            <h2 className="vds-cert-name">Rafael Milagre</h2>
             <p className="vds-cert-mid">
-              concluiu o programa <em>Construindo agentes IA na prática</em> entre 17 fev e 18 mai 2026, totalizando <strong>18 aulas, 4 lives e 2 estudos de caso entregues</strong>.
+              concluiu o programa <em>Construindo agentes IA na prática</em> entre 17 fev e 18 mai de 2026, totalizando <strong>18 aulas, 4 lives e 2 estudos de caso entregues</strong>.
             </p>
 
             <div className="vds-cert-stats">
               <div>
                 <strong>4.7</strong>
-                <em>nota média nas entregas</em>
+                <em>nota média</em>
               </div>
+              <span className="vds-cert-stats-sep" aria-hidden="true" />
               <div>
-                <strong>14d</strong>
+                <strong>14<sup>d</sup></strong>
                 <em>maior streak</em>
               </div>
+              <span className="vds-cert-stats-sep" aria-hidden="true" />
               <div>
-                <strong>92%</strong>
+                <strong>92<sup>%</sup></strong>
                 <em>aulas concluídas</em>
               </div>
             </div>
+          </div>
 
-            <div className="vds-cert-foot">
-              <div className="vds-cert-sign">
-                <span className="vds-cert-line" />
-                <strong>Caio Ribeiro</strong>
-                <em>Fundador · Viver de IA</em>
-              </div>
-              <div className="vds-cert-seal">
-                <Crown size={20} strokeWidth={1.4} />
-                <span>Selo VIA · 2026</span>
+          <span className="vds-cert-rule" />
+
+          {/* Footer */}
+          <div className="vds-cert-foot">
+            <div className="vds-cert-sign">
+              <span className="vds-cert-line" />
+              <strong>Caio Ribeiro</strong>
+              <em>Fundador · Viver de IA</em>
+            </div>
+            <div className="vds-cert-seal" aria-label="Selo VIA 2026">
+              <div className="vds-cert-seal-medal">
+                <Crown size={22} strokeWidth={1.5} />
+                <svg className="vds-cert-seal-ring" viewBox="0 0 100 100" aria-hidden="true">
+                  <defs>
+                    <path id="cert-seal-circle" d="M 50 50 m -38 0 a 38 38 0 1 1 76 0 a 38 38 0 1 1 -76 0" />
+                  </defs>
+                  <text>
+                    <textPath href="#cert-seal-circle" startOffset="0%">
+                      VIVER DE IA · SELO 2026 · PROGRAMA OFICIAL ·
+                    </textPath>
+                  </text>
+                </svg>
               </div>
             </div>
           </div>
