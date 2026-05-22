@@ -28,6 +28,13 @@ const Library = lazy(() => import('./pages/foundations/Library'));
 const BrandStory = lazy(() => import('./pages/foundations/BrandStory'));
 const Personality = lazy(() => import('./pages/foundations/Personality'));
 const VoiceExtended = lazy(() => import('./pages/foundations/VoiceExtended'));
+
+// API docs · onda 2 (formal docs por componente)
+const ApiButton = lazy(() => import('./pages/api/ApiButton'));
+const ApiCard = lazy(() => import('./pages/api/ApiCard'));
+const ApiInput = lazy(() => import('./pages/api/ApiInput'));
+const ApiModal = lazy(() => import('./pages/api/ApiModal'));
+const ApiAvatar = lazy(() => import('./pages/api/ApiAvatar'));
 const LogoUsage = lazy(() => import('./pages/foundations/LogoUsage'));
 
 // Glass
@@ -160,6 +167,14 @@ export default function App() {
                   <Route path="motion" element={<Motion />} />
                   <Route path="philosophy" element={<Philosophy />} />
                   <Route path="library" element={<Library />} />
+                </Route>
+
+                <Route path="api">
+                  <Route path="button" element={<ApiButton />} />
+                  <Route path="card" element={<ApiCard />} />
+                  <Route path="input" element={<ApiInput />} />
+                  <Route path="modal" element={<ApiModal />} />
+                  <Route path="avatar" element={<ApiAvatar />} />
                 </Route>
 
                 <Route path="glass">
