@@ -101,7 +101,7 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 ## Reference site canônico
 
 Quando em dúvida sobre como algo deve parecer, consulte:
-**https://github.com/rafaelmilagre7/viver-de-ia-ds** · 107 páginas vivas.
+**https://github.com/rafaelmilagre7/viver-de-ia-ds** · 110+ páginas vivas · 46 componentes · 46 API docs Radix-style.
 
 ## Suporte
 

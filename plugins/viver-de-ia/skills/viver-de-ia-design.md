@@ -1,13 +1,14 @@
 ---
 name: viver-de-ia-design
-description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo em nenhum nível), assinatura liquid glass, 100+ componentes/patterns canônicos, library React publicável `@viverdeia/design-system` (31 componentes em src/lib), brand book completo, email/social/paid ads/landing/commercial/editorial/event coverage. Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ou qualquer artefato visual da marca.
+description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo em nenhum nível), assinatura liquid glass, 110+ páginas/patterns canônicos, library React publicável `@viverdeia/design-system` v0.5.0 (**46 componentes** em src/lib), API docs Radix-style por componente, theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K real indexado com keywords PT-BR/EN, starter `bunx create-viverdeia-app`, brand book completo, email/social/paid ads/landing/commercial/editorial/event coverage + 4 advanced patterns (2FA setup, pricing comparison, error pages, billing checkout). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ou qualquer artefato visual da marca.
 user-invocable: true
 ---
 
 # Viver de IA · Design System
 
-Reference site canônico: `/Users/rafaelmilagre/viver-de-ia-ds` · 107 páginas · `bun dev` → http://localhost:5173
-Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds
+Reference site canônico: `/Users/rafaelmilagre/viver-de-ia-ds` · **110+ páginas · 46 componentes · 46 API docs** · `bun dev` → http://localhost:5173
+Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds · **v0.5.0**
+Starter: `bunx create-viverdeia-app meu-app` (scaffold Vite + React + TS pré-configurado com ThemeProvider)
 
 ## Princípios não-negociáveis
 
@@ -59,28 +60,48 @@ Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds
 
 Não use Sparkles, ✨, "AI sparkle". Substituir contextualmente: Compass · Award · Crown · Layers · MessageCircle · Rocket.
 
-## Library publicável
+## Library publicável (v0.5.0)
 
 ```bash
 bun add @viverdeia/design-system lucide-react
 ```
 
-```ts
-import '@viverdeia/design-system/tokens.css';
-import '@viverdeia/design-system/style.css';
-import { Button, Pill, Card, DataTable, useToasts } from '@viverdeia/design-system';
+```tsx
+import '@viverdeia/design-system/styles.css';
+import { ThemeProvider, Button, Pill, Card, DataTable, useToasts } from '@viverdeia/design-system';
+
+// Em React, sempre envelopar com ThemeProvider
+<ThemeProvider defaultMode="system">
+  <App />
+</ThemeProvider>
 ```
 
-31 componentes core: Button, Pill, Card, Input, Avatar, Icon, Toast, Tooltip, Modal, Tabs, Switch, Checkbox, RadioGroup, Select, Progress, Drawer, Spinner, Skeleton, Breadcrumb, Pagination, Accordion, Stepper, EmptyState, Combobox, DropdownMenu, Popover, Command, DatePicker, Slider, Alert, DataTable.
+**46 componentes core (9 categorias):**
 
-## Cobertura completa (107 páginas)
+- **Base (6):** Button · Pill · Card · Input · Avatar · Icon
+- **Overlay (5):** Toast · Tooltip · Modal · Tabs · Popover
+- **Form (5):** Switch · Checkbox · RadioGroup · Select · Progress
+- **Utility (5):** Drawer · Spinner · Skeleton · Breadcrumb · Pagination
+- **Composto (5):** Accordion · Stepper · EmptyState · Combobox · DropdownMenu
+- **Avançados (5):** Command (Cmd+K) · DatePicker · Slider · Alert · DataTable
+- **Premium (5) NOVO v0.5:** HoverCard · OTPInput · TagInput · Calendar · Carousel
+- **Mobile-first (5) NOVO v0.5:** MultiSelect · DateRangePicker · TimePicker · ContextMenu · Sheet
+- **Especializados (5) NOVO v0.5:** TreeView · Splitter · VirtualList · Lightbox · ColorPicker
 
-- **Fundamentos** (13): Manifesto · Brand · BrandStory · Personality · VoiceExtended · LogoUsage · Cores · Tipografia · Espaçamento · Raios · Sombras · Movimento · Filosofia · Library
+**Theming exportado:** `ThemeProvider`, `useTheme`, `applyTheme`, `createThemeOverride`.
+
+**API docs:** cada componente tem `/api/{nome}` no reference site com anatomy + props + examples + a11y.
+
+## Cobertura completa (110+ páginas)
+
+- **Fundamentos** (14): Manifesto · Brand · BrandStory · Personality · VoiceExtended · LogoUsage · Cores · Tipografia · Espaçamento · Raios · Sombras · Movimento · Filosofia · Library · **Theming (NOVO v0.5)**
 - **Glass** (3): Anatomia · Variantes · In-context
 - **Iconography** (3): Marks · Icons · Photography
-- **Components** (35+): Buttons, Tags, Badges, Cards, Form, Modal, Table, Tabs, Toast, Tooltip, etc.
+- **API docs** (46): `/api/{nome}` por componente · Radix-style
+- **Components** (35+): páginas de showcase legacy por categoria
 - **Patterns editorial** (40+): Article, Pricing, Dashboard, Onboarding, Achievement, Mentor Matching, Cohort, Lesson Player, Curriculum, etc.
-- **Patterns marketing/commercial** (8 novos): EmailCoverage (13 templates), SocialCoverage (18 templates), PaidAds (12 creatives), LandingElements (7 elementos), Commercial (deck+one-pager+case+proposta+contract), Editorial (newsletter+blog+podcast+YT+tutorial), EventCollateral (Leaders AI guidelines)
+- **Patterns marketing/commercial** (8): EmailCoverage (13 templates), SocialCoverage (18 templates), PaidAds (12 creatives), LandingElements (7 elementos), Commercial (deck+one-pager+case+proposta+contract), Editorial (newsletter+blog+podcast+YT+tutorial), EventCollateral (Leaders AI guidelines)
+- **Patterns advanced (4) NOVO v0.5:** TwoFactor (2FA setup flow) · PricingComparison (3 tiers × 12 features) · ErrorPages (404/403/500/maintenance) · Billing (4-step checkout)
 - **Showcase** (5): Marketing, Leaders AI, Aluno, Login, Settings
 - **Guidelines** (3): Voice, Copy, DosDonts
 
