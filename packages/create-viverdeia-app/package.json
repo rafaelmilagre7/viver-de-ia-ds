@@ -1,0 +1,27 @@
+{
+  "name": "create-viverdeia-app",
+  "version": "0.1.0",
+  "description": "Starter template Viver de IA · React + TypeScript + Vite + @viverdeia/design-system pré-configurado",
+  "type": "module",
+  "bin": {
+    "create-viverdeia-app": "./bin/index.mjs"
+  },
+  "files": [
+    "bin",
+    "template",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "viverdeia",
+    "design-system",
+    "starter",
+    "template",
+    "create-app"
+  ],
+  "author": "Viver de IA",
+  "license": "UNLICENSED",
+  "private": true
+}

@@ -1,0 +1,27 @@
+/* ============================================================
+   {{PROJECT_NAME}} · CSS local
+   ------------------------------------------------------------
+   Tokens do design system Viver de IA vêm de
+   @viverdeia/design-system/styles.css (importado em main.tsx).
+
+   Use --via-* livremente · NÃO redefina tokens da marca aqui
+   (use createThemeOverride se precisar de white-label).
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: var(--via-font);
+  background: var(--via-bg);
+  color: var(--via-text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
