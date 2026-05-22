@@ -264,3 +264,6 @@
   .vds-set-tabs { position: static; flex-direction: row; flex-wrap: wrap; }
   .vds-set-cols { grid-template-columns: 1fr; }
 }
+
+/* .via-field / .val / .lbl agora vivem em src/styles/form-fields.css
+   (importado globalmente via index.css) · não precisa duplicar aqui */

@@ -1,0 +1,111 @@
+/* ==============================================================
+   VIVER DE IA · form-fields global
+   --------------------------------------------------------------
+   Estilos canônicos pra .via-field / .val / .lbl quando o markup
+   é construído inline (sem usar o componente <Input> da library).
+
+   Importado GLOBALMENTE via index.css. Antes esses estilos viviam
+   em src/pages/components/form.css (lazy-loaded), o que causava
+   bug quando o usuário aterrissava direto em /showcase/settings
+   ou outras páginas que usam .via-field sem importar form.css.
+
+   Resultado anterior: inputs caíam no default do browser e
+   ficavam com bg dark (preto/cinza) em uma página light.
+
+   Não substitui o componente <Input> da library — esse continua
+   sendo o caminho preferido. Mas pra páginas de showcase que
+   precisam de field com label + textarea + customização, esse
+   CSS garante consistência editorial sem precisar importar nada.
+   ============================================================== */
+
+.via-field {
+  position: relative;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.78) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(255,255,255,0.4),
+    0 4px 12px var(--via-navy-06),
+    0 1px 3px var(--via-navy-04);
+  transition: all 200ms var(--via-ease, cubic-bezier(.16, 1, .3, 1));
+}
+
+.via-field:hover:not(.disabled):not(.focused):not(:focus-within) {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 6px 16px var(--via-navy-10);
+  transform: translateY(-1px);
+}
+
+.via-field:focus-within,
+.via-field.focused {
+  border-color: var(--via-navy);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    0 0 0 4px var(--via-navy-12),
+    0 6px 18px var(--via-navy-12);
+}
+
+.via-field .lbl {
+  display: block;
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+  margin-bottom: 6px;
+  transition: color 200ms;
+}
+.via-field:focus-within .lbl,
+.via-field.focused .lbl { color: var(--via-text-primary); }
+
+.via-field .val,
+.via-field input.val,
+.via-field textarea.val {
+  width: 100%;
+  font-family: var(--via-font);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--via-text-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  resize: none;
+  line-height: 1.5;
+  letter-spacing: -0.008em;
+}
+.via-field textarea.val {
+  min-height: 64px;
+  font-weight: 400;
+}
+.via-field .val::placeholder {
+  color: var(--via-text-muted);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* Error state */
+.via-field.error {
+  border-color: var(--via-danger);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    0 0 0 4px rgba(184,58,58,0.12),
+    0 6px 18px rgba(184,58,58,0.08);
+}
+.via-field.error .lbl { color: var(--via-danger); }
+.via-field.error .val { color: var(--via-danger); }
+
+/* Disabled state */
+.via-field.disabled {
+  background: linear-gradient(180deg, rgba(247,248,250,0.92), rgba(240,242,245,0.74));
+  border-color: rgba(208,213,221,0.95);
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.via-field.disabled .val { cursor: not-allowed; }

@@ -30,7 +30,7 @@ export default function Settings() {
           <a>Cases</a>
         </nav>
         <div className="user">
-          <span className="hi">Olá, <strong>Rafael</strong></span>
+          <span className="hi"><strong>Rafael</strong> · Founder</span>
           <span className="av">RM</span>
         </div>
       </header>
