@@ -63,3 +63,16 @@ export { ColorPicker, type ColorPickerProps, type ColorSwatch } from './ColorPic
 
 /* Tokens · runtime + types · auto-generated from tokens.css */
 export { tokens, tokensList, cssVar, type Token, type TokenName } from './tokens';
+
+/* Theming · ThemeProvider + useTheme + createThemeOverride */
+export {
+  ThemeProvider,
+  useTheme,
+  applyTheme,
+  createThemeOverride,
+  type Theme,
+  type ThemeMode,
+  type ThemeProviderProps,
+  type ThemeOverrides,
+  type CreateThemeOverrideOptions,
+} from './theming/theming';

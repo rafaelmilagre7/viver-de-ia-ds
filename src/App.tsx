@@ -28,6 +28,7 @@ const Library = lazy(() => import('./pages/foundations/Library'));
 const BrandStory = lazy(() => import('./pages/foundations/BrandStory'));
 const Personality = lazy(() => import('./pages/foundations/Personality'));
 const VoiceExtended = lazy(() => import('./pages/foundations/VoiceExtended'));
+const Theming = lazy(() => import('./pages/foundations/Theming'));
 
 // API docs · onda 2 (formal docs por componente)
 const ApiButton = lazy(() => import('./pages/api/ApiButton'));
@@ -172,6 +173,10 @@ const LocationCard = lazy(() => import('./pages/patterns/LocationCard'));
 const Cancellation = lazy(() => import('./pages/patterns/Cancellation'));
 const SearchResults = lazy(() => import('./pages/patterns/SearchResults'));
 const AuthFlow = lazy(() => import('./pages/patterns/AuthFlow'));
+const TwoFactor = lazy(() => import('./pages/patterns/TwoFactor'));
+const PricingComparison = lazy(() => import('./pages/patterns/PricingComparison'));
+const ErrorPages = lazy(() => import('./pages/patterns/ErrorPages'));
+const Billing = lazy(() => import('./pages/patterns/Billing'));
 
 // Showcase
 const ShowcaseMarketing = lazy(() => import('./pages/showcase/Marketing'));
@@ -211,6 +216,7 @@ export default function App() {
                   <Route path="motion" element={<Motion />} />
                   <Route path="philosophy" element={<Philosophy />} />
                   <Route path="library" element={<Library />} />
+                  <Route path="theming" element={<Theming />} />
                 </Route>
 
                 <Route path="api">
@@ -357,6 +363,10 @@ export default function App() {
                   <Route path="cancellation" element={<Cancellation />} />
                   <Route path="search-results" element={<SearchResults />} />
                   <Route path="auth-flow" element={<AuthFlow />} />
+                  <Route path="two-factor" element={<TwoFactor />} />
+                  <Route path="pricing-comparison" element={<PricingComparison />} />
+                  <Route path="errors" element={<ErrorPages />} />
+                  <Route path="billing" element={<Billing />} />
                   <Route path=":slug" element={<PlaceholderPage area="Padrões" />} />
                 </Route>
 
