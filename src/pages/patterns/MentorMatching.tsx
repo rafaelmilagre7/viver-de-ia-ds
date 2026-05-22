@@ -138,10 +138,10 @@ function PrimaryMatchSection() {
                 </g>
 
                 {/* Number 94 · hero editorial */}
-                <text x="110" y="118" textAnchor="middle" className="vds-mm-pct">
-                  94<tspan className="pct-mark">%</tspan>
+                <text x="110" y="120" textAnchor="middle" className="vds-mm-pct">
+                  94<tspan className="pct-mark" dx="2">%</tspan>
                 </text>
-                <text x="110" y="148" textAnchor="middle" className="vds-mm-pct-lbl">compatibilidade</text>
+                <text x="110" y="146" textAnchor="middle" className="vds-mm-pct-lbl">compatibilidade</text>
               </svg>
             </div>
 
