@@ -49,6 +49,7 @@ export const navigation: NavGroup[] = [
       { label: 'Movimento', to: '/foundations/motion' },
       { label: 'Filosofia (6 regras não-negociáveis)', to: '/foundations/philosophy' },
       { label: 'Library (React · tipados · exportáveis)', to: '/foundations/library' },
+      { label: 'Theming (CSS-first · ThemeProvider · override)', to: '/foundations/theming' },
     ],
   },
   {
@@ -157,6 +158,10 @@ export const navigation: NavGroup[] = [
       { label: 'Cancellation flow (3 passos · sem dark pattern)', to: '/patterns/cancellation' },
       { label: 'Search results (facets · filters · highlight)', to: '/patterns/search-results' },
       { label: 'Auth flow (magic link · 2FA · social)', to: '/patterns/auth-flow' },
+      { label: '2FA setup flow (método · verify · backup)', to: '/patterns/two-factor' },
+      { label: 'Pricing comparison (3 tiers · 12 features)', to: '/patterns/pricing-comparison' },
+      { label: 'Error pages (404 · 403 · 500 · maintenance)', to: '/patterns/errors' },
+      { label: 'Billing multi-step (plano · ciclo · pagamento · revisão)', to: '/patterns/billing' },
     ],
   },
   {

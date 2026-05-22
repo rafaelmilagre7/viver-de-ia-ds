@@ -1,24 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, ArrowUpRight, X } from 'lucide-react';
-import { navigation } from '../data/nav';
+import { Search, ArrowUpRight, X, Clock } from 'lucide-react';
+import {
+  buildSearchIndex,
+  searchIndex,
+  pushRecent,
+  getRecentEntries,
+  type SearchResult,
+  type SearchEntry,
+} from '../data/searchIndex';
 import './command-palette.css';
-
-type Entry = {
-  group: string;
-  label: string;
-  to: string;
-};
-
-function flatten(): Entry[] {
-  const out: Entry[] = [];
-  for (const g of navigation) {
-    for (const item of g.items) {
-      out.push({ group: g.label, label: item.label, to: item.to });
-    }
-  }
-  return out;
-}
 
 type Props = {
   open: boolean;
@@ -31,23 +22,24 @@ export default function CommandPalette({ open, onClose }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const navigate = useNavigate();
-  const all = useMemo(() => flatten(), []);
 
-  const results = useMemo(() => {
-    const q = query.toLowerCase().trim();
-    if (!q) return all;
-    return all.filter(
-      (e) => e.label.toLowerCase().includes(q) || e.group.toLowerCase().includes(q),
-    );
-  }, [all, query]);
+  const index = useMemo(() => buildSearchIndex(), []);
+  const [recents, setRecents] = useState<SearchEntry[]>([]);
+
+  const results: (SearchResult | SearchEntry)[] = useMemo(() => {
+    return query.trim() ? searchIndex(index, query) : recents;
+  }, [index, query, recents]);
+
+  const isShowingRecents = !query.trim() && recents.length > 0;
 
   useEffect(() => {
     if (open) {
       setQuery('');
       setSelected(0);
+      setRecents(getRecentEntries(index));
       setTimeout(() => inputRef.current?.focus(), 60);
     }
-  }, [open]);
+  }, [open, index]);
 
   useEffect(() => {
     if (!open) return;
@@ -65,6 +57,7 @@ export default function CommandPalette({ open, onClose }: Props) {
         e.preventDefault();
         const r = results[selected];
         if (r) {
+          pushRecent(r.to);
           navigate(r.to);
           onClose();
         }
@@ -82,8 +75,15 @@ export default function CommandPalette({ open, onClose }: Props) {
 
   if (!open) return null;
 
+  // Agrupa resultados por categoria pra display (quando há query)
+  const grouped = isShowingRecents
+    ? null
+    : groupByCategory(results as SearchResult[]);
+
+  let runningIndex = 0;
+
   return (
-    <div className="vds-cmdk" role="dialog" aria-modal="true" onClick={onClose}>
+    <div className="vds-cmdk" role="dialog" aria-modal="true" aria-label="Buscar no design system" onClick={onClose}>
       <div className="vds-cmdk-inner" onClick={(e) => e.stopPropagation()}>
         <header>
           <Search size={16} strokeWidth={2} />
@@ -92,35 +92,102 @@ export default function CommandPalette({ open, onClose }: Props) {
             placeholder="Buscar fundamentos, componentes, padrões…"
             value={query}
             onChange={(e) => { setQuery(e.target.value); setSelected(0); }}
+            aria-label="Termo de busca"
+            aria-controls="vds-cmdk-list"
+            aria-activedescendant={results[selected] ? `vds-cmdk-item-${selected}` : undefined}
           />
           <button className="close" onClick={onClose} aria-label="Fechar (Esc)">
             <X size={12} strokeWidth={2.5} />
           </button>
         </header>
-        <ul ref={listRef}>
+
+        <ul ref={listRef} id="vds-cmdk-list" role="listbox">
           {results.length === 0 && (
             <li className="empty">Nenhum resultado para "{query}"</li>
           )}
-          {results.map((r, i) => (
-            <li
-              key={r.to}
-              className={i === selected ? 'active' : ''}
-              onMouseEnter={() => setSelected(i)}
-              onClick={() => { navigate(r.to); onClose(); }}
-            >
-              <span className="kbd">{r.group}</span>
-              <span className="t">{r.label}</span>
-              <ArrowUpRight size={12} strokeWidth={2} className="arr" />
+
+          {isShowingRecents && (
+            <li className="vds-cmdk__heading">
+              <Clock size={11} strokeWidth={2} />
+              <span>recentes</span>
             </li>
-          ))}
+          )}
+
+          {grouped
+            ? Object.entries(grouped).flatMap(([group, items]) => [
+                <li key={`g-${group}`} className="vds-cmdk__heading">
+                  <span>{group}</span>
+                </li>,
+                ...items.map((r) => {
+                  const i = runningIndex++;
+                  return (
+                    <li
+                      key={r.to}
+                      id={`vds-cmdk-item-${i}`}
+                      role="option"
+                      aria-selected={i === selected}
+                      className={i === selected ? 'active' : ''}
+                      onMouseEnter={() => setSelected(i)}
+                      onClick={() => {
+                        pushRecent(r.to);
+                        navigate(r.to);
+                        onClose();
+                      }}
+                    >
+                      <div className="vds-cmdk__row">
+                        <div className="vds-cmdk__main">
+                          <span className="t">{r.label}</span>
+                          {r.description && <span className="d">{r.description}</span>}
+                        </div>
+                        <ArrowUpRight size={12} strokeWidth={2} className="arr" />
+                      </div>
+                    </li>
+                  );
+                }),
+              ])
+            : (results as SearchEntry[]).map((r, i) => (
+                <li
+                  key={r.to}
+                  id={`vds-cmdk-item-${i}`}
+                  role="option"
+                  aria-selected={i === selected}
+                  className={i === selected ? 'active' : ''}
+                  onMouseEnter={() => setSelected(i)}
+                  onClick={() => {
+                    pushRecent(r.to);
+                    navigate(r.to);
+                    onClose();
+                  }}
+                >
+                  <div className="vds-cmdk__row">
+                    <span className="kbd">{r.group}</span>
+                    <div className="vds-cmdk__main">
+                      <span className="t">{r.label}</span>
+                      {r.description && <span className="d">{r.description}</span>}
+                    </div>
+                    <ArrowUpRight size={12} strokeWidth={2} className="arr" />
+                  </div>
+                </li>
+              ))}
         </ul>
+
         <footer>
           <span className="hint"><kbd>↑↓</kbd> navegar</span>
           <span className="hint"><kbd>↵</kbd> abrir</span>
           <span className="hint"><kbd>esc</kbd> fechar</span>
-          <span className="count">{results.length} de {all.length}</span>
+          <span className="count">
+            {query.trim() ? `${results.length} resultado${results.length !== 1 ? 's' : ''}` : `${recents.length} recente${recents.length !== 1 ? 's' : ''}`}
+          </span>
         </footer>
       </div>
     </div>
   );
+}
+
+function groupByCategory(results: SearchResult[]): Record<string, SearchResult[]> {
+  const out: Record<string, SearchResult[]> = {};
+  for (const r of results) {
+    (out[r.group] = out[r.group] || []).push(r);
+  }
+  return out;
 }

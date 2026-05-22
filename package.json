@@ -20,6 +20,8 @@
     "test:unit:watch": "vitest",
     "test:unit:coverage": "vitest run --coverage",
     "test:perf": "lhci autorun",
+    "test:cross-browser": "playwright test --config=playwright.cross-browser.config.ts",
+    "test:cross-browser:install": "playwright install firefox webkit",
     "build:kit": "node scripts/build-kit.mjs",
     "story": "ladle serve",
     "story:build": "ladle build"
