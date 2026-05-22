@@ -23,10 +23,12 @@ export default function MentorMatching() {
 }
 
 function PrimaryMatchSection() {
+  // Full circle radial · -90° starts at top · 270° usable arc
   const score = 0.94;
-  const R = 70;
-  const half = Math.PI * R;
-  const dash = score * half;
+  const R = 76;
+  const C = 2 * Math.PI * R;
+  const dash = score * C * 0.75; // 270° usable
+  const trackDash = C * 0.75;
 
   return (
     <Section title="Match primário · 94% de compatibilidade" meta="card hero · score radial + razões + agendar">
@@ -48,41 +50,98 @@ function PrimaryMatchSection() {
           {/* Left — Score arc + mentor */}
           <div className="vds-mm-l">
             <div className="vds-mm-score">
-              <svg viewBox="0 0 200 120" className="vds-mm-arc">
+              <svg viewBox="0 0 220 200" className="vds-mm-arc" aria-label="Match score 94 por cento">
                 <defs>
-                  <linearGradient id="mm-arc-grad" x1="0" x2="1" y1="0" y2="0">
-                    <stop offset="0%" stopColor="var(--via-gray-300)" />
-                    <stop offset="100%" stopColor="var(--via-navy)" />
+                  {/* Conic-like gradient simulado · navy intenso → blue claro */}
+                  <linearGradient id="mm-arc-grad" x1="0" x2="1" y1="1" y2="0">
+                    <stop offset="0%" stopColor="#1E3A5F" stopOpacity="0.7" />
+                    <stop offset="40%" stopColor="#3B6BA0" stopOpacity="0.95" />
+                    <stop offset="100%" stopColor="#FFFFFF" stopOpacity="1" />
                   </linearGradient>
-                  <filter id="mm-glow">
-                    <feGaussianBlur stdDeviation="3" result="b" />
+                  {/* Glow externo */}
+                  <filter id="mm-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="b" />
                     <feMerge>
                       <feMergeNode in="b" />
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
                   </filter>
+                  {/* Atmosphere radial interno */}
+                  <radialGradient id="mm-inner-glow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#3B6BA0" stopOpacity="0.4" />
+                    <stop offset="55%" stopColor="#1E3A5F" stopOpacity="0.15" />
+                    <stop offset="100%" stopColor="#0A1F3B" stopOpacity="0" />
+                  </radialGradient>
                 </defs>
-                <g transform="translate(100, 100)">
-                  <path
-                    d={`M ${-R} 0 A ${R} ${R} 0 0 1 ${R} 0`}
+
+                <g transform="translate(110, 110) rotate(135)">
+                  {/* Tick marks ao redor · instrumento editorial */}
+                  {Array.from({ length: 27 }).map((_, i) => {
+                    const angle = (i / 36) * 360;
+                    const a = (angle * Math.PI) / 180;
+                    const r1 = R + 14;
+                    const r2 = R + 19;
+                    return (
+                      <line
+                        key={i}
+                        x1={Math.cos(a) * r1}
+                        y1={Math.sin(a) * r1}
+                        x2={Math.cos(a) * r2}
+                        y2={Math.sin(a) * r2}
+                        stroke="rgba(255,255,255,0.16)"
+                        strokeWidth="1"
+                        strokeLinecap="round"
+                      />
+                    );
+                  })}
+
+                  {/* Inner atmosphere glow circle */}
+                  <circle cx="0" cy="0" r={R - 10} fill="url(#mm-inner-glow)" />
+
+                  {/* Track ring (background · 270°) */}
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r={R}
                     fill="none"
                     stroke="rgba(255,255,255,0.08)"
-                    strokeWidth="14"
+                    strokeWidth="10"
                     strokeLinecap="round"
+                    strokeDasharray={`${trackDash} ${C}`}
                   />
-                  <path
-                    d={`M ${-R} 0 A ${R} ${R} 0 0 1 ${R} 0`}
+
+                  {/* Progress ring · gradient navy → white luminoso */}
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r={R}
                     fill="none"
                     stroke="url(#mm-arc-grad)"
-                    strokeWidth="14"
+                    strokeWidth="10"
                     strokeLinecap="round"
-                    strokeDasharray={`${dash} ${half}`}
+                    strokeDasharray={`${dash} ${C}`}
                     filter="url(#mm-glow)"
-                    style={{ transition: 'stroke-dasharray 800ms cubic-bezier(0.22, 0.61, 0.36, 1)' }}
+                    style={{ transition: 'stroke-dasharray 800ms cubic-bezier(.16,1,.3,1)' }}
                   />
+
+                  {/* Dot final indicador */}
+                  {(() => {
+                    const endAngle = score * 270; // graus
+                    const a = (endAngle * Math.PI) / 180;
+                    return (
+                      <g>
+                        <circle cx={Math.cos(a) * R} cy={Math.sin(a) * R} r="9" fill="rgba(255,255,255,0.18)" />
+                        <circle cx={Math.cos(a) * R} cy={Math.sin(a) * R} r="5" fill="#FFFFFF" />
+                      </g>
+                    );
+                  })()}
                 </g>
-                <text x="100" y="84" textAnchor="middle" className="vds-mm-pct">94<tspan className="pct-mark">%</tspan></text>
-                <text x="100" y="108" textAnchor="middle" className="vds-mm-pct-lbl">match</text>
+
+                {/* Number 94 · hero editorial */}
+                <text x="110" y="118" textAnchor="middle" className="vds-mm-pct">
+                  94<tspan className="pct-mark">%</tspan>
+                </text>
+                <text x="110" y="148" textAnchor="middle" className="vds-mm-pct-lbl">compatibilidade</text>
               </svg>
             </div>
 
