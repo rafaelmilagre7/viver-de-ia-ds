@@ -385,23 +385,21 @@
 }
 
 .vds-quote-body {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.30;
-  letter-spacing: -0.018em;
+  line-height: 1.32;
+  letter-spacing: -0.016em;
   color: var(--via-navy-deep);
-  margin: 0;
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
+  margin: auto 0;
   max-width: 540px;
+  /* sem display:flex · texto inline natural com em italic */
 }
 
 .vds-quote-body em {
   font-style: italic;
   color: var(--via-navy);
   font-weight: 500;
-  letter-spacing: -0.020em;
+  letter-spacing: -0.018em;
 }
 
 /* ============================================
@@ -423,10 +421,10 @@
 }
 
 .vds-slide-content-h3 {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: -0.016em;
-  line-height: 1.28;
+  letter-spacing: -0.014em;
+  line-height: 1.26;
   color: var(--via-navy-deep);
   margin: 0;
   max-width: 540px;
@@ -446,26 +444,27 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   flex: 1 1 auto;
   min-height: 0;
+  overflow: hidden;
 }
 
 .vds-slide-bullets li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
 }
 
 .vds-slide-bullets .num {
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  border-radius: 7px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.04em;
   display: inline-flex;
@@ -480,20 +479,20 @@
 
 .vds-slide-bullets strong {
   display: block;
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 600;
   color: var(--via-navy-deep);
-  margin-bottom: 2px;
-  letter-spacing: -0.008em;
-  line-height: 1.3;
+  margin-bottom: 1px;
+  letter-spacing: -0.006em;
+  line-height: 1.28;
 }
 
 .vds-slide-bullets p {
-  font-size: 11.5px;
-  line-height: 1.42;
+  font-size: 10.5px;
+  line-height: 1.38;
   color: var(--via-text-body);
   margin: 0;
-  letter-spacing: -0.004em;
+  letter-spacing: -0.003em;
 }
 
 /* ============================================
