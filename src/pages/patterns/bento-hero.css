@@ -26,26 +26,32 @@
   padding: 28px;
   border-radius: 22px;
   border: 1px solid var(--via-border-soft);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
   overflow: hidden;
   isolation: isolate;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all 280ms cubic-bezier(.16, 1, .3, 1);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 1px 4px var(--via-navy-04);
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(10, 31, 59, 0.04),
+    0 0 0 0.5px var(--via-navy-06),
+    0 10px 24px -12px var(--via-navy-14),
+    0 2px 6px -2px var(--via-navy-06);
 }
 
 .vds-bento-card:hover {
   transform: translateY(-3px);
-  border-color: var(--via-navy-18);
+  border-color: var(--via-navy-14);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 40px -22px var(--via-navy-22);
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(10, 31, 59, 0.05),
+    0 0 0 0.5px var(--via-navy-10),
+    0 22px 48px -16px var(--via-navy-25),
+    0 8px 18px -6px var(--via-navy-12);
 }
 
 .vds-bento-card::before {
@@ -53,8 +59,11 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(420px 200px at 0% 0%, var(--via-navy-04), transparent 60%);
+  background:
+    radial-gradient(460px 220px at 0% 0%, var(--via-navy-05), transparent 60%),
+    radial-gradient(360px 180px at 100% 100%, var(--via-navy-03), transparent 60%);
   z-index: -1;
+  opacity: 0.85;
 }
 
 /* ---------- HERO TILE (2x2) ---------- */
@@ -109,19 +118,21 @@
 .vds-bento-eyebrow {
   display: inline-flex;
   align-items: center;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-family: var(--via-font-mono, var(--via-font));
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .vds-bento-card.hero .vds-bento-eyebrow {
-  color: var(--via-gray-300);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .vds-bento-eyebrow.alt {
-  color: var(--via-text-soft);
+  color: var(--via-text-body);
+  font-weight: 600;
 }
 
 .vds-bento-mark {
@@ -134,28 +145,27 @@
 .vds-bento-card.hero h1 {
   font-size: 52px;
   font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 1.0;
+  letter-spacing: -0.034em;
+  line-height: 1.02;
   color: var(--via-white);
   margin: 0;
 }
 
 .vds-bento-card.hero h1 em {
-  font-style: normal;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 500;
-  filter: drop-shadow(0 4px 16px var(--via-navy-10));
+  font-style: italic;
+  color: var(--via-white);
+  font-weight: 400;
+  opacity: 0.78;
+  letter-spacing: -0.030em;
 }
 
 .vds-bento-lede {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 420px;
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 440px;
+  letter-spacing: -0.008em;
 }
 
 .vds-bento-cta-row {
@@ -210,18 +220,19 @@
 .vds-bento-card.stat {
   grid-column: span 2;
   background:
-    radial-gradient(420px 220px at 100% 0%, var(--via-navy-06), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+    radial-gradient(440px 230px at 100% 0%, var(--via-navy-06), transparent 60%),
+    radial-gradient(360px 180px at 0% 100%, var(--via-navy-03), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.72));
   justify-content: space-between;
 }
 
 .vds-bento-num {
-  margin: 8px 0 0;
-  font-size: 56px;
+  margin: 10px 0 0;
+  font-size: 54px;
   font-weight: 600;
-  color: var(--via-navy);
-  letter-spacing: -0.04em;
-  line-height: 0.95;
+  color: var(--via-navy-deep);
+  letter-spacing: -0.034em;
+  line-height: 1.0;
   font-feature-settings: 'tnum' 1;
   display: flex;
   align-items: baseline;
@@ -230,24 +241,21 @@
 }
 
 .vds-bento-num.small {
-  font-size: 38px;
+  font-size: 32px;
+  letter-spacing: -0.028em;
 }
 
 .vds-bento-num.accent {
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 8px var(--via-navy-12));
+  color: var(--via-navy-deep);
+  font-weight: 600;
 }
 
 .vds-bento-num em {
   font-style: normal;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 500;
-  color: var(--via-text-soft);
-  letter-spacing: -0.005em;
-  -webkit-text-fill-color: var(--via-text-soft);
+  color: var(--via-text-body);
+  letter-spacing: -0.006em;
 }
 
 .vds-bento-delta {
@@ -333,9 +341,10 @@
   grid-column: span 2;
   grid-row: span 2;
   background:
-    radial-gradient(380px 200px at 0% 0%, var(--via-navy-08), transparent 70%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.62));
-  border-color: rgba(10, 31, 59, 0.11);
+    radial-gradient(420px 220px at 0% 0%, var(--via-navy-06), transparent 60%),
+    radial-gradient(360px 200px at 100% 100%, var(--via-navy-03), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.72));
+  border-color: var(--via-border-soft);
   justify-content: space-between;
 }
 
@@ -343,42 +352,45 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 28px;
-  bottom: 28px;
-  width: 3px;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
-  border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 10px var(--via-navy-20);
+  top: 32px;
+  bottom: 32px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--via-navy-deep), var(--via-navy));
+  border-radius: 0 2px 2px 0;
 }
 
 .vds-bento-quote-mark {
   display: inline-flex;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 500;
-  letter-spacing: -0.004em;
+  letter-spacing: -0.006em;
   color: var(--via-navy-deep);
   padding: 5px 12px;
   border-radius: 999px;
-  background: rgba(10, 31, 59, 0.07);
-  border: 1px solid var(--via-navy-16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.62));
+  border: 1px solid var(--via-border-soft);
   width: fit-content;
   white-space: nowrap;
   line-height: 1.4;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 1px 2px var(--via-navy-04);
 }
 
 .vds-bento-card.quote blockquote {
   margin: 0;
   font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.32;
-  color: var(--via-navy);
+  font-weight: 400;
+  letter-spacing: -0.024em;
+  line-height: 1.34;
+  color: var(--via-text-body);
 }
 
 .vds-bento-card.quote blockquote em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.55);
-  font-weight: 500;
+  color: var(--via-navy-deep);
+  font-weight: 600;
+  letter-spacing: -0.026em;
 }
 
 .vds-bento-card.quote footer {
@@ -487,18 +499,19 @@
 .vds-bento-live-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   margin: 0;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-family: var(--via-font-mono, var(--via-font));
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--via-gray-300);
+  color: rgba(255, 255, 255, 0.74);
 }
 
 .vds-bento-card.live h4 {
-  margin: 4px 0 6px;
-  font-size: 17px;
+  margin: 6px 0 8px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.018em;
   color: var(--via-white);
@@ -507,31 +520,40 @@
 
 .vds-bento-live-meta {
   margin: 0;
-  font-size: 11.5px;
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: -0.005em;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: -0.006em;
+  line-height: 1.45;
 }
 
 .vds-bento-live-cta {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   margin-top: auto;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: var(--via-white);
-  font-size: 11.5px;
-  font-weight: 500;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  color: var(--via-navy-deep);
+  font-size: 12px;
+  font-weight: 600;
   text-decoration: none;
   width: fit-content;
-  letter-spacing: -0.005em;
-  transition: all 180ms ease;
+  letter-spacing: -0.008em;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 6px 16px -6px rgba(0, 0, 0, 0.40),
+    0 0 24px rgba(59, 107, 160, 0.20);
+  transition: all 220ms cubic-bezier(.16, 1, .3, 1);
 }
 
 .vds-bento-live-cta:hover {
-  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 10px 22px -6px rgba(0, 0, 0, 0.50),
+    0 0 36px rgba(59, 107, 160, 0.30);
 }
 
 /* ---------- NEXT (calendar) TILE ---------- */
@@ -539,15 +561,19 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--via-text-soft);
+  color: var(--via-text-body);
+}
+
+.vds-bento-card.next header svg {
+  color: var(--via-navy);
 }
 
 .vds-bento-next-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--via-navy);
-  letter-spacing: -0.008em;
-  line-height: 1.4;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--via-text-body);
+  letter-spacing: -0.012em;
+  line-height: 1.42;
 }
 
 .vds-bento-confirmed {
@@ -593,37 +619,41 @@
 
 .vds-bento-confirmed em {
   font-style: normal;
-  font-size: 11px;
-  color: var(--via-text-soft);
-  letter-spacing: -0.005em;
+  font-size: 12px;
+  color: var(--via-text-body);
+  letter-spacing: -0.006em;
 }
 
 /* ---------- ACHIEVEMENT TILE ---------- */
 .vds-bento-card.achievement {
   background:
-    radial-gradient(280px 160px at 100% 0%, var(--via-navy-06), transparent 70%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.62));
-  border-color: var(--via-navy-14);
+    radial-gradient(360px 200px at 100% 0%, var(--via-navy-06), transparent 60%),
+    radial-gradient(320px 180px at 0% 100%, var(--via-navy-04), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.72));
+  border-color: var(--via-border-soft);
   justify-content: space-between;
 }
 
 .vds-bento-medal {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--via-navy);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.3) inset,
-    0 6px 14px -4px rgba(10, 31, 59, 0.28);
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.20),
+    0 6px 14px -4px var(--via-navy-40);
 }
 
 .vds-bento-meta {
   margin: 0;
-  font-size: 11.5px;
-  color: var(--via-text-soft);
-  letter-spacing: -0.005em;
+  font-size: 12px;
+  color: var(--via-text-body);
+  letter-spacing: -0.006em;
+  line-height: 1.45;
 }
