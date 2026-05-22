@@ -209,8 +209,18 @@ function CertificateSection() {
           <div className="vds-cert-body">
             <p className="vds-cert-pre">Certificamos que</p>
             <h2 className="vds-cert-name">Rafael Milagre</h2>
-            <p className="vds-cert-mid">
-              concluiu o programa <em>Construindo agentes IA na prática</em> entre 17 fev e 18 mai de 2026, totalizando <strong>18 aulas, 4 lives e 2 estudos de caso entregues</strong>.
+
+            <p className="vds-cert-program">
+              concluiu o programa
+              <strong>Construindo agentes IA na prática</strong>
+            </p>
+
+            <p className="vds-cert-period">
+              entre <strong>17 fev</strong> e <strong>18 mai de 2026</strong>
+            </p>
+
+            <p className="vds-cert-tally">
+              18 aulas <span className="vds-cert-dot">·</span> 4 lives <span className="vds-cert-dot">·</span> 2 estudos de caso entregues
             </p>
 
             <div className="vds-cert-stats">
