@@ -63,6 +63,22 @@ const ApiSpinner = lazy(() => import('./pages/api/ApiSpinner'));
 const ApiSkeleton = lazy(() => import('./pages/api/ApiSkeleton'));
 const ApiEmptyState = lazy(() => import('./pages/api/ApiEmptyState'));
 const ApiIcon = lazy(() => import('./pages/api/ApiIcon'));
+// Onda 2C · batch 2 (componentes recentes)
+const ApiHoverCard = lazy(() => import('./pages/api/ApiHoverCard'));
+const ApiOTPInput = lazy(() => import('./pages/api/ApiOTPInput'));
+const ApiTagInput = lazy(() => import('./pages/api/ApiTagInput'));
+const ApiCalendar = lazy(() => import('./pages/api/ApiCalendar'));
+const ApiCarousel = lazy(() => import('./pages/api/ApiCarousel'));
+const ApiTimePicker = lazy(() => import('./pages/api/ApiTimePicker'));
+const ApiSheet = lazy(() => import('./pages/api/ApiSheet'));
+const ApiContextMenu = lazy(() => import('./pages/api/ApiContextMenu'));
+const ApiMultiSelect = lazy(() => import('./pages/api/ApiMultiSelect'));
+const ApiDateRangePicker = lazy(() => import('./pages/api/ApiDateRangePicker'));
+const ApiTreeView = lazy(() => import('./pages/api/ApiTreeView'));
+const ApiSplitter = lazy(() => import('./pages/api/ApiSplitter'));
+const ApiVirtualList = lazy(() => import('./pages/api/ApiVirtualList'));
+const ApiLightbox = lazy(() => import('./pages/api/ApiLightbox'));
+const ApiColorPicker = lazy(() => import('./pages/api/ApiColorPicker'));
 const LogoUsage = lazy(() => import('./pages/foundations/LogoUsage'));
 
 // Glass
@@ -229,6 +245,21 @@ export default function App() {
                   <Route path="skeleton" element={<ApiSkeleton />} />
                   <Route path="empty-state" element={<ApiEmptyState />} />
                   <Route path="icon" element={<ApiIcon />} />
+                  <Route path="hover-card" element={<ApiHoverCard />} />
+                  <Route path="otp-input" element={<ApiOTPInput />} />
+                  <Route path="tag-input" element={<ApiTagInput />} />
+                  <Route path="calendar" element={<ApiCalendar />} />
+                  <Route path="carousel" element={<ApiCarousel />} />
+                  <Route path="time-picker" element={<ApiTimePicker />} />
+                  <Route path="sheet" element={<ApiSheet />} />
+                  <Route path="context-menu" element={<ApiContextMenu />} />
+                  <Route path="multi-select" element={<ApiMultiSelect />} />
+                  <Route path="date-range-picker" element={<ApiDateRangePicker />} />
+                  <Route path="tree-view" element={<ApiTreeView />} />
+                  <Route path="splitter" element={<ApiSplitter />} />
+                  <Route path="virtual-list" element={<ApiVirtualList />} />
+                  <Route path="lightbox" element={<ApiLightbox />} />
+                  <Route path="color-picker" element={<ApiColorPicker />} />
                 </Route>
 
                 <Route path="glass">
