@@ -2,15 +2,27 @@ import { useState } from 'react';
 import { ArrowRight, ArrowLeft, CreditCard, Receipt, Check, Lock } from 'lucide-react';
 import { Button } from '../../lib/Button/Button';
 import { Input } from '../../lib/Input/Input';
-import { Stepper } from '../../lib/Stepper/Stepper';
-import { RadioGroup } from '../../lib/RadioGroup/RadioGroup';
-import { Pill } from '../../lib/Pill/Pill';
 import { Alert } from '../../lib/Alert/Alert';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import './billing.css';
 
 type Step = 0 | 1 | 2 | 3;
 type Cycle = 'monthly' | 'annual';
+
+const STEPS = [
+  { id: 'plan', label: 'Plano' },
+  { id: 'cycle', label: 'Ciclo' },
+  { id: 'pay', label: 'Pagamento' },
+  { id: 'review', label: 'Revisão' },
+];
+
+const PRINCIPLES = [
+  { code: 'i', title: 'Resumo lateral sempre visível', body: 'Total + plano + ciclo persistem em todos os steps · user nunca perde o contexto da decisão.' },
+  { code: 'ii', title: 'Sem countdown manipulativo', body: 'Não use "oferta expira em 3 min" · gera ansiedade e quebra confiança. Promoção tem prazo claro em data.' },
+  { code: 'iii', title: 'Voltar não perde dados', body: 'Estado controlado preserva escolhas · user revisa sem refazer. Step posterior só ativa quando anterior é válido.' },
+  { code: 'iv', title: 'Confirmação textual antes do submit', body: 'Step final lista tudo que vai acontecer · "Será cobrado R$ X · próxima cobrança em DD/MM". Sem surpresa.' },
+];
 
 export default function Billing() {
   return (
@@ -21,21 +33,23 @@ export default function Billing() {
         lede="Fluxo de cobrança em 4 passos editoriais (plano · ciclo · pagamento · revisão). Cada step mostra resumo lateral persistente · usuário sempre sabe o total. Sem dark pattern · sem 'oferta expira em 3 min'. Vale pra qualquer SaaS de assinatura."
       />
 
-      <Section
-        meta="fluxo completo"
-        title="4 passos · plano → ciclo → pagamento → revisão">
-        <p style={{ margin: "0 0 16px", fontSize: 13.5, color: "var(--via-text-muted)", lineHeight: 1.65 }}>Stepper editorial mostra progresso · resumo lateral persistente. Pode voltar a qualquer momento sem perder dados (estado controlado).</p>
-        <BillingFlowDemo />
+      <Section meta="fluxo completo" title="4 passos · plano → ciclo → pagamento → revisão">
+        <p style={{ margin: '0 0 24px', fontSize: 13.5, color: 'var(--via-text-muted)', lineHeight: 1.65 }}>
+          Stepper editorial mostra progresso · resumo lateral persistente. Pode voltar a qualquer momento sem perder dados (estado controlado).
+        </p>
+        <div className="vds-billing">
+          <BillingFlowDemo />
+        </div>
       </Section>
 
       <Section meta="princípios editoriais" title="o que faz cobrança honesta">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+        <div className="vds-billing-principles">
           {PRINCIPLES.map((p) => (
-            <div key={p.code} className="vds-card vds-card--glass" style={{ padding: 20 }}>
-              <Pill variant="default" size="sm">{p.code}</Pill>
-              <h3 style={{ margin: '12px 0 6px', fontSize: 15, color: 'var(--via-text-primary)' }}>{p.title}</h3>
-              <p style={{ margin: 0, fontSize: 12.5, color: 'var(--via-text-muted)', lineHeight: 1.65 }}>{p.body}</p>
-            </div>
+            <article key={p.code} className="vds-billing-principle">
+              <span className="vds-billing-principle__code">{p.code}</span>
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
+            </article>
           ))}
         </div>
       </Section>
@@ -43,75 +57,96 @@ export default function Billing() {
   );
 }
 
-const PRINCIPLES = [
-  { code: 'i', title: 'Resumo lateral sempre visível', body: 'Total + plano + ciclo persistem em todos os steps · user nunca perde o contexto da decisão.' },
-  { code: 'ii', title: 'Sem countdown manipulativo', body: 'Não use "oferta expira em 3 min" · gera ansiedade e quebra confiança. Promoção tem prazo claro em data.' },
-  { code: 'iii', title: 'Voltar não perde dados', body: 'Estado controlado preserva escolhas · user revisa sem refazer. Step posterior só ativa quando anterior é válido.' },
-  { code: 'iv', title: 'Confirmação textual antes do submit', body: 'Step final lista tudo que vai acontecer · "Será cobrado R$ X · próxima cobrança em DD/MM". Sem surpresa.' },
-];
-
 function BillingFlowDemo() {
   const [step, setStep] = useState<Step>(0);
-  const [plan, setPlan] = useState('pro');
+  const [plan, setPlan] = useState<'pro' | 'team'>('pro');
   const [cycle, setCycle] = useState<Cycle>('annual');
   const [card, setCard] = useState({ name: '', number: '', exp: '', cvc: '' });
 
-  const planPrice = plan === 'pro' ? (cycle === 'annual' ? 2900 : 290) : plan === 'team' ? (cycle === 'annual' ? 8900 : 890) : 0;
+  const planPrice = plan === 'pro' ? (cycle === 'annual' ? 2900 : 290) : cycle === 'annual' ? 8900 : 890;
   const monthly = cycle === 'annual' ? Math.round(planPrice / 12) : planPrice;
-  const planName = plan === 'pro' ? 'Pro' : plan === 'team' ? 'Team' : 'Free';
+  const planName = plan === 'pro' ? 'Pro' : 'Team';
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 280px', gap: 24, alignItems: 'start' }}>
+    <div className="vds-billing-grid">
       {/* Painel principal */}
-      <div style={{ padding: 28, background: 'var(--via-surface-1)', border: '1px solid var(--via-border)', borderRadius: 16 }}>
-        <Stepper
-          current={step}
-          steps={[
-            { id: 'plan', label: 'Plano' },
-            { id: 'cycle', label: 'Ciclo' },
-            { id: 'pay', label: 'Pagamento' },
-            { id: 'review', label: 'Revisão' },
-          ]}
-        />
+      <div className="vds-billing-panel">
+        {/* Stepper editorial */}
+        <ol className="vds-billing-stepper" role="list">
+          {STEPS.map((s, i) => (
+            <li
+              key={s.id}
+              className={`vds-billing-step ${i < step ? 'is-done' : ''} ${i === step ? 'is-current' : ''}`}
+              aria-current={i === step ? 'step' : undefined}
+            >
+              <span className="vds-billing-step__dot" aria-hidden="true">
+                {i < step ? <Check size={13} strokeWidth={2.4} /> : i + 1}
+              </span>
+              <span className="vds-billing-step__label">{s.label}</span>
+            </li>
+          ))}
+        </ol>
 
-        <div style={{ marginTop: 28 }}>
+        <div className="vds-billing-step-content">
           {step === 0 && (
             <>
-              <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--via-text-primary)' }}>Escolha o plano</h3>
-              <p style={{ margin: '0 0 18px', fontSize: 13.5, color: 'var(--via-text-muted)' }}>Pode mudar depois sem multa.</p>
-              <RadioGroup
-                ariaLabel="Plano"
-                value={plan}
-                onValueChange={setPlan}
-                options={[
-                  { value: 'pro', label: 'Pro · R$ 290/mês', description: '4 sessões 1:1 · biblioteca completa · suporte prioritário' },
-                  { value: 'team', label: 'Team · R$ 890/mês', description: '8 sessões · mentor dedicado · concierge no WhatsApp' },
-                ]}
-              />
+              <h3>Escolha o plano</h3>
+              <p className="lede">Pode mudar depois sem multa · upgrade ou downgrade prorrateado.</p>
+              <div className="vds-billing-plans" role="radiogroup" aria-label="Plano">
+                <PlanRadio
+                  selected={plan === 'pro'}
+                  onSelect={() => setPlan('pro')}
+                  name="Pro"
+                  price="R$ 290"
+                  per="/mês"
+                  desc="4 sessões 1:1 · biblioteca completa · suporte prioritário"
+                  badge={null}
+                />
+                <PlanRadio
+                  selected={plan === 'team'}
+                  onSelect={() => setPlan('team')}
+                  name="Team"
+                  price="R$ 890"
+                  per="/mês"
+                  desc="8 sessões · mentor dedicado · concierge no WhatsApp · onboarding white-glove"
+                  badge="popular"
+                />
+              </div>
             </>
           )}
 
           {step === 1 && (
             <>
-              <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--via-text-primary)' }}>Ciclo de cobrança</h3>
-              <p style={{ margin: '0 0 18px', fontSize: 13.5, color: 'var(--via-text-muted)' }}>Anual sai 2 meses grátis em qualquer plano.</p>
-              <RadioGroup
-                ariaLabel="Ciclo"
-                value={cycle}
-                onValueChange={(v) => setCycle(v as Cycle)}
-                options={[
-                  { value: 'monthly', label: 'Mensal', description: 'R$ ' + (plan === 'pro' ? '290' : '890') + '/mês · cancele quando quiser' },
-                  { value: 'annual', label: 'Anual', description: 'R$ ' + Math.round((plan === 'pro' ? 2900 : 8900) / 12) + '/mês equivalente · 2 meses grátis' },
-                ]}
-              />
+              <h3>Ciclo de cobrança</h3>
+              <p className="lede">Anual sai 2 meses grátis em qualquer plano · sem fidelidade depois.</p>
+              <div className="vds-billing-plans" role="radiogroup" aria-label="Ciclo">
+                <PlanRadio
+                  selected={cycle === 'monthly'}
+                  onSelect={() => setCycle('monthly')}
+                  name="Mensal"
+                  price={`R$ ${plan === 'pro' ? '290' : '890'}`}
+                  per="/mês"
+                  desc="Cancele quando quiser · sem fidelidade · sem multa."
+                  badge={null}
+                />
+                <PlanRadio
+                  selected={cycle === 'annual'}
+                  onSelect={() => setCycle('annual')}
+                  name="Anual"
+                  price={`R$ ${Math.round((plan === 'pro' ? 2900 : 8900) / 12)}`}
+                  per="/mês equivalente"
+                  desc="Cobrança única anual · 2 meses grátis incluídos."
+                  badge="economia 17%"
+                />
+              </div>
             </>
           )}
 
           {step === 2 && (
             <>
-              <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--via-text-primary)' }}>Pagamento</h3>
-              <p style={{ margin: '0 0 18px', fontSize: 13.5, color: 'var(--via-text-muted)' }}>Dados criptografados · não armazenamos cartão completo.</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <h3>Pagamento</h3>
+              <p className="lede">Dados criptografados · não armazenamos cartão completo · processamento via Stripe.</p>
+              <div className="vds-billing-fields">
                 <Input
                   label="Nome no cartão"
                   value={card.name}
@@ -125,7 +160,7 @@ function BillingFlowDemo() {
                   placeholder="0000 0000 0000 0000"
                   iconLeft={<CreditCard size={14} />}
                 />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+                <div className="vds-billing-fields-row">
                   <Input
                     label="Validade"
                     value={card.exp}
@@ -145,13 +180,13 @@ function BillingFlowDemo() {
 
           {step === 3 && (
             <>
-              <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--via-text-primary)' }}>Revisar antes de confirmar</h3>
-              <p style={{ margin: '0 0 18px', fontSize: 13.5, color: 'var(--via-text-muted)' }}>Última etapa · vai cobrar agora e iniciar o acesso.</p>
-              <div style={{ padding: 18, background: 'var(--via-surface-2, rgba(10,31,59,0.03))', borderRadius: 12, marginBottom: 14 }}>
+              <h3>Revisar antes de confirmar</h3>
+              <p className="lede">Última etapa · vai cobrar agora e iniciar o acesso · garantia editorial de 14 dias.</p>
+              <div className="vds-billing-review">
                 <ReviewLine label="Plano" value={`${planName} · ${cycle === 'annual' ? 'anual' : 'mensal'}`} />
-                <ReviewLine label="Cobrança hoje" value={`R$ ${planPrice.toLocaleString('pt-BR')}`} />
+                <ReviewLine label="Cobrança hoje" value={`R$ ${planPrice.toLocaleString('pt-BR')}`} emph />
                 <ReviewLine label="Próxima cobrança" value={cycle === 'annual' ? 'em 12 meses' : 'em 30 dias'} />
-                <ReviewLine label="Cartão" value={card.number ? `•••• ${card.number.slice(-4) || '0000'}` : 'pendente'} last />
+                <ReviewLine label="Cartão" value={card.number ? `•••• ${card.number.slice(-4) || '0000'}` : 'pendente'} />
               </div>
               <Alert tone="info" title="Garantia editorial · 14 dias">
                 Se não fizer sentido até a 2ª semana, devolvemos · sem perguntas, sem fricção.
@@ -160,8 +195,8 @@ function BillingFlowDemo() {
           )}
         </div>
 
-        {/* Footer de navegação */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 28, gap: 12 }}>
+        {/* Navegação */}
+        <div className="vds-billing-nav">
           <Button
             variant="ghost"
             disabled={step === 0}
@@ -175,33 +210,42 @@ function BillingFlowDemo() {
               Avançar
             </Button>
           ) : (
-            <Button iconLeft={<Lock size={13} />}>Confirmar · R$ {planPrice.toLocaleString('pt-BR')}</Button>
+            <Button iconLeft={<Lock size={13} />}>
+              Confirmar · R$ {planPrice.toLocaleString('pt-BR')}
+            </Button>
           )}
         </div>
       </div>
 
-      {/* Resumo lateral */}
-      <aside style={{ padding: 20, background: 'var(--via-surface-1)', border: '1px solid var(--via-border)', borderRadius: 14, position: 'sticky', top: 96 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-          <Receipt size={14} color="var(--via-text-primary)" />
-          <span style={{ fontSize: 11.5, color: 'var(--via-text-muted)', letterSpacing: 0.6, textTransform: 'uppercase' }}>Resumo</span>
+      {/* Resumo lateral · glass sticky */}
+      <aside className="vds-billing-summary">
+        <header className="vds-billing-summary__head">
+          <Receipt size={13} strokeWidth={2} />
+          <span>Resumo</span>
+        </header>
+
+        <div className="vds-billing-review">
+          <ReviewLine label="Plano" value={planName} />
+          <ReviewLine label="Ciclo" value={cycle === 'annual' ? 'Anual' : 'Mensal'} />
+          <ReviewLine label="Equivalente · mês" value={`R$ ${monthly.toLocaleString('pt-BR')}`} />
         </div>
-        <ReviewLine label="Plano" value={planName} />
-        <ReviewLine label="Ciclo" value={cycle === 'annual' ? 'Anual' : 'Mensal'} />
-        <ReviewLine label="Equivalente / mês" value={`R$ ${monthly.toLocaleString('pt-BR')}`} />
-        <div style={{ borderTop: '1px solid var(--via-border)', marginTop: 12, paddingTop: 12 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-            <strong style={{ fontSize: 13, color: 'var(--via-text-primary)' }}>Total hoje</strong>
-            <strong style={{ fontSize: 20, color: 'var(--via-text-primary)' }}>R$ {planPrice.toLocaleString('pt-BR')}</strong>
+
+        <div className="vds-billing-summary__total">
+          <div className="vds-billing-summary__total-row">
+            <span className="vds-billing-summary__total-lbl">Total hoje</span>
+            <span className="vds-billing-summary__total-val">R$ {planPrice.toLocaleString('pt-BR')}</span>
           </div>
-          <p style={{ margin: '6px 0 0', fontSize: 11.5, color: 'var(--via-text-muted)' }}>
-            {cycle === 'annual' ? 'Cobrança única anual · 2 meses grátis incluídos.' : 'Cobrança mensal · cancele quando quiser.'}
+          <p className="vds-billing-summary__total-hint">
+            {cycle === 'annual'
+              ? 'Cobrança única anual · 2 meses grátis incluídos.'
+              : 'Cobrança mensal · cancele quando quiser.'}
           </p>
         </div>
+
         {step === 3 && (
-          <div style={{ marginTop: 14, padding: 12, background: 'var(--via-navy-04, rgba(10,31,59,0.04))', borderRadius: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Check size={13} color="var(--via-text-primary)" />
-            <span style={{ fontSize: 12, color: 'var(--via-text-body)' }}>Pronto pra confirmar</span>
+          <div className="vds-billing-summary__ready" role="status">
+            <Check size={13} strokeWidth={2.4} />
+            <span>Pronto pra confirmar</span>
           </div>
         )}
       </aside>
@@ -209,11 +253,51 @@ function BillingFlowDemo() {
   );
 }
 
-function ReviewLine({ label, value, last = false }: { label: string; value: string; last?: boolean }) {
+function PlanRadio({
+  selected,
+  onSelect,
+  name,
+  price,
+  per,
+  desc,
+  badge,
+}: {
+  selected: boolean;
+  onSelect: () => void;
+  name: string;
+  price: string;
+  per: string;
+  desc: string;
+  badge: string | null;
+}) {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: last ? 'none' : '1px dashed var(--via-border)' }}>
-      <span style={{ fontSize: 12.5, color: 'var(--via-text-muted)' }}>{label}</span>
-      <span style={{ fontSize: 12.5, color: 'var(--via-text-body)', textAlign: 'right' }}>{value}</span>
+    <button
+      type="button"
+      className={`vds-billing-plan ${selected ? 'is-selected' : ''}`}
+      onClick={onSelect}
+      role="radio"
+      aria-checked={selected}
+    >
+      {badge && <span className="vds-billing-plan__badge">{badge}</span>}
+      <span className="vds-billing-plan__radio" aria-hidden="true" />
+      <div className="vds-billing-plan__copy">
+        <div className="vds-billing-plan__row">
+          <span className="vds-billing-plan__name">{name}</span>
+          <span className="vds-billing-plan__price">
+            {price}<em>{per}</em>
+          </span>
+        </div>
+        <p className="vds-billing-plan__desc">{desc}</p>
+      </div>
+    </button>
+  );
+}
+
+function ReviewLine({ label, value, emph = false }: { label: string; value: string; emph?: boolean }) {
+  return (
+    <div className={`vds-billing-review-line ${emph ? 'is-emph' : ''}`}>
+      <span className="lbl">{label}</span>
+      <span className="val">{value}</span>
     </div>
   );
 }
