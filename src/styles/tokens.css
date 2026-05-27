@@ -117,36 +117,65 @@
    Mantém navy como cor central · troca surfaces white → navy-dark
    ============================================================= */
 [data-theme="dark"] {
-  /* Surfaces */
-  --via-bg:           #050E1E;    /* canvas mais escuro que navy-deep */
-  --via-bg-2:         #0A1A30;
-  --via-bg-3:         #0E2138;
-  --via-surface:      #0A1F3B;
-  --via-surface-elev: #0E2647;
-  --via-bg-soft:      rgba(255, 255, 255, 0.03);
+  /* =================================================
+     SURFACES · escala com mais separação entre camadas
+     Tons levemente warm pra não ficar "preto técnico"
+     ================================================= */
+  --via-bg:           #0B1220;    /* canvas principal · warm dark */
+  --via-bg-2:         #131C30;    /* surface alt · separação clara */
+  --via-bg-3:         #1B273F;    /* surface elevated */
+  --via-surface:      #131C30;    /* card base */
+  --via-surface-elev: #1B273F;    /* card elevado · modals/popovers */
+  --via-bg-soft:      rgba(255, 255, 255, 0.04);
 
-  /* Text */
-  --via-text-primary: #F4F6FA;
-  --via-text-body:    rgba(255, 255, 255, 0.84);
-  --via-text-muted:   rgba(255, 255, 255, 0.58);
-  --via-text-faint:   rgba(255, 255, 255, 0.4);
+  /* =================================================
+     TEXT · cores SÓLIDAS (não rgba com opacity)
+     Razão: rgba(white, 0.X) sobre dark = alfa-composted
+     em cinza escurecido, perde contraste WCAG
+     ================================================= */
+  --via-text-primary: #F4F6FA;   /* near-white · headlines, links primários */
+  --via-text-body:    #D0D5DD;   /* gray-300 sólido · body text · WCAG AAA */
+  --via-text-muted:   #98A2B3;   /* gray-400 sólido · meta, secondary · WCAG AA */
+  --via-text-faint:   #7A8194;   /* entre gray-400/500 · helper · WCAG AA */
   --via-text-inverse: var(--via-navy);
 
-  --via-text:      rgba(255, 255, 255, 0.84);
-  --via-text-soft: rgba(255, 255, 255, 0.58);
-  --via-ink-2:     rgba(255, 255, 255, 0.7);
-  --via-ink-3:     rgba(255, 255, 255, 0.5);
+  --via-text:      #D0D5DD;
+  --via-text-soft: #98A2B3;
+  --via-ink-2:     #B4BBC9;
+  --via-ink-3:     #98A2B3;
 
-  /* Borders */
-  --via-border-hairline: rgba(255, 255, 255, 0.06);
-  --via-border:          rgba(255, 255, 255, 0.12);
-  --via-border-soft:     rgba(255, 255, 255, 0.08);
-  --via-border-strong:   rgba(255, 255, 255, 0.22);
+  /* =================================================
+     BORDERS · mais visíveis que antes (0.06 → 0.12)
+     ================================================= */
+  --via-border-hairline: rgba(255, 255, 255, 0.10);
+  --via-border:          rgba(255, 255, 255, 0.18);
+  --via-border-soft:     rgba(255, 255, 255, 0.12);
+  --via-border-strong:   rgba(255, 255, 255, 0.30);
 
-  /* Navy stays as accent in dark · transparency stops invert */
-  --via-navy-08: rgba(255, 255, 255, 0.05);
-  --via-navy-04: rgba(255, 255, 255, 0.03);
-  --via-navy-12: rgba(255, 255, 255, 0.08);
+  /* =================================================
+     NAVY ALPHAS · TODOS invertidos pra rgba(white, X)
+     Razão: em dark, navy alpha real fica invisível sobre
+     bg dark. Atmospheres radiais, hairlines, backgrounds
+     sutis precisam usar white com mesma intensidade.
+     ================================================= */
+  --via-navy-02: rgba(255, 255, 255, 0.025);
+  --via-navy-03: rgba(255, 255, 255, 0.035);
+  --via-navy-04: rgba(255, 255, 255, 0.045);
+  --via-navy-05: rgba(255, 255, 255, 0.055);
+  --via-navy-06: rgba(255, 255, 255, 0.07);
+  --via-navy-08: rgba(255, 255, 255, 0.09);
+  --via-navy-10: rgba(255, 255, 255, 0.11);
+  --via-navy-12: rgba(255, 255, 255, 0.13);
+  --via-navy-14: rgba(255, 255, 255, 0.15);
+  --via-navy-16: rgba(255, 255, 255, 0.17);
+  --via-navy-18: rgba(255, 255, 255, 0.19);
+  --via-navy-20: rgba(255, 255, 255, 0.22);
+  --via-navy-22: rgba(255, 255, 255, 0.24);
+  --via-navy-25: rgba(255, 255, 255, 0.28);
+  --via-navy-30: rgba(255, 255, 255, 0.32);
+  --via-navy-40: rgba(255, 255, 255, 0.42);
+  --via-navy-60: rgba(255, 255, 255, 0.55);
+  --via-navy-80: rgba(255, 255, 255, 0.72);
 
   color-scheme: dark;
 }
@@ -154,18 +183,147 @@
 /* If prefers-color-scheme: dark and no explicit theme set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --via-bg:           #050E1E;
-    --via-bg-2:         #0A1A30;
-    --via-surface:      #0A1F3B;
+    /* Note: light é nosso padrão da marca · esse bloco só ativa
+       quando NÃO há [data-theme] no <html> · útil pra evitar flash
+       em casos extremos (SSR sem hidratação) */
+    --via-bg:           #0B1220;
+    --via-bg-2:         #131C30;
+    --via-surface:      #131C30;
     --via-text-primary: #F4F6FA;
-    --via-text-body:    rgba(255, 255, 255, 0.84);
-    --via-text:         rgba(255, 255, 255, 0.84);
-    --via-text-soft:    rgba(255, 255, 255, 0.58);
-    --via-ink-2:        rgba(255, 255, 255, 0.7);
-    --via-ink-3:        rgba(255, 255, 255, 0.5);
-    --via-border-soft:  rgba(255, 255, 255, 0.08);
+    --via-text-body:    #D0D5DD;
+    --via-text:         #D0D5DD;
+    --via-text-soft:    #98A2B3;
+    --via-ink-2:        #B4BBC9;
+    --via-ink-3:        #98A2B3;
+    --via-border-soft:  rgba(255, 255, 255, 0.12);
     color-scheme: dark;
   }
+}
+
+/* =================================================
+   GLASS SURFACES · override sistêmico pra dark
+   =================================================
+   Problema: componentes usam gradient hardcoded
+   `linear-gradient(rgba(255,255,255,0.94), rgba(247,248,250,0.74))`
+   pra simular glass branco. Em dark mode isso fica branco puro
+   numa página dark — horrível.
+   Solução: regras globais que sobrescrevem esses gradients
+   pra surface dark com transparência sutil.
+   ================================================= */
+[data-theme="dark"] .vds-pa-spec,
+[data-theme="dark"] .vds-pa-meta-ad,
+[data-theme="dark"] .vds-pa-li-ad,
+[data-theme="dark"] .vds-pa-audience-card,
+[data-theme="dark"] .vds-pa-ab-card,
+[data-theme="dark"] .vds-pa-preflight,
+[data-theme="dark"] .vds-pa-headlines article,
+[data-theme="dark"] .vds-pa-cta-group,
+[data-theme="dark"] .vds-pa-yt-companion,
+[data-theme="dark"] .vds-pa-yt-script,
+[data-theme="dark"] .vds-pa-reel aside,
+[data-theme="dark"] .vds-bento-card,
+[data-theme="dark"] .vds-cert-meta,
+[data-theme="dark"] .vds-streak-milestone,
+[data-theme="dark"] .vds-cohort-l,
+[data-theme="dark"] .vds-ev-relation-text,
+[data-theme="dark"] .vds-ev-piece,
+[data-theme="dark"] .vds-ev-rules,
+[data-theme="dark"] .vds-mm-alt,
+[data-theme="dark"] .vds-cp-aside,
+[data-theme="dark"] .vds-cp-info,
+[data-theme="dark"] .vds-cp-notes,
+[data-theme="dark"] .vds-cp-materials,
+[data-theme="dark"] .vds-cp-chat,
+[data-theme="dark"] .vds-anatomy-row,
+[data-theme="dark"] .vds-ev-piece,
+[data-theme="dark"] .vds-slide.quote,
+[data-theme="dark"] .vds-slide.content,
+[data-theme="dark"] .vds-cert-meta,
+[data-theme="dark"] .vds-live-next {
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.025) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.20),
+    0 0 0 0.5px rgba(255, 255, 255, 0.04),
+    0 14px 36px -16px rgba(0, 0, 0, 0.50) !important;
+}
+
+/* Texto dentro dos cards glass em dark: cores sólidas claras */
+[data-theme="dark"] .vds-pa-spec dt,
+[data-theme="dark"] .vds-pa-meta-page em,
+[data-theme="dark"] .vds-pa-li-page em,
+[data-theme="dark"] .vds-pa-meta-footer > div > em,
+[data-theme="dark"] .vds-pa-meta-domain {
+  color: var(--via-text-muted) !important;
+}
+
+[data-theme="dark"] .vds-pa-spec dd,
+[data-theme="dark"] .vds-pa-meta-text p,
+[data-theme="dark"] .vds-pa-li-text p,
+[data-theme="dark"] .vds-pa-audience-card header em,
+[data-theme="dark"] .vds-pa-audience-block p {
+  color: var(--via-text-body) !important;
+}
+
+[data-theme="dark"] .vds-pa-meta-page strong,
+[data-theme="dark"] .vds-pa-li-page strong,
+[data-theme="dark"] .vds-pa-meta-footer strong,
+[data-theme="dark"] .vds-pa-li-footer > div strong,
+[data-theme="dark"] .vds-pa-audience-card header strong,
+[data-theme="dark"] .vds-pa-cta-group header strong,
+[data-theme="dark"] .vds-pa-preflight header h4,
+[data-theme="dark"] .vds-pa-yt-script h4,
+[data-theme="dark"] .vds-pa-yt-script li strong,
+[data-theme="dark"] .vds-pa-audience-kpi strong,
+[data-theme="dark"] .vds-pa-audience-cta,
+[data-theme="dark"] .vds-pa-headlines h4 {
+  color: var(--via-text-primary) !important;
+}
+
+/* CTAs primary navy em dark = invertem pra branco glass legível */
+[data-theme="dark"] .vds-pa-meta-cta,
+[data-theme="dark"] .vds-pa-li-cta {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: var(--via-text-primary) !important;
+}
+
+[data-theme="dark"] .vds-pa-meta-cta:hover {
+  background: var(--via-white) !important;
+  color: var(--via-navy-deep) !important;
+  border-color: var(--via-white) !important;
+}
+
+/* Google Search ad em dark · hardcoded white precisa virar surface */
+[data-theme="dark"] .vds-pa-gs-search,
+[data-theme="dark"] .vds-pa-gs-result {
+  background: var(--via-surface) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--via-text-body) !important;
+}
+
+[data-theme="dark"] .vds-pa-gs-headline,
+[data-theme="dark"] .vds-pa-gs-sitelinks strong {
+  color: #8AB4F8 !important;  /* Google blue acessível em dark */
+}
+
+[data-theme="dark"] .vds-pa-gs-desc,
+[data-theme="dark"] .vds-pa-gs-search {
+  color: var(--via-text-body) !important;
+}
+
+/* Anatomy rows · quote/content slides em dark */
+[data-theme="dark"] .vds-slide.quote .vds-quote-body,
+[data-theme="dark"] .vds-slide.content h3 {
+  color: var(--via-text-primary) !important;
+}
+
+[data-theme="dark"] .vds-slide-bullets strong,
+[data-theme="dark"] .vds-slide-bullets p {
+  color: var(--via-text-body) !important;
 }
 
 /* =============================================================

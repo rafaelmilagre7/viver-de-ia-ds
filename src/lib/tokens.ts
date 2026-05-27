@@ -53,7 +53,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-bg",
     "css": "--via-bg",
-    "value": "#050E1E",
+    "value": "#0B1220",
     "category": "color"
   },
   {
@@ -77,19 +77,19 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-border",
     "css": "--via-border",
-    "value": "rgba(255, 255, 255, 0.12)",
+    "value": "rgba(255, 255, 255, 0.18)",
     "category": "color"
   },
   {
     "name": "via-border-hairline",
     "css": "--via-border-hairline",
-    "value": "rgba(255, 255, 255, 0.06)",
+    "value": "rgba(255, 255, 255, 0.10)",
     "category": "color"
   },
   {
     "name": "via-border-soft",
     "css": "--via-border-soft",
-    "value": "rgba(255, 255, 255, 0.08)",
+    "value": "rgba(255, 255, 255, 0.12)",
     "category": "color"
   },
   {
@@ -179,13 +179,13 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-ink-2",
     "css": "--via-ink-2",
-    "value": "rgba(255, 255, 255, 0.7)",
+    "value": "#B4BBC9",
     "category": "color"
   },
   {
     "name": "via-ink-3",
     "css": "--via-ink-3",
-    "value": "rgba(255, 255, 255, 0.5)",
+    "value": "#98A2B3",
     "category": "color"
   },
   {
@@ -197,109 +197,109 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-navy-02",
     "css": "--via-navy-02",
-    "value": "rgba(10, 31, 59, 0.02)",
+    "value": "rgba(255, 255, 255, 0.025)",
     "category": "color"
   },
   {
     "name": "via-navy-03",
     "css": "--via-navy-03",
-    "value": "rgba(10, 31, 59, 0.03)",
+    "value": "rgba(255, 255, 255, 0.035)",
     "category": "color"
   },
   {
     "name": "via-navy-04",
     "css": "--via-navy-04",
-    "value": "rgba(255, 255, 255, 0.03)",
+    "value": "rgba(255, 255, 255, 0.045)",
     "category": "color"
   },
   {
     "name": "via-navy-05",
     "css": "--via-navy-05",
-    "value": "rgba(10, 31, 59, 0.05)",
+    "value": "rgba(255, 255, 255, 0.055)",
     "category": "color"
   },
   {
     "name": "via-navy-06",
     "css": "--via-navy-06",
-    "value": "rgba(10, 31, 59, 0.06)",
+    "value": "rgba(255, 255, 255, 0.07)",
     "category": "color"
   },
   {
     "name": "via-navy-08",
     "css": "--via-navy-08",
-    "value": "rgba(255, 255, 255, 0.05)",
+    "value": "rgba(255, 255, 255, 0.09)",
     "category": "color"
   },
   {
     "name": "via-navy-10",
     "css": "--via-navy-10",
-    "value": "rgba(10, 31, 59, 0.10)",
+    "value": "rgba(255, 255, 255, 0.11)",
     "category": "color"
   },
   {
     "name": "via-navy-12",
     "css": "--via-navy-12",
-    "value": "rgba(255, 255, 255, 0.08)",
+    "value": "rgba(255, 255, 255, 0.13)",
     "category": "color"
   },
   {
     "name": "via-navy-14",
     "css": "--via-navy-14",
-    "value": "rgba(10, 31, 59, 0.14)",
+    "value": "rgba(255, 255, 255, 0.15)",
     "category": "color"
   },
   {
     "name": "via-navy-16",
     "css": "--via-navy-16",
-    "value": "rgba(10, 31, 59, 0.16)",
+    "value": "rgba(255, 255, 255, 0.17)",
     "category": "color"
   },
   {
     "name": "via-navy-18",
     "css": "--via-navy-18",
-    "value": "rgba(10, 31, 59, 0.18)",
+    "value": "rgba(255, 255, 255, 0.19)",
     "category": "color"
   },
   {
     "name": "via-navy-20",
     "css": "--via-navy-20",
-    "value": "rgba(10, 31, 59, 0.20)",
+    "value": "rgba(255, 255, 255, 0.22)",
     "category": "color"
   },
   {
     "name": "via-navy-22",
     "css": "--via-navy-22",
-    "value": "rgba(10, 31, 59, 0.22)",
+    "value": "rgba(255, 255, 255, 0.24)",
     "category": "color"
   },
   {
     "name": "via-navy-25",
     "css": "--via-navy-25",
-    "value": "rgba(10, 31, 59, 0.25)",
+    "value": "rgba(255, 255, 255, 0.28)",
     "category": "color"
   },
   {
     "name": "via-navy-30",
     "css": "--via-navy-30",
-    "value": "rgba(10, 31, 59, 0.30)",
+    "value": "rgba(255, 255, 255, 0.32)",
     "category": "color"
   },
   {
     "name": "via-navy-40",
     "css": "--via-navy-40",
-    "value": "rgba(10, 31, 59, 0.40)",
+    "value": "rgba(255, 255, 255, 0.42)",
     "category": "color"
   },
   {
     "name": "via-navy-60",
     "css": "--via-navy-60",
-    "value": "rgba(10, 31, 59, 0.60)",
+    "value": "rgba(255, 255, 255, 0.55)",
     "category": "color"
   },
   {
     "name": "via-navy-80",
     "css": "--via-navy-80",
-    "value": "rgba(10, 31, 59, 0.80)",
+    "value": "rgba(255, 255, 255, 0.72)",
     "category": "color"
   },
   {
@@ -323,31 +323,31 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-surface",
     "css": "--via-surface",
-    "value": "#0A1F3B",
+    "value": "#131C30",
     "category": "color"
   },
   {
     "name": "via-surface-elev",
     "css": "--via-surface-elev",
-    "value": "#0E2647",
+    "value": "#1B273F",
     "category": "color"
   },
   {
     "name": "via-text",
     "css": "--via-text",
-    "value": "rgba(255, 255, 255, 0.84)",
+    "value": "#D0D5DD",
     "category": "color"
   },
   {
     "name": "via-text-body",
     "css": "--via-text-body",
-    "value": "rgba(255, 255, 255, 0.84)",
+    "value": "#D0D5DD",
     "category": "color"
   },
   {
     "name": "via-text-faint",
     "css": "--via-text-faint",
-    "value": "rgba(255, 255, 255, 0.4)",
+    "value": "#7A8194",
     "category": "color"
   },
   {
@@ -359,7 +359,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-text-muted",
     "css": "--via-text-muted",
-    "value": "rgba(255, 255, 255, 0.58)",
+    "value": "#98A2B3",
     "category": "color"
   },
   {
@@ -371,7 +371,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-text-soft",
     "css": "--via-text-soft",
-    "value": "rgba(255, 255, 255, 0.58)",
+    "value": "#98A2B3",
     "category": "color"
   },
   {
@@ -845,19 +845,19 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-bg-2",
     "css": "--via-bg-2",
-    "value": "#0A1A30",
+    "value": "#131C30",
     "category": "surface"
   },
   {
     "name": "via-bg-3",
     "css": "--via-bg-3",
-    "value": "#0E2138",
+    "value": "#1B273F",
     "category": "surface"
   },
   {
     "name": "via-bg-soft",
     "css": "--via-bg-soft",
-    "value": "rgba(255, 255, 255, 0.03)",
+    "value": "rgba(255, 255, 255, 0.04)",
     "category": "surface"
   },
   {
