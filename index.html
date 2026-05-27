@@ -8,7 +8,7 @@
     <title>Viver de IA · Design System</title>
     <meta name="description" content="Design System Viver de IA — marca editorial, navy profundo, vidro líquido e tipografia Geist. 49 páginas vivas + library React de 15 componentes core." />
     <meta name="theme-color" content="#0A1F3B" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://viverdeia.ai/design" />
@@ -46,11 +46,9 @@
       /* Theme bootstrap — runs before paint to avoid FOUC */
       (function () {
         try {
+          // Light é o padrão da marca · só respeita 'dark' se usuário escolheu explicitamente
           var stored = localStorage.getItem('via-theme');
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          var theme = stored === 'light' || stored === 'dark'
-            ? stored
-            : (prefersDark ? 'dark' : 'light');
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'light';
           document.documentElement.dataset.theme = theme;
         } catch (e) {}
       })();

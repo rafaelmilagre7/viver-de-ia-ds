@@ -8,7 +8,8 @@ function readInitialTheme(): Theme {
   if (typeof window === 'undefined') return 'light';
   const stored = window.localStorage.getItem('via-theme') as Theme | null;
   if (stored === 'light' || stored === 'dark') return stored;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // Light é o padrão da marca · usuário escolhe dark explicitamente se quiser
+  return 'light';
 }
 
 function applyTheme(theme: Theme) {
