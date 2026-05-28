@@ -377,7 +377,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-text-faint",
     "css": "--via-text-faint",
-    "value": "#7A8194",
+    "value": "#959EAF",
     "category": "color"
   },
   {
@@ -389,7 +389,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-text-muted",
     "css": "--via-text-muted",
-    "value": "#98A2B3",
+    "value": "#A6B0BE",
     "category": "color"
   },
   {

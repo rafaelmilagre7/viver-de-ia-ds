@@ -36,6 +36,7 @@
   --via-text-primary: var(--via-navy);
   --via-text-body: var(--via-gray-700);
   --via-text-muted: var(--via-gray-500);
+  --via-text-soft: var(--via-gray-500);
   --via-text-faint: var(--via-gray-400);
   --via-navy-04: rgba(10, 31, 59, 0.04);
   --via-navy-06: rgba(10, 31, 59, 0.06);

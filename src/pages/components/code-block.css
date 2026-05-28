@@ -19,6 +19,7 @@
    Roxo → azul-claro (dentro da paleta navy/azul). */
 [data-theme="dark"] .vds-code:not(.dark) .vds-code-content .k { color: #8FB8F6; }
 [data-theme="dark"] .vds-code:not(.dark) .vds-code-content .f { color: #74C0E8; }
+[data-theme="dark"] .vds-code:not(.dark) .vds-code-content .t { color: #9FD4C8; }
 [data-theme="dark"] .vds-code:not(.dark) .vds-code-content .c { color: rgba(255, 255, 255, 0.45); }
 
 .vds-code.dark {

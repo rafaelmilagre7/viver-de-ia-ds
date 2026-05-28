@@ -154,14 +154,14 @@
      ================================================= */
   --via-text-primary: #F4F6FA;   /* near-white · headlines, links primários */
   --via-text-body:    #D0D5DD;   /* gray-300 sólido · body text · WCAG AAA */
-  --via-text-muted:   #98A2B3;   /* gray-400 sólido · meta, secondary · WCAG AA */
-  --via-text-faint:   #7A8194;   /* entre gray-400/500 · helper · WCAG AA */
+  --via-text-muted:   #A6B0BE;   /* secondary · clareado p/ passar AA sobre vidro elevado, ainda claramente "quieto" vs body */
+  --via-text-faint:   #959EAF;   /* helper · o mais discreto, mas legível sobre vidro */
   --via-text-inverse: var(--via-navy);
 
   --via-text:      #D0D5DD;
-  --via-text-soft: #98A2B3;
+  --via-text-soft: #A6B0BE;
   --via-ink-2:     #B4BBC9;
-  --via-ink-3:     #98A2B3;
+  --via-ink-3:     #A6B0BE;
 
   /* =================================================
      BORDERS · mais visíveis que antes (0.06 → 0.12)

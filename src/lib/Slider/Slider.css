@@ -35,7 +35,7 @@
 .via-slider__val {
   font-family: var(--via-mono, var(--via-font-mono, ui-monospace, monospace));
   font-size: 12px;
-  color: var(--via-sl-color);
+  color: var(--via-text-primary);
 }
 
 .via-slider__track-wrap {

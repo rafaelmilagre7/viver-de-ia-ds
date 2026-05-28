@@ -100,22 +100,24 @@
 
 /* SECONDARY — glass white */
 .via-btn.secondary {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
-  background: var(--via-surface-onnavy);
+  /* botão secundário ADAPTA (vidro) · texto/fundo seguem o tema · estados
+     hover/pressed continuam legíveis (antes era branco fixo + texto navy,
+     que quebrava no hover escuro) */
+  background: var(--via-glass-card);
   color: var(--via-text-primary);
   border-color: var(--via-border-soft);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    inset 0 1px 0 var(--via-edge-hi),
     0 4px 10px -4px var(--via-navy-12);
 }
 
 .via-btn.secondary:hover,
 .via-btn.secondary.is-hover {
   border-color: var(--via-navy-22);
-  background: var(--via-glass-card);
+  background: var(--via-glass-card-2);
   transform: translateY(-1px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    inset 0 1px 0 var(--via-edge-hi),
     0 6px 14px -4px var(--via-navy-18);
 }
 
