@@ -169,6 +169,7 @@ export const navigation: NavGroup[] = [
     icon: Monitor,
     items: [
       { label: 'Marketing (viverdeia.ai)', to: '/showcase/marketing' },
+      { label: 'Lançamento de turma (clonável)', to: '/showcase/lancamento' },
       { label: 'Leaders AI Conference', to: '/showcase/leaders-ai' },
       { label: 'Área do aluno', to: '/showcase/aluno' },
       { label: 'Login / autenticação', to: '/showcase/login' },

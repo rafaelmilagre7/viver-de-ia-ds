@@ -184,6 +184,7 @@ const ShowcaseLeadersAI = lazy(() => import('./pages/showcase/LeadersAI'));
 const ShowcaseAluno = lazy(() => import('./pages/showcase/Aluno'));
 const ShowcaseLogin = lazy(() => import('./pages/showcase/Login'));
 const ShowcaseSettings = lazy(() => import('./pages/showcase/Settings'));
+const ShowcaseLancamento = lazy(() => import('./pages/showcase/LancamentoTurma'));
 
 // Guidelines
 const Voice = lazy(() => import('./pages/guidelines/Voice'));
@@ -376,6 +377,7 @@ export default function App() {
                   <Route path="aluno" element={<ShowcaseAluno />} />
                   <Route path="login" element={<ShowcaseLogin />} />
                   <Route path="settings" element={<ShowcaseSettings />} />
+                  <Route path="lancamento" element={<ShowcaseLancamento />} />
                   <Route path=":slug" element={<PlaceholderPage area="Páginas-modelo" />} />
                 </Route>
 
