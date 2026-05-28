@@ -19,7 +19,7 @@
   font-size: 12px;
   font-weight: 600;
   color: var(--via-navy);
-  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.55));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.95);

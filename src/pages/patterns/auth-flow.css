@@ -29,7 +29,7 @@
 }
 
 .vds-auth-card.light {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   box-shadow:
@@ -137,7 +137,7 @@
 }
 
 .vds-auth-field.light {
-  background: var(--via-white);
+  background: var(--via-surface);
   border-color: var(--via-border);
 }
 
@@ -148,7 +148,7 @@
 }
 
 .vds-auth-field.light:focus-within {
-  background: var(--via-white);
+  background: var(--via-surface);
   border-color: var(--via-navy-30);
   box-shadow: 0 0 0 3px var(--via-navy-08);
 }
@@ -546,7 +546,7 @@
   align-items: center;
   padding: 12px 16px;
   border-radius: 11px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--via-surface);
   border: 1px solid var(--via-border);
   color: var(--via-navy);
   font-family: inherit;
@@ -559,7 +559,7 @@
 }
 
 .vds-auth-social-btn:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--via-surface);
   border-color: var(--via-navy-22);
   transform: translateY(-1px);
 }
@@ -579,13 +579,13 @@
 }
 
 .vds-auth-social-icon.google {
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-border);
   color: #4285F4;
 }
 
 .vds-auth-social-icon.ms {
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-border);
   color: var(--via-blue);
 }
@@ -639,7 +639,7 @@
 /* CTA primária em context navy → glass branco com texto navy */
 .via-mesh-navy .vds-auth-cta,
 .vds-auth-card.success .vds-auth-cta:not(.ghost) {
-  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(247,248,250,0.88) 100%);
+  background: var(--via-glass-card);
   color: var(--via-navy);
   border: 1px solid rgba(255,255,255,1);
   box-shadow:
@@ -649,7 +649,7 @@
 }
 .via-mesh-navy .vds-auth-cta:hover,
 .vds-auth-card.success .vds-auth-cta:not(.ghost):hover {
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.94) 100%);
+  background: var(--via-glass-card);
   color: var(--via-navy-deep);
   filter: none;
   transform: translateY(-1px);
@@ -726,7 +726,7 @@
     inset 0 -1px 0 rgba(0,0,0,0.10);
 }
 .via-mesh-navy .vds-auth-2fa-inputs input.filled {
-  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(247,248,250,0.85) 100%);
+  background: var(--via-glass-card);
   border-color: rgba(255,255,255,1);
   color: var(--via-navy);
   box-shadow:
@@ -767,7 +767,7 @@
   border-color: rgba(255,255,255,0.30);
 }
 .via-mesh-navy .vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check {
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,248,250,0.88));
+  background: var(--via-glass-card);
   border-color: rgba(255,255,255,1);
 }
 .via-mesh-navy .vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check::after {

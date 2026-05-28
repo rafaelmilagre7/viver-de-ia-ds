@@ -3,7 +3,7 @@
    ============================================ */
 .vds-faq {
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -28,7 +28,7 @@
   gap: 12px;
   padding: 14px 16px;
   border-radius: 14px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-border);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -247,7 +247,7 @@
 
 .vds-faq-item {
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.68));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   transition: border-color .22s ease, background .22s ease;
   position: relative;
@@ -260,7 +260,7 @@
 
 .vds-faq-item.open {
   border-color: var(--via-navy-22);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.78));
+  background: var(--via-glass-card);
   box-shadow: 0 12px 28px -16px var(--via-navy-18);
 }
 

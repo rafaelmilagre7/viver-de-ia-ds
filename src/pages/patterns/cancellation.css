@@ -4,7 +4,7 @@
 .vds-cnx {
   position: relative;
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -197,7 +197,7 @@
   align-items: start;
   padding: 14px 18px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.68));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   cursor: pointer;
   transition: background .22s ease, border-color .22s ease, transform .22s ease;
@@ -219,7 +219,7 @@
 }
 
 .vds-cnx-reason label:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--via-surface);
   border-color: var(--via-navy-18);
   transform: translateY(-1px);
 }
@@ -239,7 +239,7 @@
   height: 22px;
   border-radius: 6px;
   border: 1.5px solid var(--via-border);
-  background: var(--via-white);
+  background: var(--via-surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -438,7 +438,7 @@
   align-items: center;
   padding: 16px 18px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.68));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   transition: background .22s ease, border-color .22s ease, transform .22s ease;
   position: relative;
@@ -459,7 +459,7 @@
 }
 
 .vds-cnx-alt:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--via-surface);
   border-color: var(--via-navy-18);
   transform: translateY(-1px);
 }
@@ -605,7 +605,7 @@
   font-weight: 500;
   letter-spacing: -0.008em;
   border: 1px solid var(--via-border);
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--via-surface);
   color: var(--via-navy);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;

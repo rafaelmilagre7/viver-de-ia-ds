@@ -35,7 +35,7 @@
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--via-white), rgba(247, 248, 250, 0.86));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border, #D0D5DD);
   display: inline-flex;
   align-items: center;
@@ -71,7 +71,7 @@
 
 .via-radio__input:checked + .via-radio__circle {
   border-color: var(--via-navy, #0A1F3B);
-  background: linear-gradient(180deg, var(--via-white), rgba(255, 255, 255, 0.94));
+  background: var(--via-glass-card);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 0 0 3px var(--via-navy-08),

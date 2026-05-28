@@ -244,7 +244,7 @@
   box-shadow: 0 1px 1px rgba(0,0,0,0.10);
 }
 .vds-wa-bubble.them {
-  background: var(--via-white);
+  background: var(--via-surface);
   border-top-left-radius: 0;
 }
 .vds-wa-bubble.them::before {
@@ -313,7 +313,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border-radius: 999px;
   padding: 4px 6px 4px 10px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.06);

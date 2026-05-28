@@ -341,7 +341,7 @@
   width: 120px;
   height: 120px;
   border-radius: 10px;
-  background: var(--via-white);
+  background: var(--via-surface);
   padding: 10px;
   flex-shrink: 0;
   box-shadow: 0 2px 8px -2px var(--via-navy-14);

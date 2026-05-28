@@ -31,7 +31,7 @@
   width: 100%;
   max-width: 560px;
   padding: 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.72) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(32px) saturate(200%);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
   border: 1px solid rgba(255,255,255,1);
@@ -74,7 +74,7 @@
 .via-field {
   position: relative;
   padding: 14px 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.78) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);
@@ -215,7 +215,7 @@
   font-family: var(--via-font-mono);
   font-size: 10px;
   color: var(--via-gray-400);
-  background: rgba(255,255,255,0.85);
+  background: var(--via-surface);
   padding: 2px 8px;
   border-radius: 999px;
 }
@@ -228,7 +228,7 @@
   align-items: flex-start;
   gap: 14px;
   padding: 14px 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65));
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255,255,255,0.95);
@@ -256,7 +256,7 @@
   width: 20px;
   height: 20px;
   border: 1.5px solid var(--via-gray-400);
-  background: var(--via-white);
+  background: var(--via-surface);
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;

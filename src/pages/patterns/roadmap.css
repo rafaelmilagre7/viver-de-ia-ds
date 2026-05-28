@@ -3,7 +3,7 @@
    ============================================ */
 .vds-rm {
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -57,14 +57,14 @@
   font-weight: 500;
   letter-spacing: -0.006em;
   border: 1px solid var(--via-border);
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--via-surface);
   color: var(--via-navy);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;
 }
 
 .vds-rm-tool:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--via-surface);
   border-color: var(--via-navy-18);
   transform: translateY(-1px);
 }
@@ -223,7 +223,7 @@
   position: relative;
   padding: 16px 18px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;

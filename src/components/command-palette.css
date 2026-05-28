@@ -23,7 +23,7 @@
 .vds-cmdk-inner {
   width: 100%;
   max-width: 620px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.82) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(40px) saturate(200%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
   border: 1px solid rgba(255,255,255,1);
@@ -185,7 +185,7 @@
   font-family: var(--via-font-mono);
   font-size: 9px;
   font-weight: 600;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 4px;
   padding: 2px 6px;

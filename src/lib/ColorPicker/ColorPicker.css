@@ -7,7 +7,7 @@
   gap: 14px;
   padding: 18px 20px;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.96);
@@ -137,7 +137,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--via-navy, #0A1F3B);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.78));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: 8px;
   outline: none;

@@ -7,7 +7,7 @@
   gap: 14px;
   padding: 18px 20px;
   width: 320px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.96);
@@ -182,7 +182,7 @@
 .via-cal__cell-dot--success { background: var(--via-success, #1F8A5B); }
 
 .via-cal__cell.is-selected .via-cal__cell-dot--navy {
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--via-surface);
 }
 
 @media (prefers-reduced-motion: reduce) {

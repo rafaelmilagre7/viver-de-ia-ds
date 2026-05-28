@@ -221,7 +221,7 @@
 }
 
 .vds-lesson-video .vid-ctrl.play {
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
 }
 
@@ -282,7 +282,7 @@
   padding: 24px;
   border-radius: 16px;
   border: 1px solid var(--via-border-soft);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+  background: var(--via-glass-card);
 }
 
 .vds-lesson-title-row {
@@ -388,7 +388,7 @@
 .vds-lesson-aside {
   border-radius: 16px;
   border: 1px solid var(--via-border-soft);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+  background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(140%);
   -webkit-backdrop-filter: blur(24px) saturate(140%);
   overflow: hidden;
@@ -425,7 +425,7 @@
 }
 
 .vds-lesson-tab.on {
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
   box-shadow: 0 1px 4px var(--via-navy-08);
 }
@@ -697,7 +697,7 @@
   align-items: center;
   padding: 14px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.55));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   transition: all 180ms ease;
   position: relative;
@@ -800,7 +800,7 @@
   gap: 12px;
   padding: 14px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   position: relative;
 }
@@ -909,7 +909,7 @@
 .vds-quiz {
   padding: 36px;
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -1119,14 +1119,14 @@
   padding: 20px 22px;
   border-radius: 14px;
   border: 1px solid var(--via-border-soft);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+  background: var(--via-glass-card);
   text-decoration: none;
   color: inherit;
   transition: all 200ms ease;
 }
 
 .vds-lesson-nav-card:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.78));
+  background: var(--via-glass-card);
   border-color: var(--via-navy-18);
   box-shadow: 0 8px 22px -14px var(--via-navy-18);
 }

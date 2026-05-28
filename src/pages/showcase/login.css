@@ -88,7 +88,7 @@
   width: 100%;
   max-width: 440px;
   padding: 40px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.86));
+  background: var(--via-glass-card);
   backdrop-filter: blur(40px) saturate(200%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
   border: 1px solid rgba(255,255,255,1);
@@ -130,7 +130,7 @@
   justify-content: center;
   gap: 8px;
   padding: 11px 14px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-navy-12);
   border-radius: 12px;
   font-family: var(--via-font);
@@ -169,7 +169,7 @@
 }
 .auth-divider span {
   position: relative;
-  background: rgba(255,255,255,0.96);
+  background: var(--via-surface);
   padding: 0 14px;
   font-family: var(--via-font);
   font-size: 10px;
@@ -225,7 +225,7 @@
   justify-content: center;
   font-size: 11px;
   color: transparent;
-  background: var(--via-white);
+  background: var(--via-surface);
 }
 .auth-row .box.checked {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));

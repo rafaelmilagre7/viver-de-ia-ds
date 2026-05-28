@@ -4,7 +4,7 @@
 .via-card {
   position: relative;
   border-radius: var(--via-radius-lg);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;

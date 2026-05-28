@@ -83,7 +83,7 @@ button.via-stepper__node:focus-visible {
   font-weight: 500;
   flex-shrink: 0;
   border: 1px solid var(--via-border, #D0D5DD);
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-ink-3, #6B7891);
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
   position: relative;

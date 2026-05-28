@@ -44,10 +44,10 @@
   color: var(--via-ink-3);
   opacity: 0.7;
 }
-.vds-sc-nav-btn:hover { background: var(--via-white); }
+.vds-sc-nav-btn:hover { background: var(--via-surface); }
 .vds-sc-nav-btn:hover strong { color: var(--via-navy); }
 .vds-sc-nav-btn.is-active {
-  background: var(--via-white);
+  background: var(--via-surface);
   border-color: var(--via-navy-20);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.7) inset,
@@ -125,7 +125,7 @@
 @media (max-width: 880px) { .vds-sc-ig-grid { grid-template-columns: 1fr; } }
 
 .vds-sc-ig-chrome {
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 12px;
   overflow: hidden;
@@ -290,7 +290,7 @@
 .vds-sc-story-progress span {
   display: block;
   height: 100%;
-  background: var(--via-white);
+  background: var(--via-surface);
 }
 .vds-sc-story-hdr {
   position: absolute;
@@ -479,7 +479,7 @@
    LinkedIn
    ============================================ */
 .vds-sc-li-post {
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 8px;
   overflow: hidden;
@@ -508,7 +508,7 @@
 }
 .vds-sc-li-avatar.company {
   border-radius: 4px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   padding: 6px;
 }
@@ -712,7 +712,7 @@
 .vds-sc-carousel-card.context,
 .vds-sc-carousel-card.fix,
 .vds-sc-carousel-card.learn {
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
   border: 0.5px solid var(--via-navy-12);
 }
@@ -1034,7 +1034,7 @@
 }
 
 .vds-sc-x-post {
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 12px;
   padding: 14px 16px;
@@ -1222,7 +1222,7 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: var(--via-white);
+  background: var(--via-surface);
   padding: 3px;
   margin-bottom: 14px;
 }

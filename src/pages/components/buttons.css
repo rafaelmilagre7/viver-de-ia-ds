@@ -100,7 +100,7 @@
 
 /* SECONDARY — glass white */
 .via-btn.secondary {
-  background: linear-gradient(180deg, var(--via-white), rgba(255, 255, 255, 0.85));
+  background: var(--via-glass-card);
   color: var(--via-navy);
   border-color: var(--via-border-soft);
   box-shadow:
@@ -111,7 +111,7 @@
 .via-btn.secondary:hover,
 .via-btn.secondary.is-hover {
   border-color: var(--via-navy-22);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.75));
+  background: var(--via-glass-card);
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,

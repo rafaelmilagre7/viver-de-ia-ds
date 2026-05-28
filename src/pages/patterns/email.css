@@ -5,7 +5,7 @@
 /* ---- Email client chrome (Gmail-style) ---- */
 .vds-email-client {
   position: relative;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.86));
+  background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.95);
@@ -102,7 +102,7 @@
     0 24px 56px var(--via-navy-14),
     0 4px 12px var(--via-navy-06);
 }
-.vds-email-template.light { background: var(--via-white); }
+.vds-email-template.light { background: var(--via-surface); }
 .vds-email-template.dark { background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep)); color: var(--via-white); }
 
 /* ---- Header com logo composta + tag pill ---- */
@@ -243,7 +243,7 @@
 .vds-email-template .glass-stats .g-card {
   position: relative;
   padding: 18px 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(247,248,250,0.78) 100%);
+  background: var(--via-glass-card);
   border: 1px solid rgba(255,255,255,1);
   border-radius: 16px;
   box-shadow:
@@ -446,7 +446,7 @@
 .vds-email-template .glass-cases article {
   position: relative;
   padding: 22px 24px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(247,248,250,0.78) 100%);
+  background: var(--via-glass-card);
   border: 1px solid rgba(255,255,255,1);
   border-radius: 18px;
   box-shadow:
@@ -555,7 +555,7 @@
   box-shadow: 0 8px 24px var(--via-navy-22);
 }
 .vds-email-template.dark .cta {
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-100));
+  background: var(--via-glass-card);
   color: var(--via-navy);
   box-shadow: 0 8px 24px rgba(10, 31, 59, 0.36);
 }

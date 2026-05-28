@@ -6,7 +6,7 @@
 .vds-cl-featured {
   position: relative;
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -159,7 +159,7 @@
   position: relative;
   padding: 22px 22px 20px;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -367,7 +367,7 @@
   top: 100px;
   padding: 18px 18px 14px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset;
@@ -506,7 +506,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 2px solid var(--via-navy);
   margin-top: 8px;
   z-index: 1;
@@ -537,7 +537,7 @@
 .vds-cl-entry-body {
   padding: 18px 22px 18px;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.62));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;

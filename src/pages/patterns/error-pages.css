@@ -31,7 +31,7 @@
   flex-wrap: wrap;
   margin-bottom: 28px;
   padding: 8px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.78) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);
@@ -67,7 +67,7 @@
 }
 .vds-err-switcher__btn:hover {
   color: var(--via-text-primary);
-  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(247,248,250,0.4));
+  background: var(--via-glass-card);
 }
 .vds-err-switcher__btn.is-active {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
@@ -83,7 +83,7 @@
   position: relative;
   min-height: 540px;
   padding: 88px 56px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.74) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);
@@ -135,7 +135,7 @@
   align-items: center;
   gap: 8px;
   padding: 5px 12px 5px 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,248,250,0.78));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid var(--via-navy-08);
@@ -240,7 +240,7 @@
 .vds-err-guide {
   position: relative;
   padding: 22px 22px 20px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.74) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);
@@ -271,7 +271,7 @@
 .vds-err-guide__code {
   display: inline-block;
   padding: 3px 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.78));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font-mono);

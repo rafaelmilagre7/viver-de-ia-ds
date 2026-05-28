@@ -68,7 +68,7 @@
 .vds-principle {
   position: relative;
   padding: 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.74) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);

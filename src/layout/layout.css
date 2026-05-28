@@ -25,7 +25,7 @@
   justify-content: space-between;
   padding: 0 28px;
   height: 64px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.66));
+  background: var(--via-glass-card);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   border-bottom: 0.5px solid var(--via-navy-12);
@@ -68,7 +68,7 @@
   padding: 4px 9px;
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--via-navy-04);
 }
 
 .vds-header-right {
@@ -86,7 +86,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   color: var(--via-text-muted);
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
   backdrop-filter: blur(12px);
@@ -95,7 +95,7 @@
 }
 .vds-search:hover {
   border-color: var(--via-navy-40);
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--via-navy-08);
 }
 .vds-search .vds-kbd {
   margin-left: auto;
@@ -106,7 +106,7 @@
   padding: 2px 6px;
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-xs);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--via-navy-06);
 }
 
 .vds-header-link {
@@ -157,11 +157,11 @@
   height: 26px;
   border-radius: 8px;
   background: linear-gradient(180deg, var(--via-navy-12), var(--via-navy-04));
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 0.5px solid var(--via-navy-20, var(--via-navy-20));
+  border: 0.5px solid var(--via-navy-20);
   flex-shrink: 0;
 }
 
@@ -327,7 +327,7 @@
     left: 0;
     bottom: 0;
     width: 300px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.92));
+    background: var(--via-glass-card);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     border-right: 0.5px solid var(--via-navy-12);

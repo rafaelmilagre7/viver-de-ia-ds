@@ -6,7 +6,7 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 0;
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -56,7 +56,7 @@
   letter-spacing: 0.04em;
   padding: 4px 8px;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--via-surface);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -181,14 +181,14 @@
   gap: 11px;
   padding: 10px 12px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   align-items: start;
   transition: background .22s ease, border-color .22s ease;
 }
 
 .vds-loc-access li:hover {
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--via-surface);
   border-color: var(--via-navy-16);
 }
 
@@ -245,7 +245,7 @@
   font-weight: 500;
   letter-spacing: -0.008em;
   border: 1px solid var(--via-border);
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--via-surface);
   color: var(--via-navy);
   cursor: pointer;
   transition: background .2s ease, transform .2s ease, box-shadow .22s ease;
@@ -265,7 +265,7 @@
 }
 
 .vds-loc-btn.ghost:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--via-surface);
   border-color: var(--via-navy-22);
   transform: translateY(-1px);
 }
@@ -329,7 +329,7 @@
   display: grid;
   grid-template-columns: 160px 1fr;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   isolation: isolate;

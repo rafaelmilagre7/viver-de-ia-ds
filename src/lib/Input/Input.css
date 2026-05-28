@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.78));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border);
@@ -55,12 +55,12 @@
 }
 
 .via-input:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 250, 0.86));
+  background: var(--via-glass-card);
   border-color: var(--via-navy-22);
 }
 
 .via-input:focus-within {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.92));
+  background: var(--via-glass-card);
   border-color: var(--via-navy-40);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,

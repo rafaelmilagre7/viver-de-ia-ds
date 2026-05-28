@@ -14,7 +14,7 @@
    ============================================ */
 .vds-ins {
   border-radius: 26px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.78) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   border: 1px solid rgba(255,255,255,1);
@@ -58,7 +58,7 @@
   align-items: center;
   gap: 8px;
   padding: 5px 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,248,250,0.78));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   font-family: var(--via-font-mono);
@@ -143,7 +143,7 @@
 .vds-ins-kpi {
   position: relative;
   padding: 20px 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(247,248,250,0.62) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255,255,255,1);
@@ -182,7 +182,7 @@
 
 /* Attention · sem bar vertical · só atmosphere coral sutil */
 .vds-ins-kpi.attention {
-  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.78) 100%);
+  background: var(--via-glass-card);
 }
 .vds-ins-kpi.attention::before {
   background:
@@ -249,7 +249,7 @@
   align-items: center;
   gap: 4px;
   padding: 3px 9px 3px 7px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.74));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   font-family: var(--via-font);
@@ -317,7 +317,7 @@
   align-items: center;
   gap: 14px;
   padding: 8px 14px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,248,250,0.78));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   box-shadow: inset 0 1px 0 rgba(255,255,255,1);
@@ -358,7 +358,7 @@
   background:
     radial-gradient(800px 220px at 50% 100%, rgba(30,58,95,0.06), transparent 65%),
     radial-gradient(400px 200px at 0% 50%, rgba(30,58,95,0.04), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.86), rgba(247,248,250,0.6));
+    var(--via-glass-card);
   border: 1px solid rgba(255,255,255,1);
   padding: 20px 24px;
   box-shadow:
@@ -432,7 +432,7 @@
   position: relative;
   margin: 0;
   padding: 22px 22px 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(247,248,250,0.7) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255,255,255,1);
@@ -517,7 +517,7 @@
 .vds-ins-foot-eyebrow {
   display: inline-block;
   padding: 4px 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.74));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   font-family: var(--via-font-mono);
@@ -554,7 +554,7 @@
   align-items: flex-start;
   gap: 14px;
   padding: 14px 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(247,248,250,0.66) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid rgba(255,255,255,1);
@@ -618,7 +618,7 @@
   padding: 16px 18px;
   background:
     radial-gradient(220px 120px at 0% 0%, rgba(30,58,95,0.10), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(247,248,250,0.74) 100%);
+    var(--via-glass-card);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid rgba(255,255,255,1);
@@ -702,7 +702,7 @@
 .vds-ins-tile {
   position: relative;
   padding: 22px 22px 20px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.74) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);
@@ -765,7 +765,7 @@
   align-items: center;
   gap: 4px;
   padding: 3px 9px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.78));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   font-family: var(--via-font);

@@ -7,7 +7,7 @@
 .via-case {
   position: relative;
   padding: 32px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid var(--via-border-soft);

@@ -22,7 +22,7 @@
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.78));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border, #D0D5DD);
@@ -104,7 +104,7 @@
   margin: 4px 0 0;
   padding: 4px;
   list-style: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.94));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));

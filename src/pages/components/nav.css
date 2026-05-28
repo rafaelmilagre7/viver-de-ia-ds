@@ -47,7 +47,7 @@
 }
 
 .via-nav-l {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.95);
@@ -171,7 +171,7 @@
 }
 
 .via-nav-d button {
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  background: var(--via-glass-card);
   color: var(--via-navy);
   border-color: var(--via-navy-20);
   box-shadow:

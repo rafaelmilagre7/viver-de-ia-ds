@@ -36,7 +36,7 @@
 
 /* Default · navy soft glass */
 .via-pill--default {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(247, 248, 250, 0.42));
+  background: var(--via-glass-card);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-color: var(--via-navy-14);

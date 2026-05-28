@@ -44,7 +44,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.96);
@@ -61,7 +61,7 @@
 .via-carousel__arrow--next { right: 14px; }
 
 .via-carousel__arrow:hover:not(:disabled) {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.84));
+  background: var(--via-glass-card);
   transform: translateY(-50%) scale(1.06);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,

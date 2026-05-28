@@ -13,7 +13,7 @@
   justify-content: space-between;
   gap: 28px;
   padding: 14px 48px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.78) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border-bottom: 0;
@@ -142,7 +142,7 @@
   align-items: center;
   gap: 14px;
   text-align: center;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72));
+  background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.95);
@@ -223,7 +223,7 @@
   gap: 18px;
   align-items: center;
   padding: 18px 22px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 16px;
   transition: var(--via-t);
@@ -273,7 +273,7 @@
 .al-side { display: flex; flex-direction: column; gap: 14px; }
 .al-side .card {
   padding: 22px 24px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 16px;
 }
@@ -345,7 +345,7 @@
   align-items: center;
   gap: 8px;
   padding: 9px 16px;
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
   border: none;
   border-radius: 999px;

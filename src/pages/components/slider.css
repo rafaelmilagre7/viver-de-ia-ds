@@ -1,7 +1,7 @@
 .via-slider-card {
   position: relative;
   padding: 32px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -70,7 +70,7 @@
   width: 22px;
   height: 22px;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  background: var(--via-glass-card);
   border: 2px solid var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -101,7 +101,7 @@
   width: 22px;
   height: 22px;
   border-radius: 999px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 2px solid var(--via-navy);
   cursor: grab;
 }

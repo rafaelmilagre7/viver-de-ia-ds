@@ -86,7 +86,7 @@
   overflow: hidden;
 }
 .vds-btn.primary {
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-100));
+  background: var(--via-glass-card);
   color: var(--via-navy);
   box-shadow: 0 8px 24px rgba(10, 31, 59, 0.38), inset 0 1px 0 rgba(255,255,255,1);
 }
@@ -214,7 +214,7 @@
   flex-direction: column;
   gap: 12px;
   padding: 28px 28px 72px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.58) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.95);
@@ -276,7 +276,7 @@
   width: 36px;
   height: 36px;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.80), rgba(255,255,255,0.55));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(255,255,255,1);
@@ -375,7 +375,7 @@
 .vds-brand-tile-img {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.72) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.95);
@@ -505,7 +505,7 @@
 .vds-radii-tile {
   position: relative;
   aspect-ratio: 1.6 / 1;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.72) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.95);
@@ -573,7 +573,7 @@
 .vds-shadow-card {
   width: 100%;
   height: 140px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid rgba(255,255,255,1);
   border-radius: var(--via-radius-lg);
   display: flex;
@@ -597,7 +597,7 @@
 .vds-motion-card {
   position: relative;
   padding: 24px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.72) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.95);

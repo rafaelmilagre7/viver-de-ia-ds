@@ -14,7 +14,7 @@
 .vds-tier {
   position: relative;
   padding: 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.72) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);
@@ -160,7 +160,7 @@
 }
 
 .vds-tier .btn.light {
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  background: var(--via-glass-card);
   color: var(--via-navy);
   border-color: var(--via-navy-20);
   box-shadow:
@@ -179,7 +179,7 @@
    ============================================ */
 .vds-cmp {
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -346,14 +346,14 @@
   font-weight: 500;
   letter-spacing: -0.006em;
   border: 1px solid var(--via-border);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--via-surface);
   color: var(--via-navy);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;
 }
 
 .vds-cmp-plan-cta:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--via-surface);
   border-color: var(--via-navy-22);
   transform: translateY(-1px);
 }

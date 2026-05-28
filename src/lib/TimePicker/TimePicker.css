@@ -21,7 +21,7 @@
   align-items: center;
   gap: 6px;
   padding: 8px 10px 8px 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.78));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border, #D0D5DD);
@@ -40,7 +40,7 @@
 
 .via-tp__field:focus-within {
   border-color: var(--via-navy-40);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.92));
+  background: var(--via-glass-card);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 3px var(--via-navy-10),

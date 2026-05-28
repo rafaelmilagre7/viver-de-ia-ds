@@ -585,6 +585,18 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-glass-card",
+    "css": "--via-glass-card",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025))",
+    "category": "other"
+  },
+  {
+    "name": "via-glass-card-2",
+    "css": "--via-glass-card-2",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018))",
+    "category": "other"
+  },
+  {
     "name": "via-glow-navy",
     "css": "--via-glow-navy",
     "value": "0 0 0 1px rgba(10,31,59,0.05),\n    0 8px 24px rgba(10,31,59,0.20),\n    0 16px 48px rgba(10,31,59,0.14)",
@@ -982,6 +994,8 @@ export type TokenName =
   | 'via-fw-medium'
   | 'via-fw-regular'
   | 'via-fw-semibold'
+  | 'via-glass-card'
+  | 'via-glass-card-2'
   | 'via-glow-navy'
   | 'via-glow-navy-strong'
   | 'via-lh-loose'

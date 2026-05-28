@@ -24,7 +24,7 @@
   gap: 10px;
   width: 100%;
   padding: 6px 10px 6px 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.78));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border, #D0D5DD);
@@ -48,7 +48,7 @@
 
 .via-ms__trigger.is-open {
   border-color: var(--via-navy);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.92));
+  background: var(--via-glass-card);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 3px var(--via-navy-10),
@@ -122,7 +122,7 @@
   margin: 0;
   padding: 4px;
   list-style: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.96);
@@ -162,7 +162,7 @@
   width: 16px;
   height: 16px;
   border-radius: 4px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1.5px solid var(--via-border, #D0D5DD);
   display: inline-flex;
   align-items: center;

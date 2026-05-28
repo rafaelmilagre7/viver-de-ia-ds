@@ -45,7 +45,7 @@
 }
 
 .via-avatar.more {
-  background: linear-gradient(180deg, var(--via-white), rgba(255, 255, 255, 0.85));
+  background: var(--via-glass-card);
   color: var(--via-navy);
   border: 1.5px solid var(--via-border-soft);
   box-shadow:

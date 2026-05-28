@@ -1,7 +1,7 @@
 .vds-ob {
   position: relative;
   padding: 44px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -54,7 +54,7 @@
   font-size: 12px;
   font-weight: 700;
   color: var(--via-text-soft);
-  background: var(--via-white);
+  background: var(--via-surface);
   flex-shrink: 0;
   z-index: 1;
   letter-spacing: 0.02em;
@@ -102,7 +102,7 @@
 }
 
 .vds-ob .ob-step.current .circle {
-  background: var(--via-white);
+  background: var(--via-surface);
   border-color: var(--via-navy);
   color: var(--via-navy);
   box-shadow:
@@ -167,7 +167,7 @@
   align-items: flex-start;
   gap: 14px;
   padding: 18px 20px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   border-radius: 14px;
   cursor: pointer;
@@ -190,7 +190,7 @@
 
 .vds-ob .ob-opt:hover {
   border-color: var(--via-navy-20);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.8));
+  background: var(--via-glass-card);
   transform: translateY(-1px);
   box-shadow: 0 6px 14px -8px rgba(10, 31, 59, 0.15);
 }
@@ -218,7 +218,7 @@
   height: 22px;
   border-radius: 7px;
   border: 1.5px solid var(--via-navy-25);
-  background: var(--via-white);
+  background: var(--via-surface);
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -339,7 +339,7 @@
   overflow: hidden;
   isolation: isolate;
   border: 1px solid var(--via-border-soft);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.78));
+  background: var(--via-glass-card);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 28px 56px -28px var(--via-navy-22);
@@ -640,7 +640,7 @@
   align-items: center;
   padding: 14px 16px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   cursor: pointer;
   transition: background .22s ease, border-color .22s ease, transform .22s ease, box-shadow .22s ease;
@@ -649,7 +649,7 @@
 }
 
 .vds-wiz-opt:hover {
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--via-surface);
   border-color: var(--via-navy-18);
   transform: translateY(-1px);
   box-shadow: 0 8px 18px -10px var(--via-navy-14);
@@ -685,7 +685,7 @@
   height: 22px;
   border-radius: 6px;
   border: 1.5px solid var(--via-border);
-  background: var(--via-white);
+  background: var(--via-surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -798,7 +798,7 @@
   letter-spacing: -0.008em;
   border: 1px solid var(--via-border);
   color: var(--via-navy);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--via-surface);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;
 }

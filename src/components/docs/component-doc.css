@@ -9,7 +9,7 @@
   gap: 18px;
   padding: 28px 30px;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.82));
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -140,7 +140,7 @@
 .vds-cdoc-variant-card {
   padding: 18px 20px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -218,7 +218,7 @@
 .vds-cdoc-dont {
   padding: 20px 22px;
   border-radius: 14px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   box-shadow: 0 1px 2px var(--via-navy-03);
 }
@@ -265,7 +265,7 @@
   padding: 24px 30px;
   margin: 0;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -302,7 +302,7 @@
   display: block;
   padding: 16px 18px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.62));
+  background: var(--via-glass-card);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 0.5px solid var(--via-navy-08);

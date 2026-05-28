@@ -31,7 +31,7 @@
   position: relative;
   z-index: 1;
   width: 360px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 24px 56px var(--via-navy-18), 0 4px 12px var(--via-navy-06);
@@ -261,8 +261,8 @@
   border-radius: 999px;
   overflow: hidden;
 }
-.story-bar .seg.done div { background: var(--via-white); width: 100%; height: 100%; }
-.story-bar .seg.live div { background: var(--via-white); width: 60%; height: 100%; animation: vds-story-live 8s linear forwards; }
+.story-bar .seg.done div { background: var(--via-surface); width: 100%; height: 100%; }
+.story-bar .seg.live div { background: var(--via-surface); width: 60%; height: 100%; animation: vds-story-live 8s linear forwards; }
 @keyframes vds-story-live {
   from { width: 0; }
   to { width: 100%; }
@@ -331,7 +331,7 @@
 .story-cta {
   align-self: flex-start;
   padding: 12px 22px;
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-100));
+  background: var(--via-glass-card);
   color: var(--via-navy);
   border: none;
   border-radius: 999px;
@@ -383,7 +383,7 @@
   z-index: 1;
   width: 100%;
   max-width: 560px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 24px 56px var(--via-navy-16), 0 4px 12px var(--via-navy-06);

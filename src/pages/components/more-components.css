@@ -69,7 +69,7 @@
   align-items: center;
   gap: 8px;
   padding: 9px 18px;
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  background: var(--via-glass-card);
   color: var(--via-navy);
   border: 1px solid var(--via-navy-20);
   border-radius: 999px;
@@ -114,7 +114,7 @@
 }
 .vds-skel-card {
   padding: 24px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 20px;
   display: flex;
@@ -304,7 +304,7 @@
   padding: 28px;
   border: 0.5px solid var(--via-navy-12);
   border-radius: 24px;
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  background: var(--via-glass-card);
 }
 .vds-feed-item {
   position: relative;
@@ -436,7 +436,7 @@
   width: 36px;
   height: 36px;
   border-radius: 999px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 2px solid var(--via-white);
   margin-left: -10px;
   font-family: var(--via-font);
@@ -466,7 +466,7 @@
   gap: 16px;
   align-items: center;
   padding: 14px 18px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 16px;
   transition: var(--via-t);

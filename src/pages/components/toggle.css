@@ -29,7 +29,7 @@
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: var(--via-white);
+  background: var(--via-surface);
   box-shadow: 0 2px 4px var(--via-navy-20);
   transition: left 200ms var(--via-ease);
 }

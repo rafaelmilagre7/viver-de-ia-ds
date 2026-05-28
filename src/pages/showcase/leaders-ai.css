@@ -32,7 +32,7 @@
 .la-nav a:hover, .la-nav a.active { color: var(--via-white); }
 .la-nav button {
   padding: 11px 18px;
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
   border: none;
   border-radius: 999px;
@@ -115,7 +115,7 @@
   font-weight: 600;
   color: var(--via-white);
 }
-.la-pill .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--via-white); animation: mkPulse 2.4s ease-in-out infinite; }
+.la-pill .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--via-surface); animation: mkPulse 2.4s ease-in-out infinite; }
 
 .la-section { padding: 96px 48px; max-width: 1280px; margin: 0 auto; }
 .la-section-h { margin-bottom: 48px; text-align: center; }
@@ -231,7 +231,7 @@
   gap: 14px;
 }
 .la-tier.feat {
-  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.82));
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);
   color: var(--via-navy);
@@ -301,7 +301,7 @@
   font-weight: 500;
   letter-spacing: -0.004em;
   cursor: pointer;
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
   margin-top: auto;
   white-space: nowrap;

@@ -13,7 +13,7 @@
   flex-direction: column;
   gap: 12px;
   padding: 20px 22px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
 }
@@ -76,7 +76,7 @@
 }
 .vds-lu-variants article {
   padding: 22px 24px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
 }
@@ -145,7 +145,7 @@
   flex-direction: column;
   gap: 28px;
   padding: 32px 36px 36px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
 }
@@ -176,7 +176,7 @@
   font-family: var(--via-mono);
   font-size: 10px;
   color: var(--via-navy);
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-20);
   padding: 3px 8px;
   border-radius: 6px;
@@ -228,7 +228,7 @@
   align-items: center;
   gap: 6px;
   padding: 18px 14px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 10px;
 }
@@ -268,7 +268,7 @@
 
 .vds-lu-size-min {
   padding: 22px 26px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-20);
   border-left: 2px solid var(--via-navy);
   border-radius: 12px;
@@ -312,7 +312,7 @@
 }
 .vds-lu-surface article {
   padding: 22px 24px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
   display: flex;
@@ -382,7 +382,7 @@
 
 /* ---------- Context table ---------- */
 .vds-lu-context {
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
   overflow: hidden;
@@ -434,7 +434,7 @@
 .vds-lu-do,
 .vds-lu-dont {
   padding: 22px 24px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
 }

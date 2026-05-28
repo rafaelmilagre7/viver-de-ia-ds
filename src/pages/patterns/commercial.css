@@ -10,7 +10,7 @@
   margin-bottom: 24px;
 }
 .vds-com-slide {
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 10px;
   overflow: hidden;
@@ -153,7 +153,7 @@
   max-width: 760px;
   margin: 0 auto;
   padding: 56px 64px 48px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 4px;
   box-shadow: 0 24px 56px -16px var(--via-navy-16);
@@ -313,7 +313,7 @@
   max-width: 760px;
   margin: 0 auto;
   padding: 44px 48px 40px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
   box-shadow: 0 16px 40px -12px var(--via-navy-16);
@@ -482,7 +482,7 @@
   max-width: 720px;
   margin: 0 auto;
   padding: 44px 48px 40px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 4px;
   box-shadow: 0 24px 56px -16px var(--via-navy-16);
@@ -660,7 +660,7 @@
   max-width: 680px;
   margin: 0 auto;
   padding: 48px 56px 40px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 4px;
   box-shadow: 0 24px 56px -16px var(--via-navy-16);

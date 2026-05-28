@@ -35,7 +35,7 @@
   min-height: 46px;
   padding: 7px 10px 7px 12px;
   border-radius: var(--via-radius-md);
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-border);
   cursor: text;
   transition: border-color .22s ease, box-shadow .22s ease;
@@ -124,7 +124,7 @@
   left: 0;
   right: 0;
   z-index: 10;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.86));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -196,7 +196,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--via-white);
+  background: var(--via-surface);
   color: transparent;
   transition: background .2s ease, border-color .2s ease, color .2s ease;
 }
@@ -288,7 +288,7 @@
   width: 48px;
   height: 48px;
   border-radius: 13px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -358,7 +358,7 @@
   align-items: center;
   padding: 10px 12px;
   border-radius: var(--via-radius-md);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   transition: border-color .22s ease;
 }
@@ -469,7 +469,7 @@
   display: flex;
   align-items: stretch;
   border-radius: var(--via-radius-md);
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-border);
   overflow: hidden;
   transition: border-color .22s ease, box-shadow .22s ease;
@@ -538,7 +538,7 @@
   left: 0;
   width: 320px;
   z-index: 10;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.86));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -676,7 +676,7 @@
   gap: 16px;
   padding: 20px 22px;
   border-radius: var(--via-radius-lg);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.78));
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -812,7 +812,7 @@
    ============================================ */
 .vds-fp-md {
   border-radius: var(--via-radius-lg);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.78));
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -891,7 +891,7 @@
 }
 
 .vds-fp-md-tabs button.on {
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,

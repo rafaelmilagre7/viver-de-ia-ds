@@ -31,7 +31,7 @@
   max-width: 560px;
   margin: 0 auto;
   padding: 36px 36px 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.78) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   border: 1px solid rgba(255,255,255,1);
@@ -113,7 +113,7 @@
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--via-navy-12);
@@ -157,7 +157,7 @@
   gap: 14px;
   padding: 18px 20px;
   width: 100%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(247,248,250,0.56) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid var(--via-navy-08);
@@ -257,7 +257,7 @@
   background:
     radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
     radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.74), rgba(247,248,250,0.5));
+    var(--via-glass-card);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-navy-08);
@@ -327,7 +327,7 @@
   background:
     radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
     radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.74), rgba(247,248,250,0.5));
+    var(--via-glass-card);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-navy-08);
@@ -346,7 +346,7 @@
   letter-spacing: 0.04em;
   color: var(--via-text-primary);
   padding: 8px 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));
+  background: var(--via-glass-card);
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.95);
   text-align: center;
@@ -415,7 +415,7 @@
 .vds-2fa-anatomy-card {
   position: relative;
   padding: 22px 22px 20px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.74) 100%);
+  background: var(--via-glass-card);
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   border: 1px solid rgba(255,255,255,1);
@@ -446,7 +446,7 @@
 .vds-2fa-anatomy-card__step {
   display: inline-block;
   padding: 3px 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,250,0.78));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font);

@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 0.5px solid var(--via-navy-10);
@@ -168,7 +168,7 @@
 .vds-bubble.assistant {
   position: relative;
   padding: 14px 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.82));
+  background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
   border: 1px solid rgba(255,255,255,1);
@@ -259,7 +259,7 @@
   align-items: center;
   gap: 8px;
   padding: 14px 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.68));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-top: 0.5px solid var(--via-navy-10);

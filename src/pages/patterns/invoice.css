@@ -378,7 +378,7 @@
 .vds-receipt-qr {
   width: 88px;
   height: 88px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border-radius: 12px;
   border: 1px solid var(--via-navy-08);
   display: flex;
@@ -460,7 +460,7 @@
 .vds-receipt-mini {
   width: 100%;
   max-width: 540px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border-radius: 16px;
   border: 1px solid var(--via-navy-08);
   padding: 32px;
@@ -620,7 +620,7 @@
 
   /* Reset global do shell */
   html, body {
-    background: var(--via-white) !important;
+    background: var(--via-surface) !important;
     color: var(--via-navy) !important;
     font-family: var(--via-font), 'Geist', system-ui, sans-serif !important;
     -webkit-print-color-adjust: exact !important;
@@ -684,7 +684,7 @@
     max-width: none !important;
     margin: 0 auto !important;
     padding: 28mm 22mm 24mm !important;
-    background: var(--via-white) !important;
+    background: var(--via-surface) !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -914,7 +914,7 @@
     font-family: var(--via-mono), 'Geist Mono', ui-monospace, monospace !important;
     font-size: 9pt !important;
     color: var(--via-navy) !important;
-    background: var(--via-white) !important;
+    background: var(--via-surface) !important;
     padding: 2mm 3mm !important;
     border-radius: 2mm !important;
     border: 1px solid var(--via-gray-200) !important;
@@ -950,7 +950,7 @@
   .vds-receipt-qr {
     width: 28mm !important;
     height: 28mm !important;
-    background: var(--via-white) !important;
+    background: var(--via-surface) !important;
     border: 1px solid var(--via-gray-200) !important;
     border-radius: 3mm !important;
     display: flex !important;
@@ -1029,7 +1029,7 @@
   position: relative;
   border-radius: 22px;
   padding: 32px 32px 28px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -1196,7 +1196,7 @@
   height: 28px;
   padding: 0 10px;
   border-radius: 8px;
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border);
   font-size: 12.5px;
   font-weight: 500;

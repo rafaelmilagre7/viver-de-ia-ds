@@ -20,7 +20,7 @@
   position: relative;
   border-radius: 22px;
   border: 1px solid var(--via-border-soft);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
   overflow: hidden;
@@ -554,7 +554,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--via-white);
+  background: var(--via-surface);
   transform: translate(-50%, -50%);
   border: 1.5px solid var(--via-navy-25);
   box-shadow:
@@ -604,12 +604,12 @@
 }
 
 .vid-ctrl.play {
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
 }
 
 .vid-ctrl.play:hover {
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--via-surface);
 }
 
 .vid-time {
@@ -658,7 +658,7 @@
   align-items: flex-end;
   padding: 24px 26px;
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
@@ -817,7 +817,7 @@
 .vds-cp-materials {
   padding: 24px;
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -887,7 +887,7 @@
   font-weight: 600;
   padding: 6px 11px;
   border-radius: 8px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.78));
+  background: var(--via-glass-card);
   color: var(--via-navy-deep);
   border: 1px solid var(--via-border-soft);
   cursor: pointer;
@@ -1458,7 +1458,7 @@
 }
 
 .vds-cp-live-controls .vid-ctrl.play.live {
-  background: var(--via-white);
+  background: var(--via-surface);
   color: var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 1),
@@ -1466,7 +1466,7 @@
 }
 
 .vds-cp-live-controls .vid-ctrl.play.live:hover {
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--via-surface);
 }
 
 .vds-cp-live-time {
@@ -1524,7 +1524,7 @@
   flex-direction: column;
   border-radius: 20px;
   border: 1px solid var(--via-border-soft);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
   overflow: hidden;
@@ -1747,7 +1747,7 @@
   height: 38px;
   padding: 0 14px;
   border-radius: 11px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   font-family: inherit;
   font-size: 12.5px;

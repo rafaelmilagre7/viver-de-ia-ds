@@ -335,7 +335,7 @@
   position: relative;
   padding: 22px 22px 20px;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.62));
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -346,7 +346,7 @@
   background:
     radial-gradient(360px 180px at 0% 0%, var(--via-navy-06), transparent 60%),
     radial-gradient(280px 140px at 100% 100%, var(--via-navy-03), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.72));
+    var(--via-glass-card);
   border-color: var(--via-border-soft);
 }
 
@@ -794,7 +794,7 @@
   justify-content: space-between;
   padding: 14px 22px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
@@ -867,7 +867,7 @@
 .vds-cohort-l {
   padding: 32px;
   border-radius: 20px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.7));
+  background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--via-border-soft);
@@ -1125,7 +1125,7 @@
   margin-top: auto;
   padding: 13px 20px;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--via-white), var(--via-gray-50));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-navy-20);
   color: var(--via-navy);
   font-size: 13px;

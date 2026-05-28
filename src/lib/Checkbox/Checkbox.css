@@ -29,7 +29,7 @@
   width: 16px;
   height: 16px;
   border-radius: 5px;
-  background: linear-gradient(180deg, var(--via-white), rgba(247, 248, 250, 0.86));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border, #D0D5DD);
   display: inline-flex;
   align-items: center;

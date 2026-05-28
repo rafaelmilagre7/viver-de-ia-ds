@@ -368,7 +368,7 @@
   background:
     radial-gradient(420px 240px at 0% 0%, var(--via-navy-06), transparent 60%),
     radial-gradient(360px 200px at 100% 100%, var(--via-navy-04), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 250, 0.78));
+    var(--via-glass-card);
   color: var(--via-text-body);
   border-color: var(--via-border-soft);
   box-shadow:
@@ -409,7 +409,7 @@
   background:
     radial-gradient(440px 220px at 0% 0%, var(--via-navy-05), transparent 60%),
     radial-gradient(360px 200px at 100% 100%, var(--via-navy-03), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 250, 0.78));
+    var(--via-glass-card);
   color: var(--via-text-body);
   border-color: var(--via-border-soft);
   gap: 12px;
@@ -586,7 +586,7 @@
   gap: 14px;
   padding: 18px 20px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.72));
+  background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);

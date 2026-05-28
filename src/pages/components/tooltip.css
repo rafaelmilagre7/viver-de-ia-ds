@@ -13,7 +13,7 @@
   width: 36px;
   height: 36px;
   border-radius: 999px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-gray-300);
   display: flex;
   align-items: center;

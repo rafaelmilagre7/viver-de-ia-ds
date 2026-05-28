@@ -201,118 +201,28 @@
 }
 
 /* =================================================
-   GLASS SURFACES · override sistêmico pra dark
+   GLASS SURFACES · tokens semânticos (resolvem dark sozinhos)
    =================================================
-   Problema: componentes usam gradient hardcoded
-   `linear-gradient(rgba(255,255,255,0.94), rgba(247,248,250,0.74))`
-   pra simular glass branco. Em dark mode isso fica branco puro
-   numa página dark — horrível.
-   Solução: regras globais que sobrescrevem esses gradients
-   pra surface dark com transparência sutil.
+   --via-glass-card  · superfície de card glass forte
+   --via-glass-card-2· superfície de card glass média (alt)
+   Componentes usam var(--via-glass-card) em vez de gradient
+   branco hardcoded → adapta light/dark automaticamente.
+   Substituição em massa feita via scripts/migrate-glass.mjs
    ================================================= */
-[data-theme="dark"] .vds-pa-spec,
-[data-theme="dark"] .vds-pa-meta-ad,
-[data-theme="dark"] .vds-pa-li-ad,
-[data-theme="dark"] .vds-pa-audience-card,
-[data-theme="dark"] .vds-pa-ab-card,
-[data-theme="dark"] .vds-pa-preflight,
-[data-theme="dark"] .vds-pa-headlines article,
-[data-theme="dark"] .vds-pa-cta-group,
-[data-theme="dark"] .vds-pa-yt-companion,
-[data-theme="dark"] .vds-pa-yt-script,
-[data-theme="dark"] .vds-pa-reel aside,
-[data-theme="dark"] .vds-bento-card,
-[data-theme="dark"] .vds-cert-meta,
-[data-theme="dark"] .vds-streak-milestone,
-[data-theme="dark"] .vds-cohort-l,
-[data-theme="dark"] .vds-ev-relation-text,
-[data-theme="dark"] .vds-ev-piece,
-[data-theme="dark"] .vds-ev-rules,
-[data-theme="dark"] .vds-mm-alt,
-[data-theme="dark"] .vds-cp-aside,
-[data-theme="dark"] .vds-cp-info,
-[data-theme="dark"] .vds-cp-notes,
-[data-theme="dark"] .vds-cp-materials,
-[data-theme="dark"] .vds-cp-chat,
-[data-theme="dark"] .vds-anatomy-row,
-[data-theme="dark"] .vds-ev-piece,
-[data-theme="dark"] .vds-slide.quote,
-[data-theme="dark"] .vds-slide.content,
-[data-theme="dark"] .vds-cert-meta,
-[data-theme="dark"] .vds-live-next {
-  background: linear-gradient(180deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(255, 255, 255, 0.025) 100%) !important;
-  border-color: rgba(255, 255, 255, 0.10) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.20),
-    0 0 0 0.5px rgba(255, 255, 255, 0.04),
-    0 14px 36px -16px rgba(0, 0, 0, 0.50) !important;
+:root {
+  --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
+  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
 }
 
-/* Texto dentro dos cards glass em dark: cores sólidas claras */
-[data-theme="dark"] .vds-pa-spec dt,
-[data-theme="dark"] .vds-pa-meta-page em,
-[data-theme="dark"] .vds-pa-li-page em,
-[data-theme="dark"] .vds-pa-meta-footer > div > em,
-[data-theme="dark"] .vds-pa-meta-domain {
-  color: var(--via-text-muted) !important;
+[data-theme="dark"] {
+  --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018));
 }
 
-[data-theme="dark"] .vds-pa-spec dd,
-[data-theme="dark"] .vds-pa-meta-text p,
-[data-theme="dark"] .vds-pa-li-text p,
-[data-theme="dark"] .vds-pa-audience-card header em,
-[data-theme="dark"] .vds-pa-audience-block p {
-  color: var(--via-text-body) !important;
-}
-
-[data-theme="dark"] .vds-pa-meta-page strong,
-[data-theme="dark"] .vds-pa-li-page strong,
-[data-theme="dark"] .vds-pa-meta-footer strong,
-[data-theme="dark"] .vds-pa-li-footer > div strong,
-[data-theme="dark"] .vds-pa-audience-card header strong,
-[data-theme="dark"] .vds-pa-cta-group header strong,
-[data-theme="dark"] .vds-pa-preflight header h4,
-[data-theme="dark"] .vds-pa-yt-script h4,
-[data-theme="dark"] .vds-pa-yt-script li strong,
-[data-theme="dark"] .vds-pa-audience-kpi strong,
-[data-theme="dark"] .vds-pa-audience-cta,
-[data-theme="dark"] .vds-pa-headlines h4 {
-  color: var(--via-text-primary) !important;
-}
-
-/* CTAs primary navy em dark = invertem pra branco glass legível */
-[data-theme="dark"] .vds-pa-meta-cta,
-[data-theme="dark"] .vds-pa-li-cta {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: var(--via-text-primary) !important;
-}
-
-[data-theme="dark"] .vds-pa-meta-cta:hover {
-  background: var(--via-white) !important;
-  color: var(--via-navy-deep) !important;
-  border-color: var(--via-white) !important;
-}
-
-/* Google Search ad em dark · hardcoded white precisa virar surface */
-[data-theme="dark"] .vds-pa-gs-search,
-[data-theme="dark"] .vds-pa-gs-result {
-  background: var(--via-surface) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  color: var(--via-text-body) !important;
-}
-
+/* Google Search ad · headline azul precisa virar variante dark-safe */
 [data-theme="dark"] .vds-pa-gs-headline,
 [data-theme="dark"] .vds-pa-gs-sitelinks strong {
-  color: #8AB4F8 !important;  /* Google blue acessível em dark */
-}
-
-[data-theme="dark"] .vds-pa-gs-desc,
-[data-theme="dark"] .vds-pa-gs-search {
-  color: var(--via-text-body) !important;
+  color: #8AB4F8;  /* Google blue acessível em dark · WCAG AA */
 }
 
 /* Anatomy rows · quote/content slides em dark */

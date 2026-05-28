@@ -3,7 +3,7 @@
    ============================================ */
 .vds-sr {
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -27,7 +27,7 @@
   gap: 12px;
   padding: 14px 16px;
   border-radius: 14px;
-  background: var(--via-white);
+  background: var(--via-surface);
   border: 1px solid var(--via-border);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -358,7 +358,7 @@
   gap: 6px;
   padding: 7px 12px;
   border-radius: 9px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--via-surface);
   border: 1px solid var(--via-border);
   color: var(--via-navy);
   font-family: inherit;
@@ -370,7 +370,7 @@
 }
 
 .vds-sr-sort:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--via-surface);
   border-color: var(--via-navy-22);
 }
 
