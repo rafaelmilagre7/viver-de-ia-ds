@@ -1153,7 +1153,10 @@
   50% { opacity: 1; transform: scale(1.05); }
 }
 
-.vds-cp-live-vid > *:not(.vds-cp-live-bg):not(.vds-cp-live-aura) {
+/* helper de empilhamento só pros filhos SIMPLES — exclui os overlays que já são
+   position:absolute (top bar, host, controls), senão essa regra (0,3,0) vence o
+   position:absolute deles (0,1,0) e quebra o pin (vira relative com offset solto) */
+.vds-cp-live-vid > *:not(.vds-cp-live-bg):not(.vds-cp-live-aura):not(.vds-cp-live-top):not(.vds-cp-live-host):not(.vds-cp-live-controls) {
   position: relative;
   z-index: 2;
 }
@@ -1813,5 +1816,21 @@
   .vds-cp-live-time .live-dot,
   .vds-cp-live-top .vds-live-rec-dot {
     animation: none !important;
+  }
+}
+
+/* ============================================
+   Mobile · live broadcast (≤560px)
+   No celular o vídeo 16:9 fica baixo demais (~197px) e os 3 overlays absolutos
+   (badge live no topo + card do host + controles no rodapé) se colidem. Frame
+   mais alto (4:5) + host elevado acomodam os três com folga, mantendo o look de
+   "broadcast card". Fica no fim do arquivo pra vencer as regras-base por ordem.
+   ============================================ */
+@media (max-width: 560px) {
+  .vds-cp-live-vid {
+    aspect-ratio: 4 / 5;
+  }
+  .vds-cp-live-host {
+    bottom: 128px;
   }
 }
