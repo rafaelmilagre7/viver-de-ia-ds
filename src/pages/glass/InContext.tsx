@@ -37,17 +37,17 @@ export default function GlassInContext() {
               borderBottom: '0.5px solid var(--via-navy-10)',
             }}
           >
-            <span style={{ fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.32em', textTransform: 'uppercase', color: 'var(--via-navy)' }}>VIVER DE IA</span>
-            <span style={{ fontFamily: 'var(--via-font)', fontSize: 12, fontWeight: 600, color: 'var(--via-gray-500)' }}>Mentoria · Cases · Manifesto</span>
+            <span style={{ fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.32em', textTransform: 'uppercase', color: 'var(--via-text-primary)' }}>VIVER DE IA</span>
+            <span style={{ fontFamily: 'var(--via-font)', fontSize: 12, fontWeight: 600, color: 'var(--via-text-muted)' }}>Mentoria · Cases · Manifesto</span>
           </header>
           <div
             style={{
               position: 'absolute', bottom: 24, left: 28,
               fontFamily: 'var(--via-font-display)', fontSize: 36, fontWeight: 500,
-              color: 'var(--via-navy)', letterSpacing: '-0.02em', lineHeight: 1,
+              color: 'var(--via-text-primary)', letterSpacing: '-0.02em', lineHeight: 1,
             }}
           >
-            Conteúdo rolando<br /><em style={{ color: 'var(--via-gray-500)' }}>por baixo</em>…
+            Conteúdo rolando<br /><em style={{ color: 'var(--via-text-muted)' }}>por baixo</em>…
           </div>
         </div>
       </Section>
@@ -83,8 +83,8 @@ export default function GlassInContext() {
               }}
             >
               <p className="vds-eyebrow">{c.lbl}</p>
-              <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 40, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-navy)', marginTop: 6 }}>{c.num}</div>
-              <p style={{ fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-gray-600)', marginTop: 8 }}>{c.sub}</p>
+              <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 40, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', marginTop: 6 }}>{c.num}</div>
+              <p style={{ fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-text-body)', marginTop: 8 }}>{c.sub}</p>
             </div>
           ))}
         </div>
@@ -112,12 +112,12 @@ export default function GlassInContext() {
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,1), 0 32px 80px rgba(0,0,0,0.40)',
             }}
           >
-            <h3 style={{ fontFamily: 'var(--via-font-display)', fontSize: 24, fontWeight: 500, color: 'var(--via-navy)', letterSpacing: '-0.015em', margin: 0 }}>Confirmar inscrição?</h3>
-            <p style={{ fontFamily: 'var(--via-font)', fontSize: 14, color: 'var(--via-gray-600)', lineHeight: 1.55, marginTop: 12 }}>
+            <h3 style={{ fontFamily: 'var(--via-font-display)', fontSize: 24, fontWeight: 500, color: 'var(--via-text-primary)', letterSpacing: '-0.015em', margin: 0 }}>Confirmar inscrição?</h3>
+            <p style={{ fontFamily: 'var(--via-font)', fontSize: 14, color: 'var(--via-text-body)', lineHeight: 1.55, marginTop: 12 }}>
               Sua inscrição na turma 2026.2 será confirmada. O pagamento será cobrado no método cadastrado.
             </p>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 24 }}>
-              <button style={{ padding: '11px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', background: 'transparent', color: 'var(--via-gray-600)', border: 'none' }}>Cancelar</button>
+              <button style={{ padding: '11px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', background: 'transparent', color: 'var(--via-text-body)', border: 'none' }}>Cancelar</button>
               <button style={{ padding: '11px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', background: 'var(--via-navy)', color: 'var(--via-white)', border: 'none' }}>Confirmar</button>
             </div>
           </div>

@@ -20,7 +20,7 @@
   font-family: var(--via-font, inherit);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   letter-spacing: -0.004em;
   border-bottom: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.03), transparent);
@@ -64,8 +64,8 @@
   letter-spacing: inherit;
   text-transform: inherit;
 }
-.via-dt__sort:hover { color: var(--via-navy, #0A1F3B); }
-.via-dt__sort.on { color: var(--via-navy, #0A1F3B); }
+.via-dt__sort:hover { color: var(--via-text-primary); }
+.via-dt__sort.on { color: var(--via-text-primary); }
 .via-dt__chev { display: inline-flex; align-items: center; }
 .via-dt__chev .muted { opacity: 0.35; }
 .via-dt__th-static {

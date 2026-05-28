@@ -40,13 +40,13 @@ export default function Cards() {
       <Section title="Stat card · glass" meta="hero use">
         <div className="via-card-stat-stage">
           <div className="via-card-stat">
-            <MessageCircle size={14} strokeWidth={2} style={{ color: 'var(--via-gray-500)' }} />
+            <MessageCircle size={14} strokeWidth={2} style={{ color: 'var(--via-text-muted)' }} />
             <p className="vds-eyebrow">Conversas analisadas</p>
             <div className="num">+11.920</div>
             <p className="sub"><em>Efizi</em> · 90 dias</p>
           </div>
           <div className="via-card-stat">
-            <TrendingUp size={14} strokeWidth={2} style={{ color: 'var(--via-gray-500)' }} />
+            <TrendingUp size={14} strokeWidth={2} style={{ color: 'var(--via-text-muted)' }} />
             <p className="vds-eyebrow">Economia recorrente</p>
             <div className="num">R$ 4.600<span className="suffix">/mês</span></div>
             <p className="sub"><em>Balzani &amp; Zimbel</em></p>

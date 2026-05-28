@@ -74,8 +74,8 @@ export default function IconographyIcons() {
             </div>
           ))}
         </div>
-        <p style={{ marginTop: 24, fontFamily: 'var(--via-font)', fontSize: 13, color: 'var(--via-gray-500)' }}>
-          Catálogo completo (1500+ ícones): <a href="https://lucide.dev" target="_blank" rel="noreferrer" style={{ color: 'var(--via-navy)' }}>lucide.dev</a>
+        <p style={{ marginTop: 24, fontFamily: 'var(--via-font)', fontSize: 13, color: 'var(--via-text-muted)' }}>
+          Catálogo completo (1500+ ícones): <a href="https://lucide.dev" target="_blank" rel="noreferrer" style={{ color: 'var(--via-text-primary)' }}>lucide.dev</a>
         </p>
       </Section>
 
@@ -98,10 +98,10 @@ export default function IconographyIcons() {
           <p style={{ fontFamily: 'var(--via-font)', fontSize: 10, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--via-danger)', margin: 0 }}>
             Off-brand · nunca usar
           </p>
-          <h3 style={{ fontFamily: 'var(--via-font-display)', fontSize: 24, fontWeight: 500, color: 'var(--via-navy)', margin: '8px 0 12px', letterSpacing: '-0.015em' }}>
+          <h3 style={{ fontFamily: 'var(--via-font-display)', fontSize: 24, fontWeight: 500, color: 'var(--via-text-primary)', margin: '8px 0 12px', letterSpacing: '-0.015em' }}>
             O ícone <em style={{ fontStyle: 'normal', fontWeight: 400, color: 'var(--via-danger)' }}>Sparkles</em> está banido de toda identidade Viver de IA.
           </h3>
-          <p style={{ fontFamily: 'var(--via-font)', fontSize: 13.5, lineHeight: 1.6, color: 'var(--via-gray-700)', margin: 0 }}>
+          <p style={{ fontFamily: 'var(--via-font)', fontSize: 13.5, lineHeight: 1.6, color: 'var(--via-text-body)', margin: 0 }}>
             Sparkles virou cliché global de "tudo que é IA" desde 2023. Os produtos da
             marca têm identidade própria, premium e contextual — Sparkle destrói essa
             diferenciação. Use ícones contextuais: <strong>Award</strong> (mestria),
@@ -117,14 +117,14 @@ export default function IconographyIcons() {
         <div className="vds-do-dont">
           <div className="vds-do">
             <p className="vds-do-title">Sim</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Lucide stroke. Ícones funcionais que ajudam navegação. Tamanho proporcional
               ao contexto. <code className="vds-code-inline">currentColor</code> pra integrar.
             </p>
           </div>
           <div className="vds-dont">
             <p className="vds-dont-title">Não</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Emoji (★ ✓ → etc.) como ícone. Outlined + filled misturados. Ícones
               decorativos sem função.
             </p>

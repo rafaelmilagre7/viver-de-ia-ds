@@ -53,7 +53,7 @@
 
 .via-breadcrumb__link:hover,
 .via-breadcrumb__link--btn:hover {
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
 }
 
 .via-breadcrumb__link:hover::after,
@@ -62,7 +62,7 @@
 }
 
 .via-breadcrumb__current {
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   font-weight: 500;
 }
 

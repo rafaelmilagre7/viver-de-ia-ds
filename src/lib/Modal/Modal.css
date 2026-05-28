@@ -83,7 +83,7 @@
   font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.022em;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
 }
 
 .via-modal__head p {
@@ -110,7 +110,7 @@
 
 .via-modal__close:hover {
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.06), rgba(10, 31, 59, 0.03));
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   border-color: var(--via-border-soft, rgba(10, 31, 59, 0.10));
   transform: rotate(90deg);
   transition: background .22s ease, color .22s ease, border-color .22s ease, transform .3s cubic-bezier(.2,.7,.2,1);

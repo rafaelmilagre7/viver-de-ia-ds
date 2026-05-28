@@ -113,7 +113,7 @@ export default function Brand() {
                 padding: '0 8px',
                 fontFamily: 'var(--via-font-mono)',
                 fontSize: 10,
-                color: 'var(--via-gray-500)',
+                color: 'var(--via-text-muted)',
               }}
             >
               clearance · 1x
@@ -126,14 +126,14 @@ export default function Brand() {
         <div className="vds-do-dont">
           <div className="vds-do">
             <p className="vds-do-title">Faça</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Use wordmark em PNG preto sobre fundos claros, branco sobre escuros. Mantenha
               clearance. Mantenha proporções.
             </p>
           </div>
           <div className="vds-dont">
             <p className="vds-dont-title">Evite</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Recolorir, alongar, comprimir, rotacionar, adicionar gradiente, drop-shadow ou
               outline. Nunca coloque ícone/texto dentro da zona de clearance.
             </p>

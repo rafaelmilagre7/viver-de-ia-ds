@@ -34,19 +34,19 @@ export const Introduction = () => (
       }}
     >
       Catálogo interativo dos{' '}
-      <em style={{ fontStyle: 'italic', color: 'var(--via-gray-500)', fontWeight: 400 }}>
+      <em style={{ fontStyle: 'italic', color: 'var(--via-text-muted)', fontWeight: 400 }}>
         15 componentes core
       </em>
       .
     </h1>
 
-    <p style={{ margin: '0 0 16px', fontSize: 16, lineHeight: 1.65, color: 'var(--via-gray-700)' }}>
+    <p style={{ margin: '0 0 16px', fontSize: 16, lineHeight: 1.65, color: 'var(--via-text-body)' }}>
       Cada componente da library Viver de IA tem aqui uma sandbox com play controls — você
       altera variants, sizes, disabled, etc, e vê o componente reagir em tempo real. Use isso
       pra entender o vocabulário antes de adotar em Nina, Iris, ExecSeats ou plataforma.
     </p>
 
-    <p style={{ margin: '0 0 16px', fontSize: 16, lineHeight: 1.65, color: 'var(--via-gray-700)' }}>
+    <p style={{ margin: '0 0 16px', fontSize: 16, lineHeight: 1.65, color: 'var(--via-text-body)' }}>
       O <strong>P de cada componente</strong> abre 1 ou mais stories. <strong>Switch tema</strong>{' '}
       e <strong>viewport width</strong> ficam no canto superior direito.
     </p>
@@ -66,7 +66,7 @@ export const Introduction = () => (
           fontFamily: 'var(--via-mono, Geist Mono, ui-monospace, monospace)',
           fontSize: 12.5,
           lineHeight: 1.6,
-          color: 'var(--via-navy)',
+          color: 'var(--via-text-primary)',
         }}
       >
         bun add @viverdeia/design-system
@@ -75,9 +75,9 @@ export const Introduction = () => (
       </p>
     </div>
 
-    <p style={{ marginTop: 32, fontSize: 14, color: 'var(--via-gray-600)' }}>
+    <p style={{ marginTop: 32, fontSize: 14, color: 'var(--via-text-body)' }}>
       Documentação completa em{' '}
-      <code style={{ fontFamily: 'var(--via-mono)', fontSize: 13, color: 'var(--via-navy)' }}>
+      <code style={{ fontFamily: 'var(--via-mono)', fontSize: 13, color: 'var(--via-text-primary)' }}>
         src/lib/README.md
       </code>{' '}
       ou no site de referência em <code style={{ fontFamily: 'var(--via-mono)', fontSize: 13 }}>/foundations/library</code>.

@@ -36,12 +36,12 @@
 
 .via-tv__row:hover {
   background: var(--via-navy-04);
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
 }
 
 .via-tv__row.is-selected {
   background: var(--via-navy-08);
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 

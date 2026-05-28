@@ -11,7 +11,7 @@
 .via-otp__label {
   font-size: 12px;
   font-weight: 500;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
 
@@ -29,7 +29,7 @@
   font-size: 22px;
   font-weight: 500;
   letter-spacing: -0.022em;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   background: var(--via-surface-onnavy);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);

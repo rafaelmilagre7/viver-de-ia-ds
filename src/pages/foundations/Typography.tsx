@@ -32,13 +32,13 @@ export default function Typography() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28 }}>
           <div>
             <p className="vds-eyebrow" style={{ marginBottom: 8 }}>Display + UI</p>
-            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 56, fontWeight: 500, color: 'var(--via-navy)', letterSpacing: '-0.025em', lineHeight: 1 }}>Geist</div>
-            <p style={{ fontFamily: 'var(--via-font-mono)', fontSize: 11, color: 'var(--via-gray-500)', marginTop: 8 }}>variable · 100–900 · Vercel</p>
+            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 56, fontWeight: 500, color: 'var(--via-text-primary)', letterSpacing: '-0.025em', lineHeight: 1 }}>Geist</div>
+            <p style={{ fontFamily: 'var(--via-font-mono)', fontSize: 11, color: 'var(--via-text-muted)', marginTop: 8 }}>variable · 100–900 · Vercel</p>
           </div>
           <div>
             <p className="vds-eyebrow" style={{ marginBottom: 8 }}>Mono</p>
-            <div style={{ fontFamily: 'var(--via-font-mono)', fontSize: 48, fontWeight: 500, color: 'var(--via-navy)', letterSpacing: '-0.02em', lineHeight: 1 }}>Geist Mono</div>
-            <p style={{ fontFamily: 'var(--via-font-mono)', fontSize: 11, color: 'var(--via-gray-500)', marginTop: 8 }}>variable · 100–900 · código + tokens</p>
+            <div style={{ fontFamily: 'var(--via-font-mono)', fontSize: 48, fontWeight: 500, color: 'var(--via-text-primary)', letterSpacing: '-0.02em', lineHeight: 1 }}>Geist Mono</div>
+            <p style={{ fontFamily: 'var(--via-font-mono)', fontSize: 11, color: 'var(--via-text-muted)', marginTop: 8 }}>variable · 100–900 · código + tokens</p>
           </div>
         </div>
       </Section>
@@ -87,12 +87,12 @@ export default function Typography() {
               fontWeight: 500,
               lineHeight: 1.02,
               letterSpacing: '-0.025em',
-              color: 'var(--via-navy)',
+              color: 'var(--via-text-primary)',
               margin: 0,
             }}
           >
-            Viver de <em style={{ fontStyle: 'normal', fontWeight: 400, color: 'var(--via-gray-500)' }}>IA</em>,<br />
-            não de <em style={{ fontStyle: 'normal', fontWeight: 400, color: 'var(--via-gray-500)' }}>prompt</em>.
+            Viver de <em style={{ fontStyle: 'normal', fontWeight: 400, color: 'var(--via-text-muted)' }}>IA</em>,<br />
+            não de <em style={{ fontStyle: 'normal', fontWeight: 400, color: 'var(--via-text-muted)' }}>prompt</em>.
           </p>
         </div>
       </Section>
@@ -117,21 +117,21 @@ export default function Typography() {
 
       <Section title="Números são tipografia" meta="Geist 500 tabular">
         <p>
-          Stat cards usam <em style={{ fontStyle: 'normal', fontWeight: 600, color: 'var(--via-navy)' }}>Geist 500</em> com <code className="vds-code-inline">font-variant-numeric: tabular-nums</code>.
+          Stat cards usam <em style={{ fontStyle: 'normal', fontWeight: 600, color: 'var(--via-text-primary)' }}>Geist 500</em> com <code className="vds-code-inline">font-variant-numeric: tabular-nums</code>.
           A moeda é "R$" com espaço, separador de milhar com ponto.
         </p>
         <div style={{ display: 'flex', gap: 40, marginTop: 24, alignItems: 'baseline', flexWrap: 'wrap' }}>
           <div>
             <p className="vds-eyebrow">Economia recorrente</p>
-            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 64, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-navy)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>R$ 4.600</div>
+            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 64, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>R$ 4.600</div>
           </div>
           <div>
             <p className="vds-eyebrow">Conversas analisadas</p>
-            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 64, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-navy)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>+11.920</div>
+            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 64, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>+11.920</div>
           </div>
           <div>
             <p className="vds-eyebrow">Operação financeira</p>
-            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 64, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-navy)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>100%</div>
+            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 64, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>100%</div>
           </div>
         </div>
       </Section>

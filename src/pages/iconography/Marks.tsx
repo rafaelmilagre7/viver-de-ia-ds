@@ -18,7 +18,7 @@ export default function IconographyMarks() {
       <Section title="Atalho" meta="ver na seção de fundamentos">
         <p>
           A documentação completa das marcas — variantes, plates oficiais, clearance, do's
-          & don'ts — está em <Link to="/foundations/brand" style={{ color: 'var(--via-navy)', textDecoration: 'underline' }}>Fundamentos · Marca</Link>.
+          & don'ts — está em <Link to="/foundations/brand" style={{ color: 'var(--via-text-primary)', textDecoration: 'underline' }}>Fundamentos · Marca</Link>.
         </p>
       </Section>
     </>

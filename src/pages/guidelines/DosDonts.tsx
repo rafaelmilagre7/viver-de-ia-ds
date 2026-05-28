@@ -68,11 +68,11 @@ export default function DosDonts() {
           <div className="vds-do-dont">
             <div className="vds-do">
               <p className="vds-do-title">Faça</p>
-              <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>{p.do}</p>
+              <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>{p.do}</p>
             </div>
             <div className="vds-dont">
               <p className="vds-dont-title">Evite</p>
-              <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>{p.dont}</p>
+              <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>{p.dont}</p>
             </div>
           </div>
         </Section>

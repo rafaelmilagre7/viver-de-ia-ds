@@ -247,10 +247,10 @@ function BarSection() {
 /* ---------- Donut chart ---------- */
 function DonutSection() {
   const segments = [
-    { label: 'Recorrentes', value: 72, color: "var(--via-navy)" },
+    { label: 'Recorrentes', value: 72, color: "var(--via-text-primary)" },
     { label: 'Novos', value: 18, color: 'var(--via-blue)' },
     { label: 'Cross-sell', value: 7, color: 'var(--via-blue-soft)' },
-    { label: 'Churn', value: 3, color: "var(--via-navy)" },
+    { label: 'Churn', value: 3, color: "var(--via-text-primary)" },
   ];
 
   const R = 88;

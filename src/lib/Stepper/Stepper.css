@@ -61,7 +61,7 @@ button.via-stepper__node {
 }
 
 button.via-stepper__node:hover .via-stepper__label {
-  color: var(--via-navy-deep, #02162A);
+  color: var(--via-text-primary);
 }
 
 button.via-stepper__node:focus-visible {
@@ -132,7 +132,7 @@ button.via-stepper__node:focus-visible {
 .via-stepper__label {
   font-size: 12.5px;
   font-weight: 500;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
   line-height: 1.35;
   transition: color 0.18s ease;

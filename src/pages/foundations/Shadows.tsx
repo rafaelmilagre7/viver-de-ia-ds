@@ -31,7 +31,7 @@ export default function Shadows() {
                 {s.tok.replace('--via-shadow-', '')}
               </div>
               <p style={{
-                fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-gray-500)',
+                fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-text-muted)',
                 marginTop: 14, lineHeight: 1.5,
               }}>{s.use}</p>
             </div>
@@ -66,11 +66,11 @@ export default function Shadows() {
               boxShadow: 'var(--via-shadow-glass-light)',
               fontFamily: 'var(--via-font-display)',
               fontSize: 28, fontWeight: 500, letterSpacing: '-0.02em',
-              color: 'var(--via-navy)',
+              color: 'var(--via-text-primary)',
               textAlign: 'center',
             }}
           >
-            Vidro com <em style={{ color: 'var(--via-gray-500)' }}>presença</em>
+            Vidro com <em style={{ color: 'var(--via-text-muted)' }}>presença</em>
           </div>
         </div>
       </Section>
@@ -99,7 +99,7 @@ export default function Shadows() {
             style={{
               padding: '14px 28px',
               background: 'var(--via-white)',
-              color: 'var(--via-navy)',
+              color: 'var(--via-text-primary)',
               border: '0.5px solid var(--via-navy-40)',
               borderRadius: 'var(--via-radius-pill)',
               fontFamily: 'var(--via-font)',

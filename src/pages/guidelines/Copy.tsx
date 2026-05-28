@@ -18,19 +18,19 @@ export default function Copy() {
         <div className="vds-do-dont">
           <div className="vds-do">
             <p className="vds-do-title">Faça</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: '4px 0', lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '4px 0', lineHeight: 1.55 }}>
               "Efizi: +11.920 conversas analisadas para elevar performance comercial com IA"
             </p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: '8px 0 0', lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '8px 0 0', lineHeight: 1.55 }}>
               "Balzani & Zimbel: R$ 4.600/mês em economia e 100% da operação centralizada"
             </p>
           </div>
           <div className="vds-dont">
             <p className="vds-dont-title">Evite</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: '4px 0', lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '4px 0', lineHeight: 1.55 }}>
               "Como a Efizi revolucionou as vendas com IA"
             </p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: '8px 0 0', lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '8px 0 0', lineHeight: 1.55 }}>
               "Conheça o case incrível da Balzani"
             </p>
           </div>
@@ -52,14 +52,14 @@ export default function Copy() {
         <div className="vds-do-dont">
           <div className="vds-do">
             <p className="vds-do-title">Faça</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: '4px 0', lineHeight: 1.55, fontStyle: 'normal' }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '4px 0', lineHeight: 1.55, fontStyle: 'normal' }}>
               "Ela fez isso com pouquíssimas horas. Sem saber nada."<br />
-              <span style={{ fontStyle: 'normal', color: 'var(--via-gray-500)' }}>— Márisson Lage Gonçalves</span>
+              <span style={{ fontStyle: 'normal', color: 'var(--via-text-muted)' }}>— Márisson Lage Gonçalves</span>
             </p>
           </div>
           <div className="vds-dont">
             <p className="vds-dont-title">Evite</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: '4px 0', lineHeight: 1.55, fontStyle: 'normal' }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '4px 0', lineHeight: 1.55, fontStyle: 'normal' }}>
               "A mentoria foi extremamente transformadora e revolucionou minha visão sobre IA aplicada ao negócio."
             </p>
           </div>

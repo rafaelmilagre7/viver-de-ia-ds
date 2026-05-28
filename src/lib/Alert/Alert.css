@@ -84,7 +84,7 @@
   font-family: var(--via-font, inherit);
   font-size: 14px;
   font-weight: 500;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
 .via-alert--compact .via-alert__title { font-size: 13px; }
@@ -144,7 +144,7 @@
 }
 .via-alert__close:hover {
   background: var(--via-navy-04, rgba(10,31,59,0.04));
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
 }
 
 @media (max-width: 520px) {

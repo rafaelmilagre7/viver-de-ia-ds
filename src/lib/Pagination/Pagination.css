@@ -45,7 +45,7 @@
 
 .via-pagination__page:hover,
 .via-pagination__nav:not(:disabled):hover {
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-03));
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);

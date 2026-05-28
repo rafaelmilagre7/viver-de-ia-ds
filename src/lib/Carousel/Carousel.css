@@ -48,7 +48,7 @@
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid var(--via-edge-hi);
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   cursor: pointer;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,

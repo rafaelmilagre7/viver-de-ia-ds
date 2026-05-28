@@ -35,7 +35,7 @@ export default function ApiCard() {
           title: 'Card default · listagem padrão',
           preview: (
             <Card>
-              <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-navy)' }}>Mentoria · turma 2026.2</h3>
+              <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-text-primary)' }}>Mentoria · turma 2026.2</h3>
               <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--via-ink-2)' }}>16 semanas com Caio · começa em 17 fev.</p>
             </Card>
           ),
@@ -49,7 +49,7 @@ export default function ApiCard() {
           description: 'Adiciona shine sweep + lift no hover. Combine com `as="a"` pra card-link inteiro.',
           preview: (
             <Card hoverable>
-              <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-navy)' }}>Caso · Efizi</h3>
+              <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-text-primary)' }}>Caso · Efizi</h3>
               <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--via-ink-2)' }}>R$ 1.8M destravado em 6 meses.</p>
             </Card>
           ),

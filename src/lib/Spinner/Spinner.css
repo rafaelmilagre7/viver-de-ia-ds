@@ -58,7 +58,7 @@
 }
 
 /* ===== Tones ===== */
-.via-spinner--navy { color: var(--via-navy, #0A1F3B); }
+.via-spinner--navy { color: var(--via-text-primary); }
 .via-spinner--inverse { color: var(--via-white); }
 .via-spinner--soft { color: var(--via-ink-2, #5E6B82); }
 

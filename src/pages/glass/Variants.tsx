@@ -58,7 +58,7 @@ export default function GlassVariants() {
               borderRadius: 'var(--via-radius-lg)',
               boxShadow: 'var(--via-shadow-glass-light)',
               fontFamily: 'var(--via-font-display)',
-              fontSize: 22, fontWeight: 500, color: 'var(--via-navy)',
+              fontSize: 22, fontWeight: 500, color: 'var(--via-text-primary)',
               letterSpacing: '-0.015em',
             }}
           >
@@ -83,11 +83,11 @@ export default function GlassVariants() {
               borderRadius: 'var(--via-radius-lg)',
               boxShadow: 'var(--via-shadow-glass-light)',
               fontFamily: 'var(--via-font-display)',
-              fontSize: 24, fontWeight: 500, color: 'var(--via-navy)',
+              fontSize: 24, fontWeight: 500, color: 'var(--via-text-primary)',
               letterSpacing: '-0.02em',
             }}
           >
-            Vidro que <em style={{ color: 'var(--via-gray-500)' }}>respira</em>
+            Vidro que <em style={{ color: 'var(--via-text-muted)' }}>respira</em>
           </div>
         </Tile>
         <CodeBlock>{`<div className="via-glass-strong">…</div>`}</CodeBlock>
@@ -137,7 +137,7 @@ export default function GlassVariants() {
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px var(--via-navy-08)',
               fontFamily: 'var(--via-font)',
               fontSize: 11, fontWeight: 700, letterSpacing: '0.20em', textTransform: 'uppercase',
-              color: 'var(--via-navy)',
+              color: 'var(--via-text-primary)',
             }}
           >
             <span

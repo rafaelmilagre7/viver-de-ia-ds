@@ -73,7 +73,7 @@
   background: transparent;
   font-family: var(--via-font, inherit);
   font-size: 15px;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   padding: 2px 0;
 }
 .via-cmd__head input::placeholder { color: var(--via-ink-3, #6B7891); }
@@ -91,7 +91,7 @@
   border-radius: 6px;
   transition: background 120ms ease, color 120ms ease;
 }
-.via-cmd__close:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-navy, #0A1F3B); }
+.via-cmd__close:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-text-primary); }
 
 .via-cmd__list {
   overflow-y: auto;
@@ -148,7 +148,7 @@
   justify-content: center;
   border-radius: 8px;
   background: var(--via-navy-04, rgba(10,31,59,0.04));
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   flex-shrink: 0;
 }
 .via-cmd__label {
@@ -161,7 +161,7 @@
   font-family: var(--via-font, inherit);
   font-size: 14px;
   font-weight: 500;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
 .via-cmd__label em {

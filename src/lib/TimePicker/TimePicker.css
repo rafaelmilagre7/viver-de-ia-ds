@@ -13,7 +13,7 @@
   font-size: 12px;
   font-weight: 500;
   letter-spacing: -0.006em;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
 }
 
 .via-tp__field {
@@ -61,7 +61,7 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.008em;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   background: transparent;
   border: none;
   outline: none;
@@ -104,7 +104,7 @@
 }
 .via-tp__steps button:hover:not(:disabled) {
   background: var(--via-navy-08);
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
 }
 
 .via-tp.has-error .via-tp__field { border-color: rgba(184, 92, 92, 0.40); }

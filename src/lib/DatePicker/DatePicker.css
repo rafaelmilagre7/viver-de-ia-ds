@@ -30,7 +30,7 @@
   border-radius: 10px;
   font-family: var(--via-font, inherit);
   font-size: 13px;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   cursor: pointer;
   transition: border-color 120ms ease, box-shadow 120ms ease;
 }
@@ -92,7 +92,7 @@
   font-family: var(--via-font, inherit);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   text-transform: capitalize;
   letter-spacing: -0.004em;
 }
@@ -115,7 +115,7 @@
   cursor: pointer;
   transition: background 120ms ease, color 120ms ease;
 }
-.via-dp__nav:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-navy, #0A1F3B); }
+.via-dp__nav:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-text-primary); }
 
 .via-dp__dow {
   display: grid;
@@ -151,7 +151,7 @@
   border-radius: 8px;
   font-family: var(--via-font, inherit);
   font-size: 13px;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   cursor: pointer;
   transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
 }
@@ -193,7 +193,7 @@
   border-radius: 7px;
   transition: background 120ms ease, color 120ms ease;
 }
-.via-dp__ghost:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-navy, #0A1F3B); }
+.via-dp__ghost:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-text-primary); }
 
 @keyframes via-dp-in {
   from { opacity: 0; transform: translateY(-3px); }

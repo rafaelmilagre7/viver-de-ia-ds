@@ -18,7 +18,7 @@ export default function IconographyPhotography() {
         <div className="vds-do-dont">
           <div className="vds-do">
             <p className="vds-do-title">Sim</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               White-balance cool / neutro. Levemente dessaturada. Preto-e-branco ou duotone
               navy+branco também on-brand. Pessoas reais, contexto profissional, foco no rosto
               ou nas mãos trabalhando.
@@ -26,7 +26,7 @@ export default function IconographyPhotography() {
           </div>
           <div className="vds-dont">
             <p className="vds-dont-title">Não</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Stock-y AI imagery (cérebros brilhando, espaguete neural, mãos androides).
               Imagens hipersaturadas. Vibe "Silicon Valley". Crowds dramáticos sem
               propósito narrativo.
@@ -64,7 +64,7 @@ export default function IconographyPhotography() {
           ))}
         </div>
         <p style={{
-          marginTop: 16, fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-gray-500)',
+          marginTop: 16, fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-text-muted)',
         }}>
           Placeholders. Quando entrarem fotos reais, manter o tratamento duotone navy ou
           preto-e-branco frio.

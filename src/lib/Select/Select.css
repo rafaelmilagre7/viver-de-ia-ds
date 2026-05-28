@@ -28,7 +28,7 @@
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: 9px;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   font-family: inherit;
   font-size: 13.5px;
   font-weight: 500;
@@ -154,7 +154,7 @@
   font-size: 13px;
   font-weight: 500;
   letter-spacing: -0.006em;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   cursor: pointer;
   transition: background 0.14s ease;
 }
@@ -178,6 +178,6 @@
 }
 
 .via-select__check {
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   flex-shrink: 0;
 }

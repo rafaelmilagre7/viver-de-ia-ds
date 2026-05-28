@@ -26,7 +26,7 @@ export default function PlaceholderPage({ area }: Props) {
           borderRadius: 'var(--via-radius-lg)',
           background:
             'repeating-linear-gradient(135deg, transparent 0, transparent 12px, var(--via-navy-03) 12px, var(--via-navy-03) 13px)',
-          color: 'var(--via-gray-500)',
+          color: 'var(--via-text-muted)',
           fontFamily: 'var(--via-font)',
           fontSize: 13,
           textAlign: 'center',

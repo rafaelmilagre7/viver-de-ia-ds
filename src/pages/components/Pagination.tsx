@@ -37,8 +37,8 @@ export default function Pagination() {
             <ChevronRight size={14} strokeWidth={2.2} />
           </button>
         </div>
-        <p style={{ marginTop: 24, fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-gray-500)' }}>
-          Página <strong style={{ color: 'var(--via-navy)' }}>{page}</strong> de <strong style={{ color: 'var(--via-navy)' }}>{total}</strong> · 206 cases no total
+        <p style={{ marginTop: 24, fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-text-muted)' }}>
+          Página <strong style={{ color: 'var(--via-text-primary)' }}>{page}</strong> de <strong style={{ color: 'var(--via-text-primary)' }}>{total}</strong> · 206 cases no total
         </p>
       </Section>
     </>

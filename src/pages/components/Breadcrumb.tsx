@@ -31,8 +31,8 @@ export default function Breadcrumb() {
             <ChevronRight size={12} strokeWidth={2} className="sep" />
             <span className="current">Balzani &amp; Zimbel</span>
           </nav>
-          <h2 style={{ marginTop: 16, fontFamily: 'var(--via-font-display)', fontWeight: 500, fontSize: 36, letterSpacing: '-0.025em', color: 'var(--via-navy)' }}>
-            Balzani & Zimbel: <em style={{ color: 'var(--via-gray-500)' }}>R$ 4.600/mês</em> em economia
+          <h2 style={{ marginTop: 16, fontFamily: 'var(--via-font-display)', fontWeight: 500, fontSize: 36, letterSpacing: '-0.025em', color: 'var(--via-text-primary)' }}>
+            Balzani & Zimbel: <em style={{ color: 'var(--via-text-muted)' }}>R$ 4.600/mês</em> em economia
           </h2>
         </div>
       </Section>

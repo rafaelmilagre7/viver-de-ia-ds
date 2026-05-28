@@ -33,7 +33,7 @@ export default function Motion() {
             <div key={e.tok} className="vds-motion-card">
               <div>
                 <p className="vds-eyebrow">{e.tok}</p>
-                <p style={{ fontFamily: 'var(--via-font-mono)', fontSize: 11, color: 'var(--via-gray-500)', marginTop: 6 }}>{e.curve}</p>
+                <p style={{ fontFamily: 'var(--via-font-mono)', fontSize: 11, color: 'var(--via-text-muted)', marginTop: 6 }}>{e.curve}</p>
               </div>
               <div className="vds-motion-track">
                 <div
@@ -41,7 +41,7 @@ export default function Motion() {
                   style={{ animationTimingFunction: e.curve }}
                 />
               </div>
-              <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0 }}>{e.use}</p>
+              <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0 }}>{e.use}</p>
             </div>
           ))}
         </div>
@@ -85,14 +85,14 @@ box-shadow: var(--via-shadow-focus);`}</CodeBlock>
         <div className="vds-do-dont">
           <div className="vds-do">
             <p className="vds-do-title">Faça</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Transições curtas em cor, borda e translateY. Drift lento e único em hero
               glass. Reduzir movimento se <code className="vds-code-inline">prefers-reduced-motion</code>.
             </p>
           </div>
           <div className="vds-dont">
             <p className="vds-dont-title">Evite</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Bouncy springs, ripples, parallax, partículas, autoplay em loop infinito.
               Movimento que distrai do conteúdo é movimento errado.
             </p>

@@ -55,10 +55,10 @@ export default function GlassAnatomy() {
             <p className="vds-eyebrow" style={{ position: 'relative' }}>Surface</p>
             <h3 style={{
               fontFamily: 'var(--via-font-display)', fontSize: 32, fontWeight: 500,
-              letterSpacing: '-0.02em', color: 'var(--via-navy)', margin: '8px 0 0', position: 'relative',
+              letterSpacing: '-0.02em', color: 'var(--via-text-primary)', margin: '8px 0 0', position: 'relative',
             }}>Hello, glass.</h3>
             <p style={{
-              fontFamily: 'var(--via-font)', fontSize: 14, color: 'var(--via-gray-600)',
+              fontFamily: 'var(--via-font)', fontSize: 14, color: 'var(--via-text-body)',
               marginTop: 12, position: 'relative',
             }}>Quatro camadas. Nem uma a menos.</p>
           </div>
@@ -108,7 +108,7 @@ border-radius: 20px;`}</CodeBlock>
         <div className="vds-do-dont">
           <div className="vds-do">
             <p className="vds-do-title">Sim</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Nav sticky, hero stat cards sobre fotografia, modal frame, CTA pill de
               destaque, cards de pricing em destaque, página da conferência (onde glass é
               a dominante).
@@ -116,7 +116,7 @@ border-radius: 20px;`}</CodeBlock>
           </div>
           <div className="vds-dont">
             <p className="vds-dont-title">Não</p>
-            <p style={{ fontSize: 13, color: 'var(--via-gray-600)', margin: 0, lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: 0, lineHeight: 1.55 }}>
               Dashboards densos, tabelas com dados, telas cheias de formulário. Em UI densa,
               glass machuca legibilidade. Vá de superfície plana lá.
             </p>

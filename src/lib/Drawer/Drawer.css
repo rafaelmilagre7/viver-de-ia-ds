@@ -124,7 +124,7 @@
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.018em;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
 }
 
 .via-drawer__head p {
@@ -151,7 +151,7 @@
 
 .via-drawer__close:hover {
   background: rgba(10, 31, 59, 0.05);
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   border-color: var(--via-border-soft, rgba(10, 31, 59, 0.08));
 }
 

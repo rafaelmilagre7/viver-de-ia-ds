@@ -57,7 +57,7 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.012em;
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
   text-align: left;
   transition: color 0.18s ease;
 }
@@ -67,7 +67,7 @@
 }
 
 .via-accordion__trigger:hover:not(:disabled) {
-  color: var(--via-navy-deep, #02162A);
+  color: var(--via-text-primary);
 }
 
 .via-accordion__trigger:disabled {
@@ -95,7 +95,7 @@
 
 .via-accordion__item.is-open .via-accordion__chevron {
   transform: rotate(180deg);
-  color: var(--via-navy, #0A1F3B);
+  color: var(--via-text-primary);
 }
 
 .via-accordion__panel {
