@@ -101,7 +101,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-coral-dark",
     "css": "--via-coral-dark",
-    "value": "#8C2C2C",
+    "value": "#E89B9B",
     "category": "color"
   },
   {
@@ -324,6 +324,24 @@ export const tokensList: readonly Token[] = [
     "name": "via-navy-deep",
     "css": "--via-navy-deep",
     "value": "#02162A",
+    "category": "color"
+  },
+  {
+    "name": "via-stage-1",
+    "css": "--via-stage-1",
+    "value": "#131C30",
+    "category": "color"
+  },
+  {
+    "name": "via-stage-2",
+    "css": "--via-stage-2",
+    "value": "#0B1220",
+    "category": "color"
+  },
+  {
+    "name": "via-stage-soft",
+    "css": "--via-stage-soft",
+    "value": "#1B273F",
     "category": "color"
   },
   {
@@ -975,6 +993,9 @@ export type TokenName =
   | 'via-navy-80'
   | 'via-navy-darker'
   | 'via-navy-deep'
+  | 'via-stage-1'
+  | 'via-stage-2'
+  | 'via-stage-soft'
   | 'via-success'
   | 'via-surface'
   | 'via-surface-elev'

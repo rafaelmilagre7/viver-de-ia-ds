@@ -16,7 +16,7 @@
   width: 42px;
   height: 24px;
   border-radius: 999px;
-  background: var(--via-gray-300);
+  background: var(--via-stage-1);
   border: none;
   cursor: pointer;
   transition: background 200ms var(--via-ease);

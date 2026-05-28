@@ -272,7 +272,7 @@
 
 .vds-mm-r h3 em {
   font-style: normal;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

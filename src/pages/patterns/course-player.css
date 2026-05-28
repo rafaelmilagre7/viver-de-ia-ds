@@ -150,7 +150,7 @@
   top: 12px;
   bottom: 12px;
   width: 2px;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   border-radius: 0 2px 2px 0;
   box-shadow: 0 0 8px var(--via-navy-20);
 }
@@ -276,7 +276,7 @@
 }
 
 .vds-cp-lesson.playing .vds-cp-lesson-mark {
-  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
   color: var(--via-white);
   border-color: var(--via-navy-25);
   box-shadow:
@@ -543,7 +543,7 @@
 .vid-played {
   position: absolute;
   inset: 0 auto 0 0;
-  background: linear-gradient(90deg, var(--via-white), var(--via-gray-300));
+  background: linear-gradient(90deg, var(--via-white), var(--via-stage-1));
   border-radius: 999px;
   box-shadow: 0 0 8px var(--via-navy-20);
 }

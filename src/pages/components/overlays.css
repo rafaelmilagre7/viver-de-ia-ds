@@ -10,7 +10,7 @@
   position: relative;
   border-radius: 22px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+  background: linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
   border: 1px solid var(--via-border-soft);
   min-height: 520px;
   isolation: isolate;
@@ -44,6 +44,8 @@
   display: flex;
   flex-direction: column;
 }
+/* drawer = chrome de navegação · acompanha o tema (era branco fixo) */
+[data-theme="dark"] .vds-drawer { background: rgba(19, 28, 48, 0.96); }
 
 .vds-drawer header {
   display: flex;
@@ -406,7 +408,7 @@
   top: 12px;
   bottom: 12px;
   width: 3px;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   border-radius: 0 3px 3px 0;
   box-shadow: 0 0 10px var(--via-navy-20);
 }
@@ -974,7 +976,7 @@
   border-radius: 22px;
   background:
     radial-gradient(620px 280px at 50% 0%, var(--via-navy-04), transparent 70%),
-    linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+    linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
 }

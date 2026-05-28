@@ -468,7 +468,7 @@
 }
 
 .cmu-member-dot.online { background: #1F8A5B; }
-.cmu-member-dot.away { background: var(--via-gray-400); }
+.cmu-member-dot.away { background: var(--via-stage-2); }
 
 .cmu-members li strong {
   font-size: 13px;

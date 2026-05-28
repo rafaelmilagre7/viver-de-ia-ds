@@ -190,7 +190,7 @@
 }
 
 .vds-pod.playing::before {
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   box-shadow: 0 0 12px var(--via-navy-20);
   opacity: 1;
 }

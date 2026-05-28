@@ -248,7 +248,7 @@
   top: 12px;
   bottom: 12px;
   width: 3px;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   border-radius: 0 3px 3px 0;
   box-shadow: 0 0 12px var(--via-navy-20);
 }

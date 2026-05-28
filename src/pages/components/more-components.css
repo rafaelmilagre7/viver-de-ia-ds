@@ -425,11 +425,11 @@
   height: 11px;
   border-radius: 999px;
   border: 2px solid var(--via-white);
-  background: var(--via-gray-400);
+  background: var(--via-stage-2);
 }
 .vds-avgroup-dot.live { background: var(--via-success); box-shadow: 0 0 0 2px rgba(31,138,91,0.20); }
 .vds-avgroup-dot.idle { background: var(--via-navy); }
-.vds-avgroup-dot.off { background: var(--via-gray-400); }
+.vds-avgroup-dot.off { background: var(--via-stage-2); }
 .vds-avgroup-more {
   display: inline-flex;
   align-items: center;

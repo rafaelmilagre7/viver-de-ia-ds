@@ -202,7 +202,7 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   box-shadow: 0 0 8px var(--via-navy-25);
 }
 
@@ -342,7 +342,7 @@
   background: linear-gradient(180deg, var(--via-coral-deep, var(--via-coral-deep)), var(--via-coral, var(--via-coral)));
 }
 .vds-terminal-dots span:nth-child(2) {
-  background: linear-gradient(180deg, var(--via-gray-400), var(--via-ink-2));
+  background: linear-gradient(180deg, var(--via-stage-2), var(--via-ink-2));
 }
 .vds-terminal-dots span:nth-child(3) {
   background: linear-gradient(180deg, #4ED566, #28C840);

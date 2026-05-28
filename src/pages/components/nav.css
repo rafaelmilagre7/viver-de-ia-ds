@@ -9,7 +9,7 @@
 .via-nav-stage.light {
   background:
     radial-gradient(540px 220px at 15% 0%, var(--via-navy-04), transparent 60%),
-    linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+    linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
   border: 1px solid var(--via-border-soft);
 }
 

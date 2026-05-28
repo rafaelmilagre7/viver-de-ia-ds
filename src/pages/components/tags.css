@@ -4,7 +4,7 @@
   background:
     radial-gradient(ellipse 70% 60% at 20% 0%, var(--via-navy-10) 0%, transparent 60%),
     radial-gradient(ellipse 60% 80% at 100% 100%, var(--via-navy-06) 0%, transparent 60%),
-    linear-gradient(135deg, var(--via-white) 0%, var(--via-gray-200) 100%);
+    linear-gradient(135deg, var(--via-white) 0%, var(--via-stage-soft) 100%);
 }
 .via-tag-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 

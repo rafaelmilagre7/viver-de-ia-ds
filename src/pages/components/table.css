@@ -402,7 +402,7 @@
 }
 
 .vds-tbl tbody tr.sel td:first-child::before {
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   opacity: 1;
   box-shadow: 0 0 8px var(--via-navy-20);
 }

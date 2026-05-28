@@ -8,7 +8,7 @@
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.30) 0%, transparent 55%),
     radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.26) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-gray-300) 0%, var(--via-gray-400) 100%);
+    linear-gradient(135deg, var(--via-stage-1) 0%, var(--via-stage-2) 100%);
   border: 0.5px solid var(--via-navy-20);
 }
 .vds-tier {

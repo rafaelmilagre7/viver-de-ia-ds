@@ -9,7 +9,7 @@
   border-radius: 32px;
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.18) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-gray-200) 0%, var(--via-gray-300) 100%);
+    linear-gradient(135deg, var(--via-stage-soft) 0%, var(--via-stage-1) 100%);
   border: 0.5px solid var(--via-navy-12);
   display: flex;
   align-items: flex-end;
@@ -440,7 +440,7 @@
   border-radius: 32px;
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.16) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-gray-200) 0%, var(--via-gray-300) 100%);
+    linear-gradient(135deg, var(--via-stage-soft) 0%, var(--via-stage-1) 100%);
   border: 0.5px solid var(--via-navy-12);
   display: flex;
   justify-content: center;

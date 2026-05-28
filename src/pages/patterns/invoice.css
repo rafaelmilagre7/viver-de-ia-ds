@@ -7,7 +7,7 @@
   border-radius: 28px;
   background:
     radial-gradient(900px 380px at 50% 0%, var(--via-navy-05), transparent 70%),
-    linear-gradient(180deg, var(--via-gray-100), var(--via-gray-200));
+    linear-gradient(180deg, var(--via-gray-100), var(--via-stage-soft));
   border: 1px solid var(--via-border-soft);
   display: flex;
   justify-content: center;
@@ -29,6 +29,9 @@
   --via-bg-2: #F7F8FA;
   --via-gray-50: #F7F8FA;
   --via-gray-100: #EEF1F5;
+  --via-stage-soft: #E4E7EC;
+  --via-stage-1: #D0D5DD;
+  --via-stage-2: #98A2B3;
   --via-text: var(--via-gray-700);
   --via-text-primary: var(--via-navy);
   --via-text-body: var(--via-gray-700);
@@ -1242,7 +1245,7 @@
    Modo print preview · simula visual A4 dentro da página
    ============================================ */
 .vds-receipt-stage[data-print-preview="on"] {
-  background: var(--via-gray-200);
+  background: var(--via-stage-soft);
   padding: 32px;
   border-radius: 18px;
 }

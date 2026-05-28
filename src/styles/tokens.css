@@ -138,6 +138,14 @@
      gray-200+ NÃO adaptam (são usados como texto claro). */
   --via-gray-50:  #0F1729;        /* painel sutil · 1 passo acima do canvas */
   --via-gray-100: #17213A;        /* painel · 2 passos acima */
+  /* STAGE · backdrops/wells/avatares que usam gray-200/300/400 como FUNDO.
+     Não dá pra adaptar gray-200/300/400 direto (são usados como TEXTO claro
+     em contexto escuro). Então: tokens de palco que no light valem o mesmo
+     cinza (no-op) e no dark viram superfície escura. Migração via
+     scripts/fix-stage-bg.mjs (só backgrounds). */
+  --via-stage-soft: #1B273F;      /* era gray-200 (#E4E7EC) */
+  --via-stage-1:    #131C30;      /* era gray-300 (#D0D5DD) */
+  --via-stage-2:    #0B1220;      /* era gray-400 (#98A2B3) */
 
   /* =================================================
      TEXT · cores SÓLIDAS (não rgba com opacity)
@@ -248,6 +256,10 @@
      ênfase: keynote, main stage…) · navy-deep não adapta → invisível no dark.
      Vira texto claro pra continuar legível sobre superfícies escuras. */
   --via-accent-warm: var(--via-text-primary);
+  /* coral-dark = texto destrutivo/erro (#8C2C2C) · 42 usos como cor de texto
+     sobre fundo coral-tint · escuro demais no dark → coral CLARO legível,
+     mantendo o sinal "erro/destrutivo" */
+  --via-coral-dark: #E89B9B;
 }
 
 /* Google Search ad · headline azul precisa virar variante dark-safe */

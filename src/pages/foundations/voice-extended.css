@@ -26,7 +26,7 @@
   border-radius: 10px;
   background:
     radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45)),
-    linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+    linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
   border: 0.5px solid var(--via-navy-12);
   color: var(--via-text-primary);
   box-shadow:

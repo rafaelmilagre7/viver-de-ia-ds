@@ -79,7 +79,7 @@
 }
 
 .vds-article .cover.light {
-  background: linear-gradient(135deg, var(--via-gray-100), var(--via-gray-200));
+  background: linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
 }
 
 .vds-article .cover.light::before {

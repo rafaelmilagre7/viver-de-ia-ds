@@ -513,7 +513,7 @@
   top: 8px;
   bottom: 8px;
   width: 3px;
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   border-radius: 0 3px 3px 0;
   box-shadow: 0 0 8px var(--via-navy-20);
 }
@@ -1073,7 +1073,7 @@
 }
 
 .vds-quiz-feedback.ok::before {
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   box-shadow: 0 0 10px var(--via-navy-20);
 }
 

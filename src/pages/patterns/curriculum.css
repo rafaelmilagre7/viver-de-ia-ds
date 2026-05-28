@@ -397,7 +397,7 @@
 }
 
 .vds-lesson.playing::before {
-  background: linear-gradient(180deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
   opacity: 1;
   box-shadow: 0 0 10px var(--via-navy-20);
 }
@@ -431,7 +431,7 @@
 }
 
 .vds-lesson.playing .vds-lesson-icon {
-  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
   color: var(--via-white);
   border-color: var(--via-navy-25);
   box-shadow:
@@ -581,7 +581,7 @@
 }
 
 .vds-lesson.playing .vds-lesson-go:hover {
-  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
 }
 
 /* Certificate card */

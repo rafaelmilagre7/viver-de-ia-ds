@@ -307,7 +307,7 @@
 }
 
 .vds-streak-cell.current.on {
-  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
   border-color: var(--via-navy-30);
   box-shadow: 0 0 12px var(--via-navy-25);
 }
@@ -381,7 +381,7 @@
 .vds-streak-progress > span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(90deg, var(--via-stage-1), var(--via-navy));
   border-radius: 999px;
   box-shadow: 0 0 8px var(--via-navy-20);
 }
@@ -986,7 +986,7 @@
 }
 
 .vds-cohort-marker.accent {
-  background: linear-gradient(135deg, var(--via-gray-300), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
   box-shadow:
     0 0 0 1px var(--via-navy-20),
     0 4px 10px -2px var(--via-navy-20);
