@@ -82,7 +82,10 @@ export function DataTable<T extends Record<string, unknown>>({
     initialSort ?? null,
   );
 
-  const current = sortBy && sortDir ? { key: sortBy, dir: sortDir } : internalSort;
+  const current = useMemo(
+    () => (sortBy && sortDir ? { key: sortBy, dir: sortDir } : internalSort),
+    [sortBy, sortDir, internalSort],
+  );
 
   const sortedData = useMemo(() => {
     if (!current) return data;

@@ -95,19 +95,25 @@ export function Command({
 
   const flat = useMemo(() => filtered.flatMap((g) => g.items), [filtered]);
 
-  // reset on open
-  useEffect(() => {
+  // reset on open — state em render-phase (padrão React), foco fica no effect
+  const [prevOpen, setPrevOpen] = useState(open);
+  if (open !== prevOpen) {
+    setPrevOpen(open);
     if (open) {
       setQuery('');
       setHighlight(0);
-      requestAnimationFrame(() => inputRef.current?.focus());
     }
+  }
+
+  // foco no input ao abrir (side-effect de DOM)
+  useEffect(() => {
+    if (open) requestAnimationFrame(() => inputRef.current?.focus());
   }, [open]);
 
-  // clamp highlight
-  useEffect(() => {
-    if (highlight >= flat.length) setHighlight(Math.max(0, flat.length - 1));
-  }, [flat.length, highlight]);
+  // clamp highlight quando a lista filtrada encolhe — ajuste em render-phase
+  if (highlight >= flat.length) {
+    setHighlight(Math.max(0, flat.length - 1));
+  }
 
   // ESC + body scroll lock
   useEffect(() => {

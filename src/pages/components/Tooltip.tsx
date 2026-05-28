@@ -1,9 +1,9 @@
-import { Link2, Plus, Share2 } from 'lucide-react';
+import { Link2, Plus, Share2, type LucideIcon } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import './tooltip.css';
 
-function Anchor({ tip, pos, icon: Icon, label }: { tip: string; pos: 'top' | 'bottom' | 'right'; icon: any; label: string }) {
+function Anchor({ tip, pos, icon: Icon, label }: { tip: string; pos: 'top' | 'bottom' | 'right'; icon: LucideIcon; label: string }) {
   return (
     <div className="via-tt-item">
       <div className="via-tt-anchor">

@@ -1,4 +1,5 @@
-import { ToastStack, useToasts } from './Toast';
+import { ToastStack } from './Toast';
+import { useToasts } from './useToasts';
 import { Button } from '../Button/Button';
 
 export default {

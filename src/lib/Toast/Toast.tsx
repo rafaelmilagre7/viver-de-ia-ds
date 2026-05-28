@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, type ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { Check, AlertCircle, X, Info } from 'lucide-react';
 import './Toast.css';
 
@@ -84,23 +84,4 @@ export function ToastStack({ toasts, onDismiss, position = 'top-right' }: ToastS
   );
 }
 
-/**
- * useToasts · hook helper que gerencia o stack
- */
-export function useToasts() {
-  const [toasts, setToasts] = useState<ToastItem[]>([]);
-
-  const push = useCallback((toast: Omit<ToastItem, 'id'>) => {
-    const id = `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
-    setToasts((p) => [...p, { ...toast, id }]);
-    return id;
-  }, []);
-
-  const dismiss = useCallback((id: string) => {
-    setToasts((p) => p.filter((t) => t.id !== id));
-  }, []);
-
-  const clear = useCallback(() => setToasts([]), []);
-
-  return { toasts, push, dismiss, clear };
-}
+/* useToasts · hook helper vive em ./useToasts (Fast Refresh) — importe de lá */

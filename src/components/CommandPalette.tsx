@@ -32,14 +32,23 @@ export default function CommandPalette({ open, onClose }: Props) {
 
   const isShowingRecents = !query.trim() && recents.length > 0;
 
-  useEffect(() => {
+  // reset ao abrir — state em render-phase (padrão React), foco fica no effect
+  const [prevOpen, setPrevOpen] = useState(open);
+  if (open !== prevOpen) {
+    setPrevOpen(open);
     if (open) {
       setQuery('');
       setSelected(0);
       setRecents(getRecentEntries(index));
-      setTimeout(() => inputRef.current?.focus(), 60);
     }
-  }, [open, index]);
+  }
+
+  // foco no input ao abrir (side-effect de DOM)
+  useEffect(() => {
+    if (!open) return;
+    const t = setTimeout(() => inputRef.current?.focus(), 60);
+    return () => clearTimeout(t);
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;

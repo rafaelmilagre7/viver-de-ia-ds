@@ -1,4 +1,5 @@
-import { useTheme, ThemeProvider } from '../../lib/theming/theming';
+import { ThemeProvider } from '../../lib/theming/theming';
+import { useTheme } from '../../lib/theming/theming-core';
 import { Button } from '../../lib/Button/Button';
 import { Pill } from '../../lib/Pill/Pill';
 import { Alert } from '../../lib/Alert/Alert';

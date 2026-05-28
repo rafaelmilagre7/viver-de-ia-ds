@@ -31,9 +31,12 @@ export default function Shell() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  useEffect(() => {
+  // fecha o drawer ao trocar de rota — ajuste em render-phase (sem effect)
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setDrawerOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <div className={`vds-shell${drawerOpen ? ' drawer-open' : ''}`}>

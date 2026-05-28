@@ -1,5 +1,5 @@
 import { Plus, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, type Dispatch, type SetStateAction } from 'react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import './tags.css';
@@ -8,7 +8,7 @@ export default function Tags() {
   const [setor, setSetor] = useState<string[]>(['E-commerce', 'Turismo']);
   const [tools, setTools] = useState<string[]>(['Base44']);
 
-  const toggle = (list: string[], setter: any, v: string) =>
+  const toggle = (list: string[], setter: Dispatch<SetStateAction<string[]>>, v: string) =>
     setter(list.includes(v) ? list.filter((x) => x !== v) : [...list, v]);
 
   return (

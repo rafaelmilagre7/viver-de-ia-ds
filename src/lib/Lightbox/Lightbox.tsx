@@ -35,9 +35,14 @@ export interface LightboxProps {
 export function Lightbox({ open, onClose, images, index = 0, showDownload = false }: LightboxProps) {
   const [current, setCurrent] = useState(index);
 
-  useEffect(() => {
+  // reset para o índice inicial quando (re)abre — ajuste em render-phase
+  // (padrão oficial React, evita setState dentro de effect)
+  const [prevKey, setPrevKey] = useState(`${open}:${index}`);
+  const openKey = `${open}:${index}`;
+  if (openKey !== prevKey) {
+    setPrevKey(openKey);
     if (open) setCurrent(index);
-  }, [open, index]);
+  }
 
   const go = useCallback((dir: number) => {
     setCurrent((c) => {

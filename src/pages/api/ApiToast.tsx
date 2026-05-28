@@ -1,4 +1,5 @@
-import { ToastStack, useToasts } from '../../lib/Toast/Toast';
+import { ToastStack } from '../../lib/Toast/Toast';
+import { useToasts } from '../../lib/Toast/useToasts';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
 

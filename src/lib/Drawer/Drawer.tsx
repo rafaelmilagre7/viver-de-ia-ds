@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, useRef, useId, type ReactNode } from 'react';
 import { X } from 'lucide-react';
 import './Drawer.css';
 
@@ -38,7 +38,7 @@ export function Drawer({
   hideClose = false,
 }: DrawerProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
-  const titleId = useRef(`via-drawer-title-${Math.random().toString(36).slice(2, 7)}`);
+  const titleId = useId();
 
   // ESC fecha + lock body scroll
   useEffect(() => {
@@ -72,12 +72,12 @@ export function Drawer({
         className={`via-drawer via-drawer--${side} via-drawer--${size}`}
         role="dialog"
         aria-modal="true"
-        aria-labelledby={title ? titleId.current : undefined}
+        aria-labelledby={title ? titleId : undefined}
       >
         {(title || !hideClose) && (
           <header className="via-drawer__head">
             <div>
-              {title && <h2 id={titleId.current}>{title}</h2>}
+              {title && <h2 id={titleId}>{title}</h2>}
               {description && <p>{description}</p>}
             </div>
             {!hideClose && (

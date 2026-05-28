@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type ReactNode } from 'react';
+import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import './Tooltip.css';
 
 type Side = 'top' | 'bottom' | 'left' | 'right';
@@ -21,7 +21,7 @@ export interface TooltipProps {
 export function Tooltip({ content, children, side = 'top', delay = 200 }: TooltipProps) {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const idRef = useRef(`via-tip-${Math.random().toString(36).slice(2, 8)}`);
+  const tipId = useId();
 
   const show = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -44,12 +44,12 @@ export function Tooltip({ content, children, side = 'top', delay = 200 }: Toolti
       onMouseLeave={hide}
       onFocus={show}
       onBlur={hide}
-      aria-describedby={open ? idRef.current : undefined}
+      aria-describedby={open ? tipId : undefined}
     >
       {children}
       {open && (
         <span
-          id={idRef.current}
+          id={tipId}
           role="tooltip"
           className={`via-tooltip via-tooltip--${side}`}
         >

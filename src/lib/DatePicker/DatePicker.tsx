@@ -64,10 +64,14 @@ export function DatePicker({
   const [view, setView] = useState<Date>(() => startOfMonth(value ?? new Date()));
   const rootRef = useRef<HTMLDivElement>(null);
 
-  // sync view when value changes externally
-  useEffect(() => {
+  // sync view quando value muda externamente — ajuste em render-phase
+  // (padrão oficial React, evita setState dentro de effect)
+  const valueTime = value ? value.getTime() : null;
+  const [prevValueTime, setPrevValueTime] = useState(valueTime);
+  if (valueTime !== prevValueTime) {
+    setPrevValueTime(valueTime);
     if (value) setView(startOfMonth(value));
-  }, [value]);
+  }
 
   // close on outside click + ESC
   useEffect(() => {

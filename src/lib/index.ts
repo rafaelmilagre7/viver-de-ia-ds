@@ -14,7 +14,8 @@ export { Card, type CardProps } from './Card/Card';
 export { Input, type InputProps } from './Input/Input';
 export { Avatar, type AvatarProps } from './Avatar/Avatar';
 export { Icon, type IconProps } from './Icon/Icon';
-export { ToastStack, useToasts, type ToastItem, type ToastStackProps } from './Toast/Toast';
+export { ToastStack, type ToastItem, type ToastStackProps } from './Toast/Toast';
+export { useToasts } from './Toast/useToasts';
 export { Tooltip, type TooltipProps } from './Tooltip/Tooltip';
 export { Modal, type ModalProps } from './Modal/Modal';
 export { Tabs, type TabsProps, type TabItem } from './Tabs/Tabs';
@@ -64,15 +65,14 @@ export { ColorPicker, type ColorPickerProps, type ColorSwatch } from './ColorPic
 /* Tokens · runtime + types · auto-generated from tokens.css */
 export { tokens, tokensList, cssVar, type Token, type TokenName } from './tokens';
 
-/* Theming · ThemeProvider + useTheme + createThemeOverride */
+/* Theming · ThemeProvider (componente) + hook/utils (core) */
+export { ThemeProvider, type ThemeProviderProps } from './theming/theming';
 export {
-  ThemeProvider,
   useTheme,
   applyTheme,
   createThemeOverride,
   type Theme,
   type ThemeMode,
-  type ThemeProviderProps,
   type ThemeOverrides,
   type CreateThemeOverrideOptions,
-} from './theming/theming';
+} from './theming/theming-core';

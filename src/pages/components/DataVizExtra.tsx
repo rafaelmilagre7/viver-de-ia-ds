@@ -40,7 +40,8 @@ function HeatmapSection() {
         const weekend = dow === 0 || dow === 6;
         const base = weekend ? 0.4 : 1.4;
         const seasonal = Math.sin((w / 52) * Math.PI * 2) * 0.6 + 0.6;
-        const noise = Math.random() * 1.4;
+        // deterministic pseudo-noise (GLSL-style hash) — estável entre renders
+        const noise = Math.abs((Math.sin(w * 12.9898 + d * 78.233) * 43758.5453) % 1) * 1.4;
         const v = base + seasonal + noise;
         const intensity = v < 0.6 ? 0 : v < 1.2 ? 1 : v < 2.0 ? 2 : v < 2.6 ? 3 : 4;
         out.push({

@@ -1,4 +1,4 @@
-import { useId, type ChangeEvent, type ReactNode } from 'react';
+import { useId, type ChangeEvent, type CSSProperties, type ReactNode } from 'react';
 import './Slider.css';
 
 type Tone = 'navy' | 'accent' | 'coral';
@@ -81,7 +81,7 @@ export function Slider({
           {showValue && <strong className="via-slider__val mono">{formatValue(value)}</strong>}
         </header>
       )}
-      <div className="via-slider__track-wrap" style={{ ['--via-sl-pct' as any]: `${pct}%` }}>
+      <div className="via-slider__track-wrap" style={{ '--via-sl-pct': `${pct}%` } as CSSProperties}>
         <div className="via-slider__track" aria-hidden="true">
           <div className="via-slider__fill" />
         </div>

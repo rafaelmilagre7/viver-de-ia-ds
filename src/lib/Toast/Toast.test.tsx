@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
-import { useToasts } from './Toast';
+import { useToasts } from './useToasts';
 
 describe('useToasts()', () => {
   it('starts with an empty stack', () => {
