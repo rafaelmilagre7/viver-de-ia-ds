@@ -24,7 +24,7 @@ export default function Pagination() {
           </button>
           {pages.map((p, i) =>
             p === '…' ? (
-              <span key={i} className="ell">…</span>
+              <span key={`ell-${i}`} className="ell">…</span>
             ) : (
               <button
                 key={p}

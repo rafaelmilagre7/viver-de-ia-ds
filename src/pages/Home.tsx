@@ -23,7 +23,7 @@ const sections = [
   },
   {
     eyebrow: 'Componentes',
-    title: '24 blocos vivos',
+    title: '47 blocos vivos',
     body: 'Botões, cards, modais, formulários, tabelas — cada um com variantes, estados e código.',
     to: '/components/buttons',
   },
@@ -48,7 +48,7 @@ export default function Home() {
       <section className="vds-home-hero via-mesh-navy via-noise">
         <span className="vds-home-hero-pill">
           <Layers size={12} strokeWidth={2} />
-          Versão 0.1 · 49 páginas vivas
+          Versão 0.5 · 107 páginas vivas
         </span>
         <h1 className="vds-home-hero-title">
           Marca editorial,<br />
@@ -71,10 +71,10 @@ export default function Home() {
         {/* Stats inline glass-dark */}
         <div className="vds-home-hero-stats">
           {[
-            { n: '11', l: 'Fundamentos' },
-            { n: '24', l: 'Componentes' },
-            { n: '8', l: 'Padrões' },
-            { n: '3', l: 'Páginas-modelo' },
+            { n: '13', l: 'Fundamentos' },
+            { n: '47', l: 'Componentes' },
+            { n: '46', l: 'Padrões' },
+            { n: '10', l: 'Páginas-modelo' },
           ].map((s) => (
             <div key={s.l} className="vds-home-hero-stat">
               <span className="num">{s.n}</span>

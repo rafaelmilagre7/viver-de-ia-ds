@@ -156,7 +156,8 @@ export default function ShowcaseCheckout() {
                   <div className="ckt-pix-qr" aria-hidden="true">
                     <div className="ckt-pix-qr-grid">
                       {Array.from({ length: 64 }).map((_, i) => (
-                        <span key={i} className={Math.random() > 0.5 ? 'on' : ''} />
+                        /* padrão QR determinístico (não re-randomiza no render) */
+                        <span key={i} className={((i * 53 + ((i / 8) | 0) * 19) % 5) < 2 ? 'on' : ''} />
                       ))}
                     </div>
                   </div>
