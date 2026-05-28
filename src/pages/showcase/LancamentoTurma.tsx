@@ -86,7 +86,7 @@ export default function ShowcaseLancamentoTurma() {
     <div className="vds-showcase lt">
       {/* NAV */}
       <header className="lt-nav">
-        <BrandLogo variant="black" size="md" />
+        <BrandLogo variant="auto" size="md" />
         <nav>
           <a href="#metodo">Método</a>
           <a href="#curriculo">Currículo</a>
@@ -325,7 +325,7 @@ export default function ShowcaseLancamentoTurma() {
 
       {/* FOOTER */}
       <footer className="lt-footer">
-        <BrandLogo variant="black" size="sm" />
+        <BrandLogo variant="auto" size="sm" />
         <p>Formação técnico-operativa em IA · viverdeia.ai</p>
         <span>© 2026 Viver de IA</span>
       </footer>

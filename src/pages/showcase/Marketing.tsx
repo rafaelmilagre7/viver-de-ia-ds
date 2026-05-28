@@ -19,7 +19,7 @@ export default function ShowcaseMarketing() {
   return (
     <div className="vds-showcase mk">
       <header className="mk-nav">
-        <BrandLogo variant="black" size="md" />
+        <BrandLogo variant="auto" size="md" />
         <nav>
           <a className="active">Mentoria</a>
           <a>Cases</a>

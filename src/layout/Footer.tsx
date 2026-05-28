@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="vds-footer">
       <div className="vds-footer-inner">
         <div className="vds-footer-brand-col">
-          <BrandLogo variant="black" size="sm" />
+          <BrandLogo variant="auto" size="sm" />
           <p className="vds-footer-tag">
             Design System · uma marca editorial,<br />engenharia de precisão.
           </p>

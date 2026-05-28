@@ -21,7 +21,7 @@ export default function Header({ onOpenSearch, onToggleDrawer, drawerOpen }: Pro
           {drawerOpen ? <X size={18} strokeWidth={2} /> : <Menu size={18} strokeWidth={2} />}
         </button>
         <Link to="/" className="vds-brand" aria-label="Viver de IA — Design System">
-          <BrandLogo variant="black" size="md" />
+          <BrandLogo variant="auto" size="md" />
           <span className="vds-brand-tag">Design System</span>
         </Link>
       </div>

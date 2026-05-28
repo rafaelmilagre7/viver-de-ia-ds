@@ -29,7 +29,7 @@ export default function ShowcaseCheckout() {
     <div className="vds-showcase ckt">
       {/* NAV minimal */}
       <header className="ckt-nav">
-        <BrandLogo variant="black" size="md" />
+        <BrandLogo variant="auto" size="md" />
         <span className="ckt-secure"><Lock size={12} strokeWidth={2.2} /> Pagamento seguro</span>
       </header>
 

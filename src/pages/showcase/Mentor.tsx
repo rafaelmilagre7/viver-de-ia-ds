@@ -39,7 +39,7 @@ export default function ShowcaseMentor() {
     <div className="vds-showcase mtr">
       {/* NAV */}
       <header className="mtr-nav">
-        <BrandLogo variant="black" size="md" />
+        <BrandLogo variant="auto" size="md" />
         <nav>
           <a>Painel</a>
           <a className="active">Mentoria</a>

@@ -40,7 +40,7 @@ function DrawerSection() {
         <div className="vds-drawer-scrim" />
         <aside className="vds-drawer">
           <header>
-            <BrandLogo variant="black" size="sm" />
+            <BrandLogo variant="auto" size="sm" />
             <button className="vds-drawer-close" aria-label="Fechar">
               <X size={14} strokeWidth={2.2} />
             </button>

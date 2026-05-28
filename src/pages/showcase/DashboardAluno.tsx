@@ -34,7 +34,7 @@ export default function ShowcaseDashboardAluno() {
     <div className="vds-showcase dba">
       {/* NAV */}
       <header className="dba-nav">
-        <BrandLogo variant="black" size="md" />
+        <BrandLogo variant="auto" size="md" />
         <nav>
           <a className="active">Painel</a>
           <a>Curso</a>

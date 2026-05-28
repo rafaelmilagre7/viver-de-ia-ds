@@ -58,7 +58,7 @@ export default function ShowcaseComunidade() {
     <div className="vds-showcase cmu">
       {/* NAV */}
       <header className="cmu-nav">
-        <BrandLogo variant="black" size="md" />
+        <BrandLogo variant="auto" size="md" />
         <nav>
           <a>Painel</a>
           <a>Curso</a>

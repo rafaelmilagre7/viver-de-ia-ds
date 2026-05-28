@@ -21,7 +21,23 @@
   position: relative;
   width: 100%;
   max-width: 760px;
-  background: var(--via-gray-50);
+  background: #FDFDFE;
+  /* recibo = papel impresso · sempre claro nos 2 temas (trava os tokens) */
+  --via-surface: #FFFFFF;
+  --via-surface-elev: #FFFFFF;
+  --via-bg: #FFFFFF;
+  --via-bg-2: #F7F8FA;
+  --via-gray-50: #F7F8FA;
+  --via-gray-100: #EEF1F5;
+  --via-text: var(--via-gray-700);
+  --via-text-primary: var(--via-navy);
+  --via-text-body: var(--via-gray-700);
+  --via-text-muted: var(--via-gray-500);
+  --via-text-faint: var(--via-gray-400);
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-06: rgba(10, 31, 59, 0.06);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
   border-radius: 18px;
   padding: 56px 56px 36px;
   border: 1px solid var(--via-navy-08);

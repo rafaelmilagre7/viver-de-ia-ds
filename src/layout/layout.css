@@ -358,7 +358,15 @@
 /* Brand logo · default: ambos visíveis em block */
 .vds-brand-mono, .vds-brand-wordmark { display: block; }
 
-/* Mobile estrito · 560-px-down: esconder wordmark, só monograma */
+/* Logo "auto" · alterna preto↔branco conforme o tema (variant="auto").
+   Mostra preto no claro, branco no escuro · troca instantânea no toggle. */
+.vds-brand-img--dark { display: none; }
+[data-theme="dark"] .vds-brand-img--light { display: none; }
+[data-theme="dark"] .vds-brand-img--dark { display: block; }
+
+/* Mobile estrito · 560-px-down: esconder wordmark, só monograma
+   (precisa vencer a regra de tema acima → repete com [data-theme]) */
 @media (max-width: 560px) {
   .vds-brand-wordmark { display: none; }
+  [data-theme="dark"] .vds-brand-wordmark { display: none; }
 }

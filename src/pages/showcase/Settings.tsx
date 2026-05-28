@@ -22,7 +22,7 @@ export default function Settings() {
   return (
     <div className="vds-showcase al">
       <header className="al-nav">
-        <BrandLogo variant="black" size="md" />
+        <BrandLogo variant="auto" size="md" />
         <nav>
           <a>Painel</a>
           <a>Mentoria</a>
