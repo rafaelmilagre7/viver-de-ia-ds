@@ -185,6 +185,10 @@ const ShowcaseAluno = lazy(() => import('./pages/showcase/Aluno'));
 const ShowcaseLogin = lazy(() => import('./pages/showcase/Login'));
 const ShowcaseSettings = lazy(() => import('./pages/showcase/Settings'));
 const ShowcaseLancamento = lazy(() => import('./pages/showcase/LancamentoTurma'));
+const ShowcaseDashboardAluno = lazy(() => import('./pages/showcase/DashboardAluno'));
+const ShowcaseComunidade = lazy(() => import('./pages/showcase/Comunidade'));
+const ShowcaseMentor = lazy(() => import('./pages/showcase/Mentor'));
+const ShowcaseCheckout = lazy(() => import('./pages/showcase/Checkout'));
 
 // Guidelines
 const Voice = lazy(() => import('./pages/guidelines/Voice'));
@@ -378,6 +382,10 @@ export default function App() {
                   <Route path="login" element={<ShowcaseLogin />} />
                   <Route path="settings" element={<ShowcaseSettings />} />
                   <Route path="lancamento" element={<ShowcaseLancamento />} />
+                  <Route path="dashboard-aluno" element={<ShowcaseDashboardAluno />} />
+                  <Route path="comunidade" element={<ShowcaseComunidade />} />
+                  <Route path="mentor" element={<ShowcaseMentor />} />
+                  <Route path="checkout" element={<ShowcaseCheckout />} />
                   <Route path=":slug" element={<PlaceholderPage area="Páginas-modelo" />} />
                 </Route>
 

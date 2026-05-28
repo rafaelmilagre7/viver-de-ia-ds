@@ -170,6 +170,10 @@ export const navigation: NavGroup[] = [
     items: [
       { label: 'Marketing (viverdeia.ai)', to: '/showcase/marketing' },
       { label: 'Lançamento de turma (clonável)', to: '/showcase/lancamento' },
+      { label: 'Dashboard do aluno', to: '/showcase/dashboard-aluno' },
+      { label: 'Comunidade', to: '/showcase/comunidade' },
+      { label: 'Perfil do mentor', to: '/showcase/mentor' },
+      { label: 'Checkout (3 etapas)', to: '/showcase/checkout' },
       { label: 'Leaders AI Conference', to: '/showcase/leaders-ai' },
       { label: 'Área do aluno', to: '/showcase/aluno' },
       { label: 'Login / autenticação', to: '/showcase/login' },
