@@ -189,8 +189,9 @@
 }
 
 .vds-bento-cta.primary {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-navy-20);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -230,7 +231,7 @@
   margin: 10px 0 0;
   font-size: 54px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.034em;
   line-height: 1.0;
   font-feature-settings: 'tnum' 1;
@@ -246,7 +247,7 @@
 }
 
 .vds-bento-num.accent {
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -274,7 +275,7 @@
 }
 
 .vds-bento-delta strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 700;
   letter-spacing: 0;
 }
@@ -303,7 +304,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   white-space: nowrap;
   line-height: 1.4;
 }
@@ -360,11 +361,12 @@
 }
 
 .vds-bento-quote-mark {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   font-size: 11.5px;
   font-weight: 500;
   letter-spacing: -0.006em;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   padding: 5px 12px;
   border-radius: 999px;
   background: var(--via-surface-onnavy);
@@ -388,7 +390,7 @@
 
 .vds-bento-card.quote blockquote em {
   font-style: normal;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-weight: 600;
   letter-spacing: -0.026em;
 }
@@ -423,7 +425,7 @@
   display: block;
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
 
@@ -527,6 +529,7 @@
 }
 
 .vds-bento-live-cta {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -535,7 +538,7 @@
   border-radius: 999px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
@@ -565,7 +568,7 @@
 }
 
 .vds-bento-card.next header svg {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-bento-next-title {
@@ -611,8 +614,9 @@
 }
 
 .vds-bento-avs .av.more {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1.5px solid var(--via-border-soft);
   font-size: 9px;
 }

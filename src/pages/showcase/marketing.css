@@ -30,11 +30,11 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   cursor: pointer;
   transition: color 180ms;
 }
-.mk-nav a:hover, .mk-nav a.active { color: var(--via-navy); }
+.mk-nav a:hover, .mk-nav a.active { color: var(--via-text-primary); }
 .mk-nav button {
   padding: 11px 18px;
   background: var(--via-navy);
@@ -88,7 +88,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 32px;
   white-space: nowrap;
   line-height: 1.4;
@@ -107,16 +107,16 @@
   font-weight: 500;
   line-height: 0.94;
   letter-spacing: -0.04em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0;
 }
-.mk-hero h1 em { font-style: normal; font-weight: 500; color: var(--via-gray-500); }
+.mk-hero h1 em { font-style: normal; font-weight: 500; color: var(--via-text-muted); }
 .mk-hero .lede {
   font-family: var(--via-font);
   font-size: 19px;
   font-weight: 400;
   line-height: 1.55;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   max-width: 540px;
   margin-top: 32px;
 }
@@ -152,7 +152,7 @@
 }
 .mk-hero .btn.ghost {
   background: transparent;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   padding: 16px 18px;
 }
 .mk-hero .btn.ghost:hover {
@@ -179,7 +179,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .glass-stack .g-num {
   font-family: var(--via-font-display);
@@ -203,10 +203,10 @@
 .glass-stack .g-sub {
   font-family: var(--via-font);
   font-size: 12px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 10px 0 0;
 }
-.glass-stack .g-sub em { font-family: var(--via-font-display); font-style: normal; color: var(--via-navy); font-weight: 400; }
+.glass-stack .g-sub em { font-family: var(--via-font-display); font-style: normal; color: var(--via-text-primary); font-weight: 400; }
 
 /* ---- SECTIONS ---- */
 .mk-section { padding: 96px 48px; max-width: 1280px; margin: 0 auto; }
@@ -216,12 +216,12 @@
   font-size: clamp(36px, 4.5vw, 56px);
   font-weight: 500;
   letter-spacing: -0.035em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 12px 0 0;
   line-height: 1.05;
   max-width: 800px;
 }
-.mk-section-h h2 em { font-style: normal; color: var(--via-gray-500); font-weight: 500; }
+.mk-section-h h2 em { font-style: normal; color: var(--via-text-muted); font-weight: 500; }
 
 .mk-feat-grid {
   position: relative;
@@ -271,7 +271,7 @@
   width: 40px; height: 40px;
   border-radius: 10px;
   background: var(--via-navy-08);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -282,15 +282,15 @@
   font-size: 24px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 8px;
 }
-.mk-feat h3 em { font-style: normal; color: var(--via-gray-500); }
+.mk-feat h3 em { font-style: normal; color: var(--via-text-muted); }
 .mk-feat p {
   font-family: var(--via-font);
   font-size: 13px;
   line-height: 1.55;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0;
 }
 
@@ -342,7 +342,7 @@
   font-family: var(--via-font-display);
   font-size: 18px;
   font-weight: 400;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 .mk-case .sector {
@@ -350,7 +350,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   padding: 4px 10px;
   border: 0.5px solid var(--via-navy-12);
   border-radius: 999px;
@@ -361,7 +361,7 @@
   font-family: var(--via-font-display);
   font-size: 24px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin: 0;
@@ -378,7 +378,7 @@
   font-size: 36px;
   font-weight: 500;
   letter-spacing: -0.04em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .mk-case .l {
   font-family: var(--via-font);
@@ -386,7 +386,7 @@
   font-weight: 500;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .mk-case .link {
   display: inline-flex;
@@ -397,7 +397,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
   margin-top: auto;
 }
@@ -442,7 +442,7 @@
   gap: 12px;
   padding: 18px 32px;
   background: var(--via-surface);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
@@ -467,13 +467,13 @@
   font-family: var(--via-font);
   font-weight: 600;
   letter-spacing: 0.32em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-size: 11px;
 }
 .mk-footer .meta {
   font-family: var(--via-font);
   font-size: 12px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 
 @media (max-width: 960px) {

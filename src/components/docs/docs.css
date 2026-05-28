@@ -9,7 +9,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   margin: 0;
 }
 
@@ -25,20 +25,20 @@
   font-size: clamp(40px, 5.4vw, 64px);
   line-height: 1.04;
   letter-spacing: -0.025em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 20px;
 }
 .vds-docs-title em {
   font-family: var(--via-font-display);
   font-style: normal;
   font-weight: 400;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-docs-lede {
   font-family: var(--via-font);
   font-size: 19px;
   line-height: 1.55;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0;
   max-width: 640px;
 }
@@ -63,13 +63,13 @@
   font-size: 32px;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0;
 }
 .vds-section-meta {
   font-family: var(--via-font-mono);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -94,14 +94,14 @@
   font-family: var(--via-font);
   font-size: 16px;
   line-height: 1.65;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0 0 16px;
   max-width: 640px;
 }
 .vds-section-body p em {
   font-family: var(--via-font-display);
   font-style: italic;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 400;
 }
 
@@ -168,12 +168,12 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-swatch-hex {
   font-family: var(--via-font-mono);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-swatch-token {
   font-family: var(--via-font-mono);
@@ -199,24 +199,24 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   padding-bottom: 12px;
 }
 .vds-token-table td.tok {
   font-family: var(--via-font-mono);
   font-size: 12px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   width: 35%;
 }
 .vds-token-table td.val {
   font-family: var(--via-font-mono);
   font-size: 12px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   width: 20%;
 }
 .vds-token-table td.use {
   font-size: 13px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
 }
 
 /* ---- Code block ---- */
@@ -228,7 +228,7 @@
   padding: 18px 20px;
   font-family: var(--via-font-mono);
   font-size: 12.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1.6;
   overflow-x: auto;
   white-space: pre;
@@ -240,7 +240,7 @@
   padding: 2px 6px;
   border-radius: var(--via-radius-xs);
   background: var(--via-gray-100);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* ---- Stage (for live demos) ---- */
@@ -288,18 +288,18 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0;
 }
 .vds-callout-info p {
   font-family: var(--via-font);
   font-size: 14px;
   line-height: 1.6;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0;
 }
 .vds-callout.warning { background: var(--via-navy-04); border-color: var(--via-navy-25); }
-.vds-callout.warning h4 { color: var(--via-navy-deep); }
+.vds-callout.warning h4 { color: var(--via-text-primary); }
 
 /* ---- Inline pill ---- */
 .vds-pill {
@@ -314,7 +314,7 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   background: var(--via-navy-04);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 0.5px solid var(--via-navy-12);
 }
 
@@ -329,7 +329,9 @@
   padding: 20px;
   border-radius: var(--via-radius-md);
   border: 0.5px solid var(--via-navy-12);
-  background: var(--via-bg);
+  /* bg-2 (não bg) · senão no dark o card fica idêntico à página = some */
+  background: var(--via-bg-2);
+  color: var(--via-text-body);
 }
 .vds-do { border-left: 2px solid var(--via-success); }
 .vds-dont { border-left: 2px solid var(--via-danger); }

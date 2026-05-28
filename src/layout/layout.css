@@ -44,13 +44,13 @@
   cursor: pointer;
   transition: var(--via-t);
 }
-.vds-drawer-toggle:hover { background: var(--via-navy-08); color: var(--via-navy); }
+.vds-drawer-toggle:hover { background: var(--via-navy-08); color: var(--via-text-primary); }
 
 .vds-brand {
   display: flex;
   align-items: center;
   gap: 14px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-decoration: none;
 }
 .vds-brand-mark {
@@ -121,7 +121,7 @@
   border-radius: var(--via-radius-pill);
   transition: var(--via-t);
 }
-.vds-header-link:hover { color: var(--via-navy); background: var(--via-navy-04); }
+.vds-header-link:hover { color: var(--via-text-primary); background: var(--via-navy-04); }
 
 /* ---------- SIDEBAR ---------- */
 .vds-sidebar {
@@ -276,7 +276,7 @@
   text-decoration: none;
   transition: var(--via-t);
 }
-.vds-footer-col li a:hover { color: var(--via-navy); }
+.vds-footer-col li a:hover { color: var(--via-text-primary); }
 .vds-footer-h {
   font-family: var(--via-font);
   font-size: 10px;

@@ -89,15 +89,15 @@
   font-size: clamp(40px, 5vw, 64px);
   font-weight: 500;
   letter-spacing: -0.035em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 18px 0 16px;
   line-height: 1.02;
 }
-.al-hero h1 em { font-style: normal; color: var(--via-gray-500); }
+.al-hero h1 em { font-style: normal; color: var(--via-text-muted); }
 .al-hero .lede {
   font-family: var(--via-font);
   font-size: 17px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   line-height: 1.5;
   max-width: 540px;
   margin: 0;
@@ -131,7 +131,7 @@
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 12px 24px -6px var(--via-navy-60);
 }
-.al-cta-row .btn.ghost { background: transparent; color: var(--via-navy); border-color: var(--via-border-soft); }
+.al-cta-row .btn.ghost { background: transparent; color: var(--via-text-primary); border-color: var(--via-border-soft); }
 .al-cta-row .btn.ghost:hover { background: var(--via-navy-04); }
 
 .al-progress {
@@ -181,14 +181,14 @@
   font-size: 38px;
   font-weight: 500;
   letter-spacing: -0.03em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
 }
-.al-progress .pct em { font-style: normal; color: var(--via-gray-500); font-size: 18px; margin-left: 2px; font-weight: 500; }
+.al-progress .pct em { font-style: normal; color: var(--via-text-muted); font-size: 18px; margin-left: 2px; font-weight: 500; }
 .al-progress .sub {
   font-family: var(--via-font);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   margin: 0;
 }
 
@@ -209,11 +209,11 @@
   font-size: 28px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 6px 0 0;
   width: 100%;
 }
-.al-row-h h2 em { font-style: normal; color: var(--via-gray-500); }
+.al-row-h h2 em { font-style: normal; color: var(--via-text-muted); }
 .al-row-h .ico-mut { color: var(--via-gray-400); }
 
 .al-modules ol { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
@@ -234,7 +234,7 @@
   width: 44px; height: 44px;
   border-radius: 999px;
   background: var(--via-gray-100);
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -253,7 +253,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .al-modules .t {
   display: block;
@@ -261,13 +261,13 @@
   font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.015em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-top: 2px;
 }
 .al-modules .dur {
   font-family: var(--via-font);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 
 .al-side { display: flex; flex-direction: column; gap: 14px; }
@@ -289,12 +289,12 @@
 .al-side .next .t {
   font-family: var(--via-font-mono);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .al-side .next .l {
   font-family: var(--via-font);
   font-size: 13px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
   line-height: 1.4;
 }
@@ -302,12 +302,12 @@
   font-family: var(--via-font);
   font-size: 12px;
   line-height: 1.55;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   padding: 8px 0;
   border-bottom: 0.5px solid var(--via-navy-08);
 }
 .al-side .act li:last-child { border-bottom: none; }
-.al-side .act strong { color: var(--via-navy); font-weight: 700; }
+.al-side .act strong { color: var(--via-text-primary); font-weight: 700; }
 
 .al-side .mini-cta {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
@@ -346,7 +346,7 @@
   gap: 8px;
   padding: 9px 16px;
   background: var(--via-surface);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);

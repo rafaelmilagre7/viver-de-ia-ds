@@ -9,6 +9,7 @@
 .via-tag-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 
 .via-tag {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -18,7 +19,7 @@
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-surface-onnavy);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -55,7 +56,7 @@
   background: rgba(255,255,255,0.30);
   backdrop-filter: blur(12px);
   border: 1px dashed var(--via-navy-25);
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   box-shadow: none;
 }
 .via-tag.add::before { display: none; }

@@ -230,7 +230,7 @@
   color: rgba(0,0,0,0.90);
 }
 .ig-caption strong { font-weight: 700; }
-.ig-caption span { color: var(--via-navy); font-weight: 500; }
+.ig-caption span { color: var(--via-text-primary); font-weight: 500; }
 
 /* ============ INSTAGRAM STORY ============ */
 .vds-story {
@@ -329,10 +329,11 @@
   margin: 16px 0 24px;
 }
 .story-cta {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   align-self: flex-start;
   padding: 12px 22px;
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);

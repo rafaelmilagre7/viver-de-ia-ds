@@ -90,7 +90,7 @@
   font-family: var(--via-font);
   font-size: 22px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.022em;
   margin: 0;
   line-height: 1.2;
@@ -152,7 +152,7 @@
 
 .via-modal .btn-ghost:hover {
   background: var(--via-navy-04);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-modal .btn-primary {

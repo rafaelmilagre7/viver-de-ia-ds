@@ -37,7 +37,7 @@
   background: var(--via-surface);
   font-family: inherit;
   font-size: 14px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   outline: none;
   transition: border-color 160ms ease, box-shadow 200ms ease;
   font-feature-settings: 'tnum' 1;
@@ -58,7 +58,7 @@
 
 .vds-form-hint em {
   font-style: normal;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -99,7 +99,7 @@
 
 .vds-dp-detail-title strong {
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-size: 13px;
   letter-spacing: -0.01em;
   text-transform: none;
@@ -178,7 +178,7 @@
 .vds-dp-month {
   font-size: 20px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.022em;
 }
 
@@ -196,7 +196,7 @@
   border-radius: 9px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -311,7 +311,7 @@
   border-radius: 999px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   font-size: 12px;
   font-weight: 500;
@@ -385,7 +385,7 @@
 }
 
 .vds-dp-cell.in-range:not(.sel) .vds-dp-num {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -400,7 +400,7 @@
 
 .vds-dp-cell.sel.edge-start .vds-dp-num,
 .vds-dp-cell.sel.edge-end .vds-dp-num {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 700;
 }
 
@@ -440,7 +440,7 @@
 .vds-dp-range-summary strong {
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
   font-feature-settings: 'tnum' 1;
 }
@@ -470,7 +470,7 @@
   font-style: normal;
   font-size: 16px;
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.02em;
   font-feature-settings: 'tnum' 1;
 }
@@ -511,7 +511,7 @@
 
 .vds-dp-cell.today:not(.sel) .vds-dp-num {
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* Selected — fill navy peso editorial */
@@ -554,7 +554,7 @@
   border-radius: 999px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-size: 11px;
   font-weight: 500;
   cursor: pointer;
@@ -588,7 +588,7 @@
   transition: color 140ms ease;
 }
 
-.vds-dp-clear:hover { color: var(--via-navy); }
+.vds-dp-clear:hover { color: var(--via-text-primary); }
 
 /* ============================================
    Combobox · editorial
@@ -640,7 +640,7 @@
   background: transparent;
   outline: none;
   font-size: 14px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   letter-spacing: -0.005em;
 }
@@ -656,7 +656,7 @@
 
 .vds-combobox-trigger .chev.rot {
   transform: rotate(180deg);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-combobox-list {
@@ -722,7 +722,7 @@
   height: 32px;
   border-radius: 9px;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -737,7 +737,7 @@
   margin: 0;
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -801,7 +801,7 @@
   padding: 6px 8px 6px 12px;
   border-radius: 999px;
   background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-05));
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: -0.005em;
@@ -813,7 +813,7 @@
   height: 18px;
   border-radius: 50%;
   background: var(--via-navy-16);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: none;
   display: inline-flex;
   align-items: center;
@@ -834,7 +834,7 @@
   background: transparent;
   outline: none;
   font-size: 13px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   padding: 6px 4px;
   letter-spacing: -0.005em;
@@ -892,7 +892,7 @@
   border-radius: 999px;
   background: var(--via-surface);
   border: 1px dashed var(--via-navy-20);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-size: 11.5px;
   font-weight: 500;
   cursor: pointer;
@@ -1072,14 +1072,14 @@
 .vds-range-summary strong {
   font-size: 16px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.015em;
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-range-summary > div.span strong {
   font-size: 22px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-range-summary em {
@@ -1138,7 +1138,7 @@
 }
 
 .vds-star.on {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   filter: drop-shadow(0 2px 4px var(--via-navy-20));
 }
 
@@ -1160,7 +1160,7 @@
 .vds-rating-val strong {
   font-size: 32px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.028em;
 }
 
@@ -1175,7 +1175,7 @@
   margin: 0;
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -1233,7 +1233,7 @@
   margin: 0 0 6px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -1242,7 +1242,7 @@
   font-family: var(--via-font-mono);
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1323,7 +1323,7 @@
   font-family: var(--via-font-mono);
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: transparent;
   letter-spacing: 0.02em;
 }

@@ -379,7 +379,7 @@
 }
 
 .vds-quote-mark {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   opacity: 0.32;
   flex-shrink: 0;
 }
@@ -389,7 +389,7 @@
   font-weight: 400;
   line-height: 1.32;
   letter-spacing: -0.016em;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   margin: auto 0;
   max-width: 540px;
   /* sem display:flex · texto inline natural com em italic */
@@ -397,7 +397,7 @@
 
 .vds-quote-body em {
   font-style: italic;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
   letter-spacing: -0.018em;
 }
@@ -425,7 +425,7 @@
   font-weight: 500;
   letter-spacing: -0.014em;
   line-height: 1.26;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   margin: 0;
   max-width: 540px;
   flex: 0 0 auto;
@@ -433,7 +433,7 @@
 
 .vds-slide-content-h3 em {
   font-style: italic;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 400;
   opacity: 0.72;
 }
@@ -481,7 +481,7 @@
   display: block;
   font-size: 11.5px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   margin-bottom: 1px;
   letter-spacing: -0.006em;
   line-height: 1.28;
@@ -539,6 +539,7 @@
 }
 
 .vds-slide-cta {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -546,7 +547,7 @@
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   border-radius: 999px;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-size: 12.5px;
   font-weight: 600;
   text-decoration: none;
@@ -618,7 +619,7 @@
 .vds-anatomy-name {
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   margin: 0 0 4px;
   letter-spacing: -0.008em;
 }

@@ -87,7 +87,9 @@
 }
 .vds-btn.primary {
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  /* superfície SEMPRE branca · re-pina texto pra navy nos 2 temas */
+  --via-text-primary: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow: 0 8px 24px rgba(10, 31, 59, 0.38), inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-btn.primary::before {
@@ -256,14 +258,14 @@
   font-size: 24px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 4px 0 0;
 }
 .vds-home-card-body {
   font-family: var(--via-font);
   font-size: 14px;
   line-height: 1.55;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0;
 }
 .vds-home-card-arrow {
@@ -280,7 +282,7 @@
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid var(--via-edge-hi);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 12px var(--via-navy-06);
   z-index: 2 !important;
   transition: var(--via-t);
@@ -290,6 +292,14 @@
   border-color: rgba(10,31,59,0.95);
   color: var(--via-white);
   box-shadow: 0 8px 20px var(--via-navy-30);
+}
+/* Dark: chip branco vira chip de vidro escuro sutil (senão 3 bolinhas
+   brancas berrantes nos cantos dos cards) · seta clara · pop no hover */
+[data-theme="dark"] .vds-home-card-arrow {
+  background: var(--via-navy-08);
+  color: var(--via-text-primary);
+  border-color: var(--via-border);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 12px rgba(0,0,0,0.25);
 }
 
 /* ---- Home stats ---- */
@@ -427,12 +437,12 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-brand-tile-desc {
   font-family: var(--via-font);
   font-size: 12px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 
 /* ---- Spacing scale visual em atmosfera ---- */
@@ -472,12 +482,12 @@
   font-family: var(--via-font-mono);
   font-size: 12px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-spacing-px {
   font-family: var(--via-font-mono);
   font-size: 12px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
 }
 .vds-spacing-bar {
   height: 10px;
@@ -535,12 +545,12 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-radii-value {
   font-family: var(--via-font-mono);
   font-size: 14px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* ---- Shadow tiles flutuando real ---- */
@@ -582,7 +592,7 @@
   font-family: var(--via-font-mono);
   font-size: 11px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: 0.08em;
   transition: var(--via-t);
 }
@@ -694,7 +704,7 @@
 }
 
 .vds-type-sample {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -723,7 +733,7 @@
   gap: 8px;
   border: 0.5px solid var(--via-navy-08);
   border-radius: var(--via-radius-md);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   transition: var(--via-t);
 }
 .vds-icon-cell:hover {
@@ -733,5 +743,5 @@
 .vds-icon-cell span {
   font-family: var(--via-font-mono);
   font-size: 9px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }

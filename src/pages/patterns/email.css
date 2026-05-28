@@ -32,14 +32,14 @@
   border-radius: 999px;
   background: transparent;
   border: none;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: var(--via-t);
 }
-.vds-email-toolbar button:hover { background: var(--via-navy-08); color: var(--via-navy); }
+.vds-email-toolbar button:hover { background: var(--via-navy-08); color: var(--via-text-primary); }
 
 .vds-email-meta {
   display: flex;
@@ -64,23 +64,23 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-email-from span {
   font-family: var(--via-font);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-email-time {
   font-family: var(--via-font-mono);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-email-subject {
   font-family: var(--via-font-display);
   font-size: 22px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.02em;
   margin: 0;
   padding: 4px 28px 24px;
@@ -120,7 +120,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   padding: 6px 12px;
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
@@ -226,11 +226,11 @@
   font-family: var(--via-font);
   font-size: 15px;
   line-height: 1.6;
-  color: var(--via-gray-700);
+  color: var(--via-text-body);
   margin: 0 0 28px;
 }
 .vds-email-template.dark .cnt .lede { color: rgba(255,255,255,0.78); }
-.vds-email-template .lede strong { font-weight: 700; color: var(--via-navy); }
+.vds-email-template .lede strong { font-weight: 700; color: var(--via-text-primary); }
 .vds-email-template.dark .cnt .lede strong { color: var(--via-white); }
 
 /* ---- Glass stats (transactional) ---- */
@@ -269,14 +269,14 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-email-template .glass-stats .g-val {
   font-family: var(--via-font-display);
   font-size: 26px;
   font-weight: 500;
   letter-spacing: -0.025em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
   line-height: 1;
   margin-top: 2px;
@@ -284,7 +284,7 @@
 .vds-email-template .glass-stats .g-sub {
   font-family: var(--via-font);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   margin-top: 2px;
 }
 
@@ -480,7 +480,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   padding: 4px 10px;
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
@@ -493,7 +493,7 @@
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
 }
 .vds-email-template .glass-cases .stat em {
@@ -502,7 +502,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.10em;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   text-transform: uppercase;
   margin-left: 4px;
 }
@@ -510,7 +510,7 @@
   font-family: var(--via-font-display);
   font-size: 18px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 8px;
   letter-spacing: -0.015em;
   line-height: 1.25;
@@ -519,7 +519,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   line-height: 1.55;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0 0 10px;
 }
 .vds-email-template .glass-cases a {
@@ -528,7 +528,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-decoration: none;
   cursor: pointer;
 }
@@ -555,8 +555,9 @@
   box-shadow: 0 8px 24px var(--via-navy-22);
 }
 .vds-email-template.dark .cta {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow: 0 8px 24px rgba(10, 31, 59, 0.36);
 }
 
@@ -574,7 +575,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   margin: 0 0 12px;
 }
 .vds-email-template .ps-card ul {
@@ -591,13 +592,13 @@
   font-family: var(--via-font);
   font-size: 13px;
   line-height: 1.55;
-  color: var(--via-gray-700);
+  color: var(--via-text-body);
 }
 .vds-email-template .ps-card li span {
   font-family: var(--via-font-mono);
   font-size: 12px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   flex-shrink: 0;
   width: 18px;
 }
@@ -617,7 +618,7 @@
   margin: 0 0 6px;
   font-family: var(--via-font);
   font-size: 11px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: 0.04em;
 }
@@ -626,12 +627,12 @@
   margin: 6px 0 0;
   font-family: var(--via-font);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   line-height: 1.5;
 }
 .vds-email-template.dark .ftr-meta { color: rgba(255,255,255,0.45); }
 .vds-email-template .ftr a {
-  color: var(--via-gray-700);
+  color: var(--via-text-body);
   text-decoration: underline;
   font-weight: 600;
 }

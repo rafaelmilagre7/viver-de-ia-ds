@@ -62,27 +62,27 @@
   font-family: var(--via-font);
   font-size: 10px; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-kpi-tile .num-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .vds-kpi-tile .num {
   font-family: var(--via-font-display);
   font-size: 44px; font-weight: 500;
-  letter-spacing: -0.04em; color: var(--via-navy);
+  letter-spacing: -0.04em; color: var(--via-text-primary);
   line-height: 1; font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.vds-kpi-tile .num em { font-style: normal; color: var(--via-gray-500); font-weight: 500; }
+.vds-kpi-tile .num em { font-style: normal; color: var(--via-text-muted); font-weight: 500; }
 .vds-kpi-tile .delta {
   display: inline-flex; align-items: center; gap: 4px;
   font-family: var(--via-font);
   font-size: 12px; font-weight: 700;
   padding: 3px 8px; border-radius: 999px;
 }
-.vds-kpi-tile .delta.up { color: var(--via-navy); background: var(--via-navy-06); border: 1px solid var(--via-navy-12); }
-.vds-kpi-tile .delta.down { color: var(--via-navy-deep); background: var(--via-navy-05); border: 1px solid var(--via-navy-12); }
+.vds-kpi-tile .delta.up { color: var(--via-text-primary); background: var(--via-navy-06); border: 1px solid var(--via-navy-12); }
+.vds-kpi-tile .delta.down { color: var(--via-text-primary); background: var(--via-navy-05); border: 1px solid var(--via-navy-12); }
 .vds-kpi-tile .spark { width: 100%; height: 40px; }
 .vds-kpi-tile .meta {
   font-family: var(--via-font);
-  font-size: 11px; color: var(--via-gray-500);
+  font-size: 11px; color: var(--via-text-muted);
 }

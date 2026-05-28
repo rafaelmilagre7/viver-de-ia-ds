@@ -52,7 +52,7 @@
   flex-shrink: 0;
   transition: color .22s ease;
 }
-.via-tp__field:focus-within .via-tp__icon { color: var(--via-navy); }
+.via-tp__field:focus-within .via-tp__icon { color: var(--via-text-primary); }
 
 .via-tp__cell {
   width: 32px;

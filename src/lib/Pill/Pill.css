@@ -36,11 +36,12 @@
 
 /* Default · navy soft glass */
 .via-pill--default {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-color: var(--via-navy-14);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.78) inset,
     0 0 0 0.5px var(--via-navy-04);
@@ -78,7 +79,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-color: var(--via-navy-16);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.78) inset,

@@ -85,6 +85,7 @@
   justify-content: center;
 }
 .auth-card {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 100%;
   max-width: 440px;
   padding: 40px;
@@ -98,7 +99,7 @@
     0 32px 80px rgba(0,0,0,0.40),
     0 12px 24px rgba(0,0,0,0.20);
   overflow: hidden;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .auth-card header { margin-bottom: 24px; }
 .auth-card header .vds-eyebrow { margin-bottom: 10px; }
@@ -107,14 +108,14 @@
   font-size: 32px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 8px;
 }
 .auth-card .lede {
   font-family: var(--via-font);
   font-size: 13px;
   line-height: 1.55;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0;
 }
 
@@ -136,7 +137,7 @@
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
   transition: var(--via-t);
 }
@@ -150,7 +151,7 @@
   font-family: var(--via-font-mono);
   font-size: 13px;
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .auth-divider {
@@ -176,7 +177,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 
 .auth-form { display: flex; flex-direction: column; gap: 14px; }
@@ -186,7 +187,7 @@
   gap: 10px;
 }
 .auth-form .val-with-icon input { flex: 1; }
-.auth-form .leading-ico { color: var(--via-gray-500); flex-shrink: 0; }
+.auth-form .leading-ico { color: var(--via-text-muted); flex-shrink: 0; }
 .auth-form .btn-ico {
   background: transparent;
   border: none;
@@ -198,7 +199,7 @@
   border-radius: 6px;
   transition: var(--via-t);
 }
-.auth-form .btn-ico:hover { background: var(--via-navy-08); color: var(--via-navy); }
+.auth-form .btn-ico:hover { background: var(--via-navy-08); color: var(--via-text-primary); }
 
 .auth-row {
   display: flex;
@@ -212,7 +213,7 @@
   gap: 10px;
   font-family: var(--via-font);
   font-size: 13px;
-  color: var(--via-gray-700);
+  color: var(--via-text-body);
   cursor: pointer;
 }
 .auth-row .box {
@@ -237,7 +238,7 @@
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
 }
 .auth-row .link:hover { text-decoration: underline; }
@@ -290,10 +291,10 @@
   text-align: center;
   font-family: var(--via-font);
   font-size: 13px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
 }
 .auth-foot a {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 700;
   cursor: pointer;
 }

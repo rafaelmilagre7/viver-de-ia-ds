@@ -121,7 +121,7 @@
 
 .via-nav-l a:hover,
 .via-nav-l a.active {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-nav-l a.active {
@@ -171,8 +171,9 @@
 }
 
 .via-nav-d button {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-navy-20);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,

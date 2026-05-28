@@ -96,7 +96,7 @@
   font-weight: 500;
   letter-spacing: -0.026em;
   line-height: 1.14;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-st-overview h2 em {
@@ -116,7 +116,7 @@
 }
 
 .vds-st-overview-lede strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -140,7 +140,7 @@
   font-family: var(--via-display);
   font-size: 18px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.018em;
 }
 
@@ -194,7 +194,7 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.014em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-st-group-count {
@@ -268,7 +268,7 @@
   border-radius: 10px;
   background: linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,7 +289,7 @@
   margin: 0 0 4px;
   font-size: 13.5px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -303,7 +303,7 @@
 }
 
 .vds-st-row-uptime .mono {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
@@ -329,7 +329,7 @@
 
 .vds-st-pill.ok {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1px solid var(--via-navy-14);
 }
 
@@ -405,7 +405,7 @@
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.018em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-st-incidents > header p {
@@ -427,7 +427,7 @@
 }
 
 .vds-st-incidents-archive:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-st-inc-list {
@@ -550,7 +550,7 @@
   padding: 3px 10px;
   border-radius: 999px;
   background: var(--via-navy-05);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1px solid var(--via-navy-14);
   white-space: nowrap;
   line-height: 1.4;
@@ -581,7 +581,7 @@
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.018em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* Updates */
@@ -614,7 +614,7 @@
 }
 
 .vds-st-inc-update-text {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
 
@@ -629,7 +629,7 @@
   padding: 4px 10px 4px 8px;
   border-radius: 999px;
   background: var(--via-navy-05);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1px solid var(--via-navy-12);
   font-family: var(--via-mono);
   font-size: 10px;

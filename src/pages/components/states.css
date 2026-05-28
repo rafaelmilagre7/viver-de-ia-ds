@@ -127,11 +127,11 @@
 }
 
 .vds-loader-inline.alt svg {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-loader-inline.alt p {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-loader-inline p {
@@ -143,7 +143,7 @@
 
 .vds-loader-inline p strong {
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-loader-bar {
@@ -173,7 +173,7 @@
 
 .spin {
   animation: vds-spin 1s linear infinite;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* Skeleton */
@@ -401,7 +401,7 @@
 }
 
 .vds-error-card.e500 .vds-error-id span {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* ---------- 403 · forbidden / plan gating ---------- */
@@ -454,7 +454,7 @@
 .vds-error-plan strong {
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -496,7 +496,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   padding: 5px 10px 5px 8px;
   border-radius: 999px;
   background: rgba(10, 31, 59, 0.07);
@@ -546,7 +546,7 @@
 }
 
 .vds-error-progress-row .mid {
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-weight: 700;
   letter-spacing: -0.005em;
   text-transform: none;
@@ -584,12 +584,13 @@
 
 /* Shared icon */
 .vds-error-icon {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 52px;
   height: 52px;
   border-radius: 14px;
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -624,7 +625,7 @@
   font-weight: 600;
   letter-spacing: -0.022em;
   line-height: 1.2;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0;
   max-width: 360px;
 }
@@ -644,7 +645,7 @@
 }
 
 .vds-error-card p strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -691,7 +692,7 @@
 .vds-error-btn.primary.on-dark {
   background: var(--via-surface);
   border-color: var(--via-white);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-error-btn.primary.on-dark:hover {
@@ -701,7 +702,7 @@
 .vds-error-btn.ghost {
   background: transparent;
   border-color: var(--via-border);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-error-btn.ghost.on-dark {
@@ -785,7 +786,7 @@
   height: 56px;
   border-radius: 16px;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -803,7 +804,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
   line-height: 1.25;
 }
@@ -819,11 +820,11 @@
 .vds-empty-card p em {
   font-style: normal;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-empty-card p strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -834,7 +835,7 @@
   padding: 9px 16px;
   border-radius: 999px;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1px solid var(--via-navy-10);
   font-size: 12px;
   font-weight: 500;
@@ -957,7 +958,7 @@
   font-size: 26px;
   font-weight: 500;
   letter-spacing: -0.022em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1.15;
   max-width: 460px;
 }
@@ -1015,7 +1016,7 @@
 .vds-success-btn.ghost {
   background: transparent;
   border-color: var(--via-border);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-success-btn.ghost:hover {
@@ -1229,7 +1230,7 @@
   font-weight: 500;
   letter-spacing: -0.018em;
   line-height: 1.22;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-empty-prem h4 em {
@@ -1252,7 +1253,7 @@
 }
 
 .vds-empty-prem p strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -1322,7 +1323,7 @@
 .vds-empty-prem-steps li.current .bullet {
   background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
   border-color: transparent;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow: 0 4px 10px var(--via-navy-16);
 }
 
@@ -1355,7 +1356,7 @@
   border-radius: 12px;
   background: linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1460,7 +1461,7 @@
   font-family: var(--via-display);
   font-size: 18px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.02em;
 }
 
@@ -1484,7 +1485,7 @@
   font-family: var(--via-font);
   font-size: 12.5px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
   text-align: left;
   transition: background .2s ease, border-color .2s ease, transform .2s ease;
@@ -1556,7 +1557,7 @@
   font-family: var(--via-display);
   font-size: 17px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.018em;
 }
 
@@ -1607,7 +1608,7 @@
   font-family: var(--via-display);
   font-size: 14px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.015em;
 }
 
@@ -1638,7 +1639,7 @@
   font-weight: 500;
   letter-spacing: -0.008em;
   border: 1px solid var(--via-border);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   text-decoration: none;
@@ -1690,7 +1691,7 @@
 }
 
 .vds-empty-prem-btn.ghost:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
 }
 

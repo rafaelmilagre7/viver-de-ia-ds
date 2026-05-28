@@ -25,7 +25,7 @@
 /* ===== Tones ===== */
 .via-icon--tone-default { color: currentColor; }
 .via-icon--tone-soft    { color: var(--via-ink-3); }
-.via-icon--tone-navy    { color: var(--via-navy); }
+.via-icon--tone-navy    { color: var(--via-text-primary); }
 .via-icon--tone-accent    { color: var(--via-accent); }
 .via-icon--tone-coral   { color: var(--via-coral-dark); }
 .via-icon--tone-inverse { color: var(--via-white); }
@@ -36,17 +36,18 @@
   border-radius: var(--via-radius-md);
   background: rgba(10, 31, 59, 0.05);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-icon--surface-glass {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   padding: 8px;
   border-radius: var(--via-radius-md);
   background: var(--via-surface-onnavy);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
 }
 
@@ -64,7 +65,7 @@
   padding: 8px;
   border-radius: var(--via-radius-md);
   background: linear-gradient(135deg, var(--via-accent), var(--via-accent-light));
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow: 0 4px 10px rgba(10, 31, 59, 0.18);
 }
 

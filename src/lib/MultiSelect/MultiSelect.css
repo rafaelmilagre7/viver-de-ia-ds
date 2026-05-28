@@ -47,6 +47,7 @@
 }
 
 .via-ms__trigger.is-open {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   border-color: var(--via-navy);
   background: var(--via-surface-onnavy);
   box-shadow:
@@ -103,7 +104,7 @@
   flex-shrink: 0;
   transition: transform .22s cubic-bezier(.16, 1, .3, 1), color .22s ease;
 }
-.via-ms__trigger.is-open .via-ms__chev { color: var(--via-navy); }
+.via-ms__trigger.is-open .via-ms__chev { color: var(--via-text-primary); }
 
 .via-ms.has-error .via-ms__trigger { border-color: rgba(184, 92, 92, 0.40); }
 

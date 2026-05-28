@@ -36,26 +36,26 @@
 
 .via-badge.soft {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-navy-12);
 }
 
 .via-badge.outline {
   background: transparent;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-navy-20);
 }
 
 /* Status badges — paleta navy + accent + coral pra DANGER */
 .via-badge.status.ok {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-navy-14);
 }
 
 .via-badge.status.warn {
   background: var(--via-navy-06);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   border-color: rgba(10, 31, 59, 0.15);
 }
 

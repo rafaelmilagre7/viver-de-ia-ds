@@ -73,14 +73,14 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   margin: 0 0 3px;
 }
 .vds-mini-meta h3 {
   font-family: var(--via-font);
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 8px;
   letter-spacing: -0.005em;
   white-space: nowrap;
@@ -124,7 +124,7 @@
 .vds-mini-track .time {
   font-family: var(--via-font-mono);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -135,14 +135,14 @@
   border-radius: 999px;
   background: transparent;
   border: none;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: var(--via-t);
 }
-.vds-mini-controls .ctrl:hover { background: var(--via-navy-08); color: var(--via-navy); }
+.vds-mini-controls .ctrl:hover { background: var(--via-navy-08); color: var(--via-text-primary); }
 .vds-mini-controls .play {
   width: 44px;
   height: 44px;
@@ -322,12 +322,13 @@
 }
 .vds-fullep .ep-controls .ctrl:hover { background: rgba(255,255,255,0.20); }
 .vds-fullep .ep-controls .play {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 62px;
   height: 62px;
   border-radius: 999px;
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-edge-hi);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;

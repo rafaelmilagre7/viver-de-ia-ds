@@ -94,7 +94,7 @@
   font-family: var(--via-display);
   font-size: 16px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.018em;
 }
 
@@ -140,7 +140,7 @@
 .vds-cf-track-pill.tech {
   background: var(--via-navy-06);
   border-color: var(--via-navy-16);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-cf-track-pill.biz {
@@ -190,7 +190,7 @@
   font-family: var(--via-display);
   font-size: 18px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.018em;
   font-variant-numeric: tabular-nums;
 }
@@ -236,7 +236,7 @@
 }
 
 .vds-cf-break strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
   letter-spacing: -0.008em;
 }
@@ -326,7 +326,7 @@
 
 .vds-cf-track-tag.tech {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1px solid var(--via-navy-14);
 }
 
@@ -366,7 +366,7 @@
   font-weight: 500;
   letter-spacing: -0.018em;
   line-height: 1.22;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-cf-row.featured .vds-cf-session h4 {
@@ -424,7 +424,7 @@
 .vds-cf-speaker strong {
   font-size: 12.5px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
 
@@ -454,7 +454,7 @@
   border-radius: 8px;
   background: var(--via-surface);
   border: 1px solid var(--via-border);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: 500;
@@ -489,7 +489,7 @@
 }
 
 .vds-cf-foot strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
 }
 
@@ -621,7 +621,7 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.014em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -644,6 +644,6 @@
 }
 
 .vds-cf-spk:hover .vds-cf-spk-arrow {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   transform: translateX(2px);
 }

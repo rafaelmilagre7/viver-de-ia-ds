@@ -21,7 +21,7 @@
   font-family: var(--via-font-display);
   font-size: 18px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0;
   letter-spacing: -0.02em;
 }
@@ -175,7 +175,7 @@
   position: absolute;
   font-family: var(--via-mono);
   font-size: 10px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-20);
   padding: 3px 8px;
@@ -208,7 +208,7 @@
 .vds-lu-clear-note strong {
   font-family: var(--via-font);
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* ---------- Sizing ---------- */
@@ -248,7 +248,7 @@
   font-family: var(--via-mono);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 .vds-lu-sizing em {
@@ -280,14 +280,14 @@
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 10px;
 }
 .vds-lu-size-min h4 {
   font-family: var(--via-font-display);
   font-size: 18px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 10px;
   letter-spacing: -0.022em;
 }
@@ -369,7 +369,7 @@
 .vds-lu-surface li strong {
   font-family: var(--via-mono);
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-lu-surface li code {
   font-family: var(--via-mono);
@@ -377,7 +377,7 @@
   padding: 2px 6px;
   border-radius: 4px;
   background: var(--via-navy-04);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* ---------- Context table ---------- */
@@ -415,7 +415,7 @@
 }
 .vds-lu-context td:first-child {
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
 .vds-lu-context tbody tr:last-child td { border-bottom: none; }
@@ -449,7 +449,7 @@
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 14px;
 }
 .vds-lu-dd-eyebrow.alt { color: var(--via-coral-dark); }

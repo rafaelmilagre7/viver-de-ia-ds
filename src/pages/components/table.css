@@ -54,7 +54,7 @@
   display: block;
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
 
@@ -88,7 +88,7 @@
   outline: none;
   font-size: 12.5px;
   font-family: inherit;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -110,7 +110,7 @@
   border-radius: 9px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   font-size: 12px;
   font-weight: 500;
@@ -167,12 +167,13 @@
 }
 
 .vds-tbl-density button:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-tbl-density button.active {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 1px 3px var(--via-navy-08);
@@ -207,7 +208,7 @@
 .vds-tbl-batch-count strong {
   font-size: 14px;
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
   font-feature-settings: 'tnum' 1;
 }
@@ -230,7 +231,7 @@
   border-radius: 999px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   font-size: 11.5px;
   font-weight: 500;
@@ -262,7 +263,7 @@
 }
 
 .vds-tbl-batch-clear:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
 }
 
@@ -365,7 +366,7 @@
 
 .vds-tbl thead th:hover .sort {
   opacity: 1;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* Tbody */
@@ -509,7 +510,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
   white-space: nowrap;
   overflow: hidden;
@@ -548,7 +549,7 @@
   border-radius: 999px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   white-space: nowrap;
   line-height: 1.4;
 }
@@ -561,7 +562,7 @@
 .vds-tbl-plan.corporate {
   background: rgba(10, 31, 59, 0.07);
   border-color: var(--via-navy-16);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-tbl-plan.comunidade {
@@ -576,7 +577,7 @@
   font-family: var(--via-font-mono);
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
   white-space: nowrap;
 }
@@ -617,7 +618,7 @@
   font-family: var(--via-font-mono);
   font-size: 11px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   min-width: 32px;
   text-align: right;
   letter-spacing: 0.02em;
@@ -648,13 +649,13 @@
 .vds-tbl-delta.up {
   background: var(--via-navy-06);
   border-color: var(--via-navy-14);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-tbl-delta.down {
   background: var(--via-navy-05);
   border-color: var(--via-navy-12);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 /* Cell · status — column doesn't shrink, pill never wraps */
@@ -678,13 +679,13 @@
 .vds-tbl-status.ok {
   background: var(--via-navy-05);
   border-color: var(--via-navy-14);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-tbl-status.attention {
   background: var(--via-navy-06);
   border-color: rgba(10, 31, 59, 0.15);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-tbl-status.churn {
@@ -715,7 +716,7 @@
   border-radius: 8px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -741,7 +742,7 @@
 
 .vds-tbl-action-btn.ghost:hover {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* ---------- Footer · pagination ---------- */
@@ -764,7 +765,7 @@
 }
 
 .vds-tbl-foot-info strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -792,7 +793,7 @@
 
 .vds-tbl-pag button:hover:not(:disabled):not(.active) {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-tbl-pag button.active {
@@ -832,7 +833,7 @@
   border-radius: 7px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   font-size: 11.5px;
   font-weight: 600;
@@ -856,7 +857,7 @@
 }
 
 .vds-tbl.compact tbody td.primary {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
 }
 
@@ -887,11 +888,11 @@
 .vds-tbl-prio.media {
   background: rgba(10, 31, 59, 0.07);
   border-color: var(--via-navy-16);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-tbl-prio.baixa {
   background: var(--via-navy-06);
   border-color: var(--via-navy-14);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }

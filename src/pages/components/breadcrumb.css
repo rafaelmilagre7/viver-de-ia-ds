@@ -20,7 +20,7 @@
 }
 
 .via-bc a:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
 }
 
@@ -31,7 +31,7 @@
 }
 
 .via-bc .current {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 

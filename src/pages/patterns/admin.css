@@ -73,7 +73,7 @@
   margin: 0 0 6px;
   font-size: 15px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .vds-settings-l p strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -104,7 +104,7 @@
   background: var(--via-surface);
   font-family: inherit;
   font-size: 14px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   outline: none;
   transition: border-color 160ms ease;
 }
@@ -135,7 +135,7 @@
   border-radius: 999px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: -0.005em;
@@ -167,7 +167,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -330,7 +330,7 @@
   margin: 0 0 4px;
   font-size: 18px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
 
@@ -392,7 +392,7 @@
 .vds-apikey-tag.prod {
   background: var(--via-navy-08);
   border: 1px solid var(--via-navy-16);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-apikey-tag.dev {
@@ -405,7 +405,7 @@
   margin: 0 0 4px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -416,13 +416,13 @@
 }
 
 .vds-apikey-card p strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
 .vds-apikey-card p em {
   font-style: normal;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -442,13 +442,13 @@
 .vds-apikey-status.ok {
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-14);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-apikey-status.warn {
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-14);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-apikey-token {
@@ -538,7 +538,7 @@
 }
 
 .vds-apikey-meta strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
   font-feature-settings: 'tnum' 1;
 }
@@ -565,7 +565,7 @@
 .vds-apikey-btn.ghost {
   background: transparent;
   border-color: var(--via-border);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-apikey-btn.ghost:hover {
@@ -728,7 +728,7 @@
 .vds-billing-btn.primary {
   background: var(--via-surface);
   border-color: var(--via-white);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   justify-content: center;
 }
 
@@ -742,7 +742,7 @@
 }
 
 .vds-billing-btn.ghost span {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-size: 11px;
   font-weight: 600;
   margin-left: 4px;
@@ -825,7 +825,7 @@
   margin: 0;
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -834,7 +834,7 @@
   align-items: center;
   gap: 2px;
   font-size: 11px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-decoration: none;
   font-weight: 500;
 }
@@ -901,7 +901,7 @@
 .vds-billing-history .amt {
   font-family: var(--via-font-mono);
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-align: right;
   font-feature-settings: 'tnum' 1;
   font-size: 12.5px;
@@ -918,7 +918,7 @@
   border-radius: 999px;
   background: var(--via-navy-05);
   border: 1px solid var(--via-navy-12);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   width: fit-content;
   letter-spacing: 0.1em;
   white-space: nowrap;
@@ -931,7 +931,7 @@
   border-radius: 7px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -968,7 +968,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
 
@@ -995,12 +995,12 @@
 
 .vds-audit-tabs button:hover {
   background: var(--via-navy-04);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-audit-tabs button.on {
   background: var(--via-navy-08);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -1067,7 +1067,7 @@
   font-family: var(--via-font-mono);
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: 0.01em;
   line-height: 1;
   font-feature-settings: 'tnum' 1;
@@ -1083,11 +1083,12 @@
 
 /* Icon — glass tint editorial */
 .vds-audit-icon {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 38px;
   height: 38px;
   border-radius: 11px;
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1098,12 +1099,13 @@
 }
 
 .vds-audit-item.security .vds-audit-icon {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-navy-18);
 }
 
 .vds-audit-item.security-warn .vds-audit-icon {
-  color: var(--via-navy);
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
+  color: var(--via-text-primary);
   border-color: var(--via-navy-22);
   background: var(--via-surface-onnavy);
 }
@@ -1112,7 +1114,7 @@
 .vds-audit-item.team .vds-audit-icon,
 .vds-audit-item.change .vds-audit-icon,
 .vds-audit-item.system .vds-audit-icon {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* Text */
@@ -1130,7 +1132,7 @@
 
 .vds-audit-text p strong {
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-audit-text span {
@@ -1221,7 +1223,7 @@
   font-size: 17px;
   font-weight: 500;
   letter-spacing: -0.018em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-wh-head p {
@@ -1311,7 +1313,7 @@
   border-radius: 11px;
   background: linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1342,7 +1344,7 @@
 }
 
 .vds-wh-url strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
 }
 
@@ -1380,7 +1382,7 @@
 
 .vds-wh-status.ok {
   background: var(--via-navy-05);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1px solid var(--via-navy-12);
 }
 
@@ -1401,7 +1403,7 @@
 .vds-wh-rate strong {
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
 
@@ -1429,7 +1431,7 @@
 .vds-wh-row-more:hover {
   background: var(--via-navy-04);
   border-color: var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* Signing secret block */
@@ -1465,7 +1467,7 @@
   font-size: 15px;
   font-weight: 500;
   letter-spacing: -0.015em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-wh-secret > header p {
@@ -1479,7 +1481,7 @@
   font-family: var(--via-mono);
   font-size: 10.5px;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   padding: 1px 5px;
   border-radius: 4px;
 }
@@ -1562,7 +1564,7 @@
 .vds-wh-secret-foot strong {
   font-family: var(--via-mono);
   font-size: 10.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
 }
 
@@ -1595,7 +1597,7 @@
   font-size: 17px;
   font-weight: 500;
   letter-spacing: -0.018em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-perm-head p {
@@ -1617,7 +1619,7 @@
   font-family: var(--via-mono);
   font-size: 10.5px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: 0.01em;
   flex-shrink: 0;
 }
@@ -1703,7 +1705,7 @@
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-transform: none;
   letter-spacing: -0.008em;
   margin-bottom: 2px;
@@ -1722,7 +1724,7 @@
   border-bottom: 1px solid var(--via-border-soft);
   vertical-align: middle;
   font-size: 12.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
   position: relative;
 }
@@ -1788,7 +1790,7 @@
 }
 
 .vds-perm-foot p strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
 }
 
@@ -1809,7 +1811,7 @@
   letter-spacing: -0.006em;
   border: 1px solid var(--via-border);
   background: var(--via-surface);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;
 }
@@ -1821,7 +1823,7 @@
 }
 
 .vds-perm-btn.ghost:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
 }
 

@@ -203,6 +203,7 @@
 .vds-billing-plan:hover::before { opacity: 0.7; }
 
 .vds-billing-plan.is-selected {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   border-color: var(--via-navy);
   background: var(--via-surface-onnavy);
   box-shadow:

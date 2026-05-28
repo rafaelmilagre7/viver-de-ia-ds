@@ -65,7 +65,7 @@
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.018em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1.3;
 }
 
@@ -85,7 +85,7 @@
 
 .via-accordion .head:hover .chev {
   background: var(--via-navy-08);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-accordion .chev.rot {

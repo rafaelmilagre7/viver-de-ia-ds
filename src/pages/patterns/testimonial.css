@@ -64,7 +64,7 @@
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.022em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0;
   position: relative;
   max-width: 720px;
@@ -108,7 +108,7 @@
   font-family: var(--via-font);
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
 
@@ -156,7 +156,7 @@
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.028em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
   margin-top: 4px;
   line-height: 1;

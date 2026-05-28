@@ -349,6 +349,7 @@
 }
 
 .vds-mm-cta {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -357,7 +358,7 @@
   border-radius: 999px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-family: inherit;
   font-size: 13px;
   font-weight: 600;
@@ -494,7 +495,7 @@
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -522,7 +523,7 @@
 .vds-mm-alt-score .num {
   font-size: 18px;
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.025em;
   line-height: 1;
   font-feature-settings: 'tnum' 1;
@@ -533,7 +534,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   margin-top: 2px;
 }
 
@@ -558,7 +559,7 @@
   border-radius: 999px;
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -571,7 +572,7 @@
   border-radius: 10px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   font-size: 12px;
   font-weight: 500;

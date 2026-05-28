@@ -100,8 +100,9 @@
 
 /* SECONDARY — glass white */
 .via-btn.secondary {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -127,7 +128,7 @@
 /* GHOST — transparent */
 .via-btn.ghost {
   background: transparent;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   padding: 12px 16px;
   font-weight: 500;
 }

@@ -30,7 +30,7 @@
 }
 
 .via-seg-item:hover:not(.active) {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
 }
 
@@ -79,7 +79,7 @@
 }
 
 .via-ultab.active {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .via-ultab:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-ultab .count {

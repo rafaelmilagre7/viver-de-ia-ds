@@ -51,7 +51,7 @@
   font-family: var(--via-font);
   font-size: 22px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.18;
   margin: 4px 0 0;
@@ -73,7 +73,7 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.005em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
   margin-top: auto;
   transition: gap 200ms ease;
@@ -140,6 +140,11 @@
 .via-card-stat {
   position: relative;
   padding: 26px;
+  /* card SEMPRE branco (vive sobre stage navy fixo) · re-pina texto p/ escuro */
+  --via-text-primary: var(--via-navy);
+  --via-text-body: var(--via-gray-700);
+  --via-text-muted: var(--via-gray-500);
+  --via-text-faint: var(--via-gray-400);
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.6));
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
@@ -177,7 +182,7 @@
   font-size: 44px;
   font-weight: 600;
   letter-spacing: -0.04em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1;
   font-feature-settings: 'tnum' 1;
 }
@@ -203,7 +208,7 @@
 .via-card-stat .sub em {
   font-family: var(--via-font);
   font-style: normal;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 

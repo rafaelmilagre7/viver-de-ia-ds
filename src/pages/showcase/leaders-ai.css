@@ -33,7 +33,7 @@
 .la-nav button {
   padding: 11px 18px;
   background: var(--via-surface);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
@@ -231,10 +231,11 @@
   gap: 14px;
 }
 .la-tier.feat {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
   backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid var(--via-edge-hi);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow: 0 32px 64px rgba(10, 31, 59, 0.48);
 }
 .la-tier .badge {
@@ -259,7 +260,7 @@
   letter-spacing: 0.18em; text-transform: uppercase;
   color: rgba(255,255,255,0.55);
 }
-.la-tier.feat .tag { color: var(--via-gray-500); }
+.la-tier.feat .tag { color: var(--via-text-muted); }
 .la-tier .price { display: flex; align-items: baseline; gap: 4px; }
 .la-tier .cur {
   font-family: var(--via-font-display);
@@ -267,7 +268,7 @@
   font-size: 16px;
   color: rgba(255,255,255,0.62);
 }
-.la-tier.feat .cur { color: var(--via-gray-500); }
+.la-tier.feat .cur { color: var(--via-text-muted); }
 .la-tier .num {
   font-family: var(--via-font-display);
   font-size: 42px; font-weight: 500;
@@ -282,16 +283,16 @@
   color: rgba(255,255,255,0.72);
   margin: 0;
 }
-.la-tier.feat p { color: var(--via-gray-600); }
+.la-tier.feat p { color: var(--via-text-body); }
 .la-tier ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .la-tier li {
   display: flex; gap: 8px;
   font-family: var(--via-font); font-size: 12px;
   color: rgba(255,255,255,0.85);
 }
-.la-tier.feat li { color: var(--via-gray-700); }
+.la-tier.feat li { color: var(--via-text-body); }
 .la-tier .ck { color: var(--via-white); flex-shrink: 0; margin-top: 3px; }
-.la-tier.feat .ck { color: var(--via-navy); }
+.la-tier.feat .ck { color: var(--via-text-primary); }
 .la-tier .btn {
   padding: 13px 18px;
   border-radius: 999px;
@@ -302,7 +303,7 @@
   letter-spacing: -0.004em;
   cursor: pointer;
   background: var(--via-surface);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-top: auto;
   white-space: nowrap;
   line-height: 1.4;

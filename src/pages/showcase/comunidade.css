@@ -45,7 +45,7 @@
   cursor: pointer;
 }
 
-.cmu-nav nav a.active { color: var(--via-navy); font-weight: 600; }
+.cmu-nav nav a.active { color: var(--via-text-primary); font-weight: 600; }
 
 .cmu-av {
   width: 36px;
@@ -141,9 +141,9 @@
   letter-spacing: -0.005em;
 }
 
-.cmu-cats li.active .cmu-cat-label { color: var(--via-navy-deep); font-weight: 600; }
+.cmu-cats li.active .cmu-cat-label { color: var(--via-text-primary); font-weight: 600; }
 .cmu-cat-label svg { color: var(--via-text-faint); }
-.cmu-cats li.active .cmu-cat-label svg { color: var(--via-navy); }
+.cmu-cats li.active .cmu-cat-label svg { color: var(--via-text-primary); }
 
 .cmu-cat-count {
   font-family: var(--via-font-mono, var(--via-font));
@@ -233,7 +233,7 @@
   transition: all 160ms ease;
 }
 
-.cmu-composer-actions button:hover { color: var(--via-navy); border-color: var(--via-navy-18); }
+.cmu-composer-actions button:hover { color: var(--via-text-primary); border-color: var(--via-navy-18); }
 
 .cmu-composer-send {
   width: auto !important;
@@ -275,7 +275,7 @@
   font-weight: 600;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .cmu-post-head {
@@ -305,7 +305,7 @@
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.010em;
 }
 
@@ -389,7 +389,7 @@
   transition: all 160ms ease;
 }
 
-.cmu-post-foot button:hover { background: var(--via-navy-04); color: var(--via-navy); }
+.cmu-post-foot button:hover { background: var(--via-navy-04); color: var(--via-text-primary); }
 
 /* Sidebar direita */
 .cmu-side {
@@ -423,7 +423,7 @@
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 12px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -503,7 +503,7 @@
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-align: center;
   font-feature-settings: 'tnum' 1;
 }

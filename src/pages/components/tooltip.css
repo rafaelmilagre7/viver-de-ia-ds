@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   position: relative;
   box-shadow: 0 1px 3px var(--via-navy-06);
 }

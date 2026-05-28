@@ -45,7 +45,7 @@
   font-family: var(--via-font-mono);
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
 
@@ -111,7 +111,7 @@
 }
 
 .vds-cdoc-props .vds-cdoc-type {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
 }
 
@@ -154,7 +154,7 @@
   font-family: var(--via-font-mono);
   font-size: 12px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   padding: 3px 9px;
   background: var(--via-navy-06);
   border: 0.5px solid var(--via-navy-12);
@@ -167,7 +167,7 @@
   font-size: 17px;
   font-weight: 500;
   letter-spacing: -0.016em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-cdoc-variant-card p {
@@ -237,7 +237,7 @@
   margin-bottom: 10px;
 }
 
-.vds-cdoc-do-lbl { color: var(--via-navy); }
+.vds-cdoc-do-lbl { color: var(--via-text-primary); }
 .vds-cdoc-dont-lbl { color: var(--via-coral-dark); }
 
 .vds-cdoc-do strong,
@@ -246,7 +246,7 @@
   font-family: var(--via-font-display);
   font-size: 16px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 4px;
   letter-spacing: -0.014em;
 }
@@ -287,7 +287,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -324,7 +324,7 @@
   font-family: var(--via-font-mono);
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 4px;
 }
 

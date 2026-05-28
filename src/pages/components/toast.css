@@ -53,25 +53,25 @@
   align-items: center;
   justify-content: center;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   flex-shrink: 0;
   position: relative;
   z-index: 1;
 }
-.via-toast.success .ico { background: var(--via-navy-08); color: var(--via-navy); border: 1px solid var(--via-navy-12); }
-.via-toast.warning .ico { background: rgba(10, 31, 59, 0.07); color: var(--via-navy-deep); border: 1px solid var(--via-navy-14); }
+.via-toast.success .ico { background: var(--via-navy-08); color: var(--via-text-primary); border: 1px solid var(--via-navy-12); }
+.via-toast.warning .ico { background: rgba(10, 31, 59, 0.07); color: var(--via-text-primary); border: 1px solid var(--via-navy-14); }
 .via-toast.danger .ico { background: rgba(184, 92, 92, 0.12); color: var(--via-coral-dark); border: 1px solid rgba(184, 92, 92, 0.26); }
 .via-toast .body { flex: 1; min-width: 0; position: relative; z-index: 1; padding-top: 2px; }
 .via-toast .title {
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .via-toast .desc {
   font-family: var(--via-font);
   font-size: 12px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin-top: 3px;
   line-height: 1.5;
 }
@@ -81,7 +81,7 @@
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.004em;
   align-self: center;
   cursor: pointer;
@@ -100,7 +100,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   cursor: pointer;
   align-self: flex-start;
   margin-top: 4px;

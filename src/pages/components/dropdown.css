@@ -45,7 +45,7 @@
 .via-dd-trigger .val {
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   flex: 1;
   text-align: left;
   letter-spacing: -0.008em;
@@ -58,7 +58,7 @@
 
 .via-dd-trigger .chev.rot {
   transform: rotate(180deg);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-dd-menu {
@@ -112,11 +112,11 @@
 
 .via-dd-menu li:hover {
   background: var(--via-navy-05);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-dd-menu li.active {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
   background: var(--via-navy-08);
 }

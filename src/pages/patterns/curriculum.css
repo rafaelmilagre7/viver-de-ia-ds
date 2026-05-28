@@ -127,7 +127,7 @@
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1;
   font-feature-settings: 'tnum' 1;
 }
@@ -156,7 +156,7 @@
 .vds-course-progress .val {
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -185,11 +185,11 @@
 }
 
 .vds-course-progress .next svg {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-course-progress .next strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -268,7 +268,7 @@
   height: 44px;
   border-radius: 11px;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -287,7 +287,7 @@
 .vds-module-text h3 {
   font-size: 15px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 4px;
   letter-spacing: -0.01em;
 }
@@ -312,7 +312,7 @@
   padding: 5px 10px;
   border-radius: 999px;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
   white-space: nowrap;
   font-feature-settings: 'tnum' 1;
@@ -345,7 +345,7 @@
 
 .vds-module-chev.rot {
   transform: rotate(180deg);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* Lessons */
@@ -458,7 +458,7 @@
 
 .vds-lesson.available .vds-lesson-icon {
   background: linear-gradient(180deg, var(--via-navy-10), var(--via-navy-04));
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-navy-14);
 }
 
@@ -478,18 +478,18 @@
 }
 
 .vds-lesson.done .vds-lesson-num {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-lesson.playing .vds-lesson-num {
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-weight: 700;
 }
 
 .vds-lesson-title {
   font-size: 13.5px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -504,7 +504,7 @@
 }
 
 .vds-lesson.playing .vds-lesson-title {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -529,7 +529,7 @@
 .vds-lesson.playing .vds-lesson-type {
   background: rgba(10, 31, 59, 0.07);
   border-color: var(--via-navy-14);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-lesson-dur {
@@ -542,15 +542,16 @@
 }
 
 .vds-lesson.playing .vds-lesson-dur {
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-lesson-go {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 30px;
   height: 30px;
   border-radius: 9px;
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1px solid var(--via-border-soft);
   display: inline-flex;
   align-items: center;
@@ -609,7 +610,7 @@
 .vds-cert-name {
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 4px;
   letter-spacing: -0.005em;
 }
@@ -627,7 +628,7 @@
   padding: 6px 12px;
   border-radius: 999px;
   background: rgba(10, 31, 59, 0.07);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   white-space: nowrap;
 }
 

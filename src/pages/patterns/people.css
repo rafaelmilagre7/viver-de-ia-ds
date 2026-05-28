@@ -92,7 +92,7 @@
   font-size: 28px;
   font-weight: 600;
   letter-spacing: -0.024em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-mentor-role {
@@ -128,7 +128,7 @@
 }
 
 .vds-mentor-meta svg {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-mentor-socials {
@@ -141,7 +141,7 @@
   height: 36px;
   border-radius: 10px;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -175,7 +175,7 @@
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1;
   font-feature-settings: 'tnum' 1;
 }
@@ -226,7 +226,7 @@
 .vds-mentor-btn.ghost {
   background: transparent;
   border-color: var(--via-border);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-mentor-quote {
@@ -259,7 +259,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.2em;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   padding: 4px 10px;
   border-radius: 999px;
   background: rgba(10, 31, 59, 0.07);
@@ -273,7 +273,7 @@
   margin: 0;
   font-size: 15px;
   line-height: 1.5;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
   letter-spacing: -0.015em;
 }
@@ -435,7 +435,7 @@
   border-radius: 999px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   white-space: nowrap;
   line-height: 1.4;
 }
@@ -443,7 +443,7 @@
 .vds-team-card.lead .vds-team-tag {
   background: rgba(10, 31, 59, 0.07);
   border-color: var(--via-navy-16);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-team-text {
@@ -456,7 +456,7 @@
   margin: 0;
   font-size: 17px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.018em;
   line-height: 1.2;
 }
@@ -483,7 +483,7 @@
 .vds-team-stat strong {
   font-size: 22px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1;
   font-feature-settings: 'tnum' 1;
@@ -536,7 +536,7 @@
 .vds-team-profile {
   font-size: 11px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-decoration: none;
   letter-spacing: -0.005em;
   padding: 5px 10px;
@@ -588,7 +588,7 @@
   margin: 0 0 4px;
   font-size: 18px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
 
@@ -620,7 +620,7 @@
   background: transparent;
   outline: none;
   font-size: 12.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   flex: 1;
 }
@@ -633,7 +633,7 @@
   border-radius: 10px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
@@ -713,7 +713,7 @@
   height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--via-navy-12), var(--via-navy-06));
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -788,7 +788,7 @@
 .vds-member-user p {
   margin: 0 0 3px;
   font-size: 13.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -812,7 +812,7 @@
   padding: 4px 10px 4px 8px;
   border-radius: 999px;
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.004em;
   width: fit-content;
   border: 1px solid var(--via-navy-10);
@@ -829,7 +829,7 @@
 .vds-member-plan.corporate {
   background: rgba(10, 31, 59, 0.07);
   border-color: var(--via-navy-16);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-member-plan.comunidade {
@@ -848,7 +848,7 @@
   background: var(--via-navy-08);
   border: 1px solid rgba(10, 31, 59, 0.11);
   font-size: 11.5px;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-weight: 600;
   font-feature-settings: 'tnum' 1;
   letter-spacing: -0.005em;
@@ -856,7 +856,7 @@
 }
 
 .vds-member-streak svg {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-member-last {
@@ -907,7 +907,7 @@
   height: 48px;
   border-radius: 50%;
   background: var(--via-navy-08);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -935,19 +935,19 @@
 
 .vds-userpop-plan.mentor-pill {
   background: var(--via-navy-08);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-userpop-plan.corp {
   background: var(--via-navy-08);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-userpop-card h4 {
   margin: 0 0 2px;
   font-size: 16px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -980,12 +980,12 @@
 
 .vds-userpop-stats strong {
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-right: 2px;
 }
 
 .vds-userpop-stats svg {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-userpop-actions {
@@ -1023,7 +1023,7 @@
 .vds-userpop-btn.ghost {
   background: transparent;
   border-color: var(--via-border);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-userpop-btn.ghost:hover {

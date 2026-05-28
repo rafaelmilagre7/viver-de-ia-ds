@@ -27,14 +27,14 @@
 .vds-ann-banner > * { position: relative; z-index: 1; }
 .vds-ann-banner.ghost {
   background: var(--via-gray-50);
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   box-shadow: none;
   border: 0.5px dashed var(--via-navy-12);
 }
 .vds-ann-banner.ghost button {
   background: transparent;
   border: none;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 700;
   cursor: pointer;
   text-decoration: underline;
@@ -65,12 +65,13 @@
 .vds-ann-banner p .muted { color: rgba(255,255,255,0.65); }
 .vds-ann-actions { display: flex; align-items: center; gap: 10px; }
 .vds-ann-cta {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 9px 18px;
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1px solid var(--via-navy-20);
   border-radius: 999px;
   font-family: var(--via-font);
@@ -326,9 +327,9 @@
   flex-shrink: 0;
 }
 .vds-feed-ico.success { background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep)); color: var(--via-white); border: 1px solid var(--via-navy); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 2px 6px -2px var(--via-navy-40); }
-.vds-feed-ico.info { background: var(--via-navy-06); color: var(--via-navy); border: 1px solid var(--via-border-soft); }
-.vds-feed-ico.pub { background: var(--via-navy-06); color: var(--via-navy); border: 1px solid var(--via-border-soft); }
-.vds-feed-ico.deploy { background: rgba(10, 31, 59, 0.07); color: var(--via-navy-deep); border: 1px solid var(--via-navy-16); }
+.vds-feed-ico.info { background: var(--via-navy-06); color: var(--via-text-primary); border: 1px solid var(--via-border-soft); }
+.vds-feed-ico.pub { background: var(--via-navy-06); color: var(--via-text-primary); border: 1px solid var(--via-border-soft); }
+.vds-feed-ico.deploy { background: rgba(10, 31, 59, 0.07); color: var(--via-text-primary); border: 1px solid var(--via-navy-16); }
 .vds-feed-line {
   position: absolute;
   top: 42px;
@@ -349,24 +350,24 @@
   font-family: var(--via-font);
   font-size: 14px;
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-feed-body .when {
   font-family: var(--via-font-mono);
   font-size: 11px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   letter-spacing: 0.06em;
 }
 .vds-feed-body p {
   margin: 0;
   font-family: var(--via-font);
   font-size: 13px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   line-height: 1.5;
 }
 .vds-feed-body p em {
   font-style: normal;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 .vds-feed-stat {
@@ -379,7 +380,7 @@
   font-family: var(--via-font-mono);
   font-size: 11px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: 0.04em;
 }
 
@@ -443,7 +444,7 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow: 0 4px 12px var(--via-navy-10), inset 0 0 0 0.5px var(--via-navy-12);
 }
 .vds-avgroup-meta { display: flex; flex-direction: column; gap: 2px; }
@@ -451,12 +452,12 @@
   font-family: var(--via-font);
   font-size: 14px;
   font-weight: 700;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-avgroup-meta span {
   font-family: var(--via-font);
   font-size: 12px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 
 .vds-avgroup-list { display: flex; flex-direction: column; gap: 10px; }
@@ -477,13 +478,13 @@
   font-family: var(--via-font);
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-avgroup-card span {
   display: block;
   font-family: var(--via-font);
   font-size: 12px;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   margin-top: 2px;
 }
 .vds-avgroup-card .link {
@@ -495,7 +496,7 @@
   font-weight: 700;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
   text-decoration: none;
 }

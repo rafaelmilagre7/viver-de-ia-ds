@@ -98,13 +98,13 @@
 }
 
 .vds-ob .ob-step.done .t {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-ob .ob-step.current .circle {
   background: var(--via-surface);
   border-color: var(--via-navy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow:
     0 0 0 6px var(--via-navy-08),
     0 4px 14px -3px var(--via-navy-25);
@@ -125,7 +125,7 @@
 }
 
 .vds-ob .ob-step.current .t {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 700;
 }
 
@@ -134,7 +134,7 @@
   font-size: 36px;
   font-weight: 500;
   letter-spacing: -0.028em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 6px 0 14px;
   line-height: 1.06;
 }
@@ -246,7 +246,7 @@
   font-family: var(--via-font);
   font-size: 14.5px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
 
@@ -302,7 +302,7 @@
 
 .vds-ob .btn.ghost:hover {
   background: var(--via-navy-04);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-ob .ob-skip {
@@ -314,7 +314,7 @@
 }
 
 .vds-ob .ob-skip a {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
@@ -599,7 +599,7 @@
   font-weight: 500;
   letter-spacing: -0.028em;
   line-height: 1.14;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-wiz-main h2 em {
@@ -704,7 +704,7 @@
   border-radius: 11px;
   background: linear-gradient(180deg, var(--via-navy-04), rgba(10, 31, 59, 0.01));
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -744,7 +744,7 @@
 .vds-wiz-opt-body strong {
   font-size: 13.5px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
 
@@ -775,7 +775,7 @@
 .vds-wiz-count strong {
   font-family: var(--via-mono);
   font-size: 14px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
   margin-right: 4px;
 }
@@ -797,7 +797,7 @@
   font-weight: 500;
   letter-spacing: -0.008em;
   border: 1px solid var(--via-border);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-surface);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;
@@ -810,7 +810,7 @@
 }
 
 .vds-wiz-btn.ghost:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
 }
 
@@ -836,7 +836,7 @@
 }
 
 .vds-wiz-skip a {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-decoration: none;
   border-bottom: 1px solid var(--via-navy-30);
   transition: border-color .2s ease;

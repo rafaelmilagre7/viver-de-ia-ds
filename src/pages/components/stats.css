@@ -42,7 +42,7 @@
   font-size: 44px;
   font-weight: 600;
   letter-spacing: -0.04em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1;
   font-feature-settings: 'tnum' 1;
 }

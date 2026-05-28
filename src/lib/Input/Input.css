@@ -11,7 +11,7 @@
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
 
@@ -79,7 +79,7 @@
   background: transparent;
   border: none;
   outline: none;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: var(--via-font);
   letter-spacing: -0.008em;
   width: 100%;
@@ -107,7 +107,7 @@
 }
 
 .via-input:focus-within .via-input__icon {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* ===== Sizes ===== */

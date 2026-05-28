@@ -464,7 +464,7 @@
 }
 
 .vds-ins-quote-mark {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   opacity: 0.18;
   position: absolute;
   top: 16px;
@@ -791,7 +791,7 @@
   position: absolute;
   right: -8px;
   bottom: -8px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   opacity: 0.05;
   pointer-events: none;
   z-index: -1;

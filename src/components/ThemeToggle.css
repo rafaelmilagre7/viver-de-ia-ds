@@ -22,7 +22,7 @@
 .via-theme-toggle:hover {
   background: var(--via-navy-08);
   border-color: var(--via-navy-18);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   transform: translateY(-1px);
 }
 

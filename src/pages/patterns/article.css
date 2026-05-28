@@ -135,7 +135,7 @@
 }
 
 .vds-article .cover.light .tag {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-08);
   border: 1px solid var(--via-navy-14);
 }
@@ -170,7 +170,7 @@
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.022em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0;
 }
 
@@ -220,7 +220,7 @@
 }
 
 .vds-article .author {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
   letter-spacing: -0.005em;
 }

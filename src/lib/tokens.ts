@@ -47,7 +47,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-accent-warm",
     "css": "--via-accent-warm",
-    "value": "var(--via-navy-deep)",
+    "value": "var(--via-text-primary)",
     "category": "color"
   },
   {
@@ -131,7 +131,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-gray-100",
     "css": "--via-gray-100",
-    "value": "#F0F2F5",
+    "value": "#17213A",
     "category": "color"
   },
   {
@@ -155,7 +155,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-gray-50",
     "css": "--via-gray-50",
-    "value": "#F7F8FA",
+    "value": "#0F1729",
     "category": "color"
   },
   {

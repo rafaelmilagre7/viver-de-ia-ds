@@ -28,7 +28,7 @@
   font-family: var(--via-mono);
   font-size: 11px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 .vds-com-slide-meta em {
@@ -146,7 +146,7 @@
   left: 0; top: 9px; width: 6px; height: 1px;
   background: var(--via-navy);
 }
-.vds-com-deck-rules strong { color: var(--via-navy); font-weight: 500; }
+.vds-com-deck-rules strong { color: var(--via-text-primary); font-weight: 500; }
 
 /* ---------- One-pager ---------- */
 .vds-com-onepager {
@@ -191,7 +191,7 @@
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.022em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0;
 }
 .vds-com-onepager h2 em {
@@ -217,7 +217,7 @@
   font-family: var(--via-mono);
   font-size: 22px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 .vds-com-onepager-stats em {
@@ -249,7 +249,7 @@
   line-height: 1.55;
   margin: 0;
 }
-.vds-com-onepager-cols p strong { color: var(--via-navy); font-weight: 500; }
+.vds-com-onepager-cols p strong { color: var(--via-text-primary); font-weight: 500; }
 .vds-com-onepager-cols ul {
   list-style: none;
   padding: 0;
@@ -281,7 +281,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 3px;
 }
 .vds-com-onepager footer em {
@@ -341,7 +341,7 @@
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.024em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 14px;
 }
 .vds-com-case h2 em {
@@ -382,7 +382,7 @@
   line-height: 1.6;
   margin: 0;
 }
-.vds-com-case-body p strong { font-weight: 500; color: var(--via-navy); }
+.vds-com-case-body p strong { font-weight: 500; color: var(--via-text-primary); }
 .vds-com-case-body ol {
   list-style: none;
   padding: 0;
@@ -408,7 +408,7 @@
   font-family: var(--via-mono);
   font-size: 11px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 6px;
@@ -436,7 +436,7 @@
   font-family: var(--via-mono);
   font-size: 22px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 .vds-com-case-stats em {
@@ -455,7 +455,7 @@
   font-family: var(--via-font-display);
   font-style: italic;
   font-size: 17px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1.45;
   letter-spacing: -0.018em;
 }
@@ -469,7 +469,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-com-case > footer cite em {
   font-style: normal;
@@ -521,7 +521,7 @@
 .vds-com-proposal-meta strong {
   font-family: var(--via-mono);
   font-size: 11px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 500;
 }
 
@@ -552,7 +552,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 4px;
 }
 .vds-com-proposal-for em {
@@ -598,7 +598,7 @@
 .vds-com-proposal-cost td:last-child {
   text-align: right;
   font-family: var(--via-mono);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-com-proposal-total td {
   border-bottom: none;
@@ -608,7 +608,7 @@
 }
 .vds-com-proposal-total strong {
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-com-proposal-payment {
   font-style: normal;
@@ -631,7 +631,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 4px;
 }
 .vds-com-proposal > footer em {
@@ -640,7 +640,7 @@
   color: var(--via-text);
   line-height: 1.5;
 }
-.vds-com-proposal > footer em strong { color: var(--via-navy); font-weight: 500; }
+.vds-com-proposal > footer em strong { color: var(--via-text-primary); font-weight: 500; }
 .vds-com-proposal-cta {
   padding: 12px 22px;
   background: var(--via-navy);
@@ -680,7 +680,7 @@
   font-family: var(--via-font-display);
   font-size: 18px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 3px;
   letter-spacing: -0.018em;
 }
@@ -696,7 +696,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 10px;
   letter-spacing: -0.004em;
 }
@@ -707,7 +707,7 @@
   line-height: 1.65;
   margin: 0 0 8px;
 }
-.vds-com-contract p strong { color: var(--via-navy); font-weight: 500; }
+.vds-com-contract p strong { color: var(--via-text-primary); font-weight: 500; }
 .vds-com-contract > footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -733,7 +733,7 @@
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .vds-com-contract-sig em {
   font-style: normal;

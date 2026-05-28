@@ -5,7 +5,7 @@
   gap: 14px;
   font-family: var(--via-font);
   font-size: 14px;
-  color: var(--via-gray-700);
+  color: var(--via-text-body);
   cursor: pointer;
 }
 .via-switch-row.dis { opacity: 0.5; cursor: not-allowed; }

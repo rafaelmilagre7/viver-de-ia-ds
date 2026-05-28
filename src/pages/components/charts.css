@@ -54,7 +54,7 @@
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.05;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 6px;
   font-feature-settings: 'tnum' 1;
 }
@@ -77,7 +77,7 @@
 
 .vds-chart-head .lede em {
   font-style: normal;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -92,20 +92,20 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   white-space: nowrap;
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-chart-delta.up {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-chart-delta.down {
   background: var(--via-navy-05);
   border-color: var(--via-navy-10);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
 }
 
 .vds-chart-foot {
@@ -222,7 +222,7 @@
 .vds-bar-label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
@@ -273,7 +273,7 @@
   gap: 10px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
   letter-spacing: -0.01em;
 }
@@ -358,7 +358,7 @@
 .vds-donut-legend .legend-label {
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 0 0 4px;
   letter-spacing: -0.005em;
 }
@@ -375,7 +375,7 @@
 
 .vds-donut-legend .legend-meta strong {
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 

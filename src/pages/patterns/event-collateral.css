@@ -196,7 +196,7 @@
   font-family: var(--via-font);
   font-size: 22px;
   font-weight: 500;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.20;
   margin: 0 0 22px;
@@ -204,7 +204,7 @@
 
 .vds-ev-relation-text h3 em {
   font-style: italic;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 400;
   opacity: 0.72;
 }
@@ -231,7 +231,7 @@
   font-family: var(--via-font);
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
   line-height: 1.35;
 }
@@ -335,7 +335,7 @@
   font-family: var(--via-font);
   font-size: 14.5px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.010em;
   margin-bottom: 2px;
   line-height: 1.25;
@@ -361,7 +361,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin-bottom: 8px;
 }
 
@@ -396,7 +396,7 @@
 .vds-ev-piece-mock p {
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 11.5px;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   line-height: 1.5;
   margin: 0;
   letter-spacing: 0.005em;
@@ -457,7 +457,7 @@
   font-family: var(--via-font);
   font-size: 22px;
   font-weight: 500;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.20;
   margin: 0;
@@ -505,7 +505,7 @@
   font-family: var(--via-font);
   font-size: 14.5px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.010em;
   line-height: 1.35;
   margin-bottom: 4px;

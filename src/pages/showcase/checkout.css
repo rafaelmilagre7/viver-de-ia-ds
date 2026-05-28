@@ -118,7 +118,7 @@
   white-space: nowrap;
 }
 
-.ckt-step.active .ckt-step-label { color: var(--via-navy-deep); font-weight: 600; }
+.ckt-step.active .ckt-step-label { color: var(--via-text-primary); font-weight: 600; }
 
 @media (max-width: 560px) {
   .ckt-step-label { display: none; }
@@ -139,7 +139,7 @@
   font-size: 22px;
   font-weight: 500;
   letter-spacing: -0.020em;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   margin: 0 0 6px;
 }
 
@@ -209,7 +209,7 @@
   display: block;
   font-size: 15px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.010em;
 }
 
@@ -277,7 +277,7 @@
   border: 1px solid var(--via-border-soft);
   font-family: inherit;
   font-size: 14px;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.005em;
   outline: none;
   transition: all 180ms ease;
@@ -320,11 +320,11 @@
 .ckt-pgto-tabs button.active {
   border-color: var(--via-navy);
   background: var(--via-surface);
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
-.ckt-pgto-tabs button svg { color: var(--via-navy); }
+.ckt-pgto-tabs button svg { color: var(--via-text-primary); }
 
 /* Pix */
 .ckt-pix {
@@ -362,7 +362,7 @@
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.010em;
   margin-bottom: 6px;
 }
@@ -380,7 +380,7 @@
   border-radius: 9px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: inherit;
   font-size: 12.5px;
   font-weight: 600;
@@ -413,7 +413,7 @@
   transition: all 160ms ease;
 }
 
-.ckt-back:hover { border-color: var(--via-navy-25); color: var(--via-navy); }
+.ckt-back:hover { border-color: var(--via-navy-25); color: var(--via-text-primary); }
 
 .ckt-next,
 .ckt-confirm {
@@ -480,7 +480,7 @@
   display: block;
   font-size: 15px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
   margin-bottom: 3px;
 }
@@ -531,7 +531,7 @@
 .ckt-summary-total strong {
   font-size: 22px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.022em;
   font-feature-settings: 'tnum' 1;
 }
@@ -552,7 +552,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--via-navy-deep);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
   margin-bottom: 3px;
 }

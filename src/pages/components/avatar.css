@@ -41,12 +41,13 @@
 
 .via-avatar.gray {
   background: linear-gradient(135deg, var(--via-navy-10), var(--via-navy-06));
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-avatar.more {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border: 1.5px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -98,7 +99,7 @@
   font-family: var(--via-font);
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
 

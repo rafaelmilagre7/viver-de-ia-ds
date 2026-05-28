@@ -129,6 +129,17 @@
   --via-bg-soft:      rgba(255, 255, 255, 0.04);
 
   /* =================================================
+     GRAYS CLAROS como SUPERFÍCIE · adaptam no dark
+     Razão: gray-50/100 são usados SÓ como background
+     (0 usos como texto) em ~66 lugares · seções, painéis,
+     command palette, docs, mockups. No dark precisam virar
+     painel escuro sutil, senão viram "mancha clara" (ex: o
+     rodapé que clareava embaixo, o container dos cards da home).
+     gray-200+ NÃO adaptam (são usados como texto claro). */
+  --via-gray-50:  #0F1729;        /* painel sutil · 1 passo acima do canvas */
+  --via-gray-100: #17213A;        /* painel · 2 passos acima */
+
+  /* =================================================
      TEXT · cores SÓLIDAS (não rgba com opacity)
      Razão: rgba(white, 0.X) sobre dark = alfa-composted
      em cinza escurecido, perde contraste WCAG
@@ -233,6 +244,10 @@
   --via-edge-hi: rgba(255, 255, 255, 0.08);
   --via-edge-lo: rgba(255, 255, 255, 0.05);
   --via-glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent);
+  /* accent-warm = alias legado de navy-deep · só usado como COR DE TEXTO (33x,
+     ênfase: keynote, main stage…) · navy-deep não adapta → invisível no dark.
+     Vira texto claro pra continuar legível sobre superfícies escuras. */
+  --via-accent-warm: var(--via-text-primary);
 }
 
 /* Google Search ad · headline azul precisa virar variante dark-safe */

@@ -76,13 +76,13 @@
 }
 
 .via-stepper .step.done .label {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 /* CURRENT — outline navy + dashed ring animado + halo */
 .via-stepper .step.current .circle {
   border-color: var(--via-navy);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 700;
   box-shadow:
     0 0 0 6px var(--via-navy-08),
@@ -103,7 +103,7 @@
 }
 
 .via-stepper .step.current .label {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 700;
 }
 

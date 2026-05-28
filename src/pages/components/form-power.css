@@ -8,7 +8,7 @@
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
   margin-bottom: 8px;
 }
@@ -67,7 +67,7 @@
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-14);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: 500;
@@ -104,7 +104,7 @@
 }
 
 .vds-fp-mselect-clear:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: var(--via-navy-04);
 }
 
@@ -151,7 +151,7 @@
   background: transparent;
   font-family: var(--via-font);
   font-size: 13px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
   flex: 1;
 }
@@ -209,7 +209,7 @@
 
 .vds-fp-mselect-lbl {
   font-size: 13px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
 
@@ -231,7 +231,7 @@
 }
 
 .vds-fp-mselect-foot strong {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
 }
 
@@ -285,6 +285,7 @@
 }
 
 .vds-fp-drop-icon {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 48px;
   height: 48px;
   border-radius: 13px;
@@ -292,7 +293,7 @@
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -307,7 +308,7 @@
   font-size: 17px;
   font-weight: 500;
   letter-spacing: -0.018em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-fp-drop-zone h4 em {
@@ -373,7 +374,7 @@
   border-radius: 8px;
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -389,7 +390,7 @@
 .vds-fp-drop-item-body strong {
   font-size: 12.5px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
   white-space: nowrap;
   overflow: hidden;
@@ -432,7 +433,7 @@
 
 .vds-fp-drop-pct {
   font-size: 10.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-weight: 600;
   letter-spacing: 0.01em;
 }
@@ -490,7 +491,7 @@
   border-right: 1px solid var(--via-border-soft);
   cursor: pointer;
   font-family: var(--via-font);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   transition: background .2s ease;
 }
 
@@ -505,7 +506,7 @@
 
 .vds-fp-phone-dial {
   font-size: 12.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: 0.01em;
 }
 
@@ -526,7 +527,7 @@
   padding: 12px 14px;
   font-family: var(--via-font);
   font-size: 14px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
 
@@ -579,7 +580,7 @@
 
 .vds-fp-phone-name {
   font-size: 12.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
 
@@ -702,7 +703,7 @@
 
 .vds-fp-crop-row-lbl .mono {
   margin-left: auto;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-transform: none;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -720,7 +721,7 @@
   border-radius: 7px;
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -759,7 +760,7 @@
 
 .vds-fp-crop-rotation button:hover {
   background: var(--via-navy-08);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-fp-crop-rotation button.on {
@@ -793,7 +794,7 @@
 
 .vds-fp-crop-btn:hover {
   background: var(--via-navy-04);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-fp-crop-btn.primary {
@@ -853,7 +854,7 @@
 
 .vds-fp-md-tools button:hover {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   border-color: var(--via-border-soft);
 }
 
@@ -887,12 +888,12 @@
 }
 
 .vds-fp-md-tabs button:hover {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-fp-md-tabs button.on {
   background: var(--via-surface);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 1px 3px var(--via-navy-08);
@@ -908,7 +909,7 @@
   font-family: var(--via-mono);
   font-size: 13px;
   line-height: 1.65;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: 0.005em;
   resize: vertical;
 }
@@ -924,7 +925,7 @@
   font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.022em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-fp-md-preview p {
@@ -936,7 +937,7 @@
 
 .vds-fp-md-preview p strong {
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .vds-fp-md-preview ul {
@@ -956,7 +957,7 @@
   font-style: italic;
   font-family: var(--via-display);
   font-size: 14.5px;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
 
@@ -969,7 +970,7 @@
 }
 
 .vds-fp-md-preview a {
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   text-decoration: none;
   border-bottom: 1px solid var(--via-navy-30);
   transition: border-color .2s ease;

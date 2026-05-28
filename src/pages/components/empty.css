@@ -43,7 +43,7 @@
   font-family: var(--via-font-display);
   font-size: 30px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin: 0;
@@ -52,7 +52,7 @@
 .vds-empty p {
   font-family: var(--via-font);
   font-size: 14px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   max-width: 460px;
   line-height: 1.6;
   margin: 0;

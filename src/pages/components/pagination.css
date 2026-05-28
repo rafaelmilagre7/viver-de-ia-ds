@@ -37,7 +37,7 @@
 .via-pag .p:hover,
 .via-pag .arr:hover:not(:disabled) {
   background: var(--via-navy-06);
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 
 .via-pag .p.active {

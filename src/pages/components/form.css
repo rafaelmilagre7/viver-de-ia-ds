@@ -63,7 +63,7 @@
   font-size: 24px;
   font-weight: 500;
   letter-spacing: -0.015em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   margin: 6px 0 0;
 }
 
@@ -99,7 +99,7 @@
   font-weight: 700;
   letter-spacing: 0.20em;
   text-transform: uppercase;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   margin-bottom: 6px;
   transition: color 200ms;
 }
@@ -109,7 +109,7 @@
   font-family: var(--via-font);
   font-size: 15px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   background: transparent;
   border: none;
   outline: none;
@@ -127,7 +127,7 @@
     0 0 0 4px var(--via-navy-12),
     0 6px 18px var(--via-navy-12);
 }
-.via-field.focused .lbl { color: var(--via-navy); }
+.via-field.focused .lbl { color: var(--via-text-primary); }
 
 .via-field.error {
   border-color: var(--via-danger);
@@ -145,7 +145,7 @@
   box-shadow: none;
 }
 .via-field.disabled .lbl { color: var(--via-gray-400); }
-.via-field.disabled .val { color: var(--via-gray-500); }
+.via-field.disabled .val { color: var(--via-text-muted); }
 
 .via-field-err {
   display: flex;
@@ -168,13 +168,13 @@
   padding: 4px 10px;
   border-radius: 999px;
   background: var(--via-navy-06);
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   white-space: nowrap;
   line-height: 1.4;
 }
-.via-field .cue.navy { background: var(--via-navy-10); color: var(--via-navy); }
+.via-field .cue.navy { background: var(--via-navy-10); color: var(--via-text-primary); }
 .via-field .cue.danger { background: rgba(184,58,58,0.10); color: var(--via-danger); }
-.via-field .cue.muted { background: var(--via-gray-100); color: var(--via-gray-600); }
+.via-field .cue.muted { background: var(--via-gray-100); color: var(--via-text-body); }
 
 /* ---- Inputs com prefix/icon/select ---- */
 .val-with-icon, .val-with-prefix {
@@ -182,12 +182,12 @@
   align-items: center;
   gap: 10px;
 }
-.val-with-icon .leading-ico { color: var(--via-gray-500); flex-shrink: 0; }
+.val-with-icon .leading-ico { color: var(--via-text-muted); flex-shrink: 0; }
 .val-with-prefix .prefix {
   font-family: var(--via-font);
   font-size: 15px;
   font-weight: 600;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
   flex-shrink: 0;
 }
 
@@ -202,10 +202,10 @@
   font-family: var(--via-font);
   font-size: 15px;
   font-weight: 500;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   cursor: pointer;
 }
-.val-select svg { color: var(--via-gray-500); }
+.val-select svg { color: var(--via-text-muted); }
 
 .via-field textarea.val { font-weight: 400; min-height: 60px; }
 .via-field .counter {
@@ -289,14 +289,14 @@
   font-family: var(--via-font);
   font-size: 14px;
   font-weight: 600;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
 }
 .via-check span:not(.box),
 .via-radio span:not(.ring):not(.dot) {
   display: block;
   font-family: var(--via-font);
   font-size: 12px;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin-top: 2px;
   line-height: 1.5;
 }

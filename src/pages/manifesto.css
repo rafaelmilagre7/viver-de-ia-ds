@@ -107,7 +107,7 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: var(--via-gray-500);
+  color: var(--via-text-muted);
 }
 .vds-principle .ico {
   width: 36px;
@@ -125,7 +125,7 @@
   font-size: 22px;
   font-weight: 500;
   letter-spacing: -0.015em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   line-height: 1.2;
   margin: 0 0 12px;
 }
@@ -133,7 +133,7 @@
   font-family: var(--via-font);
   font-size: 13.5px;
   line-height: 1.6;
-  color: var(--via-gray-600);
+  color: var(--via-text-body);
   margin: 0;
 }
 
