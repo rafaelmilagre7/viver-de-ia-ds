@@ -49,3 +49,6 @@ Thumbs.db
 # Misc
 *.tsbuildinfo
 .vercel
+
+# contrast audit output (regenerável)
+contrast-out/

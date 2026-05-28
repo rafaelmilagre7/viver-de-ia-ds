@@ -30,6 +30,7 @@ export default function GlassAnatomy() {
           }}
         >
           <div
+            className="vds-onlight"
             style={{
               width: 460,
               padding: 44,

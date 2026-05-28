@@ -49,6 +49,7 @@ export default function GlassVariants() {
           bg="linear-gradient(135deg, var(--via-gray-200) 0%, var(--via-gray-300) 100%)"
         >
           <div
+            className="vds-onlight"
             style={{
               padding: '20px 32px',
               background: 'linear-gradient(180deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.42) 100%)',
@@ -74,6 +75,7 @@ export default function GlassVariants() {
           bg="radial-gradient(ellipse at top, var(--via-blue-soft) 0%, var(--via-navy) 60%, var(--via-navy-deep) 100%)"
         >
           <div
+            className="vds-onlight"
             style={{
               padding: '24px 36px',
               background: 'linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.58) 100%)',
@@ -124,6 +126,7 @@ export default function GlassVariants() {
           bg="linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%)"
         >
           <span
+            className="vds-onlight"
             style={{
               display: 'inline-flex',
               alignItems: 'center',

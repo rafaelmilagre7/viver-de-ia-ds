@@ -713,7 +713,7 @@
   align-items: center;
   gap: 4px;
   padding: 10px 20px;
-  background: var(--via-coral);
+  background: var(--via-coral-deep);
   color: var(--via-white);
   border-radius: 4px;
   font-family: var(--via-font);

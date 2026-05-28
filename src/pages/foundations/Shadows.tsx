@@ -98,7 +98,7 @@ export default function Shadows() {
           <button
             style={{
               padding: '14px 28px',
-              background: 'var(--via-white)',
+              background: 'var(--via-surface)',
               color: 'var(--via-text-primary)',
               border: '0.5px solid var(--via-navy-40)',
               borderRadius: 'var(--via-radius-pill)',

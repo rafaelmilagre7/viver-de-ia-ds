@@ -62,10 +62,16 @@
   --via-gray-50: #F7F8FA;
   --via-gray-100: #EEF1F5;
   --via-text-primary: var(--via-navy);
-  --via-text-body: var(--via-gray-700);
-  --via-text-muted: var(--via-gray-500);
-  --via-text-soft: var(--via-gray-500);
-  --via-text-faint: var(--via-gray-400);
+  --via-text: #344054;            /* gray-700 literal · base body */
+  --via-text-body: #344054;
+  --via-text-muted: #5F6981;      /* AA em papel branco */
+  --via-text-soft: #5F6981;
+  --via-text-faint: #667085;      /* gray-500 · legível em e-mail (sem gray-400) */
+  --via-ink-2: #5E6B82;           /* trava ink em claro nos 2 temas */
+  --via-ink-3: #5F6981;
+  --via-coral: #B85C5C;
+  --via-coral-dark: #8C2C2C;
+  --via-coral-deep: #A14848;
   --via-navy-04: rgba(10, 31, 59, 0.04);
   --via-navy-06: rgba(10, 31, 59, 0.06);
   --via-navy-08: rgba(10, 31, 59, 0.08);
@@ -75,6 +81,8 @@
   overflow: hidden;
   margin-bottom: 8px;
 }
+/* e-mail = papel branco nos 2 temas · neutraliza o link azul do dark global */
+[data-theme="dark"] .vds-ec-card a:not([class]) { color: var(--via-ink-3); }
 
 .vds-ec-meta {
   padding: 22px 26px 18px;

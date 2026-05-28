@@ -972,6 +972,7 @@
   color: rgba(10, 31, 59, 0.55);
   font-weight: 400;
 }
+[data-theme="dark"] .vds-success-card h3 em { color: rgba(255, 255, 255, 0.62); }
 
 .vds-success-card p {
   margin: 0;
@@ -1190,6 +1191,9 @@
 .vds-empty-prem.cold .vds-empty-prem-eyebrow {
   color: var(--via-accent);
 }
+/* dark: navy/navy-alpha viram texto claro (eram invisíveis no escuro) */
+[data-theme="dark"] .vds-empty-prem-eyebrow.soft { color: var(--via-text-muted); }
+[data-theme="dark"] .vds-empty-prem.cold .vds-empty-prem-eyebrow { color: var(--via-text-primary); }
 
 .vds-empty-prem-pulse {
   width: 6px;
@@ -1294,9 +1298,8 @@
   border-color: rgba(10, 31, 59, 0.11);
 }
 
-.vds-empty-prem-steps li.done {
-  opacity: 0.62;
-}
+.vds-empty-prem-steps li.done strong { color: var(--via-text-soft); }
+/* done: cue via bullet (✓) · texto fica mutado mas AA — sem opacity no texto */
 
 .vds-empty-prem-steps .bullet {
   width: 26px;
@@ -1337,7 +1340,7 @@
 .vds-empty-prem-steps strong {
   font-size: 13.5px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
 
@@ -1345,7 +1348,7 @@
   font-style: normal;
   font-family: var(--via-mono);
   font-size: 10.5px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--via-text-soft);
   letter-spacing: 0.01em;
 }
 

@@ -296,6 +296,7 @@
   font-weight: 400;
   color: var(--via-blue);
 }
+[data-theme="dark"] .vds-lu-size-min h4 em { color: #8FB8F6; }
 .vds-lu-size-min p {
   font-family: var(--via-font);
   font-size: 13px;

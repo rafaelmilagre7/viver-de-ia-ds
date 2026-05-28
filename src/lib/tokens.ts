@@ -113,7 +113,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-danger",
     "css": "--via-danger",
-    "value": "#B83A3A",
+    "value": "#E58A8A",
     "category": "color"
   },
   {
@@ -371,13 +371,13 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-text-body",
     "css": "--via-text-body",
-    "value": "#D0D5DD",
+    "value": "var(--via-gray-700)",
     "category": "color"
   },
   {
     "name": "via-text-faint",
     "css": "--via-text-faint",
-    "value": "#959EAF",
+    "value": "var(--via-gray-400)",
     "category": "color"
   },
   {
@@ -389,19 +389,19 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-text-muted",
     "css": "--via-text-muted",
-    "value": "#A6B0BE",
+    "value": "var(--via-gray-500)",
     "category": "color"
   },
   {
     "name": "via-text-primary",
     "css": "--via-text-primary",
-    "value": "#F4F6FA",
+    "value": "var(--via-navy)",
     "category": "color"
   },
   {
     "name": "via-text-soft",
     "css": "--via-text-soft",
-    "value": "#98A2B3",
+    "value": "var(--via-gray-500)",
     "category": "color"
   },
   {

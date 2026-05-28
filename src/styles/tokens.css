@@ -62,7 +62,7 @@
   /* Semantic text */
   --via-text-primary:  var(--via-navy);
   --via-text-body:     var(--via-gray-700);
-  --via-text-muted:    var(--via-gray-500);
+  --via-text-muted:    #5C6677;   /* AA ≥4.5 em cards tint (#f0f2f3) · era gray-500 */
   --via-text-faint:    var(--via-gray-400);
   --via-text-inverse:  var(--via-white);
 
@@ -82,9 +82,9 @@
      Não remover sem migrar todas as referências.
      ============================================================ */
   --via-text:        var(--via-gray-700);   /* corpo padrão */
-  --via-text-soft:   var(--via-gray-500);   /* secondary 289+ usos */
+  --via-text-soft:   #5C6677;   /* secondary 289+ usos · AA em cards tint · era gray-500 */
   --via-ink-2:       #5E6B82;               /* texto secundário editorial · 76+ usos */
-  --via-ink-3:       #6B7891;               /* texto terciário · timestamps · 102+ usos */
+  --via-ink-3:       #5F6981;               /* texto terciário · timestamps · 102+ usos · AA ≥4.5 em off-white */
 
   /* ========== ACCENT (navy / cinza · paleta restrita) ==========
      Paleta canônica VIA: branco · off-white · cinza · azul-escuro · navy · preto.
@@ -154,14 +154,14 @@
      ================================================= */
   --via-text-primary: #F4F6FA;   /* near-white · headlines, links primários */
   --via-text-body:    #D0D5DD;   /* gray-300 sólido · body text · WCAG AAA */
-  --via-text-muted:   #A6B0BE;   /* secondary · clareado p/ passar AA sobre vidro elevado, ainda claramente "quieto" vs body */
-  --via-text-faint:   #959EAF;   /* helper · o mais discreto, mas legível sobre vidro */
+  --via-text-muted:   #AEB8C6;   /* secondary · passa AA mesmo sobre vidro elevado · ainda claramente "quieto" vs body */
+  --via-text-faint:   #9CA5B5;   /* helper · o mais discreto, mas legível sobre vidro */
   --via-text-inverse: var(--via-navy);
 
   --via-text:      #D0D5DD;
-  --via-text-soft: #A6B0BE;
+  --via-text-soft: #AEB8C6;
   --via-ink-2:     #B4BBC9;
-  --via-ink-3:     #A6B0BE;
+  --via-ink-3:     #AEB8C6;
 
   /* =================================================
      BORDERS · mais visíveis que antes (0.06 → 0.12)
@@ -260,6 +260,8 @@
      sobre fundo coral-tint · escuro demais no dark → coral CLARO legível,
      mantendo o sinal "erro/destrutivo" */
   --via-coral-dark: #E89B9B;
+  /* danger (#B83A3A) usado como texto de erro em campos · clareia no dark */
+  --via-danger: #E58A8A;
 }
 
 /* Google Search ad · headline azul precisa virar variante dark-safe */
@@ -532,6 +534,8 @@ h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-siz
 p { margin: 0; }
 a { color: var(--via-navy); text-decoration: none; }
 a:hover { text-decoration: underline; }
+/* links crus (sem classe) · navy some no dark → azul claro legível */
+[data-theme="dark"] a:not([class]) { color: #8FB8F6; }
 
 /* =============================================================
    GLASS — light-first
@@ -591,6 +595,17 @@ a:hover { text-decoration: underline; }
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
   border-color: rgba(255,255,255,0.14);
   box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* .vds-onlight · superfície SEMPRE clara (demos de vidro claro, peças que
+   mostram fundo branco de propósito) · re-pina o texto pra escuro nos 2 temas
+   senão o texto claro do dark fica branco-no-branco. */
+.vds-onlight {
+  --via-text-primary: var(--via-navy);
+  --via-text-body: var(--via-gray-700);
+  --via-text-muted: var(--via-gray-500);
+  --via-text-soft: var(--via-gray-500);
+  --via-text-faint: var(--via-gray-400);
 }
 
 /* =============================================================

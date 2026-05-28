@@ -98,7 +98,7 @@
   letter-spacing: -0.004em;
 }
 .vds-ve-sample.bad pre {
-  color: var(--via-ink-3);
+  color: var(--via-text-body);  /* sobrevive ao opacity:0.85 do bloco · AA */
 }
 
 /* ---------- Rules ---------- */

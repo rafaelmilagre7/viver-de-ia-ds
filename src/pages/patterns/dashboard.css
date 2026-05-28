@@ -50,6 +50,12 @@
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 12px -4px var(--via-navy-08);
 }
+/* dark: barra de filtros era branca fixa → vidro escuro (senão o texto
+   secundário dos filtros fica claro-sobre-claro) */
+[data-theme="dark"] .vds-dash .filters {
+  background: var(--via-navy-06);
+  border-color: var(--via-border-soft);
+}
 
 .vds-dash .filt {
   padding: 7px 14px;

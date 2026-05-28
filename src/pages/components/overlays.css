@@ -1146,7 +1146,7 @@
 }
 
 .vds-popover li.danger a {
-  color: var(--via-coral);
+  color: var(--via-coral-dark);
 }
 
 .vds-popover li.danger a svg {

@@ -1546,7 +1546,7 @@
 .vds-wh-secret-btn.warn {
   background: var(--via-navy-08);
   border-color: rgba(10, 31, 59, 0.17);
-  color: var(--via-accent);
+  color: var(--via-text-primary);
 }
 
 .vds-wh-secret-btn.warn:hover {

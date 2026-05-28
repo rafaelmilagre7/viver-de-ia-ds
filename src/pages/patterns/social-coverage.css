@@ -42,7 +42,6 @@
   font-style: normal;
   font-size: 11px;
   color: var(--via-ink-3);
-  opacity: 0.7;
 }
 .vds-sc-nav-btn:hover { background: var(--via-surface); }
 .vds-sc-nav-btn:hover strong { color: var(--via-text-primary); }

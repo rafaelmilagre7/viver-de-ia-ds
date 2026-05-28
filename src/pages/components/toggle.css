@@ -8,8 +8,10 @@
   color: var(--via-text-body);
   cursor: pointer;
 }
-.via-switch-row.dis { opacity: 0.5; cursor: not-allowed; }
-.via-switch-row em { font-family: var(--via-font); font-style: normal; color: var(--via-gray-400); font-size: 12px; }
+/* disabled: rótulo fica mutado (AA), só o trilho desbota — sem opacity no texto */
+.via-switch-row.dis { cursor: not-allowed; color: var(--via-text-soft); }
+.via-switch-row.dis .via-switch { opacity: 0.45; }
+.via-switch-row em { font-family: var(--via-font); font-style: normal; color: var(--via-text-soft); font-size: 12px; }
 
 .via-switch {
   position: relative;
