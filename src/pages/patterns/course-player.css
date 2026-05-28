@@ -1107,6 +1107,12 @@
 /* Vídeo broadcast */
 .vds-cp-live-vid {
   position: relative;
+  /* align-self:start + min-width:0 → vídeo dimensiona pela LARGURA da coluna
+     (16:9), não pela altura da linha. Sem isso, o stretch do grid + aspect-ratio
+     calculava a largura a partir da altura do chat (612px → 1088px) e estourava
+     por cima do chat. */
+  align-self: start;
+  min-width: 0;
   aspect-ratio: 16 / 9;
   border-radius: 20px;
   overflow: hidden;

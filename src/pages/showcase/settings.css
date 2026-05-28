@@ -22,7 +22,9 @@
   opacity: 0.025;
   mix-blend-mode: multiply;
 }
-.vds-showcase.al > * { position: relative; z-index: 1; }
+/* :not(.al-nav) — senão sobrescreve o position:sticky do nav e o top:64px vira
+   buraco no fluxo (conteúdo sobe e fica embaixo do nav) */
+.vds-showcase.al > *:not(.al-nav) { position: relative; z-index: 1; }
 
 .vds-set {
   max-width: 1180px;
