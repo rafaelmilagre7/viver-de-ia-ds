@@ -100,7 +100,7 @@
 
 /* SECONDARY — glass white */
 .via-btn.secondary {
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   color: var(--via-navy);
   border-color: var(--via-border-soft);
   box-shadow:

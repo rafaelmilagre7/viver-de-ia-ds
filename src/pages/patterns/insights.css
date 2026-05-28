@@ -17,11 +17,11 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   overflow: hidden;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.5),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 1px 0 0 rgba(10,31,59,0.04),
     0 32px 64px -24px var(--via-navy-22),
     0 14px 28px -10px var(--via-navy-10);
@@ -68,7 +68,7 @@
   text-transform: uppercase;
   color: var(--via-text-primary);
   margin-bottom: 14px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-ins-eyebrow::before {
   content: '';
@@ -146,7 +146,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 16px;
   display: flex;
   align-items: flex-end;
@@ -156,7 +156,7 @@
   overflow: hidden;
   transition: all 280ms cubic-bezier(.16, 1, .3, 1);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 4px 12px -4px var(--via-navy-08);
 }
 .vds-ins-kpi::before {
@@ -174,7 +174,7 @@
 .vds-ins-kpi:hover {
   transform: translateY(-2px);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 12px 24px -8px var(--via-navy-14),
     0 4px 10px -3px var(--via-navy-06);
 }
@@ -257,7 +257,7 @@
   font-weight: 500;
   letter-spacing: -0.004em;
   width: fit-content;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-ins-kpi-delta.up { color: var(--via-text-primary); }
 .vds-ins-kpi-delta.up svg { opacity: 0.85; }
@@ -320,7 +320,7 @@
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-ins-chart-legend span {
   display: inline-flex;
@@ -359,11 +359,11 @@
     radial-gradient(800px 220px at 50% 100%, rgba(30,58,95,0.06), transparent 65%),
     radial-gradient(400px 200px at 0% 50%, rgba(30,58,95,0.04), transparent 60%),
     var(--via-glass-card);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   padding: 20px 24px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.5),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 4px 14px -6px var(--via-navy-08);
 }
 
@@ -378,7 +378,7 @@
   color: var(--via-text-body);
   line-height: 1.55;
   letter-spacing: -0.004em;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-ins-chart-note strong {
   color: var(--via-text-primary);
@@ -435,12 +435,12 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 16px;
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 6px 16px -6px var(--via-navy-08);
   transition: all 280ms cubic-bezier(.16, 1, .3, 1);
 }
@@ -527,7 +527,7 @@
   text-transform: uppercase;
   color: var(--via-text-primary);
   margin-bottom: 14px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 
 .vds-ins-foot-l h4 {
@@ -557,10 +557,10 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 14px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 4px 12px -4px var(--via-navy-06);
   transition: all 240ms cubic-bezier(.16, 1, .3, 1);
 }
@@ -581,7 +581,7 @@
   font-weight: 600;
   letter-spacing: -0.004em;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px rgba(255,255,255,0.85),
     0 3px 6px -1px var(--via-navy-22);
 }
@@ -621,10 +621,10 @@
     var(--via-glass-card);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 14px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 4px 12px -4px var(--via-navy-08);
 }
 .vds-ins-foot-tip-icon {
@@ -662,14 +662,14 @@
   cursor: pointer;
   transition: all 220ms cubic-bezier(.16, 1, .3, 1);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.16),
+    inset 0 1px 0 var(--via-edge-hi),
     0 6px 14px -3px var(--via-navy-30),
     0 2px 5px var(--via-navy-14);
 }
 .vds-ins-foot-cta:hover {
   transform: translateY(-1px);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 1px 0 var(--via-edge-hi),
     0 10px 20px -4px var(--via-navy-40),
     0 4px 10px -2px var(--via-navy-22);
 }
@@ -705,14 +705,14 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 20px;
   isolation: isolate;
   overflow: hidden;
   transition: all 320ms cubic-bezier(.16, 1, .3, 1);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.4),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 16px 36px -16px var(--via-navy-14),
     0 6px 14px -6px var(--via-navy-06);
 }
@@ -772,7 +772,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: -0.004em;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-ins-tile-delta.up { color: var(--via-text-primary); }
 .vds-ins-tile-delta.down { color: var(--via-danger, #B85C5C); }

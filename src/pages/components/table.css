@@ -171,7 +171,7 @@
 }
 
 .vds-tbl-density button.active {
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,

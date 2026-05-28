@@ -331,7 +331,7 @@
 .story-cta {
   align-self: flex-start;
   padding: 12px 22px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   color: var(--via-navy);
   border: none;
   border-radius: 999px;

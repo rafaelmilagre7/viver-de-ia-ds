@@ -587,7 +587,7 @@
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   display: inline-flex;
@@ -1368,7 +1368,7 @@
   position: absolute;
   inset: 1px;
   border-radius: 11px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 60%);
+  background: var(--via-glass-sheen);
   pointer-events: none;
 }
 

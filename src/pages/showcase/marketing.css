@@ -162,14 +162,14 @@
 .glass-stack { display: flex; flex-direction: column; gap: 20px; padding-top: 40px; }
 .glass-stack .g-card {
   padding: 22px 26px;
-  background: linear-gradient(155deg, rgba(255,255,255,0.85), rgba(255,255,255,0.55));
+  background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 24px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.4),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 16px 40px var(--via-navy-10),
     0 4px 12px var(--via-navy-06);
 }
@@ -187,7 +187,7 @@
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: var(--via-navy);
+  color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
   margin-top: 6px;
 }
@@ -241,11 +241,11 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 24px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.4),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 12px 32px var(--via-navy-08),
     0 2px 8px var(--via-navy-04);
   overflow: hidden;
@@ -255,7 +255,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 45%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.65), transparent);
+  background: var(--via-glass-sheen);
   border-top-left-radius: 24px;
   pointer-events: none;
 }
@@ -263,8 +263,8 @@
 .mk-feat:hover {
   transform: translateY(-2px);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.5),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 24px 56px var(--via-navy-14);
 }
 .mk-feat .ico {
@@ -305,10 +305,10 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 28px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 12px 32px var(--via-navy-08),
     0 2px 8px var(--via-navy-04);
   display: flex;
@@ -321,7 +321,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 40%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent);
+  background: var(--via-glass-sheen);
   border-top-left-radius: 28px;
   pointer-events: none;
 }
@@ -329,7 +329,7 @@
 .mk-case:hover {
   transform: translateY(-2px);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 24px 56px var(--via-navy-14),
     0 4px 12px var(--via-navy-06);
 }

@@ -117,6 +117,18 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-edge-hi",
+    "css": "--via-edge-hi",
+    "value": "rgba(255, 255, 255, 0.08)",
+    "category": "color"
+  },
+  {
+    "name": "via-edge-lo",
+    "css": "--via-edge-lo",
+    "value": "rgba(255, 255, 255, 0.05)",
+    "category": "color"
+  },
+  {
     "name": "via-gray-100",
     "css": "--via-gray-100",
     "value": "#F0F2F5",
@@ -597,6 +609,12 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-glass-sheen",
+    "css": "--via-glass-sheen",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent)",
+    "category": "other"
+  },
+  {
     "name": "via-glow-navy",
     "css": "--via-glow-navy",
     "value": "0 0 0 1px rgba(10,31,59,0.05),\n    0 8px 24px rgba(10,31,59,0.20),\n    0 16px 48px rgba(10,31,59,0.14)",
@@ -672,6 +690,12 @@ export const tokensList: readonly Token[] = [
     "name": "via-narrow",
     "css": "--via-narrow",
     "value": "560px",
+    "category": "other"
+  },
+  {
+    "name": "via-surface-onnavy",
+    "css": "--via-surface-onnavy",
+    "value": "linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%)",
     "category": "other"
   },
   {
@@ -916,6 +940,8 @@ export type TokenName =
   | 'via-coral-dark'
   | 'via-coral-deep'
   | 'via-danger'
+  | 'via-edge-hi'
+  | 'via-edge-lo'
   | 'via-gray-100'
   | 'via-gray-200'
   | 'via-gray-300'
@@ -996,6 +1022,7 @@ export type TokenName =
   | 'via-fw-semibold'
   | 'via-glass-card'
   | 'via-glass-card-2'
+  | 'via-glass-sheen'
   | 'via-glow-navy'
   | 'via-glow-navy-strong'
   | 'via-lh-loose'
@@ -1009,6 +1036,7 @@ export type TokenName =
   | 'via-ls-tighter'
   | 'via-ls-wide'
   | 'via-narrow'
+  | 'via-surface-onnavy'
   | 'via-t-fast'
   | 'via-t-slow'
   | 'via-radius-2xl'

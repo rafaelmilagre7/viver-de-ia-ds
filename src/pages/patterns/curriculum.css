@@ -549,7 +549,7 @@
   width: 30px;
   height: 30px;
   border-radius: 9px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   color: var(--via-navy);
   border: 1px solid var(--via-border-soft);
   display: inline-flex;

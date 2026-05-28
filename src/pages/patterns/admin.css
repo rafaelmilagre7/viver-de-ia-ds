@@ -1086,7 +1086,7 @@
   width: 38px;
   height: 38px;
   border-radius: 11px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   color: var(--via-navy);
   display: inline-flex;
   align-items: center;
@@ -1105,8 +1105,7 @@
 .vds-audit-item.security-warn .vds-audit-icon {
   color: var(--via-navy);
   border-color: var(--via-navy-22);
-  background:
-    var(--via-glass-card);
+  background: var(--via-surface-onnavy);
 }
 
 .vds-audit-item.create .vds-audit-icon,
@@ -1325,7 +1324,7 @@
   position: absolute;
   inset: 1px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 60%);
+  background: var(--via-glass-sheen);
   pointer-events: none;
 }
 

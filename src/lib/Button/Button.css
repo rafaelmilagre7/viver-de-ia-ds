@@ -124,10 +124,10 @@
 
 /* Secondary · liquid glass white */
 .via-btn--secondary {
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border-color: rgba(255, 255, 255, 0.96);
+  border-color: var(--via-edge-hi);
   color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,

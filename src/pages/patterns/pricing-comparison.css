@@ -46,12 +46,12 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-bottom: 0;
   border-radius: 24px 24px 0 0;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.5),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 1px 0 0 rgba(10,31,59,0.04),
     0 -20px 40px -20px var(--via-navy-12),
     0 -8px 20px -8px var(--via-navy-08);
@@ -80,10 +80,10 @@
 /* Recommended tier · mais alto, atmosphere navy intenso ----------- */
 .vds-pricing-tier.is-recommended {
   background: var(--via-glass-card);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.5),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 0 0 1px var(--via-navy),
     0 -32px 60px -24px var(--via-navy-22),
     0 -16px 32px -12px var(--via-navy-14);
@@ -130,7 +130,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.16),
+    inset 0 1px 0 var(--via-edge-hi),
     0 4px 10px -2px var(--via-navy-30),
     0 2px 4px -1px var(--via-navy-22);
 }
@@ -293,7 +293,7 @@
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 1px 2px var(--via-navy-04);
 }
 .vds-pricing-mark--check {
@@ -301,7 +301,7 @@
   border-color: transparent;
   color: var(--via-white);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 1px 0 var(--via-edge-hi),
     0 2px 6px -1px var(--via-navy-30),
     0 1px 2px var(--via-navy-14);
 }
@@ -339,11 +339,11 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 20px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.4),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 18px 40px -16px var(--via-navy-14),
     0 6px 14px -6px var(--via-navy-06);
   overflow: hidden;
@@ -380,7 +380,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   margin-bottom: 14px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-pricing-principle h3 {
   margin: 0 0 8px;
@@ -409,7 +409,7 @@
     margin-bottom: 16px;
     border-bottom: 1px solid rgba(255,255,255,1);
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,1),
+      inset 0 1px 0 var(--via-edge-hi),
       0 18px 40px -16px var(--via-navy-14);
   }
   .vds-pricing-tier.is-recommended {

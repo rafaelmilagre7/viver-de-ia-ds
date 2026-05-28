@@ -231,9 +231,9 @@
   gap: 14px;
 }
 .la-tier.feat {
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   color: var(--via-navy);
   box-shadow: 0 32px 64px rgba(10, 31, 59, 0.48);
 }

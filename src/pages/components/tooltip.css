@@ -31,7 +31,7 @@
   font-weight: 500;
   padding: 8px 12px;
   border-radius: 8px;
-  box-shadow: 0 12px 32px var(--via-navy-30), inset 0 1px 0 rgba(255,255,255,0.10);
+  box-shadow: 0 12px 32px var(--via-navy-30), inset 0 1px 0 var(--via-edge-hi);
   white-space: nowrap;
   animation: vds-tt-in 220ms var(--via-ease-out) backwards;
   animation-delay: 60ms;

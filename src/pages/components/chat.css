@@ -12,7 +12,7 @@
   border: 0.5px solid var(--via-navy-20);
   overflow: hidden;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.5),
+    inset 0 1px 0 var(--via-edge-hi),
     0 24px 56px var(--via-navy-18);
 }
 .vds-chat-stage::after {
@@ -95,7 +95,7 @@
   flex-shrink: 0;
   overflow: hidden;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 1px 0 var(--via-edge-hi),
     0 8px 20px rgba(10,31,59,0.28);
 }
 .vds-chat-av::before {
@@ -168,14 +168,14 @@
 .vds-bubble.assistant {
   position: relative;
   padding: 14px 18px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 20px 20px 20px 4px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.4),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 12px 28px var(--via-navy-12),
     0 2px 6px var(--via-navy-05);
   font-family: var(--via-font);
@@ -190,7 +190,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent);
+  background: var(--via-glass-sheen);
   pointer-events: none;
 }
 
@@ -207,7 +207,7 @@
   font-weight: 500;
   letter-spacing: -0.005em;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0,0,0,0.20),
     0 12px 28px rgba(10,31,59,0.36),
     0 2px 6px var(--via-navy-18);

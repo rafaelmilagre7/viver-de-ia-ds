@@ -168,7 +168,7 @@
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 1px 0 var(--via-edge-hi),
     0 4px 14px -10px var(--via-navy-14);
 }
 
@@ -254,7 +254,7 @@
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 1px 0 var(--via-edge-hi),
     0 4px 14px -10px var(--via-navy-14);
 }
 
@@ -406,7 +406,7 @@
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 1px 0 var(--via-edge-hi),
     0 4px 14px -10px var(--via-navy-14);
 }
 

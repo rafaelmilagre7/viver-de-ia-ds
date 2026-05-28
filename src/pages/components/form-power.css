@@ -288,7 +288,7 @@
   width: 48px;
   height: 48px;
   border-radius: 13px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border-soft);

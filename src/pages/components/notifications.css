@@ -782,7 +782,7 @@
 }
 
 .vds-inbox-tabs button.on {
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   border-color: var(--via-border-soft);
   color: var(--via-navy);
   font-weight: 600;
@@ -859,7 +859,7 @@
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   color: var(--via-navy);
   display: inline-flex;
   align-items: center;

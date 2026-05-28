@@ -416,7 +416,7 @@
 .vds-phil-sig-demo.lift .card {
   padding: 16px 22px;
   border-radius: 12px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   font-size: 13px;
@@ -442,7 +442,7 @@
   position: relative;
   padding: 22px 28px;
   border-radius: 12px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   color: var(--via-navy);
   font-size: 13px;

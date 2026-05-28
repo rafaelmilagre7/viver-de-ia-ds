@@ -86,9 +86,9 @@
   overflow: hidden;
 }
 .vds-btn.primary {
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   color: var(--via-navy);
-  box-shadow: 0 8px 24px rgba(10, 31, 59, 0.38), inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow: 0 8px 24px rgba(10, 31, 59, 0.38), inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-btn.primary::before {
   content: '';
@@ -100,7 +100,7 @@
   background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%);
   transition: left 600ms var(--via-ease-out);
 }
-.vds-btn.primary:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(10, 31, 59, 0.48), inset 0 1px 0 rgba(255,255,255,1); }
+.vds-btn.primary:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(10, 31, 59, 0.48), inset 0 1px 0 var(--via-edge-hi); }
 .vds-btn.primary:hover::before { left: 100%; }
 .vds-btn.ghost-light {
   background: rgba(255,255,255,0.10);
@@ -217,11 +217,11 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 28px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.4),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 12px 32px var(--via-navy-08),
     0 2px 8px var(--via-navy-04);
   text-decoration: none;
@@ -236,16 +236,16 @@
   left: 0;
   right: 0;
   height: 45%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.65), transparent);
+  background: var(--via-glass-sheen);
   border-top-left-radius: 28px;
   pointer-events: none;
 }
 .vds-home-card > * { position: relative; z-index: 1; }
 .vds-home-card:hover {
-  border-color: rgba(255,255,255,1);
+  border-color: var(--via-edge-hi);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.5),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 24px 56px var(--via-navy-14),
     0 4px 12px var(--via-navy-06);
   transform: translateY(-2px);
@@ -276,12 +276,12 @@
   width: 36px;
   height: 36px;
   border-radius: 999px;
-  background: var(--via-glass-card);
+  background: var(--via-surface-onnavy);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   color: var(--via-navy);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 4px 12px var(--via-navy-06);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 12px var(--via-navy-06);
   z-index: 2 !important;
   transition: var(--via-t);
 }
@@ -378,11 +378,11 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 20px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.4),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 12px 32px var(--via-navy-10),
     0 2px 6px var(--via-navy-04);
   display: flex;
@@ -395,20 +395,20 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 40%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent);
+  background: var(--via-glass-sheen);
   border-top-left-radius: 20px;
   pointer-events: none;
 }
 .vds-brand-tile:hover .vds-brand-tile-img {
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 20px 48px var(--via-navy-16);
 }
 .vds-brand-tile-img.dark {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid rgba(10,31,59,0.95);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.12),
+    inset 0 1px 0 var(--via-edge-hi),
     0 12px 32px rgba(10,31,59,0.24);
 }
 .vds-brand-tile-img.dark::before { background: linear-gradient(180deg, rgba(255,255,255,0.18), transparent); }
@@ -508,9 +508,9 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid var(--via-edge-hi);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 1px 0 var(--via-edge-hi),
     0 8px 24px var(--via-navy-10),
     0 2px 6px var(--via-navy-04);
   padding: 16px;
@@ -524,11 +524,11 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent);
+  background: var(--via-glass-sheen);
   pointer-events: none;
 }
 .vds-radii-tile > * { position: relative; z-index: 1; }
-.vds-radii-tile:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 16px 36px var(--via-navy-16); }
+.vds-radii-tile:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 16px 36px var(--via-navy-16); }
 .vds-radii-label {
   font-family: var(--via-font);
   font-size: 10px;
@@ -574,7 +574,7 @@
   width: 100%;
   height: 140px;
   background: var(--via-surface);
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-lg);
   display: flex;
   align-items: center;
@@ -600,11 +600,11 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid var(--via-edge-hi);
   border-radius: 20px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(255,255,255,0.4),
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
     0 12px 32px var(--via-navy-08),
     0 2px 6px var(--via-navy-04);
   display: flex;
@@ -616,7 +616,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 40%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent);
+  background: var(--via-glass-sheen);
   pointer-events: none;
 }
 .vds-motion-card > * { position: relative; z-index: 1; }

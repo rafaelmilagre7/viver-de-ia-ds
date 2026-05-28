@@ -716,7 +716,7 @@
   position: absolute;
   inset: 1px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 60%);
+  background: var(--via-glass-sheen);
   pointer-events: none;
 }
 

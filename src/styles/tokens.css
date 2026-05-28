@@ -212,11 +212,27 @@
 :root {
   --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
   --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
+  /* Superfície branca FIXA · pra botões/cards SOBRE hero navy (navy nos
+     2 temas) · NÃO adapta · sempre clara porque texto sobre ela é navy */
+  --via-surface-onnavy: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
+  /* Edge highlight (a "linha de luz" no topo dos cards glass) · forte em
+     light, sutil em dark · senão vira moldura branca berrante no escuro */
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  /* Edge highlight inferior/sutil · 1px de luz na base · quase nulo em dark */
+  --via-edge-lo: rgba(255, 255, 255, 0.4);
+  /* Sheen · o "brilho" branco que desce do topo dos cards glass (::before).
+     Forte em light (vidro pega luz), quase nulo em dark (vidro escuro reflete
+     pouco) · senão o topo do card vira um lavado branco berrante no escuro */
+  --via-glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
 }
 
 [data-theme="dark"] {
   --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
   --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018));
+  /* onnavy NÃO muda · permanece branco mesmo em dark */
+  --via-edge-hi: rgba(255, 255, 255, 0.08);
+  --via-edge-lo: rgba(255, 255, 255, 0.05);
+  --via-glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent);
 }
 
 /* Google Search ad · headline azul precisa virar variante dark-safe */
@@ -532,6 +548,22 @@ a:hover { text-decoration: underline; }
   border: 1px solid rgba(255,255,255,0.95);
   border-radius: var(--via-radius-pill);
   box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(10,31,59,0.08);
+}
+
+/* Dark: vidro branco hardcoded vira vidro escuro translúcido (senão estes
+   utilitários viram blocos brancos berrantes no tema escuro) */
+[data-theme="dark"] .via-glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
+  border-color: rgba(255,255,255,0.10);
+}
+[data-theme="dark"] .via-glass-strong {
+  background: linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.05) 100%);
+  border-color: rgba(255,255,255,0.14);
+}
+[data-theme="dark"] .via-liquid {
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 16px rgba(0,0,0,0.3);
 }
 
 /* =============================================================

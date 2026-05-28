@@ -79,7 +79,7 @@
 .via-progress--navy .via-progress__fill {
   background: linear-gradient(90deg, var(--via-navy, #0A1F3B), var(--via-blue, #1E3A5F));
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 1px 0 var(--via-edge-hi),
     0 0 10px -2px var(--via-navy-30);
 }
 
@@ -87,14 +87,14 @@
 .via-progress--accent .via-progress__fill {
   background: linear-gradient(90deg, var(--via-navy-deep), var(--via-navy));
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 1px 0 var(--via-edge-hi),
     0 0 12px -2px var(--via-navy-40);
 }
 
 .via-progress--coral .via-progress__fill {
   background: linear-gradient(90deg, var(--via-coral-dark, #8C2C2C), var(--via-coral, #B85C5C));
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 1px 0 var(--via-edge-hi),
     0 0 10px -2px rgba(184, 92, 92, 0.32);
 }
 
