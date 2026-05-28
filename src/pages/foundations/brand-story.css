@@ -36,7 +36,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
@@ -436,7 +436,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
