@@ -1,14 +1,16 @@
 ---
 name: viver-de-ia-design
-description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo em nenhum nível), assinatura liquid glass, 110+ páginas/patterns canônicos, library React publicável `@viverdeia/design-system` v0.5.0 (**46 componentes** em src/lib), API docs Radix-style por componente, theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K real indexado com keywords PT-BR/EN, starter `bunx create-viverdeia-app`, brand book completo, email/social/paid ads/landing/commercial/editorial/event coverage + 4 advanced patterns (2FA setup, pricing comparison, error pages, billing checkout). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ou qualquer artefato visual da marca.
+description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo em nenhum nível), assinatura liquid glass, 107 rotas/patterns canônicos, library React publicável `@viverdeia/design-system` v0.5.0 (**47 componentes** em src/lib), API docs Radix-style por componente, theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K real indexado com keywords PT-BR/EN, starter `bunx create-viverdeia-app`, brand book completo, email/social/paid ads/landing/commercial/editorial/event coverage + 4 advanced patterns (2FA setup, pricing comparison, error pages, billing checkout). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ou qualquer artefato visual da marca.
 user-invocable: true
 ---
 
 # Viver de IA · Design System
 
-Reference site canônico: `/Users/rafaelmilagre/viver-de-ia-ds` · **110+ páginas · 46 componentes · 46 API docs** · `bun dev` → http://localhost:5173
-Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds · **v0.5.0**
+Reference site canônico: `/Users/rafaelmilagre/viver-de-ia-ds` · **107 rotas · 47 componentes · 46 API docs · dark mode + WCAG AA completos** · `bun dev` → http://localhost:5173
+Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds · site vivo: https://viver-de-ia-ds.vercel.app
 Starter: `bunx create-viverdeia-app meu-app` (scaffold Vite + React + TS pré-configurado com ThemeProvider)
+
+**Dark mode + acessibilidade (estado atual):** dark mode completo · 100% WCAG AA de contraste nos 2 temas · 0 violação séria. Em código, use SEMPRE tokens semânticos que adaptam claro↔escuro (`var(--via-text-primary|body|muted|soft)`, `var(--via-surface)`, `var(--via-border-soft)`) — nunca hardcode navy/branco em texto/superfície. Link em texto corrido = sublinhado. De-ênfase por cor, não opacity. E-mail trava tudo em claro.
 
 ## Princípios não-negociáveis
 
@@ -76,7 +78,7 @@ import { ThemeProvider, Button, Pill, Card, DataTable, useToasts } from '@viverd
 </ThemeProvider>
 ```
 
-**46 componentes core (9 categorias):**
+**47 componentes core (9 categorias):**
 
 - **Base (6):** Button · Pill · Card · Input · Avatar · Icon
 - **Overlay (5):** Toast · Tooltip · Modal · Tabs · Popover
@@ -92,7 +94,7 @@ import { ThemeProvider, Button, Pill, Card, DataTable, useToasts } from '@viverd
 
 **API docs:** cada componente tem `/api/{nome}` no reference site com anatomy + props + examples + a11y.
 
-## Cobertura completa (110+ páginas)
+## Cobertura completa (107 rotas)
 
 - **Fundamentos** (14): Manifesto · Brand · BrandStory · Personality · VoiceExtended · LogoUsage · Cores · Tipografia · Espaçamento · Raios · Sombras · Movimento · Filosofia · Library · **Theming (NOVO v0.5)**
 - **Glass** (3): Anatomia · Variantes · In-context

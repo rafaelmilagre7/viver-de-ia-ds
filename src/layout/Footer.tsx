@@ -20,6 +20,7 @@ export default function Footer() {
               <li><a href="/iconography/marks">Iconografia</a></li>
               <li><a href="/components/buttons">Componentes</a></li>
               <li><a href="/patterns/article">Padrões</a></li>
+              <li><a href="/ai">Usar com IA</a></li>
             </ul>
           </div>
 

@@ -21,6 +21,7 @@ export const routes: Route[] = [
   // Hero
   { path: '/', slug: 'home', settleMs: 200 },
   { path: '/manifesto', settleMs: 100 },
+  { path: '/ai', slug: 'ai' },
 
   // Foundations
   { path: '/foundations/brand' },

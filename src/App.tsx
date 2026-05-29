@@ -14,6 +14,7 @@ import RouteLoader from './components/RouteLoader';
 
 // Hero
 const Manifesto = lazy(() => import('./pages/Manifesto'));
+const Distribute = lazy(() => import('./pages/Distribute'));
 
 // Foundations
 const Brand = lazy(() => import('./pages/foundations/Brand'));
@@ -206,6 +207,7 @@ export default function App() {
             <Suspense fallback={<RouteLoader />}>
               <Routes>
                 <Route path="manifesto" element={<Manifesto />} />
+                <Route path="ai" element={<Distribute />} />
 
                 <Route path="foundations">
                   <Route path="brand" element={<Brand />} />
