@@ -75,7 +75,7 @@ export default function IconographyIcons() {
           ))}
         </div>
         <p style={{ marginTop: 24, fontFamily: 'var(--via-font)', fontSize: 13, color: 'var(--via-text-muted)' }}>
-          Catálogo completo (1500+ ícones): <a href="https://lucide.dev" target="_blank" rel="noreferrer" style={{ color: 'var(--via-text-primary)' }}>lucide.dev</a>
+          Catálogo completo (1500+ ícones): <a href="https://lucide.dev" target="_blank" rel="noreferrer" style={{ color: 'var(--via-text-primary)', textDecoration: 'underline', textUnderlineOffset: '2px' }}>lucide.dev</a>
         </p>
       </Section>
 

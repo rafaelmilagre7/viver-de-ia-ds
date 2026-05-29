@@ -21,10 +21,10 @@ export default function ShowcaseMarketing() {
       <header className="mk-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
-          <a className="active">Mentoria</a>
-          <a>Cases</a>
-          <a>Manifesto</a>
-          <a>Imprensa</a>
+          <a className="active" href="#mentoria">Mentoria</a>
+          <a href="#cases">Cases</a>
+          <a href="#manifesto">Manifesto</a>
+          <a href="#imprensa">Imprensa</a>
         </nav>
         <button>Entrar na turma</button>
       </header>
@@ -102,7 +102,7 @@ export default function ShowcaseMarketing() {
                 <span className="v">{c.m}</span>
                 <span className="l">{c.l}</span>
               </div>
-              <a className="link">Ler case <ArrowUpRight size={14} strokeWidth={2.5} /></a>
+              <a className="link" href="#case">Ler case <ArrowUpRight size={14} strokeWidth={2.5} /></a>
             </article>
           ))}
         </div>

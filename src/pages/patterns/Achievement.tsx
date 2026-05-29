@@ -250,7 +250,7 @@ function CertificateSection() {
               <strong>Caio Ribeiro</strong>
               <em>Fundador · Viver de IA</em>
             </div>
-            <div className="vds-cert-seal" aria-label="Selo VIA 2026">
+            <div className="vds-cert-seal" role="img" aria-label="Selo VIA 2026">
               <div className="vds-cert-seal-medal">
                 <Crown size={22} strokeWidth={1.5} />
                 <svg className="vds-cert-seal-ring" viewBox="0 0 100 100" aria-hidden="true">

@@ -20,14 +20,14 @@ export default function Header({ onOpenSearch, onToggleDrawer, drawerOpen }: Pro
         >
           {drawerOpen ? <X size={18} strokeWidth={2} /> : <Menu size={18} strokeWidth={2} />}
         </button>
-        <Link to="/" className="vds-brand" aria-label="Viver de IA — Design System">
+        <Link to="/" className="vds-brand">
           <BrandLogo variant="auto" size="md" />
           <span className="vds-brand-tag">Design System</span>
         </Link>
       </div>
 
       <div className="vds-header-right">
-        <button className="vds-search" aria-label="Buscar (Cmd K)" onClick={onOpenSearch}>
+        <button className="vds-search" onClick={onOpenSearch}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
