@@ -69,14 +69,16 @@ Semânticos parcimoniosos:
 
 ## 2. Tipografia · Geist single family
 
-Use sempre Geist Sans (UI, headings, body) + Geist Mono (números, código, timestamps).
+Use sempre Geist Sans (UI, headings, body) + Geist Mono (números, código, timestamps). Geist é open-source (SIL OFL 1.1 / MIT, da Vercel).
 
-CDN:
+CDN (web com internet):
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet" />
 ```
+
+Self-hosted (offline / sem CDN / PDF / e-mail): o kit traz os `.woff2` (variável 100–900, normal+italic) em `fonts/` + um `fonts/fonts.css` com os `@font-face` prontos. É só `@import './fonts/fonts.css'` ou copiar os 4 woff2 + o CSS. Mesmas famílias (`'Geist'` / `'Geist Mono'`).
 
 CSS:
 ```css

@@ -31,6 +31,7 @@ mkdirSync(out, { recursive: true });
 mkdirSync(resolve(out, 'system-prompts'), { recursive: true });
 mkdirSync(resolve(out, 'tokens'), { recursive: true });
 mkdirSync(resolve(out, 'logos'), { recursive: true });
+mkdirSync(resolve(out, 'fonts'), { recursive: true });
 mkdirSync(resolve(out, 'examples'), { recursive: true });
 
 // ---------- 1. README ----------
@@ -84,6 +85,13 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 │   ├── app-icon.png
 │   ├── leaders-ai-conference.png
 │   └── ...
+├── fonts/                   ← Geist self-hosted (OFL/MIT)
+│   ├── fonts.css            ← @font-face pronto · @import e usa
+│   ├── Geist-Variable.woff2          (100–900)
+│   ├── Geist-Italic-Variable.woff2
+│   ├── GeistMono-Variable.woff2
+│   ├── GeistMono-Italic-Variable.woff2
+│   └── LICENSE.txt
 └── examples/                ← HTML specimens prontos
     ├── email-welcome.html
     └── social-ig-post.html
@@ -176,6 +184,60 @@ for (const [src, dst] of Object.entries(logoMap)) {
   }
 }
 console.log(`  wrote logos/ (${copiedLogos} files)`);
+
+// ---------- 3b. Fonts (Geist · self-hosted · OFL/MIT) ----------
+const fontSrc = resolve(root, 'src/assets/fonts');
+const fontFiles = [
+  'Geist-Variable.woff2',
+  'Geist-Italic-Variable.woff2',
+  'GeistMono-Variable.woff2',
+  'GeistMono-Italic-Variable.woff2',
+  'LICENSE.txt',
+];
+let copiedFonts = 0;
+for (const f of fontFiles) {
+  const srcPath = resolve(fontSrc, f);
+  if (existsSync(srcPath)) {
+    copyFileSync(srcPath, resolve(out, `fonts/${f}`));
+    copiedFonts++;
+  }
+}
+// fonts.css · @font-face self-hosted (variável · 100-900 · normal + italic)
+const fontsCss = `/* Geist · self-hosted · variável (100–900) · normal + italic
+   Geist é open-source (SIL OFL 1.1 / MIT) da Vercel — ver LICENSE.txt.
+   Importe este arquivo OU use o CDN do Google Fonts (ver system-prompt.md).
+   Casa com os tokens --via-font ('Geist') e --via-font-mono ('Geist Mono'). */
+@font-face {
+  font-family: 'Geist';
+  src: url('./Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('./Geist-Italic-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./GeistMono-Italic-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+`;
+writeFileSync(resolve(out, 'fonts/fonts.css'), fontsCss);
+console.log(`  wrote fonts/ (${copiedFonts} woff2/license + fonts.css)`);
 
 // ---------- 4. System prompts ----------
 const promptGeneral = readFileSync(resolve(root, 'plugins/viver-de-ia/skills/viver-de-ia-design.md'), 'utf8');
