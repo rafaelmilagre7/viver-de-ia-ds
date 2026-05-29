@@ -240,7 +240,7 @@ writeFileSync(resolve(out, 'fonts/fonts.css'), fontsCss);
 console.log(`  wrote fonts/ (${copiedFonts} woff2/license + fonts.css)`);
 
 // ---------- 4. System prompts ----------
-const promptGeneral = readFileSync(resolve(root, 'plugins/viver-de-ia/skills/viver-de-ia-design.md'), 'utf8');
+const promptGeneral = readFileSync(resolve(root, 'plugins/viver-de-ia/skills/viver-de-ia-design/SKILL.md'), 'utf8');
 writeFileSync(resolve(out, 'system-prompt.md'), promptGeneral);
 
 // Versão denso pra Lovable (cola direto em custom instructions)

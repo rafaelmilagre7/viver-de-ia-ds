@@ -2,21 +2,16 @@
 
 Plugin completo do Viver de IA Design System pra Claude Code. Use pra gerar qualquer artefato editorial da marca com 1 comando.
 
-## Instalação
+## Instalação · 2 comandos (qualquer um do time)
 
-### Opção 1 · clone do repo
-```bash
-gh repo clone rafaelmilagre7/viver-de-ia-ds /tmp/viver-de-ia-ds
-mkdir -p ~/.claude/plugins/
-cp -r /tmp/viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
+No seu Claude Code, rode:
+
+```
+/plugin marketplace add rafaelmilagre7/viver-de-ia-ds
+/plugin install viver-de-ia@viver-de-ia-ds
 ```
 
-### Opção 2 · symlink (recomendado pra time interno)
-```bash
-ln -s /Users/rafaelmilagre/viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/viver-de-ia
-```
-
-Reinicie Claude Code · verifique que `/via` aparece no autocomplete.
+Pronto — `/via` e os outros comandos aparecem no autocomplete, e a skill `viver-de-ia-design` fica disponível. Pra atualizar quando o DS evoluir: `/plugin marketplace update viver-de-ia-ds`.
 
 ## Comandos disponíveis
 

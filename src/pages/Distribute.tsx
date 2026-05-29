@@ -50,11 +50,11 @@ const tools: Tool[] = [
   },
   {
     name: 'Claude Code',
-    tag: 'plugin',
+    tag: 'plugin · 2 comandos',
     steps: [
-      'Clone o repo e linke o plugin:',
-      'git clone …/viver-de-ia-ds && ln -s $(pwd)/viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/',
-      'Use os comandos /via, /via-email, /via-landing, /via-deck, /via-check.',
+      '/plugin marketplace add rafaelmilagre7/viver-de-ia-ds',
+      '/plugin install viver-de-ia@viver-de-ia-ds',
+      'Pronto — use /via, /via-email, /via-landing, /via-deck, /via-check.',
     ],
   },
 ];

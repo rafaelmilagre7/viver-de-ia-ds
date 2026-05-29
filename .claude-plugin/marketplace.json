@@ -1,0 +1,18 @@
+{
+  "name": "viver-de-ia-ds",
+  "owner": {
+    "name": "Viver de IA"
+  },
+  "metadata": {
+    "description": "Marketplace do Viver de IA Design System · plugin pro Claude Code gerar qualquer artefato da marca no padrão."
+  },
+  "plugins": [
+    {
+      "name": "viver-de-ia",
+      "source": "./plugins/viver-de-ia",
+      "description": "Skill base + comandos /via-* (email, social, landing, deck, paid ads, brand, check) + sub-agente auditor. Paleta restrita navy, voz editorial, dark mode + contraste AA, sem gold/sparkles.",
+      "category": "design",
+      "keywords": ["design-system", "branding", "editorial", "viver-de-ia"]
+    }
+  ]
+}
