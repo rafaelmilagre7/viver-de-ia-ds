@@ -159,11 +159,14 @@
   letter-spacing: -0.030em;
 }
 
-.vds-bento-lede {
+/* escopado ao card hero (navy fixo nos 2 temas) — senão o `.vds-bento p`
+   genérico (0,1,1) vence o `.vds-bento-lede` (0,1,0) e força --via-text-body,
+   que em tema CLARO vira cinza escuro sobre navy (1.89:1, ilegível). */
+.vds-bento-card.hero .vds-bento-lede {
   margin: 0;
   font-size: 14.5px;
   line-height: 1.62;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.86);
   max-width: 440px;
   letter-spacing: -0.008em;
 }
