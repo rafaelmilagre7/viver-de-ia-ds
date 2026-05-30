@@ -23,6 +23,7 @@
     "test:cross-browser": "playwright test --config=playwright.cross-browser.config.ts",
     "test:cross-browser:install": "playwright install firefox webkit",
     "build:kit": "node scripts/build-kit.mjs",
+    "kit": "bun run build:lib && bun run build:kit",
     "story": "ladle serve",
     "story:build": "ladle build"
   },

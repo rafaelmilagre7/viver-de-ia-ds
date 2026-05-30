@@ -1,0 +1,57 @@
+name: Kit · auto-regenerate
+
+# Sempre que a fonte do DS muda (componentes, tokens, prompt, logos, fontes),
+# regenera o kit universal (.zip + style.css + tokens) e commita de volta.
+# Assim o kit que o time sobe no ChatGPT/Lovable/Cursor nunca fica defasado.
+# Desacoplado do deploy do site (Vercel) — se falhar, o site continua no ar.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/lib/**'
+      - 'src/styles/tokens.css'
+      - 'docs/system-prompt.md'
+      - 'docs/system-prompts/**'
+      - 'scripts/build-kit.mjs'
+      - 'scripts/build-tokens.mjs'
+      - 'src/assets/fonts/**'
+      - 'public/logos/**'
+
+concurrency:
+  group: kit-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    name: regenera kit + commita
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: install deps
+        run: bun install --frozen-lockfile
+
+      - name: build lib + kit + zip to public
+        run: bun run kit
+
+      - name: commit kit atualizado (se mudou)
+        run: |
+          git config user.name  "viver-de-ia-bot"
+          git config user.email "bot@viverdeia.ai"
+          git add public/viver-de-ia-kit.zip
+          if git diff --cached --quiet; then
+            echo "Kit ja estava atualizado - nada a commitar."
+          else
+            git commit -m "chore(kit): regenera kit universal (auto) [skip ci]"
+            git push
+            echo "Kit regenerado e commitado."
+          fi

@@ -20,6 +20,7 @@
 import { existsSync, mkdirSync, copyFileSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execSync } from 'node:child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
@@ -147,7 +148,7 @@ const tokens = [...tokenMap.entries()].map(([full, value]) => ({
 tokens.sort((a, b) => a.category === b.category ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category));
 writeFileSync(resolve(out, 'tokens/tokens.json'), JSON.stringify({
   $version: JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8')).version,
-  $generated: new Date().toISOString(),
+  // sem timestamp de build: mantém o artefato determinístico (a data fica no git).
   $source: 'src/styles/tokens.css',
   tokens,
 }, null, 2));
@@ -369,5 +370,22 @@ for (const [filename, html] of Object.entries(examples)) {
 console.log(`  wrote examples/ (${Object.keys(examples).length} files)`);
 
 console.log(`\nKit pronto em dist/kit/`);
-console.log(`Pra empacotar em ZIP: cd dist && zip -r viver-de-ia-kit.zip kit/`);
+
+// Empacota o .zip direto em public/ (servido em /viver-de-ia-kit.zip) — sem passo manual.
+// Isso garante que `bun run build:kit` já entrega o kit pronto pro deploy, sem drift.
+const distDir = resolve(root, 'dist');
+const publicZip = resolve(root, 'public/viver-de-ia-kit.zip');
+try {
+  // Zip determinístico: mtime fixo + -X (sem atributos extras) → mesmos bytes pra
+  // mesmo conteúdo. Evita commit espúrio no CI quando nada mudou de verdade.
+  execSync(`rm -f "${publicZip}" && cd "${distDir}" && find kit -print0 | xargs -0 touch -t 200001010000 && zip -rqX viver-de-ia-kit.zip kit && mv -f viver-de-ia-kit.zip "${publicZip}"`, {
+    stdio: 'pipe',
+    shell: '/bin/bash',
+  });
+  const kb = Math.round(readFileSync(publicZip).length / 1024);
+  console.log(`  wrote public/viver-de-ia-kit.zip (${kb} KB)`);
+} catch (err) {
+  console.error(`  ⚠ falha ao zipar o kit: ${err.message}`);
+  process.exitCode = 1;
+}
 console.log(`Anexa o .zip em Claude.ai / ChatGPT / Cursor. Ou cola system-prompt.md em Lovable.`);
