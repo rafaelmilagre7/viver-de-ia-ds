@@ -530,6 +530,20 @@ h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-siz
   color: var(--via-white); /* fallback se gradient não suportado */
 }
 
+/* ── Fix sistêmico · clip do glifo itálico em gradient-text ──────────────
+   `background-clip: text` pinta o gradiente só dentro da caixa inline do <em>.
+   O glifo itálico inclina pra direita e seu traço final ("o", "t", "s"…)
+   ultrapassa a borda da caixa em ~3–6px — região que o gradiente não pinta,
+   então o último glifo aparece cortado. (Palavras terminadas em "." não mostram
+   o bug: o ponto ocupa essa folga.) padding-right estende a caixa de pintura
+   pra cobrir o overhang; margin-right negativo cancela 100% do deslocamento de
+   layout (medido: texto seguinte move 0px). No-op visual em <em> sem gradiente. */
+:is(h1, h2, h3, h4, h5) em,
+:is(h1, h2, h3, h4, h5) i {
+  padding-right: 0.16em;
+  margin-right: -0.16em;
+}
+
 
 p { margin: 0; }
 a { color: var(--via-navy); text-decoration: none; }
