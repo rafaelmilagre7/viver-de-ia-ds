@@ -1,59 +1,50 @@
-name: Kit · auto-regenerate
+name: Emails · auto-sync
 
-# Sempre que a fonte do DS muda (componentes, tokens, emails, prompt, logos,
-# fontes), regenera a lib + os emails reais + o kit universal e commita de volta.
-# Assim o kit que o time usa (e os HTMLs de email) nunca ficam defasados.
-# Desacoplado do deploy do site (Vercel) — se falhar, o site continua no ar.
+# Mantém os HTMLs renderizados (public/emails) em sincronia com os templates
+# (emails/). SÓ os emails — eles são determinísticos (mesmos bytes em qualquer
+# SO). O kit .zip NÃO é recommitado pelo CI: ele inclui o CSS compilado da lib
+# (style.css), que o Vite/esbuild minifica de forma levemente diferente entre
+# Linux e macOS (byte-diferente, funcionalmente igual) — isso causava commit
+# espúrio. O kit é reconstruído localmente (bun run kit) quando o DS muda.
+# Desacoplado do deploy (Vercel) — se falhar, o site continua no ar.
 
 on:
   push:
     branches: [main]
     paths:
-      - 'src/lib/**'
-      - 'src/styles/tokens.css'
       - 'emails/**'
-      - 'docs/system-prompt.md'
-      - 'docs/system-prompts/**'
-      - 'scripts/build-kit.mjs'
       - 'scripts/build-emails.mjs'
-      - 'scripts/build-tokens.mjs'
-      - 'src/assets/fonts/**'
-      - 'public/logos/**'
 
 concurrency:
-  group: kit-${{ github.ref }}
+  group: emails-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
   contents: write
 
 jobs:
-  regenerate:
-    name: regenera lib + emails + kit
+  sync:
+    name: render emails + commita se mudou
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
-
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-
       - name: install deps
         run: bun install --frozen-lockfile
-
-      - name: build lib + emails + kit + zip
-        run: bun run kit
-
-      - name: commit artefatos atualizados (se mudaram)
+      - name: render emails
+        run: bun run build:emails
+      - name: commit emails (se mudaram)
         run: |
           git config user.name  "viver-de-ia-bot"
           git config user.email "bot@viverdeia.ai"
-          git add public/viver-de-ia-kit.zip public/emails
+          git add public/emails
           if git diff --cached --quiet; then
-            echo "Kit e emails ja estavam atualizados - nada a commitar."
+            echo "Emails ja sincronizados - nada a commitar."
           else
-            git commit -m "chore(kit): regenera kit + emails (auto) [skip ci]"
+            git commit -m "chore(emails): re-render (auto) [skip ci]"
             git push
-            echo "Artefatos regenerados e commitados."
+            echo "Emails re-renderizados."
           fi
