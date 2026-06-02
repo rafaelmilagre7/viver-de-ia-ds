@@ -90,7 +90,7 @@ Layout grande (970×250 billboard): texto esquerda + CTA central + logo direita
 
 ## Reference completa
 
-`/Users/rafaelmilagre/viver-de-ia-ds/src/pages/patterns/PaidAds.tsx` tem:
+`viver-de-ia-ds/src/pages/patterns/PaidAds.tsx` tem:
 - Todos os formatos Meta + Google renderizados
 - Specs canônicas (safe area, texto length, CTA wording)
 - Headline library com 16 exemplos (4 cats × 4 hooks)

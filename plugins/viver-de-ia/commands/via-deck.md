@@ -89,7 +89,7 @@ Footer · "Próximo passo" + CTA "Aceitar proposta"
 
 ## Reference completa
 
-`/Users/rafaelmilagre/viver-de-ia-ds/src/pages/patterns/Commercial.tsx` tem:
+`viver-de-ia-ds/src/pages/patterns/Commercial.tsx` tem:
 - 12 slides do deck visualmente renderizados
 - one-pager A4 PDF-ready
 - case study editorial completo (Camila Moraes)

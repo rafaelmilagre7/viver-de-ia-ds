@@ -556,8 +556,8 @@ function AuditLogSection() {
     { time: '09:42', day: 'Hoje', who: 'Sistema', action: 'cobrança processada', detail: 'R$ 1.840,00 · método VISA •••• 4821', icon: CreditCard, type: 'system' },
     { time: '23:08', day: 'ontem', who: 'Mateus Silva', action: 'adicionou 3 alunos ao plano Corporate', detail: 'Mantra Tech · convites enviados', icon: UserPlus, type: 'team' },
     { time: '17:42', day: 'ontem', who: 'Rafael Milagre', action: 'editou as configurações de notificação', detail: 'desligou "comentários nas suas notas"', icon: FileEdit, type: 'change' },
-    { time: '14:00', day: 'ontem', who: 'Rafael Milagre', action: 'login pela primeira vez de São Paulo', detail: 'IP 187.18.84.22 · macOS Safari', icon: LogIn, type: 'security' },
-    { time: '09:30', day: '14 mai', who: 'Sistema', action: 'detectou tentativa de login suspeita', detail: 'IP 102.214.18.7 · bloqueado · usuário não afetado', icon: Shield, type: 'security-warn' },
+    { time: '14:00', day: 'ontem', who: 'Rafael Milagre', action: 'login pela primeira vez de São Paulo', detail: 'IP 203.0.113.22 · macOS Safari', icon: LogIn, type: 'security' },
+    { time: '09:30', day: '14 mai', who: 'Sistema', action: 'detectou tentativa de login suspeita', detail: 'IP 198.51.100.7 · bloqueado · usuário não afetado', icon: Shield, type: 'security-warn' },
   ];
 
   return (

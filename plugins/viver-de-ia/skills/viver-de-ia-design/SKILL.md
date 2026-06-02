@@ -6,7 +6,7 @@ user-invocable: true
 
 # Viver de IA · Design System
 
-Reference site canônico: `/Users/rafaelmilagre/viver-de-ia-ds` · **107 rotas · 47 componentes · 46 API docs · dark mode + WCAG AA completos** · `bun dev` → http://localhost:5173
+Reference site canônico: `viver-de-ia-ds` · **107 rotas · 47 componentes · 46 API docs · dark mode + WCAG AA completos** · `bun dev` → http://localhost:5173
 Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds · site vivo: https://viver-de-ia-ds.vercel.app
 Starter: `bunx create-viverdeia-app meu-app` (scaffold Vite + React + TS pré-configurado com ThemeProvider)
 

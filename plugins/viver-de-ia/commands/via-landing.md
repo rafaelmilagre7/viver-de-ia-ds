@@ -99,7 +99,7 @@ Resposta sempre direta · sem rodeio · sem "consulte nosso time".
 
 ## Reference completa
 
-`/Users/rafaelmilagre/viver-de-ia-ds/src/pages/patterns/LandingElements.tsx` tem:
+`viver-de-ia-ds/src/pages/patterns/LandingElements.tsx` tem:
 - 5 hero variants
 - 8 CTA variants com contexto
 - 3 padrões trust signals

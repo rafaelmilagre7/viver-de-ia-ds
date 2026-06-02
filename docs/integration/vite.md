@@ -1,6 +1,6 @@
 # Consumindo `@viverdeia/design-system` em Vite + React
 
-Cobre Vite 5+ com React 18 ou 19. Ambiente real testado: este próprio repo (`/Users/rafaelmilagre/viver-de-ia-ds`).
+Cobre Vite 5+ com React 18 ou 19. Ambiente real testado: este próprio repo (`viver-de-ia-ds`).
 
 ---
 

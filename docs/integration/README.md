@@ -5,7 +5,7 @@
 ## A · Claude Code plugin (recomendado pra devs)
 
 ```bash
-ln -s /Users/rafaelmilagre/viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/viver-de-ia
+ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/viver-de-ia
 ```
 
 Comandos disponíveis após reiniciar Claude Code:

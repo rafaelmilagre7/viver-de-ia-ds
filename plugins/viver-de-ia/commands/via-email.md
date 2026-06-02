@@ -75,7 +75,7 @@ O usuário descreveu o tipo de email em `$ARGUMENTS`. Identifica em qual das 5 c
 
 **Produção:** `emails/` (templates react-email) + `/patterns/email` no reference site (iframe do HTML real + como enviar via Resend). Renderize com `bun run build:emails`.
 
-**Editorial:** `/Users/rafaelmilagre/viver-de-ia-ds/src/pages/patterns/EmailCoverage.tsx` tem todos os 13 templates com:
+**Editorial:** `viver-de-ia-ds/src/pages/patterns/EmailCoverage.tsx` tem todos os 13 templates com:
 - subject + preview + body completo
 - notas: quando enviar, voz, variáveis dinâmicas
 - chrome de email (header logo · footer · unsubscribe)

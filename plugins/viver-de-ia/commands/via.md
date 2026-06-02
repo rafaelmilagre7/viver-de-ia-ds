@@ -34,7 +34,7 @@ Se a categoria não bate em nenhuma, gere direto seguindo os princípios canôni
 
 ## Reference site canônico
 
-Quando em dúvida sobre como algo deve parecer, consulte uma das 107 páginas em `/Users/rafaelmilagre/viver-de-ia-ds/src/pages/`.
+Quando em dúvida sobre como algo deve parecer, consulte uma das 107 páginas em `viver-de-ia-ds/src/pages/`.
 
 Páginas chave por contexto:
 - **Brand book completo** · `/foundations/brand-story` · `/foundations/personality` · `/foundations/voice-extended` · `/foundations/logo-usage`

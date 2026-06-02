@@ -81,7 +81,7 @@ Cada card: portrait 1080×1350 · headline 38-52px Geist Display
 
 ## Reference completa
 
-`/Users/rafaelmilagre/viver-de-ia-ds/src/pages/patterns/SocialCoverage.tsx` tem todos os 18 templates com chrome authentic do app (profile pic, like, comment count).
+`viver-de-ia-ds/src/pages/patterns/SocialCoverage.tsx` tem todos os 18 templates com chrome authentic do app (profile pic, like, comment count).
 
 ## Output
 

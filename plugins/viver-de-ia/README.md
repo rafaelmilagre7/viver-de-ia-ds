@@ -51,7 +51,7 @@ Pronto — `/via` e os outros comandos aparecem no autocomplete, e a skill `vive
 
 ## Reference site canônico
 
-107 páginas em `/Users/rafaelmilagre/viver-de-ia-ds`. `bun dev` → http://localhost:5173.
+107 páginas em `viver-de-ia-ds`. `bun dev` → http://localhost:5173.
 
 Quando o comando cita "ver /patterns/email-coverage", essa página tem todos os 13 templates renderizados ao vivo com chrome de email autêntico + notas de aplicação.
 
