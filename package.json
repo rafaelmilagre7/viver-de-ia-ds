@@ -26,6 +26,7 @@
     "build:emails": "bun scripts/build-emails.mjs",
     "email:dev": "email dev --dir emails --port 3000",
     "kit": "bun run build:lib && bun run build:emails && bun run build:kit",
+    "guide": "node scripts/render-guide.mjs",
     "story": "ladle serve",
     "story:build": "ladle build"
   },

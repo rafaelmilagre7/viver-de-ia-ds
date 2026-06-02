@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Como criar um Design System de nível mundial operado por IA · Viver de IA · por Rafael Milagre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0A1F3B; --navy-deep: #02162A; --navy-darker: #010B1A; --navy-lift: #16335C;
+    --ink: #0A1F3B; --body: #344054; --muted: #667085; --faint: #98A2B3;
+    --line: #E6E9EF; --line-soft: #EFF1F5; --paper: #FFFFFF; --paper-alt: #F7F9FB;
+    --coral: #B85C5C;
+    --font: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #DDE3EA; }
+  body { font-family: var(--font); color: var(--body); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+  .page {
+    position: relative;
+    width: 210mm; min-height: 297mm;
+    margin: 0 auto; background: var(--paper);
+    padding: 22mm 20mm 20mm;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* running footer */
+  .foot { position: absolute; left: 20mm; right: 20mm; bottom: 12mm; display: flex; justify-content: space-between; align-items: center;
+          font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+  .foot .b { color: var(--muted); }
+
+  /* ---------- COVER ---------- */
+  .cover {
+    background-color: var(--navy);
+    background-image:
+      radial-gradient(120% 90% at 100% 0%, rgba(255,255,255,0.10), rgba(255,255,255,0) 55%),
+      radial-gradient(90% 70% at 0% 100%, rgba(40,80,150,0.35), rgba(255,255,255,0) 60%),
+      linear-gradient(150deg, #0A1F3B 0%, #02162A 60%, #010B1A 100%);
+    color: #fff; padding: 26mm 20mm; display: flex; flex-direction: column;
+  }
+  .cover .mono-mark { width: 46px; height: auto; opacity: 0.96; }
+  .cover .eyebrow { margin: auto 0 0; font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .cover h1 { margin: 14px 0 0; font-size: 40px; line-height: 1.1; font-weight: 600; letter-spacing: -0.03em; max-width: 16em; }
+  .cover h1 em { font-style: italic; font-weight: 400; color: rgba(255,255,255,0.82); }
+  .cover .sub { margin: 20px 0 0; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,0.74); max-width: 30em; }
+  .cover .by { margin-top: 34px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 13.5px; color: rgba(255,255,255,0.78); }
+  .cover .by strong { color: #fff; font-weight: 600; }
+  .cover .glasschip { display: inline-flex; align-items: center; gap: 7px; margin-top: 26px; align-self: flex-start;
+    padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18);
+    background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
+    font-size: 11.5px; letter-spacing: 0.02em; color: rgba(255,255,255,0.9); }
+
+  /* ---------- typography ---------- */
+  .kicker { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  h2.part { font-size: 27px; line-height: 1.18; font-weight: 600; letter-spacing: -0.025em; color: var(--ink); margin: 0 0 6px; }
+  h2.part em { font-style: italic; font-weight: 400; color: var(--navy); }
+  .lede { font-size: 15px; line-height: 1.62; color: var(--body); margin: 14px 0 0; }
+  h3 { font-size: 16.5px; font-weight: 600; letter-spacing: -0.012em; color: var(--ink); margin: 26px 0 6px; }
+  p { font-size: 13.5px; line-height: 1.66; color: var(--body); margin: 0 0 11px; }
+  strong { color: var(--ink); font-weight: 600; }
+  em.i { font-style: italic; }
+  .partnum { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--navy); font-weight: 500; }
+  .rule { height: 1px; background: var(--line); border: 0; margin: 16px 0 22px; }
+
+  /* callout / frosted */
+  .box { background: var(--paper-alt); background-image: linear-gradient(180deg,#fff,#F2F5F9); border: 1px solid var(--line); border-top: 1px solid #fff; border-radius: 12px; padding: 18px 20px; margin: 16px 0; }
+  .box .lbl { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+  .box.navy { background: var(--navy); background-image: linear-gradient(150deg,#0A1F3B,#02162A); border-color: var(--navy-deep); color: #fff; }
+  .box.navy .lbl { color: rgba(255,255,255,0.6); }
+  .box.navy p, .box.navy li { color: rgba(255,255,255,0.84); }
+  .box.navy strong { color: #fff; }
+
+  ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 14px 0; }
+  ol.steps > li { position: relative; padding: 0 0 14px 40px; margin: 0; }
+  ol.steps > li::before { counter-increment: s; content: counter(s); position: absolute; left: 0; top: 0;
+    width: 26px; height: 26px; border-radius: 999px; background: var(--navy); color: #fff;
+    font-family: var(--mono); font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; }
+  ol.steps > li h4 { margin: 2px 0 3px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  ol.steps > li p { margin: 0; font-size: 12.5px; color: var(--body); }
+
+  ul.check { list-style: none; padding: 0; margin: 12px 0; }
+  ul.check li { position: relative; padding: 6px 0 6px 26px; font-size: 13px; color: var(--body); border-bottom: 1px solid var(--line-soft); }
+  ul.check li:last-child { border-bottom: 0; }
+  ul.check li::before { content: ''; position: absolute; left: 0; top: 9px; width: 14px; height: 14px; border-radius: 4px; border: 1.5px solid var(--navy); }
+  ul.check li strong { color: var(--ink); }
+
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  .mini { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: #fff; }
+  .mini h4 { margin: 0 0 4px; font-size: 13.5px; color: var(--ink); font-weight: 600; }
+  .mini p { margin: 0; font-size: 12px; color: var(--muted); }
+  .mini .n { font-family: var(--mono); font-size: 10px; color: var(--navy); letter-spacing: 0.08em; }
+
+  .decision { border-left: 2px solid var(--navy); padding: 2px 0 2px 16px; margin: 16px 0; }
+  .decision .d-t { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .decision .d-ex { font-size: 12.5px; color: var(--muted); margin: 3px 0 0; }
+  .decision .d-q { font-size: 12.5px; color: var(--navy); margin: 6px 0 0; font-style: italic; }
+
+  .pull { font-size: 19px; line-height: 1.35; font-weight: 500; letter-spacing: -0.015em; color: var(--ink); margin: 22px 0; }
+  .pull em { font-style: italic; color: var(--navy); }
+
+  /* CTA page */
+  .cta { background-color: var(--navy); background-image: radial-gradient(120% 90% at 100% 0%, rgba(255,255,255,0.10), transparent 55%), linear-gradient(150deg,#0A1F3B,#02162A 65%,#010B1A); color: #fff; }
+  .cta h2 { font-size: 30px; line-height: 1.16; font-weight: 600; letter-spacing: -0.025em; color: #fff; margin: 0 0 14px; max-width: 17em; }
+  .cta h2 em { font-style: italic; font-weight: 400; color: rgba(255,255,255,0.82); }
+  .cta p { color: rgba(255,255,255,0.78); font-size: 14.5px; }
+  .cta .btn { display: inline-block; margin-top: 22px; padding: 14px 28px; border-radius: 999px;
+    background-color: #fff; color: var(--navy); font-weight: 600; font-size: 15px; text-decoration: none; }
+  .cta .url { margin-top: 14px; font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: 0.02em; }
+  .cta .sig { margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.16); }
+  .cta .sig strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- ===================== CAPA ===================== -->
+<section class="page cover">
+  <img class="mono-mark" src="./monogram-white.png" alt="Viver de IA" />
+  <p class="eyebrow">Guia · Marca + IA · Viver de IA</p>
+  <h1>Como dar à sua empresa um Design System de <em>nível mundial</em> — operado por IA.</h1>
+  <p class="sub">O passo a passo que usei pra construir o Design System do Viver de IA. Do zero ao deploy. Sem time de design, sem agência — IA fazendo o trabalho pesado, eu dirigindo o gosto.</p>
+  <span class="glasschip">Para fundadores e líderes · não precisa saber código</span>
+  <p class="by"><strong>Rafael Milagre</strong> · fundador, Viver de IA</p>
+</section>
+
+<!-- ===================== ABERTURA ===================== -->
+<section class="page">
+  <p class="kicker">Antes de começar</p>
+  <h2 class="part">Por que a sua marca parece <em>cinco empresas diferentes</em>.</h2>
+  <p class="lede">Toda empresa que cresce rápido vive a mesma armadilha: o email tem uma cara, a landing tem outra, o post do Instagram tem outra, a proposta comercial tem outra. Cada peça, sozinha, até é bonita. Juntas, elas enfraquecem a marca — porque marca forte é, antes de tudo, marca <strong>consistente</strong>.</p>
+  <p>A solução clássica pra isso é cara e lenta: contratar um time de design, esperar meses por um "manual de marca", e torcer pra que alguém siga. Na prática, o manual vira um PDF esquecido num drive e cada um continua fazendo do seu jeito.</p>
+
+  <div class="pull">Existe um caminho novo — e eu testei nele: <em>IA como força de trabalho, dirigida por método e gosto.</em></div>
+
+  <p>Eu construí o Design System inteiro do Viver de IA assim. Não foi um manual: foi um <strong>sistema vivo</strong> — paleta, tipografia, dezenas de componentes, modelos de email que não quebram no Outlook, um site de referência navegável e um kit pra qualquer pessoa criar no padrão usando qualquer IA. Operado por IA, do zero ao deploy, dirigido por mim.</p>
+  <p>Este guia é o passo a passo disso — traduzido pra <strong>você, fundador ou líder</strong>. Sem jargão técnico, sem código. No fim, você vai saber exatamente o que decidir, em que ordem construir, e como pôr a IA pra fazer o peso na <strong>sua</strong> empresa.</p>
+
+  <div class="box">
+    <p class="lbl">O que você sai sabendo (e conseguindo fazer)</p>
+    <p style="margin:0">Entender o que é um Design System e o ROI dele pro negócio · cravar as 5 decisões de marca que só você pode tomar · seguir o método de construção bloco a bloco com IA · e aplicar tudo na sua empresa já no primeiro fim de semana.</p>
+  </div>
+  <div class="foot"><span class="b">Viver de IA · Design System</span><span>01</span></div>
+</section>
+
+<!-- ===================== PARTE 1 ===================== -->
+<section class="page">
+  <p class="partnum">Parte 1</p>
+  <h2 class="part">O que é um Design System — e por que <em>você</em> deveria se importar.</h2>
+  <p class="lede">Esqueça a definição técnica. Pro líder, um Design System é uma coisa só:</p>
+  <div class="pull">O conjunto de regras que faz <em>tudo</em> que a sua empresa cria falar a mesma língua — do email ao app.</div>
+  <p>Não é um manual parado. É um sistema que as pessoas (e as IAs) usam pra produzir, todo dia, sempre no padrão. A diferença entre "temos uma identidade visual" e "temos um Design System" é a diferença entre uma regra escrita e uma regra que se aplica sozinha.</p>
+
+  <h3>O ROI — em linguagem de negócio</h3>
+  <div class="twocol">
+    <div class="mini"><span class="n">01</span><h4>Marca mais forte</h4><p>Consistência gera reconhecimento e confiança. Cada peça reforça a anterior em vez de competir com ela.</p></div>
+    <div class="mini"><span class="n">02</span><h4>Velocidade</h4><p>Qualquer pessoa do time produz no padrão em minutos, sem esperar o designer nem reinventar a roda.</p></div>
+    <div class="mini"><span class="n">03</span><h4>Escala sem gargalo</h4><p>A marca deixa de depender de uma pessoa. O sistema carrega o padrão, não a memória de alguém.</p></div>
+    <div class="mini"><span class="n">04</span><h4>Qualidade por padrão</h4><p>O piso sobe: o "feito às pressas" já sai dentro da régua, porque a régua está embutida.</p></div>
+  </div>
+
+  <h3>As 4 camadas (sem tecnês)</h3>
+  <p>Todo Design System tem quatro camadas. Guarde essa imagem — o resto do guia se apoia nela:</p>
+  <ol class="steps">
+    <li><h4>Princípios &amp; identidade</h4><p>A alma da marca: cor, tipografia, voz, o "jeito". As decisões que só o dono toma.</p></li>
+    <li><h4>Tokens — as "regras"</h4><p>As decisões viram valores reutilizáveis ("a cor da marca é este navy", "o respiro padrão é este"). É o vocabulário do sistema.</p></li>
+    <li><h4>Componentes — as "peças"</h4><p>Botões, cards, formulários, emails — montados com as regras. Lego pronto pra usar.</p></li>
+    <li><h4>Distribuição — como o time usa</h4><p>O que faz o sistema sair do papel: um lugar pra ver tudo + um jeito de qualquer um produzir no padrão (inclusive via IA).</p></li>
+  </ol>
+  <div class="foot"><span class="b">Viver de IA · Design System</span><span>02</span></div>
+</section>
+
+<!-- ===================== PARTE 2 ===================== -->
+<section class="page">
+  <p class="partnum">Parte 2</p>
+  <h2 class="part">As 5 decisões que <em>só você</em> crava.</h2>
+  <p class="lede">Aqui está o trabalho que não dá pra delegar pra IA nem pra ninguém: definir a alma da marca. A IA executa lindamente — mas alguém precisa dizer o que é "lindo" pra essa marca. Essas são as cinco decisões. Mostro como decidi as do Viver de IA pra você decidir as suas.</p>
+
+  <div class="decision"><p class="d-t">1 · A cor</p><p class="d-ex">Viver de IA: paleta <strong>restrita</strong>, dominada por um único navy profundo. Sem dourado, sem neon, sem arco-íris. A regra-mãe: <em>premium é menos, não mais</em>.</p><p class="d-q">Sua pergunta: qual é a ÚNICA cor que é a sua marca? E o que você corta pra ela respirar?</p></div>
+
+  <div class="decision"><p class="d-t">2 · A tipografia</p><p class="d-ex">Viver de IA: uma família só (Geist) pra tudo. Nada de misturar quatro fontes. Uma voz tipográfica, consistente.</p><p class="d-q">Sua pergunta: uma fonte que aguente título e texto, e que diga o tom da marca (séria? técnica? calorosa?).</p></div>
+
+  <div class="decision"><p class="d-t">3 · A assinatura visual</p><p class="d-ex">Viver de IA: o <em>liquid glass</em> — superfícies de vidro, profundidade, luz. É o "algo a mais" que torna a marca reconhecível num piscar.</p><p class="d-q">Sua pergunta: qual é o seu detalhe memorável — o elemento que faz alguém saber que é você sem ver o logo?</p></div>
+
+  <div class="decision"><p class="d-t">4 · A voz</p><p class="d-ex">Viver de IA: operador, direto, número antes de adjetivo. Sem hype, sem "🤖 oops", sem clichê de IA. Fala como quem opera de verdade.</p><p class="d-q">Sua pergunta: como a sua marca SOA? Escreva 3 coisas que ela diz — e 3 que ela nunca diria.</p></div>
+
+  <div class="decision"><p class="d-t">5 · O princípio-mãe</p><p class="d-ex">Viver de IA: simplicidade radical — a IA carrega o peso, o usuário sente valor em minutos, complexidade é inimiga.</p><p class="d-q">Sua pergunta: qual é a única frase que, em caso de dúvida, decide tudo no seu design?</p></div>
+
+  <div class="box navy">
+    <p class="lbl">A regra de ouro desta parte</p>
+    <p style="margin:0">Decida POUCO, com convicção. Um Design System forte não é o que tem mais opções — é o que tem menos, escolhidas com clareza. Toda restrição que você crava aqui é uma decisão que ninguém (nem a IA) vai precisar tomar de novo depois.</p>
+  </div>
+  <div class="foot"><span class="b">Viver de IA · Design System</span><span>03</span></div>
+</section>
+
+<!-- ===================== PARTE 3 ===================== -->
+<section class="page">
+  <p class="partnum">Parte 3 · o coração</p>
+  <h2 class="part">O passo a passo: construir com a <em>IA fazendo o peso</em>.</h2>
+  <p class="lede">Com os princípios cravados (Parte 2), a construção vira execução. Foi exatamente este o método que usei — bloco a bloco, eu dirigindo, a IA produzindo. Você não precisa codar nenhuma linha; precisa saber a ordem e o que cobrar.</p>
+
+  <ol class="steps">
+    <li><h4>Transforme as decisões em "regras" (tokens)</h4><p>Peça pra IA virar suas 5 decisões em valores nomeados e reutilizáveis. É a fundação — tudo depois aponta pra cá.</p></li>
+    <li><h4>Construa as peças, uma a uma</h4><p>Botão, card, formulário, email… cada um é um "bloco". A IA monta, você olha e corrige o gosto. Sem pressa, sem bulk sem revisão.</p></li>
+    <li><h4>Crie um lugar vivo pra ver tudo</h4><p>Não um PDF morto: uma página navegável com cada peça renderizada. É o espelho do sistema e a fonte da verdade.</p></li>
+    <li><h4>Distribua pra qualquer um usar</h4><p>Um kit + um "prompt-mestre" que ensina a marca pra qualquer IA. Aqui mora a mágica: o time inteiro passa a criar no padrão, em qualquer ferramenta.</p></li>
+    <li><h4>Meça — não confie no achismo</h4><p>Contraste, legibilidade, performance, acessibilidade. A IA verifica em escala o que olho nenhum pega sozinho.</p></li>
+    <li><h4>Teste no mundo real</h4><p>Mandei email de verdade pra uma caixa de entrada real pra ver se renderizava. "Funciona no meu preview" não é "funciona no cliente".</p></li>
+    <li><h4>Lance pro time</h4><p>Com um caminho por função: o que o marketing faz, o que o produto faz. Adoção é o que transforma um DS bonito num DS usado.</p></li>
+  </ol>
+
+  <div class="box">
+    <p class="lbl">Os 3 princípios de operação (valem ouro)</p>
+    <p style="margin:0 0 6px"><strong>A IA executa, você dirige o gosto.</strong> Ela gera dez opções em segundos; o seu trabalho é ter o olho pra escolher a certa e pedir o ajuste fino.</p>
+    <p style="margin:0 0 6px"><strong>Só é "pronto" quando está impecável.</strong> Não "pronto pra testar" — pronto. O padrão é Linear, Stripe, Notion. Abaixo disso, volta.</p>
+    <p style="margin:0"><strong>Meça tudo, confie em pouco.</strong> Número acima de opinião. Se não dá pra medir, é só achismo bonito.</p>
+  </div>
+
+  <p style="margin-top:14px"><strong>E os perrengues?</strong> Existiram — e é por isso que funciona. A ferramenta automática não enxerga contraste sobre vidro; achei vários problemas no olho. Email tem regras próprias (um botão com degradê some no Outlook). Tudo isso virou parte do método. Honestidade &gt; parecer perfeito.</p>
+  <div class="foot"><span class="b">Viver de IA · Design System</span><span>04</span></div>
+</section>
+
+<!-- ===================== PARTE 4 ===================== -->
+<section class="page">
+  <p class="partnum">Parte 4 · faça agora</p>
+  <h2 class="part">Aplique na <em>sua</em> empresa — começando esta semana.</h2>
+  <p class="lede">Teoria sem ação é entretenimento. Aqui está o caminho mínimo pra sair do zero.</p>
+
+  <h3>Checklist · as 5 decisões pra cravar primeiro</h3>
+  <ul class="check">
+    <li><strong>Cor:</strong> a única cor da marca + o que eu corto.</li>
+    <li><strong>Tipografia:</strong> uma família que aguente tudo.</li>
+    <li><strong>Assinatura visual:</strong> o meu detalhe memorável.</li>
+    <li><strong>Voz:</strong> 3 coisas que digo · 3 que nunca diria.</li>
+    <li><strong>Princípio-mãe:</strong> a frase que decide em caso de dúvida.</li>
+  </ul>
+
+  <h3>O primeiro fim de semana</h3>
+  <p>Com as 5 decisões na mão, abra uma IA e peça, nesta ordem: (1) os tokens a partir das suas decisões; (2) os 3 componentes que você mais usa (provavelmente botão, card e um modelo de email); (3) uma página que mostre tudo junto. Em dois dias você tem o esqueleto vivo do seu DS. O resto é expansão.</p>
+
+  <h3>Os erros que afundam um DS</h3>
+  <div class="twocol">
+    <div class="mini"><h4>Paleta larga demais</h4><p>10 cores "porque pode". Restrinja — ou nada vira marca.</p></div>
+    <div class="mini"><h4>Manual morto</h4><p>PDF num drive que ninguém abre. Faça vivo e distribuível.</p></div>
+    <div class="mini"><h4>Depender de 1 pessoa</h4><p>Se só o designer sabe aplicar, não é sistema. É refém.</p></div>
+    <div class="mini"><h4>Parar em "bonito"</h4><p>Sem medir contraste/acessibilidade, "bonito" quebra na vida real.</p></div>
+  </div>
+
+  <h3>As ferramentas (genéricas)</h3>
+  <p>Você precisa de pouco: uma <strong>IA de conversa</strong> pra decidir e gerar (texto, regras, copy), uma <strong>IA que constrói interface</strong> pra ver as peças ganharem forma, e um <strong>lugar pra hospedar</strong> o resultado. O peso é da IA; a direção é sua.</p>
+  <div class="foot"><span class="b">Viver de IA · Design System</span><span>05</span></div>
+</section>
+
+<!-- ===================== FECHO / CTA ===================== -->
+<section class="page cover cta" style="display:flex;flex-direction:column;">
+  <img class="mono-mark" src="https://viver-de-ia-ds.vercel.app/logos/monogram-white.png" alt="Viver de IA" />
+  <p class="eyebrow" style="margin-top:34px">O próximo passo</p>
+  <h2>Isso é IA virando <em>força de trabalho</em> — dirigida por quem sabe.</h2>
+  <p>Você acabou de ver um sistema de marca de nível mundial construído sem time de design, sem agência e sem meses de espera. O que tornou possível não foi a IA sozinha — foi a IA <strong style="color:#fff">operada com método e gosto</strong>. É exatamente essa a virada que a gente vive no Viver de IA: transformar IA em resultado real no seu negócio.</p>
+  <p style="color:rgba(255,255,255,0.78)">Se este guia te mostrou o "como" de uma coisa, imagina aplicar a mesma lógica em tudo — atendimento, operação, conteúdo, produto. É pra lá que a Viver de IA te leva.</p>
+  <a class="btn" href="https://viverdeia.ai">Conhecer a plataforma do Viver de IA →</a>
+  <p class="url">viverdeia.ai</p>
+  <div class="sig">
+    <p style="margin:0;color:rgba(255,255,255,0.7);font-size:13px">Um abraço,</p>
+    <p style="margin:4px 0 0;font-size:16px"><strong>Rafael Milagre</strong></p>
+    <p style="margin:2px 0 0;color:rgba(255,255,255,0.6);font-size:12.5px">fundador · Viver de IA</p>
+  </div>
+</section>
+
+</body>
+</html>
