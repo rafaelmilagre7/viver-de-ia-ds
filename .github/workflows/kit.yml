@@ -1,8 +1,8 @@
 name: Kit · auto-regenerate
 
-# Sempre que a fonte do DS muda (componentes, tokens, prompt, logos, fontes),
-# regenera o kit universal (.zip + style.css + tokens) e commita de volta.
-# Assim o kit que o time sobe no ChatGPT/Lovable/Cursor nunca fica defasado.
+# Sempre que a fonte do DS muda (componentes, tokens, emails, prompt, logos,
+# fontes), regenera a lib + os emails reais + o kit universal e commita de volta.
+# Assim o kit que o time usa (e os HTMLs de email) nunca ficam defasados.
 # Desacoplado do deploy do site (Vercel) — se falhar, o site continua no ar.
 
 on:
@@ -11,9 +11,11 @@ on:
     paths:
       - 'src/lib/**'
       - 'src/styles/tokens.css'
+      - 'emails/**'
       - 'docs/system-prompt.md'
       - 'docs/system-prompts/**'
       - 'scripts/build-kit.mjs'
+      - 'scripts/build-emails.mjs'
       - 'scripts/build-tokens.mjs'
       - 'src/assets/fonts/**'
       - 'public/logos/**'
@@ -27,9 +29,9 @@ permissions:
 
 jobs:
   regenerate:
-    name: regenera kit + commita
+    name: regenera lib + emails + kit
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -40,18 +42,18 @@ jobs:
       - name: install deps
         run: bun install --frozen-lockfile
 
-      - name: build lib + kit + zip to public
+      - name: build lib + emails + kit + zip
         run: bun run kit
 
-      - name: commit kit atualizado (se mudou)
+      - name: commit artefatos atualizados (se mudaram)
         run: |
           git config user.name  "viver-de-ia-bot"
           git config user.email "bot@viverdeia.ai"
-          git add public/viver-de-ia-kit.zip
+          git add public/viver-de-ia-kit.zip public/emails
           if git diff --cached --quiet; then
-            echo "Kit ja estava atualizado - nada a commitar."
+            echo "Kit e emails ja estavam atualizados - nada a commitar."
           else
-            git commit -m "chore(kit): regenera kit universal (auto) [skip ci]"
+            git commit -m "chore(kit): regenera kit + emails (auto) [skip ci]"
             git push
-            echo "Kit regenerado e commitado."
+            echo "Artefatos regenerados e commitados."
           fi

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "welcome",
+    "name": "Boas-vindas",
+    "subject": "tua vaga tá confirmada · bora começar?",
+    "when": "Disparado quando um aluno confirma a matrícula numa turma.",
+    "bytes": 24076
+  },
+  {
+    "id": "enrollment",
+    "name": "Confirmação de turma",
+    "subject": "confirmado · sua turma começa 12 de junho",
+    "when": "Recibo de matrícula com os detalhes concretos da turma.",
+    "bytes": 24316
+  },
+  {
+    "id": "billing",
+    "name": "Cobrança / fatura",
+    "subject": "sua fatura da Viver de IA · junho",
+    "when": "Aviso de fatura. Vira coral quando está em atraso (uso semântico).",
+    "bytes": 21962
+  },
+  {
+    "id": "winback",
+    "name": "Recuperação (win-back)",
+    "subject": "tua vaga continua aqui",
+    "when": "Reengajamento de quem deu uma pausa. Caloroso, sem dark pattern.",
+    "bytes": 15711
+  },
+  {
+    "id": "digest",
+    "name": "Digest semanal",
+    "subject": "sua semana na Viver de IA · 2–8 jun",
+    "when": "Resumo recorrente do que aconteceu na turma e na comunidade.",
+    "bytes": 20653
+  }
+]

@@ -17,7 +17,7 @@
  *
  * Run: bun run build:kit
  */
-import { existsSync, mkdirSync, copyFileSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, copyFileSync, readFileSync, writeFileSync, rmSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
@@ -368,6 +368,20 @@ for (const [filename, html] of Object.entries(examples)) {
   writeFileSync(resolve(out, `examples/${filename}`), html);
 }
 console.log(`  wrote examples/ (${Object.keys(examples).length} files)`);
+
+// Emails REAIS (react-email · à prova de bala · gerados por build:emails) → kit/emails/
+// Também sobrescreve o specimen examples/email-welcome.html com o HTML de verdade.
+const emailsDir = resolve(root, 'public/emails');
+if (existsSync(emailsDir)) {
+  mkdirSync(resolve(out, 'emails'), { recursive: true });
+  const emailFiles = readdirSync(emailsDir).filter((f) => /\.(html|txt|json)$/.test(f));
+  for (const f of emailFiles) copyFileSync(resolve(emailsDir, f), resolve(out, `emails/${f}`));
+  const welcome = resolve(emailsDir, 'welcome.html');
+  if (existsSync(welcome)) copyFileSync(welcome, resolve(out, 'examples/email-welcome.html'));
+  console.log(`  wrote emails/ (${emailFiles.length} arquivos · HTML real à prova de bala)`);
+} else {
+  console.log('  ⚠ public/emails/ ausente — rode build:emails antes (kit não tem os emails reais)');
+}
 
 console.log(`\nKit pronto em dist/kit/`);
 

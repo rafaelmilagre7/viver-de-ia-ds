@@ -30,4 +30,13 @@ export default defineConfig([
       '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
+  {
+    // Templates de email (emails/**) rodam via Node com react-email render —
+    // nunca pelo HMR do Vite. Exportar `meta` + o componente é o padrão deles,
+    // então a regra de fast-refresh não se aplica aqui.
+    files: ['emails/**/*.{ts,tsx}'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
 ])
