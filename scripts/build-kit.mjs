@@ -390,9 +390,11 @@ console.log(`\nKit pronto em dist/kit/`);
 const distDir = resolve(root, 'dist');
 const publicZip = resolve(root, 'public/viver-de-ia-kit.zip');
 try {
-  // Zip determinístico: mtime fixo + -X (sem atributos extras) → mesmos bytes pra
-  // mesmo conteúdo. Evita commit espúrio no CI quando nada mudou de verdade.
-  execSync(`rm -f "${publicZip}" && cd "${distDir}" && find kit -print0 | xargs -0 touch -t 200001010000 && zip -rqX viver-de-ia-kit.zip kit && mv -f viver-de-ia-kit.zip "${publicZip}"`, {
+  // Zip determinístico CROSS-OS: mtime fixo + -X (sem atributos extras) + ordem de
+  // entradas SORTADA (LC_ALL=C) lida via -@. O `zip -r` percorre o filesystem em
+  // ordem que varia entre macOS e Linux → bytes diferentes pro mesmo conteúdo (era
+  // a fonte do commit espúrio do CI). Listar arquivos sortados elimina isso.
+  execSync(`rm -f "${publicZip}" && cd "${distDir}" && find kit -print0 | xargs -0 touch -t 200001010000 && find kit -type f | LC_ALL=C sort | zip -qX viver-de-ia-kit.zip -@ && mv -f viver-de-ia-kit.zip "${publicZip}"`, {
     stdio: 'pipe',
     shell: '/bin/bash',
   });
