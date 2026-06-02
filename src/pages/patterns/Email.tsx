@@ -10,8 +10,16 @@ const MAILS: MailDef[] = [
   { id: 'welcome', name: 'Boas-vindas', subject: 'tua vaga tá confirmada · bora começar?', when: 'Quando o aluno confirma a matrícula numa turma.' },
   { id: 'enrollment', name: 'Confirmação de turma', subject: 'confirmado · sua turma começa 12 de junho', when: 'Recibo de matrícula com os detalhes concretos.' },
   { id: 'billing', name: 'Cobrança / fatura', subject: 'sua fatura da Viver de IA · junho', when: 'Aviso de fatura — vira coral quando em atraso.' },
-  { id: 'winback', name: 'Recuperação', subject: 'tua vaga continua aqui', when: 'Reengajamento de quem deu uma pausa.' },
+  { id: 'nps', name: 'NPS / feedback', subject: 'como tá indo? 1 pergunta, 30 segundos', when: 'Pulso de satisfação — uma pergunta só.' },
   { id: 'digest', name: 'Digest semanal', subject: 'sua semana na Viver de IA · 2–8 jun', when: 'Resumo recorrente da turma e da comunidade.' },
+  { id: 'event-invite', name: 'Convite de evento', subject: 'sex 14h · auditoria de 3 agentes ao vivo', when: 'Convite pra live / Leaders AI — factual, valor concreto.' },
+  { id: 'recap', name: 'Recap pós-evento', subject: 'o que rolou na live (+ o replay)', when: '3 destaques + replay e material.' },
+  { id: 'drip', name: 'Drip / nurture', subject: 'o agente que paga a mentoria', when: 'Sequência de nutrição — cada email editorial stand-alone.' },
+  { id: 'lancamento', name: 'Lançamento de turma', subject: 'turma 2026.3 abre amanhã 9h · 30 vagas', when: 'Abertura de inscrições — fato + condição, sem countdown.' },
+  { id: 'oferta', name: 'Oferta sutil', subject: 'pelo que vi, faria sentido a gente conversar', when: 'Convite comercial observacional, sem pressão.' },
+  { id: 'churn', name: 'Churn alert (sumiço)', subject: 'tô curioso — o que rolou?', when: 'Aluno ativo que ficou quieto — curioso e humano.' },
+  { id: 'winback', name: 'Recuperação (win-back)', subject: 'tua vaga continua aqui', when: 'Reengajamento de quem já saiu.' },
+  { id: 'urgent-ops', name: 'Alerta operacional', subject: 'ação necessária · webhook 504 desde 14:08', when: 'Alerta de sistema (Nina/Iris/plataforma) — coral.' },
 ];
 
 /** iframe que se auto-dimensiona pela altura do email real (mesmo origin). */

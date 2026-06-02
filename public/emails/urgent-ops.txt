@@ -1,0 +1,36 @@
+Ação necessária
+
+
+WEBHOOK TIMEOUT · HTTP 504.
+
+Rafael, detectamos isso agora e o impacto é real — sem alarme falso. O resumo do que está acontecendo:
+
+Evento
+
+Webhook timeout · HTTP 504
+
+Desde
+
+hoje 14:08
+
+Componente
+
+provider de embeddings
+
+Impacto
+
+Mensagens da Nina em fila (não perdidas)
+
+Não precisa investigar do zero — já isolamos a causa provável. O botão abaixo abre direto no ponto certo pra você confirmar e religar.
+
+Resolver agora https://app.viverdeia.ai/status
+
+Se já estiver resolvido quando você abrir, o painel mostra “normalizado” — pode ignorar.
+
+Você recebeu este alerta porque é responsável técnico nesta conta.
+
+Gerenciar preferências https://app.viverdeia.ai/preferencias · Descadastrar https://app.viverdeia.ai/descadastrar
+
+Viver de IA · mentoria + comunidade + Leaders AI Conference
+
+© Viver de IA. Todos os direitos reservados.

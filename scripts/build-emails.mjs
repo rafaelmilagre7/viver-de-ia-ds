@@ -16,8 +16,16 @@ import { fileURLToPath } from 'node:url';
 import Welcome, { meta as welcomeMeta } from '../emails/welcome.tsx';
 import Enrollment, { meta as enrollmentMeta } from '../emails/enrollment.tsx';
 import Billing, { meta as billingMeta } from '../emails/billing.tsx';
-import Winback, { meta as winbackMeta } from '../emails/winback.tsx';
+import Nps, { meta as npsMeta } from '../emails/nps.tsx';
 import Digest, { meta as digestMeta } from '../emails/digest.tsx';
+import EventInvite, { meta as eventInviteMeta } from '../emails/event-invite.tsx';
+import Recap, { meta as recapMeta } from '../emails/recap.tsx';
+import Drip, { meta as dripMeta } from '../emails/drip.tsx';
+import Lancamento, { meta as lancamentoMeta } from '../emails/lancamento.tsx';
+import Oferta, { meta as ofertaMeta } from '../emails/oferta.tsx';
+import Churn, { meta as churnMeta } from '../emails/churn.tsx';
+import Winback, { meta as winbackMeta } from '../emails/winback.tsx';
+import UrgentOps, { meta as urgentOpsMeta } from '../emails/urgent-ops.tsx';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
@@ -27,8 +35,16 @@ const templates = [
   [Welcome, welcomeMeta],
   [Enrollment, enrollmentMeta],
   [Billing, billingMeta],
-  [Winback, winbackMeta],
+  [Nps, npsMeta],
   [Digest, digestMeta],
+  [EventInvite, eventInviteMeta],
+  [Recap, recapMeta],
+  [Drip, dripMeta],
+  [Lancamento, lancamentoMeta],
+  [Oferta, ofertaMeta],
+  [Churn, churnMeta],
+  [Winback, winbackMeta],
+  [UrgentOps, urgentOpsMeta],
 ];
 
 if (existsSync(out)) rmSync(out, { recursive: true, force: true });
