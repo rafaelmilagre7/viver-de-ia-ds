@@ -9,7 +9,7 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 ### Adicionado
 
 - **Sistema de email de PRODUÇÃO à prova de bala** (`emails/` · react-email):
-  - 5 templates flagship: `welcome`, `enrollment`, `billing`, `winback`, `digest` — todos table-based + estilo inline, &lt;30KB, testáveis em Gmail/Outlook/Apple Mail.
+  - 13 templates de produção: `welcome`, `enrollment`, `billing`, `nps`, `digest`, `event-invite`, `recap`, `drip`, `lancamento`, `oferta`, `churn`, `winback`, `urgent-ops` — todos table-based + estilo inline, &lt;30KB, testáveis em Gmail/Outlook/Apple Mail.
   - Motor token-driven (`emails/theme.ts`) com a identidade destilada pro que email renderiza: navy-dominant, fios finos, tipografia editorial. **Liquid glass simulado** (hero navy + painéis frosted + CTA glossy) com **degradê SEMPRE pareado com `background-color` sólido de fallback** → Outlook mostra sólido, Apple Mail/Gmail mostram o brilho.
   - **CTA navy sólido** (sobrevive ao Outlook), **lockup correto** (monograma + wordmark), travado em modo claro, preheader, logo hospedada absoluta.
   - `scripts/build-emails.mjs` renderiza pra `public/emails/*.html` (+ `.txt` + `manifest.json`) com checagem automática de bulletproof (tabela/inline/fallback).

@@ -6,7 +6,7 @@ description: Gera email Viver de IA — produção à prova de bala (react-email
 
 ## Dois modos
 
-1. **Produção (à prova de bala)** — quando o email vai ser ENVIADO de verdade. Use o motor `emails/` (react-email) do DS. 5 templates flagship prontos: `welcome`, `enrollment`, `billing`, `winback`, `digest`. Render via `@react-email/render` → HTML que não quebra no Gmail/Outlook/Apple Mail. Ao vivo em `/patterns/email`.
+1. **Produção (à prova de bala)** — quando o email vai ser ENVIADO de verdade. Use o motor `emails/` (react-email) do DS. **13 templates prontos**: `welcome`, `enrollment`, `billing`, `nps`, `digest`, `event-invite`, `recap`, `drip`, `lancamento`, `oferta`, `churn`, `winback`, `urgent-ops`. Render via `@react-email/render` → HTML que não quebra no Gmail/Outlook/Apple Mail. Ao vivo em `/patterns/email`.
 2. **Editorial (rascunho)** — quando o usuário só quer o conteúdo (subject/headline/corpo) pra revisar ou colar. Use as regras de voz abaixo.
 
 ### Regras invioláveis de email de produção (≠ web)

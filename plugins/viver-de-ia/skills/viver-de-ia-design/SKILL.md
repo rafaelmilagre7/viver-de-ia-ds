@@ -137,7 +137,7 @@ import { ThemeProvider, Button, Pill, Card, DataTable, useToasts } from '@viverd
 
 Emails de verdade que **não quebram no inbox** (Gmail, Outlook, Apple Mail). Vivem em `emails/` (react-email), renderizam pra `public/emails/*.html` via `bun run build:emails`, e aparecem ao vivo em `/patterns/email` (iframe do HTML real). Distinto da galeria editorial de 13 mockups — estes são os **enviáveis**.
 
-**5 templates flagship:** `welcome` (boas-vindas) · `enrollment` (confirmação de turma) · `billing` (fatura · coral só em atraso) · `winback` (recuperação · sem dark pattern) · `digest` (resumo semanal).
+**13 templates de produção:** `welcome` · `enrollment` (confirmação de turma) · `billing` (fatura · coral só em atraso) · `nps` · `digest` (resumo semanal) · `event-invite` · `recap` (pós-evento) · `drip` (nurture) · `lancamento` · `oferta` · `churn` (sumiço) · `winback` (recuperação) · `urgent-ops` (alerta de sistema). Voz por contexto (caloroso, factual, observacional, curioso…), sem dark pattern.
 
 **Regras invioláveis de email (≠ web):**
 - **Tabela + estilo inline**, ~600px, `<102KB`. Zero flex/grid/`backdrop-filter` (clientes descartam).
