@@ -20,7 +20,7 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 - **Botão `accent`** (lib): degradê navy→cinza embarrado + texto navy-sobre-navy (1.5:1) → navy intensificado glossy + texto branco (16.5:1). Mesma família corrigida em `Icon` (`surface-accent`, `surface-navy`).
 - **Glifo itálico cortado** em gradient-text (`background-clip: text`): `padding-right` na caixa + `margin-right` negativo (zero deslocamento) cobre o overhang. Fix sistêmico em todos os `hN em`.
-- **Kit determinístico cross-OS**: zip com ordem de entradas sortada + mtime fixo → mesmos bytes em macOS e Linux (acaba com o commit espúrio do CI).
+- **Kit determinístico cross-OS**: zip gerado via Python `ZIP_STORED` (ordem sortada + date_time/atributos fixos) → bytes idênticos em macOS e Linux. O `zip` CLI gravava headers dependentes do SO, o que fazia o CI recommitar o .zip a cada push; resolvido de vez.
 
 ### Automação
 

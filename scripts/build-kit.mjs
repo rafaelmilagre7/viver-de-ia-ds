@@ -390,13 +390,33 @@ console.log(`\nKit pronto em dist/kit/`);
 const distDir = resolve(root, 'dist');
 const publicZip = resolve(root, 'public/viver-de-ia-kit.zip');
 try {
-  // Zip determinístico CROSS-OS: mtime fixo + -X (sem atributos extras) + ordem de
-  // entradas SORTADA (LC_ALL=C) lida via -@. O `zip -r` percorre o filesystem em
-  // ordem que varia entre macOS e Linux → bytes diferentes pro mesmo conteúdo (era
-  // a fonte do commit espúrio do CI). Listar arquivos sortados elimina isso.
-  execSync(`rm -f "${publicZip}" && cd "${distDir}" && find kit -print0 | xargs -0 touch -t 200001010000 && find kit -type f | LC_ALL=C sort | zip -qX viver-de-ia-kit.zip -@ && mv -f viver-de-ia-kit.zip "${publicZip}"`, {
-    stdio: 'pipe',
-    shell: '/bin/bash',
+  // Zip 100% determinístico cross-OS via Python zipfile · STORED (sem zlib → sem
+  // variância de compressão) · ordem sortada · date_time fixo · create_system/attr
+  // fixos. O `zip` CLI gravava bytes de header dependentes do SO (macOS ≠ Linux) →
+  // o CI recommitava o .zip a cada push mesmo com conteúdo idêntico. STORED + Python
+  // (posix igual nos dois) dá os MESMOS bytes em qualquer máquina. Custo: ~+360KB.
+  const pyZip = [
+    'import os, zipfile',
+    'base = os.environ["VIA_DIST"]; out = os.environ["VIA_OUT"]',
+    'items = []',
+    'for root, dirs, fs in os.walk(os.path.join(base, "kit")):',
+    '    for f in fs:',
+    '        full = os.path.join(root, f)',
+    '        items.append((full, os.path.relpath(full, base)))',
+    'items.sort(key=lambda x: x[1])',
+    'z = zipfile.ZipFile(out, "w", zipfile.ZIP_STORED)',
+    'for full, arc in items:',
+    '    zi = zipfile.ZipInfo(arc, date_time=(2000, 1, 1, 0, 0, 0))',
+    '    zi.create_system = 3',
+    '    zi.external_attr = 0o644 << 16',
+    '    with open(full, "rb") as fh:',
+    '        z.writestr(zi, fh.read())',
+    'z.close()',
+  ].join('\n');
+  execSync('python3 -', {
+    input: pyZip,
+    stdio: ['pipe', 'pipe', 'pipe'],
+    env: { ...process.env, VIA_DIST: distDir, VIA_OUT: publicZip },
   });
   const kb = Math.round(readFileSync(publicZip).length / 1024);
   console.log(`  wrote public/viver-de-ia-kit.zip (${kb} KB)`);
