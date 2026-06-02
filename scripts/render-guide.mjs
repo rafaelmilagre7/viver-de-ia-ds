@@ -1,4 +1,4 @@
-// Renderiza o guia HTML (no DS da marca) para PDF de alta fidelidade via Chromium (Playwright).
+// Renderiza o guia HTML de impressão (no DS da marca) para PDF de alta fidelidade via Chromium (Playwright).
 // Uso: node scripts/render-guide.mjs
 import { chromium } from 'playwright';
 import path from 'path';
@@ -7,7 +7,7 @@ import { mkdirSync } from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
-const htmlPath = path.join(root, 'public', 'guia', 'index.html');
+const htmlPath = path.join(root, 'public', 'guia', 'print.html');
 const pdfOut = path.join(root, 'public', 'guia', 'guia-design-system-viver-de-ia.pdf');
 const shotDir = process.env.SHOT_DIR || '/tmp/guia-shots';
 
