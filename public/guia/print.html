@@ -138,6 +138,51 @@
     border: 1px solid #DBE2EE; box-shadow: inset 0 1px 0 #FFFFFF, 0 16px 32px -16px rgba(10,31,59,0.22); }
   .stat .n { font-size: 38px; font-weight: 600; color: var(--navy); letter-spacing: -0.03em; line-height: 1; }
   .stat .l { font-size: 11.5px; color: var(--muted); margin: 9px 0 0; line-height: 1.4; }
+
+  /* page-number counter (auto) */
+  body { counter-reset: pg; }
+  .page.lit { counter-increment: pg; }
+  .foot .pgnum::after { content: counter(pg, decimal-leading-zero); }
+
+  /* ---- specimens · mostrar o DS ---- */
+  .speclbl { font-size: 9.5px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--faint); margin: 0 0 11px; }
+  .palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; }
+  .sw { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 10px 22px -16px rgba(10,31,59,0.22); }
+  .sw .chip { height: 50px; }
+  .sw .m { padding: 7px 10px 8px; background: #fff; }
+  .sw .m b { display: block; font-size: 10.5px; color: var(--ink); font-weight: 600; }
+  .sw .m span { font-size: 9px; color: var(--muted); letter-spacing: 0.02em; }
+  .typespec { border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; background: linear-gradient(180deg, #fff, #F6F8FB); box-shadow: 0 14px 30px -22px rgba(10,31,59,0.18); }
+  .typespec .disp { font-size: 46px; font-weight: 600; letter-spacing: -0.035em; color: var(--ink); line-height: 1; }
+  .typespec .disp em { font-style: italic; font-weight: 400; color: var(--navy); }
+  .typespec .trow { display: flex; align-items: baseline; gap: 14px; border-top: 1px solid var(--line-soft); padding-top: 10px; margin-top: 11px; }
+  .typespec .tl { width: 88px; flex: none; font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); font-weight: 600; }
+  .typespec .h1l { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); }
+  .typespec .bdl { font-size: 13px; color: var(--body); }
+  .typespec .cpl { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .glasshero { position: relative; overflow: hidden; border-radius: 14px; padding: 22px 24px; color: #fff;
+    background: radial-gradient(130% 130% at 0% 0%, rgba(120,160,225,0.24), transparent 55%), linear-gradient(155deg, var(--navy-lift), var(--navy) 52%, var(--navy-deep));
+    border: 1px solid var(--navy-deep); box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 26px 52px -24px rgba(10,31,59,0.6); }
+  .glasshero .gh-lbl { font-size: 9.5px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 600; margin: 0; }
+  .glasshero .gh-t { font-size: 16.5px; font-weight: 600; color: #fff; margin: 7px 0 14px; letter-spacing: -0.01em; max-width: 26em; }
+  .glasshero .gh-inner { display: inline-block; border-radius: 11px; padding: 12px 16px; font-size: 11.5px; color: rgba(255,255,255,0.86);
+    border: 1px solid rgba(255,255,255,0.2); background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25); }
+  .glasshero .gh-inner b { color: #fff; }
+  .specwrap { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; background: linear-gradient(180deg, #fff, #F6F8FB); box-shadow: 0 14px 30px -22px rgba(10,31,59,0.16); }
+  .btnrow { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .btn-primary { padding: 12px 22px; border-radius: 10px; color: #fff; font-weight: 600; font-size: 13px; border: 1px solid var(--navy-deep);
+    background: radial-gradient(125% 130% at 50% -28%, rgba(255,255,255,0.22), rgba(255,255,255,0) 56%), linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 56%, var(--navy-darker) 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 12px 24px -10px rgba(10,31,59,0.5); }
+  .btn-ghost { padding: 12px 22px; border-radius: 10px; background: #fff; color: var(--navy); font-weight: 600; font-size: 13px; border: 1px solid var(--line); box-shadow: 0 6px 16px -10px rgba(10,31,59,0.2); }
+  .pill { display: inline-block; padding: 6px 13px; border-radius: 999px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.03em; }
+  .pill.navy { background: linear-gradient(160deg, var(--navy-lift), var(--navy-deep)); color: #fff; }
+  .pill.soft { background: #EEF2F8; color: var(--navy); border: 1px solid var(--line); }
+  .specgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .field .fl-lbl { display: block; font-size: 11px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .field .inp { border: 1px solid var(--line); border-radius: 9px; padding: 11px 13px; font-size: 12.5px; color: var(--muted); background: #fff; box-shadow: inset 0 1px 2px rgba(10,31,59,0.04); }
+  .uicard { border-radius: 12px; padding: 18px; background: linear-gradient(180deg, #FFFFFF 0%, #ECF1F8 100%); border: 1px solid #DBE2EE; box-shadow: inset 0 1px 0 #fff, 0 18px 36px -18px rgba(10,31,59,0.22); }
+  .uicard .uc-t { font-size: 14px; font-weight: 600; color: var(--ink); margin: 0 0 4px; }
+  .uicard .uc-b { font-size: 12px; color: var(--muted); margin: 0 0 13px; }
 </style>
 </head>
 <body>
@@ -176,7 +221,7 @@
       <p>O que é um DS de verdade e o ROI dele · as 5 decisões que só você crava · o método de construção com IA, camada por camada · como distribuir pro time todo criar no padrão · como medir a qualidade · e o roadmap pra fazer na sua empresa sem se afogar.</p>
     </div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>01</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 03 · PARTE 1 — o que é + ROI -->
@@ -201,7 +246,7 @@
   <div class="panchor">
     <div class="callout"><p class="lbl">Em uma frase</p><p>Um Design System não é custo de design — é <strong>infraestrutura de marca</strong>. Ele transforma o seu bom gosto numa regra que escala sem você no meio.</p></div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>02</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 04 · PARTE 1 — as 4 camadas -->
@@ -222,7 +267,7 @@
   <div class="panchor">
     <div class="callout"><p class="lbl">A virada de chave</p><p>As três últimas camadas a IA constrói pra você. A primeira — os princípios — <strong>é o seu trabalho.</strong> É por ela que a gente começa.</p></div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>03</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 05 · NOVO — a superfície real -->
@@ -245,7 +290,7 @@
   <div class="panchor">
     <div class="callout"><p class="lbl">Por que isso importa pro caixa</p><p>Quando <strong>toda</strong> superfície fala a mesma língua, a marca vira maior que a soma das peças. Quando não fala, cada área dilui as outras. Um DS completo não é estética — é <strong>alavanca de percepção e de confiança</strong>, e logo de receita.</p></div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>04</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 06 · PARTE 2 — as 5 decisões -->
@@ -265,7 +310,46 @@
   <div class="panchor">
     <div class="callout slim"><p>Decida <strong>pouco, com convicção.</strong> Toda restrição que você crava aqui é uma decisão que ninguém — nem a IA — precisa tomar de novo depois.</p></div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>05</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
+</section>
+
+<!-- NOVO · fundações no visual -->
+<section class="page lit">
+  <header>
+    <p class="kicker part">Parte 2 <span class="dim">· no visual</span></p>
+    <h2 class="h">As nossas fundações — pra você <em>ver</em>, não só ler.</h2>
+    <p class="lede">As 5 decisões viram coisas concretas. Aqui estão as do Viver de IA, renderizadas de verdade — a cor, a tipografia e a assinatura de vidro.</p>
+  </header>
+  <div style="margin-top:20px">
+    <p class="speclbl">A paleta — restrita, navy no comando</p>
+    <div class="palette">
+      <div class="sw"><div class="chip" style="background:#0A1F3B"></div><div class="m"><b>Navy</b><span>#0A1F3B</span></div></div>
+      <div class="sw"><div class="chip" style="background:#02162A"></div><div class="m"><b>Navy deep</b><span>#02162A</span></div></div>
+      <div class="sw"><div class="chip" style="background:#16335C"></div><div class="m"><b>Navy lift</b><span>#16335C</span></div></div>
+      <div class="sw"><div class="chip" style="background:#647088"></div><div class="m"><b>Cinza</b><span>#647088</span></div></div>
+      <div class="sw"><div class="chip" style="background:#F6F8FB"></div><div class="m"><b>Off-white</b><span>#F6F8FB</span></div></div>
+      <div class="sw"><div class="chip" style="background:#E4E8EF"></div><div class="m"><b>Linha</b><span>#E4E8EF</span></div></div>
+      <div class="sw"><div class="chip" style="background:#FFFFFF;box-shadow:inset 0 0 0 1px #EEF1F6"></div><div class="m"><b>Branco</b><span>#FFFFFF</span></div></div>
+      <div class="sw"><div class="chip" style="background:#B85C5C"></div><div class="m"><b>Coral</b><span>só destrutivo</span></div></div>
+    </div>
+  </div>
+  <div style="margin-top:20px">
+    <p class="speclbl">A tipografia — uma família só (Geist)</p>
+    <div class="typespec">
+      <div class="disp">Aa <em>Bb</em> Cc</div>
+      <div class="trow"><span class="tl">Título</span><span class="h1l">Marca consistente, operada por IA</span></div>
+      <div class="trow"><span class="tl">Corpo</span><span class="bdl">O texto que carrega o argumento — legível, sem esforço, em qualquer tela.</span></div>
+      <div class="trow"><span class="tl">Etiqueta</span><span class="cpl">Guia · Marca + IA</span></div>
+    </div>
+  </div>
+  <div class="panchor">
+    <div class="glasshero">
+      <p class="gh-lbl">A assinatura — liquid glass</p>
+      <p class="gh-t">Profundidade, luz e vidro — o detalhe que faz a marca ser reconhecível num piscar.</p>
+      <span class="gh-inner"><b>Painel de vidro</b> · superfície translúcida com brilho no topo e sombra suave</span>
+    </div>
+  </div>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 07 · PARTE 3 — o método (sequência) -->
@@ -295,7 +379,7 @@
   <div class="panchor">
     <div class="callout slim"><p>O fio condutor: <strong>bloco a bloco, um de cada vez.</strong> Velocidade vem da ordem, não da pressa.</p></div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>06</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 08 · NOVO — profundidade: tokens + site vivo -->
@@ -315,7 +399,7 @@
   <div class="panchor">
     <div class="callout"><p class="lbl">O que pedir pra IA aqui</p><p>"Transforme estas 5 decisões em tokens em três camadas (valor → papel → uso) e monte uma página que mostre cada token aplicado." <strong>Você revisa o resultado; a IA mantém a consistência.</strong></p></div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>07</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 09 · NOVO — profundidade: biblioteca + claro/escuro + acessibilidade -->
@@ -333,7 +417,50 @@
     </div>
   </div>
   <div class="panchor"><div class="callout slim"><p>Regra simples: <strong>se uma peça não está na biblioteca, ela não existe.</strong> O que não é reutilizável vira exceção — e exceção é onde a marca racha.</p></div></div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>08</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
+</section>
+
+<!-- NOVO · peças no visual -->
+<section class="page lit">
+  <header>
+    <p class="kicker part">Parte 3 <span class="dim">· no visual</span></p>
+    <h2 class="h">As peças — <em>renderizadas</em> de verdade.</h2>
+    <p class="lede">Pra não ficar abstrato: alguns componentes reais do nosso DS, do jeito que o time (e a IA) usam pra montar qualquer tela — sempre no padrão.</p>
+  </header>
+  <div style="margin-top:22px">
+    <p class="speclbl">Botões &amp; etiquetas</p>
+    <div class="specwrap">
+      <div class="btnrow">
+        <span class="btn-primary">Quero começar</span>
+        <span class="btn-ghost">Saber mais</span>
+        <span class="pill navy">Em destaque</span>
+        <span class="pill soft">Rascunho</span>
+      </div>
+    </div>
+  </div>
+  <div class="specgrid" style="margin-top:18px">
+    <div>
+      <p class="speclbl">Card</p>
+      <div class="uicard">
+        <p class="uc-t">Aula 03 · Tokens</p>
+        <p class="uc-b">As regras que a marca inteira herda — definidas uma vez, aplicadas em todo lugar.</p>
+        <span class="btn-ghost" style="padding:9px 16px;font-size:12px">Abrir aula</span>
+      </div>
+    </div>
+    <div>
+      <p class="speclbl">Campo de formulário</p>
+      <div class="specwrap" style="padding:18px 20px">
+        <div class="field">
+          <span class="fl-lbl">Seu melhor email</span>
+          <div class="inp">voce@suaempresa.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panchor">
+    <div class="callout slim"><p>Cada peça já vem com comportamento, claro/escuro e acessibilidade dentro. <strong>Você usa; não recria.</strong></p></div>
+  </div>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 10 · NOVO — distribuição: o multiplicador -->
@@ -351,7 +478,7 @@
     </div>
   </div>
   <div class="panchor"><div class="callout slim"><p>O teste de um DS maduro: <strong>uma pessoa nova produz no padrão no primeiro dia</strong> — sem te perguntar nada. Distribuição é o que torna isso possível.</p></div></div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>09</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 11 · NOVO — qualidade medida -->
@@ -372,7 +499,7 @@
   <div class="panchor">
     <div class="callout"><p class="lbl">A honestidade que faz funcionar</p><p>A ferramenta automática não enxerga tudo — contraste sobre vidro, por exemplo, engana a máquina; achei vários problemas no olho. Por isso o método junta os dois: <strong>a IA mede em escala, você julga o que a régua não pega.</strong></p></div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>10</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 12 · PARTE 3 — princípios + perrengues -->
@@ -388,7 +515,7 @@
     <div class="pcard"><h4>Meça tudo, confie em pouco</h4><p>Número acima de opinião. A IA verifica contraste, acessibilidade e performance em escala — e te entrega evidência no lugar de "tá bonito".</p><p class="pk">O que não se mede é só achismo bem-vestido.</p></div>
   </div>
   <div class="panchor"><div class="callout"><p class="lbl">E os perrengues?</p><p>Existiram — e é por isso que funciona. A ferramenta automática não enxerga contraste sobre vidro; achei vários problemas no olho. Email tem regras próprias (um botão com degradê some no Outlook). Tudo isso virou parte do método. <strong>Honestidade vale mais que parecer perfeito.</strong></p></div></div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>11</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 13 · NOVO — prova / escopo real -->
@@ -411,7 +538,7 @@
   <div class="panchor">
     <div class="callout"><p class="lbl">E o ponto que importa</p><p>Nada disso exigiu um time de design ou uma agência. Exigiu <strong>decisões claras + IA dirigida com método e gosto</strong>. É reprodutível — inclusive na sua empresa.</p></div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>12</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 14 · PARTE 4 — aplique -->
@@ -447,7 +574,7 @@
       <div class="gcard"><h4>Parar em "bonito"</h4><p>Sem medir contraste e acessibilidade, "bonito" quebra na vida real.</p></div>
     </div>
   </div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>13</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 15 · NOVO — roadmap em 3 ondas -->
@@ -465,7 +592,7 @@
     </div>
   </div>
   <div class="panchor"><div class="callout slim"><p>O erro que mata: <strong>tentar as três ondas de uma vez.</strong> A Onda 1 já entrega valor sozinha — comece por ela, esta semana, e deixe o resto vir.</p></div></div>
-  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span>14</span></footer>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
 
 <!-- 16 · FECHO + AUTOR -->
