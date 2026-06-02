@@ -4,6 +4,28 @@ Todas as mudanças notáveis no Viver de IA Design System são documentadas aqui
 
 Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.6.0] · 2026-06-02
+
+### Adicionado
+
+- **Sistema de email de PRODUÇÃO à prova de bala** (`emails/` · react-email):
+  - 5 templates flagship: `welcome`, `enrollment`, `billing`, `winback`, `digest` — todos table-based + estilo inline, &lt;30KB, testáveis em Gmail/Outlook/Apple Mail.
+  - Motor token-driven (`emails/theme.ts`) com a identidade destilada pro que email renderiza: navy-dominant, fios finos, tipografia editorial. **Liquid glass simulado** (hero navy + painéis frosted + CTA glossy) com **degradê SEMPRE pareado com `background-color` sólido de fallback** → Outlook mostra sólido, Apple Mail/Gmail mostram o brilho.
+  - **CTA navy sólido** (sobrevive ao Outlook), **lockup correto** (monograma + wordmark), travado em modo claro, preheader, logo hospedada absoluta.
+  - `scripts/build-emails.mjs` renderiza pra `public/emails/*.html` (+ `.txt` + `manifest.json`) com checagem automática de bulletproof (tabela/inline/fallback).
+  - `/patterns/email` reescrita: faz **iframe do HTML real** (o mostruário deixou de simular) + explica o motor e o envio via Resend.
+  - Kit universal passa a empacotar `kit/emails/` com os 5 HTMLs reais.
+
+### Corrigido
+
+- **Botão `accent`** (lib): degradê navy→cinza embarrado + texto navy-sobre-navy (1.5:1) → navy intensificado glossy + texto branco (16.5:1). Mesma família corrigida em `Icon` (`surface-accent`, `surface-navy`).
+- **Glifo itálico cortado** em gradient-text (`background-clip: text`): `padding-right` na caixa + `margin-right` negativo (zero deslocamento) cobre o overhang. Fix sistêmico em todos os `hN em`.
+- **Kit determinístico cross-OS**: zip com ordem de entradas sortada + mtime fixo → mesmos bytes em macOS e Linux (acaba com o commit espúrio do CI).
+
+### Automação
+
+- Workflow `kit.yml`: regenera lib + emails + kit a cada push que toca a fonte do DS e commita de volta (desacoplado do deploy).
+
 ## [0.4.0] · 2026-05-20
 
 ### Adicionado

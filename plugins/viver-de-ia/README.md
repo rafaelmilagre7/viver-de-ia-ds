@@ -18,7 +18,7 @@ Pronto — `/via` e os outros comandos aparecem no autocomplete, e a skill `vive
 | Comando | Quando usar |
 |---|---|
 | `/via` | Entrada geral · descreva o que quer construir, ela direciona |
-| `/via-email` | Email editorial · 13 templates (welcome, billing, churn, newsletter, etc.) |
+| `/via-email` | Email · 5 templates de **produção à prova de bala** (react-email · `/patterns/email`) + 13 editoriais |
 | `/via-social` | Social media · 6 canais (IG, LinkedIn, YT, X, TikTok, podcast) |
 | `/via-landing` | Landing page · 5 hero variants + 7 elementos reutilizáveis |
 | `/via-brand` | Brand book · logo correta · voice por contexto · personality |

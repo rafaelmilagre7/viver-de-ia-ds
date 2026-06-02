@@ -281,7 +281,7 @@ Substituições por contexto:
 | Shell footer | Monogram + wordmark stacked |
 | Tab browser | Favicon 32×32 |
 | OG image link preview | Wordmark navy sobre off-white |
-| Email header | Wordmark navy 200px width |
+| Email header | Lockup monograma + wordmark navy · pequeno (~18px alt · letterhead) |
 | WhatsApp profile pic | App icon (não monogram) |
 | Slide deck capa | Wordmark white sobre mesh-navy |
 | Slide deck interior | Monogram white 16px canto inferior direito |
@@ -294,6 +294,18 @@ Clear space: monogram = X/2 · wordmark = 1X.
 Tamanho mínimo: monogram 16px · wordmark 96px.
 Cor por surface: navy em light · white em dark · scrim navy 60% em foto.
 NUNCA inverter via CSS `filter:invert()` · sempre arquivo dedicado.
+
+## 9.5. Email (PRODUÇÃO · à prova de bala)
+
+Email ≠ web. Clientes (Gmail, Outlook, Apple Mail) descartam CSS moderno. Regras:
+
+- **Estrutura em tabela + estilo inline**, ~600px de largura, peça `<102KB` (Gmail corta acima).
+- **PROIBIDO** em email: flex, grid, `backdrop-filter` (vidro real), `position`, variáveis CSS, media query como dependência.
+- **CTA navy SÓLIDO** (`background-color: #0A1F3B`). Degradê puro de fundo **some no Outlook** → botão invisível.
+- **Liquid glass simulado é permitido** (hero navy, painéis frosted, CTA glossy) MAS **todo `background-image: linear/radial-gradient` precisa de um `background-color` sólido na MESMA regra** (fallback). Outlook mostra o sólido; Apple Mail/Gmail mostram o brilho.
+- **Logo = lockup pequeno** (monograma + wordmark · ~18px alt) em **URL absoluta hospedada** (não relativa). Trava em claro: `<meta name="color-scheme" content="light only">`. Sempre um **preheader** (texto de preview escondido).
+- Cor de texto sobre navy = branco sólido. Coral só pra urgência real (atraso/erro).
+- Stack canônica: **react-email + Resend**. A IA escreve só o editorial (assunto, headline, corpo); o motor renderiza o HTML. 5 templates de produção vivos em `/patterns/email`.
 
 ## 10. Tabelas
 

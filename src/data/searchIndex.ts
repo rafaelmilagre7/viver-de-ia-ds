@@ -140,7 +140,7 @@ const KEYWORD_OVERLAYS: Record<string, Pick<SearchEntry, 'description' | 'keywor
   '/patterns/onboarding': { description: 'Wizard editorial · 4 passos', keywords: ['onboarding', 'wizard', 'getting started'] },
   '/patterns/dashboard': { description: 'KPI grid + Charts + Activity', keywords: ['dashboard', 'kpi', 'metrics', 'analytics'] },
   '/patterns/pricing': { description: '3 tiers simples · cards', keywords: ['pricing', 'plans', 'preço'] },
-  '/patterns/email': { description: 'Template editorial transacional', keywords: ['email', 'template', 'transactional'] },
+  '/patterns/email': { description: 'Sistema de email de produção · react-email · à prova de bala', keywords: ['email', 'template', 'transactional', 'react-email', 'resend', 'bulletproof', 'outlook', 'gmail', 'newsletter', 'welcome', 'fatura', 'cobrança', 'produção'] },
   '/patterns/faq': { description: 'Perguntas frequentes + busca', keywords: ['faq', 'questions', 'perguntas', 'help'] },
 
   // Guidelines

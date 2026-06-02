@@ -1,8 +1,21 @@
 ---
-description: Gera email editorial Viver de IA. Use pra qualquer dos 13 templates (welcome, billing, churn, newsletter, drip, event, lançamento, NPS, oferta, win-back, etc.).
+description: Gera email Viver de IA — produção à prova de bala (react-email · emails/) ou rascunho editorial (13 templates de voz). Use pra welcome, billing, churn, newsletter, drip, event, lançamento, NPS, oferta, win-back, etc.
 ---
 
-# /via-email · gerar email editorial Viver de IA
+# /via-email · gerar email Viver de IA
+
+## Dois modos
+
+1. **Produção (à prova de bala)** — quando o email vai ser ENVIADO de verdade. Use o motor `emails/` (react-email) do DS. 5 templates flagship prontos: `welcome`, `enrollment`, `billing`, `winback`, `digest`. Render via `@react-email/render` → HTML que não quebra no Gmail/Outlook/Apple Mail. Ao vivo em `/patterns/email`.
+2. **Editorial (rascunho)** — quando o usuário só quer o conteúdo (subject/headline/corpo) pra revisar ou colar. Use as regras de voz abaixo.
+
+### Regras invioláveis de email de produção (≠ web)
+
+- **Tabela + estilo inline**, ~600px, `<102KB`. NUNCA flex/grid/`backdrop-filter`/`position`/CSS vars em email.
+- **CTA navy SÓLIDO** (`background-color`). Degradê puro de fundo SOME no Outlook → botão invisível.
+- **Liquid glass simulado OK** (hero navy, painéis frosted, CTA glossy) MAS todo `background-image: gradient` precisa de `background-color` sólido de fallback na mesma regra.
+- **Logo = lockup pequeno** (monograma + wordmark ~18px) em URL absoluta. Trava em claro (`color-scheme: light only`). Preheader sempre.
+- A IA escreve só o editorial; o motor renderiza. Pra enviar: `render(<WelcomeEmail .../>)` → `resend.emails.send({ from, to, subject, html })`.
 
 ## Entrada
 
@@ -60,7 +73,9 @@ O usuário descreveu o tipo de email em `$ARGUMENTS`. Identifica em qual das 5 c
 
 ## Reference completa
 
-`/Users/rafaelmilagre/viver-de-ia-ds/src/pages/patterns/EmailCoverage.tsx` tem todos os 13 templates com:
+**Produção:** `emails/` (templates react-email) + `/patterns/email` no reference site (iframe do HTML real + como enviar via Resend). Renderize com `bun run build:emails`.
+
+**Editorial:** `/Users/rafaelmilagre/viver-de-ia-ds/src/pages/patterns/EmailCoverage.tsx` tem todos os 13 templates com:
 - subject + preview + body completo
 - notas: quando enviar, voz, variáveis dinâmicas
 - chrome de email (header logo · footer · unsubscribe)

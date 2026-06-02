@@ -1,6 +1,6 @@
 ---
 name: viver-de-ia-design
-description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo em nenhum nível), assinatura liquid glass, 107 rotas/patterns canônicos, library React publicável `@viverdeia/design-system` v0.5.0 (**47 componentes** em src/lib), API docs Radix-style por componente, theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K real indexado com keywords PT-BR/EN, starter `bunx create-viverdeia-app`, brand book completo, email/social/paid ads/landing/commercial/editorial/event coverage + 4 advanced patterns (2FA setup, pricing comparison, error pages, billing checkout). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ou qualquer artefato visual da marca.
+description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo em nenhum nível), assinatura liquid glass, 107 rotas/patterns canônicos, library React publicável `@viverdeia/design-system` v0.6.0 (**47 componentes** em src/lib + **sistema de email de produção à prova de bala** em emails/ · react-email), API docs Radix-style por componente, theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K real indexado com keywords PT-BR/EN, starter `bunx create-viverdeia-app`, brand book completo, email/social/paid ads/landing/commercial/editorial/event coverage + 4 advanced patterns (2FA setup, pricing comparison, error pages, billing checkout). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ou qualquer artefato visual da marca.
 user-invocable: true
 ---
 
@@ -125,10 +125,32 @@ import { ThemeProvider, Button, Pill, Card, DataTable, useToasts } from '@viverd
 ## Comandos disponíveis (este plugin)
 
 - `/via` · entrada geral · descreve o que vai construir e ela direciona
-- `/via-email` · email editorial · qualquer dos 13 templates
+- `/via-email` · email · 5 templates de PRODUÇÃO (react-email · à prova de bala) + 13 editoriais
 - `/via-social` · social media · qualquer dos 6 canais
 - `/via-landing` · landing page · variants + elementos reutilizáveis
 - `/via-brand` · brand book · logo usage · voice por contexto
 - `/via-deck` · pitch deck · slides Google Slides canônicos
 - `/via-paid` · Meta Ads + Google Display
 - `/via-check` · auditoria editorial · verifica se peça segue padrão
+
+## Sistema de email de PRODUÇÃO (à prova de bala · v0.6)
+
+Emails de verdade que **não quebram no inbox** (Gmail, Outlook, Apple Mail). Vivem em `emails/` (react-email), renderizam pra `public/emails/*.html` via `bun run build:emails`, e aparecem ao vivo em `/patterns/email` (iframe do HTML real). Distinto da galeria editorial de 13 mockups — estes são os **enviáveis**.
+
+**5 templates flagship:** `welcome` (boas-vindas) · `enrollment` (confirmação de turma) · `billing` (fatura · coral só em atraso) · `winback` (recuperação · sem dark pattern) · `digest` (resumo semanal).
+
+**Regras invioláveis de email (≠ web):**
+- **Tabela + estilo inline**, ~600px, `<102KB`. Zero flex/grid/`backdrop-filter` (clientes descartam).
+- **CTA navy SÓLIDO** (`background-color`) — degradê puro some no Outlook.
+- **Liquid glass simulado:** hero navy + painéis frosted + CTA glossy SÃO permitidos, mas **todo `background-image: gradient` precisa de um `background-color` sólido de fallback** na mesma regra → Outlook mostra sólido, Apple Mail/Gmail mostram o brilho.
+- **Logo = lockup pequeno** (monograma + wordmark · ~18px) hospedado em URL absoluta. Trava em modo claro (`color-scheme: light only`). Preheader sempre.
+- A IA escreve só o **editorial** (assunto, headline, corpo); o motor renderiza o HTML.
+
+**Como enviar (Resend):**
+
+```ts
+import { render } from '@react-email/render';
+import WelcomeEmail from 'emails/welcome';
+const html = await render(<WelcomeEmail firstName="Marina" turma="Operadores · T08" daysToStart={14} platformUrl="https://app.viverdeia.ai" />);
+await resend.emails.send({ from: 'Viver de IA <oi@viverdeia.ai>', to, subject: 'tua vaga tá confirmada · bora começar?', html });
+```
