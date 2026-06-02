@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Layout } from './components/Layout';
-import { Eyebrow, H1, Lede, Para, Strong, Callout, CTA, SubLink } from './components/ui';
+import { Lede, Para, Strong, Callout, CTA, SubLink } from './components/ui';
 import { color, fontStack } from './theme';
 import { Text } from '@react-email/components';
 
@@ -24,9 +24,8 @@ export default function WinbackEmail({ firstName, lastSeen, highlight, returnUrl
     <Layout
       preview="Sem cobrança. Só um aviso de que dá pra retomar de onde parou."
       reason="Você recebeu este email porque já fez parte de uma turma da Viver de IA."
+      hero={{ eyebrow: 'Senti sua falta', title: <>A porta continua aberta, {firstName}.</> }}
     >
-      <Eyebrow>Senti sua falta</Eyebrow>
-      <H1>A porta continua aberta, {firstName}.</H1>
       <Lede>
         Vi que você deu uma pausa {lastSeen}. Acontece — a vida aperta. Só queria que soubesse que
         dá pra retomar exatamente de onde parou, sem recomeçar do zero.

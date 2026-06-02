@@ -50,11 +50,15 @@ for (const [Comp, meta] of templates) {
   // checagens de "à prova de bala"
   const hasTable = /<table/i.test(html);
   const inlineStyled = /style="/.test(html);
-  const gradientBg = /background(-image)?:\s*linear-gradient/i.test(html);
+  // liquid glass seguro: TODO style com gradiente precisa de background-color (fallback Outlook)
+  const styleAttrs = html.match(/style="[^"]*"/gi) || [];
+  const grads = styleAttrs.filter((st) => /(linear|radial)-gradient/i.test(st));
+  const badGlass = grads.filter((st) => !/background-color:/i.test(st));
+  if (badGlass.length) warned = true;
   console.log(
-    `  ${meta.id}.html · ${kb}KB${clip ? ' ⚠ >102KB (Gmail corta)' : ''} · ` +
+    `  ${meta.id}.html · ${kb}KB${clip ? ' ⚠ >102KB' : ''} · ` +
       `tabela:${hasTable ? '✓' : '✗'} inline:${inlineStyled ? '✓' : '✗'} ` +
-      `degradê-fundo:${gradientBg ? '⚠ SIM' : 'não'}`,
+      `glass:${grads.length} · ${badGlass.length === 0 ? 'todos com fallback sólido ✓' : `⚠ ${badGlass.length} SEM fallback`}`,
   );
 
   manifest.push({ id: meta.id, name: meta.name, subject: meta.subject, when: meta.when, bytes: Buffer.byteLength(html, 'utf8') });

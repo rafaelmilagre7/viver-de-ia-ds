@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Section, Text, Link } from '@react-email/components';
 import { Layout } from './components/Layout';
-import { Eyebrow, H1, Lede, CTA } from './components/ui';
+import { Lede, CTA } from './components/ui';
 import { color, fontStack } from './theme';
 
 export const meta = {
@@ -30,9 +30,8 @@ export default function DigestEmail({ firstName, weekLabel, items, appUrl }: Dig
     <Layout
       preview={`O resumo da sua semana: ${items.map((i) => i.title).slice(0, 2).join(', ')}…`}
       reason="Você recebeu este email porque ativou o resumo semanal da Viver de IA."
+      hero={{ eyebrow: `Resumo da semana · ${weekLabel}`, title: <>O que rolou, {firstName}.</> }}
     >
-      <Eyebrow>Resumo da semana · {weekLabel}</Eyebrow>
-      <H1>O que rolou, {firstName}.</H1>
       <Lede>Três coisas que valem seus 2 minutos antes de voltar pro foco.</Lede>
 
       <Section style={{ margin: '8px 0 4px' }}>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Layout } from './components/Layout';
-import { Eyebrow, H1, Lede, Para, Strong, Callout, InfoRow, CTA, SubLink } from './components/ui';
+import { Lede, Para, Strong, Callout, InfoRow, CTA, SubLink } from './components/ui';
 import { color } from './theme';
 
 export const meta = {
@@ -39,11 +39,11 @@ export default function BillingEmail({
           : `Sua próxima fatura de ${amount} vence ${dueDate}.`
       }
       reason="Você recebeu este email porque tem uma assinatura ativa na Viver de IA."
+      hero={{
+        eyebrow: overdue ? 'Pagamento em atraso' : 'Fatura',
+        title: overdue ? `Faltou o pagamento, ${firstName}.` : `Sua fatura, ${firstName}.`,
+      }}
     >
-      <Eyebrow>{overdue ? 'Pagamento em atraso' : 'Fatura'}</Eyebrow>
-      <H1>
-        {overdue ? `Faltou o pagamento, ${firstName}.` : `Sua fatura, ${firstName}.`}
-      </H1>
       <Lede>
         {overdue ? (
           <>

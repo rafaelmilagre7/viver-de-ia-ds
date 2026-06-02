@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Section } from '@react-email/components';
 import { Layout } from './components/Layout';
-import { Eyebrow, H1, Lede, Para, Strong, CTA, Step, Signature } from './components/ui';
+import { Lede, Para, Strong, CTA, Step, Signature } from './components/ui';
 
 export const meta = {
   id: 'welcome',
@@ -22,9 +22,8 @@ export default function WelcomeEmail({ firstName, turma, daysToStart, platformUr
     <Layout
       preview={`Tua vaga na turma ${turma} tá confirmada. Começa em ${daysToStart} dias.`}
       reason="Você recebeu este email porque confirmou sua matrícula na Viver de IA."
+      hero={{ eyebrow: 'Boas-vindas', title: <>Que bom te ver aqui, {firstName}.</> }}
     >
-      <Eyebrow>Boas-vindas</Eyebrow>
-      <H1>Que bom te ver aqui, {firstName}.</H1>
       <Lede>
         Tua vaga na turma <Strong>{turma}</Strong> tá confirmada. Começa em{' '}
         <Strong>{daysToStart} dias</Strong> — e dá pra chegar na semana 1 já com contexto.

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Layout } from './components/Layout';
-import { Eyebrow, H1, Lede, Para, Strong, Callout, InfoRow, CTA, SubLink } from './components/ui';
+import { Lede, Para, Strong, Callout, InfoRow, CTA, SubLink } from './components/ui';
 
 export const meta = {
   id: 'enrollment',
@@ -34,9 +34,8 @@ export default function EnrollmentEmail({
     <Layout
       preview={`Matrícula confirmada na turma ${turma}. Começa ${startDate}.`}
       reason="Você recebeu este email porque sua matrícula foi confirmada."
+      hero={{ eyebrow: 'Matrícula confirmada', title: <>Tá tudo certo, {firstName}.</> }}
     >
-      <Eyebrow>Matrícula confirmada</Eyebrow>
-      <H1>Tá tudo certo, {firstName}.</H1>
       <Lede>
         Sua vaga na <Strong>{turma}</Strong> está garantida. Guardei aqui os detalhes — é só
         chegar.

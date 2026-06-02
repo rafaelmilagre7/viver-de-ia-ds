@@ -1,35 +1,34 @@
 /* ============================================================
-   Viver de IA · Email design tokens (à prova de bala)
+   Viver de IA · Email design tokens (à prova de bala + glass)
    ------------------------------------------------------------
-   A identidade do DS destilada pro que cliente de email RENDERIZA:
-   cores SÓLIDAS (zero degradê de fundo — Outlook ignora), zero vidro,
-   zero flex/grid. Navy-dominant, fios finos, tipografia editorial.
-   Tudo trava em modo claro (regra do DS: "email trava tudo em claro").
+   A identidade do DS no que cliente de email RENDERIZA. Liquid glass
+   SIMULADO de forma segura: todo degradê vem PAREADO com um
+   background-color sólido de fallback — Outlook mostra o sólido,
+   Apple Mail/Gmail/iOS mostram o brilho. Logo = lockup (monograma +
+   wordmark). Trava em claro.
    ============================================================ */
 
-/** Base pra assets. Em produção o time troca via env pro CDN próprio. */
 export const ASSET_BASE = process.env.VIA_EMAIL_ASSETS || 'https://viver-de-ia-ds.vercel.app';
 export const asset = (p: string) => `${ASSET_BASE}${p.startsWith('/') ? '' : '/'}${p}`;
 
 export const color = {
-  // superfícies
-  pageBg: '#EDF0F4', // cinza frio · dá relevo ao card branco
+  pageBg: '#EDF0F4',
   card: '#FFFFFF',
-  cardAlt: '#F7F9FB', // callout / bloco de detalhe
-  // marca
+  cardAlt: '#F7F9FB',
   navy: '#0A1F3B',
   navyDeep: '#02162A',
-  // texto sobre branco
-  ink: '#0A1F3B', // headings / strong
-  body: '#344054', // corpo
-  muted: '#667085', // secundário / footer
-  faint: '#98A2B3', // fine print / timestamps
+  navyDarker: '#010B1A',
+  navyLift: '#16335C', // navy "iluminado" pro topo de gradientes (gloss)
+  ink: '#0A1F3B',
+  body: '#344054',
+  muted: '#667085',
+  faint: '#98A2B3',
   onNavy: '#FFFFFF',
-  onNavySoft: 'rgba(255,255,255,0.72)',
-  // fios (SÓLIDOS — Outlook não herda alpha bem)
+  onNavySoft: 'rgba(255,255,255,0.70)',
+  onNavyFaint: 'rgba(255,255,255,0.52)',
   line: '#E6E9EF',
   lineSoft: '#EFF1F5',
-  // semânticos (uso parcimonioso · nunca decorativo)
+  glassEdge: 'rgba(255,255,255,0.16)', // brilho de borda no navy
   coral: '#B85C5C',
   coralInk: '#8F3F3F',
   coralBg: '#FBF3F3',
@@ -38,12 +37,10 @@ export const color = {
   white: '#FFFFFF',
 } as const;
 
-/** Geist como progressive enhancement; stack de sistema carrega o visual onde Geist não chega. */
 export const fontStack =
   "'Geist','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
 
-export const radius = { card: 14, md: 10, sm: 8, pill: 999 } as const;
-
+export const radius = { card: 16, md: 12, sm: 8, pill: 999 } as const;
 export const CONTAINER = 600;
 
 /* ---------- estilos compartilhados (inline · React.CSSProperties) ---------- */
@@ -57,41 +54,51 @@ export const s = {
     WebkitFontSmoothing: 'antialiased',
   } as React.CSSProperties,
 
-  container: {
-    maxWidth: `${CONTAINER}px`,
-    margin: '0 auto',
-    padding: '0 16px',
-  } as React.CSSProperties,
+  container: { maxWidth: `${CONTAINER}px`, margin: '0 auto', padding: '0 16px' } as React.CSSProperties,
 
-  brandRow: { padding: '26px 8px 18px' } as React.CSSProperties,
-  wordmark: { display: 'block', border: 0 } as React.CSSProperties,
+  /* marca · lockup monograma + wordmark */
+  brandRow: { padding: '26px 6px 16px' } as React.CSSProperties,
+  brandMono: { display: 'block', border: 0 } as React.CSSProperties,
+  brandWord: { display: 'block', border: 0 } as React.CSSProperties,
 
+  /* card · padding 0; o hero e o corpo trazem o respiro */
   card: {
     backgroundColor: color.card,
     border: `1px solid ${color.line}`,
     borderRadius: `${radius.card}px`,
-    padding: '40px 40px 36px',
+    overflow: 'hidden',
   } as React.CSSProperties,
 
-  eyebrow: {
-    margin: '0 0 14px',
+  /* hero navy glassy · degradê + glint, com fallback sólido pro Outlook */
+  hero: {
+    backgroundColor: color.navy,
+    backgroundImage: `radial-gradient(130% 130% at 100% 0%, rgba(255,255,255,0.12), rgba(255,255,255,0) 55%), linear-gradient(140deg, ${color.navy} 0%, ${color.navyDeep} 70%, ${color.navyDarker} 100%)`,
+    borderTopLeftRadius: `${radius.card}px`,
+    borderTopRightRadius: `${radius.card}px`,
+    borderTop: `1px solid ${color.glassEdge}`,
+    padding: '34px 38px 30px',
+  } as React.CSSProperties,
+  heroEyebrow: {
+    margin: '0 0 12px',
     fontFamily: fontStack,
     fontSize: '12px',
     fontWeight: 600,
-    letterSpacing: '0.06em',
+    letterSpacing: '0.07em',
     textTransform: 'uppercase',
-    color: color.muted,
+    color: color.onNavySoft,
+  } as React.CSSProperties,
+  heroTitle: {
+    margin: 0,
+    fontFamily: fontStack,
+    fontSize: '26px',
+    lineHeight: '1.22',
+    fontWeight: 600,
+    letterSpacing: '-0.022em',
+    color: color.onNavy,
   } as React.CSSProperties,
 
-  h1: {
-    margin: '0 0 14px',
-    fontFamily: fontStack,
-    fontSize: '25px',
-    lineHeight: '1.25',
-    fontWeight: 600,
-    letterSpacing: '-0.02em',
-    color: color.ink,
-  } as React.CSSProperties,
+  /* corpo branco */
+  bodyWrap: { backgroundColor: color.card, padding: '32px 38px 36px' } as React.CSSProperties,
 
   lede: {
     margin: '0 0 20px',
@@ -100,7 +107,6 @@ export const s = {
     lineHeight: '1.6',
     color: color.body,
   } as React.CSSProperties,
-
   p: {
     margin: '0 0 16px',
     fontFamily: fontStack,
@@ -108,11 +114,12 @@ export const s = {
     lineHeight: '1.66',
     color: color.body,
   } as React.CSSProperties,
-
   strong: { color: color.ink, fontWeight: 600 } as React.CSSProperties,
 
+  /* CTA · navy glossy (degradê + fallback sólido) */
   btn: {
-    backgroundColor: color.navy, // SÓLIDO — sobrevive ao Outlook
+    backgroundColor: color.navy,
+    backgroundImage: `linear-gradient(180deg, ${color.navyLift} 0%, ${color.navy} 58%)`,
     color: color.onNavy,
     fontFamily: fontStack,
     fontSize: '15px',
@@ -122,23 +129,24 @@ export const s = {
     borderRadius: `${radius.pill}px`,
     padding: '13px 26px',
     display: 'inline-block',
+    border: `1px solid ${color.navyDeep}`,
   } as React.CSSProperties,
 
-  hr: {
-    border: 'none',
-    borderTop: `1px solid ${color.line}`,
-    margin: '28px 0',
-  } as React.CSSProperties,
+  hr: { border: 'none', borderTop: `1px solid ${color.line}`, margin: '26px 0' } as React.CSSProperties,
 
+  /* painel frosted glass · degradê claro + fallback sólido + borda + glint */
   callout: {
     backgroundColor: color.cardAlt,
+    backgroundImage: `linear-gradient(180deg, ${color.white} 0%, #F2F5F9 100%)`,
     border: `1px solid ${color.line}`,
+    borderTop: `1px solid #FFFFFF`,
     borderRadius: `${radius.md}px`,
     padding: '20px 22px',
     margin: '0 0 22px',
   } as React.CSSProperties,
 
-  footer: { padding: '22px 8px 36px' } as React.CSSProperties,
+  footer: { padding: '22px 6px 36px' } as React.CSSProperties,
+  footerMono: { display: 'block', border: 0, marginBottom: '12px' } as React.CSSProperties,
   footerText: {
     margin: '0 0 6px',
     fontFamily: fontStack,

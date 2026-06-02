@@ -1,16 +1,6 @@
-import { Button, Text, Heading, Hr, Section, Row, Column, Link } from '@react-email/components';
+import { Button, Text, Hr, Section, Row, Column, Link } from '@react-email/components';
 import * as React from 'react';
 import { s, color, radius, fontStack } from '../theme';
-
-export const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <Text style={s.eyebrow}>{children}</Text>
-);
-
-export const H1 = ({ children }: { children: React.ReactNode }) => (
-  <Heading as="h1" style={s.h1}>
-    {children}
-  </Heading>
-);
 
 export const Lede = ({ children }: { children: React.ReactNode }) => (
   <Text style={s.lede}>{children}</Text>
