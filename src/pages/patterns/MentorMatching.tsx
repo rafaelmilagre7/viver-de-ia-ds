@@ -223,11 +223,11 @@ function PrimaryMatchSection() {
 function AlternativesSection() {
   const alts = [
     {
-      av: 'YA',
-      name: 'Yago Almeida',
+      av: 'DM',
+      name: 'Diego Martins',
       role: 'Tech lead · plataforma',
       score: 78,
-      reason: 'Forte em infraestrutura de agentes (Iris, Nina). Match alto na parte técnica.',
+      reason: 'Forte em infraestrutura de agentes de IA. Match alto na parte técnica.',
       tags: ['VPS', 'observability', 'edge functions'],
     },
     {

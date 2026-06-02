@@ -192,7 +192,7 @@ function UpcomingLiveSection() {
 function PastLivesSection() {
   const past = [
     { date: '15 mai', title: 'Few-shot · quando 3 exemplos valem mais que 12', host: 'Caio', duration: '1h 42min', views: 248, em: 'mais que 12' },
-    { date: '08 mai', title: 'Memory: curta, média e persistente — quando cada uma serve', host: 'Caio + Yago', duration: '2h 06min', views: 312, em: 'cada uma serve' },
+    { date: '08 mai', title: 'Memory: curta, média e persistente — quando cada uma serve', host: 'Caio + Diego', duration: '2h 06min', views: 312, em: 'cada uma serve' },
     { date: '01 mai', title: 'Auditoria · 3 agentes do grupo na operação real', host: 'Caio + alunos', duration: '1h 58min', views: 196, em: 'na operação real' },
   ];
 

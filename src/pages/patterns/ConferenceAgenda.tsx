@@ -54,7 +54,7 @@ function AgendaSection() {
     {
       time: '10h00', track: 'tech', kind: 'talk',
       title: 'Multi-agent systems · arquitetura na prática',
-      speaker: 'Yago Mendes', role: 'CTO · Viver de IA', room: 'Sala B',
+      speaker: 'Diego Martins', role: 'CTO · Viver de IA', room: 'Sala B',
       duration: '40min',
     },
     {
@@ -222,7 +222,7 @@ function AgendaSpeakerStripSection() {
     { name: 'Caio Ribeiro', role: 'Fundador · Viver de IA', tag: 'Keynote' },
     { name: 'Marisson Lage', role: 'CEO · Efizi', tag: 'Keynote' },
     { name: 'Camila Moraes', role: 'Head IA · Mantra', tag: 'Talk' },
-    { name: 'Yago Mendes', role: 'CTO · Viver de IA', tag: 'Talk' },
+    { name: 'Diego Martins', role: 'CTO · Viver de IA', tag: 'Talk' },
     { name: 'Daniel Pinheiro', role: 'Founder · Pivot', tag: 'Talk' },
     { name: 'Bruna Carvalho', role: 'Product · Lumin', tag: 'Talk' },
     { name: 'Felipe Andrade', role: 'CTO · Olara Bank', tag: 'Painel' },

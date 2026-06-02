@@ -329,7 +329,7 @@ function InsightsWeeklySection() {
                 <span className="num mono">02</span>
                 <div>
                   <strong>Lançar redirecionamento ativo da Nina</strong>
-                  <em>Caio + Yago · feature flag · canary 10% na sex</em>
+                  <em>Caio + Diego · feature flag · canary 10% na sex</em>
                 </div>
               </li>
               <li>

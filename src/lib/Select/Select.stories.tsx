@@ -21,7 +21,7 @@ Default.args = {
   options: [
     { value: 'bruno', label: 'Caio Ribeiro · estratégia' },
     { value: 'mateus', label: 'Mateus Garcia · técnico' },
-    { value: 'yago', label: 'Yago Mendes · produto' },
+    { value: 'diego', label: 'Diego Martins · produto' },
     { value: 'daniel', label: 'Daniel Souza · operação' },
   ],
 };

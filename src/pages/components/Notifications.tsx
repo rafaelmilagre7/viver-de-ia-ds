@@ -249,7 +249,7 @@ function StatusSection() {
             <li>
               <span className="av">YA</span>
               <div>
-                <p><strong>Yago Almeida</strong></p>
+                <p><strong>Diego Martins</strong></p>
                 <span><span className="dot away" /> ausente · volta às 15h</span>
               </div>
             </li>

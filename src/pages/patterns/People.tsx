@@ -106,7 +106,7 @@ function MentorProfileSection() {
 function TeamGridSection() {
   const team = [
     { name: 'Caio Ribeiro', role: 'Fundador · mentor head', av: 'CR', tag: 'mentoria', metaL: '220', metaR: 'mentorados ativos' },
-    { name: 'Yago Almeida', role: 'Tech lead · plataforma', av: 'YA', tag: 'plataforma', metaL: 'iris', metaR: 'nina-agent · vps' },
+    { name: 'Diego Martins', role: 'Tech lead · plataforma', av: 'DM', tag: 'plataforma', metaL: '12', metaR: 'serviços · infra' },
     { name: 'Mateus Silva', role: 'Comunidade · operações', av: 'MS', tag: 'comunidade', metaL: '4.9K', metaR: 'membros no Discord' },
     { name: 'Luiza Ramos', role: 'Curadora · editorial', av: 'LR', tag: 'conteúdo', metaL: '142', metaR: 'pgs · playbook' },
     { name: 'Rafael Milagre', role: 'CEO · ecosystem', av: 'RM', tag: 'liderança', metaL: '38', metaR: 'contas corporate' },

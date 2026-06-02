@@ -210,7 +210,7 @@ function TrustSignalsAdvancedSection() {
             <li><strong>Caio Ribeiro</strong><em>construiu a Nina · 11.920 conversas/mês</em></li>
             <li><strong>Camila Moraes</strong><em>agente proposta · 73% menos token</em></li>
             <li><strong>Daniel Pinheiro</strong><em>onboarding agente · 2h → 20min</em></li>
-            <li><strong>Yago Almeida</strong><em>SDR automatizado · 4h/sem economizadas</em></li>
+            <li><strong>Diego Martins</strong><em>SDR automatizado · 4h/sem economizadas</em></li>
           </ul>
         </article>
       </div>

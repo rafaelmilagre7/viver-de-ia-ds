@@ -485,7 +485,7 @@ function DripSequence() {
       delay: 'D+12 (5 dias depois)',
       subject: 'Por que tem mentoria 1:1 (e por que não é call em grupo)',
       lead:
-        'curso online não chega a operação. mentoria 1:1 chega. mostro o que rola dentro de uma sessão real · case do Yago.',
+        'curso online não chega a operação. mentoria 1:1 chega. mostro o que rola dentro de uma sessão real · case do Diego.',
     },
     {
       n: 4,

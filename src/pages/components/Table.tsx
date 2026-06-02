@@ -323,10 +323,10 @@ function FullTableSection() {
 /* ---------- COMPACT TABLE — variante densa pra dashboard ---------- */
 function CompactTableSection() {
   const tasks = [
-    { id: 'T-481', task: 'Renovar token Nina · production', who: 'Yago', priority: 'alta', due: 'hoje · 18h' },
+    { id: 'T-481', task: 'Renovar token de API · production', who: 'Diego', priority: 'alta', due: 'hoje · 18h' },
     { id: 'T-480', task: 'Auditoria semanal · custo Anthropic', who: 'Caio', priority: 'média', due: 'sex · 12h' },
     { id: 'T-479', task: 'Onboarding · 3 novos da turma 2026.2', who: 'Mateus', priority: 'baixa', due: 'seg · 14h' },
-    { id: 'T-478', task: 'Calibrar few-shot · classifier v2', who: 'Yago', priority: 'média', due: 'ter · 10h' },
+    { id: 'T-478', task: 'Calibrar few-shot · classifier v2', who: 'Diego', priority: 'média', due: 'ter · 10h' },
   ];
 
   return (

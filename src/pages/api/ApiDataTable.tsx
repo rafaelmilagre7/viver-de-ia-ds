@@ -13,7 +13,7 @@ type Operator = {
 const data: Operator[] = [
   { id: '1', name: 'Caio Ribeiro', cohort: '2026.2', streak: 14, revenue: 1800000 },
   { id: '2', name: 'Márisson Lage', cohort: '2026.2', streak: 22, revenue: 920000 },
-  { id: '3', name: 'Yago Almeida', cohort: '2026.1', streak: 9, revenue: 540000 },
+  { id: '3', name: 'Diego Martins', cohort: '2026.1', streak: 9, revenue: 540000 },
 ];
 
 function DataTableDemo() {

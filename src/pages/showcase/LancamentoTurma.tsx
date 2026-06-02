@@ -51,7 +51,7 @@ const modulos = [
 
 const mentores = [
   { av: 'CR', nome: 'Caio Ribeiro', papel: 'Fundador · Viver de IA', bio: 'Construiu a Nina · 11.920 conversas/mês em produção. Mentora 220 operadores.' },
-  { av: 'YA', nome: 'Yago Almeida', papel: 'Tech lead · plataforma', bio: 'Infraestrutura de agentes (Iris, Nina). VPS, observability, edge functions.' },
+  { av: 'DM', nome: 'Diego Martins', papel: 'Tech lead · plataforma', bio: 'Infraestrutura de agentes de IA. VPS, observability, edge functions.' },
 ];
 
 const depoimentos = [

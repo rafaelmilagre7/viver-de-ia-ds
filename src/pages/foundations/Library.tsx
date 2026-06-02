@@ -240,7 +240,7 @@ function LibDataTableSection() {
     { name: 'Camila Moraes',   streak: 14, status: 'ativo',    last: '2026-05-18' },
     { name: 'Daniel Pinheiro', streak: 4,  status: 'em risco', last: '2026-05-09' },
     { name: 'Márisson Lage',   streak: 11, status: 'ativo',    last: '2026-05-20' },
-    { name: 'Yago Almeida',    streak: 0,  status: 'pausado',  last: '2026-04-22' },
+    { name: 'Diego Martins',    streak: 0,  status: 'pausado',  last: '2026-04-22' },
   ];
   return (
     <Section
@@ -883,7 +883,7 @@ function LibSelectSection() {
             options={[
               { value: 'bruno', label: 'Caio Ribeiro · estratégia' },
               { value: 'mateus', label: 'Mateus Garcia · técnico' },
-              { value: 'yago', label: 'Yago Mendes · produto' },
+              { value: 'diego', label: 'Diego Martins · produto' },
               { value: 'daniel', label: 'Daniel Souza · operação' },
             ]}
           />

@@ -53,7 +53,7 @@ function CodeLightSection() {
         <header className="vds-code-head">
           <span className="vds-code-icon"><FileCode size={13} strokeWidth={2} /></span>
           <span className="vds-code-path">
-            <em>nina-agent /</em> src / agents / classifier.ts
+            <em>meu-agente /</em> src / agents / classifier.ts
           </span>
           <span className="vds-code-lang">TypeScript</span>
           <button className="vds-code-copy" onClick={() => { setCopied(true); setTimeout(() => setCopied(false), 1400); }}>
@@ -82,7 +82,7 @@ function CodeDarkSection() {
         <header className="vds-code-head dark">
           <span className="vds-code-icon"><FileCode size={13} strokeWidth={2} /></span>
           <span className="vds-code-path">
-            <em>iris-agent /</em> prompts / SOUL.md
+            <em>meu-agente /</em> prompts / SOUL.md
           </span>
           <span className="vds-code-lang dark">Markdown</span>
           <button className="vds-code-copy dark">
@@ -99,7 +99,7 @@ function CodeDarkSection() {
           <div className="vds-code-line"><span className="vds-code-ln">6</span><span className="vds-code-content"><span className="h">### Regras invioláveis</span></span></div>
           <div className="vds-code-line"><span className="vds-code-ln">7</span><span className="vds-code-content"></span></div>
           <div className="vds-code-line active"><span className="vds-code-ln">8</span><span className="vds-code-content">- Mensagens públicas <span className="b">SEM</span> jargão técnico, IDs, ou checklist.</span></div>
-          <div className="vds-code-line"><span className="vds-code-ln">9</span><span className="vds-code-content">- Criação de cron: <span className="b">apenas Rafael ou Yago</span> autorizam.</span></div>
+          <div className="vds-code-line"><span className="vds-code-ln">9</span><span className="vds-code-content">- Criação de cron: <span className="b">apenas admins</span> autorizam.</span></div>
           <div className="vds-code-line"><span className="vds-code-ln">10</span><span className="vds-code-content">- Em caso de dúvida sobre escopo: <span className="i">pergunta primeiro</span>.</span></div>
         </pre>
       </div>
@@ -118,7 +118,7 @@ function TerminalSection() {
           </div>
           <span className="vds-terminal-title">
             <TerminalIcon size={11} strokeWidth={2} />
-            zsh · ~/iris-agent
+            zsh · ~/meu-agente
           </span>
           <button aria-label="Tela cheia" className="vds-terminal-max">
             <Maximize2 size={12} strokeWidth={2} />
@@ -127,31 +127,31 @@ function TerminalSection() {
 
         <div className="vds-terminal-body">
           <div className="row">
-            <span className="prompt">rafael@vps</span>
-            <span className="path">~/iris-agent</span>
+            <span className="prompt">dev@vps</span>
+            <span className="path">~/meu-agente</span>
             <span className="sep">$</span>
             <span className="cmd">bun run deploy</span>
           </div>
           <div className="row out">
             <span className="out-line"><span className="ok">✓</span> bundle hash <b>4f2a9c</b> · 184 KB gzip</span>
-            <span className="out-line"><span className="ok">✓</span> uploading to Cloudflare Workers · iris.viverdeia.ai</span>
+            <span className="out-line"><span className="ok">✓</span> uploading to Cloudflare Workers · meu-app.com</span>
             <span className="out-line"><span className="ok">✓</span> deployment <b>v428</b> live in <b>1.4s</b></span>
-            <span className="out-line muted">→ inspect at https://dash.cloudflare.com/iris-agent</span>
+            <span className="out-line muted">→ inspect at https://dash.cloudflare.com/meu-agente</span>
           </div>
 
           <div className="row">
-            <span className="prompt">rafael@vps</span>
-            <span className="path">~/iris-agent</span>
+            <span className="prompt">dev@vps</span>
+            <span className="path">~/meu-agente</span>
             <span className="sep">$</span>
-            <span className="cmd">curl -sS https://iris.viverdeia.ai/health | jq .version</span>
+            <span className="cmd">curl -sS https://meu-app.com/health | jq .version</span>
           </div>
           <div className="row out">
             <span className="out-line">"4.7.1"</span>
           </div>
 
           <div className="row">
-            <span className="prompt">rafael@vps</span>
-            <span className="path">~/iris-agent</span>
+            <span className="prompt">dev@vps</span>
+            <span className="path">~/meu-agente</span>
             <span className="sep">$</span>
             <span className="cmd">_<span className="cursor" /></span>
           </div>

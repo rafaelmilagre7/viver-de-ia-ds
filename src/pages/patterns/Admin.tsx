@@ -415,7 +415,7 @@ function ApiKeySection() {
             <div>
               <span className="vds-apikey-tag dev">development</span>
               <h4>nina-classifier · staging</h4>
-              <p>Criada por <strong>Yago Almeida</strong> em 03 fev 2026 · escopo <em>read</em></p>
+              <p>Criada por <strong>Diego Martins</strong> em 03 fev 2026 · escopo <em>read</em></p>
             </div>
             <span className="vds-apikey-status warn">
               <AlertTriangle size={11} strokeWidth={2.2} />
@@ -552,7 +552,7 @@ function BillingSection() {
 function AuditLogSection() {
   const events = [
     { time: '14:32', day: 'Hoje', who: 'Rafael Milagre', action: 'rotacionou chave', detail: 'nina-classifier · production', icon: KeyRound, type: 'security' },
-    { time: '11:18', day: 'Hoje', who: 'Yago Almeida', action: 'criou nova API key', detail: 'staging · escopo read', icon: Key, type: 'create' },
+    { time: '11:18', day: 'Hoje', who: 'Diego Martins', action: 'criou nova API key', detail: 'staging · escopo read', icon: Key, type: 'create' },
     { time: '09:42', day: 'Hoje', who: 'Sistema', action: 'cobrança processada', detail: 'R$ 1.840,00 · método VISA •••• 4821', icon: CreditCard, type: 'system' },
     { time: '23:08', day: 'ontem', who: 'Mateus Silva', action: 'adicionou 3 alunos ao plano Corporate', detail: 'Mantra Tech · convites enviados', icon: UserPlus, type: 'team' },
     { time: '17:42', day: 'ontem', who: 'Rafael Milagre', action: 'editou as configurações de notificação', detail: 'desligou "comentários nas suas notas"', icon: FileEdit, type: 'change' },
