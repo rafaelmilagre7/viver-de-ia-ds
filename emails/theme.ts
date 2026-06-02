@@ -56,8 +56,8 @@ export const s = {
 
   container: { maxWidth: `${CONTAINER}px`, margin: '0 auto', padding: '0 16px' } as React.CSSProperties,
 
-  /* marca · lockup monograma + wordmark */
-  brandRow: { padding: '26px 6px 16px' } as React.CSSProperties,
+  /* marca · lockup monograma + wordmark · discreto (letterhead) */
+  brandRow: { padding: '24px 4px 14px' } as React.CSSProperties,
   brandMono: { display: 'block', border: 0 } as React.CSSProperties,
   brandWord: { display: 'block', border: 0 } as React.CSSProperties,
 
@@ -76,29 +76,29 @@ export const s = {
     borderTopLeftRadius: `${radius.card}px`,
     borderTopRightRadius: `${radius.card}px`,
     borderTop: `1px solid ${color.glassEdge}`,
-    padding: '34px 38px 30px',
+    padding: '32px 36px 28px',
   } as React.CSSProperties,
   heroEyebrow: {
-    margin: '0 0 12px',
+    margin: '0 0 11px',
     fontFamily: fontStack,
-    fontSize: '12px',
+    fontSize: '11px',
     fontWeight: 600,
-    letterSpacing: '0.07em',
+    letterSpacing: '0.1em',
     textTransform: 'uppercase',
     color: color.onNavySoft,
   } as React.CSSProperties,
   heroTitle: {
     margin: 0,
     fontFamily: fontStack,
-    fontSize: '26px',
-    lineHeight: '1.22',
+    fontSize: '24px',
+    lineHeight: '1.24',
     fontWeight: 600,
-    letterSpacing: '-0.022em',
+    letterSpacing: '-0.021em',
     color: color.onNavy,
   } as React.CSSProperties,
 
   /* corpo branco */
-  bodyWrap: { backgroundColor: color.card, padding: '32px 38px 36px' } as React.CSSProperties,
+  bodyWrap: { backgroundColor: color.card, padding: '30px 36px 34px' } as React.CSSProperties,
 
   lede: {
     margin: '0 0 20px',

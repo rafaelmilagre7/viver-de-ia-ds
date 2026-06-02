@@ -36,15 +36,15 @@ export function Layout({ preview, hero, reason, children }: LayoutProps) {
           <Section style={s.brandRow}>
             <Img
               src={asset('/logos/monogram-navy.png')}
-              width="51"
-              height="28"
+              width="33"
+              height="18"
               alt="Viver de IA"
-              style={{ ...s.brandMono, display: 'inline-block', verticalAlign: 'middle', marginRight: '14px' }}
+              style={{ ...s.brandMono, display: 'inline-block', verticalAlign: 'middle', marginRight: '10px' }}
             />
             <Img
               src={asset('/logos/wordmark-navy.png')}
-              width="265"
-              height="22"
+              width="168"
+              height="14"
               alt=""
               style={{ ...s.brandWord, display: 'inline-block', verticalAlign: 'middle' }}
             />
@@ -65,8 +65,8 @@ export function Layout({ preview, hero, reason, children }: LayoutProps) {
           <Section style={s.footer}>
             <Img
               src={asset('/logos/monogram-navy.png')}
-              width="34"
-              height="19"
+              width="26"
+              height="14"
               alt="Viver de IA"
               style={s.footerMono}
             />
