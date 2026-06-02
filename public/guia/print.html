@@ -183,6 +183,44 @@
   .uicard { border-radius: 12px; padding: 18px; background: linear-gradient(180deg, #FFFFFF 0%, #ECF1F8 100%); border: 1px solid #DBE2EE; box-shadow: inset 0 1px 0 #fff, 0 18px 36px -18px rgba(10,31,59,0.22); }
   .uicard .uc-t { font-size: 14px; font-weight: 600; color: var(--ink); margin: 0 0 4px; }
   .uicard .uc-b { font-size: 12px; color: var(--muted); margin: 0 0 13px; }
+
+  /* surface mockups · o DS em acao */
+  .surfshow { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+  .emailmock, .screenmock { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #fff; box-shadow: 0 24px 50px -26px rgba(10,31,59,0.32); }
+  .emailmock .em-top { background: linear-gradient(150deg, var(--navy), var(--navy-deep)); padding: 15px 17px; display: flex; align-items: center; gap: 8px; }
+  .emailmock .em-top img { width: 17px; height: auto; }
+  .emailmock .em-top span { font-size: 8.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+  .emailmock .em-body { padding: 17px; }
+  .emailmock .em-h { font-size: 15px; font-weight: 600; color: var(--ink); margin: 0 0 6px; letter-spacing: -0.01em; }
+  .emailmock .em-p { font-size: 11px; color: var(--body); line-height: 1.5; margin: 0 0 13px; }
+  .emailmock .em-cta { display: inline-block; padding: 9px 15px; border-radius: 8px; font-size: 11px; font-weight: 600; color: #fff;
+    background: radial-gradient(125% 130% at 50% -28%, rgba(255,255,255,0.22), transparent 56%), linear-gradient(180deg, var(--navy), var(--navy-darker)); }
+  .emailmock .em-foot { border-top: 1px solid var(--line-soft); padding: 10px 17px; font-size: 8.5px; color: var(--faint); letter-spacing: 0.03em; }
+  .screenmock .sc-bar { padding: 10px 13px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--line-soft); }
+  .screenmock .sc-bar img { width: 14px; height: auto; }
+  .screenmock .sc-bar .sc-ttl { font-size: 10px; font-weight: 600; color: var(--ink); }
+  .screenmock .sc-bar .sc-nav { margin-left: auto; display: flex; gap: 6px; }
+  .screenmock .sc-bar .sc-nav i { width: 20px; height: 5px; border-radius: 3px; background: var(--line); }
+  .screenmock .sc-body { padding: 14px; background: linear-gradient(180deg, #fff, #F4F7FB); }
+  .screenmock .sc-hero { border-radius: 10px; padding: 14px 15px; color: #fff; margin-bottom: 10px;
+    background: radial-gradient(120% 120% at 0% 0%, rgba(120,160,225,0.22), transparent 55%), linear-gradient(150deg, var(--navy-lift), var(--navy-deep)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.18); }
+  .screenmock .sc-hl { font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); display: block; margin-bottom: 4px; }
+  .screenmock .sc-n { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+  .screenmock .sc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .screenmock .sc-mini { border: 1px solid var(--line); border-radius: 9px; padding: 10px 11px; background: #fff; }
+  .screenmock .sc-mini b { display: block; font-size: 16px; font-weight: 600; color: var(--navy); }
+  .screenmock .sc-mini span { font-size: 9.5px; color: var(--muted); }
+  .sc-list { margin-top: 9px; display: flex; flex-direction: column; gap: 7px; }
+  .sc-list .sc-li { display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--line); border-radius: 8px; padding: 8px 11px; background: #fff; }
+  .sc-list .sc-li span { font-size: 10px; color: var(--body); }
+  .sc-list .sc-li b { font-size: 10px; color: var(--navy); font-weight: 600; }
+  .adcard { display: flex; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #fff; box-shadow: 0 24px 50px -26px rgba(10,31,59,0.3); }
+  .adcard .ad-l { width: 34%; flex: none; padding: 18px; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(120% 120% at 0% 0%, rgba(120,160,225,0.22), transparent 55%), linear-gradient(150deg, var(--navy-lift), var(--navy-deep)); }
+  .adcard .ad-l img { width: 40px; height: auto; opacity: 0.95; }
+  .adcard .ad-r { flex: 1; padding: 18px 20px; }
+  .adcard .ad-ey { font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+  .adcard .ad-h { font-size: 15.5px; font-weight: 600; color: var(--ink); letter-spacing: -0.015em; margin: 0 0 12px; max-width: 18em; }
 </style>
 </head>
 <body>
@@ -289,6 +327,61 @@
   </div>
   <div class="panchor">
     <div class="callout"><p class="lbl">Por que isso importa pro caixa</p><p>Quando <strong>toda</strong> superfície fala a mesma língua, a marca vira maior que a soma das peças. Quando não fala, cada área dilui as outras. Um DS completo não é estética — é <strong>alavanca de percepção e de confiança</strong>, e logo de receita.</p></div>
+  </div>
+  <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
+</section>
+
+<!-- NOVO · o DS em ação (mockups) -->
+<section class="page lit">
+  <header>
+    <p class="kicker part">Parte 1 <span class="dim">· em ação</span></p>
+    <h2 class="h">A mesma marca — <em>em todo lugar</em>.</h2>
+    <p class="lede">Não é teoria. Aqui está o nosso DS montado em duas superfícies reais — repare como o email e o produto falam exatamente a mesma língua, com a mesma cor, o mesmo botão, o mesmo vidro.</p>
+  </header>
+  <div class="surfshow" style="margin-top:22px">
+    <div>
+      <p class="speclbl">Email · à prova de Outlook</p>
+      <div class="emailmock">
+        <div class="em-top"><img src="./monogram-white.png" alt="" /><span>Viver de IA</span></div>
+        <div class="em-body">
+          <p class="em-h">Sua conta está pronta</p>
+          <p class="em-p">Tudo configurado pra você começar agora. É só dar o primeiro passo — a gente conduz daqui.</p>
+          <span class="em-cta">Acessar a plataforma →</span>
+        </div>
+        <div class="em-foot">Viver de IA · você recebeu porque criou uma conta</div>
+      </div>
+    </div>
+    <div>
+      <p class="speclbl">Produto · uma tela do app</p>
+      <div class="screenmock">
+        <div class="sc-bar"><img src="./monogram-navy.png" alt="" /><span class="sc-ttl">Painel</span><span class="sc-nav"><i></i><i></i><i></i></span></div>
+        <div class="sc-body">
+          <div class="sc-hero"><span class="sc-hl">Visão geral</span><span class="sc-n">87%</span></div>
+          <div class="sc-row">
+            <div class="sc-mini"><b>12</b><span>ativos</span></div>
+            <div class="sc-mini"><b>4,9</b><span>satisfação</span></div>
+          </div>
+          <div class="sc-list">
+            <div class="sc-li"><span>Onboarding concluído</span><b>100%</b></div>
+            <div class="sc-li"><span>Próximo passo</span><b>Configurar</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:18px">
+    <p class="speclbl">Social · anúncio</p>
+    <div class="adcard">
+      <div class="ad-l"><img src="./monogram-white.png" alt="" /></div>
+      <div class="ad-r">
+        <p class="ad-ey">Viver de IA</p>
+        <p class="ad-h">A IA que vira força de trabalho no seu negócio.</p>
+        <span class="pill navy">Saiba mais</span>
+      </div>
+    </div>
+  </div>
+  <div class="panchor">
+    <div class="callout slim"><p>Um token, uma peça, uma regra — e a marca aparece idêntica no email, no app, no anúncio. <strong>Isso é o sistema funcionando.</strong></p></div>
   </div>
   <footer class="foot"><span class="fl"><img src="./monogram-navy.png" alt="" /><b>Viver de IA</b> · Guia</span><span class="pgnum"></span></footer>
 </section>
