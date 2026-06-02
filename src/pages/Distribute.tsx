@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Copy, Check, FileText, Package, Terminal, ArrowUpRight } from 'lucide-react';
+import { Copy, Check, FileText, Package, Terminal, ArrowUpRight, Megaphone, PenTool, Code2, MessageCircle } from 'lucide-react';
 import DocsHeader from '../components/docs/DocsHeader';
 import Section from '../components/docs/Section';
 import promptText from '../../docs/system-prompt.md?raw';
@@ -59,6 +59,35 @@ const tools: Tool[] = [
   },
 ];
 
+type Role = { role: string; icon: React.ReactNode; what: string; cta: string };
+
+const roles: Role[] = [
+  {
+    role: 'Marketing / conteúdo',
+    icon: <Megaphone size={18} strokeWidth={1.8} />,
+    what: 'Email, post, anúncio, landing, newsletter.',
+    cta: 'Copie o prompt-mestre (logo abaixo) → cole no ChatGPT ou Lovable → peça em português. Sai no padrão.',
+  },
+  {
+    role: 'Design / produto',
+    icon: <PenTool size={18} strokeWidth={1.8} />,
+    what: 'Telas, protótipos, mockups.',
+    cta: 'Navegue o site de referência pra ver tudo pronto, ou use o Lovable com o prompt. Cores, tipografia e componentes já alinhados.',
+  },
+  {
+    role: 'Desenvolvimento',
+    icon: <Code2 size={18} strokeWidth={1.8} />,
+    what: 'App, plataforma, landing em código.',
+    cta: 'No Claude Code: instale o plugin (2 comandos, na seção abaixo). Ou consuma a library React + tokens.',
+  },
+  {
+    role: 'Qualquer um · qualquer IA',
+    icon: <MessageCircle size={18} strokeWidth={1.8} />,
+    what: 'Na dúvida, ou em outra ferramenta.',
+    cta: 'Cole o prompt-mestre em QUALQUER IA e descreva o que quer. Ela já segue a marca.',
+  },
+];
+
 export default function Distribute() {
   const [copied, setCopied] = useState(false);
 
@@ -81,8 +110,21 @@ export default function Distribute() {
             Use o Viver de IA em <em>qualquer IA</em>.
           </>
         }
-        lede="Um padrão, todas as ferramentas. Cole o prompt-mestre (ou suba o kit) no Claude, ChatGPT, Lovable, Cursor — e tudo que a IA gerar sai no padrão Viver de IA: paleta restrita, voz editorial, dark mode e contraste AA nos dois temas."
+        lede="Um padrão, todas as ferramentas — pro time inteiro. Seja você do marketing, do design ou dev: cole o prompt-mestre (ou suba o kit) no Claude, ChatGPT, Lovable ou Cursor, e tudo que a IA gerar sai no padrão Viver de IA — paleta restrita, voz editorial, dark mode e contraste AA nos dois temas."
       />
+
+      <Section title="Comece pelo seu trabalho" meta="ache seu caso">
+        <div className="vds-dist-roles">
+          {roles.map((r) => (
+            <article key={r.role} className="vds-dist-role">
+              <span className="i">{r.icon}</span>
+              <h3>{r.role}</h3>
+              <p className="what">{r.what}</p>
+              <p className="do">{r.cta}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
 
       <Section title="Comece aqui" meta="1 prompt · 3 formatos">
         <div className="vds-dist-actions">

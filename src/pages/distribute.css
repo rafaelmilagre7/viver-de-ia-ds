@@ -174,3 +174,54 @@
   font-size: 12px;
   color: var(--via-text-soft);
 }
+
+/* ---- Comece pelo seu trabalho · cards por função ---- */
+.vds-dist-roles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.vds-dist-role {
+  position: relative;
+  padding: 22px;
+  border-radius: var(--via-radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(247, 248, 250, 0.45));
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--via-border-soft);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 8px 20px -12px var(--via-navy-14);
+}
+.vds-dist-role .i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--via-radius-md);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  margin-bottom: 13px;
+}
+.vds-dist-role h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--via-text-primary);
+}
+.vds-dist-role .what {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--via-text-muted);
+}
+.vds-dist-role .do {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--via-text-body);
+}
+@media (max-width: 720px) {
+  .vds-dist-roles {
+    grid-template-columns: 1fr;
+  }
+}
