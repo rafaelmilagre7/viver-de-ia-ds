@@ -62,7 +62,7 @@ Starter: `bunx create-viverdeia-app meu-app` (scaffold Vite + React + TS pré-co
 
 Não use Sparkles, ✨, "AI sparkle". Substituir contextualmente: Compass · Award · Crown · Layers · MessageCircle · Rocket.
 
-## Library publicável (v0.5.0)
+## Library publicável (v0.6.0)
 
 ```bash
 bun add @viverdeia/design-system lucide-react
