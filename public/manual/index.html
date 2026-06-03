@@ -1,0 +1,369 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<title>Manual de Construção — Design System de Nível Mundial</title>
+<style>
+  :root { --navy:#0A1F3B; --navy-deep:#02162A; --navy-darker:#010B1A; --navy-lift:#16335C;
+    --ink:#0A1F3B; --body:#344056; --muted:#647088; --faint:#9AA5B8; --line:#E4E8EF; --line-soft:#EEF1F6; --tint:#F6F8FB;
+    --font:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace; }
+  * { box-sizing: border-box; }
+  @page { size: A4; margin: 17mm 16mm 16mm; }
+  @page:first { margin: 0; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: var(--font); color: var(--body); font-size: 10.7pt; line-height: 1.62; -webkit-font-smoothing: antialiased; }
+
+  .cover { height: 297mm; box-sizing: border-box; padding: 30mm 24mm; color: #fff; display: flex; flex-direction: column; page-break-after: always; position: relative; overflow: hidden;
+    background-color: var(--navy);
+    background-image: radial-gradient(115% 80% at 100% -5%, rgba(120,160,225,0.20), transparent 52%), radial-gradient(90% 65% at -10% 105%, rgba(40,80,150,0.30), transparent 60%), linear-gradient(158deg, #0A1F3B 0%, #02162A 62%, #010B1A 100%); }
+  .cover .bleed { position: absolute; top: -90px; right: -110px; width: 460px; opacity: 0.05; }
+  .cover .lk { display: flex; align-items: center; gap: 11px; }
+  .cover .lk img { width: 26px; }
+  .cover .lk span { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(255,255,255,0.62); font-weight: 500; }
+  .cover .eg { margin: auto 0 0; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 500; }
+  .cover h1.ct { font-size: 40px; line-height: 1.12; font-weight: 600; letter-spacing: -0.03em; margin: 14px 0 0; max-width: 15em; }
+  .cover h1.ct em { font-style: italic; font-weight: 400; color: rgba(255,255,255,0.82); }
+  .cover .cs { margin: 20px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.74); max-width: 30em; }
+  .cover .by { margin-top: 34px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 13px; color: rgba(255,255,255,0.74); }
+  .cover .by strong { color: #fff; font-weight: 600; }
+
+  main { display: block; }
+  main > h1:first-child { display: none; }  /* título já está na capa */
+  h1, h2, h3, h4 { color: var(--ink); letter-spacing: -0.015em; }
+  h2 { font-size: 19pt; font-weight: 600; margin: 30px 0 12px; padding-top: 15px; border-top: 1px solid var(--line); page-break-after: avoid; }
+  h2 + p, h2 + blockquote { page-break-before: avoid; }
+  h3 { font-size: 13pt; font-weight: 600; margin: 20px 0 7px; page-break-after: avoid; }
+  h4 { font-size: 11pt; font-weight: 600; margin: 16px 0 6px; }
+  p { margin: 0 0 9px; }
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(10,31,59,0.25); word-break: break-all; }
+  ul, ol { margin: 0 0 11px; padding-left: 20px; }
+  li { margin: 0 0 4px; }
+  li::marker { color: var(--faint); }
+  ul li input[type=checkbox] { margin-right: 7px; transform: translateY(1px); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 22px 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9.3pt; page-break-inside: avoid; border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px var(--line); }
+  th { background: linear-gradient(160deg, var(--navy-lift), var(--navy-deep)); color: #fff; text-align: left; padding: 8px 11px; font-weight: 600; }
+  td { border-bottom: 1px solid var(--line); padding: 7px 11px; vertical-align: top; }
+  tr:nth-child(even) td { background: var(--tint); }
+  table code { font-size: 0.86em; }
+
+  pre { background: linear-gradient(165deg, #102a4a, #02162A); color: #E9EEF6; border: 1px solid var(--navy-deep);
+    border-radius: 10px; padding: 14px 16px; margin: 12px 0; font-family: var(--mono); font-size: 8.6pt; line-height: 1.5; overflow: auto; white-space: pre-wrap; word-break: break-word; page-break-inside: avoid;
+    box-shadow: 0 14px 30px -18px rgba(10,31,59,0.5); }
+  code { font-family: var(--mono); background: var(--line-soft); color: var(--navy); padding: 1.5px 5px; border-radius: 4px; font-size: 0.85em; }
+  pre code { background: none; color: inherit; padding: 0; font-size: 1em; }
+
+  blockquote { border-left: 2px solid var(--navy); background: linear-gradient(180deg, #fff, var(--tint)); padding: 13px 17px; margin: 14px 0; border-radius: 0 9px 9px 0; color: #46526A;
+    box-shadow: 0 12px 28px -20px rgba(10,31,59,0.2); page-break-inside: avoid; }
+  blockquote p { margin: 0 0 6px; } blockquote p:last-child { margin: 0; }
+  blockquote strong { color: var(--navy); }
+
+  .docfoot { margin-top: 30px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 7px; }
+  .docfoot img { width: 13px; opacity: 0.8; }
+</style></head><body>
+<section class="cover">
+  <img class="bleed" src="./monogram-white.png" alt="" />
+  <div class="lk"><img src="./monogram-white.png" alt="Viver de IA" /><span>Viver de IA</span></div>
+  <p class="eg">Manual de construção · Marca + IA</p>
+  <h1 class="ct">Design System de <em>nível mundial</em>, operado por IA.</h1>
+  <p class="cs">Manual replicável pra qualquer marca — todo o método e a arquitetura, com campos pra preencher e o Viver de IA como exemplo em cada parte.</p>
+  <p class="by"><strong>Template aberto</strong> · cortesia Viver de IA · viverdeia.ai</p>
+</section>
+<main><h1>Manual de Construção — Design System de Nível Mundial (operado por IA)</h1>
+<p><strong>Template replicável para qualquer marca.</strong> Preencha os campos <code>[ preencher ]</code> com as diretrizes da sua marca. Os exemplos marcados como <em>Viver de IA</em> são reais — mostram como cada peça foi resolvida num DS de verdade, do zero ao deploy, operado por IA.</p>
+<blockquote>
+<p><strong>Como usar este documento</strong></p>
+<ol>
+<li>Leia a Parte 0 (como dirigir a IA) e a Parte 1 (anatomia) pra ter o mapa.</li>
+<li>Crave as 5 decisões da Parte 2 — é o único trabalho que <strong>não</strong> dá pra delegar.</li>
+<li>Use as Partes 3–9 como especificação: cada uma diz <strong>o que decidir</strong>, <strong>o que pedir pra IA</strong> e <strong>como saber que ficou bom</strong>.</li>
+<li>Preencha o <strong>prompt-mestre</strong> da Parte 11 com a sua marca e cole na sua IA — é o que faz o time inteiro produzir no padrão.</li>
+<li>Siga o roadmap em ondas (Parte 10). Não tente fazer tudo de uma vez.</li>
+</ol>
+<p>Este manual serve tanto pra um time humano quanto pra ser entregue a uma IA (Claude, Cursor, Lovable, ChatGPT) como contexto de construção.</p>
+</blockquote>
+<hr>
+<h2>Parte 0 — Os 4 princípios de operação (leia antes de tudo)</h2>
+<p>Um Design System de nível mundial não nasce de uma ferramenta — nasce de uma <strong>postura</strong>. Estes quatro princípios valem mais que qualquer técnica:</p>
+<ol>
+<li><strong>A IA executa, você dirige o gosto.</strong> A IA gera dez opções em segundos; o trabalho humano é ter o olho pra escolher a certa e pedir o ajuste fino. Use a IA como um time inteiro sob a sua direção, não como um truque.</li>
+<li><strong>Só é &quot;pronto&quot; quando está impecável.</strong> Não &quot;pronto pra testar&quot; — pronto. A régua é Linear, Stripe, Notion. Abaixo disso, volta pra mesa. O &quot;quase bom&quot; não constrói marca, e o cliente sente a diferença mesmo sem saber nomear.</li>
+<li><strong>Meça tudo, confie em pouco.</strong> Número acima de opinião. Contraste, performance, acessibilidade — tudo verificado, não no &quot;tá bom assim&quot;. O que não se mede é só achismo bem-vestido.</li>
+<li><strong>Bloco a bloco, um de cada vez.</strong> Nunca gere em massa sem revisar. Cada peça é um bloco: a IA monta, você corrige, só então segue pra próxima. Velocidade vem da ordem, não da pressa.</li>
+</ol>
+<hr>
+<h2>Parte 1 — Anatomia de um Design System completo</h2>
+<h3>As 4 camadas</h3>
+<p>Todo DS, do menor ao mais robusto, tem quatro camadas. Guarde essa imagem — o resto do manual se apoia nela.</p>
+<table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>O que é</th>
+<th>Quem decide</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1. Princípios &amp; identidade</strong></td>
+<td>A alma da marca: cor, tipografia, voz, o &quot;jeito&quot;.</td>
+<td>Só o dono (Parte 2).</td>
+</tr>
+<tr>
+<td><strong>2. Tokens</strong></td>
+<td>As decisões viram valores nomeados e reutilizáveis. O vocabulário do sistema.</td>
+<td>IA constrói, você revisa (Parte 3).</td>
+</tr>
+<tr>
+<td><strong>3. Componentes</strong></td>
+<td>Botões, cards, formulários, emails — montados com os tokens.</td>
+<td>IA constrói (Parte 6).</td>
+</tr>
+<tr>
+<td><strong>4. Distribuição</strong></td>
+<td>O que faz o sistema sair do papel e o time usar todo dia.</td>
+<td>IA + processo (Parte 8).</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>A camada 1 é <strong>trabalho humano</strong>. As camadas 2–4 a IA constrói pra você. Por isso o manual começa pelas decisões.</p>
+</blockquote>
+<h3>A superfície real: um DS não é só o seu app</h3>
+<p>O erro mais comum é achar que Design System é &quot;as telas do produto&quot;. Um DS completo é um <strong>sistema operacional de marca</strong> — cobre <strong>tudo</strong> que a marca toca:</p>
+<ul>
+<li><strong>Produto</strong> — app, web, dashboards</li>
+<li><strong>Relacionamento</strong> — emails (que não podem quebrar no Outlook)</li>
+<li><strong>Aquisição</strong> — social, anúncios pagos</li>
+<li><strong>Conversão</strong> — pitch deck, proposta, one-pager</li>
+<li><strong>Operação</strong> — guias, contratos, apresentações, PDFs</li>
+<li><strong>Presença</strong> — eventos, sinalização</li>
+</ul>
+<p>Quando <strong>toda</strong> superfície fala a mesma língua, a marca vira maior que a soma das peças. Quando não fala, cada área dilui as outras. Um DS completo não é estética — é <strong>alavanca de percepção, de confiança e, no fim, de receita</strong>.</p>
+<hr>
+<h2>Parte 2 — As 5 decisões de marca (o trabalho do dono)</h2>
+<p>A IA executa lindamente, mas alguém precisa dizer o que é &quot;lindo&quot; para esta marca. Aqui está o que não dá pra delegar. Crave <strong>poucas decisões, com convicção</strong> — toda restrição aqui é uma decisão que ninguém (nem a IA) precisa tomar de novo depois.</p>
+<h3>1 · A cor</h3>
+<ul>
+<li><strong>A pergunta:</strong> Qual é a ÚNICA cor que é a sua marca? E o que você corta pra ela respirar?</li>
+<li><strong>Regra de ouro:</strong> premium é menos. Paleta restrita &gt; paleta larga. 1 cor dominante + neutros + 1 cor de destaque (geralmente só pra destrutivo/erro).</li>
+<li><em>Viver de IA:</em> navy <code>#0A1F3B</code> dominante; branco/off-white/cinza; coral só pra destrutivo. <strong>Zero</strong> dourado, neon, roxo, cyan.</li>
+<li><strong><code>[ preencher ]</code></strong> Cor principal (hex): ___ · Neutros: ___ · Cor de destaque e onde usar: ___ · Cores <strong>proibidas</strong>: ___</li>
+</ul>
+<h3>2 · A tipografia</h3>
+<ul>
+<li><strong>A pergunta:</strong> Uma fonte que aguente título e corpo e que diga o tom da marca.</li>
+<li><strong>Regra:</strong> uma família só. Nada de misturar quatro fontes.</li>
+<li><em>Viver de IA:</em> Geist pra tudo.</li>
+<li><strong><code>[ preencher ]</code></strong> Família principal: ___ · (opcional) mono pra dados/código: ___</li>
+</ul>
+<h3>3 · A assinatura visual</h3>
+<ul>
+<li><strong>A pergunta:</strong> Qual é o seu detalhe memorável — o elemento que faz alguém saber que é você sem ver o logo?</li>
+<li><em>Viver de IA:</em> o <em>liquid glass</em> — superfícies de vidro, profundidade, luz. (A &quot;receita&quot; técnica está na Parte 4.)</li>
+<li><strong><code>[ preencher ]</code></strong> A assinatura da marca: ___ (ex: vidro, sombras longas, traço, grão, brutalismo, gradiente específico...)</li>
+</ul>
+<h3>4 · A voz</h3>
+<ul>
+<li><strong>A pergunta:</strong> Como a sua marca SOA? Liste 3 coisas que ela diz — e 3 que ela nunca diria.</li>
+<li><em>Viver de IA:</em> operador, direto, número antes de adjetivo. Sem hype, sem clichê de IA.</li>
+<li><strong><code>[ preencher ]</code></strong> Diz: ___ / ___ / ___ · Nunca diz: ___ / ___ / ___</li>
+</ul>
+<h3>5 · O princípio-mãe</h3>
+<ul>
+<li><strong>A pergunta:</strong> Qual é a única frase que, em caso de dúvida, decide tudo no seu design?</li>
+<li><em>Viver de IA:</em> simplicidade radical — a IA carrega o peso, o usuário sente valor em minutos, complexidade é inimiga.</li>
+<li><strong><code>[ preencher ]</code></strong> O princípio-mãe: ___</li>
+</ul>
+<hr>
+<h2>Parte 3 — Arquitetura de tokens (3 camadas)</h2>
+<p>Tokens são o que faz o DS escalar. O segredo é que eles têm <strong>gramática</strong>, não só palavras — vivem em três camadas. Isso é o que deixa você trocar algo num lugar e a marca inteira se atualizar sozinha.</p>
+<table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>O que é</th>
+<th>Exemplo (Viver de IA)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Primitivo</strong></td>
+<td>O valor cru.</td>
+<td><code>--navy: #0A1F3B</code></td>
+</tr>
+<tr>
+<td><strong>Semântico</strong></td>
+<td>O papel do valor.</td>
+<td><code>--color-action: var(--navy)</code> · <code>--color-text: #0A1F3B</code></td>
+</tr>
+<tr>
+<td><strong>Componente</strong></td>
+<td>O uso na peça.</td>
+<td><code>--button-bg: var(--color-action)</code></td>
+</tr>
+</tbody></table>
+<p><strong>Convenção de nomes (sugestão):</strong></p>
+<pre><code>/* primitivo */     --brand: #______;  --brand-deep: #______;  --ink: #______;  --line: #______;
+/* semântico */     --color-action: var(--brand);  --color-text: var(--ink);  --color-surface: #FFF;
+/* componente */    --button-bg: var(--color-action);  --card-border: var(--line);
+</code></pre>
+<p><strong>O que pedir pra IA:</strong> <em>&quot;Transforme estas 5 decisões em tokens em três camadas (valor → papel → uso). Inclua claro <strong>e</strong> escuro desde o início — o modo escuro é a mesma regra (os tokens) respondendo ao contexto, não um remendo depois.&quot;</em></p>
+<p><strong>Como saber que ficou bom:</strong> trocar 1 primitivo atualiza a marca inteira sem caçar cor em mil arquivos. Cada token tem nome óbvio. Existe versão clara e escura de tudo.</p>
+<hr>
+<h2>Parte 4 — A assinatura visual (a receita do efeito)</h2>
+<p>A assinatura (decisão 3) é o que torna a marca reconhecível num piscar. Defina-a como uma <strong>receita reaplicável</strong>, não um enfeite pontual.</p>
+<p><em>Viver de IA — a receita do liquid glass</em> (serve de modelo pra qualquer efeito de profundidade):</p>
+<pre><code class="language-css">.glass {
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,.14), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.9), rgba(246,249,252,.55)), #fff;
+  border: 1px solid rgba(10,31,59,.09);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),   /* brilho no topo */
+    0 16px 36px -20px rgba(10,31,59,.20);  /* sombra suave e profunda */
+}
+</code></pre>
+<p>Os três ingredientes de profundidade — <strong>gradiente + brilho interno no topo + sombra longa</strong> — valem pra quase qualquer assinatura premium. Adapte os valores pra marca.</p>
+<p><strong><code>[ preencher ]</code></strong> Descreva a receita da sua assinatura (efeito + valores) pra IA reaplicar em todo componente.</p>
+<hr>
+<h2>Parte 5 — Tipografia &amp; escala</h2>
+<p>Defina uma escala fixa (não tamanhos soltos). Sugestão de pontos de partida:</p>
+<table>
+<thead>
+<tr>
+<th>Papel</th>
+<th>Peso</th>
+<th>Tamanho (web)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Display / hero</td>
+<td>600</td>
+<td>40–48px</td>
+</tr>
+<tr>
+<td>Título (h2)</td>
+<td>600</td>
+<td>26–30px</td>
+</tr>
+<tr>
+<td>Subtítulo (h3)</td>
+<td>600</td>
+<td>15–17px</td>
+</tr>
+<tr>
+<td>Corpo</td>
+<td>400</td>
+<td>14–16px</td>
+</tr>
+<tr>
+<td>Etiqueta / eyebrow</td>
+<td>600, maiúscula, espaçada</td>
+<td>10–11px</td>
+</tr>
+</tbody></table>
+<p>Regras: line-height confortável (1.5–1.65 no corpo), tracking levemente negativo nos títulos grandes, uma família só.</p>
+<hr>
+<h2>Parte 6 — Inventário de componentes</h2>
+<p>Construa <strong>bloco a bloco</strong>, na ordem de uso. Cada componente precisa nascer com: <strong>todos os estados</strong> (normal/hover/foco/ativo/desabilitado), <strong>claro + escuro</strong>, e <strong>acessibilidade</strong> (contraste, teclado, leitor de tela).</p>
+<p><strong>Ordem sugerida (Onda 1 — os que você mais usa):</strong>
+<code>Botão · Campo de texto · Card · Tipografia/heading · Link · Badge/Pill</code></p>
+<p><strong>Base &amp; formulário:</strong> Button, Input, Textarea, Select, Checkbox, Radio, Switch, Slider, DatePicker, Combobox, Upload, Form field.
+<strong>Overlay &amp; navegação:</strong> Modal/Dialog, Drawer, Tooltip, Popover, DropdownMenu, Tabs, Breadcrumb, Pagination, Command (Cmd+K).
+<strong>Dados &amp; feedback:</strong> Table, Card, Badge/Pill, Avatar, Toast, Alert, Banner, Progress, Skeleton, Spinner, EmptyState, Accordion, Stepper.</p>
+<blockquote>
+<p><em>Viver de IA:</em> ~47 componentes, publicados como biblioteca instalável e versionada (<code>@marca/design-system</code>). Quem constrói o produto puxa a peça pronta; não recria. É o que mantém o padrão mesmo com gente nova entrando.</p>
+</blockquote>
+<p><strong>O que pedir pra IA:</strong> <em>&quot;Construa o componente [X] usando os tokens, com todos os estados, claro e escuro, e acessível (contraste AA, navegável por teclado). Mostre numa página de referência ao lado das regras.&quot;</em></p>
+<hr>
+<h2>Parte 7 — As superfícies (o sistema operacional de marca)</h2>
+<p>Padronize cada superfície com os mesmos tokens e componentes. Pontos de atenção por superfície:</p>
+<ul>
+<li><strong>Produto:</strong> telas, formulários, dashboards. É a base.</li>
+<li><strong>Email — atenção, tem regras próprias.</strong> Email quebra fácil. Regras à prova de bala:<ul>
+<li>Layout em <strong>tabelas</strong> + estilos <strong>inline</strong> (nada de classes externas).</li>
+<li>Largura ~600px, peso &lt; 102KB.</li>
+<li>Botão (CTA) com <strong>cor sólida de fundo</strong> — degradê sozinho some no Outlook. Todo <code>background-image</code> precisa de um <code>background-color</code> de fallback.</li>
+<li>Travar modo claro (<code>color-scheme: light only</code>), logo hospedada em URL absoluta, preheader definido.</li>
+<li><strong>Teste numa caixa de entrada real</strong>, não só no preview.</li>
+</ul>
+</li>
+<li><strong>Social &amp; anúncios:</strong> templates por canal, no mesmo padrão visual.</li>
+<li><strong>Vendas:</strong> pitch deck, proposta, one-pager — material comercial coeso.</li>
+<li><strong>Documentos:</strong> guias, contratos, PDFs (como este). Dica: monte em HTML com o DS e <strong>renderize pra PDF com um navegador headless</strong> (Chromium/Playwright) — sai fiel, com gradiente, vidro e fonte certa.</li>
+<li><strong>Eventos:</strong> palco, crachá, sinalização.</li>
+</ul>
+<hr>
+<h2>Parte 8 — Distribuição (o multiplicador)</h2>
+<p>Um DS que só o designer sabe usar é refém, não sistema. A jogada que muda o jogo: empacotar a marca pra <strong>qualquer pessoa, em qualquer ferramenta</strong>, produzir no padrão.</p>
+<ol>
+<li><strong>Site de referência vivo</strong> — não um PDF morto: uma página navegável com cada peça renderizada (claro + escuro) e as regras ao lado. É a fonte da verdade.</li>
+<li><strong>O kit</strong> — tudo num pacote: tokens, peças, logos, fontes e as regras escritas. O &quot;comece aqui&quot; pra qualquer ferramenta.</li>
+<li><strong>O prompt-mestre</strong> — um texto que ensina a marca pra qualquer IA (Parte 11). Cola no ChatGPT/Lovable/Cursor e a IA passa a gerar no seu padrão.</li>
+<li><strong>O plugin (avançado)</strong> — comandos prontos (&quot;gere um email&quot;, &quot;uma landing&quot;) que já saem na régua. O padrão deixa de depender de disciplina e vira o caminho mais fácil.</li>
+</ol>
+<hr>
+<h2>Parte 9 — Qualidade medida (não confie no olho)</h2>
+<p>O que separa amador de nível mundial é trocar opinião por evidência. Meça:</p>
+<ul>
+<li><strong>Contraste &amp; acessibilidade</strong> — cada combinação texto/fundo no padrão WCAG AA. (Cuidado: ferramenta automática não enxerga contraste sobre vidro/gradiente — confira no olho também.)</li>
+<li><strong>Performance</strong> — peso e velocidade com teto definido.</li>
+<li><strong>Regressão visual</strong> — compare cada mudança com o &quot;antes&quot; automaticamente, pra nada quebrar sem alguém ver.</li>
+<li><strong>Teste no mundo real</strong> — email enviado pra caixa real; componente aberto no navegador de verdade.</li>
+</ul>
+<hr>
+<h2>Parte 10 — O método em ondas (a sequência)</h2>
+<p>Não tente construir tudo de uma vez. Cada onda entrega valor sozinha e prepara a próxima.</p>
+<ul>
+<li><strong>Onda 1 · Fundação.</strong> As 5 decisões → tokens → os 5–10 componentes mais usados → uma página viva mostrando tudo. No fim, você já produz no padrão.</li>
+<li><strong>Onda 2 · Superfícies.</strong> Leve o padrão pras superfícies que mais convertem: email, landing, social, vendas. A marca começa a parecer uma só em todo lugar.</li>
+<li><strong>Onda 3 · Distribuição &amp; qualidade.</strong> Empacote o kit + o prompt-mestre, meça tudo, lance pro time. O sistema vira autônomo: cresce sem depender de uma pessoa.</li>
+</ul>
+<hr>
+<h2>Parte 11 — O prompt-mestre (template pronto pra IA)</h2>
+<p>Preencha com a sua marca e cole no início de qualquer conversa com a IA. É o que faz o time inteiro (e a IA) produzir no padrão.</p>
+<pre><code>Você é o guardião do Design System da [ MARCA ]. Toda peça que gerar segue estas regras, SEM exceção. Quando em dúvida, decida pela frase-princípio.
+
+PALETA (restrita): [ cor principal ] domina. Neutros: [ neutros ]. [ cor de destaque ] só para [ uso, ex: erro/destrutivo ]. NUNCA usar: [ cores proibidas ].
+
+TIPOGRAFIA: [ fonte ] para tudo. Escala: display 600/44px · título 600/28px · corpo 400/15px · etiqueta 600 maiúscula espaçada/11px.
+
+ASSINATURA VISUAL: [ efeito ] — receita: [ descreva: gradiente + brilho + sombra, ou o seu ]. Aplique em cards, painéis e destaques.
+
+VOZ: fala como [ 3 adjetivos ]. Diz coisas como &quot;[ exemplos ]&quot;. NUNCA diz &quot;[ o que evitar ]&quot;. Sem hype, sem clichê.
+
+PRINCÍPIO-MÃE: [ frase ]. Em qualquer bifurcação, escolha o caminho que honra essa frase.
+
+REGRAS INVIOLÁVEIS:
+- Componentes nascem com todos os estados, claro + escuro, e acessíveis (contraste AA, teclado).
+- Email: tabelas + inline, CTA com cor sólida, &lt; 102KB, testado em caixa real.
+- Nada de [ liste o que a marca proíbe: emojis aleatórios, ícones X, etc. ].
+- Só entregue quando estiver impecável. &quot;Quase bom&quot; volta pra mesa.
+
+FORMATO DE SAÍDA: [ ex: HTML+CSS / React + tokens / etc. ].
+</code></pre>
+<hr>
+<h2>Parte 12 — Checklist &quot;está pronto?&quot; + erros que afundam</h2>
+<p><strong>Está pronto quando:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> As 5 decisões estão cravadas e escritas.</li>
+<li><input disabled="" type="checkbox"> Tokens em 3 camadas, claro + escuro.</li>
+<li><input disabled="" type="checkbox"> Os componentes da Onda 1 existem, com todos os estados e acessíveis.</li>
+<li><input disabled="" type="checkbox"> Existe uma página de referência viva mostrando tudo.</li>
+<li><input disabled="" type="checkbox"> O prompt-mestre está preenchido e o time consegue gerar no padrão.</li>
+<li><input disabled="" type="checkbox"> Contraste, performance e (se houver email) renderização foram <strong>medidos</strong>, não chutados.</li>
+</ul>
+<p><strong>Erros que afundam um DS:</strong></p>
+<ul>
+<li><strong>Paleta larga demais</strong> — 10 cores &quot;porque pode&quot;. Restrinja, ou nada vira marca.</li>
+<li><strong>Manual morto</strong> — PDF num drive que ninguém abre. Faça vivo e distribuível.</li>
+<li><strong>Depender de 1 pessoa</strong> — se só o designer sabe aplicar, é refém, não sistema.</li>
+<li><strong>Parar em &quot;bonito&quot;</strong> — sem medir contraste/acessibilidade, &quot;bonito&quot; quebra na vida real.</li>
+<li><strong>Fazer tudo de uma vez</strong> — comece pela Onda 1. Ela já entrega valor.</li>
+</ul>
+<hr>
+<p><em>Manual baseado no método e na arquitetura do Design System do Viver de IA — construído do zero ao deploy, operado por IA e dirigido por gosto humano. Adapte cada <code>[ preencher ]</code> à sua marca e a estrutura se mantém de pé.</em></p>
+
+  <div class="docfoot"><img src="./monogram-white.png" style="filter:invert(10%) sepia(40%) saturate(1200%) hue-rotate(190deg);" alt="" />Manual de Construção de Design System · Viver de IA · template aberto</div>
+</main>
+</body></html>
