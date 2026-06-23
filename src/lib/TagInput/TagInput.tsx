@@ -1,4 +1,4 @@
-import { useState, useRef, type KeyboardEvent, type FocusEvent } from 'react';
+import { useState, useRef, type KeyboardEvent } from 'react';
 import { X } from 'lucide-react';
 import './TagInput.css';
 
@@ -90,12 +90,10 @@ export function TagInput({
     }
   };
 
-  const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
+  const handleBlur = () => {
     setFocused(false);
-    // se tem texto pendente, vira tag
+    // texto pendente vira tag (addTag limpa o input)
     if (input.trim()) addTag(input);
-    // callback parent se houver
-    if (e.target.value !== input) setInput(e.target.value);
   };
 
   const visibleSuggestions = suggestions.filter((s) => !tags.includes(s)).slice(0, 5);
@@ -143,19 +141,21 @@ export function TagInput({
       </div>
 
       {visibleSuggestions.length > 0 && !disabled && canAdd && (
-        <div className="via-taginput__suggestions" role="list">
+        <div className="via-taginput__suggestions">
           <span className="via-taginput__suggestions-label">Sugestões</span>
-          {visibleSuggestions.map((s) => (
-            <button
-              key={s}
-              type="button"
-              role="listitem"
-              className="via-taginput__suggestion"
-              onClick={() => addTag(s)}
-            >
-              + {s}
-            </button>
-          ))}
+          <ul className="via-taginput__suggestions-list" role="list">
+            {visibleSuggestions.map((s) => (
+              <li key={s} className="via-taginput__suggestion-item">
+                <button
+                  type="button"
+                  className="via-taginput__suggestion"
+                  onClick={() => addTag(s)}
+                >
+                  + {s}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
 

@@ -46,9 +46,8 @@ describe('<OTPInput />', () => {
     // the non-digit is stripped, so the cell stays empty and focus does not advance
     expect(cells[0]).toHaveValue('');
     expect(cells[0]).toHaveFocus();
-    // NOTE: a rejected keystroke still emits onChange('') because updateAt falls into
-    // the deletion branch when the sanitized char is empty (real current behavior).
-    expect(onChange).toHaveBeenLastCalledWith('');
+    // a rejected keystroke that changes nothing must NOT emit onChange
+    expect(onChange).not.toHaveBeenCalled();
     await user.keyboard('7');
     expect(cells[0]).toHaveValue('7');
     expect(onChange).toHaveBeenLastCalledWith('7');
@@ -164,5 +163,31 @@ describe('<OTPInput />', () => {
   it('renders a hint message below the field', () => {
     render(<OTPInput length={4} hint="Enviamos um código por SMS" error autoFocus={false} />);
     expect(screen.getByText('Enviamos um código por SMS')).toBeInTheDocument();
+  });
+
+  it('marks every cell aria-invalid when the error prop is on, and not otherwise', () => {
+    const { rerender } = render(<OTPInput length={4} autoFocus={false} />);
+    screen
+      .getAllByRole('textbox')
+      .forEach((cell) => expect(cell).not.toHaveAttribute('aria-invalid'));
+
+    rerender(<OTPInput length={4} error autoFocus={false} />);
+    screen
+      .getAllByRole('textbox')
+      .forEach((cell) => expect(cell).toHaveAttribute('aria-invalid', 'true'));
+  });
+
+  it('a rejected keystroke on a non-empty cell does not emit onChange (numeric)', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <OTPInput length={4} inputType="numeric" value="12" onChange={onChange} autoFocus={false} />,
+    );
+    const cells = screen.getAllByRole('textbox');
+    cells[0].focus();
+    // typing a letter over an existing digit is rejected → value unchanged → no emit
+    await user.keyboard('a');
+    expect(onChange).not.toHaveBeenCalled();
+    expect(cells[0]).toHaveValue('1');
   });
 });

@@ -96,21 +96,64 @@ describe('<TagInput />', () => {
   it('renders suggestions, filters already-added ones, and adds on click', async () => {
     const user = userEvent.setup();
     render(<TagInput suggestions={['React', 'TypeScript', 'IA']} />);
-    // NOTE: suggestion chips are <button> but carry an explicit role="listitem",
-    // which overrides the native button role — so they are queried as listitems,
-    // not buttons, and listitems don't compute a name from text content
-    // (see bugsFound: a11y gap). We match by text within the listitem role.
-    const suggestions = screen.getAllByRole('listitem');
+    // Suggestion chips are real <button>s with an accessible name from their
+    // text content, wrapped in <li> inside a role="list" container. They are
+    // queried as buttons (not listitems) and expose their name to AT.
+    const suggestions = screen.getAllByRole('button', { name: /^\+ / });
     expect(suggestions).toHaveLength(3);
-    const reactSuggestion = suggestions.find((el) => el.textContent === '+ React')!;
+    const reactSuggestion = screen.getByRole('button', { name: '+ React' });
     expect(reactSuggestion).toBeInTheDocument();
+    // each chip lives inside a list item, and the list exposes list semantics
+    expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(screen.getAllByRole('listitem')).toHaveLength(3);
     await user.click(reactSuggestion);
     // React is now a tag, so it disappears from suggestions
     expect(screen.getByText('React')).toBeInTheDocument();
-    const remaining = screen.getAllByRole('listitem').map((el) => el.textContent);
+    const remaining = screen
+      .getAllByRole('button', { name: /^\+ / })
+      .map((el) => el.textContent);
     expect(remaining).not.toContain('+ React');
     // other suggestions remain
     expect(remaining).toContain('+ TypeScript');
+  });
+
+  it('commits pending text as a tag on blur and never resurrects it in the input', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <>
+        <TagInput onChange={onChange} />
+        <button type="button">outside</button>
+      </>,
+    );
+    const input = screen.getByRole('textbox');
+    await user.type(input, 'Pending');
+    // blur by focusing something else
+    await user.click(screen.getByRole('button', { name: 'outside' }));
+    // pending text became a tag exactly once
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(['Pending']);
+    expect(screen.getByText('Pending')).toBeInTheDocument();
+    // the input is cleared and NOT re-populated with the committed text
+    expect(input).toHaveValue('');
+  });
+
+  it('does not commit on blur when the input is empty (no resurrected text)', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <>
+        <TagInput value={['kept']} onChange={onChange} />
+        <button type="button">outside</button>
+      </>,
+    );
+    const input = screen.getByRole('textbox');
+    await user.click(input);
+    await user.click(screen.getByRole('button', { name: 'outside' }));
+    // blurring an empty field adds nothing and leaves the input empty
+    expect(onChange).not.toHaveBeenCalled();
+    expect(input).toHaveValue('');
+    expect(screen.getByText('kept')).toBeInTheDocument();
   });
 
   it('does not mutate internal state in controlled mode without a value update', async () => {

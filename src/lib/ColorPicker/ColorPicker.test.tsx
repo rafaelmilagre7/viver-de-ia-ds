@@ -75,6 +75,43 @@ describe('<ColorPicker />', () => {
     expect(screen.getByRole('radio', { name: 'Navy' })).toHaveAttribute('aria-checked', 'false');
   });
 
+  it('syncs the hex input when `value` changes externally (swatch / parent set)', async () => {
+    const onChange = vi.fn();
+    const { rerender } = render(
+      <ColorPicker palette={palette} value="#0A1F3B" onChange={onChange} />,
+    );
+    const input = screen.getByRole('textbox');
+    // input mirrors the initial controlled value
+    expect(input).toHaveValue('#0A1F3B');
+
+    // parent sets a brand-new value (e.g. picked a different swatch) -> input re-syncs
+    rerender(<ColorPicker palette={palette} value="#FFFFFF" onChange={onChange} />);
+    expect(input).toHaveValue('#FFFFFF');
+
+    // a value outside the palette also propagates to the input
+    rerender(<ColorPicker palette={palette} value="#123456" onChange={onChange} />);
+    expect(input).toHaveValue('#123456');
+  });
+
+  it('keeps manual editing working after an external value sync', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    const { rerender } = render(
+      <ColorPicker palette={palette} value="#0A1F3B" onChange={onChange} />,
+    );
+    const input = screen.getByRole('textbox');
+
+    // external change lands first
+    rerender(<ColorPicker palette={palette} value="#FFFFFF" onChange={onChange} />);
+    expect(input).toHaveValue('#FFFFFF');
+
+    // user then edits the hex by hand -> typing still updates the input and emits onChange
+    await user.clear(input);
+    await user.type(input, 'abcdef');
+    expect(input).toHaveValue('#ABCDEF');
+    expect(onChange).toHaveBeenLastCalledWith('#ABCDEF');
+  });
+
   it('typing a complete valid hex fires onChange', async () => {
     const onChange = vi.fn();
     const user = userEvent.setup();

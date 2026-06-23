@@ -57,6 +57,15 @@ export function ColorPicker({
   disabled = false,
 }: ColorPickerProps) {
   const [customHex, setCustomHex] = useState(value || '');
+  // Última `value` vinda do pai que já refletimos no input. Quando o pai muda `value`
+  // por fora (clique em swatch, set programático), re-sincronizamos o input durante o
+  // render — padrão "ajustar state quando uma prop muda" (react.dev), sem effect/cascade.
+  const [lastValue, setLastValue] = useState(value || '');
+  const incoming = value || '';
+  if (incoming.toUpperCase() !== lastValue.toUpperCase()) {
+    setLastValue(incoming);
+    setCustomHex(incoming);
+  }
 
   const selected = palette.find((s) => s.hex.toUpperCase() === (value || '').toUpperCase());
 

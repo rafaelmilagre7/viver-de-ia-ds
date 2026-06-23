@@ -60,14 +60,18 @@ export function OTPInput({
       inputType === 'numeric' ? char.replace(/\D/g, '') : char.replace(/\s/g, '');
     if (!sanitized) {
       const next = value.slice(0, index) + value.slice(index + 1);
-      setValue(next);
+      // Só emite se o keystroke realmente mudou algo. Caractere rejeitado
+      // (ex.: letra em modo numérico) sobre célula vazia não dispara onChange.
+      if (next !== value) setValue(next);
       return;
     }
     const single = sanitized.slice(0, 1);
     const arr = value.split('');
     arr[index] = single;
     const next = arr.join('').slice(0, length);
-    setValue(next);
+    // Só emite quando o valor muda de fato; um re-digitar do mesmo dígito
+    // ainda avança o foco, mas não dispara onChange à toa.
+    if (next !== value) setValue(next);
     // focus next
     if (index < length - 1) refs.current[index + 1]?.focus();
   };
@@ -132,6 +136,7 @@ export function OTPInput({
             disabled={disabled}
             className="via-otp__cell"
             aria-label={`Dígito ${i + 1} de ${length}`}
+            aria-invalid={error || undefined}
           />
         ))}
       </div>
