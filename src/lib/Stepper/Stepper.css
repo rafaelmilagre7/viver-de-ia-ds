@@ -155,7 +155,7 @@ button.via-stepper__node:focus-visible {
 /* ===== Connector line ===== */
 .via-stepper__connector {
   background: var(--via-border, #D0D5DD);
-  transition: background 0.22s ease;
+  transition: background var(--via-dur) ease;
 }
 
 .via-stepper--horizontal .via-stepper__connector {

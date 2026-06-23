@@ -27,10 +27,10 @@
   border-radius: var(--via-radius-md);
   isolation: isolate;
   transition:
-    border-color .22s ease,
-    box-shadow .22s ease,
-    background .22s ease,
-    transform .22s ease;
+    border-color var(--via-dur) ease,
+    box-shadow var(--via-dur) ease,
+    background var(--via-dur) ease,
+    transform var(--via-dur) ease;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 1px 2px var(--via-navy-04);
@@ -47,9 +47,9 @@
   background: linear-gradient(90deg, transparent, var(--via-navy), var(--via-blue), transparent);
   border-radius: 999px;
   transition:
-    left .35s cubic-bezier(.2,.7,.2,1),
-    right .35s cubic-bezier(.2,.7,.2,1),
-    opacity .22s ease;
+    left .35s var(--via-ease-snap),
+    right .35s var(--via-ease-snap),
+    opacity var(--via-dur) ease;
   opacity: 0;
   pointer-events: none;
 }
@@ -89,7 +89,7 @@
 
 .via-input input::placeholder {
   color: var(--via-ink-3);
-  transition: color .22s ease;
+  transition: color var(--via-dur) ease;
 }
 
 .via-input:focus-within input::placeholder {
@@ -103,7 +103,7 @@
   flex-shrink: 0;
   position: relative;
   z-index: 1;
-  transition: color .22s ease;
+  transition: color var(--via-dur) ease;
 }
 
 .via-input:focus-within .via-input__icon {

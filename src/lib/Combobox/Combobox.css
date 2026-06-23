@@ -29,9 +29,9 @@
   border-radius: 9px;
   color: var(--via-text-primary);
   transition:
-    border-color 0.22s ease,
-    background 0.22s ease,
-    box-shadow 0.22s ease;
+    border-color var(--via-dur) ease,
+    background var(--via-dur) ease,
+    box-shadow var(--via-dur) ease;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.86) inset,
     0 1px 2px var(--via-navy-04);

@@ -35,9 +35,9 @@
   letter-spacing: -0.008em;
   cursor: pointer;
   transition:
-    border-color 0.22s ease,
-    background 0.22s ease,
-    box-shadow 0.22s ease;
+    border-color var(--via-dur) ease,
+    background var(--via-dur) ease,
+    box-shadow var(--via-dur) ease;
   text-align: left;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.86) inset,
@@ -135,7 +135,7 @@
     0 8px 18px -10px var(--via-navy-14);
   max-height: 280px;
   overflow-y: auto;
-  animation: via-select-in 0.22s cubic-bezier(.16, 1, .3, 1);
+  animation: via-select-in var(--via-dur) var(--via-ease-out);
   isolation: isolate;
 }
 

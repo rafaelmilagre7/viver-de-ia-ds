@@ -15,7 +15,7 @@
   background: radial-gradient(circle at 50% 40%, rgba(10, 31, 59, 0.40), rgba(10, 31, 59, 0.56));
   backdrop-filter: blur(10px) saturate(120%);
   -webkit-backdrop-filter: blur(10px) saturate(120%);
-  animation: via-sheet-scrim-in .26s cubic-bezier(.2, .7, .2, 1);
+  animation: via-sheet-scrim-in .26s var(--via-ease-snap);
   pointer-events: auto;
 }
 
@@ -43,7 +43,7 @@
     0 -10px 24px -10px var(--via-navy-18);
   pointer-events: auto;
   isolation: isolate;
-  animation: via-sheet-in .42s cubic-bezier(.16, 1, .3, 1);
+  animation: via-sheet-in .42s var(--via-ease-out);
   max-width: 720px;
   margin: 0 auto;
 }
@@ -115,7 +115,7 @@
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background .22s ease, color .22s ease, border-color .22s ease, transform .3s cubic-bezier(.2, .7, .2, 1);
+  transition: background var(--via-dur) ease, color var(--via-dur) ease, border-color var(--via-dur) ease, transform .3s var(--via-ease-snap);
 }
 .via-sheet__close:hover {
   background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-03));

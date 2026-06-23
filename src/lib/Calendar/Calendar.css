@@ -48,7 +48,7 @@
   border: 1px solid transparent;
   color: var(--via-ink-2, #5E6B82);
   cursor: pointer;
-  transition: background .22s ease, color .22s ease, border-color .22s ease;
+  transition: background var(--via-dur) ease, color var(--via-dur) ease, border-color var(--via-dur) ease;
 }
 .via-cal__nav:hover {
   background: var(--via-navy-06);

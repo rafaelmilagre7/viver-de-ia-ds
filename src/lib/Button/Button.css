@@ -17,11 +17,11 @@
   overflow: hidden;
   isolation: isolate;
   transition:
-    background .22s ease,
-    border-color .22s ease,
-    color .22s ease,
-    transform .2s cubic-bezier(.2,.7,.2,1),
-    box-shadow .22s ease,
+    background var(--via-dur) ease,
+    border-color var(--via-dur) ease,
+    color var(--via-dur) ease,
+    transform .2s var(--via-ease-snap),
+    box-shadow var(--via-dur) ease,
     filter .2s ease;
 }
 
@@ -41,7 +41,7 @@
     transparent 100%
   );
   pointer-events: none;
-  transition: left .65s cubic-bezier(.2,.7,.2,1);
+  transition: left .65s var(--via-ease-snap);
 }
 .via-btn:hover:not(:disabled)::after {
   left: 120%;

@@ -48,7 +48,7 @@
 .via-progress__fill {
   height: 100%;
   border-radius: inherit;
-  transition: width 0.6s cubic-bezier(.16, 1, .3, 1);
+  transition: width 0.6s var(--via-ease-out);
   position: relative;
   overflow: hidden;
 }

@@ -36,10 +36,10 @@
   border-radius: 8px;
   cursor: pointer;
   transition:
-    background 0.22s ease,
-    color 0.22s ease,
-    border-color 0.22s ease,
-    box-shadow 0.22s ease,
+    background var(--via-dur) ease,
+    color var(--via-dur) ease,
+    border-color var(--via-dur) ease,
+    box-shadow var(--via-dur) ease,
     transform 0.18s ease;
 }
 

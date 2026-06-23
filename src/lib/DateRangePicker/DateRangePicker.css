@@ -87,7 +87,7 @@
   border: 1px solid var(--via-navy-12);
   border-radius: 999px;
   cursor: pointer;
-  transition: background .22s ease, color .22s ease, border-color .22s ease, transform .15s ease;
+  transition: background var(--via-dur) ease, color var(--via-dur) ease, border-color var(--via-dur) ease, transform .15s ease;
 }
 
 .via-drp__presets button:hover {

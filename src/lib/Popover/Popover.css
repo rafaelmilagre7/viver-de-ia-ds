@@ -23,7 +23,7 @@
     0 0 0 0.5px rgba(10, 31, 59, 0.10),
     0 24px 56px rgba(10, 31, 59, 0.18),
     0 4px 12px rgba(10, 31, 59, 0.08);
-  animation: via-popover-in 160ms cubic-bezier(.2,.7,.2,1) both;
+  animation: via-popover-in 160ms var(--via-ease-snap) both;
 }
 
 .via-popover__body {

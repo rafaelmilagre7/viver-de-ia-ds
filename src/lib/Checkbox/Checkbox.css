@@ -35,14 +35,26 @@
   align-items: center;
   justify-content: center;
   transition:
-    background 0.22s ease,
-    border-color 0.22s ease,
-    box-shadow 0.22s ease,
+    background var(--via-dur) ease,
+    border-color var(--via-dur) ease,
+    box-shadow var(--via-dur) ease,
     transform 0.18s ease;
   margin-top: 1px;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.86) inset,
     0 1px 2px var(--via-navy-04);
+}
+
+/* Alvo de toque generoso (>= WCAG AA) sem alterar o visual.
+   Altura 28px evita sobreposição com a linha vizinha em listas densas. */
+.via-checkbox__box::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 28px;
+  transform: translate(-50%, -50%);
 }
 
 .via-checkbox:hover:not(.is-disabled) .via-checkbox__box {
@@ -57,8 +69,8 @@
   opacity: 0;
   transform: scale(0.5) rotate(-12deg);
   transition:
-    opacity 0.22s ease,
-    transform 0.3s cubic-bezier(.34, 1.56, .64, 1);
+    opacity var(--via-dur) ease,
+    transform 0.3s var(--via-ease-spring);
 }
 
 .via-checkbox__input:checked + .via-checkbox__box,

@@ -26,7 +26,7 @@
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: 10px;
-  transition: border-color .22s ease, background .22s ease, box-shadow .22s ease;
+  transition: border-color var(--via-dur) ease, background var(--via-dur) ease, box-shadow var(--via-dur) ease;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.86) inset,
     0 1px 2px var(--via-navy-04);
@@ -50,7 +50,7 @@
 .via-tp__icon {
   color: var(--via-ink-2, #5E6B82);
   flex-shrink: 0;
-  transition: color .22s ease;
+  transition: color var(--via-dur) ease;
 }
 .via-tp__field:focus-within .via-tp__icon { color: var(--via-text-primary); }
 

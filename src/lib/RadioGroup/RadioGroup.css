@@ -41,13 +41,25 @@
   align-items: center;
   justify-content: center;
   transition:
-    border-color 0.22s ease,
-    box-shadow 0.22s ease,
-    background 0.22s ease;
+    border-color var(--via-dur) ease,
+    box-shadow var(--via-dur) ease,
+    background var(--via-dur) ease;
   margin-top: 1px;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.86) inset,
     0 1px 2px var(--via-navy-04);
+}
+
+/* Alvo de toque generoso (>= WCAG AA) sem alterar o visual.
+   Altura 28px evita sobreposição com a linha vizinha em listas densas. */
+.via-radio__circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 28px;
+  transform: translate(-50%, -50%);
 }
 
 .via-radio:hover:not(.is-disabled) .via-radio__circle {
@@ -63,7 +75,7 @@
   border-radius: 999px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   transform: scale(0);
-  transition: transform 0.32s cubic-bezier(.34, 1.56, .64, 1);
+  transition: transform 0.32s var(--via-ease-spring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 1px 2px var(--via-navy-30);

@@ -35,7 +35,7 @@
     0 0 0 0.5px var(--via-navy-08),
     0 22px 44px -16px var(--via-navy-25),
     0 8px 18px -10px var(--via-navy-14);
-  animation: via-toast-in .32s cubic-bezier(.16, 1, .3, 1);
+  animation: via-toast-in .32s var(--via-ease-out);
   isolation: isolate;
   overflow: hidden;
 }
@@ -65,7 +65,7 @@
     0 22px 44px -16px rgba(184, 92, 92, 0.32),
     0 8px 18px -10px rgba(184, 92, 92, 0.18);
   animation:
-    via-toast-in .32s cubic-bezier(.16, 1, .3, 1),
+    via-toast-in .32s var(--via-ease-out),
     via-toast-destructive-breathe 3.2s ease-in-out 1s infinite;
 }
 

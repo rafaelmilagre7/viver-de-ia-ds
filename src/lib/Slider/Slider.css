@@ -108,7 +108,7 @@
   cursor: grab;
   transform: translateY(calc((var(--via-sl-track-h) - var(--via-sl-thumb)) / 2));
   transition:
-    transform 180ms cubic-bezier(.34, 1.56, .64, 1),
+    transform 180ms var(--via-ease-spring),
     box-shadow 180ms ease,
     border-color 180ms ease;
 }
@@ -127,7 +127,7 @@
     0 0 12px -2px var(--via-navy-12);
   cursor: grab;
   transition:
-    transform 180ms cubic-bezier(.34, 1.56, .64, 1),
+    transform 180ms var(--via-ease-spring),
     box-shadow 180ms ease,
     border-color 180ms ease;
 }

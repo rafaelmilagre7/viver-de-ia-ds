@@ -23,7 +23,7 @@
     0 2px 6px -2px var(--via-navy-25);
   overflow: hidden;
   isolation: isolate;
-  transition: transform .22s cubic-bezier(.2,.7,.2,1), box-shadow .22s ease;
+  transition: transform var(--via-dur) var(--via-ease-snap), box-shadow var(--via-dur) ease;
 }
 
 .via-avatar img {

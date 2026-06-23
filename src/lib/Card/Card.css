@@ -10,7 +10,7 @@
   overflow: hidden;
   padding: 22px 24px;
   transition:
-    transform .26s cubic-bezier(.2,.7,.2,1),
+    transform .26s var(--via-ease-snap),
     box-shadow .26s ease,
     border-color .26s ease;
   box-shadow:
@@ -48,7 +48,7 @@
     transparent 100%
   );
   pointer-events: none;
-  transition: left .8s cubic-bezier(.2,.7,.2,1);
+  transition: left .8s var(--via-ease-snap);
   z-index: 1;
 }
 .via-card--hoverable:hover::after {

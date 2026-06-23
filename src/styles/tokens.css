@@ -399,9 +399,12 @@
   /* ========== MOTION ========================================== */
   --via-ease:        cubic-bezier(0.32, 0.08, 0.24, 1);
   --via-ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --via-ease-spring: cubic-bezier(.34, 1.56, .64, 1);  /* overshoot suave (check/radio/toggle) */
+  --via-ease-snap:   cubic-bezier(.2, .7, .2, 1);      /* resposta rápida (hover/press) */
   --via-t-fast:      120ms var(--via-ease);
   --via-t:           180ms var(--via-ease);
   --via-t-slow:      360ms var(--via-ease);
+  --via-dur:         220ms;                             /* duração de interação padrão (era .22s solto) */
 
   /* ========== LAYOUT ========================================== */
   --via-container: 1280px;

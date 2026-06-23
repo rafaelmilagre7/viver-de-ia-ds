@@ -465,6 +465,18 @@ export const tokensList: readonly Token[] = [
     "category": "motion"
   },
   {
+    "name": "via-ease-snap",
+    "css": "--via-ease-snap",
+    "value": "cubic-bezier(.2, .7, .2, 1)",
+    "category": "motion"
+  },
+  {
+    "name": "via-ease-spring",
+    "css": "--via-ease-spring",
+    "value": "cubic-bezier(.34, 1.56, .64, 1)",
+    "category": "motion"
+  },
+  {
     "name": "via-t",
     "css": "--via-t",
     "value": "180ms var(--via-ease)",
@@ -522,6 +534,12 @@ export const tokensList: readonly Token[] = [
     "name": "via-content",
     "css": "--via-content",
     "value": "760px",
+    "category": "other"
+  },
+  {
+    "name": "via-dur",
+    "css": "--via-dur",
+    "value": "220ms",
     "category": "other"
   },
   {
@@ -1016,6 +1034,8 @@ export type TokenName =
   | 'via-mono'
   | 'via-ease'
   | 'via-ease-out'
+  | 'via-ease-snap'
+  | 'via-ease-spring'
   | 'via-t'
   | 'via-blur-lg'
   | 'via-blur-md'
@@ -1026,6 +1046,7 @@ export type TokenName =
   | 'via-border-strong'
   | 'via-container'
   | 'via-content'
+  | 'via-dur'
   | 'via-fs-body'
   | 'via-fs-h1'
   | 'via-fs-h2'

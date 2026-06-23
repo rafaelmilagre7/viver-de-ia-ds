@@ -37,10 +37,10 @@
   border-radius: 10px;
   outline: none;
   transition:
-    border-color .22s ease,
-    box-shadow .22s ease,
-    background .22s ease,
-    transform .18s cubic-bezier(.34, 1.56, .64, 1);
+    border-color var(--via-dur) ease,
+    box-shadow var(--via-dur) ease,
+    background var(--via-dur) ease,
+    transform .18s var(--via-ease-spring);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 1px 2px var(--via-navy-04);
