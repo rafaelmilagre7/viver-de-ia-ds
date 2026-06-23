@@ -128,3 +128,10 @@
   cursor: not-allowed;
 }
 .via-field.disabled .val { cursor: not-allowed; }
+
+/* Dark mode · disabled legível no escuro (antes era light-only) */
+[data-theme="dark"] .via-field.disabled {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+  border-color: var(--via-border-soft);
+  opacity: 0.55;
+}

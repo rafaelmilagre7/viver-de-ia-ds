@@ -196,6 +196,14 @@
   --via-navy-60: rgba(255, 255, 255, 0.55);
   --via-navy-80: rgba(255, 255, 255, 0.72);
 
+  /* SHADOWS · as sombras navy somem no escuro · usar preto com mais opacidade */
+  --via-shadow-xs: 0 1px 2px rgba(0,0,0,0.30);
+  --via-shadow-sm: 0 2px 6px rgba(0,0,0,0.34), 0 1px 2px rgba(0,0,0,0.24);
+  --via-shadow-md: 0 6px 18px rgba(0,0,0,0.42), 0 1px 3px rgba(0,0,0,0.30);
+  --via-shadow-lg: 0 16px 40px rgba(0,0,0,0.52), 0 2px 8px rgba(0,0,0,0.34);
+  --via-shadow-xl: 0 32px 80px rgba(0,0,0,0.62), 0 4px 16px rgba(0,0,0,0.40);
+  --via-shadow-focus: 0 0 0 3px rgba(255,255,255,0.22);
+
   color-scheme: dark;
 }
 
@@ -683,4 +691,18 @@ a:hover { text-decoration: underline; }
   letter-spacing: var(--via-ls-brand);
   text-transform: uppercase;
   color: currentColor;
+}
+
+/* =============================================================
+   ACESSIBILIDADE · prefers-reduced-motion (rede de segurança global)
+   Zera animações/transições pra quem pede menos movimento — cobre
+   qualquer componente, além dos blocos por-componente já existentes.
+   ============================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

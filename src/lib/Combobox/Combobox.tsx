@@ -146,7 +146,7 @@ export function Combobox({
       </div>
 
       {open && (
-        <ul id={listId} className="via-combobox__list">
+        <ul id={listId} role="listbox" className="via-combobox__list">
           {filtered.length === 0 ? (
             <li className="via-combobox__empty">{emptyLabel}</li>
           ) : (
@@ -155,6 +155,8 @@ export function Combobox({
               return (
                 <li
                   key={opt.value}
+                  role="option"
+                  aria-selected={isSelected}
                   className={`via-combobox__option ${isSelected ? 'is-selected' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
                   aria-disabled={opt.disabled}
                   onClick={() => !opt.disabled && handleSelect(opt.value)}

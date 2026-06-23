@@ -3,8 +3,8 @@
 Site de referência + library React do design system da Viver de IA. Marca editorial, engenharia de precisão.
 
 - **49 páginas vivas** documentando fundamentos, glass, iconografia, componentes, padrões e páginas-modelo.
-- **15 componentes core** exportáveis como `@viverdeia/design-system` — drop-in em Nina, Iris, ExecSeats, plataforma.
-- **Visual regression suite** com 96 rotas × 2 viewports (192 testes Playwright).
+- **47 componentes core** exportáveis como `@viverdeia/design-system` — drop-in em Nina, Iris, ExecSeats, plataforma.
+- **Visual regression suite** com 108 rotas × 2 viewports (216 testes Playwright).
 - **TypeScript estrito** + dark mode + code-splitting por rota.
 
 ---
@@ -28,7 +28,7 @@ Site de referência + library React do design system da Viver de IA. Marca edito
 | `bun run build:lib` | gera o pacote `@viverdeia/design-system` em `dist/lib/` |
 | `bun run preview` | serve a build de produção localmente |
 | `bun run lint` | ESLint estrito (`noUnusedLocals` + `noUnusedParameters`) |
-| `bun run test:visual` | roda 192 testes de regressão visual contra baselines |
+| `bun run test:visual` | roda 216 testes de regressão visual contra baselines |
 | `bun run test:visual:update` | regenera baselines depois de mudança intencional |
 | `bun run test:visual:report` | abre HTML report do último run |
 
@@ -42,15 +42,14 @@ src/
   components/    · Pieces auxiliares (BrandLogo, ThemeToggle, RouteLoader, docs/)
   pages/         · 49 páginas (Home, foundations, glass, iconography,
                    components, patterns, showcase, guidelines)
-  lib/           · 15 componentes publicáveis (Button, Pill, Card, Input,
-                   Avatar, Icon, Toast, Tooltip, Modal, Tabs, Switch,
-                   Checkbox, RadioGroup, Select, Progress)
+  lib/           · 47 componentes publicáveis (base, formulário, overlay,
+                   navegação, dados, feedback) — índice em src/lib/index.ts
   styles/        · tokens.css (variáveis CSS · 4 camadas semânticas)
   data/          · nav.tsx, dados estáticos
   assets/        · logos (PNG VIA monograma + wordmark)
 
 tests/           · Visual regression suite (Playwright)
-  routes.ts        · lista declarativa de 96 rotas testadas
+  routes.ts        · lista declarativa de 108 rotas testadas
   visual.spec.ts   · 1 test por rota × 2 viewports
   visual.spec.ts-snapshots/  · baselines PNG
 

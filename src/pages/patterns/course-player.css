@@ -1241,7 +1241,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #1F8A5B;
+  background: var(--via-success);
   box-shadow: 0 0 8px rgba(31, 138, 91, 0.7);
   animation: vds-cp-live-aud-blink 2.2s ease-in-out infinite;
 }

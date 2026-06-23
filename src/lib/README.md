@@ -1,6 +1,6 @@
 # @viverdeia/design-system
 
-A library React do design system da Viver de IA. 15 componentes core com TypeScript types, ARIA correto, dark mode aware, sem dependências runtime além de React + lucide-react.
+A library React do design system da Viver de IA. 47 componentes core com TypeScript types, ARIA correto, dark mode aware, sem dependências runtime além de React + lucide-react.
 
 Drop-in pra qualquer projeto Viver de IA: Nina, Iris, ExecSeats, plataforma. Mesmo visual editorial, zero copy-paste.
 
