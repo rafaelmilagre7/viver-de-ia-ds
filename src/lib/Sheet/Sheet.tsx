@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, useId, useRef, type ReactNode } from 'react';
 import { X } from 'lucide-react';
 import './Sheet.css';
 
@@ -46,6 +46,10 @@ export function Sheet({
   showHandle = true,
 }: SheetProps) {
   const sheetRef = useRef<HTMLDivElement>(null);
+  const restoreFocusRef = useRef<HTMLElement | null>(null);
+  const baseId = useId();
+  const titleId = `${baseId}-title`;
+  const descriptionId = `${baseId}-description`;
 
   useEffect(() => {
     if (!open) return;
@@ -58,6 +62,22 @@ export function Sheet({
     };
   }, [open, onClose]);
 
+  // Move focus into the sheet on open and return it to the originating
+  // element once closed (focus return).
+  useEffect(() => {
+    if (!open) return;
+    restoreFocusRef.current = document.activeElement as HTMLElement | null;
+    const sheet = sheetRef.current;
+    const focusable = sheet?.querySelector<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    (focusable ?? sheet)?.focus();
+    return () => {
+      restoreFocusRef.current?.focus?.();
+      restoreFocusRef.current = null;
+    };
+  }, [open]);
+
   if (!open) return null;
 
   return (
@@ -68,15 +88,17 @@ export function Sheet({
         className="via-sheet"
         role="dialog"
         aria-modal="true"
-        aria-labelledby={title ? 'via-sheet-title' : undefined}
+        aria-labelledby={title ? titleId : undefined}
+        aria-describedby={description ? descriptionId : undefined}
+        tabIndex={-1}
         style={{ maxHeight }}
       >
         {showHandle && <span className="via-sheet__handle" aria-hidden="true" />}
         {(title || description) && (
           <header className="via-sheet__head">
             <div className="via-sheet__head-text">
-              {title && <h2 id="via-sheet-title">{title}</h2>}
-              {description && <p>{description}</p>}
+              {title && <h2 id={titleId}>{title}</h2>}
+              {description && <p id={descriptionId}>{description}</p>}
             </div>
             <button
               type="button"

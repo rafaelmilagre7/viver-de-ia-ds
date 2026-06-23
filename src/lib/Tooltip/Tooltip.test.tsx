@@ -114,25 +114,52 @@ describe('<Tooltip />', () => {
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
 
-  it('wires aria-describedby on the wrapper to the tooltip id only while open', () => {
+  it('wires aria-describedby on the trigger (not the wrapper) to the tooltip id only while open', () => {
     render(
       <Tooltip content="Descrição acessível" delay={200}>
         <button>Trigger</button>
       </Tooltip>,
     );
-    const wrap = wrapOf(screen.getByRole('button', { name: 'Trigger' }));
+    const trigger = screen.getByRole('button', { name: 'Trigger' });
+    const wrap = wrapOf(trigger);
     expect(wrap).toHaveClass('via-tooltip-wrap');
+    // The wrapper never carries the description — it's not the focusable element.
     expect(wrap).not.toHaveAttribute('aria-describedby');
+    expect(trigger).not.toHaveAttribute('aria-describedby');
 
     fireEvent.mouseEnter(wrap);
     tick(200);
 
     const tip = screen.getByRole('tooltip');
     expect(tip.id).toBeTruthy();
-    expect(wrap).toHaveAttribute('aria-describedby', tip.id);
+    // Description lands on the focusable trigger so a screen reader announces it on focus.
+    expect(trigger).toHaveAttribute('aria-describedby', tip.id);
+    expect(wrap).not.toHaveAttribute('aria-describedby');
 
     fireEvent.mouseLeave(wrap);
-    expect(wrap).not.toHaveAttribute('aria-describedby');
+    expect(trigger).not.toHaveAttribute('aria-describedby');
+  });
+
+  it('merges aria-describedby with an id already present on the trigger', () => {
+    render(
+      <Tooltip content="Descrição acessível" delay={200}>
+        <button aria-describedby="hint-1">Trigger</button>
+      </Tooltip>,
+    );
+    const trigger = screen.getByRole('button', { name: 'Trigger' });
+    const wrap = wrapOf(trigger);
+    // Pre-existing description is preserved while closed.
+    expect(trigger).toHaveAttribute('aria-describedby', 'hint-1');
+
+    fireEvent.mouseEnter(wrap);
+    tick(200);
+
+    const tip = screen.getByRole('tooltip');
+    expect(trigger).toHaveAttribute('aria-describedby', `hint-1 ${tip.id}`);
+
+    fireEvent.mouseLeave(wrap);
+    // Back to just the caller's own description once closed.
+    expect(trigger).toHaveAttribute('aria-describedby', 'hint-1');
   });
 
   it('applies the side modifier class (default top, and an explicit side)', () => {
@@ -192,20 +219,27 @@ describe('<Tooltip />', () => {
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
 
-  it('does NOT dismiss on Escape — current component has no Escape handler (a11y gap)', () => {
+  it('dismisses on Escape while keeping focus on the trigger (APG tooltip pattern)', () => {
     render(
       <Tooltip content="Persistente">
         <button>Trigger</button>
       </Tooltip>,
     );
-    const wrap = wrapOf(screen.getByRole('button', { name: 'Trigger' }));
+    const trigger = screen.getByRole('button', { name: 'Trigger' });
+    const wrap = wrapOf(trigger);
 
+    trigger.focus();
     fireEvent.focus(wrap);
     tick(200);
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
+    expect(trigger).toHaveFocus();
 
     fireEvent.keyDown(wrap, { key: 'Escape', code: 'Escape' });
-    // WAI-ARIA recommends Escape dismissal; this component does not implement it.
-    expect(screen.getByRole('tooltip')).toBeInTheDocument();
+    // Escape dismisses the tooltip…
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+    // …but focus stays on the trigger (no blur).
+    expect(trigger).toHaveFocus();
+    // aria-describedby is cleared along with the dismissal.
+    expect(trigger).not.toHaveAttribute('aria-describedby');
   });
 });

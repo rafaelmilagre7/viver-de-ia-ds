@@ -30,7 +30,9 @@ export interface ContextMenuProps {
  * `<ContextMenu>` · menu de clique direito editorial
  *
  * Usa contextmenu event nativo · posiciona no cursor · keyboard arrow nav.
- * Fecha em click fora, escape, ou seleção.
+ * Ao abrir, foca o primeiro item habilitado. ArrowDown/Up navegam entre os
+ * itens (pulando os desabilitados, com wrap), Home/End vão pro primeiro/último,
+ * Enter/Espaço ativam e fecham. Fecha em click fora, Escape, ou seleção.
  *
  * @example
  * <ContextMenu items={[
@@ -44,15 +46,79 @@ export interface ContextMenuProps {
 export function ContextMenu({ children, items, label = 'Menu de contexto' }: ContextMenuProps) {
   const [open, setOpen] = useState(false);
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
   const menuRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const openMenu = (e: MouseEvent) => {
     e.preventDefault();
     setPos({ x: e.clientX, y: e.clientY });
+    setActiveIndex(firstEnabled());
     setOpen(true);
   };
 
   const close = () => setOpen(false);
+
+  /** Índice do primeiro item não-desabilitado (ou -1 se não houver) */
+  const firstEnabled = () => items.findIndex((it) => !it.disabled);
+  /** Índice do último item não-desabilitado (ou -1 se não houver) */
+  const lastEnabled = () => {
+    for (let i = items.length - 1; i >= 0; i--) {
+      if (!items[i].disabled) return i;
+    }
+    return -1;
+  };
+  /** Próximo item habilitado a partir de `from`, andando em `dir` (+1/-1), com wrap; -1 se nenhum */
+  const nextEnabled = (from: number, dir: 1 | -1) => {
+    if (items.length === 0) return -1;
+    let i = from;
+    for (let step = 0; step < items.length; step++) {
+      i = (i + dir + items.length) % items.length;
+      if (!items[i].disabled) return i;
+    }
+    return -1;
+  };
+
+  const moveTo = (index: number) => {
+    if (index < 0) return;
+    setActiveIndex(index);
+    itemRefs.current[index]?.focus();
+  };
+
+  const activate = (index: number) => {
+    const it = items[index];
+    if (!it || it.disabled) return;
+    it.onSelect?.();
+    close();
+  };
+
+  const handleKey = (e: React.KeyboardEvent, index: number) => {
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        moveTo(nextEnabled(index, 1));
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        moveTo(nextEnabled(index, -1));
+        break;
+      case 'Home':
+        e.preventDefault();
+        moveTo(firstEnabled());
+        break;
+      case 'End':
+        e.preventDefault();
+        moveTo(lastEnabled());
+        break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        activate(index);
+        break;
+      default:
+        break;
+    }
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -82,6 +148,13 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
+  // Foca o item ativo ao abrir (definido em openMenu como o primeiro habilitado)
+  useEffect(() => {
+    if (!open) return;
+    if (activeIndex >= 0) itemRefs.current[activeIndex]?.focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
   return (
     <>
       <span onContextMenu={openMenu} className="via-cm-wrap">
@@ -99,14 +172,17 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
             <div key={i}>
               {it.separatorBefore && <div className="via-cm__sep" role="separator" />}
               <button
+                ref={(el) => { itemRefs.current[i] = el; }}
                 type="button"
                 role="menuitem"
+                tabIndex={i === activeIndex ? 0 : -1}
                 className={`via-cm__item${it.destructive ? ' is-destructive' : ''}${it.disabled ? ' is-disabled' : ''}`}
                 onClick={() => {
                   if (it.disabled) return;
                   it.onSelect?.();
                   close();
                 }}
+                onKeyDown={(e) => handleKey(e, i)}
                 disabled={it.disabled}
               >
                 {it.icon && <span className="via-cm__icon">{it.icon}</span>}

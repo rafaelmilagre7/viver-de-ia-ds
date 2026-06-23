@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type ReactNode } from 'react';
+import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import './HoverCard.css';
 
 export interface HoverCardProps {
@@ -41,8 +41,10 @@ export function HoverCard({
 }: HoverCardProps) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLSpanElement>(null);
+  const triggerWrapRef = useRef<HTMLSpanElement>(null);
   const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const bodyId = useId();
 
   const cancel = () => {
     if (openTimer.current) clearTimeout(openTimer.current);
@@ -63,6 +65,29 @@ export function HoverCard({
 
   useEffect(() => () => cancel(), []);
 
+  /**
+   * Resolve the real focusable trigger control. The consumer passes an
+   * arbitrary node (usually an <a> or <button>); we wire ARIA onto that inner
+   * control so the hover card is announced as a popup. Falls back to the
+   * trigger wrapper span when no focusable element exists.
+   */
+  const getTriggerEl = (): HTMLElement | null => {
+    const wrap = triggerWrapRef.current;
+    if (!wrap) return null;
+    const focusable = wrap.querySelector<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    return focusable ?? wrap;
+  };
+
+  // ARIA wiring on the actual focusable trigger control.
+  useEffect(() => {
+    const el = getTriggerEl();
+    if (!el) return;
+    el.setAttribute('aria-haspopup', 'dialog');
+    el.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }, [open, trigger]);
+
   return (
     <span
       ref={wrapRef}
@@ -72,15 +97,18 @@ export function HoverCard({
       onFocus={handleOpen}
       onBlur={handleClose}
     >
-      {trigger}
+      <span ref={triggerWrapRef} className="via-hovercard__trigger">
+        {trigger}
+      </span>
       {open && (
         <div
           className={`via-hovercard via-hovercard--${side} via-hovercard--align-${align}`}
           role="dialog"
+          aria-labelledby={bodyId}
           onMouseEnter={handleOpen}
           onMouseLeave={handleClose}
         >
-          <div className="via-hovercard__body">{children}</div>
+          <div id={bodyId} className="via-hovercard__body">{children}</div>
         </div>
       )}
     </span>

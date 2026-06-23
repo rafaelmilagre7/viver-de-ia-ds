@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useId } from 'react';
 import { ChevronDown, Check, X } from 'lucide-react';
 import './MultiSelect.css';
 
@@ -51,7 +51,14 @@ export function MultiSelect({
   const [internal, setInternal] = useState<string[]>([]);
   const values = controlledValue !== undefined ? controlledValue : internal;
   const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  const baseId = useId();
+  const labelId = `${baseId}-label`;
+  const listId = `${baseId}-list`;
+  const optionId = (i: number) => `${baseId}-opt-${i}`;
 
   const setValues = (next: string[]) => {
     if (controlledValue === undefined) setInternal(next);
@@ -67,19 +74,96 @@ export function MultiSelect({
     }
   };
 
+  /** Próximo índice selecionável (pulando opções desabilitadas) numa direção. */
+  const nextEnabledIndex = (from: number, dir: 1 | -1) => {
+    const n = options.length;
+    if (n === 0) return -1;
+    for (let step = 1; step <= n; step++) {
+      const i = (from + dir * step + n * step) % n;
+      if (!options[i]?.disabled) return i;
+    }
+    return -1;
+  };
+
+  const firstEnabledIndex = () => nextEnabledIndex(-1, 1);
+  const lastEnabledIndex = () => nextEnabledIndex(0, -1);
+
+  const openMenu = () => {
+    // ao abrir, destaca a 1ª selecionada ou a 1ª opção habilitada
+    const firstSelected = options.findIndex((o) => values.includes(o.value) && !o.disabled);
+    setActiveIndex(firstSelected >= 0 ? firstSelected : firstEnabledIndex());
+    setOpen(true);
+  };
+
+  const closeMenu = (returnFocus = false) => {
+    setActiveIndex(-1);
+    setOpen(false);
+    if (returnFocus) triggerRef.current?.focus();
+  };
+
+  const toggleMenu = () => (open ? closeMenu() : openMenu());
+
   useEffect(() => {
     if (!open) return;
     const onClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) closeMenu();
     };
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('mousedown', onClickOutside);
-    document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('mousedown', onClickOutside);
-      document.removeEventListener('keydown', onKey);
     };
   }, [open]);
+
+  const handleTriggerKey = (e: React.KeyboardEvent) => {
+    // Abre o listbox a partir do trigger fechado com setas / Enter / Espaço
+    if (!open) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openMenu();
+      }
+      return;
+    }
+
+    switch (e.key) {
+      case 'ArrowDown': {
+        e.preventDefault();
+        setActiveIndex((i) => nextEnabledIndex(i, 1));
+        break;
+      }
+      case 'ArrowUp': {
+        e.preventDefault();
+        setActiveIndex((i) => nextEnabledIndex(i, -1));
+        break;
+      }
+      case 'Home': {
+        e.preventDefault();
+        setActiveIndex(firstEnabledIndex());
+        break;
+      }
+      case 'End': {
+        e.preventDefault();
+        setActiveIndex(lastEnabledIndex());
+        break;
+      }
+      case 'Enter':
+      case ' ': {
+        e.preventDefault();
+        const opt = options[activeIndex];
+        if (!opt || opt.disabled) break;
+        const selected = values.includes(opt.value);
+        const canSelect = !max || values.length < max || selected;
+        if (canSelect) toggle(opt.value);
+        break;
+      }
+      case 'Escape': {
+        e.preventDefault();
+        closeMenu(true);
+        break;
+      }
+      default:
+        break;
+    }
+  };
 
   const selectedLabels = values
     .map((v) => options.find((o) => o.value === v))
@@ -90,15 +174,20 @@ export function MultiSelect({
       ref={ref}
       className={`via-ms via-ms--${size}${error ? ' has-error' : ''}${disabled ? ' is-disabled' : ''}`}
     >
-      {label && <label className="via-ms__label">{label}</label>}
+      {label && <label id={labelId} className="via-ms__label">{label}</label>}
 
       <button
+        ref={triggerRef}
         type="button"
         className={`via-ms__trigger${open ? ' is-open' : ''}`}
-        onClick={() => !disabled && setOpen(!open)}
+        onClick={() => !disabled && toggleMenu()}
+        onKeyDown={handleTriggerKey}
         disabled={disabled}
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-controls={open ? listId : undefined}
+        aria-activedescendant={open && activeIndex >= 0 ? optionId(activeIndex) : undefined}
+        {...(label ? { 'aria-labelledby': labelId } : { 'aria-label': placeholder })}
       >
         <div className="via-ms__chips">
           {selectedLabels.length === 0 && (
@@ -132,15 +221,24 @@ export function MultiSelect({
       </button>
 
       {open && (
-        <ul className="via-ms__list" role="listbox" aria-multiselectable="true">
-          {options.map((o) => {
+        <ul
+          id={listId}
+          className="via-ms__list"
+          role="listbox"
+          aria-multiselectable="true"
+          {...(label ? { 'aria-labelledby': labelId } : { 'aria-label': placeholder })}
+        >
+          {options.map((o, i) => {
             const selected = values.includes(o.value);
             const canSelect = !max || values.length < max || selected;
+            const active = i === activeIndex;
             return (
               <li
                 key={o.value}
-                className={`via-ms__option${selected ? ' is-selected' : ''}${o.disabled || !canSelect ? ' is-disabled' : ''}`}
+                id={optionId(i)}
+                className={`via-ms__option${selected ? ' is-selected' : ''}${active ? ' is-active' : ''}${o.disabled || !canSelect ? ' is-disabled' : ''}`}
                 onClick={() => !o.disabled && canSelect && toggle(o.value)}
+                onMouseEnter={() => !o.disabled && setActiveIndex(i)}
                 role="option"
                 aria-selected={selected}
               >

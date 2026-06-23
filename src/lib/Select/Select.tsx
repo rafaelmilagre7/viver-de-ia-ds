@@ -60,6 +60,8 @@ export function Select({
   const current = value ?? internal;
   const wrapRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const [active, setActive] = useState(-1);
 
   const selectedOption = options.find((o) => o.value === current);
 
@@ -69,6 +71,83 @@ export function Select({
     setOpen(false);
     triggerRef.current?.focus();
   };
+
+  const firstEnabled = (dir: 1 | -1) => {
+    const start = dir === 1 ? 0 : options.length - 1;
+    for (let i = start; i >= 0 && i < options.length; i += dir) {
+      if (!options[i]?.disabled) return i;
+    }
+    return -1;
+  };
+
+  // Abre o listbox e destaca a opção selecionada (ou a primeira habilitada)
+  const openList = () => {
+    const selectedIdx = options.findIndex((o) => o.value === current && !o.disabled);
+    setActive(selectedIdx >= 0 ? selectedIdx : firstEnabled(1));
+    setOpen(true);
+  };
+
+  // Move o destaque pulando opções desabilitadas
+  const moveActive = (dir: 1 | -1) => {
+    if (!options.length) return;
+    setActive((i) => {
+      let n = i < 0 ? (dir === 1 ? -1 : 0) : i;
+      for (let step = 0; step < options.length; step++) {
+        n = (n + dir + options.length) % options.length;
+        if (!options[n]?.disabled) return n;
+      }
+      return i;
+    });
+  };
+
+  // Navegação por teclado no controle (padrão WAI-ARIA listbox)
+  const handleKey = (e: React.KeyboardEvent) => {
+    if (disabled) return;
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        if (open) moveActive(1);
+        else openList();
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        if (open) moveActive(-1);
+        else openList();
+        break;
+      case 'Home':
+        if (open) {
+          e.preventDefault();
+          setActive(firstEnabled(1));
+        }
+        break;
+      case 'End':
+        if (open) {
+          e.preventDefault();
+          setActive(firstEnabled(-1));
+        }
+        break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        if (open) {
+          if (active >= 0 && options[active] && !options[active].disabled) {
+            handleSelect(options[active].value);
+          }
+        } else {
+          openList();
+        }
+        break;
+      // Escape é tratado pelo listener global abaixo (fecha + devolve foco ao trigger)
+      default:
+        break;
+    }
+  };
+
+  // Mantém a opção ativa visível na rolagem
+  useEffect(() => {
+    if (!open || active < 0 || !listRef.current) return;
+    listRef.current.querySelector('.is-active')?.scrollIntoView({ block: 'nearest' });
+  }, [active, open]);
 
   // Click outside fecha
   useEffect(() => {
@@ -109,8 +188,10 @@ export function Select({
         aria-labelledby={label ? labelId : undefined}
         aria-label={!label ? ariaLabel : undefined}
         aria-controls={listId}
+        aria-activedescendant={open && active >= 0 ? `${listId}-opt-${active}` : undefined}
         disabled={disabled}
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => (open ? setOpen(false) : openList())}
+        onKeyDown={handleKey}
       >
         <span className={`via-select__value ${!selectedOption ? 'is-placeholder' : ''}`}>
           {selectedOption ? selectedOption.label : placeholder}
@@ -130,17 +211,19 @@ export function Select({
       )}
 
       {open && (
-        <ul id={listId} role="listbox" className="via-select__list">
-          {options.map((opt) => {
+        <ul id={listId} ref={listRef} role="listbox" className="via-select__list">
+          {options.map((opt, idx) => {
             const isSelected = opt.value === current;
             return (
               <li
                 key={opt.value}
+                id={`${listId}-opt-${idx}`}
                 role="option"
                 aria-selected={isSelected}
                 aria-disabled={opt.disabled}
                 tabIndex={-1}
-                className={`via-select__option ${isSelected ? 'is-selected' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
+                className={`via-select__option ${isSelected ? 'is-selected' : ''} ${idx === active ? 'is-active' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
+                onMouseEnter={() => !opt.disabled && setActive(idx)}
                 onClick={() => !opt.disabled && handleSelect(opt.value)}
               >
                 <span>{opt.label}</span>

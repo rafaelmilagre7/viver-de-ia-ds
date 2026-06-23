@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { useState } from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Drawer } from './Drawer';
 
@@ -172,5 +173,115 @@ describe('<Drawer />', () => {
     );
     // the close button is the first focusable element inside the dialog
     expect(screen.getByRole('button', { name: /fechar/i })).toHaveFocus();
+  });
+
+  it('returns focus to the element that was focused before opening, on close', () => {
+    function Harness() {
+      const [open, setOpen] = useState(false);
+      return (
+        <>
+          <button type="button" onClick={() => setOpen(true)}>
+            Abrir
+          </button>
+          <Drawer open={open} onClose={() => setOpen(false)} title="Filtros">
+            <p>x</p>
+          </Drawer>
+        </>
+      );
+    }
+    render(<Harness />);
+    const trigger = screen.getByRole('button', { name: 'Abrir' });
+    // foco começa no gatilho (quem abre o drawer)
+    trigger.focus();
+    expect(trigger).toHaveFocus();
+
+    fireEvent.click(trigger);
+    // ao abrir, o foco move pra dentro do painel (não fica mais no gatilho)
+    expect(trigger).not.toHaveFocus();
+    expect(screen.getByRole('button', { name: /fechar/i })).toHaveFocus();
+
+    // ao fechar, o foco volta pro gatilho
+    fireEvent.click(screen.getByRole('button', { name: /fechar/i }));
+    expect(trigger).toHaveFocus();
+  });
+
+  it('returns focus to the previously focused element on unmount while open', () => {
+    const outside = document.createElement('button');
+    outside.textContent = 'fora';
+    document.body.appendChild(outside);
+    outside.focus();
+    expect(outside).toHaveFocus();
+
+    const { unmount } = render(
+      <Drawer open onClose={() => {}} title="Filtros">
+        <p>x</p>
+      </Drawer>,
+    );
+    // abriu: foco foi pra dentro
+    expect(outside).not.toHaveFocus();
+
+    unmount();
+    expect(outside).toHaveFocus();
+
+    outside.remove();
+  });
+
+  it('traps Tab at the last focusable, wrapping back to the first', async () => {
+    const user = userEvent.setup();
+    render(
+      <Drawer
+        open
+        onClose={() => {}}
+        title="Filtros"
+        footer={<button type="button">Aplicar</button>}
+      >
+        <button type="button">Meio</button>
+      </Drawer>,
+    );
+    const closeBtn = screen.getByRole('button', { name: /fechar/i });
+    const applyBtn = screen.getByRole('button', { name: 'Aplicar' });
+
+    // o último focável (footer) está focado → Tab deve voltar pro primeiro (fechar)
+    applyBtn.focus();
+    expect(applyBtn).toHaveFocus();
+    await user.tab();
+    expect(closeBtn).toHaveFocus();
+  });
+
+  it('traps Shift+Tab at the first focusable, wrapping to the last', async () => {
+    const user = userEvent.setup();
+    render(
+      <Drawer
+        open
+        onClose={() => {}}
+        title="Filtros"
+        footer={<button type="button">Aplicar</button>}
+      >
+        <button type="button">Meio</button>
+      </Drawer>,
+    );
+    const closeBtn = screen.getByRole('button', { name: /fechar/i });
+    const applyBtn = screen.getByRole('button', { name: 'Aplicar' });
+
+    // o primeiro focável (fechar) está focado → Shift+Tab deve ir pro último (aplicar)
+    closeBtn.focus();
+    expect(closeBtn).toHaveFocus();
+    await user.tab({ shift: true });
+    expect(applyBtn).toHaveFocus();
+  });
+
+  it('keeps focus on the dialog itself when there are no focusable children', async () => {
+    const user = userEvent.setup();
+    const { container } = render(
+      <Drawer open onClose={() => {}} hideClose>
+        <p>so texto, nada focavel</p>
+      </Drawer>,
+    );
+    const dialog = container.querySelector('.via-drawer') as HTMLElement;
+    dialog.focus();
+    expect(dialog).toHaveFocus();
+    // Tab não pode escapar: sem focáveis, o foco fica no painel
+    await user.tab();
+    expect(dialog).toHaveFocus();
   });
 });

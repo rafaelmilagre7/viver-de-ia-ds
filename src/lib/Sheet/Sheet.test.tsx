@@ -41,8 +41,10 @@ describe('<Sheet />', () => {
     );
     const dialog = screen.getByRole('dialog');
     expect(dialog).toHaveAttribute('aria-modal', 'true');
-    expect(dialog).toHaveAttribute('aria-labelledby', 'via-sheet-title');
-    expect(screen.getByRole('heading', { name: 'Filtros' })).toHaveAttribute('id', 'via-sheet-title');
+    const labelledBy = dialog.getAttribute('aria-labelledby');
+    expect(labelledBy).toBeTruthy();
+    // the heading the dialog points at is in fact its title
+    expect(screen.getByRole('heading', { name: 'Filtros' })).toHaveAttribute('id', labelledBy!);
   });
 
   it('omits aria-labelledby when no title is provided', () => {
@@ -166,16 +168,95 @@ describe('<Sheet />', () => {
     expect(screen.getByRole('dialog')).toHaveStyle({ maxHeight: '60vh' });
   });
 
-  it('does not wire aria-describedby to the description (a11y gap)', () => {
+  it('wires aria-describedby to the description so it is the accessible description', () => {
     render(
       <Sheet open onClose={() => {}} title="Filtros" description="Refine sua busca">
         <p>x</p>
       </Sheet>,
     );
-    // The description renders visually but is not associated to the dialog
-    // via aria-describedby — screen readers will not announce it as the
-    // accessible description.
+    const dialog = screen.getByRole('dialog');
+    const describedBy = dialog.getAttribute('aria-describedby');
+    expect(describedBy).toBeTruthy();
+    // the element the dialog points at is in fact the description text
+    expect(screen.getByText('Refine sua busca')).toHaveAttribute('id', describedBy!);
+  });
+
+  it('omits aria-describedby when no description is provided', () => {
+    render(
+      <Sheet open onClose={() => {}} title="Filtros">
+        <p>x</p>
+      </Sheet>,
+    );
     expect(screen.getByRole('dialog')).not.toHaveAttribute('aria-describedby');
-    expect(screen.getByText('Refine sua busca')).toBeInTheDocument();
+  });
+
+  it('moves focus into the sheet when it opens', async () => {
+    const user = userEvent.setup();
+    render(
+      <Sheet open onClose={() => {}} title="Filtros" footer={<button>Aplicar</button>}>
+        <button>Acao interna</button>
+      </Sheet>,
+    );
+    // focus lands on the first focusable element inside the dialog (the close button)
+    const dialog = screen.getByRole('dialog');
+    expect(dialog.contains(document.activeElement)).toBe(true);
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: /fechar/i }));
+    // and the user can tab between the controls inside the sheet
+    await user.tab();
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Acao interna' }));
+  });
+
+  it('falls back to focusing the dialog itself when it has no focusable children', () => {
+    render(
+      <Sheet open onClose={() => {}}>
+        <p>sem-foco</p>
+      </Sheet>,
+    );
+    const dialog = screen.getByRole('dialog');
+    expect(document.activeElement).toBe(dialog);
+  });
+
+  it('returns focus to the originating element when closed', () => {
+    const Harness = ({ open }: { open: boolean }) => (
+      <>
+        <button data-testid="opener">Abrir</button>
+        <Sheet open={open} onClose={() => {}} title="Filtros">
+          <p>x</p>
+        </Sheet>
+      </>
+    );
+    const { rerender } = render(<Harness open={false} />);
+
+    // emulate the trigger being the active element before the sheet opens
+    const opener = screen.getByTestId('opener');
+    opener.focus();
+    expect(document.activeElement).toBe(opener);
+
+    rerender(<Harness open />);
+    // focus moved into the sheet
+    expect(screen.getByRole('dialog').contains(document.activeElement)).toBe(true);
+
+    rerender(<Harness open={false} />);
+    // focus returned to the trigger that opened it
+    expect(document.activeElement).toBe(opener);
+  });
+
+  it('returns focus to the originating element on unmount', () => {
+    const opener = document.createElement('button');
+    opener.textContent = 'Abrir';
+    document.body.appendChild(opener);
+    opener.focus();
+    expect(document.activeElement).toBe(opener);
+
+    const { unmount } = render(
+      <Sheet open onClose={() => {}} title="Filtros">
+        <p>x</p>
+      </Sheet>,
+    );
+    expect(screen.getByRole('dialog').contains(document.activeElement)).toBe(true);
+
+    unmount();
+    expect(document.activeElement).toBe(opener);
+    opener.remove();
   });
 });

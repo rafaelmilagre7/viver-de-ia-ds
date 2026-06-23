@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Calendar as CalIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import './DatePicker.css';
 
@@ -37,6 +37,9 @@ const sameDay = (a: Date, b: Date) =>
 
 const startOfMonth = (d: Date) => new Date(d.getFullYear(), d.getMonth(), 1);
 const addMonths = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth() + n, 1);
+const addDays = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+const isoKey = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 
 const defaultFormat = (d: Date) =>
   `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
@@ -62,7 +65,11 @@ export function DatePicker({
 }: DatePickerProps) {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<Date>(() => startOfMonth(value ?? new Date()));
+  // active day for roving-tabindex keyboard nav · the single cell that is tabbable
+  const [activeDay, setActiveDay] = useState<Date>(() => value ?? new Date());
   const rootRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const baseId = useId();
 
   // sync view quando value muda externamente — ajuste em render-phase
   // (padrão oficial React, evita setState dentro de effect)
@@ -112,10 +119,6 @@ export function DatePicker({
   }, [view, weekStartsOn]);
 
   const isDisabled = (d: Date) => {
-    if (min && d < startOfMonth(min) && d.getMonth() !== min.getMonth()) {
-      const minDay = new Date(min.getFullYear(), min.getMonth(), min.getDate());
-      if (d < minDay) return true;
-    }
     if (min) {
       const minDay = new Date(min.getFullYear(), min.getMonth(), min.getDate());
       if (d < minDay) return true;
@@ -129,6 +132,144 @@ export function DatePicker({
 
   const today = new Date();
   const dow = weekStartsOn === 1 ? PT_DOW_MON : PT_DOW_SUN;
+
+  // first selectable in-month day of the visible month (fallback target)
+  const firstSelectable = useMemo(() => {
+    const daysInMonth = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+    for (let i = 1; i <= daysInMonth; i++) {
+      const d = new Date(view.getFullYear(), view.getMonth(), i);
+      if (!isDisabled(d)) return d;
+    }
+    return startOfMonth(view);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [view, min, max]);
+
+  // The day that owns the roving tabindex. Derived so it is ALWAYS a real,
+  // focusable in-month cell: the user's last navigation if it still fits the
+  // visible month and is enabled, else the selected value / today / first
+  // selectable day. No setState needed just to keep the active cell valid.
+  const inView = (d: Date) =>
+    d.getFullYear() === view.getFullYear() && d.getMonth() === view.getMonth();
+  let effectiveActive: Date;
+  if (activeDay && inView(activeDay) && !isDisabled(activeDay)) effectiveActive = activeDay;
+  else if (value && inView(value) && !isDisabled(value)) effectiveActive = value;
+  else if (inView(today) && !isDisabled(today)) effectiveActive = today;
+  else effectiveActive = firstSelectable;
+  const effectiveTime = effectiveActive.getTime();
+
+  // Keep DOM focus on the active cell while the calendar is open: on open, and
+  // after any navigation that changes the active day or visible month. Only
+  // grabs focus when it already lives inside the popup, so it never yanks focus
+  // away unexpectedly.
+  useEffect(() => {
+    if (!open) return;
+    const root = rootRef.current;
+    if (root && !root.contains(document.activeElement)) return;
+    const id = `${baseId}-day-${isoKey(new Date(effectiveTime))}`;
+    gridRef.current?.querySelector<HTMLButtonElement>(`[id="${id}"]`)?.focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, effectiveTime]);
+
+  // move the active day, skipping disabled/outside cells, switching month when
+  // the target leaves the visible one. Mirrors the native <Calendar> grid nav.
+  const moveActive = (from: Date, step: number, dir: 1 | -1) => {
+    let candidate = addDays(from, step);
+    // skip over disabled days in the travel direction (bounded probe)
+    let guard = 0;
+    while (isDisabled(candidate) && guard < 366) {
+      candidate = addDays(candidate, dir);
+      guard++;
+    }
+    if (isDisabled(candidate)) return; // nothing selectable that way
+    setActiveDay(candidate);
+    if (
+      candidate.getFullYear() !== view.getFullYear() ||
+      candidate.getMonth() !== view.getMonth()
+    ) {
+      setView(startOfMonth(candidate));
+    }
+  };
+
+  const onGridKeyDown = (e: React.KeyboardEvent) => {
+    const k = e.key;
+    // operate from the effective active cell (always a valid in-month day)
+    const from = effectiveActive;
+    if (k === 'Enter' || k === ' ' || k === 'Spacebar') {
+      e.preventDefault();
+      if (!isDisabled(from)) {
+        onChange(from);
+        setOpen(false);
+      }
+      return;
+    }
+    // arrow keys move by ±1 day (horizontal) or ±7 days (vertical), skipping
+    // disabled days in the travel direction and switching month at the edges.
+    if (k === 'ArrowRight') { e.preventDefault(); moveActive(from, 1, 1); return; }
+    if (k === 'ArrowLeft') { e.preventDefault(); moveActive(from, -1, -1); return; }
+    if (k === 'ArrowDown') { e.preventDefault(); moveActive(from, 7, 1); return; }
+    if (k === 'ArrowUp') { e.preventDefault(); moveActive(from, -7, -1); return; }
+    if (k === 'Home') { e.preventDefault(); moveWithinWeek(from, 'start'); return; }
+    if (k === 'End') { e.preventDefault(); moveWithinWeek(from, 'end'); return; }
+    if (k === 'PageUp') { e.preventDefault(); landOnMonthDay(addMonthsKeepDay(from, -1)); return; }
+    if (k === 'PageDown') { e.preventDefault(); landOnMonthDay(addMonthsKeepDay(from, 1)); return; }
+  };
+
+  // Home/End · jump to the first/last in-month day of the active day's week,
+  // never crossing into the previous/next month (outside cells are skipped).
+  const moveWithinWeek = (from: Date, edge: 'start' | 'end') => {
+    const offset = (from.getDay() - weekStartsOn + 7) % 7;
+    const weekStart = addDays(from, -offset);
+    const weekEnd = addDays(from, 6 - offset);
+    const dim = new Date(from.getFullYear(), from.getMonth() + 1, 0).getDate();
+    const monthStart = new Date(from.getFullYear(), from.getMonth(), 1);
+    const monthEnd = new Date(from.getFullYear(), from.getMonth(), dim);
+    // clamp the week edge to the current month, then skip disabled inward
+    let candidate =
+      edge === 'start'
+        ? (weekStart < monthStart ? monthStart : weekStart)
+        : (weekEnd > monthEnd ? monthEnd : weekEnd);
+    const inward: 1 | -1 = edge === 'start' ? 1 : -1;
+    let guard = 0;
+    while (
+      isDisabled(candidate) &&
+      candidate >= weekStart && candidate <= weekEnd &&
+      candidate >= monthStart && candidate <= monthEnd &&
+      guard < 7
+    ) {
+      candidate = addDays(candidate, inward);
+      guard++;
+    }
+    if (isDisabled(candidate)) return;
+    setActiveDay(candidate);
+  };
+
+  // same calendar-day in a sibling month, clamped to that month's length
+  const addMonthsKeepDay = (d: Date, n: number) => {
+    const target = new Date(d.getFullYear(), d.getMonth() + n, 1);
+    const dim = new Date(target.getFullYear(), target.getMonth() + 1, 0).getDate();
+    return new Date(target.getFullYear(), target.getMonth(), Math.min(d.getDate(), dim));
+  };
+
+  // land on a target date, nudging forward then backward to skip disabled days
+  const landOnMonthDay = (target: Date) => {
+    let candidate = target;
+    let guard = 0;
+    while (isDisabled(candidate) && guard < 31) {
+      candidate = addDays(candidate, 1);
+      guard++;
+    }
+    if (isDisabled(candidate)) {
+      candidate = target;
+      guard = 0;
+      while (isDisabled(candidate) && guard < 31) {
+        candidate = addDays(candidate, -1);
+        guard++;
+      }
+    }
+    if (isDisabled(candidate)) return;
+    setActiveDay(candidate);
+    setView(startOfMonth(candidate));
+  };
 
   return (
     <div ref={rootRef} className="via-dp">
@@ -176,19 +317,23 @@ export function DatePicker({
             ))}
           </div>
 
-          <div className="via-dp__grid" role="grid">
+          <div className="via-dp__grid" role="grid" ref={gridRef} onKeyDown={onGridKeyDown}>
             {cells.map((c, i) => {
               const sel = value && sameDay(c.date, value);
               const isToday = sameDay(c.date, today);
               const dis = isDisabled(c.date);
+              // roving tabindex · only the active, in-month, enabled cell is tabbable
+              const isActive = !c.outside && !dis && sameDay(c.date, effectiveActive);
               return (
                 <button
                   key={i}
+                  id={`${baseId}-day-${isoKey(c.date)}`}
                   type="button"
                   role="gridcell"
                   aria-selected={!!sel}
                   aria-current={isToday ? 'date' : undefined}
                   disabled={dis}
+                  tabIndex={isActive ? 0 : -1}
                   className={[
                     'via-dp__cell',
                     c.outside && 'outside',

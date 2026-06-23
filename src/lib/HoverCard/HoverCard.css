@@ -7,6 +7,11 @@
   align-items: center;
 }
 
+/* Transparent to layout — the trigger renders exactly as if unwrapped. */
+.via-hovercard__trigger {
+  display: contents;
+}
+
 .via-hovercard {
   position: absolute;
   z-index: 95;

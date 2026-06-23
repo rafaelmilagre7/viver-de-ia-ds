@@ -26,6 +26,10 @@ export interface DrawerProps {
  *   <RadioGroup options={...} />
  * </Drawer>
  */
+// Selector dos elementos que recebem foco por Tab dentro do painel
+const FOCUSABLE =
+  'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 export function Drawer({
   open,
   onClose,
@@ -39,6 +43,8 @@ export function Drawer({
 }: DrawerProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
+  // Quem tinha o foco antes do drawer abrir — pra devolver ao fechar
+  const prevFocusRef = useRef<HTMLElement | null>(null);
 
   // ESC fecha + lock body scroll
   useEffect(() => {
@@ -53,14 +59,52 @@ export function Drawer({
     };
   }, [open, onClose]);
 
+  // Focus return: ao abrir, guarda quem tinha o foco; ao fechar, devolve a ele
+  useEffect(() => {
+    if (!open) return;
+    prevFocusRef.current = document.activeElement as HTMLElement | null;
+    return () => {
+      prevFocusRef.current?.focus?.();
+    };
+  }, [open]);
+
   // Focus first focusable on open
   useEffect(() => {
     if (!open || !dialogRef.current) return;
-    const focusable = dialogRef.current.querySelector<HTMLElement>(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
+    const focusable = dialogRef.current.querySelector<HTMLElement>(FOCUSABLE);
     focusable?.focus();
   }, [open]);
+
+  // Focus trap: Tab/Shift+Tab ciclam só entre os focáveis dentro do painel
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== 'Tab' || !dialogRef.current) return;
+    const focusables = Array.from(
+      dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE),
+    );
+    if (focusables.length === 0) {
+      // Sem focáveis: mantém o foco no painel
+      e.preventDefault();
+      dialogRef.current.focus();
+      return;
+    }
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (e.shiftKey) {
+      // Shift+Tab no primeiro (ou foco fora) → vai pro último
+      if (active === first || !dialogRef.current.contains(active)) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      // Tab no último (ou foco fora) → volta pro primeiro
+      if (active === last || !dialogRef.current.contains(active)) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  };
 
   if (!open) return null;
 
@@ -73,6 +117,8 @@ export function Drawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}
+        tabIndex={-1}
+        onKeyDown={handleKeyDown}
       >
         {(title || !hideClose) && (
           <header className="via-drawer__head">

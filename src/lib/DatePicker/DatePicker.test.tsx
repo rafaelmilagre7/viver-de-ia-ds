@@ -214,6 +214,133 @@ describe('<DatePicker />', () => {
     expect(headers[0]).toBe('dom');
   });
 
+  // ── Keyboard grid navigation (roving tabindex) ─────────────────────────────
+  // June 2026 starts on a Monday and has 30 days, so with weekStartsOn=1 the
+  // grid's first cell is Jun 1 and Jun 15 sits at the start of its week.
+
+  /** The focused day cell (roving tabindex puts focus on the active gridcell). */
+  function focusedDay() {
+    const el = document.activeElement as HTMLElement | null;
+    return el?.getAttribute('role') === 'gridcell' ? el : null;
+  }
+
+  it('opening focuses the selected day and makes only it tabbable (roving tabindex)', async () => {
+    const user = userEvent.setup();
+    render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
+    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+
+    const day15 = monthCell('15');
+    expect(day15).toHaveFocus();
+    expect(day15).toHaveAttribute('tabindex', '0');
+    // every other in-month day is removed from the tab order
+    expect(monthCell('14')).toHaveAttribute('tabindex', '-1');
+    expect(monthCell('16')).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('Arrow keys move focus by one day (←/→) and one week (↑/↓)', async () => {
+    const user = userEvent.setup();
+    render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
+    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    expect(focusedDay()).toHaveTextContent('15');
+
+    await user.keyboard('{ArrowRight}');
+    expect(focusedDay()).toHaveTextContent('16');
+    expect(monthCell('16')).toHaveAttribute('tabindex', '0');
+
+    await user.keyboard('{ArrowLeft}{ArrowLeft}');
+    expect(focusedDay()).toHaveTextContent('14');
+
+    await user.keyboard('{ArrowDown}');
+    expect(focusedDay()).toHaveTextContent('21'); // 14 + 7
+
+    await user.keyboard('{ArrowUp}{ArrowUp}');
+    expect(focusedDay()).toHaveTextContent('7'); // 21 - 14
+  });
+
+  it('Home / End jump to the first / last day of the focused week (clamped to month)', async () => {
+    const user = userEvent.setup();
+    render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
+    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+
+    // move to Wed Jun 17, then Home → Mon Jun 15, End → Sun Jun 21
+    await user.keyboard('{ArrowRight}{ArrowRight}');
+    expect(focusedDay()).toHaveTextContent('17');
+    await user.keyboard('{Home}');
+    expect(focusedDay()).toHaveTextContent('15');
+    await user.keyboard('{End}');
+    expect(focusedDay()).toHaveTextContent('21');
+  });
+
+  it('Arrow across a month boundary switches the visible month and keeps focus on the grid', async () => {
+    const user = userEvent.setup();
+    render(<DatePicker value={new Date(2026, 5, 1)} onChange={() => {}} />);
+    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    expect(focusedDay()).toHaveTextContent('1');
+
+    await user.keyboard('{ArrowLeft}'); // Jun 1 → May 31
+    expect(screen.getByText('maio')).toBeInTheDocument();
+    expect(focusedDay()).toHaveTextContent('31');
+    expect(focusedDay()).not.toHaveClass('outside');
+  });
+
+  it('PageUp / PageDown move the focus by a whole month', async () => {
+    const user = userEvent.setup();
+    render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
+    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+
+    await user.keyboard('{PageDown}'); // June → July
+    expect(screen.getByText('julho')).toBeInTheDocument();
+    expect(focusedDay()).toHaveTextContent('15');
+
+    await user.keyboard('{PageUp}{PageUp}'); // July → May
+    expect(screen.getByText('maio')).toBeInTheDocument();
+    expect(focusedDay()).toHaveTextContent('15');
+  });
+
+  it('Enter selects the focused day and closes the popup', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    render(<Controlled initial={JUN_15_2026} onChange={onChange} />);
+    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+
+    await user.keyboard('{ArrowRight}{ArrowRight}{Enter}'); // focus 17, select
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect((onChange.mock.calls[0][0] as Date).getDate()).toBe(17);
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(screen.getByText('17/06/2026')).toBeInTheDocument();
+  });
+
+  it('Space also selects the focused day', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    render(<Controlled initial={JUN_15_2026} onChange={onChange} />);
+    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+
+    await user.keyboard('{ArrowDown}[Space]'); // focus 22, select
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect((onChange.mock.calls[0][0] as Date).getDate()).toBe(22);
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('Arrow navigation skips disabled days and never crosses the min bound', async () => {
+    const user = userEvent.setup();
+    render(
+      <DatePicker
+        value={JUN_15_2026}
+        onChange={() => {}}
+        min={new Date(2026, 5, 10)}
+      />,
+    );
+    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+
+    // walk left to the min edge (Jun 10), then try to go past it
+    await user.keyboard('{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}'); // 15→10
+    expect(focusedDay()).toHaveTextContent('10');
+    await user.keyboard('{ArrowLeft}'); // 9 is disabled → no selectable day → stays
+    expect(focusedDay()).toHaveTextContent('10');
+    expect(monthCell('9')).toBeDisabled();
+  });
+
   it('honors a custom formatLabel and a custom ariaLabel', () => {
     render(
       <DatePicker

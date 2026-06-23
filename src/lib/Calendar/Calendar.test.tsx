@@ -144,4 +144,143 @@ describe('<Calendar />', () => {
       screen.getByRole('button', { name: /saturday, june 15, 2024/i }),
     ).toBeInTheDocument();
   });
+
+  // ---- Roving tabindex + keyboard navigation -------------------------------
+
+  const jun = (day: number) =>
+    screen.getByRole('button', { name: new RegExp(`\\b${day} de junho de 2024`, 'i') });
+
+  it('exposes exactly one tabbable day cell (roving tabindex), defaulting to the selected day', () => {
+    render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 10)} />);
+
+    const grid = screen.getByRole('grid');
+    const tabbable = within(grid)
+      .getAllByRole('button')
+      .filter((b) => b.getAttribute('tabindex') === '0');
+
+    expect(tabbable).toHaveLength(1);
+    expect(tabbable[0]).toHaveAccessibleName(/, 10 de junho de 2024/i);
+    // every other in-grid day is removed from the tab order
+    expect(jun(11)).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('falls back the roving focus to the first in-month day when nothing is selected and today is elsewhere', () => {
+    // JUNE_2024 is not the current month in CI, so neither value nor today apply.
+    render(<Calendar defaultMonth={JUNE_2024} />);
+    expect(jun(1)).toHaveAttribute('tabindex', '0');
+  });
+
+  it('ArrowRight / ArrowLeft move the roving focus by ±1 day', async () => {
+    const user = userEvent.setup();
+    render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 10)} />);
+
+    jun(10).focus();
+    await user.keyboard('{ArrowRight}');
+    expect(jun(11)).toHaveFocus();
+    expect(jun(11)).toHaveAttribute('tabindex', '0');
+    expect(jun(10)).toHaveAttribute('tabindex', '-1');
+
+    await user.keyboard('{ArrowLeft}{ArrowLeft}');
+    expect(jun(9)).toHaveFocus();
+  });
+
+  it('ArrowDown / ArrowUp move the roving focus by ±7 days (one week)', async () => {
+    const user = userEvent.setup();
+    render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 10)} />);
+
+    jun(10).focus();
+    await user.keyboard('{ArrowDown}');
+    expect(jun(17)).toHaveFocus();
+
+    await user.keyboard('{ArrowUp}');
+    expect(jun(10)).toHaveFocus();
+  });
+
+  it('Home / End jump to the start / end of the week', async () => {
+    const user = userEvent.setup();
+    // June 12 2024 is a Wednesday → week runs Sun(9) .. Sat(15)
+    render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 12)} />);
+
+    jun(12).focus();
+    await user.keyboard('{Home}');
+    expect(jun(9)).toHaveFocus();
+
+    await user.keyboard('{End}');
+    expect(jun(15)).toHaveFocus();
+  });
+
+  it('PageUp / PageDown move to the previous / next month and follow focus there', async () => {
+    const user = userEvent.setup();
+    render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 15)} />);
+
+    jun(15).focus();
+    await user.keyboard('{PageDown}');
+    expect(screen.getByRole('heading', { name: /julho de 2024/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /, 15 de julho de 2024/i })).toHaveFocus();
+
+    await user.keyboard('{PageUp}');
+    expect(screen.getByRole('heading', { name: /junho de 2024/i })).toBeInTheDocument();
+    expect(jun(15)).toHaveFocus();
+  });
+
+  it('arrow navigation across a month boundary switches the view and keeps focus', async () => {
+    const user = userEvent.setup();
+    render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 30)} />);
+
+    // June 30 2024 is a Sunday; +1 day lands on July 1, which is in the next month.
+    jun(30).focus();
+    await user.keyboard('{ArrowRight}');
+    expect(screen.getByRole('heading', { name: /julho de 2024/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /, 1 de julho de 2024/i })).toHaveFocus();
+  });
+
+  it('Enter selects the focused day', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 10)} onChange={onChange} />);
+
+    jun(10).focus();
+    await user.keyboard('{ArrowRight}'); // move to 11
+    await user.keyboard('{Enter}');
+
+    expect(onChange).toHaveBeenCalledOnce();
+    const picked = onChange.mock.calls[0][0] as Date;
+    expect(picked.getDate()).toBe(11);
+  });
+
+  it('Space selects the focused day', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 10)} onChange={onChange} />);
+
+    jun(10).focus();
+    await user.keyboard(' ');
+
+    expect(onChange).toHaveBeenCalledOnce();
+    expect((onChange.mock.calls[0][0] as Date).getDate()).toBe(10);
+  });
+
+  it('keyboard navigation skips disabled days', async () => {
+    const user = userEvent.setup();
+    // window 10..20 enabled; 9 and below disabled, 21 and above disabled.
+    render(
+      <Calendar
+        defaultMonth={JUNE_2024}
+        value={new Date(2024, 5, 11)}
+        min={new Date(2024, 5, 10)}
+        max={new Date(2024, 5, 20)}
+      />,
+    );
+
+    // From the 11, ArrowLeft → 10 (enabled). Another ArrowLeft would hit 9 (disabled);
+    // it should skip to nothing enabled before → stays put at 10.
+    jun(11).focus();
+    await user.keyboard('{ArrowLeft}');
+    expect(jun(10)).toHaveFocus();
+
+    await user.keyboard('{ArrowLeft}');
+    // 9 is disabled and there is no enabled day before it in range → focus stays on 10
+    expect(jun(10)).toHaveFocus();
+    expect(jun(9)).toBeDisabled();
+  });
 });

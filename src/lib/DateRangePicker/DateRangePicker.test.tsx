@@ -95,6 +95,24 @@ describe('<DateRangePicker />', () => {
     expect(screen.getByText('—')).toBeInTheDocument();
   });
 
+  it('clicking the start day again restarts the selection instead of making a 1-day range', async () => {
+    const onChange = vi.fn<(r: DateRange) => void>();
+    const user = userEvent.setup();
+    render(<DateRangePicker defaultMonth={JUNE_2024} onChange={onChange} />);
+
+    await user.click(junDay(10)); // start = 10, end = null
+    await user.click(junDay(10)); // same day again → restart, NOT a 1-day range
+
+    // start stays on 10, end remains empty (no "dias selecionados" summary)
+    expect(screen.getByText(/10 de jun/i)).toBeInTheDocument();
+    expect(screen.getByText('—')).toBeInTheDocument();
+    expect(screen.queryByText(/dias selecionados/)).not.toBeInTheDocument();
+
+    const last = onChange.mock.calls.at(-1)![0];
+    expect(last.start?.getDate()).toBe(10);
+    expect(last.end).toBeNull();
+  });
+
   it('emits the picked range through onChange', async () => {
     const onChange = vi.fn<(r: DateRange) => void>();
     const user = userEvent.setup();

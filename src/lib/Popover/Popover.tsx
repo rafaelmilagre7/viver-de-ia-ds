@@ -55,7 +55,36 @@ export function Popover({
   label,
 }: PopoverProps) {
   const rootRef = useRef<HTMLSpanElement>(null);
+  const triggerWrapRef = useRef<HTMLSpanElement>(null);
   const panelId = useId();
+
+  /**
+   * Resolve the real focusable trigger control. The consumer passes an
+   * arbitrary node (usually a <button>); we wire ARIA + focus return onto
+   * that inner control. If no focusable element exists, fall back to the
+   * trigger wrapper span (made focusable below).
+   */
+  const getTriggerEl = (): HTMLElement | null => {
+    const wrap = triggerWrapRef.current;
+    if (!wrap) return null;
+    const focusable = wrap.querySelector<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    return focusable ?? wrap;
+  };
+
+  // ARIA wiring on the actual focusable trigger control
+  useEffect(() => {
+    const el = getTriggerEl();
+    if (!el) return;
+    el.setAttribute('aria-haspopup', 'dialog');
+    el.setAttribute('aria-expanded', open ? 'true' : 'false');
+    el.setAttribute('aria-controls', panelId);
+    // Ensure the trigger is focusable so Escape can return focus to it.
+    if (el === triggerWrapRef.current && !el.hasAttribute('tabindex')) {
+      el.tabIndex = 0;
+    }
+  }, [open, panelId, trigger]);
 
   // outside click
   useEffect(() => {
@@ -74,9 +103,8 @@ export function Popover({
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onOpenChange(false);
-        // return focus to trigger
-        const trig = rootRef.current?.querySelector<HTMLElement>('[data-popover-trigger]');
-        trig?.focus();
+        // return focus to the real focusable trigger
+        getTriggerEl()?.focus();
       }
     };
     document.addEventListener('keydown', onKey);
@@ -85,7 +113,7 @@ export function Popover({
 
   return (
     <span ref={rootRef} className="via-popover-wrap" data-side={side} data-align={align}>
-      <span data-popover-trigger>
+      <span ref={triggerWrapRef} data-popover-trigger>
         {trigger}
       </span>
       {open && (

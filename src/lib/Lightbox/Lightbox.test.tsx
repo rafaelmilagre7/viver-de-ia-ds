@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Lightbox } from './Lightbox';
@@ -135,6 +136,41 @@ describe('<Lightbox />', () => {
 
     rerender(<Lightbox open={false} onClose={() => {}} images={images} />);
     expect(document.body.style.overflow).not.toBe('hidden');
+  });
+
+  it('moves focus to the close button when opened', () => {
+    render(<Lightbox open onClose={() => {}} images={images} />);
+    expect(screen.getByRole('button', { name: 'Fechar' })).toHaveFocus();
+  });
+
+  it('returns focus to the originating element when closed', async () => {
+    const user = userEvent.setup();
+
+    // an opener button outside the lightbox holds focus before opening
+    function Harness() {
+      const [open, setOpen] = useState(false);
+      return (
+        <>
+          <button type="button" onClick={() => setOpen(true)}>
+            Abrir galeria
+          </button>
+          <Lightbox open={open} onClose={() => setOpen(false)} images={images} />
+        </>
+      );
+    }
+
+    render(<Harness />);
+    const opener = screen.getByRole('button', { name: 'Abrir galeria' });
+    opener.focus();
+    expect(opener).toHaveFocus();
+
+    // open → focus moves into the dialog (close button)
+    await user.click(opener);
+    expect(screen.getByRole('button', { name: 'Fechar' })).toHaveFocus();
+
+    // close via Escape → focus returns to the opener
+    await user.keyboard('{Escape}');
+    expect(opener).toHaveFocus();
   });
 
   it('resets to the index prop each time it reopens', async () => {

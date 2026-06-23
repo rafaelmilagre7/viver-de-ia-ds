@@ -15,6 +15,48 @@ describe('<HoverCard />', () => {
     expect(screen.queryByText('Caio Ribeiro')).not.toBeInTheDocument();
   });
 
+  it('marks the trigger as a dialog popup that is collapsed while closed', () => {
+    render(
+      <HoverCard trigger={<a href="#caio">@caioribeiro</a>}>
+        <strong>Caio Ribeiro</strong>
+      </HoverCard>,
+    );
+    const link = screen.getByRole('link', { name: '@caioribeiro' });
+    expect(link).toHaveAttribute('aria-haspopup', 'dialog');
+    expect(link).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('flips the trigger aria-expanded to true once the card opens', async () => {
+    const user = userEvent.setup();
+    render(
+      <HoverCard trigger={<a href="#caio">@caioribeiro</a>} openDelay={0}>
+        <strong>Caio Ribeiro</strong>
+      </HoverCard>,
+    );
+    const link = screen.getByRole('link', { name: '@caioribeiro' });
+    expect(link).toHaveAttribute('aria-expanded', 'false');
+
+    await user.hover(link);
+    await screen.findByRole('dialog');
+    await waitFor(() => expect(link).toHaveAttribute('aria-expanded', 'true'));
+  });
+
+  it('gives the dialog an accessible name from its content', async () => {
+    const user = userEvent.setup();
+    render(
+      <HoverCard trigger={<a href="#caio">@caioribeiro</a>} openDelay={0}>
+        <strong>Caio Ribeiro</strong>
+        <em>Fundador · Viver de IA</em>
+      </HoverCard>,
+    );
+    await user.hover(screen.getByRole('link', { name: '@caioribeiro' }));
+    const card = await screen.findByRole('dialog');
+    // aria-labelledby points to the body, so the card is announced by its content.
+    expect(card).toHaveAccessibleName(/Caio Ribeiro/);
+    // queryable by accessible name through the role query
+    expect(screen.getByRole('dialog', { name: /Caio Ribeiro/ })).toBe(card);
+  });
+
   it('opens the card on mouse enter after the open delay', async () => {
     const user = userEvent.setup();
     render(

@@ -198,4 +198,190 @@ describe('<DropdownMenu />', () => {
 
     expect(trigger).toHaveFocus();
   });
+
+  it('focuses the first menuitem when the menu opens', async () => {
+    const user = userEvent.setup();
+    render(<DropdownMenu trigger={<button>Abrir</button>} items={items} />);
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
+  });
+
+  it('uses roving tabindex: only the focused menuitem is tabbable', async () => {
+    const user = userEvent.setup();
+    render(<DropdownMenu trigger={<button>Abrir</button>} items={items} />);
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+
+    const [first, second, third] = screen.getAllByRole('menuitem');
+    expect(first).toHaveAttribute('tabindex', '0');
+    expect(second).toHaveAttribute('tabindex', '-1');
+    expect(third).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('moves focus down with ArrowDown and wraps to the first item at the end', async () => {
+    const user = userEvent.setup();
+    render(<DropdownMenu trigger={<button>Abrir</button>} items={items} />);
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
+
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: 'Compartilhar' })).toHaveFocus();
+    expect(screen.getByRole('menuitem', { name: 'Compartilhar' })).toHaveAttribute('tabindex', '0');
+
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveFocus();
+
+    // wraps back to the first item
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
+  });
+
+  it('moves focus up with ArrowUp and wraps to the last item from the first', async () => {
+    const user = userEvent.setup();
+    render(<DropdownMenu trigger={<button>Abrir</button>} items={items} />);
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
+
+    // wraps from first up to last
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveFocus();
+
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('menuitem', { name: 'Compartilhar' })).toHaveFocus();
+  });
+
+  it('jumps to first and last item with Home and End', async () => {
+    const user = userEvent.setup();
+    render(<DropdownMenu trigger={<button>Abrir</button>} items={items} />);
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+
+    await user.keyboard('{End}');
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveFocus();
+
+    await user.keyboard('{Home}');
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
+  });
+
+  it('skips disabled items while navigating with arrows', async () => {
+    const user = userEvent.setup();
+    render(
+      <DropdownMenu
+        trigger={<button>Abrir</button>}
+        items={[
+          { id: 'edit', label: 'Editar perfil' },
+          { id: 'share', label: 'Compartilhar', disabled: true },
+          { id: 'delete', label: 'Excluir' },
+        ]}
+      />,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
+
+    // ArrowDown jumps over the disabled "Compartilhar" straight to "Excluir"
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveFocus();
+
+    // ArrowUp jumps back over the disabled item to the first
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
+  });
+
+  it('opens with focus on the first enabled item when the first item is disabled', async () => {
+    const user = userEvent.setup();
+    render(
+      <DropdownMenu
+        trigger={<button>Abrir</button>}
+        items={[
+          { id: 'edit', label: 'Editar perfil', disabled: true },
+          { id: 'share', label: 'Compartilhar' },
+        ]}
+      />,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+
+    expect(screen.getByRole('menuitem', { name: 'Compartilhar' })).toHaveFocus();
+  });
+
+  it('navigates across groups with arrow keys as a single roving list', async () => {
+    const user = userEvent.setup();
+    render(
+      <DropdownMenu
+        trigger={<button>Abrir</button>}
+        groups={[
+          { id: 'account', label: 'Conta', items: [{ id: 'profile', label: 'Perfil' }] },
+          { id: 'danger', label: 'Zona de risco', items: [{ id: 'leave', label: 'Sair' }] },
+        ]}
+      />,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+    expect(screen.getByRole('menuitem', { name: 'Perfil' })).toHaveFocus();
+
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: 'Sair' })).toHaveFocus();
+  });
+
+  it('activates the focused item with Enter and returns focus to the trigger', async () => {
+    const onSelect = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <DropdownMenu
+        trigger={<button>Abrir</button>}
+        items={[
+          { id: 'edit', label: 'Editar perfil' },
+          { id: 'share', label: 'Compartilhar', onSelect },
+        ]}
+      />,
+    );
+
+    const trigger = screen.getByRole('button', { name: 'Abrir' });
+    await user.click(trigger);
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: 'Compartilhar' })).toHaveFocus();
+
+    await user.keyboard('{Enter}');
+
+    expect(onSelect).toHaveBeenCalledOnce();
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    expect(trigger).toHaveFocus();
+  });
+
+  it('activates the focused item with Space', async () => {
+    const onSelect = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <DropdownMenu
+        trigger={<button>Abrir</button>}
+        items={[{ id: 'edit', label: 'Editar perfil', onSelect }]}
+      />,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Abrir' }));
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
+
+    await user.keyboard('{ }');
+
+    expect(onSelect).toHaveBeenCalledOnce();
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+  });
+
+  it('closes on Escape and returns focus to the trigger', async () => {
+    const user = userEvent.setup();
+    render(<DropdownMenu trigger={<button>Abrir</button>} items={items} />);
+
+    const trigger = screen.getByRole('button', { name: 'Abrir' });
+    await user.click(trigger);
+    expect(screen.getByRole('menu')).toBeInTheDocument();
+
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    expect(trigger).toHaveFocus();
+  });
 });

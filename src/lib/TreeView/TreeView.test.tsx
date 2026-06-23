@@ -140,26 +140,150 @@ describe('<TreeView />', () => {
     expect(screen.queryAllByRole('treeitem')).toHaveLength(0);
   });
 
-  it('arrow keys do nothing (no tree keyboard navigation is wired up)', async () => {
-    // The docstring advertises "keyboard arrow nav" but the component attaches no
-    // onKeyDown handler. Arrow keys neither move focus nor expand/collapse. Asserting
-    // the real current behavior (this is a known a11y gap — see bugsFound).
-    const onSelect = vi.fn();
+  it('roving tabindex: only the active row is tabbable (tabIndex 0), the rest are -1', () => {
+    render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
+    // With no selection and nothing focused yet, the first visible row is the roving one.
+    const buttons = screen.getAllByRole('treeitem').map((li) => li.querySelector('button')!);
+    const cursoA = screen.getByText('Curso A').closest('button')!;
+    expect(cursoA).toHaveAttribute('tabindex', '0');
+    buttons
+      .filter((b) => b !== cursoA)
+      .forEach((b) => expect(b).toHaveAttribute('tabindex', '-1'));
+  });
+
+  it('roving tabindex: the selected row is the tabbable one when it is visible', () => {
+    render(<TreeView nodes={nodes} selected="avulsa" />);
+    expect(screen.getByText('Aula avulsa').closest('button')!).toHaveAttribute('tabindex', '0');
+    expect(screen.getByText('Curso A').closest('button')!).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('ArrowDown / ArrowUp move focus between VISIBLE rows', async () => {
+    const user = userEvent.setup();
+    render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
+
+    const cursoA = screen.getByText('Curso A').closest('button')!;
+    cursoA.focus();
+    expect(cursoA).toHaveFocus();
+
+    // Down walks into the expanded children, then back out to the next top-level node.
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByText('Aula 1').closest('button')!).toHaveFocus();
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByText('Aula 2').closest('button')!).toHaveFocus();
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByText('Curso B').closest('button')!).toHaveFocus();
+
+    // Up reverses it.
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByText('Aula 2').closest('button')!).toHaveFocus();
+  });
+
+  it('ArrowDown stops at the last visible row and ArrowUp stops at the first', async () => {
+    const user = userEvent.setup();
+    render(<TreeView nodes={nodes} />);
+
+    const cursoA = screen.getByText('Curso A').closest('button')!;
+    cursoA.focus();
+    await user.keyboard('{ArrowUp}');
+    expect(cursoA).toHaveFocus(); // already first, no wrap
+
+    const avulsa = screen.getByText('Aula avulsa').closest('button')!;
+    avulsa.focus();
+    await user.keyboard('{ArrowDown}');
+    expect(avulsa).toHaveFocus(); // already last, no wrap
+  });
+
+  it('Home / End jump to the first / last visible row', async () => {
+    const user = userEvent.setup();
+    render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
+
+    const aula1 = screen.getByText('Aula 1').closest('button')!;
+    aula1.focus();
+    await user.keyboard('{End}');
+    expect(screen.getByText('Aula avulsa').closest('button')!).toHaveFocus();
+    await user.keyboard('{Home}');
+    expect(screen.getByText('Curso A').closest('button')!).toHaveFocus();
+  });
+
+  it('ArrowRight on a collapsed parent expands it (focus stays on the parent)', async () => {
     const onExpandedChange = vi.fn();
     const user = userEvent.setup();
-    render(<TreeView nodes={nodes} onSelect={onSelect} onExpandedChange={onExpandedChange} />);
+    render(<TreeView nodes={nodes} onExpandedChange={onExpandedChange} />);
 
-    const firstRow = screen.getByText('Curso A').closest('button')!;
-    firstRow.focus();
-    await user.keyboard('{ArrowDown}{ArrowRight}{ArrowLeft}{ArrowUp}');
+    const cursoA = screen.getByText('Curso A').closest('button')!;
+    cursoA.focus();
+    await user.keyboard('{ArrowRight}');
+
+    expect(onExpandedChange).toHaveBeenCalledWith(['curso-a']);
+    expect(screen.getByText('Aula 1')).toBeInTheDocument();
+    expect(cursoA).toHaveFocus();
+  });
+
+  it('ArrowRight on an already-expanded parent moves focus to its first child', async () => {
+    const user = userEvent.setup();
+    render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
+
+    const cursoA = screen.getByText('Curso A').closest('button')!;
+    cursoA.focus();
+    await user.keyboard('{ArrowRight}');
+    expect(screen.getByText('Aula 1').closest('button')!).toHaveFocus();
+  });
+
+  it('ArrowRight on a leaf does nothing', async () => {
+    const onExpandedChange = vi.fn();
+    const onSelect = vi.fn();
+    const user = userEvent.setup();
+    render(<TreeView nodes={nodes} onExpandedChange={onExpandedChange} onSelect={onSelect} />);
+
+    const avulsa = screen.getByText('Aula avulsa').closest('button')!;
+    avulsa.focus();
+    await user.keyboard('{ArrowRight}');
 
     expect(onExpandedChange).not.toHaveBeenCalled();
     expect(onSelect).not.toHaveBeenCalled();
-    expect(screen.queryByText('Aula 1')).not.toBeInTheDocument();
+    expect(avulsa).toHaveFocus();
   });
 
-  it('native Enter on a focused parent row activates it (default button behavior)', async () => {
-    // Rows are <button>s, so Enter/Space activate via the browser default, firing onClick.
+  it('ArrowLeft on an expanded parent collapses it (focus stays on the parent)', async () => {
+    const onExpandedChange = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <TreeView nodes={nodes} defaultExpanded={['curso-a']} onExpandedChange={onExpandedChange} />,
+    );
+
+    const cursoA = screen.getByText('Curso A').closest('button')!;
+    cursoA.focus();
+    await user.keyboard('{ArrowLeft}');
+
+    expect(onExpandedChange).toHaveBeenCalledWith([]);
+    expect(screen.queryByText('Aula 1')).not.toBeInTheDocument();
+    expect(cursoA).toHaveFocus();
+  });
+
+  it('ArrowLeft on a child (or collapsed parent) moves focus to the parent', async () => {
+    const user = userEvent.setup();
+    render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
+
+    const aula1 = screen.getByText('Aula 1').closest('button')!;
+    aula1.focus();
+    await user.keyboard('{ArrowLeft}');
+    expect(screen.getByText('Curso A').closest('button')!).toHaveFocus();
+  });
+
+  it('ArrowLeft on a top-level collapsed/leaf row with no parent does nothing', async () => {
+    const onExpandedChange = vi.fn();
+    const user = userEvent.setup();
+    render(<TreeView nodes={nodes} onExpandedChange={onExpandedChange} />);
+
+    const avulsa = screen.getByText('Aula avulsa').closest('button')!;
+    avulsa.focus();
+    await user.keyboard('{ArrowLeft}');
+
+    expect(onExpandedChange).not.toHaveBeenCalled();
+    expect(avulsa).toHaveFocus();
+  });
+
+  it('Enter activates/selects a row and toggles a parent', async () => {
     const onSelect = vi.fn();
     const onExpandedChange = vi.fn();
     const user = userEvent.setup();
@@ -171,6 +295,17 @@ describe('<TreeView />', () => {
     expect(onSelect).toHaveBeenLastCalledWith('curso-a');
     expect(onExpandedChange).toHaveBeenCalledWith(['curso-a']);
     expect(screen.getByText('Aula 1')).toBeInTheDocument();
+  });
+
+  it('Space activates/selects a leaf row', async () => {
+    const onSelect = vi.fn();
+    const user = userEvent.setup();
+    render(<TreeView nodes={nodes} onSelect={onSelect} />);
+
+    screen.getByText('Aula avulsa').closest('button')!.focus();
+    await user.keyboard(' ');
+
+    expect(onSelect).toHaveBeenLastCalledWith('avulsa');
   });
 
   it('every treeitem is a tree descendant and parents nest children under role=group', () => {

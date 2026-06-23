@@ -194,4 +194,45 @@ describe('<Popover />', () => {
     await user.click(screen.getByRole('button', { name: 'Abrir' }));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
+
+  it('wires aria-haspopup="dialog" and aria-expanded onto the trigger control', async () => {
+    const user = userEvent.setup();
+    render(<Harness />);
+
+    const trigger = screen.getByRole('button', { name: 'Abrir' });
+    // closed: announces it controls a dialog and is collapsed
+    expect(trigger).toHaveAttribute('aria-haspopup', 'dialog');
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+    await user.click(trigger);
+    // open: expanded flips to true
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('points the trigger aria-controls at the dialog panel id', async () => {
+    const user = userEvent.setup();
+    render(<Harness />);
+
+    const trigger = screen.getByRole('button', { name: 'Abrir' });
+    const controls = trigger.getAttribute('aria-controls');
+    expect(controls).toBeTruthy();
+
+    await user.click(trigger);
+    const panel = screen.getByRole('dialog');
+    // the id the trigger advertises is the actual panel rendered when open
+    expect(panel).toHaveAttribute('id', controls!);
+  });
+
+  it('returns focus to the trigger when closed via Escape', async () => {
+    const user = userEvent.setup();
+    render(<Harness />);
+
+    const trigger = screen.getByRole('button', { name: 'Abrir' });
+    await user.click(trigger);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(trigger).toHaveFocus();
+  });
 });

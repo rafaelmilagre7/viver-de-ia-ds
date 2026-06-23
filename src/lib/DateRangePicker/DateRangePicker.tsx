@@ -7,6 +7,11 @@ export interface DateRange {
   end: Date | null;
 }
 
+const sameDay = (a: Date, b: Date) =>
+  a.getFullYear() === b.getFullYear() &&
+  a.getMonth() === b.getMonth() &&
+  a.getDate() === b.getDate();
+
 export interface DateRangePickerProps {
   value?: DateRange;
   onChange?: (range: DateRange) => void;
@@ -51,6 +56,10 @@ export function DateRangePicker({
   const handleDayClick = (d: Date) => {
     if (!range.start || (range.start && range.end)) {
       // start new range
+      setRange({ start: d, end: null });
+    } else if (sameDay(d, range.start)) {
+      // clicar de novo no MESMO start = reiniciar a seleção (limpa end),
+      // em vez de virar um range de 1 dia
       setRange({ start: d, end: null });
     } else {
       // complete range

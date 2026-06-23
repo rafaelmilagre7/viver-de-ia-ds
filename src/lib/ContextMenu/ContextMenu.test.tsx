@@ -100,6 +100,145 @@ describe('<ContextMenu />', () => {
     expect(screen.getByRole('menu')).toBeInTheDocument();
   });
 
+  it('focuses the first item when the menu opens', async () => {
+    const user = userEvent.setup();
+    renderMenu();
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    expect(screen.getByRole('menuitem', { name: 'Editar' })).toHaveFocus();
+  });
+
+  it('focuses the first ENABLED item when the leading item is disabled', async () => {
+    const items: ContextMenuOption[] = [
+      { label: 'Indisponível', disabled: true, onSelect: vi.fn() },
+      { label: 'Editar', onSelect: vi.fn() },
+      { label: 'Duplicar', onSelect: vi.fn() },
+    ];
+    const user = userEvent.setup();
+    renderMenu(items);
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    expect(screen.getByRole('menuitem', { name: 'Editar' })).toHaveFocus();
+  });
+
+  it('ArrowDown moves focus to the next item (with wrap-around)', async () => {
+    const user = userEvent.setup();
+    renderMenu();
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: /Duplicar/ })).toHaveFocus();
+
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveFocus();
+
+    await user.keyboard('{ArrowDown}'); // wraps past end → back to first
+    expect(screen.getByRole('menuitem', { name: 'Editar' })).toHaveFocus();
+  });
+
+  it('ArrowUp moves focus to the previous item (with wrap)', async () => {
+    const user = userEvent.setup();
+    renderMenu();
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    await user.keyboard('{ArrowUp}'); // wraps from first → last
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveFocus();
+
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('menuitem', { name: /Duplicar/ })).toHaveFocus();
+  });
+
+  it('arrow navigation skips disabled items', async () => {
+    const items: ContextMenuOption[] = [
+      { label: 'Editar', onSelect: vi.fn() },
+      { label: 'Indisponível', disabled: true, onSelect: vi.fn() },
+      { label: 'Excluir', onSelect: vi.fn() },
+    ];
+    const user = userEvent.setup();
+    renderMenu(items);
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    expect(screen.getByRole('menuitem', { name: 'Editar' })).toHaveFocus();
+    await user.keyboard('{ArrowDown}'); // skips 'Indisponível'
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveFocus();
+
+    await user.keyboard('{ArrowUp}'); // skips 'Indisponível' on the way back
+    expect(screen.getByRole('menuitem', { name: 'Editar' })).toHaveFocus();
+  });
+
+  it('Home / End jump focus to first / last item', async () => {
+    const user = userEvent.setup();
+    renderMenu();
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    await user.keyboard('{End}');
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveFocus();
+
+    await user.keyboard('{Home}');
+    expect(screen.getByRole('menuitem', { name: 'Editar' })).toHaveFocus();
+  });
+
+  it('End lands on the last ENABLED item when the trailing item is disabled', async () => {
+    const items: ContextMenuOption[] = [
+      { label: 'Editar', onSelect: vi.fn() },
+      { label: 'Duplicar', onSelect: vi.fn() },
+      { label: 'Indisponível', disabled: true, onSelect: vi.fn() },
+    ];
+    const user = userEvent.setup();
+    renderMenu(items);
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    await user.keyboard('{End}');
+    expect(screen.getByRole('menuitem', { name: 'Duplicar' })).toHaveFocus();
+  });
+
+  it('Enter activates the focused item and closes the menu', async () => {
+    const onSelect = vi.fn();
+    const items: ContextMenuOption[] = [
+      { label: 'Editar', onSelect },
+      { label: 'Duplicar', onSelect: vi.fn() },
+    ];
+    const user = userEvent.setup();
+    renderMenu(items);
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    await user.keyboard('{Enter}');
+    expect(onSelect).toHaveBeenCalledOnce();
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+  });
+
+  it('Space activates the focused item and closes the menu', async () => {
+    const onEdit = vi.fn();
+    const onDup = vi.fn();
+    const items: ContextMenuOption[] = [
+      { label: 'Editar', onSelect: onEdit },
+      { label: 'Duplicar', onSelect: onDup },
+    ];
+    const user = userEvent.setup();
+    renderMenu(items);
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    await user.keyboard('{ArrowDown}'); // focus 'Duplicar'
+    await user.keyboard('[Space]');
+    expect(onDup).toHaveBeenCalledOnce();
+    expect(onEdit).not.toHaveBeenCalled();
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+  });
+
+  it('only the focused item is reachable with Tab (tabIndex roving)', async () => {
+    const user = userEvent.setup();
+    renderMenu();
+    await user.pointer({ keys: '[MouseRight]', target: screen.getByText('alvo') });
+
+    expect(screen.getByRole('menuitem', { name: 'Editar' })).toHaveAttribute('tabIndex', '0');
+    expect(screen.getByRole('menuitem', { name: /Duplicar/ })).toHaveAttribute('tabIndex', '-1');
+    expect(screen.getByRole('menuitem', { name: 'Excluir' })).toHaveAttribute('tabIndex', '-1');
+
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('menuitem', { name: 'Editar' })).toHaveAttribute('tabIndex', '-1');
+    expect(screen.getByRole('menuitem', { name: /Duplicar/ })).toHaveAttribute('tabIndex', '0');
+  });
+
   it('closes when Escape is pressed', async () => {
     const user = userEvent.setup();
     renderMenu();

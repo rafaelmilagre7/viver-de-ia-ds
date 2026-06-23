@@ -136,10 +136,6 @@ export function Combobox({
       )}
       <div
         className={`via-combobox__trigger ${open ? 'is-open' : ''} ${disabled ? 'is-disabled' : ''}`}
-        role="combobox"
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        aria-controls={listId}
       >
         <Search size={13} strokeWidth={2.2} className="via-combobox__icon" aria-hidden="true" />
         <input
@@ -147,6 +143,10 @@ export function Combobox({
           id={`${autoId}-input`}
           type="text"
           className="via-combobox__input"
+          role="combobox"
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          aria-controls={listId}
           aria-label={!label ? ariaLabel : undefined}
           aria-labelledby={label ? labelId : undefined}
           placeholder={selectedOption && typeof selectedOption.label === 'string' ? selectedOption.label : placeholder}

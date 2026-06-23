@@ -19,12 +19,16 @@ const cities = [
 ];
 
 describe('<Combobox />', () => {
-  it('renders the trigger closed by default with the right ARIA wiring', () => {
+  it('puts the WAI-ARIA combobox role/state on the focusable input, not the wrapper', () => {
     render(<Combobox options={cities} ariaLabel="Cidade" />);
+    // role="combobox" now lives on the <input> itself (the focusable element)
     const combobox = screen.getByRole('combobox');
+    expect(combobox.tagName).toBe('INPUT');
     expect(combobox).toHaveAttribute('aria-haspopup', 'listbox');
     expect(combobox).toHaveAttribute('aria-expanded', 'false');
     expect(combobox).toHaveAttribute('aria-controls');
+    // the wrapper div no longer carries the combobox role
+    expect(combobox.closest('.via-combobox__trigger')).not.toHaveAttribute('role');
     // closed → no listbox in the tree
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
   });
@@ -32,7 +36,7 @@ describe('<Combobox />', () => {
   it('opens the listbox on input focus and lists every option', async () => {
     const user = userEvent.setup();
     render(<Combobox options={cities} ariaLabel="Cidade" />);
-    await user.click(screen.getByRole('textbox'));
+    await user.click(screen.getByRole('combobox'));
     expect(screen.getByRole('combobox')).toHaveAttribute('aria-expanded', 'true');
     const opts = screen.getAllByRole('option');
     expect(opts).toHaveLength(3);
@@ -43,8 +47,8 @@ describe('<Combobox />', () => {
   it('filters options by typed query (case-insensitive)', async () => {
     const user = userEvent.setup();
     render(<Combobox options={cities} ariaLabel="Cidade" />);
-    await user.click(screen.getByRole('textbox'));
-    await user.type(screen.getByRole('textbox'), 'rio');
+    await user.click(screen.getByRole('combobox'));
+    await user.type(screen.getByRole('combobox'), 'rio');
     const opts = screen.getAllByRole('option');
     expect(opts).toHaveLength(1);
     expect(screen.getByRole('option', { name: 'Rio de Janeiro' })).toBeInTheDocument();
@@ -53,8 +57,8 @@ describe('<Combobox />', () => {
   it('shows the empty label when nothing matches the query', async () => {
     const user = userEvent.setup();
     render(<Combobox options={cities} ariaLabel="Cidade" emptyLabel="Nada encontrado" />);
-    await user.click(screen.getByRole('textbox'));
-    await user.type(screen.getByRole('textbox'), 'zzz');
+    await user.click(screen.getByRole('combobox'));
+    await user.type(screen.getByRole('combobox'), 'zzz');
     expect(screen.queryByRole('option')).not.toBeInTheDocument();
     expect(screen.getByText('Nada encontrado')).toBeInTheDocument();
   });
@@ -63,31 +67,31 @@ describe('<Combobox />', () => {
     const onValueChange = vi.fn();
     const user = userEvent.setup();
     render(<Combobox options={cities} ariaLabel="Cidade" onValueChange={onValueChange} />);
-    await user.click(screen.getByRole('textbox'));
+    await user.click(screen.getByRole('combobox'));
     await user.click(screen.getByRole('option', { name: 'Porto Alegre' }));
     expect(onValueChange).toHaveBeenCalledWith('poa');
     // list closed after select
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
     expect(screen.getByRole('combobox')).toHaveAttribute('aria-expanded', 'false');
     // selected (uncontrolled) → label populates the input value
-    expect(screen.getByRole('textbox')).toHaveValue('Porto Alegre');
+    expect(screen.getByRole('combobox')).toHaveValue('Porto Alegre');
   });
 
   it('marks the selected option with aria-selected="true" (uncontrolled defaultValue)', async () => {
     const user = userEvent.setup();
     render(<Combobox options={cities} ariaLabel="Cidade" defaultValue="rj" />);
-    await user.click(screen.getByRole('textbox'));
+    await user.click(screen.getByRole('combobox'));
     expect(screen.getByRole('option', { name: 'Rio de Janeiro' })).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByRole('option', { name: 'São Paulo' })).toHaveAttribute('aria-selected', 'false');
   });
 
-  it('ArrowDown navigation + Enter selects the active option and sets aria-activedescendant', async () => {
+  it('ArrowDown navigation + Enter selects the active option and sets aria-activedescendant on the input', async () => {
     const onValueChange = vi.fn();
     const user = userEvent.setup();
     render(<Combobox options={cities} ariaLabel="Cidade" onValueChange={onValueChange} />);
-    const input = screen.getByRole('textbox');
+    const input = screen.getByRole('combobox');
     await user.click(input); // onFocus opens + active=0
-    // active starts at 0 (São Paulo) and is exposed via aria-activedescendant
+    // active starts at 0 (São Paulo) and is exposed via aria-activedescendant on the input
     expect(input).toHaveAttribute('aria-activedescendant');
     await user.keyboard('{ArrowDown}'); // → index 1 (Rio)
     await user.keyboard('{Enter}');
@@ -97,7 +101,7 @@ describe('<Combobox />', () => {
   it('Escape closes the open listbox', async () => {
     const user = userEvent.setup();
     render(<Combobox options={cities} ariaLabel="Cidade" />);
-    await user.click(screen.getByRole('textbox'));
+    await user.click(screen.getByRole('combobox'));
     expect(screen.getByRole('listbox')).toBeInTheDocument();
     await user.keyboard('{Escape}');
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
@@ -113,7 +117,7 @@ describe('<Combobox />', () => {
       { value: 'c', label: 'Charlie' },
     ];
     render(<Combobox options={opts} ariaLabel="Letra" onValueChange={onValueChange} />);
-    await user.click(screen.getByRole('textbox')); // active=0 (Alpha)
+    await user.click(screen.getByRole('combobox')); // active=0 (Alpha)
     await user.keyboard('{ArrowDown}'); // skips disabled Bravo → Charlie
     await user.keyboard('{Enter}');
     expect(onValueChange).toHaveBeenCalledWith('c');
@@ -127,7 +131,7 @@ describe('<Combobox />', () => {
       { value: 'b', label: 'Bravo', disabled: true },
     ];
     render(<Combobox options={opts} ariaLabel="Letra" onValueChange={onValueChange} />);
-    await user.click(screen.getByRole('textbox'));
+    await user.click(screen.getByRole('combobox'));
     const disabledOpt = screen.getByRole('option', { name: 'Bravo' });
     expect(disabledOpt).toHaveAttribute('aria-disabled', 'true');
     await user.click(disabledOpt);
@@ -142,23 +146,23 @@ describe('<Combobox />', () => {
     const { rerender } = render(
       <Combobox options={cities} ariaLabel="Cidade" value="sp" onValueChange={onValueChange} />,
     );
-    expect(screen.getByRole('textbox')).toHaveValue('São Paulo');
+    expect(screen.getByRole('combobox')).toHaveValue('São Paulo');
 
-    await user.click(screen.getByRole('textbox'));
+    await user.click(screen.getByRole('combobox'));
     await user.click(screen.getByRole('option', { name: 'Rio de Janeiro' }));
     // onValueChange fires but the displayed value stays controlled until parent updates
     expect(onValueChange).toHaveBeenCalledWith('rj');
-    expect(screen.getByRole('textbox')).toHaveValue('São Paulo');
+    expect(screen.getByRole('combobox')).toHaveValue('São Paulo');
 
     // parent confirms the change
     rerender(<Combobox options={cities} ariaLabel="Cidade" value="rj" onValueChange={onValueChange} />);
-    expect(screen.getByRole('textbox')).toHaveValue('Rio de Janeiro');
+    expect(screen.getByRole('combobox')).toHaveValue('Rio de Janeiro');
   });
 
   it('disabled combobox does not open on focus and disables the input', async () => {
     const user = userEvent.setup();
     render(<Combobox options={cities} ariaLabel="Cidade" disabled />);
-    const input = screen.getByRole('textbox');
+    const input = screen.getByRole('combobox');
     expect(input).toBeDisabled();
     await user.click(input);
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
@@ -167,6 +171,6 @@ describe('<Combobox />', () => {
 
   it('associates a visible label with the input via id/htmlFor', () => {
     render(<Combobox options={cities} label="Cidade do evento" />);
-    expect(screen.getByLabelText('Cidade do evento')).toBe(screen.getByRole('textbox'));
+    expect(screen.getByLabelText('Cidade do evento')).toBe(screen.getByRole('combobox'));
   });
 });
