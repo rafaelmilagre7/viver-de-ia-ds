@@ -47,31 +47,44 @@ export function TimePicker({
   disabled = false,
   size = 'md',
 }: TimePickerProps) {
+  const isControlled = controlledValue !== undefined;
   const [internal, setInternal] = useState('');
-  const value = controlledValue !== undefined ? controlledValue : internal;
+  const value = isControlled ? controlledValue : internal;
   const hRef = useRef<HTMLInputElement>(null);
   const mRef = useRef<HTMLInputElement>(null);
 
   const [h, m] = (value || ':').split(':');
 
-  const setTime = (hh: string, mm: string) => {
+  // Rascunho do que está sendo digitado (null = não editando → exibe o valor canônico).
+  // Sem isso, o zero-pad do 1º dígito ("1"→"01") + maxLength=2 travavam o 2º dígito.
+  const [hDraft, setHDraft] = useState<string | null>(null);
+  const [mDraft, setMDraft] = useState<string | null>(null);
+  const hShow = hDraft ?? h ?? '';
+  const mShow = mDraft ?? m ?? '';
+
+  const emit = (hh: string, mm: string) => {
     const hNum = Math.max(0, Math.min(23, parseInt(hh || '0', 10) || 0));
     const mNum = Math.max(0, Math.min(59, parseInt(mm || '0', 10) || 0));
     const next = `${pad(hNum)}:${pad(mNum)}`;
-    if (controlledValue === undefined) setInternal(next);
+    if (!isControlled) setInternal(next);
     onChange?.(next);
   };
 
   const handleH = (e: ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value.replace(/\D/g, '').slice(0, 2);
+    setHDraft(raw);
+    emit(raw, mShow);
     if (raw.length === 2) mRef.current?.focus();
-    setTime(raw, m || '00');
   };
 
   const handleM = (e: ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value.replace(/\D/g, '').slice(0, 2);
-    setTime(h || '00', raw);
+    setMDraft(raw);
+    emit(hShow, raw);
   };
+
+  // Ao sair do campo, descarta o rascunho → volta a exibir o valor canônico (HH:MM padded)
+  const commitDrafts = () => { setHDraft(null); setMDraft(null); };
 
   const handleStep = (delta: number) => {
     if (disabled) return;
@@ -83,7 +96,9 @@ export function TimePicker({
     const next = `${pad(hNum)}:${pad(mNum)}`;
     if (min && next < min) return;
     if (max && next > max) return;
-    if (controlledValue === undefined) setInternal(next);
+    setHDraft(null);
+    setMDraft(null);
+    if (!isControlled) setInternal(next);
     onChange?.(next);
   };
 
@@ -98,8 +113,9 @@ export function TimePicker({
           inputMode="numeric"
           maxLength={2}
           placeholder="HH"
-          value={h || ''}
+          value={hShow}
           onChange={handleH}
+          onBlur={commitDrafts}
           disabled={disabled}
           className="via-tp__cell"
           aria-label="Hora"
@@ -111,8 +127,9 @@ export function TimePicker({
           inputMode="numeric"
           maxLength={2}
           placeholder="MM"
-          value={m || ''}
+          value={mShow}
           onChange={handleM}
+          onBlur={commitDrafts}
           disabled={disabled}
           className="via-tp__cell"
           aria-label="Minuto"

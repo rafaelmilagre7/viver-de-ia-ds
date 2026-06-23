@@ -110,9 +110,11 @@ export function Command({
     if (open) requestAnimationFrame(() => inputRef.current?.focus());
   }, [open]);
 
-  // clamp highlight quando a lista filtrada encolhe — ajuste em render-phase
-  if (highlight >= flat.length) {
-    setHighlight(Math.max(0, flat.length - 1));
+  // clamp highlight quando a lista filtrada encolhe — ajuste em render-phase.
+  // Guarda flat.length > 0: com a lista vazia, highlight=0 e "0 >= 0" disparava
+  // setHighlight(0) em loop infinito ("Too many re-renders") em vez de mostrar o emptyLabel.
+  if (flat.length > 0 && highlight > flat.length - 1) {
+    setHighlight(flat.length - 1);
   }
 
   // ESC + body scroll lock
