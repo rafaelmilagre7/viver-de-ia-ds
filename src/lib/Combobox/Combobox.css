@@ -141,6 +141,11 @@
   background: rgba(10, 31, 59, 0.05);
 }
 
+/* Destaque por teclado (navegação com setas) */
+.via-combobox__option.is-active {
+  background: rgba(10, 31, 59, 0.09);
+}
+
 .via-combobox__option.is-selected {
   background: rgba(10, 31, 59, 0.06);
 }

@@ -61,6 +61,8 @@ export function Combobox({
   const current = value ?? internal;
   const wrapRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const [active, setActive] = useState(-1);
 
   const selectedOption = options.find((o) => o.value === current);
 
@@ -78,6 +80,25 @@ export function Combobox({
     setOpen(false);
     setQuery('');
   };
+
+  // Navegação por teclado: move o destaque pulando opções desabilitadas
+  const moveActive = (dir: 1 | -1) => {
+    if (!filtered.length) return;
+    setActive((i) => {
+      let n = i;
+      for (let step = 0; step < filtered.length; step++) {
+        n = (n + dir + filtered.length) % filtered.length;
+        if (!filtered[n]?.disabled) return n;
+      }
+      return i;
+    });
+  };
+
+  // Mantém a opção ativa visível na rolagem
+  useEffect(() => {
+    if (active < 0 || !listRef.current) return;
+    listRef.current.querySelector('.is-active')?.scrollIntoView({ block: 'nearest' });
+  }, [active]);
 
   // Click outside
   useEffect(() => {
@@ -132,9 +153,19 @@ export function Combobox({
           value={open ? query : (selectedOption && typeof selectedOption.label === 'string' ? selectedOption.label : '')}
           onChange={(e) => {
             setQuery(e.target.value);
+            setActive(0);
             if (!open) setOpen(true);
           }}
-          onFocus={() => !disabled && setOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === 'ArrowDown') { e.preventDefault(); if (open) moveActive(1); else { setOpen(true); setActive(0); } }
+            else if (e.key === 'ArrowUp') { e.preventDefault(); moveActive(-1); }
+            else if (e.key === 'Enter' && open && active >= 0 && filtered[active] && !filtered[active].disabled) {
+              e.preventDefault();
+              handleSelect(filtered[active].value);
+            }
+          }}
+          onFocus={() => { if (!disabled) { setOpen(true); setActive(0); } }}
+          aria-activedescendant={open && active >= 0 ? `${listId}-opt-${active}` : undefined}
           disabled={disabled}
         />
         <ChevronDown
@@ -146,19 +177,21 @@ export function Combobox({
       </div>
 
       {open && (
-        <ul id={listId} role="listbox" className="via-combobox__list">
+        <ul id={listId} ref={listRef} role="listbox" className="via-combobox__list">
           {filtered.length === 0 ? (
             <li className="via-combobox__empty">{emptyLabel}</li>
           ) : (
-            filtered.map((opt) => {
+            filtered.map((opt, idx) => {
               const isSelected = opt.value === current;
               return (
                 <li
                   key={opt.value}
+                  id={`${listId}-opt-${idx}`}
                   role="option"
                   aria-selected={isSelected}
-                  className={`via-combobox__option ${isSelected ? 'is-selected' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
+                  className={`via-combobox__option ${isSelected ? 'is-selected' : ''} ${idx === active ? 'is-active' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
                   aria-disabled={opt.disabled}
+                  onMouseEnter={() => !opt.disabled && setActive(idx)}
                   onClick={() => !opt.disabled && handleSelect(opt.value)}
                 >
                   <span>{opt.label}</span>
