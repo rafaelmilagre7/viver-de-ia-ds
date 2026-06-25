@@ -16,7 +16,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid var(--via-edge-hi);
+  border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg, 16px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.92) inset,
@@ -73,7 +73,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid var(--via-edge-hi);
+  border: 1px solid var(--via-border-soft);
   transform: rotate(45deg);
 }
 .via-popover--bottom .via-popover__arrow {
