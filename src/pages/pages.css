@@ -281,7 +281,7 @@
   background: var(--via-surface-onnavy);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid var(--via-edge-hi);
+  border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 12px var(--via-navy-06);
   z-index: 2 !important;
@@ -388,7 +388,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid var(--via-edge-hi);
+  border: 1px solid var(--via-border-soft);
   border-radius: 20px;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -518,7 +518,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid var(--via-edge-hi);
+  border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 8px 24px var(--via-navy-10),
@@ -584,7 +584,7 @@
   width: 100%;
   height: 140px;
   background: var(--via-surface);
-  border: 1px solid var(--via-edge-hi);
+  border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   display: flex;
   align-items: center;
@@ -610,7 +610,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid var(--via-edge-hi);
+  border: 1px solid var(--via-border-soft);
   border-radius: 20px;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
