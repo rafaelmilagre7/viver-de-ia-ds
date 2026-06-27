@@ -121,14 +121,17 @@
 .vds-pers-do,
 .vds-pers-dont {
   position: relative;
-  padding: 20px 22px;
-  border-radius: 14px;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
-  box-shadow: 0 1px 2px var(--via-navy-03);
+  padding: 22px 24px;
+  border-radius: 16px;
+  background: var(--via-glass-card);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--via-border-soft);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 10px 28px -16px var(--via-navy-14),
+    0 2px 6px -3px var(--via-navy-06);
 }
-.vds-pers-do  { border-left: 2px solid var(--via-navy); }
-.vds-pers-dont { border-left: 2px solid var(--via-coral); }
 
 .vds-pers-do  .lbl,
 .vds-pers-dont .lbl {
@@ -141,7 +144,7 @@
   margin-bottom: 10px;
 }
 .vds-pers-do  .lbl { color: var(--via-text-primary); }
-.vds-pers-dont .lbl { color: var(--via-coral-dark); }
+.vds-pers-dont .lbl { color: var(--via-text-muted); }
 
 .vds-pers-do  p,
 .vds-pers-dont p {
@@ -277,15 +280,12 @@
 }
 .vds-pers-opt.good {
   border-color: var(--via-navy-40);
-  border-left: 2px solid var(--via-navy);
   box-shadow:
     inset 0 1px 0 var(--via-white),
     0 4px 14px -6px var(--via-navy-16);
 }
 .vds-pers-opt.bad {
-  border-left: 2px solid var(--via-coral);
-  opacity: 0.84;
-  background: rgba(184, 92, 92, 0.03);
+  border-color: var(--via-border-soft);
 }
 .vds-pers-opt .lbl {
   display: block;

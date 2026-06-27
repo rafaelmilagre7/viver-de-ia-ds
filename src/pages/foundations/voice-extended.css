@@ -72,11 +72,9 @@
 }
 .vds-ve-sample.good {
   border-color: var(--via-navy-20);
-  border-left: 2px solid var(--via-navy);
 }
 .vds-ve-sample.bad {
-  border-color: rgba(184, 92, 92, 0.28);
-  border-left: 2px solid var(--via-coral);
+  border-color: var(--via-border-soft);
   opacity: 0.85;
 }
 .vds-ve-sample .lbl {
@@ -87,7 +85,7 @@
   text-transform: uppercase;
 }
 .vds-ve-sample.good .lbl { color: var(--via-text-primary); }
-.vds-ve-sample.bad  .lbl { color: var(--via-coral-dark); }
+.vds-ve-sample.bad  .lbl { color: var(--via-text-muted); }
 .vds-ve-sample pre {
   font-family: var(--via-font);
   font-size: 13.5px;
