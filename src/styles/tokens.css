@@ -239,6 +239,11 @@
 :root {
   --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
   --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
+  /* Vidro de BARRA/chrome (nav sticky, toolbar, painel flutuante) · translúcido
+     DE VERDADE pra o conteúdo passar DESFOCADO por baixo (frosted estilo Apple).
+     Só usar com backdrop-filter blur. NÃO usar em card de conteúdo (texto
+     precisa de fundo mais sólido). */
+  --via-glass-bar:    rgba(255, 255, 255, 0.6);
   /* Superfície branca FIXA · pra botões/cards SOBRE hero navy (navy nos
      2 temas) · NÃO adapta · sempre clara porque texto sobre ela é navy */
   --via-surface-onnavy: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
@@ -256,6 +261,7 @@
 [data-theme="dark"] {
   --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
   --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018));
+  --via-glass-bar:    rgba(11, 18, 32, 0.55);
   /* onnavy NÃO muda · permanece branco mesmo em dark */
   --via-edge-hi: rgba(255, 255, 255, 0.08);
   --via-edge-lo: rgba(255, 255, 255, 0.05);
