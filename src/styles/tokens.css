@@ -17,6 +17,17 @@
   --via-blue:        #1E3A5F;   /* mid azul-escuro */
   --via-blue-soft:   #2A4A6E;   /* hover state on navy / borders on navy */
 
+  /* Data-viz · rampa monocromática de 5 passos com separação REAL de valor
+     (navy → azul-aço → azul-claro). Resolve "cor próxima e escura": cada
+     série/segmento vira um tom nitidamente distinto, sem sair da paleta. */
+  --via-chart-1:     #0A1F3B;   /* navy — anchor, série dominante */
+  --via-chart-2:     #335379;   /* azul-aço escuro */
+  --via-chart-3:     #5E7B9E;   /* azul-aço médio */
+  --via-chart-4:     #93A8C2;   /* azul claro */
+  --via-chart-5:     #C4CFDD;   /* azul-cinza claro */
+  --via-chart-ink:   var(--via-navy);   /* cor primária de dado (linha/barra/funil) · adapta no dark */
+  --via-chart-ink-2: var(--via-blue);   /* fim do gradiente de dado */
+
   /* Navy transparency stops (for hairlines, hovers, soft surfaces) */
   --via-navy-80: rgba(10, 31, 59, 0.80);
   --via-navy-60: rgba(10, 31, 59, 0.60);
@@ -62,7 +73,7 @@
   /* Semantic text */
   --via-text-primary:  var(--via-navy);
   --via-text-body:     var(--via-gray-700);
-  --via-text-muted:    #4C5566;   /* secondary mais legível (era #5C6677) · AA folgado em white/tint */
+  --via-text-muted:    #4F596B;   /* secondary · passo nítido vs body e vs soft (ladder com range) */
   --via-text-faint:    var(--via-gray-400);
   --via-text-inverse:  var(--via-white);
 
@@ -82,7 +93,7 @@
      Não remover sem migrar todas as referências.
      ============================================================ */
   --via-text:        var(--via-gray-700);   /* corpo padrão */
-  --via-text-soft:   #4C5566;   /* secondary 288 usos · mais legível (era #5C6677) */
+  --via-text-soft:   #636D80;   /* terciário · um passo mais claro que muted · range, não colapso */
   --via-ink-2:       #5E6B82;               /* texto secundário editorial · 76+ usos */
   --via-ink-3:       #525C72;               /* terciário · timestamps · 224 usos · mais legível (era #5F6981) */
 
@@ -157,6 +168,15 @@
   --via-text-muted:   #AEB8C6;   /* secondary · passa AA mesmo sobre vidro elevado · ainda claramente "quieto" vs body */
   --via-text-faint:   #9CA5B5;   /* helper · o mais discreto, mas legível sobre vidro */
   --via-text-inverse: var(--via-navy);
+
+  /* Data-viz dark · rampa clara (visível sobre navy escuro) */
+  --via-chart-1:     #6E8CB4;
+  --via-chart-2:     #8BA3C4;
+  --via-chart-3:     #A8BAD4;
+  --via-chart-4:     #C5D1E2;
+  --via-chart-5:     #E0E7F1;
+  --via-chart-ink:   #9FBDE4;   /* dado em azul claro · legível sobre card escuro */
+  --via-chart-ink-2: #6E8CB4;
 
   --via-text:      #D0D5DD;
   --via-text-soft: #AEB8C6;
@@ -237,7 +257,7 @@
    Substituição em massa feita via scripts/migrate-glass.mjs
    ================================================= */
 :root {
-  --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.74));
+  --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(247, 248, 250, 0.62));
   --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
   /* Vidro de BARRA/chrome (nav sticky, toolbar, painel flutuante) · translúcido
      DE VERDADE pra o conteúdo passar DESFOCADO por baixo (frosted estilo Apple).

@@ -153,13 +153,13 @@ function AreaSection() {
           <svg viewBox={`0 0 ${W} ${H}`} className="vds-area-svg" preserveAspectRatio="xMidYMid meet">
             <defs>
               <linearGradient id="area-fill" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="var(--via-navy)" stopOpacity="0.35" />
-                <stop offset="60%" stopColor="var(--via-navy)" stopOpacity="0.1" />
-                <stop offset="100%" stopColor="var(--via-navy)" stopOpacity="0" />
+                <stop offset="0%" stopColor="var(--via-chart-ink)" stopOpacity="0.35" />
+                <stop offset="60%" stopColor="var(--via-chart-ink)" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="var(--via-chart-ink)" stopOpacity="0" />
               </linearGradient>
               <linearGradient id="area-line" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stopColor="var(--via-navy)" />
-                <stop offset="100%" stopColor="var(--via-blue)" />
+                <stop offset="0%" stopColor="var(--via-chart-ink)" />
+                <stop offset="100%" stopColor="var(--via-chart-ink-2)" />
               </linearGradient>
             </defs>
 
@@ -305,10 +305,10 @@ function BarSection() {
 /* ---------- Donut chart ---------- */
 function DonutSection() {
   const segments = [
-    { label: 'Recorrentes', value: 72, color: "var(--via-text-primary)" },
-    { label: 'Novos', value: 18, color: 'var(--via-blue)' },
-    { label: 'Cross-sell', value: 7, color: 'var(--via-blue-soft)' },
-    { label: 'Churn', value: 3, color: "var(--via-text-primary)" },
+    { label: 'Recorrentes', value: 72, color: 'var(--via-chart-1)' },
+    { label: 'Novos', value: 18, color: 'var(--via-chart-2)' },
+    { label: 'Cross-sell', value: 7, color: 'var(--via-chart-3)' },
+    { label: 'Churn', value: 3, color: 'var(--via-chart-4)' },
   ];
 
   const R = 88;

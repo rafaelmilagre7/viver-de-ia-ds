@@ -93,6 +93,48 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-chart-1",
+    "css": "--via-chart-1",
+    "value": "#6E8CB4",
+    "category": "color"
+  },
+  {
+    "name": "via-chart-2",
+    "css": "--via-chart-2",
+    "value": "#8BA3C4",
+    "category": "color"
+  },
+  {
+    "name": "via-chart-3",
+    "css": "--via-chart-3",
+    "value": "#A8BAD4",
+    "category": "color"
+  },
+  {
+    "name": "via-chart-4",
+    "css": "--via-chart-4",
+    "value": "#C5D1E2",
+    "category": "color"
+  },
+  {
+    "name": "via-chart-5",
+    "css": "--via-chart-5",
+    "value": "#E0E7F1",
+    "category": "color"
+  },
+  {
+    "name": "via-chart-ink",
+    "css": "--via-chart-ink",
+    "value": "#9FBDE4",
+    "category": "color"
+  },
+  {
+    "name": "via-chart-ink-2",
+    "css": "--via-chart-ink-2",
+    "value": "#6E8CB4",
+    "category": "color"
+  },
+  {
     "name": "via-coral",
     "css": "--via-coral",
     "value": "#B85C5C",
@@ -978,6 +1020,13 @@ export type TokenName =
   | 'via-border'
   | 'via-border-hairline'
   | 'via-border-soft'
+  | 'via-chart-1'
+  | 'via-chart-2'
+  | 'via-chart-3'
+  | 'via-chart-4'
+  | 'via-chart-5'
+  | 'via-chart-ink'
+  | 'via-chart-ink-2'
   | 'via-coral'
   | 'via-coral-dark'
   | 'via-coral-deep'

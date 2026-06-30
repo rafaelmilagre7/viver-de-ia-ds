@@ -24,6 +24,7 @@
   inset: 0;
   pointer-events: none;
   background:
+    linear-gradient(177deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 15%),
     radial-gradient(680px 280px at 92% -8%, var(--via-navy-05), transparent 60%),
     radial-gradient(420px 200px at -8% 110%, var(--via-navy-04), transparent 60%);
   z-index: -1;
@@ -88,7 +89,7 @@
   padding: 8px 14px;
   border-radius: 999px;
   background: var(--via-navy-06);
-  border: 1px solid var(--via-navy-10);
+  border: 1px solid var(--via-navy-06);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -163,15 +164,15 @@
 }
 
 .vds-area-svg .dot {
-  fill: var(--via-white);
-  stroke: var(--via-navy);
+  fill: var(--via-surface);
+  stroke: var(--via-chart-ink);
   stroke-width: 2.5;
   transition: all 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .vds-area-svg .dot.active {
-  fill: var(--via-navy);
-  stroke: var(--via-white);
+  fill: var(--via-chart-ink);
+  stroke: var(--via-surface);
   stroke-width: 3;
   filter: drop-shadow(0 4px 12px rgba(10, 31, 59, 0.35));
 }
@@ -237,7 +238,7 @@
 .vds-bar-fill {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
+  background: linear-gradient(90deg, var(--via-chart-ink), var(--via-chart-ink-2));
   border-radius: 8px;
   position: relative;
   animation: vds-bar-grow 800ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
@@ -262,7 +263,7 @@
 }
 
 .vds-bar-fill.hero {
-  background: linear-gradient(90deg, var(--via-navy), var(--via-navy));
+  background: linear-gradient(90deg, var(--via-chart-ink), var(--via-chart-ink));
   box-shadow: 0 4px 16px var(--via-navy-20);
 }
 
@@ -307,7 +308,7 @@
   font-size: 60px;
   font-weight: 600;
   letter-spacing: -0.04em;
-  fill: var(--via-navy);
+  fill: var(--via-text-primary);
   font-family: inherit;
   font-feature-settings: 'tnum' 1;
 }
@@ -475,7 +476,7 @@
   height: 100%;
   min-width: 36px;
   border-radius: 11px;
-  background: linear-gradient(135deg, var(--via-navy) 0%, var(--via-blue) 100%);
+  background: linear-gradient(135deg, var(--via-chart-ink) 0%, var(--via-chart-ink-2) 100%);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.14) inset,
     0 10px 24px -14px var(--via-navy-40);
@@ -483,7 +484,7 @@
 }
 
 .vds-funnel-bar.final {
-  background: linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy) 100%);
+  background: linear-gradient(135deg, var(--via-chart-ink) 0%, var(--via-chart-ink) 100%);
 }
 
 @keyframes vds-funnel-grow {

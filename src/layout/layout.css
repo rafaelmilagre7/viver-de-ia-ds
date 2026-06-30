@@ -11,7 +11,14 @@
     'sidebar main'
     'footer footer';
   min-height: 100vh;
-  background: var(--via-bg);
+  /* atmosfera liquid-glass · radiais navy fixos na viewport p/ a glass refratar
+     (whisper · não compete com texto, que vive em cards acima) */
+  background:
+    radial-gradient(1000px 640px at 8% -2%, var(--via-navy-04), transparent 58%),
+    radial-gradient(860px 620px at 102% 4%, rgba(30, 58, 95, 0.045), transparent 56%),
+    radial-gradient(760px 560px at 52% 104%, var(--via-navy-03), transparent 60%),
+    var(--via-bg);
+  background-attachment: fixed, fixed, fixed, fixed;
 }
 
 /* ---------- HEADER ---------- */
