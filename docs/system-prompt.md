@@ -14,7 +14,7 @@ Estado atual: **dark mode completo · 100% WCAG AA de contraste nos 2 temas (cla
 
 ## Stack disponível
 
-- **Library:** `@viverdeia/design-system` · **47 componentes React** publicáveis (ESM+CJS+types+CSS+tokens.json)
+- **Library:** `@viverdeia/design-system` · **46 componentes de UI + ThemeProvider** · DS interno, NÃO publicado no npm (ESM+CJS+types+CSS+tokens.json gerados via `bun run build:lib`)
 - **Theming:** `<ThemeProvider defaultMode="system">` + `useTheme()` hook · 3 camadas (tokens CSS / `applyTheme()` imperativo / Provider React-aware). Dark mode é CSS-first: tudo responde a `[data-theme="dark"]` no `<html>`.
 - **Componentes** prontos pra import: `Button` `Pill` `Card` `Input` `Avatar` `Icon` `Toast` `Tooltip` `Modal` `Tabs` `Popover` `Switch` `Checkbox` `RadioGroup` `Select` `Progress` `Drawer` `Spinner` `Skeleton` `Breadcrumb` `Pagination` `Accordion` `Stepper` `EmptyState` `Combobox` `DropdownMenu` `Command` `DatePicker` `Slider` `Alert` `DataTable` `HoverCard` `OTPInput` `TagInput` `Calendar` `Carousel` `MultiSelect` `DateRangePicker` `TimePicker` `ContextMenu` `Sheet` `TreeView` `Splitter` `VirtualList` `Lightbox` `ColorPicker`
 - **Starter:** `bunx create-viverdeia-app meu-app` (scaffold Vite + React + TS pré-configurado com ThemeProvider)
@@ -305,7 +305,7 @@ Email ≠ web. Clientes (Gmail, Outlook, Apple Mail) descartam CSS moderno. Regr
 - **Liquid glass simulado é permitido** (hero navy, painéis frosted, CTA glossy) MAS **todo `background-image: linear/radial-gradient` precisa de um `background-color` sólido na MESMA regra** (fallback). Outlook mostra o sólido; Apple Mail/Gmail mostram o brilho.
 - **Logo = lockup pequeno** (monograma + wordmark · ~18px alt) em **URL absoluta hospedada** (não relativa). Trava em claro: `<meta name="color-scheme" content="light only">`. Sempre um **preheader** (texto de preview escondido).
 - Cor de texto sobre navy = branco sólido. Coral só pra urgência real (atraso/erro).
-- Stack canônica: **react-email + Resend**. A IA escreve só o editorial (assunto, headline, corpo); o motor renderiza o HTML. 5 templates de produção vivos em `/patterns/email`.
+- Stack canônica: **react-email + Resend**. A IA escreve só o editorial (assunto, headline, corpo); o motor renderiza o HTML. 13 templates de produção vivos em `/patterns/email`.
 
 ## 10. Tabelas
 
@@ -361,7 +361,7 @@ Para qualquer artefato novo, identifique:
 ## Reference completa
 
 Site vivo (clonável, sempre atual): **https://viver-de-ia-ds.vercel.app**
-Código: **https://github.com/rafaelmilagre7/viver-de-ia-ds** · **107 rotas vivas · 47 componentes · API docs Radix-style · dark mode + WCAG AA completos**.
+Código: **https://github.com/rafaelmilagre7/viver-de-ia-ds** · **quase 100 rotas vivas · 46 componentes de UI + ThemeProvider · 46 API docs Radix-style · dark mode + WCAG AA completos**.
 
 Brand book: `/foundations/brand-story`, `/foundations/personality`, `/foundations/voice-extended`, `/foundations/logo-usage`
 Theming: `/foundations/theming` (CSS-first · ThemeProvider · createThemeOverride · 3 camadas)
@@ -374,7 +374,7 @@ Commercial: `/patterns/commercial` (deck + one-pager + case + proposta + contrac
 Editorial: `/patterns/editorial-content` (newsletter + blog + podcast + YT + tutorial)
 Event: `/patterns/event-collateral` (Leaders AI guidelines)
 
-**Advanced patterns (v0.5):**
+**Advanced patterns (v0.6):**
 - 2FA setup: `/patterns/two-factor` · OTPInput + multi-step
 - Pricing comparison: `/patterns/pricing-comparison` · tabela 3 tiers × 12 features
 - Error pages: `/patterns/errors` · 404 · 403 · 500 · maintenance

@@ -153,4 +153,4 @@ if (existsSync(libReadmePath)) {
 
 console.log('\n✓ Library empacotada em dist/lib/');
 console.log(`  Versão: ${version}`);
-console.log('  Para publicar: cd dist/lib && npm publish');
+console.log('  DS interno · NÃO publica no npm. dist/lib é pra consumo local (referência file: ou copiar tokens.css/style.css).');

@@ -129,6 +129,12 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-glass-bar",
+    "css": "--via-glass-bar",
+    "value": "rgba(11, 18, 32, 0.55)",
+    "category": "color"
+  },
+  {
     "name": "via-gray-100",
     "css": "--via-gray-100",
     "value": "#17213A",
@@ -978,6 +984,7 @@ export type TokenName =
   | 'via-danger'
   | 'via-edge-hi'
   | 'via-edge-lo'
+  | 'via-glass-bar'
   | 'via-gray-100'
   | 'via-gray-200'
   | 'via-gray-300'
