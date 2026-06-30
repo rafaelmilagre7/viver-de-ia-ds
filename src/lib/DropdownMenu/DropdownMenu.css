@@ -78,7 +78,7 @@
 
 .via-dropdown__item:focus-visible {
   background: rgba(10, 31, 59, 0.05);
-  outline: 2px solid rgba(10, 31, 59, 0.4);
+  outline: 2px solid var(--via-navy-40);
   outline-offset: -2px;
 }
 

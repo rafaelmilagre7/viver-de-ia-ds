@@ -21,7 +21,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px dashed rgba(10, 31, 59, 0.18);
+  border: 1px dashed var(--via-navy-18);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.76) inset,
     0 6px 14px -10px rgba(10, 31, 59, 0.08);
@@ -64,8 +64,11 @@
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: rgba(10, 31, 59, 0.06);
-  border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
+  background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
+  border: 1px solid var(--via-border-soft);
+  box-shadow:
+    0 1px 0 var(--via-edge-hi) inset,
+    0 4px 10px -6px var(--via-navy-12);
   color: var(--via-text-primary);
   margin-bottom: 4px;
 }

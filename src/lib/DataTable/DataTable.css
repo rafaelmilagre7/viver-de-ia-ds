@@ -7,12 +7,12 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(10, 31, 59, 0.10);
+  border: 1px solid var(--via-navy-10);
   border-radius: 12px;
   overflow: hidden;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.86) inset,
-    0 12px 28px -16px rgba(10, 31, 59, 0.10);
+    0 12px 28px -16px var(--via-navy-10);
 }
 
 .via-dt__caption {

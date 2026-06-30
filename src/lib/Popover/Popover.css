@@ -19,8 +19,8 @@
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg, 16px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.92) inset,
-    0 0 0 0.5px rgba(10, 31, 59, 0.10),
+    0 1px 0 var(--via-edge-hi) inset,
+    0 0 0 0.5px var(--via-navy-10),
     0 24px 56px rgba(10, 31, 59, 0.18),
     0 4px 12px rgba(10, 31, 59, 0.08);
   animation: via-popover-in 160ms var(--via-ease-snap) both;

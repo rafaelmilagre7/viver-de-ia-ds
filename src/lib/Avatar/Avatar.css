@@ -9,18 +9,19 @@
   flex-shrink: 0;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.18), transparent 60%),
-    linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+    radial-gradient(circle at 32% 22%, rgba(255, 255, 255, 0.30), transparent 54%),
+    linear-gradient(150deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
   color: var(--via-white);
   font-family: var(--via-font);
   font-weight: 600;
   letter-spacing: 0.02em;
-  border: 2px solid var(--via-white);
+  /* sem border dura · orbe glass + anel fino adaptativo (separa no stack, some no resto) */
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.12),
-    0 0 0 1px var(--via-navy-08),
-    0 2px 6px -2px var(--via-navy-25);
+    inset 0 1.5px 0 var(--via-edge-hi),
+    inset 0 -3px 5px -2px rgba(0, 0, 0, 0.24),
+    0 0 0 1.5px var(--via-surface),
+    0 1px 2px var(--via-navy-14),
+    0 5px 12px -4px var(--via-navy-22);
   overflow: hidden;
   isolation: isolate;
   transition: transform var(--via-dur) var(--via-ease-snap), box-shadow var(--via-dur) ease;
@@ -42,11 +43,11 @@
 }
 
 /* ===== Sizes ===== */
-.via-avatar--xs { width: 20px; height: 20px; font-size: 8px;  border-width: 1.5px; }
-.via-avatar--sm { width: 28px; height: 28px; font-size: 10px; border-width: 2px; }
-.via-avatar--md { width: 36px; height: 36px; font-size: 12px; border-width: 2px; }
-.via-avatar--lg { width: 52px; height: 52px; font-size: 16px; border-width: 2.5px; }
-.via-avatar--xl { width: 80px; height: 80px; font-size: 24px; border-width: 3px; }
+.via-avatar--xs { width: 20px; height: 20px; font-size: 8px;  }
+.via-avatar--sm { width: 28px; height: 28px; font-size: 10px; }
+.via-avatar--md { width: 36px; height: 36px; font-size: 12px; }
+.via-avatar--lg { width: 52px; height: 52px; font-size: 16px; }
+.via-avatar--xl { width: 80px; height: 80px; font-size: 24px; }
 
 /* ===== Status dot · com glow editorial ===== */
 .via-avatar__status {
@@ -58,7 +59,7 @@
   min-width: 8px;
   min-height: 8px;
   border-radius: 50%;
-  border: 2px solid var(--via-white);
+  border: 1.5px solid var(--via-surface);
   z-index: 2;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
