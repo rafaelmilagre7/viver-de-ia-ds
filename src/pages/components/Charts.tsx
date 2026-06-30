@@ -14,14 +14,72 @@ export default function Charts() {
             Gráficos editoriais, <em>navy & glass</em>.
           </>
         }
-        lede="Quatro arquétipos suficientes pra qualquer dashboard da marca — area pra tendência, bar pra comparação, donut pra composição, funil pra conversão. SVG puro, sem bibliotecas, tudo tonalmente unificado em navy + um único accent quando o dado merece destaque."
+        lede="KPIs de topo com sparkline, mais quatro arquétipos pra qualquer dashboard da marca — área pra tendência, barras pra comparação, donut pra composição, funil pra conversão. SVG puro, sem bibliotecas, tonalmente unificado em navy + glass."
       />
 
+      <KPISection />
       <AreaSection />
       <BarSection />
       <DonutSection />
       <FunnelSection />
     </>
+  );
+}
+
+/* ---------- Sparkline (mini-trend) ---------- */
+function Sparkline({ data }: { data: number[] }) {
+  const W = 160;
+  const H = 40;
+  const P = 3;
+  const min = Math.min(...data);
+  const max = Math.max(...data);
+  const span = max - min || 1;
+  const pts = data.map((v, i) => ({
+    x: P + (i * (W - P * 2)) / (data.length - 1),
+    y: H - P - ((v - min) / span) * (H - P * 2),
+  }));
+  let d = `M ${pts[0].x} ${pts[0].y}`;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const c = pts[i];
+    const n = pts[i + 1];
+    const cpx = (c.x + n.x) / 2;
+    d += ` C ${cpx} ${c.y}, ${cpx} ${n.y}, ${n.x} ${n.y}`;
+  }
+  const area = `${d} L ${pts[pts.length - 1].x} ${H} L ${pts[0].x} ${H} Z`;
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="vds-kpi-spark" preserveAspectRatio="none" aria-hidden="true">
+      <path d={area} className="spark-fill" />
+      <path d={d} className="spark-line" fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/* ---------- KPI sparkline cards ---------- */
+function KPISection() {
+  const kpis = [
+    { label: 'MRR', value: 'R$ 1,84M', delta: '+8,2%', up: true, data: [120, 128, 126, 138, 150, 162, 170, 184] },
+    { label: 'Churn', value: '3,0%', delta: '−1,2pp', up: false, data: [52, 49, 47, 44, 42, 40, 38, 30] },
+    { label: 'CAC', value: 'R$ 184', delta: '−6%', up: false, data: [240, 232, 228, 214, 206, 198, 192, 184] },
+    { label: 'LTV', value: 'R$ 7,2K', delta: '+12%', up: true, data: [58, 60, 59, 63, 66, 69, 70, 72] },
+  ];
+  return (
+    <Section title="KPIs · visão de topo" meta="set/2026 · últimos 8 meses">
+      <div className="vds-kpi-grid">
+        {kpis.map((k) => (
+          <div className="vds-kpi-card" key={k.label}>
+            <div className="vds-kpi-top">
+              <span className="vds-kpi-label">{k.label}</span>
+              <span className={`vds-kpi-delta ${k.up ? 'up' : 'down'}`}>
+                {k.up ? <ArrowUpRight size={12} strokeWidth={2.6} /> : <ArrowDownRight size={12} strokeWidth={2.6} />}
+                {k.delta}
+              </span>
+            </div>
+            <p className="vds-kpi-value">{k.value}</p>
+            <Sparkline data={k.data} />
+          </div>
+        ))}
+      </div>
+    </Section>
   );
 }
 
@@ -357,23 +415,30 @@ function FunnelSection() {
 
         <ol className="vds-funnel">
           {stages.map((s, i) => {
-            const widthPct = Math.max((s.count / top) * 100, 12);
+            const widthPct = Math.max((s.count / top) * 100, 6);
+            const isFinal = i === stages.length - 1;
             return (
-              <li key={s.stage} style={{ width: `${widthPct}%` }} className="vds-funnel-step">
-                <div className="vds-funnel-block">
-                  <div className="vds-funnel-meta">
-                    <span className="vds-funnel-stage">
-                      <span className="num">{(i + 1).toString().padStart(2, '0')}</span>
-                      {s.stage}
-                    </span>
-                    <span className="vds-funnel-count">{s.count.toLocaleString('pt-BR')}</span>
-                  </div>
-                  {i > 0 && (
-                    <span className="vds-funnel-rate">
-                      <ArrowDownRight size={11} strokeWidth={2.5} />
-                      {s.rateToPrev}% do anterior
-                    </span>
-                  )}
+              <li key={s.stage} className="vds-funnel-step">
+                <div className="vds-funnel-row">
+                  <span className="vds-funnel-stage">
+                    <span className="num">{(i + 1).toString().padStart(2, '0')}</span>
+                    {s.stage}
+                  </span>
+                  <span className="vds-funnel-nums">
+                    <strong>{s.count.toLocaleString('pt-BR')}</strong>
+                    {i > 0 && (
+                      <em>
+                        <ArrowDownRight size={11} strokeWidth={2.5} />
+                        {s.rateToPrev.toLocaleString('pt-BR')}% do anterior
+                      </em>
+                    )}
+                  </span>
+                </div>
+                <div className="vds-funnel-track">
+                  <span
+                    className={`vds-funnel-bar ${isFinal ? 'final' : ''}`}
+                    style={{ width: `${widthPct}%` }}
+                  />
                 </div>
               </li>
             );

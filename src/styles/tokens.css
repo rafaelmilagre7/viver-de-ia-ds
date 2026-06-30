@@ -62,14 +62,14 @@
   /* Semantic text */
   --via-text-primary:  var(--via-navy);
   --via-text-body:     var(--via-gray-700);
-  --via-text-muted:    #5C6677;   /* AA ≥4.5 em cards tint (#f0f2f3) · era gray-500 */
+  --via-text-muted:    #4C5566;   /* secondary mais legível (era #5C6677) · AA folgado em white/tint */
   --via-text-faint:    var(--via-gray-400);
   --via-text-inverse:  var(--via-white);
 
   /* Semantic borders */
   --via-border-hairline: var(--via-gray-200);
   --via-border:          var(--via-gray-300);
-  --via-border-soft:     rgba(10, 31, 59, 0.08);  /* hairline editorial · 392+ usos */
+  --via-border-soft:     rgba(10, 31, 59, 0.05);  /* hairline frameless (Apple) · 583 usos · a sombra+brilho definem o card */
   --via-border-strong:   var(--via-navy-40);
 
   /* Status — desaturated, navy-adjacent */
@@ -82,9 +82,9 @@
      Não remover sem migrar todas as referências.
      ============================================================ */
   --via-text:        var(--via-gray-700);   /* corpo padrão */
-  --via-text-soft:   #5C6677;   /* secondary 289+ usos · AA em cards tint · era gray-500 */
+  --via-text-soft:   #4C5566;   /* secondary 288 usos · mais legível (era #5C6677) */
   --via-ink-2:       #5E6B82;               /* texto secundário editorial · 76+ usos */
-  --via-ink-3:       #5F6981;               /* texto terciário · timestamps · 102+ usos · AA ≥4.5 em off-white */
+  --via-ink-3:       #525C72;               /* terciário · timestamps · 224 usos · mais legível (era #5F6981) */
 
   /* ========== ACCENT (navy / cinza · paleta restrita) ==========
      Paleta canônica VIA: branco · off-white · cinza · azul-escuro · navy · preto.
@@ -168,7 +168,7 @@
      ================================================= */
   --via-border-hairline: rgba(255, 255, 255, 0.10);
   --via-border:          rgba(255, 255, 255, 0.18);
-  --via-border-soft:     rgba(255, 255, 255, 0.12);
+  --via-border-soft:     rgba(255, 255, 255, 0.08);
   --via-border-strong:   rgba(255, 255, 255, 0.30);
 
   /* =================================================
@@ -222,7 +222,7 @@
     --via-text-soft:    #98A2B3;
     --via-ink-2:        #B4BBC9;
     --via-ink-3:        #98A2B3;
-    --via-border-soft:  rgba(255, 255, 255, 0.12);
+    --via-border-soft:  rgba(255, 255, 255, 0.08);
     color-scheme: dark;
   }
 }
@@ -653,6 +653,7 @@ a:hover { text-decoration: underline; }
   background: var(--via-white);
   border: var(--via-border-fine);
   border-radius: var(--via-radius-lg);
+  box-shadow: var(--via-shadow-sm);
   padding: var(--via-space-6);
 }
 

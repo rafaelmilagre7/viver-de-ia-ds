@@ -89,7 +89,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-border-soft",
     "css": "--via-border-soft",
-    "value": "rgba(255, 255, 255, 0.12)",
+    "value": "rgba(255, 255, 255, 0.08)",
     "category": "color"
   },
   {
