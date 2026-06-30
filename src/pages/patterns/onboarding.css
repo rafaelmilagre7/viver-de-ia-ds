@@ -201,7 +201,7 @@
 }
 
 .vds-ob .ob-opt.on {
-  border-color: rgba(10, 31, 59, 0.28);
+  border-color: var(--via-navy-30);
   background:
     radial-gradient(420px 120px at 0% 0%, var(--via-navy-05), transparent 70%),
     linear-gradient(180deg, var(--via-navy-03), rgba(255, 255, 255, 0.8));

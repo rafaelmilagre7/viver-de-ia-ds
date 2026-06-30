@@ -207,7 +207,7 @@
 .vds-set-card.placeholder {
   background: linear-gradient(180deg, rgba(247,248,250,0.86) 0%, rgba(240,242,245,0.6) 100%);
   border-style: dashed;
-  border-color: rgba(30,58,95,0.18);
+  border-color: var(--via-border-soft);
 }
 
 .vds-set-card header { margin-bottom: 28px; }

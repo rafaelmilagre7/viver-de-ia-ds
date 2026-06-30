@@ -683,7 +683,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-glass-card",
     "css": "--via-glass-card",
-    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025))",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0.022) 100%)",
     "category": "other"
   },
   {

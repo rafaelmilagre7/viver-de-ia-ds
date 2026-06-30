@@ -491,7 +491,7 @@
 .vds-cmp-cell.highlight .vds-cmp-text {
   background: var(--via-navy-05);
   color: var(--via-accent-warm);
-  border: 1px solid rgba(10, 31, 59, 0.11);
+  border: 1px solid var(--via-navy-12);
 }
 
 .vds-cmp-foot {
