@@ -2,8 +2,8 @@
 
 Site de referência + library React do design system da Viver de IA. Marca editorial, engenharia de precisão.
 
-- **49 páginas vivas** documentando fundamentos, glass, iconografia, componentes, padrões e páginas-modelo.
-- **47 componentes core** exportáveis como `@viverdeia/design-system` — drop-in em Nina, Iris, ExecSeats, plataforma.
+- **108 páginas vivas** documentando fundamentos, glass, iconografia, componentes, padrões e páginas-modelo.
+- **46 componentes de UI + ThemeProvider**, empacotáveis como `@viverdeia/design-system` (interno · não publicado no npm) — drop-in em Nina, Iris, ExecSeats, plataforma.
 - **Visual regression suite** com 108 rotas × 2 viewports (216 testes Playwright).
 - **TypeScript estrito** + dark mode + code-splitting por rota.
 
@@ -40,9 +40,9 @@ Site de referência + library React do design system da Viver de IA. Marca edito
 src/
   layout/        · Shell + Header + Sidebar + Footer
   components/    · Pieces auxiliares (BrandLogo, ThemeToggle, RouteLoader, docs/)
-  pages/         · 49 páginas (Home, foundations, glass, iconography,
-                   components, patterns, showcase, guidelines)
-  lib/           · 47 componentes publicáveis (base, formulário, overlay,
+  pages/         · 108 páginas (Home, foundations, glass, iconography,
+                   components, patterns, showcase, guidelines, api docs)
+  lib/           · 46 componentes de UI + ThemeProvider (base, formulário, overlay,
                    navegação, dados, feedback) — índice em src/lib/index.ts
   styles/        · tokens.css (variáveis CSS · 4 camadas semânticas)
   data/          · nav.tsx, dados estáticos
@@ -54,9 +54,9 @@ tests/           · Visual regression suite (Playwright)
   visual.spec.ts-snapshots/  · baselines PNG
 
 scripts/
-  finalize-lib.mjs   · pós-build da library: gera package.json publicável
+  finalize-lib.mjs   · pós-build da library: gera package.json pronto pra consumo interno (não publica no npm)
 
-tokens.css         · 300+ tokens semânticos (cores, type, spacing, glass, mesh)
+tokens.css         · 156 tokens semânticos (cores, type, spacing, glass, mesh)
 ```
 
 ---
@@ -65,7 +65,7 @@ tokens.css         · 300+ tokens semânticos (cores, type, spacing, glass, mesh
 
 1. **Light-first** · navy + greys + black. Dark mode é override, não default visual.
 2. **Liquid glass usado com intenção** · `backdrop-filter: blur(20px) saturate(140%)` só em surfaces que pedem profundidade real.
-3. **Gold é acento singular** · max 1-3 elementos por section. Justificado como semântico (premium/destaque), singular (só um por viewport), ou sistêmico (chart accent).
+3. **Paleta restrita navy-dominant** · branco / off-white / cinzas / navy / preto. Navy (`#0A1F3B`) é a única cor de marca; `--via-accent` é navy intensificado, não uma 3ª cor. Gold, amarelo, roxo "IA" e cyan são **banidos em qualquer nível**. Coral só pra destrutivo, success só pra status real.
 4. **Pills canônicas** · 11px lowercase, padding 4px 11px, nowrap, sem caps lock, sem dot decorativo, sem bolinha verde de status.
 5. **Coral só pra destrutivo real** · cancelar plano, error 500, dialog destructive. Nunca pra warning casual.
 6. **Sparkles banido** · cliché global de IA desde 2023. Use Award · Compass · Crown · Rocket · Layers conforme o contexto.
@@ -75,9 +75,9 @@ Mais detalhes em [`src/pages/foundations/Philosophy.tsx`](src/pages/foundations/
 
 ---
 
-## Library publicável
+## Library (interna · não publica no npm)
 
-A pasta `src/lib/` é a fundação de produção. Roda `bun run build:lib` pra gerar `dist/lib/` com:
+A pasta `src/lib/` é a fundação de produção. **O DS é referência interna — não publica no npm** (decisão de marca · `package.json` raiz é `private`). Roda `bun run build:lib` pra gerar `dist/lib/` (consumo local via `file:` ou copiando `tokens.css`/`style.css`) com:
 
 - ESM + CJS bundles
 - `index.d.ts` com tipos TypeScript

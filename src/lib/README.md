@@ -1,16 +1,20 @@
 # @viverdeia/design-system
 
-A library React do design system da Viver de IA. 47 componentes core com TypeScript types, ARIA correto, dark mode aware, sem dependências runtime além de React + lucide-react.
+A library React do design system da Viver de IA. 46 componentes de UI + ThemeProvider com TypeScript types, ARIA correto, dark mode aware, sem dependências runtime além de React + lucide-react.
 
 Drop-in pra qualquer projeto Viver de IA: Nina, Iris, ExecSeats, plataforma. Mesmo visual editorial, zero copy-paste.
 
 ---
 
-## Instalação
+## Instalação (interna · não publica no npm)
+
+O DS é referência interna — `@viverdeia/design-system` **não está no npm** (decisão de marca). Pra consumir, gere o bundle local e referencie por caminho:
 
 ```bash
-bun add @viverdeia/design-system
-# ou: npm install @viverdeia/design-system
+# no repo do DS:
+bun run build:lib          # gera dist/lib/
+# no projeto consumidor, em package.json:
+#   "@viverdeia/design-system": "file:../viver-de-ia-ds/dist/lib"
 ```
 
 Importe os tokens CSS uma única vez no root da aplicação (`main.tsx`/`App.tsx`):
@@ -19,7 +23,7 @@ Importe os tokens CSS uma única vez no root da aplicação (`main.tsx`/`App.tsx
 import '@viverdeia/design-system/tokens.css';
 ```
 
-Isso ativa as 300+ variáveis CSS `--via-*` (cores, type, spacing, glass, mesh, motion). Sem isso, os componentes caem em fallbacks razoáveis mas perdem a assinatura visual.
+Isso ativa as 156 variáveis CSS `--via-*` (cores, type, spacing, glass, mesh, motion). Sem isso, os componentes caem em fallbacks razoáveis mas perdem a assinatura visual.
 
 ---
 
