@@ -18,7 +18,7 @@ Pronto — `/via` e os outros comandos aparecem no autocomplete, e a skill `vive
 | Comando | Quando usar |
 |---|---|
 | `/via` | Entrada geral · descreva o que quer construir, ela direciona |
-| `/via-email` | Email · 5 templates de **produção à prova de bala** (react-email · `/patterns/email`) + 13 editoriais |
+| `/via-email` | Email · 13 templates de **produção à prova de bala** (react-email · `emails/` · `/patterns/email`) + galeria editorial |
 | `/via-social` | Social media · 6 canais (IG, LinkedIn, YT, X, TikTok, podcast) |
 | `/via-landing` | Landing page · 5 hero variants + 7 elementos reutilizáveis |
 | `/via-brand` | Brand book · logo correta · voice por contexto · personality |
@@ -28,7 +28,7 @@ Pronto — `/via` e os outros comandos aparecem no autocomplete, e a skill `vive
 
 ## Skill incluída
 
-`viver-de-ia-design` · skill base com paleta + tipografia + regras invioláveis + 107 páginas do reference site. Carregada automaticamente por todos os comandos.
+`viver-de-ia-design` · skill base com paleta + tipografia + regras invioláveis + quase 100 páginas do reference site. Carregada automaticamente por todos os comandos.
 
 ## Sub-agent incluído
 
@@ -51,7 +51,7 @@ Pronto — `/via` e os outros comandos aparecem no autocomplete, e a skill `vive
 
 ## Reference site canônico
 
-107 páginas em `viver-de-ia-ds`. `bun dev` → http://localhost:5173.
+quase 100 páginas em `viver-de-ia-ds`. `bun dev` → http://localhost:5173.
 
 Quando o comando cita "ver /patterns/email-coverage", essa página tem todos os 13 templates renderizados ao vivo com chrome de email autêntico + notas de aplicação.
 
