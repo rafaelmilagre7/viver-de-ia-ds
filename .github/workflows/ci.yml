@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -52,7 +52,7 @@ jobs:
     timeout-minutes: 8
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -73,7 +73,7 @@ jobs:
     timeout-minutes: 14
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: oven-sh/setup-bun@v2
         with:
