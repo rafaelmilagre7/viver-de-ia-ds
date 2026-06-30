@@ -68,7 +68,7 @@
 
   /* Semantic borders */
   --via-border-hairline: var(--via-gray-200);
-  --via-border:          var(--via-gray-300);
+  --via-border:          rgba(10, 31, 59, 0.16);   /* hairline navy-tint p/ controles (era gray-300 frio) · visível mas glassy */
   --via-border-soft:     rgba(10, 31, 59, 0.05);  /* hairline frameless (Apple) · 583 usos · a sombra+brilho definem o card */
   --via-border-strong:   var(--via-navy-40);
 
