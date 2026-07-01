@@ -154,7 +154,7 @@
 }
 .vds-dash .kpi .delta {
   font-family: var(--via-font);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
   background: var(--via-navy-06);
@@ -251,7 +251,7 @@
 
 .vds-dash .bar-val {
   font-family: var(--via-font-mono);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-align: right;

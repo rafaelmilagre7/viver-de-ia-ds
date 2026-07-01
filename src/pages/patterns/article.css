@@ -196,7 +196,7 @@
   border-top: 1px solid var(--via-border-soft);
   margin-top: auto;
   font-family: var(--via-font);
-  font-size: 11.5px;
+  font-size: 11px;
 }
 
 .vds-article .av {
@@ -206,7 +206,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   display: flex;
@@ -229,7 +229,7 @@
   color: var(--via-text-soft);
   margin-left: auto;
   font-family: var(--via-font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;

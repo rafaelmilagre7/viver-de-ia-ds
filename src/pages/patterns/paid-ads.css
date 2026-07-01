@@ -6,7 +6,7 @@
 .vds-pa-divider {
   margin: 56px 0 24px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -83,7 +83,7 @@
 .vds-pa-spec-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -115,7 +115,7 @@
 
 .vds-pa-spec dd {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -162,7 +162,7 @@
 
 .vds-pa-meta-page strong {
   display: block;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -174,7 +174,7 @@
   align-items: center;
   gap: 4px;
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   margin-top: 2px;
 }
@@ -196,7 +196,7 @@
 
 .vds-pa-meta-text p {
   margin: 0 0 6px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text-body);
   line-height: 1.4;
   letter-spacing: -0.005em;
@@ -237,7 +237,7 @@
 .vds-pa-meta-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -296,7 +296,7 @@
   display: block;
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   letter-spacing: 0.06em;
@@ -316,7 +316,7 @@
 .vds-pa-meta-footer > div > em {
   display: block;
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   margin-top: 2px;
   letter-spacing: -0.005em;
@@ -403,7 +403,7 @@
 .vds-pa-carousel-num {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   color: var(--via-gray-300);
@@ -422,7 +422,7 @@
 .vds-pa-carousel-card.cta h3 { font-size: 18px; letter-spacing: -0.020em; }
 
 .vds-pa-carousel-card p {
-  font-size: 11.5px;
+  font-size: 11px;
   line-height: 1.4;
   color: var(--via-gray-300);
   margin: 0;
@@ -502,7 +502,7 @@
 
 .vds-pa-story header .av img { width: 18px; height: 18px; object-fit: contain; }
 .vds-pa-story header strong { font-size: 12px; font-weight: var(--via-fw-semibold); color: var(--via-white); letter-spacing: -0.005em; }
-.vds-pa-story header em { font-style: normal; font-size: 10.5px; color: var(--via-gray-300); }
+.vds-pa-story header em { font-style: normal; font-size: 10px; color: var(--via-gray-300); }
 
 .vds-pa-story-canvas {
   position: relative;
@@ -695,7 +695,7 @@
 
 .vds-pa-reel aside > em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   display: block;
   margin-bottom: 14px;
@@ -718,7 +718,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   color: var(--via-white);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -795,7 +795,7 @@
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -814,7 +814,7 @@
 
 .vds-pa-li-text p {
   margin: 0 0 8px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -846,7 +846,7 @@
 .vds-pa-li-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -903,7 +903,7 @@
 .vds-pa-li-footer > div em {
   display: block;
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   font-family: var(--via-font-mono, var(--via-font));
   letter-spacing: 0.04em;
@@ -927,7 +927,7 @@
   background: var(--via-surface);
   border: 1.5px solid var(--via-navy);
   color: var(--via-text-primary);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -949,7 +949,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
@@ -992,7 +992,7 @@
 .vds-pa-li-card-num {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   color: var(--via-gray-300);
@@ -1022,7 +1022,7 @@
 
 .vds-pa-li-card-next {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   color: var(--via-gray-300);
@@ -1086,7 +1086,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1119,7 +1119,7 @@
 
 .vds-pa-gs-desc {
   margin: 0 0 14px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -1154,7 +1154,7 @@
 
 .vds-pa-gs-sitelinks em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1216,7 +1216,7 @@
 
 .vds-pa-gdn-grid article header em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1271,7 +1271,7 @@
   border-radius: 999px;
   background: var(--via-surface);
   color: var(--via-text-primary);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   text-decoration: none;
@@ -1361,7 +1361,7 @@
 .vds-pa-yt-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1416,7 +1416,7 @@
   background: rgba(0, 0, 0, 0.72);
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1486,7 +1486,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   color: var(--via-white);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -1529,7 +1529,7 @@
 .vds-pa-yt-script-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1581,7 +1581,7 @@
 
 .vds-pa-yt-script li strong {
   display: block;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -1590,7 +1590,7 @@
 
 .vds-pa-yt-script li p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-body);
   line-height: 1.55;
   letter-spacing: -0.004em;
@@ -1664,7 +1664,7 @@
 
 .vds-pa-audience-card header strong {
   display: block;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -1692,7 +1692,7 @@
 
 .vds-pa-audience-kpi .lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1700,7 +1700,7 @@
 }
 
 .vds-pa-audience-kpi strong {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -1714,7 +1714,7 @@
 
 .vds-pa-audience-block-lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1723,7 +1723,7 @@
 
 .vds-pa-audience-block p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.004em;
@@ -1741,7 +1741,7 @@
 
 .vds-pa-audience-cta-lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1749,7 +1749,7 @@
 }
 
 .vds-pa-audience-cta {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -1797,7 +1797,7 @@
 
 .vds-pa-ab-card header em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1831,7 +1831,7 @@
 }
 
 .vds-pa-ab-mock p {
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-gray-300);
   margin: 0;
   letter-spacing: -0.005em;
@@ -1856,7 +1856,7 @@
 .vds-pa-ab-hyp-lbl {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1910,7 +1910,7 @@
 .vds-pa-preflight-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1966,7 +1966,7 @@
 }
 
 .vds-pa-preflight-group li .q {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -1974,7 +1974,7 @@
 
 .vds-pa-preflight-group li .a {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-body);
   letter-spacing: 0.005em;
 }
@@ -1990,7 +1990,7 @@
     radial-gradient(320px 100px at 0% 0%, var(--via-navy-06), transparent 70%),
     var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.004em;
@@ -2046,7 +2046,7 @@
 }
 
 .vds-pa-headlines h4 {
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -2084,7 +2084,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2159,7 +2159,7 @@
 
 .vds-pa-cta-group header em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -2177,7 +2177,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2202,7 +2202,7 @@
   align-items: center;
   padding: 5px 10px;
   border-radius: 999px;
-  font-size: 11.5px;
+  font-size: 11px;
   letter-spacing: -0.004em;
   white-space: nowrap;
 }

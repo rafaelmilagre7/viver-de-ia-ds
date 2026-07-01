@@ -89,7 +89,7 @@
 
 .via-otp__hint {
   margin: 0;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-ink-3, #6B7891);
   letter-spacing: -0.004em;
   line-height: 1.4;

@@ -54,7 +54,7 @@
 }
 .vds-cookie-body p {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.55;
   color: rgba(255,255,255,0.78);
   margin: 0;
@@ -71,7 +71,7 @@
   padding: 11px 20px;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
@@ -199,7 +199,7 @@
   border: 1px solid var(--via-navy-20);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
@@ -288,7 +288,7 @@
 }
 .vds-comments .body p {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--via-text-body);
   margin: 0 0 10px;
@@ -519,7 +519,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;

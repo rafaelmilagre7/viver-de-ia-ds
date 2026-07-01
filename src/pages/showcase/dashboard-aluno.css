@@ -37,7 +37,7 @@
 }
 
 .dba-nav nav a {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   text-decoration: none;
@@ -115,7 +115,7 @@
 .dba-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -228,7 +228,7 @@
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
@@ -286,7 +286,7 @@
 }
 
 .dba-continue p {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-gray-300);
   margin: 0 0 18px;
   letter-spacing: -0.005em;
@@ -319,7 +319,7 @@
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   letter-spacing: -0.008em;
@@ -372,7 +372,7 @@
 .dba-agenda-date em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 8.5px;
+  font-size: 8px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -390,7 +390,7 @@
 .dba-agenda-tag {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 8.5px;
+  font-size: 8px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -400,7 +400,7 @@
 
 .dba-agenda-info strong {
   display: block;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -615,7 +615,7 @@
 
 .dba-time em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   margin: 6px 0 16px;
   letter-spacing: -0.004em;

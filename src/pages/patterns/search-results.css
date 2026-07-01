@@ -81,7 +81,7 @@
 }
 
 .vds-sr-search-shortcut {
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   padding: 3px 7px;
   border-radius: 6px;
@@ -93,7 +93,7 @@
 
 .vds-sr-result-meta {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-2);
 }
 
@@ -217,7 +217,7 @@
 }
 
 .vds-sr-facet-label {
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -227,7 +227,7 @@
 }
 
 .vds-sr-facet-count {
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
   padding: 1px 7px;
@@ -250,7 +250,7 @@
   padding: 7px 10px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-2);
   letter-spacing: -0.006em;
   transition: background .2s ease, color .2s ease;
@@ -297,7 +297,7 @@
 
 .vds-sr-toolbar-lbl {
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -362,7 +362,7 @@
   border: 1px solid var(--via-border);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
@@ -423,7 +423,7 @@
 
 .vds-sr-result-type {
   display: inline-block;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 2px 9px;
@@ -455,7 +455,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -510,7 +510,7 @@
 }
 
 .vds-sr-result-meta-pill {
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   padding: 3px 9px;
   border-radius: 999px;
@@ -533,7 +533,7 @@
 }
 
 .vds-sr-pag-info {
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-2);
 }
 

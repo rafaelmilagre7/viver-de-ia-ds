@@ -79,7 +79,7 @@ button.via-stepper__node:focus-visible {
   height: 24px;
   border-radius: 999px;
   font-family: var(--via-mono, 'Geist Mono', ui-monospace, monospace);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   flex-shrink: 0;
   border: 1px solid var(--via-border, #D0D5DD);
@@ -130,7 +130,7 @@ button.via-stepper__node:focus-visible {
 }
 
 .via-stepper__label {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
@@ -143,7 +143,7 @@ button.via-stepper__node:focus-visible {
 }
 
 .via-stepper__desc {
-  font-size: 11.5px;
+  font-size: 11px;
   line-height: 1.45;
   color: var(--via-ink-2, #5E6B82);
 }

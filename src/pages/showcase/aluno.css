@@ -39,7 +39,7 @@
 .al-nav .user { display: flex; align-items: center; gap: 12px; }
 .al-nav .hi {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }

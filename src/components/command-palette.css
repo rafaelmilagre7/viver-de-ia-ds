@@ -154,7 +154,7 @@
 }
 .vds-cmdk-inner li .d {
   font-family: var(--via-font);
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   white-space: nowrap;
   overflow: hidden;

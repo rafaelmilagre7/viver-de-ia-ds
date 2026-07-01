@@ -51,7 +51,7 @@
   position: absolute;
   bottom: 12px;
   right: 14px;
-  font-size: 9.5px;
+  font-size: 9px;
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
   padding: 4px 8px;
@@ -72,7 +72,7 @@
 .vds-loc-eyebrow {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -96,7 +96,7 @@
 
 .vds-loc-address {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--via-ink-2);
   font-feature-settings: 'tnum' 1;
@@ -140,7 +140,7 @@
 }
 
 .vds-loc-dates strong {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -149,7 +149,7 @@
 .vds-loc-dates em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -214,7 +214,7 @@
 }
 
 .vds-loc-access strong {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -241,7 +241,7 @@
   padding: 11px 16px;
   border-radius: 10px;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   border: 1px solid var(--via-border);
@@ -400,7 +400,7 @@
 
 .vds-loc-compact-body p {
   margin: 0 0 12px;
-  font-size: 11.5px;
+  font-size: 11px;
   line-height: 1.5;
   color: var(--via-ink-3);
 }
@@ -420,7 +420,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   font-family: var(--via-font);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;

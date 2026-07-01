@@ -136,7 +136,7 @@
 .via-upload-list .name {
   display: block;
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -144,7 +144,7 @@
 
 .via-upload-list .size {
   font-family: var(--via-font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
   text-transform: uppercase;

@@ -107,7 +107,7 @@
 }
 
 .via-radio__label {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   color: var(--via-text-primary);

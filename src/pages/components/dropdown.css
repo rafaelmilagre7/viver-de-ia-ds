@@ -35,7 +35,7 @@
 }
 
 .via-dd-trigger .lbl {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -43,7 +43,7 @@
 }
 
 .via-dd-trigger .val {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   flex: 1;

@@ -363,7 +363,7 @@
 }
 .vds-lu-surface li {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text);
   line-height: 1.55;
 }

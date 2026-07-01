@@ -11,7 +11,7 @@
 }
 
 .via-combobox__label {
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
@@ -69,7 +69,7 @@
   border: none;
   outline: none;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   color: var(--via-text-primary);
@@ -77,7 +77,7 @@
 }
 
 .via-combobox--md .via-combobox__input { padding: 9px 0; }
-.via-combobox--sm .via-combobox__input { padding: 6px 0; font-size: 12.5px; }
+.via-combobox--sm .via-combobox__input { padding: 6px 0; font-size: 12px; }
 
 .via-combobox__input::placeholder {
   color: var(--via-ink-3, #6B7891);

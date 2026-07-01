@@ -237,7 +237,7 @@
 }
 .vds-2fa-method__sub {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
   line-height: 1.5;
@@ -341,7 +341,7 @@
 }
 .vds-2fa-backup-code {
   font-family: var(--via-font-mono);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.04em;
   color: var(--via-text-primary);
@@ -468,7 +468,7 @@
 .vds-2fa-anatomy-card .purpose {
   margin: 0 0 8px;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.55;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;

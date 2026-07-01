@@ -219,7 +219,7 @@
 
 .vds-drawer-user p {
   margin: 0 0 2px;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -415,7 +415,7 @@
 
 .vds-sheet-note p {
   margin: 0 0 10px;
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.6;
   color: var(--via-text-primary);
 }
@@ -595,7 +595,7 @@
 
 .vds-bs-faded-content p {
   margin: 0 0 22px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -680,7 +680,7 @@
 
 .vds-bs-eyebrow {
   display: inline-flex;
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -791,7 +791,7 @@
 
 .vds-bs-desc {
   margin: 0 0 22px;
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.55;
   color: var(--via-text-soft);
 }
@@ -853,7 +853,7 @@
 
 .vds-bs-options strong {
   display: block;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -862,7 +862,7 @@
 .vds-bs-options em {
   font-style: normal;
   display: block;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
   margin-top: 3px;
   line-height: 1.45;
@@ -957,7 +957,7 @@
 
 .vds-bs-radios em {
   font-style: normal;
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1116,7 +1116,7 @@
   gap: 10px;
   padding: 9px 10px;
   border-radius: 9px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text);
   text-decoration: none;
   cursor: pointer;
@@ -1169,7 +1169,7 @@
 
 .vds-pop-eyebrow {
   margin: 0 0 12px;
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1192,7 +1192,7 @@
   gap: 10px;
   padding: 8px 8px;
   border-radius: 8px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text);
   cursor: pointer;
   letter-spacing: -0.005em;
@@ -1265,7 +1265,7 @@
 .vds-pop-clear {
   background: transparent;
   border: none;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
@@ -1286,7 +1286,7 @@
   border: none;
   border-radius: 9px;
   padding: 9px 14px;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   font-family: inherit;
@@ -1331,7 +1331,7 @@
 
 .vds-pop-user-head strong {
   display: block;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -1470,7 +1470,7 @@
   border-radius: 10px;
   background: rgba(184, 92, 92, 0.06);
   border: 1px solid rgba(184, 92, 92, 0.18);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   color: var(--via-coral-dark);
   margin-top: 4px;
@@ -1497,7 +1497,7 @@
 
 .vds-dialog p {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--via-text-soft);
   max-width: 340px;

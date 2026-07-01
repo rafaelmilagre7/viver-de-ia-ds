@@ -37,7 +37,7 @@
 }
 
 .cmu-nav nav a {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   text-decoration: none;
@@ -199,7 +199,7 @@
   background: var(--via-bg-2);
   border: 1px solid var(--via-border-soft);
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text-body);
   letter-spacing: -0.005em;
   outline: none;
@@ -242,7 +242,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep)) !important;
   border-color: var(--via-navy) !important;
   color: var(--via-white) !important;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
 }
@@ -271,7 +271,7 @@
   gap: 5px;
   margin-bottom: 12px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -311,13 +311,13 @@
 
 .cmu-post-meta em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
 
 .cmu-post-cat {
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   padding: 4px 10px;
@@ -348,7 +348,7 @@
 .cmu-post-code-lang {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -358,7 +358,7 @@
 
 .cmu-post-code code {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-gray-200);
   letter-spacing: 0;
 }
@@ -381,7 +381,7 @@
   border: none;
   color: var(--via-text-muted);
   font-family: inherit;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.004em;
@@ -478,7 +478,7 @@
 }
 
 .cmu-members-more {
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   color: var(--via-text-muted) !important;
   padding-top: 4px;
 }
@@ -532,7 +532,7 @@
 
 .cmu-rank-pts {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;

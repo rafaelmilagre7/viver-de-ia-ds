@@ -107,7 +107,7 @@
 .vds-sc-spec dd {
   margin: 0;
   font-family: var(--via-mono);
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-primary);
   line-height: 1.45;
 }
@@ -1078,7 +1078,7 @@
 }
 .vds-sc-x-post > p {
   font-family: var(--via-font);
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--via-text-primary);
   margin: 8px 0 12px;
   line-height: 1.45;

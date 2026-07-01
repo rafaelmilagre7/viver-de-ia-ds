@@ -76,7 +76,7 @@
   align-items: center;
   gap: 4px;
   padding: 3px 4px 3px 10px;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-primary);
@@ -120,13 +120,13 @@
   background: transparent;
   outline: none;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   color: var(--via-text-primary);
   padding: 4px 6px;
 }
-.via-taginput--sm .via-taginput__input { font-size: 12.5px; padding: 2px 6px; }
+.via-taginput--sm .via-taginput__input { font-size: 12px; padding: 2px 6px; }
 
 .via-taginput__input::placeholder {
   color: var(--via-ink-3, #6B7891);
@@ -165,7 +165,7 @@
   display: inline-flex;
   align-items: center;
   padding: 3px 10px;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
@@ -189,7 +189,7 @@
 
 .via-taginput__hint {
   margin: 0;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-ink-3, #6B7891);
   letter-spacing: -0.004em;
   line-height: 1.4;

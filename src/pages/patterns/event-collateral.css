@@ -113,7 +113,7 @@
 .vds-ev-mark-label em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -122,7 +122,7 @@
 
 .vds-ev-mark-label strong {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.010em;
@@ -184,7 +184,7 @@
 .vds-ev-relation-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -229,7 +229,7 @@
 
 .vds-ev-relation-list strong {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -238,7 +238,7 @@
 
 .vds-ev-relation-list span {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.004em;
@@ -333,7 +333,7 @@
 .vds-ev-piece header strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -343,7 +343,7 @@
 
 .vds-ev-piece header em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
   line-height: 1.4;
@@ -357,7 +357,7 @@
 .vds-ev-piece-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -385,7 +385,7 @@
 .vds-ev-piece-mock-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -395,7 +395,7 @@
 
 .vds-ev-piece-mock p {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-primary);
   line-height: 1.5;
   margin: 0;
@@ -446,7 +446,7 @@
 
 .vds-ev-rules-eyebrow {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -503,7 +503,7 @@
 .vds-ev-rules-list strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -513,7 +513,7 @@
 
 .vds-ev-rules-list p {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text-body);
   line-height: 1.58;
   margin: 0;

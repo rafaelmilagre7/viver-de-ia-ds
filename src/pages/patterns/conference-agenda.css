@@ -103,7 +103,7 @@
 }
 
 .vds-cf-day .dl {
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
 }
 
@@ -309,7 +309,7 @@
 .vds-cf-track-tag {
   display: inline-flex;
   align-items: center;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
@@ -340,7 +340,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
@@ -400,7 +400,7 @@
   justify-content: center;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow: 0 2px 6px var(--via-navy-18);
@@ -422,7 +422,7 @@
 }
 
 .vds-cf-speaker strong {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -431,7 +431,7 @@
 .vds-cf-speaker em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -482,7 +482,7 @@
 
 .vds-cf-foot p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-2);
   line-height: 1.55;
   max-width: 720px;
@@ -630,7 +630,7 @@
 .vds-cf-spk-body p {
   margin: 0;
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
   white-space: nowrap;

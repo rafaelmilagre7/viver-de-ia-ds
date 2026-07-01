@@ -11,7 +11,7 @@
 }
 
 .via-select__label {
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
@@ -30,7 +30,7 @@
   border-radius: 9px;
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
@@ -50,7 +50,7 @@
 
 .via-select--sm .via-select__trigger {
   padding: 6px 10px;
-  font-size: 12.5px;
+  font-size: 12px;
 }
 
 .via-select__trigger:hover:not(:disabled) {
@@ -104,7 +104,7 @@
 }
 
 .via-select__hint {
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-ink-3, #6B7891);
   line-height: 1.4;
 }

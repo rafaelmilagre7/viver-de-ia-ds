@@ -229,7 +229,7 @@
 .vds-fullep .ep-meta h2 em { font-style: normal; font-weight: var(--via-fw-regular); color: rgba(255,255,255,0.62); }
 .vds-fullep .ep-meta .lede {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: rgba(255,255,255,0.72);
   margin: 14px 0 16px;

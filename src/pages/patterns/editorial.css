@@ -82,7 +82,7 @@
 }
 .vds-ed-nl-body article p {
   font-family: var(--via-font);
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--via-text);
   line-height: 1.65;
   margin: 0 0 10px;
@@ -121,7 +121,7 @@
   margin: 8px 0 0 !important;
   padding-top: 14px;
   border-top: 0.5px solid var(--via-navy-08);
-  font-size: 13.5px !important;
+  font-size: 13px !important;
 }
 .vds-ed-nl-sign strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 
@@ -227,7 +227,7 @@
 .vds-ed-blog-author strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
@@ -349,7 +349,7 @@
 }
 .vds-ed-blog-toc a {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-primary);
   text-decoration: none;
 }
@@ -482,7 +482,7 @@
   border: 0.5px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-primary);
   text-decoration: none;
 }
@@ -539,7 +539,7 @@
 }
 .vds-ed-podcast-timestamps em {
   font-style: normal;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text);
 }
 
@@ -668,7 +668,7 @@
   border-bottom: 0.5px solid var(--via-navy-08);
   flex-wrap: wrap;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-3);
 }
 .vds-ed-youtube-meta button {
@@ -680,7 +680,7 @@
   border: 0.5px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-primary);
   cursor: pointer;
   transition: background 120ms ease;
@@ -697,7 +697,7 @@
 .vds-ed-youtube-desc p strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 .vds-ed-youtube-pre {
   font-family: var(--via-mono);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-primary);
   background: var(--via-gray-50);
   padding: 16px 20px;
@@ -788,7 +788,7 @@
 }
 .vds-ed-tutorial-meta strong {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
@@ -815,7 +815,7 @@
 .vds-ed-tutorial p strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-ed-tutorial p code {
   font-family: var(--via-mono);
-  font-size: 12.5px;
+  font-size: 12px;
   background: var(--via-navy-04);
   color: var(--via-text-primary);
   padding: 2px 6px;

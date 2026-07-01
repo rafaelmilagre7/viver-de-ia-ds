@@ -63,7 +63,7 @@
 .via-spinner--soft { color: var(--via-ink-2, #5E6B82); }
 
 .via-spinner__label {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-2, #5E6B82);
   letter-spacing: -0.006em;

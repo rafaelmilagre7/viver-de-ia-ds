@@ -1174,7 +1174,7 @@
 }
 
 .vds-print-list strong {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -1190,7 +1190,7 @@
 
 .vds-print-list code {
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   padding: 1px 5px;
@@ -1219,7 +1219,7 @@
   border-radius: 8px;
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;

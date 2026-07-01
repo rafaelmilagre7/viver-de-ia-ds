@@ -104,7 +104,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -140,7 +140,7 @@
 .vds-cnx-eyebrow {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -168,7 +168,7 @@
 
 .vds-cnx-lede {
   margin: 0 0 28px;
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--via-ink-2);
 }
@@ -284,7 +284,7 @@
 }
 
 .vds-cnx-reason-body strong {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -292,7 +292,7 @@
 
 .vds-cnx-reason-body em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-ink-3);
 }
 
@@ -326,7 +326,7 @@
   right: 18px;
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -372,7 +372,7 @@
 
 .vds-cnx-offer p {
   margin: 0 0 18px;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.74);
   max-width: 540px;
@@ -391,7 +391,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.86);
   letter-spacing: -0.006em;
 }
@@ -409,7 +409,7 @@
   color: var(--via-white);
   border: none;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
@@ -497,7 +497,7 @@
 .vds-cnx-alt-body h4 {
   margin: 0;
   font-family: var(--via-display);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
@@ -520,7 +520,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;

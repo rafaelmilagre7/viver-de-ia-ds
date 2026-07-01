@@ -135,7 +135,7 @@
 .via-search li .t {
   flex: 1;
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -161,7 +161,7 @@
 
 .via-search .hint {
   font-family: var(--via-font);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
   display: inline-flex;

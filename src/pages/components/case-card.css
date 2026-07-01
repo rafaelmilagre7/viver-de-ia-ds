@@ -153,7 +153,7 @@
   align-items: center;
   gap: 8px;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   color: var(--via-text-primary);

@@ -233,7 +233,7 @@
   counter-increment: step;
   padding-left: 38px;
   position: relative;
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--via-text);
 }
@@ -320,7 +320,7 @@
 }
 
 .vds-ec-em-fine {
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-3);
   line-height: 1.55;
   margin-top: 14px;
@@ -331,7 +331,7 @@
   margin-top: 24px !important;
   padding-top: 14px;
   border-top: 0.5px solid var(--via-navy-08);
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   line-height: 1.5 !important;
 }
 .vds-ec-em-sign strong {
@@ -377,7 +377,7 @@
 .vds-ec-em-billing-plate strong.val { font-size: 22px; }
 .vds-ec-em-billing-plate em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-ink-3);
   margin-top: 2px;
 }
@@ -415,7 +415,7 @@
 }
 .vds-ec-em-alert em {
   font-style: normal;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text);
 }
 
@@ -457,7 +457,7 @@
 }
 .vds-ec-em-hero-meta {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
 }
@@ -518,7 +518,7 @@
 }
 .vds-ec-em-recap em {
   font-style: normal;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text);
 }
 
@@ -536,7 +536,7 @@
   grid-template-columns: 56px 1fr;
   gap: 12px;
   align-items: flex-start;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.5;
 }
 .vds-ec-em-timeline .t {
@@ -737,7 +737,7 @@
 }
 .vds-ec-drip-body p {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text);
   line-height: 1.55;
   margin: 4px 0 0;
@@ -822,14 +822,14 @@
 }
 .vds-ec-note p {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text);
   line-height: 1.5;
   margin: 0;
 }
 .vds-ec-note .mono {
   font-family: var(--via-mono);
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-primary);
 }
 

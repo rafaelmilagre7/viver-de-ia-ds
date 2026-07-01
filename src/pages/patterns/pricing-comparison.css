@@ -125,7 +125,7 @@
   color: var(--via-white);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -138,7 +138,7 @@
 
 .vds-pricing-tier__desc {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
   line-height: 1.5;
@@ -217,7 +217,7 @@
 .vds-pricing-feature {
   padding: 16px 24px;
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text-body);
   letter-spacing: -0.008em;
   display: flex;
@@ -242,7 +242,7 @@
 .vds-pricing-cell {
   padding: 16px 24px;
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text-body);
   letter-spacing: -0.008em;
   display: flex;
@@ -393,7 +393,7 @@
 .vds-pricing-principle p {
   margin: 0;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.6;
   color: var(--via-text-body);
   letter-spacing: -0.004em;

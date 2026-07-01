@@ -62,7 +62,7 @@
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   font-family: var(--via-font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -86,7 +86,7 @@
 
 .vds-ins-by {
   margin: 0 0 22px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -253,7 +253,7 @@
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   width: fit-content;
@@ -307,7 +307,7 @@
 }
 .vds-ins-chart > header p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -414,7 +414,7 @@
 }
 .vds-ins-quotes > header p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -474,7 +474,7 @@
 .vds-ins-quote p {
   margin: 0 0 16px;
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--via-text-body);
   letter-spacing: -0.008em;
@@ -488,7 +488,7 @@
 }
 .vds-ins-quote footer strong {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -496,7 +496,7 @@
 .vds-ins-quote footer em {
   font-style: normal;
   font-family: var(--via-font);
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -521,7 +521,7 @@
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   font-family: var(--via-font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -634,7 +634,7 @@
 }
 .vds-ins-foot-tip p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.55;
   color: var(--via-text-body);
   letter-spacing: -0.004em;
@@ -779,7 +779,7 @@
 
 .vds-ins-tile-mini {
   font-family: var(--via-font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-text-muted);
   letter-spacing: 0.02em;
   white-space: nowrap;

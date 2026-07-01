@@ -336,7 +336,7 @@
 
 .vds-apikeys header p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-soft);
   max-width: 460px;
 }
@@ -350,7 +350,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   border: none;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
@@ -379,7 +379,7 @@
 
 .vds-apikey-tag {
   display: inline-flex;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 9px;
@@ -411,7 +411,7 @@
 
 .vds-apikey-card p {
   margin: 0;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
 }
 
@@ -504,7 +504,7 @@
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.9);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   font-family: inherit;
@@ -750,7 +750,7 @@
 
 .vds-billing-btn.sm {
   padding: 8px 14px;
-  font-size: 11.5px;
+  font-size: 11px;
 }
 
 /* Method card */
@@ -789,7 +789,7 @@
 
 .vds-cc-dots {
   font-family: var(--via-font-mono);
-  font-size: 12.5px;
+  font-size: 12px;
   flex: 1;
   letter-spacing: 0.04em;
 }
@@ -803,7 +803,7 @@
 
 .vds-billing-card p {
   margin: 0 0 10px;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
 }
 
@@ -904,7 +904,7 @@
   color: var(--via-text-primary);
   text-align: right;
   font-feature-settings: 'tnum' 1;
-  font-size: 12.5px;
+  font-size: 12px;
   letter-spacing: 0;
 }
 
@@ -1124,7 +1124,7 @@
 
 .vds-audit-text p {
   margin: 0 0 4px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text);
   letter-spacing: -0.008em;
   line-height: 1.4;
@@ -1136,7 +1136,7 @@
 }
 
 .vds-audit-text span {
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
 }
@@ -1228,7 +1228,7 @@
 
 .vds-wh-head p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-2);
   line-height: 1.5;
 }
@@ -1350,7 +1350,7 @@
 
 .vds-wh-meta {
   margin: 0;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-ink-3);
   line-height: 1.4;
 }
@@ -1358,7 +1358,7 @@
 .vds-wh-meta em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-2);
 }
 
@@ -1409,7 +1409,7 @@
 
 .vds-wh-rate em {
   font-style: normal;
-  font-size: 9.5px;
+  font-size: 9px;
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }
@@ -1479,7 +1479,7 @@
 
 .vds-wh-secret code {
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   padding: 1px 5px;
@@ -1507,7 +1507,7 @@
 
 .vds-wh-secret-key .key {
   flex: 1;
-  font-size: 12.5px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.01em;
   overflow: hidden;
@@ -1563,7 +1563,7 @@
 
 .vds-wh-secret-foot strong {
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
 }
@@ -1602,7 +1602,7 @@
 
 .vds-perm-head p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-2);
   line-height: 1.5;
   max-width: 540px;
@@ -1617,7 +1617,7 @@
   background: var(--via-navy-05);
   border: 1px solid var(--via-navy-12);
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.01em;
@@ -1660,7 +1660,7 @@
 
 .vds-perm-table thead th {
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1713,7 +1713,7 @@
 
 .role-meta {
   display: block;
-  font-size: 9.5px;
+  font-size: 9px;
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
   text-transform: none;
@@ -1723,7 +1723,7 @@
   padding: 14px 14px;
   border-bottom: 1px solid var(--via-border-soft);
   vertical-align: middle;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
   position: relative;

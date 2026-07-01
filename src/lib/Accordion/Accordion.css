@@ -110,7 +110,7 @@
 
 .via-accordion__content {
   padding: 0 4px 18px;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--via-text, var(--via-gray-700));
 }

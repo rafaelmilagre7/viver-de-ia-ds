@@ -16,7 +16,7 @@
 /* ===== Sizes ===== */
 .via-pill--sm {
   padding: 3px 9px;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
 }
 

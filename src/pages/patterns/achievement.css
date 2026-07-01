@@ -109,7 +109,7 @@
 .vds-rings-legend em {
   font-style: normal;
   display: block;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-gray-300);
   margin-top: 2px;
   letter-spacing: -0.005em;
@@ -364,7 +364,7 @@
 .vds-streak-milestone em {
   display: block;
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
   margin-top: 8px;
   letter-spacing: -0.005em;
@@ -473,7 +473,7 @@
 .vds-cert-brand-eyebrow {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -483,7 +483,7 @@
 
 .vds-cert-brand strong {
   display: block;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.010em;
@@ -499,7 +499,7 @@
 .vds-cert-issued em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -605,7 +605,7 @@
   border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
   letter-spacing: -0.004em;
@@ -808,7 +808,7 @@
   align-items: center;
   gap: 10px;
   font-family: var(--via-font-mono);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
@@ -818,7 +818,7 @@
 .vds-cert-id em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -833,7 +833,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
@@ -892,7 +892,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -921,7 +921,7 @@
 
 .vds-cohort-l > p {
   margin: 0 0 32px;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--via-text-soft);
   max-width: 460px;
@@ -930,7 +930,7 @@
 .vds-cohort-axis {
   display: flex;
   justify-content: space-between;
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -994,7 +994,7 @@
 
 .vds-cohort-hint {
   margin: 22px 0 0;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
 }
@@ -1111,7 +1111,7 @@
 .vds-cohort-stack em {
   display: block;
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-gray-300);
   margin-top: 2px;
   letter-spacing: -0.005em;

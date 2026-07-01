@@ -137,7 +137,7 @@
 .vds-pers-dont .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -149,7 +149,7 @@
 .vds-pers-do  p,
 .vds-pers-dont p {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text);
   line-height: 1.6;
   margin: 0;
@@ -290,7 +290,7 @@
 .vds-pers-opt .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -301,7 +301,7 @@
 .vds-pers-opt p {
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 15.5px;
+  font-size: 15px;
   color: var(--via-text-primary);
   line-height: 1.5;
   margin: 0;
@@ -315,7 +315,7 @@
 .vds-pers-why {
   grid-column: 1 / -1;
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--via-text);
   margin: 6px 0 0;
   line-height: 1.6;
@@ -335,5 +335,5 @@
   .vds-pers-quiz     { padding: 22px 22px; }
   .vds-pers-num      { font-size: 44px; }
   .vds-pers-trait h3 { font-size: 24px; }
-  .vds-pers-sum      { font-size: 15.5px; }
+  .vds-pers-sum      { font-size: 15px; }
 }

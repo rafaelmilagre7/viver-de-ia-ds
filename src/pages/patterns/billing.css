@@ -113,7 +113,7 @@
 }
 .vds-billing-step__label {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   color: var(--via-text-muted);
@@ -270,14 +270,14 @@
 }
 .vds-billing-plan__price em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-muted);
   font-weight: var(--via-fw-regular);
   margin-left: 4px;
 }
 .vds-billing-plan__desc {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.55;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
@@ -292,7 +292,7 @@
   color: var(--via-white);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -353,7 +353,7 @@
 }
 .vds-billing-review-line .lbl {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -429,7 +429,7 @@
 .vds-billing-summary__head svg { color: var(--via-text-primary); }
 .vds-billing-summary__head span {
   font-family: var(--via-font);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -456,7 +456,7 @@
 }
 .vds-billing-summary__total-lbl {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.008em;
   color: var(--via-text-primary);
@@ -470,7 +470,7 @@
 }
 .vds-billing-summary__total-hint {
   margin: 6px 0 0;
-  font-size: 11.5px;
+  font-size: 11px;
   line-height: 1.5;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
@@ -563,7 +563,7 @@
 .vds-billing-principle p {
   margin: 0;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.6;
   color: var(--via-text-body);
   letter-spacing: -0.004em;

@@ -71,7 +71,7 @@
 
 .vds-phil-rule > header p {
   margin: 0;
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--via-ink-2);
   max-width: 720px;
@@ -115,7 +115,7 @@
 .vds-phil-forbid-eyebrow {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -163,7 +163,7 @@
 }
 
 .vds-phil-allow strong {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -267,7 +267,7 @@
   background: linear-gradient(180deg, var(--via-navy-darker), var(--via-navy));
   color: rgba(255, 255, 255, 0.9);
   font-family: var(--via-mono);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.6;
   letter-spacing: 0.01em;
   overflow-x: auto;
@@ -316,7 +316,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.01em;
 }
@@ -329,7 +329,7 @@
 }
 
 .vds-phil-token strong {
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.01em;
@@ -337,7 +337,7 @@
 
 .vds-phil-token em {
   font-style: normal;
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3);
   line-height: 1.4;
 }
@@ -475,14 +475,14 @@
 
 .vds-phil-sig p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.55;
   color: var(--via-ink-2);
 }
 
 .vds-phil-sig code {
   font-family: var(--via-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   background: var(--via-navy-05);
   color: var(--via-text-primary);
   padding: 1px 5px;
@@ -561,7 +561,7 @@
   font-family: var(--via-display);
   font-style: italic;
   font-weight: var(--via-fw-medium);
-  font-size: 12.5px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.94);
   letter-spacing: -0.012em;
 }
@@ -649,7 +649,7 @@
 
 .vds-phil-voice em {
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-ink-3);
   line-height: 1.5;
 }

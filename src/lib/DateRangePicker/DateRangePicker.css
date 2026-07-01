@@ -78,7 +78,7 @@
 .via-drp__presets button {
   padding: 5px 11px;
   font-family: var(--via-font);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
@@ -102,7 +102,7 @@
   padding-top: 10px;
   border-top: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-ink-2, #5E6B82);
   text-align: center;
 }

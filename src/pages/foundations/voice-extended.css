@@ -88,7 +88,7 @@
 .vds-ve-sample.bad  .lbl { color: var(--via-text-muted); }
 .vds-ve-sample pre {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--via-text-primary);
   margin: 0;
@@ -165,7 +165,7 @@
   padding-left: 50px;
   position: relative;
   font-family: var(--via-font);
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--via-text);
 }

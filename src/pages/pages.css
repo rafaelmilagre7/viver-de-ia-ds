@@ -696,7 +696,7 @@
 
 .vds-type-label {
   font-family: var(--via-font);
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -710,7 +710,7 @@
 
 .vds-type-meta {
   font-family: var(--via-font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-text-soft);
   text-align: right;
   letter-spacing: 0.04em;

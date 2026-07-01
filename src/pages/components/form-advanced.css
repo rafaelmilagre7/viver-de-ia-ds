@@ -50,7 +50,7 @@
 }
 
 .vds-form-hint {
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
   margin: 6px 0 0;
   line-height: 1.5;
@@ -118,7 +118,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text);
   letter-spacing: -0.005em;
 }
@@ -219,7 +219,7 @@
 
 .vds-dp-week span {
   text-align: center;
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -430,7 +430,7 @@
 }
 
 .vds-dp-range-eyebrow {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -461,7 +461,7 @@
     radial-gradient(180px 60px at 0% 0%, var(--via-navy-06), transparent 70%),
     var(--via-navy-04);
   border: 1px solid rgba(10, 31, 59, 0.11);
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text);
   letter-spacing: -0.005em;
 }
@@ -735,7 +735,7 @@
 
 .vds-combobox-text .lbl {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -743,7 +743,7 @@
 
 .vds-combobox-text .meta {
   margin: 2px 0 0;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
 }
 
@@ -764,7 +764,7 @@
   justify-content: center;
   gap: 10px;
   padding: 24px 14px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-soft);
   text-align: center;
 }
@@ -893,7 +893,7 @@
   background: var(--via-surface);
   border: 1px dashed var(--via-navy-20);
   color: var(--via-text-primary);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
@@ -1181,7 +1181,7 @@
 
 .vds-rating-meta {
   margin: 0;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--via-text-soft);
   line-height: 1.4;
 }

@@ -83,7 +83,7 @@
 .via-nav-d a {
   position: relative;
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   text-decoration: none;

@@ -51,7 +51,7 @@
   border: none;
   cursor: pointer;
   font-family: inherit;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
@@ -98,7 +98,7 @@
 
 .via-cm__shortcut {
   font-family: var(--via-font-mono, monospace);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--via-ink-3, #6B7891);
   letter-spacing: 0.04em;
 }

@@ -73,7 +73,7 @@
   top: 5px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 7.5px;
+  font-size: 8px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   color: var(--via-text-soft);

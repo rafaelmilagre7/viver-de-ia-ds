@@ -520,7 +520,7 @@
 
 .vds-transcript .ts {
   font-family: var(--via-font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   background: var(--via-navy-05);
@@ -549,7 +549,7 @@
 }
 
 .vds-transcript p {
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.6;
   color: var(--via-text);
   margin: 0;
@@ -612,7 +612,7 @@
 }
 
 .vds-notes-eyebrow {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;

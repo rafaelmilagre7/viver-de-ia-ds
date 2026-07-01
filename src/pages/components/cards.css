@@ -59,7 +59,7 @@
 
 .via-card .body {
   font-family: var(--via-font);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--via-text-soft);
   margin: 0 0 8px;
@@ -200,7 +200,7 @@
 
 .via-card-stat .sub {
   font-family: var(--via-font);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--via-text-soft);
   margin: 0;
   line-height: 1.5;

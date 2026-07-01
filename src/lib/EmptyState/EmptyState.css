@@ -95,7 +95,7 @@
 
 .via-empty-state__description {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--via-ink-2, #5E6B82);
   max-width: 380px;
