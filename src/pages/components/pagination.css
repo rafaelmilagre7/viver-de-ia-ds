@@ -23,7 +23,7 @@
   border: 1px solid transparent;
   color: var(--via-text-soft);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;

@@ -27,7 +27,7 @@
 .al-nav nav { display: flex; gap: var(--via-space-7); flex: 1; justify-content: center; }
 .al-nav a {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -39,7 +39,7 @@
 .al-nav .user { display: flex; align-items: center; gap: var(--via-space-3); }
 .al-nav .hi {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -55,7 +55,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.012em;
   box-shadow:
@@ -96,7 +96,7 @@
 .al-hero h1 em { font-style: normal; color: var(--via-text-muted); }
 .al-hero .lede {
   font-family: var(--via-font);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   color: var(--via-text-body);
   line-height: 1.5;
   max-width: 540px;
@@ -111,7 +111,7 @@
   border: 1px solid transparent;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
@@ -178,16 +178,16 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.03em;
   color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
 }
-.al-progress .pct em { font-style: normal; color: var(--via-text-muted); font-size: 18px; margin-left: 2px; font-weight: var(--via-fw-medium); }
+.al-progress .pct em { font-style: normal; color: var(--via-text-muted); font-size: var(--via-fs-h4); margin-left: 2px; font-weight: var(--via-fw-medium); }
 .al-progress .sub {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   margin: 0;
 }
@@ -239,7 +239,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   flex-shrink: 0;
 }
@@ -249,7 +249,7 @@
 .al-modules .num {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -266,7 +266,7 @@
 }
 .al-modules .dur {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
 }
 
@@ -288,19 +288,19 @@
 .al-side .next li:last-child { border-bottom: none; }
 .al-side .next .t {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
 }
 .al-side .next .l {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
   line-height: 1.4;
 }
 .al-side .act li {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.55;
   color: var(--via-text-body);
   padding: 8px 0;
@@ -334,7 +334,7 @@
 }
 .al-side .mini-cta p {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.72);
   margin: 0;
   line-height: 1.5;
@@ -350,7 +350,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;

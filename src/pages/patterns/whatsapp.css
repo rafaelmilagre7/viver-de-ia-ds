@@ -87,7 +87,7 @@
   background: var(--via-navy-deep);
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   z-index: 3;
 }
@@ -145,7 +145,7 @@
 .vds-wa-meta strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.005em;
@@ -155,7 +155,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.78);
   margin-top: 1px;
 }
@@ -212,7 +212,7 @@
 .vds-wa-sys {
   align-self: center;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: rgba(0,0,0,0.55);
   background: rgba(225,245,254,0.92);
@@ -278,7 +278,7 @@
 .vds-wa-bubble p {
   margin: 0;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.4;
   color: inherit;
   padding-right: 50px;
@@ -293,7 +293,7 @@
   align-items: center;
   gap: 3px;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: rgba(0,0,0,0.45);
 }
 .vds-wa-bubble.me .meta { color: rgba(255,255,255,0.65); }
@@ -337,7 +337,7 @@
   background: transparent;
   padding: 8px 4px;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   color: rgba(0,0,0,0.85);
 }
 .vds-wa-field input::placeholder { color: rgba(0,0,0,0.40); }

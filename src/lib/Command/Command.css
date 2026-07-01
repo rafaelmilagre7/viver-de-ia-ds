@@ -72,7 +72,7 @@
   outline: none;
   background: transparent;
   font-family: var(--via-font, inherit);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   color: var(--via-text-primary);
   padding: 2px 0;
 }
@@ -103,7 +103,7 @@
   margin: 0;
   padding: 32px 16px;
   text-align: center;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-ink-3, #6B7891);
 }
 
@@ -120,7 +120,7 @@
   display: block;
   padding: 8px 10px 4px;
   font-family: var(--via-font, inherit);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -159,21 +159,21 @@
 }
 .via-cmd__label strong {
   font-family: var(--via-font, inherit);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
 .via-cmd__label em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3, #6B7891);
   margin-top: 2px;
 }
 
 .via-cmd__kbd {
   font-family: var(--via-mono, var(--via-font-mono, ui-monospace, monospace));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   padding: 2px 6px;
   border-radius: 5px;
   background: var(--via-navy-04, rgba(10,31,59,0.04));
@@ -189,13 +189,13 @@
   padding: 9px 14px;
   border-top: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
   background: var(--via-gray-50, #F7F8FA);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3, #6B7891);
   flex-shrink: 0;
 }
 .via-cmd__foot kbd {
   font-family: var(--via-mono, var(--via-font-mono, ui-monospace, monospace));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   padding: 1px 5px;
   border-radius: 4px;
   background: var(--via-navy-04);

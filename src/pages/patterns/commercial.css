@@ -26,14 +26,14 @@
 }
 .vds-com-slide-num {
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 .vds-com-slide-meta em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   text-align: right;
 }
@@ -50,7 +50,7 @@
 }
 .vds-com-slide-canvas h2 {
   font-family: var(--via-font-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   line-height: 1.12;
   letter-spacing: -0.022em;
@@ -64,7 +64,7 @@
 }
 .vds-com-slide-canvas p {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255, 255, 255, 0.65);
   margin: 0;
   line-height: 1.45;
@@ -117,7 +117,7 @@
 }
 .vds-com-deck-rules h4 {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -134,7 +134,7 @@
 }
 .vds-com-deck-rules li {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
   padding-left: 16px;
@@ -178,7 +178,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -215,14 +215,14 @@
 }
 .vds-com-onepager-stats strong {
   font-family: var(--via-mono);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 .vds-com-onepager-stats em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 
@@ -234,7 +234,7 @@
 .vds-com-onepager-cols article:nth-child(3) { grid-column: span 2; }
 .vds-com-onepager-cols h3 {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -244,7 +244,7 @@
 .vds-com-onepager-cols p,
 .vds-com-onepager-cols li {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   line-height: 1.55;
   margin: 0;
@@ -279,14 +279,14 @@
 .vds-com-onepager footer strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 3px;
 }
 .vds-com-onepager footer em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 .vds-com-onepager-cta {
@@ -295,7 +295,7 @@
   color: var(--via-white);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
   letter-spacing: -0.004em;
@@ -328,7 +328,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -351,7 +351,7 @@
 }
 .vds-com-case > header p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
   margin: 0;
   line-height: 1.55;
@@ -369,7 +369,7 @@
 }
 .vds-com-case-eyebrow {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -377,7 +377,7 @@
 }
 .vds-com-case-body p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
   line-height: 1.6;
   margin: 0;
@@ -397,7 +397,7 @@
   position: relative;
   padding-left: 36px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
   line-height: 1.55;
 }
@@ -406,7 +406,7 @@
   position: absolute;
   left: 0;
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   background: var(--via-navy-04);
@@ -434,14 +434,14 @@
 }
 .vds-com-case-stats strong {
   font-family: var(--via-mono);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 .vds-com-case-stats em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 
@@ -454,7 +454,7 @@
   margin: 0 0 14px;
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   color: var(--via-text-primary);
   line-height: 1.45;
   letter-spacing: -0.018em;
@@ -467,13 +467,13 @@
 }
 .vds-com-case > footer cite strong {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-com-case > footer cite em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 
@@ -499,7 +499,7 @@
 .vds-com-proposal-num {
   display: block;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
   margin-top: 6px;
@@ -513,14 +513,14 @@
 .vds-com-proposal-meta em {
   font-style: normal;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--via-ink-3);
 }
 .vds-com-proposal-meta strong {
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
 }
@@ -533,7 +533,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -542,7 +542,7 @@
 }
 .vds-com-proposal p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.6;
   margin: 0 0 10px;
@@ -550,7 +550,7 @@
 .vds-com-proposal-for strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 4px;
@@ -558,7 +558,7 @@
 .vds-com-proposal-for em {
   display: block;
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   line-height: 1.5;
 }
@@ -575,7 +575,7 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
 }
 .vds-com-proposal-list li svg {
@@ -592,7 +592,7 @@
   padding: 9px 0;
   border-bottom: 0.5px solid var(--via-navy-08);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
 }
 .vds-com-proposal-cost td:last-child {
@@ -603,7 +603,7 @@
 .vds-com-proposal-total td {
   border-bottom: none;
   padding-top: 14px;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   border-top: 1px solid var(--via-navy-12);
 }
 .vds-com-proposal-total strong {
@@ -612,7 +612,7 @@
 }
 .vds-com-proposal-payment {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   line-height: 1.5;
 }
@@ -629,14 +629,14 @@
 .vds-com-proposal > footer strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 4px;
 }
 .vds-com-proposal > footer em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   line-height: 1.5;
 }
@@ -648,7 +648,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.004em;
@@ -678,7 +678,7 @@
 .vds-com-contract > header > div strong {
   display: block;
   font-family: var(--via-font-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 3px;
@@ -686,7 +686,7 @@
 }
 .vds-com-contract > header > div em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-com-contract section {
@@ -694,7 +694,7 @@
 }
 .vds-com-contract h3 {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin: 0 0 10px;
@@ -702,7 +702,7 @@
 }
 .vds-com-contract p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.65;
   margin: 0 0 8px;
@@ -731,18 +731,18 @@
 }
 .vds-com-contract-sig strong {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-com-contract-sig em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 .vds-com-contract-loc {
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   text-align: center;
   margin-top: 22px;

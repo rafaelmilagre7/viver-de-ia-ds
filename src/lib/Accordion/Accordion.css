@@ -54,7 +54,7 @@
   border: none;
   cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
@@ -110,7 +110,7 @@
 
 .via-accordion__content {
   padding: 0 4px 18px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.6;
   color: var(--via-text, var(--via-gray-700));
 }

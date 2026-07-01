@@ -29,7 +29,7 @@
 .vds-rings-eyebrow {
   display: inline-flex;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -38,7 +38,7 @@
 }
 
 .vds-rings-l h3 {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.08;
@@ -56,7 +56,7 @@
 }
 
 .vds-rings-l p {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.62;
   color: var(--via-gray-200);
   margin: 0 0 28px;
@@ -100,7 +100,7 @@
 
 .vds-rings-legend strong {
   display: block;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.005em;
@@ -109,7 +109,7 @@
 .vds-rings-legend em {
   font-style: normal;
   display: block;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-gray-300);
   margin-top: 2px;
   letter-spacing: -0.005em;
@@ -117,7 +117,7 @@
 
 .vds-rings-legend .pct {
   font-family: var(--via-font-mono);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   font-feature-settings: 'tnum' 1;
@@ -161,7 +161,7 @@
 
 .vds-rings-week {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -169,7 +169,7 @@
 }
 
 .vds-rings-day {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-white);
@@ -187,7 +187,7 @@
   background: rgba(10, 31, 59, 0.09);
   border: 1px solid var(--via-navy-20);
   color: var(--via-gray-300);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.04em;
   font-feature-settings: 'tnum' 1;
@@ -241,7 +241,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -275,7 +275,7 @@
 
 .vds-streak-stage p {
   margin: 0 0 28px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.62;
   color: var(--via-gray-200);
   letter-spacing: -0.008em;
@@ -316,7 +316,7 @@
   display: flex;
   justify-content: space-between;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -364,7 +364,7 @@
 .vds-streak-milestone em {
   display: block;
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   margin-top: 8px;
   letter-spacing: -0.005em;
@@ -473,7 +473,7 @@
 .vds-cert-brand-eyebrow {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -483,7 +483,7 @@
 
 .vds-cert-brand strong {
   display: block;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.010em;
@@ -499,7 +499,7 @@
 .vds-cert-issued em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -507,7 +507,7 @@
 }
 
 .vds-cert-issued strong {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
   letter-spacing: -0.008em;
@@ -533,7 +533,7 @@
 .vds-cert-pre {
   font-family: var(--via-font);
   font-style: italic;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   color: var(--via-gray-300);
   margin: 0 0 16px;
@@ -557,7 +557,7 @@
 .vds-cert-program {
   margin: 0 auto 6px;
   max-width: 640px;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-regular);
   color: var(--via-gray-300);
   letter-spacing: -0.006em;
@@ -569,7 +569,7 @@
   display: block;
   margin-top: 6px;
   color: var(--via-white);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.020em;
   line-height: 1.25;
@@ -579,7 +579,7 @@
 /* Período */
 .vds-cert-period {
   margin: 0 auto 24px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   color: var(--via-gray-300);
   letter-spacing: -0.006em;
@@ -605,7 +605,7 @@
   border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
   letter-spacing: -0.004em;
@@ -647,7 +647,7 @@
 
 .vds-cert-stats strong {
   display: block;
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.034em;
@@ -656,7 +656,7 @@
 }
 
 .vds-cert-stats strong sup {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   vertical-align: super;
   margin-left: 2px;
@@ -671,7 +671,7 @@
   margin-top: 10px;
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -705,7 +705,7 @@
 
 .vds-cert-sign strong {
   display: block;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.014em;
@@ -718,7 +718,7 @@
   display: block;
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -808,7 +808,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
@@ -818,7 +818,7 @@
 .vds-cert-id em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -833,7 +833,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
@@ -892,7 +892,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -905,7 +905,7 @@
 
 .vds-cohort-l h3 {
   margin: 12px 0 14px;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.024em;
   line-height: 1.15;
@@ -921,7 +921,7 @@
 
 .vds-cohort-l > p {
   margin: 0 0 32px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-soft);
   max-width: 460px;
@@ -930,7 +930,7 @@
 .vds-cohort-axis {
   display: flex;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -994,7 +994,7 @@
 
 .vds-cohort-hint {
   margin: 22px 0 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
 }
@@ -1038,7 +1038,7 @@
 
 .vds-cohort-r h4 {
   margin: 0;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-white);
@@ -1054,7 +1054,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
   font-family: var(--via-font);
@@ -1088,7 +1088,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -1102,7 +1102,7 @@
 
 .vds-cohort-stack strong {
   display: block;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.005em;
@@ -1111,7 +1111,7 @@
 .vds-cohort-stack em {
   display: block;
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-gray-300);
   margin-top: 2px;
   letter-spacing: -0.005em;
@@ -1129,7 +1129,7 @@
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-navy-20);
   color: var(--via-text-primary);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;

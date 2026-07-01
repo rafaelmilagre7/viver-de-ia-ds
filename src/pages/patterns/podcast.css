@@ -53,7 +53,7 @@
 .vds-pod .num {
   position: relative;
   font-family: var(--via-font);
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.03em;
@@ -88,7 +88,7 @@
 
 .vds-pod .eyebrow {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -104,7 +104,7 @@
 
 .vds-pod .title {
   font-family: var(--via-font);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);

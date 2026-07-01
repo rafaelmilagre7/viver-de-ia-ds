@@ -24,14 +24,14 @@
 }
 .vds-le-hero-name {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
 .vds-le-hero-card > header em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 
@@ -45,7 +45,7 @@
 .vds-le-hero-eyebrow {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -69,7 +69,7 @@
 }
 .vds-le-hero-canvas p {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   color: rgba(255, 255, 255, 0.7);
   margin: 0 0 28px;
   max-width: 520px;
@@ -89,7 +89,7 @@
   color: var(--via-text-primary);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
   box-shadow:
@@ -107,7 +107,7 @@
   border: 0.5px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
   transition: var(--via-t);
@@ -139,7 +139,7 @@
 }
 .vds-le-cta-card em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 .vds-le-cta {
@@ -149,7 +149,7 @@
   padding: 9px 16px;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
@@ -189,7 +189,7 @@
 }
 .vds-le-cta-rules h4 {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -206,7 +206,7 @@
 }
 .vds-le-cta-rules li {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
   padding-left: 16px;
@@ -235,7 +235,7 @@
 .vds-le-trust-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -261,7 +261,7 @@
 .vds-le-trust-numbers li:last-child { border-bottom: none; }
 .vds-le-trust-numbers strong {
   font-family: var(--via-mono);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -269,14 +269,14 @@
 }
 .vds-le-trust-numbers em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
 }
 .vds-le-trust-quote blockquote {
   margin: 0 0 16px;
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   color: var(--via-text-primary);
   line-height: 1.45;
   letter-spacing: -0.018em;
@@ -295,7 +295,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   display: inline-flex;
   align-items: center;
@@ -304,13 +304,13 @@
 .vds-le-trust-quote strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-le-trust-quote em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 .vds-le-trust-cases li {
@@ -323,13 +323,13 @@
 .vds-le-trust-cases li:last-child { border-bottom: none; }
 .vds-le-trust-cases strong {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-le-trust-cases em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 
@@ -362,7 +362,7 @@
 .vds-le-faq-item summary > div { display: flex; flex-direction: column; gap: var(--via-space-1); }
 .vds-le-faq-cat {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -370,7 +370,7 @@
 }
 .vds-le-faq-item summary strong {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
@@ -384,7 +384,7 @@
   margin: 0;
   padding: 0 20px 18px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
   line-height: 1.6;
 }
@@ -407,7 +407,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -430,7 +430,7 @@
 }
 .vds-le-lead-magnet p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: rgba(255, 255, 255, 0.7);
   margin: 0 0 16px;
   line-height: 1.55;
@@ -448,7 +448,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-le-lead-magnet-l li svg { color: var(--via-success); flex-shrink: 0; }
@@ -465,7 +465,7 @@
 }
 .vds-le-lead-magnet-form label {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -486,7 +486,7 @@
   outline: none;
   background: transparent;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
   padding: 0;
   letter-spacing: -0.004em;
@@ -502,7 +502,7 @@
   color: var(--via-text-primary);
   border-radius: 8px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   border: none;
@@ -512,7 +512,7 @@
 .vds-le-lead-magnet-cta:hover { transform: translateY(-1px); }
 .vds-le-lead-magnet-fine {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.45;
 }
@@ -533,7 +533,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -564,21 +564,21 @@
 .vds-le-countdown-grid em {
   font-style: normal;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
 }
 .vds-le-countdown-sep {
   font-family: var(--via-mono);
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: -0.02em;
   padding: 0 6px;
 }
 .vds-le-countdown p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: rgba(255, 255, 255, 0.7);
   margin: 0 0 24px;
   line-height: 1.5;
@@ -593,7 +593,7 @@
   color: var(--via-text-primary);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
   box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.35);
@@ -605,7 +605,7 @@
   border-left: 2px solid var(--via-navy);
   border-radius: 8px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
 }
@@ -633,7 +633,7 @@
 .vds-le-compare .cell {
   padding: 14px 18px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.5;
   border-right: 0.5px solid var(--via-navy-08);
@@ -667,14 +667,14 @@
 .vds-le-compare header .cell.empty { background: var(--via-gray-50); }
 .vds-le-compare header strong {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
 .vds-le-compare header em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 
@@ -685,7 +685,7 @@
   border-left: 2px solid var(--via-navy);
   border-radius: 8px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
 }

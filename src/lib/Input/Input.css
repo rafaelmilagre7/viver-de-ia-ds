@@ -9,7 +9,7 @@
 
 .via-input__label {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
@@ -115,21 +115,21 @@
   padding: 7px 11px;
 }
 .via-input--sm input {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
 }
 
 .via-input--md {
   padding: 10px 14px;
 }
 .via-input--md input {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
 }
 
 .via-input--lg {
   padding: 13px 16px;
 }
 .via-input--lg input {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
 }
 
 /* ===== Variants ===== */
@@ -156,7 +156,7 @@
 /* ===== Messages ===== */
 .via-input__msg {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: -0.004em;
 }

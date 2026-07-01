@@ -88,7 +88,7 @@
 }
 
 .vds-receipt-cnpj {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   line-height: 1.6;
   color: var(--via-text-soft);
   margin: 0;
@@ -107,7 +107,7 @@
   border-radius: 999px;
   background: var(--via-navy-08);
   border: 1px solid var(--via-navy-12);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-primary);
@@ -117,7 +117,7 @@
 
 .vds-receipt-num {
   margin: 12px 0 4px;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
@@ -125,7 +125,7 @@
 }
 
 .vds-receipt-num span {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   margin-right: 4px;
@@ -134,7 +134,7 @@
 
 .vds-receipt-date {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-feature-settings: 'tnum' 1;
 }
@@ -150,7 +150,7 @@
 }
 
 .vds-receipt-eyebrow {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -159,7 +159,7 @@
 }
 
 .vds-receipt-name {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 8px;
@@ -167,7 +167,7 @@
 }
 
 .vds-receipt-info {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.6;
   color: var(--via-text-soft);
   margin: 0;
@@ -182,7 +182,7 @@
 }
 
 .vds-receipt-table thead th {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -211,7 +211,7 @@
   text-align: right;
   white-space: nowrap;
   color: var(--via-text-primary);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
 }
 
@@ -220,7 +220,7 @@
 }
 
 .vds-receipt-item-name {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 4px;
@@ -228,7 +228,7 @@
 }
 
 .vds-receipt-item-sub {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   margin: 0;
   line-height: 1.5;
@@ -244,7 +244,7 @@
 }
 
 .vds-receipt-note p:not(.vds-receipt-eyebrow) {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.6;
   color: var(--via-text-soft);
   margin: 0;
@@ -281,7 +281,7 @@
   justify-content: space-between;
   align-items: baseline;
   padding: 8px 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   position: relative;
 }
 
@@ -308,14 +308,14 @@
 
 .vds-receipt-totals-card .row.total span:first-child {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: var(--via-fw-semibold);
 }
 
 .vds-receipt-totals-card .row.total span:last-child {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
 }
@@ -334,7 +334,7 @@
 }
 
 .vds-receipt-pay-name {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 4px;
@@ -343,7 +343,7 @@
 
 .vds-receipt-pay-key {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-primary);
   margin: 0 0 10px;
   display: inline-flex;
@@ -386,7 +386,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
 }
 
@@ -428,7 +428,7 @@
 }
 
 .vds-receipt-foot p {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   line-height: 1.6;
   margin: 0;
@@ -450,7 +450,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   padding: 9px 14px;
   border-radius: 10px;
@@ -507,13 +507,13 @@
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-14);
   color: var(--via-text-primary);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
 }
 
 .vds-receipt-mini-amount {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.03em;
   color: var(--via-text-primary);
@@ -523,7 +523,7 @@
 }
 
 .vds-receipt-mini-amount span {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
   margin-left: 6px;
@@ -543,7 +543,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
 }
 
 .vds-receipt-mini-meta span {
@@ -562,7 +562,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   padding: 14px 16px;
   border-radius: 10px;
@@ -577,7 +577,7 @@
 }
 
 .vds-btn-link span {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   transition: transform 160ms ease;
 }
 
@@ -1079,7 +1079,7 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1098,7 +1098,7 @@
 .vds-print-guide h3 {
   margin: 0 0 12px;
   font-family: var(--via-display);
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.16;
@@ -1115,7 +1115,7 @@
 
 .vds-print-guide header p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.65;
   color: var(--via-ink-2);
 }
@@ -1159,7 +1159,7 @@
 }
 
 .vds-print-list .num {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-accent-warm);
   letter-spacing: 0.02em;
@@ -1174,7 +1174,7 @@
 }
 
 .vds-print-list strong {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -1183,14 +1183,14 @@
 
 .vds-print-list em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
   line-height: 1.5;
 }
 
 .vds-print-list code {
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   padding: 1px 5px;
@@ -1219,7 +1219,7 @@
   border-radius: 8px;
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
@@ -1231,13 +1231,13 @@
 
 .vds-print-tip-plus {
   font-family: var(--via-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-ink-3);
 }
 
 .vds-print-tip p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-ink-2);
   line-height: 1.5;
 }

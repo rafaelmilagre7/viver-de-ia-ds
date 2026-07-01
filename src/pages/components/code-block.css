@@ -90,7 +90,7 @@
 
 .vds-code-path {
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -109,7 +109,7 @@
 }
 
 .vds-code-lang {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 8px;
@@ -135,7 +135,7 @@
   background: var(--via-navy-08);
   color: var(--via-text-primary);
   border: none;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
@@ -162,7 +162,7 @@
   padding: 18px 0;
   background: var(--via-surface);
   font-family: var(--via-font-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   overflow-x: auto;
   position: relative;
@@ -233,7 +233,7 @@
   color: var(--via-gray-500);
   user-select: none;
   font-feature-settings: 'tnum' 1;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   position: relative;
   transition: color 140ms ease;
@@ -363,7 +363,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.02em;
   flex: 1;
@@ -397,7 +397,7 @@
 .vds-terminal-body {
   padding: 20px;
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.92);
 }
@@ -529,7 +529,7 @@
 .vds-diff-meta strong {
   display: block;
   font-family: var(--via-font-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -537,7 +537,7 @@
 
 .vds-diff-meta em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
 }
@@ -547,7 +547,7 @@
   display: flex;
   gap: var(--via-space-1_5);
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
 }
@@ -603,7 +603,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 9px;
@@ -625,7 +625,7 @@
 
 .vds-diff-colhead .meta {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
 }
 
@@ -633,7 +633,7 @@
   margin: 0;
   padding: 12px 0;
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.65;
 }
 
@@ -711,7 +711,7 @@
   padding-left: 18px;
   text-align: right;
   color: var(--via-gray-500);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-feature-settings: 'tnum' 1;
   margin-right: 12px;
 }
@@ -727,7 +727,7 @@
   padding: 14px 18px;
   background: var(--via-navy-03);
   border-top: 1px solid var(--via-border-soft);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   line-height: 1.5;
 }

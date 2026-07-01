@@ -40,7 +40,7 @@
   border-radius: 999px;
   background: var(--via-navy, var(--via-navy));
   color: var(--via-white);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   display: inline-flex;
   align-items: center;
@@ -76,7 +76,7 @@
 
 .vds-notif-panel h3 {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -85,7 +85,7 @@
 .vds-notif-panel header button {
   background: transparent;
   border: none;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
@@ -158,7 +158,7 @@
 
 .vds-notif-body p {
   margin: 0 0 3px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.45;
   color: var(--via-text);
 }
@@ -169,7 +169,7 @@
 }
 
 .vds-notif-meta {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   letter-spacing: 0.02em;
 }
@@ -194,7 +194,7 @@
   justify-content: space-between;
   padding: 9px 10px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
@@ -299,7 +299,7 @@
 
 .vds-banner-title {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -311,7 +311,7 @@
 }
 
 .vds-banner-tag {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
@@ -347,7 +347,7 @@
 
 .vds-banner-body {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.55;
   color: var(--via-text-soft);
 }
@@ -363,7 +363,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   padding: 8px 14px;
   border-radius: 999px;
@@ -448,7 +448,7 @@
   border-radius: 999px;
   background: rgba(184, 92, 92, 0.22);
   border: 1px solid rgba(184, 92, 92, 0.4);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
   letter-spacing: -0.008em;
   color: var(--via-white);
@@ -461,7 +461,7 @@
   font-family: var(--via-display);
   font-style: italic;
   font-weight: var(--via-fw-medium);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   letter-spacing: -0.012em;
 }
 
@@ -489,7 +489,7 @@
 
 .vds-status-card h3 {
   margin: 0 0 10px;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.16;
@@ -505,7 +505,7 @@
 
 .vds-live-meta {
   margin: 0 0 22px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
 }
@@ -522,7 +522,7 @@
   border: none;
   border-radius: 12px;
   padding: 12px 22px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;
@@ -534,7 +534,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255, 255, 255, 0.55);
 }
 
@@ -553,7 +553,7 @@
 }
 
 .vds-presence-eyebrow {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -585,14 +585,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
 }
 
 .vds-presence-list p {
   margin: 0 0 2px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -602,7 +602,7 @@
 }
 
 .vds-presence-list span {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   display: inline-flex;
   align-items: center;
@@ -681,7 +681,7 @@
 
 .vds-inbox h3 {
   margin: 0 0 4px;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -689,7 +689,7 @@
 
 .vds-inbox header p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-feature-settings: 'tnum' 1;
 }
@@ -719,7 +719,7 @@
   border: none;
   background: transparent;
   outline: none;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   font-family: inherit;
   flex: 1;
@@ -734,7 +734,7 @@
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
@@ -765,7 +765,7 @@
   border-radius: 9px;
   background: transparent;
   border: 1px solid transparent;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   cursor: pointer;
@@ -800,7 +800,7 @@
   border-radius: 999px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-08);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   font-feature-settings: 'tnum' 1;
   color: var(--via-text-soft);
@@ -880,7 +880,7 @@
 
 .vds-inbox-text p {
   margin: 0 0 3px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.45;
   color: var(--via-text);
 }
@@ -898,7 +898,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
 }
 

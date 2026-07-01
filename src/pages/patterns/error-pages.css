@@ -58,7 +58,7 @@
   border-radius: 999px;
   background: transparent;
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.02em;
   color: var(--via-text-muted);
@@ -141,7 +141,7 @@
   border: 1px solid var(--via-navy-08);
   border-radius: 999px;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
@@ -201,7 +201,7 @@
 }
 .vds-err-lede {
   margin: 0 0 32px;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.6;
   color: var(--via-text-body);
   max-width: 460px;
@@ -224,7 +224,7 @@
   border: 1px solid var(--via-navy-06);
   border-radius: 8px;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   letter-spacing: 0.02em;
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
@@ -275,7 +275,7 @@
   border: 1px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
@@ -286,7 +286,7 @@
 .vds-err-guide h3 {
   margin: 0 0 12px;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
@@ -295,7 +295,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.6;
 }
 .vds-err-guide__line {
@@ -306,7 +306,7 @@
 .vds-err-guide__lbl {
   flex-shrink: 0;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;

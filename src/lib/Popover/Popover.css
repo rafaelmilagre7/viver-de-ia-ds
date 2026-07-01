@@ -37,7 +37,7 @@
 .via-popover__body > h5 {
   margin: 0 0 4px;
   font-family: var(--via-font, inherit);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -46,7 +46,7 @@
 
 .via-popover__body > p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: var(--via-text, #344054);
 }

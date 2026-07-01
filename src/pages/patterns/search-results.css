@@ -55,7 +55,7 @@
   outline: none;
   background: transparent;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -81,7 +81,7 @@
 }
 
 .vds-sr-search-shortcut {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   padding: 3px 7px;
   border-radius: 6px;
@@ -93,7 +93,7 @@
 
 .vds-sr-result-meta {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
 }
 
@@ -125,7 +125,7 @@
 .vds-sr-section-eyebrow {
   margin: 0 0 10px;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -217,7 +217,7 @@
 }
 
 .vds-sr-facet-label {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -227,7 +227,7 @@
 }
 
 .vds-sr-facet-count {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
   padding: 1px 7px;
@@ -250,7 +250,7 @@
   padding: 7px 10px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
   letter-spacing: -0.006em;
   transition: background .2s ease, color .2s ease;
@@ -297,7 +297,7 @@
 
 .vds-sr-toolbar-lbl {
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -314,7 +314,7 @@
   border: 1px solid var(--via-navy-16);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
@@ -340,7 +340,7 @@
   border: none;
   color: var(--via-ink-3);
   font-family: inherit;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: var(--via-navy-20);
@@ -362,7 +362,7 @@
   border: 1px solid var(--via-border);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
@@ -423,7 +423,7 @@
 
 .vds-sr-result-type {
   display: inline-block;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 2px 9px;
@@ -455,7 +455,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -468,7 +468,7 @@
 .vds-sr-result h3 {
   margin: 0 0 6px;
   font-family: var(--via-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   line-height: 1.3;
@@ -497,7 +497,7 @@
 
 .vds-sr-result-snippet {
   margin: 0 0 10px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-ink-2);
   max-width: 720px;
@@ -510,7 +510,7 @@
 }
 
 .vds-sr-result-meta-pill {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   padding: 3px 9px;
   border-radius: 999px;
@@ -533,7 +533,7 @@
 }
 
 .vds-sr-pag-info {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
 }
 
@@ -557,7 +557,7 @@
   border: 1px solid transparent;
   color: var(--via-ink-2);
   font-family: var(--via-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, color .2s ease;
@@ -583,7 +583,7 @@
 .vds-sr-pag-ell {
   color: var(--via-ink-3);
   font-family: var(--via-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   padding: 0 4px;
 }
 
@@ -592,7 +592,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   text-decoration: none;
   letter-spacing: -0.006em;

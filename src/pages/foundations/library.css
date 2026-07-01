@@ -31,7 +31,7 @@
 .vds-lib-card-grid .via-card strong {
   display: block;
   font-family: var(--via-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
@@ -44,7 +44,7 @@
 
 .vds-lib-card-grid .via-card p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-ink-2);
 }
@@ -70,7 +70,7 @@
   background: linear-gradient(180deg, var(--via-navy-deep), var(--via-navy));
   color: rgba(255, 255, 255, 0.94);
   font-family: var(--via-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.6;
   letter-spacing: 0.01em;
   overflow-x: auto;
@@ -88,6 +88,6 @@
   }
   .vds-lib-code {
     padding: 14px 16px;
-    font-size: 11px;
+    font-size: var(--via-fs-label);
   }
 }

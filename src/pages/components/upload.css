@@ -28,7 +28,7 @@
 
 .via-upload h3 {
   font-family: var(--via-font);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.022em;
   margin: 8px 0 0;
@@ -36,7 +36,7 @@
 
 .via-upload p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-soft);
   margin: 0;
   letter-spacing: -0.005em;
@@ -52,7 +52,7 @@
   border: 1px solid var(--via-navy);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
@@ -136,7 +136,7 @@
 .via-upload-list .name {
   display: block;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -144,7 +144,7 @@
 
 .via-upload-list .size {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
   text-transform: uppercase;

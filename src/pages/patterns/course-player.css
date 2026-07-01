@@ -66,7 +66,7 @@
 
 .vds-cp-aside-eyebrow {
   display: inline-flex;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -76,7 +76,7 @@
 
 .vds-cp-aside-head h3 {
   margin: 0 0 14px;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -106,7 +106,7 @@
 
 .vds-cp-progress .pct {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
@@ -185,7 +185,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
@@ -202,7 +202,7 @@
 
 .vds-cp-mod-text strong {
   display: block;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -212,7 +212,7 @@
 .vds-cp-mod-text em {
   display: block;
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   margin-top: 2px;
   letter-spacing: -0.005em;
@@ -303,7 +303,7 @@
 
 .vds-cp-lesson-num {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   letter-spacing: 0.02em;
@@ -315,7 +315,7 @@
 }
 
 .vds-cp-lesson-title {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   letter-spacing: -0.005em;
   overflow: hidden;
@@ -341,7 +341,7 @@
 
 .vds-cp-lesson-dur {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   text-align: right;
@@ -366,7 +366,7 @@
   border-radius: 11px;
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
   width: fit-content;
@@ -453,7 +453,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -462,7 +462,7 @@
 }
 
 .vid-idle h2 {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.06;
@@ -479,7 +479,7 @@
 
 .vid-idle p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -614,7 +614,7 @@
 
 .vid-time {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: rgba(255, 255, 255, 0.85);
   margin-left: 4px;
@@ -624,7 +624,7 @@
 
 .vid-speed {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   padding: 6px 12px;
   border-radius: 7px;
@@ -691,7 +691,7 @@
 
 .vds-cp-info-eyebrow {
   display: inline-flex;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -701,7 +701,7 @@
 
 .vds-cp-info-l h3 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.015em;
@@ -710,7 +710,7 @@
 
 .vds-cp-info-l p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-soft);
   max-width: 560px;
@@ -731,7 +731,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
@@ -756,7 +756,7 @@
   border: 1px solid var(--via-navy);
   color: var(--via-white);
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
@@ -829,7 +829,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -861,7 +861,7 @@
   border: 1px solid var(--via-navy);
   color: var(--via-white);
   font-family: inherit;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
@@ -885,7 +885,7 @@
 .vds-cp-note-ts {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   padding: 6px 11px;
   border-radius: 8px;
@@ -916,7 +916,7 @@
 
 .vds-cp-notes p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text);
   letter-spacing: -0.005em;
@@ -924,7 +924,7 @@
 
 .vds-cp-note-meta {
   display: block;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   margin-top: 4px;
   letter-spacing: 0.02em;
@@ -967,7 +967,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.06em;
   box-shadow:
@@ -986,7 +986,7 @@
 
 .vds-cp-materials li strong {
   display: block;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -994,7 +994,7 @@
 
 .vds-cp-materials li em {
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   font-feature-settings: 'tnum' 1;
 }
@@ -1008,7 +1008,7 @@
   color: var(--via-text-primary);
   cursor: pointer;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-bold);
   display: inline-flex;
   align-items: center;
@@ -1047,7 +1047,7 @@
   gap: var(--via-space-3);
   padding: 8px 10px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   cursor: pointer;
   transition: all 140ms ease;
@@ -1068,7 +1068,7 @@
 
 .vds-cp-chapters li strong {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
@@ -1188,7 +1188,7 @@
   color: var(--via-white);
   white-space: nowrap;
   line-height: 1.4;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   box-shadow:
@@ -1200,7 +1200,7 @@
   font-family: var(--via-font-display, var(--via-font));
   font-style: italic;
   font-weight: var(--via-fw-medium);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   letter-spacing: -0.012em;
 }
 
@@ -1230,7 +1230,7 @@
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   color: var(--via-white);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   letter-spacing: -0.006em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -1253,7 +1253,7 @@
 
 .vds-cp-live-audience strong {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.014em;
   font-feature-settings: 'tnum' 1;
@@ -1262,7 +1262,7 @@
 .vds-cp-live-audience em {
   font-style: normal;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   letter-spacing: -0.005em;
 }
 
@@ -1298,7 +1298,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -1322,7 +1322,7 @@
 
 .vds-cp-live-host strong {
   display: block;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.012em;
@@ -1335,7 +1335,7 @@
   border-radius: 6px;
   background: rgba(184, 92, 92, 0.30);
   border: 1px solid rgba(184, 92, 92, 0.45);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   color: var(--via-white);
@@ -1346,7 +1346,7 @@
   font-style: normal;
   display: block;
   margin-top: 3px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.65);
   letter-spacing: -0.005em;
 }
@@ -1359,7 +1359,7 @@
 
 .vds-cp-live-host .host-elapsed .num {
   font-family: var(--via-font-mono);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.018em;
@@ -1389,7 +1389,7 @@
 
 .vds-cp-live-reactions .r {
   position: absolute;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   opacity: 0;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.40));
   animation: vds-cp-live-react 4s linear infinite;
@@ -1485,7 +1485,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding-left: 4px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   letter-spacing: -0.006em;
   color: rgba(255, 255, 255, 0.78);
 }
@@ -1571,7 +1571,7 @@
 
 .vds-cp-chat-eyebrow {
   display: inline-flex;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1581,7 +1581,7 @@
 
 .vds-cp-chat-head h4 {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -1597,7 +1597,7 @@
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-soft);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   font-feature-settings: 'tnum' 1;
@@ -1643,7 +1643,7 @@
   border-radius: 6px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1679,7 +1679,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -1704,7 +1704,7 @@
 }
 
 .vds-cp-chat-msg .msg-meta strong {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -1715,7 +1715,7 @@
   border-radius: 5px;
   background: linear-gradient(135deg, rgba(184, 92, 92, 0.16), rgba(184, 92, 92, 0.08));
   border: 1px solid rgba(184, 92, 92, 0.30);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1725,7 +1725,7 @@
 
 .vds-cp-chat-msg .msg-meta .msg-time {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   letter-spacing: 0.03em;
   font-feature-settings: 'tnum' 1;
@@ -1734,7 +1734,7 @@
 
 .vds-cp-chat-msg p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-text);
   letter-spacing: -0.005em;
@@ -1762,7 +1762,7 @@
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
   outline: none;

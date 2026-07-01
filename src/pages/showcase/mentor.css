@@ -37,7 +37,7 @@
 }
 
 .mtr-nav nav a {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   text-decoration: none;
@@ -56,7 +56,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
 }
 
@@ -119,7 +119,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -145,7 +145,7 @@
 .mtr-hero-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -154,7 +154,7 @@
 }
 
 .mtr-hero-info h1 {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
   color: var(--via-white);
@@ -163,7 +163,7 @@
 }
 
 .mtr-hero-info p {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.6;
   color: var(--via-gray-200);
   margin: 0 0 22px;
@@ -188,7 +188,7 @@
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   letter-spacing: -0.008em;
@@ -219,7 +219,7 @@
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   color: var(--via-white);
   font-family: inherit;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
@@ -250,7 +250,7 @@
 
 .mtr-hero-stats strong {
   display: block;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.024em;
@@ -260,7 +260,7 @@
 
 .mtr-hero-stats em {
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-gray-300);
   letter-spacing: 0.02em;
   display: block;
@@ -270,7 +270,7 @@
 @media (max-width: 860px) {
   .mtr-hero { padding: 40px 24px 0; }
   .mtr-hero-inner { flex-direction: column; text-align: center; gap: var(--via-space-5); }
-  .mtr-hero-info h1 { font-size: 32px; }
+  .mtr-hero-info h1 { font-size: var(--via-fs-h2); }
   .mtr-hero-cta-row { justify-content: center; }
   .mtr-hero-stats { grid-template-columns: repeat(2, 1fr); }
 }
@@ -299,7 +299,7 @@
 .mtr-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -308,7 +308,7 @@
 }
 
 .mtr-block h2 {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -318,7 +318,7 @@
 
 .mtr-block p {
   margin: 0 0 14px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.65;
   color: var(--via-text-body);
   letter-spacing: -0.006em;
@@ -338,7 +338,7 @@
   border-radius: 999px;
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -362,7 +362,7 @@
 .mtr-case-co {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -380,7 +380,7 @@
 
 .mtr-case-d {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   line-height: 1.45;
   letter-spacing: -0.004em;
@@ -413,7 +413,7 @@
 
 .mtr-depoimento blockquote {
   margin: 0 0 16px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   line-height: 1.5;
   letter-spacing: -0.010em;
@@ -422,7 +422,7 @@
 
 .mtr-depoimento footer strong {
   display: block;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -430,7 +430,7 @@
 
 .mtr-depoimento footer em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
 }
 
@@ -454,7 +454,7 @@
 .mtr-schedule-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -473,7 +473,7 @@
 
 .mtr-schedule > p {
   margin: 0 0 20px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: var(--via-text-body);
   letter-spacing: -0.005em;
@@ -493,7 +493,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-body);
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.004em;
@@ -521,7 +521,7 @@
   border: 1px solid var(--via-navy);
   color: var(--via-white);
   font-family: inherit;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   letter-spacing: -0.006em;
@@ -552,7 +552,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
   font-feature-settings: 'tnum' 1;

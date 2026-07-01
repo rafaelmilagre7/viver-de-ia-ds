@@ -41,7 +41,7 @@
 
 .vds-empty h3 {
   font-family: var(--via-font-display);
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
@@ -51,7 +51,7 @@
 }
 .vds-empty p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-body);
   max-width: 460px;
   line-height: 1.6;
@@ -67,7 +67,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;

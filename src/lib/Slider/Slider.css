@@ -28,13 +28,13 @@
 }
 .via-slider__head label {
   font-family: var(--via-font, inherit);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text, #344054);
   letter-spacing: -0.004em;
 }
 .via-slider__val {
   font-family: var(--via-mono, var(--via-font-mono, ui-monospace, monospace));
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
 }
 
@@ -192,7 +192,7 @@
 .via-slider__mark em {
   font-style: normal;
   font-family: var(--via-mono, var(--via-font-mono, ui-monospace, monospace));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3, #6B7891);
   margin-top: 12px;
   white-space: nowrap;
@@ -201,7 +201,7 @@
 .via-slider__hint {
   margin: 0;
   font-family: var(--via-font, inherit);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3, #6B7891);
   line-height: 1.5;
 }

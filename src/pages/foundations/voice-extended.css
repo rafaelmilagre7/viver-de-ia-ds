@@ -37,7 +37,7 @@
 .vds-ve-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -47,7 +47,7 @@
 .vds-ve-rhythm {
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   color: var(--via-text-primary);
   margin: 0;
   line-height: 1.4;
@@ -79,7 +79,7 @@
 }
 .vds-ve-sample .lbl {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -88,7 +88,7 @@
 .vds-ve-sample.bad  .lbl { color: var(--via-text-muted); }
 .vds-ve-sample pre {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-primary);
   margin: 0;
@@ -109,7 +109,7 @@
 .vds-ve-rules-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -126,7 +126,7 @@
 }
 .vds-ve-rules li {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
   padding-left: 16px;
@@ -165,7 +165,7 @@
   padding-left: 50px;
   position: relative;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-text);
 }
@@ -175,7 +175,7 @@
   left: 0;
   top: 0;
   font-family: var(--via-mono);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;

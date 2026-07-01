@@ -32,7 +32,7 @@
 
 .via-slider-card .lbl {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -41,7 +41,7 @@
 
 .via-slider-card .val {
   font-family: var(--via-font);
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.025em;
   color: var(--via-text-primary);
@@ -110,7 +110,7 @@
   display: flex;
   justify-content: space-between;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   margin-top: 12px;

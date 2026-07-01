@@ -107,12 +107,12 @@
   align-items: baseline;
   gap: var(--via-space-3);
   color: rgba(255, 255, 255, 0.84);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
 }
 
 .via-lightbox__counter {
   font-family: var(--via-font-mono, monospace);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255, 255, 255, 0.56);
   font-variant-numeric: tabular-nums;
 }
@@ -123,7 +123,7 @@
   gap: var(--via-space-1_5);
   padding: 6px 14px;
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-white, #FFFFFF);

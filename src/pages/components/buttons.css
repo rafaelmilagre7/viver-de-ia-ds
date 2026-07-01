@@ -48,17 +48,17 @@
 
 /* Sizes — editorial scale */
 .via-btn.sm {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   padding: 9px 16px;
 }
 
 .via-btn.md {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   padding: 12px 22px;
 }
 
 .via-btn.lg {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   padding: 15px 28px;
 }
 

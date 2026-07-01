@@ -73,7 +73,7 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -82,7 +82,7 @@
 
 .vds-slide-chapter-num {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -94,7 +94,7 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -105,7 +105,7 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -143,7 +143,7 @@
 
 .vds-slide-eyebrow-foot {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -156,7 +156,7 @@
 
 .vds-slide-num {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-gray-300);
   font-feature-settings: 'tnum' 1;
@@ -172,7 +172,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
   letter-spacing: -0.005em;
@@ -188,7 +188,7 @@
 .vds-slide-author strong {
   display: block;
   font-weight: var(--via-fw-semibold);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
   line-height: 1.2;
@@ -197,7 +197,7 @@
 .vds-slide-author > span > em {
   display: block;
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-muted);
   font-weight: var(--via-fw-regular);
   margin-top: 2px;
@@ -212,7 +212,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   color: var(--via-white);
@@ -238,7 +238,7 @@
 }
 
 .vds-slide-title-h2 {
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.10;
@@ -273,7 +273,7 @@
 }
 
 .vds-slide-divider-h2 {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.034em;
   line-height: 1.02;
@@ -291,7 +291,7 @@
 }
 
 .vds-slide-divider-meta {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
   letter-spacing: -0.006em;
@@ -345,7 +345,7 @@
 }
 
 .vds-stat-unit {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
   letter-spacing: -0.006em;
@@ -353,7 +353,7 @@
 }
 
 .vds-stat-meta {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: var(--via-gray-200);
   margin: 0;
@@ -421,7 +421,7 @@
 }
 
 .vds-slide-content-h3 {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   line-height: 1.26;
@@ -464,7 +464,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   display: inline-flex;
@@ -479,7 +479,7 @@
 
 .vds-slide-bullets strong {
   display: block;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin-bottom: 1px;
@@ -488,7 +488,7 @@
 }
 
 .vds-slide-bullets p {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   line-height: 1.38;
   color: var(--via-text-body);
   margin: 0;
@@ -512,7 +512,7 @@
 }
 
 .vds-slide-closing-h3 {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.026em;
   line-height: 1.10;
@@ -530,7 +530,7 @@
 }
 
 .vds-slide-lede {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-gray-200);
   margin: 0;
@@ -548,7 +548,7 @@
   border: 1px solid var(--via-edge-hi);
   border-radius: 999px;
   color: var(--via-text-primary);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.008em;
@@ -604,7 +604,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   display: inline-flex;
@@ -617,7 +617,7 @@
 }
 
 .vds-anatomy-name {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 4px;
@@ -625,7 +625,7 @@
 }
 
 .vds-anatomy-desc {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-text-body);
   margin: 0;
@@ -640,16 +640,16 @@
     padding: 24px 28px;
     gap: var(--via-space-2_5);
   }
-  .vds-slide-title-h2 { font-size: 24px; }
-  .vds-slide-divider-h2 { font-size: 32px; }
-  .vds-stat-number { font-size: 56px; }
-  .vds-quote-body { font-size: 18px; }
-  .vds-slide-content-h3 { font-size: 14px; }
+  .vds-slide-title-h2 { font-size: var(--via-fs-h3); }
+  .vds-slide-divider-h2 { font-size: var(--via-fs-h2); }
+  .vds-stat-number { font-size: var(--via-fs-display); }
+  .vds-quote-body { font-size: var(--via-fs-h4); }
+  .vds-slide-content-h3 { font-size: var(--via-fs-sm); }
   .vds-slide-closing-h3 { font-size: 20px; }
-  .vds-slide-lede { font-size: 11px; }
+  .vds-slide-lede { font-size: var(--via-fs-label); }
   .vds-slide-bullets { gap: var(--via-space-1_5); }
-  .vds-slide-bullets strong { font-size: 11px; }
-  .vds-slide-bullets p { font-size: 10px; line-height: 1.4; }
+  .vds-slide-bullets strong { font-size: var(--via-fs-label); }
+  .vds-slide-bullets p { font-size: var(--via-fs-micro); line-height: 1.4; }
 }
 
 @media (max-width: 560px) {

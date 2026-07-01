@@ -44,10 +44,10 @@
 
 /* ===== Sizes ===== */
 .via-avatar--xs { width: 20px; height: 20px; font-size: 8px;  }
-.via-avatar--sm { width: 28px; height: 28px; font-size: 10px; }
-.via-avatar--md { width: 36px; height: 36px; font-size: 12px; }
-.via-avatar--lg { width: 52px; height: 52px; font-size: 16px; }
-.via-avatar--xl { width: 80px; height: 80px; font-size: 24px; }
+.via-avatar--sm { width: 28px; height: 28px; font-size: var(--via-fs-micro); }
+.via-avatar--md { width: 36px; height: 36px; font-size: var(--via-fs-xs); }
+.via-avatar--lg { width: 52px; height: 52px; font-size: var(--via-fs-body); }
+.via-avatar--xl { width: 80px; height: 80px; font-size: var(--via-fs-h3); }
 
 /* ===== Status dot · com glow editorial ===== */
 .via-avatar__status {

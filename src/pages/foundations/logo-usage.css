@@ -19,7 +19,7 @@
 }
 .vds-lu-anatomy h4 {
   font-family: var(--via-font-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin: 0;
@@ -32,14 +32,14 @@
 }
 .vds-lu-anatomy p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   margin: 0;
   line-height: 1.55;
 }
 .vds-lu-spec-meta {
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   margin-top: 6px;
 }
@@ -82,7 +82,7 @@
 }
 .vds-lu-variants h4 {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -132,7 +132,7 @@
 }
 .vds-lu-var-grid figcaption {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   letter-spacing: -0.004em;
   text-align: center;
 }
@@ -174,7 +174,7 @@
 .vds-lu-clear-tag {
   position: absolute;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-primary);
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-20);
@@ -189,7 +189,7 @@
 
 .vds-lu-clear-cap {
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   margin: 0;
 }
@@ -201,7 +201,7 @@
   border-left: 2px solid var(--via-navy);
   border-radius: 10px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.6;
   color: var(--via-text);
 }
@@ -246,7 +246,7 @@
 }
 .vds-lu-sizing strong {
   font-family: var(--via-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -254,12 +254,12 @@
 .vds-lu-sizing em {
   font-style: normal;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-lu-size-use {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   text-align: center;
   margin-top: 2px;
@@ -276,7 +276,7 @@
 .vds-lu-min-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -285,7 +285,7 @@
 }
 .vds-lu-size-min h4 {
   font-family: var(--via-font-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin: 0 0 10px;
@@ -299,7 +299,7 @@
 [data-theme="dark"] .vds-lu-size-min h4 em { color: #8FB8F6; }
 .vds-lu-size-min p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   margin: 0;
   line-height: 1.55;
@@ -322,7 +322,7 @@
 }
 .vds-lu-surf-eyebrow {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -363,7 +363,7 @@
 }
 .vds-lu-surface li {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   line-height: 1.55;
 }
@@ -374,7 +374,7 @@
 }
 .vds-lu-surface li code {
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   padding: 2px 6px;
   border-radius: 4px;
   background: var(--via-navy-04);
@@ -399,7 +399,7 @@
 .vds-lu-context th {
   padding: 12px 18px;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -409,7 +409,7 @@
 }
 .vds-lu-context td {
   padding: 13px 18px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   border-bottom: 0.5px solid var(--via-navy-08);
   line-height: 1.5;
@@ -446,7 +446,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -466,7 +466,7 @@
 .vds-lu-do li,
 .vds-lu-dont li {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
   padding-left: 16px;

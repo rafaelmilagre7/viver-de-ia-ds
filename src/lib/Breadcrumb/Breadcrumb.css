@@ -19,7 +19,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   letter-spacing: -0.004em;
 }
 

@@ -70,13 +70,13 @@
 .ig-h strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-bold);
   color: rgba(0,0,0,0.92);
 }
 .ig-h span {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(0,0,0,0.55);
 }
 .ig-more { color: rgba(0,0,0,0.55); }
@@ -97,7 +97,7 @@
 }
 .ig-content .eyebrow {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -106,7 +106,7 @@
 }
 .ig-content h2 {
   font-family: var(--via-font-display);
-  font-size: 56px;
+  font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   line-height: 0.96;
   letter-spacing: -0.035em;
@@ -117,7 +117,7 @@
 .ig-content h2 em {
   display: block;
   font-style: normal;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
   letter-spacing: -0.015em;
@@ -125,7 +125,7 @@
 }
 .ig-content .lede {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.5;
   color: rgba(255,255,255,0.78);
   margin: 18px 0 22px;
@@ -140,7 +140,7 @@
   border: 1px solid rgba(255,255,255,0.22);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(255,255,255,0.85);
@@ -194,20 +194,20 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-regular);
   color: var(--via-white);
 }
 .ig-attr strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   color: var(--via-white);
 }
 .ig-attr span {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: rgba(255,255,255,0.55);
 }
 
@@ -225,7 +225,7 @@
 .ig-caption {
   margin: 6px 0 0;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.4;
   color: rgba(0,0,0,0.90);
 }
@@ -279,13 +279,13 @@
 }
 .story-h strong {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   color: var(--via-white);
 }
 .story-h span {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255,255,255,0.78);
 }
 .story-content {
@@ -300,7 +300,7 @@
 .story-content > * { position: relative; z-index: 2; }
 .story-content .eyebrow {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -309,7 +309,7 @@
 }
 .story-content h2 {
   font-family: var(--via-font-display);
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.03em;
   line-height: 1.0;
@@ -323,7 +323,7 @@
 }
 .story-content .lede {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: rgba(255,255,255,0.78);
   margin: 16px 0 24px;
@@ -337,7 +337,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
@@ -363,7 +363,7 @@
   backdrop-filter: blur(16px);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-white);
   outline: none;
 }
@@ -412,14 +412,14 @@
 .li-h strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   color: rgba(0,0,0,0.92);
 }
 .li-h span {
   display: block;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(0,0,0,0.60);
   margin-top: 2px;
 }
@@ -434,14 +434,14 @@
   color: var(--via-blue);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   cursor: pointer;
 }
 .li-text {
   padding: 4px 16px 12px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: rgba(0,0,0,0.90);
   margin: 0;
@@ -460,7 +460,7 @@
 .li-content { position: relative; z-index: 2; }
 .li-content .eyebrow {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -469,7 +469,7 @@
 }
 .li-content h2 {
   font-family: var(--via-font-display);
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   line-height: 1.0;
   letter-spacing: -0.03em;
@@ -479,7 +479,7 @@
 }
 .li-content h2 em {
   font-style: normal;
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
   letter-spacing: 0.05em;
@@ -488,7 +488,7 @@
 }
 .li-content .lede {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.45;
   color: rgba(255,255,255,0.78);
   margin: 10px 0 0;
@@ -502,7 +502,7 @@
 .li-stats {
   padding: 6px 4px 6px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(0,0,0,0.60);
   border-bottom: 0.5px solid rgba(0,0,0,0.08);
 }
@@ -520,7 +520,7 @@
   border: none;
   color: rgba(0,0,0,0.60);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   border-radius: 6px;

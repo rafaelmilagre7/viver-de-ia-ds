@@ -11,7 +11,7 @@
 }
 
 .via-select__label {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
@@ -30,7 +30,7 @@
   border-radius: 9px;
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
@@ -50,7 +50,7 @@
 
 .via-select--sm .via-select__trigger {
   padding: 6px 10px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
 }
 
 .via-select__trigger:hover:not(:disabled) {
@@ -104,7 +104,7 @@
 }
 
 .via-select__hint {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3, #6B7891);
   line-height: 1.4;
 }
@@ -151,7 +151,7 @@
   gap: var(--via-space-3);
   padding: 8px 10px;
   border-radius: 7px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);

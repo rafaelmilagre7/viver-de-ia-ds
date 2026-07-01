@@ -34,7 +34,7 @@
 
 .vds-heatmap-card .eyebrow {
   margin: 0 0 8px;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -43,7 +43,7 @@
 
 .vds-heatmap-card h3 {
   margin: 0 0 6px;
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.025em;
   color: var(--via-text-primary);
@@ -52,7 +52,7 @@
 }
 
 .vds-heatmap-card h3 .unit {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
   margin-left: 4px;
@@ -61,7 +61,7 @@
 
 .vds-heatmap-card .lede {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: var(--via-text-soft);
   max-width: 480px;
@@ -75,7 +75,7 @@
   border-radius: 999px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   white-space: nowrap;
@@ -96,7 +96,7 @@
 .vds-heatmap-months span {
   position: absolute;
   top: 0;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   color: var(--via-text-soft);
@@ -116,7 +116,7 @@
 }
 
 .vds-heatmap-days span {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   display: flex;
@@ -167,7 +167,7 @@
   margin-top: 22px;
   padding-top: 16px;
   border-top: 1px solid var(--via-border-soft);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
 }
 
@@ -235,7 +235,7 @@
 
 .vds-spark-label {
   margin: 0 0 12px;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -257,7 +257,7 @@
 
 .vds-spark-value {
   margin: 0;
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
@@ -274,7 +274,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   font-feature-settings: 'tnum' 1;
 }
@@ -349,7 +349,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   margin: 0 0 14px;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -366,7 +366,7 @@
 
 .vds-gauge-big {
   font-family: inherit;
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.03em;
   fill: var(--via-navy);
@@ -374,7 +374,7 @@
 }
 
 .vds-gauge-big .unit {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   fill: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0;
@@ -382,7 +382,7 @@
 
 .vds-gauge-label {
   font-family: inherit;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -391,7 +391,7 @@
 
 .vds-gauge-meta {
   margin: 18px 0 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-text-soft);
   text-align: center;

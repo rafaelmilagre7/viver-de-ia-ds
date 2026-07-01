@@ -19,7 +19,7 @@
   background: transparent;
   border: none;
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;

@@ -9,7 +9,7 @@
 }
 
 .via-otp__label {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
@@ -26,7 +26,7 @@
   height: 52px;
   text-align: center;
   font-family: var(--via-font-display, var(--via-font, 'Geist', system-ui));
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -89,7 +89,7 @@
 
 .via-otp__hint {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3, #6B7891);
   letter-spacing: -0.004em;
   line-height: 1.4;

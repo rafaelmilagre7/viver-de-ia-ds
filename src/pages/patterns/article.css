@@ -105,7 +105,7 @@
 
 .vds-article .cover .tag {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
   padding: 4px 9px 4px 7px;
@@ -142,7 +142,7 @@
 
 .vds-article .cover .time {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
 }
@@ -182,7 +182,7 @@
 
 .vds-article p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-soft);
   line-height: 1.55;
   margin: 0;
@@ -196,7 +196,7 @@
   border-top: 1px solid var(--via-border-soft);
   margin-top: auto;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
 }
 
 .vds-article .av {
@@ -206,7 +206,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   display: flex;
@@ -229,7 +229,7 @@
   color: var(--via-text-soft);
   margin-left: auto;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;

@@ -72,7 +72,7 @@
 .via-field .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -88,7 +88,7 @@
 .via-field textarea.val {
   width: 100%;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   background: transparent;

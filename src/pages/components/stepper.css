@@ -33,7 +33,7 @@
   border: 1.5px solid var(--via-navy-18);
   color: var(--via-text-soft);
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -53,7 +53,7 @@
 
 .via-stepper .label {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   color: var(--via-text-soft);

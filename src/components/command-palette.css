@@ -57,7 +57,7 @@
   outline: none;
   background: transparent;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
@@ -98,14 +98,14 @@
 }
 .vds-cmdk-inner li.empty {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
   padding: 32px;
   text-align: center;
 }
 .vds-cmdk-inner li.vds-cmdk__heading {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -130,7 +130,7 @@
 }
 .vds-cmdk-inner li .kbd {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -145,7 +145,7 @@
 .vds-cmdk-inner li.active .kbd { background: var(--via-navy); color: var(--via-white); }
 .vds-cmdk-inner li .t {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   white-space: nowrap;
@@ -154,7 +154,7 @@
 }
 .vds-cmdk-inner li .d {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -174,7 +174,7 @@
 }
 .vds-cmdk-inner footer .hint {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-muted);
   letter-spacing: 0.06em;
   display: inline-flex;
@@ -183,7 +183,7 @@
 }
 .vds-cmdk-inner footer kbd {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
@@ -194,7 +194,7 @@
 .vds-cmdk-inner footer .count {
   margin-left: auto;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-muted);
   letter-spacing: 0.08em;
 }

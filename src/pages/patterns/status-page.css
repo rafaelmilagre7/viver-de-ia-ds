@@ -63,7 +63,7 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -92,7 +92,7 @@
 .vds-st-overview h2 {
   margin: 0 0 12px;
   font-family: var(--via-display);
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.026em;
   line-height: 1.14;
@@ -109,7 +109,7 @@
 
 .vds-st-overview-lede {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-ink-2);
   max-width: 580px;
@@ -138,7 +138,7 @@
 
 .vds-st-overview-stats strong {
   font-family: var(--via-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
@@ -147,7 +147,7 @@
 .vds-st-overview-stats em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -191,14 +191,14 @@
 .vds-st-group-head h4 {
   margin: 0;
   font-family: var(--via-display);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
 }
 
 .vds-st-group-count {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }
@@ -287,7 +287,7 @@
 
 .vds-st-row-name {
   margin: 0 0 4px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -298,7 +298,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   margin: 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 
@@ -311,7 +311,7 @@
 .vds-st-row-uptime em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   letter-spacing: 0.01em;
 }
 
@@ -320,7 +320,7 @@
   align-items: center;
   padding: 4px 10px;
   border-radius: 999px;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   white-space: nowrap;
@@ -402,7 +402,7 @@
 .vds-st-incidents h4 {
   margin: 0 0 4px;
   font-family: var(--via-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
@@ -410,7 +410,7 @@
 
 .vds-st-incidents > header p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
 }
 
@@ -419,7 +419,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
   text-decoration: none;
   letter-spacing: -0.006em;
@@ -537,14 +537,14 @@
 }
 
 .vds-st-inc-date {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
 
 .vds-st-inc-sev {
   display: inline-block;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
@@ -570,7 +570,7 @@
 
 .vds-st-inc-dur {
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -578,7 +578,7 @@
 .vds-st-inc article h3 {
   margin: 0;
   font-family: var(--via-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
@@ -602,13 +602,13 @@
   grid-template-columns: 56px 1fr;
   gap: var(--via-space-3);
   padding: 4px 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-ink-2);
 }
 
 .vds-st-inc-update-time {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }
@@ -632,7 +632,7 @@
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-12);
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.02em;
 }

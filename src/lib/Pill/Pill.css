@@ -16,13 +16,13 @@
 /* ===== Sizes ===== */
 .via-pill--sm {
   padding: 3px 9px;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
 }
 
 .via-pill--md {
   padding: 4px 11px;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
 }
 
@@ -93,7 +93,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.16) inset,
@@ -106,7 +106,7 @@
   font-family: var(--via-display);
   font-style: italic;
   font-weight: var(--via-fw-medium);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   letter-spacing: -0.012em;
   color: rgba(255, 255, 255, 0.96);
 }

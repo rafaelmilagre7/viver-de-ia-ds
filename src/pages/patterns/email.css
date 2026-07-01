@@ -35,14 +35,14 @@
 }
 .vds-mail-how-card h3 {
   margin: 0 0 5px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.01em;
   color: var(--via-text-primary);
 }
 .vds-mail-how-card p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-muted);
 }
@@ -62,7 +62,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: rgba(255, 255, 255, 0.92);
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.7;
   overflow-x: auto;
   border: 1px solid var(--via-navy-deep);
@@ -94,20 +94,20 @@
 }
 .vds-mail-subj .lbl {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--via-text-faint);
 }
 .vds-mail-subj strong {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.01em;
   color: var(--via-text-primary);
 }
 .vds-mail-subj .when {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 .vds-mail-open {
@@ -117,7 +117,7 @@
   gap: 5px;
   padding: 7px 13px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
   background: var(--via-surface-onnavy, rgba(255, 255, 255, 0.6));

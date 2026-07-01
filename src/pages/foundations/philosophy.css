@@ -42,7 +42,7 @@
 
 .vds-phil-num {
   font-family: var(--via-display);
-  font-size: 56px;
+  font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   color: var(--via-navy-12);
   letter-spacing: -0.04em;
@@ -53,7 +53,7 @@
 .vds-phil-rule h3 {
   margin: 0 0 10px;
   font-family: var(--via-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.024em;
   line-height: 1.18;
@@ -71,7 +71,7 @@
 
 .vds-phil-rule > header p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-ink-2);
   max-width: 720px;
@@ -115,7 +115,7 @@
 .vds-phil-forbid-eyebrow {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -163,7 +163,7 @@
 }
 
 .vds-phil-allow strong {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -171,7 +171,7 @@
 
 .vds-phil-allow em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
   line-height: 1.5;
 }
@@ -179,7 +179,7 @@
 .vds-phil-forbid li {
   position: relative;
   padding-left: 18px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-coral-dark);
   line-height: 1.5;
 }
@@ -191,7 +191,7 @@
   top: 0;
   color: var(--via-coral);
   font-weight: var(--via-fw-semibold);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
 }
 
 /* ============================================
@@ -218,14 +218,14 @@
 .vds-phil-pill-lbl {
   min-width: 140px;
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
 
 .vds-phil-pill-lbl em {
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   margin-left: 4px;
 }
@@ -233,7 +233,7 @@
 .vds-phil-pill {
   padding: 4px 11px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   white-space: nowrap;
@@ -267,7 +267,7 @@
   background: linear-gradient(180deg, var(--via-navy-darker), var(--via-navy));
   color: rgba(255, 255, 255, 0.9);
   font-family: var(--via-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.6;
   letter-spacing: 0.01em;
   overflow-x: auto;
@@ -316,7 +316,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.01em;
 }
@@ -329,7 +329,7 @@
 }
 
 .vds-phil-token strong {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.01em;
@@ -337,7 +337,7 @@
 
 .vds-phil-token em {
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   line-height: 1.4;
 }
@@ -378,7 +378,7 @@
 .vds-phil-sig-demo.bar .row {
   padding: 10px 14px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   background: var(--via-surface);
   position: relative;
@@ -420,7 +420,7 @@
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   transition: transform .26s cubic-bezier(.2,.7,.2,1), box-shadow .26s ease;
@@ -447,7 +447,7 @@
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   isolation: isolate;
   overflow: hidden;
@@ -467,7 +467,7 @@
 .vds-phil-sig h4 {
   margin: 0 0 6px;
   font-family: var(--via-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
@@ -475,14 +475,14 @@
 
 .vds-phil-sig p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.55;
   color: var(--via-ink-2);
 }
 
 .vds-phil-sig code {
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   background: var(--via-navy-05);
   color: var(--via-text-primary);
   padding: 1px 5px;
@@ -513,7 +513,7 @@
 .vds-phil-dot-lbl {
   min-width: 120px;
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-2);
   letter-spacing: 0.01em;
 }
@@ -524,7 +524,7 @@
   gap: var(--via-space-1_5);
   padding: 4px 11px 4px 9px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   background: rgba(184, 92, 92, 0.05);
@@ -551,7 +551,7 @@
   background: rgba(184, 92, 92, 0.16);
   border: 1px solid rgba(184, 92, 92, 0.36);
   color: var(--via-white);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   white-space: nowrap;
   line-height: 1.4;
   background-color: var(--via-navy);
@@ -561,7 +561,7 @@
   font-family: var(--via-display);
   font-style: italic;
   font-weight: var(--via-fw-medium);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.94);
   letter-spacing: -0.012em;
 }
@@ -620,7 +620,7 @@
 .vds-phil-voice-tag {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -636,7 +636,7 @@
   margin: 0 0 12px;
   font-family: var(--via-display);
   font-style: italic;
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   line-height: 1.35;
@@ -649,7 +649,7 @@
 
 .vds-phil-voice em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   line-height: 1.5;
 }

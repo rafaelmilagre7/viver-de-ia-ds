@@ -43,7 +43,7 @@
 .vds-chat-h strong {
   display: block;
   font-family: var(--via-font-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -53,7 +53,7 @@
   align-items: center;
   gap: 7px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   margin-top: 2px;
 }
@@ -70,7 +70,7 @@
 }
 .vds-chat-tag {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-muted);
@@ -134,7 +134,7 @@
 .vds-bubble-system {
   align-self: center;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   background: var(--via-navy-06);
@@ -180,7 +180,7 @@
     0 12px 28px var(--via-navy-12),
     0 2px 6px var(--via-navy-05);
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.55;
   color: var(--via-text-primary);
   font-weight: 450;
@@ -203,7 +203,7 @@
   color: var(--via-white);
   border-radius: 20px 20px 4px 20px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.55;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
@@ -227,7 +227,7 @@
   margin-top: 6px;
   padding: 0 6px;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-muted);
   letter-spacing: 0.06em;
 }
@@ -271,7 +271,7 @@
   outline: none;
   background: transparent;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
   padding: 10px 4px;
 }

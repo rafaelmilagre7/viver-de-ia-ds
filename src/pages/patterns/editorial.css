@@ -22,7 +22,7 @@
 .vds-ed-newsletter > header img { width: 100px; height: auto; }
 .vds-ed-nl-edition {
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
 }
@@ -36,7 +36,7 @@
 .vds-ed-nl-eyebrow {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -59,7 +59,7 @@
 }
 .vds-ed-nl-hero p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
 }
@@ -73,7 +73,7 @@
 .vds-ed-nl-section-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -82,7 +82,7 @@
 }
 .vds-ed-nl-body article p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
   line-height: 1.65;
   margin: 0 0 10px;
@@ -97,7 +97,7 @@
 }
 .vds-ed-nl-pull strong {
   font-family: var(--via-mono);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -109,7 +109,7 @@
   align-items: center;
   gap: var(--via-space-1);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   text-decoration: none;
   border-bottom: 0.5px solid var(--via-navy-20);
@@ -131,7 +131,7 @@
   background: var(--via-gray-50);
   text-align: center;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-ed-newsletter > footer img {
@@ -169,7 +169,7 @@
 .vds-ed-blog-cat {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -193,7 +193,7 @@
 }
 .vds-ed-blog-lede {
   font-family: var(--via-font);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   color: var(--via-text);
   line-height: 1.55;
   margin: 0 0 22px;
@@ -218,7 +218,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   display: inline-flex;
   align-items: center;
@@ -227,20 +227,20 @@
 .vds-ed-blog-author strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-ed-blog-author em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-ed-blog-meta-r {
   display: flex;
   align-items: center;
   gap: var(--via-space-4);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-ed-blog-meta-r span {
@@ -259,7 +259,7 @@
 
 .vds-ed-blog-body {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   color: var(--via-text);
   line-height: 1.7;
 }
@@ -269,7 +269,7 @@
 .vds-ed-blog-body strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-ed-blog-body h2 {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
@@ -292,7 +292,7 @@
   border-radius: 6px;
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   color: var(--via-text-primary);
   line-height: 1.5;
   letter-spacing: -0.018em;
@@ -301,7 +301,7 @@
   display: block;
   font-style: normal;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-ink-3);
   margin-top: 8px;
 }
@@ -317,7 +317,7 @@
 .vds-ed-blog-toc-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -344,12 +344,12 @@
   left: 0;
   top: 1px;
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 .vds-ed-blog-toc a {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   text-decoration: none;
 }
@@ -411,7 +411,7 @@
 }
 .vds-ed-podcast-cover-eyebrow {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -420,7 +420,7 @@
 }
 .vds-ed-podcast-cover h3 {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   line-height: 1.05;
   letter-spacing: -0.022em;
@@ -445,7 +445,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -454,7 +454,7 @@
 }
 .vds-ed-podcast-meta h2 {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   line-height: 1.2;
   letter-spacing: -0.022em;
@@ -463,7 +463,7 @@
 }
 .vds-ed-podcast-meta p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
   line-height: 1.55;
   margin: 0 0 18px;
@@ -482,7 +482,7 @@
   border: 0.5px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-primary);
   text-decoration: none;
 }
@@ -493,7 +493,7 @@
 }
 .vds-ed-podcast h3 {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -519,7 +519,7 @@
 }
 .vds-ed-podcast-timestamps .t {
   font-family: var(--via-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   background: var(--via-surface);
   padding: 3px 8px;
@@ -531,7 +531,7 @@
 .vds-ed-podcast-timestamps strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 3px;
@@ -539,7 +539,7 @@
 }
 .vds-ed-podcast-timestamps em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
 }
 
@@ -561,7 +561,7 @@
 }
 .vds-ed-podcast-res-eyebrow {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -570,7 +570,7 @@
 }
 .vds-ed-podcast-resources a {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   text-decoration: none;
   border-bottom: 0.5px solid var(--via-navy-20);
@@ -610,7 +610,7 @@
 }
 .vds-ed-youtube-thumb p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.62);
   margin: 0;
 }
@@ -629,7 +629,7 @@
   background: rgba(0, 0, 0, 0.7);
   border-radius: 4px;
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-white);
 }
 .vds-ed-youtube-play {
@@ -653,7 +653,7 @@
 
 .vds-ed-youtube-info h2 {
   font-family: var(--via-font);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin: 0 0 8px;
@@ -668,7 +668,7 @@
   border-bottom: 0.5px solid var(--via-navy-08);
   flex-wrap: wrap;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-ed-youtube-meta button {
@@ -680,7 +680,7 @@
   border: 0.5px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   cursor: pointer;
   transition: background 120ms ease;
@@ -689,7 +689,7 @@
 
 .vds-ed-youtube-desc p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
   line-height: 1.55;
   margin: 0 0 14px;
@@ -697,7 +697,7 @@
 .vds-ed-youtube-desc p strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 .vds-ed-youtube-pre {
   font-family: var(--via-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   background: var(--via-gray-50);
   padding: 16px 20px;
@@ -717,7 +717,7 @@
   color: var(--via-white);
   border-radius: 4px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
   letter-spacing: -0.004em;
@@ -737,7 +737,7 @@
 .vds-ed-tutorial-cat {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -760,7 +760,7 @@
 }
 .vds-ed-tutorial-lede {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   color: var(--via-text);
   line-height: 1.6;
   margin: 0 0 20px;
@@ -780,7 +780,7 @@
 }
 .vds-ed-tutorial-meta .lbl {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -788,7 +788,7 @@
 }
 .vds-ed-tutorial-meta strong {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
@@ -798,7 +798,7 @@
 }
 .vds-ed-tutorial h2 {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
@@ -807,7 +807,7 @@
 }
 .vds-ed-tutorial p {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   color: var(--via-text);
   line-height: 1.65;
   margin: 0 0 16px;
@@ -815,7 +815,7 @@
 .vds-ed-tutorial p strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-ed-tutorial p code {
   font-family: var(--via-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   background: var(--via-navy-04);
   color: var(--via-text-primary);
   padding: 2px 6px;
@@ -838,7 +838,7 @@
   background: var(--via-gray-50);
   border-radius: 8px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
 }
 .vds-ed-tutorial-toc li::before {
@@ -846,14 +846,14 @@
   position: absolute;
   left: 14px;
   font-family: var(--via-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
 }
 
 .vds-ed-tutorial-code {
   font-family: var(--via-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   background: var(--via-gray-50);
   padding: 16px 20px;
@@ -875,7 +875,7 @@
 .vds-ed-tutorial-verify-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -894,7 +894,7 @@
   position: relative;
   padding-left: 16px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text);
   line-height: 1.55;
 }
@@ -921,7 +921,7 @@
 }
 .vds-ed-tutorial > footer p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
 }
 .vds-ed-tutorial > footer a {
   display: inline-flex;
@@ -932,7 +932,7 @@
   color: var(--via-white);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
 }

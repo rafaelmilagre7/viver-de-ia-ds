@@ -46,7 +46,7 @@
 
 .via-dropdown__group-label {
   font-family: var(--via-mono, 'Geist Mono', ui-monospace, monospace);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -63,7 +63,7 @@
   border: none;
   border-radius: 7px;
   font-family: inherit;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
@@ -116,7 +116,7 @@
 
 .via-dropdown__shortcut {
   font-family: var(--via-mono, 'Geist Mono', ui-monospace, monospace);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-3, #6B7891);
   background: var(--via-navy-05);

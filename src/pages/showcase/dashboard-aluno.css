@@ -37,7 +37,7 @@
 }
 
 .dba-nav nav a {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   text-decoration: none;
@@ -63,7 +63,7 @@
   border-radius: 999px;
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
@@ -81,7 +81,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
@@ -115,7 +115,7 @@
 .dba-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -124,7 +124,7 @@
 }
 
 .dba-greeting h1 {
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   color: var(--via-text-primary);
@@ -141,7 +141,7 @@
 
 .dba-greeting > div:first-child p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-body);
   letter-spacing: -0.005em;
 }
@@ -158,7 +158,7 @@
 
 .dba-ring-pct {
   font-family: var(--via-font);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   fill: var(--via-navy-deep);
   letter-spacing: -0.02em;
@@ -209,7 +209,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -219,7 +219,7 @@
 .dba-card-eyebrow svg { color: var(--via-text-primary); }
 
 .dba-card-meta {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;
 }
@@ -228,7 +228,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-0_5);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
@@ -268,7 +268,7 @@
 .dba-continue-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -277,7 +277,7 @@
 }
 
 .dba-continue h2 {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-white);
@@ -286,7 +286,7 @@
 }
 
 .dba-continue p {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
   margin: 0 0 18px;
   letter-spacing: -0.005em;
@@ -319,7 +319,7 @@
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   letter-spacing: -0.008em;
@@ -380,7 +380,7 @@
 }
 
 .dba-agenda-date strong {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   line-height: 1;
@@ -400,7 +400,7 @@
 
 .dba-agenda-info strong {
   display: block;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -409,7 +409,7 @@
 
 .dba-agenda-info em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;
 }
@@ -444,7 +444,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   font-feature-settings: 'tnum' 1;
 }
@@ -459,7 +459,7 @@
 
 .dba-modulo-body strong {
   display: block;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
   letter-spacing: -0.006em;
@@ -488,7 +488,7 @@
 
 .dba-modulo-pct {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   text-align: right;
@@ -522,7 +522,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -530,7 +530,7 @@
 
 .dba-activity-list p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   line-height: 1.45;
   letter-spacing: -0.005em;
@@ -540,7 +540,7 @@
 
 .dba-activity-list em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
 }
 
@@ -569,7 +569,7 @@
 
 .dba-achievement strong {
   display: block;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -578,7 +578,7 @@
 
 .dba-achievement p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   line-height: 1.45;
   letter-spacing: -0.004em;
@@ -605,7 +605,7 @@
 }
 
 .dba-time strong {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
@@ -615,7 +615,7 @@
 
 .dba-time em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   margin: 6px 0 16px;
   letter-spacing: -0.004em;

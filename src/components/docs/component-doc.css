@@ -33,7 +33,7 @@
 
 .vds-cdoc-anatomy-num {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-navy-22);
   letter-spacing: -0.02em;
@@ -43,7 +43,7 @@
 
 .vds-cdoc-anatomy-row strong {
   font-family: var(--via-font-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
@@ -51,7 +51,7 @@
 
 .vds-cdoc-anatomy-row p {
   margin: 4px 0 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
 }
@@ -80,7 +80,7 @@
   text-align: left;
   padding: 12px 16px;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -91,7 +91,7 @@
 .vds-cdoc-props td {
   padding: 14px 16px;
   border-bottom: 0.5px solid var(--via-border-soft);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.5;
   vertical-align: top;
@@ -107,7 +107,7 @@
 
 .vds-cdoc-props .mono {
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
 }
 
 .vds-cdoc-props .vds-cdoc-type {
@@ -126,7 +126,7 @@
 
 .vds-cdoc-hint {
   margin: 8px 0 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
 
@@ -152,7 +152,7 @@
 .vds-cdoc-variant-card strong {
   display: inline-block;
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   padding: 3px 9px;
@@ -164,7 +164,7 @@
 .vds-cdoc-variant-label {
   margin: 8px 0 4px;
   font-family: var(--via-font-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.016em;
   color: var(--via-text-primary);
@@ -172,7 +172,7 @@
 
 .vds-cdoc-variant-card p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   line-height: 1.5;
 }
@@ -180,7 +180,7 @@
 /* ---------- Examples ---------- */
 .vds-cdoc-ex-desc {
   margin: 0 0 14px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-ink-2);
   max-width: 640px;
@@ -230,7 +230,7 @@
 .vds-cdoc-dont-lbl {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -244,7 +244,7 @@
 .vds-cdoc-dont strong {
   display: block;
   font-family: var(--via-font-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 4px;
@@ -254,7 +254,7 @@
 .vds-cdoc-do p,
 .vds-cdoc-dont p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
 }
@@ -277,7 +277,7 @@
 .vds-cdoc-a11y li {
   position: relative;
   padding-left: 22px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text);
 }
@@ -322,7 +322,7 @@
 .vds-cdoc-related-card strong {
   display: block;
   font-family: var(--via-font-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin-bottom: 4px;
@@ -330,7 +330,7 @@
 
 .vds-cdoc-related-card p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   line-height: 1.5;
 }

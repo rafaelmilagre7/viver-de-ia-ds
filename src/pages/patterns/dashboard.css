@@ -60,7 +60,7 @@
 .vds-dash .filt {
   padding: 7px 14px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   border-radius: 999px;
@@ -136,7 +136,7 @@
 }
 .vds-dash .kpi .lbl {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -145,7 +145,7 @@
 .vds-dash .kpi .num-row { display: flex; align-items: baseline; gap: var(--via-space-2); }
 .vds-dash .kpi .num {
   font-family: var(--via-font-display);
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.03em;
   color: var(--via-text-primary);
@@ -154,7 +154,7 @@
 }
 .vds-dash .kpi .delta {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
   background: var(--via-navy-06);
@@ -227,7 +227,7 @@
 
 .vds-dash .bar-label {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
   font-weight: var(--via-fw-medium);
@@ -251,7 +251,7 @@
 
 .vds-dash .bar-val {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-align: right;
@@ -270,14 +270,14 @@
 .vds-dash .side li:last-child { border-bottom: none; }
 .vds-dash .side .who {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   grid-column: 1;
 }
 .vds-dash .side .when {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-muted);
   grid-column: 2;
   grid-row: 1;
@@ -286,7 +286,7 @@
 .vds-dash .side .what {
   grid-column: 1 / -1;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   line-height: 1.4;
 }

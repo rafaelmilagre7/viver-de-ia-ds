@@ -35,7 +35,7 @@
 }
 
 .via-dd-trigger .lbl {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -43,7 +43,7 @@
 }
 
 .via-dd-trigger .val {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   flex: 1;
@@ -102,7 +102,7 @@
   padding: 10px 12px;
   border-radius: 9px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text);
   cursor: pointer;

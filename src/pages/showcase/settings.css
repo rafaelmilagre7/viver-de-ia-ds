@@ -47,7 +47,7 @@
 .vds-set-h h1 em { font-style: normal; font-weight: var(--via-fw-regular); color: var(--via-text-muted); }
 .vds-set-h .lede {
   font-family: var(--via-font);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   line-height: 1.55;
   color: var(--via-text-body);
   margin: 0;
@@ -105,7 +105,7 @@
   border: none;
   border-radius: 12px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
   cursor: pointer;
@@ -213,7 +213,7 @@
 .vds-set-card header { margin-bottom: 28px; }
 .vds-set-card header .vds-eyebrow {
   margin-bottom: 10px;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: var(--via-fw-semibold);
@@ -221,7 +221,7 @@
 }
 .vds-set-card h2 {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.18;
@@ -235,7 +235,7 @@
 }
 .vds-set-card header p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   margin: 8px 0 0;
   line-height: 1.5;
@@ -272,7 +272,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-regular);
   letter-spacing: -0.02em;
   /* shadow stack 4-layer signature */
@@ -321,7 +321,7 @@
 .vds-set-avatar-row strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -329,7 +329,7 @@
 }
 .vds-set-avatar-row span {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -363,7 +363,7 @@
 .vds-set-toggle strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -371,7 +371,7 @@
 }
 .vds-set-toggle span {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   line-height: 1.5;
   letter-spacing: -0.004em;
@@ -413,14 +413,14 @@
 .vds-set-list strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
 .vds-set-list span {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin-top: 4px;
   letter-spacing: -0.004em;
@@ -432,7 +432,7 @@
   padding: 8px 16px;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   background: var(--via-glass-card);
@@ -472,7 +472,7 @@
   border: 1px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   white-space: nowrap;

@@ -102,7 +102,7 @@
 }
 
 .via-checkbox__label {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   color: var(--via-text-primary);
@@ -110,7 +110,7 @@
 }
 
 .via-checkbox__desc {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-ink-2, #5E6B82);
 }

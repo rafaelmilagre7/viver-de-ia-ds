@@ -48,7 +48,7 @@
   border: 1px solid rgba(255,255,255,0.20);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-white);
@@ -58,7 +58,7 @@
   margin: 0;
   flex: 1;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
 }
 .vds-ann-banner p strong { color: var(--via-white); font-weight: var(--via-fw-bold); }
@@ -75,7 +75,7 @@
   border: 1px solid var(--via-navy-20);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
@@ -204,7 +204,7 @@
 .vds-notif header .vds-eyebrow { color: rgba(255,255,255,0.55); margin: 0 0 4px; }
 .vds-notif header h3 {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   margin: 0;
@@ -212,7 +212,7 @@
 }
 .vds-notif header .all {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(255,255,255,0.65);
@@ -277,7 +277,7 @@
 .vds-notif li strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   margin-bottom: 2px;
@@ -285,14 +285,14 @@
 .vds-notif li span {
   display: block;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.62);
   line-height: 1.45;
 }
 .vds-notif li .time {
   margin-top: 6px;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: rgba(255,255,255,0.45);
   letter-spacing: 0.06em;
 }
@@ -348,20 +348,20 @@
 }
 .vds-feed-body strong {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
 }
 .vds-feed-body .when {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   letter-spacing: 0.06em;
 }
 .vds-feed-body p {
   margin: 0;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   line-height: 1.5;
 }
@@ -378,7 +378,7 @@
   border: 1px solid var(--via-navy-12);
   border-radius: 999px;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
@@ -411,12 +411,12 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-display);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   border: 2px solid var(--via-white);
   box-shadow: 0 4px 12px var(--via-navy-18);
 }
-.vds-avgroup-av.lg { width: 48px; height: 48px; font-size: 18px; }
+.vds-avgroup-av.lg { width: 48px; height: 48px; font-size: var(--via-fs-h4); }
 .vds-avgroup-dot {
   position: absolute;
   right: 0;
@@ -441,7 +441,7 @@
   border: 2px solid var(--via-white);
   margin-left: -10px;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.06em;
   color: var(--via-text-primary);
@@ -450,13 +450,13 @@
 .vds-avgroup-meta { display: flex; flex-direction: column; gap: var(--via-space-0_5); }
 .vds-avgroup-meta strong {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
 }
 .vds-avgroup-meta span {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 
@@ -476,14 +476,14 @@
 .vds-avgroup-card strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 .vds-avgroup-card span {
   display: block;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin-top: 2px;
 }
@@ -492,7 +492,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.10em;
   text-transform: uppercase;

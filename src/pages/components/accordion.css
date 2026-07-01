@@ -62,7 +62,7 @@
 
 .via-accordion .q {
   font-family: var(--via-font);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
@@ -101,7 +101,7 @@
 .via-accordion .body {
   padding: 0 28px 26px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.65;
   color: var(--via-text-soft);
   max-width: 680px;

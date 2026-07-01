@@ -47,14 +47,14 @@
 .vds-cookie-body strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   color: var(--via-white);
   margin-bottom: 4px;
 }
 .vds-cookie-body p {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.55;
   color: rgba(255,255,255,0.78);
   margin: 0;
@@ -71,7 +71,7 @@
   padding: 11px 20px;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
@@ -105,7 +105,7 @@
 }
 .vds-cookie-reset {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
 }
 .vds-cookie-reset button { background: transparent; border: none; color: var(--via-text-primary); cursor: pointer; text-decoration: underline; font-weight: var(--via-fw-bold); }
@@ -159,7 +159,7 @@
 }
 .vds-news-l .lede {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.55;
   color: rgba(255,255,255,0.72);
   margin: 0;
@@ -183,7 +183,7 @@
   border: none;
   outline: none;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-white);
   padding: 10px 0;
 }
@@ -199,7 +199,7 @@
   border: 1px solid var(--via-navy-20);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
@@ -218,7 +218,7 @@
 }
 .vds-news-foot {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255,255,255,0.55);
   margin: 0;
   padding-left: 18px;
@@ -264,7 +264,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   flex-shrink: 0;
   box-shadow: 0 4px 12px var(--via-navy-18);
 }
@@ -276,19 +276,19 @@
 }
 .vds-comments .body strong {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
 }
 .vds-comments .body .when {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   letter-spacing: 0.06em;
 }
 .vds-comments .body p {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-body);
   margin: 0 0 10px;
@@ -303,7 +303,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   cursor: pointer;
@@ -334,14 +334,14 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
 }
 .vds-comments-input input {
   border: none;
   background: transparent;
   outline: none;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
 }
 .vds-comments-input input::placeholder { color: var(--via-gray-400); }
@@ -352,7 +352,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
@@ -392,7 +392,7 @@
 .vds-file-ext em {
   font-family: var(--via-font-mono);
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.14em;
   color: var(--via-text-body);
@@ -402,14 +402,14 @@
 .vds-file-meta strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin-bottom: 4px;
 }
 .vds-file-meta span {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 .vds-file-action {
@@ -469,7 +469,7 @@
 }
 .vds-cal > header strong {
   font-family: var(--via-font-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);
@@ -497,7 +497,7 @@
 }
 .vds-cal-days .dow {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -519,7 +519,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;
@@ -556,7 +556,7 @@
 }
 .vds-cal > footer span {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-body);
 }
@@ -570,7 +570,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;

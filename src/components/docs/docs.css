@@ -5,7 +5,7 @@
 /* ---- Eyebrow ---- */
 .vds-eyebrow {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -60,7 +60,7 @@
 .vds-section-title {
   font-family: var(--via-font-display);
   font-weight: var(--via-fw-medium);
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
@@ -68,7 +68,7 @@
 }
 .vds-section-meta {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   white-space: nowrap;
   flex-shrink: 0;
@@ -82,11 +82,11 @@
     margin-bottom: 22px;
   }
   .vds-section-title {
-    font-size: 24px;
+    font-size: var(--via-fs-h3);
   }
   .vds-section-meta {
     white-space: normal;
-    font-size: 10px;
+    font-size: var(--via-fs-micro);
     line-height: 1.4;
   }
 }
@@ -96,7 +96,7 @@
    classe de bug "texto escuro-sobre-navy" na raiz, sem !important. */
 :where(.vds-section-body) p {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.65;
   color: var(--via-text-body);
   margin: 0 0 16px;
@@ -170,18 +170,18 @@
 }
 .vds-swatch-name {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 .vds-swatch-hex {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
 }
 .vds-swatch-token {
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-gray-400);
 }
 
@@ -199,7 +199,7 @@
   font-family: var(--via-font);
 }
 .vds-token-table th {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -208,18 +208,18 @@
 }
 .vds-token-table td.tok {
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   width: 35%;
 }
 .vds-token-table td.val {
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   width: 20%;
 }
 .vds-token-table td.use {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
 }
 
@@ -231,7 +231,7 @@
   border-radius: var(--via-radius-md);
   padding: 18px 20px;
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   line-height: 1.6;
   overflow-x: auto;
@@ -288,7 +288,7 @@
 .vds-callout-info { display: flex; flex-direction: column; gap: var(--via-space-3); }
 .vds-callout-info h4 {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -297,7 +297,7 @@
 }
 .vds-callout-info p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-text-body);
   margin: 0;
@@ -313,7 +313,7 @@
   padding: 4px 10px;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -341,7 +341,7 @@
 .vds-dont { border-left: 2px solid var(--via-danger); }
 .vds-do-title, .vds-dont-title {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;

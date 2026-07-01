@@ -69,7 +69,7 @@
 .vds-mini-meta { min-width: 0; }
 .vds-mini-meta .ep {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -78,7 +78,7 @@
 }
 .vds-mini-meta h3 {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 8px;
@@ -123,7 +123,7 @@
 }
 .vds-mini-track .time {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -210,7 +210,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -219,7 +219,7 @@
 }
 .vds-fullep .ep-meta h2 {
   font-family: var(--via-font-display);
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.05;
@@ -229,7 +229,7 @@
 .vds-fullep .ep-meta h2 em { font-style: normal; font-weight: var(--via-fw-regular); color: rgba(255,255,255,0.62); }
 .vds-fullep .ep-meta .lede {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: rgba(255,255,255,0.72);
   margin: 14px 0 16px;
@@ -241,7 +241,7 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: rgba(255,255,255,0.78);
 }
@@ -255,14 +255,14 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-regular);
   color: var(--via-white);
 }
 .vds-fullep .ep-date {
   margin-left: auto;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   letter-spacing: 0.10em;
   color: rgba(255,255,255,0.45);
 }
@@ -291,7 +291,7 @@
   display: flex;
   justify-content: space-between;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255,255,255,0.55);
   letter-spacing: 0.06em;
   margin-bottom: 24px;
@@ -354,7 +354,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
   cursor: pointer;
@@ -439,7 +439,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -458,7 +458,7 @@
 .vds-video .vid-idle-meta h2 em { font-style: normal; font-weight: var(--via-fw-regular); color: rgba(255,255,255,0.62); }
 .vds-video .vid-idle-meta .lede {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: rgba(255,255,255,0.72);
   margin: 12px 0 0;
 }
@@ -582,7 +582,7 @@
 .vds-video .vid-time {
   margin-left: 10px;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: rgba(255,255,255,0.78);
   letter-spacing: 0.06em;
   font-variant-numeric: tabular-nums;
@@ -593,7 +593,7 @@
   border: 1px solid rgba(255,255,255,0.20);
   border-radius: 6px;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   cursor: pointer;
@@ -619,7 +619,7 @@
 .vds-video .vid-watermark img { width: 14px; height: 14px; object-fit: contain; }
 .vds-video .vid-watermark span {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;

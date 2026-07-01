@@ -42,7 +42,7 @@
 }
 
 .lt-nav nav a {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
   text-decoration: none;
@@ -59,7 +59,7 @@
   border-radius: 999px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.006em;
@@ -148,7 +148,7 @@
   border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
   letter-spacing: -0.005em;
@@ -170,7 +170,7 @@
 }
 
 .lt-hero-h1 {
-  font-size: 56px;
+  font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.036em;
   line-height: 1.04;
@@ -186,7 +186,7 @@
 }
 
 .lt-hero-lede {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   line-height: 1.62;
   color: var(--via-gray-200);
   margin: 0 auto 36px;
@@ -212,7 +212,7 @@
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.008em;
@@ -233,7 +233,7 @@
 
 .lt-cta-primary.lg {
   padding: 17px 34px;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
 }
 
 .lt-cta-ghost {
@@ -246,7 +246,7 @@
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   color: var(--via-white);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
   letter-spacing: -0.006em;
@@ -274,7 +274,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   border: 2px solid var(--via-navy);
@@ -285,19 +285,19 @@
 
 .lt-hero-proof-avs .av.more {
   background: rgba(255, 255, 255, 0.12);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
 }
 
 .lt-hero-proof-txt {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
   letter-spacing: -0.005em;
 }
 
 @media (max-width: 860px) {
   .lt-hero { padding: 64px 24px 56px; }
-  .lt-hero-h1 { font-size: 40px; }
-  .lt-hero-lede { font-size: 16px; }
+  .lt-hero-h1 { font-size: var(--via-fs-h1); }
+  .lt-hero-lede { font-size: var(--via-fs-body); }
 }
 
 /* ============================================
@@ -321,7 +321,7 @@
 }
 
 .lt-stat strong {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.034em;
@@ -331,7 +331,7 @@
 
 .lt-stat em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -339,7 +339,7 @@
 @media (max-width: 860px) {
   .lt-stats { grid-template-columns: repeat(2, 1fr); }
   .lt-stat { padding: 26px 16px; }
-  .lt-stat strong { font-size: 32px; }
+  .lt-stat strong { font-size: var(--via-fs-h2); }
 }
 
 /* ============================================
@@ -359,7 +359,7 @@
 .lt-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -370,7 +370,7 @@
 .lt-eyebrow.on-dark { color: var(--via-gray-300); }
 
 .lt-section-head h2 {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.030em;
   line-height: 1.10;
@@ -417,7 +417,7 @@
 
 .lt-dor-num {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-faint);
   letter-spacing: 0.04em;
@@ -428,7 +428,7 @@
 
 .lt-dores li p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.5;
   color: var(--via-text-body);
   letter-spacing: -0.006em;
@@ -436,7 +436,7 @@
 
 .lt-dores-fecho {
   text-align: center;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.6;
   color: var(--via-text-body);
   max-width: 620px;
@@ -498,7 +498,7 @@
 
 .lt-pilar strong {
   display: block;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -507,7 +507,7 @@
 
 .lt-pilar p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-body);
   letter-spacing: -0.005em;
@@ -560,7 +560,7 @@
 
 .lt-modulo-body strong {
   display: block;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -569,7 +569,7 @@
 
 .lt-modulo-body p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: var(--via-text-body);
   letter-spacing: -0.005em;
@@ -577,7 +577,7 @@
 
 .lt-modulo-dur {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   letter-spacing: 0.02em;
@@ -622,7 +622,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -633,7 +633,7 @@
 
 .lt-mentor strong {
   display: block;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -642,7 +642,7 @@
 .lt-mentor em {
   display: block;
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin: 3px 0 10px;
   letter-spacing: -0.004em;
@@ -650,7 +650,7 @@
 
 .lt-mentor p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: var(--via-text-body);
   letter-spacing: -0.005em;
@@ -701,7 +701,7 @@
 
 .lt-depoimento blockquote {
   margin: 0 0 22px;
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-regular);
   line-height: 1.45;
   letter-spacing: -0.014em;
@@ -723,14 +723,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
 }
 
 .lt-depoimento footer strong {
   display: block;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -738,7 +738,7 @@
 
 .lt-depoimento footer em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 
@@ -783,7 +783,7 @@
 }
 
 .lt-oferta-l h2 {
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.1;
@@ -792,7 +792,7 @@
 }
 
 .lt-oferta-lede {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.6;
   color: var(--via-gray-200);
   margin: 0 0 28px;
@@ -812,7 +812,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-2_5);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-gray-200);
   letter-spacing: -0.005em;
   line-height: 1.45;
@@ -840,7 +840,7 @@
 .lt-oferta-card-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -856,7 +856,7 @@
 }
 
 .lt-oferta-price-from {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-gray-300);
   text-decoration: line-through;
   letter-spacing: -0.004em;
@@ -864,7 +864,7 @@
 }
 
 .lt-oferta-price strong {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.030em;
@@ -874,7 +874,7 @@
 
 .lt-oferta-price em {
   font-style: normal;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
   letter-spacing: -0.005em;
 }
@@ -891,7 +891,7 @@
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.008em;
@@ -916,7 +916,7 @@
   justify-content: center;
   gap: var(--via-space-1_5);
   margin: 14px 0 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-gray-300);
   letter-spacing: -0.004em;
 }
@@ -936,7 +936,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-gray-300);
   letter-spacing: -0.004em;
   font-feature-settings: 'tnum' 1;
@@ -945,7 +945,7 @@
 @media (max-width: 860px) {
   .lt-oferta { padding: 56px 24px; }
   .lt-oferta-inner { grid-template-columns: 1fr; gap: var(--via-space-8); }
-  .lt-oferta-l h2 { font-size: 24px; }
+  .lt-oferta-l h2 { font-size: var(--via-fs-h3); }
 }
 
 /* ============================================
@@ -972,7 +972,7 @@
   justify-content: space-between;
   gap: var(--via-space-4);
   padding: 20px 24px;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -994,7 +994,7 @@
 .lt-faq-item p {
   margin: 0;
   padding: 0 24px 22px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-text-body);
   letter-spacing: -0.005em;
@@ -1035,7 +1035,7 @@
 }
 
 .lt-final-inner h2 {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
   line-height: 1.08;
@@ -1051,7 +1051,7 @@
 }
 
 .lt-final-inner p {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.6;
   color: var(--via-gray-200);
   margin: 0 0 32px;
@@ -1060,7 +1060,7 @@
 
 @media (max-width: 860px) {
   .lt-final { padding: 64px 24px; }
-  .lt-final-inner h2 { font-size: 32px; }
+  .lt-final-inner h2 { font-size: var(--via-fs-h2); }
 }
 
 /* ============================================
@@ -1080,13 +1080,13 @@
 
 .lt-footer p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
   letter-spacing: -0.005em;
 }
 
 .lt-footer span {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-faint);
   letter-spacing: -0.004em;
 }

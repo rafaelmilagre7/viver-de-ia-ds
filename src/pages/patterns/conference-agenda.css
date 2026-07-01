@@ -80,7 +80,7 @@
 }
 
 .vds-cf-day .dn {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   color: var(--via-ink-3);
@@ -92,7 +92,7 @@
 
 .vds-cf-day .dt {
   font-family: var(--via-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
@@ -103,7 +103,7 @@
 }
 
 .vds-cf-day .dl {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
 }
 
@@ -124,7 +124,7 @@
   padding: 5px 12px;
   border-radius: 999px;
   border: 1px solid var(--via-border-soft);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   white-space: nowrap;
@@ -188,7 +188,7 @@
 
 .vds-cf-time .t {
   font-family: var(--via-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
@@ -196,7 +196,7 @@
 }
 
 .vds-cf-time .d {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }
@@ -206,7 +206,7 @@
 }
 
 .vds-cf-row.break .vds-cf-time .t {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-ink-2);
 }
 
@@ -231,7 +231,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--via-space-3);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-ink-2);
 }
 
@@ -244,7 +244,7 @@
 .vds-cf-break em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }
@@ -309,7 +309,7 @@
 .vds-cf-track-tag {
   display: inline-flex;
   align-items: center;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
@@ -340,7 +340,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
@@ -362,7 +362,7 @@
 .vds-cf-session h4 {
   margin: 0 0 14px;
   font-family: var(--via-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   line-height: 1.22;
@@ -400,7 +400,7 @@
   justify-content: center;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow: 0 2px 6px var(--via-navy-18);
@@ -422,7 +422,7 @@
 }
 
 .vds-cf-speaker strong {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -431,7 +431,7 @@
 .vds-cf-speaker em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -441,7 +441,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -456,7 +456,7 @@
   border: 1px solid var(--via-border);
   color: var(--via-text-primary);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
@@ -482,7 +482,7 @@
 
 .vds-cf-foot p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
   line-height: 1.55;
   max-width: 720px;
@@ -503,7 +503,7 @@
   color: var(--via-white);
   text-decoration: none;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   transition: background .2s ease, transform .2s ease, box-shadow .22s ease;
@@ -579,7 +579,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow:
@@ -603,7 +603,7 @@
 .vds-cf-spk-tag {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -618,7 +618,7 @@
 .vds-cf-spk-body h4 {
   margin: 0;
   font-family: var(--via-display);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
@@ -630,7 +630,7 @@
 .vds-cf-spk-body p {
   margin: 0;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
   white-space: nowrap;

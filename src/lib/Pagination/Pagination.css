@@ -27,7 +27,7 @@
   height: 32px;
   padding: 0 10px;
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
@@ -85,7 +85,7 @@
   height: 32px;
   color: var(--via-ink-3, #6B7891);
   font-family: var(--via-mono, 'Geist Mono', ui-monospace, monospace);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
 }
 
 .via-pagination__page:focus-visible,

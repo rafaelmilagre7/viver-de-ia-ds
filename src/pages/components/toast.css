@@ -64,13 +64,13 @@
 .via-toast .body { flex: 1; min-width: 0; position: relative; z-index: 1; padding-top: 2px; }
 .via-toast .title {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
 }
 .via-toast .desc {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   margin-top: 3px;
   line-height: 1.5;
@@ -79,7 +79,7 @@
   position: relative;
   z-index: 1;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;

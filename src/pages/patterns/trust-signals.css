@@ -41,7 +41,7 @@
 
 .vds-trust-eyebrow {
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -62,7 +62,7 @@
 }
 
 .vds-trust-num {
-  font-size: 56px;
+  font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.034em;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
@@ -73,7 +73,7 @@
 }
 
 .vds-trust-strip h3 > span:not(.vds-trust-num) {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
   letter-spacing: -0.018em;
@@ -134,7 +134,7 @@
 }
 
 .vds-trust-client-mark {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
@@ -142,7 +142,7 @@
 
 .vds-trust-client-name {
   font-family: var(--via-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.014em;
@@ -158,7 +158,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   text-decoration: none;
@@ -240,7 +240,7 @@
 .vds-trust-stat-v {
   margin: 0 0 8px;
   font-family: var(--via-display);
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.032em;
@@ -250,7 +250,7 @@
 
 .vds-trust-stat-l {
   margin: 0 0 14px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -258,7 +258,7 @@
 
 .vds-trust-stat-s {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   line-height: 1.45;
   padding-top: 10px;
@@ -306,7 +306,7 @@
 
 .vds-trust-rating-num .num {
   font-family: var(--via-display);
-  font-size: 56px;
+  font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.036em;
@@ -316,7 +316,7 @@
 
 .vds-trust-rating-num .of {
   font-family: var(--via-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
 }
@@ -329,7 +329,7 @@
 
 .vds-trust-rating-meta {
   margin: 0 0 16px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
 }
 
@@ -362,7 +362,7 @@
 }
 
 .vds-trust-rating-breakdown .lbl {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }
@@ -384,7 +384,7 @@
 }
 
 .vds-trust-rating-breakdown .pct {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-2);
   letter-spacing: 0.01em;
   text-align: right;
@@ -446,7 +446,7 @@
 .vds-trust-review h4 {
   margin: 0 0 10px;
   font-family: var(--via-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-style: italic;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
@@ -456,7 +456,7 @@
 
 .vds-trust-review p {
   margin: 0 0 16px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-ink-2);
 }
@@ -477,7 +477,7 @@
 }
 
 .vds-trust-review footer strong {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -486,13 +486,13 @@
 .vds-trust-review footer em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
 
 .vds-trust-review-date {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -570,7 +570,7 @@
 .vds-trust-award h4 {
   margin: 0 0 4px;
   font-family: var(--via-display);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   line-height: 1.3;
@@ -579,7 +579,7 @@
 
 .vds-trust-award p {
   margin: 0 0 12px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
   line-height: 1.45;
 }
@@ -588,7 +588,7 @@
   margin-top: auto;
   padding-top: 10px;
   border-top: 1px solid var(--via-border-soft);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }

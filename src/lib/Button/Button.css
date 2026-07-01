@@ -80,17 +80,17 @@
 /* ===== Sizes ===== */
 .via-btn--sm {
   padding: 7px 14px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
 }
 
 .via-btn--md {
   padding: 10px 18px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
 }
 
 .via-btn--lg {
   padding: 13px 24px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
 }
 
 /* ===== Variants ===== */

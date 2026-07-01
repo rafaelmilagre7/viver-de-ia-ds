@@ -9,7 +9,7 @@
 }
 
 .vds-form-field label {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -36,7 +36,7 @@
   border: 1px solid var(--via-border-soft);
   background: var(--via-surface);
   font-family: inherit;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
   outline: none;
   transition: border-color 160ms ease, box-shadow 200ms ease;
@@ -50,7 +50,7 @@
 }
 
 .vds-form-hint {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   margin: 6px 0 0;
   line-height: 1.5;
@@ -90,7 +90,7 @@
 
 .vds-dp-detail-title {
   margin: 0 0 10px;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -100,7 +100,7 @@
 .vds-dp-detail-title strong {
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   letter-spacing: -0.01em;
   text-transform: none;
 }
@@ -118,7 +118,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text);
   letter-spacing: -0.005em;
 }
@@ -183,7 +183,7 @@
 }
 
 .vds-dp-year {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
@@ -219,7 +219,7 @@
 
 .vds-dp-week span {
   text-align: center;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -257,7 +257,7 @@
 }
 
 .vds-dp-num {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.01em;
   line-height: 1;
@@ -291,7 +291,7 @@
 }
 
 .vds-form-field-label {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -313,7 +313,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
@@ -430,7 +430,7 @@
 }
 
 .vds-dp-range-eyebrow {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -438,7 +438,7 @@
 }
 
 .vds-dp-range-summary strong {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -446,7 +446,7 @@
 }
 
 .vds-dp-range-arrow {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-light);
 }
@@ -461,14 +461,14 @@
     radial-gradient(180px 60px at 0% 0%, var(--via-navy-06), transparent 70%),
     var(--via-navy-04);
   border: 1px solid rgba(10, 31, 59, 0.11);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text);
   letter-spacing: -0.005em;
 }
 
 .vds-dp-range-span em {
   font-style: normal;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
@@ -482,7 +482,7 @@
   border: 1px solid var(--via-navy);
   color: var(--via-white);
   font-family: inherit;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
@@ -555,7 +555,7 @@
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
@@ -578,7 +578,7 @@
   margin-left: auto;
   background: transparent;
   border: none;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
@@ -600,7 +600,7 @@
 
 .vds-combobox-wrap label {
   display: block;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -639,7 +639,7 @@
   border: none;
   background: transparent;
   outline: none;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -685,7 +685,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px 6px;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -735,7 +735,7 @@
 
 .vds-combobox-text .lbl {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -743,7 +743,7 @@
 
 .vds-combobox-text .meta {
   margin: 2px 0 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
 }
 
@@ -764,7 +764,7 @@
   justify-content: center;
   gap: var(--via-space-2_5);
   padding: 24px 14px;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   text-align: center;
 }
@@ -802,7 +802,7 @@
   border-radius: 999px;
   background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-05));
   color: var(--via-text-primary);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   border: 1px solid var(--via-navy-08);
@@ -833,7 +833,7 @@
   border: none;
   background: transparent;
   outline: none;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   font-family: inherit;
   padding: 6px 4px;
@@ -853,7 +853,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   border: none;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.01em;
   cursor: pointer;
@@ -870,7 +870,7 @@
 
 .vds-taginput-sugg-label {
   display: block;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -893,7 +893,7 @@
   background: var(--via-surface);
   border: 1px dashed var(--via-navy-20);
   color: var(--via-text-primary);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
@@ -1033,7 +1033,7 @@
 
 .vds-range-ticks em {
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   letter-spacing: 0.02em;
@@ -1062,7 +1062,7 @@
 .vds-range-summary > div:nth-child(3) { text-align: right; }
 
 .vds-range-eyebrow {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1070,7 +1070,7 @@
 }
 
 .vds-range-summary strong {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.015em;
@@ -1078,13 +1078,13 @@
 }
 
 .vds-range-summary > div.span strong {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   color: var(--via-text-primary);
 }
 
 .vds-range-summary em {
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   font-feature-settings: 'tnum' 1;
 }
@@ -1158,7 +1158,7 @@
 }
 
 .vds-rating-val strong {
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.028em;
@@ -1166,14 +1166,14 @@
 
 .vds-rating-val em {
   font-style: normal;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-regular);
 }
 
 .vds-rating-copy {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -1181,7 +1181,7 @@
 
 .vds-rating-meta {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   line-height: 1.4;
 }
@@ -1231,7 +1231,7 @@
 
 .vds-color-info .vds-color-name {
   margin: 0 0 6px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -1240,7 +1240,7 @@
 .vds-color-info .vds-color-hex {
   margin: 0;
   font-family: var(--via-font-mono);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   display: inline-flex;
@@ -1251,7 +1251,7 @@
 
 .vds-color-info .vds-color-hex .prefix {
   font-family: inherit;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.14em;
   padding: 3px 7px;
@@ -1310,7 +1310,7 @@
 
 .vds-color-input-wrap .prefix {
   font-family: var(--via-font-mono);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
 }
@@ -1321,7 +1321,7 @@
   outline: none;
   padding: 12px 8px;
   font-family: var(--via-font-mono);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   background: transparent;
@@ -1329,7 +1329,7 @@
 }
 
 .vds-color-input-wrap .suffix {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;

@@ -17,7 +17,7 @@
 .via-seg-item {
   padding: 9px 18px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   border-radius: 999px;
@@ -55,7 +55,7 @@
   position: relative;
   padding: 14px 0;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   color: var(--via-text-soft);
@@ -103,7 +103,7 @@
   border: 1px solid var(--via-navy-08);
   color: var(--via-text-soft);
   border-radius: 999px;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;

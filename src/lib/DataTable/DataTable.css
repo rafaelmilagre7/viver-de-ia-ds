@@ -18,7 +18,7 @@
 .via-dt__caption {
   padding: 14px 16px;
   font-family: var(--via-font, inherit);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
@@ -42,7 +42,7 @@
 .via-dt th {
   padding: 10px 14px;
   font-family: var(--via-font, inherit);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -75,7 +75,7 @@
   display: block;
   margin-top: 4px;
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3, #6B7891);
   letter-spacing: 0;
   text-transform: none;
@@ -83,7 +83,7 @@
 
 .via-dt td {
   padding: 12px 14px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text, #344054);
   border-bottom: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
   vertical-align: middle;
@@ -120,7 +120,7 @@
   text-align: center;
   padding: 40px 16px !important;
   color: var(--via-ink-3, #6B7891);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
 }
 
 /* --- Mobile · horizontal scroll preserved --- */

@@ -19,20 +19,20 @@
 .via-avatar.sm {
   width: 28px;
   height: 28px;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   border-width: 1.5px;
 }
 
 .via-avatar.md {
   width: 40px;
   height: 40px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
 }
 
 .via-avatar.lg {
   width: 56px;
   height: 56px;
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   border-width: 2.5px;
   box-shadow:
     0 0 0 1px var(--via-navy-08),
@@ -54,7 +54,7 @@
     0 2px 6px var(--via-navy-08);
   font-family: var(--via-font);
   font-weight: var(--via-fw-bold);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   letter-spacing: 0;
 }
 
@@ -97,7 +97,7 @@
 
 .via-avatar-list .name {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -105,7 +105,7 @@
 
 .via-avatar-list .role {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
 }

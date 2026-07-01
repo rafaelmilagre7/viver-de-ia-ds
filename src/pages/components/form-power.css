@@ -6,7 +6,7 @@
 .vds-fp-label {
   display: block;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
@@ -15,7 +15,7 @@
 
 .vds-fp-hint {
   margin: 8px 0 0;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: -0.004em;
 }
@@ -54,7 +54,7 @@
 }
 
 .vds-fp-mselect-ph {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-ink-3);
   align-self: center;
 }
@@ -69,7 +69,7 @@
   border: 1px solid var(--via-navy-14);
   color: var(--via-text-primary);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   line-height: 1.4;
@@ -95,7 +95,7 @@
   background: transparent;
   border: none;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   cursor: pointer;
   padding: 2px 6px;
@@ -150,7 +150,7 @@
   outline: none;
   background: transparent;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
   flex: 1;
@@ -208,13 +208,13 @@
 }
 
 .vds-fp-mselect-lbl {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
 
 .vds-fp-mselect-count {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }
@@ -226,7 +226,7 @@
   padding: 10px 14px;
   border-top: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-2);
 }
 
@@ -242,7 +242,7 @@
   border-radius: 8px;
   padding: 6px 14px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
@@ -305,7 +305,7 @@
 .vds-fp-drop-zone h4 {
   margin: 0;
   font-family: var(--via-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
@@ -318,7 +318,7 @@
 
 .vds-fp-drop-zone p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 
@@ -330,7 +330,7 @@
   border: none;
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
@@ -388,7 +388,7 @@
 }
 
 .vds-fp-drop-item-body strong {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -399,7 +399,7 @@
 
 .vds-fp-drop-item-body em {
   font-style: normal;
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -432,7 +432,7 @@
 }
 
 .vds-fp-drop-pct {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.01em;
@@ -500,12 +500,12 @@
 }
 
 .vds-fp-phone-flag {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   line-height: 1;
 }
 
 .vds-fp-phone-dial {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   letter-spacing: 0.01em;
 }
@@ -526,7 +526,7 @@
   background: transparent;
   padding: 12px 14px;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -579,7 +579,7 @@
 }
 
 .vds-fp-phone-name {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
@@ -694,7 +694,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -753,7 +753,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-ink-2);
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   cursor: pointer;
   transition: all .2s ease;
 }
@@ -785,7 +785,7 @@
   border: 1px solid var(--via-border);
   color: var(--via-ink-2);
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
@@ -879,7 +879,7 @@
   background: transparent;
   border: none;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
   cursor: pointer;
@@ -907,7 +907,7 @@
   background: transparent;
   padding: 20px 24px;
   font-family: var(--via-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.65;
   color: var(--via-text-primary);
   letter-spacing: 0.005em;
@@ -930,7 +930,7 @@
 
 .vds-fp-md-preview p {
   margin: 0 0 14px;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.65;
   color: var(--via-text);
 }
@@ -943,7 +943,7 @@
 .vds-fp-md-preview ul {
   margin: 0 0 14px;
   padding-left: 22px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.7;
   color: var(--via-text);
 }
@@ -956,7 +956,7 @@
   border-radius: 0 8px 8px 0;
   font-style: italic;
   font-family: var(--via-display);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
@@ -964,7 +964,7 @@
 .vds-fp-md-preview blockquote em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -990,7 +990,7 @@
 }
 
 .vds-fp-md-foot span {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   letter-spacing: 0.01em;
 }
@@ -1002,7 +1002,7 @@
   color: var(--via-white);
   border: none;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;

@@ -6,7 +6,7 @@
 .vds-pa-divider {
   margin: 56px 0 24px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -83,7 +83,7 @@
 .vds-pa-spec-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -106,7 +106,7 @@
 
 .vds-pa-spec dt {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -115,7 +115,7 @@
 
 .vds-pa-spec dd {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -162,7 +162,7 @@
 
 .vds-pa-meta-page strong {
   display: block;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -174,12 +174,12 @@
   align-items: center;
   gap: var(--via-space-1);
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   margin-top: 2px;
 }
 
-.vds-pa-meta-page em .dot { font-size: 10px; }
+.vds-pa-meta-page em .dot { font-size: var(--via-fs-micro); }
 .vds-pa-meta-page em svg { margin-left: 2px; }
 
 .vds-pa-meta-hdr button {
@@ -196,7 +196,7 @@
 
 .vds-pa-meta-text p {
   margin: 0 0 6px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   line-height: 1.4;
   letter-spacing: -0.005em;
@@ -237,7 +237,7 @@
 .vds-pa-meta-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -246,7 +246,7 @@
 }
 
 .vds-pa-meta-canvas h2 {
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.030em;
   line-height: 1.06;
@@ -263,7 +263,7 @@
 }
 
 .vds-pa-meta-canvas > p {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
   margin: 0;
   letter-spacing: -0.006em;
@@ -296,7 +296,7 @@
   display: block;
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   letter-spacing: 0.06em;
@@ -306,7 +306,7 @@
 
 .vds-pa-meta-footer strong {
   display: block;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -316,7 +316,7 @@
 .vds-pa-meta-footer > div > em {
   display: block;
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   margin-top: 2px;
   letter-spacing: -0.005em;
@@ -330,7 +330,7 @@
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -356,7 +356,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
@@ -403,7 +403,7 @@
 .vds-pa-carousel-num {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   color: var(--via-gray-300);
@@ -411,7 +411,7 @@
 }
 
 .vds-pa-carousel-card h3 {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.0;
@@ -419,10 +419,10 @@
   margin: 0 0 8px;
 }
 
-.vds-pa-carousel-card.cta h3 { font-size: 18px; letter-spacing: -0.020em; }
+.vds-pa-carousel-card.cta h3 { font-size: var(--via-fs-h4); letter-spacing: -0.020em; }
 
 .vds-pa-carousel-card p {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   line-height: 1.4;
   color: var(--via-gray-300);
   margin: 0;
@@ -501,8 +501,8 @@
 }
 
 .vds-pa-story header .av img { width: 18px; height: 18px; object-fit: contain; }
-.vds-pa-story header strong { font-size: 12px; font-weight: var(--via-fw-semibold); color: var(--via-white); letter-spacing: -0.005em; }
-.vds-pa-story header em { font-style: normal; font-size: 10px; color: var(--via-gray-300); }
+.vds-pa-story header strong { font-size: var(--via-fs-xs); font-weight: var(--via-fw-semibold); color: var(--via-white); letter-spacing: -0.005em; }
+.vds-pa-story header em { font-style: normal; font-size: var(--via-fs-micro); color: var(--via-gray-300); }
 
 .vds-pa-story-canvas {
   position: relative;
@@ -522,7 +522,7 @@
 .vds-pa-story-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -532,7 +532,7 @@
 }
 
 .vds-pa-story-canvas h2 {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.026em;
   line-height: 1.10;
@@ -557,7 +557,7 @@
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   align-self: flex-start;
@@ -613,7 +613,7 @@
 .vds-pa-reel-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -623,7 +623,7 @@
 }
 
 .vds-pa-reel-canvas h2 {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.026em;
   line-height: 1.10;
@@ -639,7 +639,7 @@
 }
 
 .vds-pa-reel-canvas > p {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-gray-300);
   margin: 0;
   letter-spacing: -0.006em;
@@ -686,7 +686,7 @@
 
 .vds-pa-reel aside strong {
   display: block;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -695,7 +695,7 @@
 
 .vds-pa-reel aside > em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   display: block;
   margin-bottom: 14px;
@@ -703,7 +703,7 @@
 
 .vds-pa-reel aside p {
   margin: 0 0 18px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -718,7 +718,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   color: var(--via-white);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -771,7 +771,7 @@
 
 .vds-pa-li-page strong {
   display: block;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -781,7 +781,7 @@
 .vds-pa-li-page em {
   display: block;
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin-top: 2px;
   letter-spacing: -0.005em;
@@ -795,7 +795,7 @@
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -814,7 +814,7 @@
 
 .vds-pa-li-text p {
   margin: 0 0 8px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -846,7 +846,7 @@
 .vds-pa-li-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -856,7 +856,7 @@
 }
 
 .vds-pa-li-canvas h2 {
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.08;
@@ -873,7 +873,7 @@
 }
 
 .vds-pa-li-canvas > p {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
   margin: 0;
   letter-spacing: -0.005em;
@@ -903,7 +903,7 @@
 .vds-pa-li-footer > div em {
   display: block;
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   font-family: var(--via-font-mono, var(--via-font));
   letter-spacing: 0.04em;
@@ -912,7 +912,7 @@
 
 .vds-pa-li-footer > div strong {
   display: block;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -927,7 +927,7 @@
   background: var(--via-surface);
   border: 1.5px solid var(--via-navy);
   color: var(--via-text-primary);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -949,7 +949,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
@@ -992,7 +992,7 @@
 .vds-pa-li-card-num {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   color: var(--via-gray-300);
@@ -1000,7 +1000,7 @@
 }
 
 .vds-pa-li-card h3 {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.016em;
   line-height: 1.22;
@@ -1022,7 +1022,7 @@
 
 .vds-pa-li-card-next {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   color: var(--via-gray-300);
@@ -1048,7 +1048,7 @@
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-body);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   letter-spacing: -0.006em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -1076,7 +1076,7 @@
 
 .vds-pa-gs-sponsored {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
@@ -1086,7 +1086,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1119,7 +1119,7 @@
 
 .vds-pa-gs-desc {
   margin: 0 0 14px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -1143,7 +1143,7 @@
 }
 
 .vds-pa-gs-sitelinks strong {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: #1a0dab;
   letter-spacing: -0.005em;
@@ -1154,7 +1154,7 @@
 
 .vds-pa-gs-sitelinks em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1164,7 +1164,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1196,7 +1196,7 @@
 }
 
 .vds-pa-gdn-grid article header strong {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -1204,7 +1204,7 @@
 
 .vds-pa-gdn-size {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   letter-spacing: 0.04em;
@@ -1216,7 +1216,7 @@
 
 .vds-pa-gdn-grid article header em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1242,7 +1242,7 @@
 }
 
 .vds-pa-gdn-banner h3 {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   margin: 0 0 4px;
@@ -1258,7 +1258,7 @@
 }
 
 .vds-pa-gdn-banner p {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-gray-300);
   margin: 0;
   letter-spacing: -0.005em;
@@ -1271,7 +1271,7 @@
   border-radius: 999px;
   background: var(--via-surface);
   color: var(--via-text-primary);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   text-decoration: none;
@@ -1299,22 +1299,22 @@
 .g-336-280 img { bottom: 16px; right: 16px; }
 
 .g-728-90 { width: 100%; max-width: 728px; height: 90px; padding: 14px 22px; display: grid; grid-template-columns: 1fr auto 32px; align-items: center; gap: var(--via-space-4); }
-.g-728-90 h3 { font-size: 16px; }
+.g-728-90 h3 { font-size: var(--via-fs-body); }
 .g-728-90 p { display: none; }
 .g-728-90 img { position: static; }
 
 .g-300-600 { width: 300px; height: 600px; max-width: 100%; padding: 28px 22px; display: flex; flex-direction: column; justify-content: space-between; }
-.g-300-600 h3 { font-size: 24px; }
+.g-300-600 h3 { font-size: var(--via-fs-h3); }
 .g-300-600 .vds-pa-gdn-cta { align-self: flex-start; }
 .g-300-600 img { bottom: 18px; right: 18px; width: 22px; height: 22px; }
 
 .g-320-100 { width: 100%; max-width: 320px; height: 100px; padding: 14px 18px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--via-space-3_5); }
-.g-320-100 h3 { font-size: 14px; }
+.g-320-100 h3 { font-size: var(--via-fs-sm); }
 .g-320-100 p { display: none; }
 .g-320-100 img { display: none; }
 
 .g-970-250 { width: 100%; max-width: 970px; height: 250px; padding: 32px 40px; display: grid; grid-template-columns: 1fr auto 32px; align-items: center; gap: var(--via-space-6); }
-.g-970-250 h3 { font-size: 32px; }
+.g-970-250 h3 { font-size: var(--via-fs-h2); }
 .g-970-250 img { position: static; width: 26px; height: 26px; }
 
 /* ============================================
@@ -1361,7 +1361,7 @@
 .vds-pa-yt-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1370,7 +1370,7 @@
 }
 
 .vds-pa-yt-canvas h2 {
-  font-size: 32px;
+  font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.10;
@@ -1416,7 +1416,7 @@
   background: rgba(0, 0, 0, 0.72);
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1431,7 +1431,7 @@
   border: none;
   color: var(--via-white);
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
@@ -1464,7 +1464,7 @@
 
 .vds-pa-yt-companion strong {
   display: block;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -1472,7 +1472,7 @@
 }
 
 .vds-pa-yt-companion p {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin: 0 0 16px;
   letter-spacing: -0.004em;
@@ -1486,7 +1486,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   color: var(--via-white);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -1529,7 +1529,7 @@
 .vds-pa-yt-script-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1538,7 +1538,7 @@
 }
 
 .vds-pa-yt-script h4 {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
@@ -1570,7 +1570,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   font-feature-settings: 'tnum' 1;
@@ -1581,7 +1581,7 @@
 
 .vds-pa-yt-script li strong {
   display: block;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -1590,7 +1590,7 @@
 
 .vds-pa-yt-script li p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   line-height: 1.55;
   letter-spacing: -0.004em;
@@ -1664,7 +1664,7 @@
 
 .vds-pa-audience-card header strong {
   display: block;
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -1674,7 +1674,7 @@
 
 .vds-pa-audience-card header em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -1692,7 +1692,7 @@
 
 .vds-pa-audience-kpi .lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1700,7 +1700,7 @@
 }
 
 .vds-pa-audience-kpi strong {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -1714,7 +1714,7 @@
 
 .vds-pa-audience-block-lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1723,7 +1723,7 @@
 
 .vds-pa-audience-block p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.004em;
@@ -1741,7 +1741,7 @@
 
 .vds-pa-audience-cta-lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1749,7 +1749,7 @@
 }
 
 .vds-pa-audience-cta {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -1788,7 +1788,7 @@
 
 .vds-pa-ab-label {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -1797,7 +1797,7 @@
 
 .vds-pa-ab-card header em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -1822,7 +1822,7 @@
 .vds-pa-ab-mock > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
 
 .vds-pa-ab-mock h3 {
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.15;
@@ -1831,7 +1831,7 @@
 }
 
 .vds-pa-ab-mock p {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-gray-300);
   margin: 0;
   letter-spacing: -0.005em;
@@ -1856,7 +1856,7 @@
 .vds-pa-ab-hyp-lbl {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1866,7 +1866,7 @@
 
 .vds-pa-ab-card footer p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   letter-spacing: -0.004em;
 }
@@ -1910,7 +1910,7 @@
 .vds-pa-preflight-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1938,7 +1938,7 @@
 .vds-pa-preflight-group-title {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -1966,7 +1966,7 @@
 }
 
 .vds-pa-preflight-group li .q {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -1974,7 +1974,7 @@
 
 .vds-pa-preflight-group li .a {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-body);
   letter-spacing: 0.005em;
 }
@@ -1990,7 +1990,7 @@
     radial-gradient(320px 100px at 0% 0%, var(--via-navy-06), transparent 70%),
     var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.004em;
@@ -2046,7 +2046,7 @@
 }
 
 .vds-pa-headlines h4 {
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -2084,7 +2084,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2095,7 +2095,7 @@
 
 .vds-pa-headlines-pair p {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
@@ -2151,7 +2151,7 @@
 }
 
 .vds-pa-cta-group header strong {
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -2159,7 +2159,7 @@
 
 .vds-pa-cta-group header em {
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -2177,7 +2177,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2202,7 +2202,7 @@
   align-items: center;
   padding: 5px 10px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   letter-spacing: -0.004em;
   white-space: nowrap;
 }

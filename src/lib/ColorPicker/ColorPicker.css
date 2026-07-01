@@ -20,7 +20,7 @@
 }
 
 .via-cp__label {
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
@@ -61,7 +61,7 @@
 .via-cp__name {
   margin: 0;
   font-family: var(--via-font-display, inherit);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
@@ -73,13 +73,13 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font-mono, monospace);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-ink-2, #5E6B82);
   letter-spacing: 0.04em;
 }
 .via-cp__hex .prefix {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   color: var(--via-ink-3, #6B7891);
@@ -123,7 +123,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-1);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -133,7 +133,7 @@
 .via-cp__custom input {
   padding: 8px 12px;
   font-family: var(--via-font-mono, monospace);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--via-text-primary);

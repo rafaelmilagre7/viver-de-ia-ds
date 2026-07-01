@@ -39,7 +39,7 @@
 
 .via-stat .num {
   font-family: var(--via-font);
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
@@ -49,7 +49,7 @@
 
 .via-stat .suffix {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.06em;
   color: var(--via-text-soft);
@@ -59,7 +59,7 @@
 
 .via-stat .sub {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin: 0;
   letter-spacing: -0.005em;

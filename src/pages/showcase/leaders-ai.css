@@ -22,7 +22,7 @@
 .la-nav nav { display: flex; gap: var(--via-space-7); flex: 1; justify-content: center; }
 .la-nav a {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -37,7 +37,7 @@
   border: none;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
@@ -47,7 +47,7 @@
 
 .la-eyebrow {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -95,7 +95,7 @@
 .la-hero h1 em { font-style: normal; color: rgba(255,255,255,0.55); font-weight: var(--via-fw-medium); }
 .la-hero .lede {
   font-family: var(--via-font);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   color: rgba(255,255,255,0.72);
   margin: 0 auto 32px;
   max-width: 540px;
@@ -111,7 +111,7 @@
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
 }
@@ -144,7 +144,7 @@
 }
 .la-day h3 {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-white);
@@ -161,12 +161,12 @@
 .la-day li:last-child { border-bottom: none; }
 .la-day .t {
   font-family: var(--via-font-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: rgba(255,255,255,0.55);
 }
 .la-day .n {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   color: var(--via-white);
   line-height: 1.45;
 }
@@ -194,7 +194,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   flex-shrink: 0;
@@ -202,14 +202,14 @@
 .la-speaker strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   color: var(--via-white);
 }
 .la-speaker span {
   display: block;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.62);
   margin-top: 2px;
 }
@@ -245,7 +245,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 11px; font-weight: var(--via-fw-medium);
+  font-size: var(--via-fs-label); font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -256,7 +256,7 @@
 }
 .la-tier .tag {
   font-family: var(--via-font);
-  font-size: 10px; font-weight: var(--via-fw-bold);
+  font-size: var(--via-fs-micro); font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em; text-transform: uppercase;
   color: rgba(255,255,255,0.55);
 }
@@ -265,20 +265,20 @@
 .la-tier .cur {
   font-family: var(--via-font-display);
   font-style: normal;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   color: rgba(255,255,255,0.62);
 }
 .la-tier.feat .cur { color: var(--via-text-muted); }
 .la-tier .num {
   font-family: var(--via-font-display);
-  font-size: 40px; font-weight: var(--via-fw-medium);
+  font-size: var(--via-fs-h1); font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
   line-height: 1;
 }
 .la-tier p {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: rgba(255,255,255,0.72);
   margin: 0;
@@ -287,7 +287,7 @@
 .la-tier ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--via-space-2); flex: 1; }
 .la-tier li {
   display: flex; gap: var(--via-space-2);
-  font-family: var(--via-font); font-size: 12px;
+  font-family: var(--via-font); font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.85);
 }
 .la-tier.feat li { color: var(--via-text-body); }
@@ -298,7 +298,7 @@
   border-radius: 999px;
   border: none;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
@@ -320,7 +320,7 @@
 .la-footer img { height: 24px; filter: brightness(0) invert(1); }
 .la-footer span {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.55);
 }
 

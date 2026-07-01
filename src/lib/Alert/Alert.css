@@ -82,15 +82,15 @@
 }
 .via-alert__title {
   font-family: var(--via-font, inherit);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
-.via-alert--compact .via-alert__title { font-size: 13px; }
+.via-alert--compact .via-alert__title { font-size: var(--via-fs-caption); }
 
 .via-alert__text {
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text, #344054);
 }
 .via-alert__text p { margin: 0; }
@@ -110,7 +110,7 @@
 .via-alert__action a,
 .via-alert__action button {
   font-family: var(--via-font, inherit);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-alert-accent);

@@ -597,6 +597,12 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-fs-caption",
+    "css": "--via-fs-caption",
+    "value": "0.8125rem",
+    "category": "other"
+  },
+  {
     "name": "via-fs-h1",
     "css": "--via-fs-h1",
     "value": "2.5rem",
@@ -630,6 +636,12 @@ export const tokensList: readonly Token[] = [
     "name": "via-fs-label",
     "css": "--via-fs-label",
     "value": "0.6875rem",
+    "category": "other"
+  },
+  {
+    "name": "via-fs-micro",
+    "css": "--via-fs-micro",
+    "value": "0.625rem",
     "category": "other"
   },
   {
@@ -1122,12 +1134,14 @@ export type TokenName =
   | 'via-content'
   | 'via-dur'
   | 'via-fs-body'
+  | 'via-fs-caption'
   | 'via-fs-h1'
   | 'via-fs-h2'
   | 'via-fs-h3'
   | 'via-fs-h4'
   | 'via-fs-hero'
   | 'via-fs-label'
+  | 'via-fs-micro'
   | 'via-fs-sm'
   | 'via-fs-xs'
   | 'via-fw-black'

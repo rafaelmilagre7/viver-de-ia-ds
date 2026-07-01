@@ -56,7 +56,7 @@
 .vds-bs-eyebrow {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -85,7 +85,7 @@
 
 .vds-bs-statement p {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.82);
   margin: 0;
@@ -115,14 +115,14 @@
 }
 .vds-bs-proof strong {
   font-family: var(--via-mono);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.02em;
 }
 .vds-bs-proof em {
   font-style: normal;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.4;
 }
@@ -138,7 +138,7 @@
 }
 .vds-bs-rationale h4 {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -147,7 +147,7 @@
 }
 .vds-bs-rationale p {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.65;
   color: var(--via-text);
   margin: 0 0 12px;
@@ -170,7 +170,7 @@
 .vds-bs-trajectory-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -204,7 +204,7 @@
 }
 .vds-bs-year {
   font-family: var(--via-mono);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -212,7 +212,7 @@
 .vds-bs-trajectory li strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 4px;
@@ -220,13 +220,13 @@
 }
 .vds-bs-trajectory li em {
   font-style: normal;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-ink-3);
   line-height: 1.45;
 }
 .vds-bs-pin {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -282,7 +282,7 @@
 
 .vds-bs-value-num {
   font-family: var(--via-mono);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   letter-spacing: -0.005em;
@@ -291,7 +291,7 @@
 }
 .vds-bs-value h4 {
   font-family: var(--via-font-display);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
@@ -300,7 +300,7 @@
 }
 .vds-bs-value p {
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-text);
   margin: 0;
@@ -323,7 +323,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -368,7 +368,7 @@
 .vds-bs-positioning-tag {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -396,7 +396,7 @@
 }
 .vds-bs-positioning-r li {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
   padding-left: 14px;
@@ -447,7 +447,7 @@
 .vds-bs-promise-eyebrow {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -474,7 +474,7 @@
 }
 .vds-bs-promise-lede {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.82);
   margin: 0 0 32px;
@@ -491,7 +491,7 @@
 .vds-bs-promise-grid strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -508,7 +508,7 @@
 }
 .vds-bs-promise-grid li {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.55;
   padding-left: 14px;

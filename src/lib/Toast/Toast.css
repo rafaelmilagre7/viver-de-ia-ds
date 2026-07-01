@@ -132,7 +132,7 @@
 
 .via-toast__body strong {
   font-family: var(--via-display, 'Geist', system-ui, sans-serif);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.014em;
@@ -140,7 +140,7 @@
 
 .via-toast__body p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-ink-2, #5E6B82);
 }
@@ -153,7 +153,7 @@
   border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
   color: var(--via-text-primary);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;

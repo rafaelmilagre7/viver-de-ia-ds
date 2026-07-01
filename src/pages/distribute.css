@@ -20,7 +20,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
@@ -48,7 +48,7 @@
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   color: var(--via-text-primary);
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   text-decoration: none;
@@ -58,7 +58,7 @@
 .vds-dist-secondary > svg { margin-bottom: 2px; color: var(--via-text-primary); }
 .vds-dist-secondary:hover { transform: translateY(-1px); border-color: var(--via-navy-25); }
 .vds-dist-secondary .vds-dist-meta {
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
   letter-spacing: 0;
@@ -67,7 +67,7 @@
 .vds-dist-hint {
   margin-top: 18px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-soft);
 }
@@ -78,7 +78,7 @@
 }
 .vds-dist-hint code {
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   padding: 2px 7px;
   border-radius: 6px;
   background: var(--via-navy-06);
@@ -119,7 +119,7 @@
 }
 .vds-dist-tool h3 {
   font-family: var(--via-font-display);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
@@ -129,7 +129,7 @@
 .vds-dist-tooltag {
   display: inline-block;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   letter-spacing: 0.02em;
 }
@@ -142,7 +142,7 @@
 }
 .vds-dist-tool ol li {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: var(--via-text-body);
   letter-spacing: -0.004em;
@@ -163,7 +163,7 @@
   background: var(--via-bg-soft);
   border: 0.5px solid var(--via-border-soft);
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   letter-spacing: -0.004em;
 }
@@ -171,7 +171,7 @@
 .vds-dist-contents li em {
   font-style: normal;
   font-family: var(--via-font-mono);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
 }
 
@@ -204,19 +204,19 @@
 }
 .vds-dist-role h3 {
   margin: 0 0 6px;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.01em;
   color: var(--via-text-primary);
 }
 .vds-dist-role .what {
   margin: 0 0 10px;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
 }
 .vds-dist-role .do {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-body);
 }

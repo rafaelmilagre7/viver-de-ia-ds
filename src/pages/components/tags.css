@@ -17,7 +17,7 @@
   padding: 9px 16px;
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   background: var(--via-surface-onnavy);

@@ -111,7 +111,7 @@
 }
 .vds-pricing-tier__name {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -125,7 +125,7 @@
   color: var(--via-white);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -138,7 +138,7 @@
 
 .vds-pricing-tier__desc {
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
   line-height: 1.5;
@@ -155,7 +155,7 @@
 }
 .vds-pricing-tier__amount {
   font-family: var(--via-font-display);
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
   color: var(--via-text-primary);
@@ -163,7 +163,7 @@
 }
 .vds-pricing-tier__per {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
@@ -195,7 +195,7 @@
   grid-column: 1 / -1;
   padding: 28px 24px 12px;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -217,7 +217,7 @@
 .vds-pricing-feature {
   padding: 16px 24px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   letter-spacing: -0.008em;
   display: flex;
@@ -242,7 +242,7 @@
 .vds-pricing-cell {
   padding: 16px 24px;
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   letter-spacing: -0.008em;
   display: flex;
@@ -313,7 +313,7 @@
 /* Value string · "4 por mês" ------------------------------------- */
 .vds-pricing-value {
   font-family: var(--via-font);
-  font-size: 13px;
+  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
@@ -375,7 +375,7 @@
   text-align: center;
   line-height: 24px;
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
@@ -385,7 +385,7 @@
 .vds-pricing-principle h3 {
   margin: 0 0 8px;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
@@ -393,7 +393,7 @@
 .vds-pricing-principle p {
   margin: 0;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   line-height: 1.6;
   color: var(--via-text-body);
   letter-spacing: -0.004em;

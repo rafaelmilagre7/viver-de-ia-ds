@@ -30,6 +30,6 @@
 .vds-feat h3 em { font-style: normal; color: var(--via-text-muted); }
 .vds-feat p {
   font-family: var(--via-font);
-  font-size: 12px; line-height: 1.5;
+  font-size: var(--via-fs-xs); line-height: 1.5;
   color: var(--via-text-body); margin: 0;
 }

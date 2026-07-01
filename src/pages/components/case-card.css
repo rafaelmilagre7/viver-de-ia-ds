@@ -65,7 +65,7 @@
 
 .via-case .company {
   font-family: var(--via-font);
-  font-size: 18px;
+  font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.015em;
@@ -73,7 +73,7 @@
 
 .via-case .sector {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
   color: var(--via-text-soft);
@@ -87,7 +87,7 @@
 
 .via-case h3 {
   font-family: var(--via-font);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
@@ -107,7 +107,7 @@
 
 .via-case .v {
   font-family: var(--via-font);
-  font-size: 40px;
+  font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
@@ -117,7 +117,7 @@
 
 .via-case .l {
   font-family: var(--via-font);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -129,7 +129,7 @@
   margin: 0;
   font-family: var(--via-font);
   font-style: normal;
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   line-height: 1.55;
   color: var(--via-text);
   display: flex;
@@ -142,7 +142,7 @@
 .via-case cite {
   font-family: var(--via-font);
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   color: var(--via-text-soft);
@@ -153,7 +153,7 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   color: var(--via-text-primary);

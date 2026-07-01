@@ -60,7 +60,7 @@
 }
 .vds-form-h h3 {
   font-family: var(--via-font-display);
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);
@@ -95,7 +95,7 @@
 .via-field .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -107,7 +107,7 @@
 .via-field textarea.val {
   width: 100%;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   background: transparent;
@@ -154,7 +154,7 @@
   margin-top: 8px;
   padding-left: 18px;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-danger);
 }
 
@@ -163,7 +163,7 @@
   top: 16px;
   right: 18px;
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   letter-spacing: -0.004em;
   padding: 4px 10px;
   border-radius: 999px;
@@ -185,7 +185,7 @@
 .val-with-icon .leading-ico { color: var(--via-text-muted); flex-shrink: 0; }
 .val-with-prefix .prefix {
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   flex-shrink: 0;
@@ -200,7 +200,7 @@
   border: none;
   padding: 0;
   font-family: var(--via-font);
-  font-size: 16px;
+  font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;
@@ -213,7 +213,7 @@
   bottom: 12px;
   right: 18px;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: var(--via-gray-400);
   background: var(--via-surface);
   padding: 2px 8px;
@@ -287,7 +287,7 @@
 .via-radio strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 14px;
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
@@ -295,7 +295,7 @@
 .via-radio span:not(.ring):not(.dot) {
   display: block;
   font-family: var(--via-font);
-  font-size: 12px;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   margin-top: 2px;
   line-height: 1.5;
