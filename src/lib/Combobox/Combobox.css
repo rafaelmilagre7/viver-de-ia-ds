@@ -53,7 +53,7 @@
 }
 
 .via-combobox__trigger:focus-within {
-  outline: 2px solid var(--via-navy-40);
+  outline: 2px solid var(--via-navy-60);
   outline-offset: 2px;
 }
 
@@ -138,16 +138,16 @@
 }
 
 .via-combobox__option:hover {
-  background: rgba(10, 31, 59, 0.05);
+  background: var(--via-navy-05);
 }
 
 /* Destaque por teclado (navegação com setas) */
 .via-combobox__option.is-active {
-  background: rgba(10, 31, 59, 0.09);
+  background: var(--via-navy-08);
 }
 
 .via-combobox__option.is-selected {
-  background: rgba(10, 31, 59, 0.06);
+  background: var(--via-navy-06);
 }
 
 .via-combobox__option.is-disabled {

@@ -65,7 +65,7 @@ button.via-stepper__node:hover .via-stepper__label {
 }
 
 button.via-stepper__node:focus-visible {
-  outline: 2px solid var(--via-navy-40);
+  outline: 2px solid var(--via-navy-60);
   outline-offset: 4px;
   border-radius: 6px;
 }

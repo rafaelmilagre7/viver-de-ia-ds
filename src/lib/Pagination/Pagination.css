@@ -90,6 +90,6 @@
 
 .via-pagination__page:focus-visible,
 .via-pagination__nav:focus-visible {
-  outline: 2px solid var(--via-navy-40);
+  outline: 2px solid var(--via-navy-60);
   outline-offset: 2px;
 }

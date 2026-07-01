@@ -244,10 +244,15 @@
   outline: none;
   box-shadow:
     0 0 0 2px var(--via-surface),
-    0 0 0 4px var(--via-navy-40);
+    0 0 0 4px var(--via-navy-60);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .via-btn::after { display: none; }
   .via-btn { transition: none !important; }
+}
+
+/* Tap target AA · só em ponteiro grosso (touch), não infla desktop */
+@media (pointer: coarse) {
+  .via-btn { min-height: 44px; }
 }

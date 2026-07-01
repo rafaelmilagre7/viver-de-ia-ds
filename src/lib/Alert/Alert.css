@@ -4,7 +4,7 @@
 
 .via-alert {
   --via-alert-bg: var(--via-glass-card);
-  --via-alert-border: rgba(10, 31, 59, 0.12);
+  --via-alert-border: var(--via-navy-12);
   --via-alert-accent: var(--via-navy, #0A1F3B);
   --via-alert-icon-bg: var(--via-navy-04, rgba(10,31,59,0.04));
 
@@ -34,10 +34,10 @@
   --via-alert-accent: var(--via-navy, #0A1F3B);
 }
 .via-alert--attn {
-  --via-alert-bg: rgba(10, 31, 59, 0.04);
-  --via-alert-border: rgba(10, 31, 59, 0.20);
+  --via-alert-bg: var(--via-navy-04);
+  --via-alert-border: var(--via-navy-20);
   --via-alert-accent: var(--via-navy-deep, #02162A);
-  --via-alert-icon-bg: rgba(10, 31, 59, 0.08);
+  --via-alert-icon-bg: var(--via-navy-08);
 }
 .via-alert--danger {
   --via-alert-bg: rgba(184, 92, 92, 0.06);

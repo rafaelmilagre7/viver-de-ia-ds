@@ -76,7 +76,7 @@
 }
 
 .via-accordion__trigger:focus-visible {
-  outline: 2px solid var(--via-navy-40);
+  outline: 2px solid var(--via-navy-60);
   outline-offset: 2px;
   border-radius: 4px;
 }

@@ -109,7 +109,7 @@
 }
 
 .via-modal__close:hover {
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.06), rgba(10, 31, 59, 0.03));
+  background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-03));
   color: var(--via-text-primary);
   border-color: var(--via-border-soft, rgba(10, 31, 59, 0.10));
   transform: rotate(90deg);
@@ -136,5 +136,5 @@
   gap: 10px;
   padding: 14px 20px;
   border-top: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
-  background: rgba(10, 31, 59, 0.02);
+  background: var(--via-navy-02);
 }
