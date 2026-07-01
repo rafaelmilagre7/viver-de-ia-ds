@@ -185,7 +185,7 @@
   position: relative;
   padding: 22px;
   border-radius: var(--via-radius-lg);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(247, 248, 250, 0.45));
+  background: var(--via-glass-card);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--via-border-soft);

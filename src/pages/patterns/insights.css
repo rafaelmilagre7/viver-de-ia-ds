@@ -262,8 +262,8 @@
 .vds-ins-kpi-delta.up { color: var(--via-text-primary); }
 .vds-ins-kpi-delta.up svg { opacity: 0.85; }
 .vds-ins-kpi-delta.down {
-  color: #8E3F3F;
-  background: linear-gradient(180deg, rgba(252,243,243,0.94), rgba(247,235,235,0.78));
+  color: var(--via-coral-dark);
+  background: var(--via-glass-card);
   border-color: rgba(184,92,92,0.20);
 }
 .vds-ins-kpi-delta.down svg { color: #B85C5C; }
@@ -460,7 +460,7 @@
 .vds-ins-quote:hover::before { opacity: 1; }
 
 .vds-ins-quote.subtle {
-  background: linear-gradient(180deg, rgba(247,248,250,0.86) 0%, rgba(240,242,245,0.6) 100%);
+  background: var(--via-glass-card-2);
 }
 
 .vds-ins-quote-mark {

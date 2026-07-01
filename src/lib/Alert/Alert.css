@@ -16,7 +16,6 @@
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-alert-border);
-  border-left: 2px solid var(--via-alert-accent);
   border-radius: 12px;
   padding: 14px 16px;
   font-family: var(--via-font, inherit);
@@ -50,6 +49,14 @@
   --via-alert-border: rgba(31, 138, 91, 0.22);
   --via-alert-accent: var(--via-success, #1F8A5B);
   --via-alert-icon-bg: rgba(31, 138, 91, 0.10);
+}
+
+/* Dark · o accent navy/navy-deep dos tons info/attn pinta ícone, label da
+   ação e links — navy sólido some sobre superfície escura. Remapeia pra
+   text-primary (navy no light = mesmo valor atual · near-white no dark). */
+[data-theme="dark"] .via-alert--info,
+[data-theme="dark"] .via-alert--attn {
+  --via-alert-accent: var(--via-text-primary);
 }
 
 /* --- Sizes --- */

@@ -4,7 +4,7 @@
   background:
     radial-gradient(540px 220px at 50% 0%, var(--via-navy-04), transparent 70%),
     var(--via-glass-card);
-  border: 1.5px dashed rgba(10, 31, 59, 0.28);
+  border: 1.5px dashed var(--via-navy-25);
   border-radius: var(--via-radius-lg);
   text-align: center;
   display: flex;

@@ -915,7 +915,7 @@
 
 .vds-cohort-l h3 em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.45);
+  color: var(--via-text-soft);
   font-weight: var(--via-fw-regular);
 }
 

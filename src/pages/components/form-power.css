@@ -951,7 +951,7 @@
 .vds-fp-md-preview blockquote {
   margin: 0 0 14px;
   padding: 12px 18px;
-  border-left: 3px solid var(--via-navy);
+  border-left: 3px solid var(--via-navy-40);
   background: var(--via-navy-03);
   border-radius: 0 8px 8px 0;
   font-style: italic;

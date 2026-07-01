@@ -460,7 +460,7 @@
   background:
     radial-gradient(180px 60px at 0% 0%, var(--via-navy-06), transparent 70%),
     var(--via-navy-04);
-  border: 1px solid rgba(10, 31, 59, 0.11);
+  border: 1px solid var(--via-navy-10);
   font-size: var(--via-fs-label);
   color: var(--via-text);
   letter-spacing: -0.005em;
@@ -506,7 +506,7 @@
 
 /* Today — ring navy sutil, sem fundo dourado */
 .vds-dp-cell.today:not(.sel) {
-  border-color: rgba(10, 31, 59, 0.35);
+  border-color: var(--via-navy-40);
 }
 
 .vds-dp-cell.today:not(.sel) .vds-dp-num {

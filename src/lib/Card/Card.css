@@ -99,7 +99,7 @@
   right: 0;
   top: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--via-navy), var(--via-blue), transparent);
+  background: linear-gradient(90deg, transparent, var(--via-chart-ink-2), var(--via-chart-ink), transparent);
   pointer-events: none;
   transition: none;
   z-index: 2;

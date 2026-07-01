@@ -2,6 +2,7 @@
    <DateRangePicker> · intervalo de datas
    ============================================ */
 .via-drp {
+  position: relative;
   display: inline-flex;
   flex-direction: column;
   gap: var(--via-space-3_5);

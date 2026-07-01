@@ -141,7 +141,7 @@
 
 .vds-ob h2 em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.45);
+  color: var(--via-text-muted);
   font-weight: var(--via-fw-medium);
 }
 
@@ -399,7 +399,7 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--via-accent);
+  color: var(--via-gray-300);
   margin-bottom: 14px;
   align-self: flex-start;
 }
@@ -408,8 +408,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--via-accent);
-  box-shadow: 0 0 8px var(--via-navy-30);
+  background: var(--via-white);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
   animation: vds-wiz-pulse 1.6s ease-in-out infinite;
 }
 

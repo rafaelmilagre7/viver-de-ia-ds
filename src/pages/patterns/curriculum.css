@@ -245,7 +245,7 @@
 }
 
 .vds-module.done {
-  background: linear-gradient(180deg, var(--via-navy-04), rgba(255, 255, 255, 0.62));
+  background: linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
 }
 
 .vds-module-head {

@@ -89,18 +89,18 @@
   height: 8px;
   border-radius: 50%;
   background: var(--via-coral, var(--via-coral));
-  box-shadow: 0 0 12px rgba(255, 95, 87, 0.7);
+  box-shadow: 0 0 12px rgba(184, 92, 92, 0.7);
   animation: vds-live-rec-pulse 1.4s ease-in-out infinite;
 }
 
 @keyframes vds-live-rec-pulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 12px rgba(255, 95, 87, 0.7);
+    box-shadow: 0 0 12px rgba(184, 92, 92, 0.7);
   }
   50% {
     transform: scale(1.2);
-    box-shadow: 0 0 20px rgba(255, 95, 87, 0.9);
+    box-shadow: 0 0 20px rgba(184, 92, 92, 0.9);
   }
 }
 
@@ -757,7 +757,7 @@
 
 .vds-live-past-card h4 em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.45);
+  color: var(--via-text-muted);
   font-weight: var(--via-fw-regular);
 }
 

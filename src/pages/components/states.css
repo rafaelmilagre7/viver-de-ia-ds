@@ -481,7 +481,16 @@
     radial-gradient(420px 220px at 100% 0%, var(--via-navy-08), transparent 60%),
     linear-gradient(180deg, rgba(255, 250, 240, 0.92), rgba(255, 255, 255, 0.68));
   border-color: var(--via-navy-12);
-}.vds-error-card.maintenance .vds-error-icon {
+}
+
+[data-theme="dark"] .vds-error-card.maintenance {
+  background:
+    radial-gradient(420px 220px at 100% 0%, var(--via-navy-08), transparent 60%),
+    var(--via-glass-card);
+  border-color: var(--via-border-soft);
+}
+
+.vds-error-card.maintenance .vds-error-icon {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border-color: var(--via-navy-20);
@@ -1326,7 +1335,7 @@
 .vds-empty-prem-steps li.current .bullet {
   background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
   border-color: transparent;
-  color: var(--via-text-primary);
+  color: var(--via-white);
   box-shadow: 0 4px 10px var(--via-navy-16);
 }
 

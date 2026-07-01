@@ -23,7 +23,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   border-bottom: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.03), transparent);
+  background: linear-gradient(180deg, var(--via-navy-03), transparent);
 }
 
 .via-dt__scroll {
@@ -37,7 +37,7 @@
 }
 
 .via-dt thead {
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0.04), rgba(10, 31, 59, 0.01));
+  background: linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
 }
 .via-dt th {
   padding: 10px 14px;

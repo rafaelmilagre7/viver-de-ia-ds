@@ -14,7 +14,7 @@
   height: 36px;
   border-radius: 999px;
   background: var(--via-surface);
-  border: 1px solid var(--via-gray-300);
+  border: 1px solid var(--via-border);
   display: flex;
   align-items: center;
   justify-content: center;

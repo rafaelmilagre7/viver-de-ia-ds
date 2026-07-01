@@ -20,6 +20,12 @@
 .via-slider--accent { --via-sl-color: var(--via-accent, var(--via-navy, #0A1F3B)); }
 .via-slider--coral  { --via-sl-color: var(--via-coral, #B85C5C); }
 
+/* Dark · navy/accent fill (--via-navy não inverte) vira light-navy adaptável.
+   Coral fica de fora pra manter seu override. */
+[data-theme="dark"] .via-slider:not(.via-slider--coral) {
+  --via-sl-color: var(--via-chart-ink);
+}
+
 .via-slider__head {
   display: flex;
   align-items: baseline;

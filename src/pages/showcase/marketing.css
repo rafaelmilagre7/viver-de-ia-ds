@@ -441,7 +441,8 @@
   align-items: center;
   gap: var(--via-space-3);
   padding: 18px 32px;
-  background: var(--via-surface);
+  --via-text-primary: var(--via-navy);
+  background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: none;
   border-radius: 999px;

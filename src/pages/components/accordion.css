@@ -32,7 +32,7 @@
 }
 
 .via-accordion .item.open::before {
-  background: linear-gradient(180deg, var(--via-navy), transparent 80%);
+  background: linear-gradient(180deg, var(--via-chart-ink), transparent 80%);
 }
 
 .via-accordion .head {

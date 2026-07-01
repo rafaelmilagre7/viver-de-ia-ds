@@ -82,7 +82,7 @@
 }
 
 .via-otp.is-disabled .via-otp__cell {
-  background: var(--via-gray-100, #F0F2F5);
+  background: var(--via-surface-onnavy);
   cursor: not-allowed;
   opacity: 0.6;
 }

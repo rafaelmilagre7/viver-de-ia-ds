@@ -81,7 +81,7 @@
 }
 
 .vds-loc-eyebrow.accent {
-  color: var(--via-accent);
+  color: var(--via-gray-300);
 }
 
 .vds-loc-body header h3 {
@@ -438,7 +438,7 @@
 .vds-loc-compact-cta.dark {
   background: rgba(10, 31, 59, 0.07);
   border-color: var(--via-navy-16);
-  color: var(--via-accent);
+  color: var(--via-gray-200);
 }.vds-loc-compact-cta.dark:hover {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border-color: transparent;

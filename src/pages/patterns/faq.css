@@ -460,7 +460,7 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--via-accent);
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 12px;
 }
 

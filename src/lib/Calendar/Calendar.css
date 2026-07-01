@@ -125,7 +125,7 @@
 }
 
 .via-cal__cell.is-out {
-  color: var(--via-gray-400, #98A2B3);
+  color: var(--via-gray-500, #667085);
 }
 
 .via-cal__cell.is-today:not(.is-selected) {
@@ -142,7 +142,7 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: var(--via-navy, #0A1F3B);
+  background: var(--via-text-primary);
 }
 
 .via-cal__cell.is-selected {
@@ -182,7 +182,7 @@
 .via-cal__cell-dot--success { background: var(--via-success, #1F8A5B); }
 
 .via-cal__cell.is-selected .via-cal__cell-dot--navy {
-  background: var(--via-surface);
+  background: var(--via-white);
 }
 
 @media (prefers-reduced-motion: reduce) {

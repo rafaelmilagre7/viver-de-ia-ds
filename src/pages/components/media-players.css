@@ -284,7 +284,7 @@
   transition: background 200ms;
 }
 .vds-fullep .ep-wave .bar.played {
-  background: var(--via-glass-card);
+  background: var(--via-white);
   box-shadow: 0 0 6px rgba(255,255,255,0.30);
 }
 .vds-fullep .ep-times {

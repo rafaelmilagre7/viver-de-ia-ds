@@ -343,7 +343,7 @@
 
 .vds-team-card.lead {
   border-color: var(--via-navy-14);
-  background: linear-gradient(180deg, rgba(255, 250, 240, 0.92), rgba(255, 255, 255, 0.68));
+  background: var(--via-glass-card);
 }
 
 .vds-team-card.lead::before {
@@ -836,6 +836,12 @@
   background: rgba(74, 111, 165, 0.1);
   border-color: rgba(74, 111, 165, 0.24);
   color: var(--via-blue-soft);
+}
+
+[data-theme="dark"] .vds-member-plan.comunidade {
+  background: rgba(110, 140, 180, 0.18);
+  border-color: rgba(110, 140, 180, 0.32);
+  color: #9FBDE4;
 }
 
 /* Streak chip editorial — accent */

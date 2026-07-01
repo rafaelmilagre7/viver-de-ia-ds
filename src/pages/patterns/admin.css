@@ -271,7 +271,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  color: rgba(140, 44, 44, 0.62);
+  color: var(--via-coral-dark);
   font-style: italic;
   font-family: var(--via-display);
 }

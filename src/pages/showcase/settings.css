@@ -205,7 +205,7 @@
 .vds-set-card:hover::before { opacity: 1; }
 
 .vds-set-card.placeholder {
-  background: linear-gradient(180deg, rgba(247,248,250,0.86) 0%, rgba(240,242,245,0.6) 100%);
+  background: var(--via-glass-card-2);
   border-style: dashed;
   border-color: var(--via-border-soft);
 }

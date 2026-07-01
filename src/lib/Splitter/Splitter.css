@@ -76,7 +76,7 @@
 
 .via-splitter__handle:hover .via-splitter__grip,
 .via-splitter__handle:focus-visible .via-splitter__grip {
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  background: linear-gradient(180deg, var(--via-text-primary), var(--via-navy-60));
   transform: scale(1.16);
 }
 

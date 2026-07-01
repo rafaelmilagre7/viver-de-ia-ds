@@ -819,7 +819,7 @@
 }
 
 .lt-incluso li svg {
-  color: #6FCF97;
+  color: var(--via-success);
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -921,7 +921,7 @@
   letter-spacing: -0.004em;
 }
 
-.lt-oferta-guarantee svg { color: #6FCF97; }
+.lt-oferta-guarantee svg { color: var(--via-success); }
 
 .lt-oferta-meta {
   display: flex;

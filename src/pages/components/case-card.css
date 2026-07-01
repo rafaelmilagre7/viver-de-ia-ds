@@ -136,7 +136,7 @@
   flex-direction: column;
   gap: var(--via-space-2_5);
   padding-left: 16px;
-  border-left: 2px solid rgba(10, 31, 59, 0.15);
+  border-left: 1px solid var(--via-border);
 }
 
 .via-case cite {

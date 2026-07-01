@@ -182,7 +182,7 @@
   background:
     radial-gradient(540px 220px at 0% 0%, var(--via-navy-05), transparent 60%),
     radial-gradient(420px 200px at 100% 100%, var(--via-navy-06), transparent 60%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.55));
+    var(--via-surface-elev);
   border-color: var(--via-navy-16);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,

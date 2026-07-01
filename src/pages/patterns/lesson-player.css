@@ -567,8 +567,7 @@
   padding: 16px;
   border-radius: 12px;
   border: 1px solid var(--via-border-soft);
-  background:
-    linear-gradient(180deg, rgba(255, 250, 240, 0.4), rgba(255, 255, 255, 0.85));
+  background: var(--via-surface);
   font-family: inherit;
   font-size: var(--via-fs-caption);
   line-height: 1.6;
@@ -577,7 +576,6 @@
   outline: none;
   transition: all 180ms ease;
   background-image:
-    linear-gradient(180deg, rgba(255, 250, 240, 0.4), rgba(255, 255, 255, 0.85)),
     repeating-linear-gradient(180deg, transparent 0px, transparent 23px, var(--via-navy-04) 23px, var(--via-navy-04) 24px);
   background-blend-mode: normal;
 }
@@ -808,7 +806,7 @@
 .vds-discussion > li:last-child {
   background:
     radial-gradient(280px 120px at 0% 0%, var(--via-navy-08), transparent 70%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.6), rgba(255, 255, 255, 0.5));
+    linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
   border-color: var(--via-navy-14);
 }
 

@@ -158,7 +158,7 @@
 .via-dp__cell:hover:not(:disabled):not(.sel) {
   background: var(--via-navy-04, rgba(10,31,59,0.04));
 }
-.via-dp__cell.outside { color: var(--via-ink-3, #6B7891); opacity: 0.55; }
+.via-dp__cell.outside { color: var(--via-text-faint); }
 .via-dp__cell.today {
   border-color: var(--via-navy-40, rgba(10,31,59,0.4));
   font-weight: var(--via-fw-medium);

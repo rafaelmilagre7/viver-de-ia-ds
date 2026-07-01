@@ -72,7 +72,7 @@
 
 .vds-testi .quote em {
   font-style: normal;
-  color: rgba(10, 31, 59, 0.45);
+  color: var(--via-text-muted);
   font-weight: var(--via-fw-medium);
 }
 

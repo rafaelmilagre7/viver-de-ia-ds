@@ -262,7 +262,7 @@
 }
 
 /* Syntax tokens */
-.vds-code-content .k { color: #6A2BC2; font-weight: var(--via-fw-semibold); }       /* keyword */
+.vds-code-content .k { color: var(--via-blue-soft); font-weight: var(--via-fw-semibold); }       /* keyword */
 .vds-code-content .v { color: var(--via-text-primary); }                          /* variable */
 .vds-code-content .s { color: #15794D; }                          /* string · AA em branco */
 .vds-code-content .c { color: #6B6B6B; font-style: italic; }      /* comment · AA em branco */
@@ -271,7 +271,7 @@
 .vds-code-content .t { color: var(--via-blue-soft); }                          /* type */
 .vds-code-content .f { color: #2466A3; }                          /* function */
 
-.vds-code.dark .vds-code-content .k { color: #B58CFF; }
+.vds-code.dark .vds-code-content .k { color: #8FB8F6; }
 .vds-code.dark .vds-code-content .v { color: var(--via-white); }
 .vds-code.dark .vds-code-content .s { color: #7FCBA6; }
 .vds-code.dark .vds-code-content .c { color: rgba(255, 255, 255, 0.62); }
@@ -424,7 +424,7 @@
 }
 
 .vds-terminal-body .path {
-  color: #B58CFF;
+  color: #8FB8F6;
 }
 
 .vds-terminal-body .sep {

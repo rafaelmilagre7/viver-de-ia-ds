@@ -188,7 +188,7 @@
   padding: 12px 20px;
   background:
     radial-gradient(540px 80px at 0% 0%, var(--via-navy-05), transparent 70%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.85), rgba(255, 255, 255, 0.5));
+    linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
   border-bottom: 1px solid var(--via-navy-14);
 }
 
