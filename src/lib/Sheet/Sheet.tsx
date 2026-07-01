@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, type ReactNode } from 'react';
 import { X } from 'lucide-react';
+import { useDialogFocus } from '../_shared/useDialogFocus';
 import './Sheet.css';
 
 export interface SheetProps {
@@ -46,7 +47,6 @@ export function Sheet({
   showHandle = true,
 }: SheetProps) {
   const sheetRef = useRef<HTMLDivElement>(null);
-  const restoreFocusRef = useRef<HTMLElement | null>(null);
   const baseId = useId();
   const titleId = `${baseId}-title`;
   const descriptionId = `${baseId}-description`;
@@ -62,21 +62,8 @@ export function Sheet({
     };
   }, [open, onClose]);
 
-  // Move focus into the sheet on open and return it to the originating
-  // element once closed (focus return).
-  useEffect(() => {
-    if (!open) return;
-    restoreFocusRef.current = document.activeElement as HTMLElement | null;
-    const sheet = sheetRef.current;
-    const focusable = sheet?.querySelector<HTMLElement>(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-    );
-    (focusable ?? sheet)?.focus();
-    return () => {
-      restoreFocusRef.current?.focus?.();
-      restoreFocusRef.current = null;
-    };
-  }, [open]);
+  // Foco acessível: focus-first ao abrir, trap com Tab, restore ao fechar
+  const { onKeyDown } = useDialogFocus(open, sheetRef);
 
   if (!open) return null;
 
@@ -91,6 +78,7 @@ export function Sheet({
         aria-labelledby={title ? titleId : undefined}
         aria-describedby={description ? descriptionId : undefined}
         tabIndex={-1}
+        onKeyDown={onKeyDown}
         style={{ maxHeight }}
       >
         {showHandle && <span className="via-sheet__handle" aria-hidden="true" />}

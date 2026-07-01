@@ -614,7 +614,7 @@
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
-  transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all 240ms var(--via-ease-out);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 1px 4px var(--via-navy-04);

@@ -87,7 +87,7 @@
 .via-combobox__chevron {
   color: var(--via-ink-2, #5E6B82);
   flex-shrink: 0;
-  transition: transform 0.18s cubic-bezier(.2, .8, .2, 1);
+  transition: transform 0.18s var(--via-ease-snap);
 }
 
 .via-combobox__trigger.is-open .via-combobox__chevron {
@@ -114,7 +114,7 @@
     0 16px 40px -12px rgba(10, 31, 59, 0.18);
   max-height: 280px;
   overflow-y: auto;
-  animation: via-combobox-in 0.18s cubic-bezier(.2, .8, .2, 1);
+  animation: via-combobox-in 0.18s var(--via-ease-snap);
 }
 
 @keyframes via-combobox-in {

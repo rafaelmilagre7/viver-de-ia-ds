@@ -102,7 +102,7 @@
   height: 1.5px;
   background: currentColor;
   border-radius: 999px;
-  transition: all 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all 280ms var(--via-ease-out);
   opacity: 0;
 }
 

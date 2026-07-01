@@ -134,7 +134,7 @@
   cursor: pointer;
   border: 1px solid transparent;
   white-space: nowrap;
-  transition: all 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all 220ms var(--via-ease-out);
 }
 .mk-hero .btn.primary {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));

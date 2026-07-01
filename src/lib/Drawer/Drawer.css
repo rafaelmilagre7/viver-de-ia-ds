@@ -59,7 +59,7 @@
   right: 0;
   bottom: 0;
   border-radius: 18px 0 0 18px;
-  animation: via-drawer-in-right .3s cubic-bezier(.2, .8, .2, 1);
+  animation: via-drawer-in-right .3s var(--via-ease-snap);
 }
 
 @keyframes via-drawer-in-right {
@@ -73,7 +73,7 @@
   left: 0;
   bottom: 0;
   border-radius: 0 18px 18px 0;
-  animation: via-drawer-in-left .3s cubic-bezier(.2, .8, .2, 1);
+  animation: via-drawer-in-left .3s var(--via-ease-snap);
 }
 
 @keyframes via-drawer-in-left {
@@ -87,7 +87,7 @@
   right: 0;
   bottom: 0;
   border-radius: 18px 18px 0 0;
-  animation: via-drawer-in-bottom .3s cubic-bezier(.2, .8, .2, 1);
+  animation: via-drawer-in-bottom .3s var(--via-ease-snap);
   max-height: 85vh;
 }
 

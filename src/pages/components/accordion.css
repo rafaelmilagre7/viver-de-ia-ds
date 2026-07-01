@@ -71,7 +71,7 @@
 
 .via-accordion .chev {
   color: var(--via-text-soft);
-  transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all 240ms var(--via-ease-out);
   flex-shrink: 0;
   width: 28px;
   height: 28px;

@@ -78,7 +78,7 @@
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 24px 56px -22px rgba(10, 31, 59, 0.28),
     0 2px 8px var(--via-navy-04);
-  animation: vds-dd-in 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: vds-dd-in 240ms var(--via-ease-out);
   transform-origin: top center;
   overflow: hidden;
 }

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Download } from 'lucide-react';
+import { useDialogFocus } from '../_shared/useDialogFocus';
 import './Lightbox.css';
 
 export interface LightboxImage {
@@ -34,10 +35,7 @@ export interface LightboxProps {
  */
 export function Lightbox({ open, onClose, images, index = 0, showDownload = false }: LightboxProps) {
   const [current, setCurrent] = useState(index);
-  // Botão de fechar — recebe o foco ao abrir
-  const closeRef = useRef<HTMLButtonElement>(null);
-  // Quem tinha o foco antes do lightbox abrir — pra devolver ao fechar
-  const prevFocusRef = useRef<HTMLElement | null>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   // reset para o índice inicial quando (re)abre — ajuste em render-phase
   // (padrão oficial React, evita setState dentro de effect)
@@ -72,24 +70,23 @@ export function Lightbox({ open, onClose, images, index = 0, showDownload = fals
     };
   }, [open, onClose, go]);
 
-  // Gerência de foco: ao abrir, guarda quem tinha o foco e move pro botão de
-  // fechar (foco dentro do dialog); ao fechar, devolve o foco à origem.
-  useEffect(() => {
-    if (!open) return;
-    prevFocusRef.current = document.activeElement as HTMLElement | null;
-    closeRef.current?.focus();
-    return () => {
-      prevFocusRef.current?.focus?.();
-    };
-  }, [open]);
+  // Foco acessível: focus-first ao abrir, trap com Tab, restore ao fechar
+  const { onKeyDown } = useDialogFocus(open, dialogRef);
 
   if (!open || images.length === 0) return null;
   const img = images[current];
 
   return (
-    <div className="via-lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+    <div
+      ref={dialogRef}
+      className="via-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Visualização de imagem"
+      tabIndex={-1}
+      onKeyDown={onKeyDown}
+    >
       <button
-        ref={closeRef}
         type="button"
         className="via-lightbox__close"
         onClick={onClose}

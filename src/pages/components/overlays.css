@@ -641,7 +641,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 -16px 40px var(--via-navy-18);
-  animation: vds-bs-up 380ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: vds-bs-up 380ms var(--via-ease-out);
 }
 
 .vds-bs.short {

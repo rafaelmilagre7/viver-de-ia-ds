@@ -1,5 +1,6 @@
 import { useEffect, useRef, useId, type ReactNode } from 'react';
 import { X } from 'lucide-react';
+import { useDialogFocus } from '../_shared/useDialogFocus';
 import './Modal.css';
 
 type Size = 'sm' | 'md' | 'lg';
@@ -53,14 +54,8 @@ export function Modal({
     };
   }, [open, onClose]);
 
-  // Focus first focusable on open
-  useEffect(() => {
-    if (!open || !dialogRef.current) return;
-    const focusable = dialogRef.current.querySelector<HTMLElement>(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-    focusable?.focus();
-  }, [open]);
+  // Foco acessível: focus-first ao abrir, trap com Tab, restore ao fechar
+  const { onKeyDown } = useDialogFocus(open, dialogRef);
 
   if (!open) return null;
 
@@ -73,6 +68,8 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}
+        tabIndex={-1}
+        onKeyDown={onKeyDown}
       >
         {(title || !hideClose) && (
           <header className="via-modal__head">

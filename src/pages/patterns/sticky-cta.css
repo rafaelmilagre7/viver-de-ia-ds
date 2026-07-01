@@ -223,7 +223,7 @@
   border-radius: 18px;
   isolation: isolate;
   overflow: hidden;
-  animation: vds-sticky-up .42s cubic-bezier(.2, .8, .2, 1) backwards;
+  animation: vds-sticky-up .42s var(--via-ease-snap) backwards;
 }
 
 @keyframes vds-sticky-up {
