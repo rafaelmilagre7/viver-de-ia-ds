@@ -20,7 +20,7 @@
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--via-border-soft);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 6px 16px -10px var(--via-navy-14);
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 6px 16px -10px var(--via-navy-14);
 }
 .vds-mail-how-card .i {
   display: inline-flex;
@@ -75,7 +75,7 @@
   border: 1px solid var(--via-border-soft);
   background: var(--via-surface);
   overflow: hidden;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 10px 30px -18px var(--via-navy-18);
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 10px 30px -18px var(--via-navy-18);
 }
 .vds-mail-head {
   display: flex;

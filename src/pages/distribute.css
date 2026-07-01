@@ -189,7 +189,7 @@
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--via-border-soft);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 8px 20px -12px var(--via-navy-14);
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 8px 20px -12px var(--via-navy-14);
 }
 .vds-dist-role .i {
   display: inline-flex;

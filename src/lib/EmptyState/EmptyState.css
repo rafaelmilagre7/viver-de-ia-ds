@@ -23,7 +23,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px dashed var(--via-navy-18);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.76) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 6px 14px -10px rgba(10, 31, 59, 0.08);
   isolation: isolate;
   overflow: hidden;

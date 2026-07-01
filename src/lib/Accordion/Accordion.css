@@ -22,7 +22,7 @@
   border-radius: 12px;
   margin-bottom: 8px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.86) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-06),
     0 4px 12px -8px var(--via-navy-08);
   transition: box-shadow .26s ease, transform .26s ease;
@@ -30,7 +30,7 @@
 
 .via-accordion--separated .via-accordion__item.is-open {
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.92) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-12),
     0 8px 22px -10px var(--via-navy-14);
 }

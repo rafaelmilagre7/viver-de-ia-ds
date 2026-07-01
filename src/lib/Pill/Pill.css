@@ -43,7 +43,7 @@
   border-color: var(--via-navy-14);
   color: var(--via-text-primary);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.78) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-04);
 }
 
@@ -82,7 +82,7 @@
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.78) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-06);
 }
 
