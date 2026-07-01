@@ -4,7 +4,7 @@
 .via-otp {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 
@@ -17,7 +17,7 @@
 
 .via-otp__row {
   display: inline-flex;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .via-otp__cell {

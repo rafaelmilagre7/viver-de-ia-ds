@@ -12,7 +12,7 @@
 .via-dd-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 13px 20px;
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
@@ -98,7 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 10px 12px;
   border-radius: 9px;
   font-family: var(--via-font);

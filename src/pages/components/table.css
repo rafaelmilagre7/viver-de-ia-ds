@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 16px 20px;
   border-bottom: 1px solid var(--via-border-soft);
   position: relative;
@@ -99,13 +99,13 @@
 .vds-tbl-toolbar-r {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-tbl-tool {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 8px 14px;
   border-radius: 9px;
   background: var(--via-navy-04);
@@ -149,7 +149,7 @@
   border-radius: 9px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 
 .vds-tbl-density button {
@@ -184,7 +184,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 12px 20px;
   background:
     radial-gradient(540px 80px at 0% 0%, var(--via-navy-05), transparent 70%),
@@ -195,14 +195,14 @@
 .vds-tbl-batch-l {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   flex-wrap: wrap;
 }
 
 .vds-tbl-batch-count {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-tbl-batch-count strong {
@@ -594,7 +594,7 @@
 .vds-tbl-progress {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   min-width: 130px;
 }
 
@@ -633,7 +633,7 @@
 .vds-tbl-delta {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   padding: 4px 10px 4px 8px;
   border-radius: 999px;
   font-family: var(--via-font);
@@ -750,7 +750,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 14px 20px;
   border-top: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
@@ -771,7 +771,7 @@
 
 .vds-tbl-pag {
   display: inline-flex;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   align-items: center;
 }
 
@@ -820,7 +820,7 @@
 .vds-tbl-pag-size {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-size: 11px;
   color: var(--via-text-soft);
 }
@@ -828,7 +828,7 @@
 .vds-tbl-pag-size button {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   padding: 5px 10px;
   border-radius: 7px;
   background: var(--via-navy-04);

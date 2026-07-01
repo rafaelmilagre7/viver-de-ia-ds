@@ -4,14 +4,14 @@
 .via-radio-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 
 .via-radio {
   display: inline-flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: var(--via-space-3);
   cursor: pointer;
   user-select: none;
 }
@@ -102,7 +102,7 @@
 .via-radio__copy {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   min-width: 0;
 }
 

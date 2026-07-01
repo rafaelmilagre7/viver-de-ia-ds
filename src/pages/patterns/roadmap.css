@@ -19,7 +19,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   padding: 24px 28px 20px;
   border-bottom: 1px solid var(--via-border-soft);
   background: linear-gradient(180deg, var(--via-navy-02), transparent);
@@ -42,14 +42,14 @@
 
 .vds-rm-tools-r {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
   align-items: center;
 }
 
 .vds-rm-tool {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 8px 14px;
   border-radius: 9px;
   font-family: var(--via-font);
@@ -136,7 +136,7 @@
 .vds-rm-col-head {
   display: grid;
   grid-template-columns: 32px 1fr auto;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: center;
   padding-bottom: 16px;
   margin-bottom: 14px;
@@ -216,7 +216,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-rm-card {
@@ -325,7 +325,7 @@
 .vds-rm-card-prog {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-bottom: 12px;
 }
 
@@ -364,7 +364,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding-top: 10px;
   border-top: 1px solid var(--via-border-soft);
 }
@@ -372,7 +372,7 @@
 .vds-rm-card-owner {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 11px;
   color: var(--via-ink-2);
   letter-spacing: -0.004em;
@@ -385,7 +385,7 @@
 .vds-rm-card-vote {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 5px 9px;
   border-radius: 8px;
   background: var(--via-navy-04);
@@ -424,7 +424,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   transition: background .2s ease, border-color .2s ease, color .2s ease;
 }
 

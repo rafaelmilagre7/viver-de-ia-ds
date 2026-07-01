@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   color: var(--via-text-primary);
   transition: all 220ms ease;
   overflow: hidden;
@@ -45,7 +45,7 @@
 .via-upload .cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 13px 24px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
@@ -76,13 +76,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .via-upload-list li {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 16px 18px;
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);

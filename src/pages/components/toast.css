@@ -7,14 +7,14 @@
     linear-gradient(135deg, var(--via-white) 0%, var(--via-stage-soft) 100%);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .via-toast {
   position: relative;
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 16px 20px;
   background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(200%);

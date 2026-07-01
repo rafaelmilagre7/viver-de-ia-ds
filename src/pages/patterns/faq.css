@@ -25,7 +25,7 @@
 .vds-faq-search {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 14px 16px;
   border-radius: 14px;
   background: var(--via-surface);
@@ -143,7 +143,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 
 .vds-faq-cats li button {
@@ -242,7 +242,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-faq-item {
@@ -280,7 +280,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 18px 22px;
   background: transparent;
   border: none;
@@ -297,7 +297,7 @@
 .vds-faq-q-text {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   min-width: 0;
 }
 
@@ -377,7 +377,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   margin-top: 16px;
   padding-top: 14px;
   border-top: 1px solid var(--via-border-soft);
@@ -417,7 +417,7 @@
 
 .vds-faq-more:hover {
   color: var(--via-text-primary);
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 /* ============================================
@@ -427,7 +427,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 32px;
+  gap: var(--via-space-8);
   align-items: center;
   padding: 32px 36px;
   border-radius: 22px;
@@ -498,13 +498,13 @@
 .vds-faq-contact-actions {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-faq-contact-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 11px 18px;
   border-radius: 10px;
   font-family: var(--via-font);

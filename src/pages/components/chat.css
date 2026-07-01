@@ -39,7 +39,7 @@
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 0.5px solid var(--via-navy-10);
 }
-.vds-chat-h-l { display: flex; align-items: center; gap: 14px; }
+.vds-chat-h-l { display: flex; align-items: center; gap: var(--via-space-3_5); }
 .vds-chat-h strong {
   display: block;
   font-family: var(--via-font-display);
@@ -126,7 +126,7 @@
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--via-space-5);
   min-height: 320px;
 }
 
@@ -147,7 +147,7 @@
 /* ---- Bubble rows ---- */
 .vds-bubble-row {
   display: flex;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   align-items: flex-end;
   max-width: 80%;
   animation: vds-bubble-in 360ms var(--via-ease-out) backwards;
@@ -258,7 +258,7 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 14px 18px;
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(180%);
@@ -310,9 +310,9 @@
 .vds-chat-anatomy {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
-.vds-chat-anatomy > div { display: flex; flex-direction: column; gap: 12px; }
+.vds-chat-anatomy > div { display: flex; flex-direction: column; gap: var(--via-space-3); }
 .vds-bubble.solo, .vds-bubble-system.solo {
   max-width: 100%;
 }

@@ -6,7 +6,7 @@
 .vds-ec-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 12px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
@@ -16,7 +16,7 @@
 .vds-ec-nav-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 9px 16px;
   background: transparent;
   border: 0.5px solid transparent;
@@ -103,7 +103,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   margin-bottom: 6px;
 }
 .vds-ec-from {
@@ -226,7 +226,7 @@
   margin: 0 0 18px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   counter-reset: step;
 }
 .vds-ec-em-steps li {
@@ -260,7 +260,7 @@
 .vds-ec-em-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 12px 22px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
@@ -297,7 +297,7 @@
 
 .vds-ec-em-actions {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
   flex-wrap: wrap;
   margin: 12px 0 16px;
 }
@@ -306,7 +306,7 @@
 .vds-ec-em-link-arrow {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   font-family: var(--via-font);
   font-size: 13px;
   color: var(--via-text-primary);
@@ -315,7 +315,7 @@
   transition: var(--via-t);
 }
 .vds-ec-em-link-arrow:hover {
-  gap: 8px;
+  gap: var(--via-space-2);
   border-color: var(--via-navy);
 }
 
@@ -348,7 +348,7 @@
 .vds-ec-em-billing-plate {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 18px 22px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-12);
@@ -386,7 +386,7 @@
 .vds-ec-em-alert {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 16px 20px;
   background: rgba(184, 92, 92, 0.06);
   border: 0.5px solid rgba(184, 92, 92, 0.25);
@@ -485,12 +485,12 @@
   margin: 0 0 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 .vds-ec-em-recap li {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 14px 16px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
@@ -529,12 +529,12 @@
   margin: 0 0 18px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 .vds-ec-em-timeline li {
   display: grid;
   grid-template-columns: 56px 1fr;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: flex-start;
   font-size: 13px;
   line-height: 1.5;
@@ -558,13 +558,13 @@
 .vds-ec-em-nps {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin: 14px 0 16px;
 }
 .vds-ec-em-nps .opt {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 14px 18px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
@@ -595,7 +595,7 @@
 .vds-ec-em-event-plate .lbl {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: var(--via-fw-medium);
@@ -677,7 +677,7 @@
 .vds-ec-em-checklist li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   font-size: 14px;
   color: var(--via-text);
 }
@@ -693,7 +693,7 @@
 .vds-ec-drip {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 24px 28px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
@@ -701,7 +701,7 @@
 }
 .vds-ec-drip-step {
   display: flex;
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 18px 20px;
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
@@ -720,7 +720,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .vds-ec-drip-when {
   font-family: var(--via-mono);
@@ -785,7 +785,7 @@
 .vds-ec-em-foot-links {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-top: 6px !important;
 }
 .vds-ec-em-foot-links a {
@@ -808,7 +808,7 @@
   border-top: 0.5px solid var(--via-navy-08);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 .vds-ec-note .lbl {
   display: block;

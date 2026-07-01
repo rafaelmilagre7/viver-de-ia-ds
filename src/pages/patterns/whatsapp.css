@@ -91,7 +91,7 @@
   font-weight: var(--via-fw-semibold);
   z-index: 3;
 }
-.vds-wa-status .status-r { display: flex; align-items: center; gap: 6px; }
+.vds-wa-status .status-r { display: flex; align-items: center; gap: var(--via-space-1_5); }
 
 /* Dynamic Island */
 .vds-wa-island {
@@ -114,7 +114,7 @@
   display: grid;
   grid-template-columns: auto auto 1fr auto;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 10px 14px;
   border-bottom: 0.5px solid rgba(0,0,0,0.10);
 }
@@ -165,7 +165,7 @@
   background: var(--via-success);
   box-shadow: 0 0 6px rgba(31,255,127,0.50);
 }
-.vds-wa-actions { display: flex; gap: 4px; }
+.vds-wa-actions { display: flex; gap: var(--via-space-1); }
 .vds-wa-actions button {
   width: 32px;
   height: 32px;
@@ -205,7 +205,7 @@
   padding: 12px 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 /* System "Hoje · 15:42" */
@@ -304,7 +304,7 @@
 .vds-wa-input {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 6px 8px 8px;
   background: var(--via-stage-soft);
 }
@@ -312,7 +312,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   background: var(--via-surface);
   border-radius: 999px;
   padding: 4px 6px 4px 10px;

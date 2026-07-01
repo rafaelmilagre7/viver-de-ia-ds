@@ -2,7 +2,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+  gap: var(--via-space-4_5);
   padding: 72px 32px 56px;
   border-radius: 36px;
   background:
@@ -26,7 +26,7 @@
     0 4px 12px var(--via-navy-06);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   overflow: hidden;
   transition: var(--via-t);
 }
@@ -96,7 +96,7 @@
 }
 .vds-tier.feat .tag { color: rgba(255,255,255,0.55); }
 
-.vds-tier .price { display: flex; align-items: baseline; gap: 4px; }
+.vds-tier .price { display: flex; align-items: baseline; gap: var(--via-space-1); }
 .vds-tier .cur {
   font-family: var(--via-font-display);
   font-style: normal;
@@ -125,11 +125,11 @@
 
 .vds-tier ul {
   margin: 0; padding: 0; list-style: none;
-  display: flex; flex-direction: column; gap: 8px;
+  display: flex; flex-direction: column; gap: var(--via-space-2);
   flex: 1;
 }
 .vds-tier li {
-  display: flex; gap: 8px;
+  display: flex; gap: var(--via-space-2);
   font-family: var(--via-font);
   font-size: 12px;
   color: var(--via-text-body);
@@ -299,7 +299,7 @@
 .vds-cmp-plan-price {
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: var(--via-space-1);
   margin-bottom: 6px;
   font-family: var(--via-display);
 }
@@ -344,7 +344,7 @@
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 8px 14px;
   border-radius: 9px;
   font-family: var(--via-font);

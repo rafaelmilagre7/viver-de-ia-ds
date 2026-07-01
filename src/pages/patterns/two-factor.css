@@ -62,7 +62,7 @@
 .vds-2fa-card__head {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   margin-bottom: 24px;
   padding-bottom: 20px;
   position: relative;
@@ -148,13 +148,13 @@
 .vds-2fa-methods {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 .vds-2fa-method {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 18px 20px;
   width: 100%;
   background: var(--via-glass-card);
@@ -265,7 +265,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 1px 2px var(--via-navy-04);
@@ -410,7 +410,7 @@
 .vds-2fa-anatomy {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 .vds-2fa-anatomy-card {
   position: relative;

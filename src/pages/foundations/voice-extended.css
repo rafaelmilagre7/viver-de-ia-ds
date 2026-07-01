@@ -9,13 +9,13 @@
   padding: 24px 28px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 
 .vds-ve-context header {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .vds-ve-icon {
   width: 36px;
@@ -57,7 +57,7 @@
 .vds-ve-samples {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 @media (max-width: 760px) { .vds-ve-samples { grid-template-columns: 1fr; } }
 
@@ -68,7 +68,7 @@
   border: 0.5px solid var(--via-navy-08);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-ve-sample.good {
   border-color: var(--via-navy-20);
@@ -122,7 +122,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-ve-rules li {
   font-family: var(--via-font);
@@ -157,7 +157,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--via-space-4);
   counter-reset: spine;
 }
 .vds-ve-spine li {

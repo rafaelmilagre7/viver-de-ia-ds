@@ -113,7 +113,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 22px 24px 16px;
   border-bottom: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
 }
@@ -169,7 +169,7 @@
 .via-drawer__foot {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 14px 20px;
   border-top: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
   background: var(--via-navy-02);

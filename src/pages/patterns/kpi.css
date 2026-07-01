@@ -2,7 +2,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   padding: 40px 32px;
   border-radius: 32px;
   background:
@@ -15,7 +15,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 32px;
   border-radius: 32px;
   background:
@@ -39,7 +39,7 @@
     0 2px 8px var(--via-navy-04);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   overflow: hidden;
   transition: var(--via-t);
 }
@@ -64,7 +64,7 @@
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--via-text-muted);
 }
-.vds-kpi-tile .num-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.vds-kpi-tile .num-row { display: flex; align-items: baseline; gap: var(--via-space-3); flex-wrap: wrap; }
 .vds-kpi-tile .num {
   font-family: var(--via-font-display);
   font-size: 40px; font-weight: var(--via-fw-medium);
@@ -74,7 +74,7 @@
 }
 .vds-kpi-tile .num em { font-style: normal; color: var(--via-text-muted); font-weight: var(--via-fw-medium); }
 .vds-kpi-tile .delta {
-  display: inline-flex; align-items: center; gap: 4px;
+  display: inline-flex; align-items: center; gap: var(--via-space-1);
   font-family: var(--via-font);
   font-size: 12px; font-weight: var(--via-fw-bold);
   padding: 3px 8px; border-radius: 999px;

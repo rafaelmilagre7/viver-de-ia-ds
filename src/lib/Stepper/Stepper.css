@@ -31,19 +31,19 @@
 .via-stepper--horizontal .via-stepper__item {
   flex: 1;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .via-stepper--vertical .via-stepper__item {
   flex-direction: row;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding-bottom: 22px;
 }
 
 .via-stepper__node {
   display: inline-flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: var(--via-space-3);
   background: none;
   border: none;
   padding: 0;
@@ -125,7 +125,7 @@ button.via-stepper__node:focus-visible {
 .via-stepper__copy {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   min-width: 0;
 }
 

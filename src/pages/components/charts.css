@@ -34,14 +34,14 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--via-space-6);
   margin-bottom: 28px;
 }
 
 .vds-chart-head .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
@@ -85,7 +85,7 @@
 .vds-chart-delta {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   padding: 8px 14px;
   border-radius: 999px;
   background: var(--via-navy-06);
@@ -112,7 +112,7 @@
 .vds-chart-foot {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-top: 24px;
   padding-top: 20px;
   border-top: 1px solid var(--via-border-soft);
@@ -209,14 +209,14 @@
 .vds-bars {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   margin-top: 8px;
 }
 
 .vds-bar-row {
   display: grid;
   grid-template-columns: 120px 1fr 130px;
-  gap: 20px;
+  gap: var(--via-space-5);
   align-items: center;
 }
 
@@ -271,7 +271,7 @@
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   font-size: 14px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -294,7 +294,7 @@
 .vds-donut-stage {
   display: grid;
   grid-template-columns: 280px 1fr;
-  gap: 48px;
+  gap: var(--via-space-12);
   align-items: center;
 }
 
@@ -335,13 +335,13 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 
 .vds-donut-legend li {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 14px 18px;
   border-radius: 14px;
   background: var(--via-navy-02);
@@ -370,7 +370,7 @@
   color: var(--via-text-soft);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -391,7 +391,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--via-space-5);
 }
 
 .vds-funnel-step {
@@ -414,14 +414,14 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--via-space-4);
   margin-bottom: 9px;
 }
 
 .vds-funnel-stage {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   font-size: 14px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
@@ -442,7 +442,7 @@
 .vds-funnel-nums {
   display: inline-flex;
   align-items: baseline;
-  gap: 12px;
+  gap: var(--via-space-3);
   white-space: nowrap;
   font-feature-settings: 'tnum' 1;
 }
@@ -496,7 +496,7 @@
 .vds-kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 
 .vds-kpi-card {
@@ -528,7 +528,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-kpi-label {
@@ -593,21 +593,21 @@
   }
   .vds-chart-head {
     flex-direction: column;
-    gap: 14px;
+    gap: var(--via-space-3_5);
   }
   .vds-chart-head h3 {
     font-size: 32px;
   }
   .vds-bar-row {
     grid-template-columns: 90px 1fr 80px;
-    gap: 12px;
+    gap: var(--via-space-3);
   }
   .vds-bar-value em {
     display: none;
   }
   .vds-donut-stage {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--via-space-6);
   }
   .vds-donut-svg {
     margin: 0 auto;

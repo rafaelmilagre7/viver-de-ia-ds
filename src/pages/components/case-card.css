@@ -1,7 +1,7 @@
 .via-case-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .via-case {
@@ -14,7 +14,7 @@
   border-radius: 22px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   transition: all 240ms var(--via-ease-out);
   overflow: hidden;
   isolation: isolate;
@@ -60,7 +60,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .via-case .company {
@@ -101,7 +101,7 @@
   border-bottom: 1px solid var(--via-border-soft);
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   position: relative;
 }
 
@@ -134,7 +134,7 @@
   color: var(--via-text);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding-left: 16px;
   border-left: 2px solid rgba(10, 31, 59, 0.15);
 }
@@ -151,7 +151,7 @@
 .via-case .link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: var(--via-fw-semibold);
@@ -163,5 +163,5 @@
 }
 
 .via-case .link:hover {
-  gap: 12px;
+  gap: var(--via-space-3);
 }

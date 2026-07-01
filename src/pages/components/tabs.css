@@ -11,7 +11,7 @@
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 4px 12px var(--via-navy-08),
     0 1px 3px var(--via-navy-04);
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 
 .via-seg-item {
@@ -46,7 +46,7 @@
 /* Underline tabs · classic editorial */
 .via-ultabs {
   display: flex;
-  gap: 32px;
+  gap: var(--via-space-8);
   border-bottom: 1px solid var(--via-border-soft);
   position: relative;
 }

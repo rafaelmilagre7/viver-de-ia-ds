@@ -118,7 +118,7 @@
 .vds-live-viewers {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 8px 16px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
@@ -187,7 +187,7 @@
 .vds-live-hosts {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   padding: 16px 20px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.06);
@@ -285,7 +285,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--via-space-4);
   flex-wrap: wrap;
 }
 
@@ -293,7 +293,7 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 15px 28px;
   border-radius: 999px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
@@ -323,13 +323,13 @@
 
 .vds-live-secondary {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-live-secondary button {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 11px 16px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
@@ -447,7 +447,7 @@
 .vds-live-next-meta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   flex-wrap: wrap;
   padding: 10px 16px;
   border-radius: 12px;
@@ -479,7 +479,7 @@
 .vds-live-when {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   padding: 14px 18px;
   border-radius: 14px;
   background: rgba(10, 31, 59, 0.07);
@@ -516,7 +516,7 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   margin-bottom: 20px;
 }
 
@@ -565,7 +565,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   width: 100%;
   padding: 13px 20px;
   border-radius: 12px;
@@ -604,7 +604,7 @@
 .vds-live-past {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 
 .vds-live-past-card {
@@ -737,7 +737,7 @@
 .vds-live-past-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   margin: 0 0 8px;
   font-size: 10px;
   font-weight: var(--via-fw-bold);
@@ -764,7 +764,7 @@
 .vds-live-past-meta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin: 0;
   font-size: 11px;
   color: var(--via-text-soft);

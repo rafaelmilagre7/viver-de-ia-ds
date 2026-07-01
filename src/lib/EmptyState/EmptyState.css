@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 48px 32px;
   border-radius: 16px;
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
@@ -108,7 +108,7 @@
 .via-empty-state__actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-top: 8px;
   flex-wrap: wrap;
   justify-content: center;

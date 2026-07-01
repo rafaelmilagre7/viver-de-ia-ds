@@ -364,16 +364,25 @@
   --via-lh-normal: 1.5;
   --via-lh-loose:  1.65;
 
-  /* ========== SPACING ========================================= */
+  /* ========== SPACING · base 4px + half-steps de 2px (conv. Tailwind) ===== */
+  --via-space-0_5: 2px;
   --via-space-1:   4px;
+  --via-space-1_5: 6px;
   --via-space-2:   8px;
+  --via-space-2_5: 10px;
   --via-space-3:   12px;
+  --via-space-3_5: 14px;
   --via-space-4:   16px;
+  --via-space-4_5: 18px;
   --via-space-5:   20px;
+  --via-space-5_5: 22px;
   --via-space-6:   24px;
+  --via-space-7:   28px;
   --via-space-8:   32px;
+  --via-space-9:   36px;
   --via-space-10:  40px;
   --via-space-12:  48px;
+  --via-space-14:  56px;
   --via-space-16:  64px;
   --via-space-20:  80px;
   --via-space-24:  96px;

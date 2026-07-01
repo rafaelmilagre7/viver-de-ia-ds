@@ -6,12 +6,12 @@
 .vds-lu-anatomy {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 .vds-lu-anatomy article {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 20px 22px;
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
@@ -72,7 +72,7 @@
 .vds-lu-variants {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--via-space-5);
 }
 .vds-lu-variants article {
   padding: 22px 24px;
@@ -93,7 +93,7 @@
 .vds-lu-var-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 .vds-lu-var-grid.wide {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -105,7 +105,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   align-items: center;
   padding: 18px 16px 14px;
   border-radius: 10px;
@@ -143,7 +143,7 @@
 .vds-lu-clear {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: var(--via-space-7);
   padding: 32px 36px 36px;
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
@@ -152,7 +152,7 @@
 .vds-lu-clear-demo {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   align-items: center;
 }
 .vds-lu-clear-monogram,
@@ -215,7 +215,7 @@
 .vds-lu-sizing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 28px 32px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
@@ -226,7 +226,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 18px 14px;
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
@@ -309,7 +309,7 @@
 .vds-lu-surface {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .vds-lu-surface article {
   padding: 22px 24px;
@@ -318,7 +318,7 @@
   border-radius: 14px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .vds-lu-surf-eyebrow {
   font-family: var(--via-font);
@@ -333,7 +333,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 28px 20px;
   border-radius: 10px;
   min-height: 160px;
@@ -429,7 +429,7 @@
 .vds-lu-dosdonts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 @media (max-width: 760px) { .vds-lu-dosdonts { grid-template-columns: 1fr; } }
 .vds-lu-do,
@@ -444,7 +444,7 @@
 .vds-lu-dd-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 10px;
   font-weight: var(--via-fw-medium);
@@ -461,7 +461,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-lu-do li,
 .vds-lu-dont li {

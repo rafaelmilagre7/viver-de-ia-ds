@@ -60,7 +60,7 @@
 .via-cmd__head {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 14px 16px;
   border-bottom: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
   color: var(--via-ink-3, #6B7891);
@@ -114,7 +114,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 .via-cmd__heading {
   display: block;
@@ -130,7 +130,7 @@
 .via-cmd__group li {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 9px 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -185,7 +185,7 @@
 .via-cmd__foot {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 9px 14px;
   border-top: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
   background: var(--via-gray-50, #F7F8FA);
@@ -204,7 +204,7 @@
   color: var(--via-ink-2, #5E6B82);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 
 @keyframes via-cmd-in {
@@ -222,5 +222,5 @@
 
 @media (max-width: 520px) {
   .via-cmd-root { padding-top: 8vh; padding-inline: 12px; }
-  .via-cmd__foot { flex-wrap: wrap; gap: 10px; }
+  .via-cmd__foot { flex-wrap: wrap; gap: var(--via-space-2_5); }
 }

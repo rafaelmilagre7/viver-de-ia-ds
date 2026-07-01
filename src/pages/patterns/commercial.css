@@ -6,7 +6,7 @@
 .vds-com-deck {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
   margin-bottom: 24px;
 }
 .vds-com-slide {
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 10px 14px;
   background: var(--via-gray-50);
   border-bottom: 0.5px solid var(--via-navy-08);
@@ -82,7 +82,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .vds-com-slide-wordmark {
   width: 60%;
@@ -130,7 +130,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-com-deck-rules li {
   font-family: var(--via-font);
@@ -160,7 +160,7 @@
   aspect-ratio: 1 / 1.41;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: var(--via-space-7);
 }
 .vds-com-onepager header {
   display: flex;
@@ -176,7 +176,7 @@
 .vds-com-onepager-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 10px;
   font-weight: var(--via-fw-medium);
@@ -203,7 +203,7 @@
 .vds-com-onepager-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 18px 22px;
   background: var(--via-gray-50);
   border-radius: 8px;
@@ -211,7 +211,7 @@
 .vds-com-onepager-stats > div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .vds-com-onepager-stats strong {
   font-family: var(--via-mono);
@@ -229,7 +229,7 @@
 .vds-com-onepager-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  gap: var(--via-space-5_5);
 }
 .vds-com-onepager-cols article:nth-child(3) { grid-column: span 2; }
 .vds-com-onepager-cols h3 {
@@ -256,12 +256,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 .vds-com-onepager-cols li {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-com-onepager-cols li svg {
   color: var(--via-success);
@@ -326,7 +326,7 @@
 .vds-com-case-mark {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 10px;
   font-weight: var(--via-fw-medium);
@@ -360,12 +360,12 @@
 .vds-com-case-body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--via-space-5);
 }
 .vds-com-case-body article {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-com-case-eyebrow {
   font-family: var(--via-font);
@@ -390,7 +390,7 @@
   counter-reset: case-step;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-com-case-body li {
   counter-increment: case-step;
@@ -420,7 +420,7 @@
 .vds-com-case-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 22px;
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
@@ -430,7 +430,7 @@
 .vds-com-case-stats > div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .vds-com-case-stats strong {
   font-family: var(--via-mono);
@@ -463,7 +463,7 @@
   font-style: normal;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 .vds-com-case > footer cite strong {
   font-family: var(--via-font);
@@ -531,7 +531,7 @@
 .vds-com-proposal h3 {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: var(--via-fw-medium);
@@ -568,12 +568,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 .vds-com-proposal-list li {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-font);
   font-size: 13px;
   color: var(--via-text);
@@ -621,7 +621,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--via-space-4);
   margin-top: 22px;
   padding-top: 22px;
   border-top: 0.5px solid var(--via-navy-08);
@@ -669,7 +669,7 @@
 .vds-com-contract > header {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   margin-bottom: 32px;
   padding-bottom: 22px;
   border-bottom: 0.5px solid var(--via-navy-08);
@@ -711,7 +711,7 @@
 .vds-com-contract > footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: var(--via-space-8);
   margin-top: 32px;
   padding-top: 28px;
   border-top: 0.5px solid var(--via-navy-08);
@@ -719,7 +719,7 @@
 .vds-com-contract-sig {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   align-items: center;
   text-align: center;
 }

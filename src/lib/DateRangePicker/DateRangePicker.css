@@ -4,7 +4,7 @@
 .via-drp {
   display: inline-flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 18px 20px;
   border-radius: 16px;
   background: var(--via-glass-card);
@@ -32,7 +32,7 @@
 .via-drp__head {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--via-space-4);
   padding-bottom: 12px;
   border-bottom: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
 }
@@ -40,7 +40,7 @@
 .via-drp__field {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   flex: 1;
 }
 
@@ -71,7 +71,7 @@
 
 .via-drp__presets {
   display: inline-flex;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   flex-wrap: wrap;
 }
 

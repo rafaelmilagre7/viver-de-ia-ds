@@ -1,6 +1,6 @@
 .via-pag {
   display: inline-flex;
-  gap: 4px;
+  gap: var(--via-space-1);
   align-items: center;
   padding: 4px;
   border-radius: 999px;

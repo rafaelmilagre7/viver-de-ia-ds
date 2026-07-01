@@ -42,7 +42,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--via-space-6);
   padding: 26px 32px 18px;
   border-bottom: 1px solid var(--via-border-soft);
 }
@@ -50,7 +50,7 @@
 .vds-cl-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-mono);
   font-size: 10px;
   font-weight: var(--via-fw-semibold);
@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-cl-version-num {
@@ -146,7 +146,7 @@
 .vds-cl-highlights {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 @media (max-width: 920px) {
@@ -277,7 +277,7 @@
 .vds-cl-hl-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: var(--via-fw-medium);
@@ -309,7 +309,7 @@
 .vds-cl-featured-foot {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: var(--via-space-5_5);
   padding: 18px 32px;
   border-top: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
@@ -318,7 +318,7 @@
 .vds-cl-stat {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 
 .vds-cl-stat strong {
@@ -350,14 +350,14 @@
 .vds-cl-timeline {
   display: grid;
   grid-template-columns: 200px 1fr;
-  gap: 36px;
+  gap: var(--via-space-9);
   align-items: start;
 }
 
 @media (max-width: 820px) {
   .vds-cl-timeline {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: var(--via-space-4_5);
   }
 }
 
@@ -404,14 +404,14 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 
 .vds-cl-toc li a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 8px 10px;
   border-radius: 8px;
   text-decoration: none;
@@ -467,7 +467,7 @@
   font-size: 11px !important;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-cl-toc-more a:hover {
@@ -488,7 +488,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 28px 1fr;
-  gap: 20px;
+  gap: var(--via-space-5);
   padding-bottom: 36px;
 }
 
@@ -575,7 +575,7 @@
 .vds-cl-entry-meta {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   margin-bottom: 6px;
 }
 
@@ -640,13 +640,13 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-cl-changes li {
   display: grid;
   grid-template-columns: 22px 70px 1fr;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   align-items: center;
   padding: 8px 12px;
   border-radius: 9px;

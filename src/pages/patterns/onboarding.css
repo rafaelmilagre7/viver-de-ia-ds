@@ -37,7 +37,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   position: relative;
 }
 
@@ -158,14 +158,14 @@
 .vds-ob .ob-options {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   margin-bottom: 32px;
 }
 
 .vds-ob .ob-opt {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 18px 20px;
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
@@ -262,7 +262,7 @@
 /* Actions */
 .vds-ob .ob-actions {
   display: flex;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   justify-content: flex-end;
 }
 
@@ -393,7 +393,7 @@
 .vds-wiz-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-mono);
   font-size: 10px;
   font-weight: var(--via-fw-semibold);
@@ -449,13 +449,13 @@
   margin: 0 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 
 .vds-wiz-steps li {
   display: grid;
   grid-template-columns: 26px 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   align-items: center;
   padding: 12px 10px;
   border-radius: 10px;
@@ -516,7 +516,7 @@
 .vds-wiz-steps li > div {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   min-width: 0;
 }
 
@@ -622,7 +622,7 @@
 .vds-wiz-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   margin-bottom: 22px;
 }
 
@@ -636,7 +636,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 22px 40px 1fr;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: center;
   padding: 14px 16px;
   border-radius: 14px;
@@ -763,7 +763,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-wiz-count {
@@ -783,13 +783,13 @@
 .vds-wiz-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-wiz-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 10px 18px;
   border-radius: 10px;
   font-family: var(--via-font);

@@ -903,6 +903,12 @@ export const tokensList: readonly Token[] = [
     "category": "spacing"
   },
   {
+    "name": "via-space-14",
+    "css": "--via-space-14",
+    "value": "56px",
+    "category": "spacing"
+  },
+  {
     "name": "via-space-16",
     "css": "--via-space-16",
     "value": "64px",
@@ -957,9 +963,21 @@ export const tokensList: readonly Token[] = [
     "category": "spacing"
   },
   {
+    "name": "via-space-7",
+    "css": "--via-space-7",
+    "value": "28px",
+    "category": "spacing"
+  },
+  {
     "name": "via-space-8",
     "css": "--via-space-8",
     "value": "32px",
+    "category": "spacing"
+  },
+  {
+    "name": "via-space-9",
+    "css": "--via-space-9",
+    "value": "36px",
     "category": "spacing"
   },
   {
@@ -1155,6 +1173,7 @@ export type TokenName =
   | 'via-space-1'
   | 'via-space-10'
   | 'via-space-12'
+  | 'via-space-14'
   | 'via-space-16'
   | 'via-space-2'
   | 'via-space-20'
@@ -1164,7 +1183,9 @@ export type TokenName =
   | 'via-space-4'
   | 'via-space-5'
   | 'via-space-6'
+  | 'via-space-7'
   | 'via-space-8'
+  | 'via-space-9'
   | 'via-bg-2'
   | 'via-bg-3'
   | 'via-bg-soft'

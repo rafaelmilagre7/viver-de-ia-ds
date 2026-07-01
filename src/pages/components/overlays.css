@@ -200,7 +200,7 @@
 .vds-drawer-user {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-drawer-user .av {
@@ -261,7 +261,7 @@
   justify-content: space-between;
   padding: 22px 22px 18px;
   border-bottom: 1px solid var(--via-border-soft);
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-sheet-eyebrow {
@@ -309,13 +309,13 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: var(--via-space-5_5);
 }
 
 .vds-sheet-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 14px;
   border-radius: 12px;
   background: var(--via-navy-03);
@@ -365,7 +365,7 @@
 .vds-sheet-section li {
   display: grid;
   grid-template-columns: 60px 1fr;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 10px 0;
   border-bottom: 1px solid var(--via-border-soft);
   font-size: 12px;
@@ -423,7 +423,7 @@
 .vds-sheet-note span {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 10px;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
@@ -440,13 +440,13 @@
   padding: 14px 22px;
   border-top: 1px solid var(--via-border-soft);
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-sheet-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 10px 14px;
   border-radius: 10px;
   font-size: 12px;
@@ -485,7 +485,7 @@
 .vds-bs-stage {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: var(--via-space-5);
 }
 
 .vds-bs-frame {
@@ -532,7 +532,7 @@
 .vds-bs-status-icons {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-bs-bars,
@@ -602,7 +602,7 @@
 .vds-bs-faded-lessons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-bs-faded-lessons span {
@@ -673,7 +673,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 10px 22px 18px;
   border-bottom: 1px solid var(--via-border-soft);
 }
@@ -760,7 +760,7 @@
   grid-column: 1 / -1;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 6px 12px;
   border-radius: 999px;
   background: rgba(10, 31, 59, 0.07);
@@ -803,13 +803,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-bs-options li {
   display: grid;
   grid-template-columns: 32px 1fr;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 14px 14px;
   border-radius: 12px;
   background: var(--via-navy-03);
@@ -879,7 +879,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   width: 100%;
   padding: 14px 18px;
   border-radius: 12px;
@@ -914,7 +914,7 @@
   display: grid;
   grid-template-columns: 22px 1fr auto;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 14px 4px;
   border-bottom: 1px solid var(--via-border-soft);
   cursor: pointer;
@@ -971,7 +971,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 60px 32px 80px;
   border-radius: 22px;
   background:
@@ -1025,7 +1025,7 @@
   width: auto;
   padding: 0 16px;
   height: 34px;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 12px;
   font-weight: var(--via-fw-medium);
   font-family: inherit;
@@ -1113,7 +1113,7 @@
 .vds-popover li a {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 9px 10px;
   border-radius: 9px;
   font-size: 12px;
@@ -1176,7 +1176,7 @@
   color: var(--via-text-soft);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-pop-eyebrow::before {
@@ -1189,7 +1189,7 @@
 .vds-pop-section label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 8px 8px;
   border-radius: 8px;
   font-size: 12px;
@@ -1259,7 +1259,7 @@
   padding: 10px 14px;
   border-top: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-pop-clear {
@@ -1304,7 +1304,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 16px 14px;
   border-bottom: 1px solid var(--via-border-soft);
   background:
@@ -1355,7 +1355,7 @@
 .vds-dialog-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 
 @media (max-width: 920px) {
@@ -1385,7 +1385,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   overflow: hidden;
   isolation: isolate;
 }
@@ -1465,7 +1465,7 @@
 .vds-dialog-warn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 10px 14px;
   border-radius: 10px;
   background: rgba(184, 92, 92, 0.06);
@@ -1516,7 +1516,7 @@
 
 .vds-dialog-actions {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
   width: 100%;
   margin-top: 12px;
 }
@@ -1566,7 +1566,7 @@
   padding: 24px;
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: 16px;
+  gap: var(--via-space-4);
   min-height: 560px;
   border: none;
   isolation: isolate;
@@ -1622,7 +1622,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: var(--via-space-4);
   position: relative;
   z-index: 1;
 }
@@ -1675,7 +1675,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 
 .vds-lightbox-caption {
@@ -1688,13 +1688,13 @@
 
 .vds-lightbox-actions {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-lightbox-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 8px 14px;
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.08);
@@ -1712,7 +1712,7 @@
 
 .vds-lightbox-strip {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
   justify-content: center;
   flex-wrap: wrap;
 }

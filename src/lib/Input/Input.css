@@ -4,7 +4,7 @@
 .via-input-wrap {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .via-input__label {
@@ -19,7 +19,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);

@@ -4,7 +4,7 @@
 .via-spinner {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 

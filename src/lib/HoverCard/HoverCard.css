@@ -45,7 +45,7 @@
   padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 

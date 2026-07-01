@@ -24,7 +24,7 @@
   opacity: 0.4;
   pointer-events: none;
 }
-.vds-soc-stage.ig-row { gap: 28px; flex-wrap: wrap; }
+.vds-soc-stage.ig-row { gap: var(--via-space-7); flex-wrap: wrap; }
 
 /* ============ INSTAGRAM SQUARE ============ */
 .vds-ig-frame {
@@ -42,7 +42,7 @@
   display: grid;
   grid-template-columns: 32px 1fr auto;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 10px 12px;
 }
 .ig-av {
@@ -180,7 +180,7 @@
 .ig-attr {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,0.16);
 }
@@ -213,7 +213,7 @@
 
 /* Post footer (acts + caption) */
 .ig-f { padding: 8px 12px 14px; }
-.ig-acts { display: flex; gap: 12px; padding: 4px 0; }
+.ig-acts { display: flex; gap: var(--via-space-3); padding: 4px 0; }
 .ig-acts button {
   background: transparent;
   border: none;
@@ -275,7 +275,7 @@
   z-index: 4;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .story-h strong {
   font-family: var(--via-font);
@@ -352,7 +352,7 @@
   bottom: 12px;
   z-index: 4;
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
   align-items: center;
 }
 .story-f input {
@@ -394,7 +394,7 @@
   display: grid;
   grid-template-columns: 48px 1fr auto;
   align-items: flex-start;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 14px 16px 8px;
 }
 .li-av {
@@ -514,7 +514,7 @@
 .li-acts button {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 8px 14px;
   background: transparent;
   border: none;

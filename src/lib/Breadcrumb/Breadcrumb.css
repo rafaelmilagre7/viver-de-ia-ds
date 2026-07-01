@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -18,7 +18,7 @@
 .via-breadcrumb__item {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 12px;
   letter-spacing: -0.004em;
 }

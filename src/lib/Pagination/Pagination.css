@@ -4,14 +4,14 @@
 .via-pagination {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 
 .via-pagination__list {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -22,7 +22,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   min-width: 32px;
   height: 32px;
   padding: 0 10px;

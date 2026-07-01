@@ -4,7 +4,7 @@
 .via-tp {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   min-width: 180px;
 }
@@ -19,7 +19,7 @@
 .via-tp__field {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 8px 10px 8px 12px;
   background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);

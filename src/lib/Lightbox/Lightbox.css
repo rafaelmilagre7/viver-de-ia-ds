@@ -97,7 +97,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--via-space-6);
   padding: 14px 28px 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -105,7 +105,7 @@
 .via-lightbox__caption {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: var(--via-space-3);
   color: rgba(255, 255, 255, 0.84);
   font-size: 13px;
 }
@@ -120,7 +120,7 @@
 .via-lightbox__download {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 6px 14px;
   font-family: inherit;
   font-size: 12px;

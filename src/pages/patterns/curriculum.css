@@ -6,7 +6,7 @@
 .vds-course-hero {
   display: grid;
   grid-template-columns: minmax(280px, 380px) 1fr;
-  gap: 24px;
+  gap: var(--via-space-6);
   align-items: stretch;
 }
 
@@ -61,7 +61,7 @@
 .vds-course-author {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   font-size: 12px;
   font-weight: var(--via-fw-medium);
   color: rgba(255, 255, 255, 0.85);
@@ -97,7 +97,7 @@
 .vds-course-meta {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--via-space-5);
   padding: 32px;
   border-radius: 22px;
   border: 1px solid var(--via-border-soft);
@@ -112,7 +112,7 @@
 .vds-course-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: var(--via-space-3);
   padding-bottom: 20px;
   border-bottom: 1px solid var(--via-border-soft);
 }
@@ -120,7 +120,7 @@
 .vds-course-stats .stat {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 
 .vds-course-stats .n {
@@ -179,7 +179,7 @@
   margin: 10px 0 0;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-size: 12px;
   color: var(--via-text-soft);
 }
@@ -197,7 +197,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   align-self: stretch;
   margin-top: auto;
   padding: 14px 20px;
@@ -222,7 +222,7 @@
 .vds-modules {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-module {
@@ -252,7 +252,7 @@
   display: grid;
   grid-template-columns: 56px 1fr auto;
   align-items: center;
-  gap: 20px;
+  gap: var(--via-space-5);
   width: 100%;
   padding: 22px 24px;
   border: none;
@@ -303,7 +303,7 @@
 .vds-module-meta {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-module-pill {
@@ -361,7 +361,7 @@
   display: grid;
   grid-template-columns: 28px 56px 1fr 100px 64px 30px;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 12px 14px;
   margin: 0 -14px;
   border-radius: 10px;
@@ -512,7 +512,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   font-size: 11px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
@@ -588,7 +588,7 @@
 .vds-cert-card {
   display: grid;
   grid-template-columns: 64px 1fr auto;
-  gap: 20px;
+  gap: var(--via-space-5);
   align-items: center;
   padding: 24px;
   border-radius: 16px;
@@ -646,7 +646,7 @@
   }
   .vds-lesson {
     grid-template-columns: 24px 1fr auto;
-    gap: 10px;
+    gap: var(--via-space-2_5);
   }
   .vds-lesson-num,
   .vds-lesson-type,

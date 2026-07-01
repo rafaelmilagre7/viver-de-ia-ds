@@ -6,14 +6,14 @@
     radial-gradient(ellipse 60% 80% at 100% 100%, var(--via-navy-06) 0%, transparent 60%),
     linear-gradient(135deg, var(--via-white) 0%, var(--via-stage-soft) 100%);
 }
-.via-tag-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.via-tag-row { display: flex; gap: var(--via-space-2); flex-wrap: wrap; align-items: center; }
 
 .via-tag {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 9px 16px;
   border-radius: 999px;
   font-family: var(--via-font);

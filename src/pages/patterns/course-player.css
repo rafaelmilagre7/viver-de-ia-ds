@@ -5,7 +5,7 @@
 .vds-cp {
   display: grid;
   grid-template-columns: 360px 1fr;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   align-items: start;
 }
 
@@ -86,7 +86,7 @@
 .vds-cp-progress {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-cp-progress .track {
@@ -159,7 +159,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 32px 1fr 18px;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: center;
   padding: 12px 12px;
   border: none;
@@ -238,7 +238,7 @@
 .vds-cp-lesson {
   display: grid;
   grid-template-columns: 22px 44px 1fr 40px;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   align-items: center;
   padding: 8px 10px 8px 0;
   border-radius: 8px;
@@ -354,14 +354,14 @@
 .vds-cp-main {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   min-width: 0;
 }
 
 .vds-cp-breadcrumb {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 10px 16px;
   border-radius: 11px;
   background: var(--via-navy-03);
@@ -452,7 +452,7 @@
 .vid-idle .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
@@ -575,14 +575,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .vid-row-l,
 .vid-row-r {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vid-ctrl {
@@ -655,7 +655,7 @@
 .vds-cp-info {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   align-items: flex-end;
   padding: 24px 26px;
   border-radius: 18px;
@@ -718,13 +718,13 @@
 
 .vds-cp-info-r {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-cp-mark {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 11px 16px;
   border-radius: 999px;
   background: var(--via-navy-06);
@@ -805,7 +805,7 @@
 .vds-cp-extras {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 @media (max-width: 920px) {
@@ -828,7 +828,7 @@
 .vds-cp-extras-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
@@ -845,7 +845,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   margin-bottom: 16px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--via-border-soft);
@@ -873,13 +873,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 
 .vds-cp-notes li {
   display: grid;
   grid-template-columns: 56px 1fr;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .vds-cp-note-ts {
@@ -937,13 +937,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-cp-materials li {
   display: grid;
   grid-template-columns: 44px 1fr 28px;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: center;
   padding: 12px 14px;
   border-radius: 11px;
@@ -1038,13 +1038,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-cp-chapters li {
   display: grid;
   grid-template-columns: 50px 1fr;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 12px;
@@ -1094,7 +1094,7 @@
 .vds-cp-live-grid {
   display: grid;
   grid-template-columns: 1fr 380px;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   align-items: stretch;
 }
 
@@ -1170,7 +1170,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   z-index: 3;
 }
 
@@ -1222,7 +1222,7 @@
 .vds-cp-live-audience {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 6px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
@@ -1273,7 +1273,7 @@
   bottom: 90px;
   display: grid;
   grid-template-columns: 52px 1fr auto;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   align-items: center;
   padding: 12px 18px 12px 14px;
   border-radius: 16px;
@@ -1436,7 +1436,7 @@
   bottom: 16px;
   display: grid;
   grid-template-columns: auto auto 1fr auto;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: center;
   padding: 12px 16px;
   border-radius: 14px;
@@ -1483,7 +1483,7 @@
 .vds-cp-live-time {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding-left: 4px;
   font-size: 12px;
   letter-spacing: -0.006em;
@@ -1502,7 +1502,7 @@
 .vds-cp-live-react-bar {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   padding: 3px 5px;
   border-radius: 11px;
   background: rgba(255, 255, 255, 0.06);
@@ -1564,7 +1564,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 20px 20px 16px;
   border-bottom: 1px solid var(--via-border-soft);
 }
@@ -1615,7 +1615,7 @@
   padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   flex: 1;
   overflow-y: auto;
   max-height: 520px;
@@ -1666,7 +1666,7 @@
 .vds-cp-chat-msg .msg-row {
   display: grid;
   grid-template-columns: 32px 1fr;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   align-items: flex-start;
 }
 
@@ -1749,7 +1749,7 @@
 .vds-cp-chat-foot {
   display: grid;
   grid-template-columns: 1fr 38px;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 14px 16px 16px;
   border-top: 1px solid var(--via-border-soft);
   background: linear-gradient(180deg, transparent, rgba(247, 248, 250, 0.55));

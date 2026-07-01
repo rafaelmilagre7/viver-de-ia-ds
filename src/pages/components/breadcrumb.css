@@ -1,7 +1,7 @@
 .via-bc {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   font-family: var(--via-font);
   font-size: 12px;
   font-weight: var(--via-fw-medium);

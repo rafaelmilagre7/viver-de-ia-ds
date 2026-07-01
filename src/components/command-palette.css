@@ -46,7 +46,7 @@
 .vds-cmdk-inner header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 18px 22px;
   border-bottom: 0.5px solid var(--via-navy-08);
   color: var(--via-text-muted);
@@ -114,17 +114,17 @@
   cursor: default;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 .vds-cmdk__row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .vds-cmdk__main {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   flex: 1;
   min-width: 0;
 }
@@ -166,7 +166,7 @@
 
 .vds-cmdk-inner footer {
   display: flex;
-  gap: 16px;
+  gap: var(--via-space-4);
   align-items: center;
   padding: 12px 22px;
   border-top: 0.5px solid var(--via-navy-08);
@@ -179,7 +179,7 @@
   letter-spacing: 0.06em;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 .vds-cmdk-inner footer kbd {
   font-family: var(--via-font-mono);

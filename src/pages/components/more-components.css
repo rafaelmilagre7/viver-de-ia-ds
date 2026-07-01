@@ -6,7 +6,7 @@
 .vds-ann-banner {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   padding: 14px 20px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
@@ -42,7 +42,7 @@
 .vds-ann-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 4px 10px;
   background: rgba(255,255,255,0.14);
   border: 1px solid rgba(255,255,255,0.20);
@@ -63,12 +63,12 @@
 }
 .vds-ann-banner p strong { color: var(--via-white); font-weight: var(--via-fw-bold); }
 .vds-ann-banner p .muted { color: rgba(255,255,255,0.65); }
-.vds-ann-actions { display: flex; align-items: center; gap: 10px; }
+.vds-ann-actions { display: flex; align-items: center; gap: var(--via-space-2_5); }
 .vds-ann-cta {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 9px 18px;
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
@@ -111,7 +111,7 @@
 .vds-skel-stage {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 .vds-skel-card {
   padding: 24px;
@@ -120,10 +120,10 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
-.vds-skel-row { display: flex; gap: 14px; align-items: center; }
-.vds-skel-col { display: flex; flex-direction: column; gap: 8px; }
+.vds-skel-row { display: flex; gap: var(--via-space-3_5); align-items: center; }
+.vds-skel-col { display: flex; flex-direction: column; gap: var(--via-space-2); }
 .vds-skel-avatar {
   width: 40px;
   height: 40px;
@@ -232,11 +232,11 @@
   margin: 16px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .vds-notif li {
   display: flex;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: flex-start;
   padding: 12px;
   border-radius: 14px;
@@ -301,7 +301,7 @@
 .vds-feed {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
   padding: 28px;
   border: 0.5px solid var(--via-navy-12);
   border-radius: 24px;
@@ -311,7 +311,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 28px 1fr;
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 14px 0;
   align-items: flex-start;
 }
@@ -343,7 +343,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   margin-bottom: 4px;
 }
 .vds-feed-body strong {
@@ -388,7 +388,7 @@
 .vds-avgroup-row {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: var(--via-space-6);
   margin-bottom: 32px;
 }
 .vds-avgroup {
@@ -447,7 +447,7 @@
   color: var(--via-text-primary);
   box-shadow: 0 4px 12px var(--via-navy-10), inset 0 0 0 0.5px var(--via-navy-12);
 }
-.vds-avgroup-meta { display: flex; flex-direction: column; gap: 2px; }
+.vds-avgroup-meta { display: flex; flex-direction: column; gap: var(--via-space-0_5); }
 .vds-avgroup-meta strong {
   font-family: var(--via-font);
   font-size: 14px;
@@ -460,11 +460,11 @@
   color: var(--via-text-muted);
 }
 
-.vds-avgroup-list { display: flex; flex-direction: column; gap: 10px; }
+.vds-avgroup-list { display: flex; flex-direction: column; gap: var(--via-space-2_5); }
 .vds-avgroup-card {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: 16px;
+  gap: var(--via-space-4);
   align-items: center;
   padding: 14px 18px;
   background: var(--via-surface);
@@ -490,7 +490,7 @@
 .vds-avgroup-card .link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: var(--via-fw-bold);

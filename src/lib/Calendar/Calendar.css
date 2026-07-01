@@ -4,7 +4,7 @@
 .via-cal {
   display: inline-flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 18px 20px;
   width: 320px;
   background: var(--via-glass-card);
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .via-cal__nav {
@@ -69,7 +69,7 @@
 .via-cal__weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 .via-cal__weekdays > span {
   text-align: center;
@@ -85,7 +85,7 @@
 .via-cal__grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 
 .via-cal__cell,
@@ -169,7 +169,7 @@
 
 .via-cal__cell-markers {
   display: inline-flex;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 
 .via-cal__cell-dot {

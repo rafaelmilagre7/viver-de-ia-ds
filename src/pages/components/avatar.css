@@ -60,7 +60,7 @@
 
 .via-avatar-row {
   display: flex;
-  gap: 16px;
+  gap: var(--via-space-4);
   align-items: center;
 }
 
@@ -86,13 +86,13 @@
 .via-avatar-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .via-avatar-list .row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .via-avatar-list .name {

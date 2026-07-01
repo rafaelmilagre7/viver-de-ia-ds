@@ -74,7 +74,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 32px;
+  gap: var(--via-space-8);
   padding-bottom: 28px;
   border-bottom: 1px solid var(--via-navy-08);
   margin-bottom: 28px;
@@ -83,7 +83,7 @@
 .vds-receipt-brand {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   max-width: 320px;
 }
 
@@ -102,7 +102,7 @@
 .vds-receipt-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 5px 12px;
   border-radius: 999px;
   background: var(--via-navy-08);
@@ -143,7 +143,7 @@
 .vds-receipt-parties {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  gap: var(--via-space-9);
   padding-bottom: 28px;
   border-bottom: 1px solid var(--via-navy-08);
   margin-bottom: 32px;
@@ -238,7 +238,7 @@
 .vds-receipt-totals {
   display: grid;
   grid-template-columns: 1fr 320px;
-  gap: 36px;
+  gap: var(--via-space-9);
   margin-bottom: 28px;
   align-items: end;
 }
@@ -324,7 +324,7 @@
 .vds-receipt-payment {
   display: grid;
   grid-template-columns: 1fr 88px;
-  gap: 24px;
+  gap: var(--via-space-6);
   align-items: center;
   padding: 20px;
   border-radius: 14px;
@@ -348,7 +348,7 @@
   margin: 0 0 10px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   background: var(--via-navy-06);
   padding: 6px 10px;
   border-radius: 8px;
@@ -379,13 +379,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 
 .vds-receipt-pay-meta li {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 11px;
   color: var(--via-text-soft);
 }
@@ -405,7 +405,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
   color: var(--via-text-primary);
 }
 
@@ -422,7 +422,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--via-space-6);
   padding-top: 20px;
   border-top: 1px solid var(--via-navy-06);
 }
@@ -442,14 +442,14 @@
 
 .vds-receipt-foot-actions {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-btn-ghost,
 .vds-btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 12px;
   font-weight: var(--via-fw-medium);
   padding: 9px 14px;
@@ -493,7 +493,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--via-space-4);
   padding-bottom: 20px;
   border-bottom: 1px solid var(--via-navy-06);
 }
@@ -501,7 +501,7 @@
 .vds-receipt-mini-pill {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   padding: 5px 12px 5px 10px;
   border-radius: 999px;
   background: var(--via-navy-06);
@@ -536,7 +536,7 @@
   margin: 0 0 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .vds-receipt-mini-meta li {
@@ -1077,7 +1077,7 @@
 .vds-print-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-mono);
   font-size: 10px;
   font-weight: var(--via-fw-semibold);
@@ -1143,7 +1143,7 @@
 .vds-print-list li {
   display: grid;
   grid-template-columns: 36px 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   align-items: start;
   padding: 14px 16px;
   border-radius: 14px;
@@ -1169,7 +1169,7 @@
 .vds-print-list li > div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
   min-width: 0;
 }
 
@@ -1205,7 +1205,7 @@
 .vds-print-tip {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-print-tip-key {

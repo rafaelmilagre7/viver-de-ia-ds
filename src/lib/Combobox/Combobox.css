@@ -5,7 +5,7 @@
   position: relative;
   display: inline-flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   min-width: 220px;
 }
@@ -20,7 +20,7 @@
 .via-combobox__trigger {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   width: 100%;
   background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(140%);
@@ -126,7 +126,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 8px 10px;
   border-radius: 7px;
   font-size: 13px;

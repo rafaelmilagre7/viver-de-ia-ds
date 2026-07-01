@@ -9,7 +9,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   width: 100%;
 }
 
@@ -24,7 +24,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 .via-slider__head label {
   font-family: var(--via-font, inherit);
@@ -181,7 +181,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .via-slider__mark .dot {
   width: 3px;

@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--via-space-6);
   padding: 14px 40px;
   background: var(--via-surface);
   backdrop-filter: blur(20px) saturate(150%);
@@ -105,7 +105,7 @@
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  gap: 32px;
+  gap: var(--via-space-8);
   align-items: center;
 }
 
@@ -173,7 +173,7 @@
 
 .mtr-hero-cta-row {
   display: flex;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   flex-wrap: wrap;
 }
 
@@ -181,7 +181,7 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 13px 24px;
   border-radius: 999px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
@@ -269,7 +269,7 @@
 
 @media (max-width: 860px) {
   .mtr-hero { padding: 40px 24px 0; }
-  .mtr-hero-inner { flex-direction: column; text-align: center; gap: 20px; }
+  .mtr-hero-inner { flex-direction: column; text-align: center; gap: var(--via-space-5); }
   .mtr-hero-info h1 { font-size: 32px; }
   .mtr-hero-cta-row { justify-content: center; }
   .mtr-hero-stats { grid-template-columns: repeat(2, 1fr); }
@@ -282,7 +282,7 @@
   padding: 48px;
   display: grid;
   grid-template-columns: 1fr 320px;
-  gap: 32px;
+  gap: var(--via-space-8);
   align-items: start;
 }
 
@@ -293,7 +293,7 @@
 .mtr-main {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: var(--via-space-9);
 }
 
 .mtr-eyebrow {
@@ -330,7 +330,7 @@
 .mtr-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .mtr-tag {
@@ -348,7 +348,7 @@
 .mtr-cases {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .mtr-case {
@@ -394,7 +394,7 @@
 .mtr-depoimentos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .mtr-depoimento {
@@ -482,7 +482,7 @@
 .mtr-slots {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-bottom: 18px;
 }
 
@@ -513,7 +513,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   width: 100%;
   padding: 14px;
   border-radius: 12px;
@@ -545,13 +545,13 @@
   border-top: 1px solid var(--via-border-soft);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .mtr-schedule-meta li {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-size: 12px;
   color: var(--via-text-muted);
   letter-spacing: -0.004em;

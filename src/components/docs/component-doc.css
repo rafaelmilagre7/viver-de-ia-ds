@@ -6,7 +6,7 @@
 .vds-cdoc-anatomy {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   padding: 28px 30px;
   border-radius: 16px;
   background: var(--via-glass-card);
@@ -21,7 +21,7 @@
 .vds-cdoc-anatomy-row {
   display: grid;
   grid-template-columns: 48px 1fr;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   align-items: baseline;
   padding-bottom: 14px;
   border-bottom: 0.5px solid var(--via-border-soft);
@@ -134,7 +134,7 @@
 .vds-cdoc-variants {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-cdoc-variant-card {
@@ -198,7 +198,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   flex-wrap: wrap;
   min-height: 120px;
   overflow: hidden;
@@ -208,7 +208,7 @@
 .vds-cdoc-dos {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 @media (max-width: 720px) {
   .vds-cdoc-dos { grid-template-columns: 1fr; }
@@ -271,7 +271,7 @@
   border: 1px solid var(--via-border-soft);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-cdoc-a11y li {
@@ -295,7 +295,7 @@
 .vds-cdoc-related {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .vds-cdoc-related-card {

@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: var(--via-space-7);
   padding: 14px 48px;
   background: var(--via-glass-card);
   backdrop-filter: blur(18px) saturate(160%);
@@ -23,7 +23,7 @@
   border-bottom: 0.5px solid var(--via-navy-12);
 }
 .mk-nav img { height: 24px; }
-.mk-nav nav { display: flex; gap: 28px; flex: 1; justify-content: center; }
+.mk-nav nav { display: flex; gap: var(--via-space-7); flex: 1; justify-content: center; }
 .mk-nav a {
   font-family: var(--via-font);
   font-size: 11px;
@@ -72,13 +72,13 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 80px;
+  gap: var(--via-space-20);
   align-items: center;
 }
 .mk-hero .pill {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 8px 16px;
   background: var(--via-surface);
   backdrop-filter: blur(16px) saturate(160%);
@@ -120,11 +120,11 @@
   max-width: 540px;
   margin-top: 32px;
 }
-.mk-hero .actions { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
+.mk-hero .actions { display: flex; gap: var(--via-space-3_5); margin-top: 40px; flex-wrap: wrap; }
 .mk-hero .btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 16px 28px;
   border-radius: 999px;
   font-family: var(--via-font);
@@ -159,7 +159,7 @@
   background: var(--via-navy-06);
 }
 
-.glass-stack { display: flex; flex-direction: column; gap: 20px; padding-top: 40px; }
+.glass-stack { display: flex; flex-direction: column; gap: var(--via-space-5); padding-top: 40px; }
 .glass-stack .g-card {
   padding: 22px 26px;
   background: var(--via-glass-card);
@@ -227,7 +227,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: var(--via-space-4_5);
   padding: 32px;
   border-radius: 32px;
   background:
@@ -297,7 +297,7 @@
 .mk-cases {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .mk-case {
   position: relative;
@@ -313,7 +313,7 @@
     0 2px 8px var(--via-navy-04);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--via-space-4);
   overflow: hidden;
   transition: var(--via-t);
 }
@@ -371,7 +371,7 @@
   border-top: 0.5px solid var(--via-navy-08);
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .mk-case .v {
   font-family: var(--via-font-display);
@@ -391,7 +391,7 @@
 .mk-case .link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: var(--via-fw-bold);
@@ -439,7 +439,7 @@
 .mk-cta .btn.light {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 18px 32px;
   background: var(--via-surface);
   color: var(--via-text-primary);
@@ -477,7 +477,7 @@
 }
 
 @media (max-width: 960px) {
-  .mk-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .mk-hero-inner { grid-template-columns: 1fr; gap: var(--via-space-10); }
   .mk-feat-grid, .mk-cases { grid-template-columns: 1fr; }
   .mk-nav { padding: 14px 24px; }
   .mk-nav nav { display: none; }

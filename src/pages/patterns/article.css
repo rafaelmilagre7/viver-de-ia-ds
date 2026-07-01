@@ -1,7 +1,7 @@
 .vds-article-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 
 .vds-article {
@@ -160,7 +160,7 @@
   padding: 20px 22px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   flex: 1;
 }
 
@@ -191,7 +191,7 @@
 .vds-article footer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding-top: 14px;
   border-top: 1px solid var(--via-border-soft);
   margin-top: auto;

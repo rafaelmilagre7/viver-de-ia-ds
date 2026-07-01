@@ -57,7 +57,7 @@
 .via-dropdown__item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 8px 10px;
   background: none;
   border: none;

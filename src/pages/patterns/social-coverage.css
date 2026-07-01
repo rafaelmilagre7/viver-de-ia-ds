@@ -6,7 +6,7 @@
 .vds-sc-nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 12px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 14px 16px;
   background: transparent;
   border: 0.5px solid transparent;
@@ -29,7 +29,7 @@
 .vds-sc-nav-btn > div {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 .vds-sc-nav-btn strong {
   font-family: var(--via-font);
@@ -84,12 +84,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 .vds-sc-spec dl > div {
   display: grid;
   grid-template-columns: 100px 1fr;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding-bottom: 9px;
   border-bottom: 0.5px solid var(--via-navy-08);
 }
@@ -118,7 +118,7 @@
 .vds-sc-ig-grid {
   display: grid;
   grid-template-columns: 480px 1fr;
-  gap: 24px;
+  gap: var(--via-space-6);
   align-items: start;
 }
 @media (max-width: 880px) { .vds-sc-ig-grid { grid-template-columns: 1fr; } }
@@ -134,7 +134,7 @@
 .vds-sc-ig-hdr {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 10px 14px;
 }
 .vds-sc-ig-avatar {
@@ -239,7 +239,7 @@
 }
 .vds-sc-ig-actions-l {
   display: flex;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 .vds-sc-ig-actions button {
   background: transparent;
@@ -298,7 +298,7 @@
   right: 16px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   z-index: 3;
   color: var(--via-white);
 }
@@ -438,7 +438,7 @@
 /* ---------- IG highlight ---------- */
 .vds-sc-highlight-grid {
   display: flex;
-  gap: 24px;
+  gap: var(--via-space-6);
   flex-wrap: wrap;
   padding: 32px;
   background: var(--via-gray-50);
@@ -449,7 +449,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-sc-highlight-circle {
   width: 96px;
@@ -487,7 +487,7 @@
 }
 .vds-sc-li-hdr {
   display: flex;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 14px 16px;
 }
 .vds-sc-li-avatar {
@@ -611,7 +611,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: var(--via-space-6);
 }
 .vds-sc-li-canvas-light img.word {
   width: 180px;
@@ -620,13 +620,13 @@
 .vds-sc-li-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: var(--via-space-4_5);
   width: 100%;
 }
 .vds-sc-li-stats-grid > div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
   text-align: center;
 }
 .vds-sc-li-stats-grid strong {
@@ -648,7 +648,7 @@
 .vds-sc-li-actions-stats {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 8px 16px;
   font-size: 12px;
   color: var(--via-ink-3);
@@ -677,7 +677,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 13px;
   font-weight: var(--via-fw-medium);
@@ -691,7 +691,7 @@
 .vds-sc-carousel {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .vds-sc-carousel-card {
   position: relative;
@@ -799,7 +799,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-sc-li-banner img.word {
   width: 180px;
@@ -817,7 +817,7 @@
 .vds-sc-yt-grid {
   display: grid;
   grid-template-columns: 1fr 360px;
-  gap: 24px;
+  gap: var(--via-space-6);
   align-items: start;
 }
 @media (max-width: 880px) { .vds-sc-yt-grid { grid-template-columns: 1fr; } }
@@ -973,7 +973,7 @@
 .vds-sc-yt-end-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 .vds-sc-yt-end-grid article {
   background: rgba(255, 255, 255, 0.06);
@@ -982,7 +982,7 @@
   padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 .vds-sc-yt-end-grid article.cta {
   background: var(--via-coral);
@@ -1020,7 +1020,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 .vds-sc-x-header img {
   width: 200px;
@@ -1042,7 +1042,7 @@
 .vds-sc-x-post header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   margin-bottom: 8px;
 }
 .vds-sc-x-avatar {
@@ -1135,7 +1135,7 @@
 
 .vds-sc-x-post footer {
   display: flex;
-  gap: 22px;
+  gap: var(--via-space-5_5);
   padding-top: 6px;
   color: var(--via-ink-3);
   font-family: var(--via-font);
@@ -1213,7 +1213,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   z-index: 2;
 }
 .vds-sc-tiktok-avatar {
@@ -1286,7 +1286,7 @@
 /* TikTok overlay variations */
 .vds-sc-tiktok-overlay-row {
   display: flex;
-  gap: 16px;
+  gap: var(--via-space-4);
   flex-wrap: wrap;
 }
 .vds-sc-tiktok-overlay-demo {
@@ -1321,7 +1321,7 @@
 .vds-sc-podcast-grid {
   display: grid;
   grid-template-columns: 360px 1fr;
-  gap: 24px;
+  gap: var(--via-space-6);
   align-items: start;
 }
 @media (max-width: 880px) { .vds-sc-podcast-grid { grid-template-columns: 1fr; } }
@@ -1390,7 +1390,7 @@
 .vds-sc-podcast-ep-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: var(--via-fw-medium);
@@ -1415,7 +1415,7 @@
 .vds-sc-podcast-ep-guest {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   margin: 22px 0;
 }
 .vds-sc-podcast-ep-guest .av {

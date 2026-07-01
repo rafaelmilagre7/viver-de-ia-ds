@@ -14,7 +14,7 @@
 .vds-home-hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 8px 14px;
   background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
   backdrop-filter: blur(16px) saturate(160%);
@@ -63,14 +63,14 @@
   position: relative;
   z-index: 2;
   display: flex;
-  gap: 12px;
+  gap: var(--via-space-3);
   flex-wrap: wrap;
   margin-bottom: 64px;
 }
 .vds-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 14px 22px;
   border: none;
   border-radius: 999px;
@@ -129,7 +129,7 @@
 .vds-home-hero-stat {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .vds-home-hero-stat .num {
   font-family: var(--via-font-display);
@@ -166,7 +166,7 @@
   }
   .vds-home-hero-pill { margin-bottom: 22px; }
   .vds-home-hero-actions {
-    gap: 8px;
+    gap: var(--via-space-2);
     margin-bottom: 40px;
     flex-direction: column;
     align-items: stretch;
@@ -177,7 +177,7 @@
   }
   .vds-home-hero-stats {
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: var(--via-space-4_5);
   }
   .vds-home-hero-stat .num { font-size: 40px; }
 
@@ -185,7 +185,7 @@
   .vds-home-grid {
     grid-template-columns: 1fr;
     padding: 16px;
-    gap: 10px;
+    gap: var(--via-space-2_5);
     border-radius: 24px;
   }
   .vds-home-card {
@@ -200,7 +200,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
   margin-bottom: 80px;
   padding: 32px;
   border-radius: 32px;
@@ -214,7 +214,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 28px 28px 72px;
   background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
@@ -322,10 +322,10 @@
 .vds-home-stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: var(--via-space-4);
   position: relative;
 }
-.vds-home-stat { display: flex; flex-direction: column; gap: 6px; }
+.vds-home-stat { display: flex; flex-direction: column; gap: var(--via-space-1_5); }
 .vds-home-stat-num {
   font-family: var(--via-font-display);
   font-weight: var(--via-fw-medium);
@@ -352,7 +352,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 32px;
   border-radius: 32px;
   background:
@@ -378,7 +378,7 @@
 .vds-brand-tile {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   transition: var(--via-t);
 }
 .vds-brand-tile:hover { transform: translateY(-2px); }
@@ -430,7 +430,7 @@
 .vds-brand-tile-meta {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   padding: 0 2px;
 }
 .vds-brand-tile-name {
@@ -472,7 +472,7 @@
 .vds-spacing-row {
   display: grid;
   grid-template-columns: 100px 60px 1fr;
-  gap: 24px;
+  gap: var(--via-space-6);
   align-items: center;
   padding: 10px 0;
   border-bottom: 0.5px solid var(--via-navy-10);
@@ -503,7 +503,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 32px;
   border-radius: 32px;
   background:
@@ -558,7 +558,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 32px;
+  gap: var(--via-space-8);
   padding: 56px 40px;
   border-radius: 32px;
   background:
@@ -602,7 +602,7 @@
 .vds-motion-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .vds-motion-card {
   position: relative;
@@ -619,7 +619,7 @@
     0 2px 6px var(--via-navy-04);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   overflow: hidden;
 }
 .vds-motion-card::before {
@@ -665,7 +665,7 @@
 .vds-type-row {
   display: grid;
   grid-template-columns: 140px 1fr 160px;
-  gap: 24px;
+  gap: var(--via-space-6);
   align-items: baseline;
   padding: 26px 0;
   border-bottom: 1px solid var(--via-border-soft);
@@ -721,7 +721,7 @@
 .vds-icon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-top: 16px;
 }
 .vds-icon-cell {
@@ -730,7 +730,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   border: 0.5px solid var(--via-navy-08);
   border-radius: var(--via-radius-md);
   color: var(--via-text-primary);

@@ -4,13 +4,13 @@
 .vds-lib-grid {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 
 .vds-lib-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: center;
   padding: 18px 22px;
   border-radius: 14px;
@@ -25,7 +25,7 @@
 .vds-lib-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-lib-card-grid .via-card strong {
@@ -56,7 +56,7 @@
 .vds-lib-form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
+  gap: var(--via-space-4_5);
   padding: 22px 24px;
   border-radius: 14px;
   background: var(--via-navy-02);
@@ -84,7 +84,7 @@
 @media (max-width: 720px) {
   .vds-lib-row {
     padding: 14px 16px;
-    gap: 10px;
+    gap: var(--via-space-2_5);
   }
   .vds-lib-code {
     padding: 14px 16px;

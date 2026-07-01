@@ -42,7 +42,7 @@
   padding: 32px 28px 28px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -107,7 +107,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-pricing-tier__name {
   font-family: var(--via-font-display);
@@ -150,7 +150,7 @@
 .vds-pricing-tier__price {
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   margin-top: 4px;
 }
 .vds-pricing-tier__amount {
@@ -331,7 +331,7 @@
 .vds-pricing-principles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 .vds-pricing-principle {
   position: relative;

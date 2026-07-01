@@ -7,7 +7,7 @@
   padding: 56px 32px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   animation: vds-loader-fade-in .18s ease-out;
 }
 

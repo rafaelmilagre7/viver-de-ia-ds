@@ -1,7 +1,7 @@
 .vds-feat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 .vds-feat {
   padding: 24px;
@@ -10,7 +10,7 @@
   border-radius: 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
   transition: var(--via-t);
 }
 .vds-feat:hover { border-color: var(--via-navy-40); box-shadow: var(--via-shadow-md); transform: translateY(-1px); }

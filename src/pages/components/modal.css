@@ -83,7 +83,7 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 14px;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .via-modal h3 {
@@ -127,7 +127,7 @@
 
 .via-modal footer {
   display: flex;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   justify-content: flex-end;
 }
 

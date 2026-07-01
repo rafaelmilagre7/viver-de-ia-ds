@@ -4,7 +4,7 @@
 .via-cp {
   display: inline-flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding: 18px 20px;
   border-radius: 16px;
   background: var(--via-glass-card);
@@ -29,7 +29,7 @@
 .via-cp__preview {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 12px;
   border-radius: 11px;
   background: var(--via-bg-2, var(--via-gray-50));
@@ -54,7 +54,7 @@
 .via-cp__info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   min-width: 0;
 }
 
@@ -71,7 +71,7 @@
   margin: 0;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font-mono, monospace);
   font-size: 11px;
   color: var(--via-ink-2, #5E6B82);
@@ -88,7 +88,7 @@
 .via-cp__grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .via-cp__cell {
@@ -122,7 +122,7 @@
 .via-cp__custom {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
   font-size: 11px;
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.04em;

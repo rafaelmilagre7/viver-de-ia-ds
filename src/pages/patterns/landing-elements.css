@@ -6,7 +6,7 @@
 .vds-le-heros {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 .vds-le-hero-card {
   background: var(--via-surface);
@@ -20,7 +20,7 @@
   border-bottom: 0.5px solid var(--via-navy-08);
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 .vds-le-hero-name {
   font-family: var(--via-font);
@@ -77,13 +77,13 @@
 }
 .vds-le-hero-actions {
   display: flex;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   flex-wrap: wrap;
 }
 .vds-le-hero-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 11px 22px;
   background: var(--via-surface);
   color: var(--via-text-primary);
@@ -125,13 +125,13 @@
 .vds-le-ctas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
   margin-bottom: 22px;
 }
 .vds-le-cta-card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 18px 20px;
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
@@ -145,7 +145,7 @@
 .vds-le-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 9px 16px;
   border-radius: 999px;
   font-family: var(--via-font);
@@ -224,7 +224,7 @@
 .vds-le-trust-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 .vds-le-trust-grid article {
   padding: 22px 24px;
@@ -249,12 +249,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 .vds-le-trust-numbers li {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding-bottom: 10px;
   border-bottom: 0.5px solid var(--via-navy-08);
 }
@@ -284,7 +284,7 @@
 .vds-le-trust-quote footer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding-top: 14px;
   border-top: 0.5px solid var(--via-navy-08);
 }
@@ -316,7 +316,7 @@
 .vds-le-trust-cases li {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   padding-bottom: 10px;
   border-bottom: 0.5px solid var(--via-navy-08);
 }
@@ -337,7 +337,7 @@
 .vds-le-faq {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-le-faq-item {
   background: var(--via-surface);
@@ -359,7 +359,7 @@
   list-style: none;
 }
 .vds-le-faq-item summary::-webkit-details-marker { display: none; }
-.vds-le-faq-item summary > div { display: flex; flex-direction: column; gap: 4px; }
+.vds-le-faq-item summary > div { display: flex; flex-direction: column; gap: var(--via-space-1); }
 .vds-le-faq-cat {
   font-family: var(--via-font);
   font-size: 10px;
@@ -393,7 +393,7 @@
 .vds-le-lead-magnet {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 32px;
+  gap: var(--via-space-8);
   padding: 40px 44px;
   border-radius: 18px;
   color: var(--via-white);
@@ -405,7 +405,7 @@
 .vds-le-lead-magnet-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: var(--via-fw-medium);
@@ -441,12 +441,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-le-lead-magnet-l li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   font-family: var(--via-font);
   font-size: 13px;
   color: rgba(255, 255, 255, 0.78);
@@ -456,7 +456,7 @@
 .vds-le-lead-magnet-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 24px;
   background: rgba(255, 255, 255, 0.08);
   border: 0.5px solid rgba(255, 255, 255, 0.18);
@@ -474,7 +474,7 @@
 .vds-le-lead-magnet-input {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 11px 14px;
   background: var(--via-surface);
   border-radius: 8px;
@@ -496,7 +496,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 12px 18px;
   background: var(--via-surface);
   color: var(--via-text-primary);
@@ -531,7 +531,7 @@
 .vds-le-countdown-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: 11px;
   font-weight: var(--via-fw-medium);
@@ -544,14 +544,14 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-bottom: 24px;
 }
 .vds-le-countdown-grid > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .vds-le-countdown-grid strong {
   font-family: var(--via-mono);
@@ -587,7 +587,7 @@
 .vds-le-countdown-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 11px 22px;
   background: var(--via-surface);
   color: var(--via-text-primary);
@@ -639,7 +639,7 @@
   border-right: 0.5px solid var(--via-navy-08);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 .vds-le-compare .cell:last-child { border-right: none; }
 .vds-le-compare .cell.feature {
@@ -662,7 +662,7 @@
   background: transparent;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .vds-le-compare header .cell.empty { background: var(--via-gray-50); }
 .vds-le-compare header strong {

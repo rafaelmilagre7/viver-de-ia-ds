@@ -66,7 +66,7 @@
   padding: 32px 32px 26px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: var(--via-space-5_5);
 }
 
 .vds-loc-eyebrow {
@@ -106,7 +106,7 @@
 .vds-loc-dates {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 16px;
   border-radius: 14px;
   background: var(--via-navy-03);
@@ -135,7 +135,7 @@
 .vds-loc-dates article > div {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   min-width: 0;
 }
 
@@ -172,7 +172,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-loc-access li {
@@ -230,7 +230,7 @@
 /* Actions */
 .vds-loc-actions {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
   flex-wrap: wrap;
 }
 
@@ -275,7 +275,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   margin-top: auto;
   padding-top: 18px;
   border-top: 1px solid var(--via-border-soft);
@@ -283,7 +283,7 @@
 
 .vds-loc-contact > div {
   display: flex;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   flex-wrap: wrap;
 }
 
@@ -316,7 +316,7 @@
 .vds-loc-compact-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 @media (max-width: 760px) {
@@ -375,7 +375,7 @@
   padding: 18px 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 
 .vds-loc-compact-body.dark {

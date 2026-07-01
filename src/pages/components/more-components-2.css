@@ -20,7 +20,7 @@
 .vds-cookie {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   align-items: center;
   width: 100%;
   max-width: 720px;
@@ -66,7 +66,7 @@
   cursor: pointer;
   margin-left: 4px;
 }
-.vds-cookie-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.vds-cookie-actions { display: flex; gap: var(--via-space-2); flex-shrink: 0; }
 .vds-cookie-actions button {
   padding: 11px 20px;
   border-radius: 999px;
@@ -125,7 +125,7 @@
   color: var(--via-white);
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 48px;
+  gap: var(--via-space-12);
   align-items: center;
   overflow: hidden;
 }
@@ -165,11 +165,11 @@
   margin: 0;
   max-width: 360px;
 }
-.vds-news-form { display: flex; flex-direction: column; gap: 12px; }
+.vds-news-form { display: flex; flex-direction: column; gap: var(--via-space-3); }
 .vds-news-input {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 6px 6px 6px 18px;
   background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
   backdrop-filter: blur(16px) saturate(160%);
@@ -192,7 +192,7 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 12px 20px;
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
@@ -246,11 +246,11 @@
   color: var(--via-text-primary);
   margin: 0;
 }
-.vds-comments ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 24px; }
+.vds-comments ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--via-space-6); }
 .vds-comments li {
   display: grid;
   grid-template-columns: 40px 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   align-items: flex-start;
 }
 .vds-comments li.indent { padding-left: 54px; }
@@ -271,7 +271,7 @@
 .vds-comments .body header {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   margin-bottom: 4px;
 }
 .vds-comments .body strong {
@@ -293,7 +293,7 @@
   color: var(--via-text-body);
   margin: 0 0 10px;
 }
-.vds-comments .body footer { display: flex; gap: 4px; align-items: center; }
+.vds-comments .body footer { display: flex; gap: var(--via-space-1); align-items: center; }
 .vds-comments .act {
   display: inline-flex;
   align-items: center;
@@ -316,7 +316,7 @@
 .vds-comments-input {
   display: grid;
   grid-template-columns: 32px 1fr auto;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   align-items: center;
   margin-top: 24px;
   padding: 12px 14px;
@@ -361,11 +361,11 @@
 }
 
 /* ---- File card ---- */
-.vds-files { display: flex; flex-direction: column; gap: 10px; }
+.vds-files { display: flex; flex-direction: column; gap: var(--via-space-2_5); }
 .vds-file {
   display: grid;
   grid-template-columns: 56px 1fr auto;
-  gap: 16px;
+  gap: var(--via-space-4);
   align-items: center;
   padding: 16px 18px;
   background: var(--via-surface);
@@ -385,7 +385,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   color: var(--via-text-primary);
   overflow: hidden;
 }
@@ -492,7 +492,7 @@
 .vds-cal-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  gap: var(--via-space-1);
   padding: 4px 0 6px;
 }
 .vds-cal-days .dow {
@@ -507,7 +507,7 @@
 .vds-cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 .vds-cal-cell {
   position: relative;
@@ -552,7 +552,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 .vds-cal > footer span {
   font-family: var(--via-font);
@@ -563,7 +563,7 @@
 .vds-cal > footer .cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 9px 14px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);

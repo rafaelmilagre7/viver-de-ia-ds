@@ -1,7 +1,7 @@
 .vds-testi-stack {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 
 .vds-testi {
@@ -15,7 +15,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--via-space-6);
   isolation: isolate;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
@@ -79,7 +79,7 @@
 .vds-testi .attrib {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   padding-top: 22px;
   border-top: 1px solid var(--via-border-soft);
 }

@@ -4,7 +4,7 @@
 .via-progress {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   width: 100%;
 }
@@ -13,7 +13,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .via-progress__label {

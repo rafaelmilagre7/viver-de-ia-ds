@@ -27,7 +27,7 @@
 /* ===== Code switcher · pill row glass ====================== */
 .vds-err-switcher {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
   flex-wrap: wrap;
   margin-bottom: 28px;
   padding: 8px;
@@ -133,7 +133,7 @@
 .vds-err-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 5px 12px 5px 10px;
   background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(160%);
@@ -210,7 +210,7 @@
 
 .vds-err-actions {
   display: flex;
-  gap: 12px;
+  gap: var(--via-space-3);
   flex-wrap: wrap;
 }
 
@@ -218,7 +218,7 @@
   margin: 32px 0 0;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 6px 10px;
   background: linear-gradient(180deg, rgba(247,248,250,0.7), rgba(240,242,245,0.5));
   border: 1px solid var(--via-navy-06);
@@ -235,7 +235,7 @@
 .vds-err-guides {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 .vds-err-guide {
   position: relative;
@@ -294,13 +294,13 @@
 .vds-err-guide__lines {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-size: 12px;
   line-height: 1.6;
 }
 .vds-err-guide__line {
   display: flex;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   align-items: flex-start;
 }
 .vds-err-guide__lbl {

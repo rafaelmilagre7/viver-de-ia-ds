@@ -44,7 +44,7 @@
 .via-cm__item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   width: 100%;
   padding: 7px 10px;
   background: transparent;

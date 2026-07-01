@@ -54,7 +54,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--via-space-6);
   margin-bottom: 28px;
 }
 .vds-section-title {
@@ -78,7 +78,7 @@
   .vds-section-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: var(--via-space-2);
     margin-bottom: 22px;
   }
   .vds-section-title {
@@ -114,7 +114,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 32px;
   border-radius: 28px;
   background:
@@ -140,7 +140,7 @@
 .vds-swatch {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 0;
   transition: var(--via-t);
 }
@@ -165,7 +165,7 @@
 .vds-swatch-meta {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   padding: 0 2px;
 }
 .vds-swatch-name {
@@ -260,7 +260,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: var(--via-space-6);
   flex-wrap: wrap;
 }
 .vds-stage.dark {
@@ -278,14 +278,14 @@
 .vds-callout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: var(--via-space-8);
   align-items: center;
   padding: 28px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
 }
-.vds-callout-info { display: flex; flex-direction: column; gap: 12px; }
+.vds-callout-info { display: flex; flex-direction: column; gap: var(--via-space-3); }
 .vds-callout-info h4 {
   font-family: var(--via-font);
   font-size: 14px;
@@ -309,7 +309,7 @@
 .vds-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 4px 10px;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
@@ -326,7 +326,7 @@
 .vds-do-dont {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   margin-top: 16px;
 }
 .vds-do, .vds-dont {

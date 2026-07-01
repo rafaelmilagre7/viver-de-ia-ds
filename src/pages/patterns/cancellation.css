@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
+  gap: var(--via-space-5_5);
   padding: 18px 28px;
   border-bottom: 1px solid var(--via-border-soft);
   background: linear-gradient(180deg, var(--via-navy-02), transparent);
@@ -72,13 +72,13 @@
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-cnx-steps li {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-family: var(--via-mono);
   font-size: 11px;
   color: var(--via-ink-3);
@@ -187,13 +187,13 @@
   margin: 0 0 28px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-cnx-reason label {
   display: grid;
   grid-template-columns: 22px 1fr;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   align-items: start;
   padding: 14px 18px;
   border-radius: 14px;
@@ -384,13 +384,13 @@
   margin: 0 0 22px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-cnx-offer-meta li {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-size: 12px;
   color: rgba(255, 255, 255, 0.86);
   letter-spacing: -0.006em;
@@ -402,7 +402,7 @@
 }.vds-cnx-offer-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 12px 22px;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
@@ -427,14 +427,14 @@
 .vds-cnx-alts {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-bottom: 28px;
 }
 
 .vds-cnx-alt {
   display: grid;
   grid-template-columns: 36px 1fr auto;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   align-items: center;
   padding: 16px 18px;
   border-radius: 14px;
@@ -546,7 +546,7 @@
 .vds-cnx-final {
   display: grid;
   grid-template-columns: 48px 1fr;
-  gap: 18px;
+  gap: var(--via-space-4_5);
   align-items: start;
   padding: 22px 24px;
   border-radius: 16px;
@@ -589,7 +589,7 @@
 .vds-cnx-actions {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   padding-top: 20px;
   border-top: 1px solid var(--via-border-soft);
 }

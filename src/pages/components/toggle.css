@@ -1,8 +1,8 @@
-.via-switch-stack { display: flex; flex-direction: column; gap: 18px; max-width: 420px; }
+.via-switch-stack { display: flex; flex-direction: column; gap: var(--via-space-4_5); max-width: 420px; }
 .via-switch-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   font-family: var(--via-font);
   font-size: 14px;
   color: var(--via-text-body);

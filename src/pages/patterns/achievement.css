@@ -9,7 +9,7 @@
   border-radius: 28px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 56px;
+  gap: var(--via-space-14);
   align-items: center;
   background-color: var(--via-navy);
   color: var(--via-white);
@@ -21,7 +21,7 @@
 @media (max-width: 920px) {
   .vds-rings-stage {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: var(--via-space-8);
     padding: 36px 28px;
   }
 }
@@ -75,13 +75,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-rings-legend li {
   display: grid;
   grid-template-columns: 16px 1fr auto;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   align-items: center;
   padding: 14px 18px;
   border-radius: 12px;
@@ -155,7 +155,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: var(--via-space-1);
   text-align: center;
 }
 
@@ -199,7 +199,7 @@
 .vds-streak-card {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 
 @media (max-width: 920px) {
@@ -239,7 +239,7 @@
 .vds-streak-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 11px;
   font-weight: var(--via-fw-semibold);
@@ -289,7 +289,7 @@
 .vds-streak-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
+  gap: var(--via-space-1_5);
   margin-bottom: 10px;
 }
 
@@ -328,7 +328,7 @@
 .vds-streak-side {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .vds-streak-milestone {
@@ -392,7 +392,7 @@
 .vds-cert {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 .vds-cert-paper {
@@ -452,14 +452,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--via-space-6);
   margin-bottom: 32px;
 }
 
 .vds-cert-brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 
 .vds-cert-mono {
@@ -493,7 +493,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 
 .vds-cert-issued em {
@@ -683,7 +683,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: var(--via-space-8);
   text-align: left;
   margin-top: 32px;
 }
@@ -806,7 +806,7 @@
 .vds-cert-id {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   font-family: var(--via-font-mono);
   font-size: 11px;
   font-weight: var(--via-fw-medium);
@@ -832,7 +832,7 @@
 .vds-cert-verify {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 12px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -842,7 +842,7 @@
 }
 
 .vds-cert-verify:hover {
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-cert-verify svg {
@@ -855,7 +855,7 @@
 .vds-cohort {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 18px;
+  gap: var(--via-space-4_5);
 }
 
 @media (max-width: 920px) {
@@ -891,7 +891,7 @@
 .vds-cohort-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
@@ -1025,7 +1025,7 @@
   color: var(--via-white);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   overflow: hidden;
   isolation: isolate;
   border: 1px solid rgba(10, 31, 59, 0.11);
@@ -1048,7 +1048,7 @@
 .vds-cohort-when {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin: 0 0 18px;
   padding: 7px 14px;
   border-radius: 999px;
@@ -1069,13 +1069,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-cohort-stack li {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .vds-cohort-stack .av {
@@ -1122,7 +1122,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-top: auto;
   padding: 13px 20px;
   border-radius: 999px;

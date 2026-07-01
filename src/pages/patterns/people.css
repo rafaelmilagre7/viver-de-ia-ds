@@ -56,7 +56,7 @@
 .vds-mentor-body {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 36px;
+  gap: var(--via-space-9);
   padding: 36px;
   align-items: start;
 }
@@ -64,7 +64,7 @@
 @media (max-width: 920px) {
   .vds-mentor-body {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--via-space-6);
   }
 }
 
@@ -116,13 +116,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-mentor-meta li {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   font-size: 12px;
   color: var(--via-text-soft);
 }
@@ -133,7 +133,7 @@
 
 .vds-mentor-socials {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-mentor-socials a {
@@ -157,7 +157,7 @@
 .vds-mentor-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: var(--via-space-3);
   padding: 18px;
   border-radius: 14px;
   background: var(--via-navy-04);
@@ -168,7 +168,7 @@
 .vds-mentor-stats > div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 
 .vds-mentor-stats strong {
@@ -191,7 +191,7 @@
 .vds-mentor-actions {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-bottom: 20px;
 }
 
@@ -199,7 +199,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 14px 18px;
   border-radius: 12px;
   font-size: 13px;
@@ -284,7 +284,7 @@
 .vds-team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 
 @media (max-width: 920px) {
@@ -309,7 +309,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   overflow: hidden;
   transition: all 220ms ease;
   isolation: isolate;
@@ -371,7 +371,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 22px;
-  gap: 12px;
+  gap: var(--via-space-3);
 }
 
 .vds-team-avatar-wrap {
@@ -449,7 +449,7 @@
 .vds-team-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--via-space-1);
 }
 
 .vds-team-card h4 {
@@ -473,7 +473,7 @@
 .vds-team-stat {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 12px 14px;
   border-radius: 11px;
   background: var(--via-navy-03);
@@ -505,7 +505,7 @@
 .vds-team-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding-top: 14px;
   border-top: 1px solid var(--via-border-soft);
   margin-top: auto;
@@ -579,7 +579,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--via-space-4);
   flex-wrap: wrap;
   margin-bottom: 22px;
 }
@@ -601,13 +601,13 @@
 
 .vds-member-actions {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
 }
 
 .vds-member-search {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 8px 12px;
   border-radius: 10px;
   background: var(--via-surface);
@@ -628,7 +628,7 @@
 .vds-member-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 8px 14px;
   border-radius: 10px;
   background: var(--via-navy-06);
@@ -643,7 +643,7 @@
 .vds-member-thead {
   display: grid;
   grid-template-columns: 2.4fr 1fr 1fr 1fr;
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 12px 12px;
   border-bottom: 1px solid var(--via-border-soft);
   font-size: 10px;
@@ -667,7 +667,7 @@
 .vds-member-list li {
   display: grid;
   grid-template-columns: 2.4fr 1fr 1fr 1fr;
-  gap: 16px;
+  gap: var(--via-space-4);
   padding: 14px 24px;
   border-bottom: 1px solid var(--via-border-soft);
   align-items: center;
@@ -703,7 +703,7 @@
 .vds-member-user {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 /* Avatar with presence ring — não dot bobo */
@@ -842,7 +842,7 @@
 .vds-member-streak {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 5px 10px 5px 8px;
   border-radius: 999px;
   background: var(--via-navy-08);
@@ -872,7 +872,7 @@
 .vds-userpop-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: var(--via-space-3_5);
 }
 
 @media (max-width: 920px) {
@@ -898,7 +898,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--via-space-3);
   margin-bottom: 14px;
 }
 
@@ -967,7 +967,7 @@
 .vds-userpop-stats {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   flex-wrap: wrap;
   padding: 10px 12px;
   border-radius: 9px;
@@ -990,7 +990,7 @@
 
 .vds-userpop-actions {
   display: flex;
-  gap: 6px;
+  gap: var(--via-space-1_5);
 }
 
 .vds-userpop-btn {

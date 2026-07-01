@@ -6,7 +6,7 @@
 .vds-auth-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: var(--via-space-4);
 }
 
 @media (max-width: 820px) {
@@ -128,7 +128,7 @@
 .vds-auth-field {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   padding: 12px 14px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
@@ -190,7 +190,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--via-space-2);
   padding: 13px 18px;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
@@ -330,14 +330,14 @@
 
 .vds-auth-meta {
   display: flex;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-bottom: 16px;
 }
 
 .vds-auth-meta-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 5px 11px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
@@ -361,7 +361,7 @@
 .vds-auth-card-2fa {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 36px;
+  gap: var(--via-space-9);
   align-items: center;
   padding: 36px 32px;
 }
@@ -369,7 +369,7 @@
 @media (max-width: 820px) {
   .vds-auth-card-2fa {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--via-space-6);
   }
 }.vds-auth-2fa-icon {
   width: 48px;
@@ -403,7 +403,7 @@
 .vds-auth-2fa-actions {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   margin-top: 6px;
 }
 
@@ -423,12 +423,12 @@
 /* 2FA inputs */
 .vds-auth-2fa-inputs {
   display: flex;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   margin-bottom: 18px;
 }
 
 @media (max-width: 540px) {
-  .vds-auth-2fa-inputs { gap: 6px; }
+  .vds-auth-2fa-inputs { gap: var(--via-space-1_5); }
 }
 
 .vds-auth-2fa-inputs input {
@@ -468,7 +468,7 @@
 .vds-auth-2fa-timer {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   font-family: var(--via-mono);
   font-size: 11px;
   color: rgba(255, 255, 255, 0.5);
@@ -484,7 +484,7 @@
 .vds-auth-2fa-trust {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--via-space-2_5);
   cursor: pointer;
   padding: 8px 0;
 }
@@ -536,14 +536,14 @@
 .vds-auth-social {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--via-space-2);
   margin-bottom: 18px;
 }
 
 .vds-auth-social-btn {
   display: grid;
   grid-template-columns: 32px 1fr auto;
-  gap: 12px;
+  gap: var(--via-space-3);
   align-items: center;
   padding: 12px 16px;
   border-radius: 11px;
@@ -611,7 +611,7 @@
 .vds-auth-sep {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--via-space-3);
   margin: 14px 0 14px;
   color: var(--via-ink-3);
   font-family: var(--via-mono);
