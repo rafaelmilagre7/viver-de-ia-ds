@@ -152,7 +152,7 @@
 .vds-receipt-eyebrow {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   margin: 0 0 8px;

@@ -61,7 +61,7 @@
 .vds-kpi-tile .lbl {
   font-family: var(--via-font);
   font-size: var(--via-fs-micro); font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em; text-transform: uppercase;
+  letter-spacing: var(--via-ls-mark); text-transform: uppercase;
   color: var(--via-text-muted);
 }
 .vds-kpi-tile .num-row { display: flex; align-items: baseline; gap: var(--via-space-3); flex-wrap: wrap; }

@@ -33,7 +33,7 @@
   display: inline-flex;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 18px;
@@ -338,7 +338,7 @@
   margin: 0 0 8px;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
 }

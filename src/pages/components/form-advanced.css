@@ -221,7 +221,7 @@
   text-align: center;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   padding: 6px 0;

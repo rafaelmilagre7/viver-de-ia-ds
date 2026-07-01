@@ -34,7 +34,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-soft);
 }

@@ -543,7 +543,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-muted);
 }
@@ -593,7 +593,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--via-ls-wide);
   transition: var(--via-t);
 }
 .vds-shadow-card:hover { transform: translateY(-2px); }

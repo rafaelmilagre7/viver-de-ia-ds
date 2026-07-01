@@ -780,7 +780,7 @@
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   padding: 3px 8px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.1);
@@ -1147,7 +1147,7 @@
   align-items: center;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-soft);
   width: fit-content;

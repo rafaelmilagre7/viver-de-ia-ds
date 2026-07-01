@@ -84,7 +84,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
   margin: 0 0 16px;
@@ -278,7 +278,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
   margin-bottom: 10px;
@@ -324,7 +324,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
 }
@@ -401,7 +401,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
   text-align: left;
@@ -448,7 +448,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
   margin-bottom: 14px;

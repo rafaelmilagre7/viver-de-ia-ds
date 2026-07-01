@@ -82,7 +82,7 @@
   gap: var(--via-space-1_5);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
   margin-bottom: 14px;
@@ -297,7 +297,7 @@
   display: block;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   margin-bottom: 4px;
@@ -614,7 +614,7 @@
 .vds-notes-eyebrow {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   margin: 26px 0 12px;
@@ -920,7 +920,7 @@
   display: inline-flex;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
 }

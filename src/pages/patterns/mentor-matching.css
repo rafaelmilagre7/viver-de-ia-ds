@@ -150,7 +150,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   fill: rgba(255, 255, 255, 0.48);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
 }
 
@@ -254,7 +254,7 @@
   display: inline-flex;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-gray-300);
   margin-bottom: 14px;

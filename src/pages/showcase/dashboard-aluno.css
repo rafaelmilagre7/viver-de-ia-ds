@@ -374,7 +374,7 @@
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 8px;
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--via-ls-wide);
   text-transform: uppercase;
   color: var(--via-text-muted);
 }

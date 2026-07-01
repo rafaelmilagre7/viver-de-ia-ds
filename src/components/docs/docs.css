@@ -7,7 +7,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin: 0;
@@ -201,7 +201,7 @@
 .vds-token-table th {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-muted);
   padding-bottom: 12px;
@@ -343,7 +343,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   margin: 0 0 10px;
 }

@@ -75,7 +75,7 @@
   transform: translateX(-50%);
   font-size: 8px;
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   color: var(--via-text-soft);
 }
 
@@ -90,7 +90,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   display: flex;

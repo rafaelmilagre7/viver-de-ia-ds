@@ -107,7 +107,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-muted);
   padding: 16px 14px 6px;
@@ -132,7 +132,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-muted);
   background: var(--via-gray-100);
@@ -196,5 +196,5 @@
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-micro);
   color: var(--via-text-muted);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--via-ls-wide);
 }

@@ -177,7 +177,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.22em;
+  letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-muted);
 }
@@ -466,7 +466,7 @@
 .mk-footer .wm {
   font-family: var(--via-font);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.32em;
+  letter-spacing: var(--via-ls-brand);
   color: var(--via-text-primary);
   font-size: var(--via-fs-label);
 }

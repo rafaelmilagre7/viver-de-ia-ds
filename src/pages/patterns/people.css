@@ -648,7 +648,7 @@
   border-bottom: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   background: var(--via-navy-03);

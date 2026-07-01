@@ -48,7 +48,7 @@
   font-family: var(--via-mono, 'Geist Mono', ui-monospace, monospace);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
   padding: 8px 10px 4px;

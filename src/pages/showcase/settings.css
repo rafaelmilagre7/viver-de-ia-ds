@@ -214,7 +214,7 @@
 .vds-set-card header .vds-eyebrow {
   margin-bottom: 10px;
   font-size: var(--via-fs-micro);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);

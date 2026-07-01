@@ -774,7 +774,7 @@
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 5.4px;
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.32em;
+  letter-spacing: var(--via-ls-brand);
   fill: rgba(255, 255, 255, 0.62);
 }
 

@@ -44,7 +44,7 @@
   gap: var(--via-space-1_5);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--via-ls-wide);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin: 0 0 8px;
@@ -431,7 +431,7 @@
 .vds-funnel-stage .num {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--via-ls-wide);
   padding: 3px 6px;
   border-radius: 5px;
   background: var(--via-navy-06);
