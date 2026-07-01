@@ -4,6 +4,27 @@ Todas as mudanças notáveis no Viver de IA Design System são documentadas aqui
 
 Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.6.1] · 2026-07-01
+
+Passe world-class: auditoria multi-agente (120 agentes · 157 folhas de estilo · verificação adversarial) → 109 achados confirmados, tudo corrigido e verificado. Nenhuma mudança breaking.
+
+### Corrigido
+
+- **Dark mode sistematicamente reparado** (85 dos 109 achados). Causa nº1 (~200 lugares): brilho branco de topo hardcoded (`rgba(255,255,255,0.9x) inset`) virava "moldura branca berrante" no escuro → migrado pro token `--via-edge-hi` (idêntico no light, 0.08 no dark). Causa nº2: navy/claros literais em ícone/ponto/borda/superfície que sumiam ou viravam mancha no dark → tokens adaptáveis (regra: valor light preservado). Verificado no navegador (dashboard/table/states/onboarding/form limpos nos 2 temas).
+- **Contraste**: eyebrow do wizard (navy invisível sobre aside navy → gray-300), calendário `is-out` (2.6:1 → 4.97:1), watermarks e helpers de baixo contraste.
+- **Paleta** (vazamentos fora da marca restrita): roxo `#6A2BC2` no code-block → azul; verde-menta e verde-neon nos checkmarks → `--via-success` sóbrio; vermelho `#FF5F57` (REC) → coral sancionado.
+- **Bordas** 2px opacas → hairline adaptável; **motion**: pulse infinito do Stepper removido.
+- Selo de versão do hero desatualizado (0.5·107 → 0.6·108).
+
+### Adicionado
+
+- **Fundação de tokens** (tudo drop-in · 0 diff em 214 snapshots visuais): escala de espaçamento com half-steps estilo Tailwind (`--via-space-0_5`..`-5_5`, `-7`, `-9`, `-14`); escala de tipo fechada com os 2 tamanhos mais usados que faltavam — `--via-fs-micro` (10px) e `--via-fs-caption` (13px); letter-spacing largo/tight ligado aos tokens canônicos. **169 tokens `--via-*`** no total.
+- **Guard-rail `token-drift`** no CI (`scripts/token-drift.mjs` · `bun run lint:tokens`): barra reintroduzir valor hardcoded que já tem token exato. Já pegou 49 casos na estreia.
+
+### Plugin
+
+- `viver-de-ia` **1.1.0 → 1.2.0**: `colors_and_type.css` empacotado agora é a fonte completa (inclui o bloco de dark mode + tokens novos) — o time recebe o DS atual, não um snapshot.
+
 ## [0.6.0] · 2026-06-02
 
 ### Adicionado
