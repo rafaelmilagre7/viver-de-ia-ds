@@ -42,7 +42,7 @@
     background var(--via-dur) ease,
     transform .18s var(--via-ease-spring);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 2px var(--via-navy-04);
   caret-color: var(--via-navy);
 }
@@ -50,7 +50,7 @@
 .via-otp__cell:hover:not(:disabled) {
   border-color: var(--via-navy-22);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 2px 6px -2px var(--via-navy-10);
 }
 

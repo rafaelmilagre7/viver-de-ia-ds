@@ -8,7 +8,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 18px 40px -22px var(--via-navy-14);
 }
 
@@ -30,7 +30,7 @@
   background: var(--via-surface);
   border: 1px solid var(--via-border);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 8px 18px -10px var(--via-navy-12);
   margin-bottom: 12px;
   transition: border-color .22s ease, box-shadow .22s ease;
@@ -39,7 +39,7 @@
 .vds-sr-search:focus-within {
   border-color: var(--via-navy-30);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 8px 18px -8px var(--via-navy-16),
     0 0 0 3px var(--via-navy-08);
 }

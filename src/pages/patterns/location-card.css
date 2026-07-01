@@ -11,7 +11,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 56px -22px var(--via-navy-18);
   min-height: 520px;
 }
@@ -335,7 +335,7 @@
   isolation: isolate;
   transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 10px 22px -14px var(--via-navy-12);
 }
 
@@ -343,7 +343,7 @@
   transform: translateY(-2px);
   border-color: var(--via-navy-14);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 16px 32px -16px var(--via-navy-18);
 }
 

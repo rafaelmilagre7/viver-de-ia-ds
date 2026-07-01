@@ -23,7 +23,7 @@
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg, 14px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
     0 22px 44px -16px var(--via-navy-22),
     0 8px 18px -10px var(--via-navy-14);

@@ -11,7 +11,7 @@
   backdrop-filter: blur(24px) saturate(140%);
   -webkit-backdrop-filter: blur(24px) saturate(140%);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 48px -22px var(--via-navy-18);
 }
 
@@ -314,7 +314,7 @@
   transition: all 220ms ease;
   isolation: isolate;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 3px var(--via-navy-04);
 }
 
@@ -333,7 +333,7 @@
   border-color: var(--via-navy-18);
   transform: translateY(-3px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 18px 40px -22px var(--via-navy-22);
 }
 
@@ -562,7 +562,7 @@
   overflow: hidden;
   isolation: isolate;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 4px var(--via-navy-04);
 }
 
@@ -890,7 +890,7 @@
   backdrop-filter: blur(24px) saturate(140%);
   -webkit-backdrop-filter: blur(24px) saturate(140%);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 48px -22px var(--via-navy-22);
 }
 

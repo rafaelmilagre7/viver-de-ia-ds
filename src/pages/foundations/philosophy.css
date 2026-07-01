@@ -12,7 +12,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 18px 40px -22px var(--via-navy-14);
 }
 
@@ -424,13 +424,13 @@
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   transition: transform .26s cubic-bezier(.2,.7,.2,1), box-shadow .26s ease;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset;
 }
 
 .vds-phil-sig-demo.lift .card:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 18px 36px -16px var(--via-navy-22);
 }
 

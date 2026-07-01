@@ -393,7 +393,7 @@
   -webkit-backdrop-filter: blur(24px) saturate(140%);
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -24px var(--via-navy-16);
 }
 
@@ -912,7 +912,7 @@
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -24px var(--via-navy-14);
 }
 

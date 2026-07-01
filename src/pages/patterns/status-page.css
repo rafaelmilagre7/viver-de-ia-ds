@@ -16,7 +16,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 56px -22px var(--via-navy-18);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -167,7 +167,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 12px 28px -16px var(--via-navy-12);
 }
 
@@ -386,7 +386,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 12px 28px -16px var(--via-navy-12);
 }
 

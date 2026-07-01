@@ -61,7 +61,7 @@
   border: 1px solid var(--via-border-soft);
   border-radius: 14px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 48px -22px var(--via-navy-22);
   overflow: hidden;
 }
@@ -227,7 +227,7 @@
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 8px 24px -18px var(--via-navy-18);
   overflow: hidden;
   isolation: isolate;
@@ -281,7 +281,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset;
 }
 
 .vds-banner.info .vds-banner-icon { color: var(--via-text-primary); }
@@ -657,7 +657,7 @@
   overflow: hidden;
   isolation: isolate;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 4px var(--via-navy-04);
 }
 
@@ -788,7 +788,7 @@
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 3px var(--via-navy-08);
 }
 
@@ -868,7 +868,7 @@
   justify-content: center;
   border: 1px solid var(--via-border-soft);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 2px 6px var(--via-navy-06);
 }
 

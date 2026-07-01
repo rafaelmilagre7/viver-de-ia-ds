@@ -8,7 +8,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 56px -22px var(--via-navy-18);
 }
 
@@ -260,7 +260,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 8px 20px -12px var(--via-navy-12);
 }
 
@@ -268,7 +268,7 @@
   transform: translateY(-2px);
   border-color: var(--via-navy-14);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 14px 28px -14px var(--via-navy-18);
 }
 

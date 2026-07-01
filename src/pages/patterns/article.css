@@ -16,7 +16,7 @@
   transition: all 280ms var(--via-ease-out);
   cursor: pointer;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 4px var(--via-navy-04);
   position: relative;
   isolation: isolate;
@@ -38,7 +38,7 @@
   border-color: var(--via-navy-20);
   transform: translateY(-3px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 18px 40px -22px var(--via-navy-22);
 }
 

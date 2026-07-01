@@ -8,7 +8,7 @@
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -24px var(--via-navy-18),
     0 1px 4px var(--via-navy-04);
   isolation: isolate;
@@ -482,7 +482,7 @@
   border: 1px solid var(--via-border-soft);
   background: var(--via-surface);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -24px var(--via-navy-18),
     0 1px 4px var(--via-navy-04);
   isolation: isolate;

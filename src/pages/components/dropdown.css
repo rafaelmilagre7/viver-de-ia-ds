@@ -22,7 +22,7 @@
   transition: all 200ms ease;
   min-width: 280px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 4px 10px -4px var(--via-navy-12);
 }
 
@@ -30,7 +30,7 @@
   border-color: var(--via-navy-20);
   transform: translateY(-1px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 6px 14px -4px var(--via-navy-18);
 }
 
@@ -75,7 +75,7 @@
   border: 1px solid var(--via-border-soft);
   border-radius: 14px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 56px -22px rgba(10, 31, 59, 0.28),
     0 2px 8px var(--via-navy-04);
   animation: vds-dd-in 240ms var(--via-ease-out);

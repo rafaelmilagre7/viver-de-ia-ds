@@ -19,7 +19,7 @@
   overflow: hidden;
   isolation: isolate;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 4px var(--via-navy-04);
 }
 
@@ -39,7 +39,7 @@
   border-color: var(--via-navy-20);
   transform: translateY(-3px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 18px 40px -22px var(--via-navy-22);
 }
 
@@ -152,7 +152,7 @@
   border: 1px solid var(--via-edge-hi);
   border-radius: 20px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 -1px 0 rgba(255, 255, 255, 0.4) inset,
     0 16px 36px -16px var(--via-navy-40);
   display: flex;

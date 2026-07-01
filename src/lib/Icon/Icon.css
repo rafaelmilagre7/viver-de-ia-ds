@@ -48,7 +48,7 @@
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset;
 }
 
 .via-icon--surface-navy {

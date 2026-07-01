@@ -131,7 +131,7 @@
   border-color: var(--via-edge-hi);
   color: var(--via-text-primary);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
     0 4px 10px -4px var(--via-navy-12);
 }

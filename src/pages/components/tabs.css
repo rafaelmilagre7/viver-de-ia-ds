@@ -8,7 +8,7 @@
   border: 1px solid var(--via-border-soft);
   border-radius: 999px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 4px 12px var(--via-navy-08),
     0 1px 3px var(--via-navy-04);
   gap: var(--via-space-0_5);

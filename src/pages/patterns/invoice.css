@@ -46,7 +46,7 @@
   padding: 56px 56px 36px;
   border: 1px solid var(--via-navy-08);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 48px 96px -36px var(--via-navy-25),
     0 4px 16px var(--via-navy-04);
   isolation: isolate;
@@ -485,7 +485,7 @@
   border: 1px solid var(--via-navy-08);
   padding: 32px;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 48px -28px var(--via-navy-20);
 }
 
@@ -1054,7 +1054,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -22px var(--via-navy-14);
 }
 
@@ -1224,7 +1224,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 2px 4px var(--via-navy-06),
     0 0 0 0.5px var(--via-navy-08);
 }
@@ -1253,7 +1253,7 @@
 
 .vds-receipt-stage[data-print-preview="on"] .vds-receipt {
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 32px 60px -20px var(--via-navy-18),
     0 4px 8px var(--via-navy-08);
   margin: 0 auto;

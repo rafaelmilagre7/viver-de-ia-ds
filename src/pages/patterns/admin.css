@@ -14,7 +14,7 @@
   overflow: hidden;
   isolation: isolate;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 4px var(--via-navy-04);
 }
 
@@ -216,7 +216,7 @@
   background: var(--via-glass-card);
   border-radius: 50%;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 2px 6px var(--via-navy-20),
     0 0 0 1px var(--via-navy-06);
   transition: transform 240ms var(--via-ease-out);
@@ -237,7 +237,7 @@
 .vds-toggle input:checked + span::after {
   transform: translateX(18px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 2px 6px var(--via-navy-30),
     0 0 0 1px var(--via-navy-04);
 }
@@ -1094,7 +1094,7 @@
   justify-content: center;
   border: 1px solid var(--via-border-soft);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 2px 6px var(--via-navy-06);
 }
 
@@ -1204,7 +1204,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 12px 28px -16px var(--via-navy-12);
 }
 
@@ -1578,7 +1578,7 @@
   isolation: isolate;
   overflow: hidden;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 12px 28px -16px var(--via-navy-12);
 }
 

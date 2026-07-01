@@ -81,7 +81,7 @@
   cursor: pointer;
   white-space: nowrap;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 4px 10px -3px var(--via-navy-20);
   transition: all 180ms ease;
 }
@@ -89,7 +89,7 @@
 .vds-ann-cta:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 6px 14px -3px var(--via-navy-25);
 }
 .vds-ann-close {

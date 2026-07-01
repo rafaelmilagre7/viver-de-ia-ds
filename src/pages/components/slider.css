@@ -10,7 +10,7 @@
   overflow: hidden;
   isolation: isolate;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 1px 4px var(--via-navy-04);
 }
 
@@ -73,7 +73,7 @@
   background: var(--via-glass-card);
   border: 2px solid var(--via-navy);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 4px 10px -2px var(--via-navy-30),
     0 0 0 0 var(--via-navy-18);
   cursor: grab;
@@ -84,7 +84,7 @@
 .via-slider::-webkit-slider-thumb:hover {
   transform: scale(1.08);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 6px 14px -2px var(--via-navy-40),
     0 0 0 6px var(--via-navy-10);
 }
@@ -92,7 +92,7 @@
 .via-slider::-webkit-slider-thumb:active {
   cursor: grabbing;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 6px 14px -2px var(--via-navy-40),
     0 0 0 10px var(--via-navy-12);
 }
