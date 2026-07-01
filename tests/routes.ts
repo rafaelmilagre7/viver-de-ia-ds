@@ -36,7 +36,10 @@ export const routes: Route[] = [
   { path: '/foundations/shadows' },
   { path: '/foundations/motion' },
   { path: '/foundations/philosophy' },
-  { path: '/foundations/library', settleMs: 600 },
+  // /foundations/library FORA da regressão visual de propósito: é uma galeria
+  // agregada de ~19000px com os 46 componentes vivos — pixel-instável entre
+  // ambientes (acúmulo de sub-pixel). Cada componente já tem snapshot próprio
+  // determinístico em /api/{componente}, então a cobertura não se perde.
 
   // Glass
   { path: '/glass/anatomy' },
