@@ -94,7 +94,7 @@
 .vds-bs-statement:not(.via-mesh-navy) p { color: var(--via-text); }
 
 .vds-bs-statement-lede {
-  font-size: 17px !important;
+  font-size: 18px !important;
   margin-top: 12px !important;
 }
 
@@ -115,7 +115,7 @@
 }
 .vds-bs-proof strong {
   font-family: var(--via-mono);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.02em;
@@ -147,7 +147,7 @@
 }
 .vds-bs-rationale p {
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   color: var(--via-text);
   margin: 0 0 12px;

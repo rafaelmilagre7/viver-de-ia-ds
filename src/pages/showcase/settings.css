@@ -47,7 +47,7 @@
 .vds-set-h h1 em { font-style: normal; font-weight: var(--via-fw-regular); color: var(--via-text-muted); }
 .vds-set-h .lede {
   font-family: var(--via-font);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--via-text-body);
   margin: 0;
@@ -221,7 +221,7 @@
 }
 .vds-set-card h2 {
   font-family: var(--via-font-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.18;

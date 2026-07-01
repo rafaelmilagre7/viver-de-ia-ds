@@ -36,7 +36,7 @@
 }
 .vds-docs-lede {
   font-family: var(--via-font);
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.55;
   color: var(--via-text-body);
   margin: 0;
@@ -82,7 +82,7 @@
     margin-bottom: 22px;
   }
   .vds-section-title {
-    font-size: 26px;
+    font-size: 24px;
   }
   .vds-section-meta {
     white-space: normal;

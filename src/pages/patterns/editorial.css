@@ -193,7 +193,7 @@
 }
 .vds-ed-blog-lede {
   font-family: var(--via-font);
-  font-size: 17px;
+  font-size: 18px;
   color: var(--via-text);
   line-height: 1.55;
   margin: 0 0 22px;
@@ -269,7 +269,7 @@
 .vds-ed-blog-body strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-ed-blog-body h2 {
   font-family: var(--via-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
@@ -454,7 +454,7 @@
 }
 .vds-ed-podcast-meta h2 {
   font-family: var(--via-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   line-height: 1.2;
   letter-spacing: -0.022em;
@@ -798,7 +798,7 @@
 }
 .vds-ed-tutorial h2 {
   font-family: var(--via-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
@@ -807,7 +807,7 @@
 }
 .vds-ed-tutorial p {
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--via-text);
   line-height: 1.65;
   margin: 0 0 16px;

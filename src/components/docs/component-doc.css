@@ -33,7 +33,7 @@
 
 .vds-cdoc-anatomy-num {
   font-family: var(--via-font-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-navy-22);
   letter-spacing: -0.02em;
@@ -164,7 +164,7 @@
 .vds-cdoc-variant-label {
   margin: 8px 0 4px;
   font-family: var(--via-font-display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.016em;
   color: var(--via-text-primary);

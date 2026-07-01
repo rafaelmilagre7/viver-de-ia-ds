@@ -145,7 +145,7 @@
 .vds-wa-meta strong {
   display: block;
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.005em;
@@ -337,7 +337,7 @@
   background: transparent;
   padding: 8px 4px;
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(0,0,0,0.85);
 }
 .vds-wa-field input::placeholder { color: rgba(0,0,0,0.40); }

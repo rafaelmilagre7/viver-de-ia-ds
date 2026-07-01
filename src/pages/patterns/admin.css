@@ -71,7 +71,7 @@
 
 .vds-settings-l h4 {
   margin: 0 0 6px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -653,7 +653,7 @@
   align-items: center;
   gap: 8px;
   margin: 0 0 8px;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-white);
@@ -688,7 +688,7 @@
 }
 
 .vds-billing-meta strong {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-white);
@@ -1220,7 +1220,7 @@
 .vds-wh-head h3 {
   margin: 0 0 4px;
   font-family: var(--via-display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
@@ -1409,7 +1409,7 @@
 
 .vds-wh-rate em {
   font-style: normal;
-  font-size: 9px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
 }
@@ -1464,7 +1464,7 @@
 .vds-wh-secret h4 {
   margin: 0 0 4px;
   font-family: var(--via-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);
@@ -1594,7 +1594,7 @@
 .vds-perm-head h3 {
   margin: 0 0 4px;
   font-family: var(--via-display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
@@ -1713,7 +1713,7 @@
 
 .role-meta {
   display: block;
-  font-size: 9px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
   text-transform: none;

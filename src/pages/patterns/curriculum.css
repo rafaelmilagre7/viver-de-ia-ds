@@ -43,7 +43,7 @@
 }
 
 .vds-course-cover h2 {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.06;
@@ -124,7 +124,7 @@
 }
 
 .vds-course-stats .n {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
@@ -285,7 +285,7 @@
 }
 
 .vds-module-text h3 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 4px;

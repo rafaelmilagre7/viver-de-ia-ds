@@ -61,7 +61,7 @@
 .via-cp__name {
   margin: 0;
   font-family: var(--via-font-display, inherit);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
@@ -79,7 +79,7 @@
 }
 .via-cp__hex .prefix {
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   color: var(--via-ink-3, #6B7891);

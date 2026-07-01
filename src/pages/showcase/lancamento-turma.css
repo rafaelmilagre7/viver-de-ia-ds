@@ -186,7 +186,7 @@
 }
 
 .lt-hero-lede {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.62;
   color: var(--via-gray-200);
   margin: 0 auto 36px;
@@ -285,7 +285,7 @@
 
 .lt-hero-proof-avs .av.more {
   background: rgba(255, 255, 255, 0.12);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .lt-hero-proof-txt {
@@ -296,8 +296,8 @@
 
 @media (max-width: 860px) {
   .lt-hero { padding: 64px 24px 56px; }
-  .lt-hero-h1 { font-size: 38px; }
-  .lt-hero-lede { font-size: 15px; }
+  .lt-hero-h1 { font-size: 40px; }
+  .lt-hero-lede { font-size: 16px; }
 }
 
 /* ============================================
@@ -321,7 +321,7 @@
 }
 
 .lt-stat strong {
-  font-size: 38px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.034em;
@@ -339,7 +339,7 @@
 @media (max-width: 860px) {
   .lt-stats { grid-template-columns: repeat(2, 1fr); }
   .lt-stat { padding: 26px 16px; }
-  .lt-stat strong { font-size: 30px; }
+  .lt-stat strong { font-size: 32px; }
 }
 
 /* ============================================
@@ -370,7 +370,7 @@
 .lt-eyebrow.on-dark { color: var(--via-gray-300); }
 
 .lt-section-head h2 {
-  font-size: 38px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.030em;
   line-height: 1.10;
@@ -498,7 +498,7 @@
 
 .lt-pilar strong {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -783,7 +783,7 @@
 }
 
 .lt-oferta-l h2 {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.1;
@@ -792,7 +792,7 @@
 }
 
 .lt-oferta-lede {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--via-gray-200);
   margin: 0 0 28px;
@@ -864,7 +864,7 @@
 }
 
 .lt-oferta-price strong {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.030em;
@@ -945,7 +945,7 @@
 @media (max-width: 860px) {
   .lt-oferta { padding: 56px 24px; }
   .lt-oferta-inner { grid-template-columns: 1fr; gap: 32px; }
-  .lt-oferta-l h2 { font-size: 26px; }
+  .lt-oferta-l h2 { font-size: 24px; }
 }
 
 /* ============================================
@@ -972,7 +972,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 20px 24px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -1035,7 +1035,7 @@
 }
 
 .lt-final-inner h2 {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
   line-height: 1.08;
@@ -1051,7 +1051,7 @@
 }
 
 .lt-final-inner p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--via-gray-200);
   margin: 0 0 32px;
@@ -1060,7 +1060,7 @@
 
 @media (max-width: 860px) {
   .lt-final { padding: 64px 24px; }
-  .lt-final-inner h2 { font-size: 30px; }
+  .lt-final-inner h2 { font-size: 32px; }
 }
 
 /* ============================================

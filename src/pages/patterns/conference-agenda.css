@@ -362,7 +362,7 @@
 .vds-cf-session h4 {
   margin: 0 0 14px;
   font-family: var(--via-display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   line-height: 1.22;
@@ -370,7 +370,7 @@
 }
 
 .vds-cf-row.featured .vds-cf-session h4 {
-  font-size: 19px;
+  font-size: 20px;
   letter-spacing: -0.022em;
 }
 
@@ -603,7 +603,7 @@
 .vds-cf-spk-tag {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;

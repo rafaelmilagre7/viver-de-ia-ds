@@ -95,7 +95,7 @@
   border: none;
   background: transparent;
   color: var(--via-ink-3, #6B7891);
-  font-size: 7px;
+  font-size: 8px;
   cursor: pointer;
   border-radius: 3px;
   transition: background .15s ease, color .15s ease;

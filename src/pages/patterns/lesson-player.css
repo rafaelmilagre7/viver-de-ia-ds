@@ -89,7 +89,7 @@
 }
 
 .vds-lesson-video .vid-idle h2 {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.024em;
   line-height: 1.08;
@@ -612,7 +612,7 @@
 }
 
 .vds-notes-eyebrow {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;

@@ -105,7 +105,7 @@
 }
 .vds-cmdk-inner li.vds-cmdk__heading {
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -130,7 +130,7 @@
 }
 .vds-cmdk-inner li .kbd {
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -183,7 +183,7 @@
 }
 .vds-cmdk-inner footer kbd {
   font-family: var(--via-font-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);

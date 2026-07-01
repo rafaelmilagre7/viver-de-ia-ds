@@ -113,7 +113,7 @@
 .mk-hero h1 em { font-style: normal; font-weight: var(--via-fw-medium); color: var(--via-text-muted); }
 .mk-hero .lede {
   font-family: var(--via-font);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: var(--via-fw-regular);
   line-height: 1.55;
   color: var(--via-text-body);
@@ -183,7 +183,7 @@
 }
 .glass-stack .g-num {
   font-family: var(--via-font-display);
-  font-size: 44px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -375,7 +375,7 @@
 }
 .mk-case .v {
   font-family: var(--via-font-display);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
@@ -431,7 +431,7 @@
 .mk-cta h2 em { font-style: normal; color: rgba(255,255,255,0.62); font-weight: var(--via-fw-medium); }
 .mk-cta p {
   font-family: var(--via-font);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
   color: rgba(255,255,255,0.78);
   margin: 0 0 40px;

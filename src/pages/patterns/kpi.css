@@ -67,7 +67,7 @@
 .vds-kpi-tile .num-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .vds-kpi-tile .num {
   font-family: var(--via-font-display);
-  font-size: 44px; font-weight: var(--via-fw-medium);
+  font-size: 40px; font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em; color: var(--via-text-primary);
   line-height: 1; font-variant-numeric: tabular-nums;
   white-space: nowrap;

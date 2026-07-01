@@ -219,7 +219,7 @@
 
 .vds-dp-week span {
   text-align: center;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -430,7 +430,7 @@
 }
 
 .vds-dp-range-eyebrow {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1062,7 +1062,7 @@
 .vds-range-summary > div:nth-child(3) { text-align: right; }
 
 .vds-range-eyebrow {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1078,7 +1078,7 @@
 }
 
 .vds-range-summary > div.span strong {
-  font-size: 22px;
+  font-size: 24px;
   color: var(--via-text-primary);
 }
 
@@ -1251,7 +1251,7 @@
 
 .vds-color-info .vds-color-hex .prefix {
   font-family: inherit;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.14em;
   padding: 3px 7px;
@@ -1329,7 +1329,7 @@
 }
 
 .vds-color-input-wrap .suffix {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;

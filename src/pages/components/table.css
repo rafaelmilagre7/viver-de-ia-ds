@@ -318,7 +318,7 @@
 
 .vds-tbl thead th {
   text-align: left;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -844,7 +844,7 @@
 /* ---------- COMPACT variant ---------- */
 .vds-tbl.compact thead th {
   padding: 12px 14px;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .vds-tbl.compact tbody td {

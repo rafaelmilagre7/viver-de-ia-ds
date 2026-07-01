@@ -131,7 +131,7 @@
 
 .vds-ob h2 {
   font-family: var(--via-font);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   color: var(--via-text-primary);
@@ -147,7 +147,7 @@
 
 .vds-ob .lede {
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--via-text-soft);
   margin: 0 0 32px;
   line-height: 1.55;
@@ -420,7 +420,7 @@
 .vds-wiz-aside h3 {
   margin: 0 0 12px;
   font-family: var(--via-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.18;

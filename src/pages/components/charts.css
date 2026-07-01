@@ -51,7 +51,7 @@
 }
 
 .vds-chart-head h3 {
-  font-size: 38px;
+  font-size: 40px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.025em;
   line-height: 1.05;
@@ -305,7 +305,7 @@
 }
 
 .vds-donut-svg .donut-big {
-  font-size: 60px;
+  font-size: 64px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   fill: var(--via-text-primary);
@@ -555,7 +555,7 @@
 
 .vds-kpi-value {
   margin: 14px 0 14px;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.03em;
   color: var(--via-text-primary);

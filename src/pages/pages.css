@@ -53,7 +53,7 @@
   position: relative;
   z-index: 2;
   font-family: var(--via-font);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
   color: rgba(255,255,255,0.75);
   max-width: 580px;
@@ -161,7 +161,7 @@
     margin: 0 0 20px;
   }
   .vds-home-hero-lede {
-    font-size: 15px;
+    font-size: 16px;
     margin: 0 0 28px;
   }
   .vds-home-hero-pill { margin-bottom: 22px; }
@@ -179,7 +179,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
-  .vds-home-hero-stat .num { font-size: 38px; }
+  .vds-home-hero-stat .num { font-size: 40px; }
 
   /* Home grid em mobile: 1 coluna */
   .vds-home-grid {
@@ -192,7 +192,7 @@
     padding: 24px 22px 56px;
     border-radius: 22px;
   }
-  .vds-home-card-title { font-size: 21px; }
+  .vds-home-card-title { font-size: 20px; }
 }
 
 /* ---- Home grid ---- */
@@ -696,7 +696,7 @@
 
 .vds-type-label {
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -742,6 +742,6 @@
 }
 .vds-icon-cell span {
   font-family: var(--via-font-mono);
-  font-size: 9px;
+  font-size: 10px;
   color: var(--via-text-muted);
 }

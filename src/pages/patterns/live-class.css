@@ -175,7 +175,7 @@
 
 .vds-live-lede {
   margin: 0 0 30px;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--via-gray-200);
   max-width: 600px;
@@ -423,7 +423,7 @@
 
 .vds-live-next-l h3 {
   margin: 0 0 14px;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.1;
@@ -498,7 +498,7 @@
 }
 
 .vds-live-when strong {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.03em;
@@ -545,7 +545,7 @@
 .vds-live-countdown em {
   margin-top: 4px;
   font-style: normal;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.16em;
@@ -669,7 +669,7 @@
 }
 
 .vds-live-past-date strong {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.14em;

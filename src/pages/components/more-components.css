@@ -204,7 +204,7 @@
 .vds-notif header .vds-eyebrow { color: rgba(255,255,255,0.55); margin: 0 0 4px; }
 .vds-notif header h3 {
   font-family: var(--via-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   margin: 0;
@@ -416,7 +416,7 @@
   border: 2px solid var(--via-white);
   box-shadow: 0 4px 12px var(--via-navy-18);
 }
-.vds-avgroup-av.lg { width: 48px; height: 48px; font-size: 17px; }
+.vds-avgroup-av.lg { width: 48px; height: 48px; font-size: 18px; }
 .vds-avgroup-dot {
   position: absolute;
   right: 0;

@@ -215,7 +215,7 @@
 }
 .vds-com-onepager-stats strong {
   font-family: var(--via-mono);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -434,7 +434,7 @@
 }
 .vds-com-case-stats strong {
   font-family: var(--via-mono);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -454,7 +454,7 @@
   margin: 0 0 14px;
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 17px;
+  font-size: 18px;
   color: var(--via-text-primary);
   line-height: 1.45;
   letter-spacing: -0.018em;
@@ -603,7 +603,7 @@
 .vds-com-proposal-total td {
   border-bottom: none;
   padding-top: 14px;
-  font-size: 15px;
+  font-size: 16px;
   border-top: 1px solid var(--via-navy-12);
 }
 .vds-com-proposal-total strong {

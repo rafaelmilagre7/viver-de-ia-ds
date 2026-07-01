@@ -116,7 +116,7 @@
 }
 
 .vds-heatmap-days span {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   display: flex;
@@ -257,7 +257,7 @@
 
 .vds-spark-value {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
@@ -366,7 +366,7 @@
 
 .vds-gauge-big {
   font-family: inherit;
-  font-size: 44px;
+  font-size: 40px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.03em;
   fill: var(--via-navy);

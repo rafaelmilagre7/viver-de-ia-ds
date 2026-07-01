@@ -336,7 +336,7 @@
 }
 .vds-sc-story-canvas h2 {
   font-family: var(--via-font-display);
-  font-size: 38px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -398,7 +398,7 @@
 }
 .vds-sc-reel-canvas h2 {
   font-family: var(--via-font-display);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -737,7 +737,7 @@
 }
 .vds-sc-carousel-body h3 {
   font-family: var(--via-font-display);
-  font-size: 38px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   line-height: 1.05;
   letter-spacing: -0.025em;
@@ -745,7 +745,7 @@
 }
 .vds-sc-carousel-card.hook .vds-sc-carousel-body h3,
 .vds-sc-carousel-card.result .vds-sc-carousel-body h3 {
-  font-size: 52px;
+  font-size: 56px;
 }
 .vds-sc-carousel-body h3 em {
   font-style: italic;
@@ -958,7 +958,7 @@
 }
 .vds-sc-yt-end h3 {
   font-family: var(--via-font-display);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -1108,7 +1108,7 @@
 }
 .vds-sc-x-card h3 {
   font-family: var(--via-font-display);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   line-height: 1;
   letter-spacing: -0.025em;
@@ -1179,7 +1179,7 @@
 }
 .vds-sc-tiktok-canvas h2 {
   font-family: var(--via-font-display);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -1299,7 +1299,7 @@
 .vds-sc-tiktok-overlay-demo .overlay-pos {
   position: absolute;
   font-family: var(--via-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   line-height: 1.15;
   color: var(--via-white);

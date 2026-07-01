@@ -60,7 +60,7 @@
 }
 
 .vds-hero-card h3 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.06;
@@ -164,7 +164,7 @@
 }
 
 .vds-hero-card.split h3 {
-  font-size: 30px;
+  font-size: 32px;
 }
 
 @media (max-width: 920px) {
@@ -189,7 +189,7 @@
 }
 
 .vds-hero-stats strong {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
@@ -259,7 +259,7 @@
 .mock-kpi em {
   display: block;
   font-style: normal;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -313,7 +313,7 @@
 }
 
 .vds-hero-card.editorial h3 {
-  font-size: 44px;
+  font-size: 40px;
   letter-spacing: -0.03em;
 }
 
@@ -345,7 +345,7 @@
 
 .vds-logowall-card h3 {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
@@ -541,7 +541,7 @@
 
 .vds-tl-body h4 {
   margin: 0 0 6px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -613,7 +613,7 @@
   position: absolute;
   top: -6px;
   right: -8px;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   padding: 3px 6px;
   border-radius: 5px;
@@ -625,7 +625,7 @@
 
 .vds-process-step h4 {
   margin: 0 0 8px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -919,7 +919,7 @@
   text-align: left;
   cursor: pointer;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;

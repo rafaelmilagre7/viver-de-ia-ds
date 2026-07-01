@@ -107,7 +107,7 @@
 .via-field textarea.val {
   width: 100%;
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   background: transparent;
@@ -185,7 +185,7 @@
 .val-with-icon .leading-ico { color: var(--via-text-muted); flex-shrink: 0; }
 .val-with-prefix .prefix {
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   flex-shrink: 0;
@@ -200,7 +200,7 @@
   border: none;
   padding: 0;
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;

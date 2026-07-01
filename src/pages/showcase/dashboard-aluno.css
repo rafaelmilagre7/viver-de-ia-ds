@@ -124,7 +124,7 @@
 }
 
 .dba-greeting h1 {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   color: var(--via-text-primary);
@@ -158,7 +158,7 @@
 
 .dba-ring-pct {
   font-family: var(--via-font);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   fill: var(--via-navy-deep);
   letter-spacing: -0.02em;
@@ -167,7 +167,7 @@
 
 .dba-ring-lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 7px;
+  font-size: 8px;
   font-weight: var(--via-fw-semibold);
   fill: var(--via-text-muted);
   letter-spacing: 0.14em;
@@ -277,7 +277,7 @@
 }
 
 .dba-continue h2 {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-white);
@@ -569,7 +569,7 @@
 
 .dba-achievement strong {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;

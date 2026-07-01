@@ -165,7 +165,7 @@
   padding: 28px 32px 20px;
   border-left: 0.5px solid var(--via-navy-08);
   border-right: 0.5px solid var(--via-navy-08);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   color: var(--via-text);
   letter-spacing: -0.004em;
@@ -374,7 +374,7 @@
   letter-spacing: -0.01em;
   display: block;
 }
-.vds-ec-em-billing-plate strong.val { font-size: 22px; }
+.vds-ec-em-billing-plate strong.val { font-size: 24px; }
 .vds-ec-em-billing-plate em {
   font-style: normal;
   font-size: 11px;
@@ -606,7 +606,7 @@
 }
 .vds-ec-em-event-plate h2 {
   font-family: var(--via-font-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   line-height: 1.18;
   letter-spacing: -0.022em;
@@ -710,7 +710,7 @@
 }
 .vds-ec-drip-num {
   font-family: var(--via-mono);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;

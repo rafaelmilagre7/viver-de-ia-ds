@@ -326,7 +326,7 @@
   right: 18px;
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -354,7 +354,7 @@
 .vds-cnx-offer h3 {
   margin: 0 0 10px;
   font-family: var(--via-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.2;
@@ -570,7 +570,7 @@
 .vds-cnx-final h4 {
   margin: 0 0 6px;
   font-family: var(--via-display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);

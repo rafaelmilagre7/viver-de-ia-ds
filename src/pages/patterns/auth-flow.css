@@ -60,7 +60,7 @@
   top: 18px;
   left: 24px;
   font-family: var(--via-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -80,7 +80,7 @@
 .vds-auth-card h3 {
   margin: 0 0 12px;
   font-family: var(--via-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.024em;
   line-height: 1.16;
@@ -449,7 +449,7 @@
 }
 
 @media (max-width: 540px) {
-  .vds-auth-2fa-inputs input { width: 44px; height: 52px; font-size: 22px; }
+  .vds-auth-2fa-inputs input { width: 44px; height: 52px; font-size: 24px; }
 }
 
 .vds-auth-2fa-inputs input.filled {
@@ -597,7 +597,7 @@
 }
 
 .vds-auth-social-recent {
-  font-size: 9px;
+  font-size: 10px;
   color: var(--via-accent-warm);
   padding: 3px 9px;
   border-radius: 999px;

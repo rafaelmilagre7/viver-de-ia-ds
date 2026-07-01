@@ -246,7 +246,7 @@
 }
 
 .vds-pa-meta-canvas h2 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.030em;
   line-height: 1.06;
@@ -403,7 +403,7 @@
 .vds-pa-carousel-num {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   color: var(--via-gray-300);
@@ -411,7 +411,7 @@
 }
 
 .vds-pa-carousel-card h3 {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.0;
@@ -532,7 +532,7 @@
 }
 
 .vds-pa-story-canvas h2 {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.026em;
   line-height: 1.10;
@@ -795,7 +795,7 @@
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -856,7 +856,7 @@
 }
 
 .vds-pa-li-canvas h2 {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.08;
@@ -992,7 +992,7 @@
 .vds-pa-li-card-num {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   color: var(--via-gray-300);
@@ -1000,7 +1000,7 @@
 }
 
 .vds-pa-li-card h3 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.016em;
   line-height: 1.22;
@@ -1106,7 +1106,7 @@
 .vds-pa-gs-url em { font-style: normal; }
 
 .vds-pa-gs-headline {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: var(--via-fw-medium);
   color: #1a0dab;
   letter-spacing: -0.014em;
@@ -1299,7 +1299,7 @@
 .g-336-280 img { bottom: 16px; right: 16px; }
 
 .g-728-90 { width: 100%; max-width: 728px; height: 90px; padding: 14px 22px; display: grid; grid-template-columns: 1fr auto 32px; align-items: center; gap: 16px; }
-.g-728-90 h3 { font-size: 15px; }
+.g-728-90 h3 { font-size: 16px; }
 .g-728-90 p { display: none; }
 .g-728-90 img { position: static; }
 
@@ -1370,7 +1370,7 @@
 }
 
 .vds-pa-yt-canvas h2 {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.10;
@@ -1692,7 +1692,7 @@
 
 .vds-pa-audience-kpi .lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1714,7 +1714,7 @@
 
 .vds-pa-audience-block-lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1741,7 +1741,7 @@
 
 .vds-pa-audience-cta-lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1856,7 +1856,7 @@
 .vds-pa-ab-hyp-lbl {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2084,7 +2084,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2151,7 +2151,7 @@
 }
 
 .vds-pa-cta-group header strong {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -2177,7 +2177,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;

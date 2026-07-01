@@ -147,7 +147,7 @@
 .vds-st-overview-stats em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: 9px;
+  font-size: 10px;
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
   text-transform: uppercase;

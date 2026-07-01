@@ -106,7 +106,7 @@
 .vds-tier.feat .cur { color: rgba(255,255,255,0.62); }
 .vds-tier .num {
   font-family: var(--via-font-display);
-  font-size: 42px; font-weight: var(--via-fw-medium);
+  font-size: 40px; font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
   line-height: 1;

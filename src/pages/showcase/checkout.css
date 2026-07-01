@@ -136,7 +136,7 @@
 }
 
 .ckt-panel h2 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.020em;
   color: var(--via-text-primary);
@@ -207,7 +207,7 @@
 
 .ckt-plano-info strong {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
@@ -236,7 +236,7 @@
   border-radius: 999px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow: 0 4px 10px -3px var(--via-navy-40);
@@ -478,7 +478,7 @@
 
 .ckt-summary-item strong {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -529,7 +529,7 @@
 }
 
 .ckt-summary-total strong {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;

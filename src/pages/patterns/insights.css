@@ -300,7 +300,7 @@
 .vds-ins-chart > header h4 {
   margin: 0 0 4px;
   font-family: var(--via-font);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
@@ -407,7 +407,7 @@
 .vds-ins-quotes > header h4 {
   margin: 0 0 4px;
   font-family: var(--via-font);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
@@ -745,7 +745,7 @@
 .vds-ins-tile-val {
   margin: 0 0 12px;
   font-family: var(--via-font-display);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   color: var(--via-text-primary);

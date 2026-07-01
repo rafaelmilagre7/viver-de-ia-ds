@@ -76,7 +76,7 @@
 
 .vds-sticky-page__title {
   font-family: var(--via-font-display);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -92,7 +92,7 @@
 
 .vds-sticky-page__lede {
   margin: 0 0 22px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--via-text-body);
   max-width: 560px;
@@ -136,7 +136,7 @@
 .vds-sticky-page__stat strong {
   display: block;
   font-family: var(--via-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -393,7 +393,7 @@
 .vds-sticky-countdown em {
   font-style: normal;
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);

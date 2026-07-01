@@ -87,7 +87,7 @@
 
 .via-case h3 {
   font-family: var(--via-font);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
@@ -107,7 +107,7 @@
 
 .via-case .v {
   font-family: var(--via-font);
-  font-size: 38px;
+  font-size: 40px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
@@ -129,7 +129,7 @@
   margin: 0;
   font-family: var(--via-font);
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
   color: var(--via-text);
   display: flex;

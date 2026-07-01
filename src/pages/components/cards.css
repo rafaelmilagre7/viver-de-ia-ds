@@ -49,7 +49,7 @@
 
 .via-card h3 {
   font-family: var(--via-font);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
@@ -180,7 +180,7 @@
 
 .via-card-stat .num {
   font-family: var(--via-font);
-  font-size: 44px;
+  font-size: 40px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);

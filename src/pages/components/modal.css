@@ -28,7 +28,7 @@
   top: 18px;
   left: 24px;
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -88,7 +88,7 @@
 
 .via-modal h3 {
   font-family: var(--via-font);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;

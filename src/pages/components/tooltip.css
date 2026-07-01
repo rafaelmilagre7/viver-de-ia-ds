@@ -48,7 +48,7 @@
 .via-tt.right::after { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--via-navy); }
 .via-tt-pos {
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;

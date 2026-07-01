@@ -69,7 +69,7 @@
 .vds-mini-meta { min-width: 0; }
 .vds-mini-meta .ep {
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -619,7 +619,7 @@
 .vds-video .vid-watermark img { width: 14px; height: 14px; object-fit: contain; }
 .vds-video .vid-watermark span {
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;

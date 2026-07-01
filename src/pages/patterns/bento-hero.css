@@ -143,7 +143,7 @@
 }
 
 .vds-bento-card.hero h1 {
-  font-size: 52px;
+  font-size: 56px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.034em;
   line-height: 1.02;
@@ -232,7 +232,7 @@
 
 .vds-bento-num {
   margin: 10px 0 0;
-  font-size: 54px;
+  font-size: 56px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.034em;
@@ -604,7 +604,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   border: 2px solid var(--via-white);
@@ -621,7 +621,7 @@
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: 1.5px solid var(--via-border-soft);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .vds-bento-confirmed em {

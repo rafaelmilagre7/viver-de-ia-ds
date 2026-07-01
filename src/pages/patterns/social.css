@@ -106,7 +106,7 @@
 }
 .ig-content h2 {
   font-family: var(--via-font-display);
-  font-size: 52px;
+  font-size: 56px;
   font-weight: var(--via-fw-medium);
   line-height: 0.96;
   letter-spacing: -0.035em;
@@ -117,7 +117,7 @@
 .ig-content h2 em {
   display: block;
   font-style: normal;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
   letter-spacing: -0.015em;
@@ -309,7 +309,7 @@
 }
 .story-content h2 {
   font-family: var(--via-font-display);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.03em;
   line-height: 1.0;
@@ -469,7 +469,7 @@
 }
 .li-content h2 {
   font-family: var(--via-font-display);
-  font-size: 44px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   line-height: 1.0;
   letter-spacing: -0.03em;

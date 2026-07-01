@@ -73,7 +73,7 @@
 }
 
 .vds-trust-strip h3 > span:not(.vds-trust-num) {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
   letter-spacing: -0.018em;
@@ -142,7 +142,7 @@
 
 .vds-trust-client-name {
   font-family: var(--via-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.014em;
@@ -240,7 +240,7 @@
 .vds-trust-stat-v {
   margin: 0 0 8px;
   font-family: var(--via-display);
-  font-size: 44px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.032em;
@@ -306,7 +306,7 @@
 
 .vds-trust-rating-num .num {
   font-family: var(--via-display);
-  font-size: 52px;
+  font-size: 56px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.036em;

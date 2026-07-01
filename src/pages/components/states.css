@@ -81,7 +81,7 @@
 
 .vds-loader-msg {
   margin: 0 0 6px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.01em;
@@ -444,7 +444,7 @@
 }
 
 .vds-error-plan .lbl {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -621,7 +621,7 @@
 }
 
 .vds-error-card h3 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.022em;
   line-height: 1.2;
@@ -735,7 +735,7 @@
 }
 
 .vds-error-id span {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -955,7 +955,7 @@
 
 .vds-success-card h3 {
   margin: 0;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -1230,7 +1230,7 @@
 .vds-empty-prem h4 {
   margin: 0 0 8px;
   font-family: var(--via-display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   line-height: 1.22;
@@ -1558,7 +1558,7 @@
 
 .vds-empty-prem-mini strong {
   font-family: var(--via-display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;

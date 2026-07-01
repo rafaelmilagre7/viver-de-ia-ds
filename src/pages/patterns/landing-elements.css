@@ -261,7 +261,7 @@
 .vds-le-trust-numbers li:last-child { border-bottom: none; }
 .vds-le-trust-numbers strong {
   font-family: var(--via-mono);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
@@ -276,7 +276,7 @@
   margin: 0 0 16px;
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 17px;
+  font-size: 18px;
   color: var(--via-text-primary);
   line-height: 1.45;
   letter-spacing: -0.018em;
@@ -370,7 +370,7 @@
 }
 .vds-le-faq-item summary strong {
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
@@ -571,7 +571,7 @@
 }
 .vds-le-countdown-sep {
   font-family: var(--via-mono);
-  font-size: 42px;
+  font-size: 40px;
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: -0.02em;
   padding: 0 6px;

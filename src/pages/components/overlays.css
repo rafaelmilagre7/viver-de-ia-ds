@@ -587,7 +587,7 @@
 .vds-bs-faded-content h4 {
   margin: 0 0 6px;
   font-family: var(--via-font);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.02em;
@@ -680,7 +680,7 @@
 
 .vds-bs-eyebrow {
   display: inline-flex;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -690,7 +690,7 @@
 
 .vds-bs header h3 {
   margin: 0;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
@@ -741,7 +741,7 @@
 }
 
 .vds-bs-when strong {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.035em;
@@ -776,7 +776,7 @@
 
 .vds-bs-title {
   margin: 0 0 8px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
@@ -957,7 +957,7 @@
 
 .vds-bs-radios em {
   font-style: normal;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1169,7 +1169,7 @@
 
 .vds-pop-eyebrow {
   margin: 0 0 12px;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;

@@ -53,7 +53,7 @@
 .vds-phil-rule h3 {
   margin: 0 0 10px;
   font-family: var(--via-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.024em;
   line-height: 1.18;
@@ -191,7 +191,7 @@
   top: 0;
   color: var(--via-coral);
   font-weight: var(--via-fw-semibold);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* ============================================
@@ -467,7 +467,7 @@
 .vds-phil-sig h4 {
   margin: 0 0 6px;
   font-family: var(--via-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);

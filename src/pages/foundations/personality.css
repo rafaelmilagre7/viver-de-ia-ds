@@ -83,7 +83,7 @@
   font-family: var(--via-font-display);
   font-style: italic;
   font-weight: var(--via-fw-regular);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.45;
   color: var(--via-ink-3);
   margin: 0;
@@ -301,7 +301,7 @@
 .vds-pers-opt p {
   font-family: var(--via-font-display);
   font-style: italic;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--via-text-primary);
   line-height: 1.5;
   margin: 0;
@@ -333,7 +333,7 @@
   .vds-pers-trait    { padding: 26px 24px 22px; }
   .vds-pers-spectrum { padding: 26px 24px; }
   .vds-pers-quiz     { padding: 22px 22px; }
-  .vds-pers-num      { font-size: 44px; }
+  .vds-pers-num      { font-size: 40px; }
   .vds-pers-trait h3 { font-size: 24px; }
-  .vds-pers-sum      { font-size: 15px; }
+  .vds-pers-sum      { font-size: 16px; }
 }

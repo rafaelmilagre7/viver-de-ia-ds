@@ -255,7 +255,7 @@
 }
 .vds-billing-plan__name {
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
@@ -292,7 +292,7 @@
   color: var(--via-white);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -463,7 +463,7 @@
 }
 .vds-billing-summary__total-val {
   font-family: var(--via-font-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -555,7 +555,7 @@
 .vds-billing-principle h3 {
   margin: 0 0 8px;
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);

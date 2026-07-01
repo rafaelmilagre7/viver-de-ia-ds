@@ -96,7 +96,7 @@
 .al-hero h1 em { font-style: normal; color: var(--via-text-muted); }
 .al-hero .lede {
   font-family: var(--via-font);
-  font-size: 17px;
+  font-size: 18px;
   color: var(--via-text-body);
   line-height: 1.5;
   max-width: 540px;
@@ -178,7 +178,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: 38px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.03em;
   color: var(--via-text-primary);

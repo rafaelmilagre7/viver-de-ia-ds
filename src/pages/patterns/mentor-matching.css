@@ -147,7 +147,7 @@
 
 .vds-mm-arc .vds-mm-pct-lbl {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   fill: rgba(255, 255, 255, 0.48);
   letter-spacing: 0.22em;
@@ -242,7 +242,7 @@
   font-style: normal;
   display: block;
   margin-top: 4px;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-bold);
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.12em;

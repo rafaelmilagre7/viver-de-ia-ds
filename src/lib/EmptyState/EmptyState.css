@@ -82,7 +82,7 @@
 .via-empty-state__title {
   margin: 0;
   font-family: var(--via-display, 'Geist', system-ui, sans-serif);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);

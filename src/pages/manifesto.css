@@ -53,7 +53,7 @@
   position: relative;
   z-index: 2;
   font-family: var(--via-font);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
   color: rgba(255,255,255,0.72);
   max-width: 540px;
@@ -122,7 +122,7 @@
 }
 .vds-principle h3 {
   font-family: var(--via-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);

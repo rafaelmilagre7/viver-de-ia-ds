@@ -39,7 +39,7 @@
 
 .via-stat .num {
   font-family: var(--via-font);
-  font-size: 44px;
+  font-size: 40px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);

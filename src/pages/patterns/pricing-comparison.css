@@ -111,7 +111,7 @@
 }
 .vds-pricing-tier__name {
   font-family: var(--via-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -125,7 +125,7 @@
   color: var(--via-white);
   border-radius: 999px;
   font-family: var(--via-font);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -155,7 +155,7 @@
 }
 .vds-pricing-tier__amount {
   font-family: var(--via-font-display);
-  font-size: 44px;
+  font-size: 40px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
   color: var(--via-text-primary);
@@ -385,7 +385,7 @@
 .vds-pricing-principle h3 {
   margin: 0 0 8px;
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);

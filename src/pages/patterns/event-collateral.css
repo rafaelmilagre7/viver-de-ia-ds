@@ -113,7 +113,7 @@
 .vds-ev-mark-label em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -194,7 +194,7 @@
 
 .vds-ev-relation-text h3 {
   font-family: var(--via-font);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
@@ -357,7 +357,7 @@
 .vds-ev-piece-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -385,7 +385,7 @@
 .vds-ev-piece-mock-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: 9px;
+  font-size: 10px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -455,7 +455,7 @@
 
 .vds-ev-rules-head h4 {
   font-family: var(--via-font);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;

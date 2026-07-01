@@ -130,7 +130,7 @@
 .vds-2fa-step h3 {
   margin: 0 0 8px;
   font-family: var(--via-font-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.2;
@@ -229,7 +229,7 @@
 .vds-2fa-method__title {
   display: block;
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
@@ -460,7 +460,7 @@
 .vds-2fa-anatomy-card h3 {
   margin: 0 0 8px;
   font-family: var(--via-font);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
