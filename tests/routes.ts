@@ -36,7 +36,7 @@ export const routes: Route[] = [
   { path: '/foundations/shadows' },
   { path: '/foundations/motion' },
   { path: '/foundations/philosophy' },
-  { path: '/foundations/library', settleMs: 150 },
+  { path: '/foundations/library', settleMs: 600 },
 
   // Glass
   { path: '/glass/anatomy' },
