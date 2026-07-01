@@ -90,7 +90,11 @@
     line-height: 1.4;
   }
 }
-.vds-section-body p {
+/* :where() rebaixa a especificidade do wrapper p/ (0,0,1) — vira só o DEFAULT
+   do corpo do docs. Qualquer componente com estilo próprio de p (caption de
+   mockup navy, chip, etc) ganha, em vez de ser roubado pelo docs. Corrige a
+   classe de bug "texto escuro-sobre-navy" na raiz, sem !important. */
+:where(.vds-section-body) p {
   font-family: var(--via-font);
   font-size: 16px;
   line-height: 1.65;
@@ -98,7 +102,7 @@
   margin: 0 0 16px;
   max-width: 640px;
 }
-.vds-section-body p em {
+:where(.vds-section-body) p em {
   font-family: var(--via-font-display);
   font-style: italic;
   color: var(--via-text-primary);
