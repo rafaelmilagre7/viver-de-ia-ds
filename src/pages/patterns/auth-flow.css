@@ -61,7 +61,7 @@
   left: 24px;
   font-family: var(--via-mono);
   font-size: 9.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--via-accent);
@@ -81,7 +81,7 @@
   margin: 0 0 12px;
   font-family: var(--via-display);
   font-size: 26px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.024em;
   line-height: 1.16;
   color: var(--via-white);
@@ -114,7 +114,7 @@
 
 .vds-auth-card p strong {
   color: var(--via-white);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-family: var(--via-mono);
   font-size: 12.5px;
   letter-spacing: 0.01em;
@@ -198,7 +198,7 @@
   border: none;
   font-family: inherit;
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
   box-shadow: 0 8px 18px -6px rgba(10, 31, 59, 0.42);
@@ -352,7 +352,7 @@
 
 .vds-auth-meta-pill strong {
   color: var(--via-accent);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 /* ============================================
@@ -388,7 +388,7 @@
   display: inline-block;
   font-family: var(--via-mono);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-accent);
@@ -440,7 +440,7 @@
   color: var(--via-white);
   font-family: var(--via-display);
   font-size: 28px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   text-align: center;
   letter-spacing: -0.02em;
   outline: none;
@@ -478,7 +478,7 @@
 
 .vds-auth-2fa-timer strong {
   color: var(--via-accent);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-auth-2fa-trust {
@@ -552,7 +552,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
   text-align: left;
@@ -574,7 +574,7 @@
   justify-content: center;
   font-family: var(--via-display);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   flex-shrink: 0;
 }

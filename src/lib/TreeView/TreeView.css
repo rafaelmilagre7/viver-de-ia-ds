@@ -25,7 +25,7 @@
   cursor: pointer;
   font-family: inherit;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-body, var(--via-gray-700));
   text-align: left;
@@ -42,7 +42,7 @@
 .via-tv__row.is-selected {
   background: var(--via-navy-08);
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .via-tv__row.is-selected::before {

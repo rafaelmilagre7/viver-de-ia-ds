@@ -47,7 +47,7 @@
 .via-drp__label {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
@@ -56,7 +56,7 @@
 .via-drp__field strong {
   font-family: var(--via-font-display, inherit);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
 }
@@ -64,7 +64,7 @@
 .via-drp__sep {
   font-family: var(--via-font-display, inherit);
   font-size: 20px;
-  font-weight: 300;
+  font-weight: var(--via-fw-light);
   color: var(--via-ink-3, #6B7891);
   margin-top: 14px;
 }
@@ -79,7 +79,7 @@
   padding: 5px 11px;
   font-family: var(--via-font);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
   background: var(--via-glass-card);
@@ -109,7 +109,7 @@
 .via-drp__summary strong {
   font-family: var(--via-font-mono, monospace);
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
 }
 

@@ -24,7 +24,7 @@
   color: var(--via-text-soft);
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   display: inline-flex;
@@ -47,7 +47,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 4px 10px -3px var(--via-navy-40);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .via-pag .arr:disabled {

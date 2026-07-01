@@ -57,7 +57,7 @@
   display: inline-block;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.78);
@@ -71,13 +71,13 @@
   line-height: 1.12;
   letter-spacing: -0.026em;
   margin: 0 0 20px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   max-width: 800px;
 }
 .vds-bs-statement h2 em {
   font-style: italic;
   color: rgba(255, 255, 255, 0.72);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 .vds-bs-statement:not(.via-mesh-navy) h2 em {
   color: var(--via-ink-3);
@@ -116,7 +116,7 @@
 .vds-bs-proof strong {
   font-family: var(--via-mono);
   font-size: 26px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.02em;
 }
@@ -139,7 +139,7 @@
 .vds-bs-rationale h4 {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -156,7 +156,7 @@
 .vds-bs-rationale p em {
   font-style: italic;
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 /* ---------- Vision trajectory ---------- */
@@ -171,7 +171,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -205,7 +205,7 @@
 .vds-bs-year {
   font-family: var(--via-mono);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -213,7 +213,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 4px;
   letter-spacing: -0.004em;
@@ -227,7 +227,7 @@
 .vds-bs-pin {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-primary);
@@ -283,7 +283,7 @@
 .vds-bs-value-num {
   font-family: var(--via-mono);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   letter-spacing: -0.005em;
   flex-shrink: 0;
@@ -292,7 +292,7 @@
 .vds-bs-value h4 {
   font-family: var(--via-font-display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -324,7 +324,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -333,7 +333,7 @@
 .vds-bs-positioning h3 {
   font-family: var(--via-font-display);
   font-size: clamp(20px, 2.4vw, 26px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.35;
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
@@ -342,12 +342,12 @@
 }
 .vds-bs-positioning h3 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
 .vds-bs-positioning h3 strong {
   font-style: normal;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   -webkit-background-clip: text;
   background-clip: text;
@@ -369,7 +369,7 @@
   display: inline-block;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 3px 9px;
@@ -448,7 +448,7 @@
   display: inline-block;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.78);
@@ -460,13 +460,13 @@
   line-height: 1.18;
   letter-spacing: -0.022em;
   margin: 0 0 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   max-width: 760px;
   color: inherit;
 }
 .vds-bs-promise h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   background: linear-gradient(90deg, var(--via-white), rgba(255, 255, 255, 0.7));
   -webkit-background-clip: text;
   background-clip: text;
@@ -492,7 +492,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);

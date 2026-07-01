@@ -59,7 +59,7 @@
   background: transparent;
   font-family: var(--via-font-mono);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.02em;
   color: var(--via-text-muted);
   cursor: pointer;
@@ -142,7 +142,7 @@
   border-radius: 999px;
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -194,7 +194,7 @@
   margin: 28px 0 14px;
   font-family: var(--via-font-display);
   font-size: clamp(32px, 4vw, 44px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.12;
   color: var(--via-text-primary);
@@ -229,7 +229,7 @@
   letter-spacing: 0.02em;
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
-.vds-err-incident strong { color: var(--via-text-body); font-weight: 500; }
+.vds-err-incident strong { color: var(--via-text-body); font-weight: var(--via-fw-medium); }
 
 /* ===== Copy guide cards (rodapé) =========================== */
 .vds-err-guides {
@@ -276,7 +276,7 @@
   border-radius: 999px;
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -287,7 +287,7 @@
   margin: 0 0 12px;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
 }
@@ -307,7 +307,7 @@
   flex-shrink: 0;
   font-family: var(--via-font-mono);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 2px 7px;

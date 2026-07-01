@@ -18,7 +18,7 @@
 
 .via-progress__label {
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
 }
@@ -26,7 +26,7 @@
 .via-progress__value {
   font-family: var(--via-mono, 'Geist Mono', ui-monospace, monospace);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-2, #5E6B82);
   font-variant-numeric: tabular-nums;
 }

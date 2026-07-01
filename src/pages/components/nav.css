@@ -84,7 +84,7 @@
   position: relative;
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   text-decoration: none;
   cursor: pointer;
@@ -125,7 +125,7 @@
 }
 
 .via-nav-l a.active {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .via-nav-d a {
@@ -138,7 +138,7 @@
 }
 
 .via-nav-d a.active {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .via-nav-l button,
@@ -147,7 +147,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;

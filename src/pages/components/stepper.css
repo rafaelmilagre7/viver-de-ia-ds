@@ -34,7 +34,7 @@
   color: var(--via-text-soft);
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
   z-index: 1;
@@ -54,7 +54,7 @@
 .via-stepper .label {
   font-family: var(--via-font);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   color: var(--via-text-soft);
   text-align: center;
@@ -83,7 +83,7 @@
 .via-stepper .step.current .circle {
   border-color: var(--via-navy);
   color: var(--via-text-primary);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   box-shadow:
     0 0 0 6px var(--via-navy-08),
     0 4px 14px -3px var(--via-navy-25);
@@ -104,7 +104,7 @@
 
 .via-stepper .step.current .label {
   color: var(--via-text-primary);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
 }
 
 .via-stepper .step:last-child .cell .line {

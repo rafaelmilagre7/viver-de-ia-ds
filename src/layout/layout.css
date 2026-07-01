@@ -68,7 +68,7 @@
 .vds-brand-tag {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -108,7 +108,7 @@
   margin-left: auto;
   font-family: var(--via-font-mono);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   padding: 2px 6px;
   border: 0.5px solid var(--via-navy-12);
@@ -119,7 +119,7 @@
 .vds-header-link {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -152,7 +152,7 @@
   gap: 10px;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-body);
@@ -189,7 +189,7 @@
   padding: 7px 10px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
   text-decoration: none;
   border-radius: var(--via-radius-sm);
@@ -203,7 +203,7 @@
 .vds-sidebar-link.active {
   color: var(--via-text-primary);
   background: var(--via-navy-08);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 .vds-sidebar-link.active::before {
   content: '';
@@ -218,7 +218,7 @@
 .vds-sidebar-soon {
   font-family: var(--via-font);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-gray-400);
@@ -287,7 +287,7 @@
 .vds-footer-h {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);

@@ -121,7 +121,7 @@
   padding: 8px 10px 4px;
   font-family: var(--via-font, inherit);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
@@ -160,7 +160,7 @@
 .via-cmd__label strong {
   font-family: var(--via-font, inherit);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }

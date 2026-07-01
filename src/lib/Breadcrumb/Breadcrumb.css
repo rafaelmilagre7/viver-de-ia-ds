@@ -28,7 +28,7 @@
   position: relative;
   color: var(--via-ink-2, #5E6B82);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   background: none;
   border: none;
   padding: 0;
@@ -63,7 +63,7 @@
 
 .via-breadcrumb__current {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .via-breadcrumb__sep {

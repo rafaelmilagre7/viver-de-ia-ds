@@ -91,7 +91,7 @@
   margin: 0;
   font-family: var(--via-font-display, inherit);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
 }

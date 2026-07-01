@@ -99,13 +99,13 @@
 
 .vds-sr-result-meta strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-sr-result-meta em {
   font-style: italic;
   color: var(--via-accent-warm);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 /* Grid · facets + main */
@@ -126,7 +126,7 @@
   margin: 0 0 10px;
   font-family: var(--via-mono);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -223,7 +223,7 @@
 }
 
 .vds-sr-facet-list li.on .vds-sr-facet-label {
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-sr-facet-count {
@@ -315,7 +315,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
@@ -363,7 +363,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
   flex-shrink: 0;
@@ -424,7 +424,7 @@
 .vds-sr-result-type {
   display: inline-block;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 2px 9px;
   border-radius: 999px;
@@ -469,7 +469,7 @@
   margin: 0 0 6px;
   font-family: var(--via-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   line-height: 1.3;
 }
@@ -492,7 +492,7 @@
   background: linear-gradient(180deg, transparent 50%, var(--via-navy-16) 50%);
   color: inherit;
   padding: 0 1px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-sr-result-snippet {
@@ -539,7 +539,7 @@
 
 .vds-sr-pag-info strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
 }
 
@@ -558,7 +558,7 @@
   color: var(--via-ink-2);
   font-family: var(--via-mono);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, color .2s ease;
 }

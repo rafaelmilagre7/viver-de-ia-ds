@@ -17,13 +17,13 @@
 .via-pill--sm {
   padding: 3px 9px;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .via-pill--md {
   padding: 4px 11px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .via-pill__icon {
@@ -67,7 +67,7 @@
   -webkit-backdrop-filter: blur(8px);
   border-color: rgba(184, 92, 92, 0.30);
   color: var(--via-coral-dark);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.40) inset,
     0 0 6px -2px rgba(184, 92, 92, 0.18);
@@ -80,7 +80,7 @@
   -webkit-backdrop-filter: blur(8px);
   border-color: var(--via-navy-16);
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.78) inset,
     0 0 0 0.5px var(--via-navy-06);
@@ -94,7 +94,7 @@
   border-color: var(--via-navy);
   color: var(--via-white);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.16) inset,
     0 -1px 0 rgba(0, 0, 0, 0.12) inset,
@@ -105,7 +105,7 @@
 .via-pill--live em {
   font-family: var(--via-display);
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-size: 13px;
   letter-spacing: -0.012em;
   color: rgba(255, 255, 255, 0.96);

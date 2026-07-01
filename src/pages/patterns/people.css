@@ -41,7 +41,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 4px 12px;
   border-radius: 999px;
@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: center;
   font-size: 26px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   margin-top: -68px;
   border: 4px solid var(--via-white);
@@ -90,7 +90,7 @@
 .vds-mentor-card h3 {
   margin: 0 0 4px;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.024em;
   color: var(--via-text-primary);
 }
@@ -173,7 +173,7 @@
 
 .vds-mentor-stats strong {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
   line-height: 1;
@@ -184,7 +184,7 @@
   font-style: normal;
   font-size: 10px;
   color: var(--via-text-soft);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.02em;
 }
 
@@ -203,7 +203,7 @@
   padding: 14px 18px;
   border-radius: 12px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   font-family: inherit;
@@ -257,7 +257,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
   color: var(--via-text-primary);
   padding: 4px 10px;
@@ -274,7 +274,7 @@
   font-size: 15px;
   line-height: 1.5;
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
 }
 
@@ -390,7 +390,7 @@
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   border: 3px solid var(--via-white);
   box-shadow:
@@ -420,7 +420,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   border: 2px solid var(--via-white);
   box-shadow: 0 4px 8px -2px var(--via-navy-25);
 }
@@ -429,7 +429,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 4px 11px;
   border-radius: 999px;
@@ -455,7 +455,7 @@
 .vds-team-card h4 {
   margin: 0;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
   line-height: 1.2;
@@ -482,7 +482,7 @@
 
 .vds-team-stat strong {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1;
@@ -535,7 +535,7 @@
 
 .vds-team-profile {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -587,7 +587,7 @@
 .vds-member-list h3 {
   margin: 0 0 4px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
@@ -635,7 +635,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
 }
@@ -647,7 +647,7 @@
   padding: 12px 12px;
   border-bottom: 1px solid var(--via-border-soft);
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -718,7 +718,7 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
   letter-spacing: 0.02em;
   border: 2px solid var(--via-white);
@@ -793,7 +793,7 @@
 }
 
 .vds-member-user p strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-member-user span {
@@ -808,7 +808,7 @@
   align-items: center;
   gap: 5px;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   padding: 4px 10px 4px 8px;
   border-radius: 999px;
   background: var(--via-navy-06);
@@ -849,7 +849,7 @@
   border: 1px solid var(--via-border-soft);
   font-size: 11.5px;
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   font-feature-settings: 'tnum' 1;
   letter-spacing: -0.005em;
   width: fit-content;
@@ -912,7 +912,7 @@
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
 }
 
@@ -923,7 +923,7 @@
 
 .vds-userpop-plan {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   padding: 4px 11px;
   border-radius: 999px;
   background: var(--via-navy-06);
@@ -946,7 +946,7 @@
 .vds-userpop-card h4 {
   margin: 0 0 2px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -979,7 +979,7 @@
 }
 
 .vds-userpop-stats strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin-right: 2px;
 }
@@ -1001,7 +1001,7 @@
   padding: 9px 12px;
   border-radius: 9px;
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   font-family: inherit;

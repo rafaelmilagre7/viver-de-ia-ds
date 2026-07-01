@@ -7,7 +7,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
   margin-bottom: 8px;
@@ -70,7 +70,7 @@
   color: var(--via-text-primary);
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   line-height: 1.4;
   cursor: pointer;
@@ -232,7 +232,7 @@
 
 .vds-fp-mselect-foot strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-fp-mselect-foot button {
@@ -243,7 +243,7 @@
   padding: 6px 14px;
   font-family: var(--via-font);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
   transition: background .2s ease;
@@ -306,7 +306,7 @@
   margin: 0;
   font-family: var(--via-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
 }
@@ -331,7 +331,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
   transition: background .2s ease, transform .2s ease;
@@ -389,7 +389,7 @@
 
 .vds-fp-drop-item-body strong {
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
   white-space: nowrap;
@@ -434,7 +434,7 @@
 .vds-fp-drop-pct {
   font-size: 10.5px;
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.01em;
 }
 
@@ -695,7 +695,7 @@
   gap: 6px;
   font-family: var(--via-mono);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -705,7 +705,7 @@
   margin-left: auto;
   color: var(--via-text-primary);
   text-transform: none;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.01em;
 }
 
@@ -786,7 +786,7 @@
   color: var(--via-ink-2);
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
   transition: all .2s ease;
@@ -880,7 +880,7 @@
   border: none;
   font-family: var(--via-font);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
   cursor: pointer;
   letter-spacing: -0.006em;
@@ -923,7 +923,7 @@
   margin: 0 0 14px;
   font-family: var(--via-display);
   font-size: 20px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
 }
@@ -936,7 +936,7 @@
 }
 
 .vds-fp-md-preview p strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 
@@ -1003,7 +1003,7 @@
   border: none;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
   transition: background .2s ease;

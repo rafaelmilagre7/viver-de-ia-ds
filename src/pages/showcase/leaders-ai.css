@@ -23,7 +23,7 @@
 .la-nav a {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.62);
@@ -38,7 +38,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
@@ -48,7 +48,7 @@
 .la-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.55);
@@ -86,13 +86,13 @@
 .la-hero h1 {
   font-family: var(--via-font-display);
   font-size: clamp(48px, 7vw, 96px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 0.96;
   letter-spacing: -0.04em;
   color: var(--via-white);
   margin: 20px 0 28px;
 }
-.la-hero h1 em { font-style: normal; color: rgba(255,255,255,0.55); font-weight: 500; }
+.la-hero h1 em { font-style: normal; color: rgba(255,255,255,0.55); font-weight: var(--via-fw-medium); }
 .la-hero .lede {
   font-family: var(--via-font);
   font-size: 18px;
@@ -112,7 +112,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
 }
 .la-pill .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--via-surface); animation: mkPulse 2.4s ease-in-out infinite; }
@@ -122,13 +122,13 @@
 .la-section-h h2 {
   font-family: var(--via-font-display);
   font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.035em;
   color: var(--via-white);
   margin: 16px 0 0;
   line-height: 1.05;
 }
-.la-section-h h2 em { font-style: normal; color: rgba(255,255,255,0.55); font-weight: 500; }
+.la-section-h h2 em { font-style: normal; color: rgba(255,255,255,0.55); font-weight: var(--via-fw-medium); }
 
 .la-agenda {
   display: grid;
@@ -145,7 +145,7 @@
 .la-day h3 {
   font-family: var(--via-font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-white);
   margin: 0 0 24px;
@@ -195,7 +195,7 @@
   justify-content: center;
   font-family: var(--via-font-display);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   flex-shrink: 0;
 }
@@ -203,7 +203,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-white);
 }
 .la-speaker span {
@@ -245,7 +245,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: 11px; font-weight: 500;
+  font-size: 11px; font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -256,7 +256,7 @@
 }
 .la-tier .tag {
   font-family: var(--via-font);
-  font-size: 10px; font-weight: 700;
+  font-size: 10px; font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em; text-transform: uppercase;
   color: rgba(255,255,255,0.55);
 }
@@ -271,7 +271,7 @@
 .la-tier.feat .cur { color: var(--via-text-muted); }
 .la-tier .num {
   font-family: var(--via-font-display);
-  font-size: 42px; font-weight: 500;
+  font-size: 42px; font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
   line-height: 1;
@@ -299,7 +299,7 @@
   border: none;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   background: var(--via-surface);

@@ -29,7 +29,7 @@
   margin: 0 0 4px;
   font-family: var(--via-display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
 }
@@ -54,7 +54,7 @@
   border-radius: 9px;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   border: 1px solid var(--via-border);
   background: var(--via-surface);
@@ -92,7 +92,7 @@
   color: var(--via-white);
   font-family: var(--via-mono);
   font-size: 9.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 /* Kanban grid */
@@ -185,7 +185,7 @@
   margin: 0 0 2px;
   font-family: var(--via-display);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
 }
@@ -200,7 +200,7 @@
 
 .vds-rm-col-count {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   padding: 2px 9px;
   border-radius: 999px;
@@ -281,7 +281,7 @@
 .vds-rm-card-tag {
   display: inline-block;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2);
   padding: 3px 10px;
@@ -308,7 +308,7 @@
   margin: 0 0 6px;
   font-family: var(--via-display);
   font-size: 14.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   line-height: 1.25;
   color: var(--via-text-primary);
@@ -352,7 +352,7 @@
 
 .vds-rm-card-prog-lbl {
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
   letter-spacing: 0.01em;
   min-width: 28px;
@@ -405,7 +405,7 @@
 
 .vds-rm-card-vote strong {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 /* See more in 'later' column */
@@ -418,7 +418,7 @@
   color: var(--via-ink-2);
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
   display: inline-flex;
@@ -451,5 +451,5 @@
 
 .vds-rm-foot strong {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }

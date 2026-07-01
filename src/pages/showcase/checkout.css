@@ -28,7 +28,7 @@
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -91,7 +91,7 @@
   justify-content: center;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
 }
 
@@ -112,13 +112,13 @@
 
 .ckt-step-label {
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   letter-spacing: -0.005em;
   white-space: nowrap;
 }
 
-.ckt-step.active .ckt-step-label { color: var(--via-text-primary); font-weight: 600; }
+.ckt-step.active .ckt-step-label { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
 
 @media (max-width: 560px) {
   .ckt-step-label { display: none; }
@@ -137,7 +137,7 @@
 
 .ckt-panel h2 {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.020em;
   color: var(--via-text-primary);
   margin: 0 0 6px;
@@ -208,7 +208,7 @@
 .ckt-plano-info strong {
   display: block;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
 }
@@ -237,7 +237,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-size: 9.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow: 0 4px 10px -3px var(--via-navy-40);
 }
@@ -264,7 +264,7 @@
 
 .ckt-field span {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
   letter-spacing: -0.004em;
 }
@@ -311,7 +311,7 @@
   color: var(--via-text-body);
   font-family: inherit;
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   transition: all 160ms ease;
@@ -321,7 +321,7 @@
   border-color: var(--via-navy);
   background: var(--via-surface);
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .ckt-pgto-tabs button svg { color: var(--via-text-primary); }
@@ -361,7 +361,7 @@
 .ckt-pix-info strong {
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
   margin-bottom: 6px;
@@ -383,7 +383,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   letter-spacing: -0.005em;
 }
@@ -407,7 +407,7 @@
   color: var(--via-text-body);
   font-family: inherit;
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   transition: all 160ms ease;
@@ -427,7 +427,7 @@
   color: var(--via-white);
   font-family: inherit;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   letter-spacing: -0.006em;
   box-shadow:
@@ -463,7 +463,7 @@
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -479,7 +479,7 @@
 .ckt-summary-item strong {
   display: block;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
   margin-bottom: 3px;
@@ -530,7 +530,7 @@
 
 .ckt-summary-total strong {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   font-feature-settings: 'tnum' 1;
@@ -551,7 +551,7 @@
 .ckt-summary-guarantee strong {
   display: block;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
   margin-bottom: 3px;

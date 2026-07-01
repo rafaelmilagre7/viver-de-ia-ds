@@ -61,7 +61,7 @@
 .vds-form-h h3 {
   font-family: var(--via-font-display);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);
   margin: 6px 0 0;
@@ -96,7 +96,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -108,7 +108,7 @@
   width: 100%;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   background: transparent;
   border: none;
@@ -117,7 +117,7 @@
   resize: none;
   line-height: 1.5;
 }
-.via-field .val::placeholder { color: var(--via-gray-400); font-weight: 400; }
+.via-field .val::placeholder { color: var(--via-gray-400); font-weight: var(--via-fw-regular); }
 
 /* states */
 .via-field.focused {
@@ -186,7 +186,7 @@
 .val-with-prefix .prefix {
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   flex-shrink: 0;
 }
@@ -201,13 +201,13 @@
   padding: 0;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;
 }
 .val-select svg { color: var(--via-text-muted); }
 
-.via-field textarea.val { font-weight: 400; min-height: 60px; }
+.via-field textarea.val { font-weight: var(--via-fw-regular); min-height: 60px; }
 .via-field .counter {
   position: absolute;
   bottom: 12px;
@@ -288,7 +288,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 .via-check span:not(.box),

@@ -133,7 +133,7 @@
 .via-toast__body strong {
   font-family: var(--via-display, 'Geist', system-ui, sans-serif);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.014em;
 }
@@ -154,7 +154,7 @@
   color: var(--via-text-primary);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
   white-space: nowrap;

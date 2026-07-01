@@ -27,7 +27,7 @@
 .mk-nav a {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -43,7 +43,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
@@ -86,7 +86,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-primary);
   margin-bottom: 32px;
@@ -104,17 +104,17 @@
 .mk-hero h1 {
   font-family: var(--via-font-display);
   font-size: clamp(48px, 7vw, 96px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 0.94;
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
   margin: 0;
 }
-.mk-hero h1 em { font-style: normal; font-weight: 500; color: var(--via-text-muted); }
+.mk-hero h1 em { font-style: normal; font-weight: var(--via-fw-medium); color: var(--via-text-muted); }
 .mk-hero .lede {
   font-family: var(--via-font);
   font-size: 19px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   line-height: 1.55;
   color: var(--via-text-body);
   max-width: 540px;
@@ -129,7 +129,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
@@ -176,7 +176,7 @@
 .glass-stack .g-lbl {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -184,7 +184,7 @@
 .glass-stack .g-num {
   font-family: var(--via-font-display);
   font-size: 44px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
@@ -194,7 +194,7 @@
 .glass-stack .g-suffix {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.10em;
   color: var(--via-gray-400);
   text-transform: uppercase;
@@ -206,7 +206,7 @@
   color: var(--via-text-body);
   margin: 10px 0 0;
 }
-.glass-stack .g-sub em { font-family: var(--via-font-display); font-style: normal; color: var(--via-text-primary); font-weight: 400; }
+.glass-stack .g-sub em { font-family: var(--via-font-display); font-style: normal; color: var(--via-text-primary); font-weight: var(--via-fw-regular); }
 
 /* ---- SECTIONS ---- */
 .mk-section { padding: 96px 48px; max-width: 1280px; margin: 0 auto; }
@@ -214,14 +214,14 @@
 .mk-section-h h2 {
   font-family: var(--via-font-display);
   font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.035em;
   color: var(--via-text-primary);
   margin: 12px 0 0;
   line-height: 1.05;
   max-width: 800px;
 }
-.mk-section-h h2 em { font-style: normal; color: var(--via-text-muted); font-weight: 500; }
+.mk-section-h h2 em { font-style: normal; color: var(--via-text-muted); font-weight: var(--via-fw-medium); }
 
 .mk-feat-grid {
   position: relative;
@@ -280,7 +280,7 @@
 .mk-feat h3 {
   font-family: var(--via-font-display);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
   margin: 0 0 8px;
@@ -341,14 +341,14 @@
 .mk-case .company {
   font-family: var(--via-font-display);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
 .mk-case .sector {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-muted);
   padding: 4px 10px;
@@ -360,7 +360,7 @@
 .mk-case h3 {
   font-family: var(--via-font-display);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -376,14 +376,14 @@
 .mk-case .v {
   font-family: var(--via-font-display);
   font-size: 36px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
 }
 .mk-case .l {
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -394,7 +394,7 @@
   gap: 8px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--via-text-primary);
@@ -422,13 +422,13 @@
 .mk-cta h2 {
   font-family: var(--via-font-display);
   font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.035em;
   color: var(--via-white);
   margin: 12px 0 24px;
   line-height: 1.05;
 }
-.mk-cta h2 em { font-style: normal; color: rgba(255,255,255,0.62); font-weight: 500; }
+.mk-cta h2 em { font-style: normal; color: rgba(255,255,255,0.62); font-weight: var(--via-fw-medium); }
 .mk-cta p {
   font-family: var(--via-font);
   font-size: 17px;
@@ -447,7 +447,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
@@ -465,7 +465,7 @@
 }
 .mk-footer .wm {
   font-family: var(--via-font);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.32em;
   color: var(--via-text-primary);
   font-size: 11px;

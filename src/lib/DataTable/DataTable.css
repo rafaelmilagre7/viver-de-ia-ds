@@ -19,7 +19,7 @@
   padding: 14px 16px;
   font-family: var(--via-font, inherit);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   border-bottom: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
@@ -43,7 +43,7 @@
   padding: 10px 14px;
   font-family: var(--via-font, inherit);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);

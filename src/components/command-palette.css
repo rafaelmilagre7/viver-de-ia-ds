@@ -58,10 +58,10 @@
   background: transparent;
   font-family: var(--via-font);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
-.vds-cmdk-inner header input::placeholder { color: var(--via-gray-400); font-weight: 400; }
+.vds-cmdk-inner header input::placeholder { color: var(--via-gray-400); font-weight: var(--via-fw-regular); }
 .vds-cmdk-inner header .close {
   width: 26px;
   height: 26px;
@@ -106,7 +106,7 @@
 .vds-cmdk-inner li.vds-cmdk__heading {
   font-family: var(--via-font);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -131,7 +131,7 @@
 .vds-cmdk-inner li .kbd {
   font-family: var(--via-font);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -146,7 +146,7 @@
 .vds-cmdk-inner li .t {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   white-space: nowrap;
   overflow: hidden;
@@ -184,7 +184,7 @@
 .vds-cmdk-inner footer kbd {
   font-family: var(--via-font-mono);
   font-size: 9px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 4px;

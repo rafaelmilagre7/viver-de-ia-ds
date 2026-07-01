@@ -70,7 +70,7 @@
 .vds-mini-meta .ep {
   font-family: var(--via-font);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -79,7 +79,7 @@
 .vds-mini-meta h3 {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 8px;
   letter-spacing: -0.005em;
@@ -211,7 +211,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
@@ -220,13 +220,13 @@
 .vds-fullep .ep-meta h2 {
   font-family: var(--via-font-display);
   font-size: 32px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.05;
   color: var(--via-white);
   margin: 0;
 }
-.vds-fullep .ep-meta h2 em { font-style: normal; font-weight: 400; color: rgba(255,255,255,0.62); }
+.vds-fullep .ep-meta h2 em { font-style: normal; font-weight: var(--via-fw-regular); color: rgba(255,255,255,0.62); }
 .vds-fullep .ep-meta .lede {
   font-family: var(--via-font);
   font-size: 13.5px;
@@ -242,7 +242,7 @@
   gap: 8px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: rgba(255,255,255,0.78);
 }
 .vds-fullep .ep-attr .av {
@@ -256,7 +256,7 @@
   justify-content: center;
   font-family: var(--via-font-display);
   font-size: 10px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-white);
 }
 .vds-fullep .ep-date {
@@ -355,7 +355,7 @@
   border-radius: 999px;
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
   cursor: pointer;
   transition: var(--via-t);
@@ -440,7 +440,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
@@ -449,13 +449,13 @@
 .vds-video .vid-idle-meta h2 {
   font-family: var(--via-font-display);
   font-size: clamp(28px, 4vw, 44px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.05;
   color: var(--via-white);
   margin: 0;
 }
-.vds-video .vid-idle-meta h2 em { font-style: normal; font-weight: 400; color: rgba(255,255,255,0.62); }
+.vds-video .vid-idle-meta h2 em { font-style: normal; font-weight: var(--via-fw-regular); color: rgba(255,255,255,0.62); }
 .vds-video .vid-idle-meta .lede {
   font-family: var(--via-font);
   font-size: 13px;
@@ -594,7 +594,7 @@
   border-radius: 6px;
   font-family: var(--via-font-mono);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   cursor: pointer;
 }
@@ -620,7 +620,7 @@
 .vds-video .vid-watermark span {
   font-family: var(--via-font);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.85);

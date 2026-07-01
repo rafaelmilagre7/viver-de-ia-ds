@@ -112,7 +112,7 @@
 .vds-pricing-tier__name {
   font-family: var(--via-font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
 }
@@ -126,7 +126,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 9.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   box-shadow:
@@ -139,7 +139,7 @@
 .vds-pricing-tier__desc {
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
   line-height: 1.5;
   letter-spacing: -0.004em;
@@ -156,7 +156,7 @@
 .vds-pricing-tier__amount {
   font-family: var(--via-font-display);
   font-size: 44px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
   color: var(--via-text-primary);
   line-height: 1;
@@ -164,7 +164,7 @@
 .vds-pricing-tier__per {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
 }
@@ -196,7 +196,7 @@
   padding: 28px 24px 12px;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -272,7 +272,7 @@
     var(--via-glass-card);
   border-left: 1px solid var(--via-navy);
   border-right: 1px solid var(--via-navy);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 
@@ -314,7 +314,7 @@
 .vds-pricing-value {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -376,7 +376,7 @@
   line-height: 24px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   margin-bottom: 14px;
@@ -386,7 +386,7 @@
   margin: 0 0 8px;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
 }

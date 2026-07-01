@@ -124,7 +124,7 @@
   padding: 6px 14px;
   font-family: inherit;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-white, #FFFFFF);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));

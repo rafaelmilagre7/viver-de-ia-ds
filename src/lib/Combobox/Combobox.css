@@ -12,7 +12,7 @@
 
 .via-combobox__label {
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
 }
@@ -70,7 +70,7 @@
   outline: none;
   font-family: inherit;
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   color: var(--via-text-primary);
   min-width: 0;
@@ -81,7 +81,7 @@
 
 .via-combobox__input::placeholder {
   color: var(--via-ink-3, #6B7891);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 .via-combobox__chevron {
@@ -130,7 +130,7 @@
   padding: 8px 10px;
   border-radius: 7px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
   cursor: pointer;

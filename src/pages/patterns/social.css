@@ -71,7 +71,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: rgba(0,0,0,0.92);
 }
 .ig-h span {
@@ -98,7 +98,7 @@
 .ig-content .eyebrow {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
@@ -107,7 +107,7 @@
 .ig-content h2 {
   font-family: var(--via-font-display);
   font-size: 52px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 0.96;
   letter-spacing: -0.035em;
   color: var(--via-white);
@@ -118,7 +118,7 @@
   display: block;
   font-style: normal;
   font-size: 26px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
   letter-spacing: -0.015em;
   margin-top: 4px;
@@ -141,7 +141,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(255,255,255,0.85);
   white-space: nowrap;
@@ -164,7 +164,7 @@
 .ig-content .quote {
   font-family: var(--via-font-display);
   font-size: 28px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--via-white);
@@ -173,7 +173,7 @@
 .ig-content .quote em {
   display: block;
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
   margin: 0;
 }
@@ -195,14 +195,14 @@
   justify-content: center;
   font-family: var(--via-font-display);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-white);
 }
 .ig-attr strong {
   display: block;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-white);
 }
 .ig-attr span {
@@ -229,8 +229,8 @@
   line-height: 1.4;
   color: rgba(0,0,0,0.90);
 }
-.ig-caption strong { font-weight: 700; }
-.ig-caption span { color: var(--via-text-primary); font-weight: 500; }
+.ig-caption strong { font-weight: var(--via-fw-bold); }
+.ig-caption span { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 
 /* ============ INSTAGRAM STORY ============ */
 .vds-story {
@@ -280,7 +280,7 @@
 .story-h strong {
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-white);
 }
 .story-h span {
@@ -301,7 +301,7 @@
 .story-content .eyebrow {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
@@ -310,7 +310,7 @@
 .story-content h2 {
   font-family: var(--via-font-display);
   font-size: 36px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.03em;
   line-height: 1.0;
   color: var(--via-white);
@@ -318,7 +318,7 @@
 }
 .story-content h2 em {
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
 }
 .story-content .lede {
@@ -338,7 +338,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0,0,0,0.30);
@@ -413,7 +413,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: rgba(0,0,0,0.92);
 }
 .li-h span {
@@ -435,7 +435,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   cursor: pointer;
 }
 .li-text {
@@ -446,7 +446,7 @@
   color: rgba(0,0,0,0.90);
   margin: 0;
 }
-.li-text strong { font-weight: 700; }
+.li-text strong { font-weight: var(--via-fw-bold); }
 
 .vds-li-post {
   position: relative;
@@ -461,7 +461,7 @@
 .li-content .eyebrow {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
@@ -470,7 +470,7 @@
 .li-content h2 {
   font-family: var(--via-font-display);
   font-size: 44px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.0;
   letter-spacing: -0.03em;
   color: var(--via-white);
@@ -480,7 +480,7 @@
 .li-content h2 em {
   font-style: normal;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
   letter-spacing: 0.05em;
   margin-left: 2px;
@@ -521,7 +521,7 @@
   color: rgba(0,0,0,0.60);
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   border-radius: 6px;
 }

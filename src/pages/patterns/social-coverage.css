@@ -34,7 +34,7 @@
 .vds-sc-nav-btn strong {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   letter-spacing: -0.004em;
 }
@@ -74,7 +74,7 @@
 .vds-sc-spec h4 {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -100,7 +100,7 @@
 .vds-sc-spec dt {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
 }
@@ -165,7 +165,7 @@
 .vds-sc-ig-meta strong {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-sc-ig-meta em {
@@ -202,7 +202,7 @@
 .vds-sc-ig-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
@@ -211,7 +211,7 @@
 .vds-sc-ig-canvas h2 {
   font-family: var(--via-font-display);
   font-size: 56px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -219,7 +219,7 @@
 }
 .vds-sc-ig-canvas h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-sc-ig-caption {
@@ -256,7 +256,7 @@
   color: var(--via-text);
   line-height: 1.5;
 }
-.vds-sc-ig-body strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-sc-ig-body strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 .vds-sc-ig-time {
   display: block;
   font-size: 11px;
@@ -305,7 +305,7 @@
 .vds-sc-story-hdr strong {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 .vds-sc-story-hdr em {
   font-style: normal;
@@ -328,7 +328,7 @@
 .vds-sc-story-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
@@ -337,7 +337,7 @@
 .vds-sc-story-canvas h2 {
   font-family: var(--via-font-display);
   font-size: 38px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -345,7 +345,7 @@
 }
 .vds-sc-story-canvas h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-sc-story-cta {
@@ -390,7 +390,7 @@
 .vds-sc-reel-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
@@ -399,7 +399,7 @@
 .vds-sc-reel-canvas h2 {
   font-family: var(--via-font-display);
   font-size: 36px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -407,7 +407,7 @@
 }
 .vds-sc-reel-canvas h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
 .vds-sc-reel-sub {
@@ -465,7 +465,7 @@
 .vds-sc-highlight-circle .mono {
   font-family: var(--via-mono);
   font-size: 28px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 .vds-sc-highlight em {
   font-style: normal;
@@ -498,7 +498,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -521,7 +521,7 @@
 .vds-sc-li-hdr strong {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-sc-li-hdr em {
@@ -553,7 +553,7 @@
   line-height: 1.55;
 }
 .vds-sc-li-body p { margin: 0 0 10px; }
-.vds-sc-li-body strong { font-weight: 500; color: var(--via-text-primary); }
+.vds-sc-li-body strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-sc-li-body em {
   font-style: italic;
   font-family: var(--via-font-display);
@@ -579,7 +579,7 @@
 .vds-sc-li-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
@@ -588,7 +588,7 @@
 .vds-sc-li-canvas h2 {
   font-family: var(--via-font-display);
   font-size: 64px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -596,7 +596,7 @@
 }
 .vds-sc-li-canvas h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-sc-li-canvas p {
@@ -632,7 +632,7 @@
 .vds-sc-li-stats-grid strong {
   font-family: var(--via-mono);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -680,7 +680,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
   cursor: pointer;
   transition: background 120ms ease;
@@ -738,7 +738,7 @@
 .vds-sc-carousel-body h3 {
   font-family: var(--via-font-display);
   font-size: 38px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.05;
   letter-spacing: -0.025em;
   margin: 0 0 10px;
@@ -749,7 +749,7 @@
 }
 .vds-sc-carousel-body h3 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 .vds-sc-carousel-card.hook .vds-sc-carousel-body h3 em,
 .vds-sc-carousel-card.result .vds-sc-carousel-body h3 em {
@@ -837,7 +837,7 @@
 .vds-sc-yt-eyebrow {
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
@@ -846,7 +846,7 @@
 .vds-sc-yt-thumb h2 {
   font-family: var(--via-font-display);
   font-size: clamp(40px, 6vw, 78px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1;
   letter-spacing: -0.028em;
   color: var(--via-white);
@@ -854,7 +854,7 @@
 }
 .vds-sc-yt-thumb h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-sc-yt-thumb p {
@@ -907,7 +907,7 @@
 .vds-sc-yt-banner-safe h3 {
   font-family: var(--via-font-display);
   font-size: clamp(28px, 3.6vw, 52px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -959,7 +959,7 @@
 .vds-sc-yt-end h3 {
   font-family: var(--via-font-display);
   font-size: 36px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -967,7 +967,7 @@
 }
 .vds-sc-yt-end h3 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
 .vds-sc-yt-end-grid {
@@ -1000,7 +1000,7 @@
 .vds-sc-yt-end-grid strong {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-white);
 }
 .vds-sc-yt-end-grid em {
@@ -1053,7 +1053,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1067,7 +1067,7 @@
 .vds-sc-x-post header strong {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-sc-x-post header em {
@@ -1083,7 +1083,7 @@
   margin: 8px 0 12px;
   line-height: 1.45;
 }
-.vds-sc-x-post > p strong { font-weight: 500; }
+.vds-sc-x-post > p strong { font-weight: var(--via-fw-medium); }
 .vds-sc-x-post > p em { font-style: italic; color: var(--via-ink-3); font-family: var(--via-font-display); }
 
 .vds-sc-x-card {
@@ -1100,7 +1100,7 @@
 .vds-sc-x-card-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
@@ -1109,7 +1109,7 @@
 .vds-sc-x-card h3 {
   font-family: var(--via-font-display);
   font-size: 36px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -1117,7 +1117,7 @@
 }
 .vds-sc-x-card h3 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-sc-x-card p {
@@ -1171,7 +1171,7 @@
 .vds-sc-tiktok-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
@@ -1180,7 +1180,7 @@
 .vds-sc-tiktok-canvas h2 {
   font-family: var(--via-font-display);
   font-size: 30px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -1188,7 +1188,7 @@
 }
 .vds-sc-tiktok-canvas h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-sc-tiktok-canvas p {
@@ -1241,7 +1241,7 @@
   background: var(--via-coral);
   color: var(--via-white);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1269,7 +1269,7 @@
 .vds-sc-tiktok-bottom strong {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 .vds-sc-tiktok-bottom p {
   font-family: var(--via-font);
@@ -1300,7 +1300,7 @@
   position: absolute;
   font-family: var(--via-font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.15;
   color: var(--via-white);
   letter-spacing: -0.022em;
@@ -1341,7 +1341,7 @@
 .vds-sc-podcast-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
@@ -1350,7 +1350,7 @@
 .vds-sc-podcast-cover h2 {
   font-family: var(--via-font-display);
   font-size: 64px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 0.95;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -1358,7 +1358,7 @@
 }
 .vds-sc-podcast-cover h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.7);
 }
 .vds-sc-podcast-cover p {
@@ -1393,7 +1393,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
@@ -1401,7 +1401,7 @@
 .vds-sc-podcast-ep h2 {
   font-family: var(--via-font-display);
   font-size: 32px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.022em;
   color: var(--via-white);
@@ -1409,7 +1409,7 @@
 }
 .vds-sc-podcast-ep h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-sc-podcast-ep-guest {
@@ -1426,7 +1426,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1435,7 +1435,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-white);
 }
 .vds-sc-podcast-ep-guest em {

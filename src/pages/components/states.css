@@ -82,7 +82,7 @@
 .vds-loader-msg {
   margin: 0 0 6px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.01em;
   max-width: 380px;
@@ -92,7 +92,7 @@
 .vds-loader-msg em {
   font-style: normal;
   color: rgba(255, 255, 255, 0.6);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 .vds-loader-sub {
@@ -142,7 +142,7 @@
 }
 
 .vds-loader-inline p strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 
@@ -333,7 +333,7 @@
   align-items: center;
   gap: 8px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(255, 255, 255, 0.7);
   padding: 5px 10px 5px 8px;
@@ -369,7 +369,7 @@
 .vds-error-card.e500 .vds-error-code {
   font-family: var(--via-font-mono);
   font-size: 56px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.04em;
   line-height: 1;
@@ -445,7 +445,7 @@
 
 .vds-error-plan .lbl {
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -453,7 +453,7 @@
 
 .vds-error-plan strong {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -472,7 +472,7 @@
   justify-content: center;
   color: var(--via-text-soft);
   font-size: 16px;
-  font-weight: 300;
+  font-weight: var(--via-fw-light);
 }
 
 /* ---------- Maintenance ---------- */
@@ -494,7 +494,7 @@
   gap: 8px;
   font-family: inherit;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-primary);
   padding: 5px 10px 5px 8px;
@@ -539,7 +539,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   color: var(--via-text-soft);
   font-feature-settings: 'tnum' 1;
@@ -547,7 +547,7 @@
 
 .vds-error-progress-row .mid {
   color: var(--via-text-primary);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: -0.005em;
   text-transform: none;
   font-size: 11px;
@@ -603,7 +603,7 @@
 .vds-error-code {
   font-family: inherit;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-soft);
   margin: 0;
@@ -622,7 +622,7 @@
 
 .vds-error-card h3 {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.022em;
   line-height: 1.2;
   color: var(--via-text-primary);
@@ -633,7 +633,7 @@
 .vds-error-card h3 em {
   font-style: normal;
   color: var(--via-navy-60);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-error-card p {
@@ -646,7 +646,7 @@
 
 .vds-error-card p strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-error-actions {
@@ -663,7 +663,7 @@
   padding: 11px 16px;
   border-radius: 11px;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   text-decoration: none;
   border: 1px solid;
   cursor: pointer;
@@ -736,7 +736,7 @@
 
 .vds-error-id span {
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -803,7 +803,7 @@
 .vds-empty-card h4 {
   margin: 0;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
   line-height: 1.25;
@@ -819,13 +819,13 @@
 
 .vds-empty-card p em {
   font-style: normal;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 
 .vds-empty-card p strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-empty-btn {
@@ -838,7 +838,7 @@
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-10);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -947,7 +947,7 @@
 .vds-success-eyebrow {
   display: inline-flex;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -956,7 +956,7 @@
 .vds-success-card h3 {
   margin: 0;
   font-size: 26px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
   line-height: 1.15;
@@ -970,7 +970,7 @@
 .vds-success-card h3 em {
   font-style: normal;
   color: rgba(10, 31, 59, 0.55);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 [data-theme="dark"] .vds-success-card h3 em { color: rgba(255, 255, 255, 0.62); }
 
@@ -995,7 +995,7 @@
   padding: 12px 20px;
   border-radius: 12px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   text-decoration: none;
@@ -1176,7 +1176,7 @@
   gap: 8px;
   font-family: var(--via-mono);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-accent-warm);
@@ -1212,7 +1212,7 @@
   margin: 0 0 12px;
   font-family: var(--via-display);
   font-size: 28px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.16;
   color: inherit;
@@ -1220,7 +1220,7 @@
 
 .vds-empty-prem h3 em {
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -1231,7 +1231,7 @@
   margin: 0 0 8px;
   font-family: var(--via-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   line-height: 1.22;
   color: var(--via-text-primary);
@@ -1239,7 +1239,7 @@
 
 .vds-empty-prem h4 em {
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-accent-warm);
 }
 
@@ -1258,7 +1258,7 @@
 
 .vds-empty-prem p strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-empty-prem.cold p strong {
@@ -1268,7 +1268,7 @@
 .vds-empty-prem p em {
   font-style: italic;
   color: var(--via-accent-warm);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 /* Cold steps */
@@ -1310,7 +1310,7 @@
   color: rgba(255, 255, 255, 0.66);
   font-family: var(--via-mono);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1339,7 +1339,7 @@
 
 .vds-empty-prem-steps strong {
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
@@ -1463,7 +1463,7 @@
 .vds-empty-prem-stat strong {
   font-family: var(--via-display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
 }
@@ -1487,7 +1487,7 @@
   border: 1px solid var(--via-border-soft);
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;
   text-align: left;
@@ -1527,7 +1527,7 @@
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
   line-height: 1;
 }
@@ -1559,7 +1559,7 @@
 .vds-empty-prem-mini strong {
   font-family: var(--via-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
 }
@@ -1610,7 +1610,7 @@
 .vds-empty-prem-day .num {
   font-family: var(--via-display);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.015em;
 }
@@ -1639,7 +1639,7 @@
   border-radius: 10px;
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   border: 1px solid var(--via-border);
   color: var(--via-text-primary);

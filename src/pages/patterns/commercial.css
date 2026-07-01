@@ -27,7 +27,7 @@
 .vds-com-slide-num {
   font-family: var(--via-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -51,7 +51,7 @@
 .vds-com-slide-canvas h2 {
   font-family: var(--via-font-display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.12;
   letter-spacing: -0.022em;
   color: var(--via-white);
@@ -59,7 +59,7 @@
 }
 .vds-com-slide-canvas h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
 .vds-com-slide-canvas p {
@@ -118,7 +118,7 @@
 .vds-com-deck-rules h4 {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -146,7 +146,7 @@
   left: 0; top: 9px; width: 6px; height: 1px;
   background: var(--via-navy);
 }
-.vds-com-deck-rules strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-com-deck-rules strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 
 /* ---------- One-pager ---------- */
 .vds-com-onepager {
@@ -179,7 +179,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -188,7 +188,7 @@
 .vds-com-onepager h2 {
   font-family: var(--via-font-display);
   font-size: clamp(22px, 3vw, 30px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.15;
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -196,7 +196,7 @@
 }
 .vds-com-onepager h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
 
@@ -216,7 +216,7 @@
 .vds-com-onepager-stats strong {
   font-family: var(--via-mono);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -235,7 +235,7 @@
 .vds-com-onepager-cols h3 {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -249,7 +249,7 @@
   line-height: 1.55;
   margin: 0;
 }
-.vds-com-onepager-cols p strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-com-onepager-cols p strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 .vds-com-onepager-cols ul {
   list-style: none;
   padding: 0;
@@ -280,7 +280,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 3px;
 }
@@ -296,7 +296,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   text-decoration: none;
   letter-spacing: -0.004em;
 }
@@ -329,7 +329,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -338,7 +338,7 @@
 .vds-com-case h2 {
   font-family: var(--via-font-display);
   font-size: clamp(28px, 4vw, 38px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.15;
   letter-spacing: -0.024em;
   color: var(--via-text-primary);
@@ -346,7 +346,7 @@
 }
 .vds-com-case h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
 .vds-com-case > header p {
@@ -370,7 +370,7 @@
 .vds-com-case-eyebrow {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -382,7 +382,7 @@
   line-height: 1.6;
   margin: 0;
 }
-.vds-com-case-body p strong { font-weight: 500; color: var(--via-text-primary); }
+.vds-com-case-body p strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-com-case-body ol {
   list-style: none;
   padding: 0;
@@ -407,7 +407,7 @@
   left: 0;
   font-family: var(--via-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
@@ -435,7 +435,7 @@
 .vds-com-case-stats strong {
   font-family: var(--via-mono);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -468,7 +468,7 @@
 .vds-com-case > footer cite strong {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-com-case > footer cite em {
@@ -522,7 +522,7 @@
   font-family: var(--via-mono);
   font-size: 11px;
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-com-proposal section {
@@ -534,7 +534,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -551,7 +551,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 4px;
 }
@@ -607,7 +607,7 @@
   border-top: 1px solid var(--via-navy-12);
 }
 .vds-com-proposal-total strong {
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-com-proposal-payment {
@@ -630,7 +630,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 4px;
 }
@@ -640,7 +640,7 @@
   color: var(--via-text);
   line-height: 1.5;
 }
-.vds-com-proposal > footer em strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-com-proposal > footer em strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 .vds-com-proposal-cta {
   padding: 12px 22px;
   background: var(--via-navy);
@@ -649,7 +649,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.004em;
   white-space: nowrap;
@@ -679,7 +679,7 @@
   display: block;
   font-family: var(--via-font-display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 3px;
   letter-spacing: -0.018em;
@@ -695,7 +695,7 @@
 .vds-com-contract h3 {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin: 0 0 10px;
   letter-spacing: -0.004em;
@@ -707,7 +707,7 @@
   line-height: 1.65;
   margin: 0 0 8px;
 }
-.vds-com-contract p strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-com-contract p strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 .vds-com-contract > footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -732,7 +732,7 @@
 .vds-com-contract-sig strong {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-com-contract-sig em {

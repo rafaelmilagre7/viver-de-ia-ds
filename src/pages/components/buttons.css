@@ -15,7 +15,7 @@
   border: 1px solid transparent;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   line-height: 1;
@@ -132,7 +132,7 @@
   background: transparent;
   color: var(--via-text-primary);
   padding: 12px 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .via-btn.ghost.sm {

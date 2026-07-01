@@ -34,7 +34,7 @@
 .vds-dash .dash-h h2 {
   font-family: var(--via-font-display);
   font-size: 28px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
   margin: 6px 0 0;
@@ -61,7 +61,7 @@
   padding: 7px 14px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   border-radius: 999px;
   background: transparent;
@@ -137,7 +137,7 @@
 .vds-dash .kpi .lbl {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -146,7 +146,7 @@
 .vds-dash .kpi .num {
   font-family: var(--via-font-display);
   font-size: 32px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.03em;
   color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
@@ -155,7 +155,7 @@
 .vds-dash .kpi .delta {
   font-family: var(--via-font);
   font-size: 10.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-14);
@@ -230,7 +230,7 @@
   font-size: 13px;
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-dash .bar-track {
@@ -252,7 +252,7 @@
 .vds-dash .bar-val {
   font-family: var(--via-font-mono);
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-align: right;
   font-feature-settings: 'tnum' 1;
@@ -271,7 +271,7 @@
 .vds-dash .side .who {
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   grid-column: 1;
 }
@@ -290,7 +290,7 @@
   color: var(--via-text-body);
   line-height: 1.4;
 }
-.vds-dash .side .what em { font-style: normal; color: var(--via-text-primary); font-weight: 600; }
+.vds-dash .side .what em { font-style: normal; color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
 
 @media (max-width: 760px) {
   .vds-dash .main-row { grid-template-columns: 1fr; }

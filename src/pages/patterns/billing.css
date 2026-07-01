@@ -100,7 +100,7 @@
   justify-content: center;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   flex-shrink: 0;
   background: var(--via-glass-card);
@@ -114,7 +114,7 @@
 .vds-billing-step__label {
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   color: var(--via-text-muted);
   transition: color 240ms cubic-bezier(.16, 1, .3, 1);
@@ -135,13 +135,13 @@
     0 8px 18px -4px var(--via-navy-30),
     0 4px 10px -3px var(--via-navy-22);
 }
-.vds-billing-step.is-current .vds-billing-step__label { color: var(--via-text-primary); font-weight: 600; }
+.vds-billing-step.is-current .vds-billing-step__label { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
 
 /* ----- STEP CONTENT ------------------------------------------ */
 .vds-billing-step-content h3 {
   font-family: var(--via-font-display);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.2;
   color: var(--via-text-primary);
@@ -256,14 +256,14 @@
 .vds-billing-plan__name {
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
 }
 .vds-billing-plan__price {
   font-family: var(--via-font-display);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
   white-space: nowrap;
@@ -272,7 +272,7 @@
   font-style: normal;
   font-size: 11.5px;
   color: var(--via-text-muted);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   margin-left: 4px;
 }
 .vds-billing-plan__desc {
@@ -293,7 +293,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 9.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   box-shadow:
@@ -365,7 +365,7 @@
   letter-spacing: -0.008em;
 }
 .vds-billing-review-line.is-emph .val {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 
@@ -430,7 +430,7 @@
 .vds-billing-summary__head span {
   font-family: var(--via-font);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -457,14 +457,14 @@
 .vds-billing-summary__total-lbl {
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.008em;
   color: var(--via-text-primary);
 }
 .vds-billing-summary__total-val {
   font-family: var(--via-font-display);
   font-size: 26px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
 }
@@ -487,7 +487,7 @@
   align-items: center;
   gap: 9px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
@@ -546,7 +546,7 @@
   line-height: 24px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   margin-bottom: 14px;
@@ -556,7 +556,7 @@
   margin: 0 0 8px;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
 }

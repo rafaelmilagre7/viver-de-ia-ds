@@ -83,7 +83,7 @@
 .via-alert__title {
   font-family: var(--via-font, inherit);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
@@ -111,7 +111,7 @@
 .via-alert__action button {
   font-family: var(--via-font, inherit);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-alert-accent);
   background: transparent;

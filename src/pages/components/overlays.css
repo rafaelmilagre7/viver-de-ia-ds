@@ -76,7 +76,7 @@
 
 .vds-drawer-eyebrow {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -118,7 +118,7 @@
     radial-gradient(220px 60px at 0% 0%, var(--via-navy-08), transparent 70%),
     linear-gradient(180deg, rgba(10, 31, 59, 0.07), var(--via-navy-03));
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-drawer nav li.on a::before {
@@ -173,7 +173,7 @@
   margin-left: auto;
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 2px 7px;
   border-radius: 999px;
@@ -213,21 +213,21 @@
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
 }
 
 .vds-drawer-user p {
   margin: 0 0 2px;
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
 
 .vds-drawer-user span {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -267,7 +267,7 @@
 .vds-sheet-eyebrow {
   display: inline-flex;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -277,7 +277,7 @@
 .vds-sheet header h3 {
   margin: 0 0 4px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);
 }
@@ -329,7 +329,7 @@
 
 .vds-sheet-stats strong {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
   line-height: 1;
@@ -340,7 +340,7 @@
   font-style: normal;
   font-size: 10px;
   color: var(--via-text-soft);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   margin-top: 4px;
   letter-spacing: 0.02em;
 }
@@ -348,7 +348,7 @@
 .vds-sheet-section-title {
   margin: 0 0 12px;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -379,14 +379,14 @@
 
 .vds-sheet-section .d {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .vds-sheet-section li strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 
@@ -426,7 +426,7 @@
   gap: 6px;
   font-size: 10px;
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding-top: 8px;
@@ -450,7 +450,7 @@
   padding: 10px 14px;
   border-radius: 10px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   font-family: inherit;
@@ -524,7 +524,7 @@
   padding: 14px 22px 10px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-white);
   letter-spacing: -0.01em;
 }
@@ -588,7 +588,7 @@
   margin: 0 0 6px;
   font-family: var(--via-font);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.02em;
 }
@@ -681,7 +681,7 @@
 .vds-bs-eyebrow {
   display: inline-flex;
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -691,7 +691,7 @@
 .vds-bs header h3 {
   margin: 0;
   font-size: 19px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
   line-height: 1.25;
@@ -734,7 +734,7 @@
 
 .vds-bs-when-day {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -742,7 +742,7 @@
 
 .vds-bs-when strong {
   font-size: 42px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.035em;
   line-height: 1;
@@ -751,7 +751,7 @@
 
 .vds-bs-when-month {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
 }
@@ -766,7 +766,7 @@
   background: rgba(10, 31, 59, 0.07);
   border: 1px solid rgba(10, 31, 59, 0.15);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   width: fit-content;
   margin-top: 8px;
@@ -777,7 +777,7 @@
 .vds-bs-title {
   margin: 0 0 8px;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
   line-height: 1.3;
@@ -786,7 +786,7 @@
 .vds-bs-title em {
   font-style: normal;
   color: var(--via-navy-60);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-bs-desc {
@@ -854,7 +854,7 @@
 .vds-bs-options strong {
   display: block;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -888,7 +888,7 @@
   color: var(--via-white);
   font-family: inherit;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   box-shadow:
@@ -958,7 +958,7 @@
 .vds-bs-radios em {
   font-style: normal;
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -1027,7 +1027,7 @@
   height: 34px;
   gap: 6px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-family: inherit;
   letter-spacing: -0.005em;
 }
@@ -1039,7 +1039,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   border-color: transparent;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
@@ -1170,7 +1170,7 @@
 .vds-pop-eyebrow {
   margin: 0 0 12px;
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -1208,7 +1208,7 @@
   font-style: normal;
   font-size: 10px;
   color: var(--via-text-soft);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   font-feature-settings: 'tnum' 1;
   padding: 2px 7px;
   border-radius: 999px;
@@ -1267,7 +1267,7 @@
   border: none;
   font-size: 11.5px;
   color: var(--via-text-soft);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   padding: 6px 4px;
@@ -1287,7 +1287,7 @@
   border-radius: 9px;
   padding: 9px 14px;
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -1322,7 +1322,7 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
@@ -1332,7 +1332,7 @@
 .vds-pop-user-head strong {
   display: block;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
@@ -1444,7 +1444,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-soft);
   padding: 4px 10px;
@@ -1471,7 +1471,7 @@
   background: rgba(184, 92, 92, 0.06);
   border: 1px solid rgba(184, 92, 92, 0.18);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-coral-dark);
   margin-top: 4px;
   letter-spacing: -0.005em;
@@ -1488,7 +1488,7 @@
 .vds-dialog h3 {
   margin: 0;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
   line-height: 1.25;
@@ -1505,13 +1505,13 @@
 
 .vds-dialog p strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-dialog p em {
   font-style: normal;
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-dialog-actions {
@@ -1526,7 +1526,7 @@
   padding: 12px 16px;
   border-radius: 10px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   font-family: inherit;
@@ -1657,7 +1657,7 @@
   left: 18px;
   display: inline-flex;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   padding: 5px 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
@@ -1703,7 +1703,7 @@
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   color: var(--via-white);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -1726,7 +1726,7 @@
   color: rgba(255, 255, 255, 0.55);
   font-family: var(--via-font-mono);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   display: inline-flex;
   align-items: center;

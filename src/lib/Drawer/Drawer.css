@@ -122,7 +122,7 @@
   margin: 0 0 4px;
   font-family: var(--via-display, 'Geist', system-ui, sans-serif);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
 }

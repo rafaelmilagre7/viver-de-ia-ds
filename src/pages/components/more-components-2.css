@@ -48,7 +48,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-white);
   margin-bottom: 4px;
 }
@@ -61,7 +61,7 @@
 }
 .vds-cookie-body a {
   color: var(--via-white);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   text-decoration: underline;
   cursor: pointer;
   margin-left: 4px;
@@ -72,7 +72,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
@@ -108,7 +108,7 @@
   font-size: 13px;
   color: var(--via-text-body);
 }
-.vds-cookie-reset button { background: transparent; border: none; color: var(--via-text-primary); cursor: pointer; text-decoration: underline; font-weight: 700; }
+.vds-cookie-reset button { background: transparent; border: none; color: var(--via-text-primary); cursor: pointer; text-decoration: underline; font-weight: var(--via-fw-bold); }
 
 @media (max-width: 720px) {
   .vds-cookie { grid-template-columns: 1fr; text-align: left; }
@@ -151,7 +151,7 @@
 .vds-news-l h3 {
   font-family: var(--via-font-display);
   font-size: clamp(32px, 4vw, 48px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.0;
   color: var(--via-white);
@@ -200,7 +200,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   white-space: nowrap;
@@ -241,7 +241,7 @@
 .vds-comments > header h3 {
   font-family: var(--via-font-display);
   font-size: 20px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);
   margin: 0;
@@ -277,7 +277,7 @@
 .vds-comments .body strong {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
 }
 .vds-comments .body .when {
@@ -304,7 +304,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   cursor: pointer;
   transition: var(--via-t);
@@ -353,7 +353,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
@@ -393,7 +393,7 @@
   font-family: var(--via-font-mono);
   font-style: normal;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.14em;
   color: var(--via-text-body);
 }
@@ -403,7 +403,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin-bottom: 4px;
 }
@@ -470,7 +470,7 @@
 .vds-cal > header strong {
   font-family: var(--via-font-display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);
 }
@@ -498,7 +498,7 @@
 .vds-cal-days .dow {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -520,7 +520,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;
   transition: all 180ms;
@@ -530,7 +530,7 @@
 .vds-cal-cell.picked {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   box-shadow: 0 4px 12px rgba(10,31,59,0.24);
 }
 .vds-cal-cell.event .dot {
@@ -557,7 +557,7 @@
 .vds-cal > footer span {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-body);
 }
 .vds-cal > footer .cta {
@@ -571,7 +571,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;

@@ -60,23 +60,23 @@
 }
 .vds-kpi-tile .lbl {
   font-family: var(--via-font);
-  font-size: 10px; font-weight: 700;
+  font-size: 10px; font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--via-text-muted);
 }
 .vds-kpi-tile .num-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .vds-kpi-tile .num {
   font-family: var(--via-font-display);
-  font-size: 44px; font-weight: 500;
+  font-size: 44px; font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em; color: var(--via-text-primary);
   line-height: 1; font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.vds-kpi-tile .num em { font-style: normal; color: var(--via-text-muted); font-weight: 500; }
+.vds-kpi-tile .num em { font-style: normal; color: var(--via-text-muted); font-weight: var(--via-fw-medium); }
 .vds-kpi-tile .delta {
   display: inline-flex; align-items: center; gap: 4px;
   font-family: var(--via-font);
-  font-size: 12px; font-weight: 700;
+  font-size: 12px; font-weight: var(--via-fw-bold);
   padding: 3px 8px; border-radius: 999px;
 }
 .vds-kpi-tile .delta.up { color: var(--via-text-primary); background: var(--via-navy-06); border: 1px solid var(--via-navy-12); }

@@ -10,7 +10,7 @@
 
 .via-otp__label {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
@@ -27,7 +27,7 @@
   text-align: center;
   font-family: var(--via-font-display, var(--via-font, 'Geist', system-ui));
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
   background: var(--via-surface-onnavy);

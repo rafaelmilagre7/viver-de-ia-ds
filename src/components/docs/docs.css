@@ -6,7 +6,7 @@
 .vds-eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -21,7 +21,7 @@
 .vds-docs-header .vds-eyebrow { margin-bottom: 18px; }
 .vds-docs-title {
   font-family: var(--via-font-display);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-size: clamp(40px, 5.4vw, 64px);
   line-height: 1.04;
   letter-spacing: -0.025em;
@@ -31,7 +31,7 @@
 .vds-docs-title em {
   font-family: var(--via-font-display);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
 }
 .vds-docs-lede {
@@ -59,7 +59,7 @@
 }
 .vds-section-title {
   font-family: var(--via-font-display);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-size: 32px;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -106,7 +106,7 @@
   font-family: var(--via-font-display);
   font-style: italic;
   color: var(--via-text-primary);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 /* ---- Swatch grid em atmosfera atmosférica ---- */
@@ -171,7 +171,7 @@
 .vds-swatch-name {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 .vds-swatch-hex {
@@ -200,7 +200,7 @@
 }
 .vds-token-table th {
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -289,7 +289,7 @@
 .vds-callout-info h4 {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--via-text-primary);
@@ -314,7 +314,7 @@
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   background: var(--via-navy-04);
@@ -342,7 +342,7 @@
 .vds-do-title, .vds-dont-title {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin: 0 0 10px;

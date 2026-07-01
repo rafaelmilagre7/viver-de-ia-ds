@@ -38,13 +38,13 @@
 .vds-set-h h1 {
   font-family: var(--via-font-display);
   font-size: clamp(40px, 5vw, 64px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.03em;
   line-height: 1.04;
   color: var(--via-text-primary);
   margin: 16px 0 14px;
 }
-.vds-set-h h1 em { font-style: normal; font-weight: 400; color: var(--via-text-muted); }
+.vds-set-h h1 em { font-style: normal; font-weight: var(--via-fw-regular); color: var(--via-text-muted); }
 .vds-set-h .lede {
   font-family: var(--via-font);
   font-size: 17px;
@@ -106,7 +106,7 @@
   border-radius: 12px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
   cursor: pointer;
   text-align: left;
@@ -216,13 +216,13 @@
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
 }
 .vds-set-card h2 {
   font-family: var(--via-font-display);
   font-size: 26px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.18;
   color: var(--via-text-primary);
@@ -230,7 +230,7 @@
 }
 .vds-set-card h2 em {
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
 }
 .vds-set-card header p {
@@ -273,7 +273,7 @@
   justify-content: center;
   font-family: var(--via-font-display);
   font-size: 24px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   letter-spacing: -0.02em;
   /* shadow stack 4-layer signature */
   box-shadow:
@@ -322,7 +322,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
   margin-bottom: 3px;
@@ -364,7 +364,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
   margin-bottom: 4px;
@@ -414,7 +414,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
@@ -433,7 +433,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   background: var(--via-glass-card);
   backdrop-filter: blur(12px) saturate(160%);
@@ -473,7 +473,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   white-space: nowrap;
   line-height: 1.4;

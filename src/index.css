@@ -24,7 +24,7 @@ html {
 
 body {
   font-family: var(--via-font);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   font-size: var(--via-fs-body);
   line-height: var(--via-lh-loose);
   color: var(--via-text-body);

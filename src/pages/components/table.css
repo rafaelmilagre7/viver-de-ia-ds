@@ -53,7 +53,7 @@
 .vds-tbl-toolbar.compact strong {
   display: block;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -113,7 +113,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   transition: all 160ms ease;
@@ -137,7 +137,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
   margin-left: 2px;
@@ -162,7 +162,7 @@
   cursor: pointer;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.04em;
 }
 
@@ -207,7 +207,7 @@
 
 .vds-tbl-batch-count strong {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
   font-feature-settings: 'tnum' 1;
@@ -234,7 +234,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   transition: all 140ms ease;
@@ -257,7 +257,7 @@
   color: var(--via-text-soft);
   font-family: inherit;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
 }
@@ -319,7 +319,7 @@
 .vds-tbl thead th {
   text-align: left;
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -497,7 +497,7 @@
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   border: 2px solid var(--via-white);
   box-shadow:
@@ -509,7 +509,7 @@
 .vds-tbl td.user strong {
   display: block;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
   white-space: nowrap;
@@ -532,7 +532,7 @@
 .vds-tbl td.mono {
   font-family: var(--via-font-mono);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -543,7 +543,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 4px 11px;
   border-radius: 999px;
@@ -576,7 +576,7 @@
   text-align: right;
   font-family: var(--via-font-mono);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
   white-space: nowrap;
@@ -584,7 +584,7 @@
 
 .vds-tbl td.currency .cur {
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   margin-right: 4px;
   letter-spacing: 0.04em;
@@ -617,7 +617,7 @@
 .vds-tbl-progress .pct {
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   min-width: 32px;
   text-align: right;
@@ -638,7 +638,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   border: 1px solid;
   font-feature-settings: 'tnum' 1;
@@ -669,7 +669,7 @@
   padding: 4px 11px;
   border-radius: 999px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   border: 1px solid;
   white-space: nowrap;
@@ -692,7 +692,7 @@
   background: rgba(184, 92, 92, 0.08);
   border-color: rgba(184, 92, 92, 0.28);
   color: var(--via-coral-dark);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 /* Cell · activity (relative time) */
@@ -766,7 +766,7 @@
 
 .vds-tbl-foot-info strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-tbl-pag {
@@ -785,7 +785,7 @@
   color: var(--via-text-soft);
   font-family: inherit;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-feature-settings: 'tnum' 1;
   transition: all 140ms ease;
@@ -800,7 +800,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border-color: var(--via-navy);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 2px 6px -2px var(--via-navy-40);
@@ -836,7 +836,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   font-feature-settings: 'tnum' 1;
 }
@@ -858,7 +858,7 @@
 
 .vds-tbl.compact tbody td.primary {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-tbl.compact tbody tr:hover {
@@ -869,7 +869,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 9px;
   border-radius: 999px;

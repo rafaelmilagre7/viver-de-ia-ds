@@ -103,7 +103,7 @@
 .vds-2fa-card__eyebrow {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -120,7 +120,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
@@ -131,7 +131,7 @@
   margin: 0 0 8px;
   font-family: var(--via-font-display);
   font-size: 26px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.2;
   color: var(--via-text-primary);
@@ -230,7 +230,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
   margin-bottom: 3px;
@@ -342,7 +342,7 @@
 .vds-2fa-backup-code {
   font-family: var(--via-font-mono);
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.04em;
   color: var(--via-text-primary);
   padding: 8px 12px;
@@ -393,7 +393,7 @@
   margin: 0 0 8px;
   font-family: var(--via-font-display);
   font-size: 28px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
 }
@@ -451,7 +451,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   margin-bottom: 14px;
@@ -461,7 +461,7 @@
   margin: 0 0 8px;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
 }

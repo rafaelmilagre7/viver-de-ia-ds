@@ -20,7 +20,7 @@
   border: none;
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
   position: relative;

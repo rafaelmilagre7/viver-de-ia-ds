@@ -43,7 +43,7 @@
   align-items: center;
   gap: 6px;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -52,7 +52,7 @@
 
 .vds-chart-head h3 {
   font-size: 38px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.025em;
   line-height: 1.05;
   color: var(--via-text-primary);
@@ -62,7 +62,7 @@
 
 .vds-chart-head h3 .unit {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
   margin-left: 4px;
   letter-spacing: -0.01em;
@@ -79,7 +79,7 @@
 .vds-chart-head .lede em {
   font-style: normal;
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-chart-delta {
@@ -91,7 +91,7 @@
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-06);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.01em;
   color: var(--via-text-primary);
   white-space: nowrap;
@@ -118,7 +118,7 @@
   border-top: 1px solid var(--via-border-soft);
   font-size: 11px;
   color: var(--via-text-soft);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-chart-foot .sep {
@@ -157,7 +157,7 @@
 
 .vds-area-svg .axis-label {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   fill: var(--via-text-soft);
   font-family: inherit;
   font-feature-settings: 'tnum' 1;
@@ -190,7 +190,7 @@
 
 .vds-area-svg .tooltip-label {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   fill: rgba(255, 255, 255, 0.6);
   font-family: inherit;
   letter-spacing: 0.04em;
@@ -199,7 +199,7 @@
 
 .vds-area-svg .tooltip-value {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   fill: var(--via-white);
   font-family: inherit;
   font-feature-settings: 'tnum' 1;
@@ -222,7 +222,7 @@
 
 .vds-bar-label {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -273,7 +273,7 @@
   justify-content: flex-end;
   gap: 10px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
   letter-spacing: -0.01em;
@@ -282,7 +282,7 @@
 .vds-bar-value em {
   font-style: normal;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   padding: 3px 7px;
   border-radius: 999px;
@@ -306,7 +306,7 @@
 
 .vds-donut-svg .donut-big {
   font-size: 60px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   fill: var(--via-text-primary);
   font-family: inherit;
@@ -315,14 +315,14 @@
 
 .vds-donut-svg .donut-pct {
   font-size: 28px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   fill: var(--via-text-soft);
   margin-left: 2px;
 }
 
 .vds-donut-svg .donut-sub {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   fill: var(--via-text-soft);
@@ -358,7 +358,7 @@
 
 .vds-donut-legend .legend-label {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 4px;
   letter-spacing: -0.005em;
@@ -375,7 +375,7 @@
 }
 
 .vds-donut-legend .legend-meta strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -423,14 +423,14 @@
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   color: var(--via-text-primary);
 }
 
 .vds-funnel-stage .num {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   padding: 3px 6px;
   border-radius: 5px;
@@ -449,7 +449,7 @@
 
 .vds-funnel-nums strong {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
 }
@@ -460,7 +460,7 @@
   gap: 3px;
   font-style: normal;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -533,7 +533,7 @@
 
 .vds-kpi-label {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -544,7 +544,7 @@
   align-items: center;
   gap: 3px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.01em;
   padding: 3px 8px;
   border-radius: 999px;
@@ -556,7 +556,7 @@
 .vds-kpi-value {
   margin: 14px 0 14px;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.03em;
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;

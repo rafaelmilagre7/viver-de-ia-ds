@@ -73,7 +73,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -89,7 +89,7 @@
   width: 100%;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   background: transparent;
   border: none;
@@ -101,11 +101,11 @@
 }
 .via-field textarea.val {
   min-height: 64px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 .via-field .val::placeholder {
   color: var(--via-text-muted);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   opacity: 0.7;
 }
 

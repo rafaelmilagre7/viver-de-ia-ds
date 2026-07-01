@@ -54,7 +54,7 @@
   position: relative;
   font-family: var(--via-font);
   font-size: 32px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.03em;
   text-align: center;
@@ -74,7 +74,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 7.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   color: var(--via-text-soft);
 }
@@ -89,7 +89,7 @@
 .vds-pod .eyebrow {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -105,7 +105,7 @@
 .vds-pod .title {
   font-family: var(--via-font);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
   line-height: 1.3;
@@ -114,7 +114,7 @@
 .vds-pod .title em {
   font-style: normal;
   color: var(--via-navy-60);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 /* Mini waveform decorator quando playing */

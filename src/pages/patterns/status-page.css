@@ -64,7 +64,7 @@
   gap: 8px;
   font-family: var(--via-mono);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -93,7 +93,7 @@
   margin: 0 0 12px;
   font-family: var(--via-display);
   font-size: 32px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.026em;
   line-height: 1.14;
   color: var(--via-text-primary);
@@ -117,7 +117,7 @@
 
 .vds-st-overview-lede strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-st-overview-stats {
@@ -139,7 +139,7 @@
 .vds-st-overview-stats strong {
   font-family: var(--via-display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
 }
@@ -192,7 +192,7 @@
   margin: 0;
   font-family: var(--via-display);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
 }
@@ -288,7 +288,7 @@
 .vds-st-row-name {
   margin: 0 0 4px;
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -304,7 +304,7 @@
 
 .vds-st-row-uptime .mono {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-variant-numeric: tabular-nums;
 }
 
@@ -321,7 +321,7 @@
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   white-space: nowrap;
   line-height: 1.4;
@@ -403,7 +403,7 @@
   margin: 0 0 4px;
   font-family: var(--via-display);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
 }
@@ -545,7 +545,7 @@
 .vds-st-inc-sev {
   display: inline-block;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
   border-radius: 999px;
@@ -579,7 +579,7 @@
   margin: 0;
   font-family: var(--via-display);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
 }
@@ -633,6 +633,6 @@
   border: 1px solid var(--via-navy-12);
   font-family: var(--via-mono);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.02em;
 }

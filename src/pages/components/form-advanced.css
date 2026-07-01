@@ -10,7 +10,7 @@
 
 .vds-form-field label {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -59,7 +59,7 @@
 .vds-form-hint em {
   font-style: normal;
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 /* ============================================
@@ -91,14 +91,14 @@
 .vds-dp-detail-title {
   margin: 0 0 10px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-soft);
 }
 
 .vds-dp-detail-title strong {
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
   font-size: 13px;
   letter-spacing: -0.01em;
@@ -177,14 +177,14 @@
 
 .vds-dp-month {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
 }
 
 .vds-dp-year {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
   font-feature-settings: 'tnum' 1;
@@ -220,7 +220,7 @@
 .vds-dp-week span {
   text-align: center;
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -258,7 +258,7 @@
 
 .vds-dp-num {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.01em;
   line-height: 1;
 }
@@ -292,7 +292,7 @@
 
 .vds-form-field-label {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -314,7 +314,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   transition: all 160ms ease;
@@ -386,7 +386,7 @@
 
 .vds-dp-cell.in-range:not(.sel) .vds-dp-num {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-dp-cell.sel.edge-start,
@@ -401,7 +401,7 @@
 .vds-dp-cell.sel.edge-start .vds-dp-num,
 .vds-dp-cell.sel.edge-end .vds-dp-num {
   color: var(--via-text-primary);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
 }
 
 /* Range footer */
@@ -431,7 +431,7 @@
 
 .vds-dp-range-eyebrow {
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -439,7 +439,7 @@
 
 .vds-dp-range-summary strong {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
   font-feature-settings: 'tnum' 1;
@@ -448,7 +448,7 @@
 .vds-dp-range-arrow {
   font-size: 18px;
   color: var(--via-text-soft);
-  font-weight: 300;
+  font-weight: var(--via-fw-light);
 }
 
 .vds-dp-range-span {
@@ -469,7 +469,7 @@
 .vds-dp-range-span em {
   font-style: normal;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
   font-feature-settings: 'tnum' 1;
@@ -483,7 +483,7 @@
   color: var(--via-white);
   font-family: inherit;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   box-shadow:
@@ -510,7 +510,7 @@
 }
 
 .vds-dp-cell.today:not(.sel) .vds-dp-num {
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
 }
 
@@ -525,7 +525,7 @@
 
 .vds-dp-cell.sel .vds-dp-num {
   color: var(--via-white);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-dp-cell.sel .vds-dp-event-dot {
@@ -556,7 +556,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -580,7 +580,7 @@
   border: none;
   font-size: 11px;
   color: var(--via-text-soft);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -601,7 +601,7 @@
 .vds-combobox-wrap label {
   display: block;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -686,7 +686,7 @@
   justify-content: space-between;
   padding: 8px 12px 6px;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -736,7 +736,7 @@
 .vds-combobox-text .lbl {
   margin: 0;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -803,7 +803,7 @@
   background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-05));
   color: var(--via-text-primary);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   border: 1px solid var(--via-navy-08);
 }
@@ -854,7 +854,7 @@
   color: var(--via-white);
   border: none;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.01em;
   cursor: pointer;
   font-family: inherit;
@@ -871,7 +871,7 @@
 .vds-taginput-sugg-label {
   display: block;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -894,7 +894,7 @@
   border: 1px dashed var(--via-navy-20);
   color: var(--via-text-primary);
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -1034,7 +1034,7 @@
 .vds-range-ticks em {
   font-style: normal;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   letter-spacing: 0.02em;
 }
@@ -1063,7 +1063,7 @@
 
 .vds-range-eyebrow {
   font-size: 9px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -1071,7 +1071,7 @@
 
 .vds-range-summary strong {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.015em;
   font-feature-settings: 'tnum' 1;
@@ -1159,7 +1159,7 @@
 
 .vds-rating-val strong {
   font-size: 32px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.028em;
 }
@@ -1168,13 +1168,13 @@
   font-style: normal;
   font-size: 14px;
   color: var(--via-text-soft);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 .vds-rating-copy {
   margin: 0;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -1232,7 +1232,7 @@
 .vds-color-info .vds-color-name {
   margin: 0 0 6px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -1241,7 +1241,7 @@
   margin: 0;
   font-family: var(--via-font-mono);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
@@ -1252,7 +1252,7 @@
 .vds-color-info .vds-color-hex .prefix {
   font-family: inherit;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.14em;
   padding: 3px 7px;
   border-radius: 5px;
@@ -1311,7 +1311,7 @@
 .vds-color-input-wrap .prefix {
   font-family: var(--via-font-mono);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
 }
 
@@ -1322,7 +1322,7 @@
   padding: 12px 8px;
   font-family: var(--via-font-mono);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   background: transparent;
   letter-spacing: 0.02em;
@@ -1330,7 +1330,7 @@
 
 .vds-color-input-wrap .suffix {
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);

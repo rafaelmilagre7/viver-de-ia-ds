@@ -63,7 +63,7 @@
 .via-accordion .q {
   font-family: var(--via-font);
   font-size: 17px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
   line-height: 1.3;

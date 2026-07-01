@@ -65,7 +65,7 @@
   border-radius: 999px;
   font-family: var(--via-font-mono);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-text-primary);
@@ -77,7 +77,7 @@
 .vds-sticky-page__title {
   font-family: var(--via-font-display);
   font-size: 30px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.025em;
   line-height: 1.15;
   color: var(--via-text-primary);
@@ -86,7 +86,7 @@
 }
 .vds-sticky-page__title em {
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
 }
 
@@ -101,7 +101,7 @@
 
 .vds-sticky-page__lede strong {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 /* Stats row · 3 números editoriais */
@@ -137,7 +137,7 @@
   display: block;
   font-family: var(--via-font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
   line-height: 1;
@@ -195,7 +195,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
   margin-bottom: 3px;
@@ -329,7 +329,7 @@
   gap: 6px;
   font-family: var(--via-font-mono);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 4px;
@@ -347,12 +347,12 @@
 }
 .vds-sticky-bar p strong {
   color: var(--via-white);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 .vds-sticky-bar p em {
   font-style: normal;
   color: rgba(255,255,255,0.95);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 /* Notify usa cores claras */
 .vds-sticky-bar.notify p {
@@ -384,7 +384,7 @@
 .vds-sticky-countdown strong {
   font-family: var(--via-font-mono);
   font-size: 20px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-white);
   line-height: 1;
@@ -435,7 +435,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
   margin-bottom: 3px;
@@ -460,7 +460,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
   white-space: nowrap;

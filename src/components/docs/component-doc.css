@@ -34,7 +34,7 @@
 .vds-cdoc-anatomy-num {
   font-family: var(--via-font-display);
   font-size: 26px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-navy-22);
   letter-spacing: -0.02em;
   line-height: 1;
@@ -44,7 +44,7 @@
 .vds-cdoc-anatomy-row strong {
   font-family: var(--via-font-mono);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
@@ -81,7 +81,7 @@
   padding: 12px 16px;
   font-family: var(--via-font);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--via-ink-2);
@@ -112,7 +112,7 @@
 
 .vds-cdoc-props .vds-cdoc-type {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-cdoc-props .vds-cdoc-default {
@@ -121,7 +121,7 @@
 
 .vds-cdoc-req {
   color: var(--via-coral);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-cdoc-hint {
@@ -153,7 +153,7 @@
   display: inline-block;
   font-family: var(--via-font-mono);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   padding: 3px 9px;
   background: var(--via-navy-06);
@@ -165,7 +165,7 @@
   margin: 8px 0 4px;
   font-family: var(--via-font-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.016em;
   color: var(--via-text-primary);
 }
@@ -231,7 +231,7 @@
   display: inline-block;
   font-family: var(--via-font);
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.20em;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -245,7 +245,7 @@
   display: block;
   font-family: var(--via-font-display);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 4px;
   letter-spacing: -0.014em;
@@ -288,7 +288,7 @@
   left: 0;
   top: 0;
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 /* ---------- Related ---------- */
@@ -323,7 +323,7 @@
   display: block;
   font-family: var(--via-font-mono);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin-bottom: 4px;
 }

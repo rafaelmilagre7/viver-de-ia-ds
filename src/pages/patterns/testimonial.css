@@ -51,7 +51,7 @@
   font-family: var(--via-display);
   font-style: italic;
   font-size: 64px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-navy-10);
   line-height: 0.6;
   pointer-events: none;
@@ -61,7 +61,7 @@
 .vds-testi .quote {
   font-family: var(--via-font);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.4;
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -73,7 +73,7 @@
 .vds-testi .quote em {
   font-style: normal;
   color: rgba(10, 31, 59, 0.45);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-testi .attrib {
@@ -95,7 +95,7 @@
   justify-content: center;
   font-family: var(--via-font);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
   border: 2.5px solid var(--via-white);
@@ -107,7 +107,7 @@
 .vds-testi .who {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -145,7 +145,7 @@
 .vds-testi .outcome .k {
   font-family: var(--via-mono);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -154,7 +154,7 @@
 .vds-testi .outcome .v {
   font-family: var(--via-font);
   font-size: 26px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.028em;
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
@@ -165,7 +165,7 @@
 .vds-testi .outcome em {
   font-style: normal;
   color: var(--via-text-soft);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-size: 14px;
   margin-left: 2px;
 }

@@ -12,7 +12,7 @@
 
 .via-ms__label {
   font-size: 11.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-ink-2, #5E6B82);
 }
@@ -65,7 +65,7 @@
 
 .via-ms__placeholder {
   color: var(--via-ink-3, #6B7891);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   padding: 4px 0;
 }
 
@@ -75,7 +75,7 @@
   gap: 2px;
   padding: 2px 3px 2px 8px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text-primary);
   background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-04));
@@ -149,7 +149,7 @@
   padding: 7px 8px;
   border-radius: 7px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
   cursor: pointer;

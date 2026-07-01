@@ -13,7 +13,7 @@
     linear-gradient(150deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
   color: var(--via-white);
   font-family: var(--via-font);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   /* sem border dura · orbe glass + anel fino adaptativo (separa no stack, some no resto) */
   box-shadow:

@@ -40,7 +40,7 @@
 .via-stat .num {
   font-family: var(--via-font);
   font-size: 44px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
   line-height: 1;
@@ -50,7 +50,7 @@
 .via-stat .suffix {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.06em;
   color: var(--via-text-soft);
   text-transform: uppercase;

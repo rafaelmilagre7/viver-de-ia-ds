@@ -110,7 +110,7 @@
 
 .vds-code-lang {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 8px;
   border-radius: 999px;
@@ -136,7 +136,7 @@
   color: var(--via-text-primary);
   border: none;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   font-family: inherit;
@@ -218,7 +218,7 @@
 
 .vds-code-line.active .vds-code-ln {
   color: var(--via-text-primary);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
 }
 
 .vds-code.dark .vds-code-line.active .vds-code-ln {
@@ -234,7 +234,7 @@
   user-select: none;
   font-feature-settings: 'tnum' 1;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   position: relative;
   transition: color 140ms ease;
 }
@@ -262,7 +262,7 @@
 }
 
 /* Syntax tokens */
-.vds-code-content .k { color: #6A2BC2; font-weight: 600; }       /* keyword */
+.vds-code-content .k { color: #6A2BC2; font-weight: var(--via-fw-semibold); }       /* keyword */
 .vds-code-content .v { color: var(--via-text-primary); }                          /* variable */
 .vds-code-content .s { color: #15794D; }                          /* string · AA em branco */
 .vds-code-content .c { color: #6B6B6B; font-style: italic; }      /* comment · AA em branco */
@@ -276,8 +276,8 @@
 .vds-code.dark .vds-code-content .s { color: #7FCBA6; }
 .vds-code.dark .vds-code-content .c { color: rgba(255, 255, 255, 0.62); }
 .vds-code.dark .vds-code-content .p { color: var(--via-gray-300); }
-.vds-code.dark .vds-code-content .h { color: var(--via-gray-300); font-weight: 700; }  /* md header */
-.vds-code.dark .vds-code-content .b { color: var(--via-white); font-weight: 700; }     /* md strong */
+.vds-code.dark .vds-code-content .h { color: var(--via-gray-300); font-weight: var(--via-fw-bold); }  /* md header */
+.vds-code.dark .vds-code-content .b { color: var(--via-white); font-weight: var(--via-fw-bold); }     /* md strong */
 .vds-code.dark .vds-code-content .i { color: rgba(255, 255, 255, 0.78); font-style: italic; }
 
 /* ============================================
@@ -420,7 +420,7 @@
 
 .vds-terminal-body .prompt {
   color: var(--via-success);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-terminal-body .path {
@@ -433,7 +433,7 @@
 
 .vds-terminal-body .cmd {
   color: var(--via-white);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-terminal-body .out-line {
@@ -444,11 +444,11 @@
 .vds-terminal-body .out-line .ok {
   color: var(--via-success);
   margin-right: 6px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
 }
 
 .vds-terminal-body .out-line b {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-gray-300);
   font-style: normal;
 }
@@ -530,7 +530,7 @@
   display: block;
   font-family: var(--via-font-mono);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -548,7 +548,7 @@
   gap: 6px;
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
 }
 
@@ -604,7 +604,7 @@
   align-items: center;
   gap: 6px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 9px;
   border-radius: 999px;
@@ -673,7 +673,7 @@
   position: absolute;
   left: 5px;
   color: var(--via-success);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   font-family: var(--via-font-mono);
 }
 
@@ -701,7 +701,7 @@
   position: absolute;
   left: 5px;
   color: var(--via-coral-dark);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   font-family: var(--via-font-mono);
 }
 

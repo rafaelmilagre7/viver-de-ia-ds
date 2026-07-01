@@ -81,7 +81,7 @@
 
 .vds-cf-day .dn {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   color: var(--via-ink-3);
 }
@@ -93,7 +93,7 @@
 .vds-cf-day .dt {
   font-family: var(--via-display);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
 }
@@ -125,7 +125,7 @@
   border-radius: 999px;
   border: 1px solid var(--via-border-soft);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   white-space: nowrap;
   line-height: 1.4;
@@ -189,7 +189,7 @@
 .vds-cf-time .t {
   font-family: var(--via-display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
   font-variant-numeric: tabular-nums;
@@ -237,7 +237,7 @@
 
 .vds-cf-break strong {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
 }
 
@@ -310,7 +310,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
   border-radius: 999px;
@@ -341,7 +341,7 @@
   align-items: center;
   gap: 4px;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
   border-radius: 999px;
@@ -363,7 +363,7 @@
   margin: 0 0 14px;
   font-family: var(--via-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   line-height: 1.22;
   color: var(--via-text-primary);
@@ -401,7 +401,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow: 0 2px 6px var(--via-navy-18);
   flex-shrink: 0;
@@ -423,7 +423,7 @@
 
 .vds-cf-speaker strong {
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -457,7 +457,7 @@
   color: var(--via-text-primary);
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease;
@@ -490,7 +490,7 @@
 
 .vds-cf-foot strong {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-cf-foot-cta {
@@ -504,7 +504,7 @@
   text-decoration: none;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   transition: background .2s ease, transform .2s ease, box-shadow .22s ease;
   flex-shrink: 0;
@@ -580,7 +580,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
@@ -604,7 +604,7 @@
   display: inline-block;
   font-family: var(--via-mono);
   font-size: 9px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -619,7 +619,7 @@
   margin: 0;
   font-family: var(--via-display);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
   white-space: nowrap;

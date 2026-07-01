@@ -38,14 +38,14 @@
 
 .mtr-nav nav a {
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   text-decoration: none;
   letter-spacing: -0.006em;
   cursor: pointer;
 }
 
-.mtr-nav nav a.active { color: var(--via-text-primary); font-weight: 600; }
+.mtr-nav nav a.active { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
 
 .mtr-nav-av {
   width: 36px;
@@ -57,7 +57,7 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 @media (max-width: 860px) {
@@ -120,7 +120,7 @@
   align-items: center;
   justify-content: center;
   font-size: 38px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
   box-shadow:
@@ -146,7 +146,7 @@
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-gray-300);
@@ -155,7 +155,7 @@
 
 .mtr-hero-info h1 {
   font-size: 44px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
   color: var(--via-white);
   margin: 0 0 12px;
@@ -189,7 +189,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   letter-spacing: -0.008em;
   box-shadow:
@@ -220,7 +220,7 @@
   color: var(--via-white);
   font-family: inherit;
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
   transition: background 180ms ease;
@@ -251,7 +251,7 @@
 .mtr-hero-stats strong {
   display: block;
   font-size: 26px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.024em;
   line-height: 1;
@@ -300,7 +300,7 @@
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -309,7 +309,7 @@
 
 .mtr-block h2 {
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
   margin: 0 0 14px;
@@ -339,7 +339,7 @@
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -363,7 +363,7 @@
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -373,7 +373,7 @@
 .mtr-case-r {
   margin: 0 0 6px !important;
   font-size: 14px !important;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary) !important;
   line-height: 1.35 !important;
 }
@@ -414,7 +414,7 @@
 .mtr-depoimento blockquote {
   margin: 0 0 16px;
   font-size: 14.5px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   line-height: 1.5;
   letter-spacing: -0.010em;
   color: var(--via-text-primary);
@@ -423,7 +423,7 @@
 .mtr-depoimento footer strong {
   display: block;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
 }
@@ -455,7 +455,7 @@
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -464,7 +464,7 @@
 
 .mtr-schedule h3 {
   font-size: 19px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.016em;
   margin: 0 0 8px;
@@ -494,7 +494,7 @@
   color: var(--via-text-body);
   font-family: inherit;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.004em;
   transition: all 160ms ease;
@@ -522,7 +522,7 @@
   color: var(--via-white);
   font-family: inherit;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   letter-spacing: -0.006em;
   box-shadow:

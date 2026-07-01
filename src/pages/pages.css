@@ -23,7 +23,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(255,255,255,0.85);
   margin-bottom: 32px;
@@ -37,7 +37,7 @@
   z-index: 2;
   font-family: var(--via-font-display);
   font-size: clamp(48px, 6.5vw, 84px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.0;
   letter-spacing: -0.03em;
   color: var(--via-white);
@@ -46,7 +46,7 @@
 }
 .vds-home-hero-title em {
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
 }
 .vds-home-hero-lede {
@@ -76,7 +76,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   text-decoration: none;
@@ -134,7 +134,7 @@
 .vds-home-hero-stat .num {
   font-family: var(--via-font-display);
   font-size: 48px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   letter-spacing: -0.04em;
   color: var(--via-white);
   line-height: 1;
@@ -143,7 +143,7 @@
 .vds-home-hero-stat .lbl {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.20em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.55);
@@ -254,7 +254,7 @@
 }
 .vds-home-card-title {
   font-family: var(--via-font-display);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-size: 24px;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -328,7 +328,7 @@
 .vds-home-stat { display: flex; flex-direction: column; gap: 6px; }
 .vds-home-stat-num {
   font-family: var(--via-font-display);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-size: 56px;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -337,7 +337,7 @@
 .vds-home-stat-lbl {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.55);
@@ -436,7 +436,7 @@
 .vds-brand-tile-name {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 .vds-brand-tile-desc {
@@ -481,7 +481,7 @@
 .vds-spacing-token {
   font-family: var(--via-font-mono);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-spacing-px {
@@ -542,7 +542,7 @@
 .vds-radii-label {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-muted);
@@ -591,7 +591,7 @@
   justify-content: center;
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.08em;
   transition: var(--via-t);
@@ -697,7 +697,7 @@
 .vds-type-label {
   font-family: var(--via-font);
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--via-text-soft);

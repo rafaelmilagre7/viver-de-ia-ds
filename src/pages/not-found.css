@@ -29,7 +29,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(255,255,255,0.85);
   margin-bottom: 28px;
@@ -39,7 +39,7 @@
 .vds-404 h1 {
   font-family: var(--via-font-display);
   font-size: clamp(48px, 6vw, 80px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.0;
   letter-spacing: -0.03em;
   color: var(--via-white);
@@ -47,7 +47,7 @@
 }
 .vds-404 h1 em {
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
 }
 .vds-404 p {
@@ -65,7 +65,7 @@
   right: -20px;
   font-family: var(--via-font-display);
   font-size: clamp(280px, 30vw, 460px);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   line-height: 1;
   letter-spacing: -0.06em;
   color: rgba(255,255,255,0.04);

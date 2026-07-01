@@ -32,7 +32,7 @@
   display: block;
   font-family: var(--via-display);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
   margin-bottom: 6px;

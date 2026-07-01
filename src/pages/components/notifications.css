@@ -41,7 +41,7 @@
   background: var(--via-navy, var(--via-navy));
   color: var(--via-white);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +77,7 @@
 .vds-notif-panel h3 {
   margin: 0;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -87,7 +87,7 @@
   border: none;
   font-size: 11px;
   color: var(--via-text-soft);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -164,7 +164,7 @@
 }
 
 .vds-notif-body p strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 
@@ -195,7 +195,7 @@
   padding: 9px 10px;
   border-radius: 8px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
   letter-spacing: -0.005em;
@@ -300,7 +300,7 @@
 .vds-banner-title {
   margin: 0;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
   display: inline-flex;
@@ -312,7 +312,7 @@
 
 .vds-banner-tag {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
   border-radius: 999px;
@@ -353,7 +353,7 @@
 }
 
 .vds-banner-body strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
 }
@@ -364,7 +364,7 @@
   align-items: center;
   gap: 4px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   padding: 8px 14px;
   border-radius: 999px;
   background: var(--via-navy);
@@ -449,7 +449,7 @@
   background: rgba(184, 92, 92, 0.22);
   border: 1px solid rgba(184, 92, 92, 0.4);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   letter-spacing: -0.008em;
   color: var(--via-white);
   margin-bottom: 16px;
@@ -460,7 +460,7 @@
 .vds-live-pill em {
   font-family: var(--via-display);
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-size: 13px;
   letter-spacing: -0.012em;
 }
@@ -490,7 +490,7 @@
 .vds-status-card h3 {
   margin: 0 0 10px;
   font-size: 26px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.16;
   max-width: 460px;
@@ -500,7 +500,7 @@
 .vds-status-card h3 em {
   font-style: normal;
   color: rgba(255, 255, 255, 0.55);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 .vds-live-meta {
@@ -523,7 +523,7 @@
   border-radius: 12px;
   padding: 12px 22px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   cursor: pointer;
   font-family: inherit;
@@ -540,7 +540,7 @@
 
 .vds-live-stats strong {
   color: var(--via-white);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -554,7 +554,7 @@
 
 .vds-presence-eyebrow {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -586,7 +586,7 @@
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
 }
 
@@ -598,7 +598,7 @@
 }
 
 .vds-presence-list p strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-presence-list span {
@@ -682,7 +682,7 @@
 .vds-inbox h3 {
   margin: 0 0 4px;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
 }
@@ -735,7 +735,7 @@
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -766,7 +766,7 @@
   background: transparent;
   border: 1px solid transparent;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   cursor: pointer;
   font-family: inherit;
@@ -786,7 +786,7 @@
   background: var(--via-surface-onnavy);
   border-color: var(--via-border-soft);
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 1px 3px var(--via-navy-08);
@@ -801,7 +801,7 @@
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-08);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   font-feature-settings: 'tnum' 1;
   color: var(--via-text-soft);
   letter-spacing: 0.02em;
@@ -890,7 +890,7 @@
 }
 
 .vds-inbox-text strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 

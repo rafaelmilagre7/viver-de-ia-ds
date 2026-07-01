@@ -42,7 +42,7 @@
 .vds-empty h3 {
   font-family: var(--via-font-display);
   font-size: 30px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -68,7 +68,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   margin-top: 8px;

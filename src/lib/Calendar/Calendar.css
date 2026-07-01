@@ -60,7 +60,7 @@
   margin: 0;
   font-family: var(--via-font-display, inherit);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
   text-transform: capitalize;
@@ -75,7 +75,7 @@
   text-align: center;
   font-family: var(--via-font-mono, var(--via-font, monospace));
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
@@ -100,7 +100,7 @@
   border-radius: 7px;
   font-family: inherit;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-text, var(--via-gray-700));
   background: transparent;
@@ -129,7 +129,7 @@
 }
 
 .via-cal__cell.is-today:not(.is-selected) {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   background: var(--via-navy-04);
 }

@@ -13,7 +13,7 @@
 .via-dp__label {
   font-family: var(--via-font, inherit);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
@@ -91,7 +91,7 @@
   text-align: center;
   font-family: var(--via-font, inherit);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   text-transform: capitalize;
   letter-spacing: -0.004em;
@@ -127,7 +127,7 @@
   text-align: center;
   font-family: var(--via-font, inherit);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
@@ -161,12 +161,12 @@
 .via-dp__cell.outside { color: var(--via-ink-3, #6B7891); opacity: 0.55; }
 .via-dp__cell.today {
   border-color: var(--via-navy-40, rgba(10,31,59,0.4));
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 .via-dp__cell.sel {
   background: var(--via-navy, #0A1F3B);
   color: var(--via-white, #FFFFFF);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 .via-dp__cell:disabled {
   opacity: 0.32;

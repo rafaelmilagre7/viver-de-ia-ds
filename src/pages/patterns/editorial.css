@@ -37,7 +37,7 @@
   display: inline-block;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
@@ -46,7 +46,7 @@
 .vds-ed-nl-hero h2 {
   font-family: var(--via-font-display);
   font-size: clamp(22px, 3.5vw, 30px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.15;
   letter-spacing: -0.022em;
   color: var(--via-white);
@@ -54,7 +54,7 @@
 }
 .vds-ed-nl-hero h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
 .vds-ed-nl-hero p {
@@ -74,7 +74,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -87,7 +87,7 @@
   line-height: 1.65;
   margin: 0 0 10px;
 }
-.vds-ed-nl-body article p strong { font-weight: 500; color: var(--via-text-primary); }
+.vds-ed-nl-body article p strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-ed-nl-pull {
   padding: 12px 16px;
   background: var(--via-navy-04);
@@ -98,7 +98,7 @@
 .vds-ed-nl-pull strong {
   font-family: var(--via-mono);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -123,7 +123,7 @@
   border-top: 0.5px solid var(--via-navy-08);
   font-size: 13.5px !important;
 }
-.vds-ed-nl-sign strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-ed-nl-sign strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 
 .vds-ed-newsletter > footer {
   padding: 22px 32px;
@@ -141,7 +141,7 @@
   opacity: 0.7;
 }
 .vds-ed-newsletter > footer p { margin: 0 0 6px; }
-.vds-ed-newsletter > footer strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-ed-newsletter > footer strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 .vds-ed-nl-foot-links {
   display: inline-flex;
   gap: 8px;
@@ -170,7 +170,7 @@
   display: inline-block;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -179,7 +179,7 @@
 .vds-ed-blog h1 {
   font-family: var(--via-font-display);
   font-size: clamp(28px, 4.5vw, 44px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--via-text-primary);
@@ -188,7 +188,7 @@
 }
 .vds-ed-blog h1 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
 .vds-ed-blog-lede {
@@ -219,7 +219,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -228,7 +228,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-ed-blog-author em {
@@ -266,11 +266,11 @@
 .vds-ed-blog-body p {
   margin: 0 0 18px;
 }
-.vds-ed-blog-body strong { font-weight: 500; color: var(--via-text-primary); }
+.vds-ed-blog-body strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-ed-blog-body h2 {
   font-family: var(--via-font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.25;
@@ -318,7 +318,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -412,7 +412,7 @@
 .vds-ed-podcast-cover-eyebrow {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
@@ -421,7 +421,7 @@
 .vds-ed-podcast-cover h3 {
   font-family: var(--via-font-display);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.05;
   letter-spacing: -0.022em;
   color: var(--via-white);
@@ -429,7 +429,7 @@
 }
 .vds-ed-podcast-cover h3 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
 .vds-ed-podcast-cover img {
@@ -446,7 +446,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -455,7 +455,7 @@
 .vds-ed-podcast-meta h2 {
   font-family: var(--via-font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.2;
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
@@ -494,7 +494,7 @@
 .vds-ed-podcast h3 {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -532,7 +532,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 3px;
   letter-spacing: -0.004em;
@@ -562,7 +562,7 @@
 .vds-ed-podcast-res-eyebrow {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -597,7 +597,7 @@
 .vds-ed-youtube-thumb h3 {
   font-family: var(--via-font-display);
   font-size: clamp(28px, 5vw, 56px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -605,7 +605,7 @@
 }
 .vds-ed-youtube-thumb h3 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
 .vds-ed-youtube-thumb p {
@@ -654,7 +654,7 @@
 .vds-ed-youtube-info h2 {
   font-family: var(--via-font);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin: 0 0 8px;
   letter-spacing: -0.012em;
@@ -694,7 +694,7 @@
   line-height: 1.55;
   margin: 0 0 14px;
 }
-.vds-ed-youtube-desc p strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-ed-youtube-desc p strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 .vds-ed-youtube-pre {
   font-family: var(--via-mono);
   font-size: 12.5px;
@@ -718,7 +718,7 @@
   border-radius: 4px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   text-decoration: none;
   letter-spacing: -0.004em;
 }
@@ -738,7 +738,7 @@
   display: inline-block;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -747,7 +747,7 @@
 .vds-ed-tutorial h1 {
   font-family: var(--via-font-display);
   font-size: clamp(26px, 4vw, 38px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--via-text-primary);
@@ -755,7 +755,7 @@
 }
 .vds-ed-tutorial h1 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
 .vds-ed-tutorial-lede {
@@ -781,7 +781,7 @@
 .vds-ed-tutorial-meta .lbl {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -789,7 +789,7 @@
 .vds-ed-tutorial-meta strong {
   font-family: var(--via-font);
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 
@@ -799,7 +799,7 @@
 .vds-ed-tutorial h2 {
   font-family: var(--via-font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.25;
@@ -812,7 +812,7 @@
   line-height: 1.65;
   margin: 0 0 16px;
 }
-.vds-ed-tutorial p strong { font-weight: 500; color: var(--via-text-primary); }
+.vds-ed-tutorial p strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-ed-tutorial p code {
   font-family: var(--via-mono);
   font-size: 12.5px;
@@ -848,7 +848,7 @@
   font-family: var(--via-mono);
   font-size: 12px;
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-ed-tutorial-code {
@@ -876,7 +876,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-primary);
@@ -933,6 +933,6 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   text-decoration: none;
 }

@@ -28,7 +28,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   padding: 8px 12px;
   border-radius: 8px;
   box-shadow: 0 12px 32px var(--via-navy-30), inset 0 1px 0 var(--via-edge-hi);
@@ -49,7 +49,7 @@
 .via-tt-pos {
   font-family: var(--via-font);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-gray-400);

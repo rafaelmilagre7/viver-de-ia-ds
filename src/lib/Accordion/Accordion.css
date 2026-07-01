@@ -55,7 +55,7 @@
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
   text-align: left;

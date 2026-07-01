@@ -55,7 +55,7 @@
   background: var(--via-navy-08);
   border: 1px solid var(--via-navy-18);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-gray-300);
   white-space: nowrap;
@@ -131,7 +131,7 @@
 .vds-mm-arc .vds-mm-pct {
   font-family: var(--via-font);
   font-size: 56px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   fill: var(--via-white);
   letter-spacing: -0.028em;
   font-feature-settings: 'tnum' 1, 'ss01' 1;
@@ -140,7 +140,7 @@
 .vds-mm-arc .pct-mark {
   font-size: 18px;
   fill: rgba(255, 255, 255, 0.42);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   baseline-shift: 18%;
 }
@@ -148,7 +148,7 @@
 .vds-mm-arc .vds-mm-pct-lbl {
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 9px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   fill: rgba(255, 255, 255, 0.48);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -176,7 +176,7 @@
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
   box-shadow:
@@ -199,7 +199,7 @@
 .vds-mm-mentor strong {
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.008em;
 }
@@ -231,7 +231,7 @@
 .vds-mm-mentor-stats strong {
   display: block;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.02em;
   line-height: 1;
@@ -243,7 +243,7 @@
   display: block;
   margin-top: 4px;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -253,7 +253,7 @@
 .vds-mm-r-eyebrow {
   display: inline-flex;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-gray-300);
@@ -263,7 +263,7 @@
 .vds-mm-r h3 {
   margin: 0 0 28px;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.18;
   color: var(--via-white);
@@ -276,7 +276,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-mm-reasons {
@@ -318,7 +318,7 @@
   justify-content: center;
   font-family: var(--via-font-mono);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.04em;
   font-feature-settings: 'tnum' 1;
 }
@@ -326,7 +326,7 @@
 .vds-mm-reasons strong {
   display: block;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.008em;
   line-height: 1.4;
@@ -361,7 +361,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.008em;
   cursor: pointer;
   isolation: isolate;
@@ -411,7 +411,7 @@
   color: var(--via-white);
   font-family: inherit;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   transition: all 180ms ease;
@@ -483,7 +483,7 @@
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   border: 2px solid var(--via-white);
   box-shadow:
@@ -494,7 +494,7 @@
 .vds-mm-alt-info strong {
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
@@ -522,7 +522,7 @@
 
 .vds-mm-alt-score .num {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
   letter-spacing: -0.025em;
   line-height: 1;
@@ -531,7 +531,7 @@
 
 .vds-mm-alt-score .lbl {
   font-size: 8px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-primary);
@@ -554,7 +554,7 @@
 
 .vds-mm-alt-tag {
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   padding: 4px 9px;
   border-radius: 999px;
   background: var(--via-navy-05);
@@ -575,7 +575,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   transition: all 160ms ease;

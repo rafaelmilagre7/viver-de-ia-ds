@@ -66,7 +66,7 @@
 .via-case .company {
   font-family: var(--via-font);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.015em;
 }
@@ -74,7 +74,7 @@
 .via-case .sector {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
   color: var(--via-text-soft);
   padding: 4px 10px;
@@ -88,7 +88,7 @@
 .via-case h3 {
   font-family: var(--via-font);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.22;
@@ -108,7 +108,7 @@
 .via-case .v {
   font-family: var(--via-font);
   font-size: 38px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
@@ -118,7 +118,7 @@
 .via-case .l {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -143,7 +143,7 @@
   font-family: var(--via-font);
   font-style: normal;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   color: var(--via-text-soft);
 }
@@ -154,7 +154,7 @@
   gap: 8px;
   font-family: var(--via-font);
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   color: var(--via-text-primary);
   cursor: pointer;

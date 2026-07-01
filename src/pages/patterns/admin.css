@@ -72,7 +72,7 @@
 .vds-settings-l h4 {
   margin: 0 0 6px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
@@ -87,7 +87,7 @@
 
 .vds-settings-l p strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-settings-field {
@@ -121,7 +121,7 @@
   border: 1px solid var(--via-navy);
   color: var(--via-white);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -137,7 +137,7 @@
   border: 1px solid var(--via-navy-12);
   color: var(--via-text-primary);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
 }
 
@@ -166,7 +166,7 @@
 .vds-settings-toggles strong {
   display: block;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -269,7 +269,7 @@
   top: 14px;
   right: 36px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(140, 44, 44, 0.62);
   font-style: italic;
@@ -290,7 +290,7 @@
   border: 1px solid rgba(184, 92, 92, 0.3);
   color: var(--via-coral-dark);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
@@ -329,7 +329,7 @@
 .vds-apikeys h3 {
   margin: 0 0 4px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
@@ -351,7 +351,7 @@
   color: var(--via-white);
   border: none;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
 }
@@ -380,7 +380,7 @@
 .vds-apikey-tag {
   display: inline-flex;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 9px;
   border-radius: 999px;
@@ -404,7 +404,7 @@
 .vds-apikey-card h4 {
   margin: 0 0 4px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -417,13 +417,13 @@
 
 .vds-apikey-card p strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-apikey-card p em {
   font-style: normal;
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-apikey-status {
@@ -432,7 +432,7 @@
   padding: 4px 11px;
   border-radius: 999px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   flex-shrink: 0;
   white-space: nowrap;
@@ -505,7 +505,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.9);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: 0.02em;
@@ -539,7 +539,7 @@
 
 .vds-apikey-meta strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -555,7 +555,7 @@
   padding: 6px 12px;
   border-radius: 8px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   border: 1px solid;
@@ -636,7 +636,7 @@
 .vds-billing-eyebrow {
   display: inline-flex;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
@@ -654,7 +654,7 @@
   gap: 8px;
   margin: 0 0 8px;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-white);
 }
@@ -668,7 +668,7 @@
 
 .vds-billing-current header p strong {
   color: var(--via-white);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-billing-meta {
@@ -689,7 +689,7 @@
 
 .vds-billing-meta strong {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
   color: var(--via-white);
   line-height: 1;
@@ -700,7 +700,7 @@
   font-style: normal;
   font-size: 10px;
   color: rgba(255, 255, 255, 0.55);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.02em;
 }
 
@@ -717,7 +717,7 @@
   padding: 12px 18px;
   border-radius: 11px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   font-family: inherit;
@@ -744,7 +744,7 @@
 .vds-billing-btn.ghost span {
   color: var(--via-text-primary);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   margin-left: 4px;
 }
 
@@ -779,7 +779,7 @@
 .vds-cc-brand {
   font-family: var(--via-font-mono);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   padding: 3px 8px;
   border-radius: 5px;
@@ -824,7 +824,7 @@
 .vds-billing-history h4 {
   margin: 0;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
 }
@@ -836,7 +836,7 @@
   font-size: 11px;
   color: var(--via-text-primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-billing-history ul {
@@ -887,7 +887,7 @@
 .vds-billing-history .d {
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
@@ -900,7 +900,7 @@
 
 .vds-billing-history .amt {
   font-family: var(--via-font-mono);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-align: right;
   font-feature-settings: 'tnum' 1;
@@ -913,7 +913,7 @@
   align-items: center;
   gap: 4px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   padding: 3px 9px 3px 7px;
   border-radius: 999px;
   background: var(--via-navy-05);
@@ -967,7 +967,7 @@
 .vds-audit h3 {
   margin: 0;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
 }
@@ -984,7 +984,7 @@
   background: transparent;
   border: none;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   cursor: pointer;
   font-family: inherit;
@@ -1001,7 +1001,7 @@
 .vds-audit-tabs button.on {
   background: var(--via-navy-08);
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 .vds-audit-list {
@@ -1066,7 +1066,7 @@
 .vds-audit-meta .time {
   font-family: var(--via-font-mono);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: 0.01em;
   line-height: 1;
@@ -1078,7 +1078,7 @@
   color: var(--via-text-soft);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 /* Icon — glass tint editorial */
@@ -1131,7 +1131,7 @@
 }
 
 .vds-audit-text p strong {
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
 
@@ -1146,7 +1146,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -1221,7 +1221,7 @@
   margin: 0 0 4px;
   font-family: var(--via-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
 }
@@ -1244,7 +1244,7 @@
   border: 1px solid var(--via-navy);
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
   transition: background .2s ease, transform .2s ease, box-shadow .22s ease;
@@ -1345,7 +1345,7 @@
 
 .vds-wh-url strong {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-wh-meta {
@@ -1374,7 +1374,7 @@
   padding: 4px 11px;
   border-radius: 999px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   white-space: nowrap;
   line-height: 1.4;
@@ -1402,7 +1402,7 @@
 
 .vds-wh-rate strong {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
 }
@@ -1465,7 +1465,7 @@
   margin: 0 0 4px;
   font-family: var(--via-display);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.015em;
   color: var(--via-text-primary);
 }
@@ -1532,7 +1532,7 @@
   color: rgba(255, 255, 255, 0.86);
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease;
@@ -1565,7 +1565,7 @@
   font-family: var(--via-mono);
   font-size: 10.5px;
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 /* ============================================
@@ -1595,7 +1595,7 @@
   margin: 0 0 4px;
   font-family: var(--via-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
   color: var(--via-text-primary);
 }
@@ -1618,7 +1618,7 @@
   border: 1px solid var(--via-navy-12);
   font-family: var(--via-mono);
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.01em;
   flex-shrink: 0;
@@ -1661,7 +1661,7 @@
 .vds-perm-table thead th {
   font-family: var(--via-mono);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -1704,7 +1704,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   text-transform: none;
   letter-spacing: -0.008em;
@@ -1731,7 +1731,7 @@
 
 .vds-perm-table tbody td.vds-perm-cap {
   padding-left: 24px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-perm-table tbody tr:hover td {
@@ -1791,7 +1791,7 @@
 
 .vds-perm-foot p strong {
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-perm-actions {
@@ -1807,7 +1807,7 @@
   border-radius: 9px;
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   border: 1px solid var(--via-border);
   background: var(--via-surface);

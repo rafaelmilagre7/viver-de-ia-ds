@@ -60,7 +60,7 @@
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   letter-spacing: -0.008em;
   color: var(--via-white);
   white-space: nowrap;
@@ -70,7 +70,7 @@
 .vds-live-pill em {
   font-family: var(--via-display);
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   font-size: 13px;
   letter-spacing: -0.012em;
 }
@@ -107,7 +107,7 @@
 .vds-live-elapsed {
   color: var(--via-gray-300);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   text-transform: none;
   padding-left: 10px;
@@ -133,7 +133,7 @@
 
 .vds-live-viewers strong {
   color: var(--via-white);
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   margin-right: 2px;
 }
 
@@ -148,7 +148,7 @@
   gap: 7px;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-gray-300);
@@ -157,7 +157,7 @@
 
 .vds-live-hero h1 {
   font-size: 64px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.034em;
   line-height: 1.04;
   color: var(--via-white);
@@ -168,7 +168,7 @@
 .vds-live-hero h1 em {
   font-style: italic;
   color: var(--via-white);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   opacity: 0.78;
   letter-spacing: -0.030em;
 }
@@ -180,7 +180,7 @@
   color: var(--via-gray-200);
   max-width: 600px;
   letter-spacing: -0.010em;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 /* Hosts */
@@ -216,7 +216,7 @@
   align-items: center;
   justify-content: center;
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
   box-shadow:
@@ -233,7 +233,7 @@
 .vds-live-host strong {
   display: block;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.010em;
 }
@@ -245,13 +245,13 @@
   color: var(--via-gray-300);
   letter-spacing: -0.006em;
   margin-top: 2px;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 .vds-live-host-sep {
   font-size: 18px;
   color: rgba(255, 255, 255, 0.42);
-  font-weight: 300;
+  font-weight: var(--via-fw-light);
 }
 
 /* Heart rate visualization */
@@ -301,7 +301,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: -0.008em;
   cursor: pointer;
   box-shadow:
@@ -339,7 +339,7 @@
   color: var(--via-white);
   font-family: inherit;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   transition: all 180ms ease;
@@ -352,7 +352,7 @@
 .vds-live-secondary button em {
   font-style: normal;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: var(--via-gray-300);
   padding-left: 8px;
   border-left: 1px solid rgba(255, 255, 255, 0.16);
@@ -424,7 +424,7 @@
 .vds-live-next-l h3 {
   margin: 0 0 14px;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.1;
   color: var(--via-text-primary);
@@ -433,7 +433,7 @@
 .vds-live-next-l h3 em {
   font-style: normal;
   color: var(--via-navy-60);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 .vds-live-next-l p {
@@ -461,7 +461,7 @@
 
 .vds-live-next-meta strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }
 
 /* Right · navy mesh */
@@ -491,7 +491,7 @@
 .vds-live-when em {
   font-style: normal;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--via-gray-300);
@@ -499,7 +499,7 @@
 
 .vds-live-when strong {
   font-size: 34px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.03em;
   line-height: 1;
@@ -535,7 +535,7 @@
 
 .vds-live-countdown strong {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.02em;
   line-height: 1;
@@ -546,7 +546,7 @@
   margin-top: 4px;
   font-style: normal;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -554,7 +554,7 @@
 
 .vds-live-countdown-sep {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: rgba(255, 255, 255, 0.25);
   align-self: center;
   line-height: 1;
@@ -574,7 +574,7 @@
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   box-shadow:
@@ -661,7 +661,7 @@
 .vds-live-past-date em {
   font-style: normal;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.02em;
   font-feature-settings: 'tnum' 1;
@@ -670,7 +670,7 @@
 
 .vds-live-past-date strong {
   font-size: 9px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -724,7 +724,7 @@
   color: var(--via-white);
   font-family: var(--via-font-mono);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   z-index: 2;
   font-feature-settings: 'tnum' 1;
@@ -740,7 +740,7 @@
   gap: 6px;
   margin: 0 0 8px;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -749,7 +749,7 @@
 .vds-live-past-card h4 {
   margin: 0 0 12px;
   font-size: 16.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
   line-height: 1.3;
@@ -758,7 +758,7 @@
 .vds-live-past-card h4 em {
   font-style: normal;
   color: rgba(10, 31, 59, 0.45);
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
 }
 
 .vds-live-past-meta {
@@ -773,5 +773,5 @@
 
 .vds-live-past-meta strong {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
 }

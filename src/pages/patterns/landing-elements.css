@@ -25,7 +25,7 @@
 .vds-le-hero-name {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
@@ -46,7 +46,7 @@
   display: inline-block;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
@@ -55,7 +55,7 @@
 .vds-le-hero-canvas h2 {
   font-family: var(--via-font-display);
   font-size: clamp(28px, 4vw, 44px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--via-white);
@@ -64,7 +64,7 @@
 }
 .vds-le-hero-canvas h2 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.75);
 }
 .vds-le-hero-canvas p {
@@ -90,7 +90,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   text-decoration: none;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -108,7 +108,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   text-decoration: none;
   transition: var(--via-t);
 }
@@ -150,7 +150,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
   transition: var(--via-t);
@@ -190,7 +190,7 @@
 .vds-le-cta-rules h4 {
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -218,7 +218,7 @@
   left: 0; top: 9px; width: 6px; height: 1px;
   background: var(--via-navy);
 }
-.vds-le-cta-rules strong { font-weight: 500; color: var(--via-text-primary); }
+.vds-le-cta-rules strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 
 /* ---------- Trust signals ---------- */
 .vds-le-trust-grid {
@@ -236,7 +236,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -262,7 +262,7 @@
 .vds-le-trust-numbers strong {
   font-family: var(--via-mono);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
   min-width: 90px;
@@ -296,7 +296,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -305,7 +305,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-le-trust-quote em {
@@ -324,7 +324,7 @@
 .vds-le-trust-cases strong {
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 .vds-le-trust-cases em {
@@ -363,7 +363,7 @@
 .vds-le-faq-cat {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--via-ink-3);
@@ -371,7 +371,7 @@
 .vds-le-faq-item summary strong {
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
@@ -408,7 +408,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
@@ -417,7 +417,7 @@
 .vds-le-lead-magnet h3 {
   font-family: var(--via-font-display);
   font-size: clamp(22px, 2.6vw, 30px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: 1.15;
   letter-spacing: -0.022em;
   color: var(--via-white);
@@ -425,7 +425,7 @@
 }
 .vds-le-lead-magnet h3 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
 .vds-le-lead-magnet p {
@@ -466,7 +466,7 @@
 .vds-le-lead-magnet-form label {
   font-family: var(--via-font);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
@@ -503,7 +503,7 @@
   border-radius: 8px;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   border: none;
   cursor: pointer;
@@ -534,7 +534,7 @@
   gap: 6px;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
@@ -556,7 +556,7 @@
 .vds-le-countdown-grid strong {
   font-family: var(--via-mono);
   font-size: clamp(46px, 6vw, 72px);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.025em;
   line-height: 0.9;
@@ -583,7 +583,7 @@
   margin: 0 0 24px;
   line-height: 1.5;
 }
-.vds-le-countdown p strong { color: var(--via-white); font-weight: 500; }
+.vds-le-countdown p strong { color: var(--via-white); font-weight: var(--via-fw-medium); }
 .vds-le-countdown-cta {
   display: inline-flex;
   align-items: center;
@@ -594,7 +594,7 @@
   border-radius: 999px;
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   text-decoration: none;
   box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.35);
 }
@@ -609,7 +609,7 @@
   color: var(--via-text);
   line-height: 1.55;
 }
-.vds-le-countdown-rule strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-le-countdown-rule strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 
 /* ---------- Competitor comparison ---------- */
 .vds-le-compare {
@@ -643,7 +643,7 @@
 }
 .vds-le-compare .cell:last-child { border-right: none; }
 .vds-le-compare .cell.feature {
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
   background: var(--via-gray-50);
@@ -651,7 +651,7 @@
 .vds-le-compare .cell.us {
   background: var(--via-navy-04);
   color: var(--via-text-primary);
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
 }
 .vds-le-compare .cell.us svg { color: var(--via-success); flex-shrink: 0; }
 .vds-le-compare .cell.them {
@@ -668,7 +668,7 @@
 .vds-le-compare header strong {
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
@@ -689,7 +689,7 @@
   color: var(--via-text);
   line-height: 1.55;
 }
-.vds-le-compare-rule strong { color: var(--via-text-primary); font-weight: 500; }
+.vds-le-compare-rule strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 
 @media (max-width: 720px) {
   .vds-le-compare header,

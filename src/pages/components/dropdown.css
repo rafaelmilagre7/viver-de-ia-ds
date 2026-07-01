@@ -36,7 +36,7 @@
 
 .via-dd-trigger .lbl {
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: var(--via-fw-bold);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--via-text-soft);
@@ -44,7 +44,7 @@
 
 .via-dd-trigger .val {
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   flex: 1;
   text-align: left;
@@ -103,7 +103,7 @@
   border-radius: 9px;
   font-family: var(--via-font);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text);
   cursor: pointer;
   letter-spacing: -0.005em;
@@ -117,6 +117,6 @@
 
 .via-dd-menu li.active {
   color: var(--via-text-primary);
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   background: var(--via-navy-08);
 }

@@ -518,8 +518,8 @@ body {
    sobrescreve sem precisar de override por classe — o color herda da cadeia. */
 :where(h1, h2, h3, h4) { color: var(--via-text-primary); }
 h1, h2, h3, h4 { margin: 0; }
-h1 { font-family: var(--via-font-display); font-weight: 500; font-size: var(--via-fs-h1); line-height: var(--via-lh-tight); letter-spacing: var(--via-ls-tighter); }
-h2 { font-family: var(--via-font-display); font-weight: 500; font-size: var(--via-fs-h2); line-height: var(--via-lh-snug);  letter-spacing: var(--via-ls-tighter); }
+h1 { font-family: var(--via-font-display); font-weight: var(--via-fw-medium); font-size: var(--via-fs-h1); line-height: var(--via-lh-tight); letter-spacing: var(--via-ls-tighter); }
+h2 { font-family: var(--via-font-display); font-weight: var(--via-fw-medium); font-size: var(--via-fs-h2); line-height: var(--via-lh-snug);  letter-spacing: var(--via-ls-tighter); }
 h3 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-size: var(--via-fs-h3); line-height: var(--via-lh-snug); letter-spacing: var(--via-ls-tight); }
 h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-size: var(--via-fs-h4); }
 
@@ -691,7 +691,7 @@ a:hover { text-decoration: underline; }
 .via-hero {
   font-family: var(--via-font-display);
   font-size: clamp(2.5rem, 6vw, var(--via-fs-hero));
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
@@ -700,7 +700,7 @@ a:hover { text-decoration: underline; }
 .via-display {
   font-family: var(--via-font-display);
   font-size: clamp(2rem, 4.5vw, var(--via-fs-display));
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
@@ -717,7 +717,7 @@ a:hover { text-decoration: underline; }
 
 .via-wordmark {
   font-family: var(--via-font);
-  font-weight: 300;
+  font-weight: var(--via-fw-light);
   letter-spacing: var(--via-ls-brand);
   text-transform: uppercase;
   color: currentColor;

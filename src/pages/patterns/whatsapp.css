@@ -88,7 +88,7 @@
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   z-index: 3;
 }
 .vds-wa-status .status-r { display: flex; align-items: center; gap: 6px; }
@@ -146,7 +146,7 @@
   display: block;
   font-family: var(--via-font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.005em;
 }
@@ -213,7 +213,7 @@
   align-self: center;
   font-family: var(--via-font);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--via-fw-medium);
   color: rgba(0,0,0,0.55);
   background: rgba(225,245,254,0.92);
   padding: 5px 12px;
