@@ -1073,7 +1073,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   font-feature-settings: 'tnum' 1;
 }
 

@@ -57,7 +57,7 @@
   font-size: clamp(28px, 4vw, 44px);
   font-weight: var(--via-fw-medium);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 14px;
   max-width: 640px;
@@ -558,7 +558,7 @@
   font-size: clamp(46px, 6vw, 72px);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 0.9;
 }
 .vds-le-countdown-grid em {

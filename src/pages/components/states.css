@@ -1213,7 +1213,7 @@
   font-family: var(--via-display);
   font-size: 28px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1.16;
   color: inherit;
 }
@@ -1612,7 +1612,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-empty-prem-day .slot {

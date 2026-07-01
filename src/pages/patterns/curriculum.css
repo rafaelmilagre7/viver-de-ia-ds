@@ -45,7 +45,7 @@
 .vds-course-cover h2 {
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1.06;
   color: var(--via-white);
   margin: 0 0 20px;

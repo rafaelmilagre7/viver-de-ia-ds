@@ -24,7 +24,7 @@
 .vds-feat h3 {
   font-family: var(--via-font-display);
   font-size: 20px; font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em; color: var(--via-text-primary);
+  letter-spacing: var(--via-ls-tight); color: var(--via-text-primary);
   margin: 0;
 }
 .vds-feat h3 em { font-style: normal; color: var(--via-text-muted); }

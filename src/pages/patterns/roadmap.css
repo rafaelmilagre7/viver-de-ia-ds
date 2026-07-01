@@ -309,7 +309,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   line-height: 1.25;
   color: var(--via-text-primary);
 }

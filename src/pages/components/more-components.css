@@ -208,7 +208,7 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   margin: 0;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-notif header .all {
   font-family: var(--via-font);

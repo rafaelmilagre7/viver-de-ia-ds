@@ -92,7 +92,7 @@
   font-size: 28px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   font-variant-numeric: tabular-nums;
 }
 
@@ -257,7 +257,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   line-height: 1.25;
   color: var(--via-text-primary);
 }

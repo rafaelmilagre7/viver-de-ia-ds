@@ -260,7 +260,7 @@
   font-family: var(--via-font-display);
   font-size: 20px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin-top: 2px;
 }
@@ -329,7 +329,7 @@
   font-family: var(--via-font-display);
   font-size: 20px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-white);
 }
 .al-side .mini-cta p {

@@ -278,7 +278,7 @@
   margin: 0 0 4px;
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 

@@ -53,7 +53,7 @@
 .vds-chart-head h3 {
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1.05;
   color: var(--via-text-primary);
   margin: 0 0 6px;

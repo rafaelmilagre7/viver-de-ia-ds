@@ -213,7 +213,7 @@
   font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 12px;
 }
@@ -339,7 +339,7 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 32px;
 }
@@ -401,7 +401,7 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 14px;
 }
@@ -590,7 +590,7 @@
   font-size: 64px;
   font-weight: var(--via-fw-medium);
   line-height: 1;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 10px;
 }
@@ -740,7 +740,7 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   margin: 0 0 10px;
 }
 .vds-sc-carousel-card.hook .vds-sc-carousel-body h3,
@@ -909,7 +909,7 @@
   font-size: clamp(28px, 3.6vw, 52px);
   font-weight: var(--via-fw-medium);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 14px;
 }
@@ -961,7 +961,7 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 24px;
 }
@@ -1111,7 +1111,7 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   line-height: 1;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 10px;
 }
@@ -1182,7 +1182,7 @@
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 12px;
 }
@@ -1352,7 +1352,7 @@
   font-size: 64px;
   font-weight: var(--via-fw-medium);
   line-height: 0.95;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 18px;
 }

@@ -31,6 +31,9 @@ jobs:
       - name: lint
         run: bun run lint
 
+      - name: token drift (base tokenizada)
+        run: bun run lint:tokens
+
       - name: typecheck + build
         run: bun run build
 

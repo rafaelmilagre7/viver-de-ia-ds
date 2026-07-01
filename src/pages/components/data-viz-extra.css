@@ -45,7 +45,7 @@
   margin: 0 0 6px;
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   line-height: 1.05;
   font-feature-settings: 'tnum' 1;

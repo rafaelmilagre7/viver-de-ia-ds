@@ -24,7 +24,7 @@
   font-weight: var(--via-fw-medium);
   font-size: clamp(40px, 5.4vw, 64px);
   line-height: 1.04;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0 0 20px;
 }

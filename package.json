@@ -10,6 +10,7 @@
     "build:tokens": "node scripts/build-tokens.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
+    "lint:tokens": "node scripts/token-drift.mjs",
     "preview": "vite preview",
     "test:visual": "playwright test visual.spec.ts",
     "test:visual:update": "playwright test visual.spec.ts --update-snapshots",

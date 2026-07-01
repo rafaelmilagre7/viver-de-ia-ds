@@ -124,7 +124,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   line-height: 1.2;
   margin: 0 0 12px;

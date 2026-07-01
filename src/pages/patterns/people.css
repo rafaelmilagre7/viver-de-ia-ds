@@ -275,7 +275,7 @@
   line-height: 1.5;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 /* ============================================

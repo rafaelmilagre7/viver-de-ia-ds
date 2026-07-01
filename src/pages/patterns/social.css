@@ -120,7 +120,7 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   margin-top: 4px;
 }
 .ig-content .lede {

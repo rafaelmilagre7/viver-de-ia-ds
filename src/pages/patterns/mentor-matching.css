@@ -524,7 +524,7 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1;
   font-feature-settings: 'tnum' 1;
 }

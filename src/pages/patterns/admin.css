@@ -1466,7 +1466,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 

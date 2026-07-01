@@ -181,7 +181,7 @@
   font-size: clamp(28px, 4.5vw, 44px);
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0 0 16px;
   max-width: 720px;
@@ -599,7 +599,7 @@
   font-size: clamp(28px, 5vw, 56px);
   font-weight: var(--via-fw-medium);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 8px;
 }
@@ -749,7 +749,7 @@
   font-size: clamp(26px, 4vw, 38px);
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0 0 16px;
 }

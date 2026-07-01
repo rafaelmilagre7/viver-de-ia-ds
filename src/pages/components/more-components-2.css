@@ -152,7 +152,7 @@
   font-family: var(--via-font-display);
   font-size: clamp(32px, 4vw, 48px);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1.0;
   color: var(--via-white);
   margin: 0 0 18px;
@@ -242,7 +242,7 @@
   font-family: var(--via-font-display);
   font-size: 20px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin: 0;
 }
@@ -471,7 +471,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 .vds-cal .nav {
