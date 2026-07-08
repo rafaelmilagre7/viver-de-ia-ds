@@ -50,11 +50,16 @@ que aceite upload de arquivos ou ZIP.
 4. Pede o que quiser ("crie um email de welcome", "monta um post pra LinkedIn", etc.)
 
 ### 2. Em Lovable / v0 / Cursor (system prompt)
-1. Cola o conteúdo de \`system-prompt.md\` no campo de system prompt ou custom instructions
+1. Cola o conteúdo de \`lovable-system-prompt.md\` no campo de Knowledge / custom instructions
 2. Pede o que quiser
 3. A IA vai seguir as regras do design system automaticamente
 
-### 3. Em IDE com Claude Code instalado
+### 3. Em Codex (OpenAI) e agentes que leem AGENTS.md
+1. Copia \`AGENTS.md\` deste kit pra RAIZ do projeto (o Codex lê sozinho, sem prompt)
+2. Copia \`tokens/tokens.css\` pra \`src/styles/via-tokens.css\` e importa no entrypoint
+3. Pede o que quiser — vale também pra qualquer agente que siga a convenção AGENTS.md
+
+### 4. Em IDE com Claude Code instalado
 Use o **plugin completo** com comandos slash em vez deste ZIP:
 \`\`\`
 git clone https://github.com/rafaelmilagre7/viver-de-ia-ds.git
@@ -67,6 +72,8 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 /
 ├── README.md                ← este arquivo
 ├── system-prompt.md         ← prompt geral · cola em qualquer LLM
+├── lovable-system-prompt.md ← denso · Knowledge do Lovable / custom instructions
+├── AGENTS.md                ← pro Codex · copia pra raiz do projeto (lê sozinho)
 ├── system-prompts/          ← sub-prompts por contexto
 │   ├── email.md
 │   ├── social.md
@@ -248,6 +255,20 @@ writeFileSync(resolve(out, 'system-prompt.md'), promptGeneral);
 const lovablePath = resolve(root, 'docs/system-prompt.md');
 if (existsSync(lovablePath)) {
   copyFileSync(lovablePath, resolve(out, 'lovable-system-prompt.md'));
+
+  // AGENTS.md pronto pro Codex (OpenAI) e qualquer agente que lê a convenção:
+  // mesmo prompt denso, com preâmbulo de repo em vez de "cole em custom
+  // instructions". Uso: copiar pra RAIZ do projeto — o agente lê sozinho.
+  const dense = readFileSync(lovablePath, 'utf8');
+  const marker = '\n---\n';
+  const body = dense.includes(marker) ? dense.slice(dense.indexOf(marker) + marker.length) : dense;
+  writeFileSync(resolve(out, 'AGENTS.md'), `# AGENTS.md · Viver de IA Design System
+
+Este projeto segue o **Viver de IA Design System**. Aplique as regras abaixo em TUDO que gerar aqui (UI, email, copy, assets) — sem precisar perguntar.
+
+Setup obrigatório do projeto (se ainda não existir): crie \`src/styles/via-tokens.css\` com o conteúdo de \`tokens/tokens.css\` deste kit e importe no entrypoint; carregue as fontes Geist + Geist Mono (Google Fonts). Logos oficiais em \`logos/\` — nunca recriar. Referência visual viva: https://viver-de-ia-ds.vercel.app
+
+${body}`);
 }
 
 const subPrompts = ['via-email', 'via-social', 'via-landing', 'via-brand', 'via-deck', 'via-paid'];
