@@ -14,7 +14,7 @@ Estado atual: **dark mode completo · 100% WCAG AA de contraste nos 2 temas (cla
 
 ## Stack disponível
 
-- **Library:** `@viverdeia/design-system` · **47 componentes React** publicáveis (ESM+CJS+types+CSS+tokens.json)
+- **Library:** `@viverdeia/design-system` · **46 componentes de UI + ThemeProvider** · DS interno, NÃO publicado no npm (ESM+CJS+types+CSS+tokens.json gerados via `bun run build:lib`)
 - **Theming:** `<ThemeProvider defaultMode="system">` + `useTheme()` hook · 3 camadas (tokens CSS / `applyTheme()` imperativo / Provider React-aware). Dark mode é CSS-first: tudo responde a `[data-theme="dark"]` no `<html>`.
 - **Componentes** prontos pra import: `Button` `Pill` `Card` `Input` `Avatar` `Icon` `Toast` `Tooltip` `Modal` `Tabs` `Popover` `Switch` `Checkbox` `RadioGroup` `Select` `Progress` `Drawer` `Spinner` `Skeleton` `Breadcrumb` `Pagination` `Accordion` `Stepper` `EmptyState` `Combobox` `DropdownMenu` `Command` `DatePicker` `Slider` `Alert` `DataTable` `HoverCard` `OTPInput` `TagInput` `Calendar` `Carousel` `MultiSelect` `DateRangePicker` `TimePicker` `ContextMenu` `Sheet` `TreeView` `Splitter` `VirtualList` `Lightbox` `ColorPicker`
 - **Starter:** `bunx create-viverdeia-app meu-app` (scaffold Vite + React + TS pré-configurado com ThemeProvider)
@@ -239,6 +239,21 @@ Mesh navy (hero scuros, immersive sections):
 Glass aparece em: nav sticky, hero stat cards, modal frame, settings sections.
 NUNCA glass em: dashboard denso, tabela de dados.
 
+**Vidro de CHROME (barra/nav sticky, toolbar) = frosted DE VERDADE.** A `.glass` acima (~0.9 opaca) é pra CARD de conteúdo. Pra BARRA, use fundo translúcido pra o conteúdo passar DESFOCADO por baixo (efeito Apple):
+```css
+.glass-bar {                           /* nav sticky, toolbar, painel flutuante */
+  background: rgba(255,255,255,0.6);   /* dark: rgba(11,18,32,0.55) */
+  backdrop-filter: blur(26px) saturate(185%);
+  -webkit-backdrop-filter: blur(26px) saturate(185%);
+  border-bottom: 0.5px solid rgba(10,31,59,0.12);
+}
+```
+Vidro só "aparece" quando é translúcido E tem algo atrás pra desfocar — use sobre fundo escuro/atmosférico ou conteúdo rolando, NUNCA sobre branco liso (aí some).
+
+**Borda de card = FINA e elegante.** `1px` (ou `0.5px`) solid `var(--via-border-soft)` (navy 0.08) + linha de luz interna (`inset 0 1px 0 rgba(255,255,255,.95)`). NUNCA `1.5–2px solid navy` num card ("caixa desenhada", pesado). Destaque/selecionado = fio fino + **halo navy** (`box-shadow: 0 0 0 3px rgba(10,31,59,0.08)`), não uma borda mais grossa. Borda `2px` só em: anel de avatar/foto (`2px solid #fff`), alça de slider, dot de status.
+
+**PROIBIDO — barra/canto de cor em card** (`border-left: 2–4px solid navy/coral` em callout, do/don't, "comportamento vs evita"): estilo bootstrap/alert, tem CARA DE IA. Do/don't = card glass limpo igual aos outros, diferenciado por tipografia/ênfase (label, peso), NUNCA por uma barra colorida no canto.
+
 ## 7. Hover signatures (assinatura comportamental)
 
 Bar lateral fade navy aparecendo à esquerda em hover de rows/cards/lessons/articles:
@@ -281,7 +296,7 @@ Substituições por contexto:
 | Shell footer | Monogram + wordmark stacked |
 | Tab browser | Favicon 32×32 |
 | OG image link preview | Wordmark navy sobre off-white |
-| Email header | Wordmark navy 200px width |
+| Email header | Lockup monograma + wordmark navy · pequeno (~18px alt · letterhead) |
 | WhatsApp profile pic | App icon (não monogram) |
 | Slide deck capa | Wordmark white sobre mesh-navy |
 | Slide deck interior | Monogram white 16px canto inferior direito |
@@ -294,6 +309,18 @@ Clear space: monogram = X/2 · wordmark = 1X.
 Tamanho mínimo: monogram 16px · wordmark 96px.
 Cor por surface: navy em light · white em dark · scrim navy 60% em foto.
 NUNCA inverter via CSS `filter:invert()` · sempre arquivo dedicado.
+
+## 9.5. Email (PRODUÇÃO · à prova de bala)
+
+Email ≠ web. Clientes (Gmail, Outlook, Apple Mail) descartam CSS moderno. Regras:
+
+- **Estrutura em tabela + estilo inline**, ~600px de largura, peça `<102KB` (Gmail corta acima).
+- **PROIBIDO** em email: flex, grid, `backdrop-filter` (vidro real), `position`, variáveis CSS, media query como dependência.
+- **CTA navy SÓLIDO** (`background-color: #0A1F3B`). Degradê puro de fundo **some no Outlook** → botão invisível.
+- **Liquid glass simulado é permitido** (hero navy, painéis frosted, CTA glossy) MAS **todo `background-image: linear/radial-gradient` precisa de um `background-color` sólido na MESMA regra** (fallback). Outlook mostra o sólido; Apple Mail/Gmail mostram o brilho.
+- **Logo = lockup pequeno** (monograma + wordmark · ~18px alt) em **URL absoluta hospedada** (não relativa). Trava em claro: `<meta name="color-scheme" content="light only">`. Sempre um **preheader** (texto de preview escondido).
+- Cor de texto sobre navy = branco sólido. Coral só pra urgência real (atraso/erro).
+- Stack canônica: **react-email + Resend**. A IA escreve só o editorial (assunto, headline, corpo); o motor renderiza o HTML. 13 templates de produção vivos em `/patterns/email`.
 
 ## 10. Tabelas
 
@@ -349,7 +376,7 @@ Para qualquer artefato novo, identifique:
 ## Reference completa
 
 Site vivo (clonável, sempre atual): **https://viver-de-ia-ds.vercel.app**
-Código: **https://github.com/rafaelmilagre7/viver-de-ia-ds** · **107 rotas vivas · 47 componentes · API docs Radix-style · dark mode + WCAG AA completos**.
+Código: **https://github.com/rafaelmilagre7/viver-de-ia-ds** · **quase 100 rotas vivas · 46 componentes de UI + ThemeProvider · 46 API docs Radix-style · dark mode + WCAG AA completos**.
 
 Brand book: `/foundations/brand-story`, `/foundations/personality`, `/foundations/voice-extended`, `/foundations/logo-usage`
 Theming: `/foundations/theming` (CSS-first · ThemeProvider · createThemeOverride · 3 camadas)
@@ -362,7 +389,7 @@ Commercial: `/patterns/commercial` (deck + one-pager + case + proposta + contrac
 Editorial: `/patterns/editorial-content` (newsletter + blog + podcast + YT + tutorial)
 Event: `/patterns/event-collateral` (Leaders AI guidelines)
 
-**Advanced patterns (v0.5):**
+**Advanced patterns (v0.6):**
 - 2FA setup: `/patterns/two-factor` · OTPInput + multi-step
 - Pricing comparison: `/patterns/pricing-comparison` · tabela 3 tiers × 12 features
 - Error pages: `/patterns/errors` · 404 · 403 · 500 · maintenance

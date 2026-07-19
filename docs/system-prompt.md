@@ -239,6 +239,21 @@ Mesh navy (hero scuros, immersive sections):
 Glass aparece em: nav sticky, hero stat cards, modal frame, settings sections.
 NUNCA glass em: dashboard denso, tabela de dados.
 
+**Vidro de CHROME (barra/nav sticky, toolbar) = frosted DE VERDADE.** A `.glass` acima (~0.9 opaca) é pra CARD de conteúdo. Pra BARRA, use fundo translúcido pra o conteúdo passar DESFOCADO por baixo (efeito Apple):
+```css
+.glass-bar {                           /* nav sticky, toolbar, painel flutuante */
+  background: rgba(255,255,255,0.6);   /* dark: rgba(11,18,32,0.55) */
+  backdrop-filter: blur(26px) saturate(185%);
+  -webkit-backdrop-filter: blur(26px) saturate(185%);
+  border-bottom: 0.5px solid rgba(10,31,59,0.12);
+}
+```
+Vidro só "aparece" quando é translúcido E tem algo atrás pra desfocar — use sobre fundo escuro/atmosférico ou conteúdo rolando, NUNCA sobre branco liso (aí some).
+
+**Borda de card = FINA e elegante.** `1px` (ou `0.5px`) solid `var(--via-border-soft)` (navy 0.08) + linha de luz interna (`inset 0 1px 0 rgba(255,255,255,.95)`). NUNCA `1.5–2px solid navy` num card ("caixa desenhada", pesado). Destaque/selecionado = fio fino + **halo navy** (`box-shadow: 0 0 0 3px rgba(10,31,59,0.08)`), não uma borda mais grossa. Borda `2px` só em: anel de avatar/foto (`2px solid #fff`), alça de slider, dot de status.
+
+**PROIBIDO — barra/canto de cor em card** (`border-left: 2–4px solid navy/coral` em callout, do/don't, "comportamento vs evita"): estilo bootstrap/alert, tem CARA DE IA. Do/don't = card glass limpo igual aos outros, diferenciado por tipografia/ênfase (label, peso), NUNCA por uma barra colorida no canto.
+
 ## 7. Hover signatures (assinatura comportamental)
 
 Bar lateral fade navy aparecendo à esquerda em hover de rows/cards/lessons/articles:
