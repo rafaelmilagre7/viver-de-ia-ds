@@ -34,7 +34,8 @@ import {
    ============================================================ */
 
 export interface ThemeProviderProps {
-  /** Tema inicial · default 'system' (segue prefers-color-scheme) */
+  /** Tema inicial · default 'light' (padrão da marca · white-first).
+   *  Passe 'system' explicitamente se quiser seguir prefers-color-scheme. */
   defaultMode?: ThemeMode;
   /** Persistir em localStorage · default true */
   persist?: boolean;
@@ -51,7 +52,7 @@ export interface ThemeProviderProps {
  *  - escutar prefers-color-scheme changes
  *
  * @example
- * <ThemeProvider defaultMode="system">
+ * <ThemeProvider>          // claro por padrão · marca white-first
  *   <App />
  * </ThemeProvider>
  */
@@ -62,7 +63,7 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [mode, setModeState] = useState<ThemeMode>(() => {
     if (defaultMode) return defaultMode;
-    return persist ? readPreferred() : 'system';
+    return persist ? readPreferred() : 'light';
   });
 
   const [systemTheme, setSystemTheme] = useState<Theme>(() => resolveSystem());

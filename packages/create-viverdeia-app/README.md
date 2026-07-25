@@ -23,7 +23,7 @@ meu-projeto/
 ├─ .gitignore
 ├─ README.md
 └─ src/
-   ├─ main.tsx         · ThemeProvider defaultMode="system"
+   ├─ main.tsx         · ThemeProvider (claro por padrão · white-first)
    ├─ App.tsx          · hello world editorial
    └─ index.css        · tokens via --via-*
 ```

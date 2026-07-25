@@ -30,7 +30,7 @@ src/
 ## O que vem pronto
 
 - Tokens CSS (`--via-*`) ativos via import em `main.tsx`
-- `ThemeProvider` com `defaultMode="system"` (segue prefers-color-scheme)
+- `ThemeProvider` claro por padrão (marca white-first) · passe `defaultMode="system"` pra seguir o SO
 - Anti-FOUC script no `index.html` (tema aplicado antes do React montar)
 - TypeScript strict + Vite + React 19
 

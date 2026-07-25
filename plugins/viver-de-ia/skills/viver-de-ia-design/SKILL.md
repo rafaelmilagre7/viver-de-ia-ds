@@ -11,7 +11,16 @@ Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds · site vivo: ht
 Library: `@viverdeia/design-system` v0.6.0 (46 componentes de UI + ThemeProvider · ESM+CJS+types+CSS+tokens)
 Starter: `bunx create-viverdeia-app meu-app` (scaffold Vite + React 19 + TS pré-configurado com ThemeProvider)
 
-**Estado atual:** dark mode completo · 100% WCAG AA de contraste nos 2 temas (claro + escuro) · 0 violação séria de a11y. Em código, use SEMPRE tokens semânticos que adaptam claro↔escuro (`var(--via-text-primary|body|muted|soft)`, `var(--via-surface)`, `var(--via-border-soft)`) — nunca hardcode navy/branco em texto/superfície. Link em texto corrido = sublinhado. De-ênfase por cor (token mais suave), não opacity. E-mail trava tudo em claro.
+## ⚠️ REGRA ZERO · LIGHT-FIRST (a mais violada — leia antes de tudo)
+
+**A marca é CLARA. Fundo branco/off-white é o padrão de TUDO** — landing, app, dashboard, card, email, post. Branco + off-white = ~85% de qualquer tela. Navy é a cor da MARCA (texto, CTA, detalhe), **não o fundo da página**.
+
+- **NUNCA entregue peça de fundo escuro por padrão.** Escuro só se o usuário pedir ("versão dark") ou no respiro canônico: **1 seção full-bleed navy por página** (hero imersivo, CTA de fechamento, footer) — o resto claro.
+- Dark mode é **modo alternativo do usuário** (ele aperta o botão), não a estética de partida. Em dúvida: claro.
+- `<ThemeProvider>` já nasce **claro** por padrão. Só passe `defaultMode="system"` se o usuário quiser seguir o SO.
+- Liquid glass **funciona lindamente sobre claro** — é a assinatura da casa. Não escureça a peça "pra o glass aparecer" (ver receita de glass card claro na seção 5).
+
+**Estado atual:** 100% WCAG AA de contraste nos 2 temas · 0 violação séria de a11y. Em código, use SEMPRE tokens semânticos que adaptam claro↔escuro (`var(--via-text-primary|body|muted|soft)`, `var(--via-surface)`, `var(--via-border-soft)`) — nunca hardcode navy/branco em texto/superfície. Link em texto corrido = sublinhado. De-ênfase por cor (token mais suave), não opacity. E-mail trava tudo em claro.
 
 Quando em dúvida, navegue o reference site — é o gabarito visual mais atualizado. Cmd+K abre busca real com keywords PT-BR/EN.
 
@@ -205,6 +214,40 @@ box-shadow:
 
 Tokens de glass prontos: `--via-glass-card`, `--via-glass-card-2`, `--via-glass-bar`, `--via-glass-sheen` · blur: `--via-blur-sm/-md/-lg/-xl`.
 
+#### ⭐ Glass card sobre fundo CLARO (a receita canônica — use por padrão)
+
+Glass **não precisa de fundo escuro**. Card de vidro sobre claro é a assinatura nº1 da marca e o que mais falta nas peças geradas. São **5 camadas** — sem elas vira retângulo branco chapado:
+
+```css
+/* 1. a PÁGINA precisa de atmosfera (senão o vidro não tem o que refletir) */
+.page { background:
+  radial-gradient(ellipse 80% 50% at 15% 0%, var(--via-navy-05), transparent 60%),
+  radial-gradient(ellipse 60% 50% at 100% 100%, var(--via-navy-03), transparent 65%),
+  var(--via-bg); }
+
+/* 2-4. o CARD: gradiente 3-stop + hairline quase invisível + luz no topo + sombra navy-tinted */
+.glass-card {
+  position: relative; isolation: isolate; border-radius: 20px; padding: 24px;
+  background: var(--via-glass-card);              /* gradiente 96→84→58% */
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--via-border-soft);        /* navy 0.05 · o card se define pela LUZ */
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset,    /* linha de luz no topo */
+              0 10px 24px -16px var(--via-navy-12); /* sombra navy-tinted, nunca preta */
+  transition: transform .26s var(--via-ease-snap), box-shadow .26s ease;
+}
+/* 5. atmosfera PRÓPRIA do card — é o que dá profundidade */
+.glass-card::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
+  opacity: .6; transition: opacity .26s ease; pointer-events: none;
+}
+.glass-card:hover { transform: translateY(-2px); }
+.glass-card:hover::before { opacity: 1; }
+```
+
+Usando os tokens acima, o dark se resolve sozinho. **Erros que matam o efeito:** página branca chapada sem atmosfera · `background:#fff` sólido sem gradiente · borda grossa/escura em vez de hairline · sombra preta genérica em vez de navy-tinted · esquecer o `inset` de luz e o `::before` radial. Card premium = **luz + profundidade**, não borda. (Em React, `<Card>` já entrega tudo isso.)
+
 ### 6. SVG em containers dark + headings
 
 - `<em>` dentro de h1-h4 em container dark (`.via-mesh-navy`, `.via-glass-dark`, `[data-on-dark]`) ganha gradient white automaticamente — regra catch-all em `tokens.css`. Você não precisa se preocupar.
@@ -228,7 +271,7 @@ import '@viverdeia/design-system/styles.css';
 import { ThemeProvider, Button, Pill, Card, DataTable, useToasts } from '@viverdeia/design-system';
 
 // Em React, sempre envelopar o root com ThemeProvider (anti-FOUC + persiste tema)
-<ThemeProvider defaultMode="system">
+<ThemeProvider>
   <App />
 </ThemeProvider>
 ```
@@ -291,7 +334,7 @@ applyTheme('dark');
 **Camada 3 · React-aware:**
 ```tsx
 import { ThemeProvider, useTheme } from '@viverdeia/design-system';
-<ThemeProvider defaultMode="system"><App /></ThemeProvider>
+<ThemeProvider><App /></ThemeProvider>
 // useTheme() → { theme, mode, setMode, toggle } · funciona até sem Provider (lê DOM via MutationObserver)
 ```
 
@@ -360,7 +403,7 @@ bunx create-viverdeia-app meu-app
 cd meu-app && bun install && bun dev
 ```
 
-Gera: `index.html` com anti-FOUC inline · `package.json` (React 19 + Vite 6 + TS 5 + `@viverdeia/design-system`) · `main.tsx` com `ThemeProvider defaultMode="system"` · `App.tsx` landing editorial · `index.css` com tokens `--via-*` · README com regras editoriais. Template parametrizado (`{{PROJECT_NAME}}` / `{{YEAR}}`), valida package name kebab-case, bloqueia pasta não-vazia.
+Gera: `index.html` com anti-FOUC inline · `package.json` (React 19 + Vite 6 + TS 5 + `@viverdeia/design-system`) · `main.tsx` com `ThemeProvider` (claro por padrão) · `App.tsx` landing editorial · `index.css` com tokens `--via-*` · README com regras editoriais. Template parametrizado (`{{PROJECT_NAME}}` / `{{YEAR}}`), valida package name kebab-case, bloqueia pasta não-vazia.
 
 ---
 
@@ -370,6 +413,8 @@ Gera: `index.html` com anti-FOUC inline · `package.json` (React 19 + Vite 6 + T
 - **Personality** (`/foundations/personality`) — 7 atributos: Operador-experiente · Editorial · Denso · Sem guru-bro · Pragmático · Navy-protagonista · Número-sobre-adjetivo.
 - **Voice estendida** (`/foundations/voice-extended`) — contextos: marketing landing · email transacional · email editorial · comunidade · suporte 1:1 · paid ads · social orgânico · sales B2B. Cada um com do/don't.
 - **Logo usage** (`/foundations/logo-usage`) — clear space, min size, variants (white/dark/reverse/single-color), do/don't. Sempre `BrandLogo` component com `variant` prop.
+
+**REGRA INVIOLÁVEL DA LOGO:** a logo é SEMPRE o **lockup composto = monograma VIA + wordmark "VIVER DE IA" juntos**. ❌ NUNCA entregue só o wordmark "VIVER DE IA" solto (sem monograma) — é meio logo, não a marca. ❌ NUNCA desenhe o wordmark como texto estilizado; use os arquivos oficiais de `assets/logos/` ou `<BrandLogo>` (que já renderiza o lockup completo — a prop `variant` muda só a COR: `black` | `white` | `auto`). ✅ Monograma sozinho só em espaço mínimo onde o wordmark não caberia legível: favicon, app/profile icon, canto de slide interior.
 
 ---
 

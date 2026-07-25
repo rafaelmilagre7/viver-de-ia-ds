@@ -11,7 +11,7 @@ export default function GlassInContext() {
             Onde o vidro <em>vive</em>.
           </>
         }
-        lede="Glass não é decoração — tem lugar. Esses são os quatro momentos onde a textura aparece naturalmente: nav sticky, hero stat cards, modal frame, CTA pill. Fora desses, prefira superfície plana."
+        lede="Glass é o material padrão das superfícies da marca — card de conteúdo já nasce com vidro sutil. O que muda é a intensidade: forte em nav sticky, modal e overlay; sutil em card e seção; leve em pill e input. Plano só onde a legibilidade manda: tabela densa e linha de listagem."
       />
 
       <Section title="Nav sticky" meta="topo de página">

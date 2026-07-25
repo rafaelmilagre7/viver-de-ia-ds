@@ -28,11 +28,15 @@ export const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export const STORAGE_KEY = 'via-theme';
 
+/* Light é o PADRÃO DA MARCA (white-first) · só respeita dark/system se o
+   usuário escolheu explicitamente (valor salvo). Mesmo critério do bootstrap
+   de tema do site (index.html) — senão um app novo nasce escuro só porque o
+   SO do dev está em dark, contrariando a identidade clara da marca. */
 export function readPreferred(): ThemeMode {
-  if (typeof window === 'undefined') return 'system';
+  if (typeof window === 'undefined') return 'light';
   const stored = window.localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
   if (stored === 'light' || stored === 'dark' || stored === 'system') return stored;
-  return 'system';
+  return 'light';
 }
 
 export function resolveSystem(): Theme {
