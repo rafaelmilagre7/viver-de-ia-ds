@@ -5,7 +5,7 @@
 /* ---------- Strip · logo wall editorial ---------- */
 .vds-trust-strip {
   position: relative;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   padding: 32px 36px 28px;
@@ -194,9 +194,11 @@
 .vds-trust-stat {
   position: relative;
   padding: 26px 24px 22px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   isolation: isolate;
   overflow: hidden;
   transition: transform .26s cubic-bezier(.2,.7,.2,1), box-shadow .26s ease, border-color .26s ease;
@@ -228,7 +230,7 @@
   right: 16px;
   width: 24px;
   height: 24px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   color: var(--via-text-primary);
   display: flex;
@@ -286,7 +288,7 @@
   position: sticky;
   top: 100px;
   padding: 26px 24px 22px;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
@@ -400,9 +402,11 @@
 .vds-trust-review {
   position: relative;
   padding: 24px 26px 20px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   isolation: isolate;
   overflow: hidden;
   transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
@@ -521,9 +525,11 @@
 .vds-trust-award {
   position: relative;
   padding: 24px 22px 20px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   display: flex;
   flex-direction: column;
   isolation: isolate;
@@ -557,7 +563,7 @@
 }.vds-trust-award-icon {
   width: 42px;
   height: 42px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: flex;

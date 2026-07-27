@@ -23,9 +23,9 @@
   justify-content: space-between;
   gap: var(--via-space-6);
   padding: 14px 40px;
-  background: var(--via-surface);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  background: var(--via-glass-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -60,7 +60,7 @@
   align-items: center;
   gap: 5px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-xs);
@@ -187,13 +187,13 @@
 }
 
 .dba-card {
-  border-radius: 18px;
-  background: var(--via-surface);
-  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-lg);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   padding: 24px;
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 8px 22px -16px var(--via-navy-14);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .dba-card-head {
@@ -239,7 +239,7 @@
 .dba-continue {
   grid-column: span 4;
   position: relative;
-  background-color: var(--via-navy);
+  background: var(--via-navy);
   color: var(--via-white);
   overflow: hidden;
   isolation: isolate;
@@ -295,7 +295,7 @@
 .dba-continue-bar {
   height: 5px;
   background: rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -304,7 +304,7 @@
   display: block;
   height: 100%;
   background: linear-gradient(90deg, var(--via-white), var(--via-stage-1));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 .dba-continue-cta {
@@ -315,7 +315,7 @@
   align-self: flex-start;
   margin-top: auto;
   padding: 12px 22px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
@@ -363,7 +363,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   flex-shrink: 0;
@@ -436,7 +436,7 @@
 .dba-modulo-num {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -475,7 +475,7 @@
 .dba-modulo-bar {
   height: 4px;
   background: var(--via-navy-06);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   overflow: hidden;
 }
 
@@ -483,7 +483,7 @@
   display: block;
   height: 100%;
   background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 .dba-modulo-pct {
@@ -555,7 +555,7 @@
 .dba-achievement-medal {
   width: 48px;
   height: 48px;
-  border-radius: 13px;
+  border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -594,7 +594,7 @@
 .dba-time-icon {
   width: 40px;
   height: 40px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);

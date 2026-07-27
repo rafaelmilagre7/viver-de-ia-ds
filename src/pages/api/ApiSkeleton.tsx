@@ -28,7 +28,7 @@ export default function ApiSkeleton() {
         {
           title: 'Mock de card · avatar + 3 linhas',
           preview: (
-            <div style={{ display: 'flex', gap: 12, width: '100%', maxWidth: 380, padding: 16, background: 'var(--via-surface-1)', borderRadius: 12, border: '1px solid var(--via-border)' }}>
+            <div style={{ display: 'flex', gap: 12, width: '100%', maxWidth: 380, padding: 16, background: 'var(--via-surface)', borderRadius: 12, border: '1px solid var(--via-border)' }}>
               <Skeleton variant="circle" width={44} height={44} />
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 <Skeleton variant="text" width="50%" />

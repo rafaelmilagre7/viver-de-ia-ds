@@ -19,7 +19,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 5px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   border: 1px solid transparent;
   white-space: nowrap;
   line-height: 1.4;
@@ -70,7 +70,7 @@
   position: relative;
   width: 6px;
   height: 6px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: currentColor;
   margin-right: 6px;
   flex-shrink: 0;

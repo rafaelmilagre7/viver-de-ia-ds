@@ -7,7 +7,7 @@
 .vds-pers-trait {
   position: relative;
   padding: 36px 36px 32px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -96,7 +96,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background:
     radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.62)),
     linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
@@ -122,7 +122,7 @@
 .vds-pers-dont {
   position: relative;
   padding: 22px 24px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -162,7 +162,7 @@
   flex-direction: column;
   gap: var(--via-space-7);
   padding: 36px 38px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -208,7 +208,7 @@
   color: var(--via-text-primary);
   background: var(--via-surface-onnavy);
   padding: 5px 14px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   border: 0.5px solid var(--via-navy-12);
   white-space: nowrap;
   box-shadow:
@@ -219,7 +219,7 @@
   position: relative;
   height: 6px;
   background: linear-gradient(90deg, var(--via-navy-08), var(--via-navy-12), var(--via-navy-08));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 .vds-pers-axis-dot {
   position: absolute;
@@ -248,7 +248,7 @@
   grid-template-rows: auto auto;
   gap: var(--via-space-4);
   padding: 28px 30px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -273,7 +273,7 @@
 
 .vds-pers-opt {
   padding: 20px 22px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   transition: border-color var(--via-t), box-shadow var(--via-t);

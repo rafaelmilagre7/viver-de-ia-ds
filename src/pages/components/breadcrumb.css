@@ -16,7 +16,7 @@
   transition: color 180ms ease;
   padding: 4px 8px;
   margin: -4px -8px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
 }
 
 .via-bc a:hover {
@@ -41,6 +41,9 @@
   background:
     radial-gradient(540px 200px at 0% 0%, var(--via-navy-04), transparent 60%),
     var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   border-radius: var(--via-radius-lg);
-  border: 1px solid var(--via-border-soft);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }

@@ -30,7 +30,7 @@
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid var(--via-edge-hi);
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 24px 56px var(--via-navy-22),
@@ -80,7 +80,7 @@
 .via-search .clear {
   width: 26px;
   height: 26px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-soft);
@@ -108,7 +108,7 @@
   align-items: center;
   gap: var(--via-space-3_5);
   padding: 11px 14px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   cursor: pointer;
   transition: all 160ms ease;
 }
@@ -127,7 +127,7 @@
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   padding: 4px 9px;
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   min-width: 90px;
   text-align: center;
 }
@@ -176,7 +176,7 @@
   font-weight: var(--via-fw-bold);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   padding: 2px 7px;
   color: var(--via-text-primary);
   letter-spacing: 0.04em;

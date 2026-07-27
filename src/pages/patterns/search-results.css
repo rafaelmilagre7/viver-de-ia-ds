@@ -2,9 +2,11 @@
    Search results · facets + filters + sort
    ============================================ */
 .vds-sr {
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   isolation: isolate;
   overflow: hidden;
   box-shadow:
@@ -26,7 +28,7 @@
   align-items: center;
   gap: var(--via-space-3);
   padding: 14px 16px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-surface);
   border: 1px solid var(--via-border);
   box-shadow:
@@ -63,7 +65,7 @@
 .vds-sr-search-clear {
   width: 22px;
   height: 22px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: none;
   color: var(--via-ink-3);
@@ -84,7 +86,7 @@
   font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   padding: 3px 7px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   letter-spacing: 0.04em;
@@ -163,7 +165,7 @@
   gap: var(--via-space-2_5);
   align-items: center;
   padding: 8px 10px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -200,7 +202,7 @@
 .vds-sr-facet-icon {
   width: 22px;
   height: 22px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -231,7 +233,7 @@
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
   padding: 1px 7px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
 }
@@ -248,7 +250,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   padding: 7px 10px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   cursor: pointer;
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
@@ -280,7 +282,7 @@
   gap: var(--via-space-3_5);
   padding: 10px 14px;
   margin-bottom: 18px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   flex-wrap: wrap;
@@ -309,7 +311,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   border: 1px solid var(--via-navy-16);
   color: var(--via-text-primary);
@@ -357,7 +359,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 7px 12px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface);
   border: 1px solid var(--via-border);
   color: var(--via-text-primary);
@@ -387,7 +389,7 @@
 .vds-sr-result {
   position: relative;
   padding: 18px 20px 16px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: transparent;
   border: 1px solid transparent;
   transition: background .22s ease, border-color .22s ease, padding-left .22s ease;
@@ -427,7 +429,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 2px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   white-space: nowrap;
   line-height: 1.4;
 }
@@ -513,7 +515,7 @@
   font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   padding: 3px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   letter-spacing: -0.004em;
@@ -552,7 +554,7 @@
 .vds-sr-pag-controls button {
   width: 28px;
   height: 28px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
   color: var(--via-ink-2);

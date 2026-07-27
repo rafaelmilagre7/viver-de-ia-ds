@@ -6,7 +6,7 @@
 .vds-form-stage {
   position: relative;
   padding: 64px 40px;
-  border-radius: 36px;
+  border-radius: var(--via-radius-2xl);
   background:
     radial-gradient(ellipse 65% 70% at 15% 0%, rgba(30,58,95,0.32) 0%, transparent 55%),
     radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.28) 0%, transparent 55%),
@@ -35,7 +35,7 @@
   backdrop-filter: blur(32px) saturate(200%);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
   border: 1px solid var(--via-edge-hi);
-  border-radius: 28px;
+  border-radius: var(--via-radius-xl);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -48,7 +48,7 @@
   position: absolute;
   top: 0; left: 0; right: 0; height: 35%;
   background: var(--via-glass-sheen);
-  border-top-left-radius: 28px;
+  border-top-left-radius: var(--via-radius-xl);
   pointer-events: none;
 }
 .vds-form-card > * { position: relative; z-index: 1; }
@@ -78,7 +78,7 @@
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--via-edge-hi);
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -166,7 +166,7 @@
   font-size: var(--via-fs-label);
   letter-spacing: -0.004em;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-muted);
   white-space: nowrap;
@@ -217,7 +217,7 @@
   color: var(--via-gray-400);
   background: var(--via-surface);
   padding: 2px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 /* ---- Selectors: checkbox e radio ---- */
@@ -232,7 +232,7 @@
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid var(--via-edge-hi);
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 4px 12px var(--via-navy-05);
@@ -266,7 +266,7 @@
   transition: var(--via-t);
 }
 .via-check .box { border-radius: 6px; }
-.via-radio .ring { border-radius: 999px; }
+.via-radio .ring { border-radius: var(--via-radius-pill); }
 .via-check .box.checked {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
@@ -278,7 +278,7 @@
   display: none;
   width: 9px;
   height: 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
 }
 .via-radio .ring.checked .dot { display: block; }

@@ -3,7 +3,7 @@
    ============================================ */
 
 .vds-code {
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
@@ -74,7 +74,7 @@
 .vds-code-icon {
   width: 22px;
   height: 22px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-08);
   color: var(--via-text-primary);
   display: inline-flex;
@@ -113,7 +113,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-08);
   color: var(--via-text-primary);
   margin-left: auto;
@@ -131,7 +131,7 @@
   align-items: center;
   gap: 5px;
   padding: 5px 10px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-08);
   color: var(--via-text-primary);
   border: none;
@@ -285,7 +285,7 @@
    ============================================ */
 .vds-terminal {
   position: relative;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   background: var(--via-navy-darker);
   box-shadow:
@@ -385,7 +385,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   transition: all 160ms ease;
 }
 
@@ -477,7 +477,7 @@
    ============================================ */
 .vds-diff {
   position: relative;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   border: 1px solid var(--via-border-soft);
   background: var(--via-surface);
@@ -514,7 +514,7 @@
 .vds-diff-icon {
   width: 30px;
   height: 30px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   display: inline-flex;
@@ -558,7 +558,7 @@
   align-items: center;
   gap: 5px;
   padding: 4px 9px 4px 7px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   border: 1px solid;
 }
 
@@ -607,7 +607,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   white-space: nowrap;
   line-height: 1.4;
 }

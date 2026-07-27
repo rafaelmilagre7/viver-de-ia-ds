@@ -5,7 +5,7 @@
 .vds-soc-stage {
   position: relative;
   padding: 48px 32px;
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.20) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-stage-1) 0%, var(--via-stage-2) 100%);
@@ -32,7 +32,7 @@
   z-index: 1;
   width: 360px;
   background: var(--via-surface);
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 24px 56px var(--via-navy-18), 0 4px 12px var(--via-navy-06);
   border: 0.5px solid var(--via-navy-10);
@@ -49,7 +49,7 @@
   position: relative;
   width: 32px;
   height: 32px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   display: inline-flex;
   align-items: center;
@@ -61,7 +61,7 @@
   content: '';
   position: absolute;
   inset: -2px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(45deg, var(--via-navy), var(--via-blue), var(--via-navy-deep));
   z-index: -1;
 }
@@ -138,7 +138,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04));
   backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -187,7 +187,7 @@
 .ig-attr-av {
   width: 36px;
   height: 36px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
   border: 1px solid rgba(255,255,255,0.22);
   display: inline-flex;
@@ -238,7 +238,7 @@
   z-index: 1;
   width: 280px;
   aspect-ratio: 9 / 16;
-  border-radius: 28px;
+  border-radius: var(--via-radius-xl);
   overflow: hidden;
   background: var(--via-black);
   box-shadow: 0 32px 64px var(--via-navy-30);
@@ -335,7 +335,7 @@
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: none;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -361,7 +361,7 @@
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.30);
   backdrop-filter: blur(16px);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-white);
@@ -371,7 +371,7 @@
 .story-like {
   width: 38px;
   height: 38px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: transparent;
   border: none;
   color: var(--via-white);
@@ -385,7 +385,7 @@
   width: 100%;
   max-width: 560px;
   background: var(--via-surface);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 24px 56px var(--via-navy-16), 0 4px 12px var(--via-navy-06);
   border: 0.5px solid rgba(0,0,0,0.10);
@@ -400,7 +400,7 @@
 .li-av {
   width: 48px;
   height: 48px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   display: inline-flex;
   align-items: center;
@@ -432,7 +432,7 @@
   background: transparent;
   border: 1.5px solid var(--via-blue);
   color: var(--via-blue);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
@@ -523,6 +523,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
 }
 .li-acts button:hover { background: rgba(0,0,0,0.04); }

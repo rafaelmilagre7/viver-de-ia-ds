@@ -693,6 +693,18 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-glass-blur",
+    "css": "--via-glass-blur",
+    "value": "blur(24px) saturate(175%)",
+    "category": "other"
+  },
+  {
+    "name": "via-glass-blur-bar",
+    "css": "--via-glass-blur-bar",
+    "value": "blur(26px) saturate(185%)",
+    "category": "other"
+  },
+  {
     "name": "via-glass-card",
     "css": "--via-glass-card",
     "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0.022) 100%)",
@@ -702,6 +714,12 @@ export const tokensList: readonly Token[] = [
     "name": "via-glass-card-2",
     "css": "--via-glass-card-2",
     "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018))",
+    "category": "other"
+  },
+  {
+    "name": "via-glass-ring",
+    "css": "--via-glass-ring",
+    "value": "1px solid var(--via-border-soft)",
     "category": "other"
   },
   {
@@ -821,7 +839,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-radius-md",
     "css": "--via-radius-md",
-    "value": "12px",
+    "value": "14px",
     "category": "radius"
   },
   {
@@ -833,7 +851,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-radius-sm",
     "css": "--via-radius-sm",
-    "value": "8px",
+    "value": "10px",
     "category": "radius"
   },
   {
@@ -845,8 +863,20 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-radius-xs",
     "css": "--via-radius-xs",
-    "value": "4px",
+    "value": "6px",
     "category": "radius"
+  },
+  {
+    "name": "via-glass-shadow",
+    "css": "--via-glass-shadow",
+    "value": "inset 0 1px 0 var(--via-edge-hi),\n    0 12px 32px -14px var(--via-navy-14),\n    0 2px 8px -4px var(--via-navy-06)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-glass-shadow-lift",
+    "css": "--via-glass-shadow-lift",
+    "value": "inset 0 1px 0 var(--via-edge-hi),\n    0 24px 56px -20px var(--via-navy-20),\n    0 4px 12px -6px var(--via-navy-08)",
+    "category": "shadow"
   },
   {
     "name": "via-shadow-focus",
@@ -1150,8 +1180,11 @@ export type TokenName =
   | 'via-fw-medium'
   | 'via-fw-regular'
   | 'via-fw-semibold'
+  | 'via-glass-blur'
+  | 'via-glass-blur-bar'
   | 'via-glass-card'
   | 'via-glass-card-2'
+  | 'via-glass-ring'
   | 'via-glass-sheen'
   | 'via-glow-navy'
   | 'via-glow-navy-strong'
@@ -1176,6 +1209,8 @@ export type TokenName =
   | 'via-radius-sm'
   | 'via-radius-xl'
   | 'via-radius-xs'
+  | 'via-glass-shadow'
+  | 'via-glass-shadow-lift'
   | 'via-shadow-focus'
   | 'via-shadow-glass-dark'
   | 'via-shadow-glass-light'

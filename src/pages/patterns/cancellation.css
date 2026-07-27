@@ -3,7 +3,7 @@
    ============================================ */
 .vds-cnx {
   position: relative;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
@@ -47,7 +47,7 @@
   align-items: center;
   gap: 7px;
   padding: 8px 14px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
   color: var(--via-ink-2);
@@ -196,7 +196,7 @@
   gap: var(--via-space-3_5);
   align-items: start;
   padding: 14px 18px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   cursor: pointer;
@@ -237,7 +237,7 @@
 .vds-cnx-reason-check {
   width: 22px;
   height: 22px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
   border: 1.5px solid var(--via-border);
   background: var(--via-surface);
   display: flex;
@@ -302,7 +302,7 @@
 .vds-cnx-offer {
   position: relative;
   padding: 28px 28px 24px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-md);
   color: var(--via-white);
   margin-bottom: 18px;
   isolation: isolate;
@@ -332,13 +332,13 @@
   text-transform: uppercase;
   color: var(--via-white);
   padding: 3px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.22);
 }.vds-cnx-offer-icon {
   width: 48px;
   height: 48px;
-  border-radius: 13px;
+  border-radius: var(--via-radius-sm);
   background:
     radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
     rgba(255, 255, 255, 0.06);
@@ -404,7 +404,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 12px 22px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: none;
@@ -437,7 +437,7 @@
   gap: var(--via-space-3_5);
   align-items: center;
   padding: 16px 18px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   transition: background .22s ease, border-color .22s ease, transform .22s ease;
@@ -471,7 +471,7 @@
 .vds-cnx-alt-icon {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: flex;
@@ -515,7 +515,7 @@
   align-items: center;
   gap: 5px;
   padding: 8px 14px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -549,7 +549,7 @@
   gap: var(--via-space-4_5);
   align-items: start;
   padding: 22px 24px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background:
     radial-gradient(420px 220px at 0% 0%, var(--via-navy-08), transparent 60%),
     var(--via-navy-04);
@@ -558,7 +558,7 @@
 }.vds-cnx-final-icon {
   width: 48px;
   height: 48px;
-  border-radius: 13px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: flex;
@@ -599,7 +599,7 @@
   align-items: center;
   gap: 7px;
   padding: 12px 22px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-md);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);

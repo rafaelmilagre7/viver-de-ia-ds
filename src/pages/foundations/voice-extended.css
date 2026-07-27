@@ -3,9 +3,12 @@
    ============================================ */
 
 .vds-ve-context {
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 14px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
   padding: 24px 28px;
   display: flex;
   flex-direction: column;
@@ -23,7 +26,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background:
     radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45)),
     linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
@@ -63,7 +66,7 @@
 
 .vds-ve-sample {
   padding: 16px 18px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
   display: flex;
@@ -104,7 +107,7 @@
   padding: 18px 22px;
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
 }
 .vds-ve-rules-eyebrow {
   display: block;
@@ -149,7 +152,7 @@
     radial-gradient(ellipse 70% 50% at 0% 0%, var(--via-navy-04) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-gray-50), var(--via-white));
   border: 0.5px solid var(--via-navy-08);
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
 }
 .vds-ve-spine ol {
   list-style: none;

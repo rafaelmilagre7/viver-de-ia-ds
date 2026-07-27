@@ -108,7 +108,7 @@ function Header() {
   );
 }`}</CodeBlock>
 
-        <div style={{ marginTop: 24, padding: 20, background: 'var(--via-surface-1)', borderRadius: 12, border: '1px solid var(--via-border)' }}>
+        <div style={{ marginTop: 24, padding: 20, background: 'var(--via-surface)', borderRadius: 12, border: '1px solid var(--via-border)' }}>
           <ThemeProvider defaultMode="system" persist={false}>
             <p style={{ margin: '0 0 12px', fontSize: 12.5, color: 'var(--via-text-muted)' }}>
               <strong>Demo interativo · </strong>useTheme está dentro de ThemeProvider local (sem persist):

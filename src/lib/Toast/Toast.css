@@ -25,7 +25,7 @@
   gap: var(--via-space-3);
   align-items: start;
   padding: 14px 12px 14px 16px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -85,7 +85,8 @@
 .via-toast__icon {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  /* um degrau abaixo do .via-toast (md) */
+  border-radius: var(--via-radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +149,7 @@
 .via-toast__action {
   align-self: center;
   padding: 6px 12px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
   color: var(--via-text-primary);
@@ -171,7 +172,7 @@
   align-self: center;
   width: 24px;
   height: 24px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
   color: var(--via-ink-3, #6B7891);

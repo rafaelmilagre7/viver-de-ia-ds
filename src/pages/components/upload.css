@@ -50,7 +50,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: 1px solid var(--via-navy);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -86,7 +86,7 @@
   padding: 16px 18px;
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   transition: all 180ms ease;
   position: relative;
   overflow: hidden;
@@ -116,7 +116,7 @@
 .via-upload-list .ico {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   display: inline-flex;
@@ -155,7 +155,7 @@
   width: 100%;
   height: 4px;
   background: var(--via-navy-06);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   margin-top: 8px;
   overflow: hidden;
 }
@@ -164,14 +164,14 @@
   display: block;
   height: 100%;
   background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
 .via-upload-list .x {
   width: 30px;
   height: 30px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-soft);

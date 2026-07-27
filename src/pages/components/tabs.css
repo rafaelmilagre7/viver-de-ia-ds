@@ -6,7 +6,7 @@
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 4px 12px var(--via-navy-08),
@@ -20,7 +20,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   border: 1px solid transparent;
   background: transparent;
   color: var(--via-text-soft);
@@ -102,7 +102,7 @@
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-08);
   color: var(--via-text-soft);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;

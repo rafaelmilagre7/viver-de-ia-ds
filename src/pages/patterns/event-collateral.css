@@ -22,7 +22,7 @@
 .vds-ev-relation-canvas {
   position: relative;
   min-height: 320px;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   padding: 40px 32px;
   display: flex;
   align-items: center;
@@ -155,7 +155,7 @@
 .vds-ev-relation-text {
   position: relative;
   padding: 36px 32px;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -257,7 +257,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -319,7 +319,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: 1px solid var(--via-navy);
@@ -409,7 +409,7 @@
 .vds-ev-rules {
   position: relative;
   padding: 36px 40px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -485,7 +485,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));

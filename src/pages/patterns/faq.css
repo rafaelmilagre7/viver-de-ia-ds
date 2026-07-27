@@ -2,7 +2,7 @@
    FAQ · busca + categorias + acordeão editorial
    ============================================ */
 .vds-faq {
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
@@ -27,7 +27,7 @@
   align-items: center;
   gap: var(--via-space-3);
   padding: 14px 16px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-surface);
   border: 1px solid var(--via-border);
   box-shadow:
@@ -69,7 +69,7 @@
   font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
   padding: 3px 7px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   letter-spacing: 0.04em;
@@ -153,7 +153,7 @@
   gap: 11px;
   align-items: center;
   padding: 9px 12px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -193,7 +193,7 @@
 .vds-faq-cat-icon {
   width: 24px;
   height: 24px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -224,7 +224,7 @@
   color: var(--via-ink-3);
   letter-spacing: 0.02em;
   padding: 1px 7px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
 }
@@ -246,7 +246,7 @@
 }
 
 .vds-faq-item {
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   transition: border-color .22s ease, background .22s ease;
@@ -308,7 +308,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 2px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   color: var(--via-accent-warm);
   border: 1px solid rgba(10, 31, 59, 0.11);
@@ -333,7 +333,7 @@
 .vds-faq-q-icon {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -385,7 +385,7 @@
 
 .vds-faq-feedback {
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-ink-2);
@@ -430,7 +430,7 @@
   gap: var(--via-space-8);
   align-items: center;
   padding: 32px 36px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   color: var(--via-white);
   isolation: isolate;
   overflow: hidden;
@@ -506,7 +506,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 11px 18px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);

@@ -4,7 +4,7 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--via-space-4_5);
   padding: 72px 32px 56px;
-  border-radius: 36px;
+  border-radius: var(--via-radius-2xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.30) 0%, transparent 55%),
     radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.26) 0%, transparent 55%),
@@ -18,7 +18,7 @@
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 24px;
+  border-radius: var(--via-radius-xl);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -35,7 +35,7 @@
   position: absolute;
   top: 0; left: 0; right: 0; height: 40%;
   background: var(--via-glass-sheen);
-  border-top-left-radius: 24px;
+  border-top-left-radius: var(--via-radius-xl);
   pointer-events: none;
 }
 /* Dark: o glass-card é sutil demais p/ os tiers laterais (recuavam demais
@@ -80,7 +80,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   white-space: nowrap;
   line-height: 1.4;
   box-shadow: 0 6px 14px -4px rgba(10, 31, 59, 0.45);
@@ -140,7 +140,7 @@
 
 .vds-tier .btn {
   padding: 14px 18px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   border: 1px solid var(--via-navy);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
@@ -184,7 +184,7 @@
    Comparison table · 3 planos side-by-side
    ============================================ */
 .vds-cmp {
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
@@ -275,7 +275,7 @@
   letter-spacing: -0.004em;
   color: var(--via-accent-warm);
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   border: 1px solid var(--via-navy-14);
   white-space: nowrap;
@@ -346,7 +346,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 8px 14px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -480,7 +480,7 @@
 .vds-cmp-text {
   display: inline-block;
   padding: 3px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   color: var(--via-text-primary);
   font-size: var(--via-fs-label);

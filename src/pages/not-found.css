@@ -4,7 +4,7 @@
 
 .vds-404 {
   position: relative;
-  border-radius: 40px;
+  border-radius: var(--via-radius-2xl);
   padding: 120px 64px;
   overflow: hidden;
   color: var(--via-white);
@@ -26,7 +26,7 @@
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -76,6 +76,6 @@
 }
 
 @media (max-width: 720px) {
-  .vds-404 { padding: 80px 32px; border-radius: 28px; min-height: 420px; }
+  .vds-404 { padding: 80px 32px; border-radius: var(--via-radius-xl); min-height: 420px; }
   .vds-404-big { font-size: 200px; bottom: -30px; right: -10px; }
 }

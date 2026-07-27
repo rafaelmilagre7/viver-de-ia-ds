@@ -12,7 +12,7 @@
 .via-tt-anchor {
   width: 36px;
   height: 36px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-surface);
   border: 1px solid var(--via-border);
   display: flex;
@@ -30,7 +30,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   box-shadow: 0 12px 32px var(--via-navy-30), inset 0 1px 0 var(--via-edge-hi);
   white-space: nowrap;
   animation: vds-tt-in 220ms var(--via-ease-out) backwards;

@@ -2,7 +2,7 @@
    Public Roadmap · kanban editorial
    ============================================ */
 .vds-rm {
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
@@ -51,7 +51,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 8px 14px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -87,7 +87,7 @@
   justify-content: center;
   width: 17px;
   height: 17px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy);
   color: var(--via-white);
   font-family: var(--via-mono);
@@ -146,7 +146,7 @@
 .vds-rm-col-icon {
   width: 32px;
   height: 32px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -161,7 +161,7 @@
   content: '';
   position: absolute;
   inset: 1px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-xs);
   background: var(--via-glass-sheen);
   pointer-events: none;
 }.vds-rm-col.now .vds-rm-col-icon {
@@ -203,7 +203,7 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   padding: 2px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   font-variant-numeric: tabular-nums;
@@ -222,7 +222,7 @@
 .vds-rm-card {
   position: relative;
   padding: 16px 18px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
@@ -285,7 +285,7 @@
   letter-spacing: -0.004em;
   color: var(--via-ink-2);
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   white-space: nowrap;
@@ -387,7 +387,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 5px 9px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -412,7 +412,7 @@
 .vds-rm-col-more {
   margin-top: 14px;
   padding: 10px 14px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   border: 1px dashed var(--via-border);
   background: transparent;
   color: var(--via-ink-2);

@@ -28,7 +28,7 @@
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border, #D0D5DD);
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   color: var(--via-text-primary);
   cursor: pointer;
   font-family: inherit;
@@ -80,7 +80,7 @@
   color: var(--via-text-primary);
   background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-04));
   border: 1px solid var(--via-navy-14);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 .via-ms__chip-remove {
@@ -89,7 +89,7 @@
   justify-content: center;
   width: 16px;
   height: 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: transparent;
   border: none;
   color: var(--via-text-primary);
@@ -127,7 +127,7 @@
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
@@ -147,7 +147,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   padding: 7px 8px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-xs);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;

@@ -24,7 +24,7 @@
 .vds-bento-card {
   position: relative;
   padding: 28px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(150%);
@@ -182,7 +182,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 13px 22px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
@@ -267,7 +267,7 @@
   align-items: center;
   gap: 5px;
   padding: 6px 12px 6px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
   font-size: var(--via-fs-label);
@@ -301,7 +301,7 @@
   align-items: center;
   gap: 5px;
   padding: 4px 10px 4px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
   font-size: var(--via-fs-label);
@@ -371,7 +371,7 @@
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
   padding: 5px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   width: fit-content;
@@ -464,7 +464,7 @@
   align-items: center;
   gap: 7px;
   padding: 4px 12px 4px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(184, 92, 92, 0.18);
   border: 1px solid rgba(184, 92, 92, 0.4);
   font-size: var(--via-fs-xs);
@@ -538,7 +538,7 @@
   gap: var(--via-space-1_5);
   margin-top: auto;
   padding: 10px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
@@ -644,7 +644,7 @@
 .vds-bento-medal {
   width: 44px;
   height: 44px;
-  border-radius: 13px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;

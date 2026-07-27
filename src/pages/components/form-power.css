@@ -99,7 +99,7 @@
   color: var(--via-ink-3);
   cursor: pointer;
   padding: 2px 6px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   transition: color .2s ease, background .2s ease;
 }
 
@@ -171,7 +171,7 @@
   gap: var(--via-space-3);
   align-items: center;
   padding: 9px 10px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -239,7 +239,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   padding: 6px 14px;
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
@@ -288,7 +288,7 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 48px;
   height: 48px;
-  border-radius: 13px;
+  border-radius: var(--via-radius-md);
   background: var(--via-surface-onnavy);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
@@ -325,7 +325,7 @@
 .vds-fp-drop-cta {
   margin-top: 8px;
   padding: 8px 18px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy);
   border: none;
   color: var(--via-white);
@@ -371,7 +371,7 @@
 .vds-fp-drop-item-icon {
   width: 30px;
   height: 30px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -441,7 +441,7 @@
 .vds-fp-drop-cancel {
   width: 24px;
   height: 24px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
   color: var(--via-ink-3);
@@ -561,7 +561,7 @@
   gap: var(--via-space-3);
   align-items: center;
   padding: 8px 10px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -622,7 +622,7 @@
 .vds-fp-crop-mock {
   width: 90%;
   height: 90%;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background:
     radial-gradient(circle at 30% 30%, var(--via-navy-18), transparent 50%),
     radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.08), transparent 50%),
@@ -718,7 +718,7 @@
 .vds-fp-crop-slider button {
   width: 26px;
   height: 26px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -748,7 +748,7 @@
 
 .vds-fp-crop-rotation button {
   padding: 6px 0;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-ink-2);
@@ -780,7 +780,7 @@
 .vds-fp-crop-btn {
   flex: 1;
   padding: 9px 14px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid var(--via-border);
   color: var(--via-ink-2);
@@ -829,7 +829,9 @@
   justify-content: space-between;
   padding: 8px 12px;
   border-bottom: 1px solid var(--via-border-soft);
-  background: var(--via-navy-02);
+  background: var(--via-glass-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
 }
 
 .vds-fp-md-tools {
@@ -841,7 +843,7 @@
 .vds-fp-md-tools button {
   width: 28px;
   height: 28px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
   color: var(--via-ink-2);
@@ -870,12 +872,12 @@
   gap: var(--via-space-1);
   padding: 2px;
   background: var(--via-navy-04);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
 }
 
 .vds-fp-md-tabs button {
   padding: 5px 12px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
   background: transparent;
   border: none;
   font-family: var(--via-font);
@@ -953,7 +955,7 @@
   padding: 12px 18px;
   border-left: 3px solid var(--via-navy-40);
   background: var(--via-navy-03);
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--via-radius-sm) var(--via-radius-sm) 0;
   font-style: italic;
   font-family: var(--via-display);
   font-size: var(--via-fs-sm);
@@ -986,7 +988,9 @@
   justify-content: space-between;
   padding: 10px 14px 10px 24px;
   border-top: 1px solid var(--via-border-soft);
-  background: var(--via-navy-02);
+  background: var(--via-glass-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
 }
 
 .vds-fp-md-foot span {
@@ -997,7 +1001,7 @@
 
 .vds-fp-md-send {
   padding: 7px 16px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy);
   color: var(--via-white);
   border: none;

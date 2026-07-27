@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   font-family: var(--via-font);

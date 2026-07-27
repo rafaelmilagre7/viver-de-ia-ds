@@ -17,7 +17,7 @@
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   padding: 12px 16px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
 }
@@ -49,7 +49,7 @@
 .vds-lesson-video {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   overflow: hidden;
   background: var(--via-navy);
   box-shadow:
@@ -155,7 +155,7 @@
   right: 16px;
   bottom: 16px;
   padding: 12px 16px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: rgba(10, 31, 59, 0.55);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -167,7 +167,7 @@
   position: relative;
   height: 3px;
   background: rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   margin-bottom: 10px;
   overflow: visible;
 }
@@ -176,7 +176,7 @@
   position: absolute;
   inset: 0 auto 0 0;
   background: linear-gradient(90deg, var(--via-white), rgba(255, 255, 255, 0.7));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 .vds-lesson-video .vid-chapter {
@@ -205,7 +205,7 @@
 .vds-lesson-video .vid-ctrl {
   width: 30px;
   height: 30px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   color: var(--via-white);
@@ -238,7 +238,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   padding: 5px 10px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--via-white);
@@ -255,7 +255,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 6px 12px 6px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px) saturate(140%);
@@ -280,9 +280,12 @@
 /* Info below video */
 .vds-lesson-info {
   padding: 24px;
-  border-radius: 16px;
-  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-md);
+  border: var(--via-glass-ring);
   background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-lesson-title-row {
@@ -317,7 +320,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
   color: var(--via-text-primary);
@@ -386,7 +389,7 @@
 
 /* ---------- Aside / tabs ---------- */
 .vds-lesson-aside {
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(140%);
@@ -412,7 +415,7 @@
   justify-content: center;
   gap: var(--via-space-1_5);
   padding: 9px 8px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   color: var(--via-text-soft);
@@ -442,7 +445,7 @@
 
 .vds-lesson-panel::-webkit-scrollbar-thumb {
   background: var(--via-navy-18);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 /* Transcript */
@@ -451,7 +454,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 8px 12px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   margin-bottom: 14px;
@@ -489,7 +492,7 @@
   grid-template-columns: 44px 1fr;
   gap: var(--via-space-2_5);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   transition: background 160ms ease;
 }
 
@@ -525,7 +528,7 @@
   color: var(--via-text-soft);
   background: var(--via-navy-05);
   border: 1px solid var(--via-navy-08);
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
   padding: 3px 7px;
   cursor: pointer;
   letter-spacing: 0.02em;
@@ -565,7 +568,7 @@
   width: 100%;
   min-height: 130px;
   padding: 16px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-surface);
   font-family: inherit;
@@ -591,7 +594,7 @@
   gap: var(--via-space-1_5);
   margin-top: 12px;
   padding: 9px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: 1px solid var(--via-navy);
@@ -639,7 +642,7 @@
 
 .vds-notes-list li {
   padding: 12px 14px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background:
     radial-gradient(220px 80px at 0% 0%, var(--via-navy-04), transparent 70%),
     var(--via-navy-02);
@@ -663,7 +666,7 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   background: var(--via-navy-06);
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   padding: 3px 6px;
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
@@ -694,7 +697,7 @@
   gap: var(--via-space-3);
   align-items: center;
   padding: 14px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   transition: all 180ms ease;
@@ -728,7 +731,7 @@
   position: relative;
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   display: inline-flex;
@@ -763,7 +766,7 @@
 .vds-material-dl {
   width: 30px;
   height: 30px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-08);
   border: 1px solid var(--via-navy-10);
   color: var(--via-text-primary);
@@ -797,7 +800,7 @@
   grid-template-columns: 38px 1fr;
   gap: var(--via-space-3);
   padding: 14px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   position: relative;
@@ -863,7 +866,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 2px 6px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.07);
   color: var(--via-text-primary);
   white-space: nowrap;
@@ -906,12 +909,12 @@
    ============================================ */
 .vds-quiz {
   padding: 36px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 16px 40px -24px var(--via-navy-14);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-quiz-eyebrow {
@@ -954,7 +957,7 @@
   gap: var(--via-space-3_5);
   width: 100%;
   padding: 16px 18px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
   text-align: left;
@@ -976,7 +979,7 @@
 .vds-quiz-letter {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   display: inline-flex;
@@ -997,7 +1000,7 @@
 .vds-quiz-icon.ok {
   width: 24px;
   height: 24px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -1045,7 +1048,7 @@
   font-size: var(--via-fs-caption);
   line-height: 1.55;
   padding: 14px 18px 14px 22px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-navy-03);
   position: relative;
@@ -1115,9 +1118,12 @@
   align-items: center;
   gap: var(--via-space-3_5);
   padding: 20px 22px;
-  border-radius: 14px;
-  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-md);
+  border: var(--via-glass-ring);
   background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: var(--via-glass-shadow);
   text-decoration: none;
   color: inherit;
   transition: all 200ms ease;
@@ -1172,7 +1178,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 0 22px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy);
   color: var(--via-white);
   border: 1px solid var(--via-navy);

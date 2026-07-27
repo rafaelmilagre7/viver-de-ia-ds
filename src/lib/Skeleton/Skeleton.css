@@ -45,11 +45,11 @@
 }
 
 .via-skeleton--rect {
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
 }
 
 .via-skeleton--circle {
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   aspect-ratio: 1;
 }
 

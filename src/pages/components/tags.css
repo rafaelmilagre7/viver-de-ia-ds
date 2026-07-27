@@ -15,7 +15,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 9px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
@@ -37,7 +37,7 @@
   position: absolute;
   top: 0; left: 0; right: 0; height: 50%;
   background: var(--via-glass-sheen);
-  border-top-left-radius: 999px;
+  border-top-left-radius: var(--via-radius-pill);
   pointer-events: none;
 }
 .via-tag > * { position: relative; z-index: 1; }

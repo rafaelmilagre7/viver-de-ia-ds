@@ -33,7 +33,7 @@
 .via-lightbox__img {
   max-width: min(92vw, 1400px);
   max-height: 86vh;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   cursor: default;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.08),
@@ -58,7 +58,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--via-white, #FFFFFF);
   cursor: pointer;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   z-index: 1;
   transition: background var(--via-dur) ease, transform var(--via-dur) var(--via-ease-spring);
   box-shadow:
@@ -129,7 +129,7 @@
   color: var(--via-white, #FFFFFF);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   text-decoration: none;
   transition: background var(--via-dur) ease, transform .15s ease;
 }

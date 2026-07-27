@@ -15,7 +15,7 @@ function SplitterDemo() {
         orientation="horizontal"
         defaultSplit={32}
         start={
-          <div style={{ ...panelStyle, background: 'var(--via-surface-1)' }}>
+          <div style={{ ...panelStyle, background: 'var(--via-surface)' }}>
             <strong style={{ color: 'var(--via-text-primary)' }}>Sidebar</strong>
             <p style={{ margin: '8px 0 0' }}>Painel esquerdo · navegação, lista, índice.</p>
           </div>

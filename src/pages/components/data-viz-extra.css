@@ -6,7 +6,7 @@
 .vds-heatmap-card,
 .vds-spark-card,
 .vds-gauge-card {
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(140%);
@@ -72,7 +72,7 @@
   align-items: center;
   gap: var(--via-space-1);
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
   font-size: var(--via-fs-label);

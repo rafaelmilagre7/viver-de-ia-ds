@@ -19,7 +19,7 @@
 .vds-course-cover {
   position: relative;
   aspect-ratio: 4 / 5;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@
   flex-direction: column;
   gap: var(--via-space-5);
   padding: 32px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(140%);
@@ -162,7 +162,7 @@
 
 .vds-course-progress .track {
   height: 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   overflow: hidden;
   position: relative;
@@ -172,7 +172,7 @@
   display: block;
   height: 100%;
   background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 .vds-course-progress .next {
@@ -204,7 +204,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   border: 1px solid var(--via-navy);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
@@ -226,7 +226,7 @@
 }
 
 .vds-module {
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
@@ -266,7 +266,7 @@
 .vds-module-num {
   width: 44px;
   height: 44px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   display: inline-flex;
@@ -310,7 +310,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   padding: 5px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -321,7 +321,7 @@
 .vds-module-progress {
   width: 64px;
   height: 4px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-08);
   overflow: hidden;
 }
@@ -330,7 +330,7 @@
   display: block;
   height: 100%;
   background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   transition: width 400ms ease;
 }
 
@@ -364,7 +364,7 @@
   gap: var(--via-space-3_5);
   padding: 12px 14px;
   margin: 0 -14px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   border-bottom: 1px solid var(--via-navy-04);
   font-feature-settings: 'tnum' 1;
   position: relative;
@@ -410,7 +410,7 @@
 .vds-lesson-icon {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -517,7 +517,7 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   padding: 4px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 1px solid var(--via-navy-06);
   text-align: center;
@@ -549,7 +549,7 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 30px;
   height: 30px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: 1px solid var(--via-border-soft);
@@ -591,14 +591,14 @@
   gap: var(--via-space-5);
   align-items: center;
   padding: 24px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   border: 1px dashed var(--via-navy-20);
   background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
   margin-top: 6px;
 }.vds-cert-icon {
   width: 56px;
   height: 56px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -626,7 +626,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.07);
   color: var(--via-text-primary);
   white-space: nowrap;

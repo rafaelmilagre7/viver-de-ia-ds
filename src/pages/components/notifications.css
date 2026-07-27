@@ -6,7 +6,7 @@
 .vds-notif-panel-stage {
   position: relative;
   padding: 60px 32px 40px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
   border: 1px solid var(--via-border-soft);
   display: flex;
@@ -20,7 +20,7 @@
   right: 24px;
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -37,7 +37,7 @@
   min-width: 18px;
   height: 18px;
   padding: 0 5px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy, var(--via-navy));
   color: var(--via-white);
   font-size: var(--via-fs-micro);
@@ -55,11 +55,11 @@
   width: 360px;
   max-width: 100%;
   margin-top: 30px;
-  background: var(--via-surface);
-  backdrop-filter: blur(28px) saturate(140%);
-  -webkit-backdrop-filter: blur(28px) saturate(140%);
-  border: 1px solid var(--via-border-soft);
-  border-radius: 14px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 24px 48px -22px var(--via-navy-22);
@@ -110,7 +110,7 @@
   grid-template-columns: 28px 1fr 8px;
   gap: var(--via-space-2_5);
   padding: 10px 10px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   align-items: flex-start;
   cursor: pointer;
   transition: background 140ms ease;
@@ -132,7 +132,7 @@
 .vds-notif-icon {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   display: inline-flex;
@@ -193,7 +193,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 9px 10px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -221,7 +221,7 @@
   gap: var(--via-space-3_5);
   align-items: center;
   padding: 18px 18px 18px 0;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
@@ -272,7 +272,7 @@
 .vds-banner-icon {
   width: 40px;
   height: 40px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -315,7 +315,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   border: 1px solid;
   white-space: nowrap;
   line-height: 1.4;
@@ -366,7 +366,7 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy);
   color: var(--via-white);
   text-decoration: none;
@@ -394,7 +394,7 @@
 .vds-banner-x {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   color: var(--via-text-soft);
@@ -428,7 +428,7 @@
 .vds-status-card {
   position: relative;
   padding: 36px 32px;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   color: var(--via-white);
   overflow: hidden;
   isolation: isolate;
@@ -445,7 +445,7 @@
   align-items: center;
   gap: 9px;
   padding: 6px 14px 6px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(184, 92, 92, 0.22);
   border: 1px solid rgba(184, 92, 92, 0.4);
   font-size: var(--via-fs-xs);
@@ -520,7 +520,7 @@
 .vds-live-cta {
   background: var(--via-surface);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   padding: 12px 22px;
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -547,9 +547,12 @@
 /* Presence card */
 .vds-presence-card {
   padding: 24px;
-  border-radius: 20px;
-  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-lg);
+  border: var(--via-glass-ring);
   background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-presence-eyebrow {
@@ -649,7 +652,7 @@
 .vds-inbox {
   position: relative;
   padding: 32px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
@@ -705,7 +708,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 8px 12px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   min-width: 220px;
@@ -730,7 +733,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 8px 14px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -751,7 +754,7 @@
   gap: var(--via-space-1);
   margin: 0 -10px 18px;
   padding: 6px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   overflow-x: auto;
@@ -762,7 +765,7 @@
   align-items: center;
   gap: 7px;
   padding: 8px 14px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
   font-size: var(--via-fs-xs);
@@ -797,7 +800,7 @@
   align-items: center;
   justify-content: center;
   padding: 2px 7px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-08);
   font-size: var(--via-fs-micro);
@@ -832,7 +835,7 @@
   align-items: center;
   cursor: pointer;
   transition: all 160ms ease;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   position: relative;
 }
 
@@ -860,7 +863,7 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   display: inline-flex;

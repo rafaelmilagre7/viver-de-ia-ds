@@ -34,7 +34,7 @@
   flex-shrink: 0;
   width: 18px;
   height: 18px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border, #D0D5DD);
   display: inline-flex;
@@ -72,7 +72,7 @@
 .via-radio__dot {
   width: 8px;
   height: 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-text-primary), var(--via-text-body));
   transform: scale(0);
   transition: transform 0.32s var(--via-ease-spring);

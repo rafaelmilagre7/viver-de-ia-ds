@@ -73,7 +73,7 @@
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -103,7 +103,7 @@
   padding: 11px 14px;
   background: transparent;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -143,7 +143,7 @@
   position: relative;
   width: 28px;
   height: 28px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   border: 0.5px solid var(--via-navy-08);
   color: var(--via-text-primary);
@@ -178,7 +178,7 @@
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 26px;
+  border-radius: var(--via-radius-xl);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -264,7 +264,7 @@
   position: relative;
   width: 72px;
   height: 72px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background:
     radial-gradient(circle at 32% 28%, var(--via-blue) 0%, var(--via-navy) 55%, var(--via-navy-deep) 100%);
   color: var(--via-white);
@@ -288,7 +288,7 @@
   content: '';
   position: absolute;
   inset: 2px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.22), transparent 55%);
   pointer-events: none;
 }
@@ -297,7 +297,7 @@
   bottom: -2px; right: -2px;
   width: 24px;
   height: 24px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   color: var(--via-text-primary);
   border: 2px solid var(--via-bg);
@@ -342,7 +342,7 @@
   justify-content: space-between;
   gap: var(--via-space-6);
   padding: 18px 12px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   border: 0;
   transition: background 200ms cubic-bezier(.16, 1, .3, 1);
   position: relative;
@@ -392,7 +392,7 @@
   justify-content: space-between;
   gap: var(--via-space-4);
   padding: 18px 12px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   border: 0;
   position: relative;
   transition: background 200ms cubic-bezier(.16, 1, .3, 1);
@@ -430,7 +430,7 @@
 .vds-set-action {
   position: relative;
   padding: 8px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -470,7 +470,7 @@
   -webkit-backdrop-filter: blur(10px) saturate(140%);
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-12);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);

@@ -18,7 +18,7 @@
 /* ---------- Sidebar ---------- */
 .vds-cp-aside {
   position: relative;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(160%);
@@ -92,7 +92,7 @@
 .vds-cp-progress .track {
   height: 4px;
   background: var(--via-navy-06);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   overflow: hidden;
 }
 
@@ -100,7 +100,7 @@
   display: block;
   height: 100%;
   background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
@@ -125,12 +125,12 @@
 
 .vds-cp-aside-body::-webkit-scrollbar-thumb {
   background: var(--via-navy-18);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 /* Modules */
 .vds-cp-mod {
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   margin-bottom: 4px;
   overflow: hidden;
   position: relative;
@@ -167,7 +167,7 @@
   cursor: pointer;
   text-align: left;
   font-family: inherit;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   transition: background 160ms ease;
 }
 
@@ -178,7 +178,7 @@
 .vds-cp-mod-num {
   width: 32px;
   height: 32px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -241,7 +241,7 @@
   gap: var(--via-space-2_5);
   align-items: center;
   padding: 8px 10px 8px 0;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   font-feature-settings: 'tnum' 1;
   cursor: pointer;
   transition: background 140ms ease;
@@ -260,7 +260,7 @@
 .vds-cp-lesson-mark {
   width: 22px;
   height: 22px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-xs);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-soft);
@@ -363,8 +363,10 @@
   align-items: center;
   gap: var(--via-space-2_5);
   padding: 10px 16px;
-  border-radius: 11px;
-  background: var(--via-navy-03);
+  border-radius: var(--via-radius-sm);
+  background: var(--via-glass-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
   border: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
@@ -389,7 +391,7 @@
 .vds-cp-video {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   overflow: hidden;
   background: var(--via-navy-darker);
   isolation: isolate;
@@ -523,7 +525,7 @@
   right: 16px;
   bottom: 16px;
   padding: 14px 18px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-60);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
@@ -536,7 +538,7 @@
   position: relative;
   height: 3px;
   background: rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   margin-bottom: 12px;
 }
 
@@ -544,7 +546,7 @@
   position: absolute;
   inset: 0 auto 0 0;
   background: linear-gradient(90deg, var(--via-white), var(--via-stage-1));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   box-shadow: 0 0 8px var(--via-navy-20);
 }
 
@@ -588,7 +590,7 @@
 .vid-ctrl {
   width: 32px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   color: var(--via-white);
@@ -627,7 +629,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   padding: 6px 12px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: rgba(10, 31, 59, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--via-white);
@@ -658,7 +660,7 @@
   gap: var(--via-space-4_5);
   align-items: flex-end;
   padding: 24px 26px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -726,7 +728,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 11px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -751,7 +753,7 @@
   align-items: center;
   gap: 7px;
   padding: 12px 20px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   color: var(--via-white);
@@ -817,12 +819,12 @@
 .vds-cp-notes,
 .vds-cp-materials {
   padding: 24px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-cp-extras-eyebrow {
@@ -856,7 +858,7 @@
   align-items: center;
   gap: 5px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   color: var(--via-white);
@@ -888,7 +890,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   padding: 6px 11px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: 1px solid var(--via-border-soft);
@@ -946,7 +948,7 @@
   gap: var(--via-space-3);
   align-items: center;
   padding: 12px 14px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   transition: all 160ms ease;
@@ -960,7 +962,7 @@
 .vds-cp-mat-ext {
   width: 44px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -1002,7 +1004,7 @@
 .vds-cp-materials li button {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -1046,7 +1048,7 @@
   grid-template-columns: 50px 1fr;
   gap: var(--via-space-3);
   padding: 8px 10px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   font-size: var(--via-fs-xs);
   color: var(--via-text);
   cursor: pointer;
@@ -1114,7 +1116,7 @@
   align-self: start;
   min-width: 0;
   aspect-ratio: 16 / 9;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   overflow: hidden;
   background: var(--via-navy-darker);
   isolation: isolate;
@@ -1180,7 +1182,7 @@
   align-items: center;
   gap: 9px;
   padding: 6px 14px 6px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(184, 92, 92, 0.20);
   border: 1px solid rgba(184, 92, 92, 0.42);
   backdrop-filter: blur(20px) saturate(160%);
@@ -1224,7 +1226,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(20px) saturate(160%);
@@ -1276,7 +1278,7 @@
   gap: var(--via-space-3_5);
   align-items: center;
   padding: 12px 18px 12px 14px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: rgba(10, 31, 59, 0.42);
   border: 1px solid rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(24px) saturate(160%);
@@ -1332,7 +1334,7 @@
   display: inline-block;
   margin-left: 8px;
   padding: 2px 8px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
   background: rgba(184, 92, 92, 0.30);
   border: 1px solid rgba(184, 92, 92, 0.45);
   font-size: var(--via-fs-micro);
@@ -1439,7 +1441,7 @@
   gap: var(--via-space-3);
   align-items: center;
   padding: 12px 16px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: rgba(2, 22, 42, 0.62);
   backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
@@ -1453,7 +1455,7 @@
 .vds-cp-live-controls .vid-ctrl {
   width: 32px;
   height: 32px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   color: var(--via-white);
@@ -1504,7 +1506,7 @@
   align-items: center;
   gap: var(--via-space-1);
   padding: 3px 5px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-md);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.10);
 }
@@ -1512,7 +1514,7 @@
 .vds-cp-live-react-bar button {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
   color: var(--via-white);
@@ -1533,7 +1535,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(160%);
@@ -1593,7 +1595,7 @@
   align-items: center;
   gap: 5px;
   padding: 5px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-soft);
@@ -1627,7 +1629,7 @@
 
 .vds-cp-chat-body::-webkit-scrollbar-thumb {
   background: var(--via-navy-14);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 .vds-cp-chat-msg {
@@ -1640,7 +1642,7 @@
   gap: 5px;
   margin-bottom: 6px;
   padding: 3px 9px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-micro);
@@ -1656,7 +1658,7 @@
 
 .vds-cp-chat-msg.pinned {
   padding: 12px 14px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background:
     radial-gradient(320px 100px at 0% 0%, var(--via-navy-06), transparent 70%),
     var(--via-navy-03);
@@ -1712,7 +1714,7 @@
 
 .vds-cp-chat-msg .msg-meta .host-tag {
   padding: 1px 7px;
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   background: linear-gradient(135deg, rgba(184, 92, 92, 0.16), rgba(184, 92, 92, 0.08));
   border: 1px solid rgba(184, 92, 92, 0.30);
   font-size: var(--via-fs-micro);
@@ -1758,7 +1760,7 @@
 .vds-cp-chat-input {
   height: 38px;
   padding: 0 14px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-md);
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   font-family: inherit;
@@ -1786,7 +1788,7 @@
 .vds-cp-chat-send {
   width: 38px;
   height: 38px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   color: var(--via-white);

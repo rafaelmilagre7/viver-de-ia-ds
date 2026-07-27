@@ -5,7 +5,7 @@
 .vds-wa-stage {
   position: relative;
   padding: 64px 32px;
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 65% 70% at 15% 0%, rgba(30,58,95,0.32) 0%, transparent 55%),
     radial-gradient(ellipse 65% 75% at 100% 100%, rgba(10,31,59,0.28) 0%, transparent 55%),
@@ -102,7 +102,7 @@
   width: 110px;
   height: 32px;
   background: var(--via-black);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   z-index: 5;
   box-shadow: inset 0 0 0 1px rgba(40,40,50,0.50);
 }
@@ -133,7 +133,7 @@
   position: relative;
   width: 40px;
   height: 40px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   display: inline-flex;
   align-items: center;
@@ -169,7 +169,7 @@
 .vds-wa-actions button {
   width: 32px;
   height: 32px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: transparent;
   border: none;
   color: var(--via-white);
@@ -217,7 +217,7 @@
   color: rgba(0,0,0,0.55);
   background: rgba(225,245,254,0.92);
   padding: 5px 12px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   margin: 8px 0;
   box-shadow: 0 1px 1px rgba(0,0,0,0.08);
 }
@@ -240,7 +240,7 @@
 .vds-wa-bubble {
   position: relative;
   padding: 7px 10px 6px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   box-shadow: 0 1px 1px rgba(0,0,0,0.10);
 }
 .vds-wa-bubble.them {
@@ -314,14 +314,14 @@
   align-items: center;
   gap: var(--via-space-1);
   background: var(--via-surface);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   padding: 4px 6px 4px 10px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 }
 .vds-wa-field .ico {
   width: 32px;
   height: 32px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: transparent;
   border: none;
   color: rgba(0,0,0,0.45);
@@ -344,7 +344,7 @@
 .vds-wa-send {
   width: 44px;
   height: 44px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-success), var(--via-navy-deep));
   border: none;
   color: var(--via-white);

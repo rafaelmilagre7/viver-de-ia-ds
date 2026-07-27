@@ -10,7 +10,7 @@
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   padding: 36px 40px;
   overflow: hidden;
   display: flex;
@@ -87,7 +87,7 @@
 .vds-testi .av {
   width: 50px;
   height: 50px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   display: flex;
@@ -124,7 +124,7 @@
   padding: 12px 18px 12px 22px;
   background: linear-gradient(180deg, var(--via-navy-03), rgba(10, 31, 59, 0.01));
   border: 1px solid var(--via-border-soft);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   display: flex;
   flex-direction: column;
   align-items: flex-end;

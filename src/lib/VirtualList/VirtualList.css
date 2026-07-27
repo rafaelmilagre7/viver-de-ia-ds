@@ -5,9 +5,12 @@
   position: relative;
   overflow-y: auto;
   width: 100%;
-  border-radius: var(--via-radius-md, 10px);
-  border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
+  border-radius: var(--via-radius-md);
+  border: var(--via-glass-ring);
   background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: var(--via-glass-shadow);
   scrollbar-width: thin;
   scrollbar-color: var(--via-navy-18) transparent;
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
@@ -21,7 +24,7 @@
 }
 .via-vl::-webkit-scrollbar-thumb {
   background: var(--via-navy-14);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 .via-vl::-webkit-scrollbar-thumb:hover {
   background: var(--via-navy-25);

@@ -20,7 +20,7 @@
 .vds-auth-card-2fa {
   position: relative;
   padding: 36px 32px 32px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   isolation: isolate;
   overflow: hidden;
   border: 1px solid rgba(10, 31, 59, 0.09);
@@ -66,7 +66,7 @@
   text-transform: uppercase;
   color: var(--via-accent);
   padding: 3px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.07);
   border: 1px solid var(--via-navy-14);
 }
@@ -130,7 +130,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   padding: 12px 14px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.14);
   margin-bottom: 14px;
@@ -192,7 +192,7 @@
   justify-content: center;
   gap: var(--via-space-2);
   padding: 13px 18px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: none;
@@ -339,7 +339,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 5px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.74);
@@ -374,7 +374,7 @@
 }.vds-auth-2fa-icon {
   width: 48px;
   height: 48px;
-  border-radius: 13px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: flex;
@@ -434,7 +434,7 @@
 .vds-auth-2fa-inputs input {
   width: 54px;
   height: 64px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--via-white);
@@ -498,7 +498,7 @@
 .vds-auth-2fa-trust-check {
   width: 18px;
   height: 18px;
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   border: 1.5px solid rgba(255, 255, 255, 0.24);
   background: rgba(255, 255, 255, 0.04);
   display: flex;
@@ -546,7 +546,7 @@
   gap: var(--via-space-3);
   align-items: center;
   padding: 12px 16px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-md);
   background: var(--via-surface);
   border: 1px solid var(--via-border);
   color: var(--via-text-primary);
@@ -568,7 +568,7 @@
 .vds-auth-social-icon {
   width: 32px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -600,7 +600,7 @@
   font-size: var(--via-fs-micro);
   color: var(--via-accent-warm);
   padding: 3px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   border: 1px solid rgba(10, 31, 59, 0.13);
   letter-spacing: 0.02em;

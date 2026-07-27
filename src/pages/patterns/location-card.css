@@ -5,14 +5,14 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 0;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   isolation: isolate;
   overflow: hidden;
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 24px 56px -22px var(--via-navy-18);
+  box-shadow: var(--via-glass-shadow-lift);
   min-height: 520px;
 }
 
@@ -55,10 +55,11 @@
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
   padding: 4px 8px;
-  border-radius: 6px;
-  background: var(--via-surface);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--via-radius-sm);
+  background: var(--via-glass-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  border: var(--via-glass-ring);
 }
 
 /* ---------- Body ---------- */
@@ -108,7 +109,7 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-2_5);
   padding: 16px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
 }
@@ -123,7 +124,7 @@
 .vds-loc-date-icon {
   width: 32px;
   height: 32px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: flex;
@@ -180,7 +181,7 @@
   grid-template-columns: 26px 1fr;
   gap: 11px;
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   align-items: start;
@@ -195,7 +196,7 @@
 .vds-loc-access-icon {
   width: 26px;
   height: 26px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-xs);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -239,7 +240,7 @@
   align-items: center;
   gap: 7px;
   padding: 11px 16px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -328,15 +329,15 @@
 .vds-loc-compact {
   display: grid;
   grid-template-columns: 160px 1fr;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   overflow: hidden;
   isolation: isolate;
   transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 10px 22px -14px var(--via-navy-12);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-loc-compact:hover {
@@ -415,7 +416,7 @@
   align-items: center;
   gap: 5px;
   padding: 7px 12px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);

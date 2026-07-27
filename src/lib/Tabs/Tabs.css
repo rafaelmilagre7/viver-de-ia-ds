@@ -85,14 +85,15 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 0.5px solid var(--via-navy-08);
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   align-self: flex-start;
   gap: var(--via-space-0_5);
 }
 
 .via-tabs--pills .via-tabs__tab {
   padding: 8px 14px;
-  border-radius: 8px;
+  /* um degrau abaixo do .via-tabs__list (sm) — canto interno não vaza */
+  border-radius: var(--via-radius-xs);
   color: var(--via-ink-2, #5E6B82);
   position: relative;
   z-index: 1;

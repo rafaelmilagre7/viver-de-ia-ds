@@ -47,7 +47,7 @@ export default function ApiContextMenu() {
                 style={{
                   padding: 32,
                   textAlign: 'center',
-                  background: 'var(--via-surface-1)',
+                  background: 'var(--via-surface)',
                   border: '1px dashed var(--via-border)',
                   borderRadius: 12,
                   color: 'var(--via-text-muted)',

@@ -8,7 +8,7 @@
 
 .vds-sticky-stage {
   position: relative;
-  border-radius: 26px;
+  border-radius: var(--via-radius-xl);
   padding: 56px 56px 132px;
   min-height: 480px;
   overflow: hidden;
@@ -62,7 +62,7 @@
   padding: 4px 11px;
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
@@ -119,7 +119,7 @@
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 4px 12px -4px var(--via-navy-06);
@@ -158,7 +158,7 @@
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   display: flex;
   gap: var(--via-space-3_5);
   align-items: flex-start;
@@ -180,7 +180,7 @@
   flex-shrink: 0;
   width: 36px;
   height: 36px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 70%, var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -220,7 +220,7 @@
   align-items: center;
   gap: var(--via-space-4_5);
   padding: 18px 22px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   isolation: isolate;
   overflow: hidden;
   animation: vds-sticky-up .42s var(--via-ease-snap) backwards;
@@ -367,7 +367,7 @@
   align-items: flex-end;
   gap: var(--via-space-1);
   padding: 4px 14px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
   border: 1px solid rgba(255,255,255,0.18);
   backdrop-filter: blur(12px);
@@ -411,7 +411,7 @@
   flex-shrink: 0;
   width: 38px;
   height: 38px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 70%, var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -457,7 +457,7 @@
   align-items: center;
   gap: 7px;
   padding: 10px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -528,7 +528,7 @@
 .vds-sticky-close {
   width: 30px;
   height: 30px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -565,7 +565,7 @@
   text-decoration: none;
   letter-spacing: -0.004em;
   padding: 6px 10px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   transition: all 200ms cubic-bezier(.16, 1, .3, 1);
 }
 .vds-sticky-link:hover {

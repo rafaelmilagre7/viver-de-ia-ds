@@ -4,7 +4,7 @@
 
 /* ---------- Mentor profile card ---------- */
 .vds-mentor-card {
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   overflow: hidden;
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
@@ -44,7 +44,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-10);
   border: 1px solid rgba(10, 31, 59, 0.17);
   color: var(--via-gray-300);
@@ -139,7 +139,7 @@
 .vds-mentor-socials a {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   display: inline-flex;
@@ -159,7 +159,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--via-space-3);
   padding: 18px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   margin-bottom: 20px;
@@ -201,7 +201,7 @@
   justify-content: center;
   gap: var(--via-space-2);
   padding: 14px 18px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   border: 1px solid;
@@ -232,7 +232,7 @@
 .vds-mentor-quote {
   position: relative;
   padding: 20px 22px 18px 22px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background:
     radial-gradient(280px 120px at 0% 0%, var(--via-navy-05), transparent 70%),
     linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
@@ -261,7 +261,7 @@
   letter-spacing: 0.2em;
   color: var(--via-text-primary);
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.07);
   border: 1px solid var(--via-navy-16);
   margin-bottom: 12px;
@@ -302,7 +302,7 @@
 .vds-team-card {
   position: relative;
   padding: 0 22px 18px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
@@ -432,7 +432,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 4px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
   color: var(--via-text-primary);
@@ -475,7 +475,7 @@
   align-items: baseline;
   gap: var(--via-space-2);
   padding: 12px 14px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
 }
@@ -514,7 +514,7 @@
 .vds-team-actions a:not(.vds-team-profile) {
   width: 26px;
   height: 26px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   color: var(--via-text-soft);
   display: inline-flex;
@@ -540,7 +540,7 @@
   text-decoration: none;
   letter-spacing: -0.005em;
   padding: 5px 10px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   transition: background 140ms ease;
 }
 
@@ -554,7 +554,7 @@
 .vds-member-list {
   position: relative;
   padding: 32px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
@@ -609,7 +609,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 8px 12px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   min-width: 200px;
@@ -630,7 +630,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 8px 14px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -652,7 +652,7 @@
   text-transform: uppercase;
   color: var(--via-text-soft);
   background: var(--via-navy-03);
-  border-radius: 10px 10px 0 0;
+  border-radius: var(--via-radius-sm) var(--via-radius-sm) 0 0;
   margin: 0 -12px;
   padding-left: 24px;
   padding-right: 24px;
@@ -673,7 +673,7 @@
   align-items: center;
   position: relative;
   transition: all 160ms ease;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
 }
 
 .vds-member-list li::before {
@@ -810,7 +810,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   padding: 4px 10px 4px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
@@ -850,7 +850,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 5px 10px 5px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-08);
   border: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-label);
@@ -890,14 +890,12 @@
 .vds-userpop-card {
   position: relative;
   padding: 22px;
-  border-radius: 16px;
-  border: 1px solid var(--via-border-soft);
-  background: var(--via-surface);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 24px 48px -22px var(--via-navy-22);
+  border-radius: var(--via-radius-md);
+  border: var(--via-glass-ring);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 
 .vds-userpop-card header {
@@ -931,7 +929,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   padding: 4px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-soft);
   letter-spacing: -0.004em;
@@ -976,7 +974,7 @@
   gap: var(--via-space-1_5);
   flex-wrap: wrap;
   padding: 10px 12px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-03);
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
@@ -1005,7 +1003,7 @@
   justify-content: center;
   gap: 5px;
   padding: 9px 12px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   border: 1px solid;

@@ -67,7 +67,7 @@ button.via-stepper__node:hover .via-stepper__label {
 button.via-stepper__node:focus-visible {
   outline: 2px solid var(--via-navy-60);
   outline-offset: 4px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
 }
 
 /* ===== Indicator (circle/dot) ===== */
@@ -77,13 +77,15 @@ button.via-stepper__node:focus-visible {
   justify-content: center;
   width: 24px;
   height: 24px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-mono, 'Geist Mono', ui-monospace, monospace);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   flex-shrink: 0;
   border: 1px solid var(--via-border, #D0D5DD);
-  background: var(--via-surface);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   color: var(--via-ink-3, #6B7891);
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
   position: relative;

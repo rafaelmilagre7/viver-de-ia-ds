@@ -10,7 +10,7 @@
   padding: 14px 20px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 12px 32px rgba(10,31,59,0.24);
@@ -46,7 +46,7 @@
   padding: 4px 10px;
   background: rgba(255,255,255,0.14);
   border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -73,7 +73,7 @@
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-20);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -95,7 +95,7 @@
 .vds-ann-close {
   width: 28px;
   height: 28px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255,255,255,0.10);
   border: none;
   color: var(--via-white);
@@ -115,9 +115,12 @@
 }
 .vds-skel-card {
   padding: 24px;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-12);
-  border-radius: 20px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-lg);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3);
@@ -127,19 +130,19 @@
 .vds-skel-avatar {
   width: 40px;
   height: 40px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   flex-shrink: 0;
 }
 .vds-skel-line {
   height: 12px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
 }
 .vds-skel-line.thin { height: 9px; }
-.vds-skel-line.big { height: 22px; border-radius: 8px; }
+.vds-skel-line.big { height: 22px; border-radius: var(--via-radius-sm); }
 .vds-skel-pill {
   width: 80px;
   height: 22px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 .shimmer {
   position: relative;
@@ -159,7 +162,7 @@
 .vds-notif-stage {
   position: relative;
   padding: 56px 40px;
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(46,76,118,0.50) 0%, transparent 60%),
     radial-gradient(ellipse 70% 80% at 100% 100%, rgba(2,22,42,0.85) 0%, transparent 55%),
@@ -188,7 +191,7 @@
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 24px;
+  border-radius: var(--via-radius-xl);
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -219,7 +222,7 @@
   background: rgba(255,255,255,0.10);
   border: 1px solid rgba(255,255,255,0.16);
   padding: 7px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   cursor: pointer;
   transition: var(--via-t);
   white-space: nowrap;
@@ -239,7 +242,7 @@
   gap: var(--via-space-3);
   align-items: flex-start;
   padding: 12px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   transition: background 180ms;
   cursor: pointer;
 }
@@ -252,7 +255,7 @@
   position: absolute;
   width: 3px;
   height: 18px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy));
   margin-left: -12px;
   margin-top: 0;
@@ -261,7 +264,7 @@
 .vds-notif li .ico {
   width: 30px;
   height: 30px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -304,7 +307,7 @@
   gap: var(--via-space-1);
   padding: 28px;
   border: 0.5px solid var(--via-navy-12);
-  border-radius: 24px;
+  border-radius: var(--via-radius-xl);
   background: var(--via-glass-card);
 }
 .vds-feed-item {
@@ -320,7 +323,7 @@
   z-index: 1;
   width: 28px;
   height: 28px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -376,7 +379,7 @@
   padding: 3px 10px;
   background: var(--via-navy-08);
   border: 1px solid var(--via-navy-12);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -407,7 +410,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-display);
@@ -423,7 +426,7 @@
   bottom: 0;
   width: 11px;
   height: 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   border: 2px solid var(--via-white);
   background: var(--via-stage-2);
 }
@@ -436,7 +439,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-surface);
   border: 2px solid var(--via-white);
   margin-left: -10px;
@@ -467,9 +470,12 @@
   gap: var(--via-space-4);
   align-items: center;
   padding: 14px 18px;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-12);
-  border-radius: 16px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
   transition: var(--via-t);
 }
 .vds-avgroup-card:hover { border-color: var(--via-navy-40); box-shadow: var(--via-shadow-md); transform: translateY(-1px); }

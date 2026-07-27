@@ -7,7 +7,7 @@
   flex-direction: column;
   gap: var(--via-space-3_5);
   padding: 18px 20px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -86,7 +86,7 @@
   background: var(--via-glass-card);
   backdrop-filter: blur(8px);
   border: 1px solid var(--via-navy-12);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   cursor: pointer;
   transition: background var(--via-dur) ease, color var(--via-dur) ease, border-color var(--via-dur) ease, transform .15s ease;
 }

@@ -4,7 +4,7 @@
 .vds-phil-rule {
   position: relative;
   padding: 36px 36px 32px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -98,7 +98,7 @@
 .vds-phil-allow,
 .vds-phil-forbid {
   padding: 22px 24px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -147,7 +147,7 @@
 .vds-phil-allow-icon {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: flex;
@@ -203,7 +203,7 @@
   gap: var(--via-space-2_5);
   margin-bottom: 22px;
   padding: 22px 24px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
 }
@@ -232,7 +232,7 @@
 
 .vds-phil-pill {
   padding: 4px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
@@ -263,7 +263,7 @@
 .vds-phil-code {
   margin: 0;
   padding: 22px 24px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, var(--via-navy-darker), var(--via-navy));
   color: rgba(255, 255, 255, 0.9);
   font-family: var(--via-mono);
@@ -299,7 +299,7 @@
   gap: var(--via-space-3_5);
   align-items: center;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: rgba(10, 31, 59, 0.015);
   border: 1px solid var(--via-border-soft);
   transition: background .22s ease;
@@ -311,7 +311,7 @@
 
 .vds-phil-token-swatch {
   height: 56px;
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -357,14 +357,14 @@
 
 .vds-phil-sig {
   padding: 22px 22px 20px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
 }
 
 .vds-phil-sig-demo {
   height: 140px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   margin-bottom: 16px;
@@ -377,7 +377,7 @@
 
 .vds-phil-sig-demo.bar .row {
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-xs);
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   background: var(--via-surface);
@@ -416,7 +416,7 @@
 .vds-phil-sig-demo.lift .card {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   padding: 16px 22px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -443,7 +443,7 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   position: relative;
   padding: 22px 28px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -486,7 +486,7 @@
   background: var(--via-navy-05);
   color: var(--via-text-primary);
   padding: 1px 5px;
-  border-radius: 4px;
+  border-radius: var(--via-radius-xs);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -498,7 +498,7 @@
   flex-direction: column;
   gap: var(--via-space-3);
   padding: 22px 24px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
 }
@@ -523,7 +523,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 4px 11px 4px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
@@ -547,7 +547,7 @@
   align-items: center;
   gap: 7px;
   padding: 4px 12px 4px 9px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(184, 92, 92, 0.16);
   border: 1px solid rgba(184, 92, 92, 0.36);
   color: var(--via-white);
@@ -595,7 +595,7 @@
 .vds-phil-voice {
   position: relative;
   padding: 22px 24px 20px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;

@@ -9,9 +9,12 @@
   gap: var(--via-space-4_5);
 }
 .vds-le-hero-card {
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 14px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
   overflow: hidden;
 }
 .vds-le-hero-card > header {
@@ -87,7 +90,7 @@
   padding: 11px 22px;
   background: var(--via-surface);
   color: var(--via-text-primary);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
@@ -105,7 +108,7 @@
   background: transparent;
   color: var(--via-white);
   border: 0.5px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
@@ -133,9 +136,12 @@
   flex-direction: column;
   gap: var(--via-space-2);
   padding: 18px 20px;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 12px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
 }
 .vds-le-cta-card em {
   font-style: normal;
@@ -147,7 +153,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 9px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -183,9 +189,12 @@
 
 .vds-le-cta-rules {
   padding: 24px 28px;
-  background: var(--via-gray-50);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 12px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
 }
 .vds-le-cta-rules h4 {
   font-family: var(--via-font);
@@ -228,9 +237,12 @@
 }
 .vds-le-trust-grid article {
   padding: 22px 24px;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 12px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
 }
 .vds-le-trust-eyebrow {
   display: block;
@@ -340,9 +352,12 @@
   gap: var(--via-space-2);
 }
 .vds-le-faq-item {
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 12px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   transition: border-color 120ms ease;
 }
@@ -395,7 +410,7 @@
   grid-template-columns: 1.2fr 1fr;
   gap: var(--via-space-8);
   padding: 40px 44px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   color: var(--via-white);
   overflow: hidden;
   position: relative;
@@ -460,7 +475,7 @@
   padding: 24px;
   background: rgba(255, 255, 255, 0.08);
   border: 0.5px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   backdrop-filter: blur(8px);
 }
 .vds-le-lead-magnet-form label {
@@ -477,7 +492,7 @@
   gap: var(--via-space-2);
   padding: 11px 14px;
   background: var(--via-surface);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   color: var(--via-ink-3);
 }
 .vds-le-lead-magnet-input input {
@@ -500,7 +515,7 @@
   padding: 12px 18px;
   background: var(--via-surface);
   color: var(--via-text-primary);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
@@ -521,7 +536,7 @@
 .vds-le-countdown {
   position: relative;
   padding: 44px 48px 40px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   color: var(--via-white);
   overflow: hidden;
   text-align: center;
@@ -591,7 +606,7 @@
   padding: 11px 22px;
   background: var(--via-surface);
   color: var(--via-text-primary);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
@@ -603,7 +618,7 @@
   padding: 14px 20px;
   background: var(--via-navy-04);
   border-left: 2px solid var(--via-navy);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
@@ -615,7 +630,7 @@
 .vds-le-compare {
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
 }
 .vds-le-compare header {
@@ -683,7 +698,7 @@
   padding: 14px 20px;
   background: var(--via-navy-04);
   border-left: 2px solid var(--via-navy);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);

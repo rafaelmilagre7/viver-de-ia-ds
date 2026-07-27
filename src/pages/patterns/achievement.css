@@ -6,7 +6,7 @@
 .vds-rings-stage {
   position: relative;
   padding: 56px 48px;
-  border-radius: 28px;
+  border-radius: var(--via-radius-xl);
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: var(--via-space-14);
@@ -84,7 +84,7 @@
   gap: var(--via-space-3_5);
   align-items: center;
   padding: 14px 18px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
@@ -183,7 +183,7 @@
   gap: 5px;
   margin-top: 4px;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.09);
   border: 1px solid var(--via-navy-20);
   color: var(--via-gray-300);
@@ -211,7 +211,7 @@
 .vds-streak-stage {
   position: relative;
   padding: 36px 36px 30px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background-color: var(--via-navy-darker);
   color: var(--via-white);
   overflow: hidden;
@@ -295,7 +295,7 @@
 
 .vds-streak-cell {
   aspect-ratio: 1;
-  border-radius: 4px;
+  border-radius: var(--via-radius-xs);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.04);
   transition: all 200ms ease;
@@ -334,7 +334,7 @@
 .vds-streak-milestone {
   position: relative;
   padding: 22px 22px 20px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -374,7 +374,7 @@
   margin-top: 14px;
   height: 4px;
   background: var(--via-navy-06);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   overflow: hidden;
 }
 
@@ -382,7 +382,7 @@
   display: block;
   height: 100%;
   background: linear-gradient(90deg, var(--via-stage-1), var(--via-navy));
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   box-shadow: 0 0 8px var(--via-navy-20);
 }
 
@@ -398,7 +398,7 @@
 .vds-cert-paper {
   position: relative;
   padding: 56px 72px 52px;
-  border-radius: 24px;
+  border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse at 50% 0%, rgba(59, 107, 160, 0.18) 0%, transparent 55%),
     radial-gradient(ellipse at 0% 100%, rgba(30, 58, 95, 0.22) 0%, transparent 55%),
@@ -600,7 +600,7 @@
   gap: 0;
   margin: 0 0 38px;
   padding: 10px 22px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(14px) saturate(160%);
@@ -793,7 +793,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 22px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -824,7 +824,7 @@
   text-transform: uppercase;
   color: var(--via-text-muted);
   padding: 3px 8px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
 }
@@ -866,7 +866,7 @@
 
 .vds-cohort-l {
   padding: 32px;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -942,7 +942,7 @@
   position: relative;
   height: 8px;
   background: var(--via-navy-06);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 .vds-cohort-track::before {
@@ -1017,7 +1017,7 @@
 .vds-cohort-r {
   position: relative;
   padding: 32px;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   background:
     radial-gradient(ellipse at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 55%),
     radial-gradient(ellipse at 100% 100%, var(--via-navy-06) 0%, transparent 55%),
@@ -1051,7 +1051,7 @@
   gap: var(--via-space-2);
   margin: 0 0 18px;
   padding: 7px 14px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
   font-size: var(--via-fs-xs);
@@ -1125,7 +1125,7 @@
   gap: var(--via-space-2);
   margin-top: auto;
   padding: 13px 20px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-navy-20);
   color: var(--via-text-primary);

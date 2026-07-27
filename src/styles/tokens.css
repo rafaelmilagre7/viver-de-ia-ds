@@ -390,14 +390,39 @@
   --via-space-24:  96px;
   --via-space-32:  128px;
 
-  /* ========== RADII =========================================== */
-  --via-radius-xs:   4px;
-  --via-radius-sm:   8px;
-  --via-radius-md:   12px;
+  /* ========== RADII ===========================================
+     Escala generosa (cantos suaves = leitura premium/Apple). Cada degrau
+     é perceptivelmente diferente do vizinho — nada de 14 vs 16 vs 18, que
+     só tira o ritmo. SEMPRE usar o token, nunca px cru.
+       xs  chip/tag minúscula · sm  badge, input pequeno, thumb
+       md  botão, input, card pequeno · lg  CARD PADRÃO
+       xl  card grande, modal, drawer · 2xl painel hero / seção full  */
+  --via-radius-xs:   6px;
+  --via-radius-sm:   10px;
+  --via-radius-md:   14px;
   --via-radius-lg:   20px;
   --via-radius-xl:   28px;
   --via-radius-2xl:  40px;
   --via-radius-pill: 999px;
+
+  /* ========== LIQUID GLASS · receitas prontas ==================
+     Assinatura da marca. Use a receita inteira (superfície + borda fina +
+     linha de luz no topo + sombra navy), não só o fundo.
+       via-glass-card  card/painel de conteúdo (mais sólido, texto legível)
+       via-glass-bar   nav sticky/toolbar/overlay (translúcido de verdade)
+     Vidro só "aparece" com algo atrás pra desfocar — sobre fundo
+     atmosférico/escuro/conteúdo rolando. Sobre branco liso ele some. */
+  --via-glass-blur:      blur(24px) saturate(175%);
+  --via-glass-blur-bar:  blur(26px) saturate(185%);
+  --via-glass-ring:      1px solid var(--via-border-soft);
+  --via-glass-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 12px 32px -14px var(--via-navy-14),
+    0 2px 8px -4px var(--via-navy-06);
+  --via-glass-shadow-lift:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 24px 56px -20px var(--via-navy-20),
+    0 4px 12px -6px var(--via-navy-08);
 
   /* ========== BORDERS ========================================= */
   --via-border-fine:   0.5px solid var(--via-border-hairline);

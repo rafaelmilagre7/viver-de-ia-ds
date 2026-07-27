@@ -14,7 +14,7 @@
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   padding: 18px 22px;
   transition: all 220ms var(--via-ease-out);
   overflow: hidden;
@@ -61,7 +61,7 @@
   line-height: 1;
   font-feature-settings: 'tnum' 1;
   padding: 8px 0;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   opacity: 0.85;
@@ -124,7 +124,7 @@
   gap: var(--via-space-0_5);
   height: 22px;
   padding: 0 6px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.07);
   border: 1px solid var(--via-navy-14);
 }
@@ -133,7 +133,7 @@
   display: block;
   width: 2px;
   background: var(--via-navy);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   animation: vds-wave 1.2s ease-in-out infinite;
 }
 
@@ -155,7 +155,7 @@
 .vds-pod .play {
   width: 48px;
   height: 48px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: flex;

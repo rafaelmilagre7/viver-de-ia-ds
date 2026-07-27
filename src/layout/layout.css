@@ -33,8 +33,8 @@
   padding: 0 28px;
   height: 64px;
   background: var(--via-glass-bar);
-  backdrop-filter: blur(26px) saturate(185%);
-  -webkit-backdrop-filter: blur(26px) saturate(185%);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
   border-bottom: 0.5px solid var(--via-navy-12);
 }
 .vds-header-left { display: flex; align-items: center; gap: var(--via-space-3); }
@@ -44,7 +44,7 @@
   height: 38px;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: transparent;
   border: none;
   color: var(--via-text-body);
@@ -134,7 +134,11 @@
 .vds-sidebar {
   grid-area: sidebar;
   border-right: 0.5px solid var(--via-navy-12);
-  background: var(--via-bg);
+  /* chrome de navegação · vidro de barra pra a atmosfera do shell passar
+     desfocada por baixo (mesma matéria do header sticky) */
+  background: var(--via-glass-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
   padding: 32px 24px 64px;
   overflow-y: auto;
   position: sticky;
@@ -162,7 +166,7 @@
 .vds-sidebar-eyebrow-ico {
   width: 26px;
   height: 26px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy-12), var(--via-navy-04));
   color: var(--via-text-primary);
   display: inline-flex;
@@ -335,8 +339,8 @@
     bottom: 0;
     width: 300px;
     background: var(--via-glass-card);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: var(--via-glass-blur);
+    -webkit-backdrop-filter: var(--via-glass-blur);
     border-right: 0.5px solid var(--via-navy-12);
     transform: translateX(-100%);
     transition: transform 320ms var(--via-ease-out);

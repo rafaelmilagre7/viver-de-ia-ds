@@ -8,7 +8,7 @@
   text-align: center;
   gap: var(--via-space-3_5);
   padding: 48px 32px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 
@@ -63,7 +63,7 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
   border: 1px solid var(--via-border-soft);
   box-shadow:

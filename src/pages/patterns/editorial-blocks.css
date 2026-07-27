@@ -11,7 +11,7 @@
 
 .vds-hero-card {
   position: relative;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   padding: 56px 56px 48px;
   overflow: hidden;
   isolation: isolate;
@@ -50,7 +50,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
   color: var(--via-text-primary);
@@ -109,7 +109,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 13px 22px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
@@ -211,7 +211,7 @@
 
 .vds-hero-mock {
   position: relative;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   padding: 22px;
   color: var(--via-white);
   overflow: hidden;
@@ -229,7 +229,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   padding: 4px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.14);
   align-self: flex-start;
@@ -246,7 +246,7 @@
 
 .mock-kpi {
   padding: 12px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-sm);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -294,7 +294,11 @@
 
 /* Hero editorial */
 .vds-hero-card.editorial {
-  background: var(--via-gray-50);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
   padding: 56px;
 }
 
@@ -322,7 +326,7 @@
    ============================================ */
 .vds-logowall-card {
   padding: 36px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(140%);
@@ -366,7 +370,7 @@
   gap: 1px;
   background: var(--via-border-soft);
   border: 1px solid var(--via-border-soft);
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
 }
 
@@ -440,7 +444,7 @@
    ============================================ */
 .vds-timeline {
   padding: 36px;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(24px) saturate(140%);
@@ -526,7 +530,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   color: var(--via-text-soft);
   letter-spacing: -0.004em;
@@ -580,7 +584,7 @@
 .vds-process-step {
   position: relative;
   padding: 28px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
@@ -598,7 +602,7 @@
 .vds-process-num {
   width: 48px;
   height: 48px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   display: inline-flex;
@@ -616,7 +620,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   background: var(--via-surface);
   color: var(--via-text-primary);
   border: 1px solid var(--via-border-soft);
@@ -678,9 +682,12 @@
 
 .vds-comparison-col {
   padding: 32px 28px;
-  border-radius: 20px;
-  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-lg);
+  border: var(--via-glass-ring);
   background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: var(--via-glass-shadow);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-5_5);
@@ -700,7 +707,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   pointer-events: none;
   background:
     radial-gradient(380px 200px at 0% 0%, rgba(255, 255, 255, 0.08), transparent 60%),
@@ -720,7 +727,7 @@
   display: inline-flex;
   align-items: center;
   padding: 4px 13px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
   color: var(--via-white);
   font-size: var(--via-fs-label);
@@ -826,7 +833,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   padding: 3px 8px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
@@ -854,7 +861,7 @@
   justify-content: center;
   gap: var(--via-space-2);
   padding: 14px 20px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-12);
@@ -896,7 +903,7 @@
 
 .vds-faq-item {
   border: 1px solid var(--via-border-soft);
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   overflow: hidden;
   transition: all 180ms ease;

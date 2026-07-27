@@ -1,6 +1,6 @@
 .via-accordion {
   border: 1px solid var(--via-border-soft);
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   overflow: hidden;
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
@@ -75,7 +75,7 @@
   flex-shrink: 0;
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   display: inline-flex;

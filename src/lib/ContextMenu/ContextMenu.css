@@ -15,7 +15,7 @@
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
@@ -55,7 +55,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
   text-align: left;
   transition: background .15s ease, color .15s ease;
 }

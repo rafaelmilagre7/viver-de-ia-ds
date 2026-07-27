@@ -27,7 +27,7 @@
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border, #D0D5DD);
-  border-radius: 9px;
+  border-radius: var(--via-radius-sm);
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: var(--via-fs-caption);
@@ -127,7 +127,7 @@
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
@@ -150,7 +150,8 @@
   justify-content: space-between;
   gap: var(--via-space-3);
   padding: 8px 10px;
-  border-radius: 7px;
+  /* um degrau abaixo do .via-select__list (sm) — canto interno não vaza */
+  border-radius: var(--via-radius-xs);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;

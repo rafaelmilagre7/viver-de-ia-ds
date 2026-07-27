@@ -6,7 +6,7 @@
 .vds-cookie-stage {
   position: relative;
   padding: 56px 40px;
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.18) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-stage-soft) 0%, var(--via-stage-1) 100%);
@@ -29,7 +29,7 @@
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(10,31,59,0.95);
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   background-color: var(--via-navy);
   color: var(--via-white);
   box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 24px 56px var(--via-navy-40);
@@ -37,7 +37,7 @@
 .vds-cookie-ico {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: rgba(255,255,255,0.10);
   color: var(--via-white);
   display: inline-flex;
@@ -69,7 +69,7 @@
 .vds-cookie-actions { display: flex; gap: var(--via-space-2); flex-shrink: 0; }
 .vds-cookie-actions button {
   padding: 11px 20px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -120,7 +120,7 @@
 .vds-news {
   position: relative;
   padding: 56px 48px;
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: grid;
@@ -175,7 +175,7 @@
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 .vds-news-input input {
   flex: 1;
@@ -197,7 +197,7 @@
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-20);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -231,10 +231,12 @@
 /* ---- Comment thread ---- */
 .vds-comments {
   padding: 32px;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-12);
-  border-radius: 24px;
-  box-shadow: 0 12px 32px var(--via-navy-06);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-xl);
+  box-shadow: var(--via-glass-shadow);
 }
 .vds-comments > header { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 0.5px solid var(--via-navy-08); }
 .vds-comments > header .vds-eyebrow { margin-bottom: 4px; }
@@ -257,7 +259,7 @@
 .vds-comments .av {
   width: 40px;
   height: 40px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -301,7 +303,7 @@
   padding: 5px 10px;
   background: transparent;
   border: none;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
@@ -322,12 +324,12 @@
   padding: 12px 14px;
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-12);
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
 }
 .vds-comments-input .av-sm {
   width: 32px;
   height: 32px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -350,7 +352,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: none;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -368,9 +370,12 @@
   gap: var(--via-space-4);
   align-items: center;
   padding: 16px 18px;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-12);
-  border-radius: 16px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
   transition: var(--via-t);
 }
 .vds-file:hover { border-color: var(--via-navy-40); box-shadow: var(--via-shadow-md); transform: translateY(-1px); }
@@ -378,7 +383,7 @@
   position: relative;
   width: 48px;
   height: 56px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-04));
   border: 1px solid var(--via-navy-12);
   display: flex;
@@ -415,7 +420,7 @@
 .vds-file-action {
   width: 38px;
   height: 38px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-08);
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-12);
@@ -437,7 +442,7 @@
 .vds-cal-stage {
   position: relative;
   padding: 48px 32px;
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.16) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-stage-soft) 0%, var(--via-stage-1) 100%);
@@ -454,7 +459,7 @@
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid var(--via-edge-hi);
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 16px 40px var(--via-navy-12);
@@ -477,7 +482,7 @@
 .vds-cal .nav {
   width: 32px;
   height: 32px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-08);
   color: var(--via-text-primary);
   border: none;
@@ -517,7 +522,7 @@
   justify-content: center;
   background: transparent;
   border: none;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -540,7 +545,7 @@
   transform: translateX(-50%);
   width: 4px;
   height: 4px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy);
 }
 .vds-cal-cell.picked .dot { background: var(--via-surface); }
@@ -568,7 +573,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: none;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);

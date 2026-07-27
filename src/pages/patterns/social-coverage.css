@@ -8,9 +8,12 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--via-space-2);
   padding: 12px;
-  background: var(--via-gray-50);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 14px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
   margin-bottom: 40px;
 }
 .vds-sc-nav-btn {
@@ -21,7 +24,7 @@
   padding: 14px 16px;
   background: transparent;
   border: 0.5px solid transparent;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   cursor: pointer;
   transition: var(--via-t);
   text-align: left;
@@ -59,16 +62,19 @@
   color: var(--via-text-primary);
   background: var(--via-navy-04);
   padding: 3px 8px;
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   border: 0.5px solid var(--via-navy-12);
 }
 
 /* ---------- Spec card ---------- */
 .vds-sc-spec {
   padding: 22px 24px;
-  background: var(--via-gray-50);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 12px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
   align-self: flex-start;
 }
 .vds-sc-spec h4 {
@@ -126,7 +132,7 @@
 .vds-sc-ig-chrome {
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 16px 36px -14px var(--via-navy-18);
   max-width: 480px;
@@ -271,7 +277,7 @@
   position: relative;
   width: 320px;
   aspect-ratio: 9 / 16;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   overflow: hidden;
   box-shadow: 0 24px 56px -16px rgba(10, 31, 59, 0.28);
 }
@@ -356,7 +362,7 @@
   padding: 8px 18px;
   background: rgba(255, 255, 255, 0.18);
   border: 0.5px solid rgba(255, 255, 255, 0.32);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-white);
@@ -373,7 +379,7 @@
 .vds-sc-reel-chrome {
   width: 320px;
   aspect-ratio: 9 / 16;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 24px 56px -16px rgba(10, 31, 59, 0.28);
 }
@@ -422,7 +428,7 @@
   right: 20px;
   padding: 4px 8px;
   background: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   font-size: var(--via-fs-label);
   color: var(--via-white);
 }
@@ -441,9 +447,12 @@
   gap: var(--via-space-6);
   flex-wrap: wrap;
   padding: 32px;
-  background: var(--via-gray-50);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 14px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
 }
 .vds-sc-highlight {
   display: flex;
@@ -480,7 +489,7 @@
 .vds-sc-li-post {
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   overflow: hidden;
   max-width: 600px;
   box-shadow: 0 6px 20px -8px var(--via-navy-12);
@@ -506,7 +515,7 @@
   overflow: hidden;
 }
 .vds-sc-li-avatar.company {
-  border-radius: 4px;
+  border-radius: var(--via-radius-xs);
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   padding: 6px;
@@ -697,7 +706,7 @@
   position: relative;
   aspect-ratio: 1080 / 1350;
   padding: 24px 22px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -793,7 +802,7 @@
 /* ---------- LI banner ---------- */
 .vds-sc-li-banner {
   aspect-ratio: 1128 / 191;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   padding: 24px 36px;
   color: var(--via-white);
   display: flex;
@@ -825,7 +834,7 @@
 .vds-sc-yt-thumb {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   padding: 36px 40px;
   color: var(--via-white);
   display: flex;
@@ -875,7 +884,7 @@
   right: 32px;
   padding: 4px 10px;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 4px;
+  border-radius: var(--via-radius-xs);
   font-family: var(--via-mono);
   font-size: var(--via-fs-xs);
   color: var(--via-white);
@@ -885,7 +894,7 @@
 .vds-sc-yt-banner {
   position: relative;
   aspect-ratio: 2560 / 1440;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   padding: 0;
   display: flex;
   align-items: center;
@@ -948,7 +957,7 @@
 /* ---------- YT end card ---------- */
 .vds-sc-yt-end {
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   padding: 36px 48px;
   color: var(--via-white);
   display: flex;
@@ -978,7 +987,7 @@
 .vds-sc-yt-end-grid article {
   background: rgba(255, 255, 255, 0.06);
   border: 0.5px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -995,7 +1004,7 @@
 .vds-sc-yt-end-grid .thumb {
   aspect-ratio: 16 / 9;
   background: rgba(255, 255, 255, 0.10);
-  border-radius: 4px;
+  border-radius: var(--via-radius-xs);
 }
 .vds-sc-yt-end-grid strong {
   font-family: var(--via-font);
@@ -1014,7 +1023,7 @@
    ============================================ */
 .vds-sc-x-header {
   aspect-ratio: 3 / 1;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   padding: 32px 40px;
   color: var(--via-white);
   display: flex;
@@ -1035,7 +1044,7 @@
 .vds-sc-x-post {
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   padding: 14px 16px;
   max-width: 560px;
 }
@@ -1088,7 +1097,7 @@
 
 .vds-sc-x-card {
   aspect-ratio: 1.91 / 1;
-  border-radius: 14px;
+  border-radius: var(--via-radius-sm);
   padding: 28px 32px;
   color: var(--via-white);
   display: flex;
@@ -1155,7 +1164,7 @@
   width: 320px;
   aspect-ratio: 9 / 16;
   background: var(--via-black);
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   overflow: hidden;
   box-shadow: 0 24px 56px -16px rgba(10, 31, 59, 0.32);
 }
@@ -1293,7 +1302,7 @@
   position: relative;
   width: 220px;
   aspect-ratio: 9 / 16;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
 }
 .vds-sc-tiktok-overlay-demo .overlay-pos {
@@ -1306,7 +1315,7 @@
   letter-spacing: -0.022em;
   background: rgba(0, 0, 0, 0.32);
   padding: 8px 14px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   backdrop-filter: blur(4px);
 }
 .vds-sc-tiktok-overlay-demo .top-left { top: 60px; left: 16px; right: 16px; }
@@ -1329,7 +1338,7 @@
 .vds-sc-podcast-cover {
   position: relative;
   aspect-ratio: 1 / 1;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   padding: 44px 36px;
   color: var(--via-white);
   display: flex;
@@ -1377,7 +1386,7 @@
 .vds-sc-podcast-ep {
   aspect-ratio: 1 / 1;
   max-width: 420px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   padding: 36px 32px;
   color: var(--via-white);
   display: flex;

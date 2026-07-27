@@ -45,7 +45,7 @@
   bottom: -1px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--via-navy), var(--via-blue), transparent);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   transition:
     left .35s var(--via-ease-snap),
     right .35s var(--via-ease-snap),

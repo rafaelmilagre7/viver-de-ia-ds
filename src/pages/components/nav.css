@@ -43,7 +43,7 @@
   justify-content: space-between;
   gap: var(--via-space-6);
   padding: 14px 24px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
 }
 
 .via-nav-l {
@@ -101,7 +101,7 @@
   right: 50%;
   height: 1.5px;
   background: currentColor;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   transition: all 280ms var(--via-ease-out);
   opacity: 0;
 }
@@ -144,7 +144,7 @@
 .via-nav-l button,
 .via-nav-d button {
   padding: 10px 20px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);

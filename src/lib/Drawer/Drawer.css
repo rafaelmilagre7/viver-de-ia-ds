@@ -58,7 +58,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  border-radius: 18px 0 0 18px;
+  border-radius: var(--via-radius-lg) 0 0 var(--via-radius-lg);
   animation: via-drawer-in-right .3s var(--via-ease-snap);
 }
 
@@ -72,7 +72,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  border-radius: 0 18px 18px 0;
+  border-radius: 0 var(--via-radius-lg) var(--via-radius-lg) 0;
   animation: via-drawer-in-left .3s var(--via-ease-snap);
 }
 
@@ -86,7 +86,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 18px 18px 0 0;
+  border-radius: var(--via-radius-lg) var(--via-radius-lg) 0 0;
   animation: via-drawer-in-bottom .3s var(--via-ease-snap);
   max-height: 85vh;
 }
@@ -137,7 +137,7 @@
 .via-drawer__close {
   width: 28px;
   height: 28px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
   color: var(--via-ink-3, #6B7891);

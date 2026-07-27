@@ -16,7 +16,7 @@
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-alert-border);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   padding: 14px 16px;
   font-family: var(--via-font, inherit);
   color: var(--via-text, #344054);
@@ -28,7 +28,7 @@
 
 /* --- Tones --- */
 .via-alert--info {
-  --via-alert-bg: var(--via-gray-50, #F7F8FA);
+  --via-alert-bg: var(--via-glass-card);
   --via-alert-border: var(--via-navy-12, rgba(10,31,59,0.12));
   --via-alert-accent: var(--via-navy, #0A1F3B);
 }
@@ -60,8 +60,8 @@
 }
 
 /* --- Sizes --- */
-.via-alert--compact { padding: 10px 12px; border-radius: 10px; gap: var(--via-space-2_5); }
-.via-alert--banner  { padding: 14px 16px; border-radius: 12px; gap: var(--via-space-3); }
+.via-alert--compact { padding: 10px 12px; border-radius: var(--via-radius-sm); gap: var(--via-space-2_5); }
+.via-alert--banner  { padding: 14px 16px; border-radius: var(--via-radius-md); gap: var(--via-space-3); }
 
 .via-alert__icon {
   width: 28px;
@@ -70,14 +70,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-alert-icon-bg);
   color: var(--via-alert-accent);
 }
 .via-alert--compact .via-alert__icon {
   width: 22px;
   height: 22px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
 }
 
 .via-alert__body {
@@ -124,7 +124,7 @@
   background: transparent;
   border: 0.5px solid var(--via-alert-border);
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   cursor: pointer;
   text-decoration: none;
   transition: background 120ms ease, border-color 120ms ease;
@@ -144,7 +144,7 @@
   justify-content: center;
   background: transparent;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--via-radius-xs);
   cursor: pointer;
   color: var(--via-ink-3, #6B7891);
   transition: background 120ms ease, color 120ms ease;

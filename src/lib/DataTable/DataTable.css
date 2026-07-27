@@ -8,7 +8,7 @@
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-navy-10);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,

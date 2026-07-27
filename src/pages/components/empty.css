@@ -1,7 +1,7 @@
 .vds-empty {
   position: relative;
   padding: 72px 32px 56px;
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.12) 0%, transparent 55%),
     radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-08) 0%, transparent 55%),
@@ -65,7 +65,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: none;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);

@@ -6,7 +6,7 @@
 .vds-live-hero {
   position: relative;
   padding: 56px 56px 36px;
-  border-radius: 28px;
+  border-radius: var(--via-radius-xl);
   background-color: var(--via-navy-darker);
   color: var(--via-white);
   overflow: hidden;
@@ -54,7 +54,7 @@
   align-items: center;
   gap: 9px;
   padding: 6px 14px 6px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(184, 92, 92, 0.18);
   border: 1px solid rgba(184, 92, 92, 0.4);
   backdrop-filter: blur(20px) saturate(160%);
@@ -120,7 +120,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 8px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(14px) saturate(160%);
@@ -189,7 +189,7 @@
   align-items: center;
   gap: var(--via-space-4_5);
   padding: 16px 20px;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(20px) saturate(160%);
@@ -295,7 +295,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   padding: 15px 28px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
@@ -331,7 +331,7 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 11px 16px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(16px) saturate(160%);
@@ -380,7 +380,7 @@
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 0;
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -450,7 +450,7 @@
   gap: var(--via-space-2);
   flex-wrap: wrap;
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-xs);
@@ -481,7 +481,7 @@
   flex-direction: column;
   gap: var(--via-space-0_5);
   padding: 14px 18px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: rgba(10, 31, 59, 0.07);
   border: 1px solid var(--via-navy-16);
   margin-bottom: 18px;
@@ -525,7 +525,7 @@
   flex-direction: column;
   align-items: center;
   padding: 12px 14px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   min-width: 56px;
@@ -568,7 +568,7 @@
   gap: var(--via-space-2);
   width: 100%;
   padding: 13px 20px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-navy-20);
   color: var(--via-text-primary);
@@ -610,14 +610,14 @@
 .vds-live-past-card {
   display: flex;
   flex-direction: column;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   overflow: hidden;
   transition: all 240ms var(--via-ease-out);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-live-past-card:hover {
@@ -649,7 +649,7 @@
   flex-direction: column;
   align-items: center;
   padding: 10px 14px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: rgba(10, 31, 59, 0.6);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
@@ -716,7 +716,7 @@
   bottom: 16px;
   right: 16px;
   padding: 5px 11px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.7);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);

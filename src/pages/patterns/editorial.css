@@ -8,7 +8,7 @@
   margin: 0 auto;
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 24px 56px -16px var(--via-navy-18);
 }
@@ -92,7 +92,7 @@
   padding: 12px 16px;
   background: var(--via-navy-04);
   border-left: 2px solid var(--via-navy);
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   margin-top: 6px;
 }
 .vds-ed-nl-pull strong {
@@ -289,7 +289,7 @@
   padding: 16px 22px;
   background: var(--via-gray-50);
   border-left: 2px solid var(--via-navy);
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font-display);
   font-style: italic;
   font-size: var(--via-fs-h4);
@@ -310,9 +310,12 @@
   position: sticky;
   top: 100px;
   padding: 18px 22px;
-  background: var(--via-gray-50);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 10px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-sm);
+  box-shadow: var(--via-glass-shadow);
 }
 .vds-ed-blog-toc-eyebrow {
   display: block;
@@ -369,7 +372,7 @@
   justify-content: center;
   background: transparent;
   border: 0.5px solid var(--via-navy-12);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   color: var(--via-text-primary);
   cursor: pointer;
   transition: var(--via-t);
@@ -382,9 +385,12 @@
 .vds-ed-podcast {
   max-width: 760px;
   margin: 0 auto;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
-  border-radius: 14px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
   padding: 32px 36px;
 }
 .vds-ed-podcast > header {
@@ -400,7 +406,7 @@
 .vds-ed-podcast-cover {
   position: relative;
   aspect-ratio: 1 / 1;
-  border-radius: 12px;
+  border-radius: var(--via-radius-sm);
   padding: 22px;
   color: var(--via-white);
   display: flex;
@@ -480,7 +486,7 @@
   padding: 6px 12px;
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   color: var(--via-text-primary);
@@ -515,7 +521,7 @@
   align-items: flex-start;
   padding: 12px 14px;
   background: var(--via-gray-50);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
 }
 .vds-ed-podcast-timestamps .t {
   font-family: var(--via-mono);
@@ -523,7 +529,7 @@
   color: var(--via-text-primary);
   background: var(--via-surface);
   padding: 3px 8px;
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   border: 0.5px solid var(--via-navy-12);
   white-space: nowrap;
   margin-top: 1px;
@@ -557,7 +563,7 @@
   gap: var(--via-space-3);
   padding: 10px 14px;
   background: var(--via-gray-50);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
 }
 .vds-ed-podcast-res-eyebrow {
   font-family: var(--via-font);
@@ -584,7 +590,7 @@
 .vds-ed-youtube-thumb {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   padding: 32px 40px;
   color: var(--via-white);
   display: flex;
@@ -627,7 +633,7 @@
   right: 24px;
   padding: 4px 9px;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 4px;
+  border-radius: var(--via-radius-xs);
   font-family: var(--via-mono);
   font-size: var(--via-fs-label);
   color: var(--via-white);
@@ -678,7 +684,7 @@
   padding: 6px 12px;
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
@@ -701,7 +707,7 @@
   color: var(--via-text-primary);
   background: var(--via-gray-50);
   padding: 16px 20px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   border: 0.5px solid var(--via-navy-08);
   white-space: pre-wrap;
   line-height: 1.55;
@@ -715,7 +721,7 @@
   padding: 10px 20px;
   background: var(--via-coral-deep);
   color: var(--via-white);
-  border-radius: 4px;
+  border-radius: var(--via-radius-xs);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -770,8 +776,12 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--via-space-3_5);
   padding: 18px 22px;
-  background: var(--via-gray-50);
-  border-radius: 10px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-sm);
+  box-shadow: var(--via-glass-shadow);
 }
 .vds-ed-tutorial-meta > div {
   display: flex;
@@ -819,7 +829,7 @@
   background: var(--via-navy-04);
   color: var(--via-text-primary);
   padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: var(--via-radius-xs);
 }
 
 .vds-ed-tutorial-toc {
@@ -836,7 +846,7 @@
   position: relative;
   padding: 10px 14px 10px 44px;
   background: var(--via-gray-50);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text);
@@ -857,7 +867,7 @@
   color: var(--via-text-primary);
   background: var(--via-gray-50);
   padding: 16px 20px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   border: 0.5px solid var(--via-navy-08);
   white-space: pre-wrap;
   line-height: 1.6;
@@ -870,7 +880,7 @@
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
   border-left: 2px solid var(--via-navy);
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
 }
 .vds-ed-tutorial-verify-eyebrow {
   display: block;
@@ -911,8 +921,12 @@
 .vds-ed-tutorial > footer {
   margin-top: 32px;
   padding: 20px 24px;
-  background: var(--via-gray-50);
-  border-radius: 10px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-sm);
+  box-shadow: var(--via-glass-shadow);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -930,7 +944,7 @@
   padding: 9px 18px;
   background: var(--via-navy);
   color: var(--via-white);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);

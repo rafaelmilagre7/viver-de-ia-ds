@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: var(--via-space-3_5);
   padding: 18px 20px;
-  border-radius: 16px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -31,7 +31,7 @@
   align-items: center;
   gap: var(--via-space-3);
   padding: 12px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-bg-2, var(--via-gray-50));
   border: 1px solid var(--via-border-soft);
 }
@@ -39,7 +39,7 @@
 .via-cp__swatch {
   width: 48px;
   height: 48px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-xs);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +95,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   border: 1px solid var(--via-navy-08);
   cursor: pointer;
   display: inline-flex;
@@ -139,7 +139,7 @@
   color: var(--via-text-primary);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border, #D0D5DD);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   outline: none;
   transition: border-color var(--via-dur) ease, box-shadow var(--via-dur) ease;
 }

@@ -10,7 +10,7 @@
   position: absolute;
   z-index: 9998;
   padding: 6px 11px;
-  border-radius: 7px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);

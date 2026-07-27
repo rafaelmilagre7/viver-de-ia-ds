@@ -21,7 +21,7 @@
     radial-gradient(1100px 600px at 0% 0%, rgba(30,58,95,0.10), transparent 55%),
     radial-gradient(900px 500px at 100% 20%, rgba(10,31,59,0.07), transparent 60%),
     radial-gradient(700px 400px at 50% 100%, rgba(30,58,95,0.06), transparent 60%);
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
 }
 
 /* ===== TIER CARDS · 3 cards flutuantes + 1 column de feature ==== */
@@ -48,7 +48,7 @@
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-bottom: 0;
-  border-radius: 24px 24px 0 0;
+  border-radius: var(--via-radius-xl) var(--via-radius-xl) 0 0;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -123,7 +123,7 @@
   padding: 4px 10px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
@@ -289,7 +289,7 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   box-shadow:
@@ -321,10 +321,10 @@
 
 /* Last row · arredonda parte inferior --------------------------- */
 .vds-pricing-row:last-of-type .vds-pricing-feature {
-  border-bottom-left-radius: 24px;
+  border-bottom-left-radius: var(--via-radius-xl);
 }
 .vds-pricing-row:last-of-type .vds-pricing-cell:last-child {
-  border-bottom-right-radius: 24px;
+  border-bottom-right-radius: var(--via-radius-xl);
 }
 
 /* ===== PRINCIPLES (rodapé) · glass + atmosphere ============= */
@@ -340,7 +340,7 @@
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -369,7 +369,7 @@
   display: inline-block;
   width: 26px;
   height: 26px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-12);
   text-align: center;
@@ -405,7 +405,7 @@
     grid-template-columns: 1fr;
   }
   .vds-pricing-tier {
-    border-radius: 24px;
+    border-radius: var(--via-radius-xl);
     margin-bottom: 16px;
     border-bottom: 1px solid rgba(255,255,255,1);
     box-shadow:

@@ -5,7 +5,7 @@
     radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
     radial-gradient(ellipse 50% 60% at 100% 100%, var(--via-navy-05) 0%, transparent 60%),
     linear-gradient(135deg, rgba(10, 31, 59, 0.7), rgba(6, 21, 40, 0.92));
-  border-radius: 22px;
+  border-radius: var(--via-radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +45,7 @@
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid var(--via-edge-hi);
-  border-radius: 22px;
+  border-radius: var(--via-radius-xl);
   animation: vds-modal-in 380ms var(--via-ease-out);
   overflow: hidden;
   isolation: isolate;
@@ -99,7 +99,7 @@
 .via-modal .close {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   display: flex;
@@ -134,7 +134,7 @@
 .via-modal .btn-ghost,
 .via-modal .btn-primary {
   padding: 12px 22px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);

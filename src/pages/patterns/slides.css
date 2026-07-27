@@ -25,7 +25,7 @@
 .vds-slide {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   overflow: hidden;
   padding: 30px 34px;
   display: flex;
@@ -460,7 +460,7 @@
   flex: 0 0 auto;
   width: 22px;
   height: 22px;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));
@@ -546,7 +546,7 @@
   padding: 10px 18px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   color: var(--via-text-primary);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
@@ -586,7 +586,7 @@
   display: flex;
   gap: var(--via-space-3_5);
   padding: 18px 20px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -600,7 +600,7 @@
   flex: 0 0 auto;
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));

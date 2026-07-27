@@ -22,7 +22,7 @@
     radial-gradient(1100px 600px at 0% 0%, rgba(30,58,95,0.10), transparent 55%),
     radial-gradient(900px 500px at 100% 30%, rgba(10,31,59,0.07), transparent 60%),
     radial-gradient(700px 400px at 50% 100%, rgba(30,58,95,0.06), transparent 60%);
-  border-radius: 32px;
+  border-radius: var(--via-radius-xl);
 }
 
 /* ===== Card principal · liquid glass forte ================== */
@@ -35,7 +35,7 @@
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 26px;
+  border-radius: var(--via-radius-xl);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -80,7 +80,7 @@
   position: relative;
   width: 36px;
   height: 36px;
-  border-radius: 11px;
+  border-radius: var(--via-radius-sm);
   background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 65%, var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -117,7 +117,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--via-navy-12);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -161,7 +161,7 @@
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid var(--via-navy-08);
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   text-align: left;
   cursor: pointer;
   isolation: isolate;
@@ -204,7 +204,7 @@
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 70%, var(--via-navy-deep));
   color: var(--via-white);
   display: inline-flex;
@@ -261,7 +261,7 @@
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-navy-08);
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -273,7 +273,7 @@
 .vds-2fa-qr {
   width: 148px;
   height: 148px;
-  border-radius: 14px;
+  border-radius: var(--via-radius-md);
   position: relative;
   background:
     repeating-conic-gradient(var(--via-navy) 0deg 18deg, var(--via-navy-deep) 18deg 36deg) 50% 50%/100% 100%,
@@ -299,7 +299,7 @@
   position: absolute;
   inset: 12px;
   background: var(--via-bg);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   background-image:
     radial-gradient(circle at 22% 22%, var(--via-navy-deep) 4px, transparent 4px),
     radial-gradient(circle at 78% 22%, var(--via-navy-deep) 4px, transparent 4px),
@@ -331,7 +331,7 @@
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-navy-08);
-  border-radius: 18px;
+  border-radius: var(--via-radius-lg);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 6px 12px;
@@ -347,7 +347,7 @@
   color: var(--via-text-primary);
   padding: 8px 12px;
   background: var(--via-glass-card);
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   border: 1px solid var(--via-border-soft);
   text-align: center;
   box-shadow:
@@ -369,7 +369,7 @@
   width: 72px;
   height: 72px;
   margin: 0 auto 18px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 65%, var(--via-navy-deep));
   display: inline-flex;
   align-items: center;
@@ -419,7 +419,7 @@
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   border: 1px solid var(--via-border-soft);
-  border-radius: 20px;
+  border-radius: var(--via-radius-lg);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -448,7 +448,7 @@
   padding: 3px 10px;
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-12);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);

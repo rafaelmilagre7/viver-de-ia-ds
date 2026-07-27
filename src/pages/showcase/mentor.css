@@ -23,9 +23,9 @@
   justify-content: space-between;
   gap: var(--via-space-6);
   padding: 14px 40px;
-  background: var(--via-surface);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  background: var(--via-glass-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -183,7 +183,7 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 13px 24px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
@@ -212,7 +212,7 @@
   align-items: center;
   gap: 7px;
   padding: 13px 22px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(14px) saturate(140%);
@@ -238,7 +238,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: rgba(255, 255, 255, 0.10);
-  border-radius: 16px 16px 0 0;
+  border-radius: var(--via-radius-md) var(--via-radius-md) 0 0;
   overflow: hidden;
 }
 
@@ -335,7 +335,7 @@
 
 .mtr-tag {
   padding: 7px 14px;
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-xs);
@@ -353,10 +353,12 @@
 
 .mtr-case {
   padding: 20px;
-  border-radius: 14px;
-  background: var(--via-surface);
-  border: 1px solid var(--via-border-soft);
-  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  border-radius: var(--via-radius-md);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .mtr-case-co {
@@ -399,10 +401,12 @@
 
 .mtr-depoimento {
   padding: 24px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, var(--via-surface), var(--via-bg-2));
-  border: 1px solid var(--via-border-soft);
-  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  border-radius: var(--via-radius-md);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .mtr-depoimento-mark {
@@ -443,12 +447,12 @@
   position: sticky;
   top: 88px;
   padding: 28px;
-  border-radius: 20px;
-  background: linear-gradient(180deg, var(--via-surface), var(--via-bg-2));
-  border: 1px solid var(--via-border-soft);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 14px 36px -18px var(--via-navy-18);
+  border-radius: var(--via-radius-lg);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .mtr-schedule-eyebrow {
@@ -488,7 +492,7 @@
 
 .mtr-slot {
   padding: 11px;
-  border-radius: 10px;
+  border-radius: var(--via-radius-sm);
   background: var(--via-bg-2);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-body);
@@ -516,7 +520,7 @@
   gap: var(--via-space-2);
   width: 100%;
   padding: 14px;
-  border-radius: 12px;
+  border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   color: var(--via-white);

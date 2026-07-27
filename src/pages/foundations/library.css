@@ -13,9 +13,12 @@
   gap: var(--via-space-3);
   align-items: center;
   padding: 18px 22px;
-  border-radius: 14px;
-  background: var(--via-navy-02);
-  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-md);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-lib-row.align-end {
@@ -58,9 +61,12 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--via-space-4_5);
   padding: 22px 24px;
-  border-radius: 14px;
-  background: var(--via-navy-02);
-  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-md);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-lib-code {

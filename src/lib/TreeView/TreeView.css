@@ -29,7 +29,7 @@
   letter-spacing: -0.006em;
   color: var(--via-text-body, var(--via-gray-700));
   text-align: left;
-  border-radius: 6px;
+  border-radius: var(--via-radius-sm);
   transition: background .15s ease, color .15s ease;
   position: relative;
 }
@@ -99,7 +99,7 @@
   color: var(--via-ink-3, #6B7891);
   padding: 1px 6px;
   background: var(--via-navy-04);
-  border-radius: 999px;
+  border-radius: var(--via-radius-pill);
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
 }

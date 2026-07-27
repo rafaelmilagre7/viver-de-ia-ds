@@ -33,7 +33,7 @@
   color: var(--via-ink-2, #5E6B82);
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: var(--via-radius-sm);
   cursor: pointer;
   transition:
     background var(--via-dur) ease,
