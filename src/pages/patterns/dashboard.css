@@ -1,4 +1,9 @@
 .vds-dash {
+  /* Série de dados · paleta VALIDADA (contraste + daltonismo).
+     Uma série só neste painel → --via-data-1, sem legenda.
+     Dark tem passo próprio, não é inversão do claro. */
+  --dash-1: var(--via-data-1);
+
   position: relative;
   padding: 40px;
   border-radius: var(--via-radius-xl);
@@ -56,6 +61,7 @@
   background: var(--via-navy-06);
   border-color: var(--via-border-soft);
 }
+[data-theme="dark"] .vds-dash { --dash-1: var(--via-data-1-dark); }
 
 .vds-dash .filt {
   padding: 7px 14px;
@@ -163,6 +169,7 @@
   font-size: var(--via-fs-micro);
   color: var(--via-text-muted);
   letter-spacing: -0.004em;
+  font-variant-numeric: tabular-nums;
 }
 
 .vds-dash .main-row {
@@ -261,7 +268,19 @@
 }
 .vds-dash .via-table tbody tr:last-child th[scope='row'] { border-bottom: 0; }
 .vds-dash .dash-bar-cell { width: 55%; min-width: 120px; }
-.vds-dash .dash-bar-cell .via-bar { max-width: none; }
+
+/* Barra de proporção · série única na paleta VALIDADA de dados.
+   Fill chapado de propósito: gradiente em barra é sombra disfarçada
+   e faz o mesmo valor parecer diferente em posições diferentes.
+   Trilho recessivo (mesma grade dos gráficos) e ponta em pill —
+   a barra nasce ancorada no zero da célula, então arredondar as
+   duas pontas não falseia leitura nenhuma aqui. */
+.vds-dash .via-bar {
+  max-width: none;
+  height: 6px;
+  background: var(--via-data-grid);
+}
+.vds-dash .via-bar__fill { background: var(--dash-1); }
 
 /* Legenda acessível da tabela — visível só pra leitor de tela */
 .dash-sr {

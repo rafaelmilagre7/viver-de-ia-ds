@@ -7,6 +7,16 @@
 .vds-ins-tiles {
   position: relative;
   isolation: isolate;
+
+  /* Série de dados · paleta VALIDADA (contraste + daltonismo).
+     Uma série por gráfico nesta página, então só --via-data-1.
+     O dark tem passo próprio — não é inversão automática do claro. */
+  --ins-1: var(--via-data-1);
+  --ins-dot: var(--via-surface);
+}
+[data-theme="dark"] .vds-ins,
+[data-theme="dark"] .vds-ins-tiles {
+  --ins-1: var(--via-data-1-dark);
 }
 
 /* ============================================
@@ -191,11 +201,39 @@
   gap: var(--via-space-1);
   font-size: var(--via-fs-micro);
 }
+/* Sparkline · marca fina de verdade (2px reais, não 2px escalados)
+   + ponto do valor corrente ≥8px. Coral aqui é STATUS (movimento
+   desfavorável), nunca uma segunda série. */
 .vds-ins-kpi .via-spark {
   width: 72px;
   height: 30px;
   flex: 0 0 auto;
   margin-left: auto;
+}
+.vds-ins-kpi .via-spark path {
+  stroke: var(--ins-1);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.vds-ins-kpi .via-spark .via-spark__area {
+  fill: var(--ins-1);
+  opacity: 0.12;
+  stroke: none;
+}
+.vds-ins-kpi .via-spark .spark-end {
+  fill: var(--ins-dot);
+  stroke: var(--ins-1);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+.vds-ins-kpi .via-spark--down path,
+.vds-ins-kpi .via-spark--down .spark-end { stroke: var(--via-coral-dark); }
+.vds-ins-kpi .via-spark--down .via-spark__area {
+  fill: var(--via-coral-dark);
+  opacity: 0.10;
+  stroke: none;
 }
 
 /* ============================================
@@ -236,60 +274,102 @@
   letter-spacing: -0.004em;
 }
 
-.vds-ins-chart-legend {
-  display: inline-flex;
-  align-items: center;
+/* SMALL MULTIPLES · um eixo e uma série por painel.
+   Não existe legenda aqui de propósito: com série única o título do
+   painel já nomeia o dado, e legenda vira mobília.
+   O vidro fica no painel AO REDOR — a área de plotagem é limpa, sem
+   gradiente atrás da marca (fundo texturizado come a diferença de
+   altura entre barras). */
+.vds-ins-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--via-space-3_5);
-  padding: 8px 14px;
-  background: var(--via-glass-card);
-  border: 1px solid var(--via-navy-08);
-  border-radius: var(--via-radius-pill);
-  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
-.vds-ins-chart-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--via-space-1_5);
-  font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-medium);
-  color: var(--via-text-body);
-  letter-spacing: -0.004em;
-}
-.vds-ins-chart-legend i {
-  display: inline-block;
-  font-style: normal;
-}
-.vds-ins-chart-legend i.bar {
-  width: 8px;
-  height: 12px;
-  border-radius: 2px;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-blue));
-}
-.vds-ins-chart-legend i.line {
-  width: 16px;
-  height: 2px;
-  background: var(--via-navy);
-  border-radius: 2px;
+@media (max-width: 860px) {
+  .vds-ins-charts { grid-template-columns: 1fr; }
 }
 
-.vds-ins-chart-svg {
-  width: 100%;
-  height: 240px;
+.vds-ins-panel {
+  margin: 0;
+  padding: 18px 20px 14px;
   border-radius: var(--via-radius-md);
-  position: relative;
-  display: block;
-  background:
-    radial-gradient(800px 220px at 50% 100%, rgba(30,58,95,0.06), transparent 65%),
-    radial-gradient(400px 200px at 0% 50%, rgba(30,58,95,0.04), transparent 60%),
-    var(--via-glass-card);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   border: 1px solid var(--via-border-soft);
-  padding: 20px 24px;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    inset 0 -1px 0 var(--via-edge-lo),
     0 4px 14px -6px var(--via-navy-08);
 }
+.vds-ins-panel figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-0_5);
+  margin-bottom: 14px;
+}
+.vds-ins-panel figcaption .t {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  letter-spacing: -0.01em;
+}
+.vds-ins-panel figcaption .s {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-micro);
+  color: var(--via-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Área de plotagem · grade e eixo RECESSIVOS (hairline real),
+   rótulo em token de TEXTO — nunca na cor da série. */
+.vds-ins-plot {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.vds-ins-plot .grid,
+.vds-ins-plot .axis {
+  fill: none;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  shape-rendering: crispEdges;
+}
+.vds-ins-plot .grid { stroke: var(--via-data-grid); }
+.vds-ins-plot .axis { stroke: var(--via-data-axis); }
+
+.vds-ins-plot .tick {
+  font-family: var(--via-font);
+  /* rem dentro do SVG resolve pelo root → 10 unidades de usuário,
+     exatamente o que a malha foi desenhada pra receber. */
+  font-size: var(--via-fs-micro);
+  font-variant-numeric: tabular-nums;
+  fill: var(--via-data-ink);
+  letter-spacing: 0.01em;
+}
+.vds-ins-plot .tick--strong {
+  fill: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+.vds-ins-plot .bar  { fill: var(--ins-1); }
+.vds-ins-plot .area { fill: var(--ins-1); opacity: 0.10; }
+.vds-ins-plot .line {
+  fill: none;
+  stroke: var(--ins-1);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.vds-ins-plot .dot {
+  fill: var(--ins-dot);
+  stroke: var(--ins-1);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+.vds-ins-plot .dot--last { fill: var(--ins-1); stroke: var(--ins-dot); }
 
 .vds-ins-chart-note {
   margin: 18px 0 0;

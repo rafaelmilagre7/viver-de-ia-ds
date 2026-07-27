@@ -159,6 +159,48 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-data-1",
+    "css": "--via-data-1",
+    "value": "#2E6FC4",
+    "category": "color"
+  },
+  {
+    "name": "via-data-1-dark",
+    "css": "--via-data-1-dark",
+    "value": "#5C9BEA",
+    "category": "color"
+  },
+  {
+    "name": "via-data-2",
+    "css": "--via-data-2",
+    "value": "#7FB0EE",
+    "category": "color"
+  },
+  {
+    "name": "via-data-2-dark",
+    "css": "--via-data-2-dark",
+    "value": "#2E6FC4",
+    "category": "color"
+  },
+  {
+    "name": "via-data-axis",
+    "css": "--via-data-axis",
+    "value": "var(--via-navy-20)",
+    "category": "color"
+  },
+  {
+    "name": "via-data-grid",
+    "css": "--via-data-grid",
+    "value": "var(--via-navy-08)",
+    "category": "color"
+  },
+  {
+    "name": "via-data-ink",
+    "css": "--via-data-ink",
+    "value": "var(--via-text-muted)",
+    "category": "color"
+  },
+  {
     "name": "via-edge-hi",
     "css": "--via-edge-hi",
     "value": "rgba(255, 255, 255, 0.08)",
@@ -1091,6 +1133,13 @@ export type TokenName =
   | 'via-coral-dark'
   | 'via-coral-deep'
   | 'via-danger'
+  | 'via-data-1'
+  | 'via-data-1-dark'
+  | 'via-data-2'
+  | 'via-data-2-dark'
+  | 'via-data-axis'
+  | 'via-data-grid'
+  | 'via-data-ink'
   | 'via-edge-hi'
   | 'via-edge-lo'
   | 'via-glass-bar'

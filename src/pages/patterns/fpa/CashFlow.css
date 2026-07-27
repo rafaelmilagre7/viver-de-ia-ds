@@ -1,11 +1,16 @@
 /* ==============================================================
    VIVER DE IA · FP&A — Fluxo de caixa + projeção
    --------------------------------------------------------------
-   Superfície de trabalho SEMPRE clara. Navy domina; coral só para
-   saída/desfavorável. Vidro nos cards (KPI, painel do gráfico);
-   a TABELA densa é superfície limpa com hairline entre linhas —
-   vidro sob número mata a leitura.
+   Superfície de trabalho SEMPRE clara. Navy domina; coral é
+   RESERVADO para status (fluxo negativo / desfavorável) e nunca
+   vira série. Vidro nos cards (KPI, painel do gráfico); a TABELA
+   densa é superfície limpa com hairline entre linhas — vidro sob
+   número mata a leitura.
    Borda fina e UNIFORME nos 4 lados. Nada de barra lateral colorida.
+
+   SÉRIES: duas (entradas / saídas) → paleta validada data-1/data-2
+   + segundo canal obrigatório (direção, hachura, rótulo direto).
+   O saldo acumulado é gráfico PRÓPRIO, série única, tinta da marca.
    ============================================================== */
 
 .vds-fpa-cash {
@@ -15,6 +20,21 @@
   flex-direction: column;
   gap: var(--via-space-6);
   font-family: var(--via-font);
+
+  /* alias local das séries · o dark tem passo PRÓPRIO, não inversão */
+  --via-data-1-c: var(--via-data-1);
+  --via-data-2-c: var(--via-data-2);
+}
+
+[data-theme='dark'] .vds-fpa-cash {
+  --via-data-1-c: var(--via-data-1-dark);
+  --via-data-2-c: var(--via-data-2-dark);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .vds-fpa-cash {
+    --via-data-1-c: var(--via-data-1-dark);
+    --via-data-2-c: var(--via-data-2-dark);
+  }
 }
 
 /* ==============================================================
@@ -228,12 +248,13 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Legenda */
+/* Legenda · obrigatória porque o painel de fluxo tem 2 séries.
+   Grupo 1 = séries · grupo 2 = convenções (projeção, status). */
 .vds-fpa-cash-legend {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--via-space-3_5);
+  gap: var(--via-space-3);
   padding: 8px 14px;
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
@@ -250,6 +271,12 @@
   color: var(--via-text-body);
   white-space: nowrap;
 }
+.vds-fpa-cash-legend .sep {
+  flex: 0 0 1px;
+  width: 1px;
+  height: 12px;
+  background: var(--via-navy-12);
+}
 
 .vds-fpa-cash-legend .sw,
 .vds-fpa-cash-tbl .sw {
@@ -257,16 +284,21 @@
   font-style: normal;
   flex-shrink: 0;
 }
+/* série 1 · sólida */
 .vds-fpa-cash-legend .sw.in {
-  width: 9px; height: 13px; border-radius: 3px;
-  background: var(--via-chart-ink);
-  opacity: 0.75;
+  width: 10px; height: 13px; border-radius: 3px;
+  background: var(--via-data-1-c);
 }
+/* série 2 · hachurada — o 2º canal vive AQUI, não só na cor */
 .vds-fpa-cash-legend .sw.out {
-  width: 9px; height: 13px; border-radius: 3px;
-  background: var(--via-coral);
-  opacity: 0.75;
+  width: 10px; height: 13px; border-radius: 3px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--via-data-2-c) 0 2px,
+    transparent 2px 4.6px
+  );
 }
+/* saldo acumulado · gráfico próprio, série única, tinta da marca */
 .vds-fpa-cash-legend .sw.line {
   width: 18px; height: 2px; border-radius: 2px;
   background: var(--via-chart-ink);
@@ -274,8 +306,89 @@
 .vds-fpa-cash-legend .sw.proj {
   width: 18px; height: 0;
   border-top: 2px dashed var(--via-chart-ink);
-  opacity: 0.7;
+  opacity: 0.72;
 }
+/* status · nunca é série */
+.vds-fpa-cash-legend .sw.neg {
+  width: 14px; height: 0;
+  border-top: 2px solid var(--via-coral);
+  border-radius: 2px;
+}
+
+/* ==============================================================
+   3b · Leitura sincronizada — substitui rótulo em TODO ponto.
+   Fica no mesmo lugar sempre: nada de tooltip pulando pela tela.
+   ============================================================== */
+.vds-fpa-cash-readout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--via-space-4);
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  padding: 11px 16px;
+  border-radius: var(--via-radius-md);
+  background: var(--via-navy-03);
+  border: 1px solid var(--via-border-soft);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  transition: border-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-fpa-cash-readout.is-on { border-color: var(--via-navy-14); }
+
+.vds-fpa-cash-readout .ro-ttl {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.008em;
+  color: var(--via-text-primary);
+  white-space: nowrap;
+}
+.vds-fpa-cash-readout .ro-ttl em {
+  font-style: normal;
+  padding: 2px 8px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-08);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.vds-fpa-cash-readout .ro-vals {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--via-space-2) var(--via-space-5);
+  min-width: 0;
+}
+.vds-fpa-cash-readout .ro-vals span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.vds-fpa-cash-readout .ro-vals em {
+  font-style: normal;
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--via-text-faint);
+}
+/* Rótulo usa token de TEXTO — a cor da série fica na marca, nunca na letra */
+.vds-fpa-cash-readout .ro-vals b {
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  color: var(--via-text-body);
+  white-space: nowrap;
+}
+.vds-fpa-cash-readout .ro-vals .forte b { color: var(--via-text-primary); }
+.vds-fpa-cash-readout .ro-vals b.neg { color: var(--via-coral-dark); }
 
 /* Plate do SVG — superfície limpa, o vidro é o painel em volta */
 .vds-fpa-cash-svg {
@@ -289,14 +402,15 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 4px 14px -8px var(--via-navy-08);
 }
+.vds-fpa-cash-svg rect[fill='transparent'] { cursor: crosshair; }
 
-/* Tipografia dentro do SVG */
+/* Tipografia dentro do SVG · sempre token de TEXTO */
 .vds-fpa-cash-axis {
   font-family: var(--via-font);
   font-size: 9.5px;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
-  fill: var(--via-text-muted);
+  fill: var(--via-data-ink);
 }
 .vds-fpa-cash-axis-title {
   font-family: var(--via-font);
@@ -306,6 +420,24 @@
   text-transform: uppercase;
   fill: var(--via-text-faint);
 }
+/* título de cada um dos dois gráficos */
+.vds-fpa-cash-panel-title {
+  font-family: var(--via-font);
+  font-size: 9.5px;
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  fill: var(--via-text-primary);
+}
+/* rótulo direto dentro do plot (entradas ▲ / saídas ▼) */
+.vds-fpa-cash-inplot {
+  font-family: var(--via-font);
+  font-size: 9px;
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  fill: var(--via-data-ink);
+}
 .vds-fpa-cash-mes {
   font-family: var(--via-font);
   font-size: 10.5px;
@@ -314,13 +446,26 @@
   fill: var(--via-text-body);
 }
 .vds-fpa-cash-mes.is-proj { fill: var(--via-text-faint); }
+.vds-fpa-cash-mes.is-neg {
+  fill: var(--via-coral-dark);
+  font-weight: var(--via-fw-semibold);
+}
 .vds-fpa-cash-endlabel {
   font-family: var(--via-font);
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.004em;
   fill: var(--via-text-primary);
+}
+/* anotação de status · atenção, não série */
+.vds-fpa-cash-vale {
+  font-family: var(--via-font);
+  font-size: 9.5px;
+  font-weight: var(--via-fw-semibold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.002em;
+  fill: var(--via-coral-dark);
 }
 
 /* Nota do gráfico */
@@ -576,6 +721,15 @@
 @media (max-width: 1080px) {
   .vds-fpa-cash-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@media (max-width: 900px) {
+  .vds-fpa-cash-readout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--via-space-2_5);
+  }
+  .vds-fpa-cash-readout .ro-vals { gap: var(--via-space-2) var(--via-space-4); }
+}
+
 @media (max-width: 720px) {
   .vds-fpa-cash-kpis { grid-template-columns: minmax(0, 1fr); }
   .vds-fpa-cash-panel { padding: 22px 18px 18px; }
@@ -583,6 +737,12 @@
   .vds-fpa-cash-tbl th,
   .vds-fpa-cash-tbl td { padding-left: 18px; padding-right: 18px; }
   .vds-fpa-cash-recon { align-items: flex-start; }
+  /* legenda longa demais pra pílula no celular · vira bloco */
+  .vds-fpa-cash-legend {
+    border-radius: var(--via-radius-md);
+    gap: var(--via-space-2) var(--via-space-3);
+  }
+  .vds-fpa-cash-legend .sep { display: none; }
 }
 
 /* ==============================================================
@@ -591,4 +751,5 @@
 @media (prefers-reduced-motion: reduce) {
   .vds-fpa-cash-kpi { transition: none; }
   .vds-fpa-cash-kpi:hover { transform: none; }
+  .vds-fpa-cash-readout { transition: none; }
 }

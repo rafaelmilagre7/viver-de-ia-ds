@@ -138,50 +138,79 @@ const CENARIOS: readonly Cenario[] = [
 
 /* ==============================================================
    Sparkline · mini-tendência de 6 meses
+   --------------------------------------------------------------
+   UMA série por sparkline → cor única (--via-data-1, resolvida em
+   --vds-burn-serie) e SEM legenda: o rótulo do card já nomeia a
+   série. Marca fina: linha de 2px, base hairline recessiva e um
+   único marcador no ponto mais recente, com halo para ficar ≥8px
+   e legível sobre qualquer fundo.
    ============================================================== */
+const SPARK_W = 104;
+const SPARK_H = 34;
+const SPARK_P = 5;
+
 type SparkProps = { valores: readonly number[]; id: string; rotulo: string };
 
 function Sparkline({ valores, id, rotulo }: SparkProps) {
-  const w = 96;
-  const h = 32;
-  const p = 3;
   const min = Math.min(...valores);
   const max = Math.max(...valores);
   const amplitude = max - min || 1;
   const pontos = valores.map((v, i) => ({
-    x: p + (i * (w - p * 2)) / (valores.length - 1),
-    y: p + (1 - (v - min) / amplitude) * (h - p * 2),
+    x: SPARK_P + (i * (SPARK_W - SPARK_P * 2)) / (valores.length - 1),
+    y: SPARK_P + (1 - (v - min) / amplitude) * (SPARK_H - SPARK_P * 2 - 3),
   }));
   const linha = pontos.map((pt) => `${pt.x.toFixed(1)},${pt.y.toFixed(1)}`).join(' L ');
-  const area = `M ${linha} L ${w - p},${h} L ${p},${h} Z`;
+  const area = `M ${linha} L ${SPARK_W - SPARK_P},${SPARK_H - 1} L ${SPARK_P},${SPARK_H - 1} Z`;
   const fim = pontos[pontos.length - 1];
 
   return (
-    <svg className="vds-fpa-burn-spark" viewBox={`0 0 ${w} ${h}`} role="img" aria-label={rotulo}>
+    <svg
+      className="vds-fpa-burn-spark"
+      viewBox={`0 0 ${SPARK_W} ${SPARK_H}`}
+      role="img"
+      aria-label={rotulo}
+    >
       <title>{rotulo}</title>
       <defs>
         <linearGradient id={id} x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0" stopColor="var(--via-chart-ink)" stopOpacity="0.24" />
-          <stop offset="1" stopColor="var(--via-chart-ink)" stopOpacity="0" />
+          <stop offset="0" stopColor="var(--vds-burn-serie)" stopOpacity="0.16" />
+          <stop offset="1" stopColor="var(--vds-burn-serie)" stopOpacity="0" />
         </linearGradient>
       </defs>
+      {/* base recessiva · dá chão à mini-série sem competir com ela */}
+      <line
+        x1={SPARK_P}
+        y1={SPARK_H - 1}
+        x2={SPARK_W - SPARK_P}
+        y2={SPARK_H - 1}
+        stroke="var(--via-data-grid)"
+        strokeWidth="1"
+      />
       <path d={area} fill={`url(#${id})`} />
       <path
         d={`M ${linha}`}
         fill="none"
-        stroke="var(--via-chart-ink)"
-        strokeOpacity="0.9"
-        strokeWidth="1.5"
+        stroke="var(--vds-burn-serie)"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx={fim.x} cy={fim.y} r="2.4" fill="var(--via-chart-ink)" />
+      {/* último ponto · halo da superfície + miolo da série = marca de ~9px */}
+      <circle cx={fim.x} cy={fim.y} r="4.6" fill="var(--via-surface)" />
+      <circle cx={fim.x} cy={fim.y} r="3" fill="var(--vds-burn-serie)" />
     </svg>
   );
 }
 
 /* ==============================================================
    Timeline de runway · barras de saldo projetado até o ponto zero
+   --------------------------------------------------------------
+   UMA medida, UM eixo (R$ de saldo, base em zero). Nada de segunda
+   escala: burn e runway não dividem eixo com o saldo — vivem nos
+   cards e na fórmula acima. A única variação de cor é STATUS
+   (abaixo do piso de 3 meses), que é reservado e nunca vira série.
+   Toda barra é ESTIMATIVA, então toda barra é hachurada — a legenda
+   diz isso em texto.
    ============================================================== */
 const VB_W = 900;
 const VB_H = 300;
@@ -194,14 +223,33 @@ const GRID = [0, 1_500_000, 3_000_000, 4_500_000];
 const yDe = (v: number): number => PAD.top + PLOT_H * (1 - v / ESCALA_MAX);
 const BASE_Y = yDe(0);
 
+/** Ponta arredondada no topo, base QUADRADA ancorada no eixo. */
+function barraAncorada(x: number, y: number, w: number, h: number, r = 4): string {
+  const rr = Math.max(0, Math.min(r, w / 2, h));
+  const x2 = x + w;
+  const base = y + h;
+  return [
+    `M ${x.toFixed(2)} ${base.toFixed(2)}`,
+    `L ${x.toFixed(2)} ${(y + rr).toFixed(2)}`,
+    `A ${rr} ${rr} 0 0 1 ${(x + rr).toFixed(2)} ${y.toFixed(2)}`,
+    `L ${(x2 - rr).toFixed(2)} ${y.toFixed(2)}`,
+    `A ${rr} ${rr} 0 0 1 ${x2.toFixed(2)} ${(y + rr).toFixed(2)}`,
+    `L ${x2.toFixed(2)} ${base.toFixed(2)}`,
+    'Z',
+  ].join(' ');
+}
+
 function RunwayTimeline({ proj }: { proj: Projecao }) {
   const n = proj.meses.length;
   const slot = PLOT_W / n;
-  const barW = Math.min(46, slot * 0.6);
+  /* gap mínimo de 8px entre barras vizinhas · nunca colam */
+  const barW = Math.max(10, Math.min(46, slot - 8));
   const zeroX = PAD.left + (proj.runway / n) * PLOT_W;
   const idxCritico = proj.meses.findIndex((m) => m.critico);
   const criticoX = PAD.left + idxCritico * slot;
   const pisoY = yDe(proj.piso);
+  const primeiro = proj.meses[0];
+  const critico = idxCritico >= 0 ? proj.meses[idxCritico] : null;
 
   return (
     <svg
@@ -213,28 +261,32 @@ function RunwayTimeline({ proj }: { proj: Projecao }) {
     >
       <title>Projeção de caixa até o ponto zero</title>
       <defs>
-        <linearGradient id="fpa-burn-bar" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0" stopColor="var(--via-chart-ink)" stopOpacity="0.88" />
-          <stop offset="1" stopColor="var(--via-chart-ink)" stopOpacity="0.32" />
-        </linearGradient>
-        <linearGradient id="fpa-burn-bar-crit" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0" stopColor="#B85C5C" stopOpacity="0.88" />
-          <stop offset="1" stopColor="#B85C5C" stopOpacity="0.30" />
-        </linearGradient>
+        {/* hachura de projeção · listras na cor do fundo, funciona nos dois temas */}
+        <pattern
+          id="fpa-burn-proj"
+          width="6"
+          height="6"
+          patternUnits="userSpaceOnUse"
+          patternTransform="rotate(45)"
+        >
+          <line x1="0" y1="0" x2="0" y2="6" stroke="var(--via-bg)" strokeWidth="1.7" strokeOpacity="0.38" />
+        </pattern>
       </defs>
 
-      {/* zona crítica · fundo coral discreto */}
-      <rect
-        x={criticoX}
-        y={PAD.top - 10}
-        width={Math.max(zeroX - criticoX, 0)}
-        height={BASE_Y - PAD.top + 10}
-        fill="#B85C5C"
-        fillOpacity="0.05"
-        rx="8"
-      />
+      {/* zona crítica · fundo de status discreto, atrás de tudo */}
+      {critico && (
+        <rect
+          x={criticoX}
+          y={PAD.top - 10}
+          width={Math.max(zeroX - criticoX, 0)}
+          height={BASE_Y - PAD.top + 10}
+          fill="var(--vds-burn-crit)"
+          fillOpacity="0.06"
+          rx="8"
+        />
+      )}
 
-      {/* grid + eixo y */}
+      {/* grade recessiva (hairline) + eixo de valor · base em ZERO */}
       {GRID.map((v) => (
         <g key={v}>
           <line
@@ -242,8 +294,8 @@ function RunwayTimeline({ proj }: { proj: Projecao }) {
             y1={yDe(v)}
             x2={VB_W - PAD.right}
             y2={yDe(v)}
-            stroke="var(--via-navy)"
-            strokeOpacity={v === 0 ? 0.16 : 0.07}
+            stroke={v === 0 ? 'var(--via-data-axis)' : 'var(--via-data-grid)'}
+            strokeWidth="1"
           />
           <text
             className="vds-fpa-burn-axis"
@@ -257,31 +309,40 @@ function RunwayTimeline({ proj }: { proj: Projecao }) {
         </g>
       ))}
 
+      {/* unidade do eixo · evita repetir "R$ mi" em cada rótulo */}
+      <text className="vds-fpa-burn-unit" x={PAD.left - 14} y={PAD.top - 22} textAnchor="end">
+        R$ mi
+      </text>
+
       {/* piso operacional · 3 meses de burn */}
       <line
         x1={PAD.left}
         y1={pisoY}
         x2={VB_W - PAD.right}
         y2={pisoY}
-        stroke="var(--via-navy-40)"
+        stroke="var(--via-data-axis)"
         strokeWidth="1"
         strokeDasharray="4 5"
       />
+      {/* rótulo da linha de referência · ancorado ANTES do marcador de caixa
+          zero e ABAIXO da linha — em cima ele encosta no rótulo direto da
+          barra que cruza o piso quando a premissa muda */}
+      <text className="vds-fpa-burn-ref" x={zeroX - 10} y={pisoY + 13} textAnchor="end">
+        piso · 3 meses de burn
+      </text>
 
       {/* barras · saldo no início de cada mês */}
       {proj.meses.map((m, i) => {
         const x = PAD.left + i * slot + (slot - barW) / 2;
         const y = yDe(m.saldoInicio);
+        const d = barraAncorada(x, y, barW, Math.max(BASE_Y - y, 2), 4);
         return (
-          <g key={m.label}>
-            <rect
-              x={x}
-              y={y}
-              width={barW}
-              height={Math.max(BASE_Y - y, 1)}
-              rx="5"
-              fill={m.critico ? 'url(#fpa-burn-bar-crit)' : 'url(#fpa-burn-bar)'}
-            />
+          <g key={m.label} className={`vds-fpa-burn-bar${m.critico ? ' is-critico' : ''}`}>
+            <title>
+              {`${m.label} · ${brl(m.saldoInicio)} no início do mês${m.critico ? ' · abaixo do piso de 3 meses de burn' : ''}`}
+            </title>
+            <path d={d} fill={m.critico ? 'var(--vds-burn-crit)' : 'var(--vds-burn-serie)'} />
+            <path d={d} fill="url(#fpa-burn-proj)" />
             <text
               className={`vds-fpa-burn-tick${m.critico ? ' is-critico' : ''}`}
               x={x + barW / 2}
@@ -300,7 +361,7 @@ function RunwayTimeline({ proj }: { proj: Projecao }) {
         y1={PAD.top - 14}
         x2={PAD.left}
         y2={BASE_Y}
-        stroke="var(--via-navy-30)"
+        stroke="var(--via-data-axis)"
         strokeWidth="1"
         strokeDasharray="3 4"
       />
@@ -314,8 +375,8 @@ function RunwayTimeline({ proj }: { proj: Projecao }) {
         y1={PAD.top - 14}
         x2={zeroX}
         y2={BASE_Y}
-        stroke="#B85C5C"
-        strokeOpacity="0.55"
+        stroke="var(--vds-burn-crit)"
+        strokeOpacity="0.6"
         strokeWidth="1"
       />
       <text
@@ -327,15 +388,26 @@ function RunwayTimeline({ proj }: { proj: Projecao }) {
         caixa zero · {proj.mesZero}
       </text>
 
-      {/* valor de partida · alinhado à borda da 1ª barra pra não cruzar o marcador */}
+      {/* rótulo direto SELETIVO · só os dois pontos que a leitura precisa:
+          onde o caixa começa e onde ele cruza o piso de 3 meses */}
       <text
         className="vds-fpa-burn-val"
         x={PAD.left + (slot - barW) / 2}
-        y={yDe(proj.meses[0].saldoInicio) - 10}
+        y={yDe(primeiro.saldoInicio) - 10}
         textAnchor="start"
       >
-        {brl(proj.meses[0].saldoInicio)}
+        {brl(primeiro.saldoInicio)}
       </text>
+      {critico && (
+        <text
+          className="vds-fpa-burn-val"
+          x={PAD.left + idxCritico * slot + slot / 2}
+          y={yDe(critico.saldoInicio) - 10}
+          textAnchor="middle"
+        >
+          {brl(critico.saldoInicio)}
+        </text>
+      )}
     </svg>
   );
 }
@@ -380,7 +452,7 @@ export default function BurnRunway() {
               <div className="vds-fpa-burn-card-foot">
                 <span className="vds-fpa-burn-chip is-desfavoravel">
                   <TrendingDown size={11} strokeWidth={2.3} />
-                  {pct(VAR_CAIXA_PCT)} no semestre
+                  <span className="t">{pct(VAR_CAIXA_PCT)} no semestre</span>
                 </span>
                 <Sparkline
                   id="fpa-burn-sp-caixa"
@@ -406,7 +478,7 @@ export default function BurnRunway() {
               <div className="vds-fpa-burn-card-foot">
                 <span className="vds-fpa-burn-chip is-favoravel">
                   <TrendingDown size={11} strokeWidth={2.3} />
-                  {pct(VAR_BURN_PCT)} vs. média de 6 meses
+                  <span className="t">{pct(VAR_BURN_PCT)} vs. média de 6 meses</span>
                 </span>
                 <Sparkline
                   id="fpa-burn-sp-burn"
@@ -431,7 +503,9 @@ export default function BurnRunway() {
               <div className="vds-fpa-burn-card-foot is-stack">
                 <span className={`vds-fpa-burn-chip ${acimaDoPiso ? 'is-favoravel' : 'is-desfavoravel'}`}>
                   {acimaDoPiso ? <TrendingUp size={11} strokeWidth={2.3} /> : <AlertCircle size={11} strokeWidth={2.3} />}
-                  {dec(Math.abs(folga))} {mes(folga)} {acimaDoPiso ? 'acima' : 'abaixo'} do piso de {PISO_MESES}
+                  <span className="t">
+                    {dec(Math.abs(folga))} {mes(folga)} {acimaDoPiso ? 'acima' : 'abaixo'} do piso de {PISO_MESES}
+                  </span>
                 </span>
                 <span className="vds-fpa-burn-card-calc">
                   {brl(CAIXA_ATUAL)} ÷ {brl(cenario.burn)}
@@ -455,13 +529,15 @@ export default function BurnRunway() {
               <div className="vds-fpa-burn-card-foot">
                 <span className="vds-fpa-burn-chip is-favoravel">
                   <TrendingUp size={11} strokeWidth={2.3} />
-                  {pct(VAR_MRR_PCT)} vs. mai · {dec(MRR_SHARE)}% das entradas
+                  <span className="t">{pct(VAR_MRR_PCT)} vs. mai</span>
                 </span>
                 <Sparkline
                   id="fpa-burn-sp-mrr"
                   valores={LINHAS.map((l) => l.mrr)}
                   rotulo="Receita recorrente nos últimos 6 meses, em alta"
                 />
+                {/* segundo fato em linha própria · rótulo de dado não se trunca */}
+                <span className="vds-fpa-burn-card-calc">{dec(MRR_SHARE)}% das entradas</span>
               </div>
             </article>
           </div>
@@ -507,11 +583,11 @@ export default function BurnRunway() {
 
               <ul className="vds-fpa-burn-legend">
                 <li>
-                  <i className="sw sw-navy" aria-hidden="true" />
-                  Caixa projetado
+                  <i className="sw sw-serie" aria-hidden="true" />
+                  Caixa projetado · barra hachurada = estimativa, não realizado
                 </li>
                 <li>
-                  <i className="sw sw-coral" aria-hidden="true" />
+                  <i className="sw sw-crit" aria-hidden="true" />
                   Menos de 3 meses de caixa · a partir de {proj.mesCritico}
                 </li>
                 <li>

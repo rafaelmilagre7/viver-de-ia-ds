@@ -336,6 +336,19 @@ No dark, esses valores viram os tokens equivalentes sozinhos se você usar `var(
 | `.via-meta-chip` | rótulo/meta NÃO-clicável (`--mono` pra número) |
 | `.via-bar-glass` | barra/chrome flutuante (nav sticky, toolbar) |
 
+**GRAFICOS · regua VALIDADA POR SCRIPT (nao decida cor no olho).** A paleta navy-only NAO suporta grafico de 3+ series por cor — isso foi MEDIDO com validador de daltonismo/contraste, nao opinado: navy puro "le como cinza"; azul x petroleo da deltaE 4.9 pra deuteranopia (indistinguivel; o minimo e 8). O que passou em todos os checks virou token:
+`--via-data-1: #2E6FC4` · `--via-data-2: #7FB0EE` · dark com passos PROPRIOS: `--via-data-1-dark: #5C9BEA` / `--via-data-2-dark: #2E6FC4` (nunca inverter) · `--via-data-grid` / `--via-data-axis` (recessivos) · `--via-data-ink` (rotulo).
+
+REGRA DE SERIE (inviolavel):
+- 1 serie -> `--via-data-1`, **sem legenda** (o titulo ja nomeia)
+- 2 series -> data-1 + data-2 **e obrigatoriamente um 2o canal** (tracejado / hachura / marcador diferente) + rotulo direto
+- 3+ series -> **NAO invente 3a cor**: use small multiples (um grafico por serie) ou agrupe em "Outros"
+- status (verde sobrio / coral) e RESERVADO — nunca vira serie
+
+NAO-NEGOCIAVEIS: **UM eixo — NUNCA eixo duplo** (o erro #1: faz escalas diferentes parecerem comparaveis; use 2 graficos no mesmo eixo x, ou indexe a uma base). Escala unica tambem ENTRE DIRECOES (entrada pra cima e saida pra baixo com tetos diferentes = eixo duplo escondido, distorce o dado). Barra ancorada em ZERO. Cor segue a ENTIDADE, nunca o rank (filtrar nao repinta). Sequencial = 1 hue claro->escuro; divergente = 2 polos + cinza no meio; nunca arco-iris. Legenda sempre com 2+ series. **Texto usa token de TEXTO, nunca a cor da serie.** Rotulo direto SELETIVO (nunca numero em todo ponto). Projecao sempre tracejada + legenda dizendo. Marcas finas: linha 2px, marcador 8px+, grade hairline, 2px de respiro entre fills.
+
+PROIBIDO: 3D/gloss/sombra em barra · gradiente numa serie unica (cor que varia sem significar nada) · legenda com dois itens da mesma cor · pizza com muitas fatias · eixo y que nao comeca em zero em barra.
+
 **CAMADA DE DADOS — `tokens/data.css`** (importe junto). Faz qualquer `<table>` CRU nascer no padrao: `.via-table-wrap` (moldura+scroll) · `.via-table` (+`--sticky`/`--compact`/`--roomy`) · `.via-num` (numero tabular a DIREITA — a regra principal) · `.via-mono` · `.via-row-total` (peso+regua superior) · `.via-row-group` · `.via-cell-sub` (hierarquia por INDENTACAO) · `.via-delta--up/--down` (cor so semantica) · `.via-bar` · `.via-metric`/`.via-metric-grid` (**card de metrica — aqui o vidro entra**) · `.via-spark` · `.via-projected`.
 REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos cards de metrica ao redor. Hierarquia por indentacao+peso, nunca por cor de fundo. Sem zebra pesada, sem barra lateral.
 

@@ -1,7 +1,143 @@
-/* ============================================
-   Charts · area / bar / donut / funnel
-   ============================================ */
+/* ============================================================
+   Charts · dataviz do design system
+   Régua: 1 série = cor única sem legenda · 2 séries = data-1 +
+   data-2 SEMPRE com 2º canal · 3+ = small multiples.
+   UM eixo, sempre. Grade e eixos recessivos. Texto usa token de
+   TEXTO (--via-data-ink), nunca a cor da série.
+   ============================================================ */
 
+/* ---------- tokens locais de dataviz ---------- */
+.vds-chart-card,
+.vds-kpi-card,
+.vds-rule-card {
+  --dv-1: var(--via-data-1);
+  --dv-2: var(--via-data-2);
+  --dv-grid: var(--via-data-grid);
+  --dv-axis: var(--via-data-axis);
+  --dv-ink: var(--via-data-ink);
+  --dv-bar-r: 4px;
+  --dv-track: var(--via-navy-05);
+}
+
+[data-theme='dark'] .vds-chart-card,
+[data-theme='dark'] .vds-kpi-card,
+[data-theme='dark'] .vds-rule-card {
+  /* passos próprios do dark — nunca inversão automática */
+  --dv-1: var(--via-data-1-dark);
+  --dv-2: var(--via-data-2-dark);
+}
+
+/* ============================================================
+   Régua de série · cartões de referência
+   ============================================================ */
+.vds-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--via-space-4_5);
+}
+
+.vds-rule-card {
+  position: relative;
+  border-radius: var(--via-radius-lg);
+  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--via-glass-shadow);
+  padding: 20px 20px 22px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vds-rule-card .vds-rule-n {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--via-radius-xs);
+  background: var(--via-navy-06);
+  color: var(--via-text-muted);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-wide);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-rule-card.is-veto .vds-rule-n {
+  background: var(--via-navy-10);
+  color: var(--via-text-primary);
+}
+
+.vds-rule-art {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 14px 0 12px;
+  overflow: visible;
+}
+
+.vds-rule-art .ra-line {
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+}
+.vds-rule-art .ra-line.thin { stroke-width: 1.6; }
+.vds-rule-art .ra-line.s1 { stroke: var(--dv-1); }
+.vds-rule-art .ra-line.s2 { stroke: var(--dv-2); }
+.vds-rule-art .ra-line.dashed { stroke-dasharray: 6 4; }
+.vds-rule-art .ra-dot.s1 { fill: var(--dv-1); }
+.vds-rule-art .ra-sq.s2 { fill: var(--dv-2); }
+.vds-rule-art .ra-frame {
+  fill: none;
+  stroke: var(--dv-grid);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.vds-rule-art .ra-axis {
+  stroke: var(--dv-axis);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.vds-rule-art .ra-strike {
+  stroke: var(--via-coral);
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.vds-rule-card h4 {
+  margin: 0 0 6px;
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.01em;
+  color: var(--via-text-primary);
+}
+
+.vds-rule-card p {
+  margin: 0;
+  font-size: var(--via-fs-xs);
+  line-height: 1.55;
+  color: var(--via-text-soft);
+}
+
+.vds-rule-card p code {
+  font-size: 0.92em;
+  padding: 1px 5px;
+  border-radius: var(--via-radius-xs);
+  background: var(--via-navy-06);
+  color: var(--via-text-primary);
+}
+
+.vds-rule-card p strong {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+/* ============================================================
+   Card de gráfico · vidro no card, nunca dentro da área densa
+   ============================================================ */
 .vds-chart-card {
   position: relative;
   border-radius: var(--via-radius-xl);
@@ -35,7 +171,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--via-space-6);
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .vds-chart-head .eyebrow {
@@ -73,7 +209,7 @@
   line-height: 1.5;
   color: var(--via-text-soft);
   margin: 0;
-  max-width: 460px;
+  max-width: 520px;
 }
 
 .vds-chart-head .lede em {
@@ -98,401 +234,372 @@
   font-feature-settings: 'tnum' 1;
 }
 
-.vds-chart-delta.up {
-  background: var(--via-navy-06);
-  color: var(--via-text-primary);
-}
-
 .vds-chart-delta.down {
   background: var(--via-navy-05);
   border-color: var(--via-navy-10);
-  color: var(--via-text-primary);
 }
 
 .vds-chart-foot {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: var(--via-space-2);
   margin-top: 24px;
   padding-top: 20px;
   border-top: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-label);
-  color: var(--via-text-soft);
+  color: var(--dv-ink);
   font-weight: var(--via-fw-medium);
+  font-feature-settings: 'tnum' 1;
 }
 
 .vds-chart-foot .sep {
   color: var(--via-border);
 }
 
-.vds-chart-foot .dot-key {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
+/* nota editorial fora do card */
+.vds-note {
+  margin: 16px 2px 0;
+  font-size: var(--via-fs-xs);
+  line-height: 1.6;
+  color: var(--via-text-soft);
+  max-width: 720px;
+}
+
+.vds-note strong {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+.vds-note.is-inline {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--via-space-2_5);
+  margin: 22px 0 0;
+  padding: 14px 16px;
+  border-radius: var(--via-radius-md);
+  background: var(--via-navy-04);
+  border: 1px solid var(--via-border-soft);
+  max-width: none;
+}
+
+.vds-note.is-inline svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--via-text-muted);
+}
+
+/* ============================================================
+   Legenda · só quando há 2+ séries (ou realizado × projeção)
+   ============================================================ */
+.vds-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--via-space-2) var(--via-space-6);
+  margin: 0 0 18px;
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--via-border-soft);
+}
+
+.vds-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.005em;
+  color: var(--dv-ink); /* texto NUNCA na cor da série */
+}
+
+.vds-legend-item.is-button {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 5px 10px 5px 8px;
+  margin: -5px 0;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
-.vds-chart-foot .dot-key.accent {
-  background: var(--via-navy);
+.vds-legend-item.is-button:hover,
+.vds-legend-item.is-button.is-on {
+  background: var(--via-navy-05);
+  border-color: var(--via-border-soft);
+  color: var(--via-text-primary);
 }
 
-/* ---------- Area chart ---------- */
+.vds-legend-item.is-button:focus-visible {
+  outline: 2px solid var(--dv-1);
+  outline-offset: 2px;
+}
+
+.vds-key {
+  width: 28px;
+  height: 10px;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.vds-key .key-line {
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+}
+.vds-key .key-line.s1 { stroke: var(--dv-1); }
+.vds-key .key-line.s2 { stroke: var(--dv-2); }
+.vds-key .key-line.dashed { stroke-dasharray: 6 4; }
+.vds-key .key-dot.s1 { fill: var(--dv-1); }
+.vds-key .key-sq.s2 { fill: var(--dv-2); }
+
+.vds-legend-swatch {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  flex: 0 0 auto;
+}
+
+.vds-legend-swatch.solid {
+  background: var(--dv-1);
+}
+
+.vds-legend-swatch.hatch {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--dv-2) 0 3px,
+      var(--via-surface) 3px 5px
+    );
+  box-shadow: 0 0 0 1px var(--via-navy-10) inset;
+}
+
+/* ============================================================
+   Plot SVG compartilhado (área / linhas indexadas)
+   ============================================================ */
 .vds-chart-stage {
   width: 100%;
   position: relative;
 }
 
-.vds-area-svg {
+.vds-plot {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.vds-area-svg .grid {
-  stroke: var(--via-navy-06);
-  stroke-width: 1;
-  stroke-dasharray: 2 4;
+.vds-plot text,
+.vds-sm-plot text,
+.vds-donut-svg text {
+  font-family: inherit;
 }
 
-.vds-area-svg .axis-label {
+/* grade e eixo RECESSIVOS · hairline */
+.vds-plot .grid,
+.vds-sm-plot .grid {
+  stroke: var(--dv-grid);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.vds-plot .axis,
+.vds-sm-plot .axis {
+  stroke: var(--dv-axis);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.vds-plot .axis-label,
+.vds-sm-plot .axis-label {
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
-  fill: var(--via-text-soft);
-  font-family: inherit;
+  fill: var(--dv-ink);
   font-feature-settings: 'tnum' 1;
 }
 
-.vds-area-svg .dot {
+.vds-plot .axis-label.is-proj {
+  fill: var(--via-text-soft);
+}
+
+.vds-sm-plot .axis-label.micro {
+  font-size: var(--via-fs-micro);
+}
+
+/* marcas de dado · finas e consistentes */
+.vds-plot .line {
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+.vds-plot .line.s1 { stroke: var(--dv-1); }
+.vds-plot .line.s2 { stroke: var(--dv-2); }
+.vds-plot .line.dashed { stroke-dasharray: 7 5; }
+
+.vds-plot .dot {
   fill: var(--via-surface);
-  stroke: var(--via-chart-ink);
-  stroke-width: 2.5;
-  transition: all 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  stroke: var(--dv-1);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  transition: r 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.vds-area-svg .dot.active {
-  fill: var(--via-chart-ink);
+.vds-plot .dot.is-active {
+  fill: var(--dv-1);
   stroke: var(--via-surface);
-  stroke-width: 3;
-  filter: drop-shadow(0 4px 12px rgba(10, 31, 59, 0.35));
 }
 
-.vds-area-svg .hover-line {
+.vds-plot .dot.is-proj {
+  stroke-dasharray: 3 2.5;
+}
+
+.vds-plot .mark.s1 {
+  fill: var(--dv-1);
+  stroke: var(--via-surface);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.vds-plot .mark.s2 {
+  fill: var(--dv-2);
+  stroke: var(--via-surface);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.vds-plot .mark.is-active {
+  stroke-width: 2.5;
+}
+
+.vds-plot .hover-line {
   stroke: var(--via-navy-25);
   stroke-width: 1;
   stroke-dasharray: 3 4;
+  vector-effect: non-scaling-stroke;
 }
 
-.vds-area-svg .tooltip-bg {
-  fill: var(--via-navy);
-  filter: drop-shadow(0 8px 24px rgba(10, 31, 59, 0.35));
+.vds-plot .ref-line {
+  stroke: var(--dv-axis);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+  vector-effect: non-scaling-stroke;
 }
 
-.vds-area-svg .tooltip-label {
+.vds-plot .ref-label {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  fill: rgba(255, 255, 255, 0.6);
-  font-family: inherit;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.vds-area-svg .tooltip-value {
-  font-size: var(--via-fs-sm);
-  font-weight: var(--via-fw-semibold);
-  fill: var(--via-white);
-  font-family: inherit;
-  font-feature-settings: 'tnum' 1;
-}
-
-/* ---------- Bar chart ---------- */
-.vds-bars {
-  display: flex;
-  flex-direction: column;
-  gap: var(--via-space-3_5);
-  margin-top: 8px;
-}
-
-.vds-bar-row {
-  display: grid;
-  grid-template-columns: 120px 1fr 130px;
-  gap: var(--via-space-5);
-  align-items: center;
-}
-
-.vds-bar-label {
-  font-size: var(--via-fs-caption);
-  font-weight: var(--via-fw-medium);
-  color: var(--via-text-primary);
-  letter-spacing: -0.005em;
-}
-
-.vds-bar-track {
-  position: relative;
-  height: 28px;
-  background: var(--via-navy-04);
-  border-radius: var(--via-radius-sm);
-  overflow: hidden;
-}
-
-.vds-bar-fill {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--via-chart-ink), var(--via-chart-ink-2));
-  border-radius: var(--via-radius-sm);
-  position: relative;
-  animation: vds-bar-grow 800ms var(--via-ease-out) both;
-  transform-origin: left;
-}
-
-@keyframes vds-bar-grow {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-.vds-bar-fill::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--via-radius-sm);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 70%);
-}
-
-.vds-bar-fill.hero {
-  background: linear-gradient(90deg, var(--via-chart-ink), var(--via-chart-ink));
-  box-shadow: 0 4px 16px var(--via-navy-20);
-}
-
-.vds-bar-value {
-  display: flex;
-  align-items: baseline;
-  justify-content: flex-end;
-  gap: var(--via-space-2_5);
-  font-size: var(--via-fs-sm);
-  font-weight: var(--via-fw-semibold);
-  color: var(--via-text-primary);
-  font-feature-settings: 'tnum' 1;
-  letter-spacing: -0.01em;
-}
-
-.vds-bar-value em {
-  font-style: normal;
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-medium);
-  color: var(--via-text-soft);
-  padding: 3px 7px;
-  border-radius: var(--via-radius-pill);
-  background: var(--via-navy-06);
-  letter-spacing: 0;
-}
-
-/* ---------- Donut chart ---------- */
-.vds-donut-stage {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: var(--via-space-12);
-  align-items: center;
-}
-
-.vds-donut-svg {
-  width: 280px;
-  height: 280px;
-  display: block;
-}
-
-.vds-donut-svg .donut-big {
-  font-size: 64px;
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.04em;
-  fill: var(--via-text-primary);
-  font-family: inherit;
-  font-feature-settings: 'tnum' 1;
-}
-
-.vds-donut-svg .donut-pct {
-  font-size: 28px;
-  font-weight: var(--via-fw-medium);
-  fill: var(--via-text-soft);
-  margin-left: 2px;
-}
-
-.vds-donut-svg .donut-sub {
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   fill: var(--via-text-soft);
-  font-family: inherit;
 }
 
-.vds-donut-legend {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--via-space-4_5);
+/* projeção · zona + separador + rótulo */
+.vds-plot .proj-zone {
+  fill: var(--via-navy-02);
 }
 
-.vds-donut-legend li {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--via-space-3_5);
-  padding: 14px 18px;
-  border-radius: var(--via-radius-md);
-  background: var(--via-navy-02);
-  border: 1px solid var(--via-border-soft);
+.vds-plot .proj-split {
+  stroke: var(--dv-axis);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  vector-effect: non-scaling-stroke;
 }
 
-.vds-donut-legend .legend-dot {
-  flex: 0 0 auto;
-  width: 12px;
-  height: 12px;
-  border-radius: 4px;
-  margin-top: 4px;
-}
-
-.vds-donut-legend .legend-label {
-  font-size: var(--via-fs-caption);
-  font-weight: var(--via-fw-semibold);
-  color: var(--via-text-primary);
-  margin: 0 0 4px;
-  letter-spacing: -0.005em;
-}
-
-.vds-donut-legend .legend-meta {
-  margin: 0;
-  font-size: var(--via-fs-xs);
-  color: var(--via-text-soft);
-  display: flex;
-  align-items: center;
-  gap: var(--via-space-1_5);
-  font-feature-settings: 'tnum' 1;
-}
-
-.vds-donut-legend .legend-meta strong {
-  font-weight: var(--via-fw-semibold);
-  color: var(--via-text-primary);
-  letter-spacing: -0.01em;
-}
-
-.vds-donut-legend .legend-meta span {
-  color: var(--via-border);
-}
-
-/* ---------- Funnel ---------- */
-.vds-funnel {
-  list-style: none;
-  margin: 8px 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--via-space-5);
-}
-
-.vds-funnel-step {
-  animation: vds-funnel-fade 600ms var(--via-ease-out) both;
-}
-
-.vds-funnel-step:nth-child(1) { animation-delay: 0ms; }
-.vds-funnel-step:nth-child(2) { animation-delay: 90ms; }
-.vds-funnel-step:nth-child(3) { animation-delay: 180ms; }
-.vds-funnel-step:nth-child(4) { animation-delay: 270ms; }
-.vds-funnel-step:nth-child(5) { animation-delay: 360ms; }
-
-@keyframes vds-funnel-fade {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* labels numa linha full-width — nunca truncam */
-.vds-funnel-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--via-space-4);
-  margin-bottom: 9px;
-}
-
-.vds-funnel-stage {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--via-space-2_5);
-  font-size: var(--via-fs-sm);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
-  color: var(--via-text-primary);
-}
-
-.vds-funnel-stage .num {
+.vds-plot .zone-label {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  padding: 3px 6px;
-  border-radius: var(--via-radius-xs);
-  background: var(--via-navy-06);
-  color: var(--via-text-muted);
-  font-feature-settings: 'tnum' 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--via-text-soft);
 }
 
-.vds-funnel-nums {
-  display: inline-flex;
-  align-items: baseline;
-  gap: var(--via-space-3);
-  white-space: nowrap;
-  font-feature-settings: 'tnum' 1;
+/* gradiente de área · uma hue, claro → transparente */
+.vds-plot stop.gs-1-35 { stop-color: var(--dv-1); stop-opacity: 0.3; }
+.vds-plot stop.gs-1-10 { stop-color: var(--dv-1); stop-opacity: 0.09; }
+.vds-plot stop.gs-1-00 { stop-color: var(--dv-1); stop-opacity: 0; }
+
+.vds-plot .hatch-line {
+  stroke: var(--dv-1);
+  stroke-opacity: 0.28;
+  stroke-width: 2.4;
 }
 
-.vds-funnel-nums strong {
-  font-size: var(--via-fs-h4);
+/* rótulo direto no fim da linha · texto em token de TEXTO */
+.vds-plot .dl-line {
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+}
+.vds-plot .dl-line.s1 { stroke: var(--dv-1); }
+.vds-plot .dl-line.s2 { stroke: var(--dv-2); }
+.vds-plot .dl-line.dashed { stroke-dasharray: 5 4; }
+
+.vds-plot .dl-name {
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  fill: var(--dv-ink);
+}
+
+.vds-plot .dl-value {
+  font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
-  color: var(--via-text-primary);
+  fill: var(--via-text-primary);
+  font-feature-settings: 'tnum' 1;
 }
 
-.vds-funnel-nums em {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  font-style: normal;
+/* tooltip */
+.vds-tt .tt-bg {
+  fill: var(--via-navy);
+  filter: drop-shadow(0 8px 24px rgba(10, 31, 59, 0.32));
+}
+
+[data-theme='dark'] .vds-tt .tt-bg {
+  fill: var(--via-surface-elev);
+  stroke: var(--via-border);
+  stroke-width: 1;
+}
+
+.vds-tt .tt-title {
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: rgba(255, 255, 255, 0.62);
+}
+
+[data-theme='dark'] .vds-tt .tt-title {
+  fill: var(--via-text-muted);
+}
+
+.vds-tt .tt-label {
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
-  color: var(--via-text-soft);
+  fill: rgba(255, 255, 255, 0.82);
 }
 
-/* barras navy centradas — a forma de funil, sem corte */
-.vds-funnel-track {
-  width: 100%;
-  height: 36px;
-  display: flex;
-  justify-content: center;
+[data-theme='dark'] .vds-tt .tt-label {
+  fill: var(--via-text-body);
 }
 
-.vds-funnel-bar {
-  height: 100%;
-  min-width: 36px;
-  border-radius: var(--via-radius-sm);
-  background: linear-gradient(135deg, var(--via-chart-ink) 0%, var(--via-chart-ink-2) 100%);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.14) inset,
-    0 10px 24px -14px var(--via-navy-40);
-  animation: vds-funnel-grow 760ms var(--via-ease-out) both;
+.vds-tt .tt-value {
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.01em;
+  fill: var(--via-white);
+  font-feature-settings: 'tnum' 1;
 }
 
-.vds-funnel-bar.final {
-  background: linear-gradient(135deg, var(--via-chart-ink) 0%, var(--via-chart-ink) 100%);
+[data-theme='dark'] .vds-tt .tt-value {
+  fill: var(--via-text-primary);
 }
 
-@keyframes vds-funnel-grow {
-  from { transform: scaleX(0.4); opacity: 0; }
-  to   { transform: scaleX(1); opacity: 1; }
-}
+.vds-tt .tt-key.s1 { fill: var(--dv-1); }
+.vds-tt .tt-key.s2 { fill: var(--dv-2); }
 
-/* ---------- KPI sparkline cards ---------- */
+/* ============================================================
+   KPIs · 1 série por cartão, sem legenda
+   ============================================================ */
 .vds-kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -562,6 +669,11 @@
   font-feature-settings: 'tnum' 1;
 }
 
+.vds-kpi-spark-wrap {
+  position: relative;
+  height: 40px;
+}
+
 .vds-kpi-spark {
   width: 100%;
   height: 40px;
@@ -569,47 +681,589 @@
 }
 
 .vds-kpi-spark .spark-line {
-  stroke: var(--via-navy);
+  stroke: var(--dv-1);
   stroke-width: 2;
   vector-effect: non-scaling-stroke;
 }
 
 .vds-kpi-spark .spark-fill {
-  fill: var(--via-navy-05);
+  fill: var(--dv-1);
+  fill-opacity: 0.1;
+}
+
+/* marcador do valor mais recente · 8px, fora do SVG (sem distorção) */
+.vds-kpi-spark-now {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--via-radius-pill);
+  background: var(--dv-1);
+  box-shadow: 0 0 0 2px var(--via-surface);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.vds-kpi-foot {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0 0;
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--via-text-soft);
+}
+
+/* ============================================================
+   Barras horizontais · 1 série, ordenadas, ancoradas no zero
+   ============================================================ */
+.vds-bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3_5);
+  margin-top: 10px;
+}
+
+.vds-bar-row {
+  display: grid;
+  grid-template-columns: 168px 1fr 132px;
+  gap: var(--via-space-5);
+  align-items: center;
+  padding: 5px 8px;
+  margin: 0 -8px;
+  border-radius: var(--via-radius-sm);
+  transition: background 160ms ease;
+}
+
+.vds-bar-row.is-hover {
+  background: var(--via-navy-04);
+}
+
+.vds-bar-row:focus-visible {
+  outline: 2px solid var(--dv-1);
+  outline-offset: 1px;
+}
+
+.vds-bar-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
+  letter-spacing: -0.005em;
+}
+
+/* anotação — nunca uma cor diferente pro líder */
+.vds-bar-tag {
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-wide);
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: var(--via-radius-xs);
+  background: var(--via-navy-06);
+  color: var(--via-text-muted);
+  white-space: nowrap;
+}
+
+.vds-bar-track {
+  position: relative;
+  height: 26px;
+  background: var(--dv-track);
+  border-radius: var(--dv-bar-r);
+}
+
+.vds-bar-tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--dv-grid);
+  pointer-events: none;
+}
+
+.vds-bar-fill {
+  display: block;
+  position: relative;
+  height: 100%;
+  background: var(--dv-1);
+  /* ponta arredondada, base quadrada e ancorada no zero */
+  border-radius: 0 var(--dv-bar-r) var(--dv-bar-r) 0;
+  animation: vds-bar-grow 700ms var(--via-ease-out) both;
+  transform-origin: left;
+}
+
+@keyframes vds-bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.vds-bar-tip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 3;
+  padding: 5px 10px;
+  border-radius: var(--via-radius-xs);
+  background: var(--via-navy);
+  color: var(--via-white);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  white-space: nowrap;
+  font-feature-settings: 'tnum' 1;
+  box-shadow: 0 8px 20px -10px var(--via-navy-40);
+  pointer-events: none;
+}
+
+[data-theme='dark'] .vds-bar-tip {
+  background: var(--via-surface-elev);
+  color: var(--via-text-primary);
+  border: 1px solid var(--via-border);
+}
+
+.vds-bar-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: var(--via-space-2_5);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  font-feature-settings: 'tnum' 1;
+  letter-spacing: -0.01em;
+}
+
+.vds-bar-value em {
+  font-style: normal;
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  color: var(--dv-ink);
+  padding: 3px 7px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-06);
+  letter-spacing: 0;
+}
+
+.vds-bar-axis {
+  display: grid;
+  grid-template-columns: 168px 1fr 132px;
+  gap: var(--via-space-5);
+  margin-top: 4px;
+}
+
+.vds-bar-axis-line {
+  position: relative;
+  height: 18px;
+  border-top: 1px solid var(--dv-axis);
+}
+
+.vds-bar-axis-tick {
+  position: absolute;
+  top: 5px;
+  transform: translateX(-50%);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  color: var(--dv-ink);
+  font-feature-settings: 'tnum' 1;
+  white-space: nowrap;
+}
+
+.vds-bar-axis-tick:first-child { transform: translateX(0); }
+.vds-bar-axis-tick:last-child { transform: translateX(-100%); }
+
+/* ============================================================
+   Small multiples · 3+ séries viram 3+ painéis
+   ============================================================ */
+.vds-sm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--via-space-5);
+}
+
+.vds-sm-card {
+  border-radius: var(--via-radius-md);
+  border: 1px solid var(--via-border-soft);
+  background: var(--via-navy-02);
+  padding: 16px 16px 10px;
+}
+
+.vds-sm-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--via-space-3);
+  margin-bottom: 6px;
+}
+
+.vds-sm-head h4 {
+  margin: 0;
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.005em;
+  color: var(--via-text-primary);
+}
+
+.vds-sm-value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--via-space-2);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.02em;
+  color: var(--via-text-primary);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-sm-value em {
+  font-style: normal;
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  color: var(--dv-ink);
+  letter-spacing: 0;
+}
+
+.vds-sm-plot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vds-sm-plot .sm-bar {
+  fill: var(--dv-1);
+  fill-opacity: 0.88;
+  transition: fill-opacity 160ms ease;
+}
+
+.vds-sm-plot .sm-bar.is-active {
+  fill-opacity: 1;
+}
+
+.vds-sm-plot .sm-callout {
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  fill: var(--via-text-primary);
+  font-feature-settings: 'tnum' 1;
+  paint-order: stroke;
+  stroke: var(--via-surface);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+/* ============================================================
+   Donut · 2 partes (sólido + hachura) e cauda em painéis
+   ============================================================ */
+.vds-donut-stage {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--via-space-10);
+  align-items: center;
+}
+
+.vds-donut-svg {
+  width: 260px;
+  height: 260px;
+  display: block;
+}
+
+.vds-donut-svg .donut-seg {
+  transition: opacity 180ms ease;
+  opacity: 0.94;
+}
+
+.vds-donut-svg .donut-seg.solid {
+  fill: var(--dv-1);
+}
+
+.vds-donut-svg .donut-seg.hatch {
+  fill: url(#vds-donut-hatch);
+}
+
+.vds-donut-svg .donut-seg.is-active {
+  opacity: 1;
+}
+
+.vds-donut-svg .hatch-bg {
+  fill: var(--dv-2);
+}
+
+.vds-donut-svg .hatch-fg {
+  stroke: var(--via-surface);
+  stroke-width: 2.6;
+}
+
+.vds-donut-svg .donut-big {
+  font-size: 56px;
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.04em;
+  fill: var(--via-text-primary);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-donut-svg .donut-pct {
+  font-size: 26px;
+  font-weight: var(--via-fw-medium);
+  fill: var(--via-text-soft);
+}
+
+.vds-donut-svg .donut-sub {
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--via-text-soft);
+}
+
+.vds-donut-svg .donut-money {
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  fill: var(--dv-ink);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-side-title {
+  margin: 0 0 4px;
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  letter-spacing: -0.005em;
+}
+
+.vds-side-lede {
+  margin: 0 0 16px;
+  font-size: var(--via-fs-xs);
+  line-height: 1.55;
+  color: var(--via-text-soft);
+  max-width: 460px;
+}
+
+.vds-tail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--via-space-3_5);
+}
+
+.vds-tail-card {
+  border-radius: var(--via-radius-md);
+  border: 1px solid var(--via-border-soft);
+  background: var(--via-navy-02);
+  padding: 14px 16px 16px;
+}
+
+.vds-tail-label {
+  margin: 0 0 6px;
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-wide);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.vds-tail-value {
+  display: flex;
+  align-items: baseline;
+  gap: var(--via-space-2);
+  margin: 0 0 10px;
+  font-size: var(--via-fs-h4);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.03em;
+  color: var(--via-text-primary);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-tail-value em {
+  font-style: normal;
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0;
+  color: var(--dv-ink);
+}
+
+.vds-tail-track {
+  height: 8px;
+  border-radius: var(--dv-bar-r);
+  background: var(--dv-track);
+}
+
+.vds-tail-fill {
+  display: block;
+  height: 100%;
+  background: var(--dv-1);
+  border-radius: 0 var(--dv-bar-r) var(--dv-bar-r) 0;
+}
+
+/* ============================================================
+   Funil · duas medidas, dois painéis (nunca eixo duplo)
+   ============================================================ */
+.vds-funnel {
+  margin-top: 6px;
+}
+
+.vds-funnel-head {
+  display: grid;
+  grid-template-columns: 172px 1fr 1fr;
+  gap: var(--via-space-6);
+  padding: 0 8px 10px;
+  border-bottom: 1px solid var(--via-border-soft);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-wide);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.vds-funnel-row {
+  display: grid;
+  grid-template-columns: 172px 1fr 1fr;
+  gap: var(--via-space-6);
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--via-border-soft);
+  transition: background 160ms ease;
+  animation: vds-funnel-fade 500ms var(--via-ease-out) both;
+}
+
+.vds-funnel-row:nth-child(2) { animation-delay: 0ms; }
+.vds-funnel-row:nth-child(3) { animation-delay: 70ms; }
+.vds-funnel-row:nth-child(4) { animation-delay: 140ms; }
+.vds-funnel-row:nth-child(5) { animation-delay: 210ms; }
+.vds-funnel-row:nth-child(6) { animation-delay: 280ms; }
+
+@keyframes vds-funnel-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.vds-funnel-row.is-hover {
+  background: var(--via-navy-04);
+}
+
+.vds-funnel-row:focus-visible {
+  outline: 2px solid var(--dv-1);
+  outline-offset: -2px;
+}
+
+.vds-funnel-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-2_5);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.005em;
+  color: var(--via-text-primary);
+}
+
+.vds-funnel-stage .num {
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-wide);
+  padding: 3px 6px;
+  border-radius: var(--via-radius-xs);
+  background: var(--via-navy-06);
+  color: var(--via-text-muted);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-funnel-panel {
+  display: flex;
+  align-items: center;
+  gap: var(--via-space-3_5);
+}
+
+.vds-funnel-track {
+  position: relative;
+  flex: 1 1 auto;
+  height: 22px;
+  min-width: 0;
+  background: var(--dv-track);
+  border-radius: var(--dv-bar-r);
+}
+
+.vds-funnel-tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--dv-grid);
+}
+
+.vds-funnel-bar {
+  display: block;
+  height: 100%;
+  min-width: 3px;
+  background: var(--dv-1);
+  border-radius: 0 var(--dv-bar-r) var(--dv-bar-r) 0;
+  animation: vds-bar-grow 700ms var(--via-ease-out) both;
+  transform-origin: left;
+}
+
+.vds-funnel-num {
+  flex: 0 0 auto;
+  min-width: 74px;
+  text-align: right;
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.02em;
+  color: var(--via-text-primary);
+  font-feature-settings: 'tnum' 1;
+}
+
+/* rótulo do painel · só aparece quando o cabeçalho da grade some */
+.vds-funnel-cap {
+  display: none;
+  flex: 0 0 78px;
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-wide);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.vds-funnel-num.is-empty {
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-soft);
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   Responsivo
+   ============================================================ */
+@media (max-width: 1120px) {
+  .vds-rules-grid { grid-template-columns: repeat(2, 1fr); }
+  .vds-donut-stage { grid-template-columns: 1fr; gap: var(--via-space-7); }
+  .vds-donut-svg { margin: 0 auto; }
 }
 
 @media (max-width: 980px) {
   .vds-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .vds-sm-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 760px) {
+  .vds-chart-card { padding: 24px 20px; }
+  .vds-chart-head { flex-direction: column; gap: var(--via-space-3_5); }
+  .vds-chart-head h3 { font-size: var(--via-fs-h2); }
+
+  .vds-bar-row,
+  .vds-bar-axis { grid-template-columns: 108px 1fr 82px; gap: var(--via-space-3); }
+  .vds-bar-tag { display: none; }
+  .vds-bar-value em { display: none; }
+
+  .vds-funnel-head { display: none; }
+  .vds-funnel-row { grid-template-columns: 1fr; gap: var(--via-space-2_5); }
+  .vds-funnel-cap { display: inline-block; }
+  .vds-funnel-num { min-width: 62px; }
+  .vds-tail-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .vds-rules-grid { grid-template-columns: 1fr; }
   .vds-kpi-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 720px) {
-  .vds-chart-card {
-    padding: 24px 20px;
-  }
-  .vds-chart-head {
-    flex-direction: column;
-    gap: var(--via-space-3_5);
-  }
-  .vds-chart-head h3 {
-    font-size: var(--via-fs-h2);
-  }
-  .vds-bar-row {
-    grid-template-columns: 90px 1fr 80px;
-    gap: var(--via-space-3);
-  }
-  .vds-bar-value em {
-    display: none;
-  }
-  .vds-donut-stage {
-    grid-template-columns: 1fr;
-    gap: var(--via-space-6);
-  }
-  .vds-donut-svg {
-    margin: 0 auto;
-  }
+@media (prefers-reduced-motion: reduce) {
+  .vds-bar-fill,
+  .vds-funnel-bar,
+  .vds-funnel-row { animation: none; }
+  .vds-kpi-card { transition: none; }
 }

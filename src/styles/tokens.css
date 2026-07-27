@@ -405,6 +405,31 @@
   --via-radius-2xl:  40px;
   --via-radius-pill: 999px;
 
+  /* ========== DATAVIZ · paleta de série (VALIDADA por script) ===
+     Regra desta marca: a paleta é navy-only, o que torna gráfico
+     multi-série por COR matematicamente impossível — medido, não
+     achismo. Validador (CVD/contraste/ΔE) reprovou toda tentativa
+     de 3+ séries na família fria: azul×petróleo dá ΔE 4.9 pra
+     deuteranopia (indistinguível). O que PASSOU em todos os checks:
+     o par abaixo, no claro.
+
+     COMO USAR — a regra que evita gráfico ilegível:
+       1 série   → --via-data-1 (ou o navy da marca). Sem legenda:
+                   o título já nomeia a série.
+       2 séries  → --via-data-1 + --via-data-2 e SEMPRE um segundo
+                   canal além da cor (tracejado/textura/marcador) +
+                   rótulo direto. Assim funciona no dark e pra CVD.
+       3+ séries → NÃO invente uma 3ª cor. Use small multiples (um
+                   gráfico por série) ou agrupe o resto em "Outros".
+     Status (bom/atenção/crítico) é reservado — NUNCA vira série. */
+  --via-data-1:      #2E6FC4;   /* série primária · passou light */
+  --via-data-2:      #7FB0EE;   /* série secundária · exige 2º canal */
+  --via-data-1-dark: #5C9BEA;   /* passo próprio do dark, não flip */
+  --via-data-2-dark: #2E6FC4;
+  --via-data-grid:   var(--via-navy-08);   /* grade recessiva */
+  --via-data-axis:   var(--via-navy-20);   /* linha de base/eixo */
+  --via-data-ink:    var(--via-text-muted);/* rótulo de eixo — texto usa token de TEXTO, nunca a cor da série */
+
   /* ========== LIQUID GLASS · receitas prontas ==================
      Assinatura da marca. Use a receita inteira (superfície + borda fina +
      linha de luz no topo + sombra navy), não só o fundo.

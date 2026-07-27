@@ -19,9 +19,19 @@
   font-family: var(--via-font);
   color: var(--via-text-body);
 
-  /* paleta local · resolve light/dark num lugar só */
-  --vds-fpa-var-ancora: var(--via-chart-ink);
-  --vds-fpa-var-pos: var(--via-chart-2);
+  /* --------------------------------------------------------------
+     PALETA DE DADO · resolve light/dark num lugar só
+     A ponte não tem "séries": tem TRÊS PAPÉIS, e cada papel carrega
+     rótulo direto + legenda, nunca só a cor.
+       âncora (início/fim) → navy da marca, o tom mais forte da tela
+       favorável           → --via-data-1 (série primária validada)
+       desfavorável        → coral · aqui a semântica de PERDA é
+                             legítima, e é o par azul×vermelho, o
+                             mais seguro que existe para daltonismo
+     Grade e eixo saem dos tokens recessivos (--via-data-grid/-axis).
+     -------------------------------------------------------------- */
+  --vds-fpa-var-ancora: var(--via-navy);
+  --vds-fpa-var-pos: var(--via-data-1);
   --vds-fpa-var-neg: var(--via-coral);
   --vds-fpa-var-neg-ink: var(--via-coral-dark);
   --vds-fpa-var-neg-bg: rgba(184, 92, 92, 0.08);
@@ -29,14 +39,17 @@
   --vds-fpa-var-ok-ink: var(--via-success);
   --vds-fpa-var-ok-bg: rgba(31, 138, 91, 0.08);
   --vds-fpa-var-ok-line: rgba(31, 138, 91, 0.26);
-  --vds-fpa-var-grade: var(--via-navy-08);
+  --vds-fpa-var-grade: var(--via-data-grid);
+  --vds-fpa-var-eixo: var(--via-data-axis);
   --vds-fpa-var-guia: var(--via-navy-25);
 }
 
 [data-theme='dark'] .vds-fpa-var {
-  /* no escuro a âncora clareia (chart-ink) · a ponte positiva desce um degrau
-     para não encostar no mesmo azul */
-  --vds-fpa-var-pos: var(--via-chart-1);
+  /* passos PRÓPRIOS do escuro — não é inversão do claro. No dark o tom
+     "mais forte" é o mais CLARO: a âncora vira azul-gelo e o favorável
+     desce para o passo escuro da série, mantendo distância de luminância. */
+  --vds-fpa-var-ancora: #CBD9EC;
+  --vds-fpa-var-pos: var(--via-data-1-dark);
   --vds-fpa-var-neg: #D98A8A;
   --vds-fpa-var-neg-ink: #E89B9B;
   --vds-fpa-var-neg-bg: rgba(217, 138, 138, 0.12);
@@ -374,7 +387,16 @@
   font-family: var(--via-font);
   font-variant-numeric: tabular-nums;
 }
+/* Texto do gráfico usa token de TEXTO — nunca a cor da marca.
+   O sinal (+ / −) e a barra ao lado já dizem a direção; repetir o hue
+   no rótulo é redundância que só derruba contraste. */
 .vds-fpa-var-tick {
+  font-size: 10px;
+  font-weight: var(--via-fw-medium);
+  fill: var(--via-data-ink);
+  letter-spacing: 0.01em;
+}
+.vds-fpa-var-unidade {
   font-size: 10px;
   font-weight: var(--via-fw-medium);
   fill: var(--via-text-faint);
@@ -386,13 +408,20 @@
   letter-spacing: -0.012em;
   fill: var(--via-text-primary);
 }
-.vds-fpa-var-valor.neg { fill: var(--vds-fpa-var-neg-ink); }
 .vds-fpa-var-cat {
   font-size: 10.5px;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   fill: var(--via-text-muted);
 }
+
+/* hover POR MARCA · a barra apontada permanece, o resto recua.
+   Só opacidade: a cor continua presa ao papel, nunca é repintada. */
+.vds-fpa-var-marca {
+  transition: opacity var(--via-dur) var(--via-ease-snap);
+}
+.vds-fpa-var-chart:hover .vds-fpa-var-marca { opacity: 0.42; }
+.vds-fpa-var-chart .vds-fpa-var-marca:hover { opacity: 1; }
 
 .vds-fpa-var-chart-nota {
   display: flex;
@@ -513,22 +542,23 @@
   font-weight: var(--via-fw-medium);
 }
 
+/* barra de peso · mesma tinta do gráfico: a cor segue o PAPEL da conta
+   (favorável/desfavorável), não a posição dela no ranking */
 .vds-fpa-var-row-barra { display: block; }
 .vds-fpa-var-row-barra .trilho {
   display: block;
   width: 100%;
   height: 6px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy-08);
+  background: var(--via-data-grid);
   overflow: hidden;
 }
 .vds-fpa-var-row-barra .preenche {
   display: block;
   height: 100%;
   border-radius: var(--via-radius-pill);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
-.vds-fpa-var-row-barra .preenche.ok { background: var(--via-chart-1); }
+.vds-fpa-var-row-barra .preenche.ok { background: var(--vds-fpa-var-pos); }
 .vds-fpa-var-row-barra .preenche.ruim { background: var(--vds-fpa-var-neg); }
 
 .vds-fpa-var-row-pct,
@@ -787,6 +817,7 @@
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
   .vds-fpa-var-cta,
+  .vds-fpa-var-marca,
   .vds-fpa-var-tabela tbody tr,
   .vds-fpa-var-row-nome svg { transition: none; }
   .vds-fpa-var-cta:hover { transform: none; }

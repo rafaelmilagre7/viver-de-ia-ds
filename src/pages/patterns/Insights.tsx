@@ -17,6 +17,52 @@ import './insights.css';
  * Nada de card de métrica feito à mão.
  */
 
+/* ---------- geometria dos gráficos · SMALL MULTIPLES -----------
+ * Volume (mensagens) e taxa (% resolvido) têm escalas diferentes.
+ * Eixo duplo — duas escalas y no mesmo gráfico — é o erro nº 1 de
+ * visualização: o ponto onde as curvas se cruzam vira "insight" e
+ * não significa nada, porque depende de qual escala você escolheu.
+ * A regra da casa: duas medidas → DOIS gráficos, um eixo cada.
+ * Como cada painel tem UMA série, nenhum leva legenda (o título do
+ * painel já nomeia a série) e a cor é sempre --via-data-1.
+ */
+const SEMANAS = ['S13', 'S14', 'S15', 'S16', 'S17', 'S18', 'S19', 'S20'];
+const MENSAGENS = [320, 380, 420, 560, 680, 820, 980, 1842];
+const RESOLVIDO = [52, 56, 61, 65, 71, 76, 80, 84];
+
+/* Mesma malha nos dois painéis — é a grade compartilhada que faz
+   small multiples funcionar: o olho compara posição, não decora. */
+const P = { x0: 46, x1: 310, top: 18, base: 156, tick: 176 };
+const SLOT = (P.x1 - P.x0) / SEMANAS.length;
+const SPAN = P.base - P.top;
+const BAR_TOP = 2000;          // eixo de barra SEMPRE começa em zero
+const BAR_TICKS = [0, 1000, 2000];
+const RATE_TICKS = [0, 50, 100];
+const BAR_W = 22;
+
+const nf = new Intl.NumberFormat('pt-BR');
+const slotCx = (i: number) => P.x0 + i * SLOT + SLOT / 2;
+const barY = (v: number) => P.base - (v / BAR_TOP) * SPAN;
+const rateY = (v: number) => P.base - (v / 100) * SPAN;
+
+/* Barra com topo arredondado 4px ANCORADO NA BASE. Arredondar a base
+   também (virar pill) falseia o zero e encolhe a leitura do valor. */
+function barPath(x: number, y: number, w: number, base: number, r = 4) {
+  const rr = Math.min(r, base - y, w / 2);
+  return (
+    `M${x},${base} L${x},${y + rr} Q${x},${y} ${x + rr},${y} ` +
+    `L${x + w - rr},${y} Q${x + w},${y} ${x + w},${y + rr} L${x + w},${base} Z`
+  );
+}
+
+/* Último ponto de uma sparkline, lido do próprio path. */
+function sparkEnd(d: string): { x: number; y: number } | null {
+  const pts = d.match(/-?\d+(?:\.\d+)?,-?\d+(?:\.\d+)?/g);
+  if (!pts || pts.length === 0) return null;
+  const [x, y] = pts[pts.length - 1].split(',').map(Number);
+  return { x, y };
+}
+
 /* ---------- métrica canônica · usada nos dois blocos ---------- */
 type Metric = {
   id: string;
@@ -63,6 +109,13 @@ function MetricCard({ m, className = '', children }: {
           >
             <path className="via-spark__area" d={`${m.spark} L80,32 L0,32 Z`} />
             <path d={m.spark} />
+            {/* Ponto do valor corrente · marcador ≥8px, lido do próprio
+                path (sem duplicar o dado). Sparkline sem "onde estamos
+                agora" obriga o olho a adivinhar a ponta da linha. */}
+            {(() => {
+              const end = sparkEnd(m.spark);
+              return end ? <circle className="spark-end" cx={end.x} cy={end.y} r="4.5" /> : null;
+            })()}
           </svg>
         )}
       </span>
@@ -129,6 +182,122 @@ const SEMANA: Metric[] = [
   },
 ];
 
+/* Painel 1 · volume. Série única → sem legenda, cor --via-data-1.
+   Eixo de barra começa em ZERO: barra comunica por comprimento, e
+   cortar a base multiplica a diferença aparente. */
+function PainelMensagens() {
+  const last = MENSAGENS.length - 1;
+  return (
+    <figure className="vds-ins-panel">
+      <figcaption>
+        <span className="t">Mensagens recebidas</span>
+        <span className="s">total por semana · escala 0 – 2.000</span>
+      </figcaption>
+      <svg
+        viewBox="0 0 320 186"
+        className="vds-ins-plot"
+        role="img"
+        aria-label="Mensagens recebidas por semana: 320 na semana 13, subindo até 1.842 na semana 20."
+      >
+        {BAR_TICKS.map((t) => (
+          <g key={t}>
+            <line className="grid" x1={P.x0} x2={P.x1} y1={barY(t)} y2={barY(t)} />
+            <text className="tick" x={P.x0 - 8} y={barY(t) + 3.2} textAnchor="end">
+              {nf.format(t)}
+            </text>
+          </g>
+        ))}
+        <line className="axis" x1={P.x0} x2={P.x1} y1={P.base} y2={P.base} />
+
+        {MENSAGENS.map((v, i) => (
+          <path
+            key={SEMANAS[i]}
+            className="bar"
+            d={barPath(slotCx(i) - BAR_W / 2, barY(v), BAR_W, P.base)}
+          />
+        ))}
+
+        {/* Rótulo direto SELETIVO · só a semana corrente. Número em
+            todo ponto vira ruído e mata a leitura da forma. */}
+        <text
+          className="tick tick--strong"
+          x={slotCx(last)}
+          y={barY(MENSAGENS[last]) - 7}
+          textAnchor="middle"
+        >
+          {nf.format(MENSAGENS[last])}
+        </text>
+
+        {SEMANAS.map((s, i) => (
+          <text key={s} className="tick" x={slotCx(i)} y={P.tick} textAnchor="middle">
+            {s}
+          </text>
+        ))}
+      </svg>
+    </figure>
+  );
+}
+
+/* Painel 2 · taxa. Mesma malha, mesma cor — o que muda é a medida,
+   e ela está no título do painel, não numa segunda escala. */
+function PainelResolucao() {
+  const pts = RESOLVIDO.map((v, i) => ({ x: slotCx(i), y: rateY(v), v }));
+  const line = pts.map((p, i) => `${i ? 'L' : 'M'}${p.x},${p.y}`).join(' ');
+  const first = pts[0];
+  const last = pts[pts.length - 1];
+  return (
+    <figure className="vds-ins-panel">
+      <figcaption>
+        <span className="t">Resolvido sem humano</span>
+        <span className="s">% das conversas · escala 0 – 100%</span>
+      </figcaption>
+      <svg
+        viewBox="0 0 320 186"
+        className="vds-ins-plot"
+        role="img"
+        aria-label="Percentual de conversas resolvidas sem humano: 52% na semana 13, subindo até 84% na semana 20."
+      >
+        {RATE_TICKS.map((t) => (
+          <g key={t}>
+            <line className="grid" x1={P.x0} x2={P.x1} y1={rateY(t)} y2={rateY(t)} />
+            <text className="tick" x={P.x0 - 8} y={rateY(t) + 3.2} textAnchor="end">
+              {t}%
+            </text>
+          </g>
+        ))}
+        <line className="axis" x1={P.x0} x2={P.x1} y1={P.base} y2={P.base} />
+
+        <path className="area" d={`${line} L${last.x},${P.base} L${first.x},${P.base} Z`} />
+        <path className="line" d={line} />
+
+        {pts.map((p, i) => (
+          <circle
+            key={SEMANAS[i]}
+            className={`dot${i === pts.length - 1 ? ' dot--last' : ''}`}
+            cx={p.x}
+            cy={p.y}
+            r="4"
+          />
+        ))}
+
+        {/* Só as duas pontas rotuladas · a história é "de 52% pra 84%" */}
+        <text className="tick tick--strong" x={first.x} y={first.y + 16} textAnchor="middle">
+          {first.v}%
+        </text>
+        <text className="tick tick--strong" x={last.x} y={last.y - 10} textAnchor="middle">
+          {last.v}%
+        </text>
+
+        {SEMANAS.map((s, i) => (
+          <text key={s} className="tick" x={slotCx(i)} y={P.tick} textAnchor="middle">
+            {s}
+          </text>
+        ))}
+      </svg>
+    </figure>
+  );
+}
+
 function InsightsWeeklySection() {
   return (
     <Section title="Relatório semanal · narrativa editorial" meta="cabeçalho · 4 KPIs · chart grande · quotes · CTA">
@@ -156,119 +325,21 @@ function InsightsWeeklySection() {
           ))}
         </div>
 
-        {/* Chart grande explicativo */}
+        {/* Chart · small multiples · UM eixo por painel */}
         <div className="vds-ins-chart">
           <header>
             <div>
               <h4>Atendimento Nina · últimas 8 semanas</h4>
-              <p>Volume diário · barras = mensagens recebidas · linha = % resolvidas sem humano</p>
-            </div>
-            <div className="vds-ins-chart-legend">
-              <span><i className="bar" /> Mensagens</span>
-              <span><i className="line" /> % resolvido</span>
+              <p>
+                Volume e taxa têm escalas diferentes — por isso são dois gráficos com um eixo cada, nunca um gráfico de eixo duplo.
+              </p>
             </div>
           </header>
 
-          <svg viewBox="0 0 600 240" className="vds-ins-chart-svg" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              {/* Bar gradient · navy translúcido sutil */}
-              <linearGradient id="ins-bar" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.55" />
-                <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0.12" />
-              </linearGradient>
-              {/* Inner highlight pra dar profundidade na bar */}
-              <linearGradient id="ins-bar-shine" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stopColor="#FFFFFF" stopOpacity="0.45" />
-                <stop offset="0.4" stopColor="#FFFFFF" stopOpacity="0.05" />
-                <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
-              </linearGradient>
-              {/* Area fill abaixo da line */}
-              <linearGradient id="ins-area" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.22" />
-                <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0" />
-              </linearGradient>
-              {/* Glow no dot final */}
-              <radialGradient id="ins-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.5" />
-                <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-
-            {/* Grid lines · fade nas pontas pra parecer mais leve */}
-            {[60, 110, 160].map((y) => (
-              <line key={y} x1="20" y1={y} x2="580" y2={y}
-                stroke="var(--via-navy)" strokeOpacity="0.06" strokeDasharray="2,4" />
-            ))}
-
-            {/* Bars · proporção controlada + rounded top · gradient leve */}
-            {(() => {
-              const values = [320, 380, 420, 560, 680, 820, 980, 1842];
-              const max = 1842;
-              const baseY = 200;
-              const maxH = 140;
-              const barW = 36;
-              const slotW = 70;
-              const startX = 30;
-              return values.map((v, i) => {
-                const h = (v / max) * maxH;
-                const x = startX + i * slotW;
-                const y = baseY - h;
-                return (
-                  <g key={i}>
-                    {/* main bar */}
-                    <rect x={x} y={y} width={barW} height={h} rx="5"
-                      fill="url(#ins-bar)" />
-                    {/* inner shine subtle */}
-                    <rect x={x} y={y} width={barW} height={Math.min(h, 28)} rx="5"
-                      fill="url(#ins-bar-shine)" />
-                    {/* week label */}
-                    <text x={x + barW / 2} y="218" textAnchor="middle"
-                      fontSize="9.5" fill="var(--via-text-muted)"
-                      fontFamily="var(--via-font-mono)" letterSpacing="0.04em">
-                      S{13 + i}
-                    </text>
-                  </g>
-                );
-              });
-            })()}
-
-            {/* Area fill abaixo da line */}
-            <path
-              d="M48,150 C100,140 160,130 220,115 S360,80 430,58 L566,32 L566,200 L48,200 Z"
-              fill="url(#ins-area)"
-            />
-
-            {/* Line · % resolvido */}
-            <path
-              d="M48,150 C100,140 160,130 220,115 S360,80 430,58 L566,32"
-              fill="none"
-              stroke="var(--via-navy)"
-              strokeOpacity="0.85"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-            />
-
-            {/* Dots on line */}
-            {[
-              { x: 48, y: 150 },
-              { x: 118, y: 140 },
-              { x: 188, y: 124 },
-              { x: 258, y: 110 },
-              { x: 328, y: 90 },
-              { x: 398, y: 68 },
-              { x: 468, y: 50 },
-              { x: 566, y: 32 },
-            ].map((d, i) => (
-              <circle key={i} cx={d.x} cy={d.y} r="3"
-                fill="var(--via-bg, #FFFFFF)"
-                stroke="var(--via-navy)" strokeWidth="1.5" />
-            ))}
-
-            {/* Latest dot · halo + filled */}
-            <circle cx="566" cy="32" r="14" fill="url(#ins-glow)" />
-            <circle cx="566" cy="32" r="4.5" fill="var(--via-navy)" />
-            <circle cx="566" cy="32" r="2" fill="var(--via-bg, #FFFFFF)" />
-          </svg>
+          <div className="vds-ins-charts">
+            <PainelMensagens />
+            <PainelResolucao />
+          </div>
 
           <p className="vds-ins-chart-note">
             <strong>Insight ·</strong> a curva de resolução automática passou de 52% pra 84% — Nina aprendeu o jeito da casa. Próxima semana vamos testar redirecionamento ativo pra mentor quando ela detectar dor real.

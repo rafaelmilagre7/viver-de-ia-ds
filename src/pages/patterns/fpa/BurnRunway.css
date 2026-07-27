@@ -15,6 +15,20 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-5);
+
+  /* --------------------------------------------------------------
+     PALETA DE DADO · resolvida num lugar só (light + dark)
+     Uma série por gráfico → --via-data-1. Coral é STATUS (abaixo do
+     piso de 3 meses), reservado: nunca é usado como segunda série.
+     Dark tem passo PRÓPRIO (--via-data-1-dark), não é flip do claro.
+     -------------------------------------------------------------- */
+  --vds-burn-serie: var(--via-data-1);
+  --vds-burn-crit: var(--via-coral);
+}
+
+[data-theme="dark"] .vds-fpa-burn {
+  --vds-burn-serie: var(--via-data-1-dark);
+  --vds-burn-crit: #D98A8A;
 }
 
 /* ==============================================================
@@ -101,12 +115,15 @@
   letter-spacing: -0.004em;
 }
 
+/* chip + sparkline dividem a linha; se não couber, a sparkline desce
+   para a linha de baixo em vez de cortar o texto da variação */
 .vds-fpa-burn-card-foot {
   margin-top: auto;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: var(--via-space-3);
+  flex-wrap: wrap;
+  gap: var(--via-space-2) var(--via-space-3);
   min-width: 0;
 }
 .vds-fpa-burn-card-foot.is-stack {
@@ -114,6 +131,8 @@
   align-items: flex-start;
   gap: var(--via-space-2);
 }
+/* dentro do rodapé que quebra, a linha de apoio toma a largura inteira */
+.vds-fpa-burn-card-foot:not(.is-stack) > .vds-fpa-burn-card-calc { flex: 1 0 100%; }
 
 .vds-fpa-burn-card-calc {
   font-family: var(--via-font-mono);
@@ -128,9 +147,11 @@
 }
 
 .vds-fpa-burn-spark {
-  width: 96px;
-  height: 32px;
+  width: 104px;
+  height: 34px;
   flex-shrink: 0;
+  margin-left: auto;
+  overflow: visible;
 }
 
 /* chip de variação · coral = desfavorável · verde sóbrio = favorável */
@@ -152,9 +173,20 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* sem max-width o chip estoura o card e o texto é cortado a seco,
+     sem reticências — com ela ele encolhe e degrada de forma honesta */
+  max-width: 100%;
   min-width: 0;
 }
 .vds-fpa-burn-chip svg { flex-shrink: 0; }
+/* text-overflow não age em item de flex container · o texto precisa do
+   próprio bloco para as reticências aparecerem em vez do corte a seco */
+.vds-fpa-burn-chip .t {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 /* verde sóbrio escurecido em direção ao navy · garante 5,5:1 em texto de 10px
    (o token puro fica em 4,3:1 e reprova AA nesse tamanho) */
 .vds-fpa-burn-chip.is-favoravel {
@@ -323,7 +355,9 @@
   color: var(--via-text-primary);
 }
 
-/* ---------- gráfico ---------- */
+/* ---------- gráfico ----------
+   Texto do gráfico usa SEMPRE token de TEXTO (--via-data-ink /
+   --via-text-primary), nunca a cor da série: a cor fica na marca. */
 .vds-fpa-burn-chart {
   display: block;
   width: 100%;
@@ -331,19 +365,23 @@
   font-family: var(--via-font);
   font-variant-numeric: tabular-nums;
 }
-.vds-fpa-burn-axis {
-  font-size: 10.5px;
-  fill: var(--via-text-muted);
-  letter-spacing: 0.01em;
-}
+.vds-fpa-burn-axis,
 .vds-fpa-burn-tick {
   font-size: 10.5px;
-  fill: var(--via-text-muted);
+  fill: var(--via-data-ink);
   letter-spacing: 0.01em;
 }
+/* o crítico ganha PESO, não hue — o hue já está na barra logo acima */
 .vds-fpa-burn-tick.is-critico {
-  fill: var(--via-coral-dark);
+  fill: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+.vds-fpa-burn-unit,
+.vds-fpa-burn-ref {
+  font-size: 10px;
   font-weight: var(--via-fw-medium);
+  fill: var(--via-text-faint);
+  letter-spacing: 0.01em;
 }
 .vds-fpa-burn-mark {
   font-size: var(--via-fs-label);
@@ -351,6 +389,8 @@
   fill: var(--via-text-primary);
   letter-spacing: -0.004em;
 }
+/* anotação de limiar · coral-dark é o token de TEXTO destrutivo do DS,
+   não o pigmento da barra (--via-coral) */
 .vds-fpa-burn-mark.is-critico { fill: var(--via-coral-dark); }
 .vds-fpa-burn-val {
   font-size: 11.5px;
@@ -358,6 +398,14 @@
   fill: var(--via-text-primary);
   letter-spacing: -0.01em;
 }
+
+/* hover POR MARCA · a barra apontada fica, o resto recua.
+   Sem repintar nada: só opacidade, a cor segue a entidade. */
+.vds-fpa-burn-bar {
+  transition: opacity var(--via-dur) var(--via-ease-snap);
+}
+.vds-fpa-burn-chart:hover .vds-fpa-burn-bar { opacity: 0.42; }
+.vds-fpa-burn-chart .vds-fpa-burn-bar:hover { opacity: 1; }
 
 /* ---------- legenda ---------- */
 .vds-fpa-burn-legend {
@@ -382,22 +430,25 @@
   display: inline-block;
   flex-shrink: 0;
 }
-.vds-fpa-burn-legend .sw-navy,
-.vds-fpa-burn-legend .sw-coral {
-  width: 9px;
-  height: 14px;
-  border-radius: 3px;
+/* swatch espelha a marca do gráfico: cor chapada + hachura de projeção
+   e ponta arredondada só no topo, como a barra */
+.vds-fpa-burn-legend .sw-serie,
+.vds-fpa-burn-legend .sw-crit {
+  width: 10px;
+  height: 15px;
+  border-radius: 3px 3px 1px 1px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--via-bg) 38%, transparent) 0 1.5px,
+    transparent 1.5px 5px
+  );
 }
-.vds-fpa-burn-legend .sw-navy {
-  background: linear-gradient(180deg, var(--via-chart-ink), var(--via-chart-ink-2));
-}
-.vds-fpa-burn-legend .sw-coral {
-  background: linear-gradient(180deg, #B85C5C, rgba(184, 92, 92, 0.45));
-}
+.vds-fpa-burn-legend .sw-serie { background-color: var(--vds-burn-serie); }
+.vds-fpa-burn-legend .sw-crit { background-color: var(--vds-burn-crit); }
 .vds-fpa-burn-legend .sw-dash {
   width: 18px;
   height: 0;
-  border-top: 1px dashed var(--via-navy-40);
+  border-top: 1px dashed var(--via-data-axis);
 }
 
 /* ---------- nota editorial ---------- */
@@ -552,6 +603,7 @@
    ============================================================== */
 @media (prefers-reduced-motion: reduce) {
   .vds-fpa-burn-seg-btn,
+  .vds-fpa-burn-bar,
   .vds-fpa-burn-table tbody tr { transition: none; }
   .vds-fpa-burn-seg-btn:active { transform: none; }
 }

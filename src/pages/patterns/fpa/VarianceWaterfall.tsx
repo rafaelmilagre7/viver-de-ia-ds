@@ -111,6 +111,22 @@ interface Barra {
   alt: number;
 }
 
+/** Ponta arredondada no topo, base QUADRADA — para a barra ancorada no eixo. */
+function barraAncorada(x: number, y: number, w: number, h: number, r = 4): string {
+  const rr = Math.max(0, Math.min(r, w / 2, h));
+  const x2 = x + w;
+  const base = y + h;
+  return [
+    `M ${x.toFixed(2)} ${base.toFixed(2)}`,
+    `L ${x.toFixed(2)} ${(y + rr).toFixed(2)}`,
+    `A ${rr} ${rr} 0 0 1 ${(x + rr).toFixed(2)} ${y.toFixed(2)}`,
+    `L ${(x2 - rr).toFixed(2)} ${y.toFixed(2)}`,
+    `A ${rr} ${rr} 0 0 1 ${x2.toFixed(2)} ${(y + rr).toFixed(2)}`,
+    `L ${x2.toFixed(2)} ${base.toFixed(2)}`,
+    'Z',
+  ].join(' ');
+}
+
 function montarPonte(): { barras: Barra[]; ticks: number[]; dominio: number } {
   const bruto: Omit<Barra, 'x' | 'y' | 'alt'>[] = [
     {
@@ -302,22 +318,8 @@ export default function VarianceWaterfall() {
               T.ebitdaReal,
             )} realizados.`}
           >
-            <defs>
-              <linearGradient id="vdsFpaVarAncora" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stopColor="var(--vds-fpa-var-ancora)" stopOpacity="0.98" />
-                <stop offset="1" stopColor="var(--vds-fpa-var-ancora)" stopOpacity="0.80" />
-              </linearGradient>
-              <linearGradient id="vdsFpaVarPos" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stopColor="var(--vds-fpa-var-pos)" stopOpacity="0.94" />
-                <stop offset="1" stopColor="var(--vds-fpa-var-pos)" stopOpacity="0.66" />
-              </linearGradient>
-              <linearGradient id="vdsFpaVarNeg" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stopColor="var(--vds-fpa-var-neg)" stopOpacity="0.94" />
-                <stop offset="1" stopColor="var(--vds-fpa-var-neg)" stopOpacity="0.66" />
-              </linearGradient>
-            </defs>
-
-            {/* grade + eixo de valor */}
+            {/* grade RECESSIVA (hairline) + eixo de valor · base em ZERO.
+                Um eixo só: R$ de EBITDA. Nada de segunda escala. */}
             {ticks.map((t) => (
               <g key={t}>
                 <line
@@ -325,17 +327,19 @@ export default function VarianceWaterfall() {
                   x2={VB_W - PAD_R}
                   y1={yDeValor(t)}
                   y2={yDeValor(t)}
-                  stroke="var(--vds-fpa-var-grade)"
+                  stroke={t === 0 ? 'var(--vds-fpa-var-eixo)' : 'var(--vds-fpa-var-grade)'}
                   strokeWidth="1"
-                  strokeDasharray={t === 0 ? undefined : '2,5'}
                 />
                 <text className="vds-fpa-var-tick" x={PAD_L - 14} y={yDeValor(t) + 3.5} textAnchor="end">
-                  {t === 0 ? '0' : `${nf0.format(t / 1000)} mil`}
+                  {t === 0 ? '0' : nf0.format(t / 1000)}
                 </text>
               </g>
             ))}
+            <text className="vds-fpa-var-unidade" x={PAD_L - 14} y={TOP_Y - 16} textAnchor="end">
+              R$ mil
+            </text>
 
-            {/* linha-guia entre as barras */}
+            {/* linha-guia FINA · liga o topo de uma barra à base da seguinte */}
             {barras.slice(0, -1).map((b, i) => {
               const prox = barras[i + 1];
               if (!prox) return null;
@@ -349,24 +353,33 @@ export default function VarianceWaterfall() {
                   y2={y}
                   stroke="var(--vds-fpa-var-guia)"
                   strokeWidth="1"
-                  strokeDasharray="3,3"
+                  strokeDasharray="3 3"
                 />
               );
             })}
 
-            {/* barras */}
+            {/* barras · fill CHAPADO (gradiente muda a cor efetiva e quebra o
+                contraste validado). Âncora ancorada na base → ponta arredondada
+                só no topo. Delta flutua → cantos livres. */}
             {barras.map((b) => {
-              const preenchimento =
+              const cor =
                 b.tipo === 'ancora'
-                  ? 'url(#vdsFpaVarAncora)'
+                  ? 'var(--vds-fpa-var-ancora)'
                   : b.tipo === 'positiva'
-                    ? 'url(#vdsFpaVarPos)'
-                    : 'url(#vdsFpaVarNeg)';
+                    ? 'var(--vds-fpa-var-pos)'
+                    : 'var(--vds-fpa-var-neg)';
+              const papel =
+                b.tipo === 'ancora' ? 'âncora' : b.tipo === 'positiva' ? 'favorável' : 'desfavorável';
               return (
-                <g key={b.id}>
-                  <rect x={b.x} y={b.y} width={BAR_W} height={b.alt} rx="4" fill={preenchimento} />
+                <g key={b.id} className="vds-fpa-var-marca">
+                  <title>{`${b.l1} ${b.l2} · ${b.rotulo} · ${papel}`}</title>
+                  {b.tipo === 'ancora' ? (
+                    <path d={barraAncorada(b.x, b.y, BAR_W, b.alt, 4)} fill={cor} />
+                  ) : (
+                    <rect x={b.x} y={b.y} width={BAR_W} height={b.alt} rx="2" fill={cor} />
+                  )}
                   <text
-                    className={`vds-fpa-var-valor${b.tipo === 'negativa' ? ' neg' : ''}`}
+                    className="vds-fpa-var-valor"
                     x={b.x + BAR_W / 2}
                     y={b.y - 11}
                     textAnchor="middle"
