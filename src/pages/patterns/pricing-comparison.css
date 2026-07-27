@@ -266,12 +266,14 @@
 .vds-pricing-row:last-of-type .vds-pricing-cell::after { display: none; }
 
 /* Recommended column · todas células dessa coluna ---------------- */
+/* Coluna recomendada · o corredor vertical vem do VIDRO (fundo levemente mais
+   presente), não de linhas navy nas laterais — barra de cor em card é banida. */
 .vds-pricing-cell.is-recommended {
   background:
-    radial-gradient(360px 80px at 50% 50%, rgba(30,58,95,0.06), transparent 70%),
+    radial-gradient(360px 80px at 50% 50%, rgba(30,58,95,0.10), transparent 70%),
     var(--via-glass-card);
-  border-left: 1px solid var(--via-navy);
-  border-right: 1px solid var(--via-navy);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }

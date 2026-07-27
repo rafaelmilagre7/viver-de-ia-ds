@@ -952,10 +952,13 @@
 
 .vds-fp-md-preview blockquote {
   margin: 0 0 14px;
-  padding: 12px 18px;
-  border-left: 3px solid var(--via-navy-40);
-  background: var(--via-navy-03);
-  border-radius: 0 var(--via-radius-sm) var(--via-radius-sm) 0;
+  padding: 14px 18px;
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
   font-style: italic;
   font-family: var(--via-display);
   font-size: var(--via-fs-sm);

@@ -33,22 +33,17 @@
   z-index: -1;
 }
 
-.vds-st-overview::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+/* Status · sem barra lateral · o estado vem da atmosfera do vidro + pill */
+.vds-st-overview.degraded::before {
+  background:
+    radial-gradient(560px 320px at 0% 0%, rgba(30, 58, 95, 0.09), transparent 60%),
+    radial-gradient(440px 280px at 100% 100%, var(--via-navy-05), transparent 60%);
 }
 
-.vds-st-overview.degraded::after {
-  background: linear-gradient(180deg, var(--via-accent), var(--via-accent-warm));
-}
-
-.vds-st-overview.down::after {
-  background: linear-gradient(180deg, var(--via-coral), var(--via-coral-dark));
+.vds-st-overview.down::before {
+  background:
+    radial-gradient(560px 320px at 0% 0%, rgba(184, 92, 92, 0.10), transparent 60%),
+    radial-gradient(440px 280px at 100% 100%, rgba(184, 92, 92, 0.06), transparent 60%);
 }
 
 @media (max-width: 820px) {
@@ -83,6 +78,11 @@
 .vds-st-overview.degraded .vds-st-eyebrow-bullet {
   background: var(--via-accent);
   box-shadow: 0 0 8px var(--via-navy-30);
+}
+
+.vds-st-overview.down .vds-st-eyebrow-bullet {
+  background: var(--via-coral);
+  box-shadow: 0 0 8px rgba(184, 92, 92, 0.45);
 }
 
 @keyframes vds-st-pulse {
@@ -230,31 +230,26 @@
   background: var(--via-navy-02);
 }
 
-.vds-st-row:hover::before {
-  opacity: 1;
+/* Linha com incidente · vidro levemente tingido, sem barra lateral.
+   O estado continua legível pelo pill e pelas barras de uptime. */
+.vds-st-row.degraded,
+.vds-st-row.down {
+  background: var(--via-glass-card-2);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 
-.vds-st-row::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 14px;
-  bottom: 14px;
-  width: 2px;
-  border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
-  opacity: 0;
-  transition: opacity .22s ease;
+.vds-st-row.degraded {
+  background:
+    radial-gradient(420px 80px at 0% 50%, var(--via-navy-06), transparent 70%),
+    var(--via-glass-card-2);
 }
 
-.vds-st-row.degraded::before {
-  background: linear-gradient(180deg, var(--via-accent), var(--via-accent-warm));
-  opacity: 1;
-}
-
-.vds-st-row.down::before {
-  background: linear-gradient(180deg, var(--via-coral), var(--via-coral-dark));
-  opacity: 1;
+.vds-st-row.down {
+  background:
+    radial-gradient(420px 80px at 0% 50%, rgba(184, 92, 92, 0.10), transparent 70%),
+    var(--via-glass-card-2);
 }
 
 .vds-st-row-l {
@@ -501,32 +496,19 @@
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
-  transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
+  transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease, background .26s ease;
   position: relative;
   overflow: hidden;
 }
 
-.vds-st-inc article::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 14px;
-  bottom: 14px;
-  width: 2px;
-  border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
-  opacity: 0;
-  transition: opacity .22s ease;
-}
-
+/* Hover · elevação + atmosfera no próprio vidro (sem barra lateral) */
 .vds-st-inc article:hover {
   transform: translateY(-2px);
   border-color: var(--via-navy-14);
   box-shadow: 0 12px 28px -16px var(--via-navy-18);
-}
-
-.vds-st-inc article:hover::before {
-  opacity: 1;
+  background:
+    radial-gradient(320px 120px at 0% 0%, var(--via-navy-05), transparent 65%),
+    var(--via-glass-card);
 }
 
 .vds-st-inc article header {

@@ -430,10 +430,12 @@
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: var(--via-space-3_5);
   padding: 22px;
-  background: var(--via-navy-04);
-  border: 0.5px solid var(--via-navy-12);
-  border-left: 2px solid var(--via-navy);
-  border-radius: var(--via-radius-sm);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  border-radius: var(--via-radius-md);
 }
 .vds-com-case-stats > div {
   display: flex;

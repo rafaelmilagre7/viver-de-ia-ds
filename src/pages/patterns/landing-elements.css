@@ -363,7 +363,7 @@
 }
 .vds-le-faq-item[open] {
   border-color: var(--via-navy-20);
-  border-left: 2px solid var(--via-navy);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 .vds-le-faq-item summary {
   display: flex;
@@ -616,8 +616,11 @@
 .vds-le-countdown-rule {
   margin-top: 16px;
   padding: 14px 20px;
-  background: var(--via-navy-04);
-  border-left: 2px solid var(--via-navy);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
@@ -696,8 +699,11 @@
 .vds-le-compare-rule {
   margin-top: 16px;
   padding: 14px 20px;
-  background: var(--via-navy-04);
-  border-left: 2px solid var(--via-navy);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);

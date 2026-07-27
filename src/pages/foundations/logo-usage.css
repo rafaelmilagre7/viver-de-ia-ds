@@ -206,9 +206,12 @@
 .vds-lu-clear-note {
   margin: 0;
   padding: 16px 20px;
-  background: var(--via-navy-04);
-  border-left: 2px solid var(--via-navy-40);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-sm);
+  box-shadow: var(--via-glass-shadow);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   line-height: 1.6;
@@ -284,9 +287,8 @@
   backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
   border: 0.5px solid var(--via-navy-20);
-  border-left: 2px solid var(--via-navy-40);
   border-radius: var(--via-radius-md);
-  box-shadow: var(--via-glass-shadow);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 .vds-lu-min-eyebrow {
   display: block;

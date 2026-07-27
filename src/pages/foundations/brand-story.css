@@ -135,7 +135,6 @@
   backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
-  border-left: 2px solid var(--via-navy-40);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);
 }
@@ -204,9 +203,11 @@
   transition: var(--via-t);
 }
 .vds-bs-trajectory li.now {
-  background: linear-gradient(135deg, var(--via-navy-04), transparent);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
-  border-left: 2px solid var(--via-navy-40);
+  box-shadow: var(--via-glass-shadow);
 }
 .vds-bs-year {
   font-family: var(--via-mono);
