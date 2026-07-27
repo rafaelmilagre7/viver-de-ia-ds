@@ -1,0 +1,505 @@
+/* ============================================================
+   Fundamentos · Camada de dados — estilos da PÁGINA de referência
+   ------------------------------------------------------------
+   Aqui mora só o que é da página (moldura editorial, comparativos,
+   bloco de código). O padrão de tabela em si vive em
+   src/styles/data.css e é global — nada abaixo redefine .via-*.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Texto editorial de apoio
+   ------------------------------------------------------------ */
+.vds-data-intro,
+.vds-data-tese-lede {
+  margin: 0 0 var(--via-space-6);
+  max-width: 76ch;
+  font-size: var(--via-fs-sm);
+  line-height: 1.65;
+  color: var(--via-ink-2);
+}
+
+.vds-data-intro strong,
+.vds-data-tese-lede strong {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+.vds-data-intro em,
+.vds-data-caption em {
+  font-style: italic;
+  color: var(--via-text-primary);
+}
+
+.vds-data-caption {
+  margin: var(--via-space-5) 0 0;
+  padding: 18px 20px;
+  max-width: 84ch;
+  border-radius: var(--via-radius-md);
+  background: var(--via-navy-02);
+  border: 1px solid var(--via-border-soft);
+  font-size: var(--via-fs-xs);
+  line-height: 1.65;
+  color: var(--via-ink-2);
+}
+
+.vds-data-caption strong {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+.vds-data-intro code,
+.vds-data-caption code,
+.vds-data-closing code,
+.vds-data-anat p code {
+  font-family: var(--via-mono);
+  font-size: 0.92em;
+  padding: 1px 5px;
+  border-radius: var(--via-radius-xs);
+  background: var(--via-navy-05);
+  border: 1px solid var(--via-border-soft);
+  color: var(--via-text-primary);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------
+   1 · Tese — as três decisões
+   ------------------------------------------------------------ */
+.vds-data-tri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--via-space-3_5);
+}
+
+@media (max-width: 900px) {
+  .vds-data-tri { grid-template-columns: 1fr; }
+}
+
+.vds-data-tri-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2_5);
+  padding: 24px 24px 22px;
+  border-radius: var(--via-radius-lg);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.vds-data-tri-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(360px 180px at 0% 0%, var(--via-navy-04), transparent 62%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.vds-data-tri-num {
+  font-family: var(--via-display);
+  font-size: var(--via-fs-h2);
+  font-weight: var(--via-fw-medium);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--via-navy-14);
+  font-variant-numeric: tabular-nums;
+}
+
+.vds-data-tri-item h3 {
+  margin: 0;
+  font-family: var(--via-display);
+  font-size: var(--via-fs-h4);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.018em;
+  line-height: 1.25;
+  color: var(--via-text-primary);
+}
+
+.vds-data-tri-item p {
+  margin: 0;
+  font-size: var(--via-fs-xs);
+  line-height: 1.6;
+  color: var(--via-ink-2);
+}
+
+.vds-data-tri-class {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--via-border-soft);
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-micro);
+  letter-spacing: 0.02em;
+  color: var(--via-text-muted);
+}
+
+/* ------------------------------------------------------------
+   2 · Snippet de código + modificadores
+   ------------------------------------------------------------ */
+.vds-data-snippet {
+  margin-top: var(--via-space-7);
+}
+
+.vds-data-snippet-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--via-space-3);
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.vds-data-snippet-title {
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-primary);
+}
+
+.vds-data-snippet-note {
+  font-size: var(--via-fs-xs);
+  color: var(--via-ink-3);
+}
+
+.vds-data-code {
+  margin: 0;
+  padding: 22px 24px;
+  border-radius: var(--via-radius-md);
+  background: linear-gradient(180deg, var(--via-navy-darker), var(--via-navy));
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-xs);
+  line-height: 1.62;
+  letter-spacing: 0.01em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 12px 28px -16px var(--via-navy-40);
+}
+
+.vds-data-mods {
+  margin-top: var(--via-space-6);
+  padding: 20px 22px;
+  border-radius: var(--via-radius-md);
+  background: var(--via-navy-02);
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-data-mods-label {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.vds-data-mods ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--via-space-3_5);
+}
+
+@media (max-width: 820px) {
+  .vds-data-mods ul { grid-template-columns: 1fr; }
+}
+
+.vds-data-mods li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vds-data-mods code {
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-primary);
+  letter-spacing: 0.01em;
+}
+
+.vds-data-mods em {
+  font-style: normal;
+  font-size: var(--via-fs-micro);
+  line-height: 1.5;
+  color: var(--via-ink-3);
+}
+
+/* ------------------------------------------------------------
+   3 · Densidades lado a lado
+   ------------------------------------------------------------ */
+.vds-data-dens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--via-space-4_5);
+  align-items: stretch;
+}
+
+@media (max-width: 980px) {
+  .vds-data-dens { grid-template-columns: 1fr; }
+}
+
+/* colunas de altura igual · a legenda das três alinha embaixo */
+.vds-data-dens-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.vds-data-dens-item > header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--via-space-3);
+  margin-bottom: 12px;
+}
+
+.vds-data-dens-item h4 {
+  margin: 0;
+  font-family: var(--via-display);
+  font-size: var(--via-fs-body);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.014em;
+  color: var(--via-text-primary);
+}
+
+.vds-data-dens-item header code {
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-micro);
+  color: var(--via-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.vds-data-dens-item > p {
+  margin: 0;
+  margin-top: auto;      /* as três legendas alinham na mesma linha de base */
+  padding-top: 16px;
+  font-size: var(--via-fs-xs);
+  line-height: 1.6;
+  color: var(--via-ink-2);
+}
+
+@media (max-width: 980px) {
+  .vds-data-dens-item > p { margin-top: 14px; }
+}
+
+/* ------------------------------------------------------------
+   4 · Anatomia da célula
+   ------------------------------------------------------------ */
+.vds-data-anatomy {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--via-space-4_5);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .vds-data-anatomy { grid-template-columns: 1fr; }
+}
+
+.vds-data-anat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3_5);
+  padding: 24px 24px 22px;
+  border-radius: var(--via-radius-lg);
+  background: var(--via-surface);
+  border: 1px solid var(--via-border-soft);
+  box-shadow: var(--via-glass-shadow);
+}
+
+.vds-data-anat--wide { grid-column: 1 / -1; }
+
+@media (max-width: 900px) {
+  .vds-data-anat--wide { grid-column: auto; }
+}
+
+.vds-data-anat > header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--via-border-soft);
+}
+
+.vds-data-anat > header code {
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-label);
+  letter-spacing: 0.01em;
+  color: var(--via-text-muted);
+}
+
+.vds-data-anat h4 {
+  margin: 0;
+  font-family: var(--via-display);
+  font-size: var(--via-fs-h4);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.018em;
+  color: var(--via-text-primary);
+}
+
+.vds-data-anat > p {
+  margin: 0;
+  font-size: var(--via-fs-xs);
+  line-height: 1.62;
+  color: var(--via-ink-2);
+}
+
+.vds-data-anat > p strong {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+/* Comparativo sem/com .via-num */
+.vds-data-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--via-space-4);
+}
+
+@media (max-width: 720px) {
+  .vds-data-compare { grid-template-columns: 1fr; }
+}
+
+.vds-data-compare-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vds-data-compare-tag {
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.vds-data-compare-col--bad .vds-data-compare-tag { color: var(--via-coral-dark); }
+.vds-data-compare-col--bad .via-table-wrap { border-color: rgba(184, 92, 92, 0.24); }
+
+/* Demos soltas (delta, sparkline) */
+.vds-data-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2_5);
+  padding: 16px 18px;
+  border-radius: var(--via-radius-md);
+  background: var(--via-navy-02);
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-data-demo-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--via-space-4);
+  font-size: var(--via-fs-caption);
+}
+
+.vds-data-demo-lbl { color: var(--via-ink-2); }
+
+.vds-data-demo--spark { padding: 18px 18px 14px; }
+
+/* ------------------------------------------------------------
+   5 · Regras — garante / nunca
+   ------------------------------------------------------------ */
+.vds-data-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--via-space-4_5);
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .vds-data-rules { grid-template-columns: 1fr; }
+}
+
+/* borda uniforme nos 4 lados · barra lateral é banida na marca */
+.vds-data-rules-col {
+  padding: 24px 26px 22px;
+  border-radius: var(--via-radius-lg);
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-data-rules-col--good {
+  background: linear-gradient(180deg, var(--via-navy-03), rgba(10, 31, 59, 0.01));
+}
+
+.vds-data-rules-col--bad {
+  background: linear-gradient(180deg, rgba(184, 92, 92, 0.04), rgba(184, 92, 92, 0.01));
+  border-color: rgba(184, 92, 92, 0.18);
+}
+
+.vds-data-rules-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-primary);
+}
+
+.vds-data-rules-col--bad .vds-data-rules-eyebrow { color: var(--via-coral-dark); }
+
+.vds-data-rules-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3);
+}
+
+.vds-data-rules-col li {
+  position: relative;
+  padding-left: 20px;
+  font-size: var(--via-fs-caption);
+  line-height: 1.55;
+  color: var(--via-ink-2);
+}
+
+.vds-data-rules-col li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: var(--via-fw-semibold);
+}
+
+.vds-data-rules-col--good li::before {
+  content: '·';
+  color: var(--via-text-primary);
+  font-size: var(--via-fs-body);
+  line-height: 1.2;
+}
+
+.vds-data-rules-col--bad li {
+  color: var(--via-coral-dark);
+}
+
+.vds-data-rules-col--bad li::before {
+  content: '×';
+  color: var(--via-coral);
+  font-size: var(--via-fs-body);
+  line-height: 1.35;
+}
+
+.vds-data-closing {
+  margin: var(--via-space-6) 0 0;
+  max-width: 76ch;
+  font-size: var(--via-fs-sm);
+  line-height: 1.65;
+  color: var(--via-ink-2);
+}

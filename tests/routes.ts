@@ -35,6 +35,7 @@ export const routes: Route[] = [
   { path: '/foundations/radii' },
   { path: '/foundations/shadows' },
   { path: '/foundations/motion' },
+  { path: '/foundations/dados' },
   { path: '/foundations/philosophy' },
   // /foundations/library FORA da regressão visual de propósito: é uma galeria
   // agregada de ~19000px com os 46 componentes vivos — pixel-instável entre

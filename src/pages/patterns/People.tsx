@@ -184,35 +184,46 @@ function MemberListSection() {
           </div>
         </header>
 
-        <div className="vds-member-thead">
-          <span>Operador</span>
-          <span>Plano</span>
-          <span>Streak</span>
-          <span>Última atividade</span>
+        <div className="via-table-wrap">
+          <table className="via-table vds-member-table">
+            <thead>
+              <tr>
+                <th scope="col">Operador</th>
+                <th scope="col">Plano</th>
+                <th scope="col" className="via-num">Streak</th>
+                <th scope="col">Última atividade</th>
+              </tr>
+            </thead>
+            <tbody>
+              {members.map((m) => (
+                <tr key={m.name}>
+                  <td>
+                    <div className="vds-member-user">
+                      <span className={`vds-member-av ${m.status}`}>
+                        {m.av}
+                        <span className={`vds-member-dot ${m.status}`} />
+                      </span>
+                      <div>
+                        <p><strong>{m.name}</strong></p>
+                        <span>{m.role}</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span className={`vds-member-plan ${m.plan.toLowerCase()}`}>{m.plan}</span>
+                  </td>
+                  <td className="via-num">
+                    <span className="vds-member-streak">
+                      <Award size={11} strokeWidth={2} />
+                      {m.streak} dias
+                    </span>
+                  </td>
+                  <td className="vds-member-last">{m.last}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-
-        <ul>
-          {members.map((m) => (
-            <li key={m.name}>
-              <div className="vds-member-user">
-                <span className={`vds-member-av ${m.status}`}>
-                  {m.av}
-                  <span className={`vds-member-dot ${m.status}`} />
-                </span>
-                <div>
-                  <p><strong>{m.name}</strong></p>
-                  <span>{m.role}</span>
-                </div>
-              </div>
-              <span className={`vds-member-plan ${m.plan.toLowerCase()}`}>{m.plan}</span>
-              <span className="vds-member-streak">
-                <Award size={11} strokeWidth={2} />
-                {m.streak} dias
-              </span>
-              <span className="vds-member-last">{m.last}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </Section>
   );

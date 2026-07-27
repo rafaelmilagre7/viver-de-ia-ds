@@ -133,6 +133,7 @@
 .vds-st-overview-stats > div {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--via-space-0_5);
 }
 
@@ -299,10 +300,10 @@
   color: var(--via-ink-3);
 }
 
-.vds-st-row-uptime .mono {
+/* tabular vem de .via-num — aqui só o peso/cor do número dentro da linha */
+.vds-st-row-uptime .via-num {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
-  font-variant-numeric: tabular-nums;
 }
 
 .vds-st-row-uptime em {
@@ -544,10 +545,10 @@
   margin-bottom: 8px;
 }
 
+/* fonte mono + tabular vêm de .via-mono */
 .vds-st-inc-date {
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-st-inc-sev {
@@ -615,10 +616,10 @@
   color: var(--via-ink-2);
 }
 
+/* fonte mono + tabular vêm de .via-mono */
 .vds-st-inc-update-time {
   font-size: var(--via-fs-micro);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
 }
 
 .vds-st-inc-update-text {

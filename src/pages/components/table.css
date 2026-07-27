@@ -1,19 +1,20 @@
 /* ============================================
    Tabela editorial · 8 cell types + toolbar + batch + pagination
+   --------------------------------------------
+   A tabela em si herda styles/data.css (.via-table + .via-num +
+   .via-mono + .via-delta). Aqui fica só o que é desta página:
+   shell com toolbar/batch/paginação, larguras e cell types.
+   Moldura em superfície SÓLIDA — grade densa não leva vidro.
    ============================================ */
 
 .vds-tbl-wrap {
   position: relative;
   border-radius: var(--via-radius-lg);
-  border: 1px solid var(--via-border-soft);
-  background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: var(--via-glass-ring);
+  background: var(--via-surface);
   overflow: hidden;
   isolation: isolate;
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-tbl-wrap::before {
@@ -387,12 +388,14 @@
   background: transparent;
 }
 
+/* largura mínima é da página (10 colunas); o resto vem da camada.
+   border-collapse fica em `separate` porque a célula de operador é
+   um flex container — colapsar bordas com célula anônima desalinha
+   a hairline. Com spacing 0 o resultado é idêntico visualmente. */
 .vds-tbl {
-  width: 100%;
   min-width: 980px;
   border-collapse: separate;
   border-spacing: 0;
-  font-family: var(--via-font);
 }
 
 /* Edge fade · right side hint when content overflows */
@@ -409,18 +412,9 @@
   }
 }
 
+/* thead: só o tint do cabeçalho (densidade vem da camada) */
 .vds-tbl thead th {
-  text-align: left;
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
-  color: var(--via-text-soft);
-  padding: 16px 16px;
   background: var(--via-navy-03);
-  border-bottom: 1px solid var(--via-border-soft);
-  white-space: nowrap;
-  position: relative;
 }
 
 .vds-tbl thead th:first-child {
@@ -433,10 +427,6 @@
 
 .vds-tbl thead th .vds-tbl-th-label {
   display: inline;
-}
-
-.vds-tbl thead th.num {
-  text-align: right;
 }
 
 .vds-tbl thead th.actions {
@@ -462,52 +452,16 @@
   color: var(--via-text-primary);
 }
 
-/* Tbody */
-.vds-tbl tbody tr {
-  position: relative;
-  transition: background 160ms ease;
-}
-
-.vds-tbl tbody tr:hover {
-  background: var(--via-navy-03);
-}
-
-.vds-tbl tbody tr.sel {
-  background:
-    radial-gradient(640px 80px at 0% 0%, var(--via-navy-06), transparent 70%),
-    var(--via-navy-03);
-}
-
-.vds-tbl tbody tr:hover td:first-child::before,
-.vds-tbl tbody tr.sel td:first-child::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  border-radius: 0 2px 2px 0;
-}
-
-.vds-tbl tbody tr:hover td:first-child::before {
-  background: linear-gradient(180deg, var(--via-navy), transparent 70%);
-  opacity: 0.5;
-}
-
-.vds-tbl tbody tr.sel td:first-child::before {
-  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
-  opacity: 1;
-  box-shadow: 0 0 8px var(--via-navy-20);
+/* Tbody · linha selecionada = tint chapado.
+   Sem barra lateral colorida (banida na marca) — quem marca a
+   seleção é o checkbox + o tint, não um traço de cor. */
+.vds-tbl tbody tr.sel,
+.vds-tbl tbody tr.sel:hover {
+  background: var(--via-navy-06);
 }
 
 .vds-tbl tbody td {
-  padding: 16px 16px;
-  font-size: var(--via-fs-caption);
-  color: var(--via-text);
-  border-bottom: 1px solid var(--via-border-soft);
-  vertical-align: middle;
   letter-spacing: -0.005em;
-  font-feature-settings: 'tnum' 1;
 }
 
 .vds-tbl tbody td:first-child {
@@ -516,10 +470,6 @@
 
 .vds-tbl tbody td:last-child {
   padding-right: 20px;
-}
-
-.vds-tbl tbody tr:last-child td {
-  border-bottom: none;
 }
 
 /* Cell · checkbox */
@@ -627,9 +577,8 @@
   text-overflow: ellipsis;
 }
 
-/* Cell · mono (ID) */
+/* Cell · mono (ID) — família vem de .via-mono */
 .vds-tbl td.mono {
-  font-family: var(--via-font-mono);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
@@ -670,15 +619,13 @@
   color: var(--via-text-soft);
 }
 
-/* Cell · currency */
+/* Cell · currency — alinhamento/tabular vem de .via-num */
 .vds-tbl td.currency {
-  text-align: right;
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.005em;
-  white-space: nowrap;
 }
 
 .vds-tbl td.currency .cur {
@@ -724,11 +671,8 @@
   font-feature-settings: 'tnum' 1;
 }
 
-/* Cell · delta arrow */
-.vds-tbl td.num {
-  text-align: right;
-}
-
+/* Cell · delta em chip — a COR é semântica e vem de
+   .via-delta--up / .via-delta--down. Aqui só a forma do chip. */
 .vds-tbl-delta {
   display: inline-flex;
   align-items: center;
@@ -740,21 +684,17 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;
   border: 1px solid;
-  font-feature-settings: 'tnum' 1;
-  white-space: nowrap;
   line-height: 1.4;
 }
 
 .vds-tbl-delta.up {
-  background: var(--via-navy-06);
-  border-color: var(--via-navy-14);
-  color: var(--via-text-primary);
+  background: var(--via-navy-04);
+  border-color: var(--via-navy-12);
 }
 
 .vds-tbl-delta.down {
-  background: var(--via-navy-05);
-  border-color: var(--via-navy-12);
-  color: var(--via-text-primary);
+  background: rgba(184, 92, 92, 0.07);
+  border-color: rgba(184, 92, 92, 0.24);
 }
 
 /* Cell · status — column doesn't shrink, pill never wraps */
@@ -1002,28 +942,12 @@
     var(--via-shadow-focus);
 }
 
-/* ---------- COMPACT variant ---------- */
-.vds-tbl.compact thead th {
-  padding: 12px 14px;
-  font-size: var(--via-fs-micro);
-}
-
-.vds-tbl.compact tbody td {
-  padding: 11px 14px;
-  font-size: var(--via-fs-xs);
-}
-
-.vds-tbl.compact tbody td:first-child {
-  padding-left: 20px;
-}
-
+/* ---------- COMPACT variant ----------
+   densidade + hover vêm de .via-table--compact; aqui só o realce
+   da coluna principal. */
 .vds-tbl.compact tbody td.primary {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
-}
-
-.vds-tbl.compact tbody tr:hover {
-  background: var(--via-navy-03);
 }
 
 .vds-tbl-prio {

@@ -132,6 +132,10 @@ writeFileSync(resolve(out, 'tokens/tokens.css'), tokensCss);
 const surfacesCss = readFileSync(resolve(root, 'src/styles/surfaces.css'), 'utf8');
 writeFileSync(resolve(out, 'tokens/surfaces.css'), surfacesCss);
 
+// Camada de DADOS (tabela/numero/metrica) — faz qualquer <table> cru nascer no padrao
+const dataCss = readFileSync(resolve(root, 'src/styles/data.css'), 'utf8');
+writeFileSync(resolve(out, 'tokens/data.css'), dataCss);
+
 // Gera tokens.json (parse de tokens.css)
 const cssStripped = tokensCss.replace(/\/\*[\s\S]*?\*\//g, '');
 const tokenDecl = /(--[a-z0-9-]+)\s*:\s*([^;]+);/gi;

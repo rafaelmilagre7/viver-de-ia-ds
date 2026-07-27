@@ -47,6 +47,7 @@ export const navigation: NavGroup[] = [
       { label: 'Raios', to: '/foundations/radii' },
       { label: 'Sombras', to: '/foundations/shadows' },
       { label: 'Movimento', to: '/foundations/motion' },
+      { label: 'Dados (tabela · número · métrica)', to: '/foundations/dados' },
       { label: 'Filosofia (6 regras não-negociáveis)', to: '/foundations/philosophy' },
       { label: 'Library (React · tipados · exportáveis)', to: '/foundations/library' },
       { label: 'Theming (CSS-first · ThemeProvider · override)', to: '/foundations/theming' },

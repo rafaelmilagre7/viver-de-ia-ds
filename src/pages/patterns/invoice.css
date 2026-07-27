@@ -174,7 +174,9 @@
   font-feature-settings: 'tnum' 1;
 }
 
-/* Table */
+/* Table · o recibo é DOCUMENTO: sem moldura, células rentes à
+   margem do papel. Por isso não usa .via-table (que traz frame e
+   hover de grade); os números é que herdam .via-num da camada. */
 .vds-receipt-table {
   width: 100%;
   border-collapse: collapse;
@@ -192,6 +194,7 @@
   border-bottom: 1px solid var(--via-navy-12);
 }
 
+/* precisa vencer o `text-align: left` do th acima */
 .vds-receipt-table thead .col-qty,
 .vds-receipt-table thead .col-unit,
 .vds-receipt-table thead .col-total {
@@ -201,15 +204,12 @@
 .vds-receipt-table tbody td {
   padding: 18px 0;
   border-bottom: 1px solid var(--via-navy-06);
-  font-feature-settings: 'tnum' 1;
   vertical-align: top;
 }
 
 .vds-receipt-table tbody td.col-qty,
 .vds-receipt-table tbody td.col-unit,
 .vds-receipt-table tbody td.col-total {
-  text-align: right;
-  white-space: nowrap;
   color: var(--via-text-primary);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
@@ -293,7 +293,6 @@
 .vds-receipt-totals-card .row span:last-child {
   color: var(--via-white);
   font-weight: var(--via-fw-medium);
-  font-feature-settings: 'tnum' 1;
 }
 
 .vds-receipt-totals-card .row .discount {
@@ -828,10 +827,9 @@
     border-radius: 999px !important;
     font-size: 8pt !important;
     letter-spacing: 0.04em !important;
- !important;
-  white-space: nowrap;
-  line-height: 1.4;
-}
+    white-space: nowrap !important;
+    line-height: 1.4 !important;
+  }
 
   .vds-receipt-num {
     font-family: var(--via-mono), 'Geist Mono', ui-monospace, monospace !important;

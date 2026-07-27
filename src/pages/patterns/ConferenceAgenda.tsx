@@ -106,17 +106,17 @@ function AgendaSection() {
         <header className="vds-cf-head">
           <div className="vds-cf-days">
             <button className="vds-cf-day active">
-              <span className="dn mono">QUI</span>
+              <span className="dn">QUI</span>
               <span className="dt">18 jun</span>
               <span className="dl">9 sessões · 3 trilhas</span>
             </button>
             <button className="vds-cf-day">
-              <span className="dn mono">SEX</span>
+              <span className="dn">SEX</span>
               <span className="dt">19 jun</span>
               <span className="dl">9 sessões · workshops</span>
             </button>
             <button className="vds-cf-day">
-              <span className="dn mono">SÁB</span>
+              <span className="dn">SÁB</span>
               <span className="dt">20 jun</span>
               <span className="dl">Mentoria · privado</span>
             </button>
@@ -137,8 +137,8 @@ function AgendaSection() {
           {sessions.map((s, i) => (
             <li key={i} className={`vds-cf-row ${s.kind} ${s.featured ? 'featured' : ''}`}>
               <div className="vds-cf-time">
-                <span className="t mono">{s.time}</span>
-                {s.duration && <span className="d mono">{s.duration}</span>}
+                <span className="t via-num">{s.time}</span>
+                {s.duration && <span className="d via-num">{s.duration}</span>}
               </div>
 
               {s.kind === 'break' ? (
@@ -179,7 +179,7 @@ function AgendaSection() {
 
                   <footer>
                     <div className="vds-cf-speaker">
-                      <span className="avatar mono">{(s.speaker as string).split(' ').map(x => x[0]).slice(0, 2).join('')}</span>
+                      <span className="avatar">{(s.speaker as string).split(' ').map(x => x[0]).slice(0, 2).join('')}</span>
                       <div>
                         <strong>{s.speaker}</strong>
                         <em>{s.role}</em>

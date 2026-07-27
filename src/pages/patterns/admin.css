@@ -1890,23 +1890,19 @@
   }
 }
 
+/* a grade herda styles/data.css (.via-table) — aqui só o que é
+   específico da matriz: largura mínima, colunas e as células de marca */
 .vds-perm-table {
-  width: 100%;
   min-width: 720px;
-  border-collapse: collapse;
 }
 
+/* cabeçalho de papel tem 2 linhas (nome + contagem): mono, mais
+   apertado e alinhado embaixo */
 .vds-perm-table thead th {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--via-ink-3);
   padding: 16px 14px 12px;
-  text-align: left;
   background: var(--via-navy-02);
-  border-bottom: 1px solid var(--via-border-soft);
   vertical-align: bottom;
 }
 
@@ -1958,26 +1954,15 @@
 }
 
 .vds-perm-table tbody td {
-  padding: 14px 14px;
-  border-bottom: 1px solid var(--via-border-soft);
-  vertical-align: middle;
+  padding: 14px;
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
-  position: relative;
 }
 
 .vds-perm-table tbody td.vds-perm-cap {
   padding-left: 24px;
   font-weight: var(--via-fw-medium);
-}
-
-.vds-perm-table tbody tr:hover td {
-  background: var(--via-navy-02);
-}
-
-.vds-perm-table tbody tr:last-child td {
-  border-bottom: none;
 }
 
 .vds-perm-cell {

@@ -611,28 +611,11 @@
 /* ============================================
    Member list
    ============================================ */
+/* A tabela densa mora na moldura da camada de dados (.via-table-wrap) —
+   sem vidro atrás, que mata a leitura. O vidro fica só na toolbar/cards
+   ao redor. Este bloco é só o container do cabeçalho + moldura. */
 .vds-member-list {
   position: relative;
-  padding: 32px;
-  border-radius: var(--via-radius-lg);
-  border: 1px solid var(--via-border-soft);
-  background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  overflow: hidden;
-  isolation: isolate;
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
-}
-
-.vds-member-list::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.035), transparent 60%);
-  z-index: -1;
 }
 
 .vds-member-list header {
@@ -743,52 +726,12 @@
     var(--via-shadow-focus);
 }
 
-.vds-member-thead {
-  display: grid;
-  grid-template-columns: 2.4fr 1fr 1fr 1fr;
-  gap: var(--via-space-4);
-  padding: 12px 12px;
-  border-bottom: 1px solid var(--via-border-soft);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
-  color: var(--via-text-soft);
-  background: var(--via-navy-03);
-  border-radius: var(--via-radius-sm) var(--via-radius-sm) 0 0;
-  margin: 0 -12px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.vds-member-list ul {
-  list-style: none;
-  margin: 0 -12px;
-  padding: 0;
-}
-
-.vds-member-list li {
-  display: grid;
-  grid-template-columns: 2.4fr 1fr 1fr 1fr;
-  gap: var(--via-space-4);
-  padding: 14px 24px;
-  border-bottom: 1px solid var(--via-border-soft);
-  align-items: center;
-  position: relative;
-  transition: all 160ms ease;
-  border-radius: var(--via-radius-sm);
-}
-
-/* lista densa de membros = tabela de dados: sem vidro (mataria a leitura)
-   e sem barra lateral — só o realce de linha, mais presente que antes. */
-.vds-member-list li:hover {
-  background: var(--via-navy-05);
-  box-shadow: inset 0 0 0 1px var(--via-navy-12);
-}
-
-.vds-member-list li:last-child {
-  border-bottom: none;
-}
+/* Só a proporção das colunas é específica — cabeçalho, hairlines, hover,
+   densidade e número tabular vêm de .via-table (styles/data.css). */
+.vds-member-table thead th:nth-child(1) { width: 44%; }
+.vds-member-table thead th:nth-child(2) { width: 17%; }
+.vds-member-table thead th:nth-child(3) { width: 17%; }
+.vds-member-table thead th:nth-child(4) { width: 22%; }
 
 .vds-member-user {
   display: flex;
@@ -946,7 +889,6 @@
   font-size: var(--via-fs-label);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
-  font-feature-settings: 'tnum' 1;
   letter-spacing: -0.005em;
   width: fit-content;
 }

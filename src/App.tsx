@@ -165,6 +165,7 @@ const MentorMatching = lazy(() => import('./pages/patterns/MentorMatching'));
 const Changelog = lazy(() => import('./pages/patterns/Changelog'));
 const Insights = lazy(() => import('./pages/patterns/Insights'));
 const Fpa = lazy(() => import('./pages/patterns/Fpa'));
+const DataFoundation = lazy(() => import('./pages/foundations/Data'));
 const Roadmap = lazy(() => import('./pages/patterns/Roadmap'));
 const StatusPage = lazy(() => import('./pages/patterns/StatusPage'));
 const ConferenceAgenda = lazy(() => import('./pages/patterns/ConferenceAgenda'));
@@ -222,6 +223,7 @@ export default function App() {
                   <Route path="radii" element={<Radii />} />
                   <Route path="shadows" element={<Shadows />} />
                   <Route path="motion" element={<Motion />} />
+                  <Route path="dados" element={<DataFoundation />} />
                   <Route path="philosophy" element={<Philosophy />} />
                   <Route path="library" element={<Library />} />
                   <Route path="theming" element={<Theming />} />

@@ -45,17 +45,17 @@ function StatusOverviewSection() {
 
         <aside className="vds-st-overview-stats">
           <div>
-            <strong className="mono">99.96%</strong>
+            <strong className="via-num">99.96%</strong>
             <em>uptime · 30 dias</em>
           </div>
           <span className="vds-st-overview-sep" />
           <div>
-            <strong className="mono">22 dias</strong>
+            <strong className="via-num">22 dias</strong>
             <em>sem incidente</em>
           </div>
           <span className="vds-st-overview-sep" />
           <div>
-            <strong className="mono">142ms</strong>
+            <strong className="via-num">142ms</strong>
             <em>resposta média · API</em>
           </div>
         </aside>
@@ -99,7 +99,7 @@ function StatusServicesSection() {
           <div key={g.group} className="vds-st-group">
             <header className="vds-st-group-head">
               <h4>{g.group}</h4>
-              <span className="vds-st-group-count mono">{g.items.length} serviços</span>
+              <span className="vds-st-group-count via-num">{g.items.length} serviços</span>
             </header>
 
             <ul className="vds-st-list">
@@ -117,7 +117,7 @@ function StatusServicesSection() {
                           <span className={`vds-st-pill ${s.status}`}>
                             {s.status === 'ok' ? 'operacional' : s.status === 'degraded' ? 'degradado' : 'fora do ar'}
                           </span>
-                          <span className="mono">{s.uptime.toFixed(2)}%</span>
+                          <span className="via-num">{s.uptime.toFixed(2)}%</span>
                           <em>uptime · 90 dias</em>
                         </p>
                       </div>
@@ -206,7 +206,7 @@ function StatusIncidentsSection() {
               <article>
                 <header>
                   <div className="vds-st-inc-meta">
-                    <span className="vds-st-inc-date mono">{inc.date}</span>
+                    <span className="vds-st-inc-date via-mono">{inc.date}</span>
                     <span className={`vds-st-inc-sev ${inc.severity}`}>
                       {inc.severity === 'maintenance' ? 'Manutenção' : inc.severity === 'minor' ? 'Menor' : 'Maior'}
                     </span>
@@ -218,7 +218,7 @@ function StatusIncidentsSection() {
                 <ul className="vds-st-inc-updates">
                   {inc.updates.map((u, j) => (
                     <li key={j}>
-                      <span className="vds-st-inc-update-time mono">{u.time}</span>
+                      <span className="vds-st-inc-update-time via-mono">{u.time}</span>
                       <span className="vds-st-inc-update-text">{u.text}</span>
                     </li>
                   ))}

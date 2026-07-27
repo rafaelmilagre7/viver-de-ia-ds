@@ -204,14 +204,14 @@ function PermissionsMatrixSection() {
         </header>
 
         <div className="vds-perm-scroll">
-          <table className="vds-perm-table">
+          <table className="via-table vds-perm-table">
             <thead>
               <tr>
                 <th className="vds-perm-cap">Capacidade</th>
                 {roles.map((r, i) => (
                   <th key={r} className={`vds-perm-role ${i === 0 ? 'highlight' : ''}`}>
                     <span className="role-name">{r}</span>
-                    <span className="role-meta mono">{i === 0 ? '1 pessoa' : i === 1 ? '3 pessoas' : i === 2 ? '12 pessoas' : i === 3 ? '47 pessoas' : '218 pessoas'}</span>
+                    <span className="role-meta via-mono">{i === 0 ? '1 pessoa' : i === 1 ? '3 pessoas' : i === 2 ? '12 pessoas' : i === 3 ? '47 pessoas' : '218 pessoas'}</span>
                   </th>
                 ))}
               </tr>

@@ -336,6 +336,9 @@ No dark, esses valores viram os tokens equivalentes sozinhos se você usar `var(
 | `.via-meta-chip` | rótulo/meta NÃO-clicável (`--mono` pra número) |
 | `.via-bar-glass` | barra/chrome flutuante (nav sticky, toolbar) |
 
+**CAMADA DE DADOS — `tokens/data.css`** (importe junto). Faz qualquer `<table>` CRU nascer no padrao: `.via-table-wrap` (moldura+scroll) · `.via-table` (+`--sticky`/`--compact`/`--roomy`) · `.via-num` (numero tabular a DIREITA — a regra principal) · `.via-mono` · `.via-row-total` (peso+regua superior) · `.via-row-group` · `.via-cell-sub` (hierarquia por INDENTACAO) · `.via-delta--up/--down` (cor so semantica) · `.via-bar` · `.via-metric`/`.via-metric-grid` (**card de metrica — aqui o vidro entra**) · `.via-spark` · `.via-projected`.
+REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos cards de metrica ao redor. Hierarquia por indentacao+peso, nunca por cor de fundo. Sem zebra pesada, sem barra lateral.
+
 **Todo controle precisa dos 3 estados**: `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (`var(--via-shadow-focus)` + `outline:none`). Controle sem hover é design morto. Elemento decorativo (rótulo/badge não-clicável) NÃO leva hover.
 **Controle sobre navy/escuro:** não use vidro branco nem `var(--via-surface)` (no dark ele escurece e o botão some) — use `rgba(255,255,255,0.10)` + borda `0.20` (hover `.16`/`.34`), ou `var(--via-surface-onnavy)` com texto navy fixo.
 

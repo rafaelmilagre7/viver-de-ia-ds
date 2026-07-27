@@ -233,7 +233,7 @@ function BillingFlowDemo() {
         <div className="vds-billing-summary__total">
           <div className="vds-billing-summary__total-row">
             <span className="vds-billing-summary__total-lbl">Total hoje</span>
-            <span className="vds-billing-summary__total-val">R$ {planPrice.toLocaleString('pt-BR')}</span>
+            <span className="vds-billing-summary__total-val via-num">R$ {planPrice.toLocaleString('pt-BR')}</span>
           </div>
           <p className="vds-billing-summary__total-hint">
             {cycle === 'annual'
@@ -283,7 +283,7 @@ function PlanRadio({
       <div className="vds-billing-plan__copy">
         <div className="vds-billing-plan__row">
           <span className="vds-billing-plan__name">{name}</span>
-          <span className="vds-billing-plan__price">
+          <span className="vds-billing-plan__price via-num">
             {price}<em>{per}</em>
           </span>
         </div>
@@ -297,7 +297,7 @@ function ReviewLine({ label, value, emph = false }: { label: string; value: stri
   return (
     <div className={`vds-billing-review-line ${emph ? 'is-emph' : ''}`}>
       <span className="lbl">{label}</span>
-      <span className="val">{value}</span>
+      <span className="val via-num">{value}</span>
     </div>
   );
 }

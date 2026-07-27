@@ -17,7 +17,7 @@ export default function Table() {
             Linha por linha, <em>com peso e ritmo</em>.
           </>
         }
-        lede="Tabela com 8 tipos de cell coexistindo — avatar+role, status pill navy, currency mono, progress inline, trend chip, ID hash, date relativo, actions trailing. Header com atmospheric, row hover com bar lateral, selected state navy, batch toolbar quando há seleção, density modes."
+        lede="Tabela com 8 tipos de cell coexistindo — avatar+role, status pill navy, currency tabular, progress inline, trend chip, ID hash, date relativo, actions trailing. A grade herda a camada de dados (.via-table · .via-num · .via-delta): densidade, hairline e número tabular vêm de lá. Hover e seleção por tint chapado — sem barra lateral colorida. Batch toolbar quando há seleção, density modes."
       />
 
       <FullTableSection />
@@ -172,7 +172,7 @@ function FullTableSection() {
 
         {/* Table */}
         <div className="vds-tbl-scroll">
-          <table className="vds-tbl">
+          <table className="via-table vds-tbl">
             <thead>
               <tr>
                 <th className="check">
@@ -196,14 +196,14 @@ function FullTableSection() {
                 <th>
                   <span className="vds-tbl-th-label">Plano</span>
                 </th>
-                <th className="num">
+                <th className="num via-num">
                   <span className="vds-tbl-th-label">MRR</span>
                   <ArrowUpDown size={10} strokeWidth={2} className="sort" />
                 </th>
                 <th>
                   <span className="vds-tbl-th-label">Progresso</span>
                 </th>
-                <th className="num">
+                <th className="num via-num">
                   <span className="vds-tbl-th-label">Δ 30d</span>
                 </th>
                 <th>
@@ -237,7 +237,7 @@ function FullTableSection() {
                     </td>
 
                     {/* ID em mono */}
-                    <td className="mono">{r.id}</td>
+                    <td className="mono via-mono">{r.id}</td>
 
                     {/* Plan pill */}
                     <td>
@@ -245,7 +245,7 @@ function FullTableSection() {
                     </td>
 
                     {/* MRR currency */}
-                    <td className="currency">
+                    <td className="currency via-num">
                       <span className="cur">R$</span>
                       {r.mrr.toLocaleString('pt-BR')}
                     </td>
@@ -260,9 +260,9 @@ function FullTableSection() {
                       </div>
                     </td>
 
-                    {/* Delta com trend arrow */}
-                    <td className="num">
-                      <span className={`vds-tbl-delta ${r.delta > 0 ? 'up' : 'down'}`}>
+                    {/* Delta com trend arrow · cor pela camada de dados (semântica) */}
+                    <td className="num via-num">
+                      <span className={`via-delta vds-tbl-delta ${r.delta > 0 ? 'up via-delta--up' : 'down via-delta--down'}`}>
                         {r.delta > 0 ? <TrendingUp size={10} strokeWidth={2.4} /> : <TrendingDown size={10} strokeWidth={2.4} />}
                         {r.delta > 0 ? '+' : ''}{r.delta}%
                       </span>
@@ -341,7 +341,7 @@ function CompactTableSection() {
         </header>
 
         <div className="vds-tbl-scroll">
-          <table className="vds-tbl compact">
+          <table className="via-table via-table--compact vds-tbl compact">
             <thead>
               <tr>
                 <th>ID</th>
@@ -354,13 +354,13 @@ function CompactTableSection() {
             <tbody>
               {tasks.map((t) => (
                 <tr key={t.id}>
-                  <td className="mono">{t.id}</td>
+                  <td className="mono via-mono">{t.id}</td>
                   <td className="primary">{t.task}</td>
                   <td>{t.who}</td>
                   <td>
                     <span className={`vds-tbl-prio ${t.priority}`}>{t.priority}</span>
                   </td>
-                  <td className="mono">{t.due}</td>
+                  <td className="mono via-mono">{t.due}</td>
                 </tr>
               ))}
             </tbody>

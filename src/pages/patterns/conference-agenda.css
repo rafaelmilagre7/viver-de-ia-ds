@@ -213,13 +213,13 @@
   padding-top: 14px;
 }
 
+/* tabular vem de .via-num — aqui só a voz editorial do horário */
 .vds-cf-time .t {
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;
-  font-variant-numeric: tabular-nums;
 }
 
 .vds-cf-time .d {
