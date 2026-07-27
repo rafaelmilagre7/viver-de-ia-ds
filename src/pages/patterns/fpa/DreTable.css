@@ -1,0 +1,543 @@
+/* ==============================================================
+   VIVER DE IA · FP&A · DRE (P&L) orçado vs. realizado
+   --------------------------------------------------------------
+   Regras da casa aplicadas aqui:
+   · fundo CLARO como superfície de trabalho (nada de painel escuro)
+   · vidro só nos CARDS ao redor · a TABELA é superfície limpa
+   · hierarquia por INDENTAÇÃO + PESO, nunca por cor
+   · borda fina UNIFORME · zero barra lateral colorida
+   · coral = desfavorável · verde sóbrio = meta batida · resto navy
+   · número sempre tabular-nums, alinhado à direita
+   ============================================================== */
+
+.vds-fpa-dre {
+  position: relative;
+  padding: 32px 34px 26px;
+  border-radius: var(--via-radius-xl);
+  border: 1px solid var(--via-border-soft);
+  /* atmosfera navy direto no background (não em ::before) pra o vidro
+     dos cards ter algo atrás e realmente aparecer */
+  background:
+    radial-gradient(680px 320px at 0% 0%, rgba(30, 58, 95, 0.07), transparent 58%),
+    radial-gradient(520px 260px at 100% 4%, rgba(30, 58, 95, 0.05), transparent 60%),
+    var(--via-surface);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 24px 56px -28px var(--via-navy-18),
+    0 6px 16px -10px var(--via-navy-08);
+}
+
+/* Texto só pra leitor de tela */
+.vds-fpa-dre-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================
+   CABEÇALHO DA SEÇÃO
+   ============================================ */
+.vds-fpa-dre-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--via-space-8);
+  margin-bottom: var(--via-space-6);
+}
+
+.vds-fpa-dre-head-l { min-width: 0; }
+
+.vds-fpa-dre-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.vds-fpa-dre-title {
+  margin: 0 0 8px;
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h3);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+  color: var(--via-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.vds-fpa-dre-title-status {
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-muted);
+  letter-spacing: -0.012em;
+}
+
+.vds-fpa-dre-lede {
+  margin: 0;
+  max-width: 56ch;
+  font-size: var(--via-fs-caption);
+  line-height: 1.6;
+  letter-spacing: -0.006em;
+  color: var(--via-text-body);
+}
+
+.vds-fpa-dre-head-r {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.vds-fpa-dre-updated {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-micro);
+  letter-spacing: 0.02em;
+  color: var(--via-text-faint);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.vds-fpa-dre-periods {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-1_5);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* pill herda .via-pill-link (hover/active/focus-visible já vêm de lá) */
+.vds-fpa-dre-period {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   RESUMO EM VIDRO · o vidro fica FORA da tabela
+   ============================================ */
+.vds-fpa-dre-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--via-space-3);
+  margin-bottom: var(--via-space-5);
+}
+
+/* .via-tile traz a receita de vidro · aqui só o ajuste de densidade */
+.vds-fpa-dre-card {
+  padding: 18px 20px 16px;
+  border-radius: var(--via-radius-lg);
+}
+
+.vds-fpa-dre-card-lbl {
+  display: block;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.004em;
+  color: var(--via-text-muted);
+}
+
+.vds-fpa-dre-card-val {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin: 8px 0 12px;
+  line-height: 1;
+}
+.vds-fpa-dre-card-val .cur {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-muted);
+  letter-spacing: -0.012em;
+}
+.vds-fpa-dre-card-val .num {
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h2);
+  font-weight: var(--via-fw-medium);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  color: var(--via-text-primary);
+}
+
+.vds-fpa-dre-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  flex-wrap: wrap;
+}
+
+.vds-fpa-dre-card-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px 3px 7px;
+  border-radius: var(--via-radius-pill);
+  border: 1px solid var(--via-navy-08);
+  background: var(--via-glass-card);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.004em;
+  white-space: nowrap;
+  color: var(--via-text-primary);
+}
+.vds-fpa-dre-card-delta svg { flex-shrink: 0; opacity: 0.9; }
+.vds-fpa-dre-card-delta.is-goal { color: var(--via-success); border-color: rgba(31, 138, 91, 0.24); }
+.vds-fpa-dre-card-delta.is-bad  { color: var(--via-coral-dark); border-color: rgba(184, 92, 92, 0.22); }
+
+.vds-fpa-dre-card .via-meta-chip {
+  font-variant-numeric: tabular-nums;
+  color: var(--via-text-muted);
+}
+
+/* ============================================
+   TABELA · superfície LIMPA (sem vidro, sem zebra)
+   ============================================ */
+.vds-fpa-dre-scroll {
+  position: relative;
+  /* alto o bastante pro DRE inteiro caber; o cabeçalho sticky assume
+     assim que o plano de contas cresce ou a janela encurta */
+  max-height: 900px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-lg);
+  background: var(--via-surface);
+  box-shadow: 0 1px 3px -1px var(--via-navy-08);
+}
+.vds-fpa-dre-scroll:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
+}
+
+.vds-fpa-dre-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-variant-numeric: tabular-nums;
+}
+
+.vds-fpa-dre-col-acct { width: auto; min-width: 360px; }
+.vds-fpa-dre-col-num  { width: 132px; }
+.vds-fpa-dre-col-pct  { width: 104px; }
+.vds-fpa-dre-col-perf { width: 116px; }
+
+/* ---- cabeçalho de coluna sticky ---- */
+.vds-fpa-dre-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 13px 16px 11px;
+  background: var(--via-surface);
+  text-align: right;
+  white-space: nowrap;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+  box-shadow: inset 0 -1px 0 var(--via-navy-14);
+}
+.vds-fpa-dre-table thead th:first-child { text-align: left; }
+
+/* ---- corpo ---- */
+.vds-fpa-dre-table tbody th,
+.vds-fpa-dre-table tbody td {
+  padding: 10px 16px;
+  background: var(--via-surface);
+  border-bottom: 1px solid var(--via-border-hairline);
+  vertical-align: baseline;
+  transition: background-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-fpa-dre-table tbody tr:last-child > * { border-bottom: 0; }
+
+/* hover de linha · discreto, sem zebra pesada */
+.vds-fpa-dre-table tbody tr:hover > * { background: var(--via-navy-03); }
+
+/* ---- linha de sub-conta (hierarquia por indentação + peso) ----
+   Gutter da conta-mãe: 16 (padding) + 14 (chevron) + 6 + 20 (operador) + 6
+   = nome em 62px. A sub-conta entra 16px depois disso. */
+.vds-fpa-dre-row.is-line > * { font-weight: var(--via-fw-regular); }
+.vds-fpa-dre-row.is-line .vds-fpa-dre-acct { padding-left: 86px; }
+
+/* ---- linha de TOTAL de bloco ---- */
+.vds-fpa-dre-row.is-group > * {
+  background: var(--via-navy-02);
+  font-weight: var(--via-fw-semibold);
+}
+.vds-fpa-dre-table tbody tr.is-group:hover > * { background: var(--via-navy-05); }
+
+/* ---- linha de RESULTADO (= margem bruta, = EBITDA) ---- */
+.vds-fpa-dre-row.is-result > * {
+  background: var(--via-navy-05);
+  font-weight: var(--via-fw-semibold);
+  /* resultado pesa mais que total de bloco por TAMANHO + peso, nunca por cor */
+  font-size: var(--via-fs-sm);
+  border-top: 1px solid var(--via-navy-18);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.vds-fpa-dre-row.is-result .vds-fpa-dre-acct-note { font-size: var(--via-fs-micro); }
+/* evita linha dupla: quem vem antes de um resultado abre mão da borda inferior */
+.vds-fpa-dre-table tbody tr:has(+ tr.is-result) > * { border-bottom: 0; }
+.vds-fpa-dre-table tbody tr.is-result:hover > * { background: var(--via-navy-06); }
+
+/* ---- célula de conta ---- */
+.vds-fpa-dre-acct {
+  text-align: left;
+  font-weight: inherit;
+}
+/* trilho de leitura: [chevron][operador][nome] · alinha grupo e resultado */
+.vds-fpa-dre-acct-lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.vds-fpa-dre-acct-chev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.vds-fpa-dre-acct-prefix {
+  display: inline-block;
+  width: 20px;
+  flex-shrink: 0;
+  color: var(--via-text-muted);
+  font-weight: var(--via-fw-regular);
+  font-variant-numeric: tabular-nums;
+}
+.vds-fpa-dre-acct-name {
+  display: inline-block;
+  color: var(--via-text-primary);
+  letter-spacing: -0.008em;
+  font-weight: inherit;
+}
+.vds-fpa-dre-acct-note {
+  display: block;
+  margin-top: 3px;
+  margin-left: 46px;   /* alinha com o nome da conta, não com o chevron */
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-regular);
+  letter-spacing: 0.01em;
+  color: var(--via-text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* toggle de expandir/recolher sub-contas */
+.vds-fpa-dre-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: -3px 0 0 -8px;
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  border-radius: var(--via-radius-xs);
+  background: transparent;
+  color: var(--via-text-primary);
+  font: inherit;
+  font-weight: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-fpa-dre-toggle .vds-fpa-dre-acct-chev {
+  color: var(--via-text-muted);
+  transition: color var(--via-dur) var(--via-ease-snap);
+}
+.vds-fpa-dre-toggle:hover {
+  background: var(--via-navy-05);
+  border-color: var(--via-navy-10);
+}
+.vds-fpa-dre-toggle:hover .vds-fpa-dre-acct-chev { color: var(--via-text-primary); }
+.vds-fpa-dre-toggle:active { background: var(--via-navy-08); }
+.vds-fpa-dre-toggle:focus-visible {
+  outline: none;
+  border-color: var(--via-navy-25);
+  box-shadow: var(--via-shadow-focus);
+}
+
+/* ---- células numéricas ---- */
+.vds-fpa-dre-num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.006em;
+  color: var(--via-text-primary);
+}
+.vds-fpa-dre-num.is-plan { color: var(--via-text-muted); }
+.vds-fpa-dre-num.is-good,
+.vds-fpa-dre-num.is-flat { color: var(--via-text-primary); }
+.vds-fpa-dre-num.is-bad  { color: var(--via-coral-dark); }
+.vds-fpa-dre-num.is-goal { color: var(--via-success); }
+
+/* ---- micro-barra de desempenho ---- */
+.vds-fpa-dre-perf { text-align: right; }
+
+.vds-fpa-dre-bar {
+  position: relative;
+  display: block;
+  width: 76px;
+  height: 14px;
+  margin-left: auto;
+}
+.vds-fpa-dre-bar-track {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-08);
+  overflow: hidden;
+}
+.vds-fpa-dre-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--via-navy);
+  transition: width var(--via-t-slow);
+}
+/* marca do orçado (100%) · lê nos dois estados: hairline navy nas pontas
+   que sobram da trilha + um corte claro por dentro, sobre o preenchimento */
+.vds-fpa-dre-bar-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--via-surface);
+}
+.vds-fpa-dre-bar-tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--via-navy-30);
+}
+.vds-fpa-dre-bar.is-bad  .vds-fpa-dre-bar-fill { background: var(--via-coral); }
+.vds-fpa-dre-bar.is-goal .vds-fpa-dre-bar-fill { background: var(--via-success); }
+
+/* ============================================
+   RODAPÉ · legenda + leitura do período
+   ============================================ */
+.vds-fpa-dre-foot {
+  margin-top: var(--via-space-5);
+}
+
+.vds-fpa-dre-legend {
+  display: flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--via-space-3_5);
+}
+
+.vds-fpa-dre-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy);
+  flex-shrink: 0;
+}
+.vds-fpa-dre-dot.is-bad  { background: var(--via-coral); }
+.vds-fpa-dre-dot.is-goal { background: var(--via-success); }
+
+/* chip explicativo é frase, não rótulo · quebra em vez de estourar a caixa */
+.vds-fpa-dre-legend-note {
+  white-space: normal;
+  text-align: left;
+  line-height: 1.45;
+}
+
+.vds-fpa-dre-note {
+  margin: 0 0 10px;
+  padding: 14px 18px;
+  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-md);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  font-size: var(--via-fs-caption);
+  line-height: 1.6;
+  letter-spacing: -0.006em;
+  color: var(--via-text-body);
+  font-variant-numeric: tabular-nums;
+}
+.vds-fpa-dre-note strong {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+.vds-fpa-dre-source {
+  margin: 0;
+  font-size: var(--via-fs-micro);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  color: var(--via-text-faint);
+}
+
+/* ============================================
+   DARK · a superfície de trabalho segue clara na marca,
+   mas o DS tem tema escuro · verde precisa clarear pra ler
+   ============================================ */
+[data-theme="dark"] .vds-fpa-dre-num.is-goal,
+[data-theme="dark"] .vds-fpa-dre-card-delta.is-goal { color: #48BE8B; }
+[data-theme="dark"] .vds-fpa-dre-dot.is-goal,
+[data-theme="dark"] .vds-fpa-dre-bar.is-goal .vds-fpa-dre-bar-fill { background: #48BE8B; }
+[data-theme="dark"] .vds-fpa-dre-bar-fill { background: var(--via-chart-ink); }
+[data-theme="dark"] .vds-fpa-dre-bar.is-bad .vds-fpa-dre-bar-fill { background: #D98686; }
+[data-theme="dark"] .vds-fpa-dre-dot { background: var(--via-chart-ink); }
+[data-theme="dark"] .vds-fpa-dre-dot.is-bad { background: #D98686; }
+/* pill sólido é navy · sobre painel escuro o "selecionado" some · levanta o tom */
+[data-theme="dark"] .vds-fpa-dre-period.via-pill-link--solid {
+  background: linear-gradient(180deg, #2C4269, #1C2C49);
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+/* ============================================
+   RESPONSIVO
+   ============================================ */
+@media (max-width: 900px) {
+  .vds-fpa-dre { padding: 24px 20px 22px; }
+  .vds-fpa-dre-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--via-space-4);
+  }
+  .vds-fpa-dre-head-r { align-items: flex-start; }
+  .vds-fpa-dre-periods { justify-content: flex-start; }
+  .vds-fpa-dre-cards { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vds-fpa-dre-table tbody th,
+  .vds-fpa-dre-table tbody td,
+  .vds-fpa-dre-toggle,
+  .vds-fpa-dre-bar-fill {
+    transition: none;
+  }
+}

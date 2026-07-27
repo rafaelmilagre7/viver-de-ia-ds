@@ -1,0 +1,594 @@
+/* ==============================================================
+   VIVER DE IA · FP&A — Fluxo de caixa + projeção
+   --------------------------------------------------------------
+   Superfície de trabalho SEMPRE clara. Navy domina; coral só para
+   saída/desfavorável. Vidro nos cards (KPI, painel do gráfico);
+   a TABELA densa é superfície limpa com hairline entre linhas —
+   vidro sob número mata a leitura.
+   Borda fina e UNIFORME nos 4 lados. Nada de barra lateral colorida.
+   ============================================================== */
+
+.vds-fpa-cash {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-6);
+  font-family: var(--via-font);
+}
+
+/* ==============================================================
+   1 · Cabeçalho
+   ============================================================== */
+.vds-fpa-cash-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--via-space-8);
+  flex-wrap: wrap;
+}
+
+.vds-fpa-cash-head-l { min-width: 0; flex: 1 1 460px; }
+
+.vds-fpa-cash-eyebrow {
+  display: inline-block;
+  padding: 4px 11px;
+  margin-bottom: 12px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-glass-card);
+  border: 1px solid var(--via-navy-08);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--via-text-primary);
+}
+
+.vds-fpa-cash-head h3 {
+  margin: 0 0 10px;
+  font-family: var(--via-font-display);
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.026em;
+  line-height: 1.14;
+  color: var(--via-text-primary);
+}
+
+.vds-fpa-cash-lede {
+  margin: 0;
+  max-width: 62ch;
+  font-size: var(--via-fs-sm);
+  line-height: 1.6;
+  letter-spacing: -0.006em;
+  color: var(--via-text-body);
+}
+
+.vds-fpa-cash-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--via-space-2);
+  margin-top: 16px;
+}
+
+.vds-fpa-cash-action { flex-shrink: 0; }
+
+/* ==============================================================
+   2 · KPIs · cards em vidro (o vidro vive AQUI, não na tabela)
+   ============================================================== */
+.vds-fpa-cash-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--via-space-3_5);
+}
+
+.vds-fpa-cash-kpi {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 20px 20px 18px;
+  border-radius: var(--via-radius-lg);
+  background: var(--via-glass-card);
+  backdrop-filter: blur(20px) saturate(175%);
+  -webkit-backdrop-filter: blur(20px) saturate(175%);
+  border: 1px solid var(--via-border-soft);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 12px 28px -14px var(--via-navy-14),
+    0 2px 8px -5px var(--via-navy-06);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-fpa-cash-kpi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(280px 130px at 0% 0%, var(--via-navy-06), transparent 62%);
+}
+.vds-fpa-cash-kpi:hover {
+  transform: translateY(-2px);
+  border-color: var(--via-navy-16);
+  box-shadow: var(--via-glass-shadow-lift);
+}
+
+.vds-fpa-cash-kpi-lbl {
+  display: flex;
+  align-items: center;
+  gap: var(--via-space-1_5);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.002em;
+  color: var(--via-text-muted);
+}
+.vds-fpa-cash-kpi-lbl svg {
+  flex-shrink: 0;
+  color: var(--via-text-primary);
+  opacity: 0.72;
+}
+
+.vds-fpa-cash-kpi-val {
+  margin: 10px 0 10px;
+  font-family: var(--via-font-display);
+  font-size: clamp(21px, 2vw, 26px);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.028em;
+  line-height: 1;
+  color: var(--via-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.vds-fpa-cash-kpi-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-glass-card);
+  border: 1px solid var(--via-navy-08);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.002em;
+  font-variant-numeric: tabular-nums;
+  color: var(--via-text-body);
+}
+.vds-fpa-cash-kpi-tag.pos { color: var(--via-success); border-color: rgba(31, 138, 91, 0.22); }
+.vds-fpa-cash-kpi-tag.neg { color: var(--via-coral-dark); border-color: rgba(184, 92, 92, 0.24); }
+.vds-fpa-cash-kpi-tag.neutro { color: var(--via-text-muted); }
+
+.vds-fpa-cash-kpi-note {
+  margin: 12px 0 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--via-navy-06);
+  font-size: var(--via-fs-micro);
+  line-height: 1.5;
+  letter-spacing: -0.002em;
+  color: var(--via-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==============================================================
+   3 · Painel do gráfico
+   ============================================================== */
+.vds-fpa-cash-panel {
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: 26px 28px 22px;
+  border-radius: var(--via-radius-xl);
+  background: var(--via-glass-card);
+  backdrop-filter: blur(26px) saturate(190%);
+  -webkit-backdrop-filter: blur(26px) saturate(190%);
+  border: 1px solid var(--via-border-soft);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
+    0 28px 56px -28px var(--via-navy-20),
+    0 8px 20px -10px var(--via-navy-08);
+}
+.vds-fpa-cash-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(620px 300px at 0% 0%, rgba(30, 58, 95, 0.09), transparent 58%),
+    radial-gradient(420px 220px at 100% 100%, rgba(10, 31, 59, 0.05), transparent 62%);
+}
+
+.vds-fpa-cash-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--via-space-5);
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.vds-fpa-cash-panel-head h4 {
+  margin: 0 0 4px;
+  font-size: var(--via-fs-h4);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.016em;
+  color: var(--via-text-primary);
+}
+.vds-fpa-cash-panel-head p {
+  margin: 0;
+  max-width: 58ch;
+  font-size: var(--via-fs-xs);
+  line-height: 1.5;
+  letter-spacing: -0.004em;
+  color: var(--via-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Legenda */
+.vds-fpa-cash-legend {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--via-space-3_5);
+  padding: 8px 14px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-glass-card);
+  border: 1px solid var(--via-navy-08);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+}
+.vds-fpa-cash-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-1_5);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.002em;
+  color: var(--via-text-body);
+  white-space: nowrap;
+}
+
+.vds-fpa-cash-legend .sw,
+.vds-fpa-cash-tbl .sw {
+  display: inline-block;
+  font-style: normal;
+  flex-shrink: 0;
+}
+.vds-fpa-cash-legend .sw.in {
+  width: 9px; height: 13px; border-radius: 3px;
+  background: var(--via-chart-ink);
+  opacity: 0.75;
+}
+.vds-fpa-cash-legend .sw.out {
+  width: 9px; height: 13px; border-radius: 3px;
+  background: var(--via-coral);
+  opacity: 0.75;
+}
+.vds-fpa-cash-legend .sw.line {
+  width: 18px; height: 2px; border-radius: 2px;
+  background: var(--via-chart-ink);
+}
+.vds-fpa-cash-legend .sw.proj {
+  width: 18px; height: 0;
+  border-top: 2px dashed var(--via-chart-ink);
+  opacity: 0.7;
+}
+
+/* Plate do SVG — superfície limpa, o vidro é o painel em volta */
+.vds-fpa-cash-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--via-radius-md);
+  background: var(--via-glass-card-2);
+  border: 1px solid var(--via-border-soft);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 4px 14px -8px var(--via-navy-08);
+}
+
+/* Tipografia dentro do SVG */
+.vds-fpa-cash-axis {
+  font-family: var(--via-font);
+  font-size: 9.5px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  fill: var(--via-text-muted);
+}
+.vds-fpa-cash-axis-title {
+  font-family: var(--via-font);
+  font-size: 8.5px;
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  fill: var(--via-text-faint);
+}
+.vds-fpa-cash-mes {
+  font-family: var(--via-font);
+  font-size: 10.5px;
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0.01em;
+  fill: var(--via-text-body);
+}
+.vds-fpa-cash-mes.is-proj { fill: var(--via-text-faint); }
+.vds-fpa-cash-endlabel {
+  font-family: var(--via-font);
+  font-size: 10px;
+  font-weight: var(--via-fw-semibold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.004em;
+  fill: var(--via-text-primary);
+}
+
+/* Nota do gráfico */
+.vds-fpa-cash-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--via-space-2_5);
+  margin: 16px 0 0;
+  padding: 13px 16px;
+  border-radius: var(--via-radius-md);
+  background: var(--via-navy-03);
+  border: 1px solid var(--via-border-soft);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+}
+.vds-fpa-cash-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--via-text-primary);
+  opacity: 0.6;
+}
+.vds-fpa-cash-note p {
+  margin: 0;
+  font-size: var(--via-fs-caption);
+  line-height: 1.55;
+  letter-spacing: -0.004em;
+  color: var(--via-text-body);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==============================================================
+   4 · Tabela densa · SEM vidro. Superfície limpa + hairline.
+   ============================================================== */
+.vds-fpa-cash-tbl-panel {
+  background: var(--via-surface);
+  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-xl);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 10px 26px -18px var(--via-navy-14);
+  overflow: hidden;
+}
+
+.vds-fpa-cash-tbl-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--via-space-5);
+  flex-wrap: wrap;
+  padding: 20px 24px 17px;
+  border-bottom: 1px solid var(--via-navy-08);
+}
+.vds-fpa-cash-tbl-head h4 {
+  margin: 0 0 3px;
+  font-size: var(--via-fs-h4);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.016em;
+  color: var(--via-text-primary);
+}
+.vds-fpa-cash-tbl-head p {
+  margin: 0;
+  font-size: var(--via-fs-xs);
+  letter-spacing: -0.004em;
+  color: var(--via-text-muted);
+}
+
+.vds-fpa-cash-scroll { overflow-x: auto; }
+.vds-fpa-cash-scroll:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--via-navy-40);
+}
+
+.vds-fpa-cash-tbl {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  letter-spacing: -0.004em;
+}
+
+.vds-fpa-cash-tbl th,
+.vds-fpa-cash-tbl td {
+  padding: 11px 24px;
+  text-align: left;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+/* Coluna numérica: direita + tabular */
+.vds-fpa-cash-tbl .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.vds-fpa-cash-tbl thead th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: var(--via-navy-03);
+  border-bottom: 1px solid var(--via-navy-12);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+.vds-fpa-cash-tbl tbody th {
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
+}
+.vds-fpa-cash-tbl tbody td {
+  color: var(--via-text-body);
+}
+.vds-fpa-cash-tbl tbody tr {
+  border-bottom: 1px solid var(--via-navy-06);
+}
+
+/* Linha de abertura · o ponto de partida do encadeamento */
+.vds-fpa-cash-tbl tr.abertura th,
+.vds-fpa-cash-tbl tr.abertura td {
+  background: var(--via-navy-02);
+  color: var(--via-text-muted);
+}
+.vds-fpa-cash-tbl tr.abertura th { color: var(--via-text-body); }
+.vds-fpa-cash-tbl tr.abertura td.dash { color: var(--via-text-faint); }
+.vds-fpa-cash-tbl tr.abertura td.forte {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+/* Cabeçalho de grupo */
+.vds-fpa-cash-tbl tr.grp td {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  background: var(--via-navy-05);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+.vds-fpa-cash-tbl tr.grp .sw {
+  width: 16px;
+  height: 0;
+  margin-right: 9px;
+  vertical-align: middle;
+}
+.vds-fpa-cash-tbl tr.grp .sw.real { border-top: 2px solid var(--via-chart-ink); }
+.vds-fpa-cash-tbl tr.grp .sw.proj { border-top: 2px dashed var(--via-chart-ink); opacity: 0.7; }
+
+/* Meses projetados · tinta cheia (número não pode perder contraste),
+   fundo levemente marcado — a diferença é de superfície, não de legibilidade */
+.vds-fpa-cash-tbl tr.is-proj th,
+.vds-fpa-cash-tbl tr.is-proj td {
+  background: var(--via-navy-03);
+}
+
+/* Subtotais */
+.vds-fpa-cash-tbl tr.sub th,
+.vds-fpa-cash-tbl tr.sub td {
+  background: var(--via-navy-04);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+}
+.vds-fpa-cash-tbl tr.sub { border-bottom: 1px solid var(--via-navy-12); }
+
+/* Total do exercício */
+.vds-fpa-cash-tbl tfoot th,
+.vds-fpa-cash-tbl tfoot td {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background: var(--via-navy-06);
+  border-top: 1px solid var(--via-navy-16);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+}
+
+/* Negativo · a única entrada de coral na tabela */
+.vds-fpa-cash-tbl .neg { color: var(--via-coral-dark); }
+
+/* Hover só nas linhas de dado */
+.vds-fpa-cash-tbl tbody tr:not(.grp):not(.sub):not(.abertura):hover th,
+.vds-fpa-cash-tbl tbody tr:not(.grp):not(.sub):not(.abertura):hover td {
+  background: var(--via-navy-06);
+}
+
+/* ==============================================================
+   5 · Prova da conta · a reconciliação explícita
+   ============================================================== */
+.vds-fpa-cash-recon {
+  display: flex;
+  align-items: center;
+  gap: var(--via-space-3_5);
+  padding: 16px 20px;
+  border-radius: var(--via-radius-lg);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: 1px solid var(--via-border-soft);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -14px var(--via-navy-14);
+  scroll-margin-top: 96px;
+}
+.vds-fpa-cash-recon-icon {
+  flex-shrink: 0;
+  color: var(--via-text-primary);
+  opacity: 0.55;
+}
+
+.vds-fpa-cash-eq {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--via-space-2) var(--via-space-3_5);
+  min-width: 0;
+}
+.vds-fpa-cash-eq span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.vds-fpa-cash-eq em {
+  font-style: normal;
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--via-text-faint);
+}
+.vds-fpa-cash-eq b {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.012em;
+  color: var(--via-text-body);
+  white-space: nowrap;
+}
+.vds-fpa-cash-eq .res b { color: var(--via-text-primary); }
+.vds-fpa-cash-eq i {
+  font-style: normal;
+  font-size: var(--via-fs-body);
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-faint);
+  align-self: flex-end;
+  padding-bottom: 1px;
+}
+
+/* ==============================================================
+   6 · Responsivo
+   ============================================================== */
+@media (max-width: 1080px) {
+  .vds-fpa-cash-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .vds-fpa-cash-kpis { grid-template-columns: minmax(0, 1fr); }
+  .vds-fpa-cash-panel { padding: 22px 18px 18px; }
+  .vds-fpa-cash-tbl-head { padding: 18px 18px 15px; }
+  .vds-fpa-cash-tbl th,
+  .vds-fpa-cash-tbl td { padding-left: 18px; padding-right: 18px; }
+  .vds-fpa-cash-recon { align-items: flex-start; }
+}
+
+/* ==============================================================
+   7 · Acessibilidade de movimento
+   ============================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .vds-fpa-cash-kpi { transition: none; }
+  .vds-fpa-cash-kpi:hover { transform: none; }
+}

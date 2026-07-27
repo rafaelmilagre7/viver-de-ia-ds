@@ -1,0 +1,59 @@
+/* ==============================================================
+   FP&A · casca da página que reúne as 4 seções financeiras
+   Só espaçamento e cabeçalho — cada seção traz o próprio estilo.
+   ============================================================== */
+
+.vds-fpa-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-14, 72px);
+}
+
+.vds-fpa-page__head {
+  max-width: 780px;
+}
+.vds-fpa-page__head h1 {
+  font-family: var(--via-font-display);
+  font-size: clamp(34px, 4.4vw, 52px);
+  font-weight: var(--via-fw-medium);
+  line-height: 1.06;
+  letter-spacing: -0.032em;
+  color: var(--via-text-primary);
+  margin: 12px 0 0;
+}
+.vds-fpa-page__head h1 em {
+  font-style: normal;
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-muted);
+}
+.vds-fpa-page__lede {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-h4);
+  line-height: 1.55;
+  color: var(--via-text-body);
+  margin: 20px 0 0;
+  max-width: 660px;
+}
+
+.vds-fpa-page__block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-5, 20px);
+}
+
+/* Rótulo de seção · discreto, tipográfico (sem barra, sem cor) */
+.vds-fpa-page__label {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+  margin: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--via-border-soft);
+}
+
+@media (max-width: 720px) {
+  .vds-fpa-page { gap: 48px; }
+}

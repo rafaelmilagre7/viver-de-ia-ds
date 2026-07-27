@@ -148,6 +148,7 @@ export const navigation: NavGroup[] = [
       { label: 'Mentor matching (score radial + razões + alternativas)', to: '/patterns/mentor-matching' },
       { label: 'Changelog / release notes (versão + timeline)', to: '/patterns/changelog' },
       { label: 'Insights semanais (narrativa + delta + chart inline)', to: '/patterns/insights' },
+      { label: 'FP&A financeiro (DRE · caixa · runway · waterfall)', to: '/patterns/fpa' },
       { label: 'Roadmap público (kanban now · next · later)', to: '/patterns/roadmap' },
       { label: 'Status page (uptime bars + incidentes)', to: '/patterns/status' },
       { label: 'Conference agenda (Leaders AI · day × track)', to: '/patterns/conference-agenda' },

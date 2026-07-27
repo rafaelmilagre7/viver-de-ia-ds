@@ -164,6 +164,7 @@ const CoursePlayer = lazy(() => import('./pages/patterns/CoursePlayer'));
 const MentorMatching = lazy(() => import('./pages/patterns/MentorMatching'));
 const Changelog = lazy(() => import('./pages/patterns/Changelog'));
 const Insights = lazy(() => import('./pages/patterns/Insights'));
+const Fpa = lazy(() => import('./pages/patterns/Fpa'));
 const Roadmap = lazy(() => import('./pages/patterns/Roadmap'));
 const StatusPage = lazy(() => import('./pages/patterns/StatusPage'));
 const ConferenceAgenda = lazy(() => import('./pages/patterns/ConferenceAgenda'));
@@ -360,6 +361,7 @@ export default function App() {
                   <Route path="mentor-matching" element={<MentorMatching />} />
                   <Route path="changelog" element={<Changelog />} />
                   <Route path="insights" element={<Insights />} />
+                  <Route path="fpa" element={<Fpa />} />
                   <Route path="roadmap" element={<Roadmap />} />
                   <Route path="status" element={<StatusPage />} />
                   <Route path="conference-agenda" element={<ConferenceAgenda />} />

@@ -123,6 +123,7 @@ export const routes: Route[] = [
   { path: '/patterns/mentor-matching' },
   { path: '/patterns/changelog' },
   { path: '/patterns/insights' },
+  { path: '/patterns/fpa' },
   { path: '/patterns/roadmap' },
   { path: '/patterns/status' },
   { path: '/patterns/conference-agenda' },
