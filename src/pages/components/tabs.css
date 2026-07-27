@@ -32,6 +32,17 @@
 .via-seg-item:hover:not(.active) {
   color: var(--via-text-primary);
   background: var(--via-navy-04);
+  border-color: var(--via-navy-10);
+}
+
+/* press · o item afunda em vez de subir (vive dentro do trilho) */
+.via-seg-item:active {
+  transform: scale(0.97);
+}
+
+.via-seg-item:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 
 .via-seg-item.active {
@@ -41,6 +52,18 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
     0 4px 12px -3px rgba(10, 31, 59, 0.45);
+}
+
+.via-seg-item.active:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 6px 16px -3px rgba(10, 31, 59, 0.55);
+}
+
+.via-seg-item.active:focus-visible {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    var(--via-shadow-focus);
 }
 
 /* Underline tabs · classic editorial */
@@ -93,6 +116,23 @@
   color: var(--via-text-primary);
 }
 
+/* hover mostra o underline nascendo — a aba responde antes do clique */
+.via-ultab:hover:not(.active)::after {
+  left: 22%;
+  right: 22%;
+  background: linear-gradient(90deg, transparent, var(--via-navy-30) 50%, transparent);
+}
+
+.via-ultab:active:not(.active) {
+  transform: translateY(0.5px);
+}
+
+.via-ultab:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
+}
+
 .via-ultab .count {
   display: inline-flex;
   align-items: center;
@@ -108,6 +148,15 @@
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
   min-width: 18px;
+  transition:
+    background var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
+}
+
+.via-ultab:hover:not(.active) .count {
+  border-color: var(--via-navy-14);
+  color: var(--via-text-primary);
 }
 
 .via-ultab.active .count {

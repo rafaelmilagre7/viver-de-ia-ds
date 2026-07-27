@@ -192,6 +192,7 @@
     0 4px 10px -3px var(--via-navy-08);
 }
 .vds-2fa-method:hover::before { opacity: 0.7; }
+.vds-2fa-method:active { transform: translateY(0); }
 .vds-2fa-method:focus-visible {
   outline: none;
   border-color: var(--via-navy);

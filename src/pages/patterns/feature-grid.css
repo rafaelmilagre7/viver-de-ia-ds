@@ -14,9 +14,21 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3);
-  transition: var(--via-t);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
-.vds-feat:hover { border-color: var(--via-navy-40); box-shadow: var(--via-shadow-md); transform: translateY(-1px); }
+.vds-feat:hover {
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vds-feat { transition: none; }
+  .vds-feat:hover { transform: none; }
+}
 .vds-feat .ico {
   width: 36px; height: 36px;
   border-radius: var(--via-radius-sm);

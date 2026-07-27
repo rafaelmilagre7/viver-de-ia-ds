@@ -81,20 +81,42 @@
   width: 26px;
   height: 26px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-06);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-soft);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
 }
 
 .via-search .clear:hover {
-  background: var(--via-navy);
-  color: var(--via-white);
-  border-color: var(--via-navy);
+  transform: translateY(-1px);
+  color: var(--via-text-primary);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.via-search .clear:active { transform: translateY(0); }
+
+.via-search .clear:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .via-search ul {
@@ -103,18 +125,38 @@
   padding: 8px;
 }
 
+/* Linha de resultado · dentro do painel de vidro, então a linha não
+   ganha blur próprio (card em card) — ganha superfície + hairline no hover. */
 .via-search li {
   display: flex;
   align-items: center;
   gap: var(--via-space-3_5);
   padding: 11px 14px;
   border-radius: var(--via-radius-sm);
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .via-search li:hover {
-  background: var(--via-navy-04);
+  background: var(--via-glass-card-2);
+  border-color: var(--via-navy-12);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 4px 12px -8px var(--via-navy-22);
+}
+
+.via-search li:active { transform: translateY(0); }
+
+.via-search li:focus-visible {
+  outline: none;
+  background: var(--via-glass-card-2);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-shadow-focus);
 }
 
 .via-search li .kbd {

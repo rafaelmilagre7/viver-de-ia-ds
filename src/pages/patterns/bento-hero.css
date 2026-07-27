@@ -188,7 +188,23 @@
   letter-spacing: -0.005em;
   text-decoration: none;
   border: 1px solid;
-  transition: all 200ms ease;
+  cursor: pointer;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    background-color var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-bento-cta:active {
+  transform: translateY(0);
+}
+
+.vds-bento-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.45);
 }
 
 .vds-bento-cta.primary {
@@ -203,21 +219,28 @@
 
 .vds-bento-cta.primary:hover {
   transform: translateY(-1px);
+  border-color: var(--via-navy-30);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 8px 18px -4px rgba(10, 31, 59, 0.28);
+    0 10px 22px -6px rgba(10, 31, 59, 0.32);
 }
 
 .vds-bento-cta.ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.10);
   color: var(--via-white);
-  border-color: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-color: rgba(255, 255, 255, 0.20);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .vds-bento-cta.ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 20px -10px rgba(0, 0, 0, 0.45);
 }
 
 /* ---------- STAT TILE ---------- */
@@ -352,15 +375,9 @@
   justify-content: space-between;
 }
 
-.vds-bento-card.quote::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 32px;
-  bottom: 32px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--via-navy-deep), var(--via-navy));
-  border-radius: 0 2px 2px 0;
+/* sem barra lateral (banida na marca) — o anel do card já delimita */
+.vds-bento-card.quote {
+  border-color: var(--via-navy-14);
 }
 
 .vds-bento-quote-mark {
@@ -551,7 +568,11 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 6px 16px -6px rgba(0, 0, 0, 0.40),
     0 0 24px rgba(59, 107, 160, 0.20);
-  transition: all 220ms cubic-bezier(.16, 1, .3, 1);
+  cursor: pointer;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-bento-live-cta:hover {
@@ -560,6 +581,24 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 10px 22px -6px rgba(0, 0, 0, 0.50),
     0 0 36px rgba(59, 107, 160, 0.30);
+}
+
+.vds-bento-live-cta:active {
+  transform: translateY(0);
+}
+
+.vds-bento-live-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vds-bento-cta,
+  .vds-bento-live-cta { transition: none; }
+  .vds-bento-cta:hover,
+  .vds-bento-live-cta:hover { transform: none; }
 }
 
 /* ---------- NEXT (calendar) TILE ---------- */

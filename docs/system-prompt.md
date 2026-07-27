@@ -327,6 +327,18 @@ No dark, esses valores viram os tokens equivalentes sozinhos se você usar `var(
 
 **Borda de card = FINA e elegante.** `1px` (ou `0.5px`) solid `var(--via-border-soft)` (navy 0.08) + linha de luz interna (`inset 0 1px 0 rgba(255,255,255,.95)`). NUNCA `1.5–2px solid navy` num card ("caixa desenhada", pesado). Destaque/selecionado = fio fino + **halo navy** (`box-shadow: 0 0 0 3px rgba(10,31,59,0.08)`), não uma borda mais grossa. Borda `2px` só em: anel de avatar/foto (`2px solid #fff`), alça de slider, dot de status.
 
+**CAMADA DE ACABAMENTO — classes prontas (use em vez de estilizar na mão).** O kit traz `tokens/surfaces.css` (importe junto com `tokens.css`). Em HTML cru, essas classes já entregam vidro + cantos + os 3 estados:
+| classe | pra quê |
+|---|---|
+| `.via-pill-link` | link/ação em pill (`--solid` = ação principal · `--on-dark` = sobre navy) |
+| `.via-row-card` | linha de lista com corpo (timestamp, item de agenda, recurso) |
+| `.via-tile` | card/painel em vidro (`--atmos` radial navy · `--lift` hover) |
+| `.via-meta-chip` | rótulo/meta NÃO-clicável (`--mono` pra número) |
+| `.via-bar-glass` | barra/chrome flutuante (nav sticky, toolbar) |
+
+**Todo controle precisa dos 3 estados**: `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (`var(--via-shadow-focus)` + `outline:none`). Controle sem hover é design morto. Elemento decorativo (rótulo/badge não-clicável) NÃO leva hover.
+**Controle sobre navy/escuro:** não use vidro branco nem `var(--via-surface)` (no dark ele escurece e o botão some) — use `rgba(255,255,255,0.10)` + borda `0.20` (hover `.16`/`.34`), ou `var(--via-surface-onnavy)` com texto navy fixo.
+
 **PROIBIDO — barra/canto de cor em card** (`border-left: 2–4px solid navy/coral` em callout, do/don't, "comportamento vs evita"): estilo bootstrap/alert, tem CARA DE IA. Do/don't = card glass limpo igual aos outros, diferenciado por tipografia/ênfase (label, peso), NUNCA por uma barra colorida no canto.
 
 ## 7. Hover signatures (assinatura comportamental)

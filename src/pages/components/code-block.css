@@ -132,28 +132,83 @@
   gap: 5px;
   padding: 5px 10px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-08);
+  /* liquid glass · era pill chapado em navy-08 */
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
-  border: none;
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   font-family: inherit;
-  transition: background 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-code-copy:hover {
-  background: var(--via-navy-14);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
 }
 
+.vds-code-copy:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-code-copy:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
+
+/* sobre fundo escuro · vidro CLARO translúcido (glass branco sumiria) */
 .vds-code-copy.dark {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
   color: var(--via-white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .vds-code-copy.dark:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.vds-code-copy.dark:active {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.vds-code-copy.dark:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 0 3px rgba(255, 255, 255, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vds-code-copy,
+  .vds-terminal-max {
+    transition: none;
+  }
+  .vds-code-copy:hover,
+  .vds-terminal-max:hover {
+    transform: none;
+  }
 }
 
 /* Pre block */
@@ -377,7 +432,7 @@
 
 .vds-terminal-max {
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
   width: 22px;
@@ -386,12 +441,34 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--via-radius-xs);
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
 }
 
+/* terminal é sempre escuro · vidro CLARO translúcido */
 .vds-terminal-max:hover {
   color: var(--via-white);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.vds-terminal-max:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.vds-terminal-max:focus-visible {
+  outline: none;
+  color: var(--via-white);
+  border-color: rgba(255, 255, 255, 0.20);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.22);
 }
 
 .vds-terminal-body {

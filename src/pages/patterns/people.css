@@ -208,26 +208,67 @@
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
-  transition: all 180ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
+.vds-mentor-btn:focus-visible { outline: none; }
+
 .vds-mentor-btn.primary {
-  background: var(--via-navy);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 8px 18px -8px rgba(10, 31, 59, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 18px -8px var(--via-navy-40);
 }
 
 .vds-mentor-btn.primary:hover {
-  background: var(--via-navy-deep);
   transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 26px -10px var(--via-navy-60);
 }
 
-.vds-mentor-btn.ghost {
-  background: transparent;
-  border-color: var(--via-border);
-  color: var(--via-text-primary);
+.vds-mentor-btn.primary:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
 }
+
+/* Secundário em vidro · era transparente e sem hover nenhum */
+.vds-mentor-btn.ghost {
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border-color: var(--via-border-soft);
+  color: var(--via-text-primary);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-mentor-btn.ghost:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-mentor-btn.ghost:focus-visible {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
+
+/* :active depois das variantes pra vencer o :hover delas */
+.vds-mentor-btn:active,
+.vds-mentor-btn.primary:active,
+.vds-mentor-btn.ghost:active { transform: translateY(0); }
 
 .vds-mentor-quote {
   position: relative;
@@ -241,17 +282,7 @@
   isolation: isolate;
 }
 
-.vds-mentor-quote::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 3px;
-  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
-  border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 12px var(--via-navy-20);
-}
+/* a régua lateral navy saiu daqui — borda UNIFORME nos 4 lados é a regra */
 
 .vds-mentor-quote span {
   display: inline-flex;
@@ -515,18 +546,41 @@
   width: 26px;
   height: 26px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-04);
-  color: var(--via-text-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+  color: var(--via-text-body);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: all 140ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-team-actions a:not(.vds-team-profile):hover {
-  background: var(--via-navy);
-  color: var(--via-white);
+  transform: translateY(-1px);
+  color: var(--via-text-primary);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 6px 14px -8px var(--via-navy-22);
+}
+
+.vds-team-actions a:not(.vds-team-profile):active { transform: translateY(0); }
+
+.vds-team-actions a:not(.vds-team-profile):focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-team-actions-sep {
@@ -546,6 +600,12 @@
 
 .vds-team-profile:hover {
   background: var(--via-navy-05);
+  box-shadow: inset 0 0 0 1px var(--via-navy-12);
+}
+
+.vds-team-profile:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 
 /* ============================================
@@ -610,9 +670,25 @@
   gap: var(--via-space-2);
   padding: 8px 12px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-surface);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
   min-width: 200px;
+  transition:
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+
+/* o input interno tem outline:none — o anel de foco vive no container */
+.vds-member-search:hover { border-color: var(--via-navy-20); }
+
+.vds-member-search:focus-within {
+  border-color: var(--via-navy-30);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-member-search input {
@@ -631,13 +707,40 @@
   gap: var(--via-space-1_5);
   padding: 8px 14px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-06);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-member-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-member-btn:active { transform: translateY(0); }
+
+.vds-member-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-member-thead {
@@ -676,24 +779,11 @@
   border-radius: var(--via-radius-sm);
 }
 
-.vds-member-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: transparent;
-  border-radius: 0 2px 2px 0;
-  transition: background 200ms ease;
-}
-
+/* lista densa de membros = tabela de dados: sem vidro (mataria a leitura)
+   e sem barra lateral — só o realce de linha, mais presente que antes. */
 .vds-member-list li:hover {
-  background: var(--via-navy-03);
-}
-
-.vds-member-list li:hover::before {
-  background: var(--via-navy);
+  background: var(--via-navy-05);
+  box-shadow: inset 0 0 0 1px var(--via-navy-12);
 }
 
 .vds-member-list li:last-child {
@@ -1011,28 +1101,66 @@
   font-family: inherit;
   letter-spacing: -0.005em;
   flex: 1;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
+.vds-userpop-btn:focus-visible { outline: none; }
+
 .vds-userpop-btn.primary {
-  background: var(--via-navy);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 6px 14px -8px var(--via-navy-40);
 }
 
 .vds-userpop-btn.primary:hover {
-  background: var(--via-navy-deep);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 24px -10px var(--via-navy-60);
+}
+
+.vds-userpop-btn.primary:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
 }
 
 .vds-userpop-btn.ghost {
-  background: transparent;
-  border-color: var(--via-border);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border-color: var(--via-border-soft);
   color: var(--via-text-primary);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
 }
 
 .vds-userpop-btn.ghost:hover {
-  background: var(--via-navy-04);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
 }
+
+.vds-userpop-btn.ghost:focus-visible {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
+
+/* :active depois das variantes pra vencer o :hover delas */
+.vds-userpop-btn:active,
+.vds-userpop-btn.primary:active,
+.vds-userpop-btn.ghost:active { transform: translateY(0); }
 
 .vds-userpop-btn.full {
   flex: 1;

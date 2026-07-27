@@ -194,20 +194,40 @@
   width: 30px;
   height: 30px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-04);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-dp-nav:hover {
-  background: var(--via-navy);
-  border-color: var(--via-navy);
-  color: var(--via-white);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-dp-nav:active { transform: translateY(0); }
+
+.vds-dp-nav:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-dp-week {
@@ -309,19 +329,41 @@
 .vds-dp-presets-row button {
   padding: 8px 14px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy-04);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-dp-presets-row button:hover {
-  background: var(--via-navy-08);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-dp-presets-row button:active { transform: translateY(0); }
+
+.vds-dp-presets-row button:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-dp-presets-row button.active {
@@ -489,7 +531,9 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 6px 14px -4px var(--via-navy-40);
-  transition: all 180ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-dp-range-cta:hover {
@@ -497,6 +541,15 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 8px 18px -4px var(--via-navy-60);
+}
+
+.vds-dp-range-cta:active { transform: translateY(0); }
+
+.vds-dp-range-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--via-shadow-focus);
 }
 
 .vds-dp-cell:hover:not(.muted):not(.sel) {
@@ -552,19 +605,41 @@
   gap: var(--via-space-1_5);
   padding: 6px 12px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy-04);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
-  transition: all 140ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-dp-chip:hover {
-  background: var(--via-navy-10);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-dp-chip:active { transform: translateY(0); }
+
+.vds-dp-chip:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-dp-chip-dot {
@@ -585,10 +660,19 @@
   font-family: inherit;
   letter-spacing: -0.005em;
   padding: 6px 4px;
-  transition: color 140ms ease;
+  border-radius: var(--via-radius-xs);
+  transition:
+    color var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-dp-clear:hover { color: var(--via-text-primary); }
+.vds-dp-clear:active { color: var(--via-text-primary); }
+.vds-dp-clear:focus-visible {
+  outline: none;
+  color: var(--via-text-primary);
+  box-shadow: var(--via-shadow-focus);
+}
 
 /* ============================================
    Combobox · editorial
@@ -704,13 +788,29 @@
   gap: var(--via-space-3);
   padding: 10px 12px;
   border-radius: var(--via-radius-sm);
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: background 140ms ease;
+  transition:
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   align-items: center;
 }
 
+/* Opção vive dentro do popover de vidro — sem segundo blur */
 .vds-combobox-opt:hover {
-  background: var(--via-navy-04);
+  background: var(--via-glass-card-2);
+  border-color: var(--via-navy-12);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 4px 12px -8px var(--via-navy-22);
+}
+
+.vds-combobox-opt:focus-visible {
+  outline: none;
+  background: var(--via-glass-card-2);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-combobox-opt.on {
@@ -808,23 +908,37 @@
   border: 1px solid var(--via-navy-08);
 }
 
+/* Micro-controle DENTRO da tag — sem vidro próprio (evita camada em camada) */
 .vds-tag button {
   width: 18px;
   height: 18px;
   border-radius: 50%;
   background: var(--via-navy-16);
   color: var(--via-text-primary);
-  border: none;
+  border: 1px solid transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 140ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-tag button:hover {
   background: var(--via-navy);
+  border-color: var(--via-navy);
   color: var(--via-white);
+}
+
+.vds-tag button:active { transform: scale(0.92); }
+
+.vds-tag button:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-taginput input {
@@ -850,14 +964,36 @@
   gap: 5px;
   padding: 6px 12px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  border: none;
+  border: 1px solid var(--via-navy);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 4px 10px -4px var(--via-navy-40);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.01em;
   cursor: pointer;
   font-family: inherit;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-taginput-add:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 10px 22px -8px var(--via-navy-60);
+}
+
+.vds-taginput-add:active { transform: translateY(0); }
+
+.vds-taginput-add:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
 }
 
 .vds-taginput-suggestions {
@@ -893,22 +1029,44 @@
   gap: var(--via-space-1);
   padding: 6px 11px 6px 8px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-surface);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  /* tracejado = affordance de "adicionar"; espessura uniforme nos 4 lados */
   border: 1px dashed var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   letter-spacing: -0.005em;
-  transition: all 140ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-taginput-sugg:hover {
-  background: var(--via-navy);
-  color: var(--via-white);
-  border-color: var(--via-navy);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-40);
   border-style: solid;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-taginput-sugg:active { transform: translateY(0); }
+
+.vds-taginput-sugg:focus-visible {
+  outline: none;
+  border-style: solid;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-taginput-sugg svg {
@@ -1139,6 +1297,12 @@
 .vds-star:hover {
   transform: scale(1.15) rotate(-3deg);
 }
+.vds-star:active { transform: scale(0.96); }
+.vds-star:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
+}
 
 .vds-star.on {
   color: var(--via-text-primary);
@@ -1284,9 +1448,17 @@
 
 .vds-color-cell:hover {
   transform: translateY(-2px) scale(1.05);
+  border-color: var(--via-navy-20);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.2) inset,
     0 10px 20px -8px var(--via-navy-30);
+}
+.vds-color-cell:active { transform: translateY(0) scale(1); }
+.vds-color-cell:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    var(--via-shadow-focus);
 }
 
 .vds-color-cell.on {

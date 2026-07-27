@@ -664,7 +664,9 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--via-surface);
+  /* sobre canvas navy · superfície clara fixa (var(--via-surface) some no tema escuro) */
+  background: var(--via-surface-onnavy);
+  color: var(--via-navy);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1269,8 +1271,9 @@
   align-items: center;
   padding: 6px 12px;
   border-radius: 999px;
-  background: var(--via-surface);
-  color: var(--via-text-primary);
+  /* sobre banner navy · superfície clara fixa nos 2 temas */
+  background: var(--via-surface-onnavy);
+  color: var(--via-navy);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.005em;

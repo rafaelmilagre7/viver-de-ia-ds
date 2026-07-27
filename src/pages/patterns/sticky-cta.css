@@ -468,6 +468,21 @@
   border: 1px solid transparent;
 }
 .vds-sticky-btn.sm { padding: 7px 13px; font-size: var(--via-fs-xs); }
+.vds-sticky-btn:active { transform: translateY(0); }
+/* Barra navy/exit → anel claro · barra notify (vidro branco) → anel navy */
+.vds-sticky-bar.enroll .vds-sticky-btn:focus-visible,
+.vds-sticky-bar.exit .vds-sticky-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.34);
+}
+.vds-sticky-bar.notify .vds-sticky-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
 
 /* Primary em context navy: branco com texto navy */
 .vds-sticky-bar.enroll .vds-sticky-btn.primary,
@@ -540,18 +555,29 @@
   flex-shrink: 0;
 }
 .vds-sticky-close:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.34);
   color: var(--via-white);
+  transform: translateY(-1px);
+}
+.vds-sticky-close:active { transform: translateY(0); }
+.vds-sticky-close:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.34);
 }
 .vds-sticky-bar.notify .vds-sticky-close {
   border-color: var(--via-navy-12);
   color: var(--via-text-muted);
 }
 .vds-sticky-bar.notify .vds-sticky-close:hover {
-  background: var(--via-navy-04);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-22);
   color: var(--via-text-primary);
+}
+.vds-sticky-bar.notify .vds-sticky-close:focus-visible {
+  box-shadow: var(--via-shadow-focus);
 }
 
 /* Link inline · "Ver os termos" ----------------------------- */
@@ -570,7 +596,13 @@
 }
 .vds-sticky-link:hover {
   color: var(--via-white);
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.10);
+  transform: translateY(-1px);
+}
+.vds-sticky-link:active { transform: translateY(0); }
+.vds-sticky-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.34);
 }
 
 /* Responsive ------------------------------------------------- */

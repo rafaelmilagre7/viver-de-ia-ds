@@ -237,13 +237,28 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 4px 12px var(--via-navy-05);
   cursor: pointer;
-  transition: var(--via-t);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 .via-check:hover, .via-radio:hover {
   transform: translateY(-1px);
+  border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 6px 16px var(--via-navy-10);
+}
+.via-check:active, .via-radio:active { transform: translateY(0); }
+.via-check:focus-visible,
+.via-radio:focus-visible,
+.via-check:focus-within,
+.via-radio:focus-within {
+  outline: none;
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 .via-radio.on {
   border-color: var(--via-navy);

@@ -151,8 +151,15 @@
   letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 180ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap);
 }
+
+.via-nav-l button:active,
+.via-nav-d button:active { transform: translateY(0); }
 
 .via-nav-l button {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
@@ -170,6 +177,13 @@
     0 6px 14px -3px var(--via-navy-60);
 }
 
+.via-nav-l button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--via-shadow-focus);
+}
+
 .via-nav-d button {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
@@ -182,7 +196,28 @@
 
 .via-nav-d button:hover {
   transform: translateY(-1px);
+  border-color: var(--via-navy-25);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 6px 14px -3px var(--via-navy-25);
+}
+
+.via-nav-d button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 var(--via-edge-hi) inset,
+    0 0 0 3px rgba(255, 255, 255, 0.30);
+}
+
+/* Foco dos links da nav · anel visível em ambos os fundos */
+.via-nav-l a:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
+}
+
+.via-nav-d a:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.30);
 }

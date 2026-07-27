@@ -422,11 +422,21 @@
   color: var(--via-ink-2);
   text-decoration: none;
   letter-spacing: -0.006em;
-  transition: color .2s ease;
+  padding: 4px 8px;
+  border-radius: var(--via-radius-xs);
+  transition: color var(--via-dur) var(--via-ease-snap), gap var(--via-dur) var(--via-ease-snap), box-shadow var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-st-incidents-archive:hover {
   color: var(--via-text-primary);
+  gap: var(--via-space-2_5);
+}
+
+.vds-st-incidents-archive:active { gap: var(--via-space-1_5); }
+
+.vds-st-incidents-archive:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-st-inc-list {
@@ -495,20 +505,32 @@
   padding: 18px 22px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
-  transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease, background .26s ease;
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
   position: relative;
   overflow: hidden;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap);
 }
 
 /* Hover · elevação + atmosfera no próprio vidro (sem barra lateral) */
 .vds-st-inc article:hover {
-  transform: translateY(-2px);
-  border-color: var(--via-navy-14);
-  box-shadow: 0 12px 28px -16px var(--via-navy-18);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
   background:
     radial-gradient(320px 120px at 0% 0%, var(--via-navy-05), transparent 65%),
     var(--via-glass-card);
+}
+
+.vds-st-inc article:focus-within {
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
 }
 
 .vds-st-inc article header {

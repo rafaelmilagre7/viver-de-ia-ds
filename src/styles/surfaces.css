@@ -1,0 +1,216 @@
+/* ==============================================================
+   VIVER DE IA · CAMADA DE ACABAMENTO (surfaces & controls)
+   --------------------------------------------------------------
+   Classes utilitárias que entregam o padrão da marca em HTML CRU,
+   sem precisar importar componente React. Existe por 2 motivos:
+
+   1. As páginas/patterns têm muito elemento feito à mão (pill de
+      link, linha de lista, tile) que ficava chapado — sem vidro,
+      sem hover, sem estado de foco. Aqui isso vem pronto.
+   2. Ferramenta de IA (Lovable, v0, Cursor) gera HTML/CSS, não
+      importa React. Com estas classes no kit, o time herda o
+      acabamento mesmo fora do projeto React.
+
+   REGRAS DA CASA aplicadas aqui:
+   · borda fina UNIFORME nos 4 lados (nunca barra lateral colorida)
+   · liquid glass = superfície + blur + linha de luz no topo + sombra navy
+   · cantos pela escala de token (hierarquia pai > filho)
+   · todo controle responde: hover, active e focus-visible
+   · motion pelos tokens (--via-dur / --via-ease-*)
+   ============================================================== */
+
+/* ---------------------------------------------------------------
+   1. via-pill-link · link/ação em pill (Spotify, "ver case", tags
+      clicáveis). Substitui o pill chapado feito à mão.
+   --------------------------------------------------------------- */
+.via-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.004em;
+  color: var(--via-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+.via-pill-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+.via-pill-link:active { transform: translateY(0); }
+.via-pill-link:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
+/* Variante sólida · quando o pill É a ação principal */
+.via-pill-link--solid {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  border-color: var(--via-navy);
+  color: var(--via-white);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 18px -8px var(--via-navy-40);
+}
+.via-pill-link--solid:hover {
+  border-color: var(--via-navy);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 26px -10px var(--via-navy-60);
+}
+/* Sobre fundo navy/escuro · vidro claro translúcido */
+.via-pill-link--on-dark {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+  color: var(--via-white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+.via-pill-link--on-dark:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* ---------------------------------------------------------------
+   2. via-row-card · linha de lista com corpo (timestamps, itens de
+      agenda, recursos citados). Era o retângulo cinza chapado.
+   --------------------------------------------------------------- */
+.via-row-card {
+  position: relative;
+  padding: 16px 18px;
+  border-radius: var(--via-radius-md);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+.via-row-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
+}
+/* Quando a linha é clicável inteira */
+a.via-row-card,
+button.via-row-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.via-row-card:focus-visible {
+  outline: none;
+  box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
+}
+
+/* ---------------------------------------------------------------
+   3. via-tile · card/painel de conteúdo em vidro (destaque, stat,
+      bloco editorial). A receita completa, sem decorar.
+   --------------------------------------------------------------- */
+.via-tile {
+  position: relative;
+  padding: 24px 26px;
+  border-radius: var(--via-radius-lg);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  isolation: isolate;
+}
+/* Atmosfera radial navy — a assinatura da marca, sutil */
+.via-tile--atmos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+.via-tile--lift {
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap);
+}
+.via-tile--lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--via-glass-shadow-lift);
+}
+
+/* ---------------------------------------------------------------
+   4. via-meta-chip · rótulo/meta não-clicável (categoria, status,
+      timestamp). Discreto, sem virar botão falso.
+   --------------------------------------------------------------- */
+.via-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-04);
+  border: 0.5px solid var(--via-border-soft);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0.04em;
+  color: var(--via-text-body);
+  white-space: nowrap;
+}
+.via-meta-chip--mono {
+  font-family: var(--via-font-mono, var(--via-mono));
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+/* ---------------------------------------------------------------
+   5. via-bar-glass · barra/chrome flutuante (nav sticky, toolbar).
+      Translúcido DE VERDADE — o conteúdo desfoca por baixo.
+   --------------------------------------------------------------- */
+.via-bar-glass {
+  background: var(--via-glass-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  border-bottom: 0.5px solid var(--via-navy-12);
+}
+
+/* Respeita quem pediu menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .via-pill-link,
+  .via-row-card,
+  .via-tile--lift {
+    transition: none;
+  }
+  .via-pill-link:hover,
+  .via-row-card:hover,
+  .via-tile--lift:hover {
+    transform: none;
+  }
+}

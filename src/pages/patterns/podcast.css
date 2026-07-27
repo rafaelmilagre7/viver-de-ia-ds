@@ -24,16 +24,17 @@
     0 1px 4px var(--via-navy-04);
 }
 
+/* Antes era barra lateral · virou atmosfera radial no próprio vidro */
 .vds-pod::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 2px;
-  background: transparent;
-  border-radius: 0 2px 2px 0;
-  transition: background 200ms ease;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px 160px at 0% 0%, var(--via-navy-05), transparent 62%);
+  opacity: 0;
+  transition: opacity var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-pod:hover {
@@ -45,8 +46,7 @@
 }
 
 .vds-pod:hover::before {
-  background: linear-gradient(180deg, var(--via-navy), transparent 70%);
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 /* Episode number — editorial, peso real */
@@ -177,6 +177,15 @@
     0 12px 22px -6px rgba(10, 31, 59, 0.55);
 }
 
+.vds-pod .play:active { transform: scale(1); }
+
+.vds-pod .play:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--via-shadow-focus);
+}
+
 /* Playing state — accent + atmospheric */
 .vds-pod.playing {
   background:
@@ -190,8 +199,6 @@
 }
 
 .vds-pod.playing::before {
-  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
-  box-shadow: 0 0 12px var(--via-navy-20);
   opacity: 1;
 }
 

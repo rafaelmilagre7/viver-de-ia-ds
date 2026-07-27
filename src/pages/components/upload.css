@@ -12,18 +12,33 @@
   align-items: center;
   gap: var(--via-space-2_5);
   color: var(--via-text-primary);
-  transition: all 220ms ease;
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap);
   overflow: hidden;
   isolation: isolate;
 }
 
-.via-upload:hover {
+.via-upload:hover,
+.via-upload.dragover {
   border-color: var(--via-navy);
   background:
     radial-gradient(540px 220px at 50% 0%, rgba(10, 31, 59, 0.07), transparent 70%),
     var(--via-glass-card);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -16px var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
+}
+
+.via-upload:active { transform: translateY(0); }
+
+.via-upload:focus-visible {
+  outline: none;
+  border-color: var(--via-navy);
+  box-shadow: var(--via-shadow-focus);
 }
 
 .via-upload h3 {
@@ -60,7 +75,10 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 6px 14px -4px var(--via-navy-40);
-  transition: all 180ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .via-upload .cta:hover {
@@ -68,6 +86,15 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 8px 18px -4px var(--via-navy-60);
+}
+
+.via-upload .cta:active { transform: translateY(0); }
+
+.via-upload .cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--via-shadow-focus);
 }
 
 .via-upload-list {
@@ -85,32 +112,23 @@
   gap: var(--via-space-3_5);
   padding: 16px 18px;
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
-  transition: all 180ms ease;
+  box-shadow: var(--via-glass-shadow);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   position: relative;
   overflow: hidden;
 }
 
-.via-upload-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  background: transparent;
-  border-radius: 0 2px 2px 0;
-  transition: background 200ms ease;
-}
-
 .via-upload-list li:hover {
   border-color: var(--via-navy-20);
-  transform: translateX(2px);
-}
-
-.via-upload-list li:hover::before {
-  background: linear-gradient(180deg, var(--via-navy), transparent 70%);
+  transform: translateY(-1px);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 
 .via-upload-list .ico {
@@ -172,18 +190,40 @@
   width: 30px;
   height: 30px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-04);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-soft);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
 }
 
 .via-upload-list .x:hover {
-  background: var(--via-navy);
-  color: var(--via-white);
-  border-color: var(--via-navy);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  color: var(--via-text-primary);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.via-upload-list .x:active { transform: translateY(0); }
+
+.via-upload-list .x:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }

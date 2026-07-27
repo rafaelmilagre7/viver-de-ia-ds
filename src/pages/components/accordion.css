@@ -15,24 +15,8 @@
   position: relative;
 }
 
-.via-accordion .item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 18px;
-  bottom: 18px;
-  width: 2px;
-  background: transparent;
-  border-radius: 0 2px 2px 0;
-  transition: background 220ms ease;
-}
-
 .via-accordion .item:last-child {
   border-bottom: none;
-}
-
-.via-accordion .item.open::before {
-  background: linear-gradient(180deg, var(--via-chart-ink), transparent 80%);
 }
 
 .via-accordion .head {
@@ -46,12 +30,25 @@
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: background 180ms ease;
+  transition:
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap);
   font-family: inherit;
 }
 
 .via-accordion .head:hover {
   background: var(--via-navy-03);
+}
+
+/* pressionado · afunda em vez de levantar (linha full-width não flutua) */
+.via-accordion .head:active {
+  background: var(--via-navy-06);
+}
+
+/* foco por teclado · anel interno (o painel tem overflow: hidden) */
+.via-accordion .head:focus-visible {
+  outline: none;
+  box-shadow: inset var(--via-shadow-focus);
 }
 
 .via-accordion .item.open .head {
@@ -76,16 +73,26 @@
   width: 28px;
   height: 28px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-04);
-  border: 1px solid var(--via-border-soft);
+  /* liquid glass · deixou de ser retângulo cinza chapado */
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .via-accordion .head:hover .chev {
-  background: var(--via-navy-08);
+  border-color: var(--via-navy-20);
   color: var(--via-text-primary);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 6px 14px -8px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
 }
 
 .via-accordion .chev.rot {

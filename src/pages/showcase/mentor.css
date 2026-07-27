@@ -207,14 +207,24 @@
     0 0 52px rgba(59, 107, 160, 0.34);
 }
 
+.mtr-cta-primary:active { transform: translateY(0); }
+
+.mtr-cta-primary:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.34);
+}
+
+/* secundário sobre navy · vidro claro translúcido */
 .mtr-cta-ghost {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   padding: 13px 22px;
   border-radius: var(--via-radius-pill);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   color: var(--via-white);
@@ -223,10 +233,29 @@
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.006em;
-  transition: background 180ms ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap);
 }
 
-.mtr-cta-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+.mtr-cta-ghost:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.mtr-cta-ghost:active { transform: translateY(0); }
+
+.mtr-cta-ghost:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 0 3px rgba(255, 255, 255, 0.34);
+}
 
 /* Hero stats */
 .mtr-hero-stats {
@@ -333,11 +362,17 @@
   gap: var(--via-space-2);
 }
 
+/* rótulo de especialidade · vidro, sem hover (não é ação) */
 .mtr-tag {
   padding: 7px 14px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-surface);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
@@ -493,18 +528,42 @@
 .mtr-slot {
   padding: 11px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-bg-2);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-body);
   font-family: inherit;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.004em;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
-.mtr-slot:hover { border-color: var(--via-navy-25); }
+.mtr-slot:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.mtr-slot:active { transform: translateY(0); }
+
+.mtr-slot:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
 
 .mtr-slot.active {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
@@ -540,6 +599,15 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 14px 28px -6px var(--via-navy-60);
+}
+
+.mtr-schedule-cta:active { transform: translateY(0); }
+
+.mtr-schedule-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .mtr-schedule-meta {

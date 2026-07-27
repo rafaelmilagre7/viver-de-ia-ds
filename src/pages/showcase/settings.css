@@ -118,6 +118,7 @@
   color: var(--via-text-primary);
   transform: translateX(2px);
 }
+.vds-set-tab:active:not(.active) { transform: translateX(0); }
 .vds-set-tab.active {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
@@ -126,6 +127,11 @@
     inset 0 -1px 0 rgba(255,255,255,0.05),
     0 8px 22px -6px var(--via-navy-30),
     0 4px 12px -4px var(--via-navy-22);
+}
+.vds-set-tab:focus-visible,
+.vds-set-tab.active:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 /* atmosphere inside the active tab */
 .vds-set-tab.active::before {
@@ -318,6 +324,13 @@
     0 4px 12px var(--via-navy-30),
     0 2px 5px var(--via-navy-14);
 }
+.vds-set-avatar .cam:active { transform: scale(1); }
+.vds-set-avatar .cam:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
 .vds-set-avatar-row strong {
   display: block;
   font-family: var(--via-font);
@@ -457,6 +470,13 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 8px 18px -6px var(--via-navy-30),
     0 4px 10px -4px var(--via-navy-22);
+}
+.vds-set-action:active { transform: translateY(0); }
+.vds-set-action:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 /* Badge · glass pill */

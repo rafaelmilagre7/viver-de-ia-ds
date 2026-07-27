@@ -115,27 +115,84 @@
   text-decoration: none;
   letter-spacing: -0.005em;
   border: 1px solid;
-  transition: all 200ms ease;
+  cursor: pointer;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap);
 }
+
+.vds-hero-cta:active { transform: translateY(0); }
 
 .vds-hero-cta.primary {
   background: var(--via-surface);
   border-color: var(--via-white);
   color: var(--via-text-primary);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 6px 14px -6px rgba(0, 0, 0, 0.30);
 }
 
+.vds-hero-cta.primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 12px 26px -10px rgba(0, 0, 0, 0.40);
+}
+
+.vds-hero-cta.primary:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.40);
+}
+
+/* Sobre fundo navy · vidro CLARO translúcido (vidro branco sumiria) */
 .vds-hero-cta.ghost {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
   color: var(--via-white);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.vds-hero-cta.ghost:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.vds-hero-cta.ghost:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 0 3px rgba(255, 255, 255, 0.40);
 }
 
 .vds-hero-cta.dark {
-  background: var(--via-navy);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 6px 14px -6px var(--via-navy-40);
+}
+
+.vds-hero-cta.dark:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 26px -10px var(--via-navy-60);
+}
+
+.vds-hero-cta.dark:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
 }
 
 .vds-hero-mark {
@@ -437,6 +494,12 @@
 
 .vds-logowall-link:hover {
   gap: var(--via-space-2_5);
+}
+
+.vds-logowall-link:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
 }
 
 /* ============================================
@@ -862,33 +925,70 @@
   gap: var(--via-space-2);
   padding: 14px 20px;
   border-radius: var(--via-radius-md);
-  background: var(--via-navy-06);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   color: var(--via-text-primary);
-  border: 1px solid var(--via-navy-12);
+  border: var(--via-glass-ring);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
   font-family: inherit;
-  transition: all 180ms ease;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-comparison-cta:hover {
   background: var(--via-navy);
   color: var(--via-white);
   border-color: var(--via-navy);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 20px -10px var(--via-navy-40);
+}
+
+.vds-comparison-cta:active { transform: translateY(0); }
+
+.vds-comparison-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-comparison-cta.hero {
   background: var(--via-surface);
   color: var(--via-text-primary);
   border-color: var(--via-white);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 6px 14px -6px rgba(0, 0, 0, 0.30);
 }
 
 .vds-comparison-cta.hero:hover {
   background: var(--via-gray-50);
+  color: var(--via-text-primary);
+  border-color: var(--via-white);
   transform: translateY(-1px);
-  box-shadow: 0 8px 16px -6px rgba(255, 255, 255, 0.25);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 16px -6px rgba(255, 255, 255, 0.25);
+}
+
+.vds-comparison-cta.hero:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.40);
 }
 
 /* ============================================
@@ -902,16 +1002,28 @@
 }
 
 .vds-faq-item {
-  border: 1px solid var(--via-border-soft);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: var(--via-glass-shadow);
   overflow: hidden;
-  transition: all 180ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-faq-item:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 
 .vds-faq-item.open {
-  border-color: var(--via-navy-18);
-  box-shadow: 0 12px 28px -16px var(--via-navy-14);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 
 .vds-faq-q {
@@ -922,6 +1034,7 @@
   width: 100%;
   padding: 20px 22px;
   border: none;
+  border-radius: var(--via-radius-md);
   background: transparent;
   text-align: left;
   cursor: pointer;
@@ -931,6 +1044,12 @@
   color: var(--via-text-primary);
   letter-spacing: -0.01em;
   line-height: 1.4;
+  transition: box-shadow var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-faq-q:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-faq-chev {
@@ -951,4 +1070,20 @@
   line-height: 1.65;
   color: var(--via-text-soft);
   max-width: 640px;
+}
+
+/* Respeita quem pediu menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .vds-hero-cta,
+  .vds-comparison-cta,
+  .vds-faq-item,
+  .vds-process-step {
+    transition: none;
+  }
+  .vds-hero-cta:hover,
+  .vds-comparison-cta:hover,
+  .vds-faq-item:hover,
+  .vds-process-step:hover {
+    transform: none;
+  }
 }

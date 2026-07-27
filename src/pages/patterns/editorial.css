@@ -119,6 +119,11 @@
   transition: var(--via-t);
 }
 .vds-ed-nl-link-arrow:hover { gap: var(--via-space-2); border-color: var(--via-navy); }
+.vds-ed-nl-link-arrow:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
+}
 
 .vds-ed-nl-sign {
   margin: 8px 0 0 !important;
@@ -361,8 +366,16 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   text-decoration: none;
+  /* borda sempre presente (transparente) — hover não empurra o layout */
+  border-bottom: 0.5px solid transparent;
+  transition: border-color var(--via-dur) var(--via-ease-snap);
 }
-.vds-ed-blog-toc a:hover { border-bottom: 0.5px solid var(--via-navy-20); }
+.vds-ed-blog-toc a:hover { border-bottom-color: var(--via-navy-20); }
+.vds-ed-blog-toc a:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
+}
 
 .vds-ed-blog-share {
   display: flex;
@@ -376,15 +389,35 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: 0.5px solid var(--via-navy-12);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-sm);
   color: var(--via-text-primary);
   cursor: pointer;
-  transition: var(--via-t);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 .vds-ed-blog-share button:hover {
-  background: var(--via-navy-04);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+.vds-ed-blog-share button:active { transform: translateY(0); }
+.vds-ed-blog-share button:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 /* ---------- Podcast ---------- */
@@ -490,15 +523,38 @@
   align-items: center;
   gap: 5px;
   padding: 6px 12px;
-  background: var(--via-navy-04);
-  border: 0.5px solid var(--via-navy-12);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   color: var(--via-text-primary);
   text-decoration: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
-.vds-ed-podcast-where a:hover { background: var(--via-navy-08); }
+.vds-ed-podcast-where a:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+.vds-ed-podcast-where a:active { transform: translateY(0); }
+.vds-ed-podcast-where a:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
 
 .vds-ed-podcast section {
   margin-top: 22px;
@@ -526,8 +582,21 @@
   gap: var(--via-space-3_5);
   align-items: flex-start;
   padding: 12px 14px;
-  background: var(--via-gray-50);
-  border-radius: var(--via-radius-sm);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-ed-podcast-timestamps li:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 .vds-ed-podcast-timestamps .t {
   font-family: var(--via-mono);
@@ -568,8 +637,21 @@
   align-items: center;
   gap: var(--via-space-3);
   padding: 10px 14px;
-  background: var(--via-gray-50);
-  border-radius: var(--via-radius-sm);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-ed-podcast-resources li:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 .vds-ed-podcast-res-eyebrow {
   font-family: var(--via-font);
@@ -586,6 +668,13 @@
   color: var(--via-text-primary);
   text-decoration: none;
   border-bottom: 0.5px solid var(--via-navy-20);
+  transition: border-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-ed-podcast-resources a:hover { border-bottom-color: var(--via-navy); }
+.vds-ed-podcast-resources a:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
 }
 
 /* ---------- YouTube description ---------- */
@@ -661,7 +750,16 @@
   cursor: pointer;
   transition: var(--via-t);
 }
-.vds-ed-youtube-play:hover { background: rgba(0, 0, 0, 0.85); }
+.vds-ed-youtube-play:hover {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255, 255, 255, 0.34);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.vds-ed-youtube-play:active { transform: translate(-50%, -50%) scale(1); }
+.vds-ed-youtube-play:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.40);
+}
 
 .vds-ed-youtube-info h2 {
   font-family: var(--via-font);
@@ -688,16 +786,38 @@
   align-items: center;
   gap: 5px;
   padding: 6px 12px;
-  background: var(--via-navy-04);
-  border: 0.5px solid var(--via-navy-12);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   cursor: pointer;
-  transition: background 120ms ease;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
-.vds-ed-youtube-meta button:hover { background: var(--via-navy-08); }
+.vds-ed-youtube-meta button:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+.vds-ed-youtube-meta button:active { transform: translateY(0); }
+.vds-ed-youtube-meta button:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
 
 .vds-ed-youtube-desc p {
   font-family: var(--via-font);
@@ -733,6 +853,25 @@
   font-weight: var(--via-fw-medium);
   text-decoration: none;
   letter-spacing: -0.004em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    filter var(--via-dur) var(--via-ease-snap);
+}
+.vds-ed-youtube-subscribe:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 20px -10px rgba(0, 0, 0, 0.35);
+}
+.vds-ed-youtube-subscribe:active { transform: translateY(0); }
+.vds-ed-youtube-subscribe:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    var(--via-shadow-focus);
 }
 
 /* ---------- Tutorial ---------- */
@@ -851,8 +990,12 @@
   counter-increment: t-toc;
   position: relative;
   padding: 10px 14px 10px 44px;
-  background: var(--via-gray-50);
-  border-radius: var(--via-radius-sm);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text);
@@ -950,11 +1093,54 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 9px 18px;
-  background: var(--via-navy);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
+  border: 1px solid var(--via-navy);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 6px 14px -6px var(--via-navy-40);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-ed-tutorial > footer a:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 26px -10px var(--via-navy-60);
+}
+.vds-ed-tutorial > footer a:active { transform: translateY(0); }
+.vds-ed-tutorial > footer a:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
+}
+
+/* Respeita quem pediu menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .vds-ed-blog-share button,
+  .vds-ed-podcast-where a,
+  .vds-ed-podcast-timestamps li,
+  .vds-ed-podcast-resources li,
+  .vds-ed-youtube-meta button,
+  .vds-ed-youtube-subscribe,
+  .vds-ed-tutorial > footer a {
+    transition: none;
+  }
+  .vds-ed-blog-share button:hover,
+  .vds-ed-podcast-where a:hover,
+  .vds-ed-podcast-timestamps li:hover,
+  .vds-ed-podcast-resources li:hover,
+  .vds-ed-youtube-meta button:hover,
+  .vds-ed-youtube-subscribe:hover,
+  .vds-ed-tutorial > footer a:hover {
+    transform: none;
+  }
 }

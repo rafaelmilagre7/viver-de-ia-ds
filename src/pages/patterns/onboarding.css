@@ -168,36 +168,33 @@
   gap: var(--via-space-3_5);
   padding: 18px 20px;
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
+  box-shadow: var(--via-glass-shadow);
   cursor: pointer;
-  transition: all 200ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   position: relative;
   overflow: hidden;
 }
 
-.vds-ob .ob-opt::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 2px;
-  background: transparent;
-  border-radius: 0 2px 2px 0;
-  transition: background 240ms ease;
-}
+/* nota: a barrinha lateral navy saiu — a marca pede borda UNIFORME nos 4 lados */
 
 .vds-ob .ob-opt:hover {
   border-color: var(--via-navy-20);
-  background: var(--via-glass-card);
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px -8px rgba(10, 31, 59, 0.15);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 
-.vds-ob .ob-opt:hover::before {
-  background: linear-gradient(180deg, var(--via-navy), transparent 70%);
-  opacity: 0.5;
+.vds-ob .ob-opt:active { transform: translateY(0); }
+
+.vds-ob .ob-opt:focus-visible {
+  outline: none;
+  box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
 }
 
 .vds-ob .ob-opt.on {
@@ -205,12 +202,6 @@
   background:
     radial-gradient(420px 120px at 0% 0%, var(--via-navy-05), transparent 70%),
     linear-gradient(180deg, var(--via-navy-03), rgba(255, 255, 255, 0.8));
-}
-
-.vds-ob .ob-opt.on::before {
-  background: linear-gradient(180deg, var(--via-navy), var(--via-blue));
-  opacity: 1;
-  box-shadow: 0 0 10px var(--via-navy-20);
 }
 
 .vds-ob .ob-opt .box {
@@ -275,8 +266,13 @@
   letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 200ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
+
+.vds-ob .btn:focus-visible { outline: none; }
 
 .vds-ob .btn.primary {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
@@ -284,26 +280,54 @@
   color: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 6px 14px -4px var(--via-navy-40);
+    0 8px 18px -8px var(--via-navy-40);
 }
 
 .vds-ob .btn.primary:hover {
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -4px var(--via-navy-60);
+    0 12px 26px -10px var(--via-navy-60);
 }
 
+.vds-ob .btn.primary:focus-visible {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--via-shadow-focus);
+}
+
+/* Secundário em vidro · era transparente, sem corpo */
 .vds-ob .btn.ghost {
-  background: transparent;
-  color: var(--via-text-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  color: var(--via-text-body);
   border-color: var(--via-border-soft);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
 }
 
 .vds-ob .btn.ghost:hover {
-  background: var(--via-navy-04);
+  transform: translateY(-1px);
   color: var(--via-text-primary);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
 }
+
+.vds-ob .btn.ghost:focus-visible {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
+
+/* :active depois das variantes pra vencer o :hover delas */
+.vds-ob .btn:active,
+.vds-ob .btn.primary:active,
+.vds-ob .btn.ghost:active { transform: translateY(0); }
 
 .vds-ob .ob-skip {
   margin: 24px 0 0;
@@ -326,6 +350,12 @@
 
 .vds-ob .ob-skip a:hover {
   border-bottom-color: var(--via-navy);
+}
+
+.vds-ob .ob-skip a:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
 }
 
 /* ============================================
@@ -640,23 +670,31 @@
   align-items: center;
   padding: 14px 16px;
   border-radius: var(--via-radius-md);
-  background: var(--via-surface);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
   cursor: pointer;
-  transition: background .22s ease, border-color .22s ease, transform .22s ease, box-shadow .22s ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   isolation: isolate;
   overflow: hidden;
 }
 
 .vds-wiz-opt:hover {
-  background: var(--via-surface);
-  border-color: var(--via-navy-18);
+  border-color: var(--via-navy-20);
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px -10px var(--via-navy-14);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 
-.vds-wiz-opt:hover .vds-wiz-opt-bar {
-  opacity: 1;
+.vds-wiz-opt:active { transform: translateY(0); }
+
+.vds-wiz-opt:focus-visible {
+  outline: none;
+  box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
 }
 
 .vds-wiz-opt.on {
@@ -664,20 +702,10 @@
   border-color: var(--via-navy-22);
 }
 
-.vds-wiz-opt.on .vds-wiz-opt-bar {
-  opacity: 1;
-}
-
+/* barra lateral navy aposentada · a marca pede borda UNIFORME nos 4 lados.
+   O <span> continua no markup, então é o CSS que o tira de cena. */
 .vds-wiz-opt-bar {
-  position: absolute;
-  left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
-  opacity: 0;
-  transition: opacity .22s ease;
+  display: none;
 }
 
 .vds-wiz-opt-check {
@@ -796,36 +824,77 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
-  border: 1px solid var(--via-border);
+  border: var(--via-glass-ring);
   color: var(--via-text-primary);
-  background: var(--via-surface);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   cursor: pointer;
-  transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
+.vds-wiz-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-wiz-btn:active { transform: translateY(0); }
+
+.vds-wiz-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
+
+/* Voltar/pular · vidro mais discreto, mas ainda com corpo */
 .vds-wiz-btn.ghost {
-  background: transparent;
+  background: var(--via-glass-card-2);
   border-color: transparent;
-  color: var(--via-ink-2);
+  color: var(--via-text-body);
+  box-shadow: none;
 }
 
 .vds-wiz-btn.ghost:hover {
   color: var(--via-text-primary);
-  background: var(--via-navy-04);
+  border-color: var(--via-border-soft);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 6px 16px -10px var(--via-navy-22);
 }
 
 .vds-wiz-btn.primary {
-  background: var(--via-navy);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
   padding-right: 22px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 18px -8px var(--via-navy-40);
 }
 
 .vds-wiz-btn.primary:hover {
-  background: var(--via-navy-deep);
   border-color: var(--via-navy-deep);
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px -10px rgba(10, 31, 59, 0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 26px -10px var(--via-navy-60);
+}
+
+.vds-wiz-btn.primary:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
 }
 
 .vds-wiz-skip {
@@ -844,4 +913,10 @@
 
 .vds-wiz-skip a:hover {
   border-bottom-color: var(--via-navy);
+}
+
+.vds-wiz-skip a:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
 }

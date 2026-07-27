@@ -202,7 +202,11 @@
   letter-spacing: -0.008em;
   cursor: pointer;
   box-shadow: 0 8px 18px -6px rgba(10, 31, 59, 0.42);
-  transition: filter .2s ease, transform .2s ease, box-shadow .22s ease;
+  transition:
+    filter var(--via-dur) var(--via-ease-snap),
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   margin-bottom: 16px;
 }
 
@@ -210,6 +214,19 @@
   filter: brightness(1.08);
   transform: translateY(-1px);
   box-shadow: 0 12px 24px -8px var(--via-navy-30);
+}
+
+.vds-auth-cta:active {
+  transform: translateY(0);
+  filter: none;
+}
+
+/* halo de 2 camadas · legível tanto no card claro quanto no context navy */
+.vds-auth-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.90),
+    0 0 0 4px var(--via-navy-60);
 }
 
 .vds-auth-cta.ghost {
@@ -267,6 +284,13 @@
 
 .vds-auth-foot-link a:hover {
   border-bottom-color: var(--via-accent);
+}
+
+.vds-auth-foot-link a:focus-visible,
+.vds-auth-terms a:focus-visible {
+  outline: none;
+  border-radius: 2px;
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-auth-foot-link.navy a:hover {
@@ -420,6 +444,12 @@
   color: var(--via-accent);
 }
 
+.vds-auth-2fa-actions a:focus-visible {
+  outline: none;
+  border-radius: 2px;
+  box-shadow: var(--via-shadow-focus);
+}
+
 /* 2FA inputs */
 .vds-auth-2fa-inputs {
   display: flex;
@@ -514,6 +544,16 @@
   border-color: transparent;
 }
 
+/* checkbox é visualmente escondido · o foco vive no quadradinho */
+.vds-auth-2fa-trust input:focus-visible + .vds-auth-2fa-trust-check {
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+.vds-auth-2fa-trust:hover .vds-auth-2fa-trust-check {
+  border-color: rgba(255, 255, 255, 0.42);
+}
+
 .vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check::after {
   content: '';
   width: 8px;
@@ -547,8 +587,13 @@
   align-items: center;
   padding: 12px 16px;
   border-radius: var(--via-radius-md);
-  background: var(--via-surface);
-  border: 1px solid var(--via-border);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: var(--via-fs-caption);
@@ -556,13 +601,30 @@
   letter-spacing: -0.006em;
   cursor: pointer;
   text-align: left;
-  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-auth-social-btn:hover {
-  background: var(--via-surface);
-  border-color: var(--via-navy-22);
   transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-auth-social-btn:active {
+  transform: translateY(0);
+}
+
+.vds-auth-social-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-auth-social-icon {

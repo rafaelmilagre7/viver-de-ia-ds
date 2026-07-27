@@ -136,6 +136,16 @@
 .vds-lesson-video .vid-play-big:hover {
   transform: translate(-50%, -50%) scale(1.05);
   background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.vds-lesson-video .vid-play-big:active { transform: translate(-50%, -50%) scale(1); }
+
+.vds-lesson-video .vid-play-big:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 0 0 3px rgba(255, 255, 255, 0.45);
 }
 
 .vds-lesson-video .vid-play-big .ring {
@@ -213,16 +223,37 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 160ms ease;
+  border: 1px solid transparent;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-lesson-video .vid-ctrl:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.vds-lesson-video .vid-ctrl:active { transform: scale(0.94); }
+
+.vds-lesson-video .vid-ctrl:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.40);
 }
 
 .vds-lesson-video .vid-ctrl.play {
-  background: var(--via-surface);
-  color: var(--via-text-primary);
+  background: var(--via-surface-onnavy, var(--via-white));
+  border-color: var(--via-edge-hi);
+  color: var(--via-navy);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+}
+
+.vds-lesson-video .vid-ctrl.play:hover {
+  background: var(--via-white);
+  border-color: var(--via-edge-hi);
 }
 
 .vds-lesson-video .vid-time {
@@ -239,12 +270,36 @@
   font-weight: var(--via-fw-semibold);
   padding: 5px 10px;
   border-radius: var(--via-radius-sm);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color: var(--via-white);
   cursor: pointer;
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-lesson-video .vid-quality:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.vds-lesson-video .vid-quality:active { transform: translateY(0); }
+
+.vds-lesson-video .vid-quality:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 0 3px rgba(255, 255, 255, 0.35);
 }
 
 .vds-lesson-video .vid-watermark {
@@ -321,20 +376,40 @@
   gap: var(--via-space-1_5);
   padding: 8px 14px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy-06);
-  border: 1px solid var(--via-navy-10);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   white-space: nowrap;
 }
 
 .vds-lesson-mark:hover {
-  background: var(--via-navy);
-  color: var(--via-white);
-  border-color: var(--via-navy);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-lesson-mark:active { transform: translateY(0); }
+
+.vds-lesson-mark:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-lesson-desc {
@@ -423,14 +498,41 @@
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
-  transition: all 160ms ease;
+  border: 1px solid transparent;
+  transition:
+    color var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   font-family: inherit;
 }
 
-.vds-lesson-tab.on {
-  background: var(--via-surface);
+.vds-lesson-tab:hover {
   color: var(--via-text-primary);
-  box-shadow: 0 1px 4px var(--via-navy-08);
+  border-color: var(--via-border-soft);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+}
+
+.vds-lesson-tab:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
+}
+
+.vds-lesson-tab.on {
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border-color: var(--via-border-soft);
+  color: var(--via-text-primary);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-lesson-tab.on:hover {
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 6px 16px -10px var(--via-navy-22);
 }
 
 .vds-lesson-panel {
@@ -493,55 +595,79 @@
   gap: var(--via-space-2_5);
   padding: 10px;
   border-radius: var(--via-radius-sm);
-  transition: background 160ms ease;
+  background: var(--via-glass-card-2);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: 1px solid var(--via-border-soft);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-transcript li:hover {
-  background: var(--via-navy-03);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 18px -12px var(--via-navy-22);
 }
 
+/* a régua lateral saiu · a marca pede borda UNIFORME nos 4 lados */
 .vds-transcript li.on {
   background:
     radial-gradient(220px 100px at 0% 0%, rgba(10, 31, 59, 0.07), transparent 70%),
     linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
-  border: 1px solid var(--via-navy-14);
+  border-color: var(--via-navy-22);
   position: relative;
-  box-shadow: 0 4px 12px -6px var(--via-navy-12);
-}
-
-.vds-transcript li.on::before {
-  content: '';
-  position: absolute;
-  left: -1px;
-  top: 8px;
-  bottom: 8px;
-  width: 3px;
-  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
-  border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 8px var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 4px 12px -6px var(--via-navy-12);
 }
 
 .vds-transcript .ts {
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  color: var(--via-text-soft);
-  background: var(--via-navy-05);
-  border: 1px solid var(--via-navy-08);
+  color: var(--via-text-body);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-xs);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   padding: 3px 7px;
   cursor: pointer;
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
   align-self: flex-start;
   margin-top: 1px;
-  transition: all 140ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-transcript .ts:hover {
-  background: var(--via-navy);
-  color: var(--via-white);
-  border-color: var(--via-navy);
+  transform: translateY(-1px);
+  color: var(--via-text-primary);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 6px 14px -8px var(--via-navy-22);
+}
+
+.vds-transcript .ts:active { transform: translateY(0); }
+
+.vds-transcript .ts:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-transcript li.on .ts {
@@ -609,7 +735,18 @@
 
 .vds-notes-save:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px -4px var(--via-navy-60);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 26px -10px var(--via-navy-60);
+}
+
+.vds-notes-save:active { transform: translateY(0); }
+
+.vds-notes-save:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
 }
 
 .vds-notes-eyebrow {
@@ -699,32 +836,23 @@
   padding: 14px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
-  transition: all 180ms ease;
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   position: relative;
   overflow: hidden;
 }
 
-.vds-material li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: transparent;
-  border-radius: 0 2px 2px 0;
-  transition: background 200ms ease;
-}
-
+/* sem barrinha lateral · borda UNIFORME nos 4 lados */
 .vds-material li:hover {
-  border-color: var(--via-navy-18);
-  transform: translateX(2px);
-  box-shadow: 0 6px 14px -8px rgba(10, 31, 59, 0.15);
-}
-
-.vds-material li:hover::before {
-  background: linear-gradient(180deg, var(--via-navy), transparent);
+  border-color: var(--via-navy-20);
+  transform: translateY(-1px);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 
 .vds-material-icon {
@@ -767,22 +895,39 @@
   width: 30px;
   height: 30px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-08);
-  border: 1px solid var(--via-navy-10);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 180ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-material-dl:hover {
-  background: var(--via-navy);
-  border-color: var(--via-navy);
-  color: var(--via-white);
+  border-color: var(--via-navy-20);
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px -3px var(--via-navy-40);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 18px -10px var(--via-navy-22);
+}
+
+.vds-material-dl:active { transform: translateY(0); }
+
+.vds-material-dl:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 /* Discussion — editorial thread */
@@ -904,6 +1049,12 @@
   text-decoration: underline;
 }
 
+.vds-disc-actions button:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
+}
+
 /* ============================================
    Quiz inline
    ============================================ */
@@ -958,18 +1109,32 @@
   width: 100%;
   padding: 16px 18px;
   border-radius: var(--via-radius-md);
-  border: 1px solid var(--via-border-soft);
-  background: var(--via-navy-02);
+  border: var(--via-glass-ring);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow: var(--via-glass-shadow);
   text-align: left;
   cursor: pointer;
-  transition: all 180ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   font-family: inherit;
   color: inherit;
 }
 
 .vds-quiz-option:hover:not(:disabled) {
-  background: var(--via-navy-05);
-  border-color: var(--via-navy-18);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow-lift);
+}
+
+.vds-quiz-option:active:not(:disabled) { transform: translateY(0); }
+
+.vds-quiz-option:focus-visible {
+  outline: none;
+  box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
 }
 
 .vds-quiz-option:disabled {
@@ -1047,7 +1212,7 @@
 .vds-quiz-feedback {
   font-size: var(--via-fs-caption);
   line-height: 1.55;
-  padding: 14px 18px 14px 22px;
+  padding: 14px 18px;
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-navy-03);
@@ -1055,15 +1220,7 @@
   overflow: hidden;
 }
 
-.vds-quiz-feedback::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
-}
+/* a régua lateral saiu · quem comunica o resultado é a borda inteira + o texto */
 
 .vds-quiz-feedback.ok {
   background:
@@ -1073,19 +1230,10 @@
   color: var(--via-text-primary);
 }
 
-.vds-quiz-feedback.ok::before {
-  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
-  box-shadow: 0 0 10px var(--via-navy-20);
-}
-
 .vds-quiz-feedback.bad {
   background: rgba(184, 92, 92, 0.04);
   border-color: rgba(184, 92, 92, 0.24);
   color: var(--via-text-primary);
-}
-
-.vds-quiz-feedback.bad::before {
-  background: linear-gradient(180deg, var(--via-coral), var(--via-coral-deep));
 }
 
 .vds-quiz-feedback.bad strong {
@@ -1194,4 +1342,16 @@
 .vds-lesson-nav-mark:hover {
   background: var(--via-navy-deep);
   transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 26px -10px var(--via-navy-60);
+}
+
+.vds-lesson-nav-mark:active { transform: translateY(0); }
+
+.vds-lesson-nav-mark:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
 }

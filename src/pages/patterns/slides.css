@@ -567,6 +567,16 @@
     0 0 36px rgba(59, 107, 160, 0.30);
 }
 
+.vds-slide-cta:active { transform: translateY(0); }
+
+/* Slide é navy · o anel de foco tem que ser claro pra existir */
+.vds-slide-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.34);
+}
+
 /* ============================================
    ANATOMY SECTION
    ============================================ */

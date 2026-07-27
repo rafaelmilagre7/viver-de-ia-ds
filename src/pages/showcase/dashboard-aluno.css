@@ -224,15 +224,50 @@
   font-feature-settings: 'tnum' 1;
 }
 
+/* link de ação do card · pill de vidro (era texto chapado sem hover) */
 .dba-card-link {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-0_5);
+  padding: 5px 11px;
+  margin-right: -5px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
   letter-spacing: -0.004em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+
+.dba-card-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.dba-card-link:active { transform: translateY(0); }
+
+.dba-card-link:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 /* Continue card (navy, 2x2) */
@@ -336,6 +371,15 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 16px 32px -10px rgba(0, 0, 0, 0.55),
     0 0 44px rgba(59, 107, 160, 0.32);
+}
+
+.dba-continue-cta:active { transform: translateY(0); }
+
+.dba-continue-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.34);
 }
 
 /* Agenda (2 wide) */

@@ -359,7 +359,10 @@
   padding: 22px 22px 20px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 
 .vds-phil-sig-demo {
@@ -592,29 +595,22 @@
   .vds-phil-voice-grid { grid-template-columns: 1fr; }
 }
 
+/* borda UNIFORME nos 4 lados · a barra lateral é banida na marca */
 .vds-phil-voice {
   position: relative;
   padding: 22px 24px 20px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: 1px solid var(--via-navy-20);
+  box-shadow: var(--via-glass-shadow);
   isolation: isolate;
   overflow: hidden;
 }
 
-.vds-phil-voice::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 18px;
-  bottom: 18px;
-  width: 2px;
-  border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
-}
-
-.vds-phil-voice.bad::before {
-  background: linear-gradient(180deg, var(--via-coral), rgba(184, 92, 92, 0.3));
+.vds-phil-voice.bad {
+  border-color: rgba(184, 92, 92, 0.30);
 }
 
 .vds-phil-voice-tag {

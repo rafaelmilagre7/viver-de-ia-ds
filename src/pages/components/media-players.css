@@ -140,9 +140,24 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--via-t);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
 }
-.vds-mini-controls .ctrl:hover { background: var(--via-navy-08); color: var(--via-text-primary); }
+/* Controle mora DENTRO do player de vidro — sem segunda camada de blur */
+.vds-mini-controls .ctrl:hover {
+  background: var(--via-navy-08);
+  color: var(--via-text-primary);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+}
+.vds-mini-controls .ctrl:active { transform: scale(0.94); }
+.vds-mini-controls .ctrl:focus-visible {
+  outline: none;
+  color: var(--via-text-primary);
+  box-shadow: var(--via-shadow-focus);
+}
 .vds-mini-controls .play {
   width: 44px;
   height: 44px;
@@ -159,6 +174,12 @@
 }
 .vds-mini-controls .play:hover { transform: scale(1.04); box-shadow: 0 12px 28px rgba(10,31,59,0.42); }
 .vds-mini-controls .play:active { transform: scale(0.97); }
+.vds-mini-controls .play:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
 
 /* ==============================================================
    FULL EPISODE PLAYER
@@ -307,20 +328,38 @@
   gap: var(--via-space-4_5);
   margin-bottom: 20px;
 }
+/* Sobre navy · vidro claro translúcido */
 .vds-fullep .ep-controls .ctrl {
   width: 40px;
   height: 40px;
   border-radius: var(--via-radius-pill);
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color: var(--via-white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--via-t);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
-.vds-fullep .ep-controls .ctrl:hover { background: rgba(255,255,255,0.20); }
+.vds-fullep .ep-controls .ctrl:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.vds-fullep .ep-controls .ctrl:active { transform: translateY(0); }
+.vds-fullep .ep-controls .ctrl:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.34);
+}
 .vds-fullep .ep-controls .play {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 62px;
@@ -338,6 +377,12 @@
 }
 .vds-fullep .ep-controls .play:hover { transform: scale(1.04); }
 .vds-fullep .ep-controls .play:active { transform: scale(0.97); }
+.vds-fullep .ep-controls .play:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px rgba(255, 255, 255, 0.40);
+}
 
 /* Secondary */
 .vds-fullep .ep-secondary {
@@ -351,14 +396,31 @@
 .vds-fullep .ep-speed button {
   padding: 6px 10px;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
   cursor: pointer;
-  transition: var(--via-t);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
+}
+.vds-fullep .ep-speed button:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+  color: var(--via-white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+.vds-fullep .ep-speed button:active { transform: scale(0.96); }
+.vds-fullep .ep-speed button:focus-visible {
+  outline: none;
+  color: var(--via-white);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.34);
 }
 .vds-fullep .ep-speed button.active {
   background: rgba(255,255,255,0.14);
@@ -371,11 +433,29 @@
   align-items: center;
   gap: var(--via-space-2);
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: rgba(255,255,255,0.72);
   cursor: pointer;
   padding: 6px;
   border-radius: var(--via-radius-pill);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
+}
+.vds-fullep .ep-extras button:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+  color: var(--via-white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+.vds-fullep .ep-extras button:active { transform: scale(0.96); }
+.vds-fullep .ep-extras button:focus-visible {
+  outline: none;
+  color: var(--via-white);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.34);
 }
 .vds-fullep .ep-extras .vol-bar {
   width: 60px;
@@ -503,6 +583,15 @@
   50% { transform: scale(1.12); opacity: 0; }
 }
 .vds-video .vid-play-big:hover .ring { transform: scale(1.06); }
+.vds-video .vid-play-big:active .ring { transform: scale(0.98); }
+.vds-video .vid-play-big:focus-visible { outline: none; }
+.vds-video .vid-play-big:focus-visible .ring {
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 16px 40px var(--via-navy-60),
+    0 0 0 3px rgba(255, 255, 255, 0.40);
+}
 
 /* Controls */
 .vds-video .vid-controls {
@@ -569,16 +658,35 @@
   height: 32px;
   border-radius: var(--via-radius-pill);
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: rgba(255,255,255,0.85);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--via-t);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
 }
-.vds-video .vid-ctrl:hover { background: rgba(255,255,255,0.14); color: var(--via-white); }
-.vds-video .vid-ctrl.play { background: rgba(255,255,255,0.16); }
+.vds-video .vid-ctrl:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: var(--via-white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.vds-video .vid-ctrl:active { transform: scale(0.94); }
+.vds-video .vid-ctrl:focus-visible {
+  outline: none;
+  color: var(--via-white);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.40);
+}
+.vds-video .vid-ctrl.play {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.20);
+}
 .vds-video .vid-time {
   margin-left: 10px;
   font-family: var(--via-font-mono);
@@ -589,14 +697,33 @@
 }
 .vds-video .vid-quality {
   padding: 5px 10px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.20);
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   cursor: pointer;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+.vds-video .vid-quality:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.vds-video .vid-quality:active { transform: translateY(0); }
+.vds-video .vid-quality:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.40);
 }
 
 /* Watermark */

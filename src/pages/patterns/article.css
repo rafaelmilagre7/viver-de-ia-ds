@@ -13,7 +13,10 @@
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   overflow: hidden;
-  transition: all 280ms var(--via-ease-out);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
   cursor: pointer;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -44,6 +47,23 @@
 
 .vds-article:hover::after {
   background: linear-gradient(90deg, transparent, var(--via-navy-40) 50%, transparent);
+}
+
+.vds-article:active {
+  transform: translateY(0);
+}
+
+.vds-article:focus-visible {
+  outline: none;
+  border-color: var(--via-navy-20);
+  box-shadow:
+    0 1px 0 var(--via-edge-hi) inset,
+    var(--via-shadow-focus);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vds-article { transition: none; }
+  .vds-article:hover { transform: none; }
 }
 
 /* Cover */

@@ -70,11 +70,30 @@
   gap: 9px;
   padding: 9px 14px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-04);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   min-width: 320px;
   flex: 1;
   max-width: 480px;
+  transition:
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-tbl-search:hover {
+  border-color: var(--via-navy-20);
+}
+
+.vds-tbl-search:focus-within {
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-tbl-search svg {
@@ -108,19 +127,41 @@
   gap: var(--via-space-1_5);
   padding: 8px 14px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-04);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-tbl-tool:hover {
-  background: var(--via-navy-08);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-tbl-tool:active { transform: translateY(0); }
+
+.vds-tbl-tool:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-tbl-tool.sm {
@@ -164,10 +205,23 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.04em;
+  transition:
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap),
+    transform var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-tbl-density button:hover {
   color: var(--via-text-primary);
+  background: var(--via-navy-06);
+}
+
+.vds-tbl-density button:active { transform: scale(0.94); }
+
+.vds-tbl-density button:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-tbl-density button.active {
@@ -229,21 +283,41 @@
 .vds-tbl-batch-l button:not(.vds-tbl-batch-clear) {
   padding: 6px 12px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy-06);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   border: 1px solid var(--via-navy-12);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
-  transition: all 140ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-tbl-batch-l button:not(.vds-tbl-batch-clear):hover {
-  background: var(--via-navy);
-  color: var(--via-white);
-  border-color: var(--via-navy);
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-tbl-batch-l button:not(.vds-tbl-batch-clear):active { transform: translateY(0); }
+
+.vds-tbl-batch-l button:not(.vds-tbl-batch-clear):focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-tbl-batch-clear {
@@ -260,11 +334,30 @@
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
+  transition:
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap),
+    transform var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-tbl-batch-clear:hover {
   color: var(--via-text-primary);
-  background: var(--via-navy-04);
+  border-color: var(--via-navy-20);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-tbl-batch-clear:active { transform: translateY(0.5px); }
+
+.vds-tbl-batch-clear:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 
 /* ---------- Table itself ---------- */
@@ -462,6 +555,12 @@
 
 .vds-tbl-check:hover span {
   border-color: var(--via-navy);
+}
+
+/* teclado · o input é invisível, então o anel de foco vive na caixa desenhada */
+.vds-tbl-check input:focus-visible + span {
+  border-color: var(--via-navy);
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-tbl-check input:checked + span {
@@ -710,20 +809,36 @@
   white-space: nowrap;
 }
 
+/* grade densa · fica no tint sólido (vidro por linha mataria a leitura),
+   mas ganha borda de reação, press e foco de teclado */
 .vds-tbl-action-btn {
   width: 30px;
   height: 30px;
   border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
   color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 160ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
   margin-left: 4px;
   font-family: var(--via-font);
+}
+
+.vds-tbl-action-btn:active { transform: translateY(0); }
+
+.vds-tbl-action-btn:focus-visible {
+  outline: none;
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-tbl-action-btn:hover:not(.ghost) {
@@ -788,12 +903,31 @@
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-feature-settings: 'tnum' 1;
-  transition: all 140ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-tbl-pag button:hover:not(:disabled):not(.active) {
-  background: var(--via-navy-06);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border-color: var(--via-border-soft);
   color: var(--via-text-primary);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-tbl-pag button:active:not(:disabled) { transform: translateY(0.5px); }
+
+.vds-tbl-pag button:focus-visible {
+  outline: none;
+  border-color: var(--via-navy-20);
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-tbl-pag button.active {
@@ -831,14 +965,41 @@
   gap: var(--via-space-1);
   padding: 5px 10px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-navy-04);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   font-feature-settings: 'tnum' 1;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-tbl-pag-size button:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-tbl-pag-size button:active { transform: translateY(0); }
+
+.vds-tbl-pag-size button:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 /* ---------- COMPACT variant ---------- */

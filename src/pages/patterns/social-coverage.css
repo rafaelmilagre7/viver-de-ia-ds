@@ -23,11 +23,15 @@
   gap: var(--via-space-2_5);
   padding: 14px 16px;
   background: transparent;
-  border: 0.5px solid transparent;
+  border: 1px solid transparent;
   border-radius: var(--via-radius-sm);
   cursor: pointer;
-  transition: var(--via-t);
   text-align: left;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap);
 }
 .vds-sc-nav-btn > div {
   display: flex;
@@ -46,14 +50,33 @@
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
-.vds-sc-nav-btn:hover { background: var(--via-surface); }
+.vds-sc-nav-btn:hover {
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border-color: var(--via-navy-20);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
 .vds-sc-nav-btn:hover strong { color: var(--via-text-primary); }
+.vds-sc-nav-btn:active { transform: translateY(0); }
+.vds-sc-nav-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
 .vds-sc-nav-btn.is-active {
-  background: var(--via-surface);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 4px 12px var(--via-navy-06);
+    inset 0 1px 0 var(--via-edge-hi),
+    0 4px 12px -6px var(--via-navy-14);
 }
 .vds-sc-nav-btn.is-active strong { color: var(--via-text-primary); }
 .vds-sc-nav-btn .mono {

@@ -154,7 +154,10 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 6px 14px -4px var(--via-navy-40);
-  transition: all 200ms ease;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-tier .btn:hover {
@@ -162,6 +165,22 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 8px 18px -4px var(--via-navy-60);
+}
+
+.vds-tier .btn:active { transform: translateY(0); }
+
+.vds-tier .btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--via-shadow-focus);
+}
+
+/* Tier em destaque é navy sólido · o anel de foco precisa ser claro pra existir */
+.vds-tier.feat .btn:focus-visible {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 0 0 3px rgba(255, 255, 255, 0.34);
 }
 
 .vds-tier .btn.light {
@@ -178,6 +197,12 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 8px 18px -4px var(--via-navy-25);
+}
+
+.vds-tier .btn.light:focus-visible {
+  box-shadow:
+    0 1px 0 var(--via-edge-hi) inset,
+    0 0 0 3px rgba(255, 255, 255, 0.34);
 }
 
 /* ============================================
@@ -351,29 +376,59 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
-  border: 1px solid var(--via-border);
-  background: var(--via-surface);
+  border: var(--via-glass-ring);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   color: var(--via-text-primary);
   cursor: pointer;
-  transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .22s ease;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
 
 .vds-cmp-plan-cta:hover {
-  background: var(--via-surface);
-  border-color: var(--via-navy-22);
+  border-color: var(--via-navy-20);
   transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.vds-cmp-plan-cta:active { transform: translateY(0); }
+
+.vds-cmp-plan-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .vds-cmp-plan-cta.primary {
-  background: var(--via-navy);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 6px 14px -6px var(--via-navy-30);
 }
 
 .vds-cmp-plan-cta.primary:hover {
-  background: var(--via-navy-deep);
   border-color: var(--via-navy-deep);
-  box-shadow: 0 8px 18px -10px rgba(10, 31, 59, 0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 10px 22px -10px rgba(10, 31, 59, 0.48);
+}
+
+.vds-cmp-plan-cta.primary:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--via-shadow-focus);
 }
 
 .vds-cmp-group {

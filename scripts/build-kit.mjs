@@ -128,6 +128,10 @@ Issues / dúvidas: https://github.com/rafaelmilagre7/viver-de-ia-ds/issues
 const tokensCss = readFileSync(resolve(root, 'src/styles/tokens.css'), 'utf8');
 writeFileSync(resolve(out, 'tokens/tokens.css'), tokensCss);
 
+// Camada de acabamento (classes utilitarias) — serve pra HTML cru gerado por IA
+const surfacesCss = readFileSync(resolve(root, 'src/styles/surfaces.css'), 'utf8');
+writeFileSync(resolve(out, 'tokens/surfaces.css'), surfacesCss);
+
 // Gera tokens.json (parse de tokens.css)
 const cssStripped = tokensCss.replace(/\/\*[\s\S]*?\*\//g, '');
 const tokenDecl = /(--[a-z0-9-]+)\s*:\s*([^;]+);/gi;

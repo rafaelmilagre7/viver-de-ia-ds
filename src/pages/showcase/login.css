@@ -131,17 +131,39 @@
   justify-content: center;
   gap: var(--via-space-2);
   padding: 11px 14px;
-  background: var(--via-surface);
-  border: 1px solid var(--via-navy-12);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   cursor: pointer;
-  transition: var(--via-t);
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap);
 }
-.prov:hover { border-color: var(--via-navy-40); background: var(--via-gray-50); transform: translateY(-1px); }
+.prov:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+.prov:active { transform: translateY(0); }
+.prov:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
+}
 .prov-ico {
   display: inline-flex;
   align-items: center;
@@ -200,6 +222,11 @@
   transition: var(--via-t);
 }
 .auth-form .btn-ico:hover { background: var(--via-navy-08); color: var(--via-text-primary); }
+.auth-form .btn-ico:active { transform: scale(0.94); }
+.auth-form .btn-ico:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
+}
 
 .auth-row {
   display: flex;
@@ -242,6 +269,11 @@
   cursor: pointer;
 }
 .auth-row .link:hover { text-decoration: underline; }
+.auth-row .link:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
+}
 
 .auth-submit {
   display: inline-flex;
@@ -285,6 +317,13 @@
 }
 .auth-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(10,31,59,0.32); }
 .auth-submit:hover::before { left: 100%; }
+.auth-submit:active { transform: translateY(0); }
+.auth-submit:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--via-shadow-focus);
+}
 
 .auth-foot {
   margin: 24px 0 0;

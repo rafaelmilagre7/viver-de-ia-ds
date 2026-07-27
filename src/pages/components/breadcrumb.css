@@ -13,15 +13,37 @@
   color: var(--via-text-soft);
   text-decoration: none;
   cursor: pointer;
-  transition: color 180ms ease;
+  transition:
+    color var(--via-dur) var(--via-ease-snap),
+    background var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap);
   padding: 4px 8px;
   margin: -4px -8px;
   border-radius: var(--via-radius-sm);
 }
 
+/* hover · vidro com hairline UNIFORME (anel inset, zero layout shift) */
 .via-bc a:hover {
   color: var(--via-text-primary);
-  background: var(--via-navy-04);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  box-shadow:
+    inset 0 0 0 1px var(--via-navy-20),
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.via-bc a:active {
+  box-shadow: inset 0 0 0 1px var(--via-navy-20);
+}
+
+.via-bc a:focus-visible {
+  outline: none;
+  color: var(--via-text-primary);
+  box-shadow:
+    inset 0 0 0 1px var(--via-border-soft),
+    var(--via-shadow-focus);
 }
 
 .via-bc .sep {
