@@ -214,27 +214,65 @@
   .vds-cdoc-dos { grid-template-columns: 1fr; }
 }
 
+/* Par Faça/Evite das API docs · liquid glass, SEM barra lateral.
+   Distinção editorial: "Faça" com presença (vidro cheio + lift),
+   "Evite" recuado (vidro mais lavado, sem elevação). */
 .vds-cdoc-do,
 .vds-cdoc-dont {
-  padding: 20px 22px;
-  border-radius: 14px;
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
-  box-shadow: 0 1px 2px var(--via-navy-03);
+  position: relative;
+  padding: 22px 24px;
+  border-radius: var(--via-radius-lg);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  isolation: isolate;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap);
 }
-
-.vds-cdoc-do { border-left: 2px solid var(--via-navy); }
-.vds-cdoc-dont { border-left: 2px solid var(--via-coral); }
+.vds-cdoc-do::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px 200px at 0% 0%, var(--via-navy-06), transparent 62%);
+  pointer-events: none;
+  z-index: -1;
+}
+.vds-cdoc-do:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--via-glass-shadow-lift);
+}
+.vds-cdoc-dont {
+  background: var(--via-glass-card-2);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 6px 18px -14px var(--via-navy-10);
+}
 
 .vds-cdoc-do-lbl,
 .vds-cdoc-dont-lbl {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.20em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+/* Marca tipográfica (traço), nunca bolinha/semáforo */
+.vds-cdoc-do-lbl::before,
+.vds-cdoc-dont-lbl::before {
+  content: '';
+  width: 14px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: currentColor;
+  flex-shrink: 0;
 }
 
 .vds-cdoc-do-lbl { color: var(--via-text-primary); }
