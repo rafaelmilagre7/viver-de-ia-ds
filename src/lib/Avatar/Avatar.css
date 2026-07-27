@@ -93,11 +93,27 @@
     0 1px 3px var(--via-navy-30);
 }
 
+/* Ocupado = navy, não coral. Regra da marca: só ONLINE usa o verde sóbrio;
+   todos os outros estados são navy. Coral fica reservado pra destrutivo —
+   se "ocupado" pinta de vermelho, o vermelho perde o significado de erro.
+   O glow coral também saiu: halo colorido em status é semáforo. */
 .via-avatar__status--busy {
-  background: linear-gradient(180deg, var(--via-coral), var(--via-coral-deep));
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 0 6px rgba(184, 92, 92, 0.45);
+    0 1px 3px var(--via-navy-30);
+}
+/* Ocupado se distingue de "ausente" por um traço, não por cor */
+.via-avatar__status--busy::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52%;
+  height: 1.5px;
+  border-radius: 1px;
+  background: var(--via-white);
+  transform: translate(-50%, -50%);
 }
 
 .via-avatar__status--offline {
