@@ -739,13 +739,19 @@
   gap: var(--via-space-3_5);
 }
 
-/* Avatar with presence ring — não dot bobo */
+/* Avatar · vidro editorial. O status vive SÓ na bolinha (discreta) —
+   anel colorido em volta do avatar era semáforo: gritava, e ainda
+   duplicava a informação que a bolinha já dá. */
 .vds-member-av {
   position: relative;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--via-navy-12), var(--via-navy-06));
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.55), transparent 62%),
+    linear-gradient(135deg, var(--via-navy-12), var(--via-navy-06));
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   color: var(--via-text-primary);
   display: inline-flex;
   align-items: center;
@@ -756,33 +762,12 @@
   letter-spacing: 0.02em;
   border: 2px solid var(--via-white);
   box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px var(--via-navy-08),
     0 4px 10px -4px var(--via-navy-18);
 }
-
-.vds-member-av.online {
-  box-shadow:
-    0 0 0 2px var(--via-success),
-    0 4px 10px -4px rgba(34, 102, 70, 0.35);
-}
-
-.vds-member-av.away {
-  box-shadow:
-    0 0 0 2px var(--via-navy),
-    0 4px 10px -4px rgba(10, 31, 59, 0.17);
-}
-
-.vds-member-av.busy {
-  box-shadow:
-    0 0 0 2px var(--via-coral),
-    0 4px 10px -4px rgba(184, 92, 92, 0.35);
-}
-
-.vds-member-av.offline {
-  box-shadow:
-    0 0 0 1.5px var(--via-navy-18),
-    0 4px 10px -4px var(--via-navy-12);
-}
+/* Offline recua pela OPACIDADE do conteúdo, não por anel cinza */
+.vds-member-av.offline { opacity: 0.72; }
 
 .vds-member-dot {
   position: absolute;
@@ -815,7 +800,7 @@
 }
 
 .vds-member-dot.away { background: var(--via-navy); }
-.vds-member-dot.busy { background: var(--via-coral); }
+.vds-member-dot.busy { background: var(--via-navy); }
 .vds-member-dot.offline { background: rgba(10, 31, 59, 0.35); }
 
 .vds-member-user p {

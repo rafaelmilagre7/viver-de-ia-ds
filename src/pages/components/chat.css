@@ -61,12 +61,12 @@
   width: 7px; height: 7px;
   border-radius: var(--via-radius-pill);
   background: var(--via-success);
-  box-shadow: 0 0 0 3px rgba(31,138,91,0.18);
+  box-shadow: 0 0 0 3px var(--via-navy-08);
   animation: vds-chat-pulse 2400ms ease-in-out infinite;
 }
 @keyframes vds-chat-pulse {
-  0%,100% { box-shadow: 0 0 0 3px rgba(31,138,91,0.18); }
-  50% { box-shadow: 0 0 0 6px rgba(31,138,91,0.08); }
+  0%,100% { box-shadow: 0 0 0 3px var(--via-navy-08); }
+  50% { box-shadow: 0 0 0 6px var(--via-navy-04); }
 }
 .vds-chat-tag {
   font-family: var(--via-font);
