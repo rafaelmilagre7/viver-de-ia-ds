@@ -16,8 +16,10 @@
   isolation: isolate;
 }
 
-/* Scrim shared */
-.vds-drawer-scrim,
+/* Scrim shared
+   OBS: o nome .vds-drawer-scrim é do drawer mobile do Shell (layout.css, display:none
+   fora do breakpoint). A demo usa nome próprio pra não herdar aquele display:none. */
+.vds-drawer-stage-scrim,
 .vds-sheet-scrim,
 .vds-dialog-scrim {
   position: absolute;
@@ -1113,20 +1115,24 @@
   border-bottom: none;
 }
 
+/* Anel vazio: fundo TRANSPARENTE (o vidro da sheet passa) + anel escuro o
+   bastante pra ler sobre o cinza da sheet. Disco branco chapado invertia a
+   semântica — o item vazio parecia mais preenchido que o selecionado. */
 .vds-bs-radio {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1.5px solid var(--via-navy-22);
-  background: var(--via-surface);
+  border: 1.5px solid var(--via-navy-40);
+  background: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 160ms ease;
 }
 
+/* anel + miolo do selecionado seguem o tema (navy sólido sumia no vidro escuro) */
 .vds-bs-radio.on {
-  border-color: var(--via-navy);
+  border-color: var(--via-text-primary);
 }
 
 .vds-bs-radio span {
@@ -1135,6 +1141,10 @@
   height: 10px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+}
+
+[data-theme="dark"] .vds-bs-radio span {
+  background: var(--via-text-primary);
 }
 
 .vds-bs-radio.on span {
@@ -1164,6 +1174,10 @@
     radial-gradient(620px 280px at 50% 0%, var(--via-navy-04), transparent 70%),
     linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
   border: 1px solid var(--via-border-soft);
+  /* palco reserva a altura dos 3 popovers ABERTOS (o mais alto tem 283px a
+     partir de 101px do topo) — sem isso eles vazavam na seção seguinte */
+  min-height: 420px;
+  align-content: start;
   isolation: isolate;
 }
 
@@ -1682,18 +1696,8 @@
   border-color: rgba(184, 92, 92, 0.22);
 }
 
-.vds-dialog-icon.destructive::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--via-coral);
-  border: 2.5px solid var(--via-white);
-  box-shadow: 0 2px 4px rgba(184, 92, 92, 0.4);
-}
+/* badge coral decorativo removido — o sinal destrutivo já vem do ícone coral,
+   da borda do tile, da pill 'Ação irreversível' e do botão coral */
 
 .vds-dialog-eyebrow {
   display: inline-flex;
@@ -1720,7 +1724,6 @@
 .vds-dialog-warn {
   display: inline-flex;
   align-items: center;
-  gap: var(--via-space-2);
   padding: 10px 14px;
   border-radius: var(--via-radius-sm);
   background: rgba(184, 92, 92, 0.06);
@@ -1730,14 +1733,6 @@
   color: var(--via-coral-dark);
   margin-top: 4px;
   letter-spacing: -0.005em;
-}
-
-.vds-dialog-warn-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--via-coral);
-  flex-shrink: 0;
 }
 
 .vds-dialog h3 {

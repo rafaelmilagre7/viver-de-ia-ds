@@ -86,9 +86,11 @@ function HeroLiveSection() {
           <svg viewBox="0 0 800 80" preserveAspectRatio="none" className="vds-live-heart-svg">
             <defs>
               <linearGradient id="heart-grad" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stopColor="rgba(10, 31, 59, 0)" />
-                <stop offset="50%" stopColor="rgba(10, 31, 59, 0.7)" />
-                <stop offset="100%" stopColor="rgba(10, 31, 59, 0)" />
+                <stop offset="0%" stopColor="rgba(255, 255, 255, 0)" />
+                <stop offset="20%" stopColor="rgba(255, 255, 255, 0.10)" />
+                <stop offset="50%" stopColor="rgba(255, 255, 255, 0.32)" />
+                <stop offset="80%" stopColor="rgba(255, 255, 255, 0.10)" />
+                <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
               </linearGradient>
             </defs>
             <path
@@ -208,7 +210,7 @@ function PastLivesSection() {
                 <strong>2026</strong>
               </span>
               <button aria-label="Reproduzir" className="vds-live-past-play">
-                <Play size={18} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+                <Play size={18} strokeWidth={0} style={{ fill: 'currentColor' }} />
               </button>
               <span className="vds-live-past-dur">{p.duration}</span>
             </div>

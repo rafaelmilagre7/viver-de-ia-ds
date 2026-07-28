@@ -279,7 +279,6 @@ function DatePickerSection() {
 
           <footer className="vds-dp-foot">
             <button className="vds-dp-chip" onClick={() => setSelected(19)}>
-              <span className="vds-dp-chip-dot today" />
               Hoje
             </button>
             <button className="vds-dp-chip">
@@ -316,6 +315,9 @@ function ComboboxSection() {
     <Section title="Combobox · search dentro do dropdown" meta="cidade · país · cliente · qualquer base">
       <div className="vds-combobox-wrap">
         <label>Cidade do evento</label>
+        {/* âncora do popover: a lista se posiciona pelo TRIGGER, e o wrap
+            reserva a altura do estado aberto (a demo nasce aberta) */}
+        <div className="vds-combobox-anchor">
         <div className="vds-combobox-trigger" role="combobox" aria-haspopup="listbox" aria-expanded={open} aria-controls="vds-combobox-list">
           <Search size={13} strokeWidth={2.2} className="ico" />
           <input
@@ -373,6 +375,7 @@ function ComboboxSection() {
             })}
           </ul>
         )}
+        </div>
       </div>
     </Section>
   );
@@ -564,28 +567,48 @@ function RatingSection() {
 }
 
 /* ---------- Color picker ---------- */
+type Swatch = { hex: string; token: string; name: string };
+
+/* Luminância relativa (WCAG) — decide se o ícone em cima da cor sai navy ou branco */
+function isLightColor(hex: string) {
+  const h = hex.replace('#', '');
+  if (h.length !== 6) return true;
+  const lin = (c: number) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+  const [r, g, b] = [0, 2, 4].map((i) => lin(parseInt(h.slice(i, i + 2), 16) / 255));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.45;
+}
+
 function ColorPickerSection() {
-  const palette = [
-    { hex: 'var(--via-navy)',        name: 'Navy · marca' },
-    { hex: 'var(--via-navy-deep)',   name: 'Navy deep · hover' },
-    { hex: 'var(--via-blue)',        name: 'Blue · mid' },
-    { hex: 'var(--via-blue-soft)',   name: 'Blue soft · borders dark' },
-    { hex: 'var(--via-gray-900)',    name: 'Gray 900 · near-black' },
-    { hex: 'var(--via-gray-700)',    name: 'Gray 700 · text body' },
-    { hex: 'var(--via-gray-500)',    name: 'Gray 500 · text muted' },
-    { hex: 'var(--via-gray-300)',    name: 'Gray 300 · border' },
-    { hex: 'var(--via-gray-100)',    name: 'Gray 100 · surface' },
-    { hex: 'var(--via-gray-50)',     name: 'Gray 50 · page alt' },
-    { hex: 'var(--via-white)',       name: 'White · canvas' },
-    { hex: 'var(--via-coral)',       name: 'Coral · destrutivo only' },
+  /* Paleta de marca = valores ABSOLUTOS. O swatch mostra o hex literal (nunca
+     o var()), senão o rótulo mente no tema escuro e o campo vira template
+     exposto. O token vai escrito ao lado, que é o que a seção promete. */
+  const palette: Swatch[] = [
+    { hex: '#0A1F3B', token: '--via-navy',       name: 'Navy · marca' },
+    { hex: '#02162A', token: '--via-navy-deep',  name: 'Navy deep · hover' },
+    { hex: '#1E3A5F', token: '--via-blue',       name: 'Blue · mid' },
+    { hex: '#2A4A6E', token: '--via-blue-soft',  name: 'Blue soft · borders dark' },
+    { hex: '#101828', token: '--via-gray-900',   name: 'Gray 900 · near-black' },
+    { hex: '#344054', token: '--via-gray-700',   name: 'Gray 700 · text body' },
+    { hex: '#667085', token: '--via-gray-500',   name: 'Gray 500 · text muted' },
+    { hex: '#D0D5DD', token: '--via-gray-300',   name: 'Gray 300 · border' },
+    { hex: '#F0F2F5', token: '--via-gray-100',   name: 'Gray 100 · surface' },
+    { hex: '#F7F8FA', token: '--via-gray-50',    name: 'Gray 50 · page alt' },
+    { hex: '#FFFFFF', token: '--via-white',      name: 'White · canvas' },
+    { hex: '#B85C5C', token: '--via-coral',      name: 'Coral · destrutivo only' },
   ];
-  const [picked, setPicked] = useState(palette[0]);
+  const [picked, setPicked] = useState<Swatch>(palette[0]);
 
   return (
     <Section title="Color picker · tokens da marca + hex" meta="theming · marca pessoal · destaque visual">
       <div className="vds-color-stage">
         <div className="vds-color-preview">
-          <div className="vds-color-swatch" style={{ background: picked.hex }}>
+          <div
+            className="vds-color-swatch"
+            style={{
+              background: picked.hex,
+              color: isLightColor(picked.hex) ? 'rgba(10, 31, 59, 0.55)' : 'rgba(255, 255, 255, 0.72)',
+            }}
+          >
             <Pipette size={14} strokeWidth={2} />
           </div>
           <div className="vds-color-info">
@@ -594,6 +617,7 @@ function ColorPickerSection() {
               <span className="prefix">HEX</span>
               {picked.hex.toUpperCase()}
             </p>
+            {picked.token && <p className="vds-color-token">var({picked.token})</p>}
           </div>
         </div>
 
@@ -604,10 +628,14 @@ function ColorPickerSection() {
               className={`vds-color-cell ${picked.hex === c.hex ? 'on' : ''}`}
               style={{ background: c.hex }}
               onClick={() => setPicked(c)}
-              aria-label={c.name}
+              aria-label={`${c.name} · ${c.hex}`}
             >
               {picked.hex === c.hex && (
-                <Check size={14} strokeWidth={3} style={{ color: ['#F7F8FA', '#D0D5DD', 'var(--via-blue)'].includes(c.hex) ? '#0A1F3B' : 'var(--via-white)' }} />
+                <Check
+                  size={14}
+                  strokeWidth={3}
+                  style={{ color: isLightColor(c.hex) ? '#0A1F3B' : '#FFFFFF' }}
+                />
               )}
             </button>
           ))}
@@ -621,7 +649,7 @@ function ColorPickerSection() {
             onChange={(e) => {
               const v = '#' + e.target.value.replace(/[^0-9A-Fa-f]/g, '').slice(0, 6);
               const found = palette.find((p) => p.hex.toLowerCase() === v.toLowerCase());
-              setPicked(found || { hex: v, name: 'Custom hex' });
+              setPicked(found || { hex: v, token: '', name: 'Cor custom' });
             }}
             maxLength={6}
           />

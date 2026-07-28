@@ -130,7 +130,7 @@ function PrimaryMatchSection() {
                     const a = (endAngle * Math.PI) / 180;
                     return (
                       <g>
-                        <circle cx={Math.cos(a) * R} cy={Math.sin(a) * R} r="9" fill="rgba(255,255,255,0.18)" />
+                        <circle cx={Math.cos(a) * R} cy={Math.sin(a) * R} r="7" fill="rgba(255,255,255,0.18)" />
                         <circle cx={Math.cos(a) * R} cy={Math.sin(a) * R} r="5" fill="#FFFFFF" />
                       </g>
                     );
@@ -146,10 +146,7 @@ function PrimaryMatchSection() {
             </div>
 
             <div className="vds-mm-mentor">
-              <div className="vds-mm-mentor-av">
-                CR
-                <span className="vds-mm-mentor-ring" />
-              </div>
+              <div className="vds-mm-mentor-av">CR</div>
               <div>
                 <strong>Caio Ribeiro</strong>
                 <em>Fundador · Viver de IA · 220 mentorados</em>
@@ -163,11 +160,11 @@ function PrimaryMatchSection() {
               </div>
               <div>
                 <strong>14h</strong>
-                <em>resposta média</em>
+                <em>resposta</em>
               </div>
               <div>
                 <strong>R$ 1,8M</strong>
-                <em>destravado por mentorados</em>
+                <em>destravado</em>
               </div>
             </div>
           </div>

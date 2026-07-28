@@ -144,7 +144,13 @@
   position: sticky;
   top: 64px;
   align-self: start;
-  max-height: calc(100vh - 64px);
+  /* Altura DEFINIDA de uma tela — não max-height. Por ser position:sticky,
+     uma barra mais alta que a própria faixa do grid pinta por cima do footer
+     e amputa o lockup da marca. Com height definido ela (a) nunca passa de
+     uma viewport e (b) impõe esse piso à faixa do grid, então em página curta
+     o footer é empurrado para baixo em vez de ficar coberto. Em página longa
+     a faixa cresce com o conteúdo e o sticky segue igual. */
+  height: calc(100vh - 64px);
 }
 
 .vds-sidebar-group { margin-bottom: 28px; }
@@ -237,6 +243,9 @@
   padding: 56px 64px 96px;
   max-width: 1080px;
   width: 100%;
+  /* sem min-height aqui: min-height num grid item torna o mínimo automático
+     definido e a faixa 1fr para de crescer com o conteúdo (o conteúdo vaza
+     por cima do footer). O piso de uma tela vem da altura da sidebar. */
 }
 
 /* Page transition: subtle fade + slide on route change */
@@ -347,6 +356,8 @@
     z-index: 45;
     box-shadow: 0 24px 48px var(--via-navy-20);
     padding: 24px 20px 64px;
+    /* drawer fixo: quem manda na altura é top/bottom, não a faixa do grid */
+    height: auto;
     max-height: calc(100vh - 64px);
     overflow-y: auto;
   }

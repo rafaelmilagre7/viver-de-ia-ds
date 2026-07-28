@@ -130,8 +130,11 @@
   flex-shrink: 0;
 }
 
-.vds-dp-detail-dot.navy { background: var(--via-navy); }
-.vds-dp-detail-dot.accent { background: var(--via-navy); }
+.vds-dp-detail-dot.navy,
+.vds-dp-detail-dot.accent {
+  background: var(--via-text-primary);
+  opacity: 0.75;
+}
 
 /* The picker itself */
 .vds-datepicker {
@@ -298,8 +301,10 @@
   border-radius: 50%;
 }
 
-.vds-dp-event-dot.navy { background: var(--via-navy); opacity: 0.6; }
-.vds-dp-event-dot.accent { background: var(--via-navy); }
+/* tinta do texto = navy no claro, near-white no escuro · o ponto some se
+   for navy fixo em cima do card escuro */
+.vds-dp-event-dot.navy { background: var(--via-text-primary); opacity: 0.55; }
+.vds-dp-event-dot.accent { background: var(--via-text-primary); opacity: 0.9; }
 
 /* ============================================
    Date range picker · 2 months
@@ -431,18 +436,21 @@
   font-weight: var(--via-fw-semibold);
 }
 
+/* Bordas do intervalo = as células mais FORTES do grid: fill navy cheio
+   (mesmo do .sel) + peso bold. Nada de gradiente cinza→navy, que deixava
+   o número navy ilegível em cima da metade escura. */
 .vds-dp-cell.sel.edge-start,
 .vds-dp-cell.sel.edge-end {
-  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
-  border-color: var(--via-navy-25);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  border-color: var(--via-navy);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.3) inset,
-    0 6px 14px -4px rgba(10, 31, 59, 0.28);
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 6px 14px -4px rgba(10, 31, 59, 0.32);
 }
 
 .vds-dp-cell.sel.edge-start .vds-dp-num,
 .vds-dp-cell.sel.edge-end .vds-dp-num {
-  color: var(--via-text-primary);
+  color: var(--via-white);
   font-weight: var(--via-fw-bold);
 }
 
@@ -581,12 +589,15 @@
   font-weight: var(--via-fw-semibold);
 }
 
+/* Dentro da célula selecionada o fundo é SEMPRE navy (nos dois temas),
+   então os pontos vivem em branco — hierarquia pela opacidade. */
 .vds-dp-cell.sel .vds-dp-event-dot {
-  background: var(--via-surface);
+  background: rgba(255, 255, 255, 0.55);
+  opacity: 1;
 }
 
 .vds-dp-cell.sel .vds-dp-event-dot.accent {
-  background: var(--via-stage-1);
+  background: var(--via-white);
 }
 
 .vds-dp-foot {
@@ -642,12 +653,9 @@
     var(--via-shadow-focus);
 }
 
-.vds-dp-chip-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--via-navy);
-}
+/* Sem bolinha decorativa nos chips de preset — eles são atalhos de
+   navegação, não status. Preset ativo, quando existir, usa o mesmo sinal
+   do date range: .vds-dp-presets-row button.active (fill navy + texto branco). */
 
 .vds-dp-clear {
   margin-left: auto;
@@ -678,8 +686,16 @@
    Combobox · editorial
    ============================================ */
 .vds-combobox-wrap {
-  position: relative;
   max-width: 480px;
+  /* A demo nasce ABERTA pra documentar o popover — então a seção reserva o
+     palco do estado aberto (label + trigger + gap + lista) em vez de deixar
+     o dropdown comer a seção seguinte. */
+  min-height: 448px;
+}
+
+/* Âncora do popover: a lista se posiciona pelo trigger, não pelo palco. */
+.vds-combobox-anchor {
+  position: relative;
 }
 
 .vds-combobox-wrap label {
@@ -760,8 +776,11 @@
     0 1px 0 var(--via-edge-hi) inset,
     0 24px 56px -22px var(--via-navy-25);
   z-index: 10;
-  max-height: 320px;
+  /* teto múltiplo da linha: as 5 opções + o head cabem inteiras (360px),
+     sem cortar a última no meio */
+  max-height: 368px;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .vds-combobox-section-head {
@@ -1413,6 +1432,14 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
+  letter-spacing: 0.02em;
+}
+
+.vds-color-info .vds-color-token {
+  margin: 6px 0 0;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  color: var(--via-text-soft);
   letter-spacing: 0.02em;
 }
 

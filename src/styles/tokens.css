@@ -60,6 +60,17 @@
   --via-gray-800: #1D2939;   /* close to navy */
   --via-gray-900: #101828;   /* near black */
 
+  /* STAGE · fundo de "palco" (chat, overlay, empty state, streak).
+     ⚠️ BUG CORRIGIDO: estes 3 existiam SÓ em [data-theme="dark"]. No tema
+     CLARO — que é o padrão da casa — o var() ficava vazio e INVALIDAVA a
+     declaração `background` inteira, derrubando junto as camadas de
+     atmosfera. Resultado: palco chapado e, onde o texto era branco por
+     contar com fundo escuro, TEXTO INVISÍVEL (branco no branco).
+     Agora existem nos dois temas. Nunca declare um stage só no dark. */
+  --via-stage-soft: var(--via-gray-200);
+  --via-stage-1:    var(--via-gray-300);
+  --via-stage-2:    var(--via-gray-400);
+
   --via-black: #000000;
   --via-white: #FFFFFF;
 

@@ -26,22 +26,20 @@ export default function Achievement() {
 }
 
 /* ---------- Activity Rings · Apple Watch editorial ---------- */
-function Ring({ pct, size, stroke, color, id }: { pct: number; size: number; stroke: number; color: string; id: string; glow?: string }) {
+function Ring({ pct, size, stroke, color }: { pct: number; size: number; stroke: number; color: string }) {
   const r = (size - stroke) / 2;
   const c = 2 * Math.PI * r;
   const dash = pct * c;
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <defs>
-        <filter id={`glow-${id}`}>
-          <feGaussianBlur stdDeviation="2" result="b" />
-          <feMerge>
-            <feMergeNode in="b" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth={stroke} />
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={r}
+        fill="none"
+        strokeWidth={stroke}
+        style={{ stroke: 'var(--vds-ring-track)' }}
+      />
       <circle
         cx={size / 2}
         cy={size / 2}
@@ -51,7 +49,6 @@ function Ring({ pct, size, stroke, color, id }: { pct: number; size: number; str
         strokeLinecap="round"
         strokeDasharray={`${dash} ${c}`}
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
-        filter={`url(#glow-${id})`}
         style={{ stroke: color, transition: 'stroke-dasharray 800ms cubic-bezier(0.22, 0.61, 0.36, 1)' }}
       />
     </svg>
@@ -72,7 +69,7 @@ function ActivityRingsSection() {
           </p>
           <ul className="vds-rings-legend">
             <li>
-              <span className="vds-rings-dot" style={{ background: 'var(--via-gray-300)' }} />
+              <span className="vds-rings-dot" style={{ background: 'var(--vds-ring-1)' }} />
               <div>
                 <strong>Estudo</strong>
                 <em>7 aulas · 3h 42min · meta 5h</em>
@@ -80,7 +77,7 @@ function ActivityRingsSection() {
               <span className="pct">74%</span>
             </li>
             <li>
-              <span className="vds-rings-dot" style={{ background: 'var(--via-blue)' }} />
+              <span className="vds-rings-dot" style={{ background: 'var(--vds-ring-2)' }} />
               <div>
                 <strong>Prática</strong>
                 <em>4 exercícios · 12 notas</em>
@@ -88,7 +85,7 @@ function ActivityRingsSection() {
               <span className="pct">100%</span>
             </li>
             <li>
-              <span className="vds-rings-dot" style={{ background: 'var(--via-blue-soft)' }} />
+              <span className="vds-rings-dot" style={{ background: 'var(--vds-ring-3)' }} />
               <div>
                 <strong>Comunidade</strong>
                 <em>1 live · 6 mensagens no Discord</em>
@@ -100,12 +97,12 @@ function ActivityRingsSection() {
 
         <div className="vds-rings-r">
           <div className="vds-rings-canvas">
-            <Ring id="estudo" pct={0.74} size={240} stroke={20} color="var(--via-gray-300)" glow="" />
+            <Ring pct={0.74} size={240} stroke={20} color="var(--vds-ring-1)" />
             <div className="vds-rings-inner-1">
-              <Ring id="pratica" pct={1.0} size={184} stroke={20} color="var(--via-blue)" glow="" />
+              <Ring pct={1.0} size={184} stroke={20} color="var(--vds-ring-2)" />
             </div>
             <div className="vds-rings-inner-2">
-              <Ring id="comunidade" pct={0.52} size={128} stroke={20} color="var(--via-blue-soft)" glow="" />
+              <Ring pct={0.52} size={128} stroke={20} color="var(--vds-ring-3)" />
             </div>
             <div className="vds-rings-center">
               <span className="vds-rings-week">Semana</span>

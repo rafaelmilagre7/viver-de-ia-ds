@@ -1,6 +1,6 @@
 import {
   Bell, MessageCircle, Award, Calendar, Heart, Info, AlertTriangle, AlertOctagon,
-  Check, X, Filter, Search, Archive, Star, ChevronRight, Circle,
+  Check, X, Filter, Search, Archive, Star, ChevronRight, CreditCard,
 } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
@@ -125,7 +125,6 @@ function BannersSection() {
     <Section title="System banners · 4 níveis editorial" meta="info · convite · alerta · confirmação · cada um com voz própria">
       <div className="vds-banners">
         <article className="vds-banner info">
-          <span className="vds-banner-bar" />
           <span className="vds-banner-icon">
             <Info size={15} strokeWidth={1.8} />
           </span>
@@ -146,7 +145,6 @@ function BannersSection() {
         </article>
 
         <article className="vds-banner warn">
-          <span className="vds-banner-bar" />
           <span className="vds-banner-icon">
             <AlertTriangle size={15} strokeWidth={1.8} />
           </span>
@@ -167,7 +165,6 @@ function BannersSection() {
         </article>
 
         <article className="vds-banner danger">
-          <span className="vds-banner-bar" />
           <span className="vds-banner-icon">
             <AlertOctagon size={15} strokeWidth={1.8} />
           </span>
@@ -188,7 +185,6 @@ function BannersSection() {
         </article>
 
         <article className="vds-banner success">
-          <span className="vds-banner-bar" />
           <span className="vds-banner-icon">
             <Check size={15} strokeWidth={2.4} />
           </span>
@@ -327,7 +323,7 @@ function InboxSection() {
                 {it.type === 'achievement' && <Award size={14} strokeWidth={2} />}
                 {it.type === 'live' && <Calendar size={14} strokeWidth={2} />}
                 {it.type === 'discussion' && <MessageCircle size={14} strokeWidth={2} />}
-                {it.type === 'payment' && <Circle size={14} strokeWidth={2} style={{ fill: "var(--via-navy)" }} />}
+                {it.type === 'payment' && <CreditCard size={14} strokeWidth={2} />}
               </span>
               <div className="vds-inbox-text">
                 <p>
@@ -344,6 +340,7 @@ function InboxSection() {
                 {!it.star && <Star size={13} strokeWidth={2} className="star" />}
                 <Archive size={13} strokeWidth={2} className="arch" />
               </div>
+              <span className="vds-inbox-dot" />
             </li>
           ))}
         </ul>

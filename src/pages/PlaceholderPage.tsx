@@ -1,40 +1,49 @@
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import DocsHeader from '../components/docs/DocsHeader';
+import { navigation } from '../data/nav';
+import './components/empty.css';
 
 type Props = { area: string };
 
+/* O H1 nunca sai do slug da URL — o rótulo em PT-BR vem do mapa de navegação.
+   Slug fora do mapa cai num título genérico, também em português. */
+function navLabel(pathname: string): string | null {
+  for (const group of navigation) {
+    for (const item of group.items) {
+      if (item.to === pathname) return item.label;
+    }
+  }
+  return null;
+}
+
 export default function PlaceholderPage({ area }: Props) {
-  const { slug } = useParams();
-  const title = slug ? slug.replace(/-/g, ' ') : 'Em construção';
+  const { pathname } = useLocation();
+  const label = navLabel(pathname);
 
   return (
     <>
       <DocsHeader
         eyebrow={`${area} · em breve`}
         title={
-          <>
-            {title.charAt(0).toUpperCase() + title.slice(1)} <em>em construção</em>
-          </>
+          label ? (
+            <>
+              {label} <em>em construção</em>
+            </>
+          ) : (
+            <>
+              Página <em>em construção</em>
+            </>
+          )
         }
-        lede="Essa seção está no plano e será desenhada com o mesmo cuidado das outras. Volta quando estiver pronta — você vai ver os componentes funcionando, com estados, variantes e código copiável."
+        lede="Ainda não desenhamos esta seção. Ela está no plano e entra com o mesmo cuidado das outras."
       />
 
-      <div
-        style={{
-          padding: 48,
-          border: '0.5px dashed var(--via-navy-40)',
-          borderRadius: 'var(--via-radius-lg)',
-          background:
-            'repeating-linear-gradient(135deg, transparent 0, transparent 12px, var(--via-navy-03) 12px, var(--via-navy-03) 13px)',
-          color: 'var(--via-text-muted)',
-          fontFamily: 'var(--via-font)',
-          fontSize: 13,
-          textAlign: 'center',
-          letterSpacing: '0.18em',
-          textTransform: 'uppercase',
-        }}
-      >
-        Placeholder editorial · cristalizado no próximo bloco
+      <div className="vds-empty soft">
+        <h3>O que vai ter aqui</h3>
+        <p>
+          Os componentes funcionando de verdade, com todos os estados e variantes, e o código
+          pronto pra copiar — como em qualquer outra página do sistema.
+        </p>
       </div>
     </>
   );

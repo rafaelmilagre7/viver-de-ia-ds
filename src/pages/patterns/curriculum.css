@@ -18,7 +18,10 @@
 
 .vds-course-cover {
   position: relative;
-  aspect-ratio: 4 / 5;
+  /* sem aspect-ratio: a altura vem do painel ao lado (stretch), então não sobra buraco.
+     aspect-ratio aqui transferia a altura esticada para a largura e estourava a coluna. */
+  min-width: 0;
+  min-height: 340px;
   border-radius: var(--via-radius-lg);
   padding: 32px;
   display: flex;
@@ -191,6 +194,65 @@
 .vds-course-progress .next strong {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
+}
+
+/* Próximas lives · conteúdo real no lugar do vazio entre progresso e CTA */
+.vds-course-upnext {
+  padding-top: 18px;
+  border-top: 1px solid var(--via-border-soft);
+}
+
+.vds-course-upnext .lbl {
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-soft);
+}
+
+.vds-course-upnext ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.vds-course-upnext li {
+  display: grid;
+  grid-template-columns: 58px 1fr auto;
+  align-items: center;
+  gap: var(--via-space-3);
+  padding: 9px 0;
+  border-bottom: 1px solid var(--via-navy-04);
+  font-feature-settings: 'tnum' 1;
+}
+
+.vds-course-upnext li:last-child {
+  border-bottom-color: transparent;
+  padding-bottom: 0;
+}
+
+.vds-course-upnext .d {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.vds-course-upnext .t {
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-body);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vds-course-upnext .h {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-soft);
+  text-align: right;
+  letter-spacing: 0.02em;
 }
 
 .vds-course-cta {
@@ -476,30 +538,20 @@
     0 2px 6px -2px var(--via-navy-40);
 }
 
+/* estado "tocando" = o mais forte da lista · navy cheio, sem anel, sem pulso */
 .vds-lesson.playing .vds-lesson-icon {
-  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  border-color: var(--via-navy-25);
+  border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.2) inset,
-    0 0 0 5px rgba(10, 31, 59, 0.09),
     0 2px 8px -2px var(--via-navy-25);
-  animation: vds-lesson-pulse 2s ease-in-out infinite;
 }
 
-@keyframes vds-lesson-pulse {
-  0%, 100% {
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.2) inset,
-      0 0 0 5px rgba(10, 31, 59, 0.09),
-      0 2px 8px -2px var(--via-navy-25);
-  }
-  50% {
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.2) inset,
-      0 0 0 9px var(--via-navy-08),
-      0 2px 12px -2px var(--via-navy-30);
-  }
+/* no escuro o chip mais forte é o mais CLARO — senão o "tocando" some no fundo */
+[data-theme="dark"] .vds-lesson.playing .vds-lesson-icon {
+  background: var(--via-blue);
+  border-color: var(--via-blue);
 }
 
 .vds-lesson.available .vds-lesson-icon {
@@ -645,7 +697,7 @@
 }
 
 .vds-lesson.playing .vds-lesson-go:hover {
-  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-navy-deep), var(--via-navy-deep));
 }
 
 /* Certificate card */
@@ -656,10 +708,17 @@
   align-items: center;
   padding: 24px;
   border-radius: var(--via-radius-md);
-  border: 1px dashed var(--via-navy-20);
-  background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
+  border: 1px solid var(--via-border-soft);
+  background: var(--via-glass-card);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow:
+    0 1px 0 var(--via-edge-hi) inset,
+    0 8px 24px -16px var(--via-navy-10);
   margin-top: 6px;
-}.vds-cert-icon {
+}
+
+.vds-cert-icon {
   width: 56px;
   height: 56px;
   border-radius: var(--via-radius-sm);

@@ -131,9 +131,25 @@ function CourseHero() {
               <span style={{ width: '28%' }} />
             </div>
             <p className="next">
-              <Play size={11} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+              <Play size={11} strokeWidth={0} style={{ fill: 'currentColor' }} />
               <span>Próxima aula <strong>02.02 · Few-shot · quando incluir exemplos é decisivo</strong></span>
             </p>
+          </div>
+
+          <div className="vds-course-upnext">
+            <span className="lbl">Próximas lives</span>
+            <ul>
+              <li>
+                <span className="d">12 mar</span>
+                <span className="t">Auditoria de 3 prompts reais do grupo</span>
+                <span className="h">19h · 60min</span>
+              </li>
+              <li>
+                <span className="d">26 mar</span>
+                <span className="t">Troubleshooting de um agente real do grupo</span>
+                <span className="h">19h · 90min</span>
+              </li>
+            </ul>
           </div>
 
           <button className="vds-course-cta">
@@ -199,7 +215,7 @@ function ModulesList() {
                     <li key={l.n} className={`vds-lesson ${l.state}`}>
                       <span className="vds-lesson-icon">
                         {l.state === 'done' && <Check size={13} strokeWidth={2.6} />}
-                        {l.state === 'playing' && <Play size={13} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
+                        {l.state === 'playing' && <Play size={13} strokeWidth={0} style={{ fill: 'currentColor' }} />}
                         {l.state === 'available' && lessonTypeIcon(l.type)}
                         {l.state === 'locked' && <Lock size={13} strokeWidth={2.2} />}
                       </span>

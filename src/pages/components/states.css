@@ -27,12 +27,15 @@
   isolation: isolate;
 }
 
+/* o utilitário .via-mesh-navy tem a mesma especificidade do base e perde na ordem
+   do bundle — o card pinta a própria atmosfera pra não virar retângulo branco */
 .vds-loader-card.full {
   min-height: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: var(--via-mesh-navy);
   color: var(--via-white);
   padding: 48px 32px;
   text-align: center;
@@ -68,13 +71,14 @@
   border: 2px solid rgba(255, 255, 255, 0.12);
 }
 
+/* spinner sobre atmosfera navy · navy sobre navy sumiria */
 .vds-loader-ring span {
   position: absolute;
   inset: 0;
   border-radius: 50%;
   border: 2px solid transparent;
-  border-top-color: var(--via-navy);
-  border-right-color: var(--via-navy-30);
+  border-top-color: var(--via-white);
+  border-right-color: rgba(255, 255, 255, 0.34);
   animation: vds-spin 1s linear infinite;
 }
 
@@ -274,8 +278,10 @@
 }
 
 /* ---------- 500 · server error ---------- */
+/* shorthand completo: `background-color` sozinho deixava o gradiente branco do
+   glass do base pintando POR CIMA do navy (card lavado, texto branco ilegível) */
 .vds-error-card.e500 {
-  background-color: var(--via-navy);
+  background: var(--via-mesh-navy);
   color: var(--via-white);
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 24px 56px -22px var(--via-navy-40);
@@ -314,8 +320,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--via-navy);
-  box-shadow: 0 0 12px 2px var(--via-navy-25);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.18);
   animation: vds-orbit 18s linear infinite;
   transform-origin: 0 76px;
 }
@@ -338,21 +344,22 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.82);
   padding: 5px 10px 5px 8px;
   border-radius: var(--via-radius-pill);
-  background: rgba(184, 92, 92, 0.18);
-  border: 1px solid rgba(184, 92, 92, 0.34);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   white-space: nowrap;
   line-height: 1.4;
 }
 
+/* estado de sistema ≠ ação destrutiva · coral fica reservado a destrutivo */
 .vds-error-pulse {
   position: relative;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--via-coral);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .vds-error-pulse::after {
@@ -360,7 +367,7 @@
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  background: rgba(255, 139, 133, 0.4);
+  background: rgba(255, 255, 255, 0.32);
   animation: vds-err-pulse 1.6s ease-out infinite;
 }
 
@@ -370,6 +377,8 @@
 }
 
 .vds-error-card.e500 .vds-error-code {
+  background: transparent;
+  border-color: transparent;
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-display);
   font-weight: var(--via-fw-semibold);
@@ -404,7 +413,8 @@
 }
 
 .vds-error-card.e500 .vds-error-id span {
-  color: var(--via-text-primary);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* ---------- 403 · forbidden / plan gating ---------- */
@@ -479,17 +489,15 @@
 }
 
 /* ---------- Maintenance ---------- */
+/* nada de creme/âmbar de "warning" de framework · paleta é navy-only */
 .vds-error-card.maintenance {
   background:
     radial-gradient(420px 220px at 100% 0%, var(--via-navy-08), transparent 60%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.92), rgba(255, 255, 255, 0.68));
+    var(--via-glass-card);
   border-color: var(--via-navy-12);
 }
 
 [data-theme="dark"] .vds-error-card.maintenance {
-  background:
-    radial-gradient(420px 220px at 100% 0%, var(--via-navy-08), transparent 60%),
-    var(--via-glass-card);
   border-color: var(--via-border-soft);
 }
 
@@ -1187,6 +1195,7 @@
 }
 
 .vds-empty-prem {
+  grid-column: span 2;
   position: relative;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
@@ -1224,11 +1233,13 @@
 }
 
 /* Span large for cold start */
+/* o utilitário .via-mesh-navy perde pra .vds-empty-prem.cold (0-2-0) —
+   `transparent` deixava o card branco e sumia com todo o texto branco */
 .vds-empty-prem.cold {
   grid-column: span 4;
   grid-row: span 2;
   color: var(--via-white);
-  background: transparent;
+  background: var(--via-mesh-navy);
   border-color: transparent;
   padding: 32px 28px 28px;
   min-height: 380px;
@@ -1268,11 +1279,12 @@
   z-index: 0;
 }
 
+/* órbita vive sobre a atmosfera navy do cold start · traço em luz branca */
 .vds-empty-prem-orbit-ring {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(10, 31, 59, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   animation: vds-empty-orbit 28s linear infinite;
 }
 
@@ -1285,7 +1297,7 @@
 }
 
 .vds-empty-prem-orbit-ring::before { inset: 16px; }
-.vds-empty-prem-orbit-ring::after { inset: 40px; border-color: var(--via-navy-08); }
+.vds-empty-prem-orbit-ring::after { inset: 40px; border-color: rgba(255, 255, 255, 0.06); }
 
 .vds-empty-prem-orbit-dot {
   position: absolute;
@@ -1294,8 +1306,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--via-accent);
-  box-shadow: 0 0 14px rgba(10, 31, 59, 0.35);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.22);
   animation: vds-empty-orbit-pulse 2.6s ease-in-out infinite;
 }
 
@@ -1331,12 +1343,12 @@
   color: rgba(10, 31, 59, 0.55);
 }
 
+/* cold start é sempre atmosfera navy · eyebrow em luz branca nos dois temas */
 .vds-empty-prem.cold .vds-empty-prem-eyebrow {
-  color: var(--via-accent);
+  color: rgba(255, 255, 255, 0.78);
 }
 /* dark: navy/navy-alpha viram texto claro (eram invisíveis no escuro) */
 [data-theme="dark"] .vds-empty-prem-eyebrow.soft { color: var(--via-text-muted); }
-[data-theme="dark"] .vds-empty-prem.cold .vds-empty-prem-eyebrow { color: var(--via-text-primary); }
 
 .vds-empty-prem-pulse {
   width: 6px;
@@ -1436,12 +1448,13 @@
   transition: background .22s ease, border-color .22s ease;
 }
 
+/* passo atual sobe na hierarquia com MAIS luz (navy sobre navy afundava) */
 .vds-empty-prem-steps li.current {
-  background: var(--via-navy-08);
-  border-color: rgba(10, 31, 59, 0.11);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
-.vds-empty-prem-steps li.done strong { color: var(--via-text-soft); }
+.vds-empty-prem-steps li.done strong { color: rgba(255, 255, 255, 0.66); }
 /* done: cue via bullet (✓) · texto fica mutado mas AA — sem opacity no texto */
 
 .vds-empty-prem-steps .bullet {
@@ -1467,10 +1480,10 @@
 }
 
 .vds-empty-prem-steps li.current .bullet {
-  background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
+  background: var(--via-white);
   border-color: transparent;
-  color: var(--via-white);
-  box-shadow: 0 4px 10px var(--via-navy-16);
+  color: var(--via-navy);
+  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.45);
 }
 
 .vds-empty-prem-steps li > div {
@@ -1480,10 +1493,11 @@
   min-width: 0;
 }
 
+/* a lista só existe dentro do cold start (superfície navy) — texto em branco */
 .vds-empty-prem-steps strong {
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  color: var(--via-text-primary);
+  color: rgba(255, 255, 255, 0.94);
   letter-spacing: -0.012em;
 }
 
@@ -1491,7 +1505,7 @@
   font-style: normal;
   font-family: var(--via-mono);
   font-size: var(--via-fs-micro);
-  color: var(--via-text-soft);
+  color: rgba(255, 255, 255, 0.62);
   letter-spacing: 0.01em;
 }
 
@@ -1861,16 +1875,19 @@
     0 0 0 3px rgba(255, 255, 255, 0.28);
 }
 
+/* primária sobre navy = superfície clara (navy sobre navy não lidera) ·
+   mesmo tratamento do card 500 */
 .vds-empty-prem-btn.primary.on-dark {
-  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  border-color: transparent;
-  color: var(--via-white);
-  box-shadow: 0 8px 18px -8px rgba(10, 31, 59, 0.42);
+  background: var(--via-surface);
+  border-color: var(--via-white);
+  color: var(--via-text-primary);
+  box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.45);
 }
 
 .vds-empty-prem-btn.primary.on-dark:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 10px 22px -8px rgba(10, 31, 59, 0.28);
+  background: var(--via-gray-50);
+  border-color: var(--via-white);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
 }
 
 .vds-empty-prem-btn.ghost {

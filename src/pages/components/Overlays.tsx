@@ -37,7 +37,7 @@ function DrawerSection() {
   return (
     <Section title="Drawer · navegação lateral" meta="mobile drawer · menu de seções · onboarding tour">
       <div className="vds-drawer-stage">
-        <div className="vds-drawer-scrim" />
+        <div className="vds-drawer-stage-scrim" />
         <aside className="vds-drawer">
           <header>
             <BrandLogo variant="auto" size="sm" />
@@ -440,7 +440,6 @@ function DialogSection() {
               Você perde acesso à comunidade, ao playbook e à próxima sessão (agendada pra <strong>22 mai · 14h</strong>). A renovação automática também desliga.
             </p>
             <div className="vds-dialog-warn">
-              <span className="vds-dialog-warn-dot" />
               Não pode ser desfeita pelo app — só pelo time financeiro.
             </div>
             <div className="vds-dialog-actions">

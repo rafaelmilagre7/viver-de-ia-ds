@@ -503,7 +503,7 @@ function BillingSection() {
               <span className="vds-cc-exp">12 / 2028</span>
             </div>
             <p>Cartão principal · cobrança automática habilitada</p>
-            <button className="vds-billing-btn ghost sm">Trocar cartão</button>
+            <button className="vds-billing-btn quiet sm">Trocar cartão</button>
           </div>
         </div>
 

@@ -50,7 +50,7 @@ function MiniAudioSection() {
           <div className="vds-mini-controls">
             <button aria-label="Faixa anterior" className="ctrl"><SkipBack size={16} strokeWidth={2.2} /></button>
             <button className="play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
-              {playing ? <Pause size={18} strokeWidth={0} style={{ fill: "var(--via-navy)" }} /> : <Play size={18} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
+              {playing ? <Pause size={18} strokeWidth={0} style={{ fill: 'currentColor' }} /> : <Play size={18} strokeWidth={0} style={{ fill: 'currentColor' }} />}
             </button>
             <button aria-label="Próxima faixa" className="ctrl"><SkipForward size={16} strokeWidth={2.2} /></button>
           </div>
@@ -119,7 +119,7 @@ function FullEpisodeSection() {
             <button aria-label="Aleatório" className="ctrl"><Shuffle size={16} strokeWidth={2} /></button>
             <button aria-label="Faixa anterior" className="ctrl"><SkipBack size={20} strokeWidth={2.2} /></button>
             <button className="play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
-              {playing ? <Pause size={26} strokeWidth={0} style={{ fill: "var(--via-navy)" }} /> : <Play size={26} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
+              {playing ? <Pause size={26} strokeWidth={0} style={{ fill: 'currentColor' }} /> : <Play size={26} strokeWidth={0} style={{ fill: 'currentColor' }} />}
             </button>
             <button aria-label="Próxima faixa" className="ctrl"><SkipForward size={20} strokeWidth={2.2} /></button>
             <button aria-label="Repetir" className="ctrl"><Repeat size={16} strokeWidth={2} /></button>
@@ -168,7 +168,7 @@ function VideoPlayerSection() {
               </div>
               <button className="vid-play-big" onClick={() => setPlaying(true)} aria-label="Tocar">
                 <span className="ring">
-                  <Play size={32} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+                  <Play size={32} strokeWidth={0} style={{ fill: 'currentColor' }} />
                 </span>
               </button>
             </div>
@@ -188,7 +188,7 @@ function VideoPlayerSection() {
             <div className="vid-row">
               <div className="vid-row-l">
                 <button className="vid-ctrl play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
-                  {playing ? <Pause size={16} strokeWidth={0} style={{ fill: "var(--via-navy)" }} /> : <Play size={16} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
+                  {playing ? <Pause size={16} strokeWidth={0} style={{ fill: 'currentColor' }} /> : <Play size={16} strokeWidth={0} style={{ fill: 'currentColor' }} />}
                 </button>
                 <button aria-label="Faixa anterior" className="vid-ctrl"><SkipBack size={16} strokeWidth={2.2} /></button>
                 <button aria-label="Próxima faixa" className="vid-ctrl"><SkipForward size={16} strokeWidth={2.2} /></button>

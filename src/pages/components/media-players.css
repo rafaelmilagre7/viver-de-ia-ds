@@ -103,7 +103,10 @@
 .vds-mini-track .bar span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
+  /* Fill de dado · chart-ink adapta no dark (navy → azul claro).
+     Com navy fixo, o trecho tocado ficava MAIS ESCURO que o trilho no tema
+     escuro e a barra lia invertida. */
+  background: linear-gradient(90deg, var(--via-chart-ink-2), var(--via-chart-ink));
   border-radius: var(--via-radius-pill);
   box-shadow: 0 0 8px var(--via-navy-30);
   position: relative;
@@ -117,7 +120,9 @@
   width: 10px;
   height: 10px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-surface);
+  /* Handle sempre claro com anel navy · surface viraria #131C30 no dark
+     (bolinha escura, anel escuro, sobre card escuro = sumia) */
+  background: var(--via-white);
   border: 1.5px solid var(--via-navy);
   box-shadow: 0 2px 6px var(--via-navy-30);
 }
@@ -467,7 +472,8 @@
 .vds-fullep .ep-extras .vol-bar span {
   display: block;
   height: 100%;
-  background: var(--via-surface);
+  /* Card é sempre navy · o preenchimento não pode seguir o tema do app */
+  background: var(--via-white);
   border-radius: var(--via-radius-pill);
 }
 
@@ -632,7 +638,8 @@
   width: 11px;
   height: 11px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-surface);
+  /* Chrome do vídeo é sempre escuro · handle branco em qualquer tema */
+  background: var(--via-white);
   box-shadow: 0 2px 6px rgba(10, 31, 59, 0.48);
 }
 .vds-video .vid-loaded {

@@ -4,6 +4,13 @@
 
 /* ---------- Activity Rings ---------- */
 .vds-rings-stage {
+  /* Rampa clara sobre palco navy — o palco é sempre escuro nos dois temas,
+     por isso a rampa é fixa (degraus reais de luminância, todos >= 3:1
+     contra o navy). Mesmos valores servem anel e bolinha da legenda. */
+  --vds-ring-1: rgba(255, 255, 255, 0.92);
+  --vds-ring-2: #a8bad4;
+  --vds-ring-3: #6e8cb4;
+  --vds-ring-track: rgba(255, 255, 255, 0.05);
   position: relative;
   padding: 56px 48px;
   border-radius: var(--via-radius-xl);
@@ -92,10 +99,10 @@
 }
 
 .vds-rings-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  box-shadow: 0 0 12px currentColor;
+  justify-self: center;
 }
 
 .vds-rings-legend strong {
@@ -264,12 +271,15 @@
   font-feature-settings: 'tnum' 1;
 }
 
+/* O <em> aqui é o DADO (o número), não ênfase — opta por fora do
+   gradient-text sistêmico pra não ficar mais apagado que o rótulo. */
 .vds-streak-stage h3 em {
   font-style: normal;
   font-weight: var(--via-fw-semibold);
   font-size: 72px;
+  background: none !important;
+  -webkit-text-fill-color: var(--via-white) !important;
   color: var(--via-white);
-  margin-right: 10px;
   letter-spacing: -0.040em;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.30);
 }
@@ -287,34 +297,41 @@
   font-weight: var(--via-fw-semibold);
 }
 
+/* 7 colunas de 48px — dia é célula de calendário, não bloco de 62px.
+   max-width casa exatamente com o eixo abaixo (7 * 48 + 6 * 6). */
 .vds-streak-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: var(--via-space-1_5);
   margin-bottom: 10px;
+  max-width: 372px;
 }
 
+/* Rampa de preenchimento em BRANCO-alfa: em palco escuro navy-alfa some.
+   perdido (mais discreto) < concluído (>= 3:1) < streak corrente. */
 .vds-streak-cell {
   aspect-ratio: 1;
   border-radius: var(--via-radius-xs);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  transition: all 200ms ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
 }
 
 .vds-streak-cell.on {
-  background: linear-gradient(135deg, var(--via-navy-30), var(--via-navy-16));
-  border-color: var(--via-navy-20);
+  background: rgba(255, 255, 255, 0.34);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .vds-streak-cell.current.on {
-  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
-  border-color: var(--via-navy-30);
-  box-shadow: 0 0 12px var(--via-navy-25);
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
 .vds-streak-axis {
   display: flex;
+  max-width: 372px;
   justify-content: space-between;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: var(--via-fs-micro);
@@ -334,6 +351,10 @@
 
 .vds-streak-milestone {
   position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 22px 22px 20px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
@@ -382,9 +403,8 @@
 .vds-streak-progress > span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-stage-1), var(--via-navy));
+  background: linear-gradient(90deg, var(--via-chart-ink), var(--via-chart-ink-2));
   border-radius: var(--via-radius-pill);
-  box-shadow: 0 0 8px var(--via-navy-20);
 }
 
 /* ============================================
@@ -896,6 +916,8 @@
 }
 
 .vds-cohort-l {
+  display: flex;
+  flex-direction: column;
   padding: 32px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
@@ -958,8 +980,11 @@
   max-width: 460px;
 }
 
+/* margin-top: auto ancora a trilha no rodapé do card de vidro —
+   sem isso o stretch do grid deixa ~170px de vidro vazio embaixo. */
 .vds-cohort-axis {
   display: flex;
+  margin-top: auto;
   justify-content: space-between;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
@@ -1030,17 +1055,21 @@
 }
 
 .vds-cohort-marker.accent {
-  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   box-shadow:
     0 0 0 1px var(--via-navy-20),
     0 4px 10px -2px var(--via-navy-20);
 }
 
-.vds-cohort-hint {
-  margin: 22px 0 0;
+/* Especificidade acima de `.vds-cohort-l > p` — senão o hint perde o
+   margin-top (encosta nos marcadores) e herda o max-width que quebra o link. */
+.vds-cohort-l > p.vds-cohort-hint {
+  margin: 26px 0 0;
   font-size: var(--via-fs-xs);
+  line-height: 1.5;
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
+  max-width: none;
 }
 
 .vds-cohort-hint strong {
@@ -1052,6 +1081,7 @@
   color: var(--via-text-primary);
   text-decoration: none;
   font-weight: var(--via-fw-semibold);
+  white-space: nowrap;
   margin-left: 6px;
   border-bottom: 1px solid var(--via-navy-25);
   padding-bottom: 1px;

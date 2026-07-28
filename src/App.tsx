@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Shell from './layout/Shell';
 import Home from './pages/Home';
@@ -319,6 +319,8 @@ export default function App() {
                   <Route path="more" element={<MoreComponents />} />
                   <Route path="more-2" element={<MoreComponents2 />} />
                   <Route path="media" element={<MediaPlayers />} />
+                  {/* Slug óbvio que as pessoas digitam — vai pro componente real, não pro "em breve" */}
+                  <Route path="media-players" element={<Navigate to="/components/media" replace />} />
                   <Route path="charts" element={<Charts />} />
                   <Route path="code" element={<CodeBlock />} />
                   <Route path="form-advanced" element={<FormAdvanced />} />
@@ -327,7 +329,9 @@ export default function App() {
                   <Route path="overlays" element={<Overlays />} />
                   <Route path="notifications" element={<Notifications />} />
                   <Route path="form-power" element={<FormPower />} />
-                  <Route path=":slug" element={<PlaceholderPage area="Componentes" />} />
+                  {/* Slug inexistente em Componentes = 404 honesto.
+                      Nada aqui está "em breve": toda peça listada na nav tem rota real. */}
+                  <Route path=":slug" element={<NotFound />} />
                 </Route>
 
                 <Route path="patterns">
