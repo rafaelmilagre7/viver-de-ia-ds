@@ -1,0 +1,11 @@
+/* Escopo desta página. .vds-callout (docs.css) é grid 1fr 1fr sem breakpoint —
+   em tela estreita o bloco de código sobra ~110px e o CSS vira scroll horizontal
+   ilegível. Aqui a lista de camadas empilha antes disso. Escopado em .ga-layers
+   pra não mexer no comportamento das outras páginas de docs. */
+@media (max-width: 860px) {
+  .ga-layers .vds-callout {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: var(--via-space-5);
+  }
+}

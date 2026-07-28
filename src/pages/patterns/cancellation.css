@@ -179,7 +179,7 @@
 }
 
 .vds-cnx-body h2 em {
-  font-style: italic;
+  font-style: normal;
   background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -380,7 +380,7 @@
 }
 
 .vds-cnx-offer h3 em {
-  font-style: italic;
+  font-style: normal;
   background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
   -webkit-background-clip: text;
   background-clip: text;

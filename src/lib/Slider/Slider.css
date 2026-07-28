@@ -178,6 +178,11 @@
   inset: 0;
   pointer-events: none;
 }
+/* Reserva a faixa do rótulo abaixo da trilha (só quando há marks). */
+.via-slider__track-wrap:has(.via-slider__marks) {
+  margin-bottom: 18px;
+}
+
 .via-slider__mark {
   position: absolute;
   top: 0;
@@ -195,14 +200,21 @@
   border-radius: 50%;
   background: var(--via-navy-40, rgba(10,31,59,0.4));
 }
+/* Rótulo vive ABAIXO da faixa da trilha · nunca por baixo do polegar. */
 .via-slider__mark em {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 4px;
   font-style: normal;
   font-family: var(--via-mono, var(--via-font-mono, ui-monospace, monospace));
   font-size: var(--via-fs-micro);
   color: var(--via-ink-3, #6B7891);
-  margin-top: 12px;
   white-space: nowrap;
 }
+.via-slider__mark.is-start em { left: 0; transform: none; }
+.via-slider__mark.is-end em { left: auto; right: 0; transform: none; }
 
 .via-slider__hint {
   margin: 0;

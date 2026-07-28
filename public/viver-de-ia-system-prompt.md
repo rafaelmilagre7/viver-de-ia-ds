@@ -108,7 +108,7 @@ Pesos canônicos:
 - Heading 500-600 (nunca bold massivo)
 - CTA 500 (NÃO 700)
 
-Italic editorial em ênfase: `<h2>Aprenda <em>operação real</em>, não teoria</h2>` · cor secundária no italic.
+Ênfase editorial SEM itálico ("Italic morto" — Geist não tem italic real): o `<em>` fica RETO (`font-style: normal`) e a ênfase vem de peso regular + cor secundária. Ex.: `<h2>Aprenda <em>operação real</em>, não teoria</h2>` com o `em` em display regular + cor muted.
 
 ## 3. Pill / chip canônica (regra MÁXIMA)
 
@@ -137,7 +137,7 @@ Live broadcast (única exceção pra dot + emphasized text):
 ```html
 <span class="live">
   <span class="rec-dot"></span>  <!-- coral pulsante -->
-  <em>ao vivo</em>  <!-- italic, sem caps lock "AO VIVO" -->
+  <em>ao vivo</em>  <!-- em RETO (sem itálico) + peso/cor, sem caps lock "AO VIVO" -->
 </span>
 ```
 

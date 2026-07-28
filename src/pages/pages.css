@@ -412,17 +412,22 @@
   transition: var(--via-t);
 }
 .vds-brand-tile:hover { transform: translateY(-2px); }
+/* O plate é uma AMOSTRA DE MARCA, não uma superfície de UI: ele não pode
+   herdar o tema. O tile diz "marca principal em fundo claro" — então o fundo
+   tem que continuar CLARO no tema escuro, senão o PNG preto some (medido:
+   plate rgb(35,46,68) vs tinta rgb(1,15,29) = 1.42:1). Valores fixos abaixo
+   reproduzem o composite do tema claro (medido: #FDFDFE → #F6F7F8 → #E9EBEF).
+   Só a sombra de elevação usa token — --via-shadow-ink-* já é tinta correta
+   nos dois temas. */
 .vds-brand-tile-img {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: var(--via-glass-card);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid var(--via-border-soft);
+  background: linear-gradient(180deg, #FDFDFE 0%, #F6F7F8 10%, #E9EBEF 100%);
+  border: 1px solid rgba(10, 31, 59, 0.08);
   border-radius: var(--via-radius-lg);
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    inset 0 -1px 0 var(--via-edge-lo),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(10, 31, 59, 0.05),
     0 12px 32px var(--via-shadow-ink-10),
     0 2px 6px var(--via-shadow-ink-03);
   display: flex;
@@ -431,30 +436,56 @@
   padding: 32px;
   overflow: hidden;
 }
+/* Luz no topo do vidro. z-index 0 + logo em z-index 1: o brilho fica ATRÁS da
+   marca — pintar por cima era literalmente "adicionar gradiente" no logo, o
+   que esta mesma página proíbe na coluna "Evite". */
 .vds-brand-tile-img::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 40%;
-  background: var(--via-glass-sheen);
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
   border-top-left-radius: var(--via-radius-lg);
+  border-top-right-radius: var(--via-radius-lg);
   pointer-events: none;
+  z-index: 0;
 }
 .vds-brand-tile:hover .vds-brand-tile-img {
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
     0 20px 48px var(--via-shadow-ink-20);
 }
 .vds-brand-tile-img.dark {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid rgba(10,31,59,0.95);
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
     0 12px 32px var(--via-shadow-ink-20);
 }
+.vds-brand-tile:hover .vds-brand-tile-img.dark {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 20px 48px var(--via-shadow-ink-30);
+}
 .vds-brand-tile-img.dark::before { background: linear-gradient(180deg, rgba(255,255,255,0.18), transparent); }
+/* Plate oficial (Frame 32/33/34): PNG 1920×1080. Em 4/3 com object-fit:cover
+   o plate perdia 25% da largura — recrop, justamente o que o texto proíbe.
+   16/9 + contain = plate inteiro, clearance do wordmark preservada. */
 .vds-brand-tile-img img {
+  position: relative;
+  z-index: 1;
   max-width: 80%;
   max-height: 80%;
+  object-fit: contain;
+}
+.vds-brand-tile-img--frame {
+  aspect-ratio: 16 / 9;
+  padding: 0;
+}
+.vds-brand-tile-img--frame img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 .vds-brand-tile-meta {
@@ -473,6 +504,58 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
+}
+
+/* ---- Clearance · demo da respiração mínima ----------------------------
+   Mesma regra dos plates: a demo mostra o wordmark PRETO, então o painel,
+   a moldura tracejada e o rótulo fixam valores claros nos dois temas.
+   Antes: background var(--via-gray-50) virava #0F1729 no escuro e o
+   wordmark preto ficava em 1.07:1 — invisível. */
+.vds-brand-clearance {
+  position: relative;
+  margin-top: 24px;
+  padding: clamp(24px, 4.4vw, 64px);
+  display: flex;
+  justify-content: center;
+  background: #F7F8FA;
+  border: 0.5px solid rgba(10, 31, 59, 0.12);
+  border-radius: var(--via-radius-lg);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 12px 32px var(--via-shadow-ink-10);
+}
+/* --via-clearance-v = altura do "V" = altura renderizada do wordmark (o PNG é
+   cropado no glifo: bbox de tinta = 373×31, os 31px SÃO a caixa alta).
+   padding == essa altura, então a moldura mostra 1x de verdade — era 36px
+   contra 44px de marca, ou seja 0,82x, enquanto o rótulo dizia "1x". */
+.vds-brand-clearance-frame {
+  position: relative;
+  --via-clearance-v: 44px;
+  padding: var(--via-clearance-v);
+  border: 1px dashed rgba(10, 31, 59, 0.40);
+}
+.vds-brand-clearance-frame img {
+  height: var(--via-clearance-v);
+  display: block;
+}
+/* O wordmark tem 12:1 — em 44px ele ocupa 529px e a demo (529 + 2×44 + 2×padding
+   do painel) estourava o container abaixo de ~1230px de viewport. Escala pela
+   largura do PRÓPRIO painel, mantendo padding == altura do "V" em toda largura. */
+@supports (container-type: inline-size) {
+  .vds-brand-clearance { container-type: inline-size; }
+  .vds-brand-clearance-frame { --via-clearance-v: min(44px, 5.6cqw); }
+}
+.vds-brand-clearance-label {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* knock-out na cor do PAINEL (era var(--via-bg) = branco, não batia) */
+  background: #F7F8FA;
+  padding: 0 8px;
+  font-family: var(--via-font-mono);
+  font-size: 10px;
+  color: #667085;
 }
 
 /* ---- Spacing scale visual em atmosfera ---- */
@@ -501,7 +584,10 @@
 .vds-spacing-scale > * { position: relative; z-index: 1; }
 .vds-spacing-row {
   display: grid;
-  grid-template-columns: 100px 60px 1fr;
+  /* 136px cabe `--via-space-32` inteiro em mono/xs. Com 100px o token quebrava
+     em 2 linhas de --via-space-10 pra baixo e as linhas ficavam com alturas
+     diferentes (40,8px vs 60,6px) — régua de ritmo sem ritmo. */
+  grid-template-columns: 136px 56px 1fr;
   gap: var(--via-space-6);
   align-items: center;
   padding: 10px 0;
@@ -513,19 +599,78 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
+  white-space: nowrap;
 }
 .vds-spacing-px {
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
+  white-space: nowrap;
+}
+/* Trilho = o maior valor da escala (128px). Barra = o valor da linha.
+   O comprimento é PROPORCIONAL de verdade — antes era px*4 com clamp em 100%,
+   e todo token de 32px pra cima desenhava a MESMA barra: a página prometia o
+   ritmo 32/64/96/128 e mostrava quatro barras idênticas. */
+.vds-spacing-track {
+  height: 10px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-06);
 }
 .vds-spacing-bar {
-  height: 10px;
-  background: linear-gradient(90deg, var(--via-navy), var(--via-blue) 70%, var(--via-blue-soft));
-  border-radius: var(--via-radius-pill);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.3) inset,
-    0 4px 10px var(--via-shadow-ink-20);
+  height: 100%;
+  border-radius: inherit;
+  /* Tinta de DADO (adapta no dark). Navy fixo afundava no card escuro:
+     1,14:1 contra o fundo na ponta esquerda da barra. */
+  background: linear-gradient(90deg, var(--via-chart-ink), var(--via-chart-ink-2));
+  /* sem gloss e sem sombra de elevação: barra de dado é chapada */
+}
+
+/* Meios-passos · a escala real tem 22 tokens, não 13 */
+.vds-spacing-half { margin-top: var(--via-space-6); }
+.vds-spacing-half-note {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  line-height: 1.6;
+  color: var(--via-text-muted);
+  max-width: 640px;
+  margin: 0 0 var(--via-space-3_5);
+}
+.vds-spacing-half-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--via-space-2);
+}
+.vds-spacing-half-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--via-space-2);
+  padding: 10px 14px;
+  border-radius: var(--via-radius-sm);
+  background: var(--via-navy-03);
+  border: 0.5px solid var(--via-navy-10);
+}
+.vds-spacing-half-tok {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-body);
+  white-space: nowrap;
+}
+.vds-spacing-half-px {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .vds-spacing-scale { padding: var(--via-space-5) var(--via-space-4); }
+  .vds-spacing-row {
+    grid-template-columns: 1fr auto;
+    gap: var(--via-space-2) var(--via-space-3);
+    padding: var(--via-space-3) 0;
+  }
+  .vds-spacing-track { grid-column: 1 / -1; }
 }
 
 /* ---- Radii tiles em atmosfera + glass ---- */
@@ -629,10 +774,15 @@
 .vds-shadow-card:hover { transform: translateY(-2px); }
 
 /* ---- Motion easing ---- */
+/* 4 curvas em 2×2 · largura fixa o suficiente pra string cubic-bezier
+   não quebrar dentro do card (que tem overflow:hidden). */
 .vds-motion-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--via-space-3_5);
+}
+@media (max-width: 720px) {
+  .vds-motion-grid { grid-template-columns: minmax(0, 1fr); }
 }
 .vds-motion-card {
   position: relative;
@@ -660,8 +810,35 @@
   pointer-events: none;
 }
 .vds-motion-card > * { position: relative; z-index: 1; }
+
+/* Nome do token · mono e minúsculo. Custom property é case-sensitive:
+   exibir "--VIA-EASE" (como o .vds-eyebrow fazia) documenta um token
+   que não existe e não pode ser copiado. */
+.vds-motion-tok {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--via-text-primary);
+  margin: 0;
+}
+.vds-motion-curve {
+  font-family: var(--via-font-mono);
+  font-size: 11px;
+  color: var(--via-text-muted);
+  margin: 6px 0 0;
+}
+.vds-motion-use {
+  font-size: var(--via-fs-caption);
+  line-height: 1.55;
+  color: var(--via-text-body);
+  margin: 0;
+}
+
 .vds-motion-track {
   position: relative;
+  container-type: inline-size;
   height: 36px;
   background:
     radial-gradient(220px 36px at 0% 50%, var(--via-navy-05), transparent 70%),
@@ -669,11 +846,22 @@
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-pill);
   overflow: hidden;
+  /* percurso · 6px de folga em cada ponta (dot 24 + margem 6) */
+  --via-motion-start: 0px;
+  --via-motion-end: calc(100cqw - 36px);
+}
+/* --via-ease-spring passa de 1 (pico 1.098) nos DOIS sentidos: estoura no
+   fim da ida E antes do começo da volta. Precisa de pista nas duas pontas,
+   senão o overflow:hidden come o dot na virada. */
+.vds-motion-track[data-overshoot='true'] {
+  --via-motion-start: 8cqw;
+  --via-motion-end: calc(88cqw - 30px);
 }
 
 .vds-motion-dot {
   position: absolute;
   top: 50%;
+  left: 0;
   width: 24px;
   height: 24px;
   margin-top: -12px;
@@ -681,14 +869,41 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   border-radius: 50%;
   animation: vds-slide 2400ms infinite;
+  will-change: transform;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 4px 10px -2px var(--via-shadow-ink-30);
 }
+/* transform, não `left` — a página que prega movimento disciplinado não
+   pode rodar layout a 60fps em loop infinito. */
 @keyframes vds-slide {
-  0%, 10% { left: 0; }
-  50%, 60% { left: calc(100% - 36px); }
-  100% { left: 0; }
+  0%, 10% { transform: translateX(var(--via-motion-start)); }
+  50%, 60% { transform: translateX(var(--via-motion-end)); }
+  100% { transform: translateX(var(--via-motion-start)); }
+}
+
+/* Nota de precisão sob tabela / code block */
+.vds-motion-note {
+  max-width: 68ch;
+  margin: 16px 0 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  line-height: 1.65;
+  color: var(--via-text-muted);
+}
+.vds-motion-note strong {
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+}
+/* Dentro da legenda o chip com fundo vira ruído (6 caixas num parágrafo) e
+   o inline-block abre um vão antes da pontuação. Aqui a mono já marca o
+   código sozinha. */
+.vds-motion-note .vds-code-inline {
+  display: inline;
+  padding: 0;
+  background: none;
+  font-size: 0.92em;
+  color: var(--via-text-primary);
 }
 
 /* ---- Typography spec ---- */
@@ -723,8 +938,27 @@
   color: var(--via-text-soft);
 }
 
+/* Nome do token de tamanho, embaixo do rótulo · mono, sem caps, sem tracking
+   de label (senão o nome da variável fica ilegível). */
+.vds-type-token {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-regular);
+  letter-spacing: 0;
+  text-transform: none;
+  /* soft, não faint: faint em 10px dá 2.58:1 no tema claro (ilegível) */
+  color: var(--via-text-soft);
+  word-break: break-all;
+}
+
+/* O tamanho vem por custom property (--vds-sample-size, setada inline por
+   linha) em vez de font-size inline — assim o media query consegue limitar
+   o hero de 80px sem !important. */
 .vds-type-sample {
   color: var(--via-text-primary);
+  font-size: var(--vds-sample-size, var(--via-fs-body));
   letter-spacing: -0.01em;
 }
 
@@ -735,6 +969,24 @@
   text-align: right;
   letter-spacing: 0.04em;
   font-feature-settings: 'tnum' 1;
+}
+
+@media (max-width: 720px) {
+  /* Duas colunas fixas (140+160) não cabem em telefone: rótulo + meta na
+     primeira linha, specimen full-width embaixo e limitado a 11vw. */
+  .vds-type-row {
+    grid-template-columns: 1fr auto;
+    gap: var(--via-space-2);
+    padding: 20px 12px;
+    margin: 0 -12px;
+  }
+  .vds-type-label { grid-area: 1 / 1 / 2 / 2; }
+  .vds-type-meta { grid-area: 1 / 2 / 2 / 3; }
+  .vds-type-sample {
+    grid-area: 2 / 1 / 3 / 3;
+    font-size: min(var(--vds-sample-size, var(--via-fs-body)), 11vw);
+  }
+  .vds-type-token { word-break: normal; }
 }
 
 /* ---- Icon grid ---- */

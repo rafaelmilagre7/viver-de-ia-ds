@@ -247,7 +247,7 @@
   margin: 0 0 12px;
 }
 .vds-sc-ig-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
@@ -373,7 +373,7 @@
   margin: 0 0 32px;
 }
 .vds-sc-story-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
@@ -435,7 +435,7 @@
   margin: 0 0 14px;
 }
 .vds-sc-reel-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
@@ -587,7 +587,7 @@
 .vds-sc-li-body p { margin: 0 0 10px; }
 .vds-sc-li-body strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
 .vds-sc-li-body em {
-  font-style: italic;
+  font-style: normal;
   font-family: var(--via-font-display);
   color: var(--via-text-primary);
 }
@@ -627,7 +627,7 @@
   margin: 0 0 10px;
 }
 .vds-sc-li-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
@@ -780,7 +780,7 @@
   font-size: var(--via-fs-display);
 }
 .vds-sc-carousel-body h3 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
 }
 .vds-sc-carousel-card.hook .vds-sc-carousel-body h3 em,
@@ -885,7 +885,7 @@
   margin: 0 0 14px;
 }
 .vds-sc-yt-thumb h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
@@ -998,7 +998,7 @@
   margin: 0 0 24px;
 }
 .vds-sc-yt-end h3 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
@@ -1116,7 +1116,7 @@
   line-height: 1.45;
 }
 .vds-sc-x-post > p strong { font-weight: var(--via-fw-medium); }
-.vds-sc-x-post > p em { font-style: italic; color: var(--via-ink-3); font-family: var(--via-font-display); }
+.vds-sc-x-post > p em { font-style: normal; color: var(--via-ink-3); font-family: var(--via-font-display); }
 
 .vds-sc-x-card {
   aspect-ratio: 1.91 / 1;
@@ -1148,7 +1148,7 @@
   margin: 0 0 10px;
 }
 .vds-sc-x-card h3 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
@@ -1219,7 +1219,7 @@
   margin: 0 0 12px;
 }
 .vds-sc-tiktok-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }
@@ -1389,7 +1389,7 @@
   margin: 0 0 18px;
 }
 .vds-sc-podcast-cover h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1440,7 +1440,7 @@
   margin: 18px 0 0;
 }
 .vds-sc-podcast-ep h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }

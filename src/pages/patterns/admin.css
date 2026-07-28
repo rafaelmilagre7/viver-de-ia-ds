@@ -280,7 +280,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: var(--via-coral-dark);
-  font-style: italic;
+  font-style: normal;
   font-family: var(--via-display);
 }
 

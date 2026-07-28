@@ -193,7 +193,7 @@
 }
 
 .lt-hero-h1 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
@@ -431,7 +431,7 @@
 }
 
 .lt-section-head h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-regular);
   opacity: 0.72;
@@ -1142,7 +1142,7 @@
 }
 
 .lt-final-inner h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;

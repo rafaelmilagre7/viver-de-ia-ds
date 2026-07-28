@@ -19,14 +19,34 @@ function applyTheme(theme: Theme) {
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(() => readInitialTheme());
 
+  /* Aplica na montagem (o bootstrap do index.html já pintou · isto é a rede). */
   useEffect(() => {
-    applyTheme(theme);
+    applyTheme(readInitialTheme());
+  }, []);
+
+  /* O tema mora no <html>, e outros lugares escrevem lá — a página de Theming
+     tem um demo que troca o tema de verdade. Sem observar o atributo, o rótulo
+     deste botão fica mentindo (diz "Claro" com a página já clara) e o usuário
+     precisa clicar duas vezes. */
+  useEffect(() => {
+    const obs = new MutationObserver(() => {
+      const t: Theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+      setTheme((prev) => (prev === t ? prev : t));
+    });
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => obs.disconnect();
+  }, []);
+
+  /* Persistir SÓ na escolha explícita do usuário — montar a página não é escolha. */
+  const choose = (t: Theme) => {
+    setTheme(t);
+    applyTheme(t);
     try {
-      window.localStorage.setItem('via-theme', theme);
+      window.localStorage.setItem('via-theme', t);
     } catch {
       /* ignore */
     }
-  }, [theme]);
+  };
 
   const next: Theme = theme === 'dark' ? 'light' : 'dark';
 
@@ -34,7 +54,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       className="via-theme-toggle"
-      onClick={() => setTheme(next)}
+      onClick={() => choose(next)}
       aria-label={`Mudar para tema ${next === 'dark' ? 'escuro' : 'claro'}`}
       title={`Mudar para tema ${next === 'dark' ? 'escuro' : 'claro'}`}
     >

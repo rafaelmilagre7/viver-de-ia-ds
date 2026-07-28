@@ -1,0 +1,127 @@
+/* ==============================================================
+   FOUNDATIONS · THEMING
+   --------------------------------------------------------------
+   Só layout da página. Superfície vem de .via-tile (surfaces.css)
+   e o par Faça/Evite vem de .vds-do-dont (docs.css) — nada de card
+   inventado aqui, e nenhuma barra lateral colorida.
+   ============================================================== */
+
+.vds-thm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
+  gap: var(--via-space-4);
+  margin-top: 16px;
+}
+
+/* Tinta de sombra em vez de navy. --via-glass-shadow (usado por .via-tile) é
+   montado com --via-navy-14/-06, e esses dois invertem para BRANCO no tema
+   escuro — vira halo em volta do card. No claro os valores são idênticos
+   (ink-14 === navy-14), então nada muda ali. Mesma correção que docs.css já
+   aplica no par Faça/Evite. */
+.vds-thm-tile,
+.vds-thm-demo {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 12px 32px -14px var(--via-shadow-ink-14),
+    0 2px 8px -4px var(--via-shadow-ink-06);
+}
+
+.vds-thm-tile h3 {
+  margin: 12px 0 8px;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-body);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.01em;
+  color: var(--via-text-primary);
+}
+
+.vds-thm-tile p {
+  margin: 0;
+  font-size: var(--via-fs-caption);
+  line-height: 1.65;
+  color: var(--via-text-body);
+}
+
+.vds-thm-tile p + p {
+  margin-top: 8px;
+  color: var(--via-text-muted);
+}
+
+/* Regra do tema escuro · rótulo curto acima do enunciado */
+/* Mesmo peso de cor dos rótulos do resto dos fundamentos (eyebrow, section-meta).
+   --via-text-faint aqui daria 2,6:1 no claro — ilegível pra um rótulo de 10px. */
+.vds-thm-rule-mark {
+  display: block;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  letter-spacing: var(--via-ls-mark);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+  margin-bottom: 10px;
+}
+
+/* Painel do demo interativo */
+.vds-thm-demo {
+  margin-top: 24px;
+}
+
+.vds-thm-demo-note {
+  margin: 0 0 14px;
+  font-size: var(--via-fs-caption);
+  line-height: 1.6;
+  color: var(--via-text-muted);
+}
+
+.vds-thm-demo-note strong {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+.vds-thm-readout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--via-space-2);
+  margin-bottom: 12px;
+}
+
+.vds-thm-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--via-space-2);
+}
+
+/* Texto corrido das seções (mesmo ritmo do resto dos fundamentos) */
+.vds-thm-lead {
+  margin: 0 0 16px;
+  max-width: 68ch;
+  font-size: var(--via-fs-sm);
+  line-height: 1.65;
+  color: var(--via-text-muted);
+}
+
+.vds-thm-after {
+  margin: 14px 0 0;
+  max-width: 68ch;
+  font-size: var(--via-fs-caption);
+  line-height: 1.65;
+  color: var(--via-text-muted);
+}
+
+.vds-thm-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: var(--via-fs-caption);
+  line-height: 1.75;
+  color: var(--via-text-body);
+}
+
+.vds-thm-list li + li {
+  margin-top: 4px;
+}
+
+@media (max-width: 720px) {
+  .vds-thm-grid {
+    grid-template-columns: 1fr;
+  }
+}

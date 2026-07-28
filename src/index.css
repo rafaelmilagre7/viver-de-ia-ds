@@ -93,3 +93,8 @@ select:focus-visible,
     scroll-behavior: auto !important;
   }
 }
+
+/* Guarda da marca: Geist não tem itálico real — ênfase vem de peso+cor,
+   nunca de inclinação sintética ("Italic morto", Do's & Don'ts). Baixa
+   especificidade de propósito: componente pode sobrescrever se precisar. */
+em { font-style: normal; }

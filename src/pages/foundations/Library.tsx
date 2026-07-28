@@ -27,7 +27,15 @@ export default function Library() {
             Componentes React <em>tipados e exportáveis</em>.
           </>
         }
-        lede="A library `src/lib/` é a fundação de produção do design system — 25 componentes core com TypeScript types, variants e CSS encapsulado. Importe em qualquer projeto Viver de IA: Nina, Iris, ExecSeats, plataforma. Mesmo visual, zero copy-paste."
+        lede={
+          <>
+            A library <code className="vds-code-inline">src/lib/</code> é a fundação de produção do
+            design system — 46 componentes de UI + ThemeProvider, todos com TypeScript types,
+            variants e CSS encapsulado. Esta página demonstra os 31 componentes core; os outros 15
+            têm página de API própria. Importe em qualquer projeto Viver de IA: Nina, Íris,
+            ExecSeats, plataforma. Mesmo visual, zero copy-paste.
+          </>
+        }
       />
 
       <LibButtonSection />
@@ -169,6 +177,8 @@ function LibDatePickerSection() {
 function LibSliderSection() {
   const [vol, setVol] = useState(40);
   const [level, setLevel] = useState(3);
+  const [meta, setMeta] = useState(65);
+  const [uso, setUso] = useState(92);
   return (
     <Section
       title="<Slider /> · range editorial · 3 tones × 3 sizes"
@@ -189,6 +199,22 @@ function LibSliderSection() {
               { value: 3, label: 'médio' },
               { value: 5, label: 'denso' },
             ]}
+          />
+          <Slider
+            value={meta}
+            onChange={setMeta}
+            tone="accent"
+            size="sm"
+            label="Meta de comparecimento (accent · sm)"
+            formatValue={(n) => `${n}%`}
+          />
+          <Slider
+            value={uso}
+            onChange={setUso}
+            tone="coral"
+            size="lg"
+            label="Limite de uso · alerta (coral · lg)"
+            formatValue={(n) => `${n}%`}
           />
         </div>
         <pre className="vds-lib-code mono">{`<Slider value={v} onChange={setV} label="Volume" formatValue={n => \`\${n}%\`}
@@ -325,7 +351,7 @@ function LibButtonSection() {
           </Button>
         </div>
 
-        <pre className="vds-lib-code">{`import { Button } from '@viverdeia/ds';
+        <pre className="vds-lib-code">{`import { Button } from '@viverdeia/design-system';
 
 <Button variant="primary" size="md" iconRight={<ArrowRight />}>
   Continuar
@@ -391,7 +417,7 @@ function LibCardSection() {
 
         <Card variant="featured" hoverable>
           <strong>Card featured</strong>
-          <p>Glass + accent strip accent 2px no topo · 1 por section MAX</p>
+          <p>Glass + faixa navy de 2px no topo (nunca na lateral) · 1 por section MAX</p>
         </Card>
 
         <Card variant="dark" hoverable>
@@ -751,7 +777,7 @@ function LibTabsSection() {
 /* ---------- Switch ---------- */
 function LibSwitchSection() {
   const [notif, setNotif] = useState(true);
-  const [dark, setDark] = useState(false);
+  const [transcript, setTranscript] = useState(false);
 
   return (
     <Section
@@ -767,10 +793,10 @@ function LibSwitchSection() {
             onChange={(e) => setNotif(e.target.checked)}
           />
           <Switch
-            label="Modo escuro"
-            description="Aplica a paleta navy + glass dark globalmente."
-            checked={dark}
-            onChange={(e) => setDark(e.target.checked)}
+            label="Transcrição automática das sessões"
+            description="Gera transcript e resumo logo depois de cada call."
+            checked={transcript}
+            onChange={(e) => setTranscript(e.target.checked)}
           />
           <Switch label="Versão pequena (sm)" size="sm" defaultChecked />
           <Switch label="Desabilitado" disabled />
@@ -1015,12 +1041,10 @@ function LibSpinnerSection() {
           <Spinner size="sm" label="Pequeno (sm)" />
           <Spinner size="md" label="Médio (md)" />
           <Spinner size="lg" label="Grande (lg)" />
+          <Spinner tone="soft" label="Tom soft" />
         </div>
 
-        <div
-          className="vds-lib-row"
-          style={{ background: 'var(--via-navy)', borderRadius: 14, padding: 24 }}
-        >
+        <div className="vds-lib-row vds-lib-row--navy">
           <Spinner tone="inverse" label="Em superfície navy escura…" />
         </div>
 
@@ -1079,7 +1103,7 @@ function LibBreadcrumbSection() {
   return (
     <Section
       title="<Breadcrumb /> · navegação hierárquica · ARIA nav"
-      meta="separator custom · current page detectado pelo último item sem href"
+      meta="separator custom · o último item = current page (aria-current)"
     >
       <div className="vds-lib-grid">
         <div className="vds-lib-row" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: 16 }}>
@@ -1103,7 +1127,7 @@ function LibBreadcrumbSection() {
   items={[
     { label: 'Plataforma', href: '/' },
     { label: 'Mentorias', href: '/mentorias' },
-    { label: 'Sessão 12' },  // sem href = current page
+    { label: 'Sessão 12' },  // último item = current page
   ]}
 />`}</pre>
       </div>
@@ -1122,7 +1146,10 @@ function LibPaginationSection() {
       meta="maxVisible · keyboard nav · ARIA-current page"
     >
       <div className="vds-lib-grid">
-        <div className="vds-lib-row" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: 18 }}>
+        <div
+          className="vds-lib-row vds-lib-row--scrollable"
+          style={{ flexDirection: 'column', alignItems: 'flex-start', gap: 18 }}
+        >
           <Pagination page={pageA} totalPages={42} onPageChange={setPageA} />
           <Pagination page={pageB} totalPages={128} onPageChange={setPageB} />
         </div>
@@ -1152,7 +1179,7 @@ function LibAccordionSection() {
               title: 'Como funciona a mentoria?',
               content: (
                 <p>
-                  Você marca sessões individuais com o mentor primário, recebe trans­crição automática
+                  Você marca sessões individuais com o mentor primário, recebe transcrição automática
                   depois e tem 1 follow-up assíncrono por semana via Discord.
                 </p>
               ),
@@ -1198,7 +1225,7 @@ function LibStepperSection() {
   return (
     <Section
       title="<Stepper /> · wizard editorial · horizontal | vertical"
-      meta="ARIA-current step · onStepClick volta · 4-state indicator"
+      meta="ARIA-current step · onStepClick volta · indicador de 3 estados"
     >
       <div className="vds-lib-grid">
         <Stepper current={step} steps={items} onStepClick={setStep} />

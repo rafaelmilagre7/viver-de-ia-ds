@@ -63,7 +63,7 @@
   margin: 0 0 8px;
 }
 .vds-com-slide-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
@@ -203,7 +203,7 @@
   margin: 0;
 }
 .vds-com-onepager h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
@@ -386,7 +386,7 @@
   margin: 0 0 14px;
 }
 .vds-com-case h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
@@ -496,7 +496,7 @@
 .vds-com-case > footer blockquote {
   margin: 0 0 14px;
   font-family: var(--via-font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: var(--via-fs-h4);
   color: var(--via-text-primary);
   line-height: 1.45;

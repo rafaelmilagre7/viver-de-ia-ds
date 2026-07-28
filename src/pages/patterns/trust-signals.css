@@ -466,7 +466,7 @@
   margin: 0 0 10px;
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.018em;

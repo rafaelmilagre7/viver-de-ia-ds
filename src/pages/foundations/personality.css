@@ -74,14 +74,14 @@
 }
 .vds-pers-trait h3 em {
   font-family: var(--via-font-display);
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: var(--via-ink-2);
 }
 
 .vds-pers-sum {
   font-family: var(--via-font-display);
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   font-size: var(--via-fs-h4);
   line-height: 1.45;
@@ -300,7 +300,7 @@
 .vds-pers-opt.bad  .lbl { color: var(--via-coral-dark); }
 .vds-pers-opt p {
   font-family: var(--via-font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: var(--via-fs-body);
   color: var(--via-text-primary);
   line-height: 1.5;

@@ -89,8 +89,10 @@ export function Slider({
           <div className="via-slider__marks" aria-hidden="true">
             {marks.map((m) => {
               const mp = ((m.value - min) / (max - min)) * 100;
+              /* Rótulo nas pontas encosta na borda da trilha em vez de vazar pra fora dela. */
+              const edge = mp <= 0.5 ? ' is-start' : mp >= 99.5 ? ' is-end' : '';
               return (
-                <span key={m.value} className="via-slider__mark" style={{ left: `${mp}%` }}>
+                <span key={m.value} className={`via-slider__mark${edge}`} style={{ left: `${mp}%` }}>
                   <span className="dot" />
                   {m.label && <em>{m.label}</em>}
                 </span>

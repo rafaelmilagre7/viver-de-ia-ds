@@ -1,8 +1,8 @@
-import {
-  Award, AlertCircle, Compass, Layers,
-} from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Check, X } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import { Pill, useTheme } from '../../lib';
 import './philosophy.css';
 
 export default function Philosophy() {
@@ -20,7 +20,7 @@ export default function Philosophy() {
 
       <RulePaletteRestritaSection />
       <RulePillSection />
-      <RulePaletteSection />
+      <RuleTokensSection />
       <RuleSignaturesSection />
       <RuleNoBolinhaSection />
       <RuleVoiceSection />
@@ -28,7 +28,58 @@ export default function Philosophy() {
   );
 }
 
+/* ---------- lê o valor REAL do token no tema atual ----------
+   Fonte de verdade = CSS computado, não string escrita à mão.
+   Assim a página não consegue mentir: se tokens.css mudar, o
+   valor exibido muda junto — e no dark mostra o valor do dark. */
+function useTokenValues(names: readonly string[]): Record<string, string> {
+  const { theme } = useTheme();
+  const [values, setValues] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const cs = getComputedStyle(document.documentElement);
+    const next: Record<string, string> = {};
+    for (const n of names) next[n] = cs.getPropertyValue(n).trim().toUpperCase();
+    setValues(next);
+  }, [theme, names]);
+
+  return values;
+}
+
 /* ---------- Regra 1 · Paleta restrita · navy + cinza + branco + preto ---------- */
+const TONES = [
+  {
+    name: 'Branco · #FFFFFF',
+    role: 'canvas principal, surfaces de card light, contraste em hero navy',
+    chip: 'var(--via-white)',
+  },
+  {
+    name: 'Off-white · #F7F8FA',
+    role: 'page bg alternativo, surface elev, peso visual sem ruído · --via-gray-50',
+    chip: '#F7F8FA',
+  },
+  {
+    name: 'Cinzas · gray-50 → gray-900',
+    role: 'hairlines, borders, body text · 10 stops, do #F7F8FA ao quase-preto #101828',
+    chip: 'linear-gradient(135deg, #F7F8FA 0%, #D0D5DD 45%, #101828 100%)',
+  },
+  {
+    name: 'Azul escuro · #1E3A5F',
+    role: 'borders sobre navy, hover state, mid-tone em gradients · --via-blue',
+    chip: '#1E3A5F',
+  },
+  {
+    name: 'Navy · #0A1F3B',
+    role: 'cor primária, hero atmosphere, CTAs, marca · 80% do peso visual',
+    chip: '#0A1F3B',
+  },
+  {
+    name: 'Preto · #000000',
+    role: 'tipografia editorial de peso máximo · monogram, headers fortes · --via-black',
+    chip: '#000000',
+  },
+] as const;
+
 function RulePaletteRestritaSection() {
   return (
     <Section title="Regra 1 · Paleta restrita" meta="navy domina · cinza estrutura · branco respira · preto pontua">
@@ -47,48 +98,15 @@ function RulePaletteRestritaSection() {
           <article className="vds-phil-allow">
             <span className="vds-phil-allow-eyebrow">Os 6 tons permitidos</span>
             <ul>
-              <li>
-                <div className="vds-phil-allow-icon"><AlertCircle size={13} strokeWidth={1.8} /></div>
-                <div>
-                  <strong>Branco · #FFFFFF</strong>
-                  <em>canvas principal, surfaces de card light, contraste em hero navy</em>
-                </div>
-              </li>
-              <li>
-                <div className="vds-phil-allow-icon"><Award size={13} strokeWidth={1.8} /></div>
-                <div>
-                  <strong>Off-white · #F7F8FA</strong>
-                  <em>page bg alternativo, surface elev, peso visual sem ruído</em>
-                </div>
-              </li>
-              <li>
-                <div className="vds-phil-allow-icon"><Layers size={13} strokeWidth={1.8} /></div>
-                <div>
-                  <strong>Cinzas · gray-100 → gray-900</strong>
-                  <em>hairlines, borders, body text · 9 stops do gray-50 ao quase-preto</em>
-                </div>
-              </li>
-              <li>
-                <div className="vds-phil-allow-icon"><Compass size={13} strokeWidth={1.8} /></div>
-                <div>
-                  <strong>Azul escuro · #1E3A5F</strong>
-                  <em>borders sobre navy, hover state, mid-tone em gradients</em>
-                </div>
-              </li>
-              <li>
-                <div className="vds-phil-allow-icon"><Award size={13} strokeWidth={1.8} /></div>
-                <div>
-                  <strong>Navy · #0A1F3B</strong>
-                  <em>cor primária, hero atmosphere, CTAs, marca · 80% do peso visual</em>
-                </div>
-              </li>
-              <li>
-                <div className="vds-phil-allow-icon"><AlertCircle size={13} strokeWidth={1.8} /></div>
-                <div>
-                  <strong>Preto · #000000</strong>
-                  <em>tipografia editorial de peso máximo · monogram, headers fortes</em>
-                </div>
-              </li>
+              {TONES.map((t) => (
+                <li key={t.name}>
+                  <span className="vds-phil-allow-chip" style={{ background: t.chip }} aria-hidden="true" />
+                  <div>
+                    <strong>{t.name}</strong>
+                    <em>{t.role}</em>
+                  </div>
+                </li>
+              ))}
             </ul>
           </article>
 
@@ -120,7 +138,7 @@ function RulePillSection() {
           <div>
             <h3>Toda pill segue <em>a mesma forma</em>.</h3>
             <p>
-              Não tem versão "small caps" para alguns lugares e "lowercase" para outros — caps lock + letter-spacing alto é cliché de bootstrap. O padrão editorial é discreto: lowercase, peso modesto, sem decoração antes do texto.
+              Não tem versão "small caps" para alguns lugares e "lowercase" para outros — caps lock + letter-spacing alto é cliché de bootstrap. O padrão editorial é discreto: lowercase, peso modesto, sem decoração antes do texto. As pills abaixo são o componente <code>&lt;Pill&gt;</code> da library, não uma cópia: o que você vê é literalmente o que o produto renderiza.
             </p>
           </div>
         </header>
@@ -128,85 +146,93 @@ function RulePillSection() {
         <div className="vds-phil-pill-demo">
           <div className="vds-phil-pill-row">
             <span className="vds-phil-pill-lbl">Padrão</span>
-            <span className="vds-phil-pill default">em produção</span>
-            <span className="vds-phil-pill default">corporate</span>
-            <span className="vds-phil-pill default">há 4 min</span>
+            <Pill>em produção</Pill>
+            <Pill>corporate</Pill>
+            <Pill>há 4 min</Pill>
           </div>
           <div className="vds-phil-pill-row">
             <span className="vds-phil-pill-lbl">Atenção <em>(semântico)</em></span>
-            <span className="vds-phil-pill attn">requer atenção</span>
-            <span className="vds-phil-pill attn">expira em 8 dias</span>
+            <Pill variant="attn">requer atenção</Pill>
+            <Pill variant="attn">expira em 8 dias</Pill>
           </div>
           <div className="vds-phil-pill-row">
             <span className="vds-phil-pill-lbl">Crítico <em>(coral)</em></span>
-            <span className="vds-phil-pill churn">risco churn</span>
-            <span className="vds-phil-pill churn">fora do ar</span>
+            <Pill variant="churn">risco churn</Pill>
+            <Pill variant="churn">fora do ar</Pill>
           </div>
         </div>
 
-        <pre className="vds-phil-code mono">{`.vds-pill {
-  padding: 4px 11px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 500;
+        <pre className="vds-phil-code mono">{`/* src/lib/Pill/Pill.css · a forma canônica */
+.via-pill {
+  border-radius: var(--via-radius-pill);  /* 999px */
   letter-spacing: -0.004em;
   white-space: nowrap;
   line-height: 1.4;
-  /* NÃO: text-transform: uppercase */
-  /* NÃO: letter-spacing: 0.10em+ */
-  /* NÃO: font-weight: 700 */
-  /* NÃO: bolinha decorativa antes do texto */
-}`}</pre>
+  border: 1px solid;
+}
+.via-pill--md {
+  padding: 4px 11px;
+  font-size: var(--via-fs-label);         /* 11px */
+  font-weight: var(--via-fw-medium);      /* 500 */
+}
+/* NÃO: text-transform: uppercase */
+/* NÃO: letter-spacing: 0.10em+ */
+/* NÃO: font-weight: 700 */
+/* NÃO: bolinha decorativa antes do texto */`}</pre>
       </article>
     </Section>
   );
 }
 
-/* ---------- Regra 3 · Paleta restrita ---------- */
-function RulePaletteSection() {
-  const tokens = [
-    { name: 'navy',        hex: 'var(--via-navy)',        role: 'protagonista · texto, CTA, surfaces dark · 80% do peso visual',  bg: 'var(--via-navy)',        fg: 'var(--via-white)' },
-    { name: 'navy-deep',   hex: 'var(--via-navy-deep)',   role: 'gradient bottom · hover state em surfaces dark',                  bg: 'var(--via-navy-deep)',   fg: 'var(--via-white)' },
-    { name: 'navy-darker', hex: 'var(--via-navy-darker)', role: 'mesh bottom · footers · bordas escuras',                           bg: 'var(--via-navy-darker)', fg: 'var(--via-white)' },
-    { name: 'blue',        hex: 'var(--via-blue)',        role: 'mid azul-escuro · gradient stops · bordas sobre navy',            bg: 'var(--via-blue)',        fg: 'var(--via-white)' },
-    { name: 'ink-2',       hex: 'var(--via-ink-2)',       role: 'texto secundário editorial · meta lines',                          bg: 'var(--via-ink-2)',       fg: 'var(--via-white)' },
-    { name: 'ink-3',       hex: 'var(--via-ink-3)',       role: 'texto terciário · timestamps · captions',                          bg: 'var(--via-ink-3)',       fg: 'var(--via-white)' },
-    { name: 'gray-50',     hex: 'var(--via-gray-50)',     role: 'page bg alt · surface elev sem ruído',                             bg: 'var(--via-gray-50)',     fg: 'var(--via-navy)', border: true },
-    { name: 'gray-100',    hex: 'var(--via-gray-100)',    role: 'subtle surface · paper editorial',                                 bg: 'var(--via-gray-100)',    fg: 'var(--via-navy)', border: true },
-    { name: 'gray-300',    hex: 'var(--via-gray-300)',    role: 'border stronger · gradient highlights · accent-light',             bg: 'var(--via-gray-300)',    fg: 'var(--via-navy)' },
-    { name: 'white',       hex: 'var(--via-white)',       role: 'canvas principal · superfície primária',                           bg: 'var(--via-white)',       fg: 'var(--via-navy)', border: true },
-    { name: 'coral',       hex: 'var(--via-coral)',       role: 'destrutivo only · cancel / error real',                            bg: 'var(--via-coral)',       fg: 'var(--via-white)' },
-    { name: 'success',     hex: 'var(--via-success)',     role: 'só pra presence dot · uptime · checkmark · navy-adjacent',         bg: 'var(--via-success)',     fg: 'var(--via-white)' },
-  ];
+/* ---------- Regra 3 · Tokens canônicos ---------- */
+const TOKENS = [
+  { name: '--via-navy',        role: 'protagonista · texto, CTA, surfaces dark · 80% do peso visual' },
+  { name: '--via-navy-deep',   role: 'gradient bottom · hover state em surfaces dark' },
+  { name: '--via-navy-darker', role: 'mesh bottom · footers · bordas escuras' },
+  { name: '--via-blue',        role: 'mid azul-escuro · gradient stops · bordas sobre navy' },
+  { name: '--via-ink-2',       role: 'texto secundário editorial · meta lines' },
+  { name: '--via-ink-3',       role: 'texto terciário · timestamps · captions' },
+  { name: '--via-gray-50',     role: 'page bg alt · surface elev sem ruído' },
+  { name: '--via-gray-100',    role: 'subtle surface · paper editorial' },
+  { name: '--via-gray-300',    role: 'border stronger · gradient highlights' },
+  { name: '--via-white',       role: 'canvas principal · superfície primária' },
+  { name: '--via-coral',       role: 'destrutivo only · cancel / error real' },
+  { name: '--via-success',     role: 'só pra presence dot · uptime · checkmark · navy-adjacent' },
+] as const;
+
+const TOKEN_NAMES = TOKENS.map((t) => t.name);
+
+function RuleTokensSection() {
+  const { theme } = useTheme();
+  const values = useTokenValues(TOKEN_NAMES);
 
   return (
-    <Section title="Regra 3 · Tokens canônicos" meta="12 tokens · navy + cinza + branco + 2 semânticos">
+    <Section title="Regra 3 · Tokens canônicos" meta="12 tokens de cor · navy + cinza + branco + 2 semânticos">
       <article className="vds-phil-rule">
         <header>
           <span className="vds-phil-num mono">03</span>
           <div>
-            <h3>12 tokens no total — <em>navy domina 80% do canvas</em>.</h3>
+            <h3>12 tokens de cor — <em>navy domina 80% do canvas</em>.</h3>
             <p>
-              Fora dessa lista, nada. Cores de marca terceiros (logos parceiros, syntax highlighting em code blocks) aparecem só nos contextos próprios deles, nunca como acento decorativo. Sem cyan, sem magenta, sem neon, sem roxo "IA", sem dourado, sem amarelo.
+              Este é o roster de cor da marca: os 12 tokens abaixo mais a rampa de cinza (gray-50 → gray-900), que é estrutura, não cor. Fora disso, nada. Cores de terceiros (logos parceiros, syntax highlighting em code block) aparecem só nos contextos próprios deles, nunca como acento decorativo. Sem cyan, sem magenta, sem neon, sem roxo "IA", sem dourado, sem amarelo.
+            </p>
+            <p className="vds-phil-note">
+              Os valores abaixo são lidos do CSS em tempo de execução, no tema <strong>{theme === 'dark' ? 'escuro' : 'claro'}</strong> — não são texto digitado. Quatro deles trocam de valor entre os temas: ink-2, ink-3, gray-50 e gray-100.
             </p>
           </div>
         </header>
 
         <div className="vds-phil-tokens">
-          {tokens.map((t) => (
+          {TOKENS.map((t) => (
             <div key={t.name} className="vds-phil-token">
               <span
                 className="vds-phil-token-swatch"
-                style={{
-                  background: t.bg,
-                  color: t.fg,
-                  border: t.border ? '1px solid var(--via-navy-12)' : 'none',
-                }}
-              >
-                {t.hex}
-              </span>
+                style={{ background: `var(${t.name})` }}
+                aria-hidden="true"
+              />
               <div>
-                <strong className="mono">--via-{t.name}</strong>
+                <strong className="mono">{t.name}</strong>
+                <span className="vds-phil-token-val mono">{values[t.name] || '—'}</span>
                 <em>{t.role}</em>
               </div>
             </div>
@@ -220,27 +246,27 @@ function RulePaletteSection() {
 /* ---------- Regra 4 · Assinaturas comportamentais ---------- */
 function RuleSignaturesSection() {
   return (
-    <Section title="Regra 4 · Assinaturas comportamentais" meta="hover signatures · atmospheric radials · sombras navy-tinted">
+    <Section title="Regra 4 · Assinaturas comportamentais" meta="row wash · lift translateY · atmosphere radial">
       <article className="vds-phil-rule">
         <header>
           <span className="vds-phil-num mono">04</span>
           <div>
             <h3>O design system tem <em>uma assinatura sutil</em> no comportamento.</h3>
             <p>
-              Cada elemento interativo respira do mesmo jeito. Hover sempre revela a mesma bar lateral navy fade. Cards sobem 2px na entrada. Atmosphere radial no canto superior esquerdo. Sombras navy-tinted, nunca pretas puras. Você reconhece "isso é Viver de IA" sem precisar ver o logo.
+              Cada elemento interativo respira do mesmo jeito. Row de lista lava de navy no hover. Cards sobem 3px e a atmosphere radial do canto superior esquerdo acende junto. Sombra sempre pela tinta <code>--via-shadow-ink-*</code> — navy no tema claro, preta no escuro — nunca <code>--via-navy-*</code> cru em <code>box-shadow</code>, que inverte pra branco no dark e vira halo. Você reconhece "isso é Viver de IA" sem precisar ver o logo.
             </p>
           </div>
         </header>
 
         <div className="vds-phil-sigs">
           <article className="vds-phil-sig">
-            <div className="vds-phil-sig-demo bar">
+            <div className="vds-phil-sig-demo rows">
               <div className="row">Hover em mim</div>
-              <div className="row">E em mim</div>
+              <div className="row is-selected">Row selecionada</div>
               <div className="row">E em mim também</div>
             </div>
-            <h4>Bar lateral fade navy</h4>
-            <p>2px gradient navy → transparente, aparece à esquerda no hover de rows, cards, items de lista.</p>
+            <h4>Row wash navy</h4>
+            <p>Hover pinta <code>--via-navy-04</code>; selecionada pinta <code>--via-navy-08</code> + marcador de 2px à esquerda. O marcador só é legítimo como <strong>estado de seleção em row</strong> — barra lateral colorida em card é banida.</p>
           </article>
 
           <article className="vds-phil-sig">
@@ -248,7 +274,7 @@ function RuleSignaturesSection() {
               <div className="card">Hover pra subir</div>
             </div>
             <h4>Lift translateY</h4>
-            <p>-1px a -3px no hover · transition cubic-bezier(.2,.7,.2,1) · acompanhado de shadow expand.</p>
+            <p>-3px no hover · <code>transition .26s cubic-bezier(.2,.7,.2,1)</code> · acompanhado de shadow expand em <code>--via-shadow-ink-20</code>.</p>
           </article>
 
           <article className="vds-phil-sig">
@@ -256,7 +282,7 @@ function RuleSignaturesSection() {
               <div className="card">Atmosphere radial</div>
             </div>
             <h4>Radial atmosphere</h4>
-            <p><code>radial-gradient(...) at 0% 0%, var(--via-navy-04), transparent 60%</code> no top-left dos cards principais.</p>
+            <p>Canônico: <code>radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%)</code> no top-left. A demo acima usa <code>--via-navy-08</code> só pra ler em card pequeno.</p>
           </article>
         </div>
       </article>
@@ -281,7 +307,9 @@ function RuleNoBolinhaSection() {
 
         <div className="vds-phil-dot-demo">
           <div className="vds-phil-dot-row">
-            <span className="vds-phil-dot-lbl">❌ Banido</span>
+            <span className="vds-phil-dot-lbl bad">
+              <X size={13} strokeWidth={2.2} aria-hidden="true" /> Banido
+            </span>
             <span className="vds-phil-pill-bad">
               <span className="bolinha" />
               Pago
@@ -296,17 +324,18 @@ function RuleNoBolinhaSection() {
             </span>
           </div>
           <div className="vds-phil-dot-row">
-            <span className="vds-phil-dot-lbl">✓ Editorial</span>
-            <span className="vds-phil-pill default">Pago</span>
-            <span className="vds-phil-pill default">Production</span>
-            <span className="vds-phil-pill default">Verificado</span>
+            <span className="vds-phil-dot-lbl">
+              <Check size={13} strokeWidth={2.2} aria-hidden="true" /> Editorial
+            </span>
+            <Pill>Pago</Pill>
+            <Pill>Production</Pill>
+            <Pill>Verificado</Pill>
           </div>
           <div className="vds-phil-dot-row">
-            <span className="vds-phil-dot-lbl">✓ Live real</span>
-            <span className="vds-phil-pill-live">
-              <span className="dot" />
-              <em>ao vivo agora</em>
+            <span className="vds-phil-dot-lbl">
+              <Check size={13} strokeWidth={2.2} aria-hidden="true" /> Live real
             </span>
+            <Pill variant="live">ao vivo agora</Pill>
           </div>
         </div>
       </article>

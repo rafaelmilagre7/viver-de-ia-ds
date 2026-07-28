@@ -320,7 +320,7 @@
 .vds-code-content .k { color: var(--via-blue-soft); font-weight: var(--via-fw-semibold); }       /* keyword */
 .vds-code-content .v { color: var(--via-text-primary); }                          /* variable */
 .vds-code-content .s { color: #15794D; }                          /* string · AA em branco */
-.vds-code-content .c { color: #6B6B6B; font-style: italic; }      /* comment · AA em branco */
+.vds-code-content .c { color: #6B6B6B; font-style: normal; }      /* comment · AA em branco */
 .vds-code-content .p { color: var(--via-text-primary); }                          /* property */
 .vds-code-content .n { color: var(--via-coral); }                          /* number */
 .vds-code-content .t { color: var(--via-blue-soft); }                          /* type */
@@ -333,7 +333,7 @@
 .vds-code.dark .vds-code-content .p { color: var(--via-gray-300); }
 .vds-code.dark .vds-code-content .h { color: var(--via-gray-300); font-weight: var(--via-fw-bold); }  /* md header */
 .vds-code.dark .vds-code-content .b { color: var(--via-white); font-weight: var(--via-fw-bold); }     /* md strong */
-.vds-code.dark .vds-code-content .i { color: rgba(255, 255, 255, 0.78); font-style: italic; }
+.vds-code.dark .vds-code-content .i { color: rgba(255, 255, 255, 0.78); font-style: normal; }
 
 /* ============================================
    Terminal · editorial dark

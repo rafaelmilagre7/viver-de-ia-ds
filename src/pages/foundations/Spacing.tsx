@@ -18,6 +18,24 @@ const scale = [
   { tok: '--via-space-32', px: 128 },
 ];
 
+/* Meios-passos de 2px que existem em tokens.css e que a página escondia.
+   Não são exceção: --via-space-3_5 e --via-space-1_5 estão entre os tokens
+   mais usados do DS inteiro. Omitir isso ensinava o time a evitá-los. */
+const halfSteps = [
+  { tok: '--via-space-0_5', px: 2 },
+  { tok: '--via-space-1_5', px: 6 },
+  { tok: '--via-space-2_5', px: 10 },
+  { tok: '--via-space-3_5', px: 14 },
+  { tok: '--via-space-4_5', px: 18 },
+  { tok: '--via-space-5_5', px: 22 },
+  { tok: '--via-space-7', px: 28 },
+  { tok: '--via-space-9', px: 36 },
+  { tok: '--via-space-14', px: 56 },
+];
+
+/* A barra é proporcional ao maior valor da escala — nada de clamp. */
+const MAX_PX = scale[scale.length - 1].px;
+
 export default function Spacing() {
   return (
     <>
@@ -31,15 +49,36 @@ export default function Spacing() {
         lede="A escala de espaçamento dobra a cada salto importante. O ritmo dos saltos grandes — 32 / 64 / 96 / 128 — é o que dá ao layout a calma editorial. Cuidado com 'preencher branco' — o branco é a maioria."
       />
 
-      <Section title="Escala" meta="base 4px">
+      <Section title="Escala" meta="base 4px · meio-passo 2px">
         <div className="vds-spacing-scale">
           {scale.map((s) => (
             <div key={s.tok} className="vds-spacing-row">
               <span className="vds-spacing-token">{s.tok}</span>
               <span className="vds-spacing-px">{s.px}px</span>
-              <div className="vds-spacing-bar" style={{ width: Math.min(s.px * 4, 100) + '%' }} />
+              <div className="vds-spacing-track">
+                <div
+                  className="vds-spacing-bar"
+                  style={{ width: (s.px / MAX_PX) * 100 + '%' }}
+                />
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="vds-spacing-half">
+          <p className="vds-spacing-half-note">
+            Meios-passos de 2px. Existem para ajuste ótico — ícone dentro de pill, gap
+            de chip, respiro de badge — e não para abrir uma segunda régua. Se um
+            meio-passo virou hábito numa tela, o passo inteiro é que estava errado.
+          </p>
+          <div className="vds-spacing-half-grid">
+            {halfSteps.map((h) => (
+              <div key={h.tok} className="vds-spacing-half-item">
+                <span className="vds-spacing-half-tok">{h.tok}</span>
+                <span className="vds-spacing-half-px">{h.px}px</span>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 

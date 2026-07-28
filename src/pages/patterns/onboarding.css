@@ -449,7 +449,7 @@
 }
 
 .vds-wiz-aside h3 em {
-  font-style: italic;
+  font-style: normal;
   background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -640,7 +640,7 @@
    ficava cortado (background-clip: text não pinta o overhang do fragmento que
    quebra) e no tema escuro o stop navy sumia no fundo. A ênfase é o itálico. */
 .vds-wiz-main h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-text-primary);
 }
 

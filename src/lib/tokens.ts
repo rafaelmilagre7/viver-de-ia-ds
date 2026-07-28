@@ -5,7 +5,7 @@
  * @example
  *   import { tokens, type TokenName } from '@viverdeia/design-system/tokens';
  *   const navy = tokens['via-navy']; // => '#0A1F3B'
- *   tokens['via-radius-lg'];          // => '16px'
+ *   tokens['via-radius-lg'];          // => '20px'
  */
 
 export interface Token {

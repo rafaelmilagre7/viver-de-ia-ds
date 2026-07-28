@@ -1501,7 +1501,7 @@
 
 .vds-cp-live-top .vds-live-pill em {
   font-family: var(--via-font-display, var(--via-font));
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-caption);
   letter-spacing: -0.012em;

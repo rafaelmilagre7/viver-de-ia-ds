@@ -534,7 +534,7 @@
   font-size: var(--via-fs-xs);
   line-height: 1.6;
   color: var(--via-text-body);
-  font-style: italic;
+  font-style: normal;
   letter-spacing: -0.004em;
 }
 

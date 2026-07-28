@@ -49,7 +49,7 @@
 }
 .vds-ve-rhythm {
   font-family: var(--via-font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: var(--via-fs-body);
   color: var(--via-text-primary);
   margin: 0;

@@ -55,7 +55,7 @@
 }
 
 .vds-rings-l h3 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
@@ -553,7 +553,7 @@
 
 .vds-cert-pre {
   font-family: var(--via-font);
-  font-style: italic;
+  font-style: normal;
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   color: var(--via-gray-300);
@@ -594,7 +594,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.020em;
   line-height: 1.25;
-  font-style: italic;
+  font-style: normal;
 }
 
 /* Período */
@@ -731,7 +731,7 @@
   color: var(--via-white);
   letter-spacing: -0.014em;
   font-family: var(--via-font);
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 3px;
 }
 

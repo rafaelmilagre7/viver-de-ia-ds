@@ -71,8 +71,8 @@ export default function Brand() {
         <div className="vds-brand-grid" style={{ marginTop: 24 }}>
           {frames.map((f) => (
             <div key={f.name} className="vds-brand-tile">
-              <div className="vds-brand-tile-img" style={{ padding: 0, overflow: 'hidden' }}>
-                <img src={f.img} alt={f.name} style={{ maxWidth: '100%', maxHeight: '100%', width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="vds-brand-tile-img vds-brand-tile-img--frame">
+                <img src={f.img} alt={f.name} />
               </div>
               <div className="vds-brand-tile-meta">
                 <span className="vds-brand-tile-name">{f.name}</span>
@@ -89,35 +89,10 @@ export default function Brand() {
           <em> altura do "V"</em> em volta de qualquer marca. Nada — texto, ícone, borda — entra
           dentro dessa zona.
         </p>
-        <div
-          style={{
-            marginTop: 24,
-            padding: 64,
-            border: '0.5px solid var(--via-navy-12)',
-            borderRadius: 'var(--via-radius-lg)',
-            display: 'flex',
-            justifyContent: 'center',
-            background: 'var(--via-gray-50)',
-            position: 'relative',
-          }}
-        >
-          <div style={{ position: 'relative', padding: 36, border: '1px dashed var(--via-navy-40)' }}>
-            <img src={wordmark} alt="" style={{ height: 44, display: 'block' }} />
-            <span
-              style={{
-                position: 'absolute',
-                top: -10,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                background: 'var(--via-bg)',
-                padding: '0 8px',
-                fontFamily: 'var(--via-font-mono)',
-                fontSize: 10,
-                color: 'var(--via-text-muted)',
-              }}
-            >
-              clearance · 1x
-            </span>
+        <div className="vds-brand-clearance">
+          <div className="vds-brand-clearance-frame">
+            <img src={wordmark} alt="" />
+            <span className="vds-brand-clearance-label">clearance · 1x</span>
           </div>
         </div>
       </Section>

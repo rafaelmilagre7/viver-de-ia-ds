@@ -256,7 +256,7 @@
 }
 
 .vds-pa-meta-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
@@ -541,7 +541,7 @@
 }
 
 .vds-pa-story-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.72;
@@ -632,7 +632,7 @@
 }
 
 .vds-pa-reel-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.72;
@@ -868,7 +868,7 @@
 }
 
 .vds-pa-li-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
@@ -1253,7 +1253,7 @@
 }
 
 .vds-pa-gdn-banner h3 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
@@ -1382,7 +1382,7 @@
 }
 
 .vds-pa-yt-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
@@ -1734,7 +1734,7 @@
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.004em;
-  font-style: italic;
+  font-style: normal;
 }
 
 .vds-pa-audience-card footer {
@@ -2111,7 +2111,7 @@
   color: var(--via-text-body);
   line-height: 1.5;
   letter-spacing: -0.005em;
-  font-style: italic;
+  font-style: normal;
 }
 
 .vds-pa-headlines-pair .bad p { color: rgba(142, 59, 59, 0.78); }

@@ -34,7 +34,7 @@ export const Introduction = () => (
       }}
     >
       Catálogo interativo dos{' '}
-      <em style={{ fontStyle: 'italic', color: 'var(--via-text-muted)', fontWeight: 400 }}>
+      <em style={{ fontStyle: 'normal', color: 'var(--via-text-muted)', fontWeight: 400 }}>
         15 componentes core
       </em>
       .

@@ -170,5 +170,5 @@
   text-align: center;
   font-size: var(--via-fs-xs);
   color: var(--via-ink-3, #6B7891);
-  font-style: italic;
+  font-style: normal;
 }

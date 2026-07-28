@@ -359,7 +359,7 @@
 }
 
 .vds-fp-drop-zone h4 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-accent-warm);
 }
 
@@ -1147,7 +1147,7 @@
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   border-radius: var(--via-radius-md);
-  font-style: italic;
+  font-style: normal;
   font-family: var(--via-display);
   font-size: var(--via-fs-sm);
   color: var(--via-text-primary);

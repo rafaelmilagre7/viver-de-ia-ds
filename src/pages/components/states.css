@@ -1374,7 +1374,7 @@
 }
 
 .vds-empty-prem h3 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-medium);
   background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
   -webkit-background-clip: text;
@@ -1393,7 +1393,7 @@
 }
 
 .vds-empty-prem h4 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-medium);
   color: var(--via-accent-warm);
 }
@@ -1421,7 +1421,7 @@
 }
 
 .vds-empty-prem p em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-accent-warm);
   font-weight: var(--via-fw-medium);
 }

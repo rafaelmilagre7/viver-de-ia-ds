@@ -16,11 +16,14 @@
     0 18px 40px -22px var(--via-shadow-ink-14);
 }
 
+/* atmosphere canônica · navy-04 ADAPTA no dark (vira branco@4.5%).
+   rgba(10,31,59,.035) cru ficava invisível no tema escuro — a própria
+   Regra 4 documenta var(--via-navy-04), então é isso que roda aqui. */
 .vds-phil-rule::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.035), transparent 60%);
+  background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
@@ -61,12 +64,28 @@
   max-width: 720px;
 }
 
+/* Ênfase da headline · gradient dentro da família navy.
+   ATENÇÃO: --via-accent NÃO adapta no dark (continua #0A1F3B). O gradient
+   antigo (accent → accent-warm) começava em navy quase-preto sobre card
+   escuro: a primeira palavra de TODAS as 6 headlines media 2.61:1 no dark
+   (medido). Agora cada tema fixa a própria rampa. */
 .vds-phil-rule h3 em {
-  font-style: italic;
-  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
+  font-style: normal;
+  background: linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: var(--via-navy); /* fallback sem background-clip */
+}
+
+/* o shorthand `background` reseta background-clip → repetir o clip aqui,
+   senão o gradient pinta a CAIXA inteira e o texto (fill transparent) some */
+[data-theme='dark'] .vds-phil-rule h3 em {
+  background: linear-gradient(135deg, var(--via-text-primary) 0%, var(--via-text-body) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--via-text-primary);
 }
 
 .vds-phil-rule > header p {
@@ -80,6 +99,22 @@
 .vds-phil-rule > header p strong {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
+}
+
+.vds-phil-rule > header p code {
+  font-family: var(--via-mono);
+  font-size: var(--via-fs-label);
+  background: var(--via-navy-05);
+  color: var(--via-text-primary);
+  padding: 1px 5px;
+  border-radius: var(--via-radius-xs);
+  border: 1px solid var(--via-border-soft);
+}
+
+.vds-phil-rule > header p.vds-phil-note {
+  margin-top: 10px;
+  font-size: var(--via-fs-xs);
+  color: var(--via-ink-3);
 }
 
 /* ============================================
@@ -102,8 +137,9 @@
   border: 1px solid var(--via-border-soft);
 }
 
+/* navy-03 → transparent · adapta no dark (o stop cru rgba(10,31,59,.01) não) */
 .vds-phil-allow {
-  background: linear-gradient(180deg, var(--via-navy-03), rgba(10, 31, 59, 0.01));
+  background: linear-gradient(180deg, var(--via-navy-03), transparent);
 }
 
 .vds-phil-forbid {
@@ -144,15 +180,12 @@
   align-items: start;
 }
 
-.vds-phil-allow-icon {
+/* chip = a cor de verdade · ícone genérico não ensinava nada numa lista de tons */
+.vds-phil-allow-chip {
   width: 28px;
   height: 28px;
   border-radius: var(--via-radius-sm);
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid var(--via-navy-14);
   flex-shrink: 0;
 }
 
@@ -230,35 +263,8 @@
   margin-left: 4px;
 }
 
-.vds-phil-pill {
-  padding: 4px 11px;
-  border-radius: var(--via-radius-pill);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
-  white-space: nowrap;
-  line-height: 1.4;
-  border: 1px solid;
-}
-
-.vds-phil-pill.default {
-  background: var(--via-navy-05);
-  border-color: var(--via-navy-14);
-  color: var(--via-text-primary);
-}
-
-.vds-phil-pill.attn {
-  background: var(--via-navy-12);
-  border-color: var(--via-navy-30);
-  color: var(--via-text-primary);
-}
-
-.vds-phil-pill.churn {
-  background: rgba(184, 92, 92, 0.08);
-  border-color: rgba(184, 92, 92, 0.28);
-  color: var(--via-coral-dark);
-  font-weight: var(--via-fw-semibold);
-}
+/* As pills desta página são o componente <Pill> da library (via-pill).
+   Não existe cópia local — se a canônica mudar, a doc muda junto. */
 
 .vds-phil-code {
   margin: 0;
@@ -300,7 +306,7 @@
   align-items: center;
   padding: 10px;
   border-radius: var(--via-radius-md);
-  background: rgba(10, 31, 59, 0.015);
+  background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
   transition: background .22s ease;
 }
@@ -309,22 +315,20 @@
   background: var(--via-navy-03);
 }
 
+/* Swatch = chip PURO. Antes o hex ficava DENTRO dele com uma cor de texto
+   fixa por token: no dark isso dava navy-sobre-navy em gray-50 (1.08:1) e
+   gray-100 (1.03:1), e branco-sobre-cinza-claro em ink-2 (1.93:1) e ink-3
+   (2.01:1) — quatro rótulos ilegíveis. O valor agora vive fora do chip. */
 .vds-phil-token-swatch {
   height: 56px;
   border-radius: var(--via-radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-medium);
-  letter-spacing: 0.01em;
+  border: 1px solid var(--via-navy-14);
 }
 
 .vds-phil-token > div {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   min-width: 0;
 }
 
@@ -333,6 +337,14 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.01em;
+}
+
+.vds-phil-token-val {
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-ink-2);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 .vds-phil-token em {
@@ -365,8 +377,10 @@
   box-shadow: var(--via-glass-shadow);
 }
 
+/* min-height, não height fixa · com a coluna estreita (≈1024px) as 3 rows
+   passavam de 138px de caixa e vazavam pra fora do well (medido: 155>138) */
 .vds-phil-sig-demo {
-  height: 140px;
+  min-height: 140px;
   border-radius: var(--via-radius-sm);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
@@ -378,37 +392,44 @@
   justify-content: center;
 }
 
-.vds-phil-sig-demo.bar .row {
+/* Espelha .via-tv__row (TreeView) — a row real da library.
+   O marcador de 2px é estado de SELEÇÃO, nunca hover, e nunca em card. */
+.vds-phil-sig-demo.rows .row {
   padding: 10px 14px;
-  border-radius: var(--via-radius-xs);
+  border-radius: var(--via-radius-sm);
   font-size: var(--via-fs-xs);
-  color: var(--via-text-primary);
-  background: var(--via-surface);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-body);
+  background: transparent;
   position: relative;
   cursor: pointer;
-  transition: background .22s ease, padding-left .22s ease;
+  transition: background .15s ease, color .15s ease;
 }
 
-.vds-phil-sig-demo.bar .row::before {
+.vds-phil-sig-demo.rows .row:hover {
+  background: var(--via-navy-04);
+  color: var(--via-text-primary);
+}
+
+.vds-phil-sig-demo.rows .row.is-selected {
+  background: var(--via-navy-08);
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+
+.vds-phil-sig-demo.rows .row.is-selected::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 8px;
-  bottom: 8px;
+  top: 6px;
+  bottom: 6px;
   width: 2px;
-  border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-30));
-  opacity: 0;
-  transition: opacity .22s ease;
+  border-radius: 2px;
+  background: var(--via-navy);
 }
 
-.vds-phil-sig-demo.bar .row:hover {
-  background: var(--via-surface);
-  padding-left: 22px;
-}
-
-.vds-phil-sig-demo.bar .row:hover::before {
-  opacity: 1;
+[data-theme='dark'] .vds-phil-sig-demo.rows .row.is-selected::before {
+  background: var(--via-text-primary);
 }
 
 .vds-phil-sig-demo.lift {
@@ -416,8 +437,13 @@
   justify-content: center;
 }
 
+/* surface-onnavy é BRANCA nos 2 temas · então precisa fixar TODOS os tokens
+   que pinta, não só os de texto: navy-* e border-soft viram branco no dark e
+   sumiriam sobre o próprio card branco. */
 .vds-phil-sig-demo.lift .card {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
   padding: 16px 22px;
   border-radius: var(--via-radius-sm);
   background: var(--via-surface-onnavy);
@@ -444,6 +470,8 @@
 
 .vds-phil-sig-demo.atmos .card {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
   position: relative;
   padding: 22px 28px;
   border-radius: var(--via-radius-sm);
@@ -456,13 +484,13 @@
   overflow: hidden;
 }
 
+/* UM radial, no canto superior esquerdo — que é o que a regra descreve.
+   O segundo radial (bottom-right) contradizia o próprio texto. */
 .vds-phil-sig-demo.atmos .card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(240px 140px at 0% 0%, var(--via-navy-08), transparent 60%),
-    radial-gradient(180px 120px at 100% 100%, var(--via-navy-06), transparent 60%);
+  background: radial-gradient(240px 140px at 0% 0%, var(--via-navy-08), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
@@ -513,12 +541,31 @@
   flex-wrap: wrap;
 }
 
+/* rótulos com ícone lucide · emoji ❌/✓ era exatamente o que a Regra 6 bane */
 .vds-phil-dot-lbl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   min-width: 120px;
   font-family: var(--via-mono);
   font-size: var(--via-fs-label);
   color: var(--via-ink-2);
   letter-spacing: 0.01em;
+}
+
+.vds-phil-dot-lbl svg {
+  flex-shrink: 0;
+  color: var(--via-navy);
+}
+
+[data-theme='dark'] .vds-phil-dot-lbl svg {
+  color: var(--via-text-primary);
+}
+
+.vds-phil-dot-lbl.bad,
+.vds-phil-dot-lbl.bad svg,
+[data-theme='dark'] .vds-phil-dot-lbl.bad svg {
+  color: var(--via-coral-dark);
 }
 
 .vds-phil-pill-bad {
@@ -545,42 +592,10 @@
   opacity: 0.6;
 }
 
-.vds-phil-pill-live {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 4px 12px 4px 9px;
-  border-radius: var(--via-radius-pill);
-  background: rgba(184, 92, 92, 0.16);
-  border: 1px solid rgba(184, 92, 92, 0.36);
-  color: var(--via-white);
-  font-size: var(--via-fs-xs);
-  white-space: nowrap;
-  line-height: 1.4;
-  background-color: var(--via-navy);
-}
-
-.vds-phil-pill-live em {
-  font-family: var(--via-display);
-  font-style: italic;
-  font-weight: var(--via-fw-medium);
-  font-size: var(--via-fs-xs);
-  color: rgba(255, 255, 255, 0.94);
-  letter-spacing: -0.012em;
-}
-
-.vds-phil-pill-live .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--via-coral, var(--via-coral));
-  box-shadow: 0 0 8px rgba(255, 95, 87, 0.7);
-  animation: vds-phil-pulse 1.4s ease-in-out infinite;
-}
-
-@keyframes vds-phil-pulse {
-  50% { opacity: 0.4; transform: scale(0.9); }
-}
+/* A pill "ao vivo" é <Pill variant="live"> da library.
+   A cópia local divergia da canônica (fundo navy chapado em vez do gradient,
+   `background` morto sobrescrito por `background-color`, sem guarda de
+   prefers-reduced-motion) — numa página de fundação isso é a doc mentindo. */
 
 /* ============================================
    Rule 6 · Voice grid
@@ -631,7 +646,7 @@
 .vds-phil-voice .quote {
   margin: 0 0 12px;
   font-family: var(--via-display);
-  font-style: italic;
+  font-style: normal;
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;

@@ -138,7 +138,7 @@
 }
 
 .dba-greeting h1 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-regular);
   opacity: 0.75;

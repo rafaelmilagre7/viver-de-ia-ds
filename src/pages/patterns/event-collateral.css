@@ -203,7 +203,7 @@
 }
 
 .vds-ev-relation-text h3 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-regular);
   opacity: 0.72;

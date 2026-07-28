@@ -1,0 +1,210 @@
+/* =============================================================
+   Fundamentos · Sombras
+   Estilos EXCLUSIVOS desta página. Nada aqui é token global.
+
+   Regra da página (e do DS): sombra de elevação usa a tinta
+   --via-shadow-ink-*, que já é navy no claro e PRETA no escuro.
+   Nenhuma regra abaixo usa --via-navy-* dentro de box-shadow.
+   ============================================================= */
+
+/* ---- Palco recessivo · o card precisa parecer ACIMA do fundo ---- */
+.vds-sh-stage {
+  position: relative;
+  padding: 56px 40px;
+  border-radius: var(--via-radius-xl);
+  border: 0.5px solid var(--via-navy-12);
+  background:
+    radial-gradient(ellipse 60% 70% at 15% 0%, var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
+  overflow: hidden;
+}
+.vds-sh-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.35;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.vds-sh-stage > * { position: relative; z-index: 1; }
+
+.vds-sh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  gap: var(--via-space-8);
+}
+
+.vds-sh-card {
+  width: 100%;
+  height: 132px;
+  background: var(--via-white);
+  border: 0.5px solid var(--via-border-soft);
+  border-radius: var(--via-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
+  letter-spacing: var(--via-ls-wide);
+  transition: transform var(--via-dur) var(--via-ease-out);
+}
+/* No escuro a superfície elevada precisa ser mais CLARA que o palco,
+   senão o card fica recessivo (surface = quase a cor do fundo). */
+:root[data-theme='dark'] .vds-sh-card { background: var(--via-stage-soft); }
+
+.vds-sh-card:hover { transform: translateY(-2px); }
+
+.vds-sh-use {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-body);
+  margin: 14px 0 6px;
+  line-height: var(--via-lh-normal);
+}
+
+/* Valor lido do CSS ao vivo — é o que impede a doc de mentir */
+.vds-sh-value {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--via-font-mono);
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--via-text-muted);
+  overflow-wrap: anywhere;
+}
+
+/* ---- Tinta de sombra ---- */
+.vds-sh-ink-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--via-space-6);
+}
+.vds-sh-ink-swatch {
+  width: 100%;
+  height: 34px;
+  border-radius: var(--via-radius-xs);
+  border: 0.5px solid var(--via-border-soft);
+  background: var(--via-white);
+}
+:root[data-theme='dark'] .vds-sh-ink-swatch { background: var(--via-stage-soft); }
+
+.vds-sh-ink-name {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  color: var(--via-text-primary);
+  margin: 12px 0 2px;
+}
+.vds-sh-ink-val {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  color: var(--via-text-muted);
+  margin: 0;
+}
+
+/* ---- Demos de vidro · superfícies que NÃO seguem o tema ----
+   Cada palco RE-PINA os próprios tokens de texto. Herdar do tema
+   aqui é o bug clássico: texto claro do dark em cima de vidro
+   branco = branco no branco. */
+.vds-sh-glass-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--via-space-4);
+}
+
+.vds-sh-glass-stage {
+  padding: 56px 32px;
+  border-radius: var(--via-radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+/* claro: usa o helper .vds-onlight do DS pra re-pinar o texto */
+.vds-sh-glass-stage--light {
+  background: linear-gradient(135deg, var(--via-gray-200) 0%, var(--via-gray-300) 100%);
+  border: 0.5px solid rgba(10, 31, 59, 0.10);
+}
+/* escuro: mesmo princípio, tokens fixos na mão (não há helper .ondark) */
+.vds-sh-glass-stage--dark {
+  --via-text-primary: #FFFFFF;
+  --via-text-body: rgba(255, 255, 255, 0.82);
+  --via-text-muted: rgba(255, 255, 255, 0.62);
+  background:
+    radial-gradient(ellipse 60% 80% at 20% 10%, rgba(46, 76, 118, 0.45) 0%, transparent 60%),
+    linear-gradient(135deg, #0A1F3B 0%, #071528 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.10);
+}
+
+.vds-sh-glass {
+  width: 100%;
+  max-width: 300px;
+  padding: 28px 32px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: var(--via-font-display);
+  font-size: 26px;
+  font-weight: var(--via-fw-medium);
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+  backdrop-filter: var(--via-blur-lg);
+  -webkit-backdrop-filter: var(--via-blur-lg);
+}
+.vds-sh-glass em { color: var(--via-text-muted); font-style: normal; }
+
+.vds-sh-glass--light {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 100%);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: var(--via-shadow-glass-light);
+}
+.vds-sh-glass--dark {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: var(--via-shadow-glass-dark);
+}
+
+.vds-sh-glass-label {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  letter-spacing: var(--via-ls-wide);
+  color: var(--via-text-muted);
+}
+
+/* ---- Linha de botões do anel de foco ----
+   .vds-sh-focused reproduz LITERALMENTE a regra :focus-visible do
+   <Button> real (Button.css) pra dar pra ver o anel parado. Se aquela
+   regra mudar, esta cópia precisa mudar junto. */
+.vds-sh-focus-row {
+  display: flex;
+  gap: 44px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.vds-sh-focus-pair {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.vds-sh-focus-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.vds-sh-focus-row .vds-sh-focused {
+  box-shadow:
+    0 0 0 2px var(--via-surface),
+    0 0 0 4px var(--via-navy-60);
+}
+
+@media (max-width: 720px) {
+  .vds-sh-stage { padding: 36px 20px; }
+  .vds-sh-glass-stage { padding: 40px 20px; }
+}

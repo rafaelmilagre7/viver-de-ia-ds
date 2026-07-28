@@ -205,7 +205,7 @@
   margin: 0 0 18px;
 }
 .vds-ec-em-h2-flat em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
@@ -451,7 +451,7 @@
   margin: 0 0 12px;
 }
 .vds-ec-em-hero-plate h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
@@ -626,7 +626,7 @@
   margin: 0 0 12px;
 }
 .vds-ec-em-event-plate h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }
@@ -666,7 +666,7 @@
   margin: 0 0 14px;
 }
 .vds-ec-em-launch-plate h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.72);
 }

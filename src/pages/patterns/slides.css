@@ -249,7 +249,7 @@
 }
 
 .vds-slide-title-h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
@@ -283,7 +283,7 @@
 }
 
 .vds-slide-divider-h2 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.65;
@@ -396,7 +396,7 @@
 }
 
 .vds-quote-body em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.018em;
@@ -432,7 +432,7 @@
 }
 
 .vds-slide-content-h3 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-regular);
   opacity: 0.72;
@@ -522,7 +522,7 @@
 }
 
 .vds-slide-closing-h3 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.72;

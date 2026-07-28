@@ -30,6 +30,13 @@
 .via-icon--tone-coral   { color: var(--via-coral-dark); }
 .via-icon--tone-inverse { color: var(--via-white); }
 
+/* Dark · --via-accent é navy fixo (não inverte) e virava navy-sobre-navy
+   invisível. Usa a tinta navy adaptativa. Surfaces que já fixam a própria cor
+   (navy / accent / glass) ficam de fora. */
+[data-theme="dark"] .via-icon--tone-accent:not(.via-icon--surface-navy):not(.via-icon--surface-accent):not(.via-icon--surface-glass) {
+  color: var(--via-chart-ink);
+}
+
 /* ===== Surfaces (chip around icon) ===== */
 .via-icon--surface-soft {
   padding: 8px;

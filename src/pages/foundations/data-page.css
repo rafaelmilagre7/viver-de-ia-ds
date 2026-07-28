@@ -26,7 +26,7 @@
 
 .vds-data-intro em,
 .vds-data-caption em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-text-primary);
 }
 

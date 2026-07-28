@@ -555,7 +555,7 @@
 
 .vds-live-pill em {
   font-family: var(--via-display);
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-caption);
   letter-spacing: -0.012em;

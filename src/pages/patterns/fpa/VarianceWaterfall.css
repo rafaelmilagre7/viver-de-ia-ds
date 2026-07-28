@@ -115,7 +115,7 @@
   color: var(--via-text-primary);
 }
 .vds-fpa-var-titulo em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
 }

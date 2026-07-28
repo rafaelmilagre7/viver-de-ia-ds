@@ -66,7 +66,7 @@
   max-width: 640px;
 }
 .vds-le-hero-canvas h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.75);
 }
@@ -377,7 +377,7 @@
 .vds-le-trust-quote blockquote {
   margin: 0 0 16px;
   font-family: var(--via-font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: var(--via-fs-h4);
   color: var(--via-text-primary);
   line-height: 1.45;
@@ -535,7 +535,7 @@
   margin: 0 0 14px;
 }
 .vds-le-lead-magnet h3 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: rgba(255, 255, 255, 0.78);
 }

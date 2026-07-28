@@ -75,7 +75,7 @@
   max-width: 800px;
 }
 .vds-bs-statement h2 em {
-  font-style: italic;
+  font-style: normal;
   color: rgba(255, 255, 255, 0.72);
   font-weight: var(--via-fw-regular);
 }
@@ -156,7 +156,7 @@
 }
 .vds-bs-rationale p:last-child { margin-bottom: 0; }
 .vds-bs-rationale p em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
 }
@@ -359,7 +359,7 @@
   max-width: 520px;
 }
 .vds-bs-positioning h3 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
 }
@@ -483,7 +483,7 @@
   color: inherit;
 }
 .vds-bs-promise h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-regular);
   background: linear-gradient(90deg, var(--via-white), rgba(255, 255, 255, 0.7));
   -webkit-background-clip: text;

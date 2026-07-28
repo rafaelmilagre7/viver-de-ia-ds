@@ -152,7 +152,7 @@
 }
 
 .vds-bento-card.hero h1 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
@@ -494,7 +494,7 @@
 
 .vds-bento-live-pill em {
   font-family: var(--via-display);
-  font-style: italic;
+  font-style: normal;
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-caption);
   letter-spacing: -0.012em;

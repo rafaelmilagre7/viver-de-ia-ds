@@ -128,7 +128,7 @@
 }
 
 .vds-sr-result-meta em {
-  font-style: italic;
+  font-style: normal;
   color: var(--via-accent-warm);
   font-weight: var(--via-fw-medium);
 }
