@@ -43,7 +43,7 @@
     transform .18s var(--via-ease-spring);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
   caret-color: var(--via-navy);
 }
 
@@ -51,7 +51,7 @@
   border-color: var(--via-navy-22);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 2px 6px -2px var(--via-navy-10);
+    0 2px 6px -2px var(--via-shadow-ink-10);
 }
 
 .via-otp__cell:focus {
@@ -61,7 +61,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 3px var(--via-navy-10),
-    0 6px 14px -8px var(--via-navy-12);
+    0 6px 14px -8px var(--via-shadow-ink-14);
   transform: translateY(-1px);
 }
 

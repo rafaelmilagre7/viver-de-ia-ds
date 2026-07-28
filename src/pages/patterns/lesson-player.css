@@ -60,7 +60,7 @@
   background: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 24px 48px -24px var(--via-navy-40);
+    0 24px 48px -24px var(--via-shadow-ink-40);
   isolation: isolate;
 }
 
@@ -139,7 +139,7 @@
   color: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.3) inset,
-    0 24px 48px -16px rgba(10, 31, 59, 0.55);
+    0 24px 48px -16px var(--via-shadow-ink-60);
   transition: all 220ms var(--via-ease-out);
 }
 
@@ -420,7 +420,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -437,8 +437,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-lesson-mark:active { transform: translateY(0); }
@@ -510,7 +510,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 16px 40px -24px var(--via-navy-16);
+    0 16px 40px -24px var(--via-shadow-ink-20);
 }
 
 .vds-lesson-tabs {
@@ -563,14 +563,14 @@
   color: var(--via-text-primary);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-lesson-tab.on:hover {
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 16px -10px var(--via-navy-22);
+    0 6px 16px -10px var(--via-shadow-ink-20);
 }
 
 .vds-lesson-panel {
@@ -649,7 +649,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 18px -12px var(--via-navy-22);
+    0 8px 18px -12px var(--via-shadow-ink-20);
 }
 
 /* a régua lateral saiu · a marca pede borda UNIFORME nos 4 lados */
@@ -661,7 +661,7 @@
   position: relative;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 12px -6px var(--via-navy-12);
+    0 4px 12px -6px var(--via-shadow-ink-14);
 }
 
 .vds-transcript .ts {
@@ -676,7 +676,7 @@
   border-radius: var(--via-radius-xs);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   padding: 3px 7px;
   cursor: pointer;
   letter-spacing: 0.02em;
@@ -696,7 +696,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -8px var(--via-navy-22);
+    0 6px 14px -8px var(--via-shadow-ink-20);
 }
 
 .vds-transcript .ts:active { transform: translateY(0); }
@@ -712,7 +712,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
   color: var(--via-white);
   border-color: var(--via-navy-20);
-  box-shadow: 0 2px 6px -2px var(--via-navy-25);
+  box-shadow: 0 2px 6px -2px var(--via-shadow-ink-20);
 }
 
 .vds-transcript p {
@@ -767,7 +767,7 @@
   cursor: pointer;
   letter-spacing: -0.005em;
   font-family: inherit;
-  box-shadow: 0 4px 10px -4px var(--via-navy-40);
+  box-shadow: 0 4px 10px -4px var(--via-shadow-ink-40);
   transition: all 180ms ease;
 }
 
@@ -775,7 +775,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 .vds-notes-save:active { transform: translateY(0); }
@@ -905,7 +905,7 @@
   justify-content: center;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -4px var(--via-navy-40);
+    0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
 /* dot accent decorativo removido — icon glass + peso da typography sustentam o componente */
@@ -939,7 +939,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   cursor: pointer;
   display: inline-flex;
@@ -956,7 +956,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 18px -10px var(--via-navy-22);
+    0 8px 18px -10px var(--via-shadow-ink-20);
 }
 
 .vds-material-dl:active { transform: translateY(0); }
@@ -1013,7 +1013,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-discussion .av.light {
@@ -1022,7 +1022,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 4px 10px -4px var(--via-navy-40);
+    0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
 .vds-disc-meta {
@@ -1214,7 +1214,7 @@
   justify-content: center;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px var(--via-navy-40);
+    0 2px 6px -2px var(--via-shadow-ink-40);
 }
 
 .vds-quiz-option.picked {
@@ -1234,7 +1234,7 @@
   color: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px var(--via-navy-40);
+    0 2px 6px -2px var(--via-shadow-ink-40);
 }
 
 .vds-quiz-option.wrong {
@@ -1321,7 +1321,7 @@
 .vds-lesson-nav-card:hover {
   background: var(--via-glass-card);
   border-color: var(--via-navy-18);
-  box-shadow: 0 8px 22px -14px var(--via-navy-18);
+  box-shadow: 0 8px 22px -14px var(--via-shadow-ink-20);
 }
 
 .vds-lesson-nav-card.next {
@@ -1375,7 +1375,7 @@
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   letter-spacing: -0.005em;
-  box-shadow: 0 8px 18px -8px var(--via-navy-60);
+  box-shadow: 0 8px 18px -8px var(--via-shadow-ink-60);
   transition: all 180ms ease;
   font-family: inherit;
 }
@@ -1385,7 +1385,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 .vds-lesson-nav-mark:active { transform: translateY(0); }

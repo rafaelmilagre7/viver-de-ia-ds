@@ -58,7 +58,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
     0 -1px 0 rgba(0, 0, 0, 0.10) inset,
-    0 4px 10px -4px var(--via-navy-30);
+    0 4px 10px -4px var(--via-shadow-ink-30);
 }
 
 .via-pagination__page.is-active:hover {
@@ -68,7 +68,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.22) inset,
     0 -1px 0 rgba(0, 0, 0, 0.10) inset,
-    0 6px 14px -4px var(--via-navy-40);
+    0 6px 14px -4px var(--via-shadow-ink-40);
 }
 
 .via-pagination__nav:disabled {

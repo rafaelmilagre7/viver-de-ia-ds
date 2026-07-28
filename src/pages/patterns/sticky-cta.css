@@ -20,9 +20,9 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 1px 0 0 rgba(10,31,59,0.04),
-    0 30px 64px -24px var(--via-navy-22),
-    0 14px 28px -10px var(--via-navy-10);
+    0 1px 0 0 var(--via-shadow-ink-03),
+    0 30px 64px -24px var(--via-shadow-ink-20),
+    0 14px 28px -10px var(--via-shadow-ink-10);
 }
 .vds-sticky-stage::before {
   content: '';
@@ -122,7 +122,7 @@
   border-radius: var(--via-radius-md);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 12px -4px var(--via-navy-06);
+    0 4px 12px -4px var(--via-shadow-ink-06);
   overflow: hidden;
   isolation: isolate;
 }
@@ -166,7 +166,7 @@
   max-width: 560px;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 16px -6px var(--via-navy-10);
+    0 6px 16px -6px var(--via-shadow-ink-10);
   isolation: isolate;
 }
 .vds-sticky-page__feature::before {
@@ -189,7 +189,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px rgba(255,255,255,0.85),
-    0 4px 10px -2px var(--via-navy-22);
+    0 4px 10px -2px var(--via-shadow-ink-20);
 }
 .vds-sticky-page__feature strong {
   display: block;
@@ -240,8 +240,8 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0,0,0,0.20),
     0 0 0 1px rgba(10,31,59,0.40),
-    0 28px 60px -16px rgba(10,31,59,0.55),
-    0 12px 24px -10px rgba(10,31,59,0.35);
+    0 28px 60px -16px var(--via-shadow-ink-60),
+    0 12px 24px -10px var(--via-shadow-ink-30);
 }
 .vds-sticky-bar.enroll::before {
   content: '';
@@ -264,9 +264,9 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 1px 0 0 rgba(10,31,59,0.06),
-    0 24px 56px -20px var(--via-navy-22),
-    0 10px 24px -10px var(--via-navy-10);
+    0 1px 0 0 var(--via-shadow-ink-06),
+    0 24px 56px -20px var(--via-shadow-ink-20),
+    0 10px 24px -10px var(--via-shadow-ink-10);
 }
 .vds-sticky-bar.notify::before {
   content: '';
@@ -421,7 +421,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px rgba(255,255,255,0.85),
-    0 6px 14px -3px var(--via-navy-30);
+    0 6px 14px -3px var(--via-shadow-ink-30);
 }
 .vds-sticky-icon::before {
   content: '';
@@ -513,15 +513,15 @@
   border-color: transparent;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -3px var(--via-navy-30),
-    0 2px 5px var(--via-navy-14);
+    0 6px 14px -3px var(--via-shadow-ink-30),
+    0 2px 5px var(--via-shadow-ink-14);
 }
 .vds-sticky-bar.notify .vds-sticky-btn.primary:hover {
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 10px 20px -4px var(--via-navy-40),
-    0 4px 10px -2px var(--via-navy-22);
+    0 10px 20px -4px var(--via-shadow-ink-40),
+    0 4px 10px -2px var(--via-shadow-ink-20);
 }
 
 /* Ghost on-dark · glass leve em context navy */

@@ -11,8 +11,8 @@
      viram halo/auréola em volta do trilho */
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 12px rgba(10, 31, 59, 0.08),
-    0 1px 3px rgba(10, 31, 59, 0.04);
+    0 4px 12px var(--via-shadow-ink-06),
+    0 1px 3px var(--via-shadow-ink-03);
   gap: var(--via-space-0_5);
 }
 
@@ -61,13 +61,13 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
-    0 4px 12px -3px rgba(10, 31, 59, 0.45);
+    0 4px 12px -3px var(--via-shadow-ink-40);
 }
 
 .via-seg-item.active:hover {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
-    0 6px 16px -3px rgba(10, 31, 59, 0.55);
+    0 6px 16px -3px var(--via-shadow-ink-60);
 }
 
 .via-seg-item.active:focus-visible {

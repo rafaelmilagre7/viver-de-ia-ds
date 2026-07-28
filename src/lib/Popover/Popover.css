@@ -21,8 +21,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
-    0 24px 56px rgba(10, 31, 59, 0.18),
-    0 4px 12px rgba(10, 31, 59, 0.08);
+    0 24px 56px var(--via-shadow-ink-20),
+    0 4px 12px var(--via-shadow-ink-06);
   animation: via-popover-in 160ms var(--via-ease-snap) both;
 }
 

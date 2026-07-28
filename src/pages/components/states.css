@@ -40,7 +40,7 @@
   padding: 48px 32px;
   text-align: center;
   border-color: transparent;
-  box-shadow: 0 24px 56px -22px var(--via-navy-40);
+  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
 .vds-loader-card.full > * {
@@ -274,7 +274,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
+    0 1px 4px var(--via-shadow-ink-03);
 }
 
 /* ---------- 500 · server error ---------- */
@@ -284,7 +284,7 @@
   background: var(--via-mesh-navy);
   color: var(--via-white);
   border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 24px 56px -22px var(--via-navy-40);
+  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
 .vds-error-card.e500 > * {
@@ -505,7 +505,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border-color: var(--via-navy-20);
-  box-shadow: 0 8px 18px -6px var(--via-navy-25);
+  box-shadow: 0 8px 18px -6px var(--via-shadow-ink-20);
 }
 
 .vds-error-code.maint {
@@ -617,7 +617,7 @@
   flex-shrink: 0;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 6px 14px -6px var(--via-navy-16);
+    0 6px 14px -6px var(--via-shadow-ink-20);
 }
 
 .vds-error-code {
@@ -709,13 +709,13 @@
   background: var(--via-navy);
   border-color: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 4px 10px -4px rgba(10, 31, 59, 0.45);
+  box-shadow: 0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
 .vds-error-btn.primary:hover {
   background: var(--via-navy-deep);
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px -8px rgba(10, 31, 59, 0.55);
+  box-shadow: 0 10px 22px -8px var(--via-shadow-ink-60);
 }
 
 .vds-error-btn.primary:focus-visible {
@@ -728,7 +728,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 4px 10px -4px rgba(10, 31, 59, 0.42);
+  box-shadow: 0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
 .vds-error-btn.primary.on-dark {
@@ -749,7 +749,7 @@
   color: var(--via-text-primary);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-error-btn.ghost:hover {
@@ -757,8 +757,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 /* sobre fundo navy · vidro claro translúcido (o vidro branco sumiria) */
@@ -862,7 +862,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   border: none;
-  box-shadow: 0 6px 14px -6px rgba(10, 31, 59, 0.35);
+  box-shadow: 0 6px 14px -6px var(--via-shadow-ink-30);
 }
 
 .vds-empty-card h4 {
@@ -906,7 +906,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
@@ -925,8 +925,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-empty-btn:active { transform: translateY(0); }
@@ -944,14 +944,14 @@
   border-color: var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 4px 12px -6px var(--via-navy-40);
+    0 4px 12px -6px var(--via-shadow-ink-40);
 }
 
 .vds-empty-btn.primary:hover {
   border-color: var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 10px 22px -8px var(--via-navy-60);
+    0 10px 22px -8px var(--via-shadow-ink-60);
 }
 
 .vds-empty-btn.primary:focus-visible {
@@ -973,7 +973,7 @@
   -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 /* ============================================
@@ -1031,7 +1031,7 @@
   position: relative;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 12px 28px -10px var(--via-navy-60);
+    0 12px 28px -10px var(--via-shadow-ink-60);
 }
 
 .vds-success-mark.sm {
@@ -1040,7 +1040,7 @@
   border-radius: var(--via-radius-md);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -8px rgba(10, 31, 59, 0.45);
+    0 8px 18px -8px var(--via-shadow-ink-40);
 }
 
 .vds-success-pulse {
@@ -1129,14 +1129,14 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 4px 12px -6px var(--via-navy-40);
+    0 4px 12px -6px var(--via-shadow-ink-40);
 }
 
 .vds-success-btn.primary:hover {
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 10px 22px -8px var(--via-navy-60);
+    0 10px 22px -8px var(--via-shadow-ink-60);
 }
 
 .vds-success-btn.primary:focus-visible {
@@ -1154,7 +1154,7 @@
   color: var(--via-text-primary);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-success-btn.ghost:hover {
@@ -1162,8 +1162,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-success-btn.ghost:focus-visible {
@@ -1209,7 +1209,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 12px 28px -16px var(--via-navy-12);
+    0 12px 28px -16px var(--via-shadow-ink-10);
   transition: transform .26s cubic-bezier(.2,.7,.2,1), box-shadow .26s ease, border-color .26s ease;
 }
 
@@ -1218,7 +1218,7 @@
   border-color: var(--via-navy-14);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 18px 38px -18px var(--via-navy-18);
+    0 18px 38px -18px var(--via-shadow-ink-20);
 }
 
 .vds-empty-prem::after {
@@ -1243,7 +1243,7 @@
   border-color: transparent;
   padding: 32px 28px 28px;
   min-height: 380px;
-  box-shadow: 0 24px 56px -22px var(--via-navy-40);
+  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
 @media (max-width: 1180px) {
@@ -1355,7 +1355,7 @@
   height: 6px;
   border-radius: 50%;
   background: var(--via-accent);
-  box-shadow: 0 0 8px rgba(10, 31, 59, 0.28);
+  box-shadow: 0 0 8px var(--via-shadow-ink-30);
   animation: vds-empty-pulse 1.6s ease-in-out infinite;
 }
 
@@ -1646,7 +1646,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
@@ -1805,7 +1805,7 @@
   -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   cursor: pointer;
   text-decoration: none;
   transition:
@@ -1820,8 +1820,8 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-empty-prem-btn:active { transform: translateY(0); }
@@ -1839,14 +1839,14 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 4px 12px -6px var(--via-navy-40);
+    0 4px 12px -6px var(--via-shadow-ink-40);
 }
 
 .vds-empty-prem-btn.primary:hover {
   border-color: var(--via-navy-deep);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 10px 22px -8px rgba(10, 31, 59, 0.5);
+    0 10px 22px -8px var(--via-shadow-ink-40);
 }
 
 .vds-empty-prem-btn.primary:focus-visible {
@@ -1912,7 +1912,7 @@
   border-color: var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-empty-prem-btn.ghost.on-dark:hover {

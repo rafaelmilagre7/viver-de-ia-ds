@@ -247,7 +247,7 @@
      pill ganhava halo branco (pior no hover). */
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px rgba(10, 31, 59, 0.14);
+    0 2px 6px -3px var(--via-shadow-ink-14);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -266,8 +266,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px rgba(10, 31, 59, 0.26),
-    0 2px 6px -3px rgba(10, 31, 59, 0.14);
+    0 8px 20px -10px var(--via-shadow-ink-30),
+    0 2px 6px -3px var(--via-shadow-ink-14);
 }
 
 .dba-card-link:active { transform: translateY(0); }
@@ -293,7 +293,7 @@
      navy-60 vira branco 55% no dark = auréola branca embaixo do card. */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    0 18px 44px -22px rgba(2, 22, 42, 0.60);
+    0 18px 44px -22px var(--via-shadow-ink-60);
 }
 
 .dba-continue-aura {
@@ -629,7 +629,7 @@
      desenhava uma auréola branca em volta da medalha. */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 6px 14px -4px rgba(2, 22, 42, 0.45);
+    0 6px 14px -4px var(--via-shadow-ink-40);
 }
 
 .dba-achievement strong {

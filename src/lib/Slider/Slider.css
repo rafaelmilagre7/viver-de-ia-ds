@@ -59,7 +59,7 @@
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy-10), var(--via-navy-06));
   overflow: hidden;
-  box-shadow: inset 0 1px 2px var(--via-navy-08);
+  box-shadow: inset 0 1px 2px var(--via-shadow-ink-06);
 }
 .via-slider__fill {
   height: 100%;
@@ -68,7 +68,7 @@
   transition: width 80ms linear;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 0 10px -2px var(--via-navy-30);
+    0 0 10px -2px var(--via-shadow-ink-30);
   position: relative;
   overflow: hidden;
 }
@@ -109,8 +109,8 @@
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 -1px 0 var(--via-navy-08) inset,
     0 0 0 0.5px var(--via-navy-14),
-    0 4px 12px var(--via-navy-22),
-    0 0 12px -2px var(--via-navy-12);
+    0 4px 12px var(--via-shadow-ink-20),
+    0 0 12px -2px var(--via-shadow-ink-14);
   cursor: grab;
   transform: translateY(calc((var(--via-sl-track-h) - var(--via-sl-thumb)) / 2));
   transition:
@@ -129,8 +129,8 @@
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 -1px 0 var(--via-navy-08) inset,
     0 0 0 0.5px var(--via-navy-14),
-    0 4px 12px var(--via-navy-22),
-    0 0 12px -2px var(--via-navy-12);
+    0 4px 12px var(--via-shadow-ink-20),
+    0 0 12px -2px var(--via-shadow-ink-14);
   cursor: grab;
   transition:
     transform 180ms var(--via-ease-spring),
@@ -145,8 +145,8 @@
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 -1px 0 var(--via-navy-08) inset,
     0 0 0 0.5px var(--via-navy-22),
-    0 6px 18px var(--via-navy-30),
-    0 0 18px var(--via-navy-20);
+    0 6px 18px var(--via-shadow-ink-30),
+    0 0 18px var(--via-shadow-ink-20);
 }
 .via-slider input[type="range"]:hover:not(:disabled)::-moz-range-thumb,
 .via-slider input[type="range"]:focus-visible:not(:disabled)::-moz-range-thumb {
@@ -155,8 +155,8 @@
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 -1px 0 var(--via-navy-08) inset,
     0 0 0 0.5px var(--via-navy-22),
-    0 6px 18px var(--via-navy-30),
-    0 0 18px var(--via-navy-20);
+    0 6px 18px var(--via-shadow-ink-30),
+    0 0 18px var(--via-shadow-ink-20);
 }
 .via-slider input[type="range"]:active:not(:disabled)::-webkit-slider-thumb,
 .via-slider input[type="range"]:active:not(:disabled)::-moz-range-thumb {

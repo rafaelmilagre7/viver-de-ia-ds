@@ -10,7 +10,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
+    0 1px 4px var(--via-shadow-ink-03);
   position: relative;
 }
 
@@ -81,7 +81,7 @@
   overflow: hidden;
   isolation: isolate;
   border: 1px solid rgba(10, 31, 59, 0.09);
-  box-shadow: 0 24px 56px -22px rgba(10, 31, 59, 0.45);
+  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
 .via-stats-dark::before {

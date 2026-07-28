@@ -15,7 +15,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
+    0 1px 4px var(--via-shadow-ink-03);
 }
 
 .vds-settings::before {
@@ -111,7 +111,7 @@
   letter-spacing: -0.005em;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 6px 14px -8px var(--via-navy-40);
+    0 6px 14px -8px var(--via-shadow-ink-40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
@@ -121,7 +121,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 .vds-settings-save:active {
@@ -225,7 +225,7 @@
   border-radius: 50%;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 2px 6px var(--via-navy-20),
+    0 2px 6px var(--via-shadow-ink-20),
     0 0 0 1px var(--via-navy-06);
   transition: transform 240ms var(--via-ease-out);
 }
@@ -239,14 +239,14 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -2px rgba(10, 31, 59, 0.35);
+    0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .vds-toggle input:checked + span::after {
   transform: translateX(18px);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 2px 6px var(--via-navy-30),
+    0 2px 6px var(--via-shadow-ink-30),
     0 0 0 1px var(--via-navy-04);
 }
 
@@ -380,7 +380,7 @@
   font-family: inherit;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 6px 14px -8px var(--via-navy-40);
+    0 6px 14px -8px var(--via-shadow-ink-40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
@@ -390,7 +390,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 .vds-apikeys-new:active {
@@ -420,7 +420,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px var(--via-navy-08),
-    0 12px 28px -18px var(--via-navy-22);
+    0 12px 28px -18px var(--via-shadow-ink-20);
 }
 
 .vds-apikey-top {
@@ -519,7 +519,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 2px 8px var(--via-navy-18);
+    0 2px 8px var(--via-shadow-ink-20);
 }
 
 .vds-apikey-token::before {
@@ -655,7 +655,7 @@
   color: var(--via-text-primary);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-apikey-btn.ghost:hover {
@@ -663,8 +663,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-apikey-btn.primary {
@@ -673,14 +673,14 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 4px 10px -6px var(--via-navy-40);
+    0 4px 10px -6px var(--via-shadow-ink-40);
 }
 
 .vds-apikey-btn.primary:hover {
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 10px 22px -10px var(--via-navy-60);
+    0 10px 22px -10px var(--via-shadow-ink-60);
 }
 
 .vds-apikey-btn.danger {
@@ -724,7 +724,7 @@
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  box-shadow: 0 24px 56px -22px var(--via-navy-40);
+  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
 .vds-billing-current::before {
@@ -908,7 +908,7 @@
   justify-content: center;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-billing-btn.quiet:hover {
@@ -916,8 +916,8 @@
   border-color: var(--via-navy-22);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 /* o card é claro aqui — anel de foco navy */
@@ -1137,7 +1137,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   cursor: pointer;
   display: inline-flex;
@@ -1158,7 +1158,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 8px 18px -10px var(--via-navy-40);
+    0 8px 18px -10px var(--via-shadow-ink-40);
 }
 
 .vds-billing-history button:active {
@@ -1238,7 +1238,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-audit-tabs button:active {
@@ -1260,7 +1260,7 @@
   font-weight: var(--via-fw-semibold);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-audit-list {
@@ -1354,7 +1354,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 2px 6px var(--via-navy-06);
+    0 2px 6px var(--via-shadow-ink-06);
 }
 
 .vds-audit-item.security .vds-audit-icon {
@@ -1466,7 +1466,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 12px 28px -16px var(--via-navy-12);
+    0 12px 28px -16px var(--via-shadow-ink-14);
 }
 
 .vds-wh-head {
@@ -1510,7 +1510,7 @@
   cursor: pointer;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 6px 14px -8px var(--via-navy-40);
+    0 6px 14px -8px var(--via-shadow-ink-40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -1522,7 +1522,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 .vds-wh-add:active {
@@ -1699,7 +1699,7 @@
   color: var(--via-text-primary);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-wh-row-more:active {
@@ -1735,7 +1735,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px -2px var(--via-navy-30);
+  box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
   flex-shrink: 0;
 }
 
@@ -1772,7 +1772,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   border-radius: var(--via-radius-md);
-  box-shadow: 0 8px 20px -10px rgba(10, 31, 59, 0.32);
+  box-shadow: 0 8px 20px -10px var(--via-shadow-ink-30);
   margin-bottom: 10px;
 }
 
@@ -1877,7 +1877,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 12px 28px -16px var(--via-navy-12);
+    0 12px 28px -16px var(--via-shadow-ink-14);
 }
 
 .vds-perm-head {
@@ -2043,11 +2043,11 @@
   border-radius: 50%;
   background: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 2px 6px var(--via-navy-18);
+  box-shadow: 0 2px 6px var(--via-shadow-ink-20);
 }.vds-perm-cell.highlight .vds-perm-mark {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  box-shadow: 0 4px 10px -2px var(--via-navy-30);
+  box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .vds-perm-empty {
@@ -2098,7 +2098,7 @@
   -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   cursor: pointer;
   transition:
@@ -2114,8 +2114,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-perm-btn:active {
@@ -2150,7 +2150,7 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 6px 14px -8px var(--via-navy-40);
+    0 6px 14px -8px var(--via-shadow-ink-40);
 }
 
 .vds-perm-btn.primary:hover {
@@ -2159,7 +2159,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 @media (prefers-reduced-motion: reduce) {

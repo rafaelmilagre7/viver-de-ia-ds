@@ -74,7 +74,7 @@
   margin-top: 8px;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 8px 24px var(--via-navy-22);
+    0 8px 24px var(--via-shadow-ink-20);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
@@ -97,20 +97,20 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 32px rgba(10, 31, 59, 0.32);
+    0 12px 32px var(--via-shadow-ink-30);
 }
 .vds-empty .cta:hover::before { left: 100%; }
 .vds-empty .cta:active {
   transform: translateY(0);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 4px 12px var(--via-navy-22);
+    0 4px 12px var(--via-shadow-ink-20);
 }
 .vds-empty .cta:focus-visible {
   outline: none;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 8px 24px var(--via-navy-22),
+    0 8px 24px var(--via-shadow-ink-20),
     var(--via-shadow-focus);
 }
 

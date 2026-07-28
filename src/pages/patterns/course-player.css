@@ -36,8 +36,8 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.05),
     0 0 0 0.5px var(--via-navy-08),
-    0 22px 56px -22px var(--via-navy-22),
-    0 8px 20px -8px var(--via-navy-12);
+    0 22px 56px -22px var(--via-shadow-ink-20),
+    0 8px 20px -8px var(--via-shadow-ink-10);
   max-height: 820px;
   display: flex;
   flex-direction: column;
@@ -183,7 +183,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cp-mod-head:active { transform: translateY(0); }
@@ -217,7 +217,7 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px rgba(2, 22, 42, 0.40);
+    0 2px 6px -2px var(--via-shadow-ink-40);
 }
 
 .vds-cp-mod-text strong {
@@ -280,7 +280,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cp-lesson:active:not(.locked) { transform: translateY(0); }
@@ -303,7 +303,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cp-lesson-mark {
@@ -459,10 +459,10 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.30),
     0 0 0 1px rgba(255, 255, 255, 0.04),
-    0 32px 72px -24px rgba(2, 22, 42, 0.78),
+    0 32px 72px -24px var(--via-shadow-ink-60),
     /* fixo: --via-navy-60 no dark é branco 55% → o card do vídeo ganhava um
        halo CLARO em volta */
-    0 14px 36px -12px rgba(2, 22, 42, 0.6);
+    0 14px 36px -12px var(--via-shadow-ink-60);
 }
 
 .vds-cp-video .vid-bg {
@@ -843,8 +843,8 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.04),
-    0 14px 36px -16px var(--via-navy-18),
-    0 4px 10px -4px var(--via-navy-08);
+    0 14px 36px -16px var(--via-shadow-ink-20),
+    0 4px 10px -4px var(--via-shadow-ink-06);
 }
 
 .vds-cp-info::before {
@@ -914,7 +914,7 @@
   white-space: nowrap;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -926,8 +926,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cp-mark:active { transform: translateY(0); }
@@ -960,7 +960,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.25),
-    0 8px 18px -6px rgba(2, 22, 42, 0.55),
+    0 8px 18px -6px var(--via-shadow-ink-60),
     0 0 24px rgba(59, 107, 160, 0.22);
   transition: all 240ms cubic-bezier(.16, 1, .3, 1);
 }
@@ -989,7 +989,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.25),
-    0 14px 28px -8px rgba(2, 22, 42, 0.72),
+    0 14px 28px -8px var(--via-shadow-ink-60),
     0 0 36px rgba(59, 107, 160, 0.34);
 }
 
@@ -1070,7 +1070,7 @@
   letter-spacing: -0.005em;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 4px 10px -4px rgba(2, 22, 42, 0.40);
+    0 4px 10px -4px var(--via-shadow-ink-40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -1081,7 +1081,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 10px 22px -8px rgba(2, 22, 42, 0.55);
+    0 10px 22px -8px var(--via-shadow-ink-60);
 }
 
 .vds-cp-add-note:active { transform: translateY(0); }
@@ -1124,8 +1124,8 @@
   height: fit-content;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 2px var(--via-navy-04),
-    0 4px 10px -4px var(--via-navy-12);
+    0 1px 2px var(--via-shadow-ink-03),
+    0 4px 10px -4px var(--via-shadow-ink-10);
   font-feature-settings: 'tnum' 1;
   transition: all 200ms cubic-bezier(.16, 1, .3, 1);
 }
@@ -1137,7 +1137,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -4px rgba(2, 22, 42, 0.40);
+    0 6px 14px -4px var(--via-shadow-ink-40);
 }
 
 .vds-cp-note-ts:active { transform: translateY(0); }
@@ -1214,7 +1214,7 @@
   letter-spacing: 0.06em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px rgba(2, 22, 42, 0.40);
+    0 2px 6px -2px var(--via-shadow-ink-40);
 }
 
 .vds-cp-mat-ext.alt {
@@ -1223,7 +1223,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -2px var(--via-navy-12);
+    0 2px 6px -2px var(--via-shadow-ink-10);
 }
 
 .vds-cp-materials li strong {
@@ -1259,7 +1259,7 @@
   justify-content: center;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -1271,8 +1271,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cp-materials li button:active { transform: translateY(0); }
@@ -1329,7 +1329,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cp-chapters li:active { transform: translateY(0); }
@@ -1348,7 +1348,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cp-chapters li strong {
@@ -1411,10 +1411,10 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.30),
     0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 32px 72px -24px rgba(2, 22, 42, 0.82),
+    0 32px 72px -24px var(--via-shadow-ink-60),
     /* fixo: --via-navy-60 no dark é branco 55% → o card do vídeo ganhava um
        halo CLARO em volta */
-    0 14px 36px -12px rgba(2, 22, 42, 0.6);
+    0 14px 36px -12px var(--via-shadow-ink-60);
 }
 
 .vds-cp-live-bg {
@@ -1899,8 +1899,8 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.05),
     0 0 0 0.5px var(--via-navy-08),
-    0 22px 56px -22px var(--via-navy-22),
-    0 8px 20px -8px var(--via-navy-12);
+    0 22px 56px -22px var(--via-shadow-ink-20),
+    0 8px 20px -8px var(--via-shadow-ink-10);
 }
 
 .vds-cp-chat::before {
@@ -2040,7 +2040,7 @@
   flex-shrink: 0;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -2px rgba(2, 22, 42, 0.32);
+    0 2px 6px -2px var(--via-shadow-ink-30);
 }
 
 .vds-cp-chat-msg.host .msg-av {
@@ -2127,7 +2127,7 @@
   transition: all 180ms ease;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 
 .vds-cp-chat-input::placeholder {
@@ -2154,7 +2154,7 @@
   cursor: pointer;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 10px -3px rgba(2, 22, 42, 0.40);
+    0 4px 10px -3px var(--via-shadow-ink-40);
   transition: all 200ms cubic-bezier(.16, 1, .3, 1);
 }
 
@@ -2162,7 +2162,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 18px -4px rgba(2, 22, 42, 0.55);
+    0 8px 18px -4px var(--via-shadow-ink-60);
 }
 
 .vds-cp-chat-send:active { transform: translateY(0); }

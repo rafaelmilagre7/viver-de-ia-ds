@@ -21,7 +21,7 @@
   isolation: isolate;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
+    0 1px 4px var(--via-shadow-ink-03);
 }
 
 /* Antes era barra lateral · virou atmosfera radial no próprio vidro */
@@ -42,7 +42,7 @@
   transform: translateY(-2px);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 12px 28px -16px var(--via-navy-20);
+    0 12px 28px -16px var(--via-shadow-ink-20);
 }
 
 .vds-pod:hover::before {
@@ -166,7 +166,7 @@
   flex-shrink: 0;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -6px rgba(10, 31, 59, 0.45);
+    0 8px 18px -6px var(--via-shadow-ink-40);
   transition: all 220ms var(--via-ease-out);
 }
 
@@ -174,7 +174,7 @@
   transform: scale(1.06);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 12px 22px -6px rgba(10, 31, 59, 0.55);
+    0 12px 22px -6px var(--via-shadow-ink-60);
 }
 
 .vds-pod .play:active { transform: scale(1); }
@@ -195,7 +195,7 @@
   border-color: var(--via-navy-16);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 16px 36px -22px rgba(10, 31, 59, 0.15);
+    0 16px 36px -22px var(--via-shadow-ink-14);
 }
 
 .vds-pod.playing::before {
@@ -209,7 +209,7 @@
   opacity: 1;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -3px var(--via-navy-40);
+    0 4px 10px -3px var(--via-shadow-ink-40);
 }
 
 .vds-pod.playing .num::before {
@@ -224,5 +224,5 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.2) inset,
-    0 8px 18px -4px rgba(10, 31, 59, 0.28);
+    0 8px 18px -4px var(--via-shadow-ink-30);
 }

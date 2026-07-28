@@ -15,7 +15,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 8px 22px -14px var(--via-navy-14);
+    0 8px 22px -14px var(--via-shadow-ink-14);
 }
 
 .vds-cdoc-anatomy-row {
@@ -146,7 +146,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 10px -6px var(--via-navy-10);
+    0 4px 10px -6px var(--via-shadow-ink-10);
 }
 
 .vds-cdoc-variant-card strong {
@@ -249,7 +249,7 @@
   background: var(--via-glass-card-2);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 18px -14px var(--via-navy-10);
+    0 6px 18px -14px var(--via-shadow-ink-10);
 }
 
 .vds-cdoc-do-lbl,
@@ -354,7 +354,7 @@
 .vds-cdoc-related-card:hover {
   border-color: var(--via-navy-22);
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px -8px var(--via-navy-14);
+  box-shadow: 0 8px 18px -8px var(--via-shadow-ink-14);
 }
 
 .vds-cdoc-related-card strong {

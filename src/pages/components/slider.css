@@ -72,8 +72,8 @@
   border: 2px solid var(--via-navy);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 10px -2px var(--via-navy-30),
-    0 0 0 0 var(--via-navy-18);
+    0 4px 10px -2px var(--via-shadow-ink-30),
+    0 0 0 0 var(--via-shadow-ink-20);
   cursor: grab;
   margin-top: -8px;
   transition:
@@ -85,23 +85,23 @@
   transform: scale(1.08);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 6px 14px -2px var(--via-navy-40),
-    0 0 0 6px var(--via-navy-10);
+    0 6px 14px -2px var(--via-shadow-ink-40),
+    0 0 0 6px var(--via-shadow-ink-10);
 }
 
 .via-slider::-webkit-slider-thumb:active {
   cursor: grabbing;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 6px 14px -2px var(--via-navy-40),
-    0 0 0 10px var(--via-navy-12);
+    0 6px 14px -2px var(--via-shadow-ink-40),
+    0 0 0 10px var(--via-shadow-ink-10);
 }
 
 /* teclado · o trilho tem outline:none, então o anel de foco vive no thumb */
 .via-slider:focus-visible::-webkit-slider-thumb {
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 10px -2px var(--via-navy-30),
+    0 4px 10px -2px var(--via-shadow-ink-30),
     var(--via-shadow-focus);
 }
 
@@ -113,7 +113,7 @@
   border: 2px solid var(--via-navy);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 10px -2px var(--via-navy-30);
+    0 4px 10px -2px var(--via-shadow-ink-30);
   cursor: grab;
   transition:
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -124,8 +124,8 @@
   transform: scale(1.08);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 6px 14px -2px var(--via-navy-40),
-    0 0 0 6px var(--via-navy-10);
+    0 6px 14px -2px var(--via-shadow-ink-40),
+    0 0 0 6px var(--via-shadow-ink-10);
 }
 
 .via-slider::-moz-range-thumb:active {
@@ -136,7 +136,7 @@
 .via-slider:focus-visible::-moz-range-thumb {
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 10px -2px var(--via-navy-30),
+    0 4px 10px -2px var(--via-shadow-ink-30),
     var(--via-shadow-focus);
 }
 

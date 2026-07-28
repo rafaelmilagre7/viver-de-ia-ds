@@ -40,8 +40,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-08),
-    0 32px 64px -22px rgba(10, 31, 59, 0.46),
-    0 16px 36px -12px rgba(10, 31, 59, 0.22);
+    0 32px 64px -22px var(--via-shadow-ink-40),
+    0 16px 36px -12px var(--via-shadow-ink-20);
   animation: via-modal-in .36s var(--via-ease-out);
   overflow: hidden;
   isolation: isolate;

@@ -20,7 +20,7 @@
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--via-border-soft);
-  box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 6px 16px -10px var(--via-navy-14);
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 6px 16px -10px var(--via-shadow-ink-14);
 }
 .vds-mail-how-card .i {
   display: inline-flex;
@@ -66,7 +66,7 @@
   line-height: 1.7;
   overflow-x: auto;
   border: 1px solid var(--via-navy-deep);
-  box-shadow: 0 10px 26px -12px var(--via-navy-40);
+  box-shadow: 0 10px 26px -12px var(--via-shadow-ink-40);
 }
 
 /* ---------- card de email (subject + iframe) ---------- */
@@ -75,7 +75,7 @@
   border: 1px solid var(--via-border-soft);
   background: var(--via-surface);
   overflow: hidden;
-  box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 10px 30px -18px var(--via-navy-18);
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 10px 30px -18px var(--via-shadow-ink-20);
 }
 .vds-mail-head {
   display: flex;
@@ -149,7 +149,7 @@
   border: 0;
   border-radius: 14px;
   background: transparent;
-  box-shadow: 0 12px 34px -16px rgba(10, 31, 59, 0.32);
+  box-shadow: 0 12px 34px -16px var(--via-shadow-ink-30);
 }
 
 @media (max-width: 720px) {

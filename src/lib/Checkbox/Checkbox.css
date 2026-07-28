@@ -42,7 +42,7 @@
   margin-top: 1px;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 
 /* Alvo de toque generoso (>= WCAG AA) sem alterar o visual.
@@ -61,7 +61,7 @@
   border-color: var(--via-navy-30);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 2px 6px -2px var(--via-navy-10);
+    0 2px 6px -2px var(--via-shadow-ink-10);
 }
 
 .via-checkbox__icon {
@@ -80,7 +80,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
     0 -1px 0 rgba(0, 0, 0, 0.10) inset,
-    0 2px 6px -2px var(--via-navy-25);
+    0 2px 6px -2px var(--via-shadow-ink-20);
 }
 
 .via-checkbox__input:checked + .via-checkbox__box .via-checkbox__icon,

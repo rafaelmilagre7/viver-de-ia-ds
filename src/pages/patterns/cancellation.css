@@ -10,7 +10,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 24px 56px -22px var(--via-navy-18);
+    0 24px 56px -22px var(--via-shadow-ink-20);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
@@ -72,7 +72,7 @@
   color: var(--via-text-primary);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cnx-back:active {
@@ -140,7 +140,7 @@
   background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
   border-color: transparent;
   color: var(--via-white);
-  box-shadow: 0 2px 6px var(--via-navy-16);
+  box-shadow: 0 2px 6px var(--via-shadow-ink-20);
 }
 
 .vds-cnx-steps li.done,
@@ -290,7 +290,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px var(--via-navy),
-    0 12px 28px -14px var(--via-navy-22);
+    0 12px 28px -14px var(--via-shadow-ink-20);
 }
 
 .vds-cnx-reason-body {
@@ -324,7 +324,7 @@
   margin-bottom: 18px;
   isolation: isolate;
   overflow: hidden;
-  box-shadow: 0 24px 56px -22px var(--via-navy-40);
+  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
 .vds-cnx-offer::after {
@@ -365,7 +365,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  box-shadow: 0 4px 10px -2px var(--via-navy-30);
+  box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .vds-cnx-offer h3 {
@@ -430,7 +430,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
-  box-shadow: 0 8px 18px -6px rgba(10, 31, 59, 0.42);
+  box-shadow: 0 8px 18px -6px var(--via-shadow-ink-40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -513,11 +513,11 @@
   flex-shrink: 0;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 10px -2px var(--via-navy-30);
+    0 4px 10px -2px var(--via-shadow-ink-30);
 }.vds-cnx-alt-icon.accent {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  box-shadow: 0 4px 10px -2px var(--via-navy-30);
+  box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .vds-cnx-alt-body {
@@ -555,7 +555,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: var(--via-fs-label);
@@ -575,8 +575,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cnx-alt-cta:active {
@@ -620,7 +620,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px -2px var(--via-navy-30);
+  box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .vds-cnx-final h4 {
@@ -666,7 +666,7 @@
   -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   cursor: pointer;
   transition:
@@ -681,8 +681,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cnx-btn:active {
@@ -720,7 +720,7 @@
 .vds-cnx-btn.primary:hover {
   background: var(--via-navy-deep);
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px -10px rgba(10, 31, 59, 0.42);
+  box-shadow: 0 10px 22px -10px var(--via-shadow-ink-40);
 }
 
 .vds-cnx-btn.danger {

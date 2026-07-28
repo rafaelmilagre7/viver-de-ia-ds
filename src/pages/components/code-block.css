@@ -9,8 +9,8 @@
   background: var(--via-glass-card);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 16px 40px -24px var(--via-navy-18),
-    0 1px 4px var(--via-navy-04);
+    0 16px 40px -24px var(--via-shadow-ink-20),
+    0 1px 4px var(--via-shadow-ink-03);
   isolation: isolate;
 }
 /* No dark, o bloco de código claro mantém o vidro escuro (fundo + texto
@@ -29,7 +29,7 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 24px 56px -22px var(--via-navy-60);
+    0 24px 56px -22px var(--via-shadow-ink-60);
 }
 
 /* Header */
@@ -139,7 +139,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -157,15 +157,15 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-code-copy:active {
   transform: translateY(0);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-code-copy:focus-visible {
@@ -268,7 +268,7 @@
   bottom: 0;
   width: 3px;
   background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
-  box-shadow: 0 0 8px var(--via-navy-25);
+  box-shadow: 0 0 8px var(--via-shadow-ink-20);
 }
 
 .vds-code-line.active .vds-code-ln {
@@ -345,7 +345,7 @@
   background: var(--via-navy-darker);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 24px 56px -22px rgba(10, 31, 59, 0.55);
+    0 24px 56px -22px var(--via-shadow-ink-60);
   border: 1px solid var(--via-navy-40);
   isolation: isolate;
 }
@@ -560,8 +560,8 @@
   background: var(--via-surface);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 16px 40px -24px var(--via-navy-18),
-    0 1px 4px var(--via-navy-04);
+    0 16px 40px -24px var(--via-shadow-ink-20),
+    0 1px 4px var(--via-shadow-ink-03);
   isolation: isolate;
 }
 
@@ -600,7 +600,7 @@
   flex-shrink: 0;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -4px var(--via-navy-40);
+    0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
 .vds-diff-meta strong {

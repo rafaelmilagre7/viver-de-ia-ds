@@ -53,7 +53,7 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
-    0 6px 14px -4px var(--via-navy-22);
+    0 6px 14px -4px var(--via-shadow-ink-20);
   transition: transform var(--via-dur) var(--via-ease-spring), background var(--via-dur) ease, box-shadow var(--via-dur) ease;
 }
 
@@ -66,7 +66,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 0.5px var(--via-navy-18),
-    0 10px 22px -6px var(--via-navy-30);
+    0 10px 22px -6px var(--via-shadow-ink-30);
 }
 
 .via-carousel__arrow:active:not(:disabled) {

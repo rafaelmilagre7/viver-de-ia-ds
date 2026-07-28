@@ -9,7 +9,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 24px 56px -22px var(--via-navy-18);
+    0 24px 56px -22px var(--via-shadow-ink-20);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
@@ -64,7 +64,7 @@
   cursor: pointer;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -76,8 +76,8 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-rm-tool:active { transform: translateY(0); }
@@ -95,14 +95,14 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 6px 14px -6px var(--via-navy-30);
+    0 6px 14px -6px var(--via-shadow-ink-30);
 }
 
 .vds-rm-tool.primary:hover {
   border-color: var(--via-navy-deep);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 10px 22px -10px rgba(10, 31, 59, 0.48);
+    0 10px 22px -10px var(--via-shadow-ink-40);
 }
 
 .vds-rm-tool.primary:focus-visible {
@@ -198,7 +198,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   border-color: transparent;
   color: var(--via-white);
-  box-shadow: 0 4px 10px -2px var(--via-navy-30);
+  box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .vds-rm-col.next .vds-rm-col-icon {
@@ -384,7 +384,7 @@
 
 .vds-rm-card.featured .vds-rm-card-prog-track span {
   background: linear-gradient(90deg, var(--via-accent), var(--via-accent-warm));
-  box-shadow: 0 0 10px var(--via-navy-25);
+  box-shadow: 0 0 10px var(--via-shadow-ink-20);
 }
 
 .vds-rm-card-prog-lbl {
@@ -435,7 +435,7 @@
   cursor: pointer;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -447,8 +447,8 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-rm-card-vote:active { transform: translateY(0); }
@@ -486,7 +486,7 @@
   gap: var(--via-space-1_5);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -500,8 +500,8 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-rm-col-more:active { transform: translateY(0); }

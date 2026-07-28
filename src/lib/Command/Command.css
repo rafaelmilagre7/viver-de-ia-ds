@@ -35,8 +35,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
-    0 40px 80px -16px var(--via-navy-30),
-    0 16px 32px -12px var(--via-navy-18);
+    0 40px 80px -16px var(--via-shadow-ink-30),
+    0 16px 32px -12px var(--via-shadow-ink-20);
   overflow: hidden;
   animation: via-cmd-in .32s var(--via-ease-out) both;
   display: flex;

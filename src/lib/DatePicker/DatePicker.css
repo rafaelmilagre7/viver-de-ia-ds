@@ -66,8 +66,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
-    0 24px 56px -16px var(--via-navy-22),
-    0 8px 18px -10px var(--via-navy-14);
+    0 24px 56px -16px var(--via-shadow-ink-20),
+    0 8px 18px -10px var(--via-shadow-ink-14);
   animation: via-dp-in .26s var(--via-ease-out) both;
   isolation: isolate;
 }

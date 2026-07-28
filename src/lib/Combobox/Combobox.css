@@ -34,7 +34,7 @@
     box-shadow var(--via-dur) ease;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 
 .via-combobox--md .via-combobox__trigger { padding: 0 12px; }
@@ -111,7 +111,7 @@
   border-radius: var(--via-radius-sm);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 16px 40px -12px rgba(10, 31, 59, 0.18);
+    0 16px 40px -12px var(--via-shadow-ink-20);
   max-height: 280px;
   overflow-y: auto;
   animation: via-combobox-in 0.18s var(--via-ease-snap);

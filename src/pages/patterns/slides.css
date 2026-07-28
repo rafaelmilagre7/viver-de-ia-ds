@@ -38,7 +38,7 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.20),
     0 0 0 0.5px rgba(255, 255, 255, 0.04),
-    0 24px 56px -28px rgba(2, 22, 42, 0.55);
+    0 24px 56px -28px var(--via-shadow-ink-60);
 }
 
 .vds-slide > *:not(.vds-slide-aura):not(.vds-slide-divider-rule) {
@@ -226,7 +226,7 @@
   border-color: rgba(10, 31, 59, 0.25);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -2px var(--via-navy-30);
+    0 2px 6px -2px var(--via-shadow-ink-30);
 }
 
 /* ============================================
@@ -375,7 +375,7 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.05),
     0 0 0 0.5px var(--via-navy-08),
-    0 22px 48px -22px var(--via-navy-22);
+    0 22px 48px -22px var(--via-shadow-ink-20);
 }
 
 .vds-quote-mark {
@@ -417,7 +417,7 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.05),
     0 0 0 0.5px var(--via-navy-08),
-    0 22px 48px -22px var(--via-navy-22);
+    0 22px 48px -22px var(--via-shadow-ink-20);
 }
 
 .vds-slide-content-h3 {
@@ -474,7 +474,7 @@
   margin-top: 1px;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -2px var(--via-navy-30);
+    0 2px 6px -2px var(--via-shadow-ink-30);
 }
 
 .vds-slide-bullets strong {
@@ -603,7 +603,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 12px -6px var(--via-navy-08);
+    0 4px 12px -6px var(--via-shadow-ink-06);
 }
 
 .vds-anatomy-num {
@@ -623,7 +623,7 @@
   font-feature-settings: 'tnum' 1;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -2px var(--via-navy-30);
+    0 2px 6px -2px var(--via-shadow-ink-30);
 }
 
 .vds-anatomy-name {

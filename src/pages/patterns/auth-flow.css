@@ -25,7 +25,7 @@
   overflow: hidden;
   border: 1px solid rgba(10, 31, 59, 0.09);
   color: var(--via-white);
-  box-shadow: 0 24px 56px -22px rgba(10, 31, 59, 0.38);
+  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
 /* Ilha permanentemente CLARA · `--via-surface-onnavy` é branco fixo nos 2 temas
@@ -66,7 +66,7 @@
   color: var(--via-text-primary);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 18px 40px -22px var(--via-navy-18);
+    0 18px 40px -22px var(--via-shadow-ink-20);
 }
 
 .vds-auth-card.light::before {
@@ -244,7 +244,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   cursor: pointer;
-  box-shadow: 0 8px 18px -6px rgba(10, 31, 59, 0.42);
+  box-shadow: 0 8px 18px -6px var(--via-shadow-ink-40);
   transition:
     filter var(--via-dur) var(--via-ease-snap),
     transform var(--via-dur) var(--via-ease-snap),
@@ -256,7 +256,7 @@
 .vds-auth-cta:hover {
   filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px -8px var(--via-navy-30);
+  box-shadow: 0 12px 24px -8px var(--via-shadow-ink-30);
 }
 
 .vds-auth-cta:active {
@@ -291,13 +291,13 @@
 .vds-auth-cta.navy {
   background: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 8px 18px -8px rgba(10, 31, 59, 0.42);
+  box-shadow: 0 8px 18px -8px var(--via-shadow-ink-40);
 }
 
 .vds-auth-cta.navy:hover {
   background: var(--via-navy-deep);
   filter: none;
-  box-shadow: 0 12px 24px -10px rgba(10, 31, 59, 0.52);
+  box-shadow: 0 12px 24px -10px var(--via-shadow-ink-60);
 }
 
 /* Foot link */
@@ -399,7 +399,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
-  box-shadow: 0 8px 24px var(--via-navy-20);
+  box-shadow: 0 8px 24px var(--via-shadow-ink-20);
 }
 
 .vds-auth-success-ring-pulse {
@@ -468,7 +468,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  box-shadow: 0 4px 10px -2px var(--via-navy-30);
+  box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .vds-auth-eyebrow {
@@ -656,7 +656,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: inherit;
   font-size: var(--via-fs-caption);
@@ -675,8 +675,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-auth-social-btn:active {

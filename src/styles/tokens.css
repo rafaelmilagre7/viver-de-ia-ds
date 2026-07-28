@@ -138,7 +138,7 @@
    DARK MODE · [data-theme="dark"] no <html>
    Mantém navy como cor central · troca surfaces white → navy-dark
    ============================================================= */
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   /* =================================================
      SURFACES · escala com mais separação entre camadas
      Tons levemente warm pra não ficar "preto técnico"
@@ -234,6 +234,17 @@
   --via-shadow-lg: 0 16px 40px rgba(0,0,0,0.52), 0 2px 8px rgba(0,0,0,0.34);
   --via-shadow-xl: 0 32px 80px rgba(0,0,0,0.62), 0 4px 16px rgba(0,0,0,0.40);
   --via-shadow-focus: 0 0 0 3px rgba(255,255,255,0.22);
+  /* Tinta de sombra no ESCURO: preta e mais densa — navy sobre navy
+     não produz sombra nenhuma, e token que inverte vira halo branco. */
+  --via-shadow-ink-03: rgba(0, 0, 0, 0.18);
+  --via-shadow-ink-06: rgba(0, 0, 0, 0.26);
+  --via-shadow-ink-10: rgba(0, 0, 0, 0.34);
+  --via-shadow-ink-14: rgba(0, 0, 0, 0.40);
+  --via-shadow-ink-20: rgba(0, 0, 0, 0.46);
+  --via-shadow-ink-30: rgba(0, 0, 0, 0.54);
+  --via-shadow-ink-40: rgba(0, 0, 0, 0.62);
+  --via-shadow-ink-60: rgba(0, 0, 0, 0.72);
+
 
   color-scheme: dark;
 }
@@ -289,7 +300,7 @@
   --via-glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
 }
 
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0.022) 100%);  /* sheen de topo · luz no vidro escuro */
   --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018));
   --via-glass-bar:    rgba(11, 18, 32, 0.55);
@@ -415,6 +426,29 @@
   --via-radius-xl:   28px;
   --via-radius-2xl:  40px;
   --via-radius-pill: 999px;
+
+  /* ========== TINTA DE SOMBRA · use ISTO em box-shadow ==========
+     ⚠️ A ARMADILHA Nº1 DO DS (139 ocorrências achadas em auditoria):
+     `--via-navy-40`, `--via-edge-hi` e `--via-white` INVERTEM no tema
+     escuro — viram branco. Quem usa esses tokens numa SOMBRA ganha um
+     HALO BRANCO no escuro (medimos glow de 24px em botão, auréola em
+     card, anel branco em avatar). E sombra navy fixa some sobre fundo
+     navy, deixando o elemento sem elevação nenhuma.
+
+     REGRA: em `box-shadow` de elevação, use SEMPRE --via-shadow-ink-*.
+     Ele já é navy no claro e PRETO no escuro (sombra no escuro precisa
+     ser mais densa pra existir). Nunca --via-navy-* numa sombra.
+
+     Exceção legítima: `inset 0 1px 0 var(--via-edge-hi)` — a linha de
+     luz no topo do vidro. Ali o branco é o efeito desejado. */
+  --via-shadow-ink-03: rgba(10, 31, 59, 0.03);
+  --via-shadow-ink-06: rgba(10, 31, 59, 0.06);
+  --via-shadow-ink-10: rgba(10, 31, 59, 0.10);
+  --via-shadow-ink-14: rgba(10, 31, 59, 0.14);
+  --via-shadow-ink-20: rgba(10, 31, 59, 0.20);
+  --via-shadow-ink-30: rgba(10, 31, 59, 0.30);
+  --via-shadow-ink-40: rgba(10, 31, 59, 0.40);
+  --via-shadow-ink-60: rgba(10, 31, 59, 0.60);
 
   /* ========== DATAVIZ · paleta de série (VALIDADA por script) ===
      Regra desta marca: a paleta é navy-only, o que torna gráfico

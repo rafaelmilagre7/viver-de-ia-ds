@@ -180,7 +180,7 @@
   -webkit-overflow-scrolling: touch;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.08) inset,
-    0 12px 28px -16px var(--via-navy-40);
+    0 12px 28px -16px var(--via-shadow-ink-40);
 }
 
 .vds-data-mods {

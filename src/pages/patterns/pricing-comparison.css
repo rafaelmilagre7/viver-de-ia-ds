@@ -52,9 +52,9 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 1px 0 0 rgba(10,31,59,0.04),
-    0 -20px 40px -20px var(--via-navy-12),
-    0 -8px 20px -8px var(--via-navy-08);
+    0 1px 0 0 var(--via-shadow-ink-03),
+    0 -20px 40px -20px var(--via-shadow-ink-14),
+    0 -8px 20px -8px var(--via-shadow-ink-06);
   overflow: hidden;
   isolation: isolate;
   transition: all 320ms cubic-bezier(.16, 1, .3, 1);
@@ -85,8 +85,8 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
     0 0 0 1px var(--via-navy),
-    0 -32px 60px -24px var(--via-navy-22),
-    0 -16px 32px -12px var(--via-navy-14);
+    0 -32px 60px -24px var(--via-shadow-ink-20),
+    0 -16px 32px -12px var(--via-shadow-ink-14);
   transform: translateY(-12px);
   margin-bottom: -12px;
   z-index: 2;
@@ -131,8 +131,8 @@
   text-transform: uppercase;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 10px -2px var(--via-navy-30),
-    0 2px 4px -1px var(--via-navy-22);
+    0 4px 10px -2px var(--via-shadow-ink-30),
+    0 2px 4px -1px var(--via-shadow-ink-20);
 }
 .vds-pricing-tier__badge svg { color: rgba(255,255,255,0.9); }
 
@@ -296,7 +296,7 @@
   border: 1px solid var(--via-navy-08);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 .vds-pricing-mark--check {
   background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 70%, var(--via-navy-deep));
@@ -304,8 +304,8 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -1px var(--via-navy-30),
-    0 1px 2px var(--via-navy-14);
+    0 2px 6px -1px var(--via-shadow-ink-30),
+    0 1px 2px var(--via-shadow-ink-14);
 }
 .vds-pricing-mark--x {
   color: var(--via-text-muted);
@@ -346,8 +346,8 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 18px 40px -16px var(--via-navy-14),
-    0 6px 14px -6px var(--via-navy-06);
+    0 18px 40px -16px var(--via-shadow-ink-14),
+    0 6px 14px -6px var(--via-shadow-ink-06);
   overflow: hidden;
   isolation: isolate;
   transition: all 320ms cubic-bezier(.16, 1, .3, 1);
@@ -412,7 +412,7 @@
     border-bottom: 1px solid rgba(255,255,255,1);
     box-shadow:
       inset 0 1px 0 var(--via-edge-hi),
-      0 18px 40px -16px var(--via-navy-14);
+      0 18px 40px -16px var(--via-shadow-ink-14);
   }
   .vds-pricing-tier.is-recommended {
     transform: none;

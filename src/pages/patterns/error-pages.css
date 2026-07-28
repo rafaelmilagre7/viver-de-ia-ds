@@ -38,7 +38,7 @@
   border-radius: var(--via-radius-pill);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 22px -10px var(--via-navy-12);
+    0 8px 22px -10px var(--via-shadow-ink-14);
   width: fit-content;
   position: relative;
   isolation: isolate;
@@ -79,7 +79,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 .vds-err-switcher__btn:active { transform: translateY(0); }
 .vds-err-switcher__btn:focus-visible {
@@ -96,16 +96,16 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 4px 12px -2px rgba(10, 31, 59, 0.30),
-    0 2px 6px -1px rgba(10, 31, 59, 0.22);
+    0 4px 12px -2px var(--via-shadow-ink-30),
+    0 2px 6px -1px var(--via-shadow-ink-20);
 }
 .vds-err-switcher__btn.is-active:hover {
   color: var(--via-white);
   border-color: var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 10px 22px -6px rgba(10, 31, 59, 0.40),
-    0 2px 6px -1px rgba(10, 31, 59, 0.22);
+    0 10px 22px -6px var(--via-shadow-ink-40),
+    0 2px 6px -1px var(--via-shadow-ink-20);
 }
 
 /* ===== STAGE · canvas amplo com mesh navy ================== */
@@ -121,9 +121,9 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 1px 0 0 rgba(10,31,59,0.04),
-    0 30px 64px -24px var(--via-navy-22),
-    0 14px 28px -10px var(--via-navy-10);
+    0 1px 0 0 var(--via-shadow-ink-03),
+    0 30px 64px -24px var(--via-shadow-ink-20),
+    0 14px 28px -10px var(--via-shadow-ink-10);
   overflow: hidden;
   isolation: isolate;
 }
@@ -178,7 +178,7 @@
   text-transform: uppercase;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 /* Sem bolinha decorativa: o rótulo já diz o código, e o tom
    semântico é carregado pelo ícone + copy (não por semáforo). */
@@ -201,8 +201,8 @@
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.16),
     inset 0 -1px 0 rgba(0,0,0,0.12),
-    0 22px 48px -14px rgba(10,31,59,0.40),
-    0 8px 18px -6px rgba(10,31,59,0.22);
+    0 22px 48px -14px var(--via-shadow-ink-40),
+    0 8px 18px -6px var(--via-shadow-ink-20);
   isolation: isolate;
 }
 .vds-err-icon::before {
@@ -256,7 +256,7 @@
   letter-spacing: 0.02em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 .vds-err-incident strong { color: var(--via-text-body); font-weight: var(--via-fw-medium); }
 
@@ -277,8 +277,8 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 18px 40px -16px var(--via-navy-14),
-    0 6px 14px -6px var(--via-navy-06);
+    0 18px 40px -16px var(--via-shadow-ink-14),
+    0 6px 14px -6px var(--via-shadow-ink-06);
   overflow: hidden;
   isolation: isolate;
   transition: all 320ms cubic-bezier(.16, 1, .3, 1);

@@ -11,8 +11,8 @@
   user-select: none;
   border: 2px solid var(--via-white);
   box-shadow:
-    0 0 0 1px var(--via-navy-08),
-    0 4px 10px -4px var(--via-navy-25);
+    0 0 0 1px var(--via-shadow-ink-06),
+    0 4px 10px -4px var(--via-shadow-ink-20);
   position: relative;
 }
 
@@ -35,8 +35,8 @@
   font-size: var(--via-fs-h4);
   border-width: 2.5px;
   box-shadow:
-    0 0 0 1px var(--via-navy-08),
-    0 8px 18px -4px rgba(10, 31, 59, 0.35);
+    0 0 0 1px var(--via-shadow-ink-06),
+    0 8px 18px -4px var(--via-shadow-ink-30);
 }
 
 .via-avatar.gray {
@@ -51,7 +51,7 @@
   border: 1.5px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 2px 6px var(--via-navy-08);
+    0 2px 6px var(--via-shadow-ink-06);
   font-family: var(--via-font);
   font-weight: var(--via-fw-bold);
   font-size: var(--via-fs-micro);

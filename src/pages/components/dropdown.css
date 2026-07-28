@@ -31,7 +31,7 @@
   min-width: 280px;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 10px -4px var(--via-navy-12);
+    0 4px 10px -4px var(--via-shadow-ink-10);
 }
 
 .via-dd-trigger:hover {
@@ -39,15 +39,15 @@
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 8px 20px -10px var(--via-navy-22),
-    0 4px 10px -4px var(--via-navy-12);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 4px 10px -4px var(--via-shadow-ink-10);
 }
 
 .via-dd-trigger:active {
   transform: translateY(0);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 10px -4px var(--via-navy-12);
+    0 4px 10px -4px var(--via-shadow-ink-10);
 }
 
 .via-dd-trigger:focus-visible {
@@ -114,8 +114,8 @@
      como a camada profunda. */
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 24px 56px -22px rgba(10, 31, 59, 0.28),
-    0 2px 8px -4px rgba(10, 31, 59, 0.10);
+    0 24px 56px -22px var(--via-shadow-ink-30),
+    0 2px 8px -4px var(--via-shadow-ink-06);
   animation: vds-dd-in 240ms var(--via-ease-out);
   transform-origin: top center;
   overflow: hidden;

@@ -99,7 +99,7 @@
     0 1px 0 rgba(255, 255, 255, 0.16) inset,
     0 -1px 0 rgba(0, 0, 0, 0.12) inset,
     0 0 0 0.5px var(--via-navy-08),
-    0 4px 10px -4px var(--via-navy-40);
+    0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
 .via-pill--live em {

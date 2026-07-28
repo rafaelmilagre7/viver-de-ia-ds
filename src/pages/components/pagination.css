@@ -10,7 +10,7 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 12px var(--via-navy-08);
+    0 4px 12px var(--via-shadow-ink-06);
 }
 
 .via-pag .p,
@@ -73,7 +73,7 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -3px var(--via-navy-40);
+    0 4px 10px -3px var(--via-shadow-ink-40);
   font-weight: var(--via-fw-semibold);
 }
 

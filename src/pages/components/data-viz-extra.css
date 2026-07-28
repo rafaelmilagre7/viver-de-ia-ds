@@ -30,7 +30,7 @@
   -webkit-backdrop-filter: blur(24px) saturate(140%);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 16px 40px -24px var(--via-navy-14);
+    0 16px 40px -24px var(--via-shadow-ink-14);
   isolation: isolate;
 }
 
@@ -191,7 +191,7 @@
   box-shadow:
     inset 0 0 0 1px var(--via-navy-04),
     0 0 0 1.5px var(--via-text-primary),
-    0 6px 12px -4px var(--via-navy-30);
+    0 6px 12px -4px var(--via-shadow-ink-30);
   position: relative;
   z-index: 2;
 }
@@ -208,7 +208,7 @@
   border-radius: var(--via-radius-sm);
   background: var(--via-text-primary);
   color: var(--via-bg);
-  box-shadow: 0 12px 28px -12px var(--via-navy-40);
+  box-shadow: 0 12px 28px -12px var(--via-shadow-ink-40);
   white-space: nowrap;
 }
 
@@ -530,7 +530,7 @@
   transform: translateY(-2px);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 24px 52px -26px var(--via-navy-25);
+    0 24px 52px -26px var(--via-shadow-ink-20);
 }
 
 .vds-gz-card.is-destaque {

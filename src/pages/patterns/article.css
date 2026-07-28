@@ -20,7 +20,7 @@
   cursor: pointer;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 4px var(--via-navy-04);
+    0 1px 4px var(--via-shadow-ink-03);
   position: relative;
   isolation: isolate;
 }
@@ -42,7 +42,7 @@
   transform: translateY(-3px);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 18px 40px -22px var(--via-navy-22);
+    0 18px 40px -22px var(--via-shadow-ink-20);
 }
 
 .vds-article:hover::after {
@@ -236,7 +236,7 @@
   border: 2px solid var(--via-white);
   box-shadow:
     0 0 0 1px var(--via-navy-08),
-    0 2px 6px rgba(10, 31, 59, 0.15);
+    0 2px 6px var(--via-shadow-ink-14);
 }
 
 .vds-article .author {

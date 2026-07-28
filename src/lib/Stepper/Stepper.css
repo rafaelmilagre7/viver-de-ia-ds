@@ -99,7 +99,7 @@ button.via-stepper__node:focus-visible {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
     0 0 0 4px var(--via-navy-10),
-    0 0 12px var(--via-navy-22);
+    0 0 12px var(--via-shadow-ink-20);
 }
 
 .via-stepper__indicator.is-complete {
@@ -108,7 +108,7 @@ button.via-stepper__node:focus-visible {
   color: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
-    0 1px 3px var(--via-navy-22);
+    0 1px 3px var(--via-shadow-ink-20);
 }
 
 /* ===== Copy ===== */

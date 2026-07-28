@@ -25,8 +25,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
-    0 22px 44px -16px var(--via-navy-22),
-    0 8px 18px -10px var(--via-navy-14);
+    0 22px 44px -16px var(--via-shadow-ink-20),
+    0 8px 18px -10px var(--via-shadow-ink-14);
   animation: via-hovercard-in var(--via-dur) var(--via-ease-out);
   isolation: isolate;
 }

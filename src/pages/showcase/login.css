@@ -185,7 +185,7 @@
   border-radius: var(--via-radius-md);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
@@ -201,8 +201,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 .prov:active { transform: translateY(0); }
 .prov:focus-visible {
@@ -304,7 +304,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 4px 12px var(--via-navy-20);
+  box-shadow: 0 4px 12px var(--via-shadow-ink-20);
 }
 .auth-row .link {
   font-family: var(--via-font);
@@ -338,7 +338,7 @@
   cursor: pointer;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -6px rgba(10, 31, 59, 0.45);
+    0 8px 18px -6px var(--via-shadow-ink-40);
   transition: all 240ms var(--via-ease-out);
   position: relative;
   /* isolation + z-index:-1 no ::before: o sheen era pseudo posicionado SEM
@@ -363,7 +363,7 @@
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 12px 24px -6px rgba(10, 31, 59, 0.55);
+    0 12px 24px -6px var(--via-shadow-ink-60);
 }
 .auth-submit:hover::before { left: 100%; }
 .auth-submit:active { transform: translateY(0); }

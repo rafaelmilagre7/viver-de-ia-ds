@@ -939,6 +939,54 @@ export const tokensList: readonly Token[] = [
     "category": "shadow"
   },
   {
+    "name": "via-shadow-ink-03",
+    "css": "--via-shadow-ink-03",
+    "value": "rgba(10, 31, 59, 0.03)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-shadow-ink-06",
+    "css": "--via-shadow-ink-06",
+    "value": "rgba(10, 31, 59, 0.06)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-shadow-ink-10",
+    "css": "--via-shadow-ink-10",
+    "value": "rgba(10, 31, 59, 0.10)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-shadow-ink-14",
+    "css": "--via-shadow-ink-14",
+    "value": "rgba(10, 31, 59, 0.14)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-shadow-ink-20",
+    "css": "--via-shadow-ink-20",
+    "value": "rgba(10, 31, 59, 0.20)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-shadow-ink-30",
+    "css": "--via-shadow-ink-30",
+    "value": "rgba(10, 31, 59, 0.30)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-shadow-ink-40",
+    "css": "--via-shadow-ink-40",
+    "value": "rgba(10, 31, 59, 0.40)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-shadow-ink-60",
+    "css": "--via-shadow-ink-60",
+    "value": "rgba(10, 31, 59, 0.60)",
+    "category": "shadow"
+  },
+  {
     "name": "via-shadow-lg",
     "css": "--via-shadow-lg",
     "value": "0 16px 40px rgba(10,31,59,0.10), 0 2px 8px rgba(10,31,59,0.05)",
@@ -1263,6 +1311,14 @@ export type TokenName =
   | 'via-shadow-focus'
   | 'via-shadow-glass-dark'
   | 'via-shadow-glass-light'
+  | 'via-shadow-ink-03'
+  | 'via-shadow-ink-06'
+  | 'via-shadow-ink-10'
+  | 'via-shadow-ink-14'
+  | 'via-shadow-ink-20'
+  | 'via-shadow-ink-30'
+  | 'via-shadow-ink-40'
+  | 'via-shadow-ink-60'
   | 'via-shadow-lg'
   | 'via-shadow-md'
   | 'via-shadow-sm'

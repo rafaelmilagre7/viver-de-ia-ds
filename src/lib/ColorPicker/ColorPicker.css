@@ -14,7 +14,7 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
-    0 12px 28px -12px var(--via-navy-14);
+    0 12px 28px -12px var(--via-shadow-ink-14);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   min-width: 280px;
 }
@@ -48,7 +48,7 @@
   border: 1px solid var(--via-navy-12);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.32) inset,
-    0 4px 10px -2px var(--via-navy-22);
+    0 4px 10px -2px var(--via-shadow-ink-20);
 }
 
 .via-cp__info {
@@ -109,14 +109,14 @@
   transform: scale(1.10);
   box-shadow:
     0 0 0 2px var(--via-navy-08),
-    0 4px 10px -2px var(--via-navy-22);
+    0 4px 10px -2px var(--via-shadow-ink-20);
 }
 
 .via-cp__cell.is-selected {
   transform: scale(1.06);
   box-shadow:
     0 0 0 2px var(--via-navy),
-    0 4px 10px -2px var(--via-navy-30);
+    0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .via-cp__custom {
@@ -148,7 +148,7 @@
   border-color: var(--via-navy);
   box-shadow:
     0 0 0 3px var(--via-navy-10),
-    0 4px 10px -4px var(--via-navy-12);
+    0 4px 10px -4px var(--via-shadow-ink-14);
 }
 
 .via-cp.is-disabled { opacity: 0.6; pointer-events: none; }

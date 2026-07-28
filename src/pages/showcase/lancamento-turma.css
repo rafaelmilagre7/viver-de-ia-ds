@@ -68,7 +68,7 @@
      branco de 14px (pior no hover). */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 6px 14px -4px rgba(2, 22, 42, 0.45);
+    0 6px 14px -4px var(--via-shadow-ink-40);
   transition: all 200ms cubic-bezier(.16, 1, .3, 1);
 }
 
@@ -76,7 +76,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 10px 22px -4px rgba(2, 22, 42, 0.55);
+    0 10px 22px -4px var(--via-shadow-ink-60);
 }
 
 .lt-nav-cta:active { transform: translateY(0); }
@@ -232,7 +232,7 @@
   letter-spacing: -0.008em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 14px 32px -10px rgba(10, 31, 59, 0.60),
+    0 14px 32px -10px var(--via-shadow-ink-60),
     0 0 40px rgba(59, 107, 160, 0.24);
   transition: all 240ms cubic-bezier(.16, 1, .3, 1);
 }
@@ -241,7 +241,7 @@
   transform: translateY(-2px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 20px 44px -12px rgba(10, 31, 59, 0.72),
+    0 20px 44px -12px var(--via-shadow-ink-60),
     0 0 56px rgba(59, 107, 160, 0.36);
 }
 
@@ -550,7 +550,7 @@
      desenhava uma auréola branca em volta do ícone. */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 6px 14px -4px rgba(2, 22, 42, 0.45);
+    0 6px 14px -4px var(--via-shadow-ink-40);
 }
 
 .lt-pilar strong {
@@ -699,7 +699,7 @@
      status vive só na bolinha, avatar nunca ganha anel colorido). */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 6px 14px -4px rgba(2, 22, 42, 0.45);
+    0 6px 14px -4px var(--via-shadow-ink-40);
 }
 
 .lt-mentor strong {

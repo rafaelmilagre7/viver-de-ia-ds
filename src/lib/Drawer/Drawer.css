@@ -33,8 +33,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-08),
-    0 32px 72px -16px var(--via-navy-40),
-    0 16px 32px -12px var(--via-navy-20);
+    0 32px 72px -16px var(--via-shadow-ink-40),
+    0 16px 32px -12px var(--via-shadow-ink-20);
   display: flex;
   flex-direction: column;
   pointer-events: auto;

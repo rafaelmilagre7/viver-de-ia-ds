@@ -11,7 +11,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 24px 56px -22px var(--via-navy-18);
+    0 24px 56px -22px var(--via-shadow-ink-20);
 }
 
 /* Header — day selector + track legend */
@@ -55,7 +55,7 @@
   letter-spacing: -0.006em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -73,8 +73,8 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cf-day:active {
@@ -93,7 +93,7 @@
   background: var(--via-navy);
   border-color: var(--via-navy);
   color: var(--via-white);
-  box-shadow: 0 10px 22px -10px rgba(10, 31, 59, 0.42);
+  box-shadow: 0 10px 22px -10px var(--via-shadow-ink-40);
 }
 
 .vds-cf-day.active::after {
@@ -316,7 +316,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px var(--via-navy-10),
-    0 14px 32px -18px var(--via-navy-22);
+    0 14px 32px -18px var(--via-shadow-ink-20);
 }
 
 .vds-cf-session header {
@@ -377,7 +377,7 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px rgba(10, 31, 59, 0.24);
+    0 2px 6px var(--via-shadow-ink-20);
 }
 
 .vds-cf-session h4 {
@@ -424,7 +424,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
-  box-shadow: 0 2px 6px var(--via-navy-18);
+  box-shadow: 0 2px 6px var(--via-shadow-ink-20);
   flex-shrink: 0;
 }
 
@@ -432,7 +432,7 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
-  box-shadow: 0 4px 10px var(--via-navy-16);
+  box-shadow: 0 4px 10px var(--via-shadow-ink-20);
 }
 
 .vds-cf-speaker > div {
@@ -479,7 +479,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
@@ -497,8 +497,8 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-cf-add:active {
@@ -552,7 +552,7 @@
   border: 1px solid var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 6px 14px -8px var(--via-navy-40);
+    0 6px 14px -8px var(--via-shadow-ink-40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -565,7 +565,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 .vds-cf-foot-cta:active {
@@ -632,7 +632,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px var(--via-navy-10),
-    0 12px 28px -18px var(--via-navy-22);
+    0 12px 28px -18px var(--via-shadow-ink-20);
 }
 
 .vds-cf-spk-av {
@@ -650,13 +650,13 @@
   letter-spacing: 0.02em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
-    0 4px 10px -4px rgba(10, 31, 59, 0.32);
+    0 4px 10px -4px var(--via-shadow-ink-30);
 }.vds-cf-spk.keynote .vds-cf-spk-av {
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.4) inset,
-    0 4px 10px -4px var(--via-navy-25);
+    0 4px 10px -4px var(--via-shadow-ink-20);
 }
 
 .vds-cf-spk-body {

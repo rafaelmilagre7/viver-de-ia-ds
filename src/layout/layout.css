@@ -354,7 +354,7 @@
     transform: translateX(-100%);
     transition: transform 320ms var(--via-ease-out);
     z-index: 45;
-    box-shadow: 0 24px 48px var(--via-navy-20);
+    box-shadow: 0 24px 48px var(--via-shadow-ink-20);
     padding: 24px 20px 64px;
     /* drawer fixo: quem manda na altura é top/bottom, não a faixa do grid */
     height: auto;

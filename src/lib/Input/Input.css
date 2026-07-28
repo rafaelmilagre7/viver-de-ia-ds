@@ -33,7 +33,7 @@
     transform var(--via-dur) ease;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 
 /* Focus underline · gradient animated · revela bottom-up */
@@ -65,7 +65,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 3px var(--via-navy-10),
-    0 6px 14px -8px var(--via-navy-12);
+    0 6px 14px -8px var(--via-shadow-ink-14);
 }
 
 .via-input:focus-within::after {

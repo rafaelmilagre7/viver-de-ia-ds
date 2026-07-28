@@ -45,9 +45,9 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 1px 0 0 rgba(10,31,59,0.04),
-    0 30px 64px -24px var(--via-navy-22),
-    0 14px 28px -10px var(--via-navy-10);
+    0 1px 0 0 var(--via-shadow-ink-03),
+    0 30px 64px -24px var(--via-shadow-ink-20),
+    0 14px 28px -10px var(--via-shadow-ink-10);
   overflow: hidden;
   isolation: isolate;
 }
@@ -103,8 +103,8 @@
   justify-content: center;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 16px -4px var(--via-navy-30),
-    0 2px 6px -2px var(--via-navy-14);
+    0 6px 16px -4px var(--via-shadow-ink-30),
+    0 2px 6px -2px var(--via-shadow-ink-14);
 }
 /* Sem aro branco (invisível no claro, halo no escuro) e sem glow:
    no escuro a sombra navy inverteria pra branca. */
@@ -189,7 +189,7 @@
   isolation: isolate;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
   transition: all 280ms cubic-bezier(.16, 1, .3, 1);
 }
 .vds-2fa-method::before {
@@ -210,8 +210,8 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 12px 28px -10px var(--via-navy-14),
-    0 4px 10px -3px var(--via-navy-08);
+    0 12px 28px -10px var(--via-shadow-ink-14),
+    0 4px 10px -3px var(--via-shadow-ink-06);
 }
 [data-theme="dark"] .vds-2fa-method:hover {
   box-shadow:
@@ -242,8 +242,8 @@
   position: relative;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 10px -2px var(--via-navy-22),
-    0 1px 3px -1px var(--via-navy-12);
+    0 4px 10px -2px var(--via-shadow-ink-20),
+    0 1px 3px -1px var(--via-shadow-ink-14);
 }
 [data-theme="dark"] .vds-2fa-method__icon {
   box-shadow:
@@ -302,7 +302,7 @@
   gap: var(--via-space-3);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 .vds-2fa-qr {
   width: 148px;
@@ -322,8 +322,8 @@
   -webkit-mask-composite: source-in;
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,0.14),
-    0 12px 24px -8px var(--via-navy-30),
-    0 4px 10px -3px var(--via-navy-14);
+    0 12px 24px -8px var(--via-shadow-ink-30),
+    0 4px 10px -3px var(--via-shadow-ink-14);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -380,7 +380,7 @@
   gap: 6px 12px;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 .vds-2fa-backup-code {
   font-family: var(--via-font-mono);
@@ -395,7 +395,7 @@
   text-align: center;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 1px var(--via-navy-04);
+    0 1px 1px var(--via-shadow-ink-03);
 }
 
 /* ===== CTA wide · ocupa o card =============================== */
@@ -420,8 +420,8 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 18px 36px -10px var(--via-navy-30),
-    0 8px 16px -6px var(--via-navy-22);
+    0 18px 36px -10px var(--via-shadow-ink-30),
+    0 8px 16px -6px var(--via-shadow-ink-20);
 }
 [data-theme="dark"] .vds-2fa-done__tile {
   box-shadow:
@@ -471,8 +471,8 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 18px 40px -16px var(--via-navy-14),
-    0 6px 14px -6px var(--via-navy-06);
+    0 18px 40px -16px var(--via-shadow-ink-14),
+    0 6px 14px -6px var(--via-shadow-ink-06);
   overflow: hidden;
   isolation: isolate;
   transition: all 320ms cubic-bezier(.16, 1, .3, 1);

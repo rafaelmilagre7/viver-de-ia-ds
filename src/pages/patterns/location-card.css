@@ -195,7 +195,7 @@
 .vds-loc-access li:hover {
   transform: translateY(-1px);
   border-color: var(--via-navy-20);
-  box-shadow: 0 8px 18px -12px var(--via-navy-22);
+  box-shadow: 0 8px 18px -12px var(--via-shadow-ink-20);
 }
 
 .vds-loc-access-icon {
@@ -256,7 +256,7 @@
   -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   cursor: pointer;
   transition:
@@ -271,8 +271,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-loc-btn:active { transform: translateY(0); }
@@ -290,7 +290,7 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 8px 18px -8px var(--via-navy-40);
+    0 8px 18px -8px var(--via-shadow-ink-40);
 }
 
 .vds-loc-btn.primary:hover {
@@ -298,7 +298,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 .vds-loc-btn.primary:focus-visible {
@@ -387,7 +387,7 @@
   border-color: var(--via-navy-14);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 16px 32px -16px var(--via-navy-18);
+    0 16px 32px -16px var(--via-shadow-ink-20);
 }
 
 @media (max-width: 480px) {
@@ -465,7 +465,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
@@ -484,8 +484,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-loc-compact-cta:active { transform: translateY(0); }

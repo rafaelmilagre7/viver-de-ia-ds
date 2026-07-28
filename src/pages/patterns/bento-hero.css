@@ -39,8 +39,8 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.04),
     0 0 0 0.5px var(--via-navy-06),
-    0 10px 24px -12px var(--via-navy-14),
-    0 2px 6px -2px var(--via-navy-06);
+    0 10px 24px -12px var(--via-shadow-ink-14),
+    0 2px 6px -2px var(--via-shadow-ink-06);
 }
 
 .vds-bento-card:hover {
@@ -50,8 +50,8 @@
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.05),
     0 0 0 0.5px var(--via-navy-10),
-    0 22px 48px -16px var(--via-navy-25),
-    0 8px 18px -6px var(--via-navy-12);
+    0 22px 48px -16px var(--via-shadow-ink-20),
+    0 8px 18px -6px var(--via-shadow-ink-14);
 }
 
 .vds-bento-card::before {
@@ -78,7 +78,7 @@
   justify-content: space-between;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 24px 56px -22px var(--via-navy-60);
+    0 24px 56px -22px var(--via-shadow-ink-60);
 }
 
 .vds-bento-card.hero::before {
@@ -214,7 +214,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 6px 14px -4px rgba(10, 31, 59, 0.23);
+    0 6px 14px -4px var(--via-shadow-ink-20);
 }
 
 .vds-bento-cta.primary:hover {
@@ -222,7 +222,7 @@
   border-color: var(--via-navy-30);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 10px 22px -6px rgba(10, 31, 59, 0.32);
+    0 10px 22px -6px var(--via-shadow-ink-30);
 }
 
 .vds-bento-cta.ghost {
@@ -396,7 +396,7 @@
   line-height: 1.4;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 1px 2px var(--via-navy-04);
+    0 1px 2px var(--via-shadow-ink-03);
 }
 
 .vds-bento-card.quote blockquote {
@@ -438,7 +438,7 @@
   border: 2px solid var(--via-white);
   box-shadow:
     0 0 0 1px var(--via-navy-12),
-    0 4px 10px -3px rgba(10, 31, 59, 0.35);
+    0 4px 10px -3px var(--via-shadow-ink-30);
 }
 
 .vds-bento-card.quote footer strong {
@@ -693,7 +693,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.20),
-    0 6px 14px -4px var(--via-navy-40);
+    0 6px 14px -4px var(--via-shadow-ink-40);
 }
 
 .vds-bento-meta {

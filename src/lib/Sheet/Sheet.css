@@ -39,8 +39,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
-    0 -24px 64px -16px var(--via-navy-30),
-    0 -10px 24px -10px var(--via-navy-18);
+    0 -24px 64px -16px var(--via-shadow-ink-30),
+    0 -10px 24px -10px var(--via-shadow-ink-20);
   pointer-events: auto;
   isolation: isolate;
   animation: via-sheet-in .42s var(--via-ease-out);

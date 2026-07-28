@@ -258,7 +258,7 @@
   border-color: var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 14px 32px -16px var(--via-navy-40);
+    0 14px 32px -16px var(--via-shadow-ink-40);
 }
 .vds-fpa-var-kpi--destaque::before {
   background: radial-gradient(300px 140px at 0% 0%, rgba(255, 255, 255, 0.10), transparent 62%);
@@ -292,8 +292,8 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 28px 56px -26px var(--via-navy-20),
-    0 10px 22px -12px var(--via-navy-08);
+    0 28px 56px -26px var(--via-shadow-ink-20),
+    0 10px 22px -12px var(--via-shadow-ink-06);
 }
 .vds-fpa-var-painel::before {
   content: '';
@@ -740,7 +740,7 @@
   white-space: nowrap;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 6px 14px -4px var(--via-navy-30);
+    0 6px 14px -4px var(--via-shadow-ink-30);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
@@ -749,7 +749,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 10px 22px -6px var(--via-navy-40);
+    0 10px 22px -6px var(--via-shadow-ink-40);
 }
 .vds-fpa-var-cta:active { transform: translateY(0); }
 .vds-fpa-var-cta:focus-visible {

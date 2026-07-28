@@ -79,8 +79,8 @@
   border: 1px solid var(--via-navy-08);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 48px 96px -36px var(--via-navy-25),
-    0 4px 16px var(--via-navy-04);
+    0 48px 96px -36px var(--via-shadow-ink-20),
+    0 4px 16px var(--via-shadow-ink-03);
   isolation: isolate;
   color: var(--via-text);
 }
@@ -293,7 +293,7 @@
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.96), rgba(10, 31, 59, 1));
   border-radius: var(--via-radius-md);
   color: var(--via-white);
-  box-shadow: 0 16px 32px -16px var(--via-navy-40);
+  box-shadow: 0 16px 32px -16px var(--via-shadow-ink-40);
   position: relative;
   overflow: hidden;
 }
@@ -399,7 +399,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   cursor: pointer;
   transition:
@@ -413,7 +413,7 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -8px var(--via-navy-22);
+    0 6px 14px -8px var(--via-shadow-ink-20);
 }
 
 .vds-receipt-copy:active { transform: translateY(0); }
@@ -512,7 +512,7 @@
   -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   cursor: pointer;
   transition:
@@ -526,8 +526,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-btn-ghost:focus-visible {
@@ -543,14 +543,14 @@
   border-color: var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 8px 18px -8px var(--via-navy-40);
+    0 8px 18px -8px var(--via-shadow-ink-40);
 }
 
 .vds-btn-primary:hover {
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 26px -10px var(--via-navy-60);
+    0 12px 26px -10px var(--via-shadow-ink-60);
 }
 
 .vds-btn-primary:focus-visible {
@@ -574,7 +574,7 @@
   padding: 32px;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 24px 48px -28px var(--via-navy-20);
+    0 24px 48px -28px var(--via-shadow-ink-20);
 }
 
 /* No dark, navy-20 vira rgba(white, .22): a sombra do card passa a EMITIR
@@ -668,7 +668,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   text-decoration: none;
   cursor: pointer;
@@ -683,8 +683,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--via-shadow-ink-20),
+    0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
 .vds-btn-link:active { transform: translateY(0); }
@@ -1183,7 +1183,7 @@
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 16px 40px -22px var(--via-navy-14);
+    0 16px 40px -22px var(--via-shadow-ink-14);
 }
 
 .vds-print-guide::before {
@@ -1357,7 +1357,7 @@
   letter-spacing: -0.006em;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 2px 4px var(--via-navy-06),
+    0 2px 4px var(--via-shadow-ink-06),
     0 0 0 0.5px var(--via-navy-08);
 }
 
@@ -1386,8 +1386,8 @@
 .vds-receipt-stage[data-print-preview="on"] .vds-receipt {
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 32px 60px -20px var(--via-navy-18),
-    0 4px 8px var(--via-navy-08);
+    0 32px 60px -20px var(--via-shadow-ink-20),
+    0 4px 8px var(--via-shadow-ink-06);
   margin: 0 auto;
   width: 210mm;
   min-height: 297mm;
