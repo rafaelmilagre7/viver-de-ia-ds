@@ -66,29 +66,6 @@
   margin-bottom: 14px;
 }
 
-.vds-st-eyebrow-bullet {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--via-navy);
-  box-shadow: 0 0 8px var(--via-shadow-ink-40);
-  animation: vds-st-pulse 1.8s ease-in-out infinite;
-}
-
-.vds-st-overview.degraded .vds-st-eyebrow-bullet {
-  background: var(--via-accent);
-  box-shadow: 0 0 8px var(--via-shadow-ink-30);
-}
-
-.vds-st-overview.down .vds-st-eyebrow-bullet {
-  background: var(--via-coral);
-  box-shadow: 0 0 8px rgba(184, 92, 92, 0.45);
-}
-
-@keyframes vds-st-pulse {
-  50% { opacity: 0.4; }
-}
-
 .vds-st-overview h2 {
   margin: 0 0 12px;
   font-family: var(--via-display);
@@ -99,12 +76,27 @@
   color: var(--via-text-primary);
 }
 
-.vds-st-overview h2 em {
+/* O guard global de tokens.css ainda lista .vds-st-overview como container
+   navy (legado) e força gradient BRANCO com !important — mas hoje o overview
+   é glass que segue o tema: em light o em ficava branco sobre branco
+   (invisível). Especificidade maior (article.) + !important re-fixa por tema. */
+article.vds-st-overview :is(h1, h2, h3, h4) em {
   font-style: normal;
-  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-deep) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: var(--via-navy); /* fallback se gradient não suportado */
+}
+
+:root[data-theme="dark"] article.vds-st-overview :is(h1, h2, h3, h4) em {
+  /* shorthand `background` reseta background-clip → re-declarar os longhands,
+     senão o gradiente pinta a CAIXA (retângulo branco) em vez do texto */
+  background: linear-gradient(135deg, var(--via-white) 0%, rgba(255, 255, 255, 0.78) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: var(--via-white);
 }
 
 .vds-st-overview-lede {
@@ -350,11 +342,13 @@
   flex-shrink: 0;
 }
 
+/* Barras chapadas (sem gradiente em série única) · chart-ink adapta:
+   navy no light, azul claro no dark — navy fixo sumia no tema escuro. */
 .vds-st-bar {
   width: 3px;
   height: 28px;
   border-radius: 2px;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  background: var(--via-chart-ink);
   opacity: 0.8;
   transition: opacity .2s ease, transform .2s ease;
 }
@@ -362,12 +356,15 @@
 .vds-st-bar:hover {
   opacity: 1;
   transform: scaleY(1.1);
-}.vds-st-bar.degraded {
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+}
+
+/* degradado = cinza claro (como a doc da seção descreve) · adapta nos 2 temas */
+.vds-st-bar.degraded {
+  background: var(--via-navy-30);
 }
 
 .vds-st-bar.down {
-  background: linear-gradient(180deg, var(--via-coral), var(--via-coral-dark));
+  background: var(--via-coral);
 }
 
 @media (max-width: 920px) {
@@ -472,7 +469,7 @@
   height: 11px;
   border-radius: 50%;
   background: var(--via-surface);
-  border: 2px solid var(--via-navy);
+  border: 2px solid var(--via-chart-ink); /* navy no light · claro no dark (navy fixo sumia) */
   margin-top: 6px;
   z-index: 1;
   box-shadow: 0 0 0 4px var(--via-navy-06);
@@ -482,10 +479,11 @@
   border-color: var(--via-ink-3);
 }
 
+/* minor = ponto PREENCHIDO (vs contorno das rotinas) · chapado e adaptável */
 .vds-st-inc.minor .vds-st-inc-dot {
-  background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
+  background: var(--via-chart-ink);
   border-color: transparent;
-  box-shadow: 0 0 0 4px rgba(10, 31, 59, 0.09);
+  box-shadow: 0 0 0 4px var(--via-navy-08);
 }
 
 .vds-st-inc-line {

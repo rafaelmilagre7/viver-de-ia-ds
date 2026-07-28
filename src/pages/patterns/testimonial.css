@@ -28,7 +28,7 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(540px 240px at 0% 0%, rgba(10, 31, 59, 0.045), transparent 60%);
+    radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
   z-index: -1;
 }
 
@@ -39,11 +39,11 @@
   inset: 0;
   pointer-events: none;
   border-radius: inherit;
-  background: radial-gradient(420px 200px at 100% 100%, rgba(10, 31, 59, 0.035), transparent 62%);
+  background: radial-gradient(420px 200px at 100% 100%, var(--via-navy-03), transparent 62%);
   z-index: -1;
 }
 
-/* Quote mark — ornamento tipográfico Geist Display italic */
+/* Quote mark — ornamento tipográfico Geist Display (aspas curvas, sem italic) */
 .vds-testi .quote-mark {
   position: absolute;
   top: 22px;
@@ -98,9 +98,12 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   flex-shrink: 0;
-  border: 2.5px solid var(--via-white);
+  /* sem border branca dura — --via-white NÃO inverte no escuro e virava
+     anel branco no avatar. Anel fino adaptativo no padrão do <Avatar> da lib. */
   box-shadow:
-    0 0 0 1px var(--via-navy-08),
+    inset 0 1.5px 0 var(--via-edge-hi),
+    0 0 0 1.5px var(--via-surface),
+    0 1px 2px var(--via-shadow-ink-14),
     0 6px 14px -4px var(--via-shadow-ink-30);
 }
 
@@ -122,7 +125,7 @@
 .vds-testi .outcome {
   margin-left: auto;
   padding: 12px 18px;
-  background: linear-gradient(180deg, var(--via-navy-03), rgba(10, 31, 59, 0.01));
+  background: linear-gradient(180deg, var(--via-navy-03), transparent);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   display: flex;

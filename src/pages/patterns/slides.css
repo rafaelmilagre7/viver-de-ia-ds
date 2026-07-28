@@ -2,10 +2,14 @@
    Slides · 16:9 editorial deck
    ============================================
    Layout robusto:
-   · cada slide tem aspect-ratio 16/9 fixo
+   · cada slide tem aspect-ratio 16/9 fixo e é um CONTAINER css
+   · o miolo vive em .vds-slide-canvas, dimensionado em cqi
+     (1cqi = 1% da largura do slide · referência: 466px no desktop)
+     → o slide escala como thumbnail real e nunca clipa conteúdo,
+     em qualquer largura de coluna (antes: 3º bullet cortado no
+     meio da palavra a 1280/1440)
    · flex column: top header / middle content / bottom footer
    · NUNCA usar position: absolute no footer (vaza em slides menores)
-   · conteúdo dimensionado pra caber em ~326-348px altura no desktop
    ============================================ */
 
 .vds-deck {
@@ -27,18 +31,28 @@
   aspect-ratio: 16 / 9;
   border-radius: var(--via-radius-lg);
   overflow: hidden;
-  padding: 30px 34px;
   display: flex;
-  flex-direction: column;
-  gap: var(--via-space-3_5);
   color: var(--via-white);
   border: 1px solid rgba(255, 255, 255, 0.06);
   isolation: isolate;
+  container-type: inline-size;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.20),
     0 0 0 0.5px rgba(255, 255, 255, 0.04),
     0 24px 56px -28px var(--via-shadow-ink-60);
+}
+
+/* Miolo do slide · unidades cqi resolvem contra o próprio slide
+   (container units no PRÓPRIO container resolvem contra ancestral,
+   por isso o padding vive aqui e não no .vds-slide) */
+.vds-slide-canvas {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3cqi;
+  padding: 5.58cqi 7.3cqi;
 }
 
 .vds-slide > *:not(.vds-slide-aura):not(.vds-slide-divider-rule) {
@@ -49,10 +63,10 @@
 /* Aura radial atmosférica (dark slides) */
 .vds-slide-aura {
   position: absolute;
-  top: -140px;
-  right: -120px;
-  width: 380px;
-  height: 380px;
+  top: -30cqi;
+  right: -25.7cqi;
+  width: 81.5cqi;
+  height: 81.5cqi;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(59, 107, 160, 0.20), transparent 60%);
   pointer-events: none;
@@ -73,7 +87,7 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: 2.15cqi;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -82,7 +96,7 @@
 
 .vds-slide-chapter-num {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: 2.15cqi;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -94,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: 2.15cqi;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -105,16 +119,21 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: 2.15cqi;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
 }
 
+/* BrandLogo (closing) usa height inline em px → trava a escala do
+   header em slides estreitos; o !important scoped devolve o cqi */
+.vds-slide .vds-brand-mono { height: 4.29cqi !important; }
+.vds-slide .vds-brand-wordmark { height: 3.86cqi !important; }
+
 .vds-slide-mark {
-  width: 36px;
-  height: 36px;
+  width: 7.73cqi;
+  height: 7.73cqi;
   object-fit: contain;
   opacity: 0.85;
   flex-shrink: 0;
@@ -127,7 +146,7 @@
   justify-content: space-between;
   gap: var(--via-space-3_5);
   margin-top: auto;
-  padding-top: 14px;
+  padding-top: 3cqi;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   flex: 0 0 auto;
 }
@@ -143,7 +162,7 @@
 
 .vds-slide-eyebrow-foot {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: 2.15cqi;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -156,7 +175,7 @@
 
 .vds-slide-num {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-label);
+  font-size: 2.36cqi;
   font-weight: var(--via-fw-semibold);
   color: var(--via-gray-300);
   font-feature-settings: 'tnum' 1;
@@ -171,8 +190,8 @@
 .vds-slide-author {
   display: inline-flex;
   align-items: center;
-  gap: var(--via-space-2_5);
-  font-size: var(--via-fs-xs);
+  gap: 2.15cqi;
+  font-size: 2.58cqi;
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
   letter-spacing: -0.005em;
@@ -188,7 +207,7 @@
 .vds-slide-author strong {
   display: block;
   font-weight: var(--via-fw-semibold);
-  font-size: var(--via-fs-xs);
+  font-size: 2.58cqi;
   color: var(--via-text-primary);
   letter-spacing: -0.008em;
   line-height: 1.2;
@@ -197,7 +216,7 @@
 .vds-slide-author > span > em {
   display: block;
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: 2.15cqi;
   color: var(--via-text-muted);
   font-weight: var(--via-fw-regular);
   margin-top: 2px;
@@ -205,14 +224,14 @@
 }
 
 .vds-slide-author .av {
-  width: 28px;
-  height: 28px;
+  width: 6cqi;
+  height: 6cqi;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.12);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-micro);
+  font-size: 2.15cqi;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   color: var(--via-white);
@@ -234,17 +253,20 @@
    ============================================ */
 .vds-slide.title {
   background-color: var(--via-navy);
+}
+
+.vds-slide.title .vds-slide-canvas {
   justify-content: space-between;
 }
 
 .vds-slide-title-h2 {
-  font-size: var(--via-fs-h2);
+  font-size: 6.87cqi;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.10;
   color: var(--via-white);
   margin: 0;
-  max-width: 560px;
+  max-width: 120cqi;
   align-self: flex-start;
 }
 
@@ -261,25 +283,28 @@
    ============================================ */
 .vds-slide.divider {
   background-color: var(--via-navy-darker);
+}
+
+.vds-slide.divider .vds-slide-canvas {
   justify-content: space-between;
 }
 
 .vds-slide-divider-body {
   display: flex;
   flex-direction: column;
-  gap: var(--via-space-2_5);
+  gap: 2.15cqi;
   flex: 1 1 auto;
   justify-content: center;
 }
 
 .vds-slide-divider-h2 {
-  font-size: var(--via-fs-h1);
+  font-size: 8.58cqi;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.034em;
   line-height: 1.02;
   color: var(--via-white);
   margin: 0;
-  max-width: 480px;
+  max-width: 103cqi;
 }
 
 .vds-slide-divider-h2 em {
@@ -291,7 +316,7 @@
 }
 
 .vds-slide-divider-meta {
-  font-size: var(--via-fs-caption);
+  font-size: 2.79cqi;
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
   letter-spacing: -0.006em;
@@ -321,13 +346,13 @@
 .vds-stat-body {
   display: flex;
   flex-direction: column;
-  gap: var(--via-space-3);
+  gap: 2.58cqi;
   flex: 1 1 auto;
   justify-content: center;
 }
 
 .vds-stat-number {
-  font-size: 72px;
+  font-size: 15.45cqi;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.044em;
   line-height: 0.92;
@@ -336,7 +361,7 @@
   font-feature-settings: 'tnum' 1;
   display: flex;
   align-items: baseline;
-  gap: var(--via-space-3_5);
+  gap: 3cqi;
   flex-wrap: wrap;
 }
 
@@ -345,7 +370,7 @@
 }
 
 .vds-stat-unit {
-  font-size: var(--via-fs-sm);
+  font-size: 3cqi;
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
   letter-spacing: -0.006em;
@@ -353,24 +378,46 @@
 }
 
 .vds-stat-meta {
-  font-size: var(--via-fs-caption);
+  font-size: 2.79cqi;
   line-height: 1.5;
   color: var(--via-gray-200);
   margin: 0;
-  max-width: 480px;
+  max-width: 103cqi;
   letter-spacing: -0.006em;
 }
 
 /* ============================================
    04 · QUOTE SLIDE (light · contraste editorial)
-   ============================================ */
+   ============================================
+   Quote + content são os slides de PAPEL CLARO do deck real —
+   a anatomia abaixo documenta "fundo claro pra contraste".
+   O slide é artefato: não inverte com o tema da página.
+   Tokens travados (receita do recibo em invoice.css): no dark,
+   glass-card/border-soft/navy-XX viram rgba(WHITE, x) e os dois
+   slides viravam escuros, contradizendo a própria doc. */
+.vds-slide.quote,
+.vds-slide.content {
+  --via-text-primary: var(--via-navy);
+  --via-text-body: var(--via-gray-700);
+  --via-text-muted: #4F596B;
+  --via-text-faint: var(--via-gray-400);
+  --via-navy-03: rgba(10, 31, 59, 0.03);
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-05: rgba(10, 31, 59, 0.05);
+  --via-navy-06: rgba(10, 31, 59, 0.06);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  color: var(--via-text-body);
+  border-color: var(--via-border-soft);
+}
+
 .vds-slide.quote {
+  /* base OPACA · glass-card é translúcido e escurecia sobre a página dark */
   background:
     radial-gradient(420px 240px at 0% 0%, var(--via-navy-06), transparent 60%),
     radial-gradient(360px 200px at 100% 100%, var(--via-navy-04), transparent 60%),
-    var(--via-glass-card);
-  color: var(--via-text-body);
-  border-color: var(--via-border-soft);
+    linear-gradient(180deg, #FFFFFF 0%, #FCFDFE 55%, #F6F8FB 100%);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.05),
@@ -382,16 +429,18 @@
   color: var(--via-text-primary);
   opacity: 0.32;
   flex-shrink: 0;
+  width: 6cqi;
+  height: 6cqi;
 }
 
 .vds-quote-body {
-  font-size: 20px;
+  font-size: 4.29cqi;
   font-weight: var(--via-fw-regular);
   line-height: 1.32;
   letter-spacing: -0.016em;
   color: var(--via-text-primary);
   margin: auto 0;
-  max-width: 540px;
+  max-width: 116cqi;
   /* sem display:flex · texto inline natural com em italic */
 }
 
@@ -406,13 +455,11 @@
    05 · CONTENT SLIDE (lista numerada)
    ============================================ */
 .vds-slide.content {
+  /* tokens travados junto com .quote (papel claro nos 2 temas) */
   background:
     radial-gradient(440px 220px at 0% 0%, var(--via-navy-05), transparent 60%),
     radial-gradient(360px 200px at 100% 100%, var(--via-navy-03), transparent 60%),
-    var(--via-glass-card);
-  color: var(--via-text-body);
-  border-color: var(--via-border-soft);
-  gap: var(--via-space-3);
+    linear-gradient(180deg, #FFFFFF 0%, #FCFDFE 55%, #F6F8FB 100%);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(10, 31, 59, 0.05),
@@ -420,14 +467,23 @@
     0 22px 48px -22px var(--via-shadow-ink-20);
 }
 
+/* Ritmo mais denso · abre espaço pros 3 bullets no 16:9 */
+.vds-slide.content .vds-slide-canvas {
+  gap: 2.15cqi;
+}
+
+.vds-slide.content .vds-slide-foot {
+  padding-top: 2.15cqi;
+}
+
 .vds-slide-content-h3 {
-  font-size: var(--via-fs-body);
+  font-size: 3.22cqi;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
-  line-height: 1.26;
+  line-height: 1.24;
   color: var(--via-text-primary);
   margin: 0;
-  max-width: 540px;
+  max-width: 116cqi;
   flex: 0 0 auto;
 }
 
@@ -444,7 +500,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--via-space-1_5);
+  gap: 1.07cqi;
   flex: 1 1 auto;
   min-height: 0;
   overflow: hidden;
@@ -453,18 +509,18 @@
 .vds-slide-bullets li {
   display: flex;
   align-items: flex-start;
-  gap: var(--via-space-2_5);
+  gap: 2.15cqi;
 }
 
 .vds-slide-bullets .num {
   flex: 0 0 auto;
-  width: 22px;
-  height: 22px;
+  width: 4.72cqi;
+  height: 4.72cqi;
   border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: 2.15cqi;
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   display: inline-flex;
@@ -479,7 +535,7 @@
 
 .vds-slide-bullets strong {
   display: block;
-  font-size: var(--via-fs-label);
+  font-size: 2.36cqi;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin-bottom: 1px;
@@ -488,8 +544,8 @@
 }
 
 .vds-slide-bullets p {
-  font-size: var(--via-fs-micro);
-  line-height: 1.38;
+  font-size: 2.15cqi;
+  line-height: 1.32;
   color: var(--via-text-body);
   margin: 0;
   letter-spacing: -0.003em;
@@ -500,25 +556,28 @@
    ============================================ */
 .vds-slide.closing {
   background-color: var(--via-navy);
+}
+
+.vds-slide.closing .vds-slide-canvas {
   justify-content: space-between;
 }
 
 .vds-slide-closing-body {
   display: flex;
   flex-direction: column;
-  gap: var(--via-space-2_5);
+  gap: 2.15cqi;
   flex: 1 1 auto;
   justify-content: center;
 }
 
 .vds-slide-closing-h3 {
-  font-size: var(--via-fs-h3);
+  font-size: 5.15cqi;
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.026em;
   line-height: 1.10;
   color: var(--via-white);
   margin: 0;
-  max-width: 440px;
+  max-width: 94.4cqi;
 }
 
 .vds-slide-closing-h3 em {
@@ -530,11 +589,11 @@
 }
 
 .vds-slide-lede {
-  font-size: var(--via-fs-caption);
+  font-size: 2.79cqi;
   line-height: 1.55;
   color: var(--via-gray-200);
   margin: 0;
-  max-width: 440px;
+  max-width: 94.4cqi;
   letter-spacing: -0.006em;
 }
 
@@ -542,13 +601,13 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
   align-items: center;
-  gap: var(--via-space-2);
-  padding: 10px 18px;
+  gap: 1.72cqi;
+  padding: 2.15cqi 3.86cqi;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-pill);
   color: var(--via-text-primary);
-  font-size: var(--via-fs-xs);
+  font-size: 2.58cqi;
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   letter-spacing: -0.008em;
@@ -568,6 +627,11 @@
 }
 
 .vds-slide-cta:active { transform: translateY(0); }
+
+.vds-slide-cta svg {
+  width: 3cqi;
+  height: 3cqi;
+}
 
 /* Slide é navy · o anel de foco tem que ser claro pra existir */
 .vds-slide-cta:focus-visible {
@@ -642,28 +706,5 @@
   letter-spacing: -0.004em;
 }
 
-/* ============================================
-   Responsive (tablet/mobile)
-   ============================================ */
-@media (max-width: 1024px) {
-  .vds-slide {
-    padding: 24px 28px;
-    gap: var(--via-space-2_5);
-  }
-  .vds-slide-title-h2 { font-size: var(--via-fs-h3); }
-  .vds-slide-divider-h2 { font-size: var(--via-fs-h2); }
-  .vds-stat-number { font-size: var(--via-fs-display); }
-  .vds-quote-body { font-size: var(--via-fs-h4); }
-  .vds-slide-content-h3 { font-size: var(--via-fs-sm); }
-  .vds-slide-closing-h3 { font-size: 20px; }
-  .vds-slide-lede { font-size: var(--via-fs-label); }
-  .vds-slide-bullets { gap: var(--via-space-1_5); }
-  .vds-slide-bullets strong { font-size: var(--via-fs-label); }
-  .vds-slide-bullets p { font-size: var(--via-fs-micro); line-height: 1.4; }
-}
-
-@media (max-width: 560px) {
-  .vds-slide {
-    padding: 20px 22px;
-  }
-}
+/* Responsive: sem media queries de tipografia — o canvas em cqi
+   escala o slide inteiro proporcionalmente em qualquer largura. */

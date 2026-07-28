@@ -17,7 +17,7 @@ export default function FAQ() {
             Perguntas frequentes, <em>respondidas com cuidado</em>.
           </>
         }
-        lede="FAQ editorial — categorias laterais navegáveis, busca instantânea no topo, acordeões com pergunta em display Geist e resposta em prosa. Bar lateral navy no item ativo. Sem o FAQ canônico chato — cada bloco com peso de marca."
+        lede="FAQ editorial — categorias laterais navegáveis, busca instantânea no topo, acordeões com pergunta em display Geist e resposta em prosa. Anel navy fino no item ativo. Sem o FAQ canônico chato — cada bloco com peso de marca."
       />
 
       <FAQPremiumSection />

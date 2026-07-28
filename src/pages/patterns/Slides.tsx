@@ -32,40 +32,44 @@ function DeckSection() {
         <article className="vds-slide title via-mesh-navy via-noise">
           <span className="vds-slide-aura" aria-hidden="true" />
 
-          <header className="vds-slide-top">
-            <span className="vds-slide-chapter">Cap. 01 · 2026</span>
-            <img src={monogramWhite} alt="" className="vds-slide-mark" />
-          </header>
+          <div className="vds-slide-canvas">
+            <header className="vds-slide-top">
+              <span className="vds-slide-chapter">Cap. 01 · 2026</span>
+              <img src={monogramWhite} alt="" className="vds-slide-mark" />
+            </header>
 
-          <h2 className="vds-slide-title-h2">
-            Quando a IA <em>vira receita</em>, sem a tração virar caos.
-          </h2>
+            <h2 className="vds-slide-title-h2">
+              Quando a IA <em>vira receita</em>, sem a tração virar caos.
+            </h2>
 
-          <footer className="vds-slide-foot">
-            <span className="vds-slide-author">
-              <span className="av">CR</span>
-              <span>Caio Ribeiro <em>· Viver de IA</em></span>
-            </span>
-            <span className="vds-slide-num">01 / 12</span>
-          </footer>
+            <footer className="vds-slide-foot">
+              <span className="vds-slide-author">
+                <span className="av">CR</span>
+                <span>Caio Ribeiro <em>· Viver de IA</em></span>
+              </span>
+              <span className="vds-slide-num">01 / 12</span>
+            </footer>
+          </div>
         </article>
 
         {/* 02 · Section divider */}
         <article className="vds-slide divider via-mesh-navy via-noise">
           <span className="vds-slide-aura" aria-hidden="true" />
 
-          <header className="vds-slide-top">
-            <span className="vds-slide-chapter">Cap. 02</span>
-            <span className="vds-slide-chapter-num">02 / 12</span>
-          </header>
+          <div className="vds-slide-canvas">
+            <header className="vds-slide-top">
+              <span className="vds-slide-chapter">Cap. 02</span>
+              <span className="vds-slide-chapter-num">02 / 12</span>
+            </header>
 
-          <div className="vds-slide-divider-body">
-            <h2 className="vds-slide-divider-h2">
-              O playbook
-              <br />
-              <em>na prática.</em>
-            </h2>
-            <p className="vds-slide-divider-meta">3 estudos de caso · 38 minutos</p>
+            <div className="vds-slide-divider-body">
+              <h2 className="vds-slide-divider-h2">
+                O playbook
+                <br />
+                <em>na prática.</em>
+              </h2>
+              <p className="vds-slide-divider-meta">3 estudos de caso · 38 minutos</p>
+            </div>
           </div>
 
           <span className="vds-slide-divider-rule" aria-hidden="true" />
@@ -75,51 +79,56 @@ function DeckSection() {
         <article className="vds-slide stat via-mesh-navy via-noise">
           <span className="vds-slide-aura" aria-hidden="true" />
 
-          <header className="vds-slide-top">
-            <span className="vds-slide-eyebrow">Implementação Efizi · 90 dias</span>
-          </header>
+          <div className="vds-slide-canvas">
+            <header className="vds-slide-top">
+              <span className="vds-slide-eyebrow">Implementação Efizi · 90 dias</span>
+            </header>
 
-          <div className="vds-stat-body">
-            <p className="vds-stat-number">
-              <span className="num">11.920</span>
-              <span className="vds-stat-unit">conversas analisadas</span>
-            </p>
-            <p className="vds-stat-meta">
-              do canal de vendas em 12 semanas — o que era invisível, virou base de decisão.
-            </p>
+            <div className="vds-stat-body">
+              <p className="vds-stat-number">
+                <span className="num">11.920</span>
+                <span className="vds-stat-unit">conversas analisadas</span>
+              </p>
+              <p className="vds-stat-meta">
+                do canal de vendas em 12 semanas — o que era invisível, virou base de decisão.
+              </p>
+            </div>
+
+            <footer className="vds-slide-foot">
+              <span className="vds-slide-eyebrow-foot">Fonte · CRM Efizi + Nina IA</span>
+              <span className="vds-slide-num">04 / 12</span>
+            </footer>
           </div>
-
-          <footer className="vds-slide-foot">
-            <span className="vds-slide-eyebrow-foot">Fonte · CRM Efizi + Nina IA</span>
-            <span className="vds-slide-num">04 / 12</span>
-          </footer>
         </article>
 
         {/* 04 · Quote slide */}
         <article className="vds-slide quote">
-          <header className="vds-slide-top">
-            <Quote size={28} strokeWidth={1.4} className="vds-quote-mark" />
-            <span className="vds-slide-eyebrow-dark">Testemunho · cliente</span>
-          </header>
+          <div className="vds-slide-canvas">
+            <header className="vds-slide-top">
+              <Quote size={28} strokeWidth={1.4} className="vds-quote-mark" />
+              <span className="vds-slide-eyebrow-dark">Testemunho · cliente</span>
+            </header>
 
-          <blockquote className="vds-quote-body">
-            A IA não substituiu meu time. Ela <em>devolveu tempo</em> pra eles fazerem o que só humanos fazem — escutar de verdade.
-          </blockquote>
+            <blockquote className="vds-quote-body">
+              A IA não substituiu meu time. Ela <em>devolveu tempo</em> pra eles fazerem o que só humanos fazem — escutar de verdade.
+            </blockquote>
 
-          <footer className="vds-slide-foot light">
-            <span className="vds-slide-author">
-              <span className="av light">ML</span>
-              <span>
-                <strong>Márisson Lage</strong>
-                <em>CEO · Efizi Soluções</em>
+            <footer className="vds-slide-foot light">
+              <span className="vds-slide-author">
+                <span className="av light">ML</span>
+                <span>
+                  <strong>Márisson Lage</strong>
+                  <em>CEO · Efizi Soluções</em>
+                </span>
               </span>
-            </span>
-            <span className="vds-slide-num">07 / 12</span>
-          </footer>
+              <span className="vds-slide-num">07 / 12</span>
+            </footer>
+          </div>
         </article>
 
         {/* 05 · Content slide */}
         <article className="vds-slide content">
+          <div className="vds-slide-canvas">
           <header className="vds-slide-top">
             <span className="vds-slide-eyebrow-dark">Cap. 03 · O que muda</span>
           </header>
@@ -156,33 +165,36 @@ function DeckSection() {
             <span className="vds-slide-eyebrow-foot">Playbook · capítulo 03</span>
             <span className="vds-slide-num">09 / 12</span>
           </footer>
+          </div>
         </article>
 
         {/* 06 · Closing slide */}
         <article className="vds-slide closing via-mesh-navy via-noise">
           <span className="vds-slide-aura" aria-hidden="true" />
 
-          <header className="vds-slide-top">
-            <BrandLogo variant="white" size="sm" />
-            <span className="vds-slide-chapter-num">12 / 12</span>
-          </header>
+          <div className="vds-slide-canvas">
+            <header className="vds-slide-top">
+              <BrandLogo variant="white" size="sm" />
+              <span className="vds-slide-chapter-num">12 / 12</span>
+            </header>
 
-          <div className="vds-slide-closing-body">
-            <h3 className="vds-slide-closing-h3">
-              Pronto pra começar <em>seu próximo capítulo?</em>
-            </h3>
-            <p className="vds-slide-lede">
-              Mentoria 1:1, comunidade de operadores e o playbook que está sendo escrito enquanto você lê isso.
-            </p>
+            <div className="vds-slide-closing-body">
+              <h3 className="vds-slide-closing-h3">
+                Pronto pra começar <em>seu próximo capítulo?</em>
+              </h3>
+              <p className="vds-slide-lede">
+                Mentoria 1:1, comunidade de operadores e o playbook que está sendo escrito enquanto você lê isso.
+              </p>
+            </div>
+
+            <footer className="vds-slide-foot transparent">
+              <a className="vds-slide-cta" href="#">
+                viverdeia.ai/comecar
+                <ArrowRight size={14} strokeWidth={2.4} />
+              </a>
+              <span className="vds-slide-eyebrow-foot">Caio Ribeiro · 17 mai 2026</span>
+            </footer>
           </div>
-
-          <footer className="vds-slide-foot transparent">
-            <a className="vds-slide-cta" href="#">
-              viverdeia.ai/comecar
-              <ArrowRight size={14} strokeWidth={2.4} />
-            </a>
-            <span className="vds-slide-eyebrow-foot">Caio Ribeiro · 17 mai 2026</span>
-          </footer>
         </article>
       </div>
     </Section>

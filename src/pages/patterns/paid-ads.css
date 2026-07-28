@@ -63,7 +63,7 @@
   isolation: isolate;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    inset 0 -1px 0 rgba(10, 31, 59, 0.04),
+    inset 0 -1px 0 var(--via-shadow-ink-03),
     0 0 0 0.5px var(--via-navy-06),
     0 8px 22px -12px var(--via-shadow-ink-14);
 }
@@ -229,7 +229,10 @@
     inset 0 -1px 0 rgba(0, 0, 0, 0.20);
 }
 
-.vds-pa-meta-canvas > *:not(.vds-pa-aura) {
+/* Conteúdo acima da aura · :where() zera a especificidade, senão este
+   blanket (0,2,0) engole o position:absolute dos monogramas/play (0,1,0)
+   e o logo "canto inferior direito" cai no fluxo, colado na margem esquerda */
+.vds-pa-meta-canvas > :where(*:not(.vds-pa-aura)) {
   position: relative;
   z-index: 1;
 }
@@ -398,7 +401,7 @@
 }
 
 .vds-pa-carousel-card.cta { background: linear-gradient(180deg, var(--via-navy-deep), #000000); }
-.vds-pa-carousel-card > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
+.vds-pa-carousel-card > :where(*:not(.vds-pa-aura)) { position: relative; z-index: 1; }
 
 .vds-pa-carousel-num {
   display: inline-block;
@@ -440,6 +443,13 @@
   z-index: 2;
 }
 
+/* Cards que carregam o monograma (hook + cta) reservam o canto:
+   sem isso a última linha do texto passa POR BAIXO do logo */
+.vds-pa-carousel-card.hook > div,
+.vds-pa-carousel-card.cta > div {
+  padding-right: 26px;
+}
+
 /* ============================================
    META · STORY 9:16
    ============================================ */
@@ -471,7 +481,9 @@
 .vds-pa-story-progress > span {
   display: block;
   height: 100%;
-  background: var(--via-surface);
+  /* chrome do story sobre canvas navy FIXO · branco fixo nos 2 temas
+     (var(--via-surface) vira #131C30 no dark e o preenchimento some) */
+  background: #FFFFFF;
   border-radius: 999px;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.40);
 }
@@ -517,7 +529,7 @@
   isolation: isolate;
 }
 
-.vds-pa-story-canvas > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
+.vds-pa-story-canvas > :where(*:not(.vds-pa-aura)) { position: relative; z-index: 1; }
 
 .vds-pa-story-eyebrow {
   display: inline-block;
@@ -608,7 +620,7 @@
     0 22px 56px -22px var(--via-shadow-ink-60);
 }
 
-.vds-pa-reel-canvas > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
+.vds-pa-reel-canvas > :where(*:not(.vds-pa-aura)) { position: relative; z-index: 1; }
 
 .vds-pa-reel-eyebrow {
   display: inline-block;
@@ -843,7 +855,7 @@
   isolation: isolate;
 }
 
-.vds-pa-li-canvas > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
+.vds-pa-li-canvas > :where(*:not(.vds-pa-aura)) { position: relative; z-index: 1; }
 
 .vds-pa-li-eyebrow {
   display: inline-block;
@@ -989,7 +1001,7 @@
     0 14px 36px -16px var(--via-shadow-ink-40);
 }
 
-.vds-pa-li-card > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
+.vds-pa-li-card > :where(*:not(.vds-pa-aura)) { position: relative; z-index: 1; }
 
 .vds-pa-li-card-num {
   display: inline-block;
@@ -1235,7 +1247,7 @@
     0 8px 22px -12px var(--via-shadow-ink-40);
 }
 
-.vds-pa-gdn-banner > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
+.vds-pa-gdn-banner > :where(*:not(.vds-pa-aura)) { position: relative; z-index: 1; }
 
 .vds-pa-gdn-text {
   display: flex;
@@ -1357,7 +1369,7 @@
   overflow: hidden;
 }
 
-.vds-pa-yt-canvas > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
+.vds-pa-yt-canvas > :where(*:not(.vds-pa-aura)) { position: relative; z-index: 1; }
 
 .vds-pa-yt-text { max-width: 540px; }
 
@@ -1628,7 +1640,7 @@
   gap: var(--via-space-3_5);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    inset 0 -1px 0 rgba(10, 31, 59, 0.04),
+    inset 0 -1px 0 var(--via-shadow-ink-03),
     0 0 0 0.5px var(--via-navy-06),
     0 8px 22px -12px var(--via-shadow-ink-14);
 }
@@ -1828,7 +1840,7 @@
     0 8px 22px -12px var(--via-shadow-ink-40);
 }
 
-.vds-pa-ab-mock > *:not(.vds-pa-aura) { position: relative; z-index: 1; }
+.vds-pa-ab-mock > :where(*:not(.vds-pa-aura)) { position: relative; z-index: 1; }
 
 .vds-pa-ab-mock h3 {
   font-size: var(--via-fs-h4);

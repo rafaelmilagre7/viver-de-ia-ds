@@ -121,7 +121,7 @@ function InstagramSection() {
               { k: 'Tamanho', v: '1080 × 1080px (1:1)' },
               { k: 'Safe area', v: '60px de cada lado · evitar título no corte' },
               { k: 'Logo', v: 'monogram_white 40px canto inferior esquerdo' },
-              { k: 'Headline', v: 'Geist Display · 56-72px · italic em número' },
+              { k: 'Headline', v: 'Geist Display · 56-72px · número em peso regular' },
               { k: 'Caption', v: '60% transparency · sem emoji decorativo' },
               { k: 'Cor', v: 'mesh-navy + noise · sem foto literal' },
             ]}
@@ -366,7 +366,7 @@ function LinkedInSection() {
             { n: 6, type: 'fix', h: 'Mudança 2', sub: 'turno 1 vira "leitor de intent"' },
             { n: 7, type: 'result', h: '11k → 13k', sub: '2k conversas a mais em 7 dias' },
             { n: 8, type: 'learn', h: 'O que vale anotar', sub: 'meça a latência percebida do 1º turno' },
-            { n: 9, type: 'learn', h: 'Segundo aprendizado', sub: 'agente consultivo perde lead com intent claro' },
+            { n: 9, type: 'learn', h: 'Segunda lição', sub: 'agente consultivo perde lead com intent claro' },
             {
               n: 10,
               type: 'cta',
@@ -459,7 +459,7 @@ function YouTubeSection() {
             <h3>Operadores formando operadores.</h3>
             <p>220 alunos · 90 dias até agente em produção · método codificado em vídeo</p>
           </div>
-          <div className="vds-sc-yt-banner-tv-line">Safe area TV (1546×423)</div>
+          <div className="vds-sc-yt-banner-tv-line">Área desktop (2560×423)</div>
           <div className="vds-sc-yt-banner-mobile-line">Safe area mobile (1546×423)</div>
         </article>
       </Section>

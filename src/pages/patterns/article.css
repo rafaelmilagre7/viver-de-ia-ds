@@ -84,7 +84,7 @@
   inset: 0;
   background:
     radial-gradient(ellipse 60% 80% at 80% 20%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 20% 80%, var(--via-navy-08) 0%, transparent 60%);
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(10, 31, 59, 0.08) 0%, transparent 60%);
   z-index: 1;
 }
 
@@ -98,8 +98,11 @@
   z-index: 1;
 }
 
+/* Plate cinza claro é ARTE DA CAPA, não superfície do tema:
+   fixa os próprios tons (como a capa navy) pros dois temas —
+   senão no dark as "2 variantes" viram a mesma capa escura. */
 .vds-article .cover.light {
-  background: linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
+  background: linear-gradient(135deg, #F0F2F5, #E4E7EC);
 }
 
 .vds-article .cover.light::before {
@@ -107,8 +110,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 20% 100%, var(--via-navy-12) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 100% 0%, var(--via-navy-05) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 80% at 20% 100%, rgba(10, 31, 59, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 100% 0%, rgba(10, 31, 59, 0.05) 0%, transparent 60%);
   z-index: 1;
 }
 
@@ -128,22 +131,13 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
-  padding: 4px 9px 4px 7px;
+  text-transform: uppercase;
+  padding: 4px 10px;
   border-radius: var(--via-radius-pill);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
   white-space: nowrap;
   line-height: 1.4;
-}
-
-.vds-article .cover .tag::before {
-  content: '';
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.7;
 }
 
 .vds-article .cover.navy .tag {
@@ -155,9 +149,9 @@
 }
 
 .vds-article .cover.light .tag {
-  color: var(--via-text-primary);
-  background: var(--via-navy-08);
-  border: 1px solid var(--via-navy-14);
+  color: #0A1F3B;
+  background: rgba(10, 31, 59, 0.08);
+  border: 1px solid rgba(10, 31, 59, 0.14);
 }
 
 .vds-article .cover .time {
@@ -172,7 +166,7 @@
 }
 
 .vds-article .cover.light .time {
-  color: var(--via-text-soft);
+  color: #636D80;
 }
 
 /* Body */
@@ -235,7 +229,7 @@
   flex-shrink: 0;
   border: 2px solid var(--via-white);
   box-shadow:
-    0 0 0 1px var(--via-navy-08),
+    0 0 0 1px var(--via-shadow-ink-06),
     0 2px 6px var(--via-shadow-ink-14);
 }
 

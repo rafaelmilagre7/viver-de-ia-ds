@@ -15,7 +15,7 @@ export default function Article() {
       <DocsHeader
         eyebrow="Padrões · artigo"
         title={<>Capa <em>limpa</em>, headline em Geist, atribuição abaixo.</>}
-        lede="Card de artigo é a unidade do diretório editorial. Capa em gradient navy ou plate cinza claro. Tag uppercase no canto, tempo de leitura. Título em Geist 19 com italic em uma palavra. Atribuição com avatar de iniciais."
+        lede="Card de artigo é a unidade do diretório editorial. Capa em gradient navy ou plate cinza claro. Tag uppercase no canto, tempo de leitura. Título em Geist 20 com uma palavra em contraste de peso e cor. Atribuição com avatar de iniciais."
       />
 
       <Section title="Grid de artigos" meta="2 variantes de capa">

@@ -132,7 +132,7 @@
   gap: 0;
   background:
     radial-gradient(640px 320px at 0% 0%, var(--via-navy-03), transparent 60%),
-    radial-gradient(480px 280px at 100% 100%, rgba(10, 31, 59, 0.035), transparent 60%);
+    radial-gradient(480px 280px at 100% 100%, var(--via-navy-03), transparent 60%);
 }
 
 @media (max-width: 1000px) {
@@ -294,9 +294,15 @@
 }
 
 .vds-rm-card.featured {
-  border-color: rgba(10, 31, 59, 0.17);
+  border-color: var(--via-navy-16);
   background:
     linear-gradient(180deg, var(--via-navy-04), rgba(255, 255, 255, 0.65));
+}
+
+/* Fundo do featured tem branco fixo (0.65) · no escuro vira vidro claro
+   equivalente — senão o card lava e o rodapé some */
+[data-theme="dark"] .vds-rm-card.featured {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
 }
 
 .vds-rm-card.featured .vds-rm-card-bar {
@@ -306,6 +312,11 @@
 .vds-rm-card.investigating {
   background: linear-gradient(180deg, var(--via-navy-02), rgba(255, 255, 255, 0.55));
   border-style: dashed;
+}
+
+/* Mesmo caso: branco fixo no fundo · no escuro vira vidro sutil */
+[data-theme="dark"] .vds-rm-card.investigating {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
 }
 
 .vds-rm-card > header {
@@ -382,9 +393,10 @@
   transition: width .4s cubic-bezier(.2,.7,.2,1);
 }
 
-.vds-rm-card.featured .vds-rm-card-prog-track span {
-  background: linear-gradient(90deg, var(--via-accent), var(--via-accent-warm));
-  box-shadow: 0 0 10px var(--via-shadow-ink-20);
+/* Tinta navy some sobre card escuro (≈1.2:1) · no dark o dado usa o
+   passo claro da série primária, mesmo remédio do pattern dashboard */
+[data-theme="dark"] .vds-rm-card-prog-track span {
+  background: var(--via-data-1-dark);
 }
 
 .vds-rm-card-prog-lbl {
@@ -516,7 +528,7 @@
 /* Footer note */
 .vds-rm-foot {
   padding: 18px 28px;
-  background: rgba(10, 31, 59, 0.015);
+  background: var(--via-navy-02);
   border-top: 1px solid var(--via-border-soft);
 }
 

@@ -96,8 +96,8 @@ export default function WhatsApp() {
                           {m.time}
                           {m.kind === 'me' && (
                             <svg className={`check ${m.read ? 'read' : ''}`} width="16" height="10" viewBox="0 0 16 10" fill="none">
-                              <path d="M0.5 5.5 L4 9 L10 1" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                              <path d="M5 5.5 L8.5 9 L14.5 1" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                              <path d="M0.5 5.5 L4 9 L10 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                              <path d="M5 5.5 L8.5 9 L14.5 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                             </svg>
                           )}
                         </span>

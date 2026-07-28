@@ -15,8 +15,8 @@ export default function Podcast() {
     <>
       <DocsHeader
         eyebrow="Padrões · podcast"
-        title={<>Episódios em <em>lista</em>, número em itálico.</>}
-        lede="Listing de podcast: número do episódio em Geist italic à esquerda, data + duração + título no meio, botão play à direita. O atual fica em navy@04 com border navy. Sem player embedded no listing — só toggle visual."
+        title={<>Episódios em <em>lista</em>, número em destaque.</>}
+        lede="Listing de podcast: número do episódio em bloco tabular à esquerda, data + duração + título no meio, botão play à direita. O episódio atual ganha superfície elevada com atmosfera navy e número sólido. Sem player embedded no listing — só toggle visual."
       />
 
       <Section title="Listing" meta="episode 042 tocando">
@@ -39,8 +39,8 @@ export default function Podcast() {
               </span>
               <button className="play" aria-label={e.playing ? `Pausar ${e.title}` : `Tocar ${e.title}`}>
                 {e.playing
-                  ? <Pause size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
-                  : <Play size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
+                  ? <Pause size={14} strokeWidth={0} style={{ fill: "currentColor" }} />
+                  : <Play size={14} strokeWidth={0} style={{ fill: "currentColor" }} />}
               </button>
             </div>
           ))}

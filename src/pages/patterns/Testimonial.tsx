@@ -27,14 +27,14 @@ export default function Testimonial() {
       <DocsHeader
         eyebrow="Padrões · depoimento"
         title={<>Citação <em>em Geist 24</em>, outcome ao lado.</>}
-        lede="Depoimento canônico: aspas decorativas em Geist italic gigante e cinza claro no canto. Frase em primeira pessoa, italic numa palavra. Atribuição com avatar de iniciais. Outcome numérico encosta na direita, dividido por hairline."
+        lede="Depoimento canônico: aspas decorativas em Geist Display gigantes e cinza claro no canto. Frase em primeira pessoa, destaque de cor numa expressão. Atribuição com avatar de iniciais. Outcome numérico encosta na direita, dividido por hairline."
       />
 
       <Section title="Card · com outcome" meta="formato editorial">
         <div className="vds-testi-stack">
           {testis.map((t) => (
             <div key={t.who} className="vds-testi">
-              <span className="quote-mark">"</span>
+              <span className="quote-mark">&rdquo;</span>
               <p className="quote">
                 {t.quote.split(t.em)[0]}<em>{t.em}</em>{t.quote.split(t.em)[1] || ''}
               </p>

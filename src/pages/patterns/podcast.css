@@ -125,7 +125,9 @@
   height: 22px;
   padding: 0 6px;
   border-radius: var(--via-radius-pill);
-  background: rgba(10, 31, 59, 0.07);
+  /* navy-06 adapta: tinta navy no claro, tinta branca no escuro
+     (o rgba fixo virava mancha invisível no dark) */
+  background: var(--via-navy-06);
   border: 1px solid var(--via-navy-14);
 }
 
@@ -135,6 +137,11 @@
   background: var(--via-navy);
   border-radius: var(--via-radius-pill);
   animation: vds-wave 1.2s ease-in-out infinite;
+}
+
+/* --via-navy não inverte no dark → barras navy sumiam no card escuro */
+[data-theme="dark"] .vds-pod-wave span {
+  background: var(--via-text-primary);
 }
 
 .vds-pod-wave span:nth-child(1) { height: 30%; animation-delay: 0s; }
@@ -225,4 +232,16 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.2) inset,
     0 8px 18px -4px var(--via-shadow-ink-30);
+}
+
+/* no escuro o botão mais forte é o mais CLARO — senão o disco navy some
+   no card escuro (mesma receita do "tocando" do curriculum) */
+[data-theme="dark"] .vds-pod .play,
+[data-theme="dark"] .vds-pod.playing .play {
+  background: var(--via-blue);
+}
+
+[data-theme="dark"] .vds-pod.playing .num {
+  background: var(--via-blue);
+  border-color: var(--via-blue);
 }

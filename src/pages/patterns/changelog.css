@@ -35,7 +35,9 @@
   right: 0;
   top: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--via-accent), var(--via-accent-warm), transparent);
+  /* só accent-warm: adapta nos 2 temas (navy-deep no claro · claro no escuro).
+     --via-accent não adapta → no dark a linha ficava assimétrica (metade some) */
+  background: linear-gradient(90deg, transparent, var(--via-accent-warm), transparent);
 }
 
 .vds-cl-featured-head {
@@ -60,19 +62,6 @@
   margin-bottom: 6px;
 }
 
-.vds-cl-eyebrow-bullet {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--via-accent);
-  box-shadow: 0 0 8px var(--via-shadow-ink-30);
-  animation: vds-cl-pulse 1.8s ease-in-out infinite;
-}
-
-@keyframes vds-cl-pulse {
-  50% { opacity: 0.4; }
-}
-
 .vds-cl-quarter {
   margin: 0;
   font-size: var(--via-fs-xs);
@@ -87,12 +76,13 @@
   gap: var(--via-space-1_5);
 }
 
+/* "versão em mono grande" (lede) — mono de verdade, não display */
 .vds-cl-version-num {
-  font-family: var(--via-display);
+  font-family: var(--via-mono);
   font-size: 28px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: var(--via-ls-tighter);
+  letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -126,12 +116,11 @@
   color: var(--via-text-primary);
 }
 
+/* ênfase = cor muted (padrão DocsHeader) · gradient navy→navy-deep
+   não adapta no dark e apagava o início da palavra */
 .vds-cl-featured-body h2 em {
   font-style: normal;
-  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--via-text-muted);
 }
 
 .vds-cl-lede {
@@ -176,9 +165,12 @@
     0 16px 32px -16px var(--via-shadow-ink-20);
 }
 
+/* tile navy fixo (mesh) — specificity maior que .via-mesh-navy,
+   então o background PRECISA repetir o mesh aqui, senão o tile
+   fica transparente e o texto branco some no tema claro */
 .vds-cl-hl.primary {
   color: var(--via-white);
-  background: transparent;
+  background: var(--via-mesh-navy);
   border-color: transparent;
   grid-row: span 1;
   min-height: 220px;
@@ -244,13 +236,8 @@
   color: var(--via-white);
 }
 
-.vds-cl-hl h3 em {
-  font-style: normal;
-  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+/* h3 em vive dentro do mesh navy — o fix sistêmico de tokens.css
+   (.via-mesh-navy :is(h1-h4) em) já pinta gradient branco nos 2 temas */
 
 .vds-cl-hl h4 {
   margin: 0 0 6px;
@@ -544,21 +531,23 @@
   justify-content: center;
 }
 
+/* dots usam tokens que ADAPTAM: text-primary = navy no claro, quase-branco
+   no escuro · --via-navy fixo sumia no dark (borda invisível) */
 .vds-cl-entry-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--via-surface);
-  border: 2px solid var(--via-navy);
+  border: 2px solid var(--via-text-primary);
   margin-top: 8px;
   z-index: 1;
   box-shadow: 0 0 0 4px var(--via-navy-06);
 }
 
 .vds-cl-entry:first-child .vds-cl-entry-dot {
-  background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
+  background: var(--via-text-primary);
   border-color: transparent;
-  box-shadow: 0 0 0 4px rgba(10, 31, 59, 0.09);
+  box-shadow: 0 0 0 4px var(--via-navy-08);
 }
 
 .vds-cl-entry-line {
@@ -611,11 +600,11 @@
 }
 
 .vds-cl-entry-v {
-  font-family: var(--via-display);
+  font-family: var(--via-mono);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.018em;
+  letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
 }
 

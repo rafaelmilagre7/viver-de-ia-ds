@@ -27,15 +27,17 @@
 .vds-soc-stage.ig-row { gap: var(--via-space-7); flex-wrap: wrap; }
 
 /* ============ INSTAGRAM SQUARE ============ */
+/* Chrome simulado do Instagram (card branco) — superfície FIXA,
+   não herda tokens de tema: o texto do chrome é preto fixo. */
 .vds-ig-frame {
   position: relative;
   z-index: 1;
   width: 360px;
-  background: var(--via-surface);
+  background: var(--via-white);
   border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 24px 56px var(--via-shadow-ink-20), 0 4px 12px var(--via-shadow-ink-06);
-  border: 0.5px solid var(--via-navy-10);
+  border: 0.5px solid rgba(0,0,0,0.10);
 }
 
 .ig-h {
@@ -56,14 +58,6 @@
   justify-content: center;
   flex-shrink: 0;
   padding: 2px;
-}
-.ig-av::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: var(--via-radius-pill);
-  background: linear-gradient(45deg, var(--via-navy), var(--via-blue), var(--via-navy-deep));
-  z-index: -1;
 }
 .ig-av img { width: 70%; height: 70%; object-fit: contain; }
 .ig-av.sm { width: 28px; height: 28px; padding: 1.5px; }
@@ -230,7 +224,7 @@
   color: rgba(0,0,0,0.90);
 }
 .ig-caption strong { font-weight: var(--via-fw-bold); }
-.ig-caption span { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
+.ig-caption span { color: var(--via-navy); font-weight: var(--via-fw-medium); }
 
 /* ============ INSTAGRAM STORY ============ */
 .vds-story {
@@ -261,8 +255,8 @@
   border-radius: 999px;
   overflow: hidden;
 }
-.story-bar .seg.done div { background: var(--via-surface); width: 100%; height: 100%; }
-.story-bar .seg.live div { background: var(--via-surface); width: 60%; height: 100%; animation: vds-story-live 8s linear forwards; }
+.story-bar .seg.done div { background: var(--via-white); width: 100%; height: 100%; }
+.story-bar .seg.live div { background: var(--via-white); width: 60%; height: 100%; animation: vds-story-live 8s linear forwards; }
 @keyframes vds-story-live {
   from { width: 0; }
   to { width: 100%; }
@@ -379,12 +373,13 @@
 }
 
 /* ============ LINKEDIN ============ */
+/* Chrome simulado do LinkedIn (card branco) — superfície FIXA como no IG. */
 .vds-li-frame {
   position: relative;
   z-index: 1;
   width: 100%;
   max-width: 560px;
-  background: var(--via-surface);
+  background: var(--via-white);
   border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 24px 56px var(--via-shadow-ink-20), 0 4px 12px var(--via-shadow-ink-06);

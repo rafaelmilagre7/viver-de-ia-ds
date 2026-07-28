@@ -1,5 +1,5 @@
 import {
-  Sparkles, Wrench, Plus, ShieldCheck, ArrowUpRight, GitBranch,
+  ArrowUp, Wrench, Plus, ShieldCheck, ArrowUpRight, GitBranch,
   Layers, MessageCircle, Rocket,
 } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
@@ -165,7 +165,7 @@ function ChangelogTimelineSection() {
 
   const typeIcons: Record<string, typeof Plus> = {
     new: Plus,
-    improved: Sparkles,
+    improved: ArrowUp,
     fix: Wrench,
     security: ShieldCheck,
   };
@@ -183,7 +183,7 @@ function ChangelogTimelineSection() {
         <aside className="vds-cl-toc">
           <header>
             <span className="vds-cl-toc-eyebrow">Histórico</span>
-            <p>Pulando pra a versão</p>
+            <p>Pular pra versão</p>
           </header>
           <ul>
             {versions.map((vr) => (
