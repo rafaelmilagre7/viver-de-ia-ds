@@ -46,8 +46,9 @@ export default function Copy() {
 
       <Section title="Depoimentos" meta="conversa, atribuído">
         <p>
-          Pull quotes são curtas, em primeira pessoa, sempre atribuídas. <em>Italic em Geist</em>
-          para a frase, sans-serif para a atribuição. Mantenha a oralidade — o "fala de WhatsApp" é o tom.
+          Pull quotes são curtas, em primeira pessoa, sempre atribuídas. <em>Geist regular</em> para a
+          frase — ênfase é peso e cor, nunca itálico — e atribuição em cinza apagado. Mantenha a
+          oralidade — o "fala de WhatsApp" é o tom.
         </p>
         <div className="vds-do-dont">
           <div className="vds-do">

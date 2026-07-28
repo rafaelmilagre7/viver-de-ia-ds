@@ -84,12 +84,12 @@ function BentoSection() {
           <svg viewBox="0 0 200 40" className="vds-bento-spark-svg" preserveAspectRatio="none">
             <defs>
               <linearGradient id="bento-spark" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="var(--via-navy)" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="var(--via-navy)" stopOpacity="0" />
+                <stop offset="0%" stopColor="var(--vds-bento-spark-ink)" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="var(--vds-bento-spark-ink)" stopOpacity="0" />
               </linearGradient>
             </defs>
             <path d="M 0 32 C 30 28, 50 24, 80 20 S 130 12, 160 8 S 190 4, 200 4 L 200 40 L 0 40 Z" fill="url(#bento-spark)" />
-            <path d="M 0 32 C 30 28, 50 24, 80 20 S 130 12, 160 8 S 190 4, 200 4" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.6" fill="none" strokeLinecap="round" />
+            <path d="M 0 32 C 30 28, 50 24, 80 20 S 130 12, 160 8 S 190 4, 200 4" style={{ stroke: "var(--vds-bento-spark-ink)" }} strokeWidth="1.6" fill="none" strokeLinecap="round" />
           </svg>
         </article>
 

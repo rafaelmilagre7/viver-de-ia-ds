@@ -56,7 +56,7 @@ export default function ShowcaseAluno() {
             <div className="ring">
               <svg viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="42" fill="none" stroke="var(--via-navy-08)" strokeWidth="6" />
-                <circle cx="50" cy="50" r="42" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="6"
+                <circle cx="50" cy="50" r="42" fill="none" style={{ stroke: "var(--via-chart-ink)" }} strokeWidth="6"
                   strokeDasharray="264" strokeDashoffset="132"
                   transform="rotate(-90 50 50)"
                   strokeLinecap="round" />
@@ -78,7 +78,7 @@ export default function ShowcaseAluno() {
                 <li key={m.n} className={`mod ${m.state}`}>
                   <span className="ico">
                     {m.state === 'done' && <Check size={14} strokeWidth={3} />}
-                    {m.state === 'current' && <Play size={12} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
+                    {m.state === 'current' && <Play size={12} strokeWidth={0} style={{ fill: "currentColor" }} />}
                     {m.state === 'locked' && <Lock size={12} strokeWidth={2} />}
                     {m.state === 'todo' && m.n}
                   </span>

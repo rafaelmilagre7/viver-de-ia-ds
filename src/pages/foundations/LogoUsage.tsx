@@ -77,7 +77,8 @@ function AnatomySection() {
         </article>
 
         <article>
-          <div className="vds-lu-spec vds-lu-spec--light">
+          {/* asset Leaders AI é BRANCO → palco navy fixo (em light sumia) */}
+          <div className="vds-lu-spec vds-lu-spec--dark">
             <img src={leadersAI} alt="Leaders AI Conference" />
           </div>
           <h4>Sub-brand <em>Leaders AI</em></h4>

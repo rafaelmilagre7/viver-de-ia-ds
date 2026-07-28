@@ -310,6 +310,13 @@
 .vds-bento-card.spark {
   grid-column: span 2;
   justify-content: space-between;
+  /* Ink da sparkline · navy da marca em light; passo próprio do dark
+     (--via-navy é fixo e sumia sobre o card escuro) */
+  --vds-bento-spark-ink: var(--via-navy);
+}
+
+[data-theme="dark"] .vds-bento-card.spark {
+  --vds-bento-spark-ink: var(--via-data-1-dark);
 }
 
 .vds-bento-spark-row {
@@ -341,6 +348,11 @@
   height: 5px;
   border-radius: 50%;
   background: var(--via-navy);
+}
+
+/* Dark: navy sólido não adapta → a bolinha de status sumia dentro do pill */
+[data-theme="dark"] .vds-bento-dot {
+  background: var(--via-text-primary);
 }
 
 .vds-bento-dot::after {
@@ -435,7 +447,8 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
-  border: 2px solid var(--via-white);
+  /* anel adaptativo · --via-white não inverte e virava halo branco no dark */
+  border: 2px solid var(--via-surface);
   box-shadow:
     0 0 0 1px var(--via-navy-12),
     0 4px 10px -3px var(--via-shadow-ink-30);
@@ -504,9 +517,23 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--via-coral, var(--via-coral));
-  box-shadow: 0 0 8px rgba(255, 95, 87, 0.7);
+  background: var(--via-coral);
+  /* glow no coral da marca (#B85C5C) · não no vermelho neon */
+  box-shadow: 0 0 8px rgba(184, 92, 92, 0.7);
   animation: vds-live-rec-pulse 1.4s ease-in-out infinite;
+}
+
+/* Definido localmente · a rota é lazy e não pode depender do chunk
+   de live-class.css pra bolinha pulsar */
+@keyframes vds-live-rec-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(184, 92, 92, 0.7);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(184, 92, 92, 0.9);
+  }
 }
 
 .vds-bento-live-views {
@@ -646,7 +673,8 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
-  border: 2px solid var(--via-white);
+  /* anel adaptativo · --via-white não inverte e virava halo branco no dark */
+  border: 2px solid var(--via-surface);
   margin-left: -8px;
   box-shadow: 0 0 0 1px var(--via-navy-12);
 }

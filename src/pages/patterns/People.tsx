@@ -274,7 +274,7 @@ function UserPopoverSection() {
             220 mentorados ativos · responde em até 14h · mentoria 1:1 + lives.
           </p>
           <div className="vds-userpop-stats">
-            <span><Star size={11} strokeWidth={2} style={{ fill: "var(--via-navy)", stroke: "var(--via-navy)" }} /> <strong>4,9</strong></span>
+            <span><Star size={11} strokeWidth={2} style={{ fill: 'var(--via-text-primary)', stroke: 'var(--via-text-primary)' }} /> <strong>4,9</strong></span>
             <span>·</span>
             <span><Users size={11} strokeWidth={2} /> <strong>220</strong></span>
             <span>·</span>

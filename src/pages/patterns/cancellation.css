@@ -143,6 +143,19 @@
   box-shadow: 0 2px 6px var(--via-shadow-ink-20);
 }
 
+/* Dark: accent(navy)→accent-warm(quase branco) rendia bolha lavada com "2"
+   branco ilegível na ponta clara. Bolha clara sólida + numeral navy. */
+[data-theme="dark"] .vds-cnx-steps li.current .num {
+  background: var(--via-text-primary);
+  color: var(--via-navy);
+}
+
+/* Dark: o disco navy do passo concluído desaparecia no header escuro —
+   só o check branco flutuava. Aro claro devolve o contorno. */
+[data-theme="dark"] .vds-cnx-steps li.done .num {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
 .vds-cnx-steps li.done,
 .vds-cnx-steps li.current {
   color: var(--via-text-primary);
@@ -181,6 +194,15 @@
 .vds-cnx-body h2 em {
   font-style: normal;
   background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark: --via-accent segue navy fixo → "essas" sumia sobre o painel escuro.
+   Gradiente claro + re-declarar os longhands (shorthand reseta o clip). */
+[data-theme="dark"] .vds-cnx-body h2 em {
+  background: linear-gradient(135deg, var(--via-white) 0%, rgba(255, 255, 255, 0.78) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -327,6 +349,8 @@
   box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
+/* Linha de luz FIXA · o card é navy (mesh) nos 2 temas; com var(--via-accent)
+   (= navy) ela sumia no claro e só metade aparecia no escuro. */
 .vds-cnx-offer::after {
   content: '';
   position: absolute;
@@ -334,7 +358,7 @@
   right: 0;
   top: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--via-accent), var(--via-accent-warm), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.32), transparent);
 }
 
 .vds-cnx-offer-tag {
@@ -609,7 +633,7 @@
   background:
     radial-gradient(420px 220px at 0% 0%, var(--via-navy-08), transparent 60%),
     var(--via-navy-04);
-  border: 1px solid rgba(10, 31, 59, 0.11);
+  border: 1px solid var(--via-navy-10); /* navy cru sumia no dark · token adapta */
   margin-bottom: 28px;
 }.vds-cnx-final-icon {
   width: 48px;

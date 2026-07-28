@@ -291,6 +291,12 @@
   background: linear-gradient(90deg, transparent, var(--via-accent), var(--via-accent-warm), transparent);
 }
 
+/* Dark: --via-accent (navy sólido) não adapta → a metade esquerda da linha
+   sumia e sobrava um risco branco lopsided. Ink claro simétrico nos 2 stops. */
+[data-theme="dark"] .vds-cmp-plan.highlight::before {
+  background: linear-gradient(90deg, transparent, rgba(244, 246, 250, 0.5), rgba(244, 246, 250, 0.5), transparent);
+}
+
 .vds-cmp-plan-tag {
   position: absolute;
   top: 14px;

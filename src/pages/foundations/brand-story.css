@@ -370,6 +370,18 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: var(--via-navy); /* fallback sem background-clip */
+}
+/* navy fixo em clip-text = texto INVISÍVEL sobre card escuro (medido:
+   "Viver de IA" sumia no dark). Cada tema fixa a própria rampa —
+   mesmo padrão do .vds-phil-rule h3 em. O shorthand `background`
+   reseta background-clip, então o clip repete aqui. */
+[data-theme='dark'] .vds-bs-positioning h3 strong {
+  background: linear-gradient(180deg, var(--via-text-primary), var(--via-text-body));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--via-text-primary);
 }
 
 .vds-bs-positioning-r {

@@ -120,13 +120,15 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
-  background: var(--via-surface-onnavy, rgba(255, 255, 255, 0.6));
+  /* pill sobre chrome ADAPTATIVO do DS (não sobre navy) · tint adaptativo,
+     senão surface-onnavy fica branco no dark e o texto claro some */
+  background: var(--via-navy-06);
   border: 1px solid var(--via-border-soft);
   text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 .vds-mail-open:hover {
-  background: var(--via-glass-card, rgba(255, 255, 255, 0.85));
+  background: var(--via-navy-10);
   transform: translateY(-1px);
 }
 

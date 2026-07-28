@@ -29,11 +29,11 @@ export default function Accordion() {
     <>
       <DocsHeader
         eyebrow="Componentes · acordeão"
-        title={<>Perguntas em <em>Geist 20</em>. Respostas calmas.</>}
-        lede="Acordeão é o pattern de FAQ — pergunta em serif, chevron rotaciona ao abrir, conteúdo respira. Use para perguntas que se repetem, não para esconder conteúdo importante."
+        title={<>Perguntas em <em>Geist 18</em>. Respostas calmas.</>}
+        lede="Acordeão é o pattern de FAQ — pergunta em Geist semibold, chevron rotaciona ao abrir, conteúdo respira. Use para perguntas que se repetem, não para esconder conteúdo importante."
       />
 
-      <Section title="FAQ" meta="serif title · chevron rotate">
+      <Section title="FAQ" meta="geist 18 semibold · chevron rotate">
         <div className="via-accordion">
           {faqs.map((f, i) => {
             const isOpen = open === i;

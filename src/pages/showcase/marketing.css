@@ -35,6 +35,11 @@
   transition: color 180ms;
 }
 .mk-nav a:hover, .mk-nav a.active { color: var(--via-text-primary); }
+/* Nav do mockup: <a> sem classe caía no override global
+   `[data-theme="dark"] a:not([class])` (azul #8FB8F6) · re-pina o editorial */
+[data-theme="dark"] .mk-nav nav a { color: var(--via-text-muted); }
+[data-theme="dark"] .mk-nav nav a:hover,
+[data-theme="dark"] .mk-nav nav a.active { color: var(--via-text-primary); }
 .mk-nav button {
   padding: 11px 18px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
@@ -115,7 +120,8 @@
 }
 .mk-hero .pill-dot {
   width: 6px; height: 6px; border-radius: 999px;
-  background: var(--via-navy);
+  /* tinta do texto (navy no claro, clara no escuro) — navy fixo sumia no dark */
+  background: var(--via-text-primary);
   animation: mkPulse 2.4s ease-in-out infinite;
 }
 @keyframes mkPulse { 0%,100%{opacity:1; transform:scale(1)} 50%{opacity:0.4; transform:scale(0.7)} }
@@ -454,10 +460,10 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 2px 6px -3px var(--via-shadow-ink-10);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  /* botão da marca = sentence case, sem tracking largo (caps+tracking em botão é banido) */
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.004em;
   color: var(--via-text-primary);
   text-decoration: none;
   white-space: nowrap;

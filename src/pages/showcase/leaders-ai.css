@@ -30,6 +30,11 @@
   cursor: pointer;
 }
 .la-nav a:hover, .la-nav a.active { color: var(--via-white); }
+/* Chrome do evento é FIXO (dark nos 2 temas) · os <a> sem classe caíam no
+   override global `[data-theme="dark"] a:not([class])` e viravam azuis */
+[data-theme="dark"] .la-nav nav a { color: rgba(255,255,255,0.62); }
+[data-theme="dark"] .la-nav nav a:hover,
+[data-theme="dark"] .la-nav nav a.active { color: var(--via-white); }
 .la-nav button {
   padding: 11px 18px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
@@ -134,7 +139,6 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
 }
-.la-pill .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--via-surface); animation: mkPulse 2.4s ease-in-out infinite; }
 
 .la-section { padding: 96px 48px; max-width: 1280px; margin: 0 auto; }
 .la-section-h { margin-bottom: 48px; text-align: center; }
@@ -255,7 +259,7 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
   backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid var(--via-edge-hi);
+  border: 1px solid rgba(255,255,255,0.9); /* card é branco FIXO · edge-hi adaptava e a borda sumia no dark */
   color: var(--via-text-primary);
   box-shadow: 0 32px 64px var(--via-shadow-ink-40);
 }
@@ -263,7 +267,7 @@
   position: absolute;
   top: -12px; left: 50%; transform: translateX(-50%);
   padding: 5px 14px;
-  background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
+  background: var(--via-navy);
   color: var(--via-white);
   font-family: var(--via-font);
   font-size: var(--via-fs-label); font-weight: var(--via-fw-medium);

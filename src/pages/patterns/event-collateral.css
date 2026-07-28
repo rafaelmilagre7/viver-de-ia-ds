@@ -147,7 +147,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--via-stage-1);
+  /* sobre canvas navy FIXO → cor fixa (stage-1 adapta e sumia no dark) */
+  background: var(--via-gray-300);
   box-shadow: 0 0 16px rgba(208, 213, 221, 0.6);
 }
 

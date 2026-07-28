@@ -7,6 +7,21 @@
 }
 
 .via-nav-stage.light {
+  /* MOCKUP FIXO · demo da variante clara não herda o tema do site:
+     pina os tokens no valor do CLARO (senão, no dark, o palco escurece
+     e o wordmark preto + CTA navy somem sobre navy). */
+  --via-gray-100: #F0F2F5;
+  --via-stage-soft: #E4E7EC;
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  --via-glass-card: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  --via-text-soft: #636D80;
+  --via-text-primary: #0A1F3B;
+  --via-shadow-ink-14: rgba(10, 31, 59, 0.14);
+  --via-shadow-ink-40: rgba(10, 31, 59, 0.40);
+  --via-shadow-ink-60: rgba(10, 31, 59, 0.60);
+  --via-shadow-focus: 0 0 0 3px rgba(10, 31, 59, 0.15);
   background:
     radial-gradient(540px 220px at 15% 0%, var(--via-navy-04), transparent 60%),
     linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
@@ -14,6 +29,13 @@
 }
 
 .via-nav-stage.dark {
+  /* MOCKUP FIXO · palco navy idêntico nos 2 temas: pina os alphas navy
+     (invertem pra branco no dark) e a borda/realce do CTA branco. */
+  --via-navy-05: rgba(10, 31, 59, 0.05);
+  --via-navy-20: rgba(10, 31, 59, 0.20);
+  --via-navy-25: rgba(10, 31, 59, 0.25);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  --via-shadow-ink-20: rgba(10, 31, 59, 0.20);
   background:
     radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
     radial-gradient(ellipse 50% 60% at 100% 100%, var(--via-navy-05) 0%, transparent 60%),
@@ -115,12 +137,15 @@
   opacity: 1;
 }
 
-.via-nav-l a {
+/* Especificidade (0,3,1) de propósito: o guard global
+   [data-theme="dark"] a:not([class]) (0,2,1) pintava os links
+   sem classe de azul-claro dentro do mockup fixo. */
+.via-nav-stage.light .via-nav-l a {
   color: var(--via-text-soft);
 }
 
-.via-nav-l a:hover,
-.via-nav-l a.active {
+.via-nav-stage.light .via-nav-l a:hover,
+.via-nav-stage.light .via-nav-l a.active {
   color: var(--via-text-primary);
 }
 
@@ -128,12 +153,13 @@
   font-weight: var(--via-fw-semibold);
 }
 
-.via-nav-d a {
+/* mesma dose de especificidade contra o guard global do dark */
+.via-nav-stage.dark .via-nav-d a {
   color: rgba(255, 255, 255, 0.62);
 }
 
-.via-nav-d a:hover,
-.via-nav-d a.active {
+.via-nav-stage.dark .via-nav-d a:hover,
+.via-nav-stage.dark .via-nav-d a.active {
   color: var(--via-white);
 }
 

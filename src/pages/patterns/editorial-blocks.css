@@ -544,6 +544,11 @@
   background: var(--via-navy);
   box-shadow: 0 0 0 1px var(--via-navy-25);
 }
+/* navy é constante → no dark o miolo "atual" some no card escuro e o marco
+   vigente fica igual aos passados · preenche com o primário do tema */
+[data-theme='dark'] .vds-tl-item.now .vds-tl-dot {
+  background: var(--via-text-primary);
+}
 
 .vds-tl-pulse {
   position: absolute;

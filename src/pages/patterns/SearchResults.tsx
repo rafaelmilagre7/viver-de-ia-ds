@@ -192,7 +192,8 @@ function SearchResultsSection() {
                       {r.time}
                     </span>
                     <span className="vds-sr-result-score mono">
-                      <Star size={9} strokeWidth={2} style={{ fill: "var(--via-navy)" }} />
+                      {/* fill navy fixo virava estrela oca no dark · currentColor segue o score */}
+                      <Star size={9} strokeWidth={2} style={{ fill: "currentColor" }} />
                       {r.score}%
                     </span>
                   </div>

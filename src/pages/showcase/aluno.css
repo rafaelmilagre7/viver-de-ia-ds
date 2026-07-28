@@ -36,6 +36,12 @@
   transition: color 200ms cubic-bezier(.16, 1, .3, 1);
 }
 .al-nav a:hover, .al-nav a.active { color: var(--via-text-primary); }
+/* Nav do mockup: os <a> sem classe caíam no override global
+   `[data-theme="dark"] a:not([class])` (azul #8FB8F6) — link azul não existe
+   neste chrome. Re-pina as cores editoriais no dark. */
+[data-theme="dark"] .al-nav nav a { color: var(--via-text-muted); }
+[data-theme="dark"] .al-nav nav a:hover,
+[data-theme="dark"] .al-nav nav a.active { color: var(--via-text-primary); }
 .al-nav .user { display: flex; align-items: center; gap: var(--via-space-3); }
 .al-nav .hi {
   font-family: var(--via-font);
@@ -235,6 +241,7 @@
 }
 .al-row-h {
   display: flex;
+  flex-wrap: wrap; /* eyebrow em cima, h2 (width:100%) quebra pra linha de baixo — sem isso colavam na mesma linha */
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
@@ -280,6 +287,9 @@
   box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
 }
 .al-modules .mod.current { background: var(--via-navy-04); border-color: var(--via-navy); }
+/* navy fixo some sobre card escuro · no dark a borda do módulo atual usa o
+   alpha que inverte pra branco (senão o estado "current" desaparece) */
+[data-theme="dark"] .al-modules .mod.current { border-color: var(--via-navy-40); }
 .al-modules .ico {
   width: 44px; height: 44px;
   border-radius: var(--via-radius-pill);
@@ -398,8 +408,10 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 9px 16px;
-  background: var(--via-surface);
-  color: var(--via-text-primary);
+  /* card navy é FIXO nos 2 temas → o botão também fixa (surface adaptava e
+     virava pill escura ilegível no dark) */
+  background: var(--via-surface-onnavy);
+  color: var(--via-navy);
   border: none;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);

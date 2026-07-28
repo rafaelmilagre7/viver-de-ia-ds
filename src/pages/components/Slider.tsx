@@ -11,10 +11,10 @@ export default function Slider() {
       <DocsHeader
         eyebrow="Componentes · slider"
         title={<>Trilha <em>fina</em>, alça com sombra navy.</>}
-        lede="Slider para faixa numérica contínua — orçamento, prioridade, intensidade. Trilha 4px navy@10 → navy preenchida do início ao thumb. Alça 20px com hairline e sombra navy 18%."
+        lede="Slider para faixa numérica contínua — orçamento, prioridade, intensidade. Trilha 6px navy@8 → preenchida em navy até o thumb. Alça 22px com borda navy e sombra navy 30%."
       />
 
-      <Section title="Padrão" meta="track 4px · thumb 20">
+      <Section title="Padrão" meta="track 6px · thumb 22">
         <div className="via-slider-card">
           <div className="hdr">
             <span className="lbl">Orçamento mensal</span>

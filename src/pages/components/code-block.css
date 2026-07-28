@@ -57,8 +57,10 @@
 }
 
 .vds-code-head.dark {
+  /* alphas FIXOS · navy-08/20 invertem pra branco no dark e o header
+     do bloco navy ganhava brilho/hairline clara que não existe no claro. */
   background:
-    radial-gradient(420px 80px at 0% 0%, var(--via-navy-08), transparent 70%),
+    radial-gradient(420px 80px at 0% 0%, rgba(10, 31, 59, 0.08), transparent 70%),
     rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -68,7 +70,7 @@
 }
 
 .vds-code-head.dark::after {
-  background: linear-gradient(90deg, transparent, var(--via-navy-20) 50%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(10, 31, 59, 0.20) 50%, transparent);
 }
 
 .vds-code-icon {
@@ -257,7 +259,9 @@
 }
 
 .vds-code.dark .vds-code-line.active {
-  background: linear-gradient(90deg, rgba(10, 31, 59, 0.07), var(--via-navy-05));
+  /* alphas FIXOS · navy-05 inverte pra branco no dark e a linha ativa
+     ganhava uma faixa clara que não existe no claro. */
+  background: linear-gradient(90deg, rgba(10, 31, 59, 0.07), rgba(10, 31, 59, 0.05));
 }
 
 .vds-code-line.active::before {
@@ -267,7 +271,9 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
+  /* gradiente FIXO · --via-stage-1 vira #131C30 no dark e o marcador
+     da linha ativa sumia sobre o bloco navy. */
+  background: linear-gradient(180deg, #D0D5DD, var(--via-navy));
   box-shadow: 0 0 8px var(--via-shadow-ink-20);
 }
 
@@ -350,13 +356,19 @@
   isolation: isolate;
 }
 
+/* dark · navy-40 inverte pra rgba(255,255,255,0.42) e virava um anel
+   claro grosso em volta do terminal · hairline branca sutil no lugar */
+[data-theme="dark"] .vds-terminal {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
 .vds-terminal::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(420px 200px at 0% 0%, var(--via-navy-06), transparent 60%),
+    radial-gradient(420px 200px at 0% 0%, rgba(10, 31, 59, 0.06), transparent 60%),
     radial-gradient(380px 200px at 100% 100%, rgba(126, 224, 168, 0.04), transparent 60%);
   z-index: 0;
 }
@@ -407,7 +419,9 @@
   background: linear-gradient(180deg, var(--via-coral-deep, var(--via-coral-deep)), var(--via-coral, var(--via-coral)));
 }
 .vds-terminal-dots span:nth-child(2) {
-  background: linear-gradient(180deg, var(--via-stage-2), var(--via-ink-2));
+  /* cinzas FIXOS · stage-2/ink-2 adaptam no dark e a bolinha do meio
+     virava gradiente quebrado (escuro em cima, claro embaixo). */
+  background: linear-gradient(180deg, #98A2B3, #5E6B82);
 }
 .vds-terminal-dots span:nth-child(3) {
   background: linear-gradient(180deg, #4ED566, #28C840);
@@ -538,7 +552,9 @@
   display: inline-block;
   width: 7px;
   height: 14px;
-  background: var(--via-surface);
+  /* branco FIXO · --via-surface vira #131C30 no dark e o cursor
+     sumia sobre o terminal navy-darker. */
+  background: var(--via-white);
   vertical-align: -2px;
   margin-left: 2px;
   animation: vds-blink 1.05s steps(1) infinite;

@@ -11,7 +11,33 @@
   border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 24px 56px -16px var(--via-shadow-ink-20);
+  /* newsletter = e-mail REAL = papel branco nos 2 temas · trava tokens em
+     claro (mesma doutrina do .vds-ec-card · senão vira "e-mail escuro", que
+     não existe · e a wordmark preta/monograma navy somem no dark) */
+  --via-surface: #FFFFFF;
+  --via-bg: #FFFFFF;
+  --via-bg-2: #F7F8FA;
+  --via-gray-50: #F7F8FA;
+  --via-text-primary: var(--via-navy);
+  --via-text: #344054;
+  --via-text-body: #344054;
+  --via-text-muted: #5F6981;
+  --via-text-soft: #5F6981;
+  --via-text-faint: #667085;
+  --via-ink-2: #5E6B82;
+  --via-ink-3: #5F6981;
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-06: rgba(10, 31, 59, 0.06);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-navy-14: rgba(10, 31, 59, 0.14);
+  --via-navy-16: rgba(10, 31, 59, 0.16);
+  --via-navy-20: rgba(10, 31, 59, 0.20);
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  --via-glass-card: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);
 }
+/* e-mail = papel branco nos 2 temas · neutraliza o link azul do dark global */
+[data-theme="dark"] .vds-ed-newsletter a:not([class]) { color: var(--via-ink-3); }
 .vds-ed-newsletter > header {
   display: flex;
   align-items: center;

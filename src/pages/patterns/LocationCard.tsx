@@ -38,9 +38,10 @@ function LocationVenueSection() {
               <pattern id="loc-grid" width="20" height="20" patternUnits="userSpaceOnUse">
                 <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--via-navy-06)" strokeWidth="0.5" />
               </pattern>
+              {/* tinta primária (navy no claro, clara no escuro) — navy fixo sumia no dark */}
               <radialGradient id="loc-pulse" cx="50%" cy="50%">
-                <stop offset="0" stopColor="var(--via-navy)" stopOpacity="0.5" />
-                <stop offset="1" stopColor="var(--via-navy)" stopOpacity="0" />
+                <stop offset="0" stopColor="var(--via-text-primary)" stopOpacity="0.5" />
+                <stop offset="1" stopColor="var(--via-text-primary)" stopOpacity="0" />
               </radialGradient>
             </defs>
             <rect width="400" height="300" fill="url(#loc-grid)" />
@@ -66,17 +67,19 @@ function LocationVenueSection() {
               <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite" />
             </circle>
 
-            {/* Main marker */}
+            {/* Main marker · aro branco + glifo branco: o disco navy sumia no mapa
+                escuro e o prédio navy-sobre-navy era invisível nos 2 temas */}
             <g transform="translate(200, 150)">
               <circle r="22" style={{ fill: "var(--via-navy)" }} />
-              <circle r="22" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="2" />
-              <path d="M-7,-2 L0,-8 L7,-2 L7,8 L-7,8 Z" style={{ fill: "var(--via-navy)" }} />
+              <circle r="22" fill="none" stroke="var(--via-white)" strokeWidth="2" />
+              <path d="M-7,-2 L0,-8 L7,-2 L7,8 L-7,8 Z" fill="var(--via-white)" />
               <circle cx="0" cy="2" r="3" style={{ fill: "var(--via-navy)" }} />
             </g>
 
-            {/* Label callout */}
+            {/* Label callout · rect de 116 cortava o texto mono (~146 de largura);
+                o excesso ficava navy sobre o mapa escuro = rótulo mutilado no dark */}
             <g transform="translate(200, 110)">
-              <rect x="-58" y="-22" width="116" height="22" rx="4" fill="var(--via-white)" stroke="var(--via-navy-16)" />
+              <rect x="-80" y="-22" width="160" height="22" rx="4" fill="var(--via-white)" stroke="var(--via-navy-16)" />
               <text x="0" y="-7" textAnchor="middle" fontSize="11" fontFamily="var(--via-mono)" style={{ fill: "var(--via-navy)" }} letterSpacing="0.02em">
                 Centro de Eventos Frei
               </text>
@@ -198,10 +201,11 @@ function LocationCompactSection() {
               <rect width="200" height="120" fill="url(#mini-grid)" />
               <path d="M0,70 Q60,60 120,68 T200,58" stroke="var(--via-navy-16)" strokeWidth="4" fill="none" strokeLinecap="round" />
               <path d="M60,0 Q70,40 65,80 T70,120" stroke="var(--via-navy-12)" strokeWidth="3" fill="none" strokeLinecap="round" />
+              {/* mesma receita do pin alt: aro + miolo brancos (navy puro sumia no dark) */}
               <g transform="translate(100, 60)">
                 <circle r="11" style={{ fill: "var(--via-navy)" }} />
-                <circle r="11" fill="none" style={{ stroke: "var(--via-navy)" }} strokeWidth="1.5" />
-                <circle cx="0" cy="0" r="3" style={{ fill: "var(--via-navy)" }} />
+                <circle r="11" fill="none" stroke="var(--via-white)" strokeWidth="1.5" />
+                <circle cx="0" cy="0" r="3" fill="var(--via-white)" />
               </g>
             </svg>
           </div>

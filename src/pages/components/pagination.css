@@ -77,6 +77,12 @@
   font-weight: var(--via-fw-semibold);
 }
 
+/* Dark · --via-navy não inverte: o fill do pill ativo fica na mesma luminância
+   do vidro escuro e a forma some — hairline clara devolve o contorno. */
+[data-theme="dark"] .via-pag .p.active {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
 .via-pag .arr:disabled {
   opacity: 0.3;
   cursor: not-allowed;

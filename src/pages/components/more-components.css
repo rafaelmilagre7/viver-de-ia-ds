@@ -330,17 +330,6 @@
   background: rgba(255, 255, 255, 0.14);
   border-color: rgba(255, 255, 255, 0.30);
 }
-.vds-notif li.unread::before {
-  content: '';
-  position: absolute;
-  width: 3px;
-  height: 18px;
-  border-radius: var(--via-radius-pill);
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy));
-  margin-left: -12px;
-  margin-top: 0;
-  box-shadow: 0 0 8px var(--via-shadow-ink-20);
-}
 .vds-notif li .ico {
   width: 30px;
   height: 30px;
@@ -496,7 +485,9 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
-  border: 2px solid var(--via-white);
+  /* Anel do stack = cor da SUPERFÍCIE atrás (adapta) · --via-white aqui
+     virava anel branco gritante no tema escuro */
+  border: 2px solid var(--via-surface);
   box-shadow: 0 4px 12px var(--via-shadow-ink-20);
 }
 .vds-avgroup-av.lg { width: 48px; height: 48px; font-size: var(--via-fs-h4); }
@@ -507,11 +498,13 @@
   width: 11px;
   height: 11px;
   border-radius: var(--via-radius-pill);
-  border: 2px solid var(--via-white);
+  border: 2px solid var(--via-surface);
   background: var(--via-stage-2);
 }
 .vds-avgroup-dot.live { background: var(--via-success); box-shadow: 0 0 0 2px var(--via-navy-08); }
 .vds-avgroup-dot.idle { background: var(--via-navy); }
+/* Navy sólido some sobre card escuro · ocioso precisa continuar ≠ offline */
+[data-theme="dark"] .vds-avgroup-dot.idle { background: var(--via-navy-60); }
 .vds-avgroup-dot.off { background: var(--via-stage-2); }
 .vds-avgroup-more {
   display: inline-flex;
@@ -521,7 +514,7 @@
   height: 36px;
   border-radius: var(--via-radius-pill);
   background: var(--via-surface);
-  border: 2px solid var(--via-white);
+  border: 2px solid var(--via-surface);
   margin-left: -10px;
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
@@ -570,14 +563,18 @@
   border-color: var(--via-navy-20);
   box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
 }
-.vds-avgroup-card strong {
+/* Meta do card SÓ na coluna de texto (> div) — `span` solto aqui vazava
+   pro avatar (.vds-avgroup-av é <span>): display:block matava o
+   inline-flex (iniciais desalinhadas vazando do círculo) e text-muted
+   apagava o branco das iniciais. */
+.vds-avgroup-card > div strong {
   display: block;
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
 }
-.vds-avgroup-card span {
+.vds-avgroup-card > div span {
   display: block;
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
@@ -598,10 +595,9 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 2px 6px -3px var(--via-shadow-ink-10);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.005em;
   color: var(--via-text-primary);
   cursor: pointer;
   text-decoration: none;

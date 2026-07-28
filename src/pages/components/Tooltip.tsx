@@ -36,12 +36,12 @@ export default function Tooltip() {
         <table className="vds-token-table">
           <thead><tr><th>Token</th><th>Valor</th><th>Onde</th></tr></thead>
           <tbody>
-            <tr><td className="tok">Background</td><td className="val">var(--via-navy)</td><td className="use">Pílula opaca, navy sólido</td></tr>
+            <tr><td className="tok">Background</td><td className="val">navy → navy-deep</td><td className="use">Pílula opaca, gradient navy</td></tr>
             <tr><td className="tok">Text</td><td className="val">var(--via-white) · 11px · 500</td><td className="use">Sentence case, sem ponto final</td></tr>
-            <tr><td className="tok">Padding</td><td className="val">8 12</td><td className="use">Aperta no texto</td></tr>
-            <tr><td className="tok">Radius</td><td className="val">8px</td><td className="use">Mais firme que pílula</td></tr>
-            <tr><td className="tok">Offset</td><td className="val">10px do âncora</td><td className="use">Respiração</td></tr>
-            <tr><td className="tok">Shadow</td><td className="val">navy 20% 32px</td><td className="use">Profundidade discreta</td></tr>
+            <tr><td className="tok">Padding</td><td className="val">6 11</td><td className="use">Aperta no texto</td></tr>
+            <tr><td className="tok">Radius</td><td className="val">10px (radius-sm)</td><td className="use">Mais firme que pílula</td></tr>
+            <tr><td className="tok">Offset</td><td className="val">8px do âncora</td><td className="use">Respiração</td></tr>
+            <tr><td className="tok">Shadow</td><td className="val">ink 40% 18px + hairline</td><td className="use">Profundidade discreta</td></tr>
           </tbody>
         </table>
       </Section>

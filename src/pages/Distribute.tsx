@@ -181,7 +181,7 @@ export default function Distribute() {
         <p className="vds-dist-hint">
           Pra código React de verdade, instale a library:{' '}
           <code>bun add @viverdeia/design-system lucide-react</code> — 47 componentes, dark mode e contraste AA inclusos.
-          Referência visual completa: <a href="https://viver-de-ia-ds.vercel.app" target="_blank" rel="noreferrer">o site inteiro</a> (107 rotas vivas).
+          Referência visual completa: <a href="https://viver-de-ia-ds.vercel.app" target="_blank" rel="noreferrer">o site inteiro</a> (108 rotas vivas).
         </p>
       </Section>
     </>

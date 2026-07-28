@@ -72,6 +72,15 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Dark: navy→navy-deep são fixos e o 218 sumia sobre o card escuro.
+   Gradiente claro + re-declarar os longhands (shorthand reseta o clip). */
+[data-theme="dark"] .vds-trust-num {
+  background: linear-gradient(180deg, var(--via-white) 0%, rgba(255, 255, 255, 0.78) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .vds-trust-strip h3 > span:not(.vds-trust-num) {
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
@@ -348,6 +357,14 @@
   margin-bottom: 8px;
 }
 
+/* Estrelas preenchidas em ink adaptativo · navy fixo sumia no dark.
+   CSS vence os presentation attributes do Lucide (fill="none"). */
+.vds-trust-rating-stars svg,
+.vds-trust-review-stars svg {
+  fill: var(--via-text-primary);
+  stroke: var(--via-text-primary);
+}
+
 .vds-trust-rating-meta {
   margin: 0 0 16px;
   font-size: var(--via-fs-xs);
@@ -399,7 +416,9 @@
 .vds-trust-rating-breakdown .bar span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-accent), var(--via-accent-warm));
+  /* série única = cor chapada (gradiente em série única é banido) ·
+     text-primary = navy em light, ink claro em dark */
+  background: var(--via-text-primary);
   border-radius: 999px;
   transition: width .4s ease;
 }

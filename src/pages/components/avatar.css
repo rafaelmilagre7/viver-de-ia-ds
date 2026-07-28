@@ -9,7 +9,8 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   user-select: none;
-  border: 2px solid var(--via-white);
+  /* anel = cor do canvas (recorte), não branco fixo — senão vira halo no dark */
+  border: 2px solid var(--via-bg);
   box-shadow:
     0 0 0 1px var(--via-shadow-ink-06),
     0 4px 10px -4px var(--via-shadow-ink-20);
@@ -45,9 +46,8 @@
 }
 
 .via-avatar.more {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  color: var(--via-text-primary);
+  color: var(--via-navy);
   border: 1.5px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -56,6 +56,15 @@
   font-weight: var(--via-fw-bold);
   font-size: var(--via-fs-micro);
   letter-spacing: 0;
+}
+
+/* Dark · surface-onnavy é branca FIXA (feita pra viver sobre hero navy) —
+   aqui o chip vive sobre o canvas: virava bolacha branca berrante.
+   Superfície elevada + texto claro. */
+[data-theme='dark'] .via-avatar.more {
+  background: var(--via-surface-elev);
+  color: var(--via-text-primary);
+  border-color: var(--via-border);
 }
 
 .via-avatar-row {
@@ -69,7 +78,7 @@
 }
 
 .via-avatar-stack .via-avatar {
-  border-color: var(--via-white);
+  border-color: var(--via-bg);
   margin-left: -10px;
   transition: all 200ms ease;
 }

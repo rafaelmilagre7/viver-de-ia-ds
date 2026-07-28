@@ -16,7 +16,7 @@ export default function Stepper() {
       <DocsHeader
         eyebrow="Componentes · stepper"
         title={<>Passos com <em>check</em>, conectados.</>}
-        lede="Stepper guia fluxos longos — onboarding, checkout, formulário multi-step. Passos concluídos têm check navy. O atual fica em hairline navy. Os pendentes em cinza. Linha conectora navy se o passo anterior foi feito."
+        lede="Stepper guia fluxos longos — onboarding, checkout, formulário multi-step. Passos concluídos viram disco navy com check branco. O atual fica em hairline navy. Os pendentes em cinza. Linha conectora navy se o passo anterior foi feito."
       />
 
       <Section title="Horizontal" meta="onboarding 4 passos">

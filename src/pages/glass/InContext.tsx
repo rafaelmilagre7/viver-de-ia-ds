@@ -21,9 +21,10 @@ export default function GlassInContext() {
             height: 280,
             borderRadius: 'var(--via-radius-lg)',
             overflow: 'hidden',
+            /* Mockup: interior fixa as próprias cores (não segue o tema) */
             background:
-              'linear-gradient(135deg, var(--via-gray-200), var(--via-gray-300)), radial-gradient(ellipse at 80% 0%, var(--via-navy-08), transparent)',
-            border: '0.5px solid var(--via-navy-12)',
+              'linear-gradient(135deg, #E4E7EC, #D0D5DD), radial-gradient(ellipse at 80% 0%, rgba(10,31,59,0.08), transparent)',
+            border: '0.5px solid rgba(10,31,59,0.12)',
           }}
         >
           <header
@@ -34,20 +35,20 @@ export default function GlassInContext() {
               background: 'linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.66))',
               backdropFilter: 'blur(18px) saturate(160%)',
               WebkitBackdropFilter: 'blur(18px) saturate(160%)',
-              borderBottom: '0.5px solid var(--via-navy-10)',
+              borderBottom: '0.5px solid rgba(10,31,59,0.10)',
             }}
           >
-            <span style={{ fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.32em', textTransform: 'uppercase', color: 'var(--via-text-primary)' }}>VIVER DE IA</span>
-            <span style={{ fontFamily: 'var(--via-font)', fontSize: 12, fontWeight: 600, color: 'var(--via-text-muted)' }}>Mentoria · Cases · Manifesto</span>
+            <span style={{ fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.32em', textTransform: 'uppercase', color: '#0A1F3B' }}>VIVER DE IA</span>
+            <span style={{ fontFamily: 'var(--via-font)', fontSize: 12, fontWeight: 600, color: '#4F596B' }}>Mentoria · Cases · Manifesto</span>
           </header>
           <div
             style={{
               position: 'absolute', bottom: 24, left: 28,
               fontFamily: 'var(--via-font-display)', fontSize: 36, fontWeight: 500,
-              color: 'var(--via-text-primary)', letterSpacing: '-0.02em', lineHeight: 1,
+              color: '#0A1F3B', letterSpacing: '-0.02em', lineHeight: 1,
             }}
           >
-            Conteúdo rolando<br /><em style={{ color: 'var(--via-text-muted)' }}>por baixo</em>…
+            Conteúdo rolando<br /><em style={{ color: '#4F596B' }}>por baixo</em>…
           </div>
         </div>
       </Section>
@@ -82,9 +83,10 @@ export default function GlassInContext() {
                 boxShadow: 'var(--via-shadow-glass-light)',
               }}
             >
-              <p className="vds-eyebrow">{c.lbl}</p>
-              <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 40, fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', marginTop: 6 }}>{c.num}</div>
-              <p style={{ fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-text-body)', marginTop: 8 }}>{c.sub}</p>
+              {/* Tile de vidro claro fixo → texto também fixo (não segue o tema) */}
+              <p className="vds-eyebrow" style={{ color: '#4F596B' }}>{c.lbl}</p>
+              <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 40, fontWeight: 500, letterSpacing: '-0.04em', color: '#0A1F3B', marginTop: 6 }}>{c.num}</div>
+              <p style={{ fontFamily: 'var(--via-font)', fontSize: 12, color: '#344054', marginTop: 8 }}>{c.sub}</p>
             </div>
           ))}
         </div>
@@ -112,13 +114,14 @@ export default function GlassInContext() {
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,1), 0 32px 80px rgba(0,0,0,0.40)',
             }}
           >
-            <h3 style={{ fontFamily: 'var(--via-font-display)', fontSize: 24, fontWeight: 500, color: 'var(--via-text-primary)', letterSpacing: '-0.015em', margin: 0 }}>Confirmar inscrição?</h3>
-            <p style={{ fontFamily: 'var(--via-font)', fontSize: 14, color: 'var(--via-text-body)', lineHeight: 1.55, marginTop: 12 }}>
+            {/* Modal claro fixo → tinta fixa; botões seguem o Button real (sentence case, tracking apertado) */}
+            <h3 style={{ fontFamily: 'var(--via-font-display)', fontSize: 24, fontWeight: 500, color: '#0A1F3B', letterSpacing: '-0.015em', margin: 0 }}>Confirmar inscrição?</h3>
+            <p style={{ fontFamily: 'var(--via-font)', fontSize: 14, color: '#344054', lineHeight: 1.55, marginTop: 12 }}>
               Sua inscrição na turma 2026.2 será confirmada. O pagamento será cobrado no método cadastrado.
             </p>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 24 }}>
-              <button style={{ padding: '11px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', background: 'transparent', color: 'var(--via-text-body)', border: 'none' }}>Cancelar</button>
-              <button style={{ padding: '11px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', background: 'var(--via-navy)', color: 'var(--via-white)', border: 'none' }}>Confirmar</button>
+              <button style={{ padding: '10px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 14, fontWeight: 500, letterSpacing: '-0.008em', background: 'transparent', color: '#4F596B', border: 'none' }}>Cancelar</button>
+              <button style={{ padding: '10px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 14, fontWeight: 500, letterSpacing: '-0.008em', background: '#0A1F3B', color: '#FFFFFF', border: 'none' }}>Confirmar</button>
             </div>
           </div>
         </div>

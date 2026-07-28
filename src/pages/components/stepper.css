@@ -119,3 +119,22 @@
 .via-stepper .step:last-child .cell .line {
   display: none;
 }
+
+/* Dark · navy não inverte: com o fill/linha navy sólidos, o passo FEITO
+   ficava mais apagado que o pendente (linha navy sobre canvas escuro
+   praticamente some; a pendente, em branco 11%, gritava mais). Mesmo
+   padrão do checkbox/radio: o "ligado" é tinta CLARA, glifo navy. */
+[data-theme='dark'] .via-stepper .step.done .circle {
+  background: var(--via-text-primary);
+  border-color: var(--via-text-primary);
+  color: var(--via-navy);
+  box-shadow: 0 4px 10px -3px rgba(0, 0, 0, 0.55);
+}
+
+[data-theme='dark'] .via-stepper .step.done .line {
+  background: var(--via-text-primary);
+}
+
+[data-theme='dark'] .via-stepper .step.current .circle {
+  border-color: var(--via-text-primary);
+}

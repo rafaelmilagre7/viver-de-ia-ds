@@ -68,6 +68,9 @@
 
 /* Dark variant — premium navy mesh */
 .via-stats-dark {
+  /* MOCKUP FIXO · card navy idêntico nos 2 temas: navy-05 inverte pra
+     branco no dark e viraria brilho que não existe no claro. */
+  --via-navy-05: rgba(10, 31, 59, 0.05);
   position: relative;
   background:
     radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),

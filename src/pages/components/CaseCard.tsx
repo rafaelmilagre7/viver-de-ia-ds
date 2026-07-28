@@ -28,7 +28,7 @@ export default function CaseCard() {
       <DocsHeader
         eyebrow="Componentes · case card"
         title={<>Headline <em>com métrica</em>, citação no rodapé.</>}
-        lede="Case card é o cartão-âncora do diretório de cases. Headline em Geist 22, métrica em destaque, citação atribuída em itálico. Hover lift discreto, link 'Ler case' uppercase."
+        lede="Case card é o cartão-âncora do diretório de cases. Headline em Geist 24, métrica em destaque, citação atribuída em reto — ênfase por peso e cor. Hover lift discreto, link 'Ler case' com seta."
       />
 
       <Section title="Padrão" meta="company · sector · headline · stat · quote">

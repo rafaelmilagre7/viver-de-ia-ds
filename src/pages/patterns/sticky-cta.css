@@ -186,9 +186,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  /* aro branco fixo virava HALO no escuro · edge-hi é a versão por token */
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 0 0 1px rgba(255,255,255,0.85),
+    0 0 0 1px var(--via-edge-hi),
     0 4px 10px -2px var(--via-shadow-ink-20);
 }
 .vds-sticky-page__feature strong {
@@ -418,9 +419,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  /* aro branco fixo virava HALO no escuro · edge-hi é a versão por token */
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 0 0 1px rgba(255,255,255,0.85),
+    0 0 0 1px var(--via-edge-hi),
     0 6px 14px -3px var(--via-shadow-ink-30);
 }
 .vds-sticky-icon::before {
@@ -496,9 +498,11 @@
     0 6px 14px -3px rgba(0,0,0,0.32),
     0 2px 6px -1px rgba(0,0,0,0.20);
 }
+/* hover FIXO branco · var(--via-surface) inverte no escuro e o botão
+   branco virava navy com texto navy (invisível) ao passar o mouse */
 .vds-sticky-bar.enroll .vds-sticky-btn.primary:hover,
 .vds-sticky-bar.exit .vds-sticky-btn.primary:hover {
-  background: var(--via-surface);
+  background: var(--via-white);
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),

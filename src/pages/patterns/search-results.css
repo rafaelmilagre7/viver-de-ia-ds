@@ -298,10 +298,52 @@
   color: var(--via-text-primary);
 }
 
+/* Controles por token (receita da library RadioGroup/Checkbox) · o nativo
+   com accent-color navy rendia caixa parda do UA no escuro e o estado
+   marcado (navy) sumia sobre o card dark. */
 .vds-sr-filter-list input {
-  accent-color: var(--via-navy);
-  width: 14px;
-  height: 14px;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  flex-shrink: 0;
+  background: var(--via-surface);
+  border: 1.5px solid var(--via-border);
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 1px 2px var(--via-shadow-ink-03);
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.vds-sr-filter-list input[type="radio"] { border-radius: var(--via-radius-pill); }
+.vds-sr-filter-list input[type="checkbox"] { border-radius: 5px; }
+
+.vds-sr-filter-list input:hover { border-color: var(--via-navy-30); }
+
+.vds-sr-filter-list input:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
+}
+
+/* Radio marcado · aro + ponto na tinta primária (navy no claro, clara no escuro) */
+.vds-sr-filter-list input[type="radio"]:checked {
+  border-color: var(--via-text-primary);
+  background:
+    radial-gradient(circle, var(--via-text-primary) 0 3px, transparent 3.5px),
+    var(--via-surface);
+}
+
+/* Checkbox marcado · navy com check branco (mesma receita da library) */
+.vds-sr-filter-list input[type="checkbox"]:checked {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.7 9.5 3.6' fill='none' stroke='%23FFFFFF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 10px 10px no-repeat,
+    linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  border-color: var(--via-navy);
+}
+
+/* Dark: a caixa navy marcada precisa de aro claro pra não sumir no card */
+[data-theme="dark"] .vds-sr-filter-list input[type="checkbox"]:checked {
+  border-color: rgba(255, 255, 255, 0.30);
 }
 
 /* ---------- Main ---------- */
@@ -533,7 +575,7 @@
 .vds-sr-result-type.accent {
   background: var(--via-navy-05);
   color: var(--via-accent-warm);
-  border: 1px solid rgba(10, 31, 59, 0.13);
+  border: 1px solid var(--via-navy-12); /* navy cru sumia no dark · token adapta */
 }
 
 .vds-sr-result-type.ink {

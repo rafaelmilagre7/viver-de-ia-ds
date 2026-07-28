@@ -340,7 +340,9 @@
   letter-spacing: -0.012em;
   margin-bottom: 3px;
 }
-.vds-set-avatar-row span {
+/* escopado ao bloco de texto — `.vds-set-avatar-row span` pegava TAMBÉM o
+   próprio avatar (que é <span>) e pintava o "RM" de cinza-muted sobre navy */
+.vds-set-avatar-row > div span {
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);

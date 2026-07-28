@@ -15,7 +15,7 @@ export default function Stats() {
       <DocsHeader
         eyebrow="Componentes · stats"
         title={<>Número <em>grande</em>, contexto pequeno.</>}
-        lede="Stats são tipografia de primeira classe — Geist 300 em tabular-nums, navy. O eyebrow uppercase em cima nomeia. A linha abaixo dá o contexto humano ('Efizi · 90 dias'). Sem barras, sem gráficos — o número fala."
+        lede="Stats são tipografia de primeira classe — Geist semibold em tabular-nums, navy. O eyebrow uppercase em cima nomeia. A linha abaixo dá o contexto humano ('Efizi · 90 dias'). Sem barras, sem gráficos — o número fala."
       />
 
       <Section title="Linha de 4" meta="hairline divider entre">

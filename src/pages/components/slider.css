@@ -48,6 +48,8 @@
 }
 
 .via-slider {
+  --sl-fill-a: var(--via-navy);
+  --sl-fill-b: var(--via-blue);
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
@@ -56,11 +58,18 @@
   outline: none;
   background: linear-gradient(
     to right,
-    var(--via-navy) 0%,
-    var(--via-blue) var(--p, 0%),
+    var(--sl-fill-a) 0%,
+    var(--sl-fill-b) var(--p, 0%),
     var(--via-navy-08) var(--p, 0%)
   );
   box-shadow: 0 1px 0 var(--via-edge-hi) inset;
+}
+
+/* Dark · --via-navy/--via-blue não invertem: o preenchimento sumia no card
+   escuro. Rampa chart-ink (navy claro adaptável) devolve a leitura. */
+[data-theme="dark"] .via-slider-card .via-slider {
+  --sl-fill-a: var(--via-chart-ink-2);
+  --sl-fill-b: var(--via-chart-ink);
 }
 
 .via-slider::-webkit-slider-thumb {
@@ -68,10 +77,11 @@
   width: 22px;
   height: 22px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-glass-card);
+  /* alça é FÍSICA — branca fixa nos 2 temas (glass adaptativo virava bolha escura no dark) */
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 1), rgba(247, 248, 250, 0.92));
   border: 2px solid var(--via-navy);
   box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
+    0 1px 0 rgba(255, 255, 255, 1) inset,
     0 4px 10px -2px var(--via-shadow-ink-30),
     0 0 0 0 var(--via-shadow-ink-20);
   cursor: grab;
@@ -109,10 +119,10 @@
   width: 22px;
   height: 22px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-glass-card);
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 1), rgba(247, 248, 250, 0.92));
   border: 2px solid var(--via-navy);
   box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
+    0 1px 0 rgba(255, 255, 255, 1) inset,
     0 4px 10px -2px var(--via-shadow-ink-30);
   cursor: grab;
   transition:

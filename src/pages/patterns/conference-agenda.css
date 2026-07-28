@@ -96,6 +96,8 @@
   box-shadow: 0 10px 22px -10px var(--via-shadow-ink-40);
 }
 
+/* Linha de luz FIXA · o pill é navy nos 2 temas; com var(--via-accent)
+   (= navy) ela sumia no claro e só metade aparecia no escuro. */
 .vds-cf-day.active::after {
   content: '';
   position: absolute;
@@ -103,7 +105,7 @@
   right: 0;
   top: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--via-accent), var(--via-accent-warm), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.32), transparent);
 }
 
 .vds-cf-day .dn {
@@ -113,8 +115,10 @@
   color: var(--via-ink-3);
 }
 
+/* var(--via-accent) = navy → "QUI" ficava navy sobre pill navy (invisível
+   nos 2 temas). Pill é navy fixo · rótulo claro fixo. */
 .vds-cf-day.active .dn {
-  color: var(--via-accent);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .vds-cf-day .dt {

@@ -24,7 +24,7 @@ export default function Toggle() {
       <DocsHeader
         eyebrow="Componentes · toggle"
         title={<>Pílula <em>seca</em>, dot que desliza.</>}
-        lede="Toggle é sempre on/off explícito. O fundo vira navy quando ativo, o dot desliza 22px. Sem ícone dentro do toggle — o significado está no label ao lado."
+        lede="Toggle é sempre on/off explícito. O fundo vira navy quando ativo, o dot desliza 18px. Sem ícone dentro do toggle — o significado está no label ao lado."
       />
 
       <Section title="Estados" meta="on · off · disabled">

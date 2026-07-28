@@ -37,6 +37,13 @@
     0 1px 2px var(--via-shadow-ink-03);
   flex-shrink: 0;
 }
+/* radial branco fixo deixava o chip claro no dark com ícone near-white
+   por cima → ícone invisível (medido). Sheen cai pra alpha sutil. */
+[data-theme='dark'] .vds-ve-icon {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)),
+    linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
+}
 .vds-ve-eyebrow {
   display: block;
   font-family: var(--via-font);
@@ -150,7 +157,10 @@
   padding: 36px 40px;
   background:
     radial-gradient(ellipse 70% 50% at 0% 0%, var(--via-navy-04) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-gray-50), var(--via-white));
+    /* --via-white é FIXO (#FFF nos 2 temas): no dark o gradient varria
+       de painel escuro pra BRANCO e o texto claro sumia por cima (medido).
+       --via-surface vale white no claro e card escuro no dark. */
+    linear-gradient(135deg, var(--via-gray-50), var(--via-surface));
   border: 0.5px solid var(--via-navy-08);
   border-radius: var(--via-radius-md);
 }

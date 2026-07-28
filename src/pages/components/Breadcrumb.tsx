@@ -14,11 +14,14 @@ export default function Breadcrumb() {
 
       <Section title="Padrão" meta="cinza · chevron · 11px">
         <nav className="via-bc">
-          <a>Mentoria</a>
+          {/* className="crumb" exige classe no <a>: o guard global de dark
+              ([data-theme="dark"] a:not([class]) → azul link) vence .via-bc a
+              por especificidade e pintava o caminho de azul — breadcrumb é cinza. */}
+          <a className="crumb">Mentoria</a>
           <ChevronRight size={12} strokeWidth={2} className="sep" />
-          <a>Cases</a>
+          <a className="crumb">Cases</a>
           <ChevronRight size={12} strokeWidth={2} className="sep" />
-          <a>E-commerce</a>
+          <a className="crumb">E-commerce</a>
           <ChevronRight size={12} strokeWidth={2} className="sep" />
           <span className="current">Efizi · +11.920 conversas</span>
         </nav>
@@ -27,7 +30,7 @@ export default function Breadcrumb() {
       <Section title="Em página" meta="acima do título">
         <div className="via-bc-frame">
           <nav className="via-bc">
-            <a>Cases</a>
+            <a className="crumb">Cases</a>
             <ChevronRight size={12} strokeWidth={2} className="sep" />
             <span className="current">Balzani &amp; Zimbel</span>
           </nav>

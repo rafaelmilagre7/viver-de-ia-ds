@@ -28,11 +28,22 @@
 .vds-empty > * { position: relative; z-index: 1; }
 
 .vds-empty-mark {
+  /* Tinta da marca geométrica · navy/blue no claro */
+  --vds-emp-ink: var(--via-navy);
+  --vds-emp-ink-2: var(--via-blue);
   width: 120px;
   height: 120px;
   display: block;
   margin-bottom: 8px;
   animation: vds-empty-mark-in 800ms var(--via-ease-out);
+}
+
+/* Dark · navy e blue não invertem: a marca virava constelação invisível
+   (traço navy a 30-40% sobre painel escuro — só a estrela sobrava, apagada).
+   Tinta clara nos 2 tons, mesma hierarquia. */
+[data-theme='dark'] .vds-empty-mark {
+  --vds-emp-ink: var(--via-text-primary);
+  --vds-emp-ink-2: #9FBDE4;
 }
 @keyframes vds-empty-mark-in {
   from { opacity: 0; transform: scale(0.92); }

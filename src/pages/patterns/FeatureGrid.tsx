@@ -18,7 +18,7 @@ export default function FeatureGrid() {
       <DocsHeader
         eyebrow="Padrões · grid de features"
         title={<>Ícone, headline, <em>uma linha</em>.</>}
-        lede="Grid de 3 ou 6 features. Ícone Lucide num quadrado navy@06, headline Geist 20 com italic numa palavra, descrição Inter 12. Use para apresentar pilares ou capacidades — não confunda com cards de produto."
+        lede="Grid de 3 ou 6 features. Ícone Lucide num quadrado navy@08, headline Geist 20 com a palavra-chave em cinza, descrição Inter 12. Use para apresentar pilares ou capacidades — não confunda com cards de produto."
       />
 
       <Section title="3 colunas" meta="usado em hero ou meio de página">

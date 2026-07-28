@@ -1,8 +1,11 @@
 .via-search-stage {
+  /* canto inferior-direito: navy fixo no claro — --via-navy-22 inverte pra
+     white-alpha no dark e virava mancha leitosa sobre o palco escuro */
+  --stage-glow: rgba(10, 31, 59, 0.22);
   padding: 56px 48px;
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30, 58, 95, 0.28) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-22) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--stage-glow) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-stage-1) 0%, var(--via-stage-2) 100%);
   border-radius: var(--via-radius-lg);
   display: flex;
@@ -10,6 +13,10 @@
   isolation: isolate;
   overflow: hidden;
   position: relative;
+}
+
+[data-theme="dark"] .via-search-stage {
+  --stage-glow: rgba(30, 58, 95, 0.35); /* eco azul do canto superior, família navy */
 }
 
 .via-search-stage::before {
@@ -32,7 +39,7 @@
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-lg);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 1px 0 var(--via-edge-hi) inset,
     0 24px 56px var(--via-shadow-ink-20),
     0 4px 12px var(--via-shadow-ink-06);
   overflow: hidden;

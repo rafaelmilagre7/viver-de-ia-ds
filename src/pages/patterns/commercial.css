@@ -669,7 +669,9 @@
   padding-top: 22px;
   border-top: 0.5px solid var(--via-navy-08);
 }
-.vds-com-proposal > footer strong {
+/* Só o rótulo "Próximo passo" é bloco — o strong DENTRO do em
+   (a data) fica inline, senão a frase quebra com ponto órfão. */
+.vds-com-proposal > footer > div > strong {
   display: block;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
@@ -820,4 +822,36 @@
   color: var(--via-ink-3);
   text-align: center;
   margin-top: 22px;
+}
+
+/* ============================================
+   PAPEL FIXO · one-pager (PDF A4), proposta (A4) e contrato
+   (documento legal) são mockups de papel impresso — o interior
+   NÃO herda o tema. Pina os tokens de luz no subtree: no dark
+   o documento continua papel branco e o wordmark preto do
+   header continua legível (herdando o tema ele sumia).
+   ============================================ */
+.vds-com-onepager,
+.vds-com-proposal,
+.vds-com-contract {
+  --via-surface: var(--via-white);
+  --via-text-primary: var(--via-navy);
+  --via-text: var(--via-gray-700);
+  --via-ink-3: #525C72;
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-06: rgba(10, 31, 59, 0.06);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-navy-12: rgba(10, 31, 59, 0.12);
+  --via-navy-14: rgba(10, 31, 59, 0.14);
+  --via-glass-card: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);
+  /* composites resolvem no :root ANTES de herdar — pinar por inteiro,
+     senão o ring/sombra chegam aqui já com os valores do dark */
+  --via-glass-ring: 1px solid rgba(10, 31, 59, 0.05);
+  --via-glass-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 12px 32px -14px rgba(10, 31, 59, 0.14),
+    0 2px 8px -4px rgba(10, 31, 59, 0.06);
+  --via-shadow-focus: 0 0 0 3px rgba(10, 31, 59, 0.15);
 }

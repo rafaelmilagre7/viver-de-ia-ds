@@ -48,9 +48,10 @@
   width: 18px;
   height: 18px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-surface);
+  /* dot é FÍSICO — branco fixo nos 2 temas (surface adaptativa sumia no dark) */
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 1), rgba(247, 248, 250, 0.92));
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
     0 2px 4px var(--via-shadow-ink-20);
   transition:
     left var(--via-dur) var(--via-ease-snap),
@@ -76,3 +77,24 @@
 }
 .via-switch.on .dot { left: 21px; }
 .via-switch:disabled { cursor: not-allowed; }
+
+/* Dark · --via-navy não inverte: trilho ativo navy some no canvas escuro
+   (e o off, em white-alpha, ficava MAIS claro que o on — affordance invertida).
+   Um passo de luz na família navy + hairline clara devolvem o estado. */
+[data-theme="dark"] .via-switch.on {
+  background: var(--via-blue-soft);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+[data-theme="dark"] .via-switch.on:hover:not(:disabled) {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 4px 12px -6px var(--via-shadow-ink-40);
+}
+[data-theme="dark"] .via-switch.on:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    var(--via-shadow-focus);
+}

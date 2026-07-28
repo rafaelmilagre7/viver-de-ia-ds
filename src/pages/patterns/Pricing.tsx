@@ -35,7 +35,7 @@ export default function Pricing() {
       <DocsHeader
         eyebrow="Padrões · pricing"
         title={<>Três tiers, <em>um destaque</em>.</>}
-        lede="Pricing canônico — 3 tiers, o do meio em navy sólido marcado 'Mais escolhido'. R$ em itálico Geist, número grande tabular, lista com check Lucide stroke. Botão pílula navy nos laterais; branco no destaque."
+        lede="Pricing canônico — 3 tiers, o do meio em navy sólido marcado 'Mais escolhido'. R$ menor em Geist, número grande tabular, lista com check Lucide stroke. Botão pílula navy nos laterais; branco no destaque."
       />
 
       <Section title="Conferência · 3 tiers" meta="featured no meio">

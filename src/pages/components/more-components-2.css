@@ -318,6 +318,9 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-sm);
   flex-shrink: 0;
+  /* Hairline que adapta: navy-16 vira branco 0.17 no escuro — sem ele o
+     círculo navy desaparecia sobre o card escuro (só as iniciais boiando) */
+  border: 1px solid var(--via-navy-16);
   box-shadow: 0 4px 12px var(--via-shadow-ink-20);
 }
 .vds-comments .body header {
@@ -422,6 +425,7 @@
   justify-content: center;
   font-family: var(--via-font-display);
   font-size: var(--via-fs-xs);
+  border: 1px solid var(--via-navy-16);
 }
 .vds-comments-input input {
   border: none;

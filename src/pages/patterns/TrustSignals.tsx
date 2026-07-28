@@ -130,7 +130,7 @@ function TrustReviewsSection() {
           </div>
           <div className="vds-trust-rating-stars">
             {[1, 2, 3, 4, 5].map((i) => (
-              <Star key={i} size={16} strokeWidth={1.8} style={{ fill: "var(--via-navy)", stroke: "var(--via-navy)" }} />
+              <Star key={i} size={16} strokeWidth={1.8} />
             ))}
           </div>
           <p className="vds-trust-rating-meta">
@@ -162,7 +162,7 @@ function TrustReviewsSection() {
               <Quote size={16} strokeWidth={1.8} className="vds-trust-review-mark" />
               <div className="vds-trust-review-stars">
                 {[...Array(r.stars)].map((_, j) => (
-                  <Star key={j} size={11} strokeWidth={1.8} style={{ fill: "var(--via-navy)", stroke: "var(--via-navy)" }} />
+                  <Star key={j} size={11} strokeWidth={1.8} />
                 ))}
               </div>
               <h4>{r.title}</h4>

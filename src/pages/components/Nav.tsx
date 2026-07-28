@@ -10,7 +10,7 @@ export default function Nav() {
       <DocsHeader
         eyebrow="Componentes · navegação"
         title={<>Sticky, <em>vidro leve</em>, hairline.</>}
-        lede="Nav padrão fica grudada no topo com glass de 18px e borda-inferior hairline. À esquerda, wordmark. No meio, links em uppercase 0.16em. À direita, um CTA e talvez um avatar. Duas variantes — light e dark."
+        lede="Nav padrão fica grudada no topo com glass de 20px e borda hairline. À esquerda, wordmark. No meio, links em peso médio com sublinhado que desliza no ativo. À direita, um CTA e talvez um avatar. Duas variantes — light e dark."
       />
 
       <Section title="Light · sobre off-white" meta="default">

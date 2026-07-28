@@ -491,7 +491,9 @@
 .vds-fp-drop-progress span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-navy), var(--via-navy-deep));
+  /* Série única = cor chapada · chart-ink adapta (navy no claro, azul
+     claro no escuro) — navy fixo sumia sobre o card escuro */
+  background: var(--via-chart-ink);
   border-radius: 2px;
   transition: width .3s ease;
 }
@@ -505,6 +507,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Mesmo tratamento do botão primary: hairline que adapta + fio de luz —
+     sem isso o círculo navy desaparecia sobre o card escuro */
+  border: 1px solid var(--via-navy-16);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset;
 }
 
 .vds-fp-drop-pct {
@@ -698,7 +704,9 @@
     radial-gradient(420px 240px at 0% 0%, rgba(46, 76, 118, 0.4), transparent 60%),
     linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   overflow: hidden;
-  border: 1px solid var(--via-navy-40);
+  /* Palco editorial FIXO: cor literal — navy-40 inverte pra branco 0.42
+     no escuro e virava contorno claro gritante no palco */
+  border: 1px solid rgba(10, 31, 59, 0.40);
 }
 
 .vds-fp-crop-image {
@@ -715,7 +723,9 @@
   height: 90%;
   border-radius: var(--via-radius-md);
   background:
-    radial-gradient(circle at 30% 30%, var(--via-navy-18), transparent 50%),
+    /* Interior do mockup FIXA as próprias cores (navy-18 inverte no escuro
+       e lavava a foto simulada de cinza claro) */
+    radial-gradient(circle at 30% 30%, rgba(10, 31, 59, 0.18), transparent 50%),
     radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.08), transparent 50%),
     linear-gradient(135deg, var(--via-blue-soft) 0%, var(--via-navy-darker) 100%);
 }
@@ -846,9 +856,62 @@
     var(--via-shadow-focus);
 }
 
+/* Range custom por token — o nativo com accent-color + color-scheme:dark
+   rendia trilho branco gritante e thumb navy invisível no tema escuro.
+   Preenchimento entra por --fp-fill (inline, vindo do estado React). */
 .vds-fp-crop-slider input[type="range"] {
   flex: 1;
-  accent-color: var(--via-navy);
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: var(--via-radius-pill);
+  background: linear-gradient(
+    90deg,
+    var(--via-chart-ink) 0 var(--fp-fill, 20%),
+    var(--via-navy-08) var(--fp-fill, 20%) 100%
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.vds-fp-crop-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-chart-ink);
+  border: 2px solid var(--via-surface);
+  box-shadow: 0 1px 4px var(--via-shadow-ink-20);
+  transition: transform var(--via-dur) var(--via-ease-snap);
+}
+
+.vds-fp-crop-slider input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.1); }
+
+.vds-fp-crop-slider input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-chart-ink);
+  border: 2px solid var(--via-surface);
+  box-shadow: 0 1px 4px var(--via-shadow-ink-20);
+}
+
+.vds-fp-crop-slider input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-08);
+}
+
+.vds-fp-crop-slider input[type="range"]::-moz-range-progress {
+  height: 4px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-chart-ink);
+}
+
+.vds-fp-crop-slider input[type="range"]:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-fp-crop-rotation {

@@ -81,7 +81,8 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
   margin-top: -68px;
-  border: 4px solid var(--via-white);
+  /* cutout: acompanha a superfície nos 2 temas (branco fixo virava halo no dark) */
+  border: 4px solid var(--via-surface);
   box-shadow: 0 8px 18px -8px var(--via-shadow-ink-30);
   position: relative;
   margin-bottom: 18px;
@@ -397,6 +398,12 @@
   opacity: 1;
 }
 
+/* Navy fixo some sobre o card escuro — o lead (o card mais importante)
+   perdia justamente o marcador que os outros mantinham */
+[data-theme="dark"] .vds-team-card.lead .vds-team-flag {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55) 30%, rgba(255, 255, 255, 0.55) 70%, transparent);
+}
+
 .vds-team-head {
   display: flex;
   align-items: center;
@@ -423,7 +430,8 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
-  border: 3px solid var(--via-white);
+  /* cutout: acompanha a superfície nos 2 temas (branco fixo virava halo no dark) */
+  border: 3px solid var(--via-surface);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 0 0 1px var(--via-navy-08),
@@ -452,7 +460,8 @@
   align-items: center;
   justify-content: center;
   font-weight: var(--via-fw-bold);
-  border: 2px solid var(--via-white);
+  /* cutout: acompanha a superfície nos 2 temas (branco fixo virava halo no dark) */
+  border: 2px solid var(--via-surface);
   box-shadow: 0 4px 8px -2px var(--via-shadow-ink-20);
 }
 
@@ -760,11 +769,19 @@
   font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
   letter-spacing: 0.02em;
-  border: 2px solid var(--via-white);
+  /* cutout: acompanha a superfície nos 2 temas (branco fixo virava halo no dark) */
+  border: 2px solid var(--via-surface);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px var(--via-navy-08),
     0 4px 10px -4px var(--via-shadow-ink-20);
+}
+/* No dark o sheen branco 0.55 lavava o avatar e apagava as iniciais
+   (claro sobre claro) — sheen bem mais discreto sobre o vidro escuro */
+[data-theme="dark"] .vds-member-av {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.12), transparent 62%),
+    linear-gradient(135deg, var(--via-navy-12), var(--via-navy-06));
 }
 /* Offline recua pela OPACIDADE do conteúdo, não por anel cinza */
 .vds-member-av.offline { opacity: 0.72; }
@@ -776,7 +793,8 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2.5px solid var(--via-white);
+  /* cutout: acompanha a superfície nos 2 temas (branco fixo virava halo no dark) */
+  border: 2.5px solid var(--via-surface);
   background: var(--via-success);
 }
 
@@ -802,6 +820,11 @@
 .vds-member-dot.away { background: var(--via-navy); }
 .vds-member-dot.busy { background: var(--via-navy); }
 .vds-member-dot.offline { background: rgba(10, 31, 59, 0.35); }
+/* Navy fixo some sobre surface escura — no dark a bolinha "resto navy"
+   vira um slate da mesma família, e offline continua recuado (fraco) */
+[data-theme="dark"] .vds-member-dot.away,
+[data-theme="dark"] .vds-member-dot.busy { background: #56719F; }
+[data-theme="dark"] .vds-member-dot.offline { background: rgba(255, 255, 255, 0.20); }
 
 .vds-member-user p {
   margin: 0 0 3px;

@@ -61,7 +61,6 @@ export default function ShowcaseLeadersAI() {
           atrelada, governança séria, decisões reais.
         </p>
         <div className="la-pill">
-          <span className="dot" />
           14 e 15 de outubro · São Paulo · Auditório Pinheiros
         </div>
       </section>

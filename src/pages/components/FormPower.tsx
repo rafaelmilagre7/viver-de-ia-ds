@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, type CSSProperties } from 'react';
 import {
   Check, X, ChevronDown, Search, Upload as UploadIcon, FileText,
   Image as ImageIcon, ZoomIn, ZoomOut, RotateCw, Bold, Italic,
@@ -268,7 +268,7 @@ function ImageCropperSection() {
   const [rotation, setRotation] = useState(0);
 
   return (
-    <Section title="Image cropper · editor de avatar editorial" meta="zoom · rotate · circle/square mask · preview live">
+    <Section title="Image cropper · editor de avatar editorial" meta="zoom · rotate · máscara circular · preview live">
       <article className="vds-fp-crop">
         <div className="vds-fp-crop-stage">
           <div
@@ -304,6 +304,7 @@ function ImageCropperSection() {
                 value={zoom}
                 onChange={(e) => setZoom(parseFloat(e.target.value))}
                 aria-label="Nível de zoom"
+                style={{ '--fp-fill': `${(((zoom - 1) / 2) * 100).toFixed(1)}%` } as CSSProperties}
               />
               <button type="button" aria-label="Aumentar zoom" onClick={() => setZoom((z) => Math.min(3, z + 0.1))}>
                 <ZoomIn size={11} strokeWidth={2.4} />
@@ -363,7 +364,7 @@ A diferença foi enorme:
 Próximo passo · validar com [dados de produção](https://nina.viverdeia.ai/audit).`;
 
   return (
-    <Section title="Markdown editor · com toolbar + preview" meta="toolbar editorial · split view · syntax highlighting básico">
+    <Section title="Markdown editor · com toolbar + preview" meta="toolbar editorial · abas escrever/preview · ⌘+Enter pra enviar">
       <article className="vds-fp-md">
         <header className="vds-fp-md-toolbar">
           <div className="vds-fp-md-tools">

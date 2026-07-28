@@ -7,7 +7,7 @@ export default function Badges() {
     <>
       <DocsHeader
         eyebrow="Componentes · badges"
-        title={<>Pequenos, <em>uppercase</em>, raramente saturados.</>}
+        title={<>Pequenos, <em>quietos</em>, raramente saturados.</>}
         lede="Badges são pequenas etiquetas categóricas. Quatro variantes — solid (forte, navy), soft (default), outline (sutil), status (com cor de significado). Use só quando o item precisa de classificação visível."
       />
 
@@ -51,11 +51,11 @@ export default function Badges() {
         <table className="vds-token-table">
           <thead><tr><th>Token</th><th>Valor</th></tr></thead>
           <tbody>
-            <tr><td className="tok">Font</td><td className="val">Inter 10 · 700</td></tr>
-            <tr><td className="tok">Tracking</td><td className="val">0.20em uppercase</td></tr>
-            <tr><td className="tok">Padding</td><td className="val">6px 11px</td></tr>
-            <tr><td className="tok">Radius</td><td className="val">6px</td></tr>
-            <tr><td className="tok">Border</td><td className="val">1px · alpha 12%</td></tr>
+            <tr><td className="tok">Font</td><td className="val">Geist 11 · 500</td></tr>
+            <tr><td className="tok">Tracking</td><td className="val">-0.004em · sentence case</td></tr>
+            <tr><td className="tok">Padding</td><td className="val">5px 11px</td></tr>
+            <tr><td className="tok">Radius</td><td className="val">pill (999px)</td></tr>
+            <tr><td className="tok">Border</td><td className="val">1px · navy alpha 12–20%</td></tr>
           </tbody>
         </table>
       </Section>

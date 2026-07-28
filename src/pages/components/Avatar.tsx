@@ -16,7 +16,7 @@ export default function Avatar() {
       <DocsHeader
         eyebrow="Componentes · avatar"
         title={<>Iniciais em <em>Geist</em>, círculo navy.</>}
-        lede="Avatar com iniciais em serif sobre fundo navy ou cinza. Quando há foto, ela vem em duotone navy. Tamanhos sm/md/lg para nav, lista e perfil — sempre pareados ao tamanho do texto vizinho."
+        lede="Avatar com iniciais em Geist sobre fundo navy ou cinza. Quando há foto, ela vem em duotone navy. Tamanhos sm/md/lg para nav, lista e perfil — sempre pareados ao tamanho do texto vizinho."
       />
 
       <Section title="Tamanhos" meta="sm 28 · md 40 · lg 56">
