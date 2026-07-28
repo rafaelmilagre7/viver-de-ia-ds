@@ -34,11 +34,13 @@
   gap: var(--via-space-3);
   transition: var(--via-t);
 }
+/* Lift no hover · receita canônica do vidro (--via-glass-shadow-lift), que
+   já traz o spread negativo. A sombra bespoke anterior era
+   0 24px 56px var(--via-navy-16) — sem spread, e navy-16 vira
+   rgba(255,255,255,0.17) no dark: auréola branca de 56px em volta do tile. */
 .vds-kpi-tile.via-metric:hover {
   transform: translateY(-2px);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 24px 56px var(--via-navy-16);
+  box-shadow: var(--via-glass-shadow-lift);
 }
 .vds-kpi-tile .via-delta {
   display: inline-flex;
@@ -49,6 +51,18 @@
 
 /* A sparkline fecha o card — encosta na base sem margem morta */
 .vds-kpi-tile .via-spark { height: 40px; margin-top: 2px; }
+
+/* A LINHA é dado: usa a tinta de dado, que adapta (navy no claro, azul
+   claro no escuro). O default da camada é --via-navy cru, fixo nos dois
+   temas — no dark ficava navy sobre card navy (1,01:1) e só sobrava a
+   área. E o traço é 1,5px REAL: o viewBox estica no eixo X (preserve-
+   AspectRatio="none") e a espessura mudava conforme a largura do tile. */
+.vds-kpi-tile .via-spark path {
+  stroke: var(--via-chart-ink);
+  vector-effect: non-scaling-stroke;
+}
+/* a área continua só preenchimento — não herda o stroke da regra acima */
+.vds-kpi-tile .via-spark .via-spark__area { stroke: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .vds-kpi-tile.via-metric { transition: none; }

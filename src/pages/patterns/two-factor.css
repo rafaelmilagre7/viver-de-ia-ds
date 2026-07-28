@@ -23,6 +23,12 @@
     radial-gradient(900px 500px at 100% 30%, rgba(10,31,59,0.07), transparent 60%),
     radial-gradient(700px 400px at 50% 100%, rgba(30,58,95,0.06), transparent 60%);
   border-radius: var(--via-radius-xl);
+  /* Sem o mask a atmosfera corta reta na borda do bloco e vira uma
+     "laje" cinza visível atrás do card (o gradiente ainda tem alfa
+     quando encontra o limite do elemento). O mask leva o alfa a zero
+     antes da borda · atmosfera sem contorno. */
+  -webkit-mask-image: radial-gradient(closest-side ellipse at 50% 50%, #000 18%, transparent 100%);
+  mask-image: radial-gradient(closest-side ellipse at 50% 50%, #000 18%, transparent 100%);
 }
 
 /* ===== Card principal · liquid glass forte ================== */
@@ -44,6 +50,15 @@
     0 14px 28px -10px var(--via-navy-10);
   overflow: hidden;
   isolation: isolate;
+}
+/* --via-navy-22/10 viram rgba(255,255,255,·) no dark · a sombra de
+   64px vira uma auréola branca em volta do card. Sombra preta. */
+[data-theme="dark"] .vds-2fa-card {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
+    0 30px 64px -24px rgba(0,0,0,0.62),
+    0 14px 28px -10px rgba(0,0,0,0.42);
 }
 .vds-2fa-card::before {
   content: '';
@@ -88,9 +103,16 @@
   justify-content: center;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 0 0 1px rgba(255,255,255,0.85),
     0 6px 16px -4px var(--via-navy-30),
     0 2px 6px -2px var(--via-navy-14);
+}
+/* Sem aro branco (invisível no claro, halo no escuro) e sem glow:
+   no escuro a sombra navy inverteria pra branca. */
+[data-theme="dark"] .vds-2fa-card__icon {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 6px 16px -4px rgba(0,0,0,0.55),
+    0 2px 6px -2px rgba(0,0,0,0.40);
 }
 .vds-2fa-card__icon::before {
   content: '';
@@ -191,6 +213,12 @@
     0 12px 28px -10px var(--via-navy-14),
     0 4px 10px -3px var(--via-navy-08);
 }
+[data-theme="dark"] .vds-2fa-method:hover {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 12px 28px -10px rgba(0,0,0,0.55),
+    0 4px 10px -3px rgba(0,0,0,0.38);
+}
 .vds-2fa-method:hover::before { opacity: 0.7; }
 .vds-2fa-method:active { transform: translateY(0); }
 .vds-2fa-method:focus-visible {
@@ -214,9 +242,14 @@
   position: relative;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 0 0 1px rgba(255,255,255,0.85),
     0 4px 10px -2px var(--via-navy-22),
     0 1px 3px -1px var(--via-navy-12);
+}
+[data-theme="dark"] .vds-2fa-method__icon {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 4px 10px -2px rgba(0,0,0,0.50),
+    0 1px 3px -1px rgba(0,0,0,0.38);
 }
 .vds-2fa-method__icon::before {
   content: '';
@@ -288,18 +321,27 @@
     linear-gradient(#fff, #fff);
   -webkit-mask-composite: source-in;
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.85),
+    inset 0 0 0 1px rgba(255,255,255,0.14),
     0 12px 24px -8px var(--via-navy-30),
     0 4px 10px -3px var(--via-navy-14);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+[data-theme="dark"] .vds-2fa-qr {
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.14),
+    0 12px 24px -8px rgba(0,0,0,0.60),
+    0 4px 10px -3px rgba(0,0,0,0.42);
+}
+/* A folha do QR é superfície FIXA (moldura navy que não adapta).
+   Com var(--via-bg) ela virava #0B1220 no escuro e os marcadores
+   navy-deep sumiam · 1,03:1. Branco fixo nos dois temas. */
 .vds-2fa-qr::before {
   content: '';
   position: absolute;
   inset: 12px;
-  background: var(--via-bg);
+  background: var(--via-white);
   border-radius: var(--via-radius-sm);
   background-image:
     radial-gradient(circle at 22% 22%, var(--via-navy-deep) 4px, transparent 4px),
@@ -378,9 +420,14 @@
   color: var(--via-white);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 0 0 1px rgba(255,255,255,0.9),
     0 18px 36px -10px var(--via-navy-30),
     0 8px 16px -6px var(--via-navy-22);
+}
+[data-theme="dark"] .vds-2fa-done__tile {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 18px 36px -10px rgba(0,0,0,0.60),
+    0 8px 16px -6px rgba(0,0,0,0.44);
 }
 .vds-2fa-done__tile::before {
   content: '';
@@ -429,6 +476,13 @@
   overflow: hidden;
   isolation: isolate;
   transition: all 320ms cubic-bezier(.16, 1, .3, 1);
+}
+[data-theme="dark"] .vds-2fa-anatomy-card {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-edge-lo),
+    0 18px 40px -16px rgba(0,0,0,0.55),
+    0 6px 14px -6px rgba(0,0,0,0.36);
 }
 .vds-2fa-anatomy-card::before {
   content: '';

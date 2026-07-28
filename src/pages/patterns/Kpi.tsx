@@ -10,7 +10,8 @@ import './kpi.css';
  * · .via-metric__label/value/foot  label uppercase, número tabular, rodapé
  * · .via-metric__value small       prefixo de moeda menor que o número
  * · .via-delta --up/--down         variação com cor semântica
- * · .via-spark (+ --down)          sparkline sem gradiente bespoke
+ * · .via-spark                     sparkline sem gradiente bespoke
+ *                                  (linha em --via-chart-ink · adapta no dark)
  */
 function Tile({
   lbl, cur, num, delta, path, meta,
@@ -50,7 +51,7 @@ export default function Kpi() {
       <DocsHeader
         eyebrow="Padrões · KPI"
         title={<>Tile, número, <em>sparkline</em>.</>}
-        lede="Tile de KPI da camada de dados: label uppercase em cima, número tabular no display, variação com cor semântica ao lado e sparkline navy embaixo. Sem grid, sem axis labels — é uma intuição visual, não um gráfico. Prefixo de moeda entra menor que o número, porque o dado é o protagonista."
+        lede="Tile de KPI da camada de dados: label uppercase em cima, número tabular no display, variação com cor semântica ao lado e sparkline na tinta de dado embaixo. Sem grid, sem axis labels — é uma intuição visual, não um gráfico. Prefixo de moeda entra menor que o número, porque o dado é o protagonista."
       />
 
       <Section title="2 tiles" meta="formato canônico · .via-metric">

@@ -7,11 +7,21 @@
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-pill);
+  /* sombra FIXA em navy · --via-navy-08/04 invertem pra branco no dark e
+     viram halo/auréola em volta do trilho */
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 4px 12px var(--via-navy-08),
-    0 1px 3px var(--via-navy-04);
+    0 4px 12px rgba(10, 31, 59, 0.08),
+    0 1px 3px rgba(10, 31, 59, 0.04);
   gap: var(--via-space-0_5);
+}
+
+/* dark · sombra preta de verdade (a navy some no escuro) */
+[data-theme='dark'] .via-seg {
+  box-shadow:
+    0 1px 0 var(--via-edge-hi) inset,
+    0 6px 18px rgba(0, 0, 0, 0.42),
+    0 1px 3px rgba(0, 0, 0, 0.30);
 }
 
 .via-seg-item {
@@ -66,6 +76,32 @@
     var(--via-shadow-focus);
 }
 
+/* dark · o chip selecionado tem que SUBIR. Navy sobre trilho escuro dá
+   1,01:1 (a seleção some). No escuro ele inverte: superfície clara + tinta
+   navy — mesmo mecanismo do .vds-bs-radio em overlays.css. */
+[data-theme='dark'] .via-seg-item.active {
+  background: linear-gradient(180deg, var(--via-text-primary), var(--via-text-body));
+  color: var(--via-text-inverse);
+  border-color: var(--via-text-primary);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45) inset,
+    0 4px 12px -3px rgba(0, 0, 0, 0.55);
+}
+
+[data-theme='dark'] .via-seg-item.active:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45) inset,
+    0 6px 16px -3px rgba(0, 0, 0, 0.65);
+}
+
+/* o anel de foco tem que sobreviver ao override acima (empate de
+   especificidade — sem isto o teclado perde o anel no dark) */
+[data-theme='dark'] .via-seg-item.active:focus-visible {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45) inset,
+    var(--via-shadow-focus);
+}
+
 /* Underline tabs · classic editorial */
 .via-ultabs {
   display: flex;
@@ -96,7 +132,9 @@
   left: 50%;
   right: 50%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--via-navy) 50%, transparent);
+  /* tinta que adapta · --via-navy fixo dava 1,13:1 no dark (indicador sumia,
+     mais escuro que a própria hairline da régua) */
+  background: linear-gradient(90deg, transparent, var(--via-text-primary) 50%, transparent);
   border-radius: 2px 2px 0 0;
   transition: all 280ms var(--via-ease-out);
 }
@@ -106,10 +144,11 @@
   font-weight: var(--via-fw-semibold);
 }
 
+/* sem glow: --via-navy-30 vira branco 32% no dark e o 0 0 12px era a única
+   coisa visível — uma auréola no lugar do traço */
 .via-ultab.active::after {
   left: 0;
   right: 0;
-  box-shadow: 0 0 12px var(--via-navy-30);
 }
 
 .via-ultab:hover {
@@ -159,8 +198,10 @@
   color: var(--via-text-primary);
 }
 
+/* badge da aba ativa · navy fixo dava 1,13:1 sobre o fundo escuro (a pílula
+   sumia e ficava mais apagada que a da aba inativa) · tinta que adapta */
 .via-ultab.active .count {
-  background: var(--via-navy);
-  border-color: var(--via-navy);
-  color: var(--via-white);
+  background: var(--via-text-primary);
+  border-color: var(--via-text-primary);
+  color: var(--via-text-inverse);
 }

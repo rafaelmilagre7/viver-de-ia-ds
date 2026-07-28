@@ -26,18 +26,34 @@ export default function Dropdown() {
 
       <Section title="Sort" meta="seleção única · glass menu">
         <div className="via-dd-stage">
-          <button className="via-dd-trigger" onClick={() => setOpen(!open)}>
+          <button
+            type="button"
+            className="via-dd-trigger"
+            aria-haspopup="listbox"
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
+          >
             <span className="lbl">Ordenar</span>
             <span className="val">{sel.l}</span>
             <ChevronDown size={14} strokeWidth={2.2} className={`chev ${open ? 'rot' : ''}`} />
           </button>
           {open && (
-            <ul className="via-dd-menu">
+            <ul className="via-dd-menu" role="listbox" aria-label="Ordenar">
               {opts.map((o) => (
                 <li
                   key={o.v}
+                  role="option"
+                  aria-selected={val === o.v}
+                  tabIndex={0}
                   className={val === o.v ? 'active' : ''}
                   onClick={() => { setVal(o.v); setOpen(false); }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setVal(o.v);
+                      setOpen(false);
+                    }
+                  }}
                 >
                   {o.l}
                   {val === o.v && <Check size={14} strokeWidth={2.5} />}

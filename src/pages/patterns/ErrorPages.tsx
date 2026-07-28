@@ -81,7 +81,6 @@ export default function ErrorPages() {
           <div className="vds-err-stage" role="region" aria-live="polite" aria-label={def.label}>
             <div className="vds-err-content">
               <span className={`vds-err-pill ${def.tone === 'attn' ? 'is-attn' : ''} ${def.tone === 'danger' ? 'is-danger' : ''}`}>
-                <span className="vds-err-pill__dot" aria-hidden="true" />
                 {def.label}
               </span>
 

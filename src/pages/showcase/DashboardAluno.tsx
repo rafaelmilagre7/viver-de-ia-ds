@@ -65,9 +65,12 @@ export default function ShowcaseDashboardAluno() {
                 transform="rotate(-90 60 60)"
               />
               <defs>
+                {/* chart-ink adapta no dark (navy→azul claro). Com navy/blue
+                    crus o arco ficava mais ESCURO que a trilha no tema
+                    escuro — o anel lia invertido. */}
                 <linearGradient id="dba-grad" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0%" stopColor="var(--via-navy)" />
-                  <stop offset="100%" stopColor="var(--via-blue)" />
+                  <stop offset="0%" stopColor="var(--via-chart-ink)" />
+                  <stop offset="100%" stopColor="var(--via-chart-ink-2)" />
                 </linearGradient>
               </defs>
               <text x="60" y="58" textAnchor="middle" className="dba-ring-pct">42%</text>

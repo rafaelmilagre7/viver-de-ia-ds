@@ -4,7 +4,9 @@
   background:
     radial-gradient(540px 220px at 50% 0%, var(--via-navy-04), transparent 70%),
     var(--via-glass-card);
-  border: 1.5px dashed var(--via-navy-25);
+  /* hairline tracejada · 1px é a régua de contorno do sistema (1.5px engrossa
+     o card e briga com o resto das superfícies) */
+  border: 1px dashed var(--via-navy-25);
   border-radius: var(--via-radius-lg);
   text-align: center;
   display: flex;
@@ -25,9 +27,14 @@
 
 .via-upload:hover,
 .via-upload.dragover {
-  border-color: var(--via-navy);
+  /* navy literal SOME no dark (borda mais escura que o palco): a borda
+     "endurecida" do drag-over precisa de token que adapta */
+  border-color: var(--via-navy-60);
+  /* o preenchimento do drag-over PRECISA ser token adaptativo: em navy literal
+     ele escurecia a zona no dark (feedback invertido — a zona apagava em vez
+     de acender ao receber o arquivo) */
   background:
-    radial-gradient(540px 220px at 50% 0%, rgba(10, 31, 59, 0.07), transparent 70%),
+    radial-gradient(540px 220px at 50% 0%, var(--via-navy-08), transparent 70%),
     var(--via-glass-card);
   transform: translateY(-2px);
   box-shadow: var(--via-glass-shadow-lift);
@@ -37,7 +44,7 @@
 
 .via-upload:focus-visible {
   outline: none;
-  border-color: var(--via-navy);
+  border-color: var(--via-navy-60);
   box-shadow: var(--via-shadow-focus);
 }
 
@@ -72,9 +79,12 @@
   letter-spacing: -0.005em;
   cursor: pointer;
   margin-top: 10px;
+  /* sombra em LITERAL: o botão é navy sólido nos DOIS temas, então não pode
+     herdar navy-40/60 — esses tokens viram BRANCO no dark e a pílula ganhava
+     halo branco sobre o palco escuro. */
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 6px 14px -4px var(--via-navy-40);
+    0 6px 14px -4px rgba(10, 31, 59, 0.40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -85,12 +95,26 @@
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -4px var(--via-navy-60);
+    0 8px 18px -4px rgba(10, 31, 59, 0.60);
 }
 
 .via-upload .cta:active { transform: translateY(0); }
 
-.via-upload .cta:focus-visible {
+/* no dark a sombra navy some no palco navy · profundidade vem do preto */
+[data-theme='dark'] .via-upload .cta {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 6px 16px -6px rgba(0, 0, 0, 0.55);
+}
+
+[data-theme='dark'] .via-upload .cta:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 10px 22px -6px rgba(0, 0, 0, 0.65);
+}
+
+.via-upload .cta:focus-visible,
+[data-theme='dark'] .via-upload .cta:focus-visible {
   outline: none;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
@@ -184,6 +208,14 @@
   background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
   border-radius: var(--via-radius-pill);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+/* o trilho é token que INVERTE (navy-06 → branco@07 no dark), mas o
+   preenchimento era navy fixo: a parte "enviada" ficava mais ESCURA que a
+   parte vazia e a barra lia invertida. No dark o dado usa a rampa clara. */
+[data-theme='dark'] .via-upload-list .bar span {
+  background: linear-gradient(90deg, var(--via-data-2-dark), var(--via-data-1-dark));
+  box-shadow: none;
 }
 
 .via-upload-list .x {

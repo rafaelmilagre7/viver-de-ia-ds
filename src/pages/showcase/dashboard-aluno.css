@@ -16,7 +16,9 @@
 /* NAV */
 .dba-nav {
   position: sticky;
-  top: 0;
+  /* 64px = altura do header do shell (sticky, z-50). Com top:0 a nav do
+     produto ficava INTEIRA embaixo do header ao rolar — sumia da tela. */
+  top: 64px;
   z-index: 40;
   display: flex;
   align-items: center;
@@ -84,7 +86,10 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
-  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+  /* superfície navy FIXA (não adapta) → linha de luz FIXA.
+     Com var(--via-edge-hi) virava 0.95 no claro (risco branco duro) e
+     0.08 no escuro (some). */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 @media (max-width: 860px) {
@@ -160,7 +165,9 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
-  fill: var(--via-navy-deep);
+  /* era var(--via-navy-deep) — hex fixo #02162A: no tema escuro o número
+     ficava navy sobre navy (1,07:1, ilegível). text-primary adapta. */
+  fill: var(--via-text-primary);
   letter-spacing: -0.02em;
   font-feature-settings: 'tnum' 1;
 }
@@ -236,9 +243,11 @@
   backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
+  /* sombra de elevação FIXA em navy: navy-10/22 viram branco no dark e a
+     pill ganhava halo branco (pior no hover). */
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px rgba(10, 31, 59, 0.14);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -257,8 +266,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px rgba(10, 31, 59, 0.26),
+    0 2px 6px -3px rgba(10, 31, 59, 0.14);
 }
 
 .dba-card-link:active { transform: translateY(0); }
@@ -280,9 +289,11 @@
   isolation: isolate;
   display: flex;
   flex-direction: column;
+  /* superfície navy FIXA → sombra e linha de luz FIXAS.
+     navy-60 vira branco 55% no dark = auréola branca embaixo do card. */
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 18px 44px -22px var(--via-navy-60);
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 18px 44px -22px rgba(2, 22, 42, 0.60);
 }
 
 .dba-continue-aura {
@@ -335,10 +346,13 @@
   margin-bottom: 20px;
 }
 
+/* O card é navy FIXO nos 2 temas → a barra tem que ser branca FIXA.
+   Era white→var(--via-stage-1): no dark stage-1 vira #131C30 e o
+   preenchimento sumia dentro do navy. */
 .dba-continue-bar > span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-white), var(--via-stage-1));
+  background: #FFFFFF;
   border-radius: var(--via-radius-pill);
 }
 
@@ -499,7 +513,9 @@
   border-color: var(--via-navy);
 }
 
-.dba-modulo.locked { opacity: 0.5; }
+/* recuo do módulo bloqueado · 0.5 deixava o título a 2,6:1 no claro
+   (ilegível). 0.62 mantém a hierarquia e passa de 3,5:1. */
+.dba-modulo.locked { opacity: 0.62; }
 
 .dba-modulo-body strong {
   display: block;
@@ -523,10 +539,13 @@
   overflow: hidden;
 }
 
+/* Preenchimento com o ink de dado (adapta no dark). Era gradiente
+   navy→blue: no tema escuro o preenchido ficava MAIS ESCURO que a trilha
+   (branco 7%) e a barra lia invertida. Série única = sem gradiente. */
 .dba-modulo-bar > span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
+  background: var(--via-chart-ink);
   border-radius: var(--via-radius-pill);
 }
 
@@ -606,9 +625,11 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  /* tile navy FIXO → sombra FIXA. navy-40 vira branco 42% no dark e
+     desenhava uma auréola branca em volta da medalha. */
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -4px var(--via-navy-40);
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 6px 14px -4px rgba(2, 22, 42, 0.45);
 }
 
 .dba-achievement strong {
@@ -673,16 +694,19 @@
   margin-top: auto;
 }
 
+/* Série única = barra CHAPADA no ink de dado (sem gradiente, sem gloss).
+   Antes: navy→navy-20, que no dark virava navy→branco 22% (barra lavando
+   pra cima) e a última (blue→navy) ficava escura sobre card escuro —
+   a ênfase da semana atual lia INVERTIDA. */
 .dba-time-spark span {
   flex: 1;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-20));
+  background: var(--via-chart-ink);
+  opacity: 0.42;
   border-radius: 3px 3px 0 0;
   min-height: 6px;
 }
 
-.dba-time-spark span:last-child {
-  background: linear-gradient(180deg, var(--via-blue), var(--via-navy));
-}
+.dba-time-spark span:last-child { opacity: 1; }
 
 /* Responsive grid */
 @media (max-width: 980px) {

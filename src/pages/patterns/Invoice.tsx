@@ -61,7 +61,7 @@ function PrintGuideSection() {
             <span className="num mono">03</span>
             <div>
               <strong>Cores autorizadas pelo print-color-adjust</strong>
-              <em>navy, accent e coral preservados via <code>print-color-adjust: exact</code> — sem perda na impressora.</em>
+              <em>navy, cinzas e fundos da marca preservados via <code>print-color-adjust: exact</code> — sem perda na impressora.</em>
             </div>
           </li>
           <li>
@@ -81,8 +81,8 @@ function PrintGuideSection() {
           <li>
             <span className="num mono">06</span>
             <div>
-              <strong>Fallback compacto para email</strong>
-              <em>o recibo compacto também tem versão print — útil pra confirmação rápida em uma página.</em>
+              <strong>Só o documento fiscal vai pra folha</strong>
+              <em>o recibo compacto (peça de email) e esta própria documentação saem do fluxo de impressão — nada de segunda página solta.</em>
             </div>
           </li>
         </ul>
@@ -259,7 +259,9 @@ function CompactReceiptSection() {
       <div className="vds-receipt-stage compact">
         <article className="vds-receipt-mini">
           <header>
-            <BrandLogo variant="black" size="sm" />
+            {/* o card compacto ADAPTA ao tema (surface escura no dark) →
+                lockup precisa virar branco junto, senão some navy-sobre-navy */}
+            <BrandLogo variant="auto" size="sm" />
             <span className="vds-receipt-mini-pill">
               <Check size={11} strokeWidth={2.5} /> Pagamento confirmado
             </span>

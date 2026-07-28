@@ -1,6 +1,20 @@
-.via-modal-stage {
+/* ============================================================
+   Demo do componente Modal (página /components/modal)
+
+   ⚠️ CLASSES COM PREFIXO `vds-` (demo da página), NUNCA `.via-modal`.
+   A library exporta `.via-modal` em src/lib/Modal/Modal.css. Como as
+   rotas são lazy, o CSS da lib entra no documento assim que alguém
+   passa por /api/modal ou /library — e ficava lá. As duas folhas
+   colidiam no MESMO seletor `.via-modal`: display virava flex,
+   max-height virava calc(100vh - 48px) e a sombra da lib vazava pra
+   cá. O resultado da página dependia da ORDEM de navegação. Demo é
+   demo: vive em namespace próprio.
+   ============================================================ */
+
+.vds-modal-stage {
   position: relative;
-  height: 420px;
+  min-height: 420px;
+  padding: 24px;
   background:
     radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
     radial-gradient(ellipse 50% 60% at 100% 100%, var(--via-navy-05) 0%, transparent 60%),
@@ -13,7 +27,7 @@
   isolation: isolate;
 }
 
-.via-modal-stage::before {
+.vds-modal-stage::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -23,7 +37,7 @@
   pointer-events: none;
 }
 
-.via-modal-stage .stage-label {
+.vds-modal-stage .stage-label {
   position: absolute;
   top: 18px;
   left: 24px;
@@ -36,22 +50,62 @@
   z-index: 2;
 }
 
-.via-modal {
+.vds-modal-demo {
   position: relative;
   z-index: 2;
-  width: 480px;
-  padding: 34px;
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
   background: var(--via-glass-card);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-xl);
+  /* SOMBRA DE PAIRAR · em TINTA PRETA fixa, não em token navy-*.
+     O scrim é navy nos dois temas, então a sombra não pode inverter:
+     --via-navy-40 vira rgba(branco, .42) no escuro e o "flutuar"
+     viraria auréola. Antes isso morava numa classe órfã
+     (.via-modal-keep) que ninguém aplicava — a doc prometia sombra e
+     a tela entregava zero. */
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 32px 80px -20px rgba(0, 0, 0, 0.45),
+    0 12px 24px -12px rgba(0, 0, 0, 0.28);
   animation: vds-modal-in 380ms var(--via-ease-out);
   overflow: hidden;
   isolation: isolate;
+
+  /* LIFT dos botões · declarado POR TEMA. Token navy-* em box-shadow
+     vira halo branco no escuro (era 0 6px 14px rgba(255,255,255,.42)
+     em volta do "Confirmar"). Tinta no claro, preto no escuro. */
+  --vds-md-lift:        0 6px 14px -4px rgba(10, 31, 59, 0.28);
+  --vds-md-lift-hover:  0 10px 20px -6px rgba(10, 31, 59, 0.36);
+  --vds-md-lift-soft:   0 2px 6px -3px rgba(10, 31, 59, 0.10);
+  --vds-md-lift-soft-h: 0 8px 20px -10px rgba(10, 31, 59, 0.22);
+
+  /* Ação primária · no claro é navy sobre vidro branco (7,9:1).
+     No escuro o vidro fica navy-escuro e o navy do botão media 1,09:1
+     contra a própria superfície — só o halo branco desenhava o botão.
+     Superfície fixa `--via-surface-onnavy` + rótulo navy fixo. */
+  --vds-md-cta-fill:  linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  --vds-md-cta-ink:   #FFFFFF;
+  --vds-md-cta-edge:  var(--via-navy);
+  --vds-md-cta-inset: inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-.via-modal::before {
+[data-theme='dark'] .vds-modal-demo {
+  --vds-md-lift:        0 6px 14px -4px rgba(0, 0, 0, 0.55);
+  --vds-md-lift-hover:  0 10px 20px -6px rgba(0, 0, 0, 0.62);
+  --vds-md-lift-soft:   0 2px 6px -3px rgba(0, 0, 0, 0.45);
+  --vds-md-lift-soft-h: 0 8px 20px -10px rgba(0, 0, 0, 0.52);
+
+  --vds-md-cta-fill:  var(--via-surface-onnavy);
+  --vds-md-cta-ink:   var(--via-navy);
+  --vds-md-cta-edge:  rgba(255, 255, 255, 0.82);
+  --vds-md-cta-inset: inset 0 -1px 0 rgba(10, 31, 59, 0.14);
+}
+
+.vds-modal-demo::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -71,14 +125,7 @@
   }
 }
 
-.via-modal-keep {
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 32px 80px rgba(0, 0, 0, 0.45),
-    0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.via-modal header {
+.vds-modal-demo header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -86,7 +133,7 @@
   gap: var(--via-space-3_5);
 }
 
-.via-modal h3 {
+.vds-modal-demo h3 {
   font-family: var(--via-font);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
@@ -96,7 +143,7 @@
   line-height: 1.2;
 }
 
-.via-modal .close {
+.vds-modal-demo .close {
   width: 28px;
   height: 28px;
   border-radius: var(--via-radius-sm);
@@ -106,7 +153,7 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    var(--vds-md-lift-soft);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,26 +167,25 @@
     color var(--via-dur) var(--via-ease-snap);
 }
 
-.via-modal .close:hover {
+.vds-modal-demo .close:hover {
   transform: translateY(-1px);
   border-color: var(--via-navy-20);
   color: var(--via-text-primary);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    var(--vds-md-lift-soft-h);
 }
 
-.via-modal .close:active { transform: translateY(0); }
+.vds-modal-demo .close:active { transform: translateY(0); }
 
-.via-modal .close:focus-visible {
+.vds-modal-demo .close:focus-visible {
   outline: none;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     var(--via-shadow-focus);
 }
 
-.via-modal p {
+.vds-modal-demo p {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text-soft);
@@ -147,14 +193,15 @@
   margin: 0 0 26px;
 }
 
-.via-modal footer {
+.vds-modal-demo footer {
   display: flex;
   gap: var(--via-space-2_5);
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
-.via-modal .btn-ghost,
-.via-modal .btn-primary {
+.vds-modal-demo .btn-ghost,
+.vds-modal-demo .btn-primary {
   padding: 12px 22px;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
@@ -170,10 +217,10 @@
     color var(--via-dur) var(--via-ease-snap);
 }
 
-.via-modal .btn-ghost:active,
-.via-modal .btn-primary:active { transform: translateY(0); }
+.vds-modal-demo .btn-ghost:active,
+.vds-modal-demo .btn-primary:active { transform: translateY(0); }
 
-.via-modal .btn-ghost {
+.vds-modal-demo .btn-ghost {
   background: var(--via-glass-card);
   backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -181,45 +228,44 @@
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    var(--vds-md-lift-soft);
 }
 
-.via-modal .btn-ghost:hover {
+.vds-modal-demo .btn-ghost:hover {
   transform: translateY(-1px);
   color: var(--via-text-primary);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    var(--vds-md-lift-soft-h);
 }
 
-.via-modal .btn-ghost:focus-visible {
+.vds-modal-demo .btn-ghost:focus-visible {
   outline: none;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     var(--via-shadow-focus);
 }
 
-.via-modal .btn-primary:focus-visible {
-  outline: none;
+.vds-modal-demo .btn-primary {
+  background: var(--vds-md-cta-fill);
+  color: var(--vds-md-cta-ink);
+  border-color: var(--vds-md-cta-edge);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    var(--via-shadow-focus);
+    var(--vds-md-cta-inset),
+    var(--vds-md-lift);
 }
 
-.via-modal .btn-primary {
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-white);
-  border-color: var(--via-navy);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 6px 14px -4px var(--via-navy-40);
-}
-
-.via-modal .btn-primary:hover {
+.vds-modal-demo .btn-primary:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -4px var(--via-navy-60);
+    var(--vds-md-cta-inset),
+    var(--vds-md-lift-hover);
+}
+
+.vds-modal-demo .btn-primary:focus-visible {
+  outline: none;
+  box-shadow:
+    var(--vds-md-cta-inset),
+    var(--via-shadow-focus);
 }

@@ -1,13 +1,27 @@
 .via-toast-bed {
+  /* Sombras do toast · os alphas navy INVERTEM pra branco no dark e viram
+     halo/auréola em volta do card. Fixadas aqui como var local. */
+  --toast-cast:    var(--via-navy-12);
+  --toast-contact: var(--via-navy-05);
+  --toast-lift:    var(--via-navy-10);
+  --toast-lift-hi: var(--via-navy-22);
+
   padding: 32px;
   border-radius: var(--via-radius-lg);
   background:
     radial-gradient(ellipse 70% 60% at 20% 0%, var(--via-navy-10) 0%, transparent 60%),
     radial-gradient(ellipse 60% 80% at 100% 100%, var(--via-navy-06) 0%, transparent 60%),
-    linear-gradient(135deg, var(--via-white) 0%, var(--via-gray-100) 100%);
+    linear-gradient(135deg, var(--via-surface) 0%, var(--via-gray-100) 100%);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
+}
+
+[data-theme="dark"] .via-toast-bed {
+  --toast-cast:    rgba(0, 0, 0, 0.46);
+  --toast-contact: rgba(0, 0, 0, 0.30);
+  --toast-lift:    rgba(0, 0, 0, 0.40);
+  --toast-lift-hi: rgba(0, 0, 0, 0.52);
 }
 
 .via-toast {
@@ -24,10 +38,12 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
-    0 16px 40px var(--via-navy-12),
-    0 2px 6px var(--via-navy-05);
+    0 16px 40px var(--toast-cast),
+    0 2px 6px var(--toast-contact);
   overflow: hidden;
-  max-width: 560px;
+  /* Toast real nasce no canto inferior DIREITO (ver lede) · o palco respeita isso */
+  width: min(560px, 100%);
+  margin-left: auto;
   animation: vds-toast-in 380ms var(--via-ease-out) backwards;
 }
 .via-toast:nth-child(2) { animation-delay: 80ms; }
@@ -59,7 +75,7 @@
   z-index: 1;
 }
 .via-toast.success .ico { background: var(--via-navy-08); color: var(--via-text-primary); border: 1px solid var(--via-navy-12); }
-.via-toast.warning .ico { background: rgba(10, 31, 59, 0.07); color: var(--via-text-primary); border: 1px solid var(--via-navy-14); }
+.via-toast.warning .ico { background: var(--via-navy-06); color: var(--via-text-primary); border: 1px solid var(--via-navy-14); }
 .via-toast.danger .ico { background: rgba(184, 92, 92, 0.12); color: var(--via-coral-dark); border: 1px solid rgba(184, 92, 92, 0.26); }
 .via-toast .body { flex: 1; min-width: 0; position: relative; z-index: 1; padding-top: 2px; }
 .via-toast .title {
@@ -93,7 +109,7 @@
   border: 1px solid var(--via-navy-12);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--toast-lift);
   white-space: nowrap;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -105,8 +121,8 @@
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-navy-22),
-    0 2px 6px -3px var(--via-navy-10);
+    0 8px 20px -10px var(--toast-lift-hi),
+    0 2px 6px -3px var(--toast-lift);
 }
 .via-toast .action:active { transform: translateY(0); }
 .via-toast .action:focus-visible {
@@ -144,7 +160,7 @@
   color: var(--via-text-primary);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-navy-10);
+    0 2px 6px -3px var(--toast-lift);
 }
 .via-toast .close:active { transform: translateY(0.5px); }
 .via-toast .close:focus-visible {

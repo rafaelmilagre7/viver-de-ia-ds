@@ -38,10 +38,42 @@
   --via-text-muted: var(--via-gray-500);
   --via-text-soft: var(--via-gray-500);
   --via-text-faint: var(--via-gray-400);
+  /* ink-2/ink-3 são a cor de TODO o texto secundário no @media print
+     (eyebrows, data, sub-item, rodapé legal, rótulo do QR). No dark eles
+     viram cinza-claro → imprimir com o tema escuro ligado gera folha com
+     texto a ~2:1 sobre papel branco. Travados junto com o resto. */
+  --via-ink-2: #5E6B82;
+  --via-ink-3: #525C72;
+  /* RAMPA NAVY COMPLETA travada · no dark os tokens navy-XX viram
+     rgba(WHITE, X) — sobre este papel branco fixo isso apaga hairline,
+     borda de pill e transforma a sombra do documento em HALO BRANCO.
+     O papel não adapta → os tokens dele também não podem adaptar. */
+  --via-navy-02: rgba(10, 31, 59, 0.02);
+  --via-navy-03: rgba(10, 31, 59, 0.03);
   --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-05: rgba(10, 31, 59, 0.05);
   --via-navy-06: rgba(10, 31, 59, 0.06);
   --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-navy-10: rgba(10, 31, 59, 0.10);
+  --via-navy-12: rgba(10, 31, 59, 0.12);
+  --via-navy-14: rgba(10, 31, 59, 0.14);
+  --via-navy-16: rgba(10, 31, 59, 0.16);
+  --via-navy-18: rgba(10, 31, 59, 0.18);
+  --via-navy-20: rgba(10, 31, 59, 0.20);
+  --via-navy-22: rgba(10, 31, 59, 0.22);
+  --via-navy-25: rgba(10, 31, 59, 0.25);
+  --via-navy-30: rgba(10, 31, 59, 0.30);
+  --via-navy-40: rgba(10, 31, 59, 0.40);
+  --via-navy-60: rgba(10, 31, 59, 0.60);
   --via-edge-hi: rgba(255, 255, 255, 0.95);
+  --via-edge-lo: rgba(255, 255, 255, 0.4);
+  /* Glass dos botões do documento (Imprimir / copiar chave): no dark o
+     glass-card vira branco 10%→2% e o ring vira branco 8% → sobre papel
+     branco o botão DESAPARECE (sobra só o texto navy flutuando). */
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  --via-glass-card: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);
+  --via-glass-ring: 1px solid rgba(10, 31, 59, 0.05);
+  --via-shadow-focus: 0 0 0 3px rgba(10, 31, 59, 0.15);
   border-radius: var(--via-radius-lg);
   padding: 56px 56px 36px;
   border: 1px solid var(--via-navy-08);
@@ -545,6 +577,14 @@
     0 24px 48px -28px var(--via-navy-20);
 }
 
+/* No dark, navy-20 vira rgba(white, .22): a sombra do card passa a EMITIR
+   luz sobre o palco escuro (halo branco por baixo). Sombra tem que ser preta. */
+[data-theme="dark"] .vds-receipt-mini {
+  box-shadow:
+    0 1px 0 var(--via-edge-hi) inset,
+    0 24px 48px -28px rgba(0, 0, 0, 0.62);
+}
+
 .vds-receipt-mini header {
   display: flex;
   align-items: center;
@@ -949,6 +989,14 @@
     color: var(--via-text-body) !important;
   }
 
+  /* O card de totais perde o fundo navy na impressão, mas os rótulos
+     continuavam brancos 60% (regra de tela) → "Subtotal" e "Desconto
+     Founders" saíam BRANCO SOBRE BRANCO (1,07:1): o papel imprimia dois
+     valores sem nome. Rótulo volta a ser tinta. */
+  .vds-receipt-totals-card .row span:first-child {
+    color: var(--via-text-body) !important;
+  }
+
   .vds-receipt-totals-card .row span:last-child {
     font-family: var(--via-mono), 'Geist Mono', ui-monospace, monospace !important;
     color: var(--via-text-primary) !important;
@@ -969,9 +1017,8 @@
     letter-spacing: -0.015em !important;
   }
 
-  .vds-receipt-totals-card .discount {
-    color: var(--via-coral) !important;
-  }
+  /* (não existe regra de coral aqui: o desconto imprime em tinta navy, igual
+     à tela. Número vermelho num recibo é semáforo — a marca não usa.) */
 
   .vds-receipt-note {
     font-size: 9pt !important;
@@ -1168,14 +1215,6 @@
   margin-bottom: 14px;
 }
 
-.vds-print-eyebrow-bullet {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--via-accent);
-  box-shadow: 0 0 8px rgba(10, 31, 59, 0.28);
-}
-
 .vds-print-guide h3 {
   margin: 0 0 12px;
   font-family: var(--via-display);
@@ -1192,6 +1231,18 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* O card de glass ESCURECE no dark, mas --via-accent continua navy #0A1F3B:
+   a ênfase começava quase na cor do fundo (medido 3,7:1 contra 15,3:1 do
+   resto da headline) — o destaque virava desaparecimento. Mesmo remédio do
+   fix sistêmico de gradient-text em container escuro (tokens.css). */
+[data-theme="dark"] .vds-print-guide h3 em {
+  background: linear-gradient(135deg, var(--via-white) 0%, rgba(255, 255, 255, 0.78) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--via-white);
 }
 
 .vds-print-guide header p {

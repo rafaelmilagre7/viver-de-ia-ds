@@ -9,7 +9,7 @@ export default function Upload() {
       <DocsHeader
         eyebrow="Componentes · upload"
         title={<>Dropzone <em>dashed</em>, lista de arquivos.</>}
-        lede="Upload tem zona com borda tracejada e ícone Lucide grande. Drag-over preenche com navy@04 e endurece a borda. Abaixo, a lista de arquivos enviados em hairline com remover."
+        lede="Upload tem zona com borda tracejada e ícone Lucide grande. Em repouso o preenchimento é navy@04; drag-over sobe pra navy@08 e endurece a borda. Abaixo, a lista de arquivos enviados em hairline com remover."
       />
 
       <Section title="Dropzone" meta="dashed glass">
