@@ -88,7 +88,7 @@ export default function ShowcaseComunidade() {
           <article className="cmu-composer">
             <span className="cmu-composer-av">RM</span>
             <div className="cmu-composer-field">
-              <input type="text" placeholder="Compartilhe um win, uma dúvida, um agente que você construiu…" />
+              <input type="text" placeholder="Compartilhe um win, uma dúvida ou um agente novo" />
               <div className="cmu-composer-actions">
                 <button aria-label="Imagem"><ImageIcon size={15} strokeWidth={2} /></button>
                 <button aria-label="Código"><Code2 size={15} strokeWidth={2} /></button>

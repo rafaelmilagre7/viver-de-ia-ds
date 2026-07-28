@@ -21,8 +21,31 @@
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
+  /* contém o sheen (z-index negativo) dentro do próprio botão */
+  isolation: isolate;
   transition: all 200ms var(--via-ease);
   font-feature-settings: 'tnum' 1;
+
+  /* LIFT · sombra de TINTA, nunca de token navy-*.
+     Os tokens --via-navy-* invertem pra rgba(branco) no tema escuro —
+     usá-los em box-shadow transformava a sombra num HALO branco em volta
+     do botão. Aqui a sombra é declarada por tema: tinta no claro, preto
+     no escuro. */
+  --vds-btn-lift:        0 8px 18px -6px rgba(10, 31, 59, 0.18);
+  --vds-btn-lift-hover:  0 12px 24px -8px rgba(10, 31, 59, 0.26);
+  --vds-btn-lift-press:  0 4px 10px -4px rgba(10, 31, 59, 0.16);
+  --vds-btn-lift-soft:   0 4px 10px -4px rgba(10, 31, 59, 0.10);
+  --vds-btn-lift-soft-h: 0 6px 14px -4px rgba(10, 31, 59, 0.14);
+  --vds-btn-inset:       inset 0 2px 4px -2px rgba(10, 31, 59, 0.16);
+}
+
+[data-theme='dark'] .via-btn {
+  --vds-btn-lift:        0 8px 18px -6px rgba(0, 0, 0, 0.55);
+  --vds-btn-lift-hover:  0 12px 24px -8px rgba(0, 0, 0, 0.62);
+  --vds-btn-lift-press:  0 4px 10px -4px rgba(0, 0, 0, 0.50);
+  --vds-btn-lift-soft:   0 4px 10px -4px rgba(0, 0, 0, 0.45);
+  --vds-btn-lift-soft-h: 0 6px 14px -4px rgba(0, 0, 0, 0.52);
+  --vds-btn-inset:       inset 0 2px 4px -2px rgba(0, 0, 0, 0.50);
 }
 
 .via-btn.primary::before {
@@ -30,6 +53,9 @@
   position: absolute;
   top: 0;
   left: -100%;
+  /* fica ACIMA do fundo e ABAIXO do rótulo · o rótulo é text node solto,
+     então `.via-btn > *` sozinho não protegia — o sheen lavava o texto */
+  z-index: -1;
   width: 100%;
   height: 100%;
   background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.22) 50%, transparent 70%);
@@ -69,7 +95,7 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 8px 18px -6px var(--via-navy-40);
+    var(--vds-btn-lift);
 }
 
 .via-btn.primary:hover,
@@ -78,7 +104,7 @@
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 12px 24px -6px var(--via-navy-60);
+    var(--vds-btn-lift-hover);
 }
 
 .via-btn.primary:active,
@@ -86,12 +112,14 @@
   transform: translateY(0) scale(0.98);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 10px -4px var(--via-navy-40);
+    var(--vds-btn-lift-press);
 }
 
 .via-btn.primary:disabled {
   background: var(--via-navy-08);
-  color: rgba(10, 31, 59, 0.35);
+  /* era rgba(10,31,59,0.35) fixo · no tema escuro dava 1.04:1 contra o
+     próprio fundo — o rótulo "Disabled" sumia. Token adapta. */
+  color: var(--via-text-faint);
   border-color: transparent;
   box-shadow: none;
   cursor: not-allowed;
@@ -108,7 +136,7 @@
   border-color: var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 10px -4px var(--via-navy-12);
+    var(--vds-btn-lift-soft);
 }
 
 .via-btn.secondary:hover,
@@ -118,13 +146,17 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -4px var(--via-navy-18);
+    var(--vds-btn-lift-soft-h);
 }
 
 .via-btn.secondary:active,
 .via-btn.secondary.is-pressed {
-  background: var(--via-navy-04);
+  /* pressed MANTÉM o vidro (antes virava fill chapado var(--via-navy-04),
+     que no escuro ficava mais CLARO que o default e invertia o gesto).
+     Afundar = perder a elevação + ganhar sombra interna. */
+  background: var(--via-glass-card-2);
   transform: translateY(0) scale(0.98);
+  box-shadow: var(--vds-btn-inset);
 }
 
 /* GHOST — transparent */
@@ -153,18 +185,19 @@
   transform: scale(0.98);
 }
 
-/* Focus state — editorial ring */
+/* Focus state — editorial ring · o anel usa token (adapta no escuro).
+   Antes era rgba(10,31,59,0.15) fixo: sumia sobre fundo escuro. */
 .via-btn:focus-visible {
   outline: none;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 0 0 3px rgba(10, 31, 59, 0.15),
-    0 8px 18px -6px var(--via-navy-40);
+    0 0 0 3px var(--via-navy-22),
+    var(--vds-btn-lift);
 }
 
 .via-btn.secondary:focus-visible,
 .via-btn.ghost:focus-visible {
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 3px var(--via-navy-12);
+    0 0 0 3px var(--via-navy-22);
 }

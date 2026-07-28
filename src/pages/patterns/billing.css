@@ -167,6 +167,9 @@
   align-items: flex-start;
   gap: var(--via-space-3_5);
   padding: 18px 20px;
+  /* o card é <button> · o UA centraliza o texto e a descrição do plano saía
+     centralizada, desalinhada do nome. Coluna editorial = flush left. */
+  text-align: left;
   background: var(--via-glass-card);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
@@ -223,17 +226,45 @@
   .vds-billing-principle:hover { transform: none; }
 }
 
+/* Selecionado · hairline navy · MESMA espessura do não-selecionado (o que muda
+   é a cor, não a grossura) + superfície elevada + radio preenchido.
+   Antes: border 1px navy + ring `0 0 0 1px navy` = contorno encorpado de 2px. */
 .vds-billing-plan.is-selected {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   border-color: var(--via-navy);
-  background: var(--via-surface-onnavy);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 0 0 1px var(--via-navy),
     0 18px 36px -12px var(--via-navy-22),
     0 6px 14px -4px var(--via-navy-14);
 }
 .vds-billing-plan.is-selected::before { opacity: 1; }
+
+/* Claro · superfície branca fixa (onnavy) e texto navy andam SEMPRE em par ·
+   texto navy travado sem o fundo branco = texto invisível. */
+:root:not([data-theme='dark']) .vds-billing-plan.is-selected {
+  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
+  background: var(--via-surface-onnavy);
+}
+
+/* Escuro · onnavy é branco FIXO (existe pra card SOBRE hero navy) · aqui virava
+   um bloco chapado cegante dentro do painel de vidro. No escuro a seleção é
+   vidro elevado + hairline clara, e o texto volta a seguir o tema. */
+[data-theme='dark'] .vds-billing-plan.is-selected {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.06) 100%);
+  border-color: var(--via-navy-40);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 18px 36px -12px rgba(0, 0, 0, 0.55),
+    0 6px 14px -4px rgba(0, 0, 0, 0.38);
+}
+/* o miolo do radio usa var(--via-surface) (escuro no dark) · o círculo precisa
+   ser claro pra o "preenchido" existir sobre o vidro escuro. */
+[data-theme='dark'] .vds-billing-plan.is-selected .vds-billing-plan__radio {
+  background: var(--via-surface-onnavy);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 4px var(--via-navy-08),
+    0 4px 10px -2px rgba(0, 0, 0, 0.5);
+}
 
 .vds-billing-plan__radio {
   position: relative;
@@ -458,7 +489,9 @@
 
 .vds-billing-summary__total {
   position: relative;
-  margin: 16px -4px 0;
+  /* alinhado com o bloco de linhas acima · o -4px lateral deixava a caixa 8px
+     mais larga que o bloco vizinho e as bordas brigavam na mesma coluna. */
+  margin: 16px 0 0;
   padding: 18px 16px;
   background:
     radial-gradient(280px 120px at 0% 0%, rgba(30,58,95,0.10), transparent 65%),
@@ -591,6 +624,10 @@
 
 /* ----- Responsive ------------------------------------------- */
 @media (max-width: 980px) {
+  /* o mesh sangra 40px pra cada lado · no estreito isso empurra o documento e
+     cria scroll horizontal (450px de scrollWidth num viewport de 430). A
+     atmosfera continua, só para de vazar lateralmente. */
+  .vds-billing::before { inset: -60px 0; }
   .vds-billing-grid { grid-template-columns: 1fr; }
   .vds-billing-summary { position: static; }
   .vds-billing-stepper { gap: var(--via-space-1); }

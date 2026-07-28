@@ -118,7 +118,7 @@ function PlayerSection() {
                         <li key={l.n} className={`vds-cp-lesson ${l.state}`}>
                           <span className="vds-cp-lesson-mark">
                             {l.state === 'done' && <Check size={11} strokeWidth={2.6} />}
-                            {l.state === 'playing' && <Play size={11} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
+                            {l.state === 'playing' && <Play size={11} strokeWidth={0} style={{ fill: 'currentColor' }} />}
                             {l.state === 'available' && lessonTypeIcon(l.type)}
                             {l.state === 'locked' && <Lock size={10} strokeWidth={2.2} />}
                           </span>
@@ -165,7 +165,7 @@ function PlayerSection() {
                 <p>Caio Ribeiro · transcript com timestamps na lateral · 12 notas suas</p>
 
                 <button className="vid-play-big" onClick={() => setPlaying(true)} aria-label="Tocar vídeo">
-                  <Play size={30} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+                  <Play size={26} strokeWidth={0} style={{ fill: 'currentColor' }} />
                 </button>
               </div>
             )}
@@ -184,14 +184,14 @@ function PlayerSection() {
                   <button className="vid-ctrl play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
                     {playing ? <Pause size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} /> : <Play size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
                   </button>
-                  <button aria-label="Faixa anterior" className="vid-ctrl"><SkipBack size={14} strokeWidth={2.2} /></button>
-                  <button aria-label="Próxima faixa" className="vid-ctrl"><SkipForward size={14} strokeWidth={2.2} /></button>
+                  <button aria-label="Faixa anterior" className="vid-ctrl vid-ctrl-skip"><SkipBack size={14} strokeWidth={2.2} /></button>
+                  <button aria-label="Próxima faixa" className="vid-ctrl vid-ctrl-skip"><SkipForward size={14} strokeWidth={2.2} /></button>
                   <button aria-label="Volume" className="vid-ctrl"><Volume2 size={14} strokeWidth={2.2} /></button>
                   <span className="vid-time">05:51 / 13:54</span>
                 </div>
                 <div className="vid-row-r">
                   <button className="vid-speed">1×</button>
-                  <button aria-label="Configurações" className="vid-ctrl"><Settings size={14} strokeWidth={2} /></button>
+                  <button aria-label="Configurações" className="vid-ctrl vid-ctrl-opt"><Settings size={14} strokeWidth={2} /></button>
                   <button aria-label="Tela cheia" className="vid-ctrl"><Maximize2 size={14} strokeWidth={2} /></button>
                 </div>
               </div>
@@ -316,10 +316,7 @@ function LiveLessonSection() {
 
             {/* Host card */}
             <div className="vds-cp-live-host">
-              <div className="host-av">
-                CR
-                <span className="host-ring" />
-              </div>
+              <div className="host-av">CR</div>
               <div>
                 <strong>Caio Ribeiro <span className="host-tag">host</span></strong>
                 <em>Auditando 3 prompts em produção · ao vivo</em>
@@ -404,7 +401,7 @@ function LiveLessonSection() {
                 type="text"
                 value={msg}
                 onChange={(e) => setMsg(e.target.value)}
-                placeholder="Pergunte ao vivo · Caio responde nos próximos minutos"
+                placeholder="Pergunte ao vivo · Caio responde na hora"
                 className="vds-cp-chat-input"
               />
               <button className="vds-cp-chat-send" aria-label="Enviar">

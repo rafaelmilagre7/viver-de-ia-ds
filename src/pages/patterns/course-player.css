@@ -1,5 +1,12 @@
 /* ============================================
    Course player premium · playlist + vídeo + notes
+
+   ⚠️ SOMBRA DE ELEMENTO NAVY = COR FIXA.
+   --via-navy-30/40/60/80 são tokens que INVERTEM (navy no claro, branco no
+   escuro). Como superfície/borda isso é certo; como DROP SHADOW embaixo de um
+   elemento navy (botão "Próxima", "Nota em 05:51", chip PDF, avatar do chat) o
+   token virava um HALO BRANCO no tema escuro. Sombra de peça navy usa
+   rgba(2,22,42,·) nos dois temas.
    ============================================ */
 
 .vds-cp {
@@ -210,7 +217,7 @@
   border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px var(--via-navy-40);
+    0 2px 6px -2px rgba(2, 22, 42, 0.40);
 }
 
 .vds-cp-mod-text strong {
@@ -285,9 +292,18 @@
     var(--via-shadow-focus);
 }
 
+/* aula em andamento · MESMA receita do item ativo dos capítulos: vidro + fio
+   uniforme nos 4 lados. Antes era um wash 90deg que nascia na esquerda e se
+   dissolvia no meio da linha — leitura de "barra lateral" e sem aresta
+   definida à direita. */
 .vds-cp-lesson.playing {
-  background:
-    linear-gradient(90deg, var(--via-navy-08), transparent);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border-color: var(--via-navy-20);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
 }
 
 .vds-cp-lesson-mark {
@@ -308,10 +324,15 @@
   border-color: var(--via-navy);
 }
 
+/* chip navy sólido + glifo branco. Antes o fundo era
+   linear-gradient(--via-stage-1 → --via-navy): no DARK o stage-1 é #131C30 e o
+   ícone (fill navy) ficava EXATAMENTE da cor do fundo — a aula em andamento
+   aparecia como um quadrado vazio. O que diferencia do "concluída" é o anel
+   pulsante, não a cor do chip. */
 .vds-cp-lesson.playing .vds-cp-lesson-mark {
-  background: linear-gradient(135deg, var(--via-stage-1), var(--via-navy));
+  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  border-color: var(--via-navy-25);
+  border-color: var(--via-navy);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.2) inset,
     0 0 0 4px rgba(10, 31, 59, 0.09);
@@ -423,6 +444,12 @@
 /* Video */
 .vds-cp-video {
   position: relative;
+  /* container de TAMANHO: o pôster (eyebrow + título + meta + disco de play)
+     divide a altura do frame com a barra de controle, que é fixa (~91px). Entre
+     1025 e ~1300 o grid 2-col deixa o vídeo com ~220-280px de altura e o
+     conjunto não cabe. As @container abaixo compactam o pôster por ALTURA REAL
+     do frame — nunca por largura de viewport. */
+  container-type: size;
   aspect-ratio: 16 / 9;
   border-radius: var(--via-radius-lg);
   overflow: hidden;
@@ -433,7 +460,9 @@
     inset 0 -1px 0 rgba(0, 0, 0, 0.30),
     0 0 0 1px rgba(255, 255, 255, 0.04),
     0 32px 72px -24px rgba(2, 22, 42, 0.78),
-    0 14px 36px -12px var(--via-navy-60);
+    /* fixo: --via-navy-60 no dark é branco 55% → o card do vídeo ganhava um
+       halo CLARO em volta */
+    0 14px 36px -12px rgba(2, 22, 42, 0.6);
 }
 
 .vds-cp-video .vid-bg {
@@ -468,15 +497,28 @@
   filter: blur(32px);
 }
 
-.vds-cp-video > *:not(.vid-bg):not(.vid-glow):not(.vid-aura) {
+/* helper de empilhamento só pros filhos SIMPLES — precisa excluir TAMBÉM os
+   overlays que já são position:absolute (.vid-idle, .vid-controls,
+   .vid-watermark). Sem isso essa regra (0,3,0) vence o position:absolute deles
+   (0,1,0), eles viram `relative` e os offsets left/right/bottom passam a ser
+   deslocamento: a barra de controle escapava 16px pela DIREITA (cantada
+   arredondada cortada pelo frame), a marca d'água era empurrada pra fora do
+   quadro (nunca aparecia) e o .vid-idle virava fluxo — fazendo o play central
+   (absolute dentro dele) cair EM CIMA do headline. Mesmo bug já corrigido na
+   variante ao vivo mais abaixo. */
+.vds-cp-video > *:not(.vid-bg):not(.vid-glow):not(.vid-aura):not(.vid-idle):not(.vid-controls):not(.vid-watermark) {
   position: relative;
   z-index: 2;
 }
 
+.vid-idle { z-index: 2; }
+
+/* padding-bottom reserva a faixa da barra de controle (bottom:16 + ~75 de
+   altura) pro texto nunca correr por baixo dela */
 .vid-idle {
   position: absolute;
   inset: 0;
-  padding: 44px;
+  padding: 28px 32px 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -493,16 +535,19 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--via-gray-300);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
+/* título de PÔSTER, não de página: o frame 16:9 dentro da coluna tem ~330px de
+   altura e precisa acomodar eyebrow + título + meta + play + barra de controle.
+   Em fs-h1 (40px) o bloco não cabia e o play caía em cima da tipografia. */
 .vid-idle h2 {
-  font-size: var(--via-fs-h1);
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.028em;
-  line-height: 1.06;
+  letter-spacing: -0.022em;
+  line-height: 1.14;
   color: var(--via-white);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   max-width: 640px;
 }
 
@@ -518,47 +563,67 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* No FLUXO da coluna (order:-1 + margin-block:auto): o disco ocupa a faixa
+   livre acima do bloco editorial e NUNCA pode cair em cima do título — antes
+   era absolute/top:50% e pousava exatamente sobre o headline. */
 .vid-play-big {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 96px;
-  height: 96px;
+  order: -1;
+  align-self: center;
+  margin-block: auto;
+  flex: 0 0 auto;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(208, 213, 221, 0.18), var(--via-navy-06));
-  border: 1px solid rgba(208, 213, 221, 0.34);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.44);
   backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
-  color: var(--via-gray-300);
+  /* triângulo BRANCO · em navy sobre o disco escuro o CTA principal sumia */
+  color: var(--via-white);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  /* disco vive SEMPRE sobre vídeo escuro · sombra preta nos 2 temas */
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.18) inset,
-    0 24px 48px -16px var(--via-navy-20),
-    0 0 32px var(--via-navy-12);
+    0 1px 0 rgba(255, 255, 255, 0.24) inset,
+    0 20px 40px -14px rgba(0, 0, 0, 0.55);
   transition: all 240ms var(--via-ease-out);
 }
 
 .vid-play-big:hover {
-  transform: translate(-50%, -50%) scale(1.06);
-  background: linear-gradient(135deg, rgba(208, 213, 221, 0.32), var(--via-navy-08));
-  border-color: rgba(255, 255, 255, 0.44);
+  transform: scale(1.06);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.14));
+  border-color: rgba(255, 255, 255, 0.62);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.22) inset,
-    0 32px 56px -16px rgba(10, 31, 59, 0.28),
-    0 0 48px rgba(10, 31, 59, 0.17);
+    0 1px 0 rgba(255, 255, 255, 0.28) inset,
+    0 26px 48px -14px rgba(0, 0, 0, 0.62);
 }
 
-.vid-play-big:active { transform: translate(-50%, -50%) scale(1); }
+.vid-play-big:active { transform: scale(1); }
 
 .vid-play-big:focus-visible {
   outline: none;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.22) inset,
     0 0 0 3px rgba(255, 255, 255, 0.40);
+}
+
+/* Frame curto · pôster compacta em vez de estourar o quadro */
+@container (max-height: 300px) {
+  .vid-idle { padding: 16px 22px 104px; }
+  .vid-idle .eyebrow { margin-bottom: 8px; }
+  .vid-idle h2 { font-size: var(--via-fs-body); line-height: 1.2; margin-bottom: 6px; }
+  .vid-idle p { display: none; }
+  .vid-play-big { width: 52px; height: 52px; }
+  .vid-play-big svg { width: 18px; height: 18px; }
+}
+
+@container (max-height: 240px) {
+  .vid-idle { padding: 12px 18px 104px; }
+  .vid-idle .eyebrow { display: none; }
+  .vid-play-big { width: 44px; height: 44px; }
+  .vid-play-big svg { width: 15px; height: 15px; }
 }
 
 /* Video controls */
@@ -569,7 +634,11 @@
   bottom: 16px;
   padding: 14px 18px;
   border-radius: var(--via-radius-md);
-  background: var(--via-navy-60);
+  /* o frame do vídeo é --via-navy-darker (#010B1A) nos DOIS temas. Com
+     --via-navy-60 a barra virava rgba(255,255,255,0.55) no dark: painel CLARO
+     em cima de vídeo escuro, com os ícones brancos sumindo. Cor fixa de
+     contexto escuro — a mesma receita da barra do broadcast. */
+  background: rgba(2, 22, 42, 0.62);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -585,26 +654,31 @@
   margin-bottom: 12px;
 }
 
+/* trilha percorrida = série única → cor CHAPADA. O gradiente
+   branco → --via-stage-1 apagava no dark (stage-1 = #131C30, quase o fundo do
+   vídeo): o trecho já assistido sumia justo perto do knob. */
 .vid-played {
   position: absolute;
   inset: 0 auto 0 0;
-  background: linear-gradient(90deg, var(--via-white), var(--via-stage-1));
+  background: var(--via-white);
   border-radius: var(--via-radius-pill);
-  box-shadow: 0 0 8px var(--via-navy-20);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.28);
 }
 
+/* knob/controles vivem sobre vídeo escuro fixo → cores fixas.
+   Com --via-surface o knob virava #131C30 (escuro) em cima da trilha branca. */
 .vid-knob {
   position: absolute;
   top: 50%;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--via-surface);
+  background: var(--via-white);
   transform: translate(-50%, -50%);
-  border: 1.5px solid var(--via-navy-25);
+  border: 1.5px solid rgba(10, 31, 59, 0.25);
   box-shadow:
-    0 0 0 4px rgba(10, 31, 59, 0.09),
-    0 2px 6px var(--via-navy-60);
+    0 0 0 4px rgba(10, 31, 59, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
 .vid-chapter {
@@ -663,17 +737,19 @@
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.40);
 }
 
+/* botão BRANCO fixo · com --via-surface ele virava #131C30 no dark e o ícone
+   (fill navy) ficava navy-sobre-navy: o play principal da barra sumia. */
 .vid-ctrl.play {
-  background: var(--via-surface);
+  background: var(--via-white);
   border-color: rgba(255, 255, 255, 0.55);
-  color: var(--via-text-primary);
+  color: var(--via-navy);
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
     0 2px 8px -3px rgba(0, 0, 0, 0.35);
 }
 
 .vid-ctrl.play:hover {
-  background: var(--via-surface);
+  background: var(--via-white);
   border-color: var(--via-white);
   transform: translateY(-1px);
   box-shadow:
@@ -683,11 +759,14 @@
 
 .vid-ctrl.play:active { transform: translateY(0); }
 
+/* nowrap: em coluna estreita o "05:51 / 13:54" quebrava em 2 linhas e a barra
+   de controle crescia em altura, encostando no título do pôster */
 .vid-time {
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
   margin-left: 4px;
   letter-spacing: 0.04em;
   font-feature-settings: 'tnum' 1;
@@ -881,7 +960,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.25),
-    0 8px 18px -6px var(--via-navy-60),
+    0 8px 18px -6px rgba(2, 22, 42, 0.55),
     0 0 24px rgba(59, 107, 160, 0.22);
   transition: all 240ms cubic-bezier(.16, 1, .3, 1);
 }
@@ -910,7 +989,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0, 0, 0, 0.25),
-    0 14px 28px -8px var(--via-navy-80),
+    0 14px 28px -8px rgba(2, 22, 42, 0.72),
     0 0 36px rgba(59, 107, 160, 0.34);
 }
 
@@ -991,7 +1070,7 @@
   letter-spacing: -0.005em;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 4px 10px -4px var(--via-navy-40);
+    0 4px 10px -4px rgba(2, 22, 42, 0.40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -1002,7 +1081,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 10px 22px -8px var(--via-navy-60);
+    0 10px 22px -8px rgba(2, 22, 42, 0.55);
 }
 
 .vds-cp-add-note:active { transform: translateY(0); }
@@ -1058,7 +1137,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -4px var(--via-navy-40);
+    0 6px 14px -4px rgba(2, 22, 42, 0.40);
 }
 
 .vds-cp-note-ts:active { transform: translateY(0); }
@@ -1135,7 +1214,7 @@
   letter-spacing: 0.06em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 2px 6px -2px var(--via-navy-40);
+    0 2px 6px -2px rgba(2, 22, 42, 0.40);
 }
 
 .vds-cp-mat-ext.alt {
@@ -1313,6 +1392,10 @@
 /* Vídeo broadcast */
 .vds-cp-live-vid {
   position: relative;
+  /* mesma razão do frame gravado: os 3 overlays (pill/audiência no topo, card
+     do host, barra de controle) são de altura fixa. Entre 1101 e ~1340 o grid
+     1fr/380px deixa o broadcast com ~220px e eles se atropelam. */
+  container-type: size;
   /* align-self:start + min-width:0 → vídeo dimensiona pela LARGURA da coluna
      (16:9), não pela altura da linha. Sem isso, o stretch do grid + aspect-ratio
      calculava a largura a partir da altura do chat (612px → 1088px) e estourava
@@ -1329,7 +1412,9 @@
     inset 0 -1px 0 rgba(0, 0, 0, 0.30),
     0 0 0 1px rgba(255, 255, 255, 0.05),
     0 32px 72px -24px rgba(2, 22, 42, 0.82),
-    0 14px 36px -12px var(--via-navy-60);
+    /* fixo: --via-navy-60 no dark é branco 55% → o card do vídeo ganhava um
+       halo CLARO em volta */
+    0 14px 36px -12px rgba(2, 22, 42, 0.6);
 }
 
 .vds-cp-live-bg {
@@ -1362,9 +1447,21 @@
 /* helper de empilhamento só pros filhos SIMPLES — exclui os overlays que já são
    position:absolute (top bar, host, controls), senão essa regra (0,3,0) vence o
    position:absolute deles (0,1,0) e quebra o pin (vira relative com offset solto) */
-.vds-cp-live-vid > *:not(.vds-cp-live-bg):not(.vds-cp-live-aura):not(.vds-cp-live-top):not(.vds-cp-live-host):not(.vds-cp-live-controls) {
+.vds-cp-live-vid > *:not(.vds-cp-live-bg):not(.vds-cp-live-aura):not(.vds-cp-live-top):not(.vds-cp-live-host):not(.vds-cp-live-controls):not(.vid-watermark) {
   position: relative;
   z-index: 2;
+}
+
+/* A marca d'água tinha ficado de fora da lista de exceções: virava `relative`,
+   caía no fluxo no canto superior esquerdo e o monograma era CARIMBADO em cima
+   da pill "ao vivo" (traços do lockup cortando a borda da pill). Aqui o canto
+   superior esquerdo é da pill — a marca vai pro canto inferior direito, na
+   faixa livre entre o card do host e a barra de controle. */
+.vds-cp-live-vid .vid-watermark {
+  top: auto;
+  left: auto;
+  right: 22px;
+  bottom: 96px;
 }
 
 /* Top overlay — live + audience */
@@ -1443,12 +1540,14 @@
     0 6px 16px -6px rgba(0, 0, 0, 0.32);
 }
 
+/* pill de AUDIÊNCIA é métrica, não status: a bolinha aqui era verde --via-success
+   com glow, encostada na bolinha vermelha do "ao vivo" na MESMA faixa —
+   semáforo verde/vermelho. Marcador neutro, sem glow. */
 .vds-cp-live-audience .dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--via-success);
-  box-shadow: 0 0 8px rgba(31, 138, 91, 0.7);
+  background: rgba(255, 255, 255, 0.72);
   animation: vds-cp-live-aud-blink 2.2s ease-in-out infinite;
 }
 
@@ -1513,18 +1612,9 @@
     0 6px 16px -4px rgba(0, 0, 0, 0.50);
 }
 
-.vds-cp-live-host .host-ring {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(184, 92, 92, 0.55);
-  animation: vds-cp-live-host-ring 2.4s ease-in-out infinite;
-}
-
-@keyframes vds-cp-live-host-ring {
-  0%, 100% { transform: scale(1); opacity: 0.55; }
-  50%      { transform: scale(1.08); opacity: 0.95; }
-}
+/* REMOVIDO: anel coral pulsante em volta do avatar do host. Halo colorido em
+   avatar é semáforo — o estado "ao vivo" já mora na pill "ao vivo" (bolinha
+   rec) e no rótulo "host". O avatar fica limpo. */
 
 .vds-cp-live-host strong {
   display: block;
@@ -1534,13 +1624,15 @@
   letter-spacing: -0.012em;
 }
 
+/* "host" é PAPEL, não estado de risco: coral é reservado a destrutivo e, na
+   live, ao sinal de "ao vivo/gravando". Rótulo neutro sobre o vidro escuro. */
 .vds-cp-live-host .host-tag {
   display: inline-block;
   margin-left: 8px;
   padding: 2px 8px;
   border-radius: var(--via-radius-xs);
-  background: rgba(184, 92, 92, 0.30);
-  border: 1px solid rgba(184, 92, 92, 0.45);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
@@ -1561,6 +1653,23 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+/* Broadcast em frame curto · card do host encolhe e a marca d'água sai */
+@container (max-height: 300px) {
+  .vds-cp-live-host {
+    bottom: 78px;
+    grid-template-columns: 40px 1fr auto;
+    gap: var(--via-space-2_5);
+    padding: 8px 14px 8px 10px;
+  }
+  .vds-cp-live-host .host-av {
+    width: 40px;
+    height: 40px;
+    font-size: var(--via-fs-caption);
+  }
+  .vds-cp-live-host > div > em { display: none; }
+  .vds-cp-live-vid .vid-watermark { display: none; }
 }
 
 .vds-cp-live-host .host-elapsed .num {
@@ -1683,17 +1792,19 @@
 
 .vds-cp-live-controls .vid-ctrl:active { transform: translateY(0); }
 
+/* mesmo caso do play da aula gravada: branco fixo, senão o pause do broadcast
+   ficava navy sobre navy no tema escuro */
 .vds-cp-live-controls .vid-ctrl.play.live {
-  background: var(--via-surface);
+  background: var(--via-white);
   border-color: rgba(255, 255, 255, 0.55);
-  color: var(--via-text-primary);
+  color: var(--via-navy);
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
     0 2px 8px -2px rgba(0, 0, 0, 0.32);
 }
 
 .vds-cp-live-controls .vid-ctrl.play.live:hover {
-  background: var(--via-surface);
+  background: var(--via-white);
   border-color: var(--via-white);
   transform: translateY(-1px);
   box-shadow:
@@ -1701,14 +1812,24 @@
     0 8px 18px -8px rgba(0, 0, 0, 0.50);
 }
 
+/* min-width:0 + nowrap: sem isso o rótulo quebrava em 2 linhas nas colunas
+   estreitas, a barra de controle crescia em altura e subia por cima do card do
+   host. Barra de controle tem altura de UMA linha, sempre. */
 .vds-cp-live-time {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
   padding-left: 4px;
+  min-width: 0;
   font-size: var(--via-fs-xs);
   letter-spacing: -0.006em;
   color: rgba(255, 255, 255, 0.78);
+}
+
+.vds-cp-live-time > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .vds-cp-live-time .live-dot {
@@ -1919,7 +2040,7 @@
   flex-shrink: 0;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -2px var(--via-navy-30);
+    0 2px 6px -2px rgba(2, 22, 42, 0.32);
 }
 
 .vds-cp-chat-msg.host .msg-av {
@@ -1944,18 +2065,19 @@
   letter-spacing: -0.008em;
 }
 
+/* mesmo motivo do card do host: rótulo de papel em cor de alerta lia como
+   erro ao lado do nome. Neutro, adaptando nos 2 temas via tokens. */
 .vds-cp-chat-msg .msg-meta .host-tag {
   padding: 1px 7px;
   border-radius: var(--via-radius-xs);
-  background: linear-gradient(135deg, rgba(184, 92, 92, 0.16), rgba(184, 92, 92, 0.08));
-  border: 1px solid rgba(184, 92, 92, 0.30);
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-14);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #8E3B3B;
+  color: var(--via-text-soft);
 }
-[data-theme="dark"] .vds-cp-chat-msg .msg-meta .host-tag { color: #E79A9A; }
 
 .vds-cp-chat-msg .msg-meta .msg-time {
   font-family: var(--via-font-mono);
@@ -1986,7 +2108,9 @@
   gap: var(--via-space-2);
   padding: 14px 16px 16px;
   border-top: 1px solid var(--via-border-soft);
-  background: linear-gradient(180deg, transparent, rgba(247, 248, 250, 0.55));
+  /* era rgba(247,248,250,0.55) hardcoded: no tema escuro pintava uma faixa
+     CLARA no rodapé do painel de vidro escuro. Token adapta nos dois temas. */
+  background: linear-gradient(180deg, transparent, var(--via-navy-04));
 }
 
 .vds-cp-chat-input {
@@ -2030,7 +2154,7 @@
   cursor: pointer;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 4px 10px -3px var(--via-navy-40);
+    0 4px 10px -3px rgba(2, 22, 42, 0.40);
   transition: all 200ms cubic-bezier(.16, 1, .3, 1);
 }
 
@@ -2038,7 +2162,7 @@
   transform: translateY(-1px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 8px 18px -4px var(--via-navy-60);
+    0 8px 18px -4px rgba(2, 22, 42, 0.55);
 }
 
 .vds-cp-chat-send:active { transform: translateY(0); }
@@ -2050,10 +2174,21 @@
     var(--via-shadow-focus);
 }
 
+/* Barra de controle é problema de LARGURA, não de altura: abaixo de ~520px de
+   frame o conjunto completo estourava pela direita. Secundários saem primeiro
+   (avançar/voltar faixa e configurações); play/volume/tempo/velocidade/tela
+   cheia ficam. Precisa vir DEPOIS de .vid-ctrl (mesma especificidade — quem
+   vence é a ordem). */
+@container (max-width: 520px) {
+  .vid-ctrl-skip,
+  .vid-ctrl-opt {
+    display: none;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .vds-cp-live-aura,
-  .vds-cp-live-host .host-ring,
   .vds-cp-live-reactions .r,
   .vds-cp-live-audience .dot,
   .vds-cp-live-time .live-dot,
@@ -2091,5 +2226,15 @@
   }
   .vds-cp-live-host {
     bottom: 128px;
+  }
+  /* no celular a barra de controle do broadcast quebra em 2 linhas e sobe:
+     não sobra faixa livre pra marca d'água */
+  .vds-cp-live-vid .vid-watermark {
+    display: none;
+  }
+  /* mesma razão na aula gravada: 16:9 no celular dá ~197px de altura e o pôster
+     + barra de controle não convivem */
+  .vds-cp-video {
+    aspect-ratio: 4 / 5;
   }
 }

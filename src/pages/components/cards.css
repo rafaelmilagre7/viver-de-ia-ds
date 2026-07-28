@@ -23,28 +23,14 @@
     0 1px 4px var(--via-navy-04);
 }
 
-.via-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, transparent);
-  z-index: 3;
-  transition: background 280ms ease;
-}
-
+/* hover = hairline UNIFORME + lift. Sem barra de destaque no topo:
+   uma faixa de 3px numa aresta só quebra o contorno hairline do card. */
 .via-card:hover {
   border-color: var(--via-navy-20);
   transform: translateY(-3px);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 18px 40px -22px var(--via-navy-22);
-}
-
-.via-card:hover::after {
-  background: linear-gradient(90deg, transparent, rgba(10, 31, 59, 0.32) 50%, transparent);
 }
 
 .via-card h3 {
@@ -171,7 +157,8 @@
   padding: 48px;
   background:
     radial-gradient(ellipse at 20% 0%, rgba(42, 74, 110, 0.55) 0%, transparent 55%),
-    radial-gradient(ellipse at 100% 100%, var(--via-navy-06) 0%, transparent 55%),
+    /* palco navy FIXO nos dois temas → literal (o token navy-06 vira branco no dark) */
+    radial-gradient(ellipse at 100% 100%, rgba(10, 31, 59, 0.06) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
   border-radius: var(--via-radius-lg);
   display: grid;
@@ -185,21 +172,26 @@
 .via-card-stat {
   position: relative;
   padding: 26px;
-  /* card SEMPRE branco (vive sobre stage navy fixo) · re-pina texto p/ escuro */
+  /* card SEMPRE branco (vive sobre stage navy fixo) · re-pina texto p/ escuro.
+     Secundário um passo mais escuro (gray-600): sobre vidro translúcido o
+     gray-500 caía p/ 2,4:1 contra o navy que atravessa. */
   --via-text-primary: var(--via-navy);
   --via-text-body: var(--via-gray-700);
-  --via-text-muted: var(--via-gray-500);
-  --via-text-soft: var(--via-gray-500);
-  --via-text-faint: var(--via-gray-400);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.6));
+  --via-text-muted: var(--via-gray-600);
+  --via-text-soft: var(--via-gray-600);
+  --via-text-faint: var(--via-gray-500);
+  /* piso do vidro em 0.88: ainda deixa o navy respirar, sem virar mancha cinza */
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.88));
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid var(--via-edge-hi);
+  /* aresta/sombra em LITERAL: edge-hi e navy-40 viram branco no dark e o card
+     (que é claro nos dois temas) ganhava halo branco sobre o palco navy. */
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: var(--via-radius-lg);
   box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
     0 -1px 0 rgba(255, 255, 255, 0.4) inset,
-    0 16px 36px -16px var(--via-navy-40);
+    0 16px 36px -16px rgba(10, 31, 59, 0.45);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
@@ -214,7 +206,8 @@
   left: 0;
   right: 0;
   height: 40%;
-  background: var(--via-glass-sheen);
+  /* sheen literal · o token perde a luz no dark e o card é claro nos 2 temas */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
   pointer-events: none;
 }
 

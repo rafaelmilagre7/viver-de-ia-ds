@@ -4,7 +4,10 @@
 
 .vds-showcase.auth {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* piso explícito na coluna do card: com `1fr 1fr` puro o min-content do h2
+     do aside ("engenharia") roubava a coluna direita e a largura do card
+     passava a depender do tamanho da copy ao lado. */
+  grid-template-columns: minmax(0, 1fr) minmax(min(100%, 400px), 1fr);
   min-height: 100vh;
   color: var(--via-white);
   position: relative;
@@ -19,7 +22,14 @@
   flex-direction: column;
   justify-content: space-between;
 }
+/* min-width:0 nos dois itens do grid: por padrão item de grid tem
+   min-width:auto, então o min-content do lockup (452px) inflava a coluna e,
+   com o `overflow:hidden` do container, o CARD saía cortado no mobile
+   (botão Apple e "Esqueci a senha" sumiam pela direita). */
+.auth-aside,
+.auth-card-wrap { min-width: 0; }
 .auth-brand img { display: block; }
+.auth-brand-compact { display: none; }
 
 .auth-pull { max-width: 460px; }
 .auth-pull h2 {
@@ -79,13 +89,45 @@
 .auth-card-wrap {
   position: relative;
   z-index: 2;
-  padding: 64px 56px;
+  padding: 64px 44px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+/* Ilha permanentemente CLARA · `--via-surface-onnavy` é branco fixo nos 2 temas.
+   O card fixava só os tokens de TEXTO — o resto da subárvore continuava lendo os
+   valores do tema DARK dentro de um card branco:
+     · `.prov` usa --via-glass-card + --via-glass-ring → branco 10% e branco 8%
+       = botão branco no branco, SEM aro (invisível);
+     · `.auth-divider span` e `.auth-row .box` usam --via-surface → #131C30
+       = tarja preta atravessando o card branco;
+     · a rampa --via-navy-XX inverte pra branco → sombras/hover somem;
+     · --via-shadow-focus vira branco 22% → anel de foco invisível no branco.
+   Fixar os valores light aqui deixa a ilha estável nos dois temas.
+   (mesmo padrão de src/pages/patterns/auth-flow.css → .vds-auth-card.light) */
 .auth-card {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
+  --via-surface: var(--via-white);
+  --via-border: rgba(10, 31, 59, 0.16);
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  /* --via-glass-ring já resolve o var(--via-border-soft) lá no :root, então
+     precisa ser refixado literalmente — senão o aro dos .prov continua
+     branco 8% (invisível) dentro do card branco no tema escuro. */
+  --via-glass-ring: 1px solid rgba(10, 31, 59, 0.05);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  --via-edge-lo: rgba(255, 255, 255, 0.4);
+  --via-glass-card: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);
+  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-05: rgba(10, 31, 59, 0.05);
+  --via-navy-06: rgba(10, 31, 59, 0.06);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-navy-10: rgba(10, 31, 59, 0.10);
+  --via-navy-12: rgba(10, 31, 59, 0.12);
+  --via-navy-14: rgba(10, 31, 59, 0.14);
+  --via-navy-20: rgba(10, 31, 59, 0.20);
+  --via-navy-22: rgba(10, 31, 59, 0.22);
+  --via-shadow-focus: 0 0 0 3px rgba(10, 31, 59, 0.15);
   width: 100%;
   max-width: 440px;
   padding: 40px;
@@ -130,7 +172,12 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-2);
-  padding: 11px 14px;
+  /* rótulo curto + nowrap: a coluna do card vale ~113px no doc frame e
+     "Continuar com Google" quebrava em 3 linhas (botão de 72px de altura,
+     marca desalinhada). O texto completo vive no aria-label. */
+  min-height: 40px;
+  white-space: nowrap;
+  padding: 10px 12px;
   background: var(--via-glass-card);
   backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -168,32 +215,30 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
-  font-family: var(--via-font-mono);
-  font-size: var(--via-fs-caption);
-  font-weight: var(--via-fw-bold);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
   color: var(--via-text-primary);
 }
+.prov-ico svg { display: block; width: 100%; height: 100%; }
 
+/* linha · rótulo · linha em flex: o "recorte" antigo pintava um retângulo
+   com var(--via-surface) por cima do card (patch branco fora do gradiente no
+   claro; tarja #131C30 no escuro). Sem fundo, não há o que destoar. */
 .auth-divider {
-  position: relative;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 14px;
   margin: 12px 0 20px;
 }
-.auth-divider::before {
+.auth-divider::before,
+.auth-divider::after {
   content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 0.5px;
+  flex: 1;
+  height: 1px;
   background: var(--via-navy-12);
 }
 .auth-divider span {
-  position: relative;
-  background: var(--via-surface);
-  padding: 0 14px;
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
@@ -247,7 +292,7 @@
   width: 18px;
   height: 18px;
   border-radius: var(--via-radius-xs);
-  border: 1.5px solid var(--via-gray-400);
+  border: 1px solid var(--via-border);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -296,14 +341,11 @@
     0 8px 18px -6px rgba(10, 31, 59, 0.45);
   transition: all 240ms var(--via-ease-out);
   position: relative;
+  /* isolation + z-index:-1 no ::before: o sheen era pseudo posicionado SEM
+     z-index, então varria por CIMA do rótulo (branco 20% lavando "Entrar no
+     painel" no hover). Agora é camada de fundo do próprio botão. */
+  isolation: isolate;
   overflow: hidden;
-}
-
-.auth-submit:hover {
-  transform: translateY(-1px);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 12px 24px -6px rgba(10, 31, 59, 0.55);
 }
 .auth-submit::before {
   content: '';
@@ -312,10 +354,17 @@
   left: -100%;
   width: 100%;
   height: 100%;
+  z-index: -1;
+  pointer-events: none;
   background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.20) 50%, transparent 70%);
   transition: left 700ms var(--via-ease-out);
 }
-.auth-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(10,31,59,0.32); }
+.auth-submit:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 12px 24px -6px rgba(10, 31, 59, 0.55);
+}
 .auth-submit:hover::before { left: 100%; }
 .auth-submit:active { transform: translateY(0); }
 .auth-submit:focus-visible {
@@ -332,16 +381,27 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
 }
-.auth-foot a {
+/* `.auth-foot-link` (e não `<a>` puro) porque o global
+   `[data-theme="dark"] a:not([class])` pintava esse CTA de #8FB8F6 —
+   azul claro sobre card branco (~2:1) e fora da paleta. Com classe,
+   a regra global não casa mais. */
+.auth-foot .auth-foot-link {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-bold);
   cursor: pointer;
 }
-.auth-foot a:hover { text-decoration: underline; }
+.auth-foot .auth-foot-link:hover { text-decoration: underline; }
 
 @media (max-width: 960px) {
-  .vds-showcase.auth { grid-template-columns: 1fr; }
+  .vds-showcase.auth { grid-template-columns: minmax(0, 1fr); }
   .auth-aside { padding: 40px 32px 0; }
   .auth-card-wrap { padding: 32px; }
   .auth-card { padding: 28px; }
+}
+
+/* o lockup `lg` mede 452px e não cabe em tela estreita — troca pelo `md` */
+@media (max-width: 560px) {
+  .auth-brand-full { display: none; }
+  .auth-brand-compact { display: block; }
+  .auth-providers { gap: var(--via-space-2); }
 }

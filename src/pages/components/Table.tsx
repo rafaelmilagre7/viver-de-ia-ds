@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   ArrowUpDown, MoreHorizontal, Check, Search, Filter, ChevronDown,
   TrendingUp, TrendingDown, Download, X, ArrowRight,
@@ -26,9 +26,50 @@ export default function Table() {
   );
 }
 
+/* Névoa de borda pelo overflow REAL da grade.
+   Antes era `@media (min-width: 1280px)`: viewport largo desligava a
+   névoa, mas a moldura da doc continua ~950px e a tabela cheia estoura
+   250px — o pill de status era cortado no meio, sem nenhum sinal de que
+   havia mais coluna. Aqui o estado vem do próprio scroller. */
+function useEdgeFade() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const update = () => {
+      const max = el.scrollWidth - el.clientWidth;
+      if (max <= 1) {
+        el.dataset.edge = 'none';
+        return;
+      }
+      const atStart = el.scrollLeft <= 1;
+      const atEnd = el.scrollLeft >= max - 1;
+      el.dataset.edge = atStart ? 'right' : atEnd ? 'left' : 'both';
+    };
+
+    update();
+    el.addEventListener('scroll', update, { passive: true });
+
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    const table = el.querySelector('table');
+    if (table) ro.observe(table);
+
+    return () => {
+      el.removeEventListener('scroll', update);
+      ro.disconnect();
+    };
+  }, []);
+
+  return ref;
+}
+
 /* ---------- FULL TABLE · todos os cell types ---------- */
 function FullTableSection() {
   const [selected, setSelected] = useState<string[]>(['ML', 'CR']);
+  const scrollRef = useEdgeFade();
 
   const rows = [
     {
@@ -171,7 +212,7 @@ function FullTableSection() {
         )}
 
         {/* Table */}
-        <div className="vds-tbl-scroll">
+        <div className="vds-tbl-scroll" ref={scrollRef} data-edge="none">
           <table className="via-table vds-tbl">
             <thead>
               <tr>
@@ -329,6 +370,8 @@ function CompactTableSection() {
     { id: 'T-478', task: 'Calibrar few-shot · classifier v2', who: 'Diego', priority: 'média', due: 'ter · 10h' },
   ];
 
+  const scrollRef = useEdgeFade();
+
   return (
     <Section title="Variante compacta · pra dashboard" meta="densidade menor · cell types mínimos">
       <article className="vds-tbl-wrap compact">
@@ -340,7 +383,7 @@ function CompactTableSection() {
           <button className="vds-tbl-tool sm">Ver todas →</button>
         </header>
 
-        <div className="vds-tbl-scroll">
+        <div className="vds-tbl-scroll" ref={scrollRef} data-edge="none">
           <table className="via-table via-table--compact vds-tbl compact">
             <thead>
               <tr>

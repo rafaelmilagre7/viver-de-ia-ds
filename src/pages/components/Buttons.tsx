@@ -11,10 +11,10 @@ export default function Buttons() {
         eyebrow="Componentes · botões"
         title={
           <>
-            Sempre <em>pílula</em>. Sempre <em>uppercase</em>.
+            Sempre <em>pílula</em>. Nunca <em>caixa alta</em>.
           </>
         }
-        lede="Três variantes — primary, secondary, ghost. Quatro estados — default, hover, pressed, disabled. Três tamanhos — sm, md, lg. O radius é sempre pill (999), e o letter-spacing 0.10em em uppercase. É a regra que faz o sistema reconhecível."
+        lede="Três variantes — primary, secondary, ghost. Quatro estados — default, hover, pressed, disabled. Três tamanhos — sm, md, lg. O radius é sempre pill (999), o peso é medium e o rótulo vai em sentence case com tracking negativo. É a regra que faz o sistema reconhecível."
       />
 
       <Section title="Primary" meta="default · navy">
@@ -57,11 +57,11 @@ export default function Buttons() {
           </thead>
           <tbody>
             <tr><td className="tok">radius</td><td className="val">pill (999)</td><td className="use">Sempre · todas as variantes</td></tr>
-            <tr><td className="tok">padding (md)</td><td className="val">13px 22px</td><td className="use">Padrão</td></tr>
             <tr><td className="tok">padding (sm)</td><td className="val">9px 16px</td><td className="use">Compacto, em barra de filtro/pill</td></tr>
-            <tr><td className="tok">padding (lg)</td><td className="val">16px 28px</td><td className="use">Hero CTA</td></tr>
-            <tr><td className="tok">font</td><td className="val">Inter 12 · 700</td><td className="use">Uppercase, 0.10em</td></tr>
-            <tr><td className="tok">primary shadow</td><td className="val">0 8px 24px navy/18</td><td className="use">Lift discreto</td></tr>
+            <tr><td className="tok">padding (md)</td><td className="val">12px 22px</td><td className="use">Padrão</td></tr>
+            <tr><td className="tok">padding (lg)</td><td className="val">15px 28px</td><td className="use">Hero CTA</td></tr>
+            <tr><td className="tok">font</td><td className="val">Geist 13 · 500</td><td className="use">Sentence case, -0.005em</td></tr>
+            <tr><td className="tok">primary lift</td><td className="val">0 8px 18px -6px ink/18</td><td className="use">Sombra de tinta · vira preto no escuro</td></tr>
             <tr><td className="tok">transition</td><td className="val">200ms ease</td><td className="use">Hover / pressed</td></tr>
           </tbody>
         </table>

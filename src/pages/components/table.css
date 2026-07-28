@@ -22,7 +22,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(640px 280px at 0% 0%, rgba(10, 31, 59, 0.035), transparent 60%);
+  background: radial-gradient(640px 280px at 0% 0%, var(--via-navy-03), transparent 60%);
   z-index: -1;
 }
 
@@ -44,7 +44,7 @@
   left: 20px;
   right: 20px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(10, 31, 59, 0.11) 50%, transparent);
+  background: linear-gradient(90deg, transparent, var(--via-navy-10) 50%, transparent);
 }
 
 .vds-tbl-toolbar.compact {
@@ -392,24 +392,38 @@
    border-collapse fica em `separate` porque a célula de operador é
    um flex container — colapsar bordas com célula anônima desalinha
    a hairline. Com spacing 0 o resultado é idêntico visualmente. */
-.vds-tbl {
+.vds-tbl:not(.compact) {
   min-width: 980px;
+}
+
+/* a compacta tem 5 colunas — herdar os 980px da tabela cheia obrigava
+   scroll (e comia o padding da última coluna) sem nada pra ver. */
+.vds-tbl.compact {
+  min-width: 620px;
+}
+
+.vds-tbl {
   border-collapse: separate;
   border-spacing: 0;
 }
 
-/* Edge fade · right side hint when content overflows */
-.vds-tbl-scroll {
-  -webkit-mask-image: linear-gradient(90deg, var(--via-black) 0, var(--via-black) calc(100% - 24px), transparent 100%);
-  mask-image: linear-gradient(90deg, var(--via-black) 0, var(--via-black) calc(100% - 24px), transparent 100%);
+/* Edge fade · aparece pelo overflow REAL, não por largura de viewport.
+   A largura da moldura vem do shell da doc (sidebar + max-width), então
+   viewport largo não significa tabela cabendo: em 2133px a grade ainda
+   estoura 252px. O lado que some é o que ganha a névoa. */
+.vds-tbl-scroll[data-edge='right'] {
+  -webkit-mask-image: linear-gradient(90deg, var(--via-black) 0, var(--via-black) calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(90deg, var(--via-black) 0, var(--via-black) calc(100% - 28px), transparent 100%);
 }
 
-@media (min-width: 1280px) {
-  /* On wide enough viewports, no mask needed */
-  .vds-tbl-scroll {
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
+.vds-tbl-scroll[data-edge='left'] {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, var(--via-black) 28px, var(--via-black) 100%);
+  mask-image: linear-gradient(90deg, transparent 0, var(--via-black) 28px, var(--via-black) 100%);
+}
+
+.vds-tbl-scroll[data-edge='both'] {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, var(--via-black) 28px, var(--via-black) calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, var(--via-black) 28px, var(--via-black) calc(100% - 28px), transparent 100%);
 }
 
 /* thead: só o tint do cabeçalho (densidade vem da camada) */
@@ -608,7 +622,7 @@
 }
 
 .vds-tbl-plan.corporate {
-  background: rgba(10, 31, 59, 0.07);
+  background: var(--via-navy-06);
   border-color: var(--via-navy-16);
   color: var(--via-text-primary);
 }
@@ -652,12 +666,14 @@
   overflow: hidden;
 }
 
+/* tinta de DADO (--via-chart-ink) e não navy cru: navy é fixo nos dois
+   temas e no escuro fica mais escuro que a própria trilha — a barra
+   lia ao contrário. Sem gloss/inset: barra de dado é chapada. */
 .vds-tbl-progress .track > span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
+  background: linear-gradient(90deg, var(--via-chart-ink), var(--via-chart-ink-2));
   border-radius: var(--via-radius-pill);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
 .vds-tbl-progress .pct {
@@ -723,7 +739,7 @@
 
 .vds-tbl-status.attention {
   background: var(--via-navy-06);
-  border-color: rgba(10, 31, 59, 0.15);
+  border-color: var(--via-navy-16);
   color: var(--via-text-primary);
 }
 
@@ -971,7 +987,7 @@
 
 .vds-tbl-prio.média,
 .vds-tbl-prio.media {
-  background: rgba(10, 31, 59, 0.07);
+  background: var(--via-navy-08);
   border-color: var(--via-navy-16);
   color: var(--via-text-primary);
 }

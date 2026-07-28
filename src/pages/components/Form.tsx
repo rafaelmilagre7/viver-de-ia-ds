@@ -91,7 +91,7 @@ export default function Form() {
                 </div>
               </div>
 
-              <div className="via-field">
+              <div className="via-field has-counter">
                 <label className="lbl">Bio profissional</label>
                 <textarea
                   className="val"
@@ -112,8 +112,14 @@ export default function Form() {
           <div className="vds-form-card">
             <p className="vds-eyebrow" style={{ marginBottom: 18 }}>Preferências da turma</p>
             <div className="vds-form-selectors">
-              <label className="via-check" onClick={() => setTermo(!termo)}>
-                <span className={`box ${termo ? 'checked' : ''}`}>
+              <label className="via-check">
+                <input
+                  className="hid"
+                  type="checkbox"
+                  checked={termo}
+                  onChange={(e) => setTermo(e.target.checked)}
+                />
+                <span className={`box ${termo ? 'checked' : ''}`} aria-hidden="true">
                   {termo && <Check size={12} strokeWidth={3} />}
                 </span>
                 <div>
@@ -122,8 +128,14 @@ export default function Form() {
                 </div>
               </label>
 
-              <label className="via-check" onClick={() => setNews(!news)}>
-                <span className={`box ${news ? 'checked' : ''}`}>
+              <label className="via-check">
+                <input
+                  className="hid"
+                  type="checkbox"
+                  checked={news}
+                  onChange={(e) => setNews(e.target.checked)}
+                />
+                <span className={`box ${news ? 'checked' : ''}`} aria-hidden="true">
                   {news && <Check size={12} strokeWidth={3} />}
                 </span>
                 <div>
@@ -139,12 +151,16 @@ export default function Form() {
                     { v: '2026.2', l: 'Turma 2026.2', d: 'Início em agosto · inscrições abertas' },
                     { v: '2027.1', l: 'Turma 2027.1', d: 'Início em fevereiro · lista de interesse' },
                   ].map((o) => (
-                    <label
-                      key={o.v}
-                      className={`via-radio ${turma === o.v ? 'on' : ''}`}
-                      onClick={() => setTurma(o.v)}
-                    >
-                      <span className={`ring ${turma === o.v ? 'checked' : ''}`}>
+                    <label key={o.v} className={`via-radio ${turma === o.v ? 'on' : ''}`}>
+                      <input
+                        className="hid"
+                        type="radio"
+                        name="vds-turma"
+                        value={o.v}
+                        checked={turma === o.v}
+                        onChange={() => setTurma(o.v)}
+                      />
+                      <span className={`ring ${turma === o.v ? 'checked' : ''}`} aria-hidden="true">
                         <span className="dot" />
                       </span>
                       <div>
@@ -167,7 +183,7 @@ export default function Form() {
             <tr><td className="tok">Wrapper radius</td><td className="val">28px</td></tr>
             <tr><td className="tok">Wrapper shadow</td><td className="val">0 24px 56px navy 14% + inner 1px white</td></tr>
             <tr><td className="tok">Field surface</td><td className="val">white 85% + blur 24 saturate 180%</td></tr>
-            <tr><td className="tok">Field border</td><td className="val">1px white 95% (rest) → navy 100% (focus)</td></tr>
+            <tr><td className="tok">Field border</td><td className="val">1px white 95% (rest) → navy 100% (focus) · branco 55% no dark</td></tr>
             <tr><td className="tok">Field radius</td><td className="val">16px</td></tr>
             <tr><td className="tok">Focus ring</td><td className="val">0 0 0 4px navy 12%</td></tr>
             <tr><td className="tok">Padding</td><td className="val">14 18</td></tr>

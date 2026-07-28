@@ -111,18 +111,9 @@
   font-weight: var(--via-fw-bold);
 }
 
-.vds-ob .ob-step.current .circle::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: var(--via-radius-pill);
-  border: 1.5px dashed var(--via-navy-18);
-  animation: vds-ob-spin 14s linear infinite;
-}
-
-@keyframes vds-ob-spin {
-  to { transform: rotate(360deg); }
-}
+/* O anel tracejado girando saiu: 1.5px dashed vira fuzz na borda do círculo,
+   e giro infinito promete "carregando" num passo que só está ativo.
+   O halo suave (box-shadow acima) já marca o passo atual com nitidez. */
 
 .vds-ob .ob-step.current .t {
   color: var(--via-text-primary);
@@ -507,8 +498,11 @@
   display: none;
 }
 
+/* Painel é navy em QUALQUER tema, então o realce do passo atual não pode usar
+   token que vira navy no claro (--via-navy-08 = navy 8% no light, branco 9% no
+   dark): a linha do passo atual simplesmente sumia no tema padrão. */
 .vds-wiz-steps li.current {
-  background: var(--via-navy-08);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .vds-wiz-steps li.done {
@@ -536,11 +530,17 @@
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.18);
   color: var(--via-white);
-}.vds-wiz-steps li.current .vds-wiz-step-bullet {
-  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
+}
+
+/* Disco navy sobre painel navy deixava o passo ATUAL como o único sem bolinha
+   visível — hierarquia invertida (concluído e futuro apareciam, o atual não).
+   Invertido: disco branco sólido, numeral navy. Atual > concluído > futuro. */
+.vds-wiz-steps li.current .vds-wiz-step-bullet {
+  background: var(--via-white);
   border-color: transparent;
-  color: var(--via-white);
-  box-shadow: 0 4px 10px -2px var(--via-navy-30);
+  color: var(--via-navy-deep);
+  font-weight: var(--via-fw-bold);
+  box-shadow: 0 4px 12px -3px rgba(0, 0, 0, 0.45);
 }
 
 .vds-wiz-steps li > div {
@@ -588,12 +588,15 @@
   position: relative;
 }
 
+/* O trilho vive SEMPRE sobre o painel navy (via-mesh-navy não muda com o tema).
+   O preenchimento precisa ser CLARO: navy→navy-deep (accent/accent-warm) some
+   dentro do navy e o progresso lia invertido — só o vazio aparecia. */
 .vds-wiz-progress span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-accent), var(--via-accent-warm));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.6));
   border-radius: 2px;
-  box-shadow: 0 0 12px var(--via-navy-25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.18);
   transition: width .4s ease;
 }
 
@@ -632,12 +635,13 @@
   color: var(--via-text-primary);
 }
 
+/* Sem gradient-text aqui: accent→accent-warm é navy→navy-deep (diferença
+   imperceptível) e cobrava dois preços — o glifo itálico do fim da 1ª linha
+   ficava cortado (background-clip: text não pinta o overhang do fragmento que
+   quebra) e no tema escuro o stop navy sumia no fundo. A ênfase é o itálico. */
 .vds-wiz-main h2 em {
   font-style: italic;
-  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--via-text-primary);
 }
 
 .vds-wiz-lede {

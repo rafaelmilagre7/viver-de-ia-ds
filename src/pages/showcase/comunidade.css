@@ -13,10 +13,14 @@
   .vds-showcase.cmu { margin: -32px -24px -64px; }
 }
 
-/* NAV */
+/* NAV
+   top: 64px — o header do shell (.vds-header) é sticky em top:0 com z-index 50.
+   Com top:0 aqui, as duas barras disputavam a MESMA faixa de 64px e a nav da
+   página ficava 100% escondida atrás do header do shell ao rolar (z 40 < 50).
+   Mesma régua já usada em aluno.css / leaders-ai.css / marketing.css. */
 .cmu-nav {
   position: sticky;
-  top: 0;
+  top: 64px;
   z-index: 40;
   display: flex;
   align-items: center;
@@ -89,7 +93,8 @@
 /* Categorias (esquerda) */
 .cmu-cats {
   position: sticky;
-  top: 88px;
+  /* 64 (header do shell) + 64 (nav da página) + 24 de respiro */
+  top: 152px;
 }
 
 .cmu-cats-eyebrow,
@@ -230,6 +235,9 @@
   color: var(--via-text-body);
   letter-spacing: -0.005em;
   outline: none;
+  /* o campo é fluido (flex:1) — sem isso o placeholder corta no meio da
+     palavra em vez de reticenciar */
+  text-overflow: ellipsis;
   transition: all 180ms ease;
 }
 
@@ -420,7 +428,10 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.42);
+  /* 0.42 sobre --via-navy-darker dava 3,7:1 — reprovava em AA num rótulo de
+     11px. 0.58 sobe pra ~6,5:1 e continua "quieto" ao lado do código.
+     Mesma faixa do chrome de código escuro em components/code-block.css. */
+  color: rgba(255, 255, 255, 0.58);
   margin-bottom: 8px;
 }
 
@@ -484,7 +495,8 @@
 /* Sidebar direita */
 .cmu-side {
   position: sticky;
-  top: 88px;
+  /* 64 (header do shell) + 64 (nav da página) + 24 de respiro */
+  top: 152px;
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
@@ -557,8 +569,32 @@
   border: 2px solid var(--via-surface);
 }
 
-.cmu-member-dot.online { background: #1F8A5B; }
-.cmu-member-dot.away { background: var(--via-stage-2); }
+/* Status vive só na bolinha e segue o contrato do <Avatar> da library:
+   ONLINE = verde sóbrio (--via-success); todos os outros estados = navy.
+   O `away` usava --via-stage-2, que é token de SUPERFÍCIE de palco: no tema
+   escuro ele vira #0B1220 e a bolinha sumia dentro do card. */
+.cmu-member-dot.online {
+  background: var(--via-success);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 1px 2px rgba(0, 0, 0, 0.16);
+}
+
+.cmu-member-dot.away {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 1px 3px var(--via-navy-30);
+}
+
+/* No tema escuro o navy encosta no card (≈1,1:1) e a bolinha desaparece.
+   O equivalente do navy no dark é o neutro claro — recuado por opacidade,
+   como manda a régua de status. Nunca uma cor de semáforo. */
+[data-theme="dark"] .cmu-member-dot.away {
+  background: var(--via-text-faint);
+  opacity: 0.55;
+  box-shadow: none;
+}
 
 .cmu-members li strong {
   font-size: var(--via-fs-caption);

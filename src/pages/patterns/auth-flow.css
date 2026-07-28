@@ -28,8 +28,39 @@
   box-shadow: 0 24px 56px -22px rgba(10, 31, 59, 0.38);
 }
 
+/* Ilha permanentemente CLARA · `--via-surface-onnavy` é branco fixo nos 2 temas
+   ("NÃO adapta · sempre clara porque texto sobre ela é navy"). O card já fixava
+   os tokens de TEXTO — mas o resto da subárvore continuava lendo os valores do
+   tema DARK, e com a página em escuro tudo dentro dele lavava:
+     · `p.navy`/termos herdavam ink-2/ink-3 dark (#B4BBC9/#AEB8C6) → cinza claro
+       sobre card branco, ~1.9:1;
+     · os 3 botões de provider usam `--via-glass-card` + `--via-glass-ring`, que
+       em dark viram branco 10% e branco 8% → botão branco no branco, sem aro;
+     · `.vds-auth-field.light` usa `--via-surface`, que em dark é #131C30 → campo
+       navy-escuro com texto navy dentro do card branco.
+   Fixar os valores light aqui deixa a ilha estável nos dois temas. */
 .vds-auth-card.light {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
+  --via-ink-2: #5E6B82;
+  --via-ink-3: #525C72;
+  --via-surface: var(--via-white);
+  --via-border: rgba(10, 31, 59, 0.16);
+  --via-border-soft: rgba(10, 31, 59, 0.05);
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  --via-glass-card: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);
+  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
+  /* accent-warm vira TEXTO CLARO no dark e a rampa navy-XX inverte pra branco:
+     dentro de um card branco isso apaga a pill "último usado" e a atmosfera. */
+  --via-accent: var(--via-navy);
+  --via-accent-warm: var(--via-navy-deep);
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-05: rgba(10, 31, 59, 0.05);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-navy-10: rgba(10, 31, 59, 0.10);
+  --via-navy-18: rgba(10, 31, 59, 0.18);
+  --via-navy-20: rgba(10, 31, 59, 0.20);
+  --via-navy-22: rgba(10, 31, 59, 0.22);
+  --via-navy-30: rgba(10, 31, 59, 0.30);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
@@ -98,6 +129,18 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* TEXTO INVISÍVEL · o fix sistêmico de tokens.css força gradient BRANCO em
+   `.vds-auth-card :is(h1..h4) em` com !important, assumindo que todo auth card
+   é navy. O card `.light` tem fundo branco → "volta" saía branco no branco.
+   Specificity maior + !important devolve o gradient navy nesse card. */
+.vds-auth-card.light :is(h1, h2, h3, h4) em {
+  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: var(--via-navy);
 }
 
 .vds-auth-card p {
@@ -298,11 +341,31 @@
 }
 
 .vds-auth-terms {
-  margin: 14px 0 0;
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   text-align: center;
   line-height: 1.5;
+}
+
+/* TEXTO INVISÍVEL · `.vds-auth-card p` (0,1,1) pintava esse <p> de branco 70%
+   e ganhava de `.vds-auth-terms` (0,1,0). No card claro só os links sublinhados
+   apareciam — a frase "Ao continuar, você concorda…" sumia no branco.
+   O mesmo seletor também sequestrava `margin` e `max-width: 400px`: num card de
+   952px a caixa ficava colada à esquerda e o texto "centralizado" saía fora do
+   eixo. Daí `margin-inline: auto` aqui, com specificity (0,2,0). */
+.vds-auth-card.light .vds-auth-terms {
+  color: var(--via-ink-3);
+}
+
+.vds-auth-card .vds-auth-terms {
+  margin: 14px auto 0;
+  /* medida um pouco maior que os 400px herdados: cabe numa linha só e o link
+     "Política de privacidade" para de quebrar no meio. */
+  max-width: 34rem;
+}
+
+.vds-auth-card .vds-auth-foot-link {
+  margin-inline: auto;
 }
 
 .vds-auth-terms a {
@@ -843,13 +906,23 @@
   color: rgba(255,255,255,0.72);
 }
 
-/* Step pill (passo 1 · enviar link) em context navy --------- */
-.via-mesh-navy .vds-auth-step {
+/* Step pill (passo 1 · enviar link) em context navy ---------
+   O card `.success` é navy sólido mas não tem `.via-mesh-navy`: a pill
+   "passo 2 · cheque seu email" ficava navy #0A1F3B sobre navy #0A1F3B —
+   texto, fundo e borda invisíveis (o passo 2 simplesmente não existia na tela). */
+.via-mesh-navy .vds-auth-step,
+.vds-auth-card.success .vds-auth-step {
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.18);
   color: rgba(255,255,255,0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+/* …e o envelope precisa descer pra não colidir com a pill que voltou a existir
+   (mesmo ritmo vertical do brand lockup do passo 1). */
+.vds-auth-card.success .vds-auth-success-ring {
+  margin-top: 12px;
 }
 
 /* Meta pill (Link expira em 9:47) em context navy ----------- */

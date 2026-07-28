@@ -39,7 +39,10 @@
   align-items: start;
 }
 
-@media (max-width: 1024px) {
+/* Colapsa ANTES de o aside fixo (360px) estrangular a coluna principal —
+   em 1100px o vídeo caía pra 315px de largura, mais estreito que a própria
+   lateral. A peça principal nunca pode ficar menor que o acessório. */
+@media (max-width: 1180px) {
   .vds-lesson-grid {
     grid-template-columns: 1fr;
   }
@@ -49,6 +52,9 @@
 .vds-lesson-video {
   position: relative;
   aspect-ratio: 16 / 9;
+  /* o poster se adapta à PRÓPRIA altura (não à do viewport): a barra de
+     controles tem altura fixa e come metade de um 16:9 estreito */
+  container-type: size;
   border-radius: var(--via-radius-lg);
   overflow: hidden;
   background: var(--via-navy);
@@ -64,16 +70,24 @@
   z-index: 0;
 }
 
+/* Poster ocioso · GRID de 2 faixas: copy em cima, play no miolo livre.
+   Os dois vivem em faixas separadas — nunca se sobrepõem — e o padding
+   inferior RESERVA a faixa da barra de controles (16px offset + ~69px de
+   altura), senão o lede some por baixo do vidro dos controles. */
 .vds-lesson-video .vid-idle {
   position: absolute;
   inset: 0;
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  padding: 24px 28px 88px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   color: var(--via-white);
   z-index: 2;
   background: linear-gradient(180deg, rgba(10, 31, 59, 0) 40%, rgba(10, 31, 59, 0.6) 100%);
+}
+
+.vds-lesson-video .vid-idle-copy {
+  align-self: start;
+  max-width: 34ch;
 }
 
 .vds-lesson-video .vid-idle .eyebrow {
@@ -85,17 +99,16 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .vds-lesson-video .vid-idle h2 {
-  font-size: var(--via-fs-h2);
+  font-size: 24px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.024em;
-  line-height: 1.08;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
   color: var(--via-white);
-  margin: 0 0 10px;
-  max-width: 540px;
+  margin: 0 0 8px;
 }
 
 .vds-lesson-video .vid-idle h2 em {
@@ -105,18 +118,15 @@
 }
 
 .vds-lesson-video .vid-idle .lede {
-  font-size: var(--via-fs-xs);
+  font-size: var(--via-fs-label);
   color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 24px;
+  margin: 0;
 }
 
 .vds-lesson-video .vid-play-big {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 96px;
-  height: 96px;
+  place-self: center;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(28px) saturate(160%);
@@ -134,12 +144,12 @@
 }
 
 .vds-lesson-video .vid-play-big:hover {
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: scale(1.05);
   background: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.34);
 }
 
-.vds-lesson-video .vid-play-big:active { transform: translate(-50%, -50%) scale(1); }
+.vds-lesson-video .vid-play-big:active { transform: scale(1); }
 
 .vds-lesson-video .vid-play-big:focus-visible {
   outline: none;
@@ -263,7 +273,16 @@
   font-feature-settings: 'tnum' 1;
   margin-left: 4px;
   letter-spacing: 0.02em;
+  /* timecode é um bloco só · sem ele o "04:28 / 13:54" quebra em 3 linhas
+     e a barra de controles dobra de altura no estreito */
+  white-space: nowrap;
 }
+
+.vds-lesson-video .vid-row-l,
+.vds-lesson-video .vid-row-r { min-width: 0; }
+
+.vds-lesson-video .vid-ctrl,
+.vds-lesson-video .vid-quality { flex: none; }
 
 .vds-lesson-video .vid-quality {
   font-size: var(--via-fs-label);
@@ -330,6 +349,25 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.12em;
   color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Poster responsivo · pela altura do PRÓPRIO vídeo ----------
+   A faixa de controles tem altura fixa (~85px). Num 16:9 estreito ela come
+   metade do poster, e não sobra espaço pra copy + play. Em vez de adivinhar
+   pelo viewport, o poster reage à própria altura. */
+@container (max-height: 300px) {
+  .vds-lesson-video .vid-idle { padding: 16px 16px 84px; }
+  .vds-lesson-video .vid-idle-copy { display: none; }
+}
+
+@container (max-height: 210px) {
+  .vds-lesson-video .vid-idle { padding: 12px 12px 78px; }
+  .vds-lesson-video .vid-play-big { width: 56px; height: 56px; }
+  /* marca d'água e controles secundários saem · o que sobra é o essencial:
+     tocar, volume, tempo, tela cheia — sem timecode passando por baixo de botão */
+  .vds-lesson-video .vid-watermark,
+  .vds-lesson-video .vid-ctrl.skip,
+  .vds-lesson-video .vid-quality { display: none; }
 }
 
 /* Info below video */
@@ -970,19 +1008,21 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
-  border: 2px solid var(--via-white);
+  /* sem anel · o avatar se resolve com hairline + a luz de topo do vidro.
+     `--via-white` não adapta: em dark o anel de 2px virava halo branco. */
+  border: 1px solid var(--via-border-soft);
   box-shadow:
-    0 0 0 1px var(--via-navy-08),
-    0 2px 6px var(--via-navy-10);
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 6px -3px var(--via-navy-10);
 }
 
 .vds-discussion .av.light {
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
-  border-color: var(--via-white);
+  border-color: var(--via-navy-20);
   box-shadow:
-    0 0 0 1px var(--via-navy-20),
-    0 4px 10px -3px var(--via-navy-40);
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 4px 10px -4px var(--via-navy-40);
 }
 
 .vds-disc-meta {
@@ -1012,7 +1052,8 @@
   letter-spacing: -0.004em;
   padding: 2px 6px;
   border-radius: var(--via-radius-pill);
-  background: rgba(10, 31, 59, 0.07);
+  /* token, não navy cru · navy 7% chapado some sobre superfície escura */
+  background: var(--via-navy-06);
   color: var(--via-text-primary);
   white-space: nowrap;
   line-height: 1.4;
@@ -1185,7 +1226,7 @@
   background:
     radial-gradient(280px 120px at 0% 0%, var(--via-navy-08), transparent 70%),
     var(--via-navy-03);
-  border-color: rgba(10, 31, 59, 0.15);
+  border-color: var(--via-navy-20);
 }
 
 .vds-quiz-option.correct .vds-quiz-letter {

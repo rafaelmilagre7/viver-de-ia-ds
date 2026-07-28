@@ -129,6 +129,20 @@
 }
 .via-field.focused .lbl { color: var(--via-text-primary); }
 
+/* Dark · --via-navy NÃO inverte no escuro (#0A1F3B fixo), então a borda de
+   foco ficava MAIS ESCURA que o vidro: 1,49:1 contra a superfície e 1,61:1
+   contra o anel — o foco virava um sulco, não um endurecimento. No escuro o
+   foco endurece com LUZ (escala navy-alpha, que vira branco) + o anel de foco
+   do DS. */
+[data-theme='dark'] .via-field.focused,
+[data-theme='dark'] .via-field:focus-within {
+  border-color: var(--via-navy-60);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 4px var(--via-navy-14),
+    0 6px 18px rgba(0, 0, 0, 0.34);
+}
+
 .via-field.error {
   border-color: var(--via-danger);
   box-shadow:
@@ -137,7 +151,11 @@
     0 6px 18px rgba(184,58,58,0.08);
 }
 .via-field.error .lbl { color: var(--via-danger); }
-.via-field.error .val { color: var(--via-danger); }
+/* O que o usuário digitou NUNCA muda de cor por causa de validação — quem
+   carrega o erro é a borda + o label + a mensagem. Pintar o valor também
+   deixava 4 elementos vermelhos empilhados no mesmo campo (berrante).
+   Especificidade acima do global form-fields.css de propósito. */
+.vds-form-card .via-field.error .val { color: var(--via-text-primary); }
 
 .via-field.disabled {
   background: linear-gradient(180deg, rgba(247,248,250,0.92), rgba(240,242,245,0.74));
@@ -208,22 +226,26 @@
 .val-select svg { color: var(--via-text-muted); }
 
 .via-field textarea.val { font-weight: var(--via-fw-regular); min-height: 60px; }
+/* Contador vive numa faixa RESERVADA embaixo do texto. Antes ele era um chip
+   branco opaco flutuando sobre o vidro e o retângulo dele invadia 10px da
+   última linha do textarea (rows=3) — qualquer 3ª linha longa passava por
+   baixo. Com a faixa reservada não existe zona de colisão e o chip some. */
+.via-field.has-counter { padding-bottom: 38px; }
 .via-field .counter {
   position: absolute;
   bottom: 12px;
   right: 18px;
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-micro);
-  color: var(--via-gray-400);
-  background: var(--via-surface);
-  padding: 2px 8px;
-  border-radius: var(--via-radius-pill);
+  letter-spacing: 0.02em;
+  color: var(--via-text-muted);
 }
 
 /* ---- Selectors: checkbox e radio ---- */
 .vds-form-selectors { display: flex; flex-direction: column; gap: var(--via-space-3_5); }
 
 .via-check, .via-radio {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-3_5);
@@ -266,6 +288,19 @@
   box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 6px 16px var(--via-navy-10);
 }
 
+/* Input real, visualmente escondido (mesmo padrão do <Checkbox> da library):
+   dá teclado, semântica e faz o :focus-within acima existir de verdade —
+   antes o card era um <label> com onClick e o foco era CSS morto. */
+.via-check .hid,
+.via-radio .hid {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
 .via-check .box,
 .via-radio .ring {
   width: 20px;
@@ -297,6 +332,20 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
 }
 .via-radio .ring.checked .dot { display: block; }
+
+/* Dark · o "ligado" é tinta CLARA. Com navy sólido (que não inverte) o estado
+   selecionado ficava MAIS escuro que o vazio: o ponto do radio dava 1,05:1
+   contra o próprio anel (sumia) e o anel não-selecionado, em gray-400, gritava
+   mais alto que o selecionado — o estado lia invertido. */
+[data-theme='dark'] .via-check .box.checked {
+  background: var(--via-text-primary);
+  border-color: var(--via-text-primary);
+  color: var(--via-navy);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+[data-theme='dark'] .via-radio .ring.checked { border-color: var(--via-text-primary); }
+[data-theme='dark'] .via-radio .ring.checked .dot { background: var(--via-text-primary); }
+[data-theme='dark'] .via-radio.on { border-color: var(--via-navy-40); }
 
 .via-check strong,
 .via-radio strong {

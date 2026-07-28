@@ -56,9 +56,11 @@ function PlayerSection() {
 
               {!playing && (
                 <div className="vid-idle">
-                  <span className="eyebrow"><Headphones size={11} strokeWidth={2.2} /> Aula 02.02 · 13min 54s</span>
-                  <h2>Few-shot · <em>quando incluir exemplos é decisivo</em>.</h2>
-                  <p className="lede">Caio Ribeiro · sessão gravada · transcript completo na lateral</p>
+                  <div className="vid-idle-copy">
+                    <span className="eyebrow"><Headphones size={11} strokeWidth={2.2} /> Aula 02.02 · 13min 54s</span>
+                    <h2>Few-shot · <em>quando incluir exemplos é decisivo</em>.</h2>
+                    <p className="lede">Caio Ribeiro · sessão gravada · transcript completo na lateral</p>
+                  </div>
                   <button className="vid-play-big" onClick={() => setPlaying(true)} aria-label="Tocar">
                     <span className="ring">
                       <Play size={28} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
@@ -84,8 +86,8 @@ function PlayerSection() {
                         <Play size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
                       )}
                     </button>
-                    <button aria-label="Faixa anterior" className="vid-ctrl"><SkipBack size={14} strokeWidth={2.2} /></button>
-                    <button aria-label="Próxima faixa" className="vid-ctrl"><SkipForward size={14} strokeWidth={2.2} /></button>
+                    <button aria-label="Faixa anterior" className="vid-ctrl skip"><SkipBack size={14} strokeWidth={2.2} /></button>
+                    <button aria-label="Próxima faixa" className="vid-ctrl skip"><SkipForward size={14} strokeWidth={2.2} /></button>
                     <button aria-label="Volume" className="vid-ctrl"><Volume2 size={14} strokeWidth={2.2} /></button>
                     <span className="vid-time">04:28 / 13:54</span>
                   </div>

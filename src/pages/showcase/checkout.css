@@ -35,7 +35,8 @@
   letter-spacing: -0.004em;
 }
 
-.ckt-secure svg { color: #1F8A5B; }
+/* ícone do cadeado acompanha o rótulo (nada de verde de semáforo) */
+.ckt-secure svg { color: var(--via-text-muted); }
 
 @media (max-width: 860px) {
   .ckt-nav { padding: 14px 20px; }
@@ -201,11 +202,32 @@
     var(--via-shadow-focus);
 }
 
+/* Selecionado · o card ELEVA (mantém o vidro + anel neutro).
+   Não usar --via-navy como cor de anel: no tema escuro navy fica mais
+   escuro que o vidro e a seleção some (o card escolhido parecia desativado). */
 .ckt-plano.selected {
-  border-color: var(--via-navy);
+  border-color: var(--via-text-primary);
   background:
-    radial-gradient(360px 100px at 0% 0%, var(--via-navy-04), transparent 70%),
-    var(--via-surface);
+    radial-gradient(420px 120px at 50% 0%, var(--via-navy-04), transparent 70%),
+    var(--via-glass-card);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px var(--via-navy-08),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.ckt-plano.selected:hover {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px var(--via-navy-08),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.ckt-plano.selected:focus-visible {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .ckt-plano-radio {
@@ -220,13 +242,13 @@
   transition: border-color 180ms ease;
 }
 
-.ckt-plano.selected .ckt-plano-radio { border-color: var(--via-navy); }
+.ckt-plano.selected .ckt-plano-radio { border-color: var(--via-text-primary); }
 
 .ckt-plano-radio span {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--via-navy);
+  background: var(--via-text-primary);
 }
 
 .ckt-plano-info { flex: 1; }
@@ -369,10 +391,30 @@
     var(--via-shadow-focus);
 }
 
+/* Aba ativa · mesmo motivo do card selecionado: anel neutro que existe
+   nos dois temas (navy puro somia sobre o vidro escuro). */
 .ckt-pgto-tabs button.active {
-  border-color: var(--via-navy);
+  border-color: var(--via-text-primary);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px var(--via-navy-08),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.ckt-pgto-tabs button.active:hover {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 0 0 3px var(--via-navy-08),
+    0 8px 20px -10px var(--via-navy-22),
+    0 2px 6px -3px var(--via-navy-10);
+}
+
+.ckt-pgto-tabs button.active:focus-visible {
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    var(--via-shadow-focus);
 }
 
 .ckt-pgto-tabs button svg { color: var(--via-text-primary); }
@@ -388,11 +430,13 @@
   border: 1px solid var(--via-border-soft);
 }
 
+/* A "folha" do QR é branca FIXA nos dois temas · os módulos são navy-deep,
+   então --via-surface (que vira #131C30 no escuro) apagava o código inteiro. */
 .ckt-pix-qr {
   width: 120px;
   height: 120px;
   border-radius: var(--via-radius-sm);
-  background: var(--via-surface);
+  background: var(--via-surface-onnavy);
   padding: 10px;
   flex-shrink: 0;
   box-shadow: 0 2px 8px -2px var(--via-navy-14);
@@ -625,7 +669,7 @@
   letter-spacing: -0.004em;
 }
 
-.ckt-summary-incl svg { color: #1F8A5B; flex-shrink: 0; }
+.ckt-summary-incl svg { color: var(--via-text-primary); flex-shrink: 0; }
 
 .ckt-summary-total {
   display: flex;
@@ -661,7 +705,7 @@
   border: 1px solid var(--via-border-soft);
 }
 
-.ckt-summary-guarantee svg { color: #1F8A5B; flex-shrink: 0; margin-top: 1px; }
+.ckt-summary-guarantee svg { color: var(--via-text-primary); flex-shrink: 0; margin-top: 1px; }
 
 .ckt-summary-guarantee strong {
   display: block;

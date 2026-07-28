@@ -86,7 +86,9 @@ function WizardPremiumSection() {
         {/* LEFT — atmospheric narrative panel */}
         <aside className="vds-wiz-aside via-mesh-navy via-noise">
           <header>
-            <BrandLogo variant="white" size="md" />
+            {/* sm: o lockup md (~331px) estourava os 302px úteis do painel de
+                360px e o overflow:hidden do wizard cortava o "A" de VIVER DE IA */}
+            <BrandLogo variant="white" size="sm" />
           </header>
 
           <div className="vds-wiz-aside-body">
