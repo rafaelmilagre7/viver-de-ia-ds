@@ -228,7 +228,7 @@
 .auth-divider {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--via-space-3_5);
   margin: 12px 0 20px;
 }
 .auth-divider::before,

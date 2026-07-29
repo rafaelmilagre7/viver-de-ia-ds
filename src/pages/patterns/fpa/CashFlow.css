@@ -368,7 +368,7 @@
 .vds-fpa-cash-readout .ro-vals span {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 .vds-fpa-cash-readout .ro-vals em {
   font-style: normal;
@@ -686,7 +686,7 @@
 .vds-fpa-cash-eq span {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 .vds-fpa-cash-eq em {
   font-style: normal;

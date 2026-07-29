@@ -152,7 +152,7 @@
   fill: rgba(255, 255, 255, 0.48);
   /* tracking curto de propósito: o rótulo divide a banda vertical com o
      indicador do arco — com var(--via-ls-mark) ele encosta no dot */
-  letter-spacing: 0.08em;
+  letter-spacing: var(--via-ls-wide);
   text-transform: uppercase;
 }
 

@@ -134,7 +134,7 @@
 
 .dash-metric.via-metric {
   padding: 18px 20px;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   transition: var(--via-t);
 }
 /* coluna estreita · o número desce um degrau pra não estourar */
@@ -163,7 +163,7 @@
 .dash-metric .via-delta {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: var(--via-space-0_5);
 }
 .dash-metric-ref {
   font-size: var(--via-fs-micro);

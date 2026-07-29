@@ -326,7 +326,7 @@
 .vds-data-anat > header {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding-bottom: 14px;
   border-bottom: 1px solid var(--via-border-soft);
 }
@@ -373,7 +373,7 @@
 .vds-data-compare-col {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--via-space-2_5);
 }
 
 .vds-data-compare-tag {

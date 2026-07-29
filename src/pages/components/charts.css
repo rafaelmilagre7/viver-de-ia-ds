@@ -996,7 +996,7 @@
 }
 
 .vds-donut-svg .donut-big {
-  font-size: 56px;
+  font-size: var(--via-fs-display);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   fill: var(--via-text-primary);

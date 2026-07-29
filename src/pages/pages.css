@@ -556,7 +556,7 @@
   background: #F7F8FA;
   padding: 0 8px;
   font-family: var(--via-font-mono);
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   color: #667085;
 }
 
@@ -827,7 +827,7 @@
 }
 .vds-motion-curve {
   font-family: var(--via-font-mono);
-  font-size: 11px;
+  font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   margin: 6px 0 0;
 }

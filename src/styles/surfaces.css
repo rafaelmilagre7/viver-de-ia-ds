@@ -26,7 +26,7 @@
 .via-pill-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 7px 14px;
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);

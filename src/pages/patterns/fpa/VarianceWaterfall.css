@@ -141,7 +141,7 @@
 .vds-fpa-var-selo {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   padding: 6px 13px;
   border-radius: var(--via-radius-pill);
   background: var(--vds-fpa-var-ok-bg);
@@ -391,13 +391,13 @@
    O sinal (+ / −) e a barra ao lado já dizem a direção; repetir o hue
    no rótulo é redundância que só derruba contraste. */
 .vds-fpa-var-tick {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   fill: var(--via-data-ink);
   letter-spacing: 0.01em;
 }
 .vds-fpa-var-unidade {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   fill: var(--via-text-faint);
   letter-spacing: 0.01em;
@@ -471,7 +471,7 @@
   padding: 0 18px 2px;
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--via-ls-wide);
   text-transform: uppercase;
   color: var(--via-text-faint);
 }
@@ -576,7 +576,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 4px;
+  gap: var(--via-space-1);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.018em;
@@ -662,7 +662,7 @@
   border-bottom: 1px solid var(--via-navy-12);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--via-ls-wide);
   text-transform: uppercase;
   color: var(--via-text-muted);
   text-align: left;
@@ -767,7 +767,7 @@
   .vds-fpa-var-lista .vds-fpa-var-row {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: start;
-    row-gap: 10px;
+    row-gap: var(--via-space-2_5);
     column-gap: var(--via-space-4);
   }
   .vds-fpa-var-row-id { grid-column: 1; grid-row: 1; }
@@ -788,7 +788,7 @@
 @media (max-width: 620px) {
   .vds-fpa-var-lista .vds-fpa-var-row {
     grid-template-columns: minmax(0, 1fr) auto;
-    row-gap: 8px;
+    row-gap: var(--via-space-2);
   }
   .vds-fpa-var-row-id { grid-column: 1 / -1; grid-row: 1; }
   .vds-fpa-var-row-num {

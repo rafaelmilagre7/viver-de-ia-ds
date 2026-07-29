@@ -55,5 +55,5 @@
 }
 
 @media (max-width: 720px) {
-  .vds-fpa-page { gap: 48px; }
+  .vds-fpa-page { gap: var(--via-space-12); }
 }

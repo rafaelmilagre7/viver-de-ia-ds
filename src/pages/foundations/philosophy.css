@@ -330,7 +330,7 @@
 .vds-phil-token > div {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--via-space-0_5);
   min-width: 0;
 }
 
@@ -547,7 +547,7 @@
 .vds-phil-dot-lbl {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--via-space-1_5);
   min-width: 120px;
   font-family: var(--via-mono);
   font-size: var(--via-fs-label);

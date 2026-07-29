@@ -378,7 +378,7 @@
 }
 .vds-fpa-burn-unit,
 .vds-fpa-burn-ref {
-  font-size: 10px;
+  font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   fill: var(--via-text-faint);
   letter-spacing: 0.01em;

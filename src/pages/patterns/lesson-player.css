@@ -103,7 +103,7 @@
 }
 
 .vds-lesson-video .vid-idle h2 {
-  font-size: 24px;
+  font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   line-height: 1.15;
