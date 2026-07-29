@@ -60,6 +60,17 @@
   --via-gray-800: #1D2939;   /* close to navy */
   --via-gray-900: #101828;   /* near black */
 
+  /* STAGE · fundo de "palco" (chat, overlay, empty state, streak).
+     ⚠️ BUG CORRIGIDO: estes 3 existiam SÓ em [data-theme="dark"]. No tema
+     CLARO — que é o padrão da casa — o var() ficava vazio e INVALIDAVA a
+     declaração `background` inteira, derrubando junto as camadas de
+     atmosfera. Resultado: palco chapado e, onde o texto era branco por
+     contar com fundo escuro, TEXTO INVISÍVEL (branco no branco).
+     Agora existem nos dois temas. Nunca declare um stage só no dark. */
+  --via-stage-soft: var(--via-gray-200);
+  --via-stage-1:    var(--via-gray-300);
+  --via-stage-2:    var(--via-gray-400);
+
   --via-black: #000000;
   --via-white: #FFFFFF;
 
@@ -127,7 +138,7 @@
    DARK MODE · [data-theme="dark"] no <html>
    Mantém navy como cor central · troca surfaces white → navy-dark
    ============================================================= */
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   /* =================================================
      SURFACES · escala com mais separação entre camadas
      Tons levemente warm pra não ficar "preto técnico"
@@ -223,6 +234,17 @@
   --via-shadow-lg: 0 16px 40px rgba(0,0,0,0.52), 0 2px 8px rgba(0,0,0,0.34);
   --via-shadow-xl: 0 32px 80px rgba(0,0,0,0.62), 0 4px 16px rgba(0,0,0,0.40);
   --via-shadow-focus: 0 0 0 3px rgba(255,255,255,0.22);
+  /* Tinta de sombra no ESCURO: preta e mais densa — navy sobre navy
+     não produz sombra nenhuma, e token que inverte vira halo branco. */
+  --via-shadow-ink-03: rgba(0, 0, 0, 0.18);
+  --via-shadow-ink-06: rgba(0, 0, 0, 0.26);
+  --via-shadow-ink-10: rgba(0, 0, 0, 0.34);
+  --via-shadow-ink-14: rgba(0, 0, 0, 0.40);
+  --via-shadow-ink-20: rgba(0, 0, 0, 0.46);
+  --via-shadow-ink-30: rgba(0, 0, 0, 0.54);
+  --via-shadow-ink-40: rgba(0, 0, 0, 0.62);
+  --via-shadow-ink-60: rgba(0, 0, 0, 0.72);
+
 
   color-scheme: dark;
 }
@@ -278,7 +300,7 @@
   --via-glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
 }
 
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0.022) 100%);  /* sheen de topo · luz no vidro escuro */
   --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018));
   --via-glass-bar:    rgba(11, 18, 32, 0.55);
@@ -390,14 +412,87 @@
   --via-space-24:  96px;
   --via-space-32:  128px;
 
-  /* ========== RADII =========================================== */
-  --via-radius-xs:   4px;
-  --via-radius-sm:   8px;
-  --via-radius-md:   12px;
+  /* ========== RADII ===========================================
+     Escala generosa (cantos suaves = leitura premium/Apple). Cada degrau
+     é perceptivelmente diferente do vizinho — nada de 14 vs 16 vs 18, que
+     só tira o ritmo. SEMPRE usar o token, nunca px cru.
+       xs  chip/tag minúscula · sm  badge, input pequeno, thumb
+       md  botão, input, card pequeno · lg  CARD PADRÃO
+       xl  card grande, modal, drawer · 2xl painel hero / seção full  */
+  --via-radius-xs:   6px;
+  --via-radius-sm:   10px;
+  --via-radius-md:   14px;
   --via-radius-lg:   20px;
   --via-radius-xl:   28px;
   --via-radius-2xl:  40px;
   --via-radius-pill: 999px;
+
+  /* ========== TINTA DE SOMBRA · use ISTO em box-shadow ==========
+     ⚠️ A ARMADILHA Nº1 DO DS (139 ocorrências achadas em auditoria):
+     `--via-navy-40`, `--via-edge-hi` e `--via-white` INVERTEM no tema
+     escuro — viram branco. Quem usa esses tokens numa SOMBRA ganha um
+     HALO BRANCO no escuro (medimos glow de 24px em botão, auréola em
+     card, anel branco em avatar). E sombra navy fixa some sobre fundo
+     navy, deixando o elemento sem elevação nenhuma.
+
+     REGRA: em `box-shadow` de elevação, use SEMPRE --via-shadow-ink-*.
+     Ele já é navy no claro e PRETO no escuro (sombra no escuro precisa
+     ser mais densa pra existir). Nunca --via-navy-* numa sombra.
+
+     Exceção legítima: `inset 0 1px 0 var(--via-edge-hi)` — a linha de
+     luz no topo do vidro. Ali o branco é o efeito desejado. */
+  --via-shadow-ink-03: rgba(10, 31, 59, 0.03);
+  --via-shadow-ink-06: rgba(10, 31, 59, 0.06);
+  --via-shadow-ink-10: rgba(10, 31, 59, 0.10);
+  --via-shadow-ink-14: rgba(10, 31, 59, 0.14);
+  --via-shadow-ink-20: rgba(10, 31, 59, 0.20);
+  --via-shadow-ink-30: rgba(10, 31, 59, 0.30);
+  --via-shadow-ink-40: rgba(10, 31, 59, 0.40);
+  --via-shadow-ink-60: rgba(10, 31, 59, 0.60);
+
+  /* ========== DATAVIZ · paleta de série (VALIDADA por script) ===
+     Regra desta marca: a paleta é navy-only, o que torna gráfico
+     multi-série por COR matematicamente impossível — medido, não
+     achismo. Validador (CVD/contraste/ΔE) reprovou toda tentativa
+     de 3+ séries na família fria: azul×petróleo dá ΔE 4.9 pra
+     deuteranopia (indistinguível). O que PASSOU em todos os checks:
+     o par abaixo, no claro.
+
+     COMO USAR — a regra que evita gráfico ilegível:
+       1 série   → --via-data-1 (ou o navy da marca). Sem legenda:
+                   o título já nomeia a série.
+       2 séries  → --via-data-1 + --via-data-2 e SEMPRE um segundo
+                   canal além da cor (tracejado/textura/marcador) +
+                   rótulo direto. Assim funciona no dark e pra CVD.
+       3+ séries → NÃO invente uma 3ª cor. Use small multiples (um
+                   gráfico por série) ou agrupe o resto em "Outros".
+     Status (bom/atenção/crítico) é reservado — NUNCA vira série. */
+  --via-data-1:      #2E6FC4;   /* série primária · passou light */
+  --via-data-2:      #7FB0EE;   /* série secundária · exige 2º canal */
+  --via-data-1-dark: #5C9BEA;   /* passo próprio do dark, não flip */
+  --via-data-2-dark: #2E6FC4;
+  --via-data-grid:   var(--via-navy-08);   /* grade recessiva */
+  --via-data-axis:   var(--via-navy-20);   /* linha de base/eixo */
+  --via-data-ink:    var(--via-text-muted);/* rótulo de eixo — texto usa token de TEXTO, nunca a cor da série */
+
+  /* ========== LIQUID GLASS · receitas prontas ==================
+     Assinatura da marca. Use a receita inteira (superfície + borda fina +
+     linha de luz no topo + sombra navy), não só o fundo.
+       via-glass-card  card/painel de conteúdo (mais sólido, texto legível)
+       via-glass-bar   nav sticky/toolbar/overlay (translúcido de verdade)
+     Vidro só "aparece" com algo atrás pra desfocar — sobre fundo
+     atmosférico/escuro/conteúdo rolando. Sobre branco liso ele some. */
+  --via-glass-blur:      blur(24px) saturate(175%);
+  --via-glass-blur-bar:  blur(26px) saturate(185%);
+  --via-glass-ring:      1px solid var(--via-border-soft);
+  --via-glass-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 12px 32px -14px var(--via-navy-14),
+    0 2px 8px -4px var(--via-navy-06);
+  --via-glass-shadow-lift:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 24px 56px -20px var(--via-navy-20),
+    0 4px 12px -6px var(--via-navy-08);
 
   /* ========== BORDERS ========================================= */
   --via-border-fine:   0.5px solid var(--via-border-hairline);

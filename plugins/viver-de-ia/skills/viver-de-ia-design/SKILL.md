@@ -106,12 +106,12 @@ Tokens semânticos reais de texto: `--via-text-primary`, `--via-text-body`, `--v
 </span>
 ```
 
-Live em italic editorial *"ao vivo"* — nunca caps lock "AO VIVO". Dot tem 2 animations simultâneas: scale e ring com opacity fade.
+Live minúsculo "ao vivo" — nunca caps lock "AO VIVO". O `<em>` fica RETO (guarda global `em { font-style: normal }` — Geist não tem itálico verdadeiro; ênfase = peso + cor). Dot tem 2 animations simultâneas: scale e ring com opacity fade.
 
 ### Tipografia — Geist single family
 
 - **Geist** (variable 100-900) pra TUDO · **Geist Mono** pra código/tokens/timestamps/números
-- Italic editorial OK em ênfase (h2 em, blockquote, live pill)
+- **ITÁLICO BANIDO** — Geist não tem itálico real; o navegador inclina à força ("Italic morto"). Ênfase editorial = **peso + cor** (`<em>` fica RETO via guarda global `em { font-style: normal }`; em heading, `em` ganha cor mais suave). Nunca escreva `font-style: italic`.
 - Letterspacing: corpo `-0.005 a -0.018em` · headings `-0.022 a -0.04em` · mono eyebrows em `0.04-0.08em` (não pill!)
 - Pesos: body 400-500 · subtítulo 500-600 · heading 500-600 · CTA 500 (NÃO 700)
 
@@ -191,28 +191,34 @@ Cards e cards de componente sempre ganham `::before` com radial gradient sutil:
 .card:hover::before { opacity: 1; }
 ```
 
-### 4. Shadow stack 4-layer (drama editorial)
+### 4. Sombras — SEMPRE tinta de sombra `--via-shadow-ink-*` (regra dura)
 
-Para overlays (Modal/Drawer/Popover/Command), use stack de 4 camadas:
+**Toda sombra usa `--via-shadow-ink-03..60`** (navy no claro, PRETO mais denso no escuro — sombra navy sobre fundo navy não eleva nada). **NUNCA** use token de cor que inverte (`--via-navy-XX`, `--via-white`) dentro de `box-shadow` — no dark ele vira **halo branco** em volta do card (o defeito nº 1 que a auditoria matou em 453 camadas). Exceções que NÃO são sombra e ficam como estão: `inset 0 1px 0 var(--via-edge-hi)` (linha de luz do vidro) e anéis `0 0 0 Npx` (focus/pulse).
+
+Stack canônico pra overlays (Modal/Drawer/Popover/Command):
 
 ```css
 box-shadow:
-  0 1px 0 rgba(255,255,255,0.95) inset,           /* inset highlight top */
-  0 0 0 0.5px var(--via-navy-10),                  /* hairline navy */
-  0 22-32px 56-72px -16px var(--via-navy-22-40),   /* drop deep */
-  0 8-16px 18-36px -10px var(--via-navy-14-22);    /* drop close */
+  0 1px 0 var(--via-edge-hi) inset,                     /* linha de luz no topo */
+  0 0 0 0.5px var(--via-navy-10),                        /* hairline (anel, não sombra) */
+  0 22-32px 56-72px -16px var(--via-shadow-ink-30),      /* drop deep */
+  0 8-16px 18-36px -10px var(--via-shadow-ink-14);       /* drop close */
 ```
 
-### 5. Glass forte vs glass leve
+### 5. Liquid glass — receitas CANÔNICAS por token (não faça blur à mão)
 
-| Contexto | blur + saturate | bg |
+**Nunca escreva `blur(Npx) saturate(N%)` com números soltos** — a auditoria achou dezenas de receitas à mão divergindo entre si. Use os tokens-receita:
+
+| Token | Valor | Uso |
 |---|---|---|
-| Modal / Drawer / Popover / Command | `blur(20-28px) saturate(140-160%)` | `gradient white 96→84%` |
-| Card / Alert / DataTable / EmptyState | `blur(16-20px) saturate(140%)` | `gradient white 94→72%` |
-| Pill / Tab pills / Input | `blur(8-12px) saturate(140%)` | `gradient white 92→62%` |
-| Toast | `blur(20px) saturate(140%)` | `gradient white 96→86%` |
+| `--via-glass-blur` | `blur(24px) saturate(175%)` | cards, painéis, overlays — o padrão de TUDO |
+| `--via-glass-blur-bar` | `blur(26px) saturate(185%)` | barras chrome (nav sticky, header, toolbar) |
+| `--via-glass-bar` | fundo translúcido real (branco .6 claro / navy .55 escuro) | o `background` das barras |
+| `--via-glass-ring` | hairline de vidro | a "borda" do card — nunca borda grossa |
+| `--via-glass-shadow` / `--via-glass-shadow-lift` | pilha pronta repouso/hover | sombra do vidro |
+| `--via-glass-card`, `--via-glass-card-2`, `--via-glass-sheen` | gradientes de superfície | fundo do vidro |
 
-Tokens de glass prontos: `--via-glass-card`, `--via-glass-card-2`, `--via-glass-bar`, `--via-glass-sheen` · blur: `--via-blur-sm/-md/-lg/-xl`.
+Regra de aplicação: **vidro em card/painel/barra/metric — NUNCA em tabela densa** (linha de dado pede superfície sólida e leitura; o vidro fica nos cards de métrica ao redor).
 
 #### ⭐ Glass card sobre fundo CLARO (a receita canônica — use por padrão)
 
@@ -227,13 +233,15 @@ Glass **não precisa de fundo escuro**. Card de vidro sobre claro é a assinatur
 
 /* 2-4. o CARD: gradiente 3-stop + hairline quase invisível + luz no topo + sombra navy-tinted */
 .glass-card {
-  position: relative; isolation: isolate; border-radius: 20px; padding: 24px;
-  background: var(--via-glass-card);              /* gradiente 96→84→58% */
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid var(--via-border-soft);        /* navy 0.05 · o card se define pela LUZ */
+  position: relative; isolation: isolate;
+  border-radius: var(--via-radius-lg);             /* 20px · card padrão */
+  padding: 24px;
+  background: var(--via-glass-card);               /* gradiente 96→84→58% */
+  backdrop-filter: var(--via-glass-blur);          /* receita canônica 24px/175% */
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);                   /* hairline de vidro · o card se define pela LUZ */
   box-shadow: 0 1px 0 var(--via-edge-hi) inset,    /* linha de luz no topo */
-              0 10px 24px -16px var(--via-navy-12); /* sombra navy-tinted, nunca preta */
+              0 10px 24px -16px var(--via-shadow-ink-14); /* tinta de sombra, nunca token que inverte */
   transition: transform .26s var(--via-ease-snap), box-shadow .26s ease;
 }
 /* 5. atmosfera PRÓPRIA do card — é o que dá profundidade */
@@ -257,6 +265,43 @@ Usando os tokens acima, o dark se resolve sozinho. **Erros que matam o efeito:**
 ### 7. prefers-reduced-motion
 
 Sempre respeitar — animações de entrada/pulse/shine desligam sob `@media (prefers-reduced-motion: reduce)`.
+
+### 8. Cantos generosos — escala de raio (parente > filho)
+
+`--via-radius-xs` 6 · `-sm` 10 · `-md` 14 · `-lg` 20 (**card padrão**) · `-xl` 28 · `-2xl` 40 · `-pill` 999. Regras: **filho um degrau abaixo do pai** (card lg → chip interno md); canto concêntrico = `calc(raio-do-pai - 1px)` quando encostado na borda; e-mail mantém px cru (cliente de e-mail não resolve `var()`).
+
+### 9. PADRÕES BANIDOS (cara de IA — tolerância zero)
+
+1. **Barra/linha lateral colorida** em card/box/item — nos 3 mecanismos: `border-left` colorido, `::before` de 2-4px à esquerda, `box-shadow inset` horizontal. É o padrão que o Rafael mais odeia. A ênfase vem do vidro + tipografia, nunca de barrinha.
+2. **Anel/halo colorido em avatar** — status mora SÓ no dot (online = verde sóbrio `--via-success`, demais = navy; offline recua por opacidade), nunca em anel ao redor da foto.
+3. **Semáforo verde/vermelho genérico** em pills/badges que não são status real.
+4. **Bolinha decorativa** em pill que não é status.
+5. **CAPS LOCK + tracking largo em botão** (botão = sentence case peso 500).
+6. **Superfície chapada** onde cabe vidro · **borda grossa** como contorno de card (hairline + luz).
+7. Sparkles/emoji decorativo · dourado/amarelo/roxo/cyan · fundo escuro como superfície de trabalho (light-first!).
+8. **Itálico sintético** (seção Tipografia) · gradiente em barra de série única · 3D/gloss em gráfico.
+
+### 10. Dataviz — régua de leitura (contraste perfeito entre séries)
+
+Paleta de série própria (navy puro não sustenta 2+ séries — vira cinza): **`--via-data-1`** `#2E6FC4` e **`--via-data-2`** `#7FB0EE` no claro; no escuro usam `--via-data-1-dark` `#5C9BEA` / `--via-data-2-dark` `#2E6FC4`. Grade/eixo/tinta: `--via-data-grid/axis/ink`.
+
+- **1 série** = sem legenda (título já diz o quê).
+- **2 séries** = cor + **segundo canal obrigatório** (tracejado/hachura/marcador) + rótulo direto na linha — nunca só cor.
+- **3+ séries** = small multiples (painéis pareados), não espaguete.
+- **UM eixo só** — eixo duplo é banido (inclusive escala dupla escondida entre direções).
+- Barra **ancorada no zero** · projeção **tracejada** · texto SEMPRE em token de texto (nunca na cor da série) · verde/vermelho reservado pra status real, não pra "subiu/desceu" decorativo (delta usa `.via-delta--up/down/flat` do data.css).
+- Fill de progresso no DARK: rampa clara `--via-data-2-dark → --via-data-1-dark` (navy fixo lê INVERTIDO — feito parece faltante).
+
+### 11. Camadas prontas pra HTML cru — `surfaces.css` + `data.css` (nesta skill)
+
+Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz duas folhas prontas — importe junto com `colors_and_type.css`:
+
+- **`data.css`** (tabelas/números/finanças): `.via-table-wrap` + `.via-table` (variações `--sticky/--compact/--roomy`) · `.via-num` (tabular, alinhado à direita) · `.via-row-total` / `.via-row-group` · `.via-cell-sub` · `.via-delta--up/down/flat` · `.via-bar` · `.via-metric` (+`--atmos`) · `.via-metric-grid` · `.via-spark` (+`--down/--projected`). Regra: **tabela densa SEM vidro; vidro nos cards de métrica ao redor**.
+- **`surfaces.css`** (controles/acabamento): `.via-pill-link` (+`--solid/--on-dark`) · `.via-row-card` · `.via-tile` (+`--atmos/--lift`) · `.via-meta-chip` (+`--mono`) · `.via-bar-glass`. Todo controle tem `:hover/:active/:focus-visible` prontos.
+
+### 12. Mockup dentro de peça — interior FIXA as próprias cores
+
+Mockup de tela/post/papel/QR/e-mail dentro de uma página **pina as próprias cores** (hex/rgba fixos) — nunca herda tokens adaptativos do tema, senão o interior "vira dark" junto com a página e o texto some. Chrome de plataforma de terceiros (WhatsApp/Instagram/YouTube) fica **fiel à plataforma** (verde do WhatsApp é do WhatsApp); só o conteúdo VIA dentro segue a marca.
 
 ---
 
@@ -470,15 +515,17 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 4. Hardcoded hexes só em exceções documentadas
 5. Sem semáforo verde/vermelho em pills genéricas · sem bolinha decorativa em chip que não é status real
 6. Buttons sentence-case (não `letter-spacing: 0.10em + uppercase`)
-7. Surface glass + atmosphere radial quando aplicável · shadow stack 4-layer em overlays
+7. Glass pelas receitas canônicas (`--via-glass-blur/-ring/-bar`) · sombras SÓ em `--via-shadow-ink-*` (zero token que inverte em box-shadow)
 8. Spring physics via tokens (`--via-ease-out`, `--via-ease-spring`) · shine sweep em interativos
-9. Tabelas sortable → `<DataTable>` da library
-10. Eyebrows em mono small caps 0.04-0.08em · live broadcast em italic *"ao vivo"*
-11. Sparkles banido (Compass/Award/Crown/etc.)
+9. Tabelas sortable → `<DataTable>` da library · tabela/finanças em HTML cru → classes do `data.css` (tabela densa SEM vidro)
+10. Eyebrows em mono small caps 0.04-0.08em · ZERO itálico (`<em>` reto · ênfase = peso + cor)
+11. Sparkles banido (Compass/Award/Crown/etc.) · **zero barra lateral colorida** (3 mecanismos) · zero anel colorido em avatar
 12. Contraste WCAG AA garantido em dark mode (tokens semânticos) · `prefers-reduced-motion` respeitado
 13. App React com `<ThemeProvider>` no root (+ anti-FOUC script no `index.html`)
 14. Sem dark pattern em fluxos críticos (cancellation, billing, errors)
 15. Email: tabela + inline + CTA navy sólido + fallback de background sólido + lockup ~18px
+16. Raio na escala (card 20 · filho um degrau abaixo) · dataviz na régua (séries `--via-data-*`, UM eixo, zero-anchored, projeção tracejada)
+17. Mockup interno pina as próprias cores (não herda tema) · testar a peça nos 2 temas ANTES de entregar (o dark é onde tudo quebra)
 
 ---
 
@@ -487,9 +534,10 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 - **46 componentes de UI** em 9 categorias + `ThemeProvider` (47 símbolos exportados no barrel)
 - **46 API docs** Radix-style (um por componente)
 - **13 templates de email de produção** (react-email · enviáveis)
-- **169 tokens** `--via-*` únicos · navy alpha = **18 stops** (02→80)
+- **206 tokens** `--via-*` únicos · navy alpha = **18 stops** (02→80) · tinta de sombra 03→60 · receitas glass · escala de raio · paleta dataviz
 - **18 templates social** · **6 canais** · cobertura paid/landing/commercial/editorial/event
 - Dark mode completo · 100% WCAG AA de contraste (claro + escuro) · 0 violação séria de a11y
+- **Auditoria visual 100% (28/Jul/2026):** todas as telas do reference site revisadas uma a uma, em claro E escuro, com medição de pixel — as regras deste manifesto saem dessa auditoria, não de teoria
 - Glass pervasivo · CI: build + typecheck + lint + Vitest + axe-core a11y + visual regression Playwright (`ci.yml`)
 
 ---
@@ -497,7 +545,10 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 ## Conteúdo desta skill
 
 - `SKILL.md` — este manifesto
-- `colors_and_type.css` — tokens prontos pra `@import`
+- `colors_and_type.css` — tokens prontos pra `@import` (cópia fiel do `tokens.css` da fonte)
+- `surfaces.css` — controles/acabamento pra HTML cru (pill-link, tile, row-card, meta-chip, bar-glass)
+- `data.css` — tabelas, números e métricas (via-table, via-num, via-metric, via-delta, via-spark)
+- `guidelines.md` — aprofundamento: voz, copy, do's & don'ts com cite de página canônica
 - `assets/logos/` — VIA monogram + wordmark + Leaders AI mark
 
 ## Fontes & ícones (CDN)

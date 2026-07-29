@@ -1,0 +1,269 @@
+/* ==============================================================
+   VIVER DE IA · CAMADA DE DADOS (tabela, número, métrica)
+   --------------------------------------------------------------
+   A estrutura padrão pra QUALQUER tabela ou tela de dados — não um
+   caso isolado. Escreva <table> cru + estas classes e a tabela já
+   nasce no padrão da marca.
+
+   Existe porque: 22 telas têm tabela feita à mão e só 4 usam o
+   componente React. E ferramenta de IA (Lovable/Cursor/v0) gera
+   HTML cru — sem esta camada, cada tabela é reinventada.
+
+   REGRAS DA CASA aplicadas aqui:
+   · fundo CLARO · tabela densa NUNCA leva vidro (mata a leitura);
+     o vidro fica nos cards de métrica ao redor
+   · hairline entre linhas — nada de zebra pesada
+   · hierarquia por INDENTAÇÃO + PESO, nunca por cor de fundo
+   · número sempre tabular, alinhado à direita
+   · cor só como SEMÂNTICA: coral = desfavorável · verde sóbrio =
+     meta batida · navy = neutro. Nunca semáforo de framework.
+   · nenhuma barra/linha lateral colorida
+
+   USO MÍNIMO:
+     <div class="via-table-wrap">
+       <table class="via-table">
+         <thead><tr><th>Conta</th><th class="via-num">Realizado</th></tr></thead>
+         <tbody><tr><td>Receita</td><td class="via-num">3.184.000</td></tr></tbody>
+       </table>
+     </div>
+   ============================================================== */
+
+/* ---------------------------------------------------------------
+   1. Moldura · dá o corte arredondado e o scroll horizontal seguro
+   --------------------------------------------------------------- */
+.via-table-wrap {
+  position: relative;
+  overflow-x: auto;
+  border-radius: var(--via-radius-lg);
+  border: var(--via-glass-ring);
+  background: var(--via-surface);
+  box-shadow: var(--via-glass-shadow);
+  -webkit-overflow-scrolling: touch;
+}
+.via-table-wrap:focus-visible {
+  outline: none;
+  box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
+}
+
+/* ---------------------------------------------------------------
+   2. Tabela base
+   --------------------------------------------------------------- */
+.via-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  color: var(--via-text-body);
+  background: transparent;
+}
+
+.via-table thead th {
+  position: relative;
+  padding: 14px 18px;
+  text-align: left;
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+  white-space: nowrap;
+  background: var(--via-surface);
+  border-bottom: 1px solid var(--via-border-soft);
+}
+
+/* Cabeçalho que gruda ao rolar — some quando a tabela é curta */
+.via-table--sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.via-table tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--via-border-soft);
+  vertical-align: middle;
+}
+.via-table tbody tr:last-child td { border-bottom: 0; }
+
+/* Hover só onde é linha de dado (some em total/grupo via .via-row-*) */
+.via-table tbody tr {
+  transition: background var(--via-dur) var(--via-ease-snap);
+}
+.via-table tbody tr:hover { background: var(--via-navy-03); }
+
+/* Densidades */
+.via-table--compact thead th,
+.via-table--compact tbody td { padding: 9px 14px; }
+.via-table--roomy thead th,
+.via-table--roomy tbody td { padding: 18px 22px; }
+
+/* ---------------------------------------------------------------
+   3. Células semânticas · o que faz a tabela “ler” certo
+   --------------------------------------------------------------- */
+
+/* Número: tabular + direita. A regra mais importante da camada —
+   sem isso os dígitos dançam de linha pra linha. */
+.via-num,
+.via-table .via-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  white-space: nowrap;
+}
+/* Monoespaçado pra código/id/timestamp (não pra dinheiro) */
+.via-mono {
+  font-family: var(--via-font-mono, var(--via-mono));
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+/* Linha de TOTAL/resultado · peso + régua superior (convenção
+   contábil). Nunca barra lateral, nunca cor de fundo forte. */
+.via-row-total td {
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  background: var(--via-navy-03);
+  border-top: 1px solid var(--via-border);
+}
+.via-table tbody tr.via-row-total:hover { background: var(--via-navy-04); }
+
+/* Cabeçalho de grupo dentro do corpo (ex.: "Realizado · jan–jun") */
+.via-row-group td {
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+  background: var(--via-navy-02);
+}
+.via-table tbody tr.via-row-group:hover { background: var(--via-navy-02); }
+
+/* Hierarquia por indentação — sub-conta entra, não muda de cor */
+.via-cell-sub    { padding-left: 42px !important; color: var(--via-text-body); }
+.via-cell-sub-2  { padding-left: 66px !important; color: var(--via-text-muted); }
+
+/* ---------------------------------------------------------------
+   4. Variação (delta) · cor SÓ como semântica
+   --------------------------------------------------------------- */
+.via-delta {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--via-fw-medium);
+  white-space: nowrap;
+}
+.via-delta--up   { color: var(--via-success); }   /* favorável / meta batida */
+.via-delta--down { color: var(--via-coral-dark); }/* desfavorável */
+.via-delta--flat { color: var(--via-text-muted); }
+
+/* Micro-barra de proporção · comunica peso sem virar gráfico */
+.via-bar {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  height: 4px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-08);
+  overflow: hidden;
+}
+.via-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--via-navy), var(--via-navy-deep));
+}
+.via-bar__fill--down { background: linear-gradient(90deg, var(--via-coral), var(--via-coral-deep)); }
+
+/* ---------------------------------------------------------------
+   5. Bloco de métrica (KPI) · AQUI o vidro é bem-vindo
+   --------------------------------------------------------------- */
+.via-metric {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 24px;
+  border-radius: var(--via-radius-lg);
+  background: var(--via-glass-card);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
+  isolation: isolate;
+}
+.via-metric--atmos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px 200px at 0% 0%, var(--via-navy-05), transparent 62%);
+  pointer-events: none;
+  z-index: -1;
+}
+.via-metric__label {
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+.via-metric__value {
+  font-family: var(--via-font-display);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: var(--via-fw-medium);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--via-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+/* Prefixo de moeda menor que o número — o dado é o protagonista */
+.via-metric__value small {
+  font-size: 0.52em;
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-muted);
+  margin-right: 4px;
+  letter-spacing: 0;
+}
+.via-metric__foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: var(--via-fs-label);
+  color: var(--via-text-muted);
+}
+
+/* Grade de métricas — 4 → 2 → 1 sem quebrar */
+.via-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: var(--via-space-3_5, 14px);
+}
+
+/* ---------------------------------------------------------------
+   6. Sparkline / mini-gráfico inline
+   --------------------------------------------------------------- */
+.via-spark {
+  display: block;
+  width: 100%;
+  height: 34px;
+  overflow: visible;
+}
+.via-spark path { fill: none; stroke: var(--via-navy); stroke-width: 1.5; }
+.via-spark .via-spark__area { fill: var(--via-navy-08); stroke: none; }
+.via-spark--down path { stroke: var(--via-coral); }
+.via-spark--down .via-spark__area { fill: rgba(184, 92, 92, 0.10); }
+
+/* Projeção/estimativa SEMPRE visualmente distinta do realizado */
+.via-projected,
+.via-spark--projected path { stroke-dasharray: 4 4; opacity: 0.72; }
+
+@media (prefers-reduced-motion: reduce) {
+  .via-table tbody tr { transition: none; }
+}
+
+/* Mobile · a tabela rola dentro da própria moldura, a página não */
+@media (max-width: 720px) {
+  .via-table thead th,
+  .via-table tbody td { padding: 11px 14px; }
+  .via-cell-sub   { padding-left: 30px !important; }
+  .via-cell-sub-2 { padding-left: 46px !important; }
+}
