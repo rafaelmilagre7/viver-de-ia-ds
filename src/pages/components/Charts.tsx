@@ -393,7 +393,7 @@ function AreaSection() {
             viewBox={`0 0 ${W} ${H}`}
             className="vds-plot"
             preserveAspectRatio="xMidYMid meet"
-            role="img"
+            role="group"
             aria-label="Receita mensal de janeiro a agosto de 2026, com projeção para setembro e outubro."
             onMouseLeave={() => setHover(lastReal)}
           >
@@ -594,7 +594,7 @@ function IndexedSection() {
             viewBox={`0 0 ${W} ${H}`}
             className="vds-plot"
             preserveAspectRatio="xMidYMid meet"
-            role="img"
+            role="group"
             aria-label="Receita e leads indexados a 100 em janeiro de 2026, de janeiro a agosto."
             onMouseLeave={() => setHover(meses.length - 1)}
           >
