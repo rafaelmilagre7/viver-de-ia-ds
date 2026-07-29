@@ -374,6 +374,13 @@
   text-underline-offset: 2px;
 }
 
+/* Guard global `[data-theme=dark] a:not([class])` (0,2,1) ganhava de
+   `.vds-auth-terms a` (0,1,1) e pintava Termos/Política de azul #8FB8F6
+   DENTRO da ilha branca fixa. (0,3,1) devolve o ink fixo da ilha. */
+.vds-auth-card.light .vds-auth-terms a {
+  color: var(--via-ink-2);
+}
+
 /* Magic link success */
 .vds-auth-card.success {
   background: linear-gradient(180deg, var(--via-navy) 0%, var(--via-navy-darker) 100%);
@@ -895,9 +902,12 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
   border-color: rgba(255,255,255,0.30);
 }
+/* Interior de mockup navy FIXA as próprias cores: `--via-glass-card` e
+   `--via-edge-hi` INVERTEM no dark (viram branco ~10%/8%) e o quadradinho
+   marcado sumia no navy — mesma receita fixa do OTP input.filled. */
 .via-mesh-navy .vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check {
-  background: var(--via-glass-card);
-  border-color: var(--via-edge-hi);
+  background: var(--via-surface-onnavy);
+  border-color: rgba(255, 255, 255, 0.95);
 }
 .via-mesh-navy .vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check::after {
   border-color: var(--via-navy);

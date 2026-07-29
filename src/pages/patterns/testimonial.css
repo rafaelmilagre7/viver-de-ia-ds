@@ -7,8 +7,8 @@
 .vds-testi {
   position: relative;
   background: var(--via-glass-card);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   padding: 36px 40px;

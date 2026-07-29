@@ -443,6 +443,15 @@
   background: linear-gradient(90deg, var(--via-navy), var(--via-navy));
 }
 
+/* No escuro o fill navy→blue fica mais ESCURO que a própria trilha (invertia a
+   leitura: o trecho feito parecia o buraco). Rampa clara própria do dark —
+   mesma receita de upload/range. */
+[data-theme="dark"] .vds-course-progress .track > span,
+[data-theme="dark"] .vds-module-progress > span,
+[data-theme="dark"] .vds-module.done .vds-module-progress > span {
+  background: linear-gradient(90deg, var(--via-data-2-dark), var(--via-data-1-dark));
+}
+
 .vds-module-chev {
   color: var(--via-text-soft);
   transition: transform 220ms var(--via-ease-out);
@@ -601,6 +610,19 @@
   color: rgba(10, 31, 59, 0.35);
 }
 
+/* Navy fixo some sobre canvas escuro — travado precisa continuar legível
+   (apagado, não invisível) */
+[data-theme="dark"] .vds-lesson.locked .vds-lesson-icon {
+  color: rgba(255, 255, 255, 0.30);
+}
+
+[data-theme="dark"] .vds-lesson.locked .vds-lesson-title,
+[data-theme="dark"] .vds-lesson.locked .vds-lesson-num,
+[data-theme="dark"] .vds-lesson.locked .vds-lesson-type,
+[data-theme="dark"] .vds-lesson.locked .vds-lesson-dur {
+  color: rgba(255, 255, 255, 0.38);
+}
+
 .vds-lesson.playing .vds-lesson-title {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
@@ -625,7 +647,8 @@
 }
 
 .vds-lesson.playing .vds-lesson-type {
-  background: rgba(10, 31, 59, 0.07);
+  /* token (não rgba navy fixo) · senão o pill some no escuro */
+  background: var(--via-navy-08);
   border-color: var(--via-navy-14);
   color: var(--via-text-primary);
 }
@@ -644,7 +667,8 @@
 }
 
 .vds-lesson-go {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
+  /* sem re-pin de tokens de texto: o chip é glass ADAPTATIVO (não superfície
+     branca fixa) — pinado, a seta ficava navy invisível no escuro */
   width: 30px;
   height: 30px;
   border-radius: var(--via-radius-sm);
@@ -750,7 +774,8 @@
   font-weight: var(--via-fw-semibold);
   padding: 6px 12px;
   border-radius: var(--via-radius-pill);
-  background: rgba(10, 31, 59, 0.07);
+  /* token (não rgba navy fixo) · senão o pill some no escuro */
+  background: var(--via-navy-08);
   color: var(--via-text-primary);
   white-space: nowrap;
 }

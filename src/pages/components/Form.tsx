@@ -181,10 +181,10 @@ export default function Form() {
           <thead><tr><th>Token</th><th>Valor</th></tr></thead>
           <tbody>
             <tr><td className="tok">Wrapper radius</td><td className="val">28px</td></tr>
-            <tr><td className="tok">Wrapper shadow</td><td className="val">0 24px 56px navy 14% + inner 1px white</td></tr>
-            <tr><td className="tok">Field surface</td><td className="val">white 85% + blur 24 saturate 180%</td></tr>
+            <tr><td className="tok">Wrapper shadow</td><td className="val">0 24px 56px ink 20% + inner 1px white</td></tr>
+            <tr><td className="tok">Field surface</td><td className="val">glass card + blur 20 saturate 180%</td></tr>
             <tr><td className="tok">Field border</td><td className="val">1px white 95% (rest) → navy 100% (focus) · branco 55% no dark</td></tr>
-            <tr><td className="tok">Field radius</td><td className="val">16px</td></tr>
+            <tr><td className="tok">Field radius</td><td className="val">14px</td></tr>
             <tr><td className="tok">Focus ring</td><td className="val">0 0 0 4px navy 12%</td></tr>
             <tr><td className="tok">Padding</td><td className="val">14 18</td></tr>
             <tr><td className="tok">Label</td><td className="val">Geist 10 · 700 · 0.20em uppercase</td></tr>

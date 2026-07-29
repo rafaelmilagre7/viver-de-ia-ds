@@ -877,6 +877,15 @@
   justify-content: center;
 }
 
+/* Dark · mesmo remédio do checkbox/radio (form.css): navy sólido não inverte
+   e media ~1,04:1 contra a linha destacada — o quadrado do mark e o chip do
+   check sumiam, sobrava um glifo solto. No escuro o "ligado" é tinta CLARA. */
+[data-theme='dark'] .vds-combobox-opt.on .vds-combobox-mark,
+[data-theme='dark'] .vds-combobox-check {
+  background: var(--via-text-primary);
+  color: var(--via-navy);
+}
+
 .vds-combobox-empty {
   display: flex;
   align-items: center;
@@ -1190,6 +1199,26 @@
   cursor: grab;
 }
 
+/* Dark · o trilho vazio INVERTE (navy-08 → branco@9), mas o preenchimento era
+   navy fixo: a faixa selecionada ficava mais ESCURA que o trilho e o controle
+   lia invertido (medido: fill #0A1F3B sobre rail branco@9). Mesma cura da
+   barra de upload — o dado usa a rampa clara. Os thumbs (surface + aro navy,
+   os dois escuros no dark) endurecem com LUZ, como o foco dos fields. */
+[data-theme='dark'] .vds-range-track .fill {
+  background: linear-gradient(90deg, var(--via-data-2-dark), var(--via-data-1-dark));
+  box-shadow: none;
+}
+
+[data-theme='dark'] .vds-range-track input[type='range']::-webkit-slider-thumb {
+  background: var(--via-surface-elev);
+  border-color: var(--via-navy-60);
+}
+
+[data-theme='dark'] .vds-range-track input[type='range']::-moz-range-thumb {
+  background: var(--via-surface-elev);
+  border-color: var(--via-navy-60);
+}
+
 .vds-range-ticks {
   display: flex;
   justify-content: space-between;
@@ -1491,6 +1520,20 @@
 .vds-color-cell.on {
   outline: 2px solid var(--via-navy);
   outline-offset: 3px;
+}
+
+/* Dark · aro de seleção em navy fixo media 1,04:1 contra o canvas escuro —
+   a seleção só existia pelo check. O "ligado" no escuro é tinta clara. */
+[data-theme='dark'] .vds-color-cell.on {
+  outline-color: var(--via-navy-60);
+}
+
+/* Dark · swatch é cor LITERAL da marca: gray-900 #101828 media 1,04:1 contra
+   o canvas #0B1220 e a célula sumia do grid (hairline navy-08 → branco@9 não
+   segura). Um degrau acima na mesma escala — branco@15 — devolve o contorno
+   sem virar moldura; hover (navy-20) continua acima na escada. */
+[data-theme='dark'] .vds-color-cell {
+  border-color: var(--via-navy-14);
 }
 
 .vds-color-input-wrap {

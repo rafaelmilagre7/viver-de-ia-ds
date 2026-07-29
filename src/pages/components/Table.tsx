@@ -68,7 +68,9 @@ function useEdgeFade() {
 
 /* ---------- FULL TABLE · todos os cell types ---------- */
 function FullTableSection() {
-  const [selected, setSelected] = useState<string[]>(['ML', 'CR']);
+  /* estado inicial só com avatares que EXISTEM na grade: 'CR' não era
+     linha nenhuma e o batch dizia "2 selecionados" com 1 checkbox marcado */
+  const [selected, setSelected] = useState<string[]>(['ML', 'CM']);
   const scrollRef = useEdgeFade();
 
   const rows = [

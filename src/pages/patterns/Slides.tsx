@@ -223,14 +223,14 @@ function SlideContentSection() {
           <span className="vds-anatomy-num">03</span>
           <div>
             <p className="vds-anatomy-name">Stat slide</p>
-            <p className="vds-anatomy-desc">Número monumental (80-96px) · unidade subordinada · uma linha de contexto editorial. Pra dado que muda a conversa.</p>
+            <p className="vds-anatomy-desc">Número monumental — 15% da largura do slide, escala com o deck · unidade subordinada · uma linha de contexto editorial. Pra dado que muda a conversa.</p>
           </div>
         </div>
         <div className="vds-anatomy-row">
           <span className="vds-anatomy-num">04</span>
           <div>
             <p className="vds-anatomy-name">Quote slide</p>
-            <p className="vds-anatomy-desc">Fundo claro pra contraste · aspas grandes · pull quote em 22-26px · atribuição com avatar. Quando alguém disser uma frase que você não tem como melhorar.</p>
+            <p className="vds-anatomy-desc">Fundo claro pra contraste · aspas grandes · pull quote em ~4% da largura do slide · atribuição com avatar. Quando alguém disser uma frase que você não tem como melhorar.</p>
           </div>
         </div>
         <div className="vds-anatomy-row">
@@ -244,7 +244,7 @@ function SlideContentSection() {
           <span className="vds-anatomy-num">06</span>
           <div>
             <p className="vds-anatomy-name">Closing slide</p>
-            <p className="vds-anatomy-desc">Logo composta + CTA em pill glass + URL legível · slide final do deck. Espelha o title slide em tom mais convidativo.</p>
+            <p className="vds-anatomy-desc">Logo composta + CTA em pill claro + URL legível · slide final do deck. Espelha o title slide em tom mais convidativo.</p>
           </div>
         </div>
       </div>

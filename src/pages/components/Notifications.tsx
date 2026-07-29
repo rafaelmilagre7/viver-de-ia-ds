@@ -30,7 +30,7 @@ export default function Notifications() {
 /* ---------- Notification panel dropdown ---------- */
 function PanelSection() {
   return (
-    <Section title="Notification panel · dropdown do sino" meta="header bell · 280px · até 6 items recentes">
+    <Section title="Notification panel · dropdown do sino" meta="header bell · 360px · até 6 items recentes">
       <div className="vds-notif-panel-stage">
         <div className="vds-notif-bell">
           <Bell size={14} strokeWidth={2.2} />
@@ -336,7 +336,7 @@ function InboxSection() {
                 </span>
               </div>
               <div className="vds-inbox-rh">
-                {it.star && <Star size={13} strokeWidth={2} style={{ fill: "var(--via-navy)" }} className="star on" />}
+                {it.star && <Star size={13} strokeWidth={2} className="star on" />}
                 {!it.star && <Star size={13} strokeWidth={2} className="star" />}
                 <Archive size={13} strokeWidth={2} className="arch" />
               </div>

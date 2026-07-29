@@ -41,8 +41,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow: var(--via-glass-shadow);
   padding: 20px 20px 22px;
   overflow: hidden;
@@ -143,8 +143,8 @@
   border-radius: var(--via-radius-xl);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(28px) saturate(140%);
-  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 24px 48px -28px var(--via-shadow-ink-20),
@@ -159,8 +159,11 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* sheen pelo TOKEN (--via-glass-sheen): a receita anterior era
+     rgba(255,255,255,0.55) literal — no escuro virava uma faixa leitosa
+     de ~90px no topo de cada card. O token é forte no claro e 0.05 no dark. */
   background:
-    linear-gradient(177deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 15%),
+    var(--via-glass-sheen) 0 0 / 100% 15% no-repeat,
     radial-gradient(680px 280px at 92% -8%, var(--via-navy-05), transparent 60%),
     radial-gradient(420px 200px at -8% 110%, var(--via-navy-04), transparent 60%);
   z-index: -1;
@@ -611,8 +614,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 16px 32px -24px var(--via-shadow-ink-20),

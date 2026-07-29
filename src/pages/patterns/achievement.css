@@ -1077,7 +1077,9 @@
   font-weight: var(--via-fw-semibold);
 }
 
-.vds-cohort-hint a {
+/* (0,2,1) pra não perder do guard `[data-theme=dark] a:not([class])` —
+   "Ver carteira completa" saía azul #8FB8F6 no dark em vez de text-primary. */
+.vds-cohort-l .vds-cohort-hint a {
   color: var(--via-text-primary);
   text-decoration: none;
   font-weight: var(--via-fw-semibold);

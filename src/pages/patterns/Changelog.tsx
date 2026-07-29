@@ -145,9 +145,9 @@ function ChangelogTimelineSection() {
       date: '28 mar 2026',
       title: 'Painel de progresso do aluno',
       changes: [
-        { type: 'new', text: 'Activity rings · 3 anéis (estudo, prática, comunidade) com gradient ouro' },
+        { type: 'new', text: 'Activity rings · 3 anéis (estudo, prática, comunidade) com gradient navy' },
         { type: 'new', text: 'Streak editorial · contagem de dias seguidos sem dependência de notificação irritante' },
-        { type: 'improved', text: 'Curriculum agora destaca o módulo atual com bar lateral navy' },
+        { type: 'improved', text: 'Curriculum agora destaca o módulo atual com superfície elevada + atmosfera navy' },
       ],
     },
     {

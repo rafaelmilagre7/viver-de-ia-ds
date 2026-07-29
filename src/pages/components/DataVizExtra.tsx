@@ -42,7 +42,7 @@ export default function DataVizExtra() {
             Heatmap, sparklines, gauge — <em>os 3 que sempre faltam</em>.
           </>
         }
-        lede="Complementam os 4 arquétipos principais quando o dashboard precisa de granularidade. Heatmap pra densidade ao longo do tempo, sparkline pra microtendência ao lado do KPI, gauge pra posição contra uma meta. Todos SVG autoral, uma escala por gráfico, paleta de série validada pra daltonismo."
+        lede="Complementam os 4 arquétipos principais quando o dashboard precisa de granularidade. Heatmap pra densidade ao longo do tempo, sparkline pra microtendência ao lado do KPI, gauge pra posição contra uma meta. Tudo autoral — sparkline e gauge em SVG, heatmap em grade de células — uma escala por gráfico, paleta de série validada pra daltonismo."
       />
 
       <HeatmapSection />

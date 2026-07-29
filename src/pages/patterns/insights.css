@@ -94,6 +94,12 @@
   50% { transform: scale(0.85); opacity: 0.55; }
 }
 
+/* Dark · o ponto do eyebrow era navy fixo e sumia no chip escuro —
+   sobrava só o halo. Tinta primária clara faz o papel do navy aqui. */
+[data-theme="dark"] .vds-ins-eyebrow::before {
+  background: var(--via-text-primary);
+}
+
 .vds-ins-by {
   margin: 0 0 22px;
   font-size: var(--via-fs-xs);

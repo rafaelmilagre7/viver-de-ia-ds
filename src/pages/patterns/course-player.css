@@ -111,6 +111,13 @@
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
+/* No escuro o fill navy→blue fica mais ESCURO que a própria trilha (invertia a
+   leitura). Rampa clara própria do dark — mesma receita de upload/range. */
+[data-theme="dark"] .vds-cp-progress .track > span {
+  background: linear-gradient(90deg, var(--via-data-2-dark), var(--via-data-1-dark));
+  box-shadow: none;
+}
+
 .vds-cp-progress .pct {
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-micro);
@@ -391,6 +398,14 @@
 .vds-cp-lesson.locked .vds-cp-lesson-num,
 .vds-cp-lesson.locked .vds-cp-lesson-dur {
   color: rgba(10, 31, 59, 0.35);
+}
+
+/* Navy fixo some sobre canvas escuro — travado precisa continuar legível
+   (apagado, não invisível) */
+[data-theme="dark"] .vds-cp-lesson.locked .vds-cp-lesson-title,
+[data-theme="dark"] .vds-cp-lesson.locked .vds-cp-lesson-num,
+[data-theme="dark"] .vds-cp-lesson.locked .vds-cp-lesson-dur {
+  color: rgba(255, 255, 255, 0.38);
 }
 
 .vds-cp-lesson-dur {

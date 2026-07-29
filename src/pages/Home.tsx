@@ -48,7 +48,7 @@ export default function Home() {
       <section className="vds-home-hero via-mesh-navy via-noise">
         <span className="vds-home-hero-pill">
           <Layers size={12} strokeWidth={2} />
-          Versão 0.6 · 108 páginas vivas
+          Versão 0.6 · 166 páginas vivas
         </span>
         <h1 className="vds-home-hero-title">
           Marca editorial,<br />
@@ -71,9 +71,9 @@ export default function Home() {
         {/* Stats inline glass-dark */}
         <div className="vds-home-hero-stats">
           {[
-            { n: '13', l: 'Fundamentos' },
+            { n: '15', l: 'Fundamentos' },
             { n: '47', l: 'Componentes' },
-            { n: '46', l: 'Padrões' },
+            { n: '47', l: 'Padrões' },
             { n: '10', l: 'Páginas-modelo' },
           ].map((s) => (
             <div key={s.l} className="vds-home-hero-stat">

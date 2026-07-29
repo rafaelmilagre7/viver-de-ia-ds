@@ -19,7 +19,7 @@ export default function Admin() {
             Operação do produto, <em>com a mesma cara</em>.
           </>
         }
-        lede="Quando o usuário vira admin, a UI muda mas a marca não. Settings sections editorial, API keys tratadas com cuidado, billing transparente, audit log que conta a história. As 4 peças que aparecem em todo painel administrativo sério."
+        lede="Quando o usuário vira admin, a UI muda mas a marca não. Settings sections editorial, API keys tratadas com cuidado, webhooks e permissões sob controle, billing transparente, audit log que conta a história. As 6 peças que aparecem em todo painel administrativo sério."
       />
 
       <SettingsSection />

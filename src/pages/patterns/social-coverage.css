@@ -152,9 +152,11 @@
 }
 @media (max-width: 880px) { .vds-sc-ig-grid { grid-template-columns: 1fr; } }
 
+/* Chrome simulado do Instagram — superfície FIXA em light como no
+   patterns/social: mockup não herda o tema do docs (o print não muda). */
 .vds-sc-ig-chrome {
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-08);
+  background: var(--via-white);
+  border: 0.5px solid rgba(0, 0, 0, 0.10);
   border-radius: var(--via-radius-md);
   overflow: hidden;
   box-shadow: 0 16px 36px -14px var(--via-shadow-ink-20);
@@ -175,7 +177,7 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  border: 0.5px solid var(--via-navy-12);
+  border: 0.5px solid rgba(10, 31, 59, 0.12); /* sobre chrome fixo light → hairline fixa */
 }
 .vds-sc-ig-avatar img {
   width: 100%;
@@ -196,17 +198,17 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  color: var(--via-text-primary);
+  color: rgba(0, 0, 0, 0.92);
 }
 .vds-sc-ig-meta em {
   font-style: normal;
   font-size: var(--via-fs-label);
-  color: var(--via-ink-3);
+  color: rgba(0, 0, 0, 0.55);
 }
 .vds-sc-ig-hdr button {
   background: transparent;
   border: none;
-  color: var(--via-text-primary);
+  color: rgba(0, 0, 0, 0.90);
   cursor: pointer;
   padding: 4px;
 }
@@ -274,7 +276,7 @@
 .vds-sc-ig-actions button {
   background: transparent;
   border: none;
-  color: var(--via-text-primary);
+  color: rgba(0, 0, 0, 0.90);
   cursor: pointer;
   padding: 4px;
 }
@@ -283,14 +285,14 @@
   padding: 0 14px 16px;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  color: var(--via-text);
+  color: rgba(0, 0, 0, 0.80);
   line-height: 1.5;
 }
-.vds-sc-ig-body strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
+.vds-sc-ig-body strong { color: rgba(0, 0, 0, 0.92); font-weight: var(--via-fw-medium); }
 .vds-sc-ig-time {
   display: block;
   font-size: var(--via-fs-label);
-  color: var(--via-ink-3);
+  color: rgba(0, 0, 0, 0.45);
   margin-top: 8px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -512,9 +514,10 @@
 /* ============================================
    LinkedIn
    ============================================ */
+/* Chrome simulado do LinkedIn — superfície FIXA em light (mockup não herda tema). */
 .vds-sc-li-post {
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-12);
+  background: var(--via-white);
+  border: 0.5px solid rgba(0, 0, 0, 0.10);
   border-radius: var(--via-radius-sm);
   overflow: hidden;
   max-width: 600px;
@@ -542,8 +545,8 @@
 }
 .vds-sc-li-avatar.company {
   border-radius: var(--via-radius-xs);
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-12);
+  background: var(--via-white);
+  border: 0.5px solid rgba(10, 31, 59, 0.12);
   padding: 6px;
 }
 .vds-sc-li-avatar.company img { width: 100%; height: 100%; }
@@ -557,12 +560,12 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
-  color: var(--via-text-primary);
+  color: rgba(0, 0, 0, 0.92);
 }
 .vds-sc-li-hdr em {
   font-style: normal;
   font-size: var(--via-fs-xs);
-  color: var(--via-ink-3);
+  color: rgba(0, 0, 0, 0.60);
   line-height: 1.4;
 }
 .vds-sc-li-hdr span {
@@ -570,13 +573,13 @@
   align-items: center;
   gap: 3px;
   font-size: var(--via-fs-label);
-  color: var(--via-ink-3);
+  color: rgba(0, 0, 0, 0.60);
   margin-top: 2px;
 }
 .vds-sc-li-hdr button {
   background: transparent;
   border: none;
-  color: var(--via-ink-3);
+  color: rgba(0, 0, 0, 0.55);
   padding: 4px;
 }
 
@@ -584,15 +587,15 @@
   padding: 0 16px 14px;
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  color: var(--via-text);
+  color: rgba(0, 0, 0, 0.85);
   line-height: 1.55;
 }
 .vds-sc-li-body p { margin: 0 0 10px; }
-.vds-sc-li-body strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
+.vds-sc-li-body strong { font-weight: var(--via-fw-medium); color: rgba(0, 0, 0, 0.92); }
 .vds-sc-li-body em {
   font-style: normal;
   font-family: var(--via-font-display);
-  color: var(--via-text-primary);
+  color: rgba(0, 0, 0, 0.92);
 }
 
 .vds-sc-li-canvas {
@@ -679,7 +682,7 @@
 }
 
 .vds-sc-li-actions {
-  border-top: 0.5px solid var(--via-navy-08);
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
 }
 .vds-sc-li-actions-stats {
   display: flex;
@@ -687,7 +690,7 @@
   gap: var(--via-space-1_5);
   padding: 8px 16px;
   font-size: var(--via-fs-xs);
-  color: var(--via-ink-3);
+  color: rgba(0, 0, 0, 0.60);
 }
 .vds-sc-li-react {
   width: 18px;
@@ -704,7 +707,7 @@
 .vds-sc-li-actions-btns {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 0.5px solid var(--via-navy-08);
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
 }
 .vds-sc-li-actions-btns button {
   background: transparent;
@@ -717,11 +720,11 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  color: var(--via-ink-2);
+  color: rgba(0, 0, 0, 0.60);
   cursor: pointer;
   transition: background 120ms ease;
 }
-.vds-sc-li-actions-btns button:hover { background: var(--via-navy-04); }
+.vds-sc-li-actions-btns button:hover { background: rgba(0, 0, 0, 0.04); }
 
 /* ---------- LI carousel ---------- */
 .vds-sc-carousel {
@@ -1081,9 +1084,10 @@
   color: rgba(255, 255, 255, 0.65);
 }
 
+/* Chrome simulado do X — superfície FIXA em light (mockup não herda tema). */
 .vds-sc-x-post {
-  background: var(--via-surface);
-  border: 0.5px solid var(--via-navy-12);
+  background: var(--via-white);
+  border: 0.5px solid rgba(0, 0, 0, 0.10);
   border-radius: var(--via-radius-md);
   padding: 14px 16px;
   max-width: 560px;
@@ -1117,23 +1121,23 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
-  color: var(--via-text-primary);
+  color: rgba(0, 0, 0, 0.92);
 }
 .vds-sc-x-post header em {
   display: block;
   font-style: normal;
   font-size: var(--via-fs-caption);
-  color: var(--via-ink-3);
+  color: rgba(0, 0, 0, 0.55);
 }
 .vds-sc-x-post > p {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  color: var(--via-text-primary);
+  color: rgba(0, 0, 0, 0.92);
   margin: 8px 0 12px;
   line-height: 1.45;
 }
 .vds-sc-x-post > p strong { font-weight: var(--via-fw-medium); }
-.vds-sc-x-post > p em { font-style: normal; color: var(--via-ink-3); font-family: var(--via-font-display); }
+.vds-sc-x-post > p em { font-style: normal; color: rgba(0, 0, 0, 0.55); font-family: var(--via-font-display); }
 
 .vds-sc-x-card {
   aspect-ratio: 1.91 / 1;
@@ -1186,7 +1190,7 @@
   display: flex;
   gap: var(--via-space-5_5);
   padding-top: 6px;
-  color: var(--via-ink-3);
+  color: rgba(0, 0, 0, 0.55);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
 }
@@ -1505,5 +1509,4 @@
   right: 28px;
   width: 26px;
   opacity: 0.5;
-  filter: brightness(0) invert(1);
 }

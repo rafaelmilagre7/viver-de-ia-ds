@@ -6,7 +6,6 @@ import {
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
-import monogram from '../../assets/logos/VIA_monogram_hq.png';
 import wordmarkWhite from '../../assets/logos/VIVER_DE_IA_white.png';
 import wordmarkBlack from '../../assets/logos/VIVER_DE_IA_black.png';
 import appIcon from '../../assets/logos/VIA_app_icon.png';
@@ -699,7 +698,7 @@ function PodcastSection() {
           <p className="vds-sc-podcast-ep-where">
             disponível em Spotify · Apple · Pocket Casts
           </p>
-          <img src={monogram} alt="" className="vds-sc-podcast-ep-mono" />
+          <img src={monogramWhite} alt="" className="vds-sc-podcast-ep-mono" />
         </article>
       </Section>
     </>

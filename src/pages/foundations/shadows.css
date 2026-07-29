@@ -120,7 +120,10 @@
 
 .vds-sh-glass-stage {
   padding: 56px 32px;
-  border-radius: var(--via-radius-lg);
+  /* xl como os outros palcos da página (.vds-sh-stage) — e um degrau ACIMA
+     do vidro interno (lg): filho igual ao pai deixa o encaixe torto, regra
+     de Aninhamento da doc de Raios vizinha. */
+  border-radius: var(--via-radius-xl);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,7 +149,9 @@
   width: 100%;
   max-width: 300px;
   padding: 28px 32px;
-  border-radius: 20px;
+  /* lg (20px) via token — a página de Raios proíbe px cru fora de
+     círculo/e-mail; a doc de sombras não pode violar a doc vizinha. */
+  border-radius: var(--via-radius-lg);
   text-align: center;
   font-family: var(--via-font-display);
   font-size: 26px;

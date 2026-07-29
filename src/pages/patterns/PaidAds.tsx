@@ -200,7 +200,7 @@ function MetaStorySection() {
           { k: 'Safe area bottom', v: '250px reservada · CTA sticker + reply' },
           { k: 'Conteúdo central', v: '~1420px usável · headline + sub + CTA' },
           { k: 'CTA sticker', v: 'Posicionado no terço inferior · botão pill 999' },
-          { k: 'Logo', v: 'monogram_white inferior centralizado 32px' },
+          { k: 'Logo', v: 'monogram_white inferior centralizado 24px' },
         ]} />
       </div>
     </Section>
@@ -468,8 +468,8 @@ function GoogleDisplaySection() {
 
         <SpecBlock items={[
           { k: 'Headline', v: 'Adaptativa · short (≤25 chars) · long (≤90 chars)' },
-          { k: 'Logo', v: 'monogram_white · sempre canto inferior direito' },
-          { k: 'CTA', v: 'Button branco glass · "Ver programa" · "Cadastre-se"' },
+          { k: 'Logo', v: 'monogram_white canto inferior direito · sai no 320×100' },
+          { k: 'CTA', v: 'Button branco sólido · "Ver programa" · "Cadastre-se"' },
           { k: 'Responsive', v: 'Mesma copy adaptada · prioridade pra short em sizes pequenos' },
           { k: 'Image safe area', v: '20% margin de cada lado · canvas central limpo' },
           { k: 'Animated', v: 'Opcional · fade entre 2 versões da headline máx 15s' },

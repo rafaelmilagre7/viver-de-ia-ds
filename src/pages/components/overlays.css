@@ -142,6 +142,11 @@
   position: relative;
 }
 
+/* Itens do mockup: <a> sem classe caía no override global
+   [data-theme="dark"] a:not([class]) (azul #8FB8F6) · re-pina o editorial.
+   Fica ANTES de hover/on pra perder o empate de especificidade pra eles. */
+[data-theme="dark"] .vds-drawer nav li a { color: var(--via-text); }
+
 /* Item vive dentro do drawer de vidro — luz + hairline, sem segundo blur */
 .vds-drawer nav li a:hover {
   background: var(--via-glass-card-2);
@@ -188,18 +193,20 @@
   transition: all 180ms ease;
 }
 
+/* Mark forte = tinta do tema, não navy fixo — navy sólido some no drawer escuro
+   (no claro --via-text-primary É o navy, então nada muda) */
 .vds-drawer nav li a:hover .vds-drawer-mark {
-  background: var(--via-navy);
+  background: var(--via-text-primary);
 }
 
 .vds-drawer nav li.on .vds-drawer-mark {
-  background: var(--via-navy);
+  background: var(--via-text-primary);
   box-shadow: 0 0 0 3px var(--via-navy-10);
 }
 
 .vds-drawer nav li .vds-drawer-mark.live {
-  background: var(--via-navy);
-  box-shadow: 0 0 0 2px rgba(10, 31, 59, 0.09);
+  background: var(--via-text-primary);
+  box-shadow: 0 0 0 2px var(--via-navy-08);
 }
 
 .vds-drawer nav li .vds-drawer-mark.live::after {
@@ -207,7 +214,7 @@
   position: absolute;
   inset: -2px;
   border-radius: 50%;
-  background: rgba(10, 31, 59, 0.17);
+  background: var(--via-navy-18);
   animation: vds-live-pulse 1.8s ease-out infinite;
   z-index: -1;
 }
@@ -461,27 +468,17 @@
   color: var(--via-text-primary);
 }
 
+/* Nota do mentor = superfície + borda uniforme nos 4 lados (barra lateral é
+   banida — mesma lei do item ativo do drawer) · hairlines em token que flipa */
 .vds-sheet-note {
   position: relative;
-  padding: 16px 16px 14px 18px;
+  padding: 16px 16px 14px;
   border-radius: var(--via-radius-md);
   background:
     radial-gradient(280px 100px at 0% 0%, var(--via-navy-05), transparent 70%),
     linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
-  border: 1px solid rgba(10, 31, 59, 0.11);
+  border: 1px solid var(--via-navy-10);
   overflow: hidden;
-}
-
-.vds-sheet-note::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 3px;
-  background: linear-gradient(180deg, var(--via-stage-1), var(--via-navy));
-  border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 10px var(--via-shadow-ink-20);
 }
 
 .vds-sheet-note p {
@@ -501,7 +498,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding-top: 8px;
-  border-top: 1px solid rgba(10, 31, 59, 0.09);
+  border-top: 1px solid var(--via-navy-08);
   width: 100%;
 }
 
@@ -561,28 +558,51 @@
     var(--via-shadow-focus);
 }
 
+/* CTA primária · vars por tema (mesma receita do Modal): no escuro o navy
+   mede ~1,1:1 contra o vidro escuro — a primária inverte pra não sumir:
+   superfície clara fixa + rótulo navy. */
+.vds-sheet-btn.primary,
+.vds-bs-cta,
+.vds-pop-apply,
+.vds-dialog-btn.primary {
+  --ov-cta-fill:  linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  --ov-cta-ink:   var(--via-white);
+  --ov-cta-edge:  var(--via-navy);
+  --ov-cta-inset: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+[data-theme='dark'] .vds-sheet-btn.primary,
+[data-theme='dark'] .vds-bs-cta,
+[data-theme='dark'] .vds-pop-apply,
+[data-theme='dark'] .vds-dialog-btn.primary {
+  --ov-cta-fill:  var(--via-surface-onnavy);
+  --ov-cta-ink:   var(--via-navy);
+  --ov-cta-edge:  rgba(255, 255, 255, 0.82);
+  --ov-cta-inset: inset 0 -1px 0 rgba(10, 31, 59, 0.14);
+}
+
 .vds-sheet-btn.primary {
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  border-color: var(--via-navy);
-  color: var(--via-white);
+  background: var(--ov-cta-fill);
+  border-color: var(--ov-cta-edge);
+  color: var(--ov-cta-ink);
   flex: 1;
   justify-content: center;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
 .vds-sheet-btn.primary:hover {
   transform: translateY(-1px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     0 10px 22px -8px var(--via-shadow-ink-60);
 }
 
 .vds-sheet-btn.primary:focus-visible {
   outline: none;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     var(--via-shadow-focus);
 }
 
@@ -649,11 +669,13 @@
   gap: var(--via-space-1_5);
 }
 
+/* Chrome do celular vive sobre o navy FIXO do mockup — cores fixas
+   (--via-surface flipava pra escuro e os glifos sumiam no tema escuro) */
 .vds-bs-bars,
 .vds-bs-wifi {
   width: 14px;
   height: 10px;
-  background: var(--via-surface);
+  background: var(--via-white);
   border-radius: 2px;
   clip-path: polygon(0 60%, 30% 60%, 30% 30%, 60% 30%, 60% 0, 100% 0, 100% 100%, 0 100%);
 }
@@ -666,7 +688,7 @@
 .vds-bs-battery {
   width: 22px;
   height: 11px;
-  border: 1.5px solid var(--via-edge-hi);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
   border-radius: 3px;
   position: relative;
 }
@@ -678,7 +700,7 @@
   bottom: 2px;
   left: 2px;
   width: 70%;
-  background: var(--via-surface);
+  background: var(--via-white);
   border-radius: 1px;
 }
 
@@ -689,7 +711,7 @@
   top: 3px;
   bottom: 3px;
   width: 2px;
-  background: var(--via-surface);
+  background: var(--via-white);
   border-radius: 0 1px 1px 0;
 }
 
@@ -869,7 +891,7 @@
   background:
     radial-gradient(280px 120px at 100% 0%, var(--via-navy-06), transparent 70%),
     linear-gradient(180deg, var(--via-navy-05), var(--via-navy-02));
-  border: 1px solid rgba(10, 31, 59, 0.11);
+  border: 1px solid var(--via-navy-10);
   margin-bottom: 18px;
 }
 
@@ -904,8 +926,9 @@
   gap: var(--via-space-1_5);
   padding: 6px 12px;
   border-radius: var(--via-radius-pill);
-  background: rgba(10, 31, 59, 0.07);
-  border: 1px solid rgba(10, 31, 59, 0.15);
+  /* tokens que flipam — a pill sumia inteira no tema escuro */
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-14);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -1039,16 +1062,16 @@
   width: 100%;
   padding: 14px 18px;
   border-radius: var(--via-radius-md);
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  border: 1px solid var(--via-navy);
-  color: var(--via-white);
+  background: var(--ov-cta-fill);
+  border: 1px solid var(--ov-cta-edge);
+  color: var(--ov-cta-ink);
   font-family: inherit;
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--ov-cta-inset),
     0 8px 18px -6px var(--via-shadow-ink-40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -1058,7 +1081,7 @@
 .vds-bs-cta:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--ov-cta-inset),
     0 14px 28px -10px var(--via-shadow-ink-60);
 }
 
@@ -1067,7 +1090,7 @@
 .vds-bs-cta:focus-visible {
   outline: none;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    var(--ov-cta-inset),
     var(--via-shadow-focus);
 }
 
@@ -1340,6 +1363,11 @@
   position: relative;
 }
 
+/* Itens do mockup: <a> sem classe caía no override global
+   [data-theme="dark"] a:not([class]) (azul #8FB8F6) · re-pina o editorial.
+   Fica ANTES de hover/danger pra perder o empate de especificidade pra eles. */
+[data-theme="dark"] .vds-popover li a { color: var(--via-text); }
+
 .vds-popover li a svg {
   color: var(--via-text-soft);
   transition: color var(--via-dur) var(--via-ease-snap);
@@ -1412,7 +1440,8 @@
   content: '';
   width: 14px;
   height: 1px;
-  background: rgba(10, 31, 59, 0.35);
+  /* token que flipa — navy fixo sumia no vidro escuro */
+  background: var(--via-navy-40);
 }
 
 .vds-pop-section label {
@@ -1464,7 +1493,7 @@
   -webkit-appearance: none;
   width: 16px;
   height: 16px;
-  border-radius: 5px;
+  border-radius: var(--via-radius-xs);
   background: var(--via-surface);
   border: 1.5px solid var(--via-navy-25);
   position: relative;
@@ -1474,12 +1503,14 @@
 }
 
 .vds-pop-section input[type='checkbox']:hover {
-  border-color: var(--via-navy);
+  border-color: var(--via-text-primary);
 }
 
+/* Checked segue o tema (mesma regra do radio da bottom sheet):
+   caixa navy sólida sumia no vidro escuro — vira tinta clara + check navy */
 .vds-pop-section input[type='checkbox']:checked {
-  background: var(--via-navy);
-  border-color: var(--via-navy);
+  background: var(--via-text-primary);
+  border-color: var(--via-text-primary);
 }
 
 .vds-pop-section input[type='checkbox']:checked::after {
@@ -1489,7 +1520,7 @@
   left: 4.5px;
   width: 4px;
   height: 8px;
-  border: solid var(--via-white);
+  border: solid var(--via-surface);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -1534,9 +1565,9 @@
 
 .vds-pop-apply {
   flex: 1;
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-white);
-  border: 1px solid var(--via-navy);
+  background: var(--ov-cta-fill);
+  color: var(--ov-cta-ink);
+  border: 1px solid var(--ov-cta-edge);
   border-radius: var(--via-radius-sm);
   padding: 9px 14px;
   font-size: var(--via-fs-label);
@@ -1545,7 +1576,7 @@
   font-family: inherit;
   letter-spacing: -0.005em;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     0 4px 10px -4px var(--via-shadow-ink-40);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -1555,7 +1586,7 @@
 .vds-pop-apply:hover {
   transform: translateY(-1px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     0 10px 22px -8px var(--via-shadow-ink-60);
 }
 
@@ -1564,7 +1595,7 @@
 .vds-pop-apply:focus-visible {
   outline: none;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     var(--via-shadow-focus);
 }
 
@@ -1818,25 +1849,25 @@
 }
 
 .vds-dialog-btn.primary {
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  border-color: var(--via-navy);
-  color: var(--via-white);
+  background: var(--ov-cta-fill);
+  border-color: var(--ov-cta-edge);
+  color: var(--ov-cta-ink);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
 .vds-dialog-btn.primary:hover {
   transform: translateY(-1px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     0 10px 22px -8px var(--via-shadow-ink-60);
 }
 
 .vds-dialog-btn.primary:focus-visible {
   outline: none;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--ov-cta-inset),
     var(--via-shadow-focus);
 }
 
@@ -1870,6 +1901,11 @@
    ============================================ */
 .vds-lightbox-stage {
   position: relative;
+  /* Palco de mídia é escuro FIXO nos 2 temas. O shorthand `background` do
+     bloco compartilhado (gradiente claro, linha ~13) atropelava tanto o
+     background-color daqui quanto a utility .via-mesh-navy — no claro o
+     palco ficava claro com legenda branca ilegível. Re-pina o mesh. */
+  background: var(--via-mesh-navy);
   background-color: var(--via-navy-darker);
   color: var(--via-white);
   padding: 24px;
@@ -2123,8 +2159,10 @@
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.40);
 }
 
+/* Ativo em overlay branco FIXO — token navy-* flipa por tema e sumia
+   no claro (tinta escura sobre palco escuro); o palco é fixo, o estado também */
 .vds-lightbox-thumb.on {
-  background: var(--via-navy-10);
-  border-color: var(--via-navy-20);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
   color: var(--via-white);
 }

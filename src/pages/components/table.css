@@ -562,7 +562,10 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.02em;
-  border: 2px solid var(--via-white);
+  /* recorte, não anel: em --via-surface o contorno some no papel dos dois
+     temas. Era --via-white — invisível no claro, mas no escuro virava um
+     anel branco aceso em volta de cada avatar da grade. */
+  border: 2px solid var(--via-surface);
   box-shadow:
     0 0 0 1px var(--via-shadow-ink-10),
     0 2px 6px -2px var(--via-shadow-ink-20);

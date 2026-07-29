@@ -26,8 +26,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -24px var(--via-shadow-ink-14);
@@ -299,9 +299,14 @@
 /* =========================================================
    2 · SPARKLINES · small multiples (1 série por tile)
    ========================================================= */
+/* auto-fit e não repeat(4, 1fr): o tile tem min-content ~330px (valor
+   nowrap + plot de 148px), então 4 trilhas 1fr não conseguiam encolher
+   e a grade estourava o container em ~220px — a página inteira ganhava
+   scroll horizontal em qualquer viewport abaixo de ~1660px. Com auto-fit
+   o small multiple vira 2×2 no desktop comum e 4 em fila só quando cabe. */
 .vds-sk-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: var(--via-space-3_5);
 }
 
@@ -696,12 +701,6 @@
 /* =========================================================
    Responsivo
    ========================================================= */
-@media (max-width: 1080px) {
-  .vds-sk-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 920px) {
   .vds-gz-grid {
     grid-template-columns: 1fr;

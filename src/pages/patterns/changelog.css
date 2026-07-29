@@ -275,6 +275,13 @@
   border-bottom-color: var(--via-navy);
 }
 
+/* Guard global `[data-theme=dark] a:not([class])` pintava estes links
+   de azul — aqui o link é parte do card: text-primary + fio navy-30
+   (que adapta) nos 2 temas. :root só pra vencer a specificity do guard. */
+:root[data-theme="dark"] .vds-cl-hl a {
+  color: var(--via-text-primary);
+}
+
 .vds-cl-hl a:focus-visible {
   outline: none;
   border-radius: 2px;
@@ -716,9 +723,11 @@
   border: 1px solid var(--via-navy-18);
 }
 
+/* texto/ícone destrutivo = coral-dark (adapta: #8C2C2C claro · #E89B9B escuro).
+   Coral cru (#B85C5C) como TINTA media 3.9:1 no dark e 4.4:1 no claro — reprova. */
 .vds-cl-changes li.security .vds-cl-change-icon {
   background: rgba(184, 92, 92, 0.16);
-  color: var(--via-coral);
+  color: var(--via-coral-dark);
   border: 1px solid rgba(184, 92, 92, 0.28);
 }
 
@@ -732,7 +741,7 @@
 
 .vds-cl-changes li.new .vds-cl-change-tag { color: var(--via-accent-warm); }
 .vds-cl-changes li.improved .vds-cl-change-tag { color: var(--via-text-primary); }
-.vds-cl-changes li.security .vds-cl-change-tag { color: var(--via-coral); }
+.vds-cl-changes li.security .vds-cl-change-tag { color: var(--via-coral-dark); }
 
 .vds-cl-change-text {
   font-size: var(--via-fs-xs);

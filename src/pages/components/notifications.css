@@ -57,6 +57,9 @@
     var(--via-shadow-focus);
 }
 
+/* Disco em tinta do tema — navy fixo sumia no escuro e o badge virava só um
+   anel branco oco. Anel de recorte em --via-surface (branco no claro, cor do
+   canvas no escuro) pra manter a ilusão de cut-out nos 2 temas. */
 .vds-notif-dot {
   position: absolute;
   top: -4px;
@@ -65,8 +68,8 @@
   height: 18px;
   padding: 0 5px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy, var(--via-navy));
-  color: var(--via-white);
+  background: var(--via-text-primary);
+  color: var(--via-surface);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   display: inline-flex;
@@ -74,7 +77,7 @@
   justify-content: center;
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
-  border: 1.5px solid var(--via-white);
+  border: 1.5px solid var(--via-surface);
 }
 
 .vds-notif-panel {
@@ -206,7 +209,8 @@
 }
 
 .vds-notif-icon.achievement {
-  background: rgba(10, 31, 59, 0.07);
+  /* token que flipa — o alpha navy fixo sumia no tema escuro */
+  background: var(--via-navy-06);
   color: var(--via-text-primary);
 }
 
@@ -265,6 +269,10 @@
     box-shadow var(--via-dur) var(--via-ease-snap),
     border-color var(--via-dur) var(--via-ease-snap);
 }
+
+/* <a> sem classe caía no override global [data-theme="dark"] a:not([class])
+   (azul #8FB8F6) · re-pina o editorial */
+[data-theme="dark"] .vds-notif-panel footer a { color: var(--via-text-primary); }
 
 .vds-notif-panel footer a:hover {
   transform: translateY(-1px);
@@ -423,8 +431,15 @@
   font-feature-settings: 'tnum' 1;
 }
 
-/* CTA editorial */
+/* CTA editorial · vars por tema (receita do Modal): navy fixo media ~1,1:1
+   contra o banner de vidro escuro — no escuro a primária inverte pra não sumir */
 .vds-banner-cta {
+  --nb-cta-fill:       var(--via-navy);
+  --nb-cta-fill-hover: var(--via-navy-deep);
+  --nb-cta-ink:        var(--via-white);
+  --nb-cta-edge:       var(--via-navy);
+  --nb-cta-inset:      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
@@ -432,26 +447,34 @@
   font-weight: var(--via-fw-semibold);
   padding: 8px 14px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-navy);
-  color: var(--via-white);
+  background: var(--nb-cta-fill);
+  color: var(--nb-cta-ink);
   text-decoration: none;
   letter-spacing: -0.005em;
   white-space: nowrap;
-  border: 1px solid var(--via-navy);
+  border: 1px solid var(--nb-cta-edge);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     background var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--nb-cta-inset),
     0 4px 10px -4px var(--via-shadow-ink-40);
+}
+
+[data-theme='dark'] .vds-banner-cta {
+  --nb-cta-fill:       var(--via-surface-onnavy);
+  --nb-cta-fill-hover: var(--via-surface-onnavy);
+  --nb-cta-ink:        var(--via-navy);
+  --nb-cta-edge:       rgba(255, 255, 255, 0.82);
+  --nb-cta-inset:      inset 0 -1px 0 rgba(10, 31, 59, 0.14);
 }
 
 .vds-banner-cta:hover {
   transform: translateY(-1px);
-  background: var(--via-navy-deep);
+  background: var(--nb-cta-fill-hover);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--nb-cta-inset),
     0 10px 22px -8px var(--via-shadow-ink-60);
 }
 
@@ -460,7 +483,7 @@
 .vds-banner-cta:focus-visible {
   outline: none;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    var(--nb-cta-inset),
     var(--via-shadow-focus);
 }
 
@@ -1100,27 +1123,31 @@
   color: var(--via-border);
 }
 
+/* Esconde POR ÍCONE, não no container: opacity no pai multiplicava e matava o
+   `.star.on { opacity: 1 }` — a favoritada nunca aparecia em repouso. */
 .vds-inbox-rh {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-3_5);
   color: var(--via-text-soft);
-  opacity: 0;
-  transition: opacity 160ms ease;
 }
 
-.vds-inbox-item:hover .vds-inbox-rh {
+.vds-inbox-item:hover .vds-inbox-rh svg {
   opacity: 1;
 }
 
+/* Miolo em currentColor — fill navy fixo (inline) sumia no card escuro e a
+   favoritada lia como vazia; a tinta do tema preenche nos 2 temas. */
 .vds-inbox-rh .star.on {
   opacity: 1;
   color: var(--via-text-primary);
+  fill: currentColor;
 }
 
 .vds-inbox-rh svg {
+  opacity: 0;
   cursor: pointer;
-  transition: color 140ms ease;
+  transition: opacity 160ms ease, color 140ms ease;
 }
 
 .vds-inbox-rh svg:hover {

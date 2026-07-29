@@ -191,7 +191,7 @@ function ErrorPagesSection() {
 /* ---------- Empty states ---------- */
 function EmptyStatesSection() {
   return (
-    <Section title="Empty states · 4 cenas" meta="sem resultados · sem dados ainda · primeiro acesso · tudo feito">
+    <Section title="Empty states · 4 cenas" meta="sem resultados · sem dados ainda · sem acesso · tudo feito">
       <div className="vds-empties">
         {/* No results */}
         <article className="vds-empty-card">
@@ -427,7 +427,7 @@ function EmptyPremiumSection() {
 /* ---------- Success states ---------- */
 function SuccessStatesSection() {
   return (
-    <Section title="Success states · confirmação de ação" meta="pagamento aprovado · curso concluído · agendamento feito">
+    <Section title="Success states · confirmação de ação" meta="pagamento aprovado · aula concluída">
       <div className="vds-success-row">
         <article className="vds-success-card">
           <div className="vds-success-mark">

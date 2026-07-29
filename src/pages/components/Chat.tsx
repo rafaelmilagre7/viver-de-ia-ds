@@ -119,11 +119,11 @@ export default function Chat() {
         <div className="vds-chat-anatomy">
           <div>
             <p className="vds-eyebrow">User</p>
-            <div className="vds-bubble user solo">Mensagem do usuário fica em navy sólido com gradient, peso médio, sombra navy 18%. Canto inferior-direito menor pra "ancorar" no eixo do remetente.</div>
+            <div className="vds-bubble user solo">Mensagem do usuário fica em navy sólido com gradient, peso médio, sombra ink-40. Canto inferior-direito menor pra "ancorar" no eixo do remetente.</div>
           </div>
           <div>
             <p className="vds-eyebrow">Assistant</p>
-            <div className="vds-bubble assistant solo">Bubble do assistente é liquid glass branco com hairline, blur 24px saturado. Canto inferior-esquerdo menor. Texto em navy peso regular.</div>
+            <div className="vds-bubble assistant solo">Bubble do assistente é liquid glass branco com hairline, blur 24px saturado. Canto inferior-esquerdo menor. Texto em navy, peso 450.</div>
           </div>
           <div>
             <p className="vds-eyebrow">System</p>

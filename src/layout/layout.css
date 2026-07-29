@@ -289,14 +289,18 @@
   gap: var(--via-space-8);
 }
 .vds-footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--via-space-2); }
-.vds-footer-col li a {
+/* Especificidade (0,2,2) de propósito: o guard global
+   [data-theme="dark"] a:not([class]) (0,2,1) pintava os links sem classe
+   do footer de azul #8FB8F6 no escuro — link azul não existe no DS.
+   Re-pina o cinza editorial nos dois temas. */
+.vds-footer .vds-footer-col li a {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
   text-decoration: none;
   transition: var(--via-t);
 }
-.vds-footer-col li a:hover { color: var(--via-text-primary); }
+.vds-footer .vds-footer-col li a:hover { color: var(--via-text-primary); }
 .vds-footer-h {
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);

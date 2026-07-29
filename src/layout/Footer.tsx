@@ -49,7 +49,7 @@ export default function Footer() {
       <div className="vds-footer-bottom">
         <span>Versão 0.6 · em evolução</span>
         <span className="vds-footer-bottom-dot">·</span>
-        <span>108 páginas vivas</span>
+        <span>166 páginas vivas</span>
         <span className="vds-footer-bottom-dot">·</span>
         <span>Geist (Vercel) + Liquid Glass</span>
         <span className="vds-footer-bottom-meta">

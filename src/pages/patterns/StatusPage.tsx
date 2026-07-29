@@ -29,7 +29,7 @@ export default function StatusPage() {
 /* ---------- Overview · estado geral ---------- */
 function StatusOverviewSection() {
   return (
-    <Section title="Header status · estado geral em prosa" meta="quando ok · navy calmo · quando incidente · navy escuro + linha editorial">
+    <Section title="Header status · estado geral em prosa" meta="quando ok · navy calmo · quando incidente · atmosfera tingida no vidro + pill">
       <article className="vds-st-overview ok">
         <div className="vds-st-overview-body">
           <span className="vds-st-eyebrow">
@@ -93,7 +93,7 @@ function StatusServicesSection() {
   ];
 
   return (
-    <Section title="Serviços · uptime 90 dias · agrupados editorial" meta="cada bar = 1 dia · navy = ok · cinza claro = degradado · coral = down">
+    <Section title="Serviços · uptime 90 dias · agrupados editorial" meta="cada bar = 1 dia · tinta do tema = ok · cinza claro = degradado · coral = down">
       <article className="vds-st-services">
         {services.map((g) => (
           <div key={g.group} className="vds-st-group">

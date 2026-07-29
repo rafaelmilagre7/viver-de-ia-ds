@@ -47,7 +47,7 @@ export default function WhatsApp() {
         lede="Preview da Nina conversando via WhatsApp pra material de marketing — captura de tela editorial. Frame de celular real (Dynamic Island, status bar, home indicator), chrome WhatsApp light com avatar Nina, bubbles padrão WhatsApp (verde-marca pra usuário, branco pra Nina), input nativo. Cada peça em escala 1:1 com produto real."
       />
 
-      <Section title="iPhone · light mode" meta="conversa Nina · 5 mensagens">
+      <Section title="iPhone · light mode" meta="conversa Nina · 4 mensagens">
         <div className="vds-wa-stage">
           <div className="vds-wa-phone">
             {/* Status bar */}

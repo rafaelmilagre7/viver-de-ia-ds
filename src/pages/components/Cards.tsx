@@ -9,10 +9,10 @@ export default function Cards() {
       <DocsHeader
         eyebrow="Componentes · cards"
         title={<>Hairline, <em>radius 20</em>, padding generoso.</>}
-        lede="Cards default em fundo branco com border navy@12, radius 20px, padding 24–28px. Hover levanta com sombra navy-tinted. A variante glass é só para superfícies onde o vidro faz sentido."
+        lede="Cards default em vidro sobre o papel do tema — hairline, radius 20px, padding 26px. Hover levanta com sombra de tinta, que vira preto no escuro. O stat card sobre navy é só para superfícies onde o vidro claro faz sentido."
       />
 
-      <Section title="Default · light" meta="hairline + hover lift">
+      <Section title="Default · adaptativo" meta="hairline + hover lift">
         <div className="via-card-grid">
           <article className="via-card">
             <p className="vds-eyebrow">Mentoria · turma 2026.2</p>

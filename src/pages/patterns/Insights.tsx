@@ -134,7 +134,7 @@ export default function Insights() {
             A semana <em>tem uma história</em> — conte ela.
           </>
         }
-        lede="Relatório semanal não é dump de números — é narrativa. Editorial com headline+lede no topo, 4 KPIs com delta e mini-spark inline, 1 chart grande explicativo, citações reais do que aconteceu e CTAs pra próxima ação. Stripe + Notion + The Information."
+        lede="Relatório semanal não é dump de números — é narrativa. Editorial com headline+lede no topo, 4 KPIs com delta e mini-spark inline, gráficos pareados com um eixo cada, citações reais do que aconteceu e CTAs pra próxima ação. Stripe + Notion + The Information."
       />
 
       <InsightsWeeklySection />
@@ -300,7 +300,7 @@ function PainelResolucao() {
 
 function InsightsWeeklySection() {
   return (
-    <Section title="Relatório semanal · narrativa editorial" meta="cabeçalho · 4 KPIs · chart grande · quotes · CTA">
+    <Section title="Relatório semanal · narrativa editorial" meta="cabeçalho · 4 KPIs · gráficos pareados · quotes · CTA">
       <article className="vds-ins">
         {/* Cabeçalho editorial */}
         <header className="vds-ins-head">

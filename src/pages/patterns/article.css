@@ -227,7 +227,9 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 2px solid var(--via-white);
+  /* anel = recorte na cor do canvas (receita do .via-avatar) —
+     branco fixo virava anel branco berrante no card escuro */
+  border: 2px solid var(--via-bg);
   box-shadow:
     0 0 0 1px var(--via-shadow-ink-06),
     0 2px 6px var(--via-shadow-ink-14);

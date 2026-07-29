@@ -130,7 +130,9 @@
 
 .vds-loader-inline.alt {
   background: var(--via-navy-06);
-  border-color: rgba(10, 31, 59, 0.09);
+  /* token, não literal · navy 0.09 fixo sumia sobre o painel escuro
+     (o fundo adaptava e a borda não) */
+  border-color: var(--via-navy-08);
 }
 
 .vds-loader-inline.alt svg {
@@ -519,8 +521,10 @@
   color: var(--via-text-primary);
   padding: 5px 10px 5px 8px;
   border-radius: var(--via-radius-pill);
-  background: rgba(10, 31, 59, 0.07);
-  border: 1px solid rgba(10, 31, 59, 0.17);
+  /* tokens, não literais · navy 0.07/0.17 fixos apagavam a pílula inteira
+     no escuro (só o texto flutuava, sem contorno) */
+  background: var(--via-navy-06);
+  border: 1px solid var(--via-navy-16);
   width: fit-content;
   white-space: nowrap;
   line-height: 1.4;
@@ -531,7 +535,9 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--via-navy);
+  /* tinta que adapta · navy fixo dava ~1,1:1 no escuro e o dot sumia
+     (mesmo mecanismo do indicador das tabs) */
+  background: var(--via-text-primary);
 }
 
 .vds-error-live-dot::after {
@@ -584,7 +590,9 @@
 .vds-error-progress-bar > span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--via-navy), var(--via-navy));
+  /* tinta que adapta · fill navy fixo sobre pista navy-08 (que vira branco
+     no dark) INVERTIA a leitura: os 42% feitos pareciam o trecho faltante */
+  background: var(--via-text-primary);
   border-radius: var(--via-radius-pill);
   position: relative;
 }
@@ -731,14 +739,18 @@
   box-shadow: 0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
+/* o card 500 é navy FIXO nos 2 temas → o botão-líder também FIXA branco.
+   var(--via-surface)/text-primary flipavam no dark e ele virava outline
+   escuro, idêntico ao ghost do lado (hierarquia sumia). */
 .vds-error-btn.primary.on-dark {
-  background: var(--via-surface);
+  background: var(--via-surface-onnavy);
   border-color: var(--via-white);
-  color: var(--via-text-primary);
+  color: var(--via-navy);
 }
 
 .vds-error-btn.primary.on-dark:hover {
-  background: var(--via-gray-50);
+  /* literal claro de propósito · gray-50 adapta e apagava o botão no dark */
+  background: linear-gradient(180deg, #F5F7FA 0%, #EDF0F5 100%);
 }
 
 .vds-error-btn.ghost {
@@ -839,11 +851,18 @@
 }
 
 .vds-empty-card.all-done {
+  /* brilho de "tudo feito" declarado POR TEMA · o literal branco 0.5 no pé
+     do gradiente virava mancha clara subindo pelo card no escuro */
+  --vds-empty-done-glow: rgba(255, 255, 255, 0.5);
   background:
     radial-gradient(380px 180px at 0% 0%, var(--via-navy-05), transparent 70%),
-    linear-gradient(180deg, var(--via-navy-03), rgba(255, 255, 255, 0.5));
+    linear-gradient(180deg, var(--via-navy-03), var(--vds-empty-done-glow));
   border-color: var(--via-navy-18);
   border-style: solid;
+}
+
+[data-theme='dark'] .vds-empty-card.all-done {
+  --vds-empty-done-glow: rgba(255, 255, 255, 0.05);
 }
 
 .vds-empty-glyph {
@@ -1540,8 +1559,10 @@
 }
 
 .vds-empty-prem-icon.coffee {
-  background: linear-gradient(180deg, var(--via-navy-06), rgba(10, 31, 59, 0.01));
-  border-color: rgba(10, 31, 59, 0.07);
+  /* tokens, não literais · navy 0.01/0.07 fixos apagavam gradiente e borda
+     do chip no escuro (o irmão .zen já usava token) */
+  background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-02));
+  border-color: var(--via-navy-06);
   color: var(--via-accent-warm);
 }
 
@@ -1588,7 +1609,9 @@
 
 @keyframes vds-empty-trail {
   0%, 100% { background: var(--via-border); transform: scale(1); }
-  40% { background: var(--via-navy); transform: scale(1.15); }
+  /* tinta que adapta · no pico o dot ia pra navy FIXO e, no escuro,
+     ficava mais APAGADO que em repouso — pulso ao contrário */
+  40% { background: var(--via-text-primary); transform: scale(1.15); }
 }
 
 .vds-empty-prem-trail-lbl {
@@ -1878,14 +1901,17 @@
 /* primária sobre navy = superfície clara (navy sobre navy não lidera) ·
    mesmo tratamento do card 500 */
 .vds-empty-prem-btn.primary.on-dark {
-  background: var(--via-surface);
+  /* cold start é navy FIXO nos 2 temas → botão-líder FIXA branco
+     (surface/text-primary flipavam no dark e ele virava outline escuro) */
+  background: var(--via-surface-onnavy);
   border-color: var(--via-white);
-  color: var(--via-text-primary);
+  color: var(--via-navy);
   box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.45);
 }
 
 .vds-empty-prem-btn.primary.on-dark:hover {
-  background: var(--via-gray-50);
+  /* literal claro de propósito · gray-50 adapta e apagava o botão no dark */
+  background: linear-gradient(180deg, #F5F7FA 0%, #EDF0F5 100%);
   border-color: var(--via-white);
   box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
 }

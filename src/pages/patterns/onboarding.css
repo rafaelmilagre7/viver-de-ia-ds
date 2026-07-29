@@ -188,11 +188,15 @@
   box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
 }
 
+/* O stop rgba(255,255,255,0.8) era fixo: no dark virava painel branco com
+   texto claro por cima (subtítulo ilegível). Tint navy-XX (que inverte
+   sozinho) sobre o mesmo vidro dos cards irmãos funciona nos 2 temas. */
 .vds-ob .ob-opt.on {
   border-color: var(--via-navy-30);
   background:
     radial-gradient(420px 120px at 0% 0%, var(--via-navy-05), transparent 70%),
-    linear-gradient(180deg, var(--via-navy-03), rgba(255, 255, 255, 0.8));
+    linear-gradient(180deg, var(--via-navy-03), transparent 60%),
+    var(--via-glass-card);
 }
 
 .vds-ob .ob-opt .box {
@@ -908,7 +912,10 @@
   text-align: center;
 }
 
-.vds-wiz-skip a {
+/* (0,2,1) pra empatar com o guard `[data-theme=dark] a:not([class])` e vencer
+   por ordem — senão "Pular e ir pro painel" saía azul no dark enquanto o
+   irmão "Pular onboarding" (.vds-ob .ob-skip a) ficava branco. */
+.vds-wiz-main .vds-wiz-skip a {
   color: var(--via-text-primary);
   text-decoration: none;
   border-bottom: 1px solid var(--via-navy-30);

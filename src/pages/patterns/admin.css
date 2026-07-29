@@ -255,6 +255,18 @@
   outline-offset: 3px;
 }
 
+/* Dark · o trilho marcado é navy fixo (some no canvas escuro) e o knob
+   herdava --via-glass-card, que inverte pra vidro ~5% e desaparece junto —
+   ligado ficava parecendo desligado. Knob vira tinta clara sólida (mesma
+   receita do thumb da library) e o trilho marcado ganha aro claro, como o
+   checkbox marcado do search-results. */
+[data-theme="dark"] .vds-toggle span::after {
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 1), rgba(247, 248, 250, 0.92));
+}
+[data-theme="dark"] .vds-toggle input:checked + span {
+  border-color: rgba(255, 255, 255, 0.38);
+}
+
 .vds-settings-row.danger {
   position: relative;
   background:

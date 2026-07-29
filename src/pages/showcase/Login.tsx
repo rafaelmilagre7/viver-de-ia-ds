@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { ArrowRight, Check, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import BrandLogo from '../../components/BrandLogo';
 import './login.css';
 
@@ -92,7 +92,9 @@ export default function Login() {
 
             <div className="auth-row">
               <label className="check">
-                <span className="box checked">✓</span>
+                {/* Check do Lucide, não o glyph "✓" — a própria página de
+                    iconografia bane caractere de texto como ícone. */}
+                <span className="box checked"><Check size={11} strokeWidth={3} /></span>
                 Lembrar de mim
               </label>
               <a className="link">Esqueci a senha</a>

@@ -26,7 +26,7 @@ export default function Buttons() {
         </div>
       </Section>
 
-      <Section title="Secondary" meta="default · branco com border">
+      <Section title="Secondary" meta="default · vidro com border">
         <div className="vds-buttons-row">
           <button className="via-btn secondary md">Ver agenda</button>
           <button className="via-btn secondary md is-hover">Hover</button>
@@ -62,7 +62,7 @@ export default function Buttons() {
             <tr><td className="tok">padding (lg)</td><td className="val">15px 28px</td><td className="use">Hero CTA</td></tr>
             <tr><td className="tok">font</td><td className="val">Geist 13 · 500</td><td className="use">Sentence case, -0.005em</td></tr>
             <tr><td className="tok">primary lift</td><td className="val">0 8px 18px -6px ink/18</td><td className="use">Sombra de tinta · vira preto no escuro</td></tr>
-            <tr><td className="tok">transition</td><td className="val">200ms ease</td><td className="use">Hover / pressed</td></tr>
+            <tr><td className="tok">transition</td><td className="val">200ms via-ease</td><td className="use">Hover / pressed</td></tr>
           </tbody>
         </table>
       </Section>

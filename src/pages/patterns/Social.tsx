@@ -15,7 +15,7 @@ export default function Social() {
             Posts editoriais <em>na assinatura da marca</em>.
           </>
         }
-        lede="Templates pra Instagram (square 1:1 + story 9:16), LinkedIn (3:1 cover), Twitter/X. Plate navy mesh com noise, monograma VIA marca d'água, citação editorial em Geist, métrica como peça tipográfica. Cada post pronto pra exportar."
+        lede="Templates pra Instagram (square 1:1 + story 9:16) e LinkedIn (post 3:1). Plate navy mesh com noise, monograma VIA marca d'água, citação editorial em Geist, métrica como peça tipográfica. Cada post pronto pra exportar — os demais canais vivem em Social coverage."
       />
 
       <Section title="Instagram · post square 1:1" meta="1080×1080 · feed">
@@ -127,7 +127,8 @@ export default function Social() {
         </div>
       </Section>
 
-      <Section title="LinkedIn · post 3:1" meta="1584×396 · feed corporativo">
+      {/* 1200×400 = export real do plate 3:1 (1584×396 é capa de perfil 4:1, outro artefato) */}
+      <Section title="LinkedIn · post 3:1" meta="1200×400 · feed corporativo">
         <div className="vds-soc-stage">
           <div className="vds-li-frame">
             <header className="li-h">
