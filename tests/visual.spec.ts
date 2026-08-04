@@ -16,6 +16,22 @@ import { routes, routeSlug } from './routes';
  *   bun run test:visual:update
  */
 
+// A câmera fotografa o visual PADRÃO: preferências de mídia declaradas, não
+// herdadas da máquina. O runner do CI tem "reduzir transparência" LIGADO no
+// sistema — a guarda de material dos tokens disparava e solidificava o vidro
+// (baseline translúcida × captura sólida). reduced-motion segue reduzido,
+// igual ao contextOptions do config.
+test.beforeEach(async ({ page }) => {
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('Emulation.setEmulatedMedia', {
+    features: [
+      { name: 'prefers-reduced-motion', value: 'reduce' },
+      { name: 'prefers-reduced-transparency', value: 'no-preference' },
+      { name: 'prefers-contrast', value: 'no-preference' },
+    ],
+  });
+});
+
 for (const r of routes) {
   test(`visual · ${r.path}`, async ({ page }) => {
     // Bloqueia o noise SVG turbulence (pode variar por GPU/renderer)
