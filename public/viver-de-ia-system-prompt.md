@@ -363,6 +363,7 @@ REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos c
 - Texto sobre vidro pede um passo a mais de contraste/peso do que sobre superfície sólida; cor de destaque mora em camada sólida, nunca solta no vidro.
 - Vidro que entra em cena (modal/popover) anima blur + scale juntos — "materializa", não é fade seco.
 - Acessibilidade de material já é automática nos tokens: `prefers-reduced-transparency` solidifica o vidro e `prefers-contrast: more` engrossa bordas. Não desfaça com `backdrop-filter` literal fora dos tokens.
+- Física de gesto (React/Motion): mola com `bounce: 0` por padrão; `bounce: 0.2` SÓ depois de flick/arremesso. Gesto arrastável segue o dedo 1:1 e decide fechar×voltar pelo EMBALO (projeção), não pela posição. Nunca anime gesto com transition de duração fixa (não dá pra agarrar no meio). Anime só `transform`/`opacity`. Menu/balão escala DA ORIGEM (transform-origin no gatilho), nunca do centro.
 
 ## 7. Hover signatures (assinatura comportamental)
 

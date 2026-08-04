@@ -537,6 +537,7 @@
   --via-t:           180ms var(--via-ease);
   --via-t-slow:      360ms var(--via-ease);
   --via-dur:         220ms;                             /* duração de interação padrão (era .22s solto) */
+  --via-dur-press:   110ms;                             /* feedback de APERTAR (WWDC: resposta no pointer-down, instantânea — nunca a 220ms) */
 
   /* ========== LAYOUT ========================================== */
   --via-container: 1280px;

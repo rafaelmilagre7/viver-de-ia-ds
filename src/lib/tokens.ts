@@ -645,6 +645,12 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-dur-press",
+    "css": "--via-dur-press",
+    "value": "110ms",
+    "category": "other"
+  },
+  {
     "name": "via-fs-body",
     "css": "--via-fs-body",
     "value": "1rem",
@@ -1262,6 +1268,7 @@ export type TokenName =
   | 'via-container'
   | 'via-content'
   | 'via-dur'
+  | 'via-dur-press'
   | 'via-fs-body'
   | 'via-fs-caption'
   | 'via-fs-h1'

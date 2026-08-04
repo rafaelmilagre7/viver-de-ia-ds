@@ -308,6 +308,13 @@ Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz d
 - **Borda de rolagem, não régua dura** — onde conteúdo passa por baixo de chrome sticky, prefira máscara de fade/blur no encontro em vez de `border-bottom` de 1px permanente.
 - **Acessibilidade de material é AUTOMÁTICA nos tokens**: `prefers-reduced-transparency` solidifica todo o vidro (blur off + superfície sólida) e `prefers-contrast: more` engrossa a borda pra 0.4/0.45 — já resolvido em `colors_and_type.css`, nenhum componente precisa tratar. Não desfaça isso com `backdrop-filter` literal fora dos tokens.
 
+**Física de gesto (motor canônico da library — 29/Jul):**
+- A library tem motor de mola próprio (`src/lib/_shared/spring.ts` + `useDragDismiss.ts`) na linguagem da Apple: **damping ratio** (1.0 = sem quique · ~0.8 = quica leve, SÓ após gesto com embalo) + **response** (segundos até o alvo; não é "duração" — o assentar emerge). Valores que a Apple usa e o DS adotou: mover = 1.0/0.4 · drawer/sheet = 0.8/0.3.
+- **Drawer, Sheet, Lightbox e Toast já vêm com o gesto completo**: arrasto 1:1 respeitando onde agarrou, histerese de 10px (clique continua clique), soltura decidida pela PROJEÇÃO do momentum (flick curto fecha; arrasto lento e curto volta), mola recebe a velocidade do dedo (sem emenda), rubber-band no sentido contrário, agarrar no meio da animação re-captura do valor vivo, saída por X/ESC animada pela mesma mola. Não reimplemente nada disso à mão.
+- Em app React FORA da library (Lovable etc.), a tradução pra Framer Motion/Motion: `type: 'spring'` com `bounce: 0` por padrão e `bounce: 0.2` só após flick; `duration` ≈ response. Nunca anime gesto com transition CSS de duração fixa — não dá pra agarrar no meio.
+- Anime SÓ `transform` e `opacity` (compositor); nunca `left/top/width/height` em keyframe.
+- Menus/balões escalam DA ORIGEM (transform-origin apontando pro gatilho conforme o lado), nunca do próprio centro.
+
 ### 13. Mockup dentro de peça — interior FIXA as próprias cores
 
 Mockup de tela/post/papel/QR/e-mail dentro de uma página **pina as próprias cores** (hex/rgba fixos) — nunca herda tokens adaptativos do tema, senão o interior "vira dark" junto com a página e o texto some. Chrome de plataforma de terceiros (WhatsApp/Instagram/YouTube) fica **fiel à plataforma** (verde do WhatsApp é do WhatsApp); só o conteúdo VIA dentro segue a marca.
