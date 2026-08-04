@@ -89,7 +89,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-border-soft",
     "css": "--via-border-soft",
-    "value": "rgba(255, 255, 255, 0.08)",
+    "value": "rgba(255, 255, 255, 0.45)",
     "category": "color"
   },
   {
@@ -215,7 +215,19 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-glass-bar",
     "css": "--via-glass-bar",
-    "value": "rgba(11, 18, 32, 0.55)",
+    "value": "var(--via-surface)",
+    "category": "color"
+  },
+  {
+    "name": "via-glass-card",
+    "css": "--via-glass-card",
+    "value": "var(--via-surface)",
+    "category": "color"
+  },
+  {
+    "name": "via-glass-card-2",
+    "css": "--via-glass-card-2",
+    "value": "var(--via-surface)",
     "category": "color"
   },
   {
@@ -737,25 +749,13 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-glass-blur",
     "css": "--via-glass-blur",
-    "value": "blur(24px) saturate(175%)",
+    "value": "none",
     "category": "other"
   },
   {
     "name": "via-glass-blur-bar",
     "css": "--via-glass-blur-bar",
-    "value": "blur(26px) saturate(185%)",
-    "category": "other"
-  },
-  {
-    "name": "via-glass-card",
-    "css": "--via-glass-card",
-    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0.022) 100%)",
-    "category": "other"
-  },
-  {
-    "name": "via-glass-card-2",
-    "css": "--via-glass-card-2",
-    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018))",
+    "value": "none",
     "category": "other"
   },
   {
@@ -1191,6 +1191,8 @@ export type TokenName =
   | 'via-edge-hi'
   | 'via-edge-lo'
   | 'via-glass-bar'
+  | 'via-glass-card'
+  | 'via-glass-card-2'
   | 'via-gray-100'
   | 'via-gray-200'
   | 'via-gray-300'
@@ -1279,8 +1281,6 @@ export type TokenName =
   | 'via-fw-semibold'
   | 'via-glass-blur'
   | 'via-glass-blur-bar'
-  | 'via-glass-card'
-  | 'via-glass-card-2'
   | 'via-glass-ring'
   | 'via-glass-sheen'
   | 'via-glow-navy'

@@ -299,7 +299,16 @@ Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz d
 - **`data.css`** (tabelas/números/finanças): `.via-table-wrap` + `.via-table` (variações `--sticky/--compact/--roomy`) · `.via-num` (tabular, alinhado à direita) · `.via-row-total` / `.via-row-group` · `.via-cell-sub` · `.via-delta--up/down/flat` · `.via-bar` · `.via-metric` (+`--atmos`) · `.via-metric-grid` · `.via-spark` (+`--down/--projected`). Regra: **tabela densa SEM vidro; vidro nos cards de métrica ao redor**.
 - **`surfaces.css`** (controles/acabamento): `.via-pill-link` (+`--solid/--on-dark`) · `.via-row-card` · `.via-tile` (+`--atmos/--lift`) · `.via-meta-chip` (+`--mono`) · `.via-bar-glass`. Todo controle tem `:hover/:active/:focus-visible` prontos.
 
-### 12. Mockup dentro de peça — interior FIXA as próprias cores
+### 12. Fluidez e material (doutrina Apple/WWDC adotada 29/Jul)
+
+- **Feedback no apertar, não no soltar** — todo interativo tem `:active` instantâneo (`transform: scale(0.97)` ou tom mais fundo). Esperar o clique completar pra reagir = interface morta.
+- **Vidro claro NUNCA empilha sobre vidro claro** — legibilidade colapsa. Card de vidro dentro de painel de vidro: o de dentro vira superfície sólida (`--via-surface`) ou tinta rasa.
+- **Vibrancy: texto sobre vidro pede mais contraste** — peso um passo acima e token de texto mais forte do que usaria em superfície sólida; cor de destaque mora em camada sólida (pill/botão), nunca solta no vidro.
+- **Materializar, não só aparecer** — vidro que entra em cena (modal, popover) anima blur + scale juntos (o material "chega"), não fade de opacidade seco.
+- **Borda de rolagem, não régua dura** — onde conteúdo passa por baixo de chrome sticky, prefira máscara de fade/blur no encontro em vez de `border-bottom` de 1px permanente.
+- **Acessibilidade de material é AUTOMÁTICA nos tokens**: `prefers-reduced-transparency` solidifica todo o vidro (blur off + superfície sólida) e `prefers-contrast: more` engrossa a borda pra 0.4/0.45 — já resolvido em `colors_and_type.css`, nenhum componente precisa tratar. Não desfaça isso com `backdrop-filter` literal fora dos tokens.
+
+### 13. Mockup dentro de peça — interior FIXA as próprias cores
 
 Mockup de tela/post/papel/QR/e-mail dentro de uma página **pina as próprias cores** (hex/rgba fixos) — nunca herda tokens adaptativos do tema, senão o interior "vira dark" junto com a página e o texto some. Chrome de plataforma de terceiros (WhatsApp/Instagram/YouTube) fica **fiel à plataforma** (verde do WhatsApp é do WhatsApp); só o conteúdo VIA dentro segue a marca.
 

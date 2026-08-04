@@ -357,6 +357,13 @@ REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos c
 
 **PROIBIDO — barra/canto de cor em card** (`border-left: 2–4px solid navy/coral` em callout, do/don't, "comportamento vs evita"): estilo bootstrap/alert, tem CARA DE IA. Do/don't = card glass limpo igual aos outros, diferenciado por tipografia/ênfase (label, peso), NUNCA por uma barra colorida no canto.
 
+**Fluidez e material (doutrina Apple/WWDC):**
+- Feedback no APERTAR, não no soltar — todo interativo tem `:active` instantâneo (`scale(0.97)` ou tom mais fundo).
+- Vidro claro NUNCA empilha sobre vidro claro (legibilidade colapsa) — card interno vira superfície sólida.
+- Texto sobre vidro pede um passo a mais de contraste/peso do que sobre superfície sólida; cor de destaque mora em camada sólida, nunca solta no vidro.
+- Vidro que entra em cena (modal/popover) anima blur + scale juntos — "materializa", não é fade seco.
+- Acessibilidade de material já é automática nos tokens: `prefers-reduced-transparency` solidifica o vidro e `prefers-contrast: more` engrossa bordas. Não desfaça com `backdrop-filter` literal fora dos tokens.
+
 ## 7. Hover signatures (assinatura comportamental)
 
 Bar lateral fade navy aparecendo à esquerda em hover de rows/cards/lessons/articles:

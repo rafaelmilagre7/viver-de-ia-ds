@@ -842,3 +842,36 @@ a:hover { text-decoration: underline; }
     scroll-behavior: auto !important;
   }
 }
+
+/* =============================================================
+   ACESSIBILIDADE DE MATERIAL · prefers-reduced-transparency +
+   prefers-contrast (HIG/WWDC: material translúcido vira sólido
+   quando o usuário pede). O DS inteiro bebe destes tokens, então
+   a curva fecha aqui — nenhum componente precisa saber disso.
+   ============================================================= */
+@media (prefers-reduced-transparency: reduce) {
+  :root,
+  :root[data-theme='dark'] {
+    --via-glass-blur: none;
+    --via-glass-blur-bar: none;
+    --via-glass-card: var(--via-surface);
+    --via-glass-card-2: var(--via-surface);
+    --via-glass-bar: var(--via-surface);
+  }
+}
+@media (prefers-contrast: more) {
+  :root {
+    --via-border-soft: rgba(10, 31, 59, 0.4);
+  }
+  :root[data-theme='dark'] {
+    --via-border-soft: rgba(255, 255, 255, 0.45);
+  }
+  /* superfície quase-sólida + borda definida (via glass-ring, que deriva
+     de border-soft) — vidro decorativo não pode custar legibilidade */
+  :root,
+  :root[data-theme='dark'] {
+    --via-glass-card: var(--via-surface);
+    --via-glass-card-2: var(--via-surface);
+    --via-glass-bar: var(--via-surface);
+  }
+}
