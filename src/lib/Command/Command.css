@@ -41,8 +41,8 @@
   transform-origin: top center;
   animation: via-cmd-in var(--via-dur) var(--via-ease-out) both;
   /* Materialização (WWDC): blur anima SÓ na entrada, curto —
-     will-change promove a camada antes do primeiro frame */
-  will-change: transform, opacity, backdrop-filter;
+     sem will-change permanente — camada fixa muda a rasterização do blur
+     em GPU de software (flagrado no robô de CI) */
   display: flex;
   flex-direction: column;
   max-height: min(72vh, 640px);

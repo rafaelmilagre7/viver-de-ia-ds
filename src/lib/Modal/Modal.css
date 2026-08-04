@@ -42,10 +42,10 @@
     0 0 0 0.5px var(--via-navy-08),
     0 32px 64px -22px var(--via-shadow-ink-40),
     0 16px 36px -12px var(--via-shadow-ink-20);
+  /* Materialização (WWDC): o blur anima SÓ na entrada e é curto.
+     Sem will-change permanente — camada promovida fixa muda a rasterização
+     do blur em GPU de software (flagrado no robô de CI). */
   animation: via-modal-in var(--via-dur) var(--via-ease-out);
-  /* Materialização (WWDC): o blur anima SÓ na entrada e é curto —
-     will-change promove a camada antes do primeiro frame pra não jankar */
-  will-change: transform, opacity, backdrop-filter;
   overflow: hidden;
   isolation: isolate;
 }
