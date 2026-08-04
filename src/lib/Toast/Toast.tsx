@@ -1,5 +1,6 @@
-import { useEffect, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, type ReactNode } from 'react';
 import { Check, AlertCircle, X, Info } from 'lucide-react';
+import { useDragDismiss } from '../_shared/useDragDismiss';
 import './Toast.css';
 
 type Variant = 'default' | 'success' | 'warning' | 'destructive';
@@ -28,15 +29,35 @@ interface ToastProps {
 function ToastCard({ toast, onDismiss }: ToastProps) {
   const variant = toast.variant ?? 'default';
   const duration = toast.duration ?? 4500;
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const dismissSelf = useCallback(() => onDismiss(toast.id), [onDismiss, toast.id]);
+
+  // Swipe pra direita dispensa (toast vive à direita). scrimRef = o próprio
+  // card: a opacidade acompanha o deslocamento e o card some por completo
+  // mesmo com o gap de 24px entre a borda dele e a da viewport.
+  const { close } = useDragDismiss({
+    panelRef: cardRef,
+    axis: 'x',
+    dir: 1,
+    onDismiss: dismissSelf,
+    scrimRef: cardRef,
+  });
+
+  const closeAnimated = useCallback(() => {
+    const el = cardRef.current;
+    if (el) el.style.animation = 'none'; // entrada CSS não pode brigar com a mola de saída
+    close();
+  }, [close]);
 
   useEffect(() => {
     if (duration <= 0) return;
-    const t = setTimeout(() => onDismiss(toast.id), duration);
+    const t = setTimeout(dismissSelf, duration);
     return () => clearTimeout(t);
-  }, [duration, toast.id, onDismiss]);
+  }, [duration, dismissSelf]);
 
   return (
-    <div className={`via-toast via-toast--${variant}`} role="status" aria-live="polite">
+    <div ref={cardRef} className={`via-toast via-toast--${variant}`} role="status" aria-live="polite">
       <span className="via-toast__icon">{variantIcon[variant]}</span>
       <div className="via-toast__body">
         <strong>{toast.title}</strong>
@@ -50,7 +71,7 @@ function ToastCard({ toast, onDismiss }: ToastProps) {
       <button
         type="button"
         className="via-toast__close"
-        onClick={() => onDismiss(toast.id)}
+        onClick={closeAnimated}
         aria-label="Fechar notificação"
       >
         <X size={12} strokeWidth={2.4} />

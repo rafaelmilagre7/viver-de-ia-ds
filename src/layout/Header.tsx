@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import BrandLogo from '../components/BrandLogo';
 import ThemeToggle from '../components/ThemeToggle';
+import { useScrollEdge } from './useScrollEdge';
 
 type Props = {
   onOpenSearch?: () => void;
@@ -10,8 +11,9 @@ type Props = {
 };
 
 export default function Header({ onOpenSearch, onToggleDrawer, drawerOpen }: Props) {
+  const edgeRef = useScrollEdge<HTMLElement>();
   return (
-    <header className="vds-header">
+    <header ref={edgeRef} className="vds-header">
       <div className="vds-header-left">
         <button
           className="vds-drawer-toggle"

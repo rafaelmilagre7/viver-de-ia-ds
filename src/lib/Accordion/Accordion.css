@@ -59,11 +59,20 @@
   letter-spacing: -0.012em;
   color: var(--via-text-primary);
   text-align: left;
-  transition: color 0.18s ease;
+  border-radius: var(--via-radius-xs);
+  transition: color 0.18s ease, background var(--via-dur) ease;
+}
+
+/* Press · tom mais fundo (scale distorceria a linha inteira) */
+.via-accordion__trigger:active:not(:disabled) {
+  background: var(--via-navy-04);
+  transition-duration: var(--via-dur-press);
 }
 
 .via-accordion--separated .via-accordion__trigger {
   padding: 14px 16px;
+  /* um degrau abaixo do card (md) — canto do press não vaza */
+  border-radius: calc(var(--via-radius-md) - 1px);
 }
 
 .via-accordion__trigger:hover:not(:disabled) {

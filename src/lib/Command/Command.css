@@ -38,7 +38,11 @@
     0 40px 80px -16px var(--via-shadow-ink-30),
     0 16px 32px -12px var(--via-shadow-ink-20);
   overflow: hidden;
-  animation: via-cmd-in .32s var(--via-ease-out) both;
+  transform-origin: top center;
+  animation: via-cmd-in var(--via-dur) var(--via-ease-out) both;
+  /* Materialização (WWDC): blur anima SÓ na entrada, curto —
+     will-change promove a camada antes do primeiro frame */
+  will-change: transform, opacity, backdrop-filter;
   display: flex;
   flex-direction: column;
   max-height: min(72vh, 640px);
@@ -208,8 +212,12 @@
 }
 
 @keyframes via-cmd-in {
-  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  from { opacity: 0; transform: translateY(-8px) scale(0.98);
+         backdrop-filter: blur(0px) saturate(100%);
+         -webkit-backdrop-filter: blur(0px) saturate(100%); }
+  to   { opacity: 1; transform: translateY(0) scale(1);
+         backdrop-filter: blur(24px) saturate(150%);
+         -webkit-backdrop-filter: blur(24px) saturate(150%); }
 }
 @keyframes via-cmd-scrim-in {
   from { opacity: 0; }
@@ -217,7 +225,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-cmd, .via-cmd-scrim { animation: none !important; }
+  /* Sem scale/blur animado: vira crossfade simples */
+  .via-cmd { animation-name: via-cmd-fade; }
+}
+@keyframes via-cmd-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @media (max-width: 520px) {

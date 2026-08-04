@@ -71,6 +71,7 @@
 
 .via-carousel__arrow:active:not(:disabled) {
   transform: translateY(-50%) scale(0.98);
+  transition-duration: var(--via-dur-press);
 }
 
 .via-carousel__arrow:disabled {
@@ -99,6 +100,11 @@
 
 .via-carousel__dot:hover {
   background: var(--via-navy-30);
+}
+
+.via-carousel__dot:active:not(.is-active) {
+  background: var(--via-navy-40);
+  transition-duration: var(--via-dur-press);
 }
 
 .via-carousel__dot.is-active {

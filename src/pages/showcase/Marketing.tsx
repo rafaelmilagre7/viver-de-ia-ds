@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight, Clock, Zap, Users } from 'lucide-react';
 import BrandLogo from '../../components/BrandLogo';
+import { useScrollEdge } from '../../layout/useScrollEdge';
 import './marketing.css';
 
 const cases = [
@@ -16,9 +17,10 @@ const feats = [
 ];
 
 export default function ShowcaseMarketing() {
+  const navEdgeRef = useScrollEdge<HTMLElement>();
   return (
     <div className="vds-showcase mk">
-      <header className="mk-nav">
+      <header ref={navEdgeRef} className="mk-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
           <a className="active" href="#mentoria">Mentoria</a>

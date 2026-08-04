@@ -146,6 +146,11 @@
     0 22px 42px -16px var(--via-shadow-ink-20);
 }
 
+.via-card--hoverable:active {
+  transform: translateY(-1px) scale(0.99);
+  transition-duration: var(--via-dur-press);
+}
+
 .via-card--hoverable.via-card--dark:hover {
   border-color: rgba(255, 255, 255, 0.18);
   box-shadow:

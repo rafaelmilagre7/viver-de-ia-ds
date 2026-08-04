@@ -1,6 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useState } from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Lightbox } from './Lightbox';
 
@@ -11,6 +11,62 @@ const images = [
 ];
 
 const single = [{ src: '/solo.jpg', alt: 'Foto única', caption: 'Bastidores' }];
+
+// jsdom não tem matchMedia nem rAF confiável — controlamos os quadros na mão
+// (o gesto/saída animada vivem em useDragDismiss, que exige os dois)
+let rafCbs: Map<number, FrameRequestCallback>;
+let rafSeq: number;
+let clock: number;
+let reducedMotion: boolean;
+
+beforeEach(() => {
+  rafCbs = new Map();
+  rafSeq = 0;
+  clock = 0;
+  reducedMotion = false;
+  vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
+    rafCbs.set(++rafSeq, cb);
+    return rafSeq;
+  });
+  vi.stubGlobal('cancelAnimationFrame', (id: number) => {
+    rafCbs.delete(id);
+  });
+  vi.stubGlobal('matchMedia', (query: string) => ({
+    matches: query.includes('prefers-reduced-motion') && reducedMotion,
+    media: query,
+    addEventListener: () => {},
+    removeEventListener: () => {},
+  }));
+  vi.spyOn(performance, 'now').mockImplementation(() => clock);
+});
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+  vi.restoreAllMocks();
+});
+
+function frame(dt = 16) {
+  clock += dt;
+  const cbs = [...rafCbs.values()];
+  rafCbs.clear();
+  for (const cb of cbs) cb(clock);
+}
+
+/** Roda a mola até o fim (ou até estourar o teto de quadros) */
+function settle(done: () => boolean) {
+  act(() => {
+    for (let i = 0; i < 200 && !done(); i++) frame();
+  });
+}
+
+function panelEl() {
+  return document.querySelector('.via-lightbox__content') as HTMLElement;
+}
+
+/** jsdom mede 0 — sem altura não há percurso pra mola viajar */
+function givePanelHeight(value = 700) {
+  Object.defineProperty(panelEl(), 'offsetHeight', { value });
+}
 
 describe('<Lightbox />', () => {
   it('does not render when closed', () => {
@@ -80,15 +136,18 @@ describe('<Lightbox />', () => {
     expect(screen.getByRole('img', { name: 'Caio na live' })).toBeInTheDocument();
   });
 
-  it('calls onClose on Escape, on close button, and on backdrop click', async () => {
+  it('calls onClose on Escape, on close button, and on backdrop click — after the exit spring settles', async () => {
     const onClose = vi.fn();
     const user = userEvent.setup();
     render(<Lightbox open onClose={onClose} images={images} />);
 
     await user.keyboard('{Escape}');
+    expect(onClose).not.toHaveBeenCalled(); // saída é animada, não imediata
+    settle(() => onClose.mock.calls.length > 0);
     expect(onClose).toHaveBeenCalledTimes(1);
 
     await user.click(screen.getByRole('button', { name: 'Fechar' }));
+    settle(() => onClose.mock.calls.length > 1);
     expect(onClose).toHaveBeenCalledTimes(2);
   });
 
@@ -99,10 +158,99 @@ describe('<Lightbox />', () => {
 
     // clicking the img stops propagation → no close
     await user.click(screen.getByRole('img', { name: 'Foto única' }));
+    settle(() => onClose.mock.calls.length > 0);
     expect(onClose).not.toHaveBeenCalled();
 
-    // clicking the surrounding content (backdrop) closes
+    // clicking the surrounding content (backdrop) closes — animated
     await user.click(screen.getByRole('img', { name: 'Foto única' }).parentElement!);
+    expect(onClose).not.toHaveBeenCalled();
+    settle(() => onClose.mock.calls.length > 0);
+    expect(onClose).toHaveBeenCalledOnce();
+  });
+
+  it('ESC exit is animated: intermediate transform + scrim fade before onClose', () => {
+    const onClose = vi.fn();
+    render(<Lightbox open onClose={onClose} images={single} />);
+    givePanelHeight(700);
+    const panel = panelEl();
+    const scrim = document.querySelector('.via-lightbox__scrim') as HTMLElement;
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClose).not.toHaveBeenCalled();
+
+    act(() => {
+      frame();
+      frame();
+    });
+    expect(onClose).not.toHaveBeenCalled();
+    const mid = parseFloat(panel.style.transform.replace(/[^\d.-]/g, ''));
+    expect(mid).toBeGreaterThan(0);
+    expect(mid).toBeLessThan(700);
+    const scrimMid = parseFloat(scrim.style.opacity);
+    expect(scrimMid).toBeLessThan(1);
+    expect(scrimMid).toBeGreaterThanOrEqual(0);
+
+    settle(() => onClose.mock.calls.length > 0);
+    expect(onClose).toHaveBeenCalledOnce();
+    expect(panel.style.transform).toBe('translateY(700px)');
+    expect(scrim.style.opacity).toBe('0');
+  });
+
+  it('freezes the scrim CSS entry animation before the exit spring drives its opacity', () => {
+    render(<Lightbox open onClose={() => {}} images={single} />);
+    givePanelHeight(700);
+    const scrim = document.querySelector('.via-lightbox__scrim') as HTMLElement;
+    expect(scrim.style.animation).not.toBe('none');
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(scrim.style.animation).toBe('none');
+  });
+
+  it('holding ESC (repeated keydown) does not restart the exit spring', () => {
+    const onClose = vi.fn();
+    render(<Lightbox open onClose={onClose} images={single} />);
+    givePanelHeight(700);
+    const panel = panelEl();
+    const y = () => parseFloat(panel.style.transform.replace(/[^\d.-]/g, '') || '0');
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    act(() => {
+      frame();
+      frame();
+      frame();
+    });
+    const mid = y();
+    expect(mid).toBeGreaterThan(0);
+
+    // key repeat mid-flight: no new spring scheduled (rafSeq stable), motion keeps forward
+    const seqBefore = rafSeq;
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(rafSeq).toBe(seqBefore);
+    act(() => frame());
+    expect(y()).toBeGreaterThanOrEqual(mid);
+
+    settle(() => onClose.mock.calls.length > 0);
+    expect(onClose).toHaveBeenCalledOnce();
+  });
+
+  it('releasing a drag does not count as a backdrop click', () => {
+    const onClose = vi.fn();
+    render(<Lightbox open onClose={onClose} images={single} />);
+    const panel = panelEl();
+
+    // pointer travelled 160px between press and the synthetic click → drag, not click
+    fireEvent.pointerDown(panel, { clientX: 100, clientY: 100 });
+    fireEvent.click(panel, { clientX: 100, clientY: 260 });
+    settle(() => onClose.mock.calls.length > 0);
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('closes dry (no animation) under prefers-reduced-motion', () => {
+    reducedMotion = true;
+    const onClose = vi.fn();
+    render(<Lightbox open onClose={onClose} images={single} />);
+
+    fireEvent.keyDown(document, { key: 'Escape' });
     expect(onClose).toHaveBeenCalledOnce();
   });
 
@@ -168,8 +316,9 @@ describe('<Lightbox />', () => {
     await user.click(opener);
     expect(screen.getByRole('button', { name: 'Fechar' })).toHaveFocus();
 
-    // close via Escape → focus returns to the opener
+    // close via Escape → exit animates → focus returns to the opener
     await user.keyboard('{Escape}');
+    settle(() => screen.queryByRole('dialog') === null);
     expect(opener).toHaveFocus();
   });
 

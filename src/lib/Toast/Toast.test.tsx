@@ -1,5 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
-import { renderHook, act } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { renderHook, act, render, screen, fireEvent } from '@testing-library/react';
+import { ToastStack } from './Toast';
 import { useToasts } from './useToasts';
 
 describe('useToasts()', () => {
@@ -89,5 +90,110 @@ describe('useToasts()', () => {
     });
     result.current.toasts[0].action?.onClick();
     expect(onClick).toHaveBeenCalledOnce();
+  });
+});
+
+describe('ToastCard · saída animada', () => {
+  // jsdom não tem matchMedia nem rAF confiável — controlamos os quadros na mão
+  let rafCbs: Map<number, FrameRequestCallback>;
+  let rafSeq: number;
+  let clock: number;
+  let reducedMotion: boolean;
+
+  beforeEach(() => {
+    rafCbs = new Map();
+    rafSeq = 0;
+    clock = 0;
+    reducedMotion = false;
+    vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
+      rafCbs.set(++rafSeq, cb);
+      return rafSeq;
+    });
+    vi.stubGlobal('cancelAnimationFrame', (id: number) => {
+      rafCbs.delete(id);
+    });
+    vi.stubGlobal('matchMedia', (query: string) => ({
+      matches: query.includes('prefers-reduced-motion') && reducedMotion,
+      media: query,
+      addEventListener: () => {},
+      removeEventListener: () => {},
+    }));
+    vi.spyOn(performance, 'now').mockImplementation(() => clock);
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.restoreAllMocks();
+  });
+
+  function frame(dt = 16) {
+    clock += dt;
+    const cbs = [...rafCbs.values()];
+    rafCbs.clear();
+    for (const cb of cbs) cb(clock);
+  }
+
+  function renderSticky(onDismiss: (id: string) => void) {
+    render(
+      <ToastStack
+        toasts={[{ id: 't1', title: 'Backup concluído', duration: 0 }]}
+        onDismiss={onDismiss}
+      />,
+    );
+    const card = document.querySelector('.via-toast') as HTMLElement;
+    // jsdom mede 0 — sem largura não há percurso pra mola viajar
+    Object.defineProperty(card, 'offsetWidth', { value: 380 });
+    return card;
+  }
+
+  it('X anima a saída: transform intermediário existe antes do onDismiss', () => {
+    const onDismiss = vi.fn();
+    const card = renderSticky(onDismiss);
+
+    fireEvent.click(screen.getByLabelText('Fechar notificação'));
+    expect(onDismiss).not.toHaveBeenCalled();
+
+    act(() => {
+      frame();
+      frame();
+    });
+    expect(onDismiss).not.toHaveBeenCalled();
+    const mid = parseFloat(card.style.transform.replace(/[^\d.-]/g, ''));
+    expect(mid).toBeGreaterThan(0);
+    expect(mid).toBeLessThan(380);
+
+    act(() => {
+      for (let i = 0; i < 200 && onDismiss.mock.calls.length === 0; i++) frame();
+    });
+    expect(onDismiss).toHaveBeenCalledExactlyOnceWith('t1');
+    expect(card.style.transform).toBe('translateX(380px)');
+  });
+
+  it('prefers-reduced-motion: X fecha seco, sem animação', () => {
+    reducedMotion = true;
+    const onDismiss = vi.fn();
+    renderSticky(onDismiss);
+
+    fireEvent.click(screen.getByLabelText('Fechar notificação'));
+    expect(onDismiss).toHaveBeenCalledExactlyOnceWith('t1');
+    expect(rafCbs.size).toBe(0);
+  });
+
+  it('auto-dismiss por tempo continua direto (sem mola)', () => {
+    vi.useFakeTimers();
+    const onDismiss = vi.fn();
+    render(
+      <ToastStack toasts={[{ id: 't2', title: 'Sincronizado' }]} onDismiss={onDismiss} />,
+    );
+
+    act(() => {
+      vi.advanceTimersByTime(4499);
+    });
+    expect(onDismiss).not.toHaveBeenCalled();
+    act(() => {
+      vi.advanceTimersByTime(1);
+    });
+    expect(onDismiss).toHaveBeenCalledExactlyOnceWith('t2');
+    vi.useRealTimers();
   });
 });

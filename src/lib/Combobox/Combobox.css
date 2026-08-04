@@ -141,6 +141,10 @@
   background: var(--via-navy-05);
 }
 
+.via-combobox__option:active:not(.is-disabled) {
+  background: var(--via-navy-10);
+}
+
 /* Destaque por teclado (navegação com setas) */
 .via-combobox__option.is-active {
   background: var(--via-navy-08);

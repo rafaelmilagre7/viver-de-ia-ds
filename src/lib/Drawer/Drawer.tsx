@@ -1,5 +1,6 @@
-import { useEffect, useRef, useId, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useId, type ReactNode } from 'react';
 import { X } from 'lucide-react';
+import { useDragDismiss } from '../_shared/useDragDismiss';
 import './Drawer.css';
 
 type Side = 'right' | 'left' | 'bottom';
@@ -18,7 +19,8 @@ export interface DrawerProps {
 }
 
 /**
- * Drawer · sheet lateral · acessível · ESC fecha · scrim clicável
+ * Drawer · sheet lateral · acessível · ESC fecha · scrim clicável ·
+ * arrasto-pra-fechar (spring física) · saída animada em X/ESC/scrim
  *
  * @example
  * <Drawer open={open} onClose={() => setOpen(false)} side="right" title="Filtros">
@@ -30,8 +32,14 @@ export interface DrawerProps {
 const FOCUSABLE =
   'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-export function Drawer({
-  open,
+export function Drawer(props: DrawerProps) {
+  // Painel monta do zero a cada abertura — o estado do gesto (offset vivo
+  // da mola) não pode vazar de um ciclo de abre/fecha pro outro
+  if (!props.open) return null;
+  return <DrawerPanel {...props} />;
+}
+
+function DrawerPanel({
   onClose,
   side = 'right',
   size = 'md',
@@ -42,14 +50,67 @@ export function Drawer({
   hideClose = false,
 }: DrawerProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
+  const scrimRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
   // Quem tinha o foco antes do drawer abrir — pra devolver ao fechar
   const prevFocusRef = useRef<HTMLElement | null>(null);
+  // Saída já em andamento — pedido repetido (ESC segurado) não reinicia a mola
+  const closingRef = useRef(false);
+
+  // onClose vive num ref: identidade instável do consumidor (arrow inline)
+  // não pode re-assinar os listeners do gesto no meio da animação
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  });
+  const handleDismiss = useCallback(() => onCloseRef.current(), []);
+
+  const axis = side === 'bottom' ? 'y' : 'x';
+  const dir = side === 'left' ? -1 : 1;
+
+  // Veta o gesto quando o agarre nasce dentro de conteúdo que rola no eixo dele
+  const canStart = useCallback(
+    (e: PointerEvent) => {
+      let node = e.target instanceof HTMLElement ? e.target : null;
+      while (node && node !== dialogRef.current) {
+        const scrollable =
+          axis === 'y'
+            ? node.scrollHeight > node.clientHeight
+            : node.scrollWidth > node.clientWidth;
+        if (scrollable) {
+          const style = getComputedStyle(node);
+          const overflow = axis === 'y' ? style.overflowY : style.overflowX;
+          if (overflow === 'auto' || overflow === 'scroll') return false;
+        }
+        node = node.parentElement;
+      }
+      return true;
+    },
+    [axis],
+  );
+
+  const { close } = useDragDismiss({
+    panelRef: dialogRef,
+    axis,
+    dir,
+    onDismiss: handleDismiss,
+    canStart,
+    scrimRef,
+  });
+
+  // X/ESC/scrim saem pela mesma mola do gesto; onClose só dispara no settle
+  const requestClose = useCallback(() => {
+    if (closingRef.current) return;
+    closingRef.current = true;
+    // Entrada CSS ainda rodando venceria o transform inline da mola
+    if (dialogRef.current) dialogRef.current.style.animation = 'none';
+    if (scrimRef.current) scrimRef.current.style.animation = 'none';
+    close();
+  }, [close]);
 
   // ESC fecha + lock body scroll
   useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && requestClose();
     document.addEventListener('keydown', onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -57,23 +118,22 @@ export function Drawer({
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prev;
     };
-  }, [open, onClose]);
+  }, [requestClose]);
 
   // Focus return: ao abrir, guarda quem tinha o foco; ao fechar, devolve a ele
   useEffect(() => {
-    if (!open) return;
     prevFocusRef.current = document.activeElement as HTMLElement | null;
     return () => {
       prevFocusRef.current?.focus?.();
     };
-  }, [open]);
+  }, []);
 
   // Focus first focusable on open
   useEffect(() => {
-    if (!open || !dialogRef.current) return;
+    if (!dialogRef.current) return;
     const focusable = dialogRef.current.querySelector<HTMLElement>(FOCUSABLE);
     focusable?.focus();
-  }, [open]);
+  }, []);
 
   // Focus trap: Tab/Shift+Tab ciclam só entre os focáveis dentro do painel
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -106,11 +166,9 @@ export function Drawer({
     }
   };
 
-  if (!open) return null;
-
   return (
     <div className="via-drawer-root" role="presentation">
-      <div className="via-drawer-scrim" onClick={onClose} aria-hidden="true" />
+      <div ref={scrimRef} className="via-drawer-scrim" onClick={requestClose} aria-hidden="true" />
       <div
         ref={dialogRef}
         className={`via-drawer via-drawer--${side} via-drawer--${size}`}
@@ -130,7 +188,7 @@ export function Drawer({
               <button
                 type="button"
                 className="via-drawer__close"
-                onClick={onClose}
+                onClick={requestClose}
                 aria-label="Fechar drawer"
               >
                 <X size={14} strokeWidth={2.2} />

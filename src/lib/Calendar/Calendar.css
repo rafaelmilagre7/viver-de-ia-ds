@@ -55,6 +55,10 @@
   color: var(--via-text-primary);
   border-color: var(--via-navy-12);
 }
+.via-cal__nav:active {
+  background: var(--via-navy-10);
+  transition-duration: var(--via-dur-press);
+}
 
 .via-cal__month {
   margin: 0;
@@ -122,6 +126,11 @@
 .via-cal__cell:hover:not(.is-disabled):not(.is-selected) {
   background: var(--via-navy-06);
   color: var(--via-text-primary);
+}
+
+.via-cal__cell:active:not(.is-disabled) {
+  transform: scale(0.94);
+  transition-duration: var(--via-dur-press);
 }
 
 .via-cal__cell.is-out {

@@ -64,6 +64,11 @@ button.via-stepper__node:hover .via-stepper__label {
   color: var(--via-text-primary);
 }
 
+button.via-stepper__node:active .via-stepper__indicator {
+  transform: scale(0.94);
+  transition-duration: var(--via-dur-press);
+}
+
 button.via-stepper__node:focus-visible {
   outline: 2px solid var(--via-navy-60);
   outline-offset: 4px;
@@ -87,7 +92,7 @@ button.via-stepper__node:focus-visible {
   backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
   color: var(--via-ink-3, #6B7891);
-  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform var(--via-dur) var(--via-ease-snap);
   position: relative;
   z-index: 1;
 }

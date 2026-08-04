@@ -71,6 +71,13 @@
     0 6px 14px -4px var(--via-shadow-ink-40);
 }
 
+.via-pagination__page:active,
+.via-pagination__page.is-active:active,
+.via-pagination__nav:active:not(:disabled) {
+  transform: translateY(0) scale(0.95);
+  transition-duration: var(--via-dur-press);
+}
+
 .via-pagination__nav:disabled {
   color: var(--via-ink-3, #6B7891);
   opacity: 0.5;

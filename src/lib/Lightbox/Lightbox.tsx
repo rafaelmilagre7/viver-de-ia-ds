@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { useDialogFocus } from '../_shared/useDialogFocus';
+import { useDragDismiss } from '../_shared/useDragDismiss';
 import './Lightbox.css';
 
 export interface LightboxImage {
@@ -25,6 +26,8 @@ export interface LightboxProps {
  * `<Lightbox>` · foto em tela cheia editorial
  *
  * Múltiplas imagens · setas keyboard/touch · escape close · download opcional.
+ * Arrastar a foto pra baixo dispensa (iOS Fotos) — o fundo clareia junto e a
+ * soltura decide por projeção de momentum. X/ESC/fundo saem pela mesma mola.
  *
  * @example
  * <Lightbox
@@ -34,17 +37,56 @@ export interface LightboxProps {
  * />
  */
 export function Lightbox({ open, onClose, images, index = 0, showDownload = false }: LightboxProps) {
+  if (!open || images.length === 0) return null;
+  // Vista montada só enquanto aberta: estado do gesto nasce zerado a cada
+  // abertura e `key` reproduz o reset pro index quando ele muda em aberto
+  return <LightboxView key={index} onClose={onClose} images={images} index={index} showDownload={showDownload} />;
+}
+
+interface LightboxViewProps {
+  onClose: () => void;
+  images: LightboxImage[];
+  index: number;
+  showDownload: boolean;
+}
+
+function LightboxView({ onClose, images, index, showDownload }: LightboxViewProps) {
   const [current, setCurrent] = useState(index);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const scrimRef = useRef<HTMLDivElement>(null);
+  const pressPos = useRef<{ x: number; y: number } | null>(null);
+  // Saída já em andamento — pedido repetido (ESC segurado) não reinicia a mola
+  const closingRef = useRef(false);
 
-  // reset para o índice inicial quando (re)abre — ajuste em render-phase
-  // (padrão oficial React, evita setState dentro de effect)
-  const [prevKey, setPrevKey] = useState(`${open}:${index}`);
-  const openKey = `${open}:${index}`;
-  if (openKey !== prevKey) {
-    setPrevKey(openKey);
-    if (open) setCurrent(index);
-  }
+  // onClose vive num ref: identidade instável do consumidor (arrow inline)
+  // não pode re-assinar os listeners do gesto no meio da animação
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  });
+  const handleDismiss = useCallback(() => {
+    closingRef.current = false;
+    onCloseRef.current();
+  }, []);
+
+  // Swipe vertical pra baixo dispensa · pra cima resiste (rubber-band)
+  const { close } = useDragDismiss({
+    panelRef,
+    axis: 'y',
+    dir: 1,
+    onDismiss: handleDismiss,
+    scrimRef,
+  });
+
+  // X/ESC/fundo saem pela mesma mola do gesto; onClose só dispara no settle
+  const requestClose = useCallback(() => {
+    if (closingRef.current) return;
+    closingRef.current = true;
+    // Entrada CSS do fundo ainda rodando venceria a opacidade inline da mola
+    if (scrimRef.current) scrimRef.current.style.animation = 'none';
+    close();
+  }, [close]);
 
   const go = useCallback((dir: number) => {
     setCurrent((c) => {
@@ -56,9 +98,9 @@ export function Lightbox({ open, onClose, images, index = 0, showDownload = fals
   }, [images.length]);
 
   useEffect(() => {
-    if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      // e.repeat: ESC segurado não reinicia a mola de saída a cada auto-repeat
+      if (e.key === 'Escape' && !e.repeat) requestClose();
       if (e.key === 'ArrowLeft') go(-1);
       if (e.key === 'ArrowRight') go(1);
     };
@@ -68,12 +110,22 @@ export function Lightbox({ open, onClose, images, index = 0, showDownload = fals
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
-  }, [open, onClose, go]);
+  }, [requestClose, go]);
 
   // Foco acessível: focus-first ao abrir, trap com Tab, restore ao fechar
-  const { onKeyDown } = useDialogFocus(open, dialogRef);
+  const { onKeyDown } = useDialogFocus(true, dialogRef);
 
-  if (!open || images.length === 0) return null;
+  // A soltura de um arrasto também dispara `click` no painel — só conta como
+  // clique de fechar se o ponteiro andou menos que a histerese do gesto
+  const onPanelPointerDown = (e: React.PointerEvent) => {
+    pressPos.current = { x: e.clientX, y: e.clientY };
+  };
+  const onPanelClick = (e: React.MouseEvent) => {
+    const p = pressPos.current;
+    if (p && Math.hypot(e.clientX - p.x, e.clientY - p.y) >= 10) return;
+    requestClose();
+  };
+
   const img = images[current];
 
   return (
@@ -86,10 +138,12 @@ export function Lightbox({ open, onClose, images, index = 0, showDownload = fals
       tabIndex={-1}
       onKeyDown={onKeyDown}
     >
+      <div ref={scrimRef} className="via-lightbox__scrim" aria-hidden="true" />
+
       <button
         type="button"
         className="via-lightbox__close"
-        onClick={onClose}
+        onClick={requestClose}
         aria-label="Fechar"
       >
         <X size={18} strokeWidth={1.8} />
@@ -116,11 +170,17 @@ export function Lightbox({ open, onClose, images, index = 0, showDownload = fals
         </>
       )}
 
-      <div className="via-lightbox__content" onClick={onClose}>
+      <div
+        ref={panelRef}
+        className="via-lightbox__content"
+        onPointerDown={onPanelPointerDown}
+        onClick={onPanelClick}
+      >
         <img
           src={img.src}
           alt={img.alt}
           className="via-lightbox__img"
+          draggable={false}
           onClick={(e) => e.stopPropagation()}
         />
       </div>

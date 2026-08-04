@@ -56,6 +56,12 @@
   color: var(--via-text-primary);
 }
 
+.via-breadcrumb__link:active,
+.via-breadcrumb__link--btn:active {
+  color: var(--via-text-primary);
+  transition-duration: var(--via-dur-press);
+}
+
 .via-breadcrumb__link:hover::after,
 .via-breadcrumb__link--btn:hover::after {
   right: 0;

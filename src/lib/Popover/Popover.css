@@ -51,11 +51,35 @@
   color: var(--via-text, #344054);
 }
 
-/* --- Sides --- */
-.via-popover--bottom { top: calc(100% + 10px); }
-.via-popover--top    { bottom: calc(100% + 10px); }
-.via-popover--left   { right: calc(100% + 10px); top: 50%; transform: translateY(-50%); }
-.via-popover--right  { left: calc(100% + 10px); top: 50%; transform: translateY(-50%); }
+/* --- Sides ---
+   Origem espacial (WWDC): transform-origin aponta pro trigger, então o
+   scale nasce DELE — nunca do centro. As vars --via-pop-from/to alimentam
+   o keyframe único (placements com translate estático precisam repetir o
+   translate no keyframe, senão a animação o descarta e o painel pula). */
+.via-popover--bottom {
+  top: calc(100% + 10px);
+  transform-origin: top center;
+  --via-pop-from: translateY(-2px) scale(0.98);
+  --via-pop-to:   translateY(0) scale(1);
+}
+.via-popover--top {
+  bottom: calc(100% + 10px);
+  transform-origin: bottom center;
+  --via-pop-from: translateY(2px) scale(0.98);
+  --via-pop-to:   translateY(0) scale(1);
+}
+.via-popover--left {
+  right: calc(100% + 10px); top: 50%; transform: translateY(-50%);
+  transform-origin: right center;
+  --via-pop-from: translateY(-50%) translateX(2px) scale(0.98);
+  --via-pop-to:   translateY(-50%) translateX(0) scale(1);
+}
+.via-popover--right {
+  left: calc(100% + 10px); top: 50%; transform: translateY(-50%);
+  transform-origin: left center;
+  --via-pop-from: translateY(-50%) translateX(-2px) scale(0.98);
+  --via-pop-to:   translateY(-50%) translateX(0) scale(1);
+}
 
 /* --- Alignment along the cross-axis --- */
 .via-popover--bottom.via-popover--align-start,
@@ -64,6 +88,19 @@
 .via-popover--top.via-popover--align-center   { left: 50%; transform: translateX(-50%); }
 .via-popover--bottom.via-popover--align-end,
 .via-popover--top.via-popover--align-end      { right: 0; }
+
+.via-popover--bottom.via-popover--align-start { transform-origin: top left; }
+.via-popover--bottom.via-popover--align-end   { transform-origin: top right; }
+.via-popover--top.via-popover--align-start    { transform-origin: bottom left; }
+.via-popover--top.via-popover--align-end      { transform-origin: bottom right; }
+.via-popover--bottom.via-popover--align-center {
+  --via-pop-from: translateX(-50%) translateY(-2px) scale(0.98);
+  --via-pop-to:   translateX(-50%) translateY(0) scale(1);
+}
+.via-popover--top.via-popover--align-center {
+  --via-pop-from: translateX(-50%) translateY(2px) scale(0.98);
+  --via-pop-to:   translateX(-50%) translateY(0) scale(1);
+}
 
 /* --- Arrow --- */
 .via-popover__arrow {
@@ -110,16 +147,8 @@
 .via-popover--top.via-popover--align-end      .via-popover__arrow { left: auto; right: 18px; margin: 0; }
 
 @keyframes via-popover-in {
-  from { opacity: 0; transform: translateY(2px) scale(0.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-.via-popover--bottom.via-popover--align-center,
-.via-popover--top.via-popover--align-center {
-  animation-name: via-popover-in-centered;
-}
-@keyframes via-popover-in-centered {
-  from { opacity: 0; transform: translateX(-50%) translateY(2px) scale(0.98); }
-  to   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+  from { opacity: 0; transform: var(--via-pop-from, translateY(-2px) scale(0.98)); }
+  to   { opacity: 1; transform: var(--via-pop-to, translateY(0) scale(1)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

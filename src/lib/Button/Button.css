@@ -47,12 +47,6 @@
   left: 120%;
 }
 
-/* Press state · sutil afundar */
-.via-btn:active:not(:disabled) {
-  transform: translateY(0) scale(0.985);
-  transition-duration: .1s;
-}
-
 .via-btn:disabled,
 .via-btn--loading {
   cursor: not-allowed;
@@ -217,6 +211,13 @@
   box-shadow:
     0 2px 8px -2px rgba(0, 0, 0, 0.40) inset,
     0 4px 12px -6px var(--via-shadow-ink-60);
+}
+
+/* Press state · sutil afundar · resposta instantânea (retorno segue a base).
+   Depois dos variants: o transform do press vence o translateY(-1px) do hover */
+.via-btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+  transition-duration: var(--via-dur-press);
 }
 
 /* ===== Loading spinner ===== */

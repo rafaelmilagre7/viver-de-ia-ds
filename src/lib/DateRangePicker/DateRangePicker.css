@@ -98,6 +98,11 @@
   transform: translateY(-1px);
 }
 
+.via-drp__presets button:active {
+  transform: translateY(0) scale(0.97);
+  transition-duration: var(--via-dur-press);
+}
+
 .via-drp__summary {
   margin: 0;
   padding-top: 10px;

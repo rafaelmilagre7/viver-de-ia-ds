@@ -972,6 +972,7 @@ function LibProgressSection() {
 /* ---------- Drawer ---------- */
 function LibDrawerSection() {
   const [right, setRight] = useState(false);
+  const [left, setLeft] = useState(false);
   const [bottom, setBottom] = useState(false);
 
   return (
@@ -983,6 +984,9 @@ function LibDrawerSection() {
         <div className="vds-lib-row">
           <Button variant="primary" onClick={() => setRight(true)}>
             Abrir drawer (right)
+          </Button>
+          <Button variant="secondary" onClick={() => setLeft(true)}>
+            Abrir drawer (left)
           </Button>
           <Button variant="secondary" onClick={() => setBottom(true)}>
             Abrir bottom sheet
@@ -1012,6 +1016,21 @@ function LibDrawerSection() {
             <Checkbox label="Apenas mentees ativos" defaultChecked />
             <Checkbox label="Com sessão agendada na semana" />
             <Checkbox label="Com pendência aberta há +7 dias" />
+          </div>
+        </Drawer>
+
+        <Drawer
+          open={left}
+          onClose={() => setLeft(false)}
+          side="left"
+          size="sm"
+          title="Navegação"
+          description="Seções da mentoria."
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <Checkbox label="Visão geral" defaultChecked />
+            <Checkbox label="Sessões" />
+            <Checkbox label="Materiais" />
           </div>
         </Drawer>
 

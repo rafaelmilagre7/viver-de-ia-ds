@@ -1,8 +1,33 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeAll, beforeEach, afterAll } from 'vitest';
 import { useState } from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Drawer } from './Drawer';
+
+// jsdom não implementa matchMedia — o gesto de arrasto consulta
+// prefers-reduced-motion ao abrir; `reducedMotion` controla a resposta por teste
+let reducedMotion = false;
+
+beforeAll(() => {
+  vi.stubGlobal('matchMedia', (query: string) => ({
+    matches: query.includes('prefers-reduced-motion') ? reducedMotion : false,
+    media: query,
+    onchange: null,
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    addListener: () => {},
+    removeListener: () => {},
+    dispatchEvent: () => false,
+  }));
+});
+
+afterAll(() => {
+  vi.unstubAllGlobals();
+});
+
+beforeEach(() => {
+  reducedMotion = false;
+});
 
 describe('<Drawer />', () => {
   it('does not render anything when closed', () => {
@@ -57,33 +82,48 @@ describe('<Drawer />', () => {
     expect(screen.getByRole('dialog')).not.toHaveAttribute('aria-labelledby');
   });
 
-  it('calls onClose when the close button is clicked', async () => {
+  it('animates out on close button click: stays mounted, then calls onClose', async () => {
     const onClose = vi.fn();
-    const user = userEvent.setup();
     render(
       <Drawer open onClose={onClose} title="Filtros">
         <p>x</p>
       </Drawer>,
     );
-    await user.click(screen.getByRole('button', { name: /fechar/i }));
-    expect(onClose).toHaveBeenCalledOnce();
+    fireEvent.click(screen.getByRole('button', { name: /fechar/i }));
+    // saída animada: onClose só dispara quando a mola assenta
+    expect(onClose).not.toHaveBeenCalled();
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    await waitFor(() => expect(onClose).toHaveBeenCalledOnce());
   });
 
-  it('calls onClose when ESC is pressed', async () => {
+  it('calls onClose after the exit animation when ESC is pressed', async () => {
     const onClose = vi.fn();
-    const user = userEvent.setup();
     render(
       <Drawer open onClose={onClose} title="Filtros">
         <p>x</p>
       </Drawer>,
     );
-    await user.keyboard('{Escape}');
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClose).not.toHaveBeenCalled();
+    await waitFor(() => expect(onClose).toHaveBeenCalledOnce());
+  });
+
+  it('calls onClose only once when ESC is pressed repeatedly during the exit', async () => {
+    const onClose = vi.fn();
+    render(
+      <Drawer open onClose={onClose} title="Filtros">
+        <p>x</p>
+      </Drawer>,
+    );
+    fireEvent.keyDown(document, { key: 'Escape' });
+    fireEvent.keyDown(document, { key: 'Escape' });
+    await waitFor(() => expect(onClose).toHaveBeenCalledOnce());
+    await new Promise((r) => setTimeout(r, 80));
     expect(onClose).toHaveBeenCalledOnce();
   });
 
-  it('calls onClose when the scrim is clicked', async () => {
+  it('calls onClose after the exit animation when the scrim is clicked', async () => {
     const onClose = vi.fn();
-    const user = userEvent.setup();
     const { container } = render(
       <Drawer open onClose={onClose} title="Filtros">
         <p>x</p>
@@ -91,7 +131,20 @@ describe('<Drawer />', () => {
     );
     const scrim = container.querySelector('.via-drawer-scrim');
     expect(scrim).not.toBeNull();
-    await user.click(scrim as Element);
+    fireEvent.click(scrim as Element);
+    expect(onClose).not.toHaveBeenCalled();
+    await waitFor(() => expect(onClose).toHaveBeenCalledOnce());
+  });
+
+  it('closes synchronously under prefers-reduced-motion', () => {
+    reducedMotion = true;
+    const onClose = vi.fn();
+    render(
+      <Drawer open onClose={onClose} title="Filtros">
+        <p>x</p>
+      </Drawer>,
+    );
+    fireEvent.click(screen.getByRole('button', { name: /fechar/i }));
     expect(onClose).toHaveBeenCalledOnce();
   });
 
@@ -175,7 +228,7 @@ describe('<Drawer />', () => {
     expect(screen.getByRole('button', { name: /fechar/i })).toHaveFocus();
   });
 
-  it('returns focus to the element that was focused before opening, on close', () => {
+  it('returns focus to the element that was focused before opening, on close', async () => {
     function Harness() {
       const [open, setOpen] = useState(false);
       return (
@@ -200,9 +253,9 @@ describe('<Drawer />', () => {
     expect(trigger).not.toHaveFocus();
     expect(screen.getByRole('button', { name: /fechar/i })).toHaveFocus();
 
-    // ao fechar, o foco volta pro gatilho
+    // ao fechar (saída animada), o foco volta pro gatilho quando desmonta
     fireEvent.click(screen.getByRole('button', { name: /fechar/i }));
-    expect(trigger).toHaveFocus();
+    await waitFor(() => expect(trigger).toHaveFocus());
   });
 
   it('returns focus to the previously focused element on unmount while open', () => {

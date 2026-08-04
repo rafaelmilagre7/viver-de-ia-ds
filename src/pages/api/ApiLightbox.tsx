@@ -25,7 +25,7 @@ export default function ApiLightbox() {
       eyebrow="api · lightbox"
       name="Lightbox"
       headline="foto tela cheia · keyboard arrows · download opcional"
-      description="Lightbox pra fotos em tela cheia. Suporta múltiplas imagens · setas keyboard/touch · ESC fecha · caption inferior · download opcional. Use pra: galerias de evento, portfolio, screenshots de produto. Scrim radial blur 12px."
+      description="Lightbox pra fotos em tela cheia. Suporta múltiplas imagens · setas keyboard · arrastar pra baixo dispensa · ESC fecha · caption inferior · download opcional. Use pra: galerias de evento, portfolio, screenshots de produto. Scrim blur 16px."
       importLine={`import { Lightbox, type LightboxProps, type LightboxImage } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-lightbox', description: 'Portal fixed · scrim radial + blur · z-index alto' },
@@ -33,7 +33,7 @@ export default function ApiLightbox() {
         { part: 'via-lightbox__caption', description: 'Texto inferior · alt + caption opcional' },
         { part: 'via-lightbox__arrows', description: 'Botões prev/next nas laterais · hover glow' },
         { part: 'via-lightbox__close', description: 'X canto superior direito' },
-        { part: 'via-lightbox__download', description: 'Download icon · canto superior esquerdo (opcional)' },
+        { part: 'via-lightbox__download', description: 'Botão "Baixar" · barra inferior, ao lado da legenda (opcional)' },
       ]}
       props={[
         { name: 'open', type: 'boolean', required: true, description: 'Estado controlado' },
@@ -77,10 +77,10 @@ export default function ApiLightbox() {
       ]}
       a11y={[
         <>role=dialog + aria-modal=true · focus trap</>,
-        <>Keyboard: ESC fecha · arrow esq/dir navega · Home/End primeiro/último</>,
+        <>Keyboard: ESC fecha · arrow esq/dir navega</>,
         <>Alt text obrigatório · screen reader anuncia "Imagem X de Y: [alt]"</>,
-        <>Touch swipe esquerda/direita navega (mobile)</>,
-        <>Reduced motion: spring vira fade · sem zoom-in</>,
+        <>Arrastar a foto pra baixo dispensa (iOS Fotos) · fundo clareia junto · pra cima resiste · X/ESC saem pela mesma mola</>,
+        <>Reduced motion: spring vira fade · sem zoom-in · dispensa fecha seco</>,
       ]}
       related={[
         { name: 'Carousel', description: 'Galeria inline · não full-screen', href: '/api/carousel' },

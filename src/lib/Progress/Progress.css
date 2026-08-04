@@ -59,7 +59,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -40%;
+  left: 0;
   width: 35%;
   background: linear-gradient(
     100deg,
@@ -70,9 +70,10 @@
   animation: via-progress-shimmer 2.4s ease-in-out infinite;
 }
 
+/* -115%/400% da própria largura (35%) = -40%/140% do track — só compositor */
 @keyframes via-progress-shimmer {
-  0%   { left: -40%; }
-  100% { left: 140%; }
+  0%   { transform: translateX(-115%); }
+  100% { transform: translateX(400%); }
 }
 
 /* ===== Tones ===== */

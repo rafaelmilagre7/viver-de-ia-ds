@@ -39,6 +39,11 @@
   color: var(--via-text-primary);
 }
 
+.via-tv__row:active {
+  background: var(--via-navy-10);
+  transition-duration: var(--via-dur-press);
+}
+
 .via-tv__row.is-selected {
   background: var(--via-navy-08);
   color: var(--via-text-primary);

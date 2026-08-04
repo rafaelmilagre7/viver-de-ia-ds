@@ -43,7 +43,8 @@
   transition:
     border-color var(--via-dur) ease,
     box-shadow var(--via-dur) ease,
-    background var(--via-dur) ease;
+    background var(--via-dur) ease,
+    transform var(--via-dur) var(--via-ease-snap);
   margin-top: 1px;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -67,6 +68,11 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 2px 6px -2px var(--via-shadow-ink-10);
+}
+
+.via-radio:active:not(.is-disabled) .via-radio__circle {
+  transform: scale(0.9);
+  transition-duration: var(--via-dur-press);
 }
 
 .via-radio__dot {

@@ -28,6 +28,8 @@
   animation: via-tip-in var(--via-dur) var(--via-ease-out);
 }
 
+/* Origem espacial (WWDC): cada side define transform-origin apontando
+   pro trigger — a escala nasce dele, nunca do centro */
 @keyframes via-tip-in {
   from { opacity: 0; transform: var(--via-tip-from); }
   to   { opacity: 1; transform: var(--via-tip-to); }
@@ -46,8 +48,9 @@
   bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  --via-tip-from: translate(-50%, 4px);
-  --via-tip-to:   translate(-50%, 0);
+  transform-origin: bottom center;
+  --via-tip-from: translate(-50%, 4px) scale(0.96);
+  --via-tip-to:   translate(-50%, 0) scale(1);
 }
 
 .via-tooltip--top::after {
@@ -63,8 +66,9 @@
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  --via-tip-from: translate(-50%, -4px);
-  --via-tip-to:   translate(-50%, 0);
+  transform-origin: top center;
+  --via-tip-from: translate(-50%, -4px) scale(0.96);
+  --via-tip-to:   translate(-50%, 0) scale(1);
 }
 
 .via-tooltip--bottom::after {
@@ -80,8 +84,9 @@
   right: calc(100% + 8px);
   top: 50%;
   transform: translateY(-50%);
-  --via-tip-from: translate(4px, -50%);
-  --via-tip-to:   translate(0, -50%);
+  transform-origin: right center;
+  --via-tip-from: translate(4px, -50%) scale(0.96);
+  --via-tip-to:   translate(0, -50%) scale(1);
 }
 
 .via-tooltip--left::after {
@@ -97,8 +102,9 @@
   left: calc(100% + 8px);
   top: 50%;
   transform: translateY(-50%);
-  --via-tip-from: translate(-4px, -50%);
-  --via-tip-to:   translate(0, -50%);
+  transform-origin: left center;
+  --via-tip-from: translate(-4px, -50%) scale(0.96);
+  --via-tip-to:   translate(0, -50%) scale(1);
 }
 
 .via-tooltip--right::after {
@@ -107,4 +113,8 @@
   transform: translateY(-50%);
   border-width: 5px 5px 5px 0;
   border-color: transparent var(--via-navy, #0A1F3B) transparent transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-tooltip { animation: none !important; }
 }

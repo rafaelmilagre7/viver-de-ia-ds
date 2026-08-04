@@ -38,6 +38,11 @@
   animation: via-toast-in .32s var(--via-ease-out);
   isolation: isolate;
   overflow: hidden;
+  /* swipe horizontal de dispensar: o touch não pode virar scroll da página
+     nem o arrasto de mouse virar seleção de texto no meio do gesto */
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Atmosphere radial sutil top-left */

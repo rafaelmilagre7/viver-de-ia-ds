@@ -49,11 +49,35 @@
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 
-/* --- Sides --- */
-.via-hovercard--bottom { top: calc(100% + 8px); }
-.via-hovercard--top    { bottom: calc(100% + 8px); }
-.via-hovercard--left   { right: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
-.via-hovercard--right  { left: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+/* --- Sides ---
+   Origem espacial (WWDC): transform-origin aponta pro trigger — o scale
+   nasce dele. Vars --via-hc-from/to alimentam o keyframe único; placements
+   com translate estático repetem o translate, senão a animação o descarta
+   e o card pula no fim da entrada. */
+.via-hovercard--bottom {
+  top: calc(100% + 8px);
+  transform-origin: top center;
+  --via-hc-from: translateY(-4px) scale(0.98);
+  --via-hc-to:   translateY(0) scale(1);
+}
+.via-hovercard--top {
+  bottom: calc(100% + 8px);
+  transform-origin: bottom center;
+  --via-hc-from: translateY(4px) scale(0.98);
+  --via-hc-to:   translateY(0) scale(1);
+}
+.via-hovercard--left {
+  right: calc(100% + 8px); top: 50%; transform: translateY(-50%);
+  transform-origin: right center;
+  --via-hc-from: translateY(-50%) translateX(4px) scale(0.98);
+  --via-hc-to:   translateY(-50%) translateX(0) scale(1);
+}
+.via-hovercard--right {
+  left: calc(100% + 8px); top: 50%; transform: translateY(-50%);
+  transform-origin: left center;
+  --via-hc-from: translateY(-50%) translateX(-4px) scale(0.98);
+  --via-hc-to:   translateY(-50%) translateX(0) scale(1);
+}
 
 /* Cross-axis alignment */
 .via-hovercard--bottom.via-hovercard--align-start,
@@ -63,17 +87,22 @@
 .via-hovercard--bottom.via-hovercard--align-end,
 .via-hovercard--top.via-hovercard--align-end      { right: 0; }
 
-@keyframes via-hovercard-in {
-  from { opacity: 0; transform: translateY(4px) scale(0.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+.via-hovercard--bottom.via-hovercard--align-start { transform-origin: top left; }
+.via-hovercard--bottom.via-hovercard--align-end   { transform-origin: top right; }
+.via-hovercard--top.via-hovercard--align-start    { transform-origin: bottom left; }
+.via-hovercard--top.via-hovercard--align-end      { transform-origin: bottom right; }
+.via-hovercard--bottom.via-hovercard--align-center {
+  --via-hc-from: translateX(-50%) translateY(-4px) scale(0.98);
+  --via-hc-to:   translateX(-50%) translateY(0) scale(1);
 }
-.via-hovercard--bottom.via-hovercard--align-center,
 .via-hovercard--top.via-hovercard--align-center {
-  animation-name: via-hovercard-in-centered;
+  --via-hc-from: translateX(-50%) translateY(4px) scale(0.98);
+  --via-hc-to:   translateX(-50%) translateY(0) scale(1);
 }
-@keyframes via-hovercard-in-centered {
-  from { opacity: 0; transform: translateX(-50%) translateY(4px) scale(0.98); }
-  to   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+
+@keyframes via-hovercard-in {
+  from { opacity: 0; transform: var(--via-hc-from, translateY(-4px) scale(0.98)); }
+  to   { opacity: 1; transform: var(--via-hc-to, translateY(0) scale(1)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

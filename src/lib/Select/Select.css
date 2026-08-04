@@ -37,11 +37,17 @@
   transition:
     border-color var(--via-dur) ease,
     background var(--via-dur) ease,
-    box-shadow var(--via-dur) ease;
+    box-shadow var(--via-dur) ease,
+    transform var(--via-dur) var(--via-ease-snap);
   text-align: left;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 1px 2px var(--via-shadow-ink-03);
+}
+
+.via-select__trigger:active:not(:disabled) {
+  transform: scale(0.99);
+  transition-duration: var(--via-dur-press);
 }
 
 .via-select--md .via-select__trigger {
@@ -162,6 +168,10 @@
 
 .via-select__option:hover {
   background: var(--via-navy-05);
+}
+
+.via-select__option:active:not(.is-disabled) {
+  background: var(--via-navy-10);
 }
 
 /* Destaque por teclado (navegação com setas) */

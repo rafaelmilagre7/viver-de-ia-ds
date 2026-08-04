@@ -106,6 +106,10 @@
   background: var(--via-navy-08);
   color: var(--via-text-primary);
 }
+.via-tp__steps button:active:not(:disabled) {
+  background: var(--via-navy-12);
+  transition-duration: var(--via-dur-press);
+}
 
 .via-tp.has-error .via-tp__field { border-color: rgba(184, 92, 92, 0.40); }
 .via-tp.has-error .via-tp__field:focus-within {

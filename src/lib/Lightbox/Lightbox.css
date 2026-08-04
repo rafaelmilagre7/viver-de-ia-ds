@@ -7,12 +7,20 @@
   z-index: 9994;
   display: flex;
   flex-direction: column;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+/* Fundo em elemento próprio: a opacidade acompanha o arrasto (scrimRef)
+   sem apagar a foto nem o chrome */
+.via-lightbox__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background:
     radial-gradient(circle at 50% 40%, rgba(10, 31, 59, 0.86), rgba(2, 22, 42, 0.96));
   backdrop-filter: blur(16px) saturate(130%);
   -webkit-backdrop-filter: blur(16px) saturate(130%);
   animation: via-lightbox-in .26s var(--via-ease-out);
-  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 
 @keyframes via-lightbox-in {
@@ -28,6 +36,7 @@
   padding: 24px;
   cursor: zoom-out;
   overflow: hidden;
+  touch-action: none; /* pan vertical é o gesto de dispensar, não scroll nativo */
 }
 
 .via-lightbox__img {
@@ -139,7 +148,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-lightbox, .via-lightbox__img, .via-lightbox__close, .via-lightbox__arrow, .via-lightbox__download {
+  .via-lightbox__scrim, .via-lightbox__img, .via-lightbox__close, .via-lightbox__arrow, .via-lightbox__download {
     animation: none !important;
     transition: none !important;
   }

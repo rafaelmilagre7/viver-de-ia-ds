@@ -24,7 +24,15 @@
   letter-spacing: -0.008em;
   cursor: pointer;
   position: relative;
-  transition: color var(--via-dur) ease, background var(--via-dur) ease;
+  transition:
+    color var(--via-dur) ease,
+    background var(--via-dur) ease,
+    transform var(--via-dur) var(--via-ease-snap);
+}
+
+.via-tabs__tab:active:not(:disabled) {
+  transform: scale(0.97);
+  transition-duration: var(--via-dur-press);
 }
 
 .via-tabs__badge {

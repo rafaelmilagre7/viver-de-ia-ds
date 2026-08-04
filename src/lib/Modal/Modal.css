@@ -42,15 +42,30 @@
     0 0 0 0.5px var(--via-navy-08),
     0 32px 64px -22px var(--via-shadow-ink-40),
     0 16px 36px -12px var(--via-shadow-ink-20);
-  animation: via-modal-in .36s var(--via-ease-out);
+  animation: via-modal-in var(--via-dur) var(--via-ease-out);
+  /* Materialização (WWDC): o blur anima SÓ na entrada e é curto —
+     will-change promove a camada antes do primeiro frame pra não jankar */
+  will-change: transform, opacity, backdrop-filter;
   overflow: hidden;
   isolation: isolate;
 }
 
 @keyframes via-modal-in {
-  0%   { opacity: 0; transform: translateY(20px) scale(0.94); }
+  0%   { opacity: 0; transform: translateY(20px) scale(0.94);
+         backdrop-filter: blur(0px) saturate(100%);
+         -webkit-backdrop-filter: blur(0px) saturate(100%); }
   60%  { opacity: 1; transform: translateY(-2px) scale(1.005); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 1; transform: translateY(0) scale(1);
+         backdrop-filter: blur(28px) saturate(140%);
+         -webkit-backdrop-filter: blur(28px) saturate(140%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-modal, .via-modal-scrim { animation-name: via-modal-fade; }
+}
+@keyframes via-modal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .via-modal::before {

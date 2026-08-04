@@ -35,7 +35,16 @@
   background: var(--via-glass-bar);
   backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
-  border-bottom: 0.5px solid var(--via-navy-12);
+  /* Borda de rolagem (WWDC scroll edge effect) · .is-scrolled vem do
+     useScrollEdge — só existe com conteúdo rolado por baixo */
+  border-bottom: 0.5px solid transparent;
+  transition:
+    border-color var(--via-dur) var(--via-ease-out),
+    box-shadow var(--via-dur) var(--via-ease-out);
+}
+.vds-header.is-scrolled {
+  border-bottom-color: var(--via-navy-12);
+  box-shadow: 0 8px 20px -16px var(--via-shadow-ink-20);
 }
 .vds-header-left { display: flex; align-items: center; gap: var(--via-space-3); }
 .vds-drawer-toggle {

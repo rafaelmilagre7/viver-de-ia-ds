@@ -31,12 +31,14 @@
   isolation: isolate;
 }
 
-.via-dropdown__menu--start { left: 0; }
-.via-dropdown__menu--end { right: 0; }
+/* Origem espacial (WWDC): o menu abre pra baixo — escala nasce do canto
+   ancorado no trigger, não do centro */
+.via-dropdown__menu--start { left: 0; transform-origin: top left; }
+.via-dropdown__menu--end { right: 0; transform-origin: top right; }
 
 @keyframes via-dropdown-in {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-4px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .via-dropdown__group {
@@ -76,6 +78,10 @@
   background: var(--via-navy-05);
 }
 
+.via-dropdown__item:active:not(:disabled) {
+  background: var(--via-navy-10);
+}
+
 .via-dropdown__item:focus-visible {
   background: var(--via-navy-05);
   outline: 2px solid var(--via-navy-60);
@@ -88,6 +94,10 @@
 
 .via-dropdown__item.is-destructive:hover:not(:disabled) {
   background: rgba(184, 92, 92, 0.08);
+}
+
+.via-dropdown__item.is-destructive:active:not(:disabled) {
+  background: rgba(184, 92, 92, 0.14);
 }
 
 .via-dropdown__item.is-disabled,
@@ -130,4 +140,8 @@
   height: 1px;
   background: var(--via-border-soft, rgba(10, 31, 59, 0.08));
   margin: 6px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .via-dropdown__menu { animation: none !important; }
 }

@@ -22,6 +22,9 @@
     0 22px 44px -16px var(--via-shadow-ink-20),
     0 8px 18px -10px var(--via-shadow-ink-14);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+  /* Origem espacial (WWDC): o menu nasce do ponto do clique — o canto
+     superior esquerdo ancora no cursor */
+  transform-origin: top left;
   animation: via-cm-in 0.2s var(--via-ease-out);
   isolation: isolate;
 }
