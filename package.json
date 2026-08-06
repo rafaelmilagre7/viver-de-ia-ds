@@ -11,6 +11,7 @@
     "sitemap": "node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "lint:tokens": "node scripts/token-drift.mjs",
+    "lint:sync": "node scripts/check-plugin-sync.mjs",
     "preview": "vite preview",
     "test:visual": "playwright test visual.spec.ts",
     "test:visual:update": "playwright test visual.spec.ts --update-snapshots",

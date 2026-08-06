@@ -34,6 +34,9 @@ jobs:
       - name: token drift (base tokenizada)
         run: bun run lint:tokens
 
+      - name: sync do pacote do time (plugin espelha a fonte)
+        run: bun run lint:sync
+
       - name: typecheck + build
         run: bun run build
 
