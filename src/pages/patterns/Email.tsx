@@ -8,6 +8,7 @@ type MailDef = { id: string; name: string; subject: string; when: string };
 
 const MAILS: MailDef[] = [
   { id: 'welcome', name: 'Boas-vindas', subject: 'tua vaga tá confirmada · bora começar?', when: 'Quando o aluno confirma a matrícula numa turma.' },
+  { id: 'welcome-plataforma', name: 'Boas-vindas à plataforma', subject: 'teu acesso à plataforma tá liberado', when: 'Quando o acesso à plataforma é liberado (primeiro login). Se coincidir com a matrícula, o welcome de turma vence.' },
   { id: 'enrollment', name: 'Confirmação de turma', subject: 'confirmado · sua turma começa 12 de junho', when: 'Recibo de matrícula com os detalhes concretos.' },
   { id: 'billing', name: 'Cobrança / fatura', subject: 'sua fatura da Viver de IA · junho', when: 'Aviso de fatura — vira coral quando em atraso.' },
   { id: 'nps', name: 'NPS / feedback', subject: 'como tá indo? 1 pergunta, 30 segundos', when: 'Pulso de satisfação — uma pergunta só.' },

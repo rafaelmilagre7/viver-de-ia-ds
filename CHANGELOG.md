@@ -4,6 +4,12 @@ Todas as mudanças notáveis no Viver de IA Design System são documentadas aqui
 
 Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
+## [Não lançado]
+
+### Adicionado
+
+- **Email `welcome-plataforma`** (Boas-vindas à plataforma · 14º template de produção): disparado quando o acesso do aluno à plataforma é liberado (primeiro login). Variáveis `firstName`, `loginEmail`, `platformUrl` · 3 passos (login → trilha de início → apresentação na comunidade) · CTA "Acessar a plataforma". Distinto do `welcome` (que confirma vaga em turma). Registrado no motor (`build-emails.mjs`) e no mostruário `/patterns/email` · 27.5KB, checagens bulletproof ✓.
+
 ## [0.6.1] · 2026-07-01
 
 Passe world-class: auditoria multi-agente (120 agentes · 157 folhas de estilo · verificação adversarial) → 109 achados confirmados, tudo corrigido e verificado. Nenhuma mudança breaking.

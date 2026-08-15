@@ -7,6 +7,13 @@
     "bytes": 28759
   },
   {
+    "id": "welcome-plataforma",
+    "name": "Boas-vindas à plataforma",
+    "subject": "teu acesso à plataforma tá liberado",
+    "when": "Disparado quando o acesso do aluno à plataforma é liberado (primeiro login). Se coincidir com a confirmação de matrícula, o welcome de turma vence — nunca os dois na mesma janela.",
+    "bytes": 27748
+  },
+  {
     "id": "enrollment",
     "name": "Confirmação de turma",
     "subject": "confirmado · sua turma começa 12 de junho",

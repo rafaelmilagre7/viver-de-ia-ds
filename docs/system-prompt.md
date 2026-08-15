@@ -436,7 +436,7 @@ Email ≠ web. Clientes (Gmail, Outlook, Apple Mail) descartam CSS moderno. Regr
 - **Liquid glass simulado é permitido** (hero navy, painéis frosted, CTA glossy) MAS **todo `background-image: linear/radial-gradient` precisa de um `background-color` sólido na MESMA regra** (fallback). Outlook mostra o sólido; Apple Mail/Gmail mostram o brilho.
 - **Logo = lockup pequeno** (monograma + wordmark · ~18px alt) em **URL absoluta hospedada** (não relativa). Trava em claro: `<meta name="color-scheme" content="light only">`. Sempre um **preheader** (texto de preview escondido).
 - Cor de texto sobre navy = branco sólido. Coral só pra urgência real (atraso/erro).
-- Stack canônica: **react-email + Resend**. A IA escreve só o editorial (assunto, headline, corpo); o motor renderiza o HTML. 13 templates de produção vivos em `/patterns/email`.
+- Stack canônica: **react-email + Resend**. A IA escreve só o editorial (assunto, headline, corpo); o motor renderiza o HTML. 14 templates de produção vivos em `/patterns/email`.
 
 ## 10. Tabelas
 

@@ -1,6 +1,6 @@
 ---
 name: viver-de-ia-design
-description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo/roxo/cyan em nenhum nível), assinatura liquid glass + atmosphere radial + spring physics, library React interna `@viverdeia/design-system` v0.6.0 (não publicada no npm · DS interno) (**46 componentes de UI + ThemeProvider** em src/lib · 46 API docs Radix-style), theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K indexado PT-BR/EN, starter `bunx create-viverdeia-app`, **sistema de email de produção à prova de bala** (13 templates react-email em emails/), brand book completo + cobertura email/social/paid ads/landing/commercial/editorial/event + patterns avançados (2FA, pricing comparison, error pages, billing). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ad creative, ou qualquer artefato visual da marca.
+description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo/roxo/cyan em nenhum nível), assinatura liquid glass + atmosphere radial + spring physics, library React interna `@viverdeia/design-system` v0.6.0 (não publicada no npm · DS interno) (**46 componentes de UI + ThemeProvider** em src/lib · 46 API docs Radix-style), theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K indexado PT-BR/EN, starter `bunx create-viverdeia-app`, **sistema de email de produção à prova de bala** (14 templates react-email em emails/), brand book completo + cobertura email/social/paid ads/landing/commercial/editorial/event + patterns avançados (2FA, pricing comparison, error pages, billing). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ad creative, ou qualquer artefato visual da marca.
 user-invocable: true
 ---
 
@@ -412,7 +412,7 @@ const css = createThemeOverride({ '--via-navy': '#0F2A4E' }, { scope: 'light' })
 
 Emails de verdade que **não quebram no inbox** (Gmail, Outlook, Apple Mail). Vivem em `emails/` (react-email), renderizam pra `public/emails/*.html` via `bun run build:emails`, e aparecem ao vivo em `/patterns/email`. Distinto da galeria editorial de mockups — estes são os **enviáveis**.
 
-**13 templates de produção:** `welcome` · `enrollment` (confirmação de turma) · `billing` (fatura · coral só em atraso) · `nps` · `digest` (resumo semanal) · `event-invite` · `recap` (pós-evento) · `drip` (nurture) · `lancamento` · `oferta` · `churn` (sumiço) · `winback` (recuperação) · `urgent-ops` (alerta de sistema). Voz por contexto, sem dark pattern.
+**14 templates de produção:** `welcome` · `welcome-plataforma` (primeiro acesso à plataforma) · `enrollment` (confirmação de turma) · `billing` (fatura · coral só em atraso) · `nps` · `digest` (resumo semanal) · `event-invite` · `recap` (pós-evento) · `drip` (nurture) · `lancamento` · `oferta` · `churn` (sumiço) · `winback` (recuperação) · `urgent-ops` (alerta de sistema). Voz por contexto, sem dark pattern.
 
 **Regras invioláveis de email (≠ web):**
 - **Tabela + estilo inline**, ~600px, `<102KB`. Zero flex/grid/`backdrop-filter` (clientes descartam).
@@ -496,7 +496,7 @@ Gera: `index.html` com anti-FOUC inline · `package.json` (React 19 + Vite 6 + T
 ## Comandos deste plugin (`/via-*`)
 
 - `/via` · entrada geral · descreve o que vai construir e direciona pro pattern certo
-- `/via-email` · email · 13 templates de PRODUÇÃO (react-email · à prova de bala) ou rascunho editorial
+- `/via-email` · email · 14 templates de PRODUÇÃO (react-email · à prova de bala) ou rascunho editorial
 - `/via-social` · social media · 6 canais · 18 templates
 - `/via-landing` · landing page · hero variants + elementos reutilizáveis
 - `/via-brand` · brand book · logo usage · voice por contexto
@@ -549,7 +549,7 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 
 - **46 componentes de UI** em 9 categorias + `ThemeProvider` (47 símbolos exportados no barrel)
 - **46 API docs** Radix-style (um por componente)
-- **13 templates de email de produção** (react-email · enviáveis)
+- **14 templates de email de produção** (react-email · enviáveis)
 - **206 tokens** `--via-*` únicos · navy alpha = **18 stops** (02→80) · tinta de sombra 03→60 · receitas glass · escala de raio · paleta dataviz
 - **18 templates social** · **6 canais** · cobertura paid/landing/commercial/editorial/event
 - Dark mode completo · 100% WCAG AA de contraste (claro + escuro) · 0 violação séria de a11y

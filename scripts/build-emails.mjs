@@ -14,6 +14,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import Welcome, { meta as welcomeMeta } from '../emails/welcome.tsx';
+import WelcomePlataforma, { meta as welcomePlataformaMeta } from '../emails/welcome-plataforma.tsx';
 import Enrollment, { meta as enrollmentMeta } from '../emails/enrollment.tsx';
 import Billing, { meta as billingMeta } from '../emails/billing.tsx';
 import Nps, { meta as npsMeta } from '../emails/nps.tsx';
@@ -33,6 +34,7 @@ const out = resolve(root, 'public/emails');
 
 const templates = [
   [Welcome, welcomeMeta],
+  [WelcomePlataforma, welcomePlataformaMeta],
   [Enrollment, enrollmentMeta],
   [Billing, billingMeta],
   [Nps, npsMeta],
