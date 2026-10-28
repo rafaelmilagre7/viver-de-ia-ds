@@ -7,7 +7,7 @@
 
 .via-cm {
   position: fixed;
-  z-index: 9991;
+  z-index: var(--via-z-dropdown, 1100);
   min-width: 200px;
   max-width: 280px;
   padding: 5px;

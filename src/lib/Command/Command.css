@@ -5,7 +5,7 @@
 .via-cmd-root {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: var(--via-z-modal, 1000);
   display: flex;
   align-items: flex-start;
   justify-content: center;

@@ -12,7 +12,9 @@ describe('<HoverCard />', () => {
     );
     expect(screen.getByRole('link', { name: '@caioribeiro' })).toBeInTheDocument();
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    expect(screen.queryByText('Caio Ribeiro')).not.toBeInTheDocument();
+    // o conteúdo existe só num nó oculto que descreve o trigger (aria-describedby)
+    expect(screen.queryByText('Caio Ribeiro')).not.toBeVisible();
+    expect(screen.getByRole('link', { name: '@caioribeiro' })).toHaveAccessibleDescription('Caio Ribeiro');
   });
 
   it('marks the trigger as a dialog popup that is collapsed while closed', () => {

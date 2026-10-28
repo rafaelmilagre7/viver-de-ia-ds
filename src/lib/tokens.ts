@@ -879,6 +879,48 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-z-dropdown",
+    "css": "--via-z-dropdown",
+    "value": "1100",
+    "category": "other"
+  },
+  {
+    "name": "via-z-modal",
+    "css": "--via-z-modal",
+    "value": "1000",
+    "category": "other"
+  },
+  {
+    "name": "via-z-overlay",
+    "css": "--via-z-overlay",
+    "value": "1000",
+    "category": "other"
+  },
+  {
+    "name": "via-z-popover",
+    "css": "--via-z-popover",
+    "value": "1100",
+    "category": "other"
+  },
+  {
+    "name": "via-z-sticky",
+    "css": "--via-z-sticky",
+    "value": "100",
+    "category": "other"
+  },
+  {
+    "name": "via-z-toast",
+    "css": "--via-z-toast",
+    "value": "1200",
+    "category": "other"
+  },
+  {
+    "name": "via-z-tooltip",
+    "css": "--via-z-tooltip",
+    "value": "1300",
+    "category": "other"
+  },
+  {
     "name": "via-radius-2xl",
     "css": "--via-radius-2xl",
     "value": "40px",
@@ -1349,6 +1391,13 @@ export type TokenName =
   | 'via-surface-onnavy'
   | 'via-t-fast'
   | 'via-t-slow'
+  | 'via-z-dropdown'
+  | 'via-z-modal'
+  | 'via-z-overlay'
+  | 'via-z-popover'
+  | 'via-z-sticky'
+  | 'via-z-toast'
+  | 'via-z-tooltip'
   | 'via-radius-2xl'
   | 'via-radius-lg'
   | 'via-radius-md'

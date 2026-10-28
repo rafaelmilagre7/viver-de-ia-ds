@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 import { Check } from 'lucide-react';
+import '../_shared/sr-only.css';
 import './Stepper.css';
 
 export interface StepItem {
@@ -74,7 +75,11 @@ export function Stepper({
                 >
                   <StepIndicator index={i} status={status} />
                   <span className="via-stepper__copy">
-                    <span className="via-stepper__label">{step.label}</span>
+                    <span className="via-stepper__label">
+                      {step.label}
+                      {/* o check é só visual (aria-hidden) — o estado vai em texto */}
+                      {isComplete && <span className="via-sr-only"> (concluído)</span>}
+                    </span>
                     {step.description && <span className="via-stepper__desc">{step.description}</span>}
                   </span>
                 </button>
@@ -82,7 +87,11 @@ export function Stepper({
                 <div className="via-stepper__node">
                   <StepIndicator index={i} status={status} />
                   <span className="via-stepper__copy">
-                    <span className="via-stepper__label">{step.label}</span>
+                    <span className="via-stepper__label">
+                      {step.label}
+                      {/* o check é só visual (aria-hidden) — o estado vai em texto */}
+                      {isComplete && <span className="via-sr-only"> (concluído)</span>}
+                    </span>
                     {step.description && <span className="via-stepper__desc">{step.description}</span>}
                   </span>
                 </div>

@@ -4,7 +4,7 @@
 .via-lightbox {
   position: fixed;
   inset: 0;
-  z-index: 9994;
+  z-index: var(--via-z-modal, 1000);
   display: flex;
   flex-direction: column;
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);

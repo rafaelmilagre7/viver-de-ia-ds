@@ -34,7 +34,13 @@ export const STORAGE_KEY = 'via-theme';
    SO do dev está em dark, contrariando a identidade clara da marca. */
 export function readPreferred(): ThemeMode {
   if (typeof window === 'undefined') return 'light';
-  const stored = window.localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
+  // localStorage pode lançar (iframe sandbox, cookies bloqueados, Safari privado)
+  let stored: string | null;
+  try {
+    stored = window.localStorage.getItem(STORAGE_KEY);
+  } catch {
+    return 'light';
+  }
   if (stored === 'light' || stored === 'dark' || stored === 'system') return stored;
   return 'light';
 }
@@ -55,14 +61,16 @@ export function applyTheme(theme: Theme) {
  *
  * Funciona com ou sem ThemeProvider:
  *  - com Provider: state React-aware, re-renderiza ao mudar
- *  - sem Provider: lê DOM (data-theme) e usa applyTheme imperativo
+ *  - sem Provider: lê DOM (data-theme) e usa applyTheme imperativo · sem
+ *    data-theme no <html> a página está clara, então reporta 'light'
+ *    (light-first — não chuta o tema do SO)
  */
 export function useTheme(): ThemeContextValue {
   const ctx = useContext(ThemeContext);
   // Standalone mode (sem Provider) — lê o DOM diretamente
   const [domTheme, setDomTheme] = useState<Theme>(() => {
     if (typeof document === 'undefined') return 'light';
-    return (document.documentElement.dataset.theme as Theme) || resolveSystem();
+    return (document.documentElement.dataset.theme as Theme) || 'light';
   });
 
   useEffect(() => {

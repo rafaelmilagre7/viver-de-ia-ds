@@ -114,7 +114,7 @@ describe('<Tooltip />', () => {
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
 
-  it('wires aria-describedby on the trigger (not the wrapper) to the tooltip id only while open', () => {
+  it('wires aria-describedby on the trigger (not the wrapper) — always, even before the delay', () => {
     render(
       <Tooltip content="Descrição acessível" delay={200}>
         <button>Trigger</button>
@@ -125,7 +125,10 @@ describe('<Tooltip />', () => {
     expect(wrap).toHaveClass('via-tooltip-wrap');
     // The wrapper never carries the description — it's not the focusable element.
     expect(wrap).not.toHaveAttribute('aria-describedby');
-    expect(trigger).not.toHaveAttribute('aria-describedby');
+    // Closed: the description already resolves (hidden node with the same text),
+    // so a screen reader hears it on focus, before the delay elapses.
+    expect(trigger).toHaveAccessibleDescription('Descrição acessível');
+    const closedId = trigger.getAttribute('aria-describedby');
 
     fireEvent.mouseEnter(wrap);
     tick(200);
@@ -134,10 +137,11 @@ describe('<Tooltip />', () => {
     expect(tip.id).toBeTruthy();
     // Description lands on the focusable trigger so a screen reader announces it on focus.
     expect(trigger).toHaveAttribute('aria-describedby', tip.id);
+    expect(tip.id).toBe(closedId);
     expect(wrap).not.toHaveAttribute('aria-describedby');
 
     fireEvent.mouseLeave(wrap);
-    expect(trigger).not.toHaveAttribute('aria-describedby');
+    expect(trigger).toHaveAccessibleDescription('Descrição acessível');
   });
 
   it('merges aria-describedby with an id already present on the trigger', () => {
@@ -148,8 +152,9 @@ describe('<Tooltip />', () => {
     );
     const trigger = screen.getByRole('button', { name: 'Trigger' });
     const wrap = wrapOf(trigger);
-    // Pre-existing description is preserved while closed.
-    expect(trigger).toHaveAttribute('aria-describedby', 'hint-1');
+    // Pre-existing description is preserved (and merged) open or closed.
+    const closed = trigger.getAttribute('aria-describedby');
+    expect(closed).toMatch(/^hint-1 /);
 
     fireEvent.mouseEnter(wrap);
     tick(200);
@@ -158,8 +163,7 @@ describe('<Tooltip />', () => {
     expect(trigger).toHaveAttribute('aria-describedby', `hint-1 ${tip.id}`);
 
     fireEvent.mouseLeave(wrap);
-    // Back to just the caller's own description once closed.
-    expect(trigger).toHaveAttribute('aria-describedby', 'hint-1');
+    expect(trigger).toHaveAttribute('aria-describedby', closed!);
   });
 
   it('applies the side modifier class (default top, and an explicit side)', () => {
@@ -239,7 +243,7 @@ describe('<Tooltip />', () => {
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     // …but focus stays on the trigger (no blur).
     expect(trigger).toHaveFocus();
-    // aria-describedby is cleared along with the dismissal.
-    expect(trigger).not.toHaveAttribute('aria-describedby');
+    // The description stays wired (hidden node) after the dismissal.
+    expect(trigger).toHaveAccessibleDescription('Persistente');
   });
 });

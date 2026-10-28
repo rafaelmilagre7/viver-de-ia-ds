@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef, type ReactNode, type MouseEvent } from 'react';
+import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { Portal } from '../_shared/Portal';
 import './ContextMenu.css';
 
 export interface ContextMenuOption {
@@ -32,7 +34,9 @@ export interface ContextMenuProps {
  * Usa contextmenu event nativo · posiciona no cursor · keyboard arrow nav.
  * Ao abrir, foca o primeiro item habilitado. ArrowDown/Up navegam entre os
  * itens (pulando os desabilitados, com wrap), Home/End vão pro primeiro/último,
- * Enter/Espaço ativam e fecham. Fecha em click fora, Escape, ou seleção.
+ * Enter/Espaço ativam e fecham. Fecha em click fora, foco fora, Tab, Escape ou
+ * seleção — nesses três últimos o foco volta pro elemento que abriu o menu.
+ * O menu abre num portal no <body> (nunca preso num container com transform).
  *
  * @example
  * <ContextMenu items={[
@@ -49,15 +53,22 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const menuRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  // Quem tinha o foco quando o menu abriu — volta pra ele em ESC/Tab/seleção
+  const invokerRef = useRef<HTMLElement | null>(null);
 
   const openMenu = (e: MouseEvent) => {
     e.preventDefault();
+    invokerRef.current = document.activeElement as HTMLElement | null;
     setPos({ x: e.clientX, y: e.clientY });
     setActiveIndex(firstEnabled());
     setOpen(true);
   };
 
   const close = () => setOpen(false);
+  const closeAndRestore = () => {
+    close();
+    invokerRef.current?.focus?.();
+  };
 
   /** Índice do primeiro item não-desabilitado (ou -1 se não houver) */
   const firstEnabled = () => items.findIndex((it) => !it.disabled);
@@ -89,7 +100,7 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
     const it = items[index];
     if (!it || it.disabled) return;
     it.onSelect?.();
-    close();
+    closeAndRestore();
   };
 
   const handleKey = (e: React.KeyboardEvent, index: number) => {
@@ -115,24 +126,18 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
         e.preventDefault();
         activate(index);
         break;
+      case 'Tab':
+        e.preventDefault();
+        closeAndRestore();
+        break;
       default:
         break;
     }
   };
 
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
-    const onClickOutside = (e: globalThis.MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) close();
-    };
-    document.addEventListener('keydown', onKey);
-    document.addEventListener('mousedown', onClickOutside);
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.removeEventListener('mousedown', onClickOutside);
-    };
-  }, [open]);
+  // Clique fora / foco fora fecha · ESC fecha só o menu (camada do topo)
+  useDismiss(open, [menuRef], close);
+  const layer = useEscapeLayer(open, closeAndRestore);
 
   // Adjust menu position if it would overflow viewport
   useEffect(() => {
@@ -161,37 +166,35 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
         {children}
       </span>
       {open && (
-        <div
-          ref={menuRef}
-          className="via-cm"
-          role="menu"
-          aria-label={label}
-          style={{ top: pos.y, left: pos.x }}
-        >
-          {items.map((it, i) => (
-            <div key={i}>
-              {it.separatorBefore && <div className="via-cm__sep" role="separator" />}
-              <button
-                ref={(el) => { itemRefs.current[i] = el; }}
-                type="button"
-                role="menuitem"
-                tabIndex={i === activeIndex ? 0 : -1}
-                className={`via-cm__item${it.destructive ? ' is-destructive' : ''}${it.disabled ? ' is-disabled' : ''}`}
-                onClick={() => {
-                  if (it.disabled) return;
-                  it.onSelect?.();
-                  close();
-                }}
-                onKeyDown={(e) => handleKey(e, i)}
-                disabled={it.disabled}
-              >
-                {it.icon && <span className="via-cm__icon">{it.icon}</span>}
-                <span className="via-cm__label">{it.label}</span>
-                {it.shortcut && <span className="via-cm__shortcut">{it.shortcut}</span>}
-              </button>
-            </div>
-          ))}
-        </div>
+        <Portal layer={layer}>
+          <div
+            ref={menuRef}
+            className="via-cm"
+            role="menu"
+            aria-label={label}
+            style={{ top: pos.y, left: pos.x }}
+          >
+            {items.map((it, i) => (
+              <div key={i}>
+                {it.separatorBefore && <div className="via-cm__sep" role="separator" />}
+                <button
+                  ref={(el) => { itemRefs.current[i] = el; }}
+                  type="button"
+                  role="menuitem"
+                  tabIndex={i === activeIndex ? 0 : -1}
+                  className={`via-cm__item${it.destructive ? ' is-destructive' : ''}${it.disabled ? ' is-disabled' : ''}`}
+                  onClick={() => activate(i)}
+                  onKeyDown={(e) => handleKey(e, i)}
+                  disabled={it.disabled}
+                >
+                  {it.icon && <span className="via-cm__icon">{it.icon}</span>}
+                  <span className="via-cm__label">{it.label}</span>
+                  {it.shortcut && <span className="via-cm__shortcut">{it.shortcut}</span>}
+                </button>
+              </div>
+            ))}
+          </div>
+        </Portal>
       )}
     </>
   );

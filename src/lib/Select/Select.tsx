@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
+import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { Anchored } from '../_shared/Portal';
 import './Select.css';
 
 export interface SelectOption {
@@ -25,6 +27,11 @@ export interface SelectProps {
 
 /**
  * Select · combobox editorial · keyboard nav · ARIA listbox
+ *
+ * Padrão "select-only combobox" (WAI-ARIA): o trigger é role=combobox, o foco
+ * fica nele e a opção ativa vem por aria-activedescendant. Nome acessível =
+ * rótulo + valor atual. A lista abre num portal ancorado (nunca cortada por
+ * card/modal), fecha em ESC (só ela, não o modal), clique fora ou foco fora.
  *
  * @example
  * <Select
@@ -55,6 +62,9 @@ export function Select({
   const autoId = useId();
   const listId = `via-select-list-${autoId}`;
   const labelId = `via-select-label-${autoId}`;
+  const triggerId = `via-select-trigger-${autoId}`;
+  const valueId = `via-select-value-${autoId}`;
+  const hintId = `via-select-hint-${autoId}`;
   const [open, setOpen] = useState(false);
   const [internal, setInternal] = useState<string | undefined>(defaultValue);
   const current = value ?? internal;
@@ -149,28 +159,14 @@ export function Select({
     listRef.current.querySelector('.is-active')?.scrollIntoView({ block: 'nearest' });
   }, [active, open]);
 
-  // Click outside fecha
-  useEffect(() => {
-    if (!open) return;
-    const onClick = (e: MouseEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener('mousedown', onClick);
-    return () => document.removeEventListener('mousedown', onClick);
-  }, [open]);
+  // Clique fora ou foco fora (Tab pra outro campo) fecha — sem puxar o foco de volta
+  useDismiss(open, [wrapRef, listRef], () => setOpen(false));
 
-  // ESC fecha
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setOpen(false);
-        triggerRef.current?.focus();
-      }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open]);
+  // ESC fecha só a lista (camada do topo) e devolve o foco ao trigger
+  const layer = useEscapeLayer(open, () => {
+    setOpen(false);
+    triggerRef.current?.focus();
+  });
 
   return (
     <div ref={wrapRef} className={`via-select via-select--${size} ${className}`}>
@@ -181,19 +177,27 @@ export function Select({
       )}
       <button
         ref={triggerRef}
+        id={triggerId}
         type="button"
+        role="combobox"
         className={`via-select__trigger ${open ? 'is-open' : ''} ${error ? 'has-error' : ''}`}
         aria-haspopup="listbox"
         aria-expanded={open}
-        aria-labelledby={label ? labelId : undefined}
+        // Nome = rótulo + valor atual ("Plano Pro"); sem label visível, o
+        // aria-label do próprio trigger entra no lugar do rótulo
+        aria-labelledby={
+          label ? `${labelId} ${valueId}` : ariaLabel ? `${triggerId} ${valueId}` : undefined
+        }
         aria-label={!label ? ariaLabel : undefined}
         aria-controls={listId}
         aria-activedescendant={open && active >= 0 ? `${listId}-opt-${active}` : undefined}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={hint || error ? hintId : undefined}
         disabled={disabled}
         onClick={() => (open ? setOpen(false) : openList())}
         onKeyDown={handleKey}
       >
-        <span className={`via-select__value ${!selectedOption ? 'is-placeholder' : ''}`}>
+        <span id={valueId} className={`via-select__value ${!selectedOption ? 'is-placeholder' : ''}`}>
           {selectedOption ? selectedOption.label : placeholder}
         </span>
         <ChevronDown
@@ -205,35 +209,46 @@ export function Select({
       </button>
 
       {(hint || error) && (
-        <span className={`via-select__hint ${error ? 'is-error' : ''}`}>
+        <span id={hintId} className={`via-select__hint ${error ? 'is-error' : ''}`}>
           {error || hint}
         </span>
       )}
 
       {open && (
-        <ul id={listId} ref={listRef} role="listbox" className="via-select__list">
-          {options.map((opt, idx) => {
-            const isSelected = opt.value === current;
-            return (
-              <li
-                key={opt.value}
-                id={`${listId}-opt-${idx}`}
-                role="option"
-                aria-selected={isSelected}
-                aria-disabled={opt.disabled}
-                tabIndex={-1}
-                className={`via-select__option ${isSelected ? 'is-selected' : ''} ${idx === active ? 'is-active' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
-                onMouseEnter={() => !opt.disabled && setActive(idx)}
-                onClick={() => !opt.disabled && handleSelect(opt.value)}
-              >
-                <span>{opt.label}</span>
-                {isSelected && (
-                  <Check className="via-select__check" size={12} strokeWidth={2.4} aria-hidden="true" />
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <Anchored anchorRef={wrapRef} z="dropdown" layer={layer}>
+          <ul
+            id={listId}
+            ref={listRef}
+            role="listbox"
+            aria-labelledby={label ? labelId : undefined}
+            aria-label={!label ? ariaLabel ?? placeholder : undefined}
+            className="via-select__list"
+            // Clique numa opção não tira o foco do trigger (activedescendant)
+            onMouseDown={(e) => e.preventDefault()}
+          >
+            {options.map((opt, idx) => {
+              const isSelected = opt.value === current;
+              return (
+                <li
+                  key={opt.value}
+                  id={`${listId}-opt-${idx}`}
+                  role="option"
+                  aria-selected={isSelected}
+                  aria-disabled={opt.disabled}
+                  tabIndex={-1}
+                  className={`via-select__option ${isSelected ? 'is-selected' : ''} ${idx === active ? 'is-active' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
+                  onMouseEnter={() => !opt.disabled && setActive(idx)}
+                  onClick={() => !opt.disabled && handleSelect(opt.value)}
+                >
+                  <span>{opt.label}</span>
+                  {isSelected && (
+                    <Check className="via-select__check" size={12} strokeWidth={2.4} aria-hidden="true" />
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </Anchored>
       )}
     </div>
   );

@@ -86,10 +86,24 @@
   padding-bottom: var(--via-space-1);
 }
 
+/* role=grid · embrulha cabeçalho + dias mantendo o gap da coluna do .via-cal */
+.via-cal__table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3_5);
+}
+
 .via-cal__grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: var(--via-space-0_5);
+}
+
+/* Semana (role=row) · subgrid: células seguem as 7 colunas e o gap do grid */
+.via-cal__row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
 }
 
 .via-cal__cell,

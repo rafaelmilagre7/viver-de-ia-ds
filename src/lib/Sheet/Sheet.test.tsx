@@ -107,12 +107,12 @@ describe('<Sheet />', () => {
   it('calls onClose when the scrim is clicked', async () => {
     const onClose = vi.fn();
     const user = userEvent.setup();
-    const { container } = render(
+    render(
       <Sheet open onClose={onClose} title="Filtros">
         <p>x</p>
       </Sheet>,
     );
-    const scrim = container.querySelector('.via-sheet-scrim') as HTMLElement;
+    const scrim = document.body.querySelector('.via-sheet-scrim') as HTMLElement;
     expect(scrim).toBeInTheDocument();
     await user.click(scrim);
     await waitFor(() => expect(onClose).toHaveBeenCalledOnce());
@@ -158,19 +158,19 @@ describe('<Sheet />', () => {
   });
 
   it('renders the grip handle by default and hides it when showHandle is false', () => {
-    const { container, rerender } = render(
+    const { rerender } = render(
       <Sheet open onClose={() => {}} title="Filtros">
         <p>x</p>
       </Sheet>,
     );
-    expect(container.querySelector('.via-sheet__handle')).toBeInTheDocument();
+    expect(document.body.querySelector('.via-sheet__handle')).toBeInTheDocument();
 
     rerender(
       <Sheet open onClose={() => {}} title="Filtros" showHandle={false}>
         <p>x</p>
       </Sheet>,
     );
-    expect(container.querySelector('.via-sheet__handle')).not.toBeInTheDocument();
+    expect(document.body.querySelector('.via-sheet__handle')).not.toBeInTheDocument();
   });
 
   it('applies the maxHeight prop (default 85vh, overridable) to the dialog', () => {
@@ -326,7 +326,7 @@ describe('<Sheet /> · saída animada', () => {
   it('keeps the dialog mounted and mid-transform while the spring runs, then calls onClose', () => {
     const { step } = mockRaf();
     const onClose = vi.fn();
-    const { dialog, container } = renderOpenSheet(onClose);
+    const { dialog } = renderOpenSheet(onClose);
 
     fireEvent.keyDown(document, { key: 'Escape' });
 
@@ -341,7 +341,7 @@ describe('<Sheet /> · saída animada', () => {
     expect(mid!).toBeGreaterThan(0);
     expect(mid!).toBeLessThan(480);
     // scrim acompanha a saída (opacidade caindo junto)
-    const scrim = container.querySelector('.via-sheet-scrim') as HTMLElement;
+    const scrim = document.body.querySelector('.via-sheet-scrim') as HTMLElement;
     expect(Number(scrim.style.opacity)).toBeLessThan(1);
     expect(onClose).not.toHaveBeenCalled();
 

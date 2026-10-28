@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import {
   animateSpring,
   project,
@@ -21,6 +21,12 @@ import {
  *
  * O componente chama `close()` (X/ESC/scrim) pra sair ANIMADO pela
  * mesma física — saída e gesto compartilham o mesmo motor.
+ *
+ * Callbacks vivem em ref: o consumidor passa arrow inline (identidade nova a
+ * cada render) e um re-render do pai no meio da saída NÃO pode cancelar a
+ * mola. Se depois do `onDismiss` o painel continua montado (o consumidor
+ * vetou o fechamento), ele volta pro lugar — nada de scrim invisível
+ * bloqueando a página.
  */
 
 const HYSTERESIS = 10; // px antes de assumir que é drag
@@ -43,6 +49,8 @@ export interface DragDismissOptions {
   spring?: SpringParams;
   /** Scrim que acompanha (opacidade 1→0 conforme sai) */
   scrimRef?: React.RefObject<HTMLElement | null>;
+  /** Chamado quando o consumidor manteve aberto após o onDismiss (painel voltou) */
+  onKeptOpen?: () => void;
 }
 
 export function useDragDismiss({
@@ -54,10 +62,29 @@ export function useDragDismiss({
   canStart,
   spring = SPRING.sheet,
   scrimRef,
+  onKeptOpen,
 }: DragDismissOptions) {
   const anim = useRef<{ cancel: () => { value: number; velocity: number } } | null>(null);
   const offset = useRef(0); // deslocamento atual do painel (px, no eixo)
   const reduced = useRef(false);
+
+  // Identidade instável do consumidor não re-cria close() nem re-assina o gesto
+  const onDismissRef = useRef(onDismiss);
+  const canStartRef = useRef(canStart);
+  const onKeptOpenRef = useRef(onKeptOpen);
+  useEffect(() => {
+    onDismissRef.current = onDismiss;
+    canStartRef.current = canStart;
+    onKeptOpenRef.current = onKeptOpen;
+  });
+
+  // Conta saídas concluídas: se o efeito abaixo roda, o painel sobreviveu ao onDismiss
+  const [dismissals, setDismissals] = useState(0);
+  const handledDismissals = useRef(0);
+  const dismiss = useCallback(() => {
+    onDismissRef.current();
+    setDismissals((n) => n + 1);
+  }, []);
 
   const travel = useCallback(() => {
     const el = panelRef.current;
@@ -83,7 +110,7 @@ export function useDragDismiss({
     (velocity = 0) => {
       anim.current?.cancel();
       if (reduced.current) {
-        onDismiss();
+        dismiss();
         return;
       }
       anim.current = animateSpring({
@@ -92,11 +119,24 @@ export function useDragDismiss({
         to: dir * travel(),
         params: spring,
         onFrame: paint,
-        onSettle: onDismiss,
+        onSettle: dismiss,
       });
     },
-    [dir, travel, spring, paint, onDismiss],
+    [dir, travel, spring, paint, dismiss],
   );
+
+  // Consumidor vetou (open continua true): o painel volta pela mesma mola
+  useEffect(() => {
+    if (dismissals === handledDismissals.current) return;
+    handledDismissals.current = dismissals;
+    anim.current?.cancel();
+    if (reduced.current) {
+      paint(0);
+    } else {
+      anim.current = animateSpring({ from: offset.current, to: 0, params: spring, onFrame: paint });
+    }
+    onKeptOpenRef.current?.();
+  }, [dismissals, paint, spring]);
 
   useEffect(() => {
     const el = panelRef.current;
@@ -113,7 +153,7 @@ export function useDragDismiss({
 
     const onDown = (e: PointerEvent) => {
       if (e.button !== 0) return;
-      if (canStart && !canStart(e)) return;
+      if (canStartRef.current && !canStartRef.current(e)) return;
       // Interruptibilidade: agarrar no meio da animação re-captura do valor VIVO
       const live = anim.current?.cancel();
       anim.current = null;
@@ -186,7 +226,7 @@ export function useDragDismiss({
       el.removeEventListener('pointercancel', onUp);
       anim.current?.cancel();
     };
-  }, [panelRef, enabled, axis, dir, canStart, spring, paint, close, travel]);
+  }, [panelRef, enabled, axis, dir, spring, paint, close, travel]);
 
   return { close };
 }

@@ -1,0 +1,18 @@
+/* ============================================
+   Camada de overlay · caixa ancorada dos popups em portal
+   ============================================ */
+
+/* Caixa invisível do tamanho do trigger: não rouba clique/hover dele */
+.via-anchor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  font-family: var(--via-font, 'Geist', system-ui, sans-serif);
+}
+
+/* Popup dentro dela volta a receber ponteiro (especificidade zero:
+   quem declara pointer-events próprio, como o Tooltip, vence) */
+:where(.via-anchor) > * {
+  pointer-events: auto;
+}

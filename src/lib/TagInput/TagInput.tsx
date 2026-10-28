@@ -1,4 +1,4 @@
-import { useState, useRef, type KeyboardEvent } from 'react';
+import { useState, useRef, useId, type KeyboardEvent } from 'react';
 import { X } from 'lucide-react';
 import './TagInput.css';
 
@@ -59,6 +59,9 @@ export function TagInput({
   const [input, setInput] = useState('');
   const [focused, setFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const baseId = useId();
+  const inputId = `${baseId}-input`;
+  const hintId = `${baseId}-hint`;
 
   const setTags = (next: string[]) => {
     if (controlledValue === undefined) setInternal(next);
@@ -101,7 +104,7 @@ export function TagInput({
 
   return (
     <div className={`via-taginput via-taginput--${size}${error ? ' has-error' : ''}${disabled ? ' is-disabled' : ''}`}>
-      {label && <label className="via-taginput__label">{label}</label>}
+      {label && <label htmlFor={inputId} className="via-taginput__label">{label}</label>}
 
       <div
         className={`via-taginput__field${focused ? ' is-focused' : ''}`}
@@ -128,11 +131,17 @@ export function TagInput({
         ))}
         <input
           ref={inputRef}
+          id={inputId}
           className="via-taginput__input"
           type="text"
           value={input}
           placeholder={canAdd ? placeholder : ''}
-          disabled={disabled || !canAdd}
+          disabled={disabled}
+          // No limite o campo fica só-leitura (não desabilitado): o foco não cai
+          // pro <body> e o Backspace ainda remove a última tag
+          readOnly={!canAdd}
+          aria-describedby={hint ? hintId : undefined}
+          aria-invalid={error || undefined}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKey}
           onFocus={() => setFocused(true)}
@@ -160,7 +169,7 @@ export function TagInput({
       )}
 
       {hint && (
-        <p className={`via-taginput__hint${error ? ' is-error' : ''}`}>
+        <p id={hintId} className={`via-taginput__hint${error ? ' is-error' : ''}`}>
           {hint}
           {max > 0 && (
             <span className="via-taginput__count">

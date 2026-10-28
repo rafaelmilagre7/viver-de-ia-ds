@@ -1,5 +1,8 @@
-import { useState, useRef, useEffect, useId } from 'react';
+import { useState, useRef, useId } from 'react';
 import { ChevronDown, Check, X } from 'lucide-react';
+import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { Anchored } from '../_shared/Portal';
+import '../_shared/sr-only.css';
 import './MultiSelect.css';
 
 export interface MultiSelectOption {
@@ -28,6 +31,10 @@ export interface MultiSelectProps {
  *
  * Dropdown com checkboxes · valores selecionados aparecem como chips no trigger.
  * Click em chip remove. Suporta limite máximo.
+ *
+ * O controle é um botão role=combobox que cobre a caixa; os botões de remover
+ * chip ficam FORA dele (botão dentro de botão quebra HTML e leitor de tela).
+ * A lista abre num portal ancorado e fecha em ESC, clique fora ou foco fora.
  *
  * @example
  * <MultiSelect
@@ -58,6 +65,9 @@ export function MultiSelect({
   const baseId = useId();
   const labelId = `${baseId}-label`;
   const listId = `${baseId}-list`;
+  const valueId = `${baseId}-value`;
+  const hintId = `${baseId}-hint`;
+  const listRef = useRef<HTMLUListElement>(null);
   const optionId = (i: number) => `${baseId}-opt-${i}`;
 
   const setValues = (next: string[]) => {
@@ -103,16 +113,9 @@ export function MultiSelect({
 
   const toggleMenu = () => (open ? closeMenu() : openMenu());
 
-  useEffect(() => {
-    if (!open) return;
-    const onClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) closeMenu();
-    };
-    document.addEventListener('mousedown', onClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', onClickOutside);
-    };
-  }, [open]);
+  // Clique fora / foco fora fecha; ESC fecha só a lista e devolve o foco
+  useDismiss(open, [ref, listRef], () => closeMenu());
+  const layer = useEscapeLayer(open, () => closeMenu(true));
 
   const handleTriggerKey = (e: React.KeyboardEvent) => {
     // Abre o listbox a partir do trigger fechado com setas / Enter / Espaço
@@ -155,11 +158,6 @@ export function MultiSelect({
         if (canSelect) toggle(opt.value);
         break;
       }
-      case 'Escape': {
-        e.preventDefault();
-        closeMenu(true);
-        break;
-      }
       default:
         break;
     }
@@ -176,22 +174,33 @@ export function MultiSelect({
     >
       {label && <label id={labelId} className="via-ms__label">{label}</label>}
 
-      <button
-        ref={triggerRef}
-        type="button"
-        className={`via-ms__trigger${open ? ' is-open' : ''}`}
-        onClick={() => !disabled && toggleMenu()}
-        onKeyDown={handleTriggerKey}
-        disabled={disabled}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        aria-controls={open ? listId : undefined}
-        aria-activedescendant={open && activeIndex >= 0 ? optionId(activeIndex) : undefined}
-        {...(label ? { 'aria-labelledby': labelId } : { 'aria-label': placeholder })}
-      >
+      <div className={`via-ms__trigger${open ? ' is-open' : ''}`}>
+        <button
+          ref={triggerRef}
+          type="button"
+          role="combobox"
+          className="via-ms__combobox"
+          onClick={() => !disabled && toggleMenu()}
+          onKeyDown={handleTriggerKey}
+          disabled={disabled}
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          aria-controls={open ? listId : undefined}
+          aria-activedescendant={open && activeIndex >= 0 ? optionId(activeIndex) : undefined}
+          aria-describedby={hint ? hintId : undefined}
+          aria-invalid={error || undefined}
+          {...(label
+            ? { 'aria-labelledby': `${labelId} ${valueId}` }
+            : { 'aria-label': placeholder })}
+        >
+          {/* Valor atual pro leitor de tela (os chips visíveis ficam fora do botão) */}
+          <span id={valueId} className="via-sr-only">
+            {selectedLabels.length > 0 ? selectedLabels.map((o) => o.label).join(', ') : placeholder}
+          </span>
+        </button>
         <div className="via-ms__chips">
           {selectedLabels.length === 0 && (
-            <span className="via-ms__placeholder">{placeholder}</span>
+            <span className="via-ms__placeholder" aria-hidden="true">{placeholder}</span>
           )}
           {selectedLabels.map((o) => (
             <span key={o.value} className="via-ms__chip">
@@ -199,10 +208,7 @@ export function MultiSelect({
               {!disabled && (
                 <button
                   type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggle(o.value);
-                  }}
+                  onClick={() => toggle(o.value)}
                   aria-label={`Remover ${o.label}`}
                   className="via-ms__chip-remove"
                 >
@@ -217,43 +223,49 @@ export function MultiSelect({
           strokeWidth={2}
           className="via-ms__chev"
           style={{ transform: open ? 'rotate(180deg)' : undefined }}
+          aria-hidden="true"
         />
-      </button>
+      </div>
 
       {open && (
-        <ul
-          id={listId}
-          className="via-ms__list"
-          role="listbox"
-          aria-multiselectable="true"
-          {...(label ? { 'aria-labelledby': labelId } : { 'aria-label': placeholder })}
-        >
-          {options.map((o, i) => {
-            const selected = values.includes(o.value);
-            const canSelect = !max || values.length < max || selected;
-            const active = i === activeIndex;
-            return (
-              <li
-                key={o.value}
-                id={optionId(i)}
-                className={`via-ms__option${selected ? ' is-selected' : ''}${active ? ' is-active' : ''}${o.disabled || !canSelect ? ' is-disabled' : ''}`}
-                onClick={() => !o.disabled && canSelect && toggle(o.value)}
-                onMouseEnter={() => !o.disabled && setActiveIndex(i)}
-                role="option"
-                aria-selected={selected}
-              >
-                <span className="via-ms__option-check">
-                  {selected && <Check size={11} strokeWidth={3} />}
-                </span>
-                <span>{o.label}</span>
-              </li>
-            );
-          })}
-        </ul>
+        <Anchored anchorRef={ref} z="dropdown" layer={layer}>
+          <ul
+            id={listId}
+            ref={listRef}
+            className="via-ms__list"
+            role="listbox"
+            aria-multiselectable="true"
+            {...(label ? { 'aria-labelledby': labelId } : { 'aria-label': placeholder })}
+            // Clique numa opção não tira o foco do combobox (activedescendant)
+            onMouseDown={(e) => e.preventDefault()}
+          >
+            {options.map((o, i) => {
+              const selected = values.includes(o.value);
+              const canSelect = !max || values.length < max || selected;
+              const active = i === activeIndex;
+              return (
+                <li
+                  key={o.value}
+                  id={optionId(i)}
+                  className={`via-ms__option${selected ? ' is-selected' : ''}${active ? ' is-active' : ''}${o.disabled || !canSelect ? ' is-disabled' : ''}`}
+                  onClick={() => !o.disabled && canSelect && toggle(o.value)}
+                  onMouseEnter={() => !o.disabled && setActiveIndex(i)}
+                  role="option"
+                  aria-selected={selected}
+                >
+                  <span className="via-ms__option-check">
+                    {selected && <Check size={11} strokeWidth={3} />}
+                  </span>
+                  <span>{o.label}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </Anchored>
       )}
 
       {hint && (
-        <p className={`via-ms__hint${error ? ' is-error' : ''}`}>
+        <p id={hintId} className={`via-ms__hint${error ? ' is-error' : ''}`}>
           {hint}
           {max > 0 && (
             <span className="via-ms__count">

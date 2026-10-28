@@ -531,6 +531,21 @@
   --via-content:   760px;
   --via-narrow:    560px;
 
+  /* ========== CAMADAS (z-index) ================================
+     Tudo que flutua (modal, drawer, menus, listas, tooltip) vai num portal
+     no <body>. No mesmo nível, quem abriu por último fica por cima (ordem
+     no DOM) — por isso overlay e modal empatam: um Sheet aberto de dentro
+     de um Modal (e vice-versa) sobe sozinho. Menus/listas/popovers abrem
+     DE DENTRO de diálogos, então ficam acima deles.
+     ============================================================ */
+  --via-z-sticky:   100;    /* barra/cabeçalho fixo da página */
+  --via-z-overlay:  1000;   /* Drawer, Sheet · painel com scrim */
+  --via-z-modal:    1000;   /* Modal, Command, Lightbox */
+  --via-z-dropdown: 1100;   /* Select, MultiSelect, Combobox, DropdownMenu, ContextMenu, DatePicker */
+  --via-z-popover:  1100;   /* Popover, HoverCard */
+  --via-z-toast:    1200;
+  --via-z-tooltip:  1300;
+
   /* ========== SIGNATURE ATMOSPHERES =========================== */
   /* Mesh light — base cinza-azulada com 4 stops de cor navy */
   --via-mesh-light:

@@ -21,6 +21,7 @@ export interface IconProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'childr
  * @example
  * <Icon size="md" tone="navy"><Compass /></Icon>
  * <Icon surface="navy" size="lg"><Award /></Icon>
+ * <Icon label="Concluído"><Check /></Icon>   // role="img" + nome acessível
  */
 export const Icon = forwardRef<HTMLSpanElement, IconProps>(
   ({ children, size = 'md', tone = 'default', surface = 'none', label, className = '', ...rest }, ref) => {
@@ -38,6 +39,9 @@ export const Icon = forwardRef<HTMLSpanElement, IconProps>(
       <span
         ref={ref}
         className={cls}
+        // Com label o ícone é imagem com nome (span sem papel não aceita aria-label);
+        // sem label é decorativo e sai da árvore de acessibilidade
+        role={label ? 'img' : undefined}
         aria-label={label}
         aria-hidden={label ? undefined : true}
         {...rest}

@@ -25,7 +25,8 @@ export interface SplitterProps {
  * `<Splitter>` · divisor arrastável entre 2 painéis
  *
  * Use pra: editor + preview, sidebar + main, code + console. Drag no handle
- * redimensiona · keyboard arrow keys (esq/dir ou up/down) ajusta 1% por step.
+ * redimensiona (pointer events: mouse, toque e caneta) · keyboard arrow keys
+ * (esq/dir ou up/down) ajusta 1% por step.
  *
  * @example
  * <Splitter
@@ -56,25 +57,28 @@ export function Splitter({
     onSplitChange?.(clamped);
   }, [controlledSplit, onSplitChange, min, max]);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handlePointerDown = (e: React.PointerEvent) => {
+    if (e.button !== 0) return;
     e.preventDefault();
     const container = containerRef.current;
     if (!container) return;
     const rect = container.getBoundingClientRect();
 
-    const onMove = (ev: MouseEvent) => {
+    const onMove = (ev: PointerEvent) => {
       const pos = orientation === 'horizontal'
         ? ((ev.clientX - rect.left) / rect.width) * 100
         : ((ev.clientY - rect.top) / rect.height) * 100;
       setSplit(pos);
     };
     const onUp = () => {
-      document.removeEventListener('mousemove', onMove);
-      document.removeEventListener('mouseup', onUp);
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+      document.removeEventListener('pointercancel', onUp);
       document.body.style.cursor = '';
     };
-    document.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseup', onUp);
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+    document.addEventListener('pointercancel', onUp);
     document.body.style.cursor = orientation === 'horizontal' ? 'col-resize' : 'row-resize';
   };
 
@@ -110,7 +114,7 @@ export function Splitter({
       <button
         type="button"
         className="via-splitter__handle"
-        onMouseDown={handleMouseDown}
+        onPointerDown={handlePointerDown}
         onKeyDown={handleKeyDown}
         role="separator"
         aria-orientation={orientation}

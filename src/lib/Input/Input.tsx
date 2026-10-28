@@ -1,4 +1,4 @@
-import { forwardRef, type InputHTMLAttributes, type ReactNode } from 'react';
+import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from 'react';
 import './Input.css';
 
 type Variant = 'default' | 'error' | 'success';
@@ -36,7 +36,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const inputId = id || `via-input-${Math.random().toString(36).slice(2, 9)}`;
+    // useId: estável entre renders e igual no SSR/hidratação (Math.random mudava a cada render)
+    const autoId = useId();
+    const inputId = id || `via-input-${autoId}`;
     const computedVariant = error ? 'error' : variant;
 
     const cls = [

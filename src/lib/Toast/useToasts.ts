@@ -12,11 +12,14 @@ import type { ToastItem } from './Toast';
  * push({ title: 'Salvo', variant: 'success' });
  * <ToastStack toasts={toasts} onDismiss={dismiss} />
  */
+// Sequência local: id único sem Math.random (determinístico, sem colisão no mesmo ms)
+let seq = 0;
+
 export function useToasts() {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
 
   const push = useCallback((toast: Omit<ToastItem, 'id'>) => {
-    const id = `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+    const id = `${Date.now()}-${++seq}`;
     setToasts((p) => [...p, { ...toast, id }]);
     return id;
   }, []);

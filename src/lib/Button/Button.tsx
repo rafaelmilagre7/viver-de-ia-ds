@@ -16,6 +16,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 /**
  * Button · primary action component for Viver de IA design system
  *
+ * `loading` NÃO usa o `disabled` nativo: botão desabilitado perde o foco (quem
+ * apertou Enter cai pro <body>). Fica aria-disabled + aria-busy e o clique é
+ * engolido (nem onClick nem submit de formulário) até terminar.
+ *
  * @example
  * <Button variant="primary" iconRight={<ArrowRight />}>
  *   Continuar
@@ -33,6 +37,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       className = '',
       children,
+      onClick,
       ...rest
     },
     ref
@@ -53,9 +58,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type="button"
         className={cls}
-        disabled={disabled || loading}
+        disabled={disabled}
+        aria-disabled={loading || undefined}
         aria-busy={loading || undefined}
         {...rest}
+        onClick={
+          loading
+            ? (e) => {
+                e.preventDefault(); // bloqueia também o submit de formulário
+              }
+            : onClick
+        }
       >
         {iconLeft && <span className="via-btn__icon">{iconLeft}</span>}
         {loading ? <span className="via-btn__spinner" aria-hidden="true" /> : null}

@@ -71,10 +71,12 @@ export function DateRangePicker({
     }
   };
 
+  // "Últimos N dias" = N dias contando hoje (hoje e os N-1 anteriores), à meia-noite
+  // como as datas que vêm do calendário
   const applyPreset = (days: number) => {
-    const end = new Date();
-    const start = new Date();
-    start.setDate(end.getDate() - days);
+    const now = new Date();
+    const end = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const start = new Date(end.getFullYear(), end.getMonth(), end.getDate() - (days - 1));
     setRange({ start, end });
   };
 
@@ -124,7 +126,8 @@ export function DateRangePicker({
 
       {range.start && range.end && (
         <p className="via-drp__summary">
-          <strong>{Math.ceil((range.end.getTime() - range.start.getTime()) / 86400000) + 1}</strong>{' '}
+          {/* round: horário de verão deixa um dia com 23h/25h */}
+          <strong>{Math.round((range.end.getTime() - range.start.getTime()) / 86400000) + 1}</strong>{' '}
           dias selecionados
         </p>
       )}

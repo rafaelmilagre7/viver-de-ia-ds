@@ -25,8 +25,8 @@ describe('<Calendar />', () => {
     // June has 30 in-month days; day "1" and "30" must be present and reachable.
     // The day number always follows "<weekday>, " — anchoring on ", N de" avoids
     // colliding with "21" / "31" (substring) and with out-of-month spill cells.
-    expect(within(grid).getByRole('button', { name: /, 1 de junho de 2024/i })).toBeInTheDocument();
-    expect(within(grid).getByRole('button', { name: /, 30 de junho de 2024/i })).toBeInTheDocument();
+    expect(within(grid).getByRole('gridcell', { name: /, 1 de junho de 2024/i })).toBeInTheDocument();
+    expect(within(grid).getByRole('gridcell', { name: /, 30 de junho de 2024/i })).toBeInTheDocument();
   });
 
   it('clicking a day fires onChange with that exact date', async () => {
@@ -34,7 +34,7 @@ describe('<Calendar />', () => {
     const user = userEvent.setup();
     render(<Calendar defaultMonth={JUNE_2024} onChange={onChange} />);
 
-    await user.click(screen.getByRole('button', { name: /^sábado, 15 de junho de 2024/i }));
+    await user.click(screen.getByRole('gridcell', { name: /^sábado, 15 de junho de 2024/i }));
 
     expect(onChange).toHaveBeenCalledOnce();
     const picked = onChange.mock.calls[0][0] as Date;
@@ -46,10 +46,10 @@ describe('<Calendar />', () => {
   it('the controlled value marks the matching day with aria-selected', () => {
     render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 10)} />);
 
-    const selected = screen.getByRole('button', { name: /, 10 de junho de 2024/i });
+    const selected = screen.getByRole('gridcell', { name: /, 10 de junho de 2024/i });
     expect(selected).toHaveAttribute('aria-selected', 'true');
 
-    const other = screen.getByRole('button', { name: /, 11 de junho de 2024/i });
+    const other = screen.getByRole('gridcell', { name: /, 11 de junho de 2024/i });
     expect(other).toHaveAttribute('aria-selected', 'false');
   });
 
@@ -78,16 +78,16 @@ describe('<Calendar />', () => {
     );
 
     // Day 5 is before min → disabled.
-    const dayBefore = screen.getByRole('button', { name: /, 5 de junho de 2024/i });
+    const dayBefore = screen.getByRole('gridcell', { name: /, 5 de junho de 2024/i });
     expect(dayBefore).toBeDisabled();
     await user.click(dayBefore);
     expect(onChange).not.toHaveBeenCalled();
 
     // Day 25 is after max → disabled.
-    expect(screen.getByRole('button', { name: /, 25 de junho de 2024/i })).toBeDisabled();
+    expect(screen.getByRole('gridcell', { name: /, 25 de junho de 2024/i })).toBeDisabled();
 
     // A day inside the window is enabled and fires onChange.
-    await user.click(screen.getByRole('button', { name: /, 15 de junho de 2024/i }));
+    await user.click(screen.getByRole('gridcell', { name: /, 15 de junho de 2024/i }));
     expect(onChange).toHaveBeenCalledOnce();
   });
 
@@ -102,7 +102,7 @@ describe('<Calendar />', () => {
       month: 'long',
       year: 'numeric',
     });
-    const todayCell = screen.getByRole('button', { name: fullLabel });
+    const todayCell = screen.getByRole('gridcell', { name: fullLabel });
     expect(todayCell).toHaveAttribute('aria-current', 'date');
   });
 
@@ -131,7 +131,7 @@ describe('<Calendar />', () => {
     render(<Calendar value={new Date(2023, 0, 9)} />);
     // January 2023 should be shown because value lives there.
     expect(screen.getByRole('heading', { name: /janeiro de 2023/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /, 9 de janeiro de 2023/i })).toHaveAttribute(
+    expect(screen.getByRole('gridcell', { name: /, 9 de janeiro de 2023/i })).toHaveAttribute(
       'aria-selected',
       'true',
     );
@@ -141,21 +141,21 @@ describe('<Calendar />', () => {
     render(<Calendar defaultMonth={JUNE_2024} locale="en-US" />);
     expect(screen.getByRole('heading', { name: /june 2024/i })).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /saturday, june 15, 2024/i }),
+      screen.getByRole('gridcell', { name: /saturday, june 15, 2024/i }),
     ).toBeInTheDocument();
   });
 
   // ---- Roving tabindex + keyboard navigation -------------------------------
 
   const jun = (day: number) =>
-    screen.getByRole('button', { name: new RegExp(`\\b${day} de junho de 2024`, 'i') });
+    screen.getByRole('gridcell', { name: new RegExp(`\\b${day} de junho de 2024`, 'i') });
 
   it('exposes exactly one tabbable day cell (roving tabindex), defaulting to the selected day', () => {
     render(<Calendar defaultMonth={JUNE_2024} value={new Date(2024, 5, 10)} />);
 
     const grid = screen.getByRole('grid');
     const tabbable = within(grid)
-      .getAllByRole('button')
+      .getAllByRole('gridcell')
       .filter((b) => b.getAttribute('tabindex') === '0');
 
     expect(tabbable).toHaveLength(1);
@@ -216,7 +216,7 @@ describe('<Calendar />', () => {
     jun(15).focus();
     await user.keyboard('{PageDown}');
     expect(screen.getByRole('heading', { name: /julho de 2024/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /, 15 de julho de 2024/i })).toHaveFocus();
+    expect(screen.getByRole('gridcell', { name: /, 15 de julho de 2024/i })).toHaveFocus();
 
     await user.keyboard('{PageUp}');
     expect(screen.getByRole('heading', { name: /junho de 2024/i })).toBeInTheDocument();
@@ -231,7 +231,7 @@ describe('<Calendar />', () => {
     jun(30).focus();
     await user.keyboard('{ArrowRight}');
     expect(screen.getByRole('heading', { name: /julho de 2024/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /, 1 de julho de 2024/i })).toHaveFocus();
+    expect(screen.getByRole('gridcell', { name: /, 1 de julho de 2024/i })).toHaveFocus();
   });
 
   it('Enter selects the focused day', async () => {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Pipette, Check } from 'lucide-react';
 import './ColorPicker.css';
 
@@ -68,11 +68,29 @@ export function ColorPicker({
   }
 
   const selected = palette.find((s) => s.hex.toUpperCase() === (value || '').toUpperCase());
+  const cellRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  // Radiogroup (APG): uma parada de Tab só — a selecionada, ou a 1ª se nenhuma
+  const selectedIdx = selected ? palette.indexOf(selected) : -1;
+  const tabStop = selectedIdx >= 0 ? selectedIdx : 0;
 
   const select = (hex: string) => {
     if (disabled) return;
     setCustomHex(hex);
     onChange?.(hex);
+  };
+
+  // Setas movem E selecionam (padrão de radio), com volta nas pontas
+  const handleGridKey = (e: React.KeyboardEvent, i: number) => {
+    const n = palette.length;
+    let next = -1;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (i + 1) % n;
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (i - 1 + n) % n;
+    else if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = n - 1;
+    if (next < 0) return;
+    e.preventDefault();
+    select(palette[next].hex);
+    cellRefs.current[next]?.focus();
   };
 
   const handleCustomChange = (raw: string) => {
@@ -102,14 +120,19 @@ export function ColorPicker({
       </div>
 
       <div className="via-cp__grid" role="radiogroup" aria-label="Paleta de cores">
-        {palette.map((s) => {
+        {palette.map((s, i) => {
           const isSelected = (value || '').toUpperCase() === s.hex.toUpperCase();
           return (
             <button
               key={s.hex}
+              ref={(el) => {
+                cellRefs.current[i] = el;
+              }}
               type="button"
               role="radio"
               aria-checked={isSelected}
+              tabIndex={i === tabStop ? 0 : -1}
+              onKeyDown={(e) => handleGridKey(e, i)}
               aria-label={s.name}
               title={`${s.name} · ${s.hex}`}
               className={`via-cp__cell${isSelected ? ' is-selected' : ''}`}

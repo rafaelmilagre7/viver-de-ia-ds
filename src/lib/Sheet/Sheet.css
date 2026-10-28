@@ -4,7 +4,7 @@
 .via-sheet-root {
   position: fixed;
   inset: 0;
-  z-index: 9989;
+  z-index: var(--via-z-overlay, 1000);
   pointer-events: none;
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
