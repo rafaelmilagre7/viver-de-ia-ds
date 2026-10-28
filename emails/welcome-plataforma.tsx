@@ -7,7 +7,7 @@ import { color } from './theme';
 export const meta = {
   id: 'welcome-plataforma',
   name: 'Boas-vindas à plataforma',
-  subject: 'teu acesso à plataforma tá liberado',
+  subject: 'seu acesso à plataforma tá liberado',
   when: 'Disparado quando o acesso do aluno à plataforma é liberado (primeiro login). Se coincidir com a confirmação de matrícula, o welcome de turma vence — nunca os dois na mesma janela.',
 };
 
@@ -20,12 +20,12 @@ export interface WelcomePlataformaEmailProps {
 export default function WelcomePlataformaEmail({ firstName, loginEmail, platformUrl }: WelcomePlataformaEmailProps) {
   return (
     <Layout
-      preview={`Login com ${loginEmail} — a senha tu define no primeiro acesso. Três passos pra começar bem.`}
+      preview={`Login com ${loginEmail} — a senha você define no primeiro acesso. Três passos pra começar bem.`}
       reason="Você recebeu este email porque seu acesso à plataforma Viver de IA foi liberado."
-      hero={{ eyebrow: 'Boas-vindas', title: <>Teu acesso tá liberado, {firstName}.</> }}
+      hero={{ eyebrow: 'Boas-vindas', title: <>Seu acesso tá liberado, {firstName}.</> }}
     >
       <Lede>
-        O login é com este mesmo email — <Strong>{loginEmail}</Strong> — e a senha tu define no
+        O login é com este mesmo email — <Strong>{loginEmail}</Strong> — e a senha você define no
         primeiro acesso.
       </Lede>
 
@@ -39,14 +39,14 @@ export default function WelcomePlataformaEmail({ firstName, loginEmail, platform
           mostra como a plataforma funciona e por onde começar
         </Step>
         <Step n={3} title="Se apresenta na comunidade">
-          conta o que tu faz e o que quer construir com IA
+          conta o que você faz e o que quer construir com IA
         </Step>
       </Section>
 
       <CTA href={platformUrl}>Acessar a plataforma</CTA>
 
       <Para style={{ margin: '18px 0 0', color: color.muted, fontSize: '14px' }}>
-        Se algo travar no acesso, responde este email — a gente resolve contigo.
+        Se algo travar no acesso, responde este email — a gente resolve com você.
       </Para>
 
       <Signature name="Caio Ribeiro" role="fundador · Viver de IA" />

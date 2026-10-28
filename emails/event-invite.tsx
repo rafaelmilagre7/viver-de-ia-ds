@@ -39,7 +39,7 @@ export default function EventInviteEmail({ firstName, title, date, format, spots
       </Callout>
 
       <Para>
-        Você sai com pelo menos <Strong>3 ajustes</Strong> que dá pra aplicar no teu agente no mesmo
+        Você sai com pelo menos <Strong>3 ajustes</Strong> que dá pra aplicar no seu agente no mesmo
         dia. Quem aparece ao vivo pergunta; quem só assiste o replay perde a parte boa.
       </Para>
 

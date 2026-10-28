@@ -88,7 +88,7 @@ DigestEmail.PreviewProps = {
     {
       kicker: 'Mentoria ao vivo',
       title: 'Quinta, 19h · revisão de casos reais',
-      note: 'Traz teu fluxo travado — a gente destrava ao vivo. Fica gravado se não der pra ir.',
+      note: 'Traz seu fluxo travado — a gente destrava ao vivo. Fica gravado se não der pra ir.',
       url: 'https://app.viverdeia.ai/ao-vivo',
     },
     {

@@ -1,9 +1,9 @@
 Boas-vindas
 
 
-TEU ACESSO TÁ LIBERADO, MARINA.
+SEU ACESSO TÁ LIBERADO, MARINA.
 
-O login é com este mesmo email — marina@empresa.com.br — e a senha tu define no primeiro acesso.
+O login é com este mesmo email — marina@empresa.com.br — e a senha você define no primeiro acesso.
 
 Três passos pra começar bem:
 
@@ -17,11 +17,11 @@ Começa pela trilha de início — mostra como a plataforma funciona e por onde 
 
 3
 
-Se apresenta na comunidade — conta o que tu faz e o que quer construir com IA
+Se apresenta na comunidade — conta o que você faz e o que quer construir com IA
 
 Acessar a plataforma https://app.viverdeia.ai
 
-Se algo travar no acesso, responde este email — a gente resolve contigo.
+Se algo travar no acesso, responde este email — a gente resolve com você.
 
 ----------------------------------------
 
