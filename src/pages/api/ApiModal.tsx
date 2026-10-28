@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Button } from '../../lib/Button/Button';
-import { Modal } from '../../lib/Modal/Modal';
+import { Modal, type ModalProps } from '../../lib/Modal/Modal';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Modal as meta } from './props.generated.json';
 
 function ModalDemo() {
   const [open, setOpen] = useState(false);
@@ -46,16 +47,41 @@ export default function ApiModal() {
         { part: 'via-modal__body', description: 'Conteúdo scrollável · padding 6×24×24' },
         { part: 'via-modal__foot', description: 'Footer com ações (botões) · justify-content end · gradient bg' },
       ]}
-      props={[
-        { name: 'open', type: 'boolean', required: true, description: 'Estado controlado · true = visível' },
-        { name: 'onClose', type: '() => void', required: true, description: 'Callback chamado em close (ESC, scrim click, X)' },
-        { name: 'title', type: 'ReactNode', description: 'Título do modal · vira <h2> com id pra aria-labelledby' },
-        { name: 'description', type: 'ReactNode', description: 'Descrição opcional sob o título' },
-        { name: 'children', type: 'ReactNode', required: true, description: 'Conteúdo do body' },
-        { name: 'footer', type: 'ReactNode', description: 'Slot pra ações · geralmente 2 Buttons (ghost + primary)' },
-        { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Largura máxima · sm=420 / md=560 / lg=760' },
-        { name: 'dismissOnScrim', type: 'boolean', default: 'true', description: 'Se false, clicar no scrim NÃO fecha (use pra evitar perda de dados)' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: {
+          open: false,
+          title: 'Renovar plano',
+          description: 'Suas próximas 3 cobranças serão de R$ 6.000.',
+          children: 'Você pode cancelar a qualquer momento antes da renovação.',
+        },
+        exclude: ['open'],
+        render: (v, set) => {
+          const close = () => set({ open: false });
+          return (
+            <>
+              <Button variant="primary" onClick={() => set({ open: true })}>Abrir modal</Button>
+              <Modal {...(v as Partial<ModalProps>)} open={v.open === true} onClose={close} footer={<Button variant="primary" onClick={close}>Confirmar</Button>}>
+                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: 'var(--via-text)' }}>{String(v.children ?? '')}</p>
+              </Modal>
+            </>
+          );
+        },
+        codeProps: ['open={open}', 'onClose={() => setOpen(false)}'],
+      }}
+      descriptions={{
+        open: 'Estado controlado · true = visível',
+        onClose: 'Callback chamado em close (ESC, scrim click, X)',
+        title: 'Título do modal · vira <h2> com id pra aria-labelledby',
+        description: 'Descrição opcional sob o título',
+        children: 'Conteúdo do body',
+        footer: 'Slot pra ações · geralmente 2 Buttons (ghost + primary)',
+        size: 'Largura máxima · sm=420 / md=560 / lg=760',
+        hideClose: 'Esconde o botão X do header · ESC continua fechando',
+        scrim: 'Fundo escurecido atrás do modal · clicar nele fecha',
+        // em implementação no Modal · aparece na tabela assim que a prop existir no código
+        dismissOnScrim: 'Se false, clicar no scrim NÃO fecha (use pra evitar perda de dados)',
+      }}
       sizes={[
         { name: 'sm', label: '420px max', description: 'Confirmação curta · 1 ação · sem form' },
         { name: 'md', label: '560px max', description: 'Padrão · form curto, escolha, detalhe' },

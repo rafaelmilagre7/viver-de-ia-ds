@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Drawer } from '../../lib/Drawer/Drawer';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Drawer as meta } from './props.generated.json';
 
 function DrawerDemo() {
   const [open, setOpen] = useState(false);
@@ -40,15 +41,18 @@ export default function ApiDrawer() {
         { part: 'via-drawer__head', description: 'Header · title + description + close' },
         { part: 'via-drawer__body', description: 'Conteúdo scrollável' },
       ]}
-      props={[
-        { name: 'open', type: 'boolean', required: true, description: 'Estado controlado' },
-        { name: 'onClose', type: '() => void', required: true, description: 'Callback close' },
-        { name: 'title', type: 'ReactNode', description: 'Título · vira h2 aria-labelledby' },
-        { name: 'description', type: 'ReactNode', description: 'Descrição opcional sob title' },
-        { name: 'children', type: 'ReactNode', required: true, description: 'Conteúdo do body' },
-        { name: 'side', type: "'right' | 'left' | 'top' | 'bottom'", default: "'right'", description: 'Lado de entrada' },
-        { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Largura/altura · sm=320 / md=420 / lg=560' },
-      ]}
+      meta={meta}
+      descriptions={{
+        open: 'Estado controlado',
+        onClose: 'Callback close',
+        title: 'Título · vira h2 aria-labelledby',
+        description: 'Descrição opcional sob title',
+        children: 'Conteúdo do body',
+        side: 'Lado de entrada',
+        size: 'Largura/altura · sm=320 / md=420 / lg=560',
+        footer: 'Slot fixo no rodapé · ações do painel (ex.: Aplicar filtros)',
+        hideClose: 'Esconde o botão X do header · ESC e scrim continuam fechando',
+      }}
       examples={[
         {
           title: 'Drawer right (default)',

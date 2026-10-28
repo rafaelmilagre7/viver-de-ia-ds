@@ -1,6 +1,7 @@
 import { HoverCard } from '../../lib/HoverCard/HoverCard';
 import { Avatar } from '../../lib/Avatar/Avatar';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { HoverCard as meta } from './props.generated.json';
 
 export default function ApiHoverCard() {
   return (
@@ -16,14 +17,15 @@ export default function ApiHoverCard() {
         { part: 'openDelay', description: 'Delay antes de mostrar (evita flicker em hover passageiro)' },
         { part: 'closeDelay', description: 'Delay antes de esconder (permite mover mouse pro card)' },
       ]}
-      props={[
-        { name: 'trigger', type: 'ReactNode', required: true, description: 'Elemento que dispara hover/focus' },
-        { name: 'children', type: 'ReactNode', required: true, description: 'Conteúdo do card flutuante' },
-        { name: 'side', type: "'top' | 'right' | 'bottom' | 'left'", default: "'bottom'", description: 'Lado preferido vs trigger' },
-        { name: 'align', type: "'start' | 'center' | 'end'", default: "'center'", description: 'Alinhamento eixo cruzado' },
-        { name: 'openDelay', type: 'number', default: '300', description: 'Ms antes de abrir · evita flicker' },
-        { name: 'closeDelay', type: 'number', default: '200', description: 'Ms antes de fechar · permite mouse-move pro card' },
-      ]}
+      meta={meta}
+      descriptions={{
+        trigger: 'Elemento que dispara hover/focus',
+        children: 'Conteúdo do card flutuante',
+        side: 'Lado preferido vs trigger',
+        align: 'Alinhamento eixo cruzado',
+        openDelay: 'Ms antes de abrir · evita flicker',
+        closeDelay: 'Ms antes de fechar · permite mouse-move pro card',
+      }}
       examples={[
         {
           title: 'Preview de mentor em @username',

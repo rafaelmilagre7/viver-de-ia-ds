@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Sheet } from '../../lib/Sheet/Sheet';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Sheet as meta } from './props.generated.json';
 
 function SheetDemo() {
   const [open, setOpen] = useState(false);
@@ -44,16 +45,17 @@ export default function ApiSheet() {
         { part: 'via-sheet__body', description: 'Conteúdo scrollável · padding generoso' },
         { part: 'via-sheet__footer', description: 'Ações sticky bottom · cancel + confirm' },
       ]}
-      props={[
-        { name: 'open', type: 'boolean', required: true, description: 'Estado controlado' },
-        { name: 'onClose', type: '() => void', required: true, description: 'Callback close (ESC, scrim, X)' },
-        { name: 'title', type: 'ReactNode', description: 'Título · vira h2 aria-labelledby' },
-        { name: 'description', type: 'ReactNode', description: 'Descrição opcional sob title' },
-        { name: 'children', type: 'ReactNode', required: true, description: 'Conteúdo do body' },
-        { name: 'footer', type: 'ReactNode', description: 'Ações sticky · cancel/confirm buttons' },
-        { name: 'maxHeight', type: 'string', default: "'85vh'", description: 'Altura máxima do sheet' },
-        { name: 'showHandle', type: 'boolean', default: 'true', description: 'Mostra grip handle no topo (gesture-hint)' },
-      ]}
+      meta={meta}
+      descriptions={{
+        open: 'Estado controlado',
+        onClose: 'Callback close (ESC, scrim, X)',
+        title: 'Título · vira h2 aria-labelledby',
+        description: 'Descrição opcional sob title',
+        children: 'Conteúdo do body',
+        footer: 'Ações sticky · cancel/confirm buttons',
+        maxHeight: 'Altura máxima do sheet',
+        showHandle: 'Mostra grip handle no topo (gesture-hint)',
+      }}
       examples={[
         {
           title: 'Sheet de filtros com footer actions',

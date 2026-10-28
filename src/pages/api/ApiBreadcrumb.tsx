@@ -1,5 +1,6 @@
 import { Breadcrumb } from '../../lib/Breadcrumb/Breadcrumb';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Breadcrumb as meta } from './props.generated.json';
 
 export default function ApiBreadcrumb() {
   return (
@@ -15,12 +16,13 @@ export default function ApiBreadcrumb() {
         { part: 'via-breadcrumb__item', description: 'Link · hover navy · current sem hover' },
         { part: 'via-breadcrumb__separator', description: 'ChevronRight 12px · navy-30 · aria-hidden' },
       ]}
-      props={[
-        { name: 'items', type: 'BreadcrumbItem[]', required: true, description: 'Array { label, href?, onClick? } · último sem href = current' },
-        { name: 'separator', type: 'ReactNode', description: 'Custom separator · default ChevronRight 12px' },
-        { name: 'ariaLabel', type: 'string', default: "'Caminho de navegação'", description: 'Label do nav pra screen reader' },
-        { name: 'className', type: 'string', description: 'Classe custom no container' },
-      ]}
+      meta={meta}
+      descriptions={{
+        items: 'Array { label, href?, onClick? } · último sem href = current',
+        separator: 'Custom separator · default ChevronRight 12px',
+        ariaLabel: 'Label do nav pra screen reader',
+        className: 'Classe custom no container',
+      }}
       examples={[
         {
           title: 'Hierarquia 3 níveis',

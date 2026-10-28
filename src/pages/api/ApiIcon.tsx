@@ -1,6 +1,7 @@
 import { Icon } from '../../lib/Icon/Icon';
 import ComponentDoc from '../../components/docs/ComponentDoc';
 import { Compass, Award, Crown, Layers, Rocket } from 'lucide-react';
+import { Icon as meta } from './props.generated.json';
 
 export default function ApiIcon() {
   return (
@@ -8,23 +9,24 @@ export default function ApiIcon() {
       eyebrow="api · icon"
       name="Icon"
       headline="wrapper Lucide · 3 sizes · 4 surfaces · tons semânticos"
-      description="Icon é o wrapper consistente para Lucide icons no DS. Padroniza size (sm/md/lg), tone (default/navy/accent/coral/muted/inverse) e surface (none/glass/navy/accent tile). Use Icon em vez de Lucide direto pra manter consistência editorial."
+      description="Icon é o wrapper consistente para Lucide icons no DS. Padroniza size (xs/sm/md/lg/xl), tone (default/soft/navy/accent/coral/inverse) e surface (none/soft/glass/navy/accent tile). Use Icon em vez de Lucide direto pra manter consistência editorial."
       importLine={`import { Icon, type IconProps } from '@viverdeia/design-system';
 import { Compass, Award } from 'lucide-react';`}
       anatomy={[
         { part: 'via-icon', description: 'span wrapper · inline-flex · centra o SVG' },
         { part: 'via-icon--size-*', description: 'sm=14 / md=16 / lg=20 (sem surface) ou 32/40/48 (com surface tile)' },
-        { part: 'via-icon--tone-*', description: 'Color do stroke · default herda · navy/accent/coral/muted/inverse' },
+        { part: 'via-icon--tone-*', description: 'Color do stroke · default herda · soft/navy/accent/coral/inverse' },
         { part: 'via-icon--surface-*', description: 'Tile glass ao redor · none/glass/navy/accent' },
       ]}
-      props={[
-        { name: 'children', type: 'ReactNode', required: true, description: 'Componente Lucide · <Compass />, <Award />, etc.' },
-        { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'sm=14 · md=16 · lg=20 (ajusta com surface)' },
-        { name: 'tone', type: "'default' | 'navy' | 'accent' | 'coral' | 'muted' | 'inverse'", default: "'default'", description: 'Cor semantic do stroke' },
-        { name: 'surface', type: "'none' | 'glass' | 'navy' | 'accent'", default: "'none'", description: 'Tile decorativo · vira chip glass ao redor' },
-        { name: 'label', type: 'string', description: 'aria-label · obrigatório quando ícone é decorativo+único (sem texto adjacente)' },
-        { name: '...rest', type: 'HTMLAttributes<HTMLSpanElement>', description: 'Aceita todas props do span (className, style, id, etc.)' },
-      ]}
+      meta={meta}
+      descriptions={{
+        children: 'Componente Lucide · <Compass />, <Award />, etc.',
+        size: 'xs=10 · sm=12 · md=14 · lg=18 · xl=22 (ajusta com surface)',
+        tone: 'Cor semantic do stroke',
+        surface: 'Tile decorativo · vira chip glass ao redor',
+        label: 'aria-label · obrigatório quando ícone é decorativo+único (sem texto adjacente)',
+        '...rest': 'Aceita todas props do span (className, style, id, etc.)',
+      }}
       examples={[
         {
           title: '3 sizes · 4 surfaces',
@@ -62,7 +64,7 @@ import { Compass, Award } from 'lucide-react';`}
         <>SVG interno marcado aria-hidden=true automaticamente</>,
         <>label prop vira aria-label no span wrapper (quando presente)</>,
         <>Sem label = ícone decorativo · texto adjacente carrega a info</>,
-        <>tone="muted" passa contraste AA contra fundos editorial padrão</>,
+        <>tone="soft" passa contraste AA contra fundos editorial padrão</>,
       ]}
       related={[
         { name: 'Avatar', description: 'Tile específico pra pessoas (foto/iniciais)', href: '/api/avatar' },

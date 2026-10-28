@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { TreeView, type TreeNode } from '../../lib/TreeView/TreeView';
 import ComponentDoc from '../../components/docs/ComponentDoc';
 import { Folder, FileText, BookOpen } from 'lucide-react';
+import { TreeView as meta } from './props.generated.json';
 
 const nodes: TreeNode[] = [
   {
@@ -66,15 +67,16 @@ export default function ApiTreeView() {
         { part: 'via-tree__count', description: 'Badge contador à direita · navy alpha' },
         { part: 'highlighted', description: 'Item destacado (ring navy) · use pra "aula atual"' },
       ]}
-      props={[
-        { name: 'nodes', type: 'TreeNode[]', required: true, description: 'Árvore · cada nó tem id, label, icon?, children?, count?, highlighted?' },
-        { name: 'defaultExpanded', type: 'string[]', description: 'IDs inicialmente expandidos (uncontrolled)' },
-        { name: 'expanded', type: 'string[]', description: 'IDs expandidos (controlado)' },
-        { name: 'onExpandedChange', type: '(ids: string[]) => void', description: 'Callback ao expandir/colapsar' },
-        { name: 'selected', type: 'string', description: 'ID selecionado · selected glow' },
-        { name: 'onSelect', type: '(id: string) => void', description: 'Callback ao selecionar nó' },
-        { name: 'label', type: 'string', description: 'aria-label da árvore' },
-      ]}
+      meta={meta}
+      descriptions={{
+        nodes: 'Árvore · cada nó tem id, label, icon?, children?, count?, highlighted?',
+        defaultExpanded: 'IDs inicialmente expandidos (uncontrolled)',
+        expanded: 'IDs expandidos (controlado)',
+        onExpandedChange: 'Callback ao expandir/colapsar',
+        selected: 'ID selecionado · selected glow',
+        onSelect: 'Callback ao selecionar nó',
+        label: 'aria-label da árvore',
+      }}
       sizes={[
         { name: 'TreeNode.id', label: 'string · obrigatório', description: 'Identificador único' },
         { name: 'TreeNode.label', label: 'ReactNode · obrigatório', description: 'Texto do nó' },

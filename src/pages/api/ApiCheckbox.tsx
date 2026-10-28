@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Checkbox } from '../../lib/Checkbox/Checkbox';
+import { Checkbox, type CheckboxProps } from '../../lib/Checkbox/Checkbox';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Checkbox as meta } from './props.generated.json';
 
 function CheckboxDemo() {
   const [terms, setTerms] = useState(false);
@@ -37,15 +38,28 @@ export default function ApiCheckbox() {
         { part: 'via-checkbox__check', description: 'Check stroke 2.4 · spring scale 0→1.1→1' },
         { part: 'via-checkbox__copy', description: 'Label + description vertical stack' },
       ]}
-      props={[
-        { name: 'label', type: 'ReactNode', description: 'Label visível à direita do box' },
-        { name: 'description', type: 'ReactNode', description: 'Texto secundário abaixo do label' },
-        { name: 'indeterminate', type: 'boolean', default: 'false', description: 'Estado "parcial" · linha horizontal no lugar do check (use em parent de lista)' },
-        { name: 'checked / defaultChecked', type: 'boolean', description: 'Estado controlado / inicial uncontrolled (props HTML padrão)' },
-        { name: 'onChange', type: '(e: ChangeEvent<HTMLInputElement>) => void', description: 'Callback nativo · use e.target.checked' },
-        { name: 'disabled', type: 'boolean', description: 'Bloqueado · opacity 0.5 · cursor not-allowed' },
-        { name: '...rest', type: 'InputHTMLAttributes<HTMLInputElement>', description: 'Aceita todas props nativas do input (name, value, required, etc.)' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: {
+          label: 'Aceito os termos de uso',
+          description: 'Leia em viverdeia.ai/termos antes de marcar.',
+          checked: false,
+          indeterminate: false,
+          disabled: false,
+        },
+        render: (v, set) => <Checkbox {...(v as CheckboxProps)} onChange={(e) => set({ checked: e.target.checked })} />,
+        codeProps: ['onChange={(e) => setAceito(e.target.checked)}'],
+      }}
+      descriptions={{
+        label: 'Label visível à direita do box',
+        description: 'Texto secundário abaixo do label',
+        indeterminate: 'Estado "parcial" · linha horizontal no lugar do check (use em parent de lista)',
+        checked: 'Estado controlado (prop HTML padrão)',
+        defaultChecked: 'Estado inicial não controlado (prop HTML padrão)',
+        onChange: 'Callback nativo · use e.target.checked',
+        disabled: 'Bloqueado · opacity 0.5 · cursor not-allowed',
+        '...rest': 'Aceita todas props nativas do input (name, value, required, etc.)',
+      }}
       examples={[
         {
           title: 'Lista com indeterminate',

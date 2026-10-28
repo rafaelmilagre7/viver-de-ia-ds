@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { DatePicker } from '../../lib/DatePicker/DatePicker';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { DatePicker as meta } from './props.generated.json';
 
 function DatePickerDemo() {
   const [d, setD] = useState<Date | null>(new Date());
@@ -30,18 +31,19 @@ export default function ApiDatePicker() {
         { part: 'via-datepicker__day', description: 'Célula · hover bg navy-04 · selected bg navy + glow' },
         { part: 'today indicator', description: 'Ring sutil ao redor do dia atual (não selected)' },
       ]}
-      props={[
-        { name: 'value', type: 'Date | null', required: true, description: 'Data selecionada (controlado) · null = vazio' },
-        { name: 'onChange', type: '(d: Date | null) => void', required: true, description: 'Callback · null quando user limpa' },
-        { name: 'min', type: 'Date', description: 'Data mínima permitida (inclusive)' },
-        { name: 'max', type: 'Date', description: 'Data máxima permitida (inclusive)' },
-        { name: 'placeholder', type: 'string', description: 'Texto quando value é null' },
-        { name: 'label', type: 'string', description: 'Label visível acima do trigger' },
-        { name: 'ariaLabel', type: 'string', description: 'Pra screen reader se não tem label' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado' },
-        { name: 'weekStartsOn', type: '0 | 1', default: '1', description: '0=domingo / 1=segunda (Brasil default)' },
-        { name: 'formatLabel', type: '(d: Date) => string', description: 'Format custom · default ISO pt-BR' },
-      ]}
+      meta={meta}
+      descriptions={{
+        value: 'Data selecionada (controlado) · null = vazio',
+        onChange: 'Callback · null quando user limpa',
+        min: 'Data mínima permitida (inclusive)',
+        max: 'Data máxima permitida (inclusive)',
+        placeholder: 'Texto quando value é null',
+        label: 'Label visível acima do trigger',
+        ariaLabel: 'Pra screen reader se não tem label',
+        disabled: 'Bloqueado',
+        weekStartsOn: '0=domingo / 1=segunda (Brasil default)',
+        formatLabel: 'Format custom · default ISO pt-BR',
+      }}
       examples={[
         {
           title: 'Date picker com data mínima = hoje',

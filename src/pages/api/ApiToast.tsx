@@ -2,6 +2,7 @@ import { ToastStack } from '../../lib/Toast/Toast';
 import { useToasts } from '../../lib/Toast/useToasts';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Toast as meta } from './props.generated.json';
 
 function ToastDemo() {
   const { toasts, push, dismiss } = useToasts();
@@ -42,11 +43,12 @@ export default function ApiToast() {
         { part: 'via-toast__action', description: 'Botão opcional · ação contextual ("Reverter")' },
         { part: 'via-toast__close', description: 'X · hover rotate + bg navy-05' },
       ]}
-      props={[
-        { name: 'toasts', type: 'ToastItem[]', required: true, description: 'Array de toasts ativos · gerenciado pelo useToasts()' },
-        { name: 'onDismiss', type: '(id: string) => void', required: true, description: 'Callback ao fechar · vem do useToasts' },
-        { name: 'position', type: "'top-right' | 'top-center' | 'bottom-right' | 'bottom-center'", default: "'top-right'", description: 'Posição do stack na viewport' },
-      ]}
+      meta={meta}
+      descriptions={{
+        toasts: 'Array de toasts ativos · gerenciado pelo useToasts()',
+        onDismiss: 'Callback ao fechar · vem do useToasts',
+        position: 'Posição do stack na viewport',
+      }}
       sizes={[
         { name: 'ToastItem.variant', label: "'default' | 'success' | 'warning' | 'destructive'", description: 'Tom semantic do toast' },
         { name: 'ToastItem.title', label: 'string · obrigatório', description: 'Headline curta do toast' },

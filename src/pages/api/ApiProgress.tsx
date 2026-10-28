@@ -1,5 +1,6 @@
-import { Progress } from '../../lib/Progress/Progress';
+import { Progress, type ProgressProps } from '../../lib/Progress/Progress';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Progress as meta } from './props.generated.json';
 
 export default function ApiProgress() {
   return (
@@ -15,13 +16,24 @@ export default function ApiProgress() {
         { part: 'via-progress__track', description: 'Trilho · gradient navy alpha + inset shadow' },
         { part: 'via-progress__fill', description: 'Fill animado · width transition spring + shimmer ::after' },
       ]}
-      props={[
-        { name: 'value', type: 'number', required: true, description: 'Valor atual (0-100)' },
-        { name: 'label', type: 'string', description: 'Label visível · pode incluir contexto ("Streak meta")' },
-        { name: 'showValue', type: 'boolean', default: 'false', description: 'Mostra "X%" à direita do label' },
-        { name: 'tone', type: "'navy' | 'accent' | 'coral'", default: "'navy'", description: 'Tom semantic do fill' },
-        { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Track height · sm=4 / md=6 / lg=10' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { value: 64, label: 'Onboarding', showValue: true },
+        render: (v) => (
+          <div style={{ width: '100%', maxWidth: 420 }}>
+            <Progress {...(v as Partial<ProgressProps>)} value={Number(v.value ?? 0)} />
+          </div>
+        ),
+      }}
+      descriptions={{
+        value: 'Valor atual (0-100)',
+        label: 'Label visível · pode incluir contexto ("Streak meta")',
+        showValue: 'Mostra "X%" à direita do label',
+        tone: 'Tom semantic do fill',
+        size: 'Track height · sm=4 / md=6 / lg=10',
+        ariaLabel: 'Nome acessível da barra · sem ele, usa o label se for texto',
+        className: 'Classe extra no container',
+      }}
       examples={[
         {
           title: '3 tones · 3 progress',

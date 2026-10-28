@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { OTPInput } from '../../lib/OTPInput/OTPInput';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { OTPInput as meta } from './props.generated.json';
 
 function OTPDemo() {
   const [code, setCode] = useState('');
@@ -30,18 +31,19 @@ export default function ApiOTPInput() {
         { part: 'auto-focus', description: 'Digit avança · backspace recua · arrow keys navegam' },
         { part: 'paste detection', description: 'Cole código completo num campo · auto-fills todos' },
       ]}
-      props={[
-        { name: 'length', type: 'number', default: '6', description: 'Quantidade de dígitos (4 ou 6 são padrão)' },
-        { name: 'value', type: 'string', description: 'Valor controlado · sempre String com .length=length' },
-        { name: 'onChange', type: '(value: string) => void', description: 'Callback a cada mudança (mesmo incompleto)' },
-        { name: 'onComplete', type: '(value: string) => void', description: 'Callback quando todos os dígitos preenchidos' },
-        { name: 'label', type: 'string', description: 'Label visível acima' },
-        { name: 'hint', type: 'string', description: 'Texto secundário abaixo · explica origem do código' },
-        { name: 'error', type: 'boolean', default: 'false', description: 'true = cells viram danger ring' },
-        { name: 'autoFocus', type: 'boolean', default: 'false', description: 'Foca primeiro cell ao montar' },
-        { name: 'inputType', type: "'text' | 'numeric'", default: "'numeric'", description: 'numeric=keyboard numérico mobile · text=alfanumérico' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado' },
-      ]}
+      meta={meta}
+      descriptions={{
+        length: 'Quantidade de dígitos (4 ou 6 são padrão)',
+        value: 'Valor controlado · sempre String com .length=length',
+        onChange: 'Callback a cada mudança (mesmo incompleto)',
+        onComplete: 'Callback quando todos os dígitos preenchidos',
+        label: 'Label visível acima',
+        hint: 'Texto secundário abaixo · explica origem do código',
+        error: 'true = cells viram danger ring',
+        autoFocus: 'Foca primeiro cell ao montar',
+        inputType: 'numeric=keyboard numérico mobile · text=alfanumérico',
+        disabled: 'Bloqueado',
+      }}
       examples={[
         {
           title: '6 dígitos · onComplete + paste detection',

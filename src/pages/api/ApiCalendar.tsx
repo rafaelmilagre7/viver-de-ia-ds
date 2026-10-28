@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Calendar } from '../../lib/Calendar/Calendar';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Calendar as meta } from './props.generated.json';
 
 function CalendarDemo() {
   const [date, setDate] = useState<Date | null>(new Date());
@@ -27,16 +28,17 @@ export default function ApiCalendar() {
         { part: 'via-calendar__day', description: 'Célula · hover bg navy-04 · selected glow' },
         { part: 'via-calendar__marker', description: 'Dot abaixo do número · cores navy/coral/success' },
       ]}
-      props={[
-        { name: 'value', type: 'Date | null', description: 'Data selecionada (controlado)' },
-        { name: 'onChange', type: '(date: Date) => void', description: 'Callback ao selecionar' },
-        { name: 'defaultMonth', type: 'Date', description: 'Mês inicial mostrado · default mês atual' },
-        { name: 'min', type: 'Date', description: 'Data mínima selecionável' },
-        { name: 'max', type: 'Date', description: 'Data máxima selecionável' },
-        { name: 'locale', type: 'string', default: "'pt-BR'", description: 'Locale pra formatação de mês/dias' },
-        { name: 'showWeekdays', type: 'boolean', default: 'true', description: 'Mostra header de dias da semana' },
-        { name: 'markers', type: '{ date, tone?, label? }[]', description: 'Dots coloridos pra eventos · 3 tones (navy/coral/success)' },
-      ]}
+      meta={meta}
+      descriptions={{
+        value: 'Data selecionada (controlado)',
+        onChange: 'Callback ao selecionar',
+        defaultMonth: 'Mês inicial mostrado · default mês atual',
+        min: 'Data mínima selecionável',
+        max: 'Data máxima selecionável',
+        locale: 'Locale pra formatação de mês/dias',
+        showWeekdays: 'Mostra header de dias da semana',
+        markers: 'Dots coloridos pra eventos · 3 tones (navy/coral/success)',
+      }}
       examples={[
         {
           title: 'Calendar com 3 markers (sessão, deadline, live)',

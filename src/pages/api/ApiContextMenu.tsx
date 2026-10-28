@@ -1,6 +1,7 @@
 import { ContextMenu } from '../../lib/ContextMenu/ContextMenu';
 import ComponentDoc from '../../components/docs/ComponentDoc';
 import { Edit, Copy, Archive, Trash2 } from 'lucide-react';
+import { ContextMenu as meta } from './props.generated.json';
 
 export default function ApiContextMenu() {
   return (
@@ -17,11 +18,12 @@ export default function ApiContextMenu() {
         { part: 'via-context-menu__separator', description: 'Linha 1px navy-08 (separatorBefore=true)' },
         { part: 'destructive variant', description: 'Coral · pra delete/cancel · semântico' },
       ]}
-      props={[
-        { name: 'children', type: 'ReactNode', required: true, description: 'Elemento que recebe right-click · wrapped automaticamente' },
-        { name: 'items', type: 'ContextMenuOption[]', required: true, description: 'Items do menu (com separators inline)' },
-        { name: 'label', type: 'string', description: 'aria-label do menu · "Ações do item"' },
-      ]}
+      meta={meta}
+      descriptions={{
+        children: 'Elemento que recebe right-click · wrapped automaticamente',
+        items: 'Items do menu (com separators inline)',
+        label: 'aria-label do menu · "Ações do item"',
+      }}
       sizes={[
         { name: 'ContextMenuOption.label', label: 'ReactNode · obrigatório', description: 'Texto do item' },
         { name: 'ContextMenuOption.onSelect', label: '() => void', description: 'Callback ao clicar / Enter' },

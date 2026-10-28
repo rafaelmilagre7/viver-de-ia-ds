@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MultiSelect } from '../../lib/MultiSelect/MultiSelect';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { MultiSelect as meta } from './props.generated.json';
 
 const SKILLS = [
   { value: 'llm', label: 'LLMs' },
@@ -42,18 +43,19 @@ export default function ApiMultiSelect() {
         { part: 'via-multi-select__chip', description: 'Chip · gradient navy-08 + X dismiss' },
         { part: 'via-multi-select__listbox', description: 'Portal · checkbox + label · scroll' },
       ]}
-      props={[
-        { name: 'options', type: 'MultiSelectOption[]', required: true, description: 'Array { value, label, disabled? }' },
-        { name: 'value', type: 'string[]', description: 'Valores selecionados (controlado)' },
-        { name: 'onChange', type: '(values: string[]) => void', description: 'Callback ao marcar/desmarcar' },
-        { name: 'label', type: 'string', description: 'Label visível acima' },
-        { name: 'placeholder', type: 'string', description: 'Quando array vazio' },
-        { name: 'hint', type: 'string', description: 'Hint abaixo · "Aparece no perfil"' },
-        { name: 'max', type: 'number', default: '0', description: 'Limite · 0 = ilimitado · ao atingir bloqueia novos' },
-        { name: 'error', type: 'boolean', default: 'false', description: 'true = trigger danger ring' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado' },
-        { name: 'size', type: "'sm' | 'md'", default: "'md'", description: 'Tamanho do trigger' },
-      ]}
+      meta={meta}
+      descriptions={{
+        options: 'Array { value, label, disabled? }',
+        value: 'Valores selecionados (controlado)',
+        onChange: 'Callback ao marcar/desmarcar',
+        label: 'Label visível acima',
+        placeholder: 'Quando array vazio',
+        hint: 'Hint abaixo · "Aparece no perfil"',
+        max: 'Limite · 0 = ilimitado · ao atingir bloqueia novos',
+        error: 'true = trigger danger ring',
+        disabled: 'Bloqueado',
+        size: 'Tamanho do trigger',
+      }}
       examples={[
         {
           title: 'Skills com max=5',

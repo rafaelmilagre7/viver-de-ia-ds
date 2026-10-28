@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Switch } from '../../lib/Switch/Switch';
+import { Switch, type SwitchProps } from '../../lib/Switch/Switch';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Switch as meta } from './props.generated.json';
 
 function SwitchDemo() {
   const [on, setOn] = useState(true);
@@ -28,15 +29,26 @@ export default function ApiSwitch() {
         { part: 'via-switch__thumb', description: 'Knob · radial gradient white realista + 5-layer shadow + spring' },
         { part: 'via-switch__copy', description: 'Label + description (opcional) vertical stack' },
       ]}
-      props={[
-        { name: 'checked', type: 'boolean', description: 'Estado controlado · true = on (padrão React)' },
-        { name: 'defaultChecked', type: 'boolean', description: 'Estado inicial uncontrolled' },
-        { name: 'onChange', type: '(e: ChangeEvent<HTMLInputElement>) => void', description: 'Callback nativo · use `e.target.checked` pra obter boolean' },
-        { name: 'label', type: 'ReactNode', description: 'Label visível à direita' },
-        { name: 'description', type: 'ReactNode', description: 'Descrição secundária abaixo do label' },
-        { name: 'size', type: "'sm' | 'md'", default: "'md'", description: 'md=36×20 / sm=30×17' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado · opacity 0.5 · cursor not-allowed' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: {
+          label: 'Notificações por e-mail',
+          description: 'Receber resumo semanal das atividades do time.',
+          checked: true,
+          disabled: false,
+        },
+        render: (v, set) => <Switch {...(v as SwitchProps)} onChange={(e) => set({ checked: e.target.checked })} />,
+        codeProps: ['onChange={(e) => setOn(e.target.checked)}'],
+      }}
+      descriptions={{
+        checked: 'Estado controlado · true = on (padrão React)',
+        defaultChecked: 'Estado inicial uncontrolled',
+        onChange: 'Callback nativo · use `e.target.checked` pra obter boolean',
+        label: 'Label visível à direita',
+        description: 'Descrição secundária abaixo do label',
+        size: 'md=36×20 / sm=30×17',
+        disabled: 'Bloqueado · opacity 0.5 · cursor not-allowed',
+      }}
       examples={[
         {
           title: 'Setting com descrição',

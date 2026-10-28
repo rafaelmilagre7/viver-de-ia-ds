@@ -1,5 +1,6 @@
 import { Spinner } from '../../lib/Spinner/Spinner';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Spinner as meta } from './props.generated.json';
 
 export default function ApiSpinner() {
   return (
@@ -16,12 +17,13 @@ export default function ApiSpinner() {
         { part: 'via-spinner__head', description: 'Arco animado · stroke-dasharray + rotação' },
         { part: 'via-spinner__label', description: 'Texto opcional à direita · pra contexto' },
       ]}
-      props={[
-        { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'sm=14 / md=20 / lg=28' },
-        { name: 'tone', type: "'navy' | 'inverse' | 'soft'", default: "'navy'", description: 'navy=padrão editorial · inverse=em fundo navy · soft=secondary muted' },
-        { name: 'label', type: 'string', description: 'Texto inline · "Carregando dashboard…"' },
-        { name: 'className', type: 'string', description: 'Classe custom no wrapper' },
-      ]}
+      meta={meta}
+      descriptions={{
+        size: 'sm=14 / md=20 / lg=28',
+        tone: 'navy=padrão editorial · inverse=em fundo navy · soft=secondary muted',
+        label: 'Texto inline · "Carregando dashboard…"',
+        className: 'Classe custom no wrapper',
+      }}
       examples={[
         {
           title: '3 sizes com tones',

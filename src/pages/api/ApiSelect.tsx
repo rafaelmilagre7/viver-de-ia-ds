@@ -1,6 +1,13 @@
 import { useState } from 'react';
-import { Select } from '../../lib/Select/Select';
+import { Select, type SelectProps } from '../../lib/Select/Select';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Select as meta } from './props.generated.json';
+
+const PLANOS = [
+  { value: 'free', label: 'Free · 0 sessões' },
+  { value: 'pro', label: 'Pro · R$ 290/mês · 4 sessões' },
+  { value: 'team', label: 'Team · R$ 890/mês · ilimitado' },
+];
 
 function SelectDemo() {
   const [v, setV] = useState('pro');
@@ -10,11 +17,7 @@ function SelectDemo() {
       placeholder="Selecione um plano"
       value={v}
       onValueChange={setV}
-      options={[
-        { value: 'free', label: 'Free · 0 sessões' },
-        { value: 'pro', label: 'Pro · R$ 290/mês · 4 sessões' },
-        { value: 'team', label: 'Team · R$ 890/mês · ilimitado' },
-      ]}
+      options={PLANOS}
     />
   );
 }
@@ -34,19 +37,31 @@ export default function ApiSelect() {
         { part: 'via-select__option', description: 'Item · hover bg navy-02 + check à direita se selected' },
         { part: 'via-select__hint', description: 'Texto secundário abaixo · vira danger se error' },
       ]}
-      props={[
-        { name: 'options', type: 'SelectOption[]', required: true, description: 'Array { value, label }' },
-        { name: 'value', type: 'string', description: 'Valor selecionado (controlado)' },
-        { name: 'defaultValue', type: 'string', description: 'Inicial (uncontrolled)' },
-        { name: 'onValueChange', type: '(value: string) => void', description: 'Callback ao escolher' },
-        { name: 'placeholder', type: 'string', default: "'Selecione…'", description: 'Texto quando sem seleção' },
-        { name: 'label', type: 'string', description: 'Label visível acima do trigger' },
-        { name: 'hint', type: 'string', description: 'Texto secundário abaixo · ajuda/contexto' },
-        { name: 'error', type: 'string', description: 'Mensagem de erro · trigger vira ring danger' },
-        { name: 'size', type: "'sm' | 'md'", default: "'md'", description: 'sm=32 / md=40 altura do trigger' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado' },
-        { name: 'ariaLabel', type: 'string', description: 'Pra screen reader quando não tem label visível' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { label: 'Plano', value: 'pro' },
+        exclude: ['value'],
+        render: (v, set) => (
+          <div style={{ width: '100%', maxWidth: 320 }}>
+            <Select {...(v as Partial<SelectProps>)} options={PLANOS} onValueChange={(value) => set({ value })} />
+          </div>
+        ),
+        codeProps: ['options={planos}', 'value={plano}', 'onValueChange={setPlano}'],
+      }}
+      descriptions={{
+        options: 'Array { value, label }',
+        value: 'Valor selecionado (controlado)',
+        defaultValue: 'Inicial (uncontrolled)',
+        onValueChange: 'Callback ao escolher',
+        placeholder: 'Texto quando sem seleção',
+        label: 'Label visível acima do trigger',
+        hint: 'Texto secundário abaixo · ajuda/contexto',
+        error: 'Mensagem de erro · trigger vira ring danger',
+        size: 'sm=32 / md=40 altura do trigger',
+        disabled: 'Bloqueado',
+        ariaLabel: 'Pra screen reader quando não tem label visível',
+        className: 'Classe extra no container',
+      }}
       examples={[
         {
           title: 'Select com label e 3 opções',

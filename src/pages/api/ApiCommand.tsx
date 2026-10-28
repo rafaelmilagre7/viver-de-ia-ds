@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Command } from '../../lib/Command/Command';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Command as meta } from './props.generated.json';
 
 function CommandDemo() {
   const [open, setOpen] = useState(false);
@@ -58,15 +59,16 @@ export default function ApiCommand() {
         { part: 'via-command__item', description: 'Linha · label + shortcut · highlight selected' },
         { part: 'via-command__empty', description: 'Empty state quando query não match nada' },
       ]}
-      props={[
-        { name: 'open', type: 'boolean', required: true, description: 'Estado controlado · normalmente vem de useKbd("cmd+k")' },
-        { name: 'onClose', type: '() => void', required: true, description: 'Callback close (ESC, scrim, após select)' },
-        { name: 'onSelect', type: '(id: string) => void', required: true, description: 'Callback ao selecionar item · caller decide navegação' },
-        { name: 'groups', type: 'CommandGroup[]', description: 'Items agrupados com heading' },
-        { name: 'items', type: 'CommandItem[]', description: 'Items planos (sem heading) · vira group único sem label' },
-        { name: 'placeholder', type: 'string', description: 'Placeholder do input · "Buscar ação ou página…"' },
-        { name: 'emptyLabel', type: 'string', description: 'Mensagem quando query vazia · "Nenhum resultado"' },
-      ]}
+      meta={meta}
+      descriptions={{
+        open: 'Estado controlado · normalmente vem de useKbd("cmd+k")',
+        onClose: 'Callback close (ESC, scrim, após select)',
+        onSelect: 'Callback ao selecionar item · caller decide navegação',
+        groups: 'Items agrupados com heading',
+        items: 'Items planos (sem heading) · vira group único sem label',
+        placeholder: 'Placeholder do input · "Buscar ação ou página…"',
+        emptyLabel: 'Mensagem quando query vazia · "Nenhum resultado"',
+      }}
       sizes={[
         { name: 'CommandItem.id', label: 'string · obrigatório', description: 'Identificador (vira parâmetro do onSelect)' },
         { name: 'CommandItem.label', label: 'string · obrigatório', description: 'Texto principal · vira matchpoint do filtro' },

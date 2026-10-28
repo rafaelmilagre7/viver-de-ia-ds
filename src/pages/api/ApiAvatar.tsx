@@ -1,5 +1,6 @@
-import { Avatar } from '../../lib/Avatar/Avatar';
+import { Avatar, type AvatarProps } from '../../lib/Avatar/Avatar';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Avatar as meta } from './props.generated.json';
 
 export default function ApiAvatar() {
   return (
@@ -15,13 +16,19 @@ export default function ApiAvatar() {
         { part: '<img>', description: 'Foto (quando `src` provido) · object-fit cover' },
         { part: 'via-avatar__status', description: 'Dot inferior direito · pulse breathing em online' },
       ]}
-      props={[
-        { name: 'src', type: 'string', description: 'URL da imagem · se ausente, mostra iniciais' },
-        { name: 'alt', type: 'string', required: true, description: 'Nome completo · usado pra derivar iniciais ("Caio Ribeiro" → "CR") e ARIA label' },
-        { name: 'size', type: "'xs' | 'sm' | 'md' | 'lg' | 'xl'", default: "'md'", description: '20 / 28 / 36 / 52 / 80 px' },
-        { name: 'status', type: "'online' | 'away' | 'busy' | 'offline'", description: 'Dot de presença · online tem pulse' },
-        { name: '...rest', type: 'HTMLAttributes', description: 'Aceita className extra, role, etc' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { alt: 'Caio Ribeiro', size: 'lg' },
+        render: (v) => <Avatar {...(v as AvatarProps)} />,
+      }}
+      descriptions={{
+        src: 'URL da imagem · se ausente, mostra iniciais',
+        alt: 'Nome completo · usado pra derivar iniciais ("Caio Ribeiro" → "CR") e ARIA label',
+        initials: 'Iniciais explícitas · têm prioridade sobre as derivadas do alt',
+        size: '20 / 28 / 36 / 52 / 80 px',
+        status: 'Dot de presença · online tem pulse',
+        '...rest': 'Aceita className extra, role, etc',
+      }}
       sizes={[
         { name: 'xs · 20px', label: 'Avatar group stack', description: 'Pra mostrar "+12 membros" em listas densas' },
         { name: 'sm · 28px', label: 'Comment row', description: 'Discussões, chat, notification rows' },

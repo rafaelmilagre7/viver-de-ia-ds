@@ -1,5 +1,6 @@
 import { Splitter } from '../../lib/Splitter/Splitter';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Splitter as meta } from './props.generated.json';
 
 const panelStyle: React.CSSProperties = {
   padding: 16,
@@ -45,17 +46,18 @@ export default function ApiSplitter() {
         { part: 'via-splitter__handle', description: 'Barra arrastável · 4px (horizontal) ou 4px (vertical) · hover navy-30' },
         { part: 'via-splitter__grip', description: 'Indicador visual · 3 dots verticais/horizontais' },
       ]}
-      props={[
-        { name: 'start', type: 'ReactNode', required: true, description: 'Painel da esquerda (horizontal) ou topo (vertical)' },
-        { name: 'end', type: 'ReactNode', required: true, description: 'Painel da direita ou baixo' },
-        { name: 'orientation', type: "'horizontal' | 'vertical'", default: "'horizontal'", description: 'horizontal=lado-a-lado / vertical=stack' },
-        { name: 'defaultSplit', type: 'number', default: '50', description: 'Posição inicial em % (0-100)' },
-        { name: 'split', type: 'number', description: 'Posição controlada' },
-        { name: 'onSplitChange', type: '(pct: number) => void', description: 'Callback ao redimensionar' },
-        { name: 'min', type: 'number', default: '15', description: '% mínimo do painel start' },
-        { name: 'max', type: 'number', default: '85', description: '% máximo do painel start' },
-        { name: 'handleLabel', type: 'string', description: 'aria-label do handle · "Redimensionar painéis"' },
-      ]}
+      meta={meta}
+      descriptions={{
+        start: 'Painel da esquerda (horizontal) ou topo (vertical)',
+        end: 'Painel da direita ou baixo',
+        orientation: 'horizontal=lado-a-lado / vertical=stack',
+        defaultSplit: 'Posição inicial em % (0-100)',
+        split: 'Posição controlada',
+        onSplitChange: 'Callback ao redimensionar',
+        min: '% mínimo do painel start',
+        max: '% máximo do painel start',
+        handleLabel: 'aria-label do handle · "Redimensionar painéis"',
+      }}
       examples={[
         {
           title: 'Splitter horizontal · sidebar + main',

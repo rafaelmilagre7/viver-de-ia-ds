@@ -3,6 +3,7 @@ import { Popover } from '../../lib/Popover/Popover';
 import { Button } from '../../lib/Button/Button';
 import { Checkbox } from '../../lib/Checkbox/Checkbox';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Popover as meta } from './props.generated.json';
 
 function PopoverDemo() {
   const [open, setOpen] = useState(false);
@@ -42,17 +43,18 @@ export default function ApiPopover() {
         { part: 'via-popover__panel', description: 'Portal floating · glass + atmosphere + spring' },
         { part: 'via-popover__arrow (opt)', description: 'Triangulo apontando pro trigger' },
       ]}
-      props={[
-        { name: 'open', type: 'boolean', required: true, description: 'Estado controlado · sempre necessário' },
-        { name: 'onOpenChange', type: '(open: boolean) => void', required: true, description: 'Callback chamado em close (outside click + ESC) — opcional pra open via trigger' },
-        { name: 'trigger', type: 'ReactNode', required: true, description: 'Elemento que dispara · render inline' },
-        { name: 'children', type: 'ReactNode', required: true, description: 'Conteúdo do panel floating' },
-        { name: 'side', type: "'top' | 'right' | 'bottom' | 'left'", default: "'bottom'", description: 'Lado preferido vs trigger · flip automático se não couber' },
-        { name: 'align', type: "'start' | 'center' | 'end'", default: "'center'", description: 'Alinhamento ao longo do eixo side' },
-        { name: 'closeOnOutsideClick', type: 'boolean', default: 'true', description: 'Fecha quando user clica fora' },
-        { name: 'closeOnEscape', type: 'boolean', default: 'true', description: 'Fecha quando user pressiona ESC' },
-        { name: 'label', type: 'string', description: 'Aria-label do panel pra screen reader' },
-      ]}
+      meta={meta}
+      descriptions={{
+        open: 'Estado controlado · sempre necessário',
+        onOpenChange: 'Callback chamado em close (outside click + ESC) — opcional pra open via trigger',
+        trigger: 'Elemento que dispara · render inline',
+        children: 'Conteúdo do panel floating',
+        side: 'Lado preferido vs trigger · flip automático se não couber',
+        align: 'Alinhamento ao longo do eixo side',
+        closeOnOutsideClick: 'Fecha quando user clica fora',
+        closeOnEscape: 'Fecha quando user pressiona ESC',
+        label: 'Aria-label do panel pra screen reader',
+      }}
       examples={[
         {
           title: 'Popover de filtros · bottom + start',

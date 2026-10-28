@@ -1,5 +1,6 @@
 import { Carousel } from '../../lib/Carousel/Carousel';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Carousel as meta } from './props.generated.json';
 
 const slideStyle: React.CSSProperties = {
   display: 'flex',
@@ -42,16 +43,17 @@ export default function ApiCarousel() {
         { part: 'via-carousel__arrows', description: 'Botões prev/next · glass + hover ring' },
         { part: 'via-carousel__dots', description: 'Indicador inferior · dot ativo expande pill' },
       ]}
-      props={[
-        { name: 'children', type: 'ReactNode[]', required: true, description: 'Array de slides · cada child vira 1 slide' },
-        { name: 'index', type: 'number', description: 'Slide ativo (controlado)' },
-        { name: 'onIndexChange', type: '(index: number) => void', description: 'Callback ao mudar' },
-        { name: 'showArrows', type: 'boolean', default: 'true', description: 'Mostra setas prev/next' },
-        { name: 'showDots', type: 'boolean', default: 'true', description: 'Mostra dots indicator' },
-        { name: 'autoPlay', type: 'number', default: '0', description: 'Ms entre transições · 0 = desabilita · pausa em hover' },
-        { name: 'loop', type: 'boolean', default: 'true', description: 'Loop infinito · último → primeiro' },
-        { name: 'label', type: 'string', description: 'aria-label do region' },
-      ]}
+      meta={meta}
+      descriptions={{
+        children: 'Array de slides · cada child vira 1 slide',
+        index: 'Slide ativo (controlado)',
+        onIndexChange: 'Callback ao mudar',
+        showArrows: 'Mostra setas prev/next',
+        showDots: 'Mostra dots indicator',
+        autoPlay: 'Ms entre transições · 0 = desabilita · pausa em hover',
+        loop: 'Loop infinito · último → primeiro',
+        label: 'aria-label do region',
+      }}
       examples={[
         {
           title: 'Carousel auto-play 5s + dots + arrows',

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TagInput } from '../../lib/TagInput/TagInput';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { TagInput as meta } from './props.generated.json';
 
 function TagInputDemo() {
   const [tags, setTags] = useState<string[]>(['IA generativa', 'agentes']);
@@ -31,19 +32,20 @@ export default function ApiTagInput() {
         { part: 'via-tag-input__field', description: 'Input livre · flex-grow · sem borda própria' },
         { part: 'via-tag-input__suggestions', description: 'Dropdown abaixo · clicar adiciona à lista' },
       ]}
-      props={[
-        { name: 'value', type: 'string[]', description: 'Tags atuais (controlado)' },
-        { name: 'onChange', type: '(tags: string[]) => void', description: 'Callback ao add/remove' },
-        { name: 'label', type: 'string', description: 'Label visível' },
-        { name: 'placeholder', type: 'string', description: 'Placeholder do input livre' },
-        { name: 'hint', type: 'string', description: 'Hint educativo abaixo · "Enter adiciona"' },
-        { name: 'max', type: 'number', default: '0', description: 'Limite · 0 = ilimitado · input bloqueia ao atingir' },
-        { name: 'suggestions', type: 'string[]', description: 'Sugestões clicáveis · filtra ao digitar' },
-        { name: 'allowDuplicates', type: 'boolean', default: 'false', description: 'true = permite tag repetida (raro)' },
-        { name: 'error', type: 'boolean', default: 'false', description: 'true = wrapper vira danger ring' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado · não permite adicionar' },
-        { name: 'size', type: "'sm' | 'md'", default: "'md'", description: 'Tamanho dos chips' },
-      ]}
+      meta={meta}
+      descriptions={{
+        value: 'Tags atuais (controlado)',
+        onChange: 'Callback ao add/remove',
+        label: 'Label visível',
+        placeholder: 'Placeholder do input livre',
+        hint: 'Hint educativo abaixo · "Enter adiciona"',
+        max: 'Limite · 0 = ilimitado · input bloqueia ao atingir',
+        suggestions: 'Sugestões clicáveis · filtra ao digitar',
+        allowDuplicates: 'true = permite tag repetida (raro)',
+        error: 'true = wrapper vira danger ring',
+        disabled: 'Bloqueado · não permite adicionar',
+        size: 'Tamanho dos chips',
+      }}
       examples={[
         {
           title: 'Tags com suggestions e max=6',
