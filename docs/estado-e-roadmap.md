@@ -61,6 +61,37 @@ do Mac continua funcionando como plano B.
 4. Lint de volta a 0 warnings; sondas de auditoria removidas da raiz.
 5. `CLAUDE.md` + este documento + CHANGELOG cobrindo jul–ago.
 
+## Auditoria do DS (28/out, tarde) — corrigido + upgrades A e B
+
+Pedido do Rafael: "foco NO design system — corrigir o que precisar e dar um upgrade". Auditoria em 3
+frentes (componentes, mercado, velocidade/organização), cada achado conferido (1 descartado: os
+`--via-chart-*` SÃO usados — só os `--via-chart-1..5` não). Executado em 5 frentes paralelas e
+integrado na branch `rodada-ds-out28`. Detalhe item a item no CHANGELOG `[Não lançado]`.
+
+| Medida | Antes | Depois | Como medir |
+|---|---|---|---|
+| test:unit | 519 | 793 | `bun run test:unit` |
+| Cobertura `src/lib` (stmts/branches/funcs/lines) | 87,4 / 82,1 / 91,2 / 89,9 | 92,7 / 87,0 / 97,5 / 95,7 (piso 80) | `bun run test:unit:coverage` |
+| a11y (axe) | 109 rotas · lib nunca renderizada | 156 (110 + 46 `/api`) | `bun run test:a11y` |
+| contraste claro+escuro | 216/218 | 218/220 (as 2: cinza do horário do Instagram, proposital) | `bunx playwright test tests/contrast.spec.ts --project=desktop` |
+| visual | 218/218 | 220/220 após atualizar 5 baselines intencionais (`/glass/anatomy` ×2 botão Copiar, `/patterns/email` mobile assunto "sua vaga", `/guidelines/microcopy` ×2 nova) | `bun run test:visual` |
+| Lighthouse mobile (preview local) | home 85 · `/guia` 69 (LCP 7,7 s) | home 95 · `/guia` 93 (LCP 2,6 s) | `npx lighthouse@12 <url> --chrome-flags="--headless=new"` |
+| `bun audit --prod` | 5 alertas (react-router) | 0 | `bun audit --prod` |
+
+**Ficou em aberto desta rodada** (não promete nada ao usuário hoje, mas vale a próxima):
+- Nomes de API divergentes entre componentes (`onValueChange` × `onChange`, `danger`/`destructive`/`coral`,
+  `error` string × boolean, ~25 componentes sem `className`/`style`, selects sem `name`/`forwardRef`) —
+  unificar é mudança de contrato pros produtos; fazer junto com versionamento (0.7.0).
+- OTPInput `onChange` ainda emite string compacta; DataTable `onSortChange` não recebe `null` (use
+  `onSortStateChange`) — mantidos por compatibilidade.
+- 404 real: URL desconhecida ainda responde 200 (rewrite do SPA) — só `noindex`.
+- Links de parágrafo sem sublinhado por CSS de página em 7 patterns (onboarding, email-coverage,
+  editorial-content, paid-ads, achievement, faq, auth-flow).
+- Kit: exemplo `landing-evergreen.html` com hero navy (contra light-first).
+- Upgrades não escolhidos ainda: C (ponte Lovable/shadcn), D (pacote de marca: SVG, tema de slides,
+  DTCG pra Figma/Canva — precisa dos arquivos originais do designer), E (peças novas: Textarea, Field,
+  FileUpload, AlertDialog, Charts, AppShell, DataTable com filtro), F (lib por componente / CSS por componente).
+
 ## Achados em aberto
 
 ### P0 · colocar no ar
