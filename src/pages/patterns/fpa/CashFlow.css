@@ -177,7 +177,7 @@
   font-variant-numeric: tabular-nums;
   color: var(--via-text-body);
 }
-.vds-fpa-cash-kpi-tag.pos { color: var(--via-success); border-color: rgba(31, 138, 91, 0.22); }
+.vds-fpa-cash-kpi-tag.pos { color: var(--via-success-text); border-color: rgba(31, 138, 91, 0.22); }
 .vds-fpa-cash-kpi-tag.neg { color: var(--via-coral-dark); border-color: rgba(184, 92, 92, 0.24); }
 .vds-fpa-cash-kpi-tag.neutro { color: var(--via-text-muted); }
 

@@ -29,7 +29,7 @@ O usuário descreveu plataforma + formato em `$ARGUMENTS`. Identifica:
 | Headline | 1 linha · ≤40 chars · afirmação NÃO pergunta |
 | Body / primary text | Hook + razão · até 125 chars antes do "Ver mais" |
 | CTA button | Verbal infinitivo · 2-4 palavras |
-| Image | Navy editorial · zero foto literal · sem gold |
+| Image | **Fundo claro** (branco/off-white + atmosfera radial navy suave) · tipografia navy · zero foto literal · sem gold. Navy de fundo só se o usuário pedir ou no card de fechamento do carrossel (regra zero · light-first) |
 
 ## Headlines canônicas (4 categorias)
 
@@ -65,7 +65,7 @@ O usuário descreveu plataforma + formato em `$ARGUMENTS`. Identifica:
 ```
 Page card: Viver de IA · Patrocinado · 🌐
 Primary text: hook editorial + razão (até 125 chars)
-Image: 1080×1080 navy mesh + monogram_white canto + headline editorial
+Image: 1080×1080 fundo claro + atmosfera radial navy suave + lockup navy no canto + headline editorial navy
 Footer: VIVERDEIA.AI · "Ver programa" · sub-headline
 CTA button: "Saiba mais"
 ```
@@ -76,7 +76,7 @@ Card 1: HOOK (número grande · ex: +220 operadores)
 Card 2: contexto (90 dias até produção)
 Card 3: contexto (4 meses · mentoria 1:1)
 Card 4: resultado (R$ 1,8M destravado)
-Card 5: CTA (Ver programa · próxima turma)
+Card 5: CTA (Ver programa · próxima turma) · único card que pode ter fundo navy (respiro canônico)
 ```
 
 ### Google Display Banner
@@ -90,7 +90,7 @@ Layout grande (970×250 billboard): texto esquerda + CTA central + logo direita
 
 ## Reference completa
 
-`viver-de-ia-ds/src/pages/patterns/PaidAds.tsx` tem:
+`viver-de-ia-ds/src/pages/patterns/PaidAds.tsx` tem (atenção: os criativos de lá ainda estão em fundo navy, anteriores à regra light-first · para cor de fundo vale este comando):
 - Todos os formatos Meta + Google renderizados
 - Specs canônicas (safe area, texto length, CTA wording)
 - Headline library com 16 exemplos (4 cats × 4 hooks)

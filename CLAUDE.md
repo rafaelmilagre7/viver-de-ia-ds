@@ -41,7 +41,7 @@ src/App.tsx                rotas (lazy) · tests/routes.ts = rotas cobertas por 
 emails/                    14 templates react-email → public/emails/*.html (CI kit.yml re-renderiza)
 plugins/viver-de-ia/       plugin Claude Code: skill + 8 comandos /via-* + agente via-auditor
 packages/create-viverdeia-app/  starter (NÃO está no npm — o `bunx` dos docs não funciona fora daqui)
-docs/                      system-prompt.md (= public/viver-de-ia-system-prompt.md), manual, integração
+docs/                      system-prompt.md (= public/viver-de-ia-system-prompt.md = public/llms.txt), manual, integração
 public/guia, public/manual lead magnet PDF + manual de construção de DS
 scripts/                   build/guard scripts · fix-*.mjs e migrate-glass.mjs são codemods históricos (já rodados)
 ```
@@ -52,7 +52,7 @@ scripts/                   build/guard scripts · fix-*.mjs e migrate-glass.mjs 
 |---|---|
 | `src/styles/tokens.css`, `surfaces.css`, `data.css` | cópia em `plugins/.../viver-de-ia-design/` (`colors_and_type.css`, `surfaces.css`, `data.css`) — `lint:sync` barra |
 | tokens | `bun run build:tokens` regenera `src/lib/tokens.ts` (parser único: `scripts/parse-tokens.mjs`) |
-| regra editorial/visual | `SKILL.md` + `guidelines.md` do plugin, `docs/system-prompt.md` **e** `public/viver-de-ia-system-prompt.md`, bump em `plugins/viver-de-ia/.claude-plugin/plugin.json` |
+| regra editorial/visual | `SKILL.md` + `guidelines.md` do plugin, `docs/system-prompt.md` copiado por cima de `public/viver-de-ia-system-prompt.md` e `public/llms.txt` (`lint:sync` barra), bump em `plugins/viver-de-ia/.claude-plugin/plugin.json` |
 | lib, emails ou tokens | `bun run kit` e commitar `public/viver-de-ia-kit.zip` (o CI não faz isso) |
 | pixel de alguma rota | baseline visual (`test:visual:update`, no Mac) |
 | componente da lib | página `/components/*` ou `/api/*` + teste ao lado (`*.test.tsx`) |

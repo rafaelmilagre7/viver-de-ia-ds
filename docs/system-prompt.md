@@ -25,7 +25,7 @@ Contraste: **100% WCAG AA nos 2 temas · 0 violação séria de acessibilidade**
 - **Library:** `@viverdeia/design-system` · **46 componentes de UI + ThemeProvider** · DS interno, NÃO publicado no npm (ESM+CJS+types+CSS+tokens.json gerados via `bun run build:lib`)
 - **Theming:** `<ThemeProvider>` + `useTheme()` hook · 3 camadas (tokens CSS / `applyTheme()` imperativo / Provider React-aware). Dark mode é CSS-first: tudo responde a `[data-theme="dark"]` no `<html>`.
 - **Componentes** prontos pra import: `Button` `Pill` `Card` `Input` `Avatar` `Icon` `Toast` `Tooltip` `Modal` `Tabs` `Popover` `Switch` `Checkbox` `RadioGroup` `Select` `Progress` `Drawer` `Spinner` `Skeleton` `Breadcrumb` `Pagination` `Accordion` `Stepper` `EmptyState` `Combobox` `DropdownMenu` `Command` `DatePicker` `Slider` `Alert` `DataTable` `HoverCard` `OTPInput` `TagInput` `Calendar` `Carousel` `MultiSelect` `DateRangePicker` `TimePicker` `ContextMenu` `Sheet` `TreeView` `Splitter` `VirtualList` `Lightbox` `ColorPicker`
-- **Starter:** `bunx create-viverdeia-app meu-app` (scaffold Vite + React + TS pré-configurado com ThemeProvider)
+- **Starter:** `create-viverdeia-app` existe só dentro do repo do DS (não está no npm · `bunx` não funciona fora dele). Fora do repo, comece um Vite + React + TS e importe `tokens.css` + `surfaces.css` + `data.css` do kit.
 
 Em React app, sempre envelopar `<App />` com `<ThemeProvider>` e importar `@viverdeia/design-system/styles.css`.
 
@@ -213,16 +213,18 @@ Voz muda de registro por contexto (mas mantém esqueleto):
 
 ## 6. Surfaces · glass + atmospheric
 
-Glass uniforme:
+Glass uniforme — **receitas por token, nunca `blur(Npx) saturate(N%)` com número solto**:
 ```css
 .glass {
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.7));
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(10,31,59,0.08);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  background: var(--via-glass-card);
+  -webkit-backdrop-filter: var(--via-glass-blur);   /* blur(24px) saturate(175%) */
+  backdrop-filter: var(--via-glass-blur);           /* SEMPRE depois do -webkit- (ver abaixo) */
+  border: var(--via-glass-ring);
+  box-shadow: var(--via-glass-shadow);
 }
 ```
+
+**Ordem do vidro (bug real):** em todo bloco, `-webkit-backdrop-filter` vem ANTES e `backdrop-filter` por último. Na ordem inversa, o minificador do Vite 8 / Next.js apaga o padrão e o vidro some no Chrome e no Firefox.
 
 Atmospheric radial (signature do system, top-left de cards principais):
 ```css
@@ -256,10 +258,10 @@ Mesh navy (hero scuros, immersive sections):
 **Vidro de CHROME (barra/nav sticky, toolbar) = frosted DE VERDADE.** A `.glass` acima (~0.9 opaca) é pra CARD de conteúdo. Pra BARRA, use fundo translúcido pra o conteúdo passar DESFOCADO por baixo (efeito Apple):
 ```css
 .glass-bar {                           /* nav sticky, toolbar, painel flutuante */
-  background: rgba(255,255,255,0.6);   /* dark: rgba(11,18,32,0.55) */
-  backdrop-filter: blur(26px) saturate(185%);
-  -webkit-backdrop-filter: blur(26px) saturate(185%);
-  border-bottom: 0.5px solid rgba(10,31,59,0.12);
+  background: var(--via-glass-bar);              /* branco .6 no claro · navy .55 no escuro */
+  -webkit-backdrop-filter: var(--via-glass-blur-bar);   /* blur(26px) saturate(185%) */
+  backdrop-filter: var(--via-glass-blur-bar);
+  border-bottom: 0.5px solid var(--via-border);
 }
 ```
 Vidro de CHROME só "aparece" quando há algo atrás pra desfocar — barra sticky sobre conteúdo rolando, painel flutuante sobre hero. Numa barra parada sobre branco liso o blur não tem o que borrar.
@@ -270,62 +272,44 @@ Glass **não precisa de fundo escuro**. O card de vidro sobre claro é a assinat
 
 ```css
 /* 1. A PÁGINA precisa de atmosfera (senão não há o que o vidro refletir) */
-.page {
-  background:
-    radial-gradient(ellipse 80% 50% at 15% 0%, rgba(10,31,59,0.05), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(10,31,59,0.035), transparent 65%),
-    #FFFFFF;
-}
+.page { background:
+  radial-gradient(ellipse 80% 50% at 15% 0%, var(--via-navy-05), transparent 60%),
+  radial-gradient(ellipse 60% 50% at 100% 100%, var(--via-navy-03), transparent 65%),
+  var(--via-bg); }
 
-/* 2. O CARD de vidro */
+/* 2-4. O CARD: gradiente 3-stop + hairline quase invisível + luz no topo + tinta de sombra */
 .glass-card {
-  position: relative;
-  isolation: isolate;
-  border-radius: 20px;
+  position: relative; isolation: isolate;
+  border-radius: var(--via-radius-lg);             /* 20px · card padrão */
   padding: 24px;
-
-  /* gradiente 3-stop = o vidro pega luz de cima e "desce" pro off-white */
-  background: linear-gradient(180deg,
-    rgba(255,255,255,0.96) 0%,
-    rgba(255,255,255,0.84) 10%,
-    rgba(247,248,250,0.58) 100%);
-
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-
-  /* 3. hairline quase invisível — o card se define pela LUZ, não pela borda */
-  border: 1px solid rgba(10,31,59,0.05);
-
-  /* 4. linha de luz no topo + sombra navy-tinted difusa (nunca sombra preta) */
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.95) inset,
-    0 10px 24px -16px rgba(10,31,59,0.12);
-
-  transition: transform .26s cubic-bezier(.2,.7,.2,1), box-shadow .26s ease;
+  background: var(--via-glass-card);               /* gradiente 96→84→58% */
+  -webkit-backdrop-filter: var(--via-glass-blur);  /* receita canônica 24px/175% · -webkit- primeiro */
+  backdrop-filter: var(--via-glass-blur);
+  border: var(--via-glass-ring);                   /* hairline de vidro · o card se define pela LUZ */
+  box-shadow: 0 1px 0 var(--via-edge-hi) inset,    /* linha de luz no topo */
+              0 10px 24px -16px var(--via-shadow-ink-14); /* tinta de sombra, nunca token que inverte */
+  transition: transform .26s var(--via-ease-snap), box-shadow .26s ease;
 }
 
 /* 5. atmosfera PRÓPRIA do card (top-left) — é isso que dá profundidade */
 .glass-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  background: radial-gradient(540px 240px at 0% 0%, rgba(10,31,59,0.04), transparent 60%);
-  opacity: .6;
-  transition: opacity .26s ease;
-  pointer-events: none;
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
+  opacity: .6; transition: opacity .26s ease; pointer-events: none;
 }
-
-.glass-card:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.95) inset, 0 18px 36px -20px rgba(10,31,59,0.18); }
+.glass-card:hover { transform: translateY(-2px); }
 .glass-card:hover::before { opacity: 1; }
 ```
 
-No dark, esses valores viram os tokens equivalentes sozinhos se você usar `var(--via-glass-card)`, `var(--via-border-soft)`, `var(--via-edge-hi)`, `var(--via-navy-04)` em vez dos literais acima.
+Com os tokens acima o dark se resolve sozinho. Sem acesso aos tokens (HTML solto), importe o `tokens.css` do kit — não troque por literais.
 
 **Erros que matam o efeito** (os mais comuns): fundo da página branco chapado sem atmosfera · card `background: #fff` sólido sem gradiente · borda grossa/escura em vez de hairline · sombra preta genérica (`rgba(0,0,0,.1)`) em vez de navy-tinted · esquecer o `inset` de luz no topo · esquecer o `::before` radial. Card premium = **luz + profundidade**, não borda.
 
 **Borda de card = FINA e elegante.** `1px` (ou `0.5px`) solid `var(--via-border-soft)` (navy 0.08) + linha de luz interna (`inset 0 1px 0 rgba(255,255,255,.95)`). NUNCA `1.5–2px solid navy` num card ("caixa desenhada", pesado). Destaque/selecionado = fio fino + **halo navy** (`box-shadow: 0 0 0 3px rgba(10,31,59,0.08)`), não uma borda mais grossa. Borda `2px` só em: anel de avatar/foto (`2px solid #fff`), alça de slider, dot de status.
+
+**Sombra = tinta de sombra, sempre.** Toda sombra usa `var(--via-shadow-ink-03..60)` (navy no claro, preto mais denso no escuro). NUNCA ponha `--via-navy-XX`, `--via-white` ou `rgba(10,31,59,…)` literal dentro de `box-shadow` — no escuro vira halo branco ou some. Exceções que não são sombra: a linha de luz `inset 0 1px 0 var(--via-edge-hi)` e anéis `0 0 0 Npx` de foco.
+
+**Cantos — escala de raio (pai > filho):** `--via-radius-xs` 6 · `-sm` 10 · `-md` 14 · `-lg` 20 (**card padrão**) · `-xl` 28 · `-2xl` 40 · `-pill` 999. Filho um degrau abaixo do pai (card `lg` → chip interno `md`); encostado na borda, `calc(raio-do-pai - 1px)`. Email usa px cru (cliente de email não resolve `var()`).
 
 **CAMADA DE ACABAMENTO — classes prontas (use em vez de estilizar na mão).** O kit traz `tokens/surfaces.css` (importe junto com `tokens.css`). Em HTML cru, essas classes já entregam vidro + cantos + os 3 estados:
 | classe | pra quê |
@@ -367,20 +351,13 @@ REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos c
 
 ## 7. Hover signatures (assinatura comportamental)
 
-Bar lateral fade navy aparecendo à esquerda em hover de rows/cards/lessons/articles:
+Hover = **o elemento sobe e a luz aumenta** — nunca uma barra colorida na lateral (banida nos 3 mecanismos: `border-left` colorido, `::before` fino à esquerda, `box-shadow inset` horizontal).
 ```css
-.row { position: relative; overflow: hidden; }
-.row::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 2px;
-  background: linear-gradient(180deg, #0A1F3B, transparent);
-  opacity: 0;
-  transition: opacity 200ms;
-}
-.row:hover::before { opacity: 1; }
+.row-card { transition: transform .2s var(--via-ease-snap), box-shadow .2s ease, border-color .2s ease; }
+.row-card:hover  { transform: translateY(-1px); box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 12px 28px -18px var(--via-shadow-ink-20); }
+.row-card:active { transform: scale(0.97); }     /* resposta no APERTAR */
 ```
+Em HTML cru, `.via-row-card` / `.via-tile--lift` (do `surfaces.css`) já entregam isso.
 
 Lift em cards interativos: `translateY(-1px)` a `translateY(-3px)` · transition cubic-bezier(.2,.7,.2,1).
 
@@ -477,15 +454,15 @@ Para qualquer artefato novo, identifique:
 2. ✓ Tokens semânticos em código (texto/superfície adaptam claro↔escuro · sem hex fixo)
 3. ✓ Contraste AA nos 2 temas · sem claro-sobre-claro / navy-sobre-navy · link em texto sublinhado
 4. ✓ Pill canônica (11px · 500 · `-0.004em` · nowrap · sem dot · sem caps lock)
-5. ✓ Tipografia Geist · sem mistura de famílias · italic em ênfase
+5. ✓ Tipografia Geist · sem mistura de famílias · ZERO itálico (`<em>` reto · ênfase = peso + cor)
 6. ✓ Voz editorial · número ou citação · sem clichê IA · sem emoji decorativo
 7. ✓ CTAs sentence-case · verbo no infinitivo · 2-4 palavras
 8. ✓ Surfaces glass + atmospheric quando aplicável · NUNCA glass em dashboard/tabela densa
-9. ✓ Hover signatures (bar lateral navy, lift)
+9. ✓ Hover signatures (lift + luz · nunca barra lateral) · `:active` no apertar
 10. ✓ Logo correta por contexto · clear space · tamanho mínimo
 11. ✓ Sparkles banido · usar Compass/Award/Crown
 12. ✓ Tabela sortable → `<DataTable>` da library
-13. ✓ Live broadcast em italic · não caps lock
+13. ✓ Live "ao vivo" minúsculo · reto · não caps lock
 14. ✓ A11y: icon-button com aria-label · div[aria-label] com role · aria-label contém texto visível
 15. ✓ Sub-brand Leaders AI só em material de evento
 

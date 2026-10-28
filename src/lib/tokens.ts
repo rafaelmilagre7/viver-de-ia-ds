@@ -93,6 +93,12 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-border-strong",
+    "css": "--via-border-strong",
+    "value": "var(--via-navy-40)",
+    "category": "color"
+  },
+  {
     "name": "via-chart-1",
     "css": "--via-chart-1",
     "value": "#0A1F3B",
@@ -441,6 +447,12 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-success-text",
+    "css": "--via-success-text",
+    "value": "#18744C",
+    "category": "color"
+  },
+  {
     "name": "via-surface",
     "css": "--via-surface",
     "value": "var(--via-white)",
@@ -606,12 +618,6 @@ export const tokensList: readonly Token[] = [
     "name": "via-border-fine",
     "css": "--via-border-fine",
     "value": "0.5px solid var(--via-border-hairline)",
-    "category": "other"
-  },
-  {
-    "name": "via-border-strong",
-    "css": "--via-border-strong",
-    "value": "1px solid var(--via-navy-40)",
     "category": "other"
   },
   {
@@ -1212,6 +1218,7 @@ export type TokenName =
   | 'via-border'
   | 'via-border-hairline'
   | 'via-border-soft'
+  | 'via-border-strong'
   | 'via-chart-1'
   | 'via-chart-2'
   | 'via-chart-3'
@@ -1270,6 +1277,7 @@ export type TokenName =
   | 'via-stage-2'
   | 'via-stage-soft'
   | 'via-success'
+  | 'via-success-text'
   | 'via-surface'
   | 'via-surface-elev'
   | 'via-text'
@@ -1298,7 +1306,6 @@ export type TokenName =
   | 'via-blur-xl'
   | 'via-border-1'
   | 'via-border-fine'
-  | 'via-border-strong'
   | 'via-container'
   | 'via-content'
   | 'via-dur'

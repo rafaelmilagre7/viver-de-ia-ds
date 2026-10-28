@@ -64,6 +64,9 @@ Deploy é manual (`vercel --prod` a partir do Mac, projeto já linkado em `.verc
 ### P0 · colocar no ar
 - ~~Mergear esta branch~~ (PR #1), ~~republicar o site~~ e ~~push do plugin 1.4.2~~ — feitos em 28/out
   (site conferido no ar: email 14 publicado, mesmo pacote do build local).
+- **Rollout pros produtos pausado pelo Rafael (28/out):** este repo é o DS da **marca**; o Subido
+  (e o que mais for do time de produto) vai ter um DS de produto próprio. Não atualizar produto
+  sem ele confirmar quem é o dono. O que o DS de produto herda da marca está em aberto.
 - **Nenhum consumidor tem o conserto do vidro** (levantamento no Mac, 28/out — tabela no fim).
   Só `claude-viverdeia` e `via-talentos` linkam o `dist/lib` vivo (pedem reinstalar); o resto
   vendoriza ou copiou tokens e precisa re-vendorizar ou corrigir a ordem no próprio CSS.
@@ -71,20 +74,29 @@ Deploy é manual (`vercel --prod` a partir do Mac, projeto já linkado em `.verc
   Subir a versão do pacote (0.6.2) junto com o aviso aos produtos.
 
 ### P1 · bugs e incoerências pequenas
-- **`--via-border-strong` muda de tipo**: cor no tema escuro, shorthand `1px solid …` no claro
-  (redefinido no 3º `:root` de `tokens.css`). O único uso (`showcase/mentor.css`, `border-color`)
-  fica inválido no claro. Conserto: tirar a redefinição shorthand (muda pixel em /showcase/mentor →
-  rebaseline no Mac).
-- **Contraste na camada de dados**: verde `--via-success` como texto dá 4,33:1 no branco e
-  3,7–3,9:1 no escuro (AA pede 4,5); notas em gray-400 no DRE dão 2,48:1. Afeta
-  `/patterns/fpa` e `/foundations/dados` (e o `data.css` distribuído). Precisa de um tom de
-  texto pro success. Os outros casos são mockups de Instagram/email (cor da plataforma).
+Rodada de correção feita em 28/out (CHANGELOG `[Não lançado]`), aprovada pelo Rafael:
+- ~~`--via-border-strong` muda de tipo~~ → shorthand removido; é cor nos dois temas (o único uso
+  no site é no escuro, então não muda pixel aqui; protege quem usa o token no claro).
+- ~~Legenda do mockup de Instagram some no escuro~~ (1,47:1) → mockup fixa a cor. Contraste agora:
+  216/218 rota×tema limpas; as 2 restantes são o cinza de horário do próprio Instagram.
+- ~~Verde de texto abaixo de AA na camada de dados~~ → token `--via-success-text`
+  (`#18744C` claro · `#4FBF8B` escuro); notas do DRE em `--via-text-soft`.
+- ~~Rodapé dos 14 emails ilegível~~ → `#4F596B` / `#636D80` sobre o `pageBg` (6,2 e 4,6:1).
+- ~~`/via-paid` manda fundo navy~~ → claro por padrão; navy só a pedido ou no card de
+  fechamento do carrossel. **Pendente:** os criativos de `/patterns/paid-ads` ainda são navy
+  (anteriores à regra) — redesenhar em claro é trabalho de design, não conserto.
+- ~~Prompts das outras IAs atrasados~~ → `docs/system-prompt.md` reescrito onde contradizia a
+  skill (ensinava **barra lateral no hover**, itálico no checklist, vidro com número solto e na
+  ordem que o minify apaga, sombra com navy literal; faltavam tinta de sombra e escala de raio).
+  `public/llms.txt` (era cópia de maio, sem light-first e com `defaultMode="system"`) e a cópia
+  pública agora são cópias exatas, guardadas pelo `lint:sync`. Skill: v0.6.1 e starter honesto.
+
+Ainda aberto (decisão do Rafael):
 - **Light-first só vale com ThemeProvider**: o `tokens.css` cru vira escuro sozinho quando o SO
   está em dark (`@media (prefers-color-scheme: dark) :root:not([data-theme])`). Quem usa o CSS
   sem React (Aurora) teve que travar `data-theme="light"`. Decidir se o CSS cru deve nascer claro.
-- **`/via-paid` manda fundo navy** (`commands/via-paid.md`), contra a regra zero light-first.
-- Prompts distribuídos atrasados: `public/llms.txt` é de 28/mai; `docs/system-prompt.md` não tem
-  tinta de sombra, receitas de vidro nem escala de raio. A skill diz "v0.6.0" (pacote é 0.6.1).
+- **Endereço oficial**: canonical/OG/sitemap apontam pra `viverdeia.ai/design` (404) e a imagem
+  de prévia não existe — levar o site pra lá ou assumir `viver-de-ia-ds.vercel.app`.
 
 ### P2 · fundação (a "Onda 3")
 - Tipografia: 97% tokenizada (2.361 vs 76 px crus).

@@ -1,6 +1,6 @@
 ---
 name: viver-de-ia-design
-description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo/roxo/cyan em nenhum nível), assinatura liquid glass + atmosphere radial + spring physics, library React interna `@viverdeia/design-system` v0.6.0 (não publicada no npm · DS interno) (**46 componentes de UI + ThemeProvider** em src/lib · 46 API docs Radix-style), theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K indexado PT-BR/EN, starter `bunx create-viverdeia-app`, **sistema de email de produção à prova de bala** (14 templates react-email em emails/), brand book completo + cobertura email/social/paid ads/landing/commercial/editorial/event + patterns avançados (2FA, pricing comparison, error pages, billing). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ad creative, ou qualquer artefato visual da marca.
+description: Use para gerar interfaces e artefatos da marca Viver de IA — mentoria + comunidade + Leaders AI Conference (PT-BR). Inclui design tokens (paleta RESTRITA navy-dominant + cinza secundário + coral só pra destrutivo · sem gold/amarelo/roxo/cyan em nenhum nível), assinatura liquid glass + atmosphere radial + spring physics, library React interna `@viverdeia/design-system` v0.6.1 (não publicada no npm · DS interno) (**46 componentes de UI + ThemeProvider** em src/lib · 46 API docs Radix-style), theming system 3-camadas (ThemeProvider + useTheme + createThemeOverride), Cmd+K indexado PT-BR/EN, starter interno `create-viverdeia-app` (só no repo), **sistema de email de produção à prova de bala** (14 templates react-email em emails/), brand book completo + cobertura email/social/paid ads/landing/commercial/editorial/event + patterns avançados (2FA, pricing comparison, error pages, billing). Use sempre que produzir landing, dashboard, app, plataforma de aluno, deck, mock, e-mail, post social, ad creative, ou qualquer artefato visual da marca.
 user-invocable: true
 ---
 
@@ -8,8 +8,8 @@ user-invocable: true
 
 Reference site canônico: `viver-de-ia-ds` · `bun dev` → http://localhost:5173
 Repo público: https://github.com/rafaelmilagre7/viver-de-ia-ds · site vivo: https://viver-de-ia-ds.vercel.app
-Library: `@viverdeia/design-system` v0.6.0 (46 componentes de UI + ThemeProvider · ESM+CJS+types+CSS+tokens)
-Starter: `bunx create-viverdeia-app meu-app` (scaffold Vite + React 19 + TS pré-configurado com ThemeProvider)
+Library: `@viverdeia/design-system` v0.6.1 (46 componentes de UI + ThemeProvider · ESM+CJS+types+CSS+tokens)
+Starter: `create-viverdeia-app` (scaffold Vite + React 19 + TS com ThemeProvider) · só roda dentro do repo do DS — não está no npm
 
 ## ⚠️ REGRA ZERO · LIGHT-FIRST (a mais violada — leia antes de tudo)
 
@@ -237,8 +237,8 @@ Glass **não precisa de fundo escuro**. Card de vidro sobre claro é a assinatur
   border-radius: var(--via-radius-lg);             /* 20px · card padrão */
   padding: 24px;
   background: var(--via-glass-card);               /* gradiente 96→84→58% */
-  backdrop-filter: var(--via-glass-blur);          /* receita canônica 24px/175% */
-  -webkit-backdrop-filter: var(--via-glass-blur);
+  -webkit-backdrop-filter: var(--via-glass-blur);  /* receita canônica 24px/175% · -webkit- SEMPRE primeiro */
+  backdrop-filter: var(--via-glass-blur);          /* na ordem inversa o minify do Vite 8/Next apaga este e o vidro some */
   border: var(--via-glass-ring);                   /* hairline de vidro · o card se define pela LUZ */
   box-shadow: 0 1px 0 var(--via-edge-hi) inset,    /* linha de luz no topo */
               0 10px 24px -16px var(--via-shadow-ink-14); /* tinta de sombra, nunca token que inverte */
@@ -321,7 +321,7 @@ Mockup de tela/post/papel/QR/e-mail dentro de uma página **pina as próprias co
 
 ---
 
-## Library `@viverdeia/design-system` v0.6.0 (interna · não publicada no npm)
+## Library `@viverdeia/design-system` v0.6.1 (interna · não publicada no npm)
 
 ### Como consumir em projeto interno
 
@@ -458,6 +458,8 @@ const results = searchIndex(buildSearchIndex(), 'paleta');
 ---
 
 ## Starter `bunx create-viverdeia-app`
+
+**Só funciona dentro do repo do DS** (`packages/create-viverdeia-app`): não está no npm e o template depende de `file:../../viver-de-ia-ds`. Fora dele, `bunx` falha — comece um Vite + React + TS e consuma o `dist/lib` ou o kit.
 
 ```bash
 bunx create-viverdeia-app meu-app

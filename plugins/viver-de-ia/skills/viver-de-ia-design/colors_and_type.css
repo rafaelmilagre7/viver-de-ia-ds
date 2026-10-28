@@ -96,6 +96,7 @@
 
   /* Status — desaturated, navy-adjacent */
   --via-success: #1F8A5B;
+  --via-success-text: #18744C;   /* success como TEXTO (delta, meta batida) · 5,8:1 no branco · o #1F8A5B dá 4,33 */
   --via-warning: #0A1F3B;
   --via-danger:  #B83A3A;
 
@@ -318,6 +319,8 @@
   --via-coral-dark: #E89B9B;
   /* danger (#B83A3A) usado como texto de erro em campos · clareia no dark */
   --via-danger: #E58A8A;
+  /* success-text · o verde do claro dá 3,9:1 no card escuro → passo claro próprio */
+  --via-success-text: #4FBF8B;
 }
 
 /* Google Search ad · headline azul precisa virar variante dark-safe */
@@ -497,7 +500,6 @@
   /* ========== BORDERS ========================================= */
   --via-border-fine:   0.5px solid var(--via-border-hairline);
   --via-border-1:      1px solid var(--via-border);
-  --via-border-strong: 1px solid var(--via-navy-40);
 
   /* ========== SHADOWS ========================================= */
   /* Navy-tinted, gentle. The brand never uses gray-black shadows. */

@@ -22,7 +22,8 @@ export const color = {
   ink: '#0A1F3B',
   body: '#344054',
   muted: '#667085',
-  faint: '#98A2B3',
+  mutedOnPage: '#4F596B', // secundário sobre o pageBg cinza (o muted dá 4,35:1 ali) · = --via-text-muted
+  faint: '#636D80', // rodapé sobre o pageBg · 4,6:1 (o #98A2B3 dava 2,25) · = --via-text-soft
   onNavy: '#FFFFFF',
   onNavySoft: 'rgba(255,255,255,0.70)',
   onNavyFaint: 'rgba(255,255,255,0.52)',
@@ -152,7 +153,7 @@ export const s = {
     fontFamily: fontStack,
     fontSize: '13px',
     lineHeight: '1.6',
-    color: color.muted,
+    color: color.mutedOnPage,
   } as React.CSSProperties,
   footerFaint: {
     margin: '0 0 4px',

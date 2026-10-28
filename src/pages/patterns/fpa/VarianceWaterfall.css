@@ -36,7 +36,7 @@
   --vds-fpa-var-neg-ink: var(--via-coral-dark);
   --vds-fpa-var-neg-bg: rgba(184, 92, 92, 0.08);
   --vds-fpa-var-neg-line: rgba(184, 92, 92, 0.26);
-  --vds-fpa-var-ok-ink: var(--via-success);
+  --vds-fpa-var-ok-ink: var(--via-success-text);
   --vds-fpa-var-ok-bg: rgba(31, 138, 91, 0.08);
   --vds-fpa-var-ok-line: rgba(31, 138, 91, 0.26);
   --vds-fpa-var-grade: var(--via-data-grid);
@@ -54,7 +54,6 @@
   --vds-fpa-var-neg-ink: #E89B9B;
   --vds-fpa-var-neg-bg: rgba(217, 138, 138, 0.12);
   --vds-fpa-var-neg-line: rgba(217, 138, 138, 0.30);
-  --vds-fpa-var-ok-ink: #4FBF8B;
   --vds-fpa-var-ok-bg: rgba(79, 191, 139, 0.12);
   --vds-fpa-var-ok-line: rgba(79, 191, 139, 0.30);
   --vds-fpa-var-guia: var(--via-navy-40);

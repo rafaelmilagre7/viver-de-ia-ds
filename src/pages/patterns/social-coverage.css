@@ -288,6 +288,8 @@
   color: rgba(0, 0, 0, 0.80);
   line-height: 1.5;
 }
+/* mockup fixa a própria cor: o `p` do docs pegava --via-text-body e sumia no branco do post no escuro */
+.vds-sc-ig-body p { color: inherit; }
 .vds-sc-ig-body strong { color: rgba(0, 0, 0, 0.92); font-weight: var(--via-fw-medium); }
 .vds-sc-ig-time {
   display: block;

@@ -19,6 +19,9 @@ const PAIRS = [
   ['src/styles/tokens.css', `${PLUGIN}/colors_and_type.css`],
   ['src/styles/surfaces.css', `${PLUGIN}/surfaces.css`],
   ['src/styles/data.css', `${PLUGIN}/data.css`],
+  // prompt das outras IAs · as cópias públicas ficaram 5 meses atrás da fonte (itálico, barra lateral)
+  ['docs/system-prompt.md', 'public/viver-de-ia-system-prompt.md'],
+  ['docs/system-prompt.md', 'public/llms.txt'],
 ];
 
 const drift = PAIRS.filter(([src, copy]) => {

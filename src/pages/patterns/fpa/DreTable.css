@@ -192,7 +192,7 @@
   color: var(--via-text-primary);
 }
 .vds-fpa-dre-card-delta svg { flex-shrink: 0; opacity: 0.9; }
-.vds-fpa-dre-card-delta.is-goal { color: var(--via-success); border-color: rgba(31, 138, 91, 0.24); }
+.vds-fpa-dre-card-delta.is-goal { color: var(--via-success-text); border-color: rgba(31, 138, 91, 0.24); }
 .vds-fpa-dre-card-delta.is-bad  { color: var(--via-coral-dark); border-color: rgba(184, 92, 92, 0.22); }
 
 .vds-fpa-dre-card .via-meta-chip {
@@ -336,7 +336,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-regular);
   letter-spacing: 0.01em;
-  color: var(--via-text-faint);
+  color: var(--via-text-soft);   /* faint (gray-400) dava 2,5:1 no fundo da tabela */
   font-variant-numeric: tabular-nums;
 }
 
@@ -387,7 +387,7 @@
 .vds-fpa-dre-num.is-good,
 .vds-fpa-dre-num.is-flat { color: var(--via-text-primary); }
 .vds-fpa-dre-num.is-bad  { color: var(--via-coral-dark); }
-.vds-fpa-dre-num.is-goal { color: var(--via-success); }
+.vds-fpa-dre-num.is-goal { color: var(--via-success-text); }
 
 /* ---- micro-barra de desempenho ---- */
 .vds-fpa-dre-perf { text-align: right; }

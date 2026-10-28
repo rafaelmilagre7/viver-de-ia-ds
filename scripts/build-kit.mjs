@@ -110,7 +110,7 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 
 1. **Paleta restrita** · branco · cinza · navy · preto · coral só destrutivo · sem gold/amarelo
 2. **Pill canônica** · 11px · 500 · letter-spacing -0.004em · nowrap · sem dot · sem caps lock
-3. **Geist single family** · italic em ênfase · letterspacing negativo em corpo
+3. **Geist single family** · ZERO itálico (\`<em>\` reto · ênfase = peso + cor) · letterspacing negativo em corpo
 4. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA
 5. **Sparkles banido** · usar Compass · Award · Crown · Layers · MessageCircle
 6. **Logo correta por contexto** · monogram pequeno · wordmark grande · app icon em profile
@@ -318,11 +318,11 @@ const examples = {
 <title>Instagram post · Viver de IA</title>
 <style>
   body { margin:0; background:#F0F2F5; padding:24px; display:flex; justify-content:center; }
-  .post { width:480px; aspect-ratio:1/1; background:linear-gradient(135deg,#0A1F3B,#02162A); padding:48px; color:#fff; display:flex; flex-direction:column; justify-content:center; position:relative; border-radius:12px; overflow:hidden; font-family:'Geist',sans-serif; }
-  .eyebrow { font-size:13px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:22px; }
+  .post { width:480px; aspect-ratio:1/1; background:radial-gradient(ellipse 80% 60% at 0% 0%,rgba(10,31,59,0.06),transparent 60%),linear-gradient(180deg,#FFFFFF,#F5F7FA); padding:48px; color:#0A1F3B; display:flex; flex-direction:column; justify-content:center; position:relative; border-radius:12px; overflow:hidden; font-family:'Geist',sans-serif; }
+  .eyebrow { font-size:13px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#4F596B; margin-bottom:22px; }
   h2 { font-size:72px; font-weight:500; line-height:1.02; letter-spacing:-0.025em; margin:0 0 14px; }
-  em { font-style:italic; font-weight:400; color:rgba(255,255,255,0.78); }
-  p { font-size:14px; color:rgba(255,255,255,0.6); margin:0; max-width:320px; line-height:1.5; }
+  em { font-style:normal; font-weight:400; color:#5E6B82; }
+  p { font-size:14px; color:#4F596B; margin:0; max-width:320px; line-height:1.5; }
   img { position:absolute; bottom:30px; left:48px; width:38px; opacity:0.7; }
 </style>
 </head>
@@ -331,7 +331,7 @@ const examples = {
     <span class="eyebrow">turma 2026.2 · 45 dias dentro</span>
     <h2>+<em>11.920</em><br />conversas/mês.</h2>
     <p>operação real · auditada · método codificado em 18 aulas</p>
-    <img src="../logos/monogram-white.png" alt="" />
+    <img src="../logos/monogram-navy.png" alt="" />
   </div>
 </body>
 </html>`,
@@ -346,7 +346,7 @@ const examples = {
   .hero { padding:80px 40px; background:linear-gradient(135deg,#0A1F3B,#02162A); color:#fff; text-align:center; }
   .eyebrow { font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.65); margin-bottom:20px; }
   h1 { font-size:60px; font-weight:500; line-height:1.05; letter-spacing:-0.025em; margin:0 0 16px; }
-  h1 em { font-style:italic; font-weight:400; color:rgba(255,255,255,0.75); }
+  h1 em { font-style:normal; font-weight:400; color:rgba(255,255,255,0.75); }
   .lede { font-size:18px; color:rgba(255,255,255,0.7); max-width:600px; margin:0 auto 32px; line-height:1.55; }
   .cta { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; background:#fff; color:#0A1F3B; border-radius:999px; text-decoration:none; font-weight:500; }
   .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding:48px 40px; background:#F7F8FA; max-width:1200px; margin:0 auto; }

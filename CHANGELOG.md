@@ -8,6 +8,15 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ### Corrigido
 
+- **Rodada pós-retomada (28/out)** — erros medidos no Mac, todos com verificação de contraste:
+  - **Verde de "positivo" ilegível** na camada de dados e no FP&A (4,33:1 no branco, 3,9:1 no card escuro): novo token `--via-success-text` (`#18744C` claro · `#4FBF8B` escuro) em `.via-delta--up` e nos números de meta batida; notas do DRE saem do `--via-text-faint` (2,5:1) pro `--via-text-soft`.
+  - **Rodapé dos 14 emails** com texto a 2,25:1 sobre o fundo cinza: `#4F596B` / `#636D80` (mesmos tons de `--via-text-muted` / `--via-text-soft`).
+  - **`--via-border-strong`** virava shorthand `1px solid …` no claro (3º `:root`) e invalidava o `border-color` da tela de mentor: agora é cor nos dois temas.
+  - **Prompt das outras IAs** (`docs/system-prompt.md`): ensinava barra lateral no hover (banida), itálico no checklist, vidro com número solto e na ordem que o minify apaga, sombra com navy literal; faltavam tinta de sombra e escala de raio. `public/llms.txt` era a versão de maio (sem light-first, `defaultMode="system"`) e virou cópia exata.
+  - **`/via-paid`** mandava fundo navy por padrão: agora claro (regra zero).
+  - **Legenda do post de Instagram** em `/patterns/social-coverage` sumia no tema escuro (1,47:1 — o `p` do docs herdava `--via-text-body`): o mockup agora fixa a própria cor. O cinza do horário fica (é o da plataforma).
+  - **Kit ZIP**: o resumo de princípios e os 2 exemplos HTML ensinavam itálico; o post de Instagram de exemplo era navy (post é claro por padrão) — agora em reto e claro.
+  - Exemplos de vidro na skill e em `/glass/anatomy` na ordem certa (`-webkit-` primeiro); skill diz v0.6.1 e que o starter só roda dentro do repo.
 - **Vidro sumia no build minificado** (lib, kit e quem vendoriza o CSS): 595 regras tinham `backdrop-filter` antes de `-webkit-backdrop-filter`; o lightningcss (Vite 8 / Next.js) trata o prefixado como sobrescrita e apaga o padrão → Chrome/Firefox sem blur (no `style.css` da lib, só 7 de 61 regras de vidro mantinham o blur padrão). Ordem invertida em todo o CSS + plugin (zero diff de pixel no site).
 - **Tokens em JS/JSON com valores do tema escuro**: `tokens.ts`, `dist/lib/tokens.json` e o `tokens.json` do kit pegavam a última definição do arquivo inteiro — 56 tokens saíam com o valor do dark/`prefers-reduced-transparency` (`via-bg` = `#0B1220`, `via-glass-blur` = `none`) e os 6 half-steps (`--via-space-0_5`…`5_5`) faltavam. Os 3 parsers duplicados viraram 1 (`scripts/parse-tokens.mjs`), lendo só o `:root` padrão. 189 → 195 tokens.
 - Kit ZIP regenerado (passa a levar o email 14, o vidro e os tokens corrigidos).
@@ -16,6 +25,7 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 ### Adicionado
 
 - Guarda `lint:glass` (`scripts/glass-order.mjs`) no CI.
+- `lint:sync` passa a guardar as cópias do prompt das IAs (`public/viver-de-ia-system-prompt.md`, `public/llms.txt`).
 - Teste dos tokens gerados (`src/lib/tokens.test.ts`).
 - `CLAUDE.md` (mapa e regras pra quem trabalha no repo), `docs/estado-e-roadmap.md`, `playwright.cloud.config.ts` (Playwright com o Chromium da máquina, pra sessão em nuvem).
 
@@ -25,6 +35,7 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ### Plugin
 
+- `viver-de-ia` **1.4.2 → 1.5.0**: token `--via-success-text`, `data.css` e `colors_and_type.css` atualizados, `/via-paid` light-first, skill com exemplos de vidro na ordem certa.
 - `viver-de-ia` **1.4.1 → 1.4.2**: leva a ordem do vidro corrigida nas 3 folhas empacotadas e o email 14 na skill. O conteúdo tinha mudado sem bump, então quem já estava no 1.4.1 não recebia.
 
 ### Jul–ago (sem release)

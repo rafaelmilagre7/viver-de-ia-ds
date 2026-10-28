@@ -134,8 +134,8 @@ background: var(--via-glass-card);`}</CodeBlock>
               </p>
             </div>
             <CodeBlock>{`/* --via-glass-blur = ${GLASS.blur} */
-backdrop-filter: var(--via-glass-blur);
--webkit-backdrop-filter: var(--via-glass-blur);`}</CodeBlock>
+-webkit-backdrop-filter: var(--via-glass-blur);
+backdrop-filter: var(--via-glass-blur);`}</CodeBlock>
           </li>
           <li className="vds-callout">
             <div className="vds-callout-info">

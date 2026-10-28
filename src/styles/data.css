@@ -150,7 +150,7 @@
   font-weight: var(--via-fw-medium);
   white-space: nowrap;
 }
-.via-delta--up   { color: var(--via-success); }   /* favorável / meta batida */
+.via-delta--up   { color: var(--via-success-text); }   /* favorável / meta batida */
 .via-delta--down { color: var(--via-coral-dark); }/* desfavorável */
 .via-delta--flat { color: var(--via-text-muted); }
 
