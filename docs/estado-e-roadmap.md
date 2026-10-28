@@ -31,7 +31,9 @@ Tudo abaixo foi medido no repo ou no site, não estimado.
 
 `viver-de-ia-ds.vercel.app` republicado em 28/out com o `main` atual (antes estava no estado
 de ~6/ago, 83 dias sem deploy, sem o email 14). Time `viver-de-ia` na Vercel.
-Deploy é manual (`vercel --prod` a partir do Mac, projeto já linkado em `.vercel/`).
+Publicação automática desde 28/out: a Vercel está ligada a `rafaelmilagre7/viver-de-ia-ds` (conectada
+pela conta `rafaelmilagre7`, membro do time) e todo push no `main` vai pra produção. `vercel --prod`
+do Mac continua funcionando como plano B.
 
 ### Ferramentas do Rafael (Mac)
 
@@ -126,8 +128,7 @@ Rodada de melhorias (28/out, aprovada pelo Rafael: "pode executar todas as corre
 - `bunx create-viverdeia-app` não existe no npm e o template depende de `file:../../viver-de-ia-ds`.
 - ~~Canonical, OG e sitemap apontam pra `viverdeia.ai/design` (404)~~ → resolvido (ver P1).
 - ~~Vidro nunca visto em Safari/iPhone~~ → conferido no WebKit (Desktop Safari + iPhone 15 Pro), igual ao Chrome.
-- Visual regression só no macOS; deploy manual. **Ligar a Vercel ao `main`** (publicação automática)
-  precisa do ok explícito do Rafael — a permissão automática barrou a mudança de configuração.
+- Visual regression só no macOS. ~~Ligar a Vercel ao `main`~~ → ligado em 28/out (push no `main` publica).
 
 ## Quem consome o DS hoje
 

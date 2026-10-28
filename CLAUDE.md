@@ -4,7 +4,7 @@ Repo do DS da Viver de IA: site de referência (Vite + React) + library React in
 `@viverdeia/design-system` + plugin Claude Code + kit pra outras IAs + emails de produção.
 Dono: Rafael Milagre. Idioma do projeto: PT-BR (código, commits, docs).
 
-- Site: https://viver-de-ia-ds.vercel.app (deploy **manual** na Vercel — não segue o `main` sozinho)
+- Site: https://viver-de-ia-ds.vercel.app (Vercel ligada ao repo desde 28/out: **push no `main` publica sozinho**; outros branches viram preview)
 - Regras de marca (fonte canônica): `plugins/viver-de-ia/skills/viver-de-ia-design/SKILL.md`
 - Estado atual, achados e roadmap: `docs/estado-e-roadmap.md`
 
