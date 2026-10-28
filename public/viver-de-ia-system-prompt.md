@@ -183,7 +183,9 @@ CTA primário · pílula 999 · navy gradient:
 
 ## 5. Voz editorial · operador-experiente
 
-Tom: operador que opera. PT-BR direto. "você" infinitivo.
+Tom: operador que opera. PT-BR direto. "você" infinitivo. Produto e email transacional: sempre "você" (nunca tu/teu/tua/contigo).
+
+Microcopy de produto (erro, tela vazia, confirmação, sucesso, botão, ajuda de campo): use as frases canônicas de `/guidelines/microcopy` quando a situação bater.
 
 SEMPRE:
 - Número específico (não "centenas", "muito mais")

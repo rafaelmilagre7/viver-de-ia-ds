@@ -147,6 +147,7 @@ export const routes: Route[] = [
   { path: '/guidelines/voice' },
   { path: '/guidelines/copy' },
   { path: '/guidelines/dos-donts' },
+  { path: '/guidelines/microcopy' },
 ];
 
 export function routeSlug(r: Route): string {

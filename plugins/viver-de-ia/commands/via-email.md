@@ -39,9 +39,9 @@ O usuário descreveu o tipo de email em `$ARGUMENTS`. Identifica em qual das 5 c
 | Concierge NPS | pessoal-curioso | "Como tá indo a mentoria? 1 pergunta direta" |
 | Comercial evento | factual-editorial | "Sex 14h · auditoria de 3 prompts ao vivo" |
 | Comercial lançamento | fato + condição | "Turma 2026.3 abre amanhã 9h · [N] vagas · 4 meses" |
-| Comercial oferta | observacional | "Pelo que vi no teu agente, faria sentido conversar" |
-| Lifecycle churn | curioso-humano | "Tu sumiu há 19 dias · tô curioso, o que rolou" |
-| Lifecycle win-back | observa-mudanças | "3 coisas mudaram desde que tu saiu · acho que faz sentido voltar" |
+| Comercial oferta | observacional | "Pelo que vi no seu agente, faria sentido conversar" |
+| Lifecycle churn | curioso-humano | "Você sumiu há 19 dias · tô curioso, o que rolou" |
+| Lifecycle win-back | observa-mudanças | "3 coisas mudaram desde que você saiu · acho que faz sentido voltar" |
 
 Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] vagas`.
 

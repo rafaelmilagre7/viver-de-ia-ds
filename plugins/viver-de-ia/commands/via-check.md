@@ -30,7 +30,7 @@ O usuário colou conteúdo (HTML, JSX, copy, screenshot description) em `$ARGUME
 ### 3. Tipografia
 - [ ] Geist Display + Geist + Geist Mono (single family)
 - [ ] Sem mistura de famílias
-- [ ] Italic editorial em ênfase (h2 em, blockquote)
+- [ ] Zero itálico · ênfase = peso + cor (`<em>` reto, inclusive em h2 e blockquote)
 - [ ] Letterspacing negativo em corpo (`-0.005em` a `-0.018em`)
 - [ ] Pesos: body 400-500 · heading 500-600 · CTA 500 (não 700)
 
@@ -78,7 +78,7 @@ O usuário colou conteúdo (HTML, JSX, copy, screenshot description) em `$ARGUME
 
 ### 11. Status indicators
 - [ ] Sem semáforo verde/vermelho em pills genéricas
-- [ ] Live broadcast em italic editorial ("ao vivo"), não caps lock "AO VIVO"
+- [ ] Live broadcast em minúsculas sem exclamação ("ao vivo"), não caps lock "AO VIVO"
 - [ ] Eyebrows preservados em mono small caps 0.04-0.08em
 
 ### 12. Princípios de cobertura
@@ -114,8 +114,8 @@ Auditoria · social post LinkedIn pessoal
   · Headline com 8 palavras · poderia comprimir pra 5-6
 
 ✗ Vermelhos
-  · Pill "AO VIVO!" usa caps lock + exclamação · trocar pra italic
-    "ao vivo" sem exclamação. Ver /foundations/voice-extended live pill rule.
+  · Pill "AO VIVO!" usa caps lock + exclamação · trocar pra
+    "ao vivo" em minúsculas, sem exclamação. Ver /foundations/voice-extended live pill rule.
   · Logo monogram dimensionado em 12px no rodapé · abaixo do mínimo 16px.
     Ver /foundations/logo-usage sizing canônico.
 ```

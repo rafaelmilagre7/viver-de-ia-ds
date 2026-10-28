@@ -429,7 +429,7 @@ Emails de verdade que **não quebram no inbox** (Gmail, Outlook, Apple Mail). Vi
 import { render } from '@react-email/render';
 import WelcomeEmail from 'emails/welcome';
 const html = await render(<WelcomeEmail firstName="Marina" turma="Operadores · T08" daysToStart={14} platformUrl="https://app.viverdeia.ai" />);
-await resend.emails.send({ from: 'Viver de IA <oi@viverdeia.ai>', to, subject: 'tua vaga tá confirmada · bora começar?', html });
+await resend.emails.send({ from: 'Viver de IA <oi@viverdeia.ai>', to, subject: 'sua vaga tá confirmada · bora começar?', html });
 ```
 
 ---
@@ -479,6 +479,7 @@ Gera: `index.html` com anti-FOUC inline · `package.json` (React 19 + Vite 6 + T
 - **Manifesto / mission / vision** (`/foundations/brand-story`) — hero navy + cards editoriais com mission, vision, values, promessa, contrato com aluno.
 - **Personality** (`/foundations/personality`) — 7 atributos: Operador-experiente · Editorial · Denso · Sem guru-bro · Pragmático · Navy-protagonista · Número-sobre-adjetivo.
 - **Voice estendida** (`/foundations/voice-extended`) — contextos: marketing landing · email transacional · email editorial · comunidade · suporte 1:1 · paid ads · social orgânico · sales B2B. Cada um com do/don't.
+- **Microcopy de produto** (`/guidelines/microcopy` · `microcopy.md` nesta skill) — 65 frases canônicas pra erro, tela vazia, confirmação, sucesso, carregamento, onboarding, botão e ajuda de campo. Produto e email transacional falam **"você"** (nunca tu/teu/tua/contigo). Situação coberta = use a frase canônica.
 - **Logo usage** (`/foundations/logo-usage`) — clear space, min size, variants (white/dark/reverse/single-color), do/don't. Sempre `BrandLogo` component com `variant` prop.
 
 **REGRA INVIOLÁVEL DA LOGO:** a logo é SEMPRE o **lockup composto = monograma VIA + wordmark "VIVER DE IA" juntos**. ❌ NUNCA entregue só o wordmark "VIVER DE IA" solto (sem monograma) — é meio logo, não a marca. ❌ NUNCA desenhe o wordmark como texto estilizado; use os arquivos oficiais de `assets/logos/` ou `<BrandLogo>` (que já renderiza o lockup completo — a prop `variant` muda só a COR: `black` | `white` | `auto`). ✅ Monograma sozinho só em espaço mínimo onde o wordmark não caberia legível: favicon, app/profile icon, canto de slide interior.
@@ -571,6 +572,7 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 - `surfaces.css` — controles/acabamento pra HTML cru (pill-link, tile, row-card, meta-chip, bar-glass)
 - `data.css` — tabelas, números e métricas (via-table, via-num, via-metric, via-delta, via-spark)
 - `guidelines.md` — aprofundamento: voz, copy, do's & don'ts com cite de página canônica
+- `microcopy.md` — frases canônicas de produto (erro, vazio, confirmação, sucesso, botão…) · gerado de `src/content/microcopy.ts`
 - `assets/logos/` — VIA monogram + wordmark + Leaders AI mark
 
 ## Fontes & ícones (CDN)

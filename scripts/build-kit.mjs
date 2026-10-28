@@ -75,6 +75,7 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 ├── system-prompt.md         ← prompt geral · cola em qualquer LLM
 ├── lovable-system-prompt.md ← denso · Knowledge do Lovable / custom instructions
 ├── AGENTS.md                ← pro Codex · copia pra raiz do projeto (lê sozinho)
+├── microcopy.md             ← frases canônicas de produto (erro, vazio, confirmação, botão…)
 ├── system-prompts/          ← sub-prompts por contexto
 │   ├── email.md
 │   ├── social.md
@@ -219,6 +220,7 @@ console.log(`  wrote fonts/ (${copiedFonts} woff2/license + fonts.css)`);
 // ---------- 4. System prompts ----------
 const promptGeneral = readFileSync(resolve(root, 'plugins/viver-de-ia/skills/viver-de-ia-design/SKILL.md'), 'utf8');
 writeFileSync(resolve(out, 'system-prompt.md'), promptGeneral);
+copyFileSync(resolve(root, 'plugins/viver-de-ia/skills/viver-de-ia-design/microcopy.md'), resolve(out, 'microcopy.md'));
 
 // Versão denso pra Lovable (cola direto em custom instructions)
 const lovablePath = resolve(root, 'docs/system-prompt.md');
@@ -278,7 +280,7 @@ const examples = {
     </header>
     <div class="body">
       <p>Oi <strong>{aluno_first_name}</strong>,</p>
-      <p>tua vaga na turma <strong>{turma_codename}</strong> tá confirmada. começa em <strong>14 dias</strong>.</p>
+      <p>sua vaga na turma <strong>{turma_codename}</strong> tá confirmada. começa em <strong>14 dias</strong>.</p>
       <ol>
         <li><strong>Acessa a plataforma</strong> app.viverdeia.ai · login com esse email</li>
         <li><strong>Assiste o intro de 12min</strong> · contextualiza o método</li>

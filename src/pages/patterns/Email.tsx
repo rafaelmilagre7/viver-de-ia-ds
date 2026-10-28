@@ -7,8 +7,8 @@ import './email.css';
 type MailDef = { id: string; name: string; subject: string; when: string };
 
 const MAILS: MailDef[] = [
-  { id: 'welcome', name: 'Boas-vindas', subject: 'tua vaga tá confirmada · bora começar?', when: 'Quando o aluno confirma a matrícula numa turma.' },
-  { id: 'welcome-plataforma', name: 'Boas-vindas à plataforma', subject: 'teu acesso à plataforma tá liberado', when: 'Quando o acesso à plataforma é liberado (primeiro login). Se coincidir com a matrícula, o welcome de turma vence.' },
+  { id: 'welcome', name: 'Boas-vindas', subject: 'sua vaga tá confirmada · bora começar?', when: 'Quando o aluno confirma a matrícula numa turma.' },
+  { id: 'welcome-plataforma', name: 'Boas-vindas à plataforma', subject: 'seu acesso à plataforma tá liberado', when: 'Quando o acesso à plataforma é liberado (primeiro login). Se coincidir com a matrícula, o welcome de turma vence.' },
   { id: 'enrollment', name: 'Confirmação de turma', subject: 'confirmado · sua turma começa 12 de junho', when: 'Recibo de matrícula com os detalhes concretos.' },
   { id: 'billing', name: 'Cobrança / fatura', subject: 'sua fatura da Viver de IA · junho', when: 'Aviso de fatura — vira coral quando em atraso.' },
   { id: 'nps', name: 'NPS / feedback', subject: 'como tá indo? 1 pergunta, 30 segundos', when: 'Pulso de satisfação — uma pergunta só.' },
@@ -19,7 +19,7 @@ const MAILS: MailDef[] = [
   { id: 'lancamento', name: 'Lançamento de turma', subject: 'turma 2026.3 abre amanhã 9h · 30 vagas', when: 'Abertura de inscrições — fato + condição, sem countdown.' },
   { id: 'oferta', name: 'Oferta sutil', subject: 'pelo que vi, faria sentido a gente conversar', when: 'Convite comercial observacional, sem pressão.' },
   { id: 'churn', name: 'Churn alert (sumiço)', subject: 'tô curioso — o que rolou?', when: 'Aluno ativo que ficou quieto — curioso e humano.' },
-  { id: 'winback', name: 'Recuperação (win-back)', subject: 'tua vaga continua aqui', when: 'Reengajamento de quem já saiu.' },
+  { id: 'winback', name: 'Recuperação (win-back)', subject: 'sua vaga continua aqui', when: 'Reengajamento de quem já saiu.' },
   { id: 'urgent-ops', name: 'Alerta operacional', subject: 'ação necessária · webhook 504 desde 14:08', when: 'Alerta de sistema (Nina/Iris/plataforma) — coral.' },
 ];
 
@@ -79,7 +79,7 @@ const html = await render(
 );
 await resend.emails.send({
   from: 'Viver de IA <oi@viverdeia.ai>',
-  to, subject: 'tua vaga tá confirmada · bora começar?', html,
+  to, subject: 'sua vaga tá confirmada · bora começar?', html,
 });`}</pre>
       </Section>
 

@@ -154,8 +154,8 @@ function TransactionalSection() {
               Oi <strong>Rafael</strong>,
             </p>
             <p>
-              tua vaga na turma 2026.2 tá confirmada. começa em <strong>14 dias</strong>, e tem
-              3 coisas que se tu fizer essa semana, entra no ritmo da turma sem perder a
+              sua vaga na turma 2026.2 tá confirmada. começa em <strong>14 dias</strong>, e tem
+              3 coisas que se você fizer essa semana, entra no ritmo da turma sem perder a
               primeira aula.
             </p>
 
@@ -167,7 +167,7 @@ function TransactionalSection() {
                 <strong>Assiste o intro de 12min</strong> · contextualiza o método e o que vais construir nos próximos 90 dias
               </li>
               <li>
-                <strong>Marca a primeira mentoria 1:1</strong> · 30min pra alinhar caso real teu e dimensionar o que faz sentido construir
+                <strong>Marca a primeira mentoria 1:1</strong> · 30min pra alinhar caso real seu e dimensionar o que faz sentido construir
               </li>
             </ol>
 
@@ -199,7 +199,7 @@ function TransactionalSection() {
           category="Transacional · billing"
           from="Viver de IA · cobrança"
           subject="Cobrança em 2 dias · R$ 2.400 · mentoria mensal"
-          preview="renovação da tua mentoria entra na fatura sex 23/mai. reduz pra lite em 1 clique se preferir."
+          preview="renovação da sua mentoria entra na fatura sex 23/mai. reduz pra lite em 1 clique se preferir."
           time="qua · 18:22"
           notes={{
             when: '48h antes da cobrança · uma vez só · sem follow-up agressivo',
@@ -223,7 +223,7 @@ function TransactionalSection() {
             </div>
 
             <p>
-              Rafael, a renovação da tua mentoria entra na fatura <strong>sex 23/mai</strong>.
+              Rafael, a renovação da sua mentoria entra na fatura <strong>sex 23/mai</strong>.
               Se quiser <strong>reduzir pra plano lite</strong> (R$ 980/mês · mantém comunidade
               + plataforma, sem mentoria 1:1), troca aqui:
             </p>
@@ -294,7 +294,7 @@ function TransactionalSection() {
 
             <p className="vds-ec-em-fine">
               Se não resolver até <strong>seg 27/mai</strong>, o acesso entra em pausa
-              automática (sem custo) e tu pode voltar quando quiser.
+              automática (sem custo) e você pode voltar quando quiser.
             </p>
           </div>
           <EmailFooter />
@@ -358,10 +358,10 @@ function EditorialSection() {
               <strong className="mono">+18% conversão · 4s vs 28s latência primeiro turno</strong>
             </div>
 
-            <h3>O que vale anotar pra tua operação</h3>
+            <h3>O que vale anotar pra sua operação</h3>
             <p>
               latência percebida no primeiro turno é o número que mais subestima impacto. mede
-              o teu agora. se passa de 8s, o lead já tá indo embora antes da resposta.
+              o seu agora. se passa de 8s, o lead já tá indo embora antes da resposta.
             </p>
             <p>
               segundo: cuidado com agente "consultivo" no turno 1. o lead chega com intent
@@ -617,7 +617,7 @@ function ConciergeSection() {
           <EmailHeader />
           <div className="vds-ec-em-body">
             <p>
-              Rafael, tu tá há <strong>45 dias</strong> na turma 2026.2. metade do caminho.
+              Rafael, você tá há <strong>45 dias</strong> na turma 2026.2. metade do caminho.
             </p>
             <p>
               quero saber 1 coisa só: <strong>o ritmo das aulas + mentoria 1:1 tá ajudando ou
@@ -774,7 +774,7 @@ function CommercialSection() {
               </li>
             </ol>
 
-            <h3 className="vds-ec-em-h3">O que tu recebe</h3>
+            <h3 className="vds-ec-em-h3">O que você recebe</h3>
             <ul className="vds-ec-em-checklist">
               <li><Check /> 18 aulas estruturadas + 4 lives ao vivo + 2 estudos de caso</li>
               <li><Check /> Mentoria 1:1 mensal (4 sessões 60min)</li>
@@ -808,8 +808,8 @@ function CommercialSection() {
         <EmailFrame
           category="Comercial · oferta"
           from="Caio · Viver de IA"
-          subject="Pelo que vi no teu agente, faria sentido conversar"
-          preview="vi tua entrega do módulo 3 · operação tem padrão pra 2-3 agentes paralelos · tem plano cohort que cabe melhor."
+          subject="Pelo que vi no seu agente, faria sentido conversar"
+          preview="vi sua entrega do módulo 3 · operação tem padrão pra 2-3 agentes paralelos · tem plano cohort que cabe melhor."
           time="qui · 09:42"
           notes={{
             when: 'Quando aluno demonstra perfil pra upgrade · análise manual, não automatizada',
@@ -820,14 +820,14 @@ function CommercialSection() {
           <EmailHeader />
           <div className="vds-ec-em-body">
             <p>
-              Rafael, olhei tua entrega do módulo 3 (caso do agente de qualificação de leads
+              Rafael, olhei sua entrega do módulo 3 (caso do agente de qualificação de leads
               SDR) ontem.
             </p>
             <p>
               <strong>3 coisas que chamaram atenção:</strong>
             </p>
             <ol className="vds-ec-em-steps">
-              <li>Tu já tá pensando arquitetura multi-agente (separou intent reader do responder)</li>
+              <li>Você já tá pensando arquitetura multi-agente (separou intent reader do responder)</li>
               <li>Operação tem volume pra 2-3 agentes paralelos (qualificação · pós-venda · churn)</li>
               <li>Tem perfil de quem vai construir mais que 1 — provavelmente já tá pensando o próximo</li>
             </ol>
@@ -840,14 +840,14 @@ function CommercialSection() {
             </p>
 
             <p>
-              não tô vendendo no email · só achei que valia mencionar pq talvez tu nem soubesse
+              não tô vendendo no email · só achei que valia mencionar pq talvez você nem soubesse
               que existe. se quiser conversar, responde esse email com horário que te cabe
               que marco 30min.
             </p>
 
             <p>
               se não fizer sentido, ignora esse email <strong>sem culpa</strong> · a turma
-              2026.2 já cobre o que tu precisa.
+              2026.2 já cobre o que você precisa.
             </p>
 
             <p className="vds-ec-em-sign">
@@ -872,8 +872,8 @@ function LifecycleSection() {
         <EmailFrame
           category="Lifecycle · churn"
           from="Caio · Viver de IA"
-          subject="Tu sumiu há 19 dias · tô curioso, o que rolou"
-          preview="vi que tu não entra na plataforma há 19 dias. não tô cobrando · só curioso se foi algo que aconteceu (no curso ou na vida)."
+          subject="Você sumiu há 19 dias · tô curioso, o que rolou"
+          preview="vi que você não entra na plataforma há 19 dias. não tô cobrando · só curioso se foi algo que aconteceu (no curso ou na vida)."
           time="seg · 11:14"
           notes={{
             when: 'D+14 da última atividade · uma única vez · não escala em sequência',
@@ -887,7 +887,7 @@ function LifecycleSection() {
               Rafael,
             </p>
             <p>
-              vi que tu não entra na plataforma há <strong>19 dias</strong>. não tô cobrando · só
+              vi que você não entra na plataforma há <strong>19 dias</strong>. não tô cobrando · só
               curioso pra saber se foi algo.
             </p>
 
@@ -898,7 +898,7 @@ function LifecycleSection() {
               <li>
                 <strong>Vida atravessou.</strong> Operação ficou em crise, projeto novo
                 explodiu, família precisou. ok, <strong>tem botão de pausa</strong> (1 mês ou
-                3) que congela o ciclo sem cobrar e tu volta quando puder.
+                3) que congela o ciclo sem cobrar e você volta quando puder.
               </li>
               <li>
                 <strong>O curso travou em algum lugar.</strong> Módulo difícil, prompt que não
@@ -931,7 +931,7 @@ function LifecycleSection() {
         <EmailFrame
           category="Lifecycle · win-back"
           from="Caio · Viver de IA"
-          subject="3 coisas mudaram desde que tu saiu · acho que faz sentido voltar"
+          subject="3 coisas mudaram desde que você saiu · acho que faz sentido voltar"
           preview="cancelou mentoria em fev. desde então: mentoria virou 1:1 toda semana · plataforma ganhou laboratório de prompt · turma fechou em 25, não 50."
           time="qua · 14:42"
           notes={{
@@ -946,7 +946,7 @@ function LifecycleSection() {
               Rafael,
             </p>
             <p>
-              tu saiu da mentoria em <strong>fev 2026</strong> — 3 meses já. te escrevo porque
+              você saiu da mentoria em <strong>fev 2026</strong> — 3 meses já. te escrevo porque
               3 coisas mudaram desde então que talvez te interessem:
             </p>
 
@@ -957,7 +957,7 @@ function LifecycleSection() {
               </li>
               <li>
                 <strong>Plataforma ganhou laboratório de prompt</strong>. dá pra testar
-                variações dos teus prompts contra dataset real, A/B side-by-side, antes de
+                variações dos seus prompts contra dataset real, A/B side-by-side, antes de
                 subir pra produção.
               </li>
               <li>

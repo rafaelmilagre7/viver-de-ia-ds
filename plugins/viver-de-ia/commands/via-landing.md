@@ -59,11 +59,13 @@ O usuário descreveu contexto em `$ARGUMENTS`. Identifica que tipo de landing:
 
 **Prova com número:**
 ```
-+220 operadores formados desde 2024
-R$ 1,8M destravado por alunos em 12 meses
++[N] operadores formados desde 2024
+R$ [valor] destravado por alunos em 12 meses
 11.920 conversas/mês rodando via Nina
 90 dias até primeiro agente em produção
 ```
+
+Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N]`.
 
 **Prova atribuída** (depoimento):
 ```

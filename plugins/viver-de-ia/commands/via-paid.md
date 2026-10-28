@@ -38,8 +38,10 @@ O usuário descreveu plataforma + formato em `$ARGUMENTS`. Identifica:
 - "IA não te aposenta. Operador que não usa IA aposenta."
 
 **Prova com número** (use quando funil mid):
-- "220 operadores. R$ 1,8M destravado. 90 dias."
+- "[N] operadores. R$ [valor] destravado. 90 dias."
 - "11.920 conversas/mês rodando. Eu te ensino como."
+
+Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N]`.
 
 **Convite direto** (use quando funil bottom):
 - "Turma 2026.3 · 30 vagas · 4 meses"
@@ -72,7 +74,7 @@ CTA button: "Saiba mais"
 
 ### Meta carousel 5 cards
 ```
-Card 1: HOOK (número grande · ex: +220 operadores)
+Card 1: HOOK (número grande · ex: +[N] operadores)
 Card 2: contexto (90 dias até produção)
 Card 3: contexto (4 meses · mentoria 1:1)
 Card 4: resultado (R$ 1,8M destravado)

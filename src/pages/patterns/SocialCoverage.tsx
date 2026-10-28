@@ -8,7 +8,7 @@ import Section from '../../components/docs/Section';
 import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
 import wordmarkWhite from '../../assets/logos/VIVER_DE_IA_white.png';
 import wordmarkBlack from '../../assets/logos/VIVER_DE_IA_black.png';
-import appIcon from '../../assets/logos/VIA_app_icon.png';
+import appIcon from '../../assets/logos/VIA_app_icon_128.png';
 import './social-coverage.css';
 
 /* ============================================================

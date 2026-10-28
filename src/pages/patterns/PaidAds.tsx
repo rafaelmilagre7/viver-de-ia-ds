@@ -7,7 +7,7 @@ import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
 import monogramNavy from '../../assets/logos/VIA_monogram_hq.png';
-import appIcon from '../../assets/logos/VIA_app_icon.png';
+import appIcon from '../../assets/logos/VIA_app_icon_128.png';
 import './paid-ads.css';
 
 /* ============================================================

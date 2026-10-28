@@ -75,7 +75,7 @@ e copiar `SKILL.md`, `guidelines.md` e as 3 folhas CSS do plugin pra skill local
 
 - `bun run build` reescreve `public/sitemap.xml` com a data do dia — descarte (`git checkout public/sitemap.xml`) se não for intencional.
 - Bun mais novo reordena o `bun.lock` sem mudar versões; não commite esse ruído.
-- O site builda com `cssMinify: false` (vite.config.ts); a lib minifica com lightningcss — por isso o `lint:glass`.
+- Site e lib minificam CSS com lightningcss (desde 28/out o site também) — por isso o `lint:glass`: na ordem errada o minify apaga o `backdrop-filter`.
 - Sessão em nuvem (claude.ai/code): use `--config=playwright.cloud.config.ts` (Chromium pré-instalado). Visual regression não roda fora do macOS.
 - Endereço oficial = `https://viver-de-ia-ds.vercel.app` (canonical/OG/sitemap/robots). Se a marca ganhar `viverdeia.ai/design`, trocar nos 4 + `SITE_URL` do sitemap.
 - `lint:tokens` também barra `padding`/`margin` em px que já têm `--via-space-*` (off-scale passa).
