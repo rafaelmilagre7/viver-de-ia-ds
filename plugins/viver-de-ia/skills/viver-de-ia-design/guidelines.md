@@ -11,7 +11,8 @@ A voz da Viver de IA é a de um operador experiente compartilhando o que funcion
 ### Princípios
 
 - **Transformação maior que ferramenta.** Toda história é sobre o que o operador consegue depois — receita, margem, autonomia. A stack é meio, nunca fim.
-- **Toda afirmação carrega número ou citação.** "+11.920 conversas", "R$ 4.600/mês", "100% automatizado". Sem isso é blog, não é cases.
+- **Toda afirmação carrega número ou citação.** "+11.920 conversas", "R$ [valor]/mês", "100% automatizado". Sem isso é blog, não é cases.
+- **Nunca invente preço nem número de alunos/operadores/vagas.** Pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`.
 - **Pontos finais, não exclamações.** Confiante sem ser estridente.
 - **Brasilidade quente, sem clichê.** PT-BR direto, "você" infinitivo, nunca "o senhor". Sem emoji, sem unicode decorativo.
 
@@ -55,7 +56,7 @@ Curtas, primeira pessoa, sempre atribuídas. Mantenha a oralidade. **Sem italic*
 
 | Caso | Formato | Exemplo |
 |---|---|---|
-| Reais | R$ + espaço + ponto | R$ 4.600 · R$ 2,5M |
+| Reais | R$ + espaço + ponto | R$ 1.234 · R$ 2,5M |
 | Porcentagem | sem espaço | 100% · +42% |
 | Plus | com sinal | +11.920 |
 | Tempo | sem espaço · slash | 24/7 · 16 semanas |
@@ -99,7 +100,7 @@ Checklist obrigatório antes de marcar tela como pronta.
 
 ### Surfaces — glass + atmospheric
 
-✅ Glass base: `linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.7))` + `backdrop-filter: blur(16-28px) saturate(140-180%)` + border + inset highlight · atmospheric: `radial-gradient at 0% 0%, rgba(10,31,59,0.04), transparent 60%` (signature) · liquid glass aparece em nav sticky, hero stat, modal, overlays
+✅ Glass base: `linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.7))` + `-webkit-backdrop-filter` e `backdrop-filter` pela receita `var(--via-glass-blur)` (nunca blur à mão · -webkit- primeiro) + border + inset highlight · atmospheric: `radial-gradient at 0% 0%, rgba(10,31,59,0.04), transparent 60%` (signature) · liquid glass aparece em nav sticky, hero stat, modal, overlays
 ❌ Bg branco flat sem hierarquia · glass em dashboard denso ou tabela de dados · sombras pretas puras (devem ser navy-tinted)
 
 ### Status indicators — quando dot é legítimo
@@ -257,13 +258,13 @@ Existem classes utilitárias globais (`src/styles/surfaces.css`, importado no `i
 ```css
 /* CARD/painel de conteúdo — mais sólido, texto legível */
 background: var(--via-glass-card);
-backdrop-filter: var(--via-glass-blur); -webkit-backdrop-filter: var(--via-glass-blur);
+-webkit-backdrop-filter: var(--via-glass-blur); backdrop-filter: var(--via-glass-blur);  /* -webkit- SEMPRE primeiro */
 border: var(--via-glass-ring);
 box-shadow: var(--via-glass-shadow);        /* hover/elevado: --via-glass-shadow-lift */
 
 /* BARRA/chrome (nav sticky, toolbar, menu flutuante) — translúcido DE VERDADE */
 background: var(--via-glass-bar);
-backdrop-filter: var(--via-glass-blur-bar); -webkit-backdrop-filter: var(--via-glass-blur-bar);
+-webkit-backdrop-filter: var(--via-glass-blur-bar); backdrop-filter: var(--via-glass-blur-bar);
 ```
 - Vidro só "aparece" com algo atrás pra desfocar (fundo atmosférico/escuro/conteúdo rolando). Sobre branco liso ele **some** — ali use card sólido + hairline.
 - **NUNCA** glass em: tabela/dashboard denso (mata a leitura), card DENTRO de card (vira sopa de vidro), fundo de e-mail (sem suporte), e nunca ao custo do contraste AA.

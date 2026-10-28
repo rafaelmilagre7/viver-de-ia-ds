@@ -59,8 +59,8 @@ O usuário fez pergunta sobre brand em `$ARGUMENTS`. Identifica o tipo:
 
 | Contexto | Registro | Sample bom |
 |---|---|---|
-| Marketing landing | editorial-comercial | "+220 operadores. 90 dias até o primeiro agente em produção." |
-| Email transacional | concierge-direto | "Cobrança em 2 dias · R$ 6.000 · mentoria mensal" |
+| Marketing landing | editorial-comercial | "+[N] operadores. 90 dias até o primeiro agente em produção." |
+| Email transacional | concierge-direto | "Cobrança em 2 dias · R$ [valor] · mentoria mensal" |
 | Email editorial | crônica-operacional | "Essa semana vi a Nina passar de 11k pra 13k conversas" |
 | Comunidade Discord | mentor-presente | "oi pessoal, esse caso do João é exatamente o que conversei" |
 | Suporte 1:1 | pragmático-humano | "vi aqui que o webhook tá retornando 504 desde ontem 14h" |
@@ -68,6 +68,8 @@ O usuário fez pergunta sobre brand em `$ARGUMENTS`. Identifica o tipo:
 | Social orgânico | crônica-pessoal | "7 meses atrás a Nina perdia 40% das conversas no primeiro turno" |
 | Sales B2B | consultivo-objetivo | "Vocês perdem ~4h/semana só com triagem de leads no Meta" |
 | Eventos palco | palco-operacional | "Vou contar 3 erros que cometi construindo a Nina" |
+
+Nunca invente preço nem número de alunos/operadores/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`.
 
 ## Personality · 7 atributos
 

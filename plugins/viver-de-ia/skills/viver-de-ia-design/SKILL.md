@@ -21,7 +21,7 @@ Starter: `create-viverdeia-app` (scaffold Vite + React 19 + TS com ThemeProvider
 - O `colors_and_type.css` cru (HTML sem React) também nasce **claro**, mesmo com o SO em escuro: escuro só com `data-theme="dark"` no `<html>`.
 - Liquid glass **funciona lindamente sobre claro** — é a assinatura da casa. Não escureça a peça "pra o glass aparecer" (ver receita de glass card claro na seção 5).
 
-**Estado atual:** 100% WCAG AA de contraste nos 2 temas · 0 violação séria de a11y. Em código, use SEMPRE tokens semânticos que adaptam claro↔escuro (`var(--via-text-primary|body|muted|soft)`, `var(--via-surface)`, `var(--via-border-soft)`) — nunca hardcode navy/branco em texto/superfície. Link em texto corrido = sublinhado. De-ênfase por cor (token mais suave), não opacity. E-mail trava tudo em claro.
+**Estado atual:** 100% WCAG AA de contraste nos 2 temas · 0 violação séria de a11y. Em código, use SEMPRE tokens semânticos que adaptam claro↔escuro (`var(--via-text-primary|body|muted|soft)`, `var(--via-surface)`, `var(--via-border-soft)`) — nunca hardcode navy/branco em texto/superfície. Link em texto corrido = sublinhado (o `colors_and_type.css` já sublinha `<a>` sem classe dentro de `<p>`). De-ênfase por cor (token mais suave), não opacity. E-mail trava tudo em claro.
 
 Quando em dúvida, navegue o reference site — é o gabarito visual mais atualizado. Cmd+K abre busca real com keywords PT-BR/EN.
 
@@ -90,7 +90,8 @@ Tokens semânticos reais de texto: `--via-text-primary`, `--via-text-body`, `--v
   white-space: nowrap;
   line-height: 1.4;
   background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(247,248,250,0.42));
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: var(--via-glass-blur);  /* receita por token · -webkit- SEMPRE primeiro */
+  backdrop-filter: var(--via-glass-blur);
 }
 ```
 
@@ -127,6 +128,7 @@ Live minúsculo "ao vivo" — nunca caps lock "AO VIVO". O `<em>` fica RETO (gua
 
 - PT-BR direto · "você" infinitivo
 - Sempre número ou citação atribuída · sem "centenas" genérico
+- **Nunca invente preço nem número de alunos/operadores/vagas** · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
 - Sem clichê IA ("revolucione", "transforme", "o futuro chegou")
 - Sem emoji decorativo (✨🚀💪🔥) · sem urgência fabricada
 - Sentence-case em CTAs · não caps lock
@@ -441,7 +443,7 @@ Em `/patterns/*` — todos com fluxo interativo + princípios editoriais:
 - **`/patterns/errors`** · 404 · 403 · 500 · maintenance · copy honesta (sem 🤖 oops · sem dark pattern)
 - **`/patterns/billing`** · checkout em steps · resumo lateral sticky · sem countdown manipulativo
 
-**Princípios herdados:** resumo sempre visível (`<aside sticky>`) · voltar não perde dados · sem dark pattern (countdown/scarcity falsa/defaults manipulativos) · confirmação textual antes de submit. Junto com os patterns anteriores: `cancellation`, `auth-flow`, `onboarding`, `dashboard`, `lesson-player`, `cohort`, `curriculum`, etc.
+**Princípios herdados:** resumo sempre visível (`<aside sticky>`) · voltar não perde dados · sem dark pattern (countdown/scarcity falsa/defaults manipulativos) · confirmação textual antes de submit. Junto com os patterns anteriores: `cancellation`, `auth-flow`, `onboarding`, `dashboard`, `lesson`, `curriculum`, etc.
 
 ---
 
@@ -487,7 +489,7 @@ Gera: `index.html` com anti-FOUC inline · `package.json` (React 19 + Vite 6 + T
 
 | Bloco | Cobertura |
 |---|---|
-| **Email Coverage** | galeria editorial de templates (welcome, billing, churn, digest, urgent ops, drip, event invite, recap, lançamento, NPS, oferta, win-back) — mockups; os **enviáveis** ficam em `emails/` (13 de produção) |
+| **Email Coverage** | galeria editorial de templates (welcome, billing, churn, digest, urgent ops, drip, event invite, recap, lançamento, NPS, oferta, win-back) — mockups; os **enviáveis** ficam em `emails/` (14 de produção) |
 | **Social Coverage** | Instagram (post + story + reel cover + highlight) · LinkedIn pessoal/empresa · YouTube · X · TikTok · Podcast cover · **18 templates** |
 | **Paid Ads** | Meta Ads (single + carousel + video + story + reel) · Google Display (6 sizes) · headlines + descrições editoriais |
 | **Landing Elements** | Hero variants · CTAs · Trust signals · FAQ · Pricing comparison · Lead magnet · Countdown · Comparativo concorrente |
@@ -554,7 +556,7 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 - **46 componentes de UI** em 9 categorias + `ThemeProvider` (47 símbolos exportados no barrel)
 - **46 API docs** Radix-style (um por componente)
 - **14 templates de email de produção** (react-email · enviáveis)
-- **206 tokens** `--via-*` únicos · navy alpha = **18 stops** (02→80) · tinta de sombra 03→60 · receitas glass · escala de raio · paleta dataviz
+- **196 tokens** `--via-*` únicos · navy alpha = **18 stops** (02→80) · tinta de sombra 03→60 · receitas glass · escala de raio · paleta dataviz
 - **18 templates social** · **6 canais** · cobertura paid/landing/commercial/editorial/event
 - Dark mode completo · 100% WCAG AA de contraste (claro + escuro) · 0 violação séria de a11y
 - **Auditoria visual 100% (28/Jul/2026):** todas as telas do reference site revisadas uma a uma, em claro E escuro, com medição de pixel — as regras deste manifesto saem dessa auditoria, não de teoria
