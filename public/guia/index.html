@@ -7,10 +7,14 @@
 <meta name="description" content="O passo a passo que Rafael Milagre usou pra construir o Design System do Viver de IA — pra fundadores e líderes. Baixe o PDF." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<!-- Fonte sem travar o 1º paint: o texto aparece na hora e troca pra Geist quando chega -->
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 <meta property="og:title" content="Guia: Design System de nível mundial operado por IA" />
 <meta property="og:description" content="O passo a passo, pra fundadores e líderes. Por Rafael Milagre · Viver de IA." />
-<meta property="og:image" content="https://viver-de-ia-ds.vercel.app/guia/cover.png" />
+<meta property="og:image" content="https://viver-de-ia-ds.vercel.app/guia/cover-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1697" />
 <meta property="og:type" content="website" />
 <style>
   :root {
@@ -65,18 +69,19 @@
 </style>
 </head>
 <body>
+  <!-- Caminhos absolutos: em /guia (sem barra final) os relativos caíam na raiz e quebravam capa e PDF -->
   <main class="wrap">
     <figure class="cover-fig">
-      <a href="./guia-design-system-viver-de-ia.pdf" aria-label="Baixar o guia em PDF">
-        <img src="./cover.png" alt="Capa do guia: como dar à sua empresa um Design System de nível mundial operado por IA" />
+      <a href="/guia/guia-design-system-viver-de-ia.pdf" aria-label="Baixar o guia em PDF">
+        <img src="/guia/cover-640.webp" srcset="/guia/cover-640.webp 640w, /guia/cover-960.webp 960w" sizes="(max-width: 364px) calc(100vw - 44px), 320px" width="640" height="905" fetchpriority="high" alt="Capa do guia: como dar à sua empresa um Design System de nível mundial operado por IA" />
       </a>
     </figure>
     <div class="content">
-      <div class="brandrow"><img src="./monogram-white.png" alt="" /><span>Viver de IA</span></div>
+      <div class="brandrow"><img src="/guia/monogram-white-56.png" width="28" height="15" alt="" /><span>Viver de IA</span></div>
       <p class="eyebrow">Guia · Marca + IA</p>
       <h1>Um Design System de <em>nível mundial</em>, operado por IA.</h1>
       <p class="pitch">O passo a passo que usei pra construir o Design System do Viver de IA — do zero ao deploy, sem time de design nem agência. Escrito pra fundadores e líderes: sem jargão, sem código.</p>
-      <a class="cta" href="./guia-design-system-viver-de-ia.pdf">Baixar o guia em PDF →</a>
+      <a class="cta" href="/guia/guia-design-system-viver-de-ia.pdf">Baixar o guia em PDF →</a>
       <p class="meta">PDF · 19 páginas · guia completo</p>
       <p class="by">por <strong>Rafael Milagre</strong> · fundador, Viver de IA</p>
     </div>
