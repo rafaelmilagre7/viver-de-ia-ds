@@ -37,6 +37,9 @@ jobs:
       - name: sync do pacote do time (plugin espelha a fonte)
         run: bun run lint:sync
 
+      - name: ordem do vidro (minify não pode apagar o backdrop-filter)
+        run: bun run lint:glass
+
       - name: typecheck + build
         run: bun run build
 

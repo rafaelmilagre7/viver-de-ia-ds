@@ -4,8 +4,8 @@
 .vds-cf {
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -47,8 +47,8 @@
   padding: 12px 18px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   border: 1px solid var(--via-border-soft);
   cursor: pointer;
   font-family: var(--via-font);
@@ -249,8 +249,8 @@
   padding: 8px 18px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: 1px dashed var(--via-navy-14);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
@@ -289,8 +289,8 @@
   padding: 18px 22px 16px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -478,8 +478,8 @@
   padding: 6px 12px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -601,8 +601,8 @@
   padding: 14px 16px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   isolation: isolate;

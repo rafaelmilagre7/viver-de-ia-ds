@@ -702,8 +702,8 @@ a:hover { text-decoration: underline; }
 /* Light glass: white-tinted, used on gray-50 / gray-100 surfaces */
 .via-glass {
   background: linear-gradient(180deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.42) 100%);
-  backdrop-filter: var(--via-blur-md);
   -webkit-backdrop-filter: var(--via-blur-md);
+  backdrop-filter: var(--via-blur-md);
   border: 1px solid rgba(255,255,255,0.80);
   border-radius: var(--via-radius-lg);
   box-shadow: var(--via-shadow-glass-light);
@@ -711,8 +711,8 @@ a:hover { text-decoration: underline; }
 
 .via-glass-strong {
   background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.58) 100%);
-  backdrop-filter: var(--via-blur-lg);
   -webkit-backdrop-filter: var(--via-blur-lg);
+  backdrop-filter: var(--via-blur-lg);
   border: 1px solid rgba(255,255,255,0.95);
   border-radius: var(--via-radius-lg);
   box-shadow: var(--via-shadow-glass-light);
@@ -721,8 +721,8 @@ a:hover { text-decoration: underline; }
 /* Dark glass: used in the rare full-bleed navy moments (footer, CTA) */
 .via-glass-dark {
   background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 100%);
-  backdrop-filter: var(--via-blur-md);
   -webkit-backdrop-filter: var(--via-blur-md);
+  backdrop-filter: var(--via-blur-md);
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: var(--via-radius-lg);
   box-shadow: var(--via-shadow-glass-dark);
@@ -732,8 +732,8 @@ a:hover { text-decoration: underline; }
 /* Liquid pill — for status / announcement labels */
 .via-liquid {
   background: linear-gradient(180deg, rgba(255,255,255,0.80), rgba(255,255,255,0.55));
-  backdrop-filter: var(--via-blur-md);
   -webkit-backdrop-filter: var(--via-blur-md);
+  backdrop-filter: var(--via-blur-md);
   border: 1px solid rgba(255,255,255,0.95);
   border-radius: var(--via-radius-pill);
   box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(10,31,59,0.08);

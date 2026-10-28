@@ -158,8 +158,8 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
-  backdrop-filter: var(--via-blur-lg);
   -webkit-backdrop-filter: var(--via-blur-lg);
+  backdrop-filter: var(--via-blur-lg);
 }
 .vds-sh-glass em { color: var(--via-text-muted); font-style: normal; }
 

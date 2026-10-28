@@ -30,8 +30,8 @@
   padding: 7px 14px;
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -101,8 +101,8 @@
   padding: 16px 18px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   transition:
@@ -139,8 +139,8 @@ button.via-row-card {
   padding: 24px 26px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   isolation: isolate;
@@ -196,8 +196,8 @@ button.via-row-card {
    --------------------------------------------------------------- */
 .via-bar-glass {
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   border-bottom: 0.5px solid var(--via-navy-12);
 }
 

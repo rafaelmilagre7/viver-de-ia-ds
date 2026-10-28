@@ -11,8 +11,8 @@
 }
 .vds-com-slide {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   border-radius: var(--via-radius-sm);
@@ -25,8 +25,8 @@
   gap: var(--via-space-2_5);
   padding: 10px 14px;
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   border-bottom: 0.5px solid var(--via-navy-08);
 }
 .vds-com-slide-num {
@@ -117,8 +117,8 @@
 .vds-com-deck-rules {
   padding: 24px 28px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   border-radius: var(--via-radius-md);
@@ -214,8 +214,8 @@
   gap: var(--via-space-3_5);
   padding: 18px 22px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   border-radius: var(--via-radius-sm);
@@ -464,8 +464,8 @@
   gap: var(--via-space-3_5);
   padding: 22px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   border-radius: var(--via-radius-md);

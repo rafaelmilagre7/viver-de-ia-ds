@@ -338,8 +338,8 @@
   padding: 22px 24px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   /* Tinta de sombra, não navy. --via-glass-shadow é montado com --via-navy-14/-06,
      que invertem pra branco no tema escuro e viram halo em volta do card.

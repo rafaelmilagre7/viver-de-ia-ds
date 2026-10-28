@@ -44,8 +44,8 @@
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   color: var(--via-text-primary);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
@@ -98,8 +98,8 @@
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 12px 30px -18px var(--via-shadow-ink-14);
 }
 .vds-dist-tool header {
@@ -161,8 +161,8 @@
   padding: 12px 16px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   font-family: var(--via-font);
@@ -189,8 +189,8 @@
   padding: 22px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 8px 20px -12px var(--via-shadow-ink-14);
 }

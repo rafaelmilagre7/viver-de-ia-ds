@@ -32,8 +32,8 @@
   margin-bottom: 28px;
   padding: 8px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-pill);
   box-shadow:
@@ -73,8 +73,8 @@
 .vds-err-switcher__btn:hover {
   color: var(--via-text-primary);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   transform: translateY(-1px);
   box-shadow:
@@ -114,8 +114,8 @@
   min-height: 540px;
   padding: 88px 56px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -166,8 +166,8 @@
   gap: var(--via-space-2);
   padding: 5px 12px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font-mono);
@@ -246,8 +246,8 @@
   gap: var(--via-space-2);
   padding: 6px 10px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font-mono);
@@ -270,8 +270,8 @@
   position: relative;
   padding: 22px 22px 20px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
+  backdrop-filter: blur(22px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   box-shadow:

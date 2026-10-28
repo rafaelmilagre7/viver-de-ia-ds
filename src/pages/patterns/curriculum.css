@@ -105,8 +105,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(24px) saturate(140%);
   -webkit-backdrop-filter: blur(24px) saturate(140%);
+  backdrop-filter: blur(24px) saturate(140%);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -24px var(--via-shadow-ink-20);
@@ -309,8 +309,8 @@
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -351,8 +351,8 @@
 
 .vds-module-head:hover {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -493,8 +493,8 @@
 
 .vds-lesson:hover:not(.locked) {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -516,8 +516,8 @@
 
 .vds-lesson.playing {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -673,8 +673,8 @@
   height: 30px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   color: var(--via-text-primary);
   border: var(--via-glass-ring);
   display: inline-flex;
@@ -734,8 +734,8 @@
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 8px 24px -16px var(--via-shadow-ink-10);

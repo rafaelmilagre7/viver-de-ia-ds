@@ -8,8 +8,8 @@
   border-radius: var(--via-radius-md);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   box-shadow: var(--via-glass-shadow);
   scrollbar-width: thin;
   scrollbar-color: var(--via-navy-18) transparent;

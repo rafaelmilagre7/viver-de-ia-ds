@@ -158,8 +158,8 @@
   padding: 36px 32px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   isolation: isolate;
@@ -226,8 +226,8 @@
   padding: 14px 16px;
   position: relative;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   border-radius: var(--via-radius-md);
@@ -265,8 +265,8 @@
   flex-direction: column;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   isolation: isolate;
@@ -417,8 +417,8 @@
   padding: 36px 40px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   isolation: isolate;

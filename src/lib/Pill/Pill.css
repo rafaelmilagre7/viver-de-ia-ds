@@ -38,8 +38,8 @@
 .via-pill--default {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-color: var(--via-navy-14);
   color: var(--via-text-primary);
   box-shadow:
@@ -50,8 +50,8 @@
 /* Attn · accent soft · SEMÂNTICO (warning real) */
 .via-pill--attn {
   background: linear-gradient(180deg, var(--via-navy-12), var(--via-navy-08));
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-color: var(--via-navy-25);
   color: var(--via-accent-warm);
   box-shadow:
@@ -63,8 +63,8 @@
 .via-pill--churn {
   background:
     linear-gradient(180deg, rgba(184, 92, 92, 0.12), rgba(184, 92, 92, 0.06));
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-color: rgba(184, 92, 92, 0.30);
   color: var(--via-coral-dark);
   font-weight: var(--via-fw-semibold);
@@ -76,8 +76,8 @@
 /* Success · navy editorial (sem semáforo verde) */
 .via-pill--success {
   background: linear-gradient(180deg, var(--via-navy-08), var(--via-navy-04));
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-color: var(--via-navy-16);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);

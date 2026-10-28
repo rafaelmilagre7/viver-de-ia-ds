@@ -15,8 +15,8 @@
   position: relative;
   padding: 32px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -384,8 +384,8 @@
   letter-spacing: -0.006em;
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   color: var(--via-text-primary);
   cursor: pointer;
   box-shadow:

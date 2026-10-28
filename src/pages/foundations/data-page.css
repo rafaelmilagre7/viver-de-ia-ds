@@ -82,8 +82,8 @@
   padding: 24px 24px 22px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   isolation: isolate;

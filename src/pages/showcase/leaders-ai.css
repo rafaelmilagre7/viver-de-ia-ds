@@ -14,8 +14,8 @@
   gap: var(--via-space-7);
   padding: 14px 48px;
   background: linear-gradient(180deg, rgba(2,22,42,0.85), rgba(10,31,59,0.65));
-  backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 .la-nav img { height: 28px; filter: brightness(0) invert(1); }
@@ -202,8 +202,8 @@
 .la-speaker {
   padding: 18px 22px;
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: var(--via-radius-lg);
   display: flex;

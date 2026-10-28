@@ -22,8 +22,8 @@
   height: 36px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   display: inline-flex;
@@ -86,8 +86,8 @@
   max-width: 100%;
   margin-top: 30px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow:
@@ -310,8 +310,8 @@
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 8px 24px -18px var(--via-shadow-ink-20);
@@ -352,8 +352,8 @@
   flex-shrink: 0;
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
   box-shadow: 0 1px 0 var(--via-edge-hi) inset;
 }
 
@@ -695,8 +695,8 @@
   border-radius: var(--via-radius-lg);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   box-shadow: var(--via-glass-shadow);
 }
 
@@ -802,8 +802,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
   overflow: hidden;
   isolation: isolate;
   box-shadow:
@@ -857,8 +857,8 @@
   padding: 8px 12px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -899,8 +899,8 @@
   padding: 8px 14px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),

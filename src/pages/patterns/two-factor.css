@@ -38,8 +38,8 @@
   margin: 0 auto;
   padding: 36px 36px 32px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
+  backdrop-filter: blur(28px) saturate(200%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -136,8 +136,8 @@
   align-items: center;
   padding: 4px 10px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
@@ -180,8 +180,8 @@
   padding: 18px 20px;
   width: 100%;
   background: var(--via-glass-card);
-  backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
   text-align: left;
@@ -292,8 +292,8 @@
     radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
     radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
     var(--via-glass-card);
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
   display: flex;
@@ -371,8 +371,8 @@
     radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
     radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
     var(--via-glass-card);
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
   display: grid;
@@ -464,8 +464,8 @@
   position: relative;
   padding: 22px 22px 20px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
+  backdrop-filter: blur(22px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   box-shadow:

@@ -39,8 +39,8 @@
   position: relative;
   padding: 36px 36px 28px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
+  backdrop-filter: blur(28px) saturate(200%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -171,8 +171,8 @@
      centralizada, desalinhada do nome. Coluna editorial = flush left. */
   text-align: left;
   background: var(--via-glass-card);
-  backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -369,8 +369,8 @@
   position: relative;
   padding: 22px 24px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
   margin-bottom: 16px;
@@ -446,8 +446,8 @@
   top: 96px;
   padding: 24px 22px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
+  backdrop-filter: blur(28px) saturate(200%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -560,8 +560,8 @@
   position: relative;
   padding: 22px 22px 20px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   box-shadow:

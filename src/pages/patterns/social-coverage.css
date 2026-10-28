@@ -9,8 +9,8 @@
   gap: var(--via-space-2);
   padding: 12px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);
@@ -52,8 +52,8 @@
 }
 .vds-sc-nav-btn:hover {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   transform: translateY(-1px);
   box-shadow:
@@ -71,8 +71,8 @@
 }
 .vds-sc-nav-btn.is-active {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -93,8 +93,8 @@
 .vds-sc-spec {
   padding: 22px 24px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);
@@ -476,8 +476,8 @@
   flex-wrap: wrap;
   padding: 32px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);

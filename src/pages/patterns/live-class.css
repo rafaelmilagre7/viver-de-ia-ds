@@ -58,8 +58,8 @@
   border-radius: var(--via-radius-pill);
   background: rgba(184, 92, 92, 0.18);
   border: 1px solid rgba(184, 92, 92, 0.4);
-  backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
   letter-spacing: -0.008em;
@@ -124,8 +124,8 @@
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   font-size: var(--via-fs-xs);
   color: var(--via-gray-200);
   letter-spacing: -0.005em;
@@ -193,8 +193,8 @@
   border-radius: var(--via-radius-lg);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 8px 22px -8px rgba(0, 0, 0, 0.40);
@@ -349,8 +349,8 @@
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.20);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color: var(--via-white);
   font-family: inherit;
@@ -414,8 +414,8 @@
   gap: 0;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   isolation: isolate;
@@ -517,8 +517,8 @@
   /* sobre navy os alphas têm que ser brancos — espelha o vidro dos tiles do countdown */
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
   margin-bottom: 18px;
   text-align: center;
@@ -565,8 +565,8 @@
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   min-width: 56px;
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
 }
 
 .vds-live-countdown strong {
@@ -658,8 +658,8 @@
   flex-direction: column;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   overflow: hidden;
   transition: all 240ms var(--via-ease-out);
@@ -697,8 +697,8 @@
   padding: 10px 14px;
   border-radius: var(--via-radius-sm);
   background: rgba(10, 31, 59, 0.6);
-  backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 2;
   text-align: center;
@@ -732,8 +732,8 @@
   height: 64px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.28);
   color: var(--via-white);
   cursor: pointer;
@@ -777,8 +777,8 @@
   padding: 5px 11px;
   border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.7);
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--via-white);
   font-family: var(--via-font-mono);

@@ -38,8 +38,8 @@
   align-items: center;
   padding: 14px 18px 14px 14px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(32px) saturate(200%);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
+  backdrop-filter: blur(32px) saturate(200%);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -339,8 +339,8 @@
   height: 40px;
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: 1px solid rgba(255, 255, 255, 0.20);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color: var(--via-white);
@@ -567,8 +567,8 @@
   height: 96px;
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
-  backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.30);
   display: inline-flex;
   align-items: center;
@@ -615,8 +615,8 @@
      pra branco 55% no dark e a barra virava vidro CLARO — ícone branco 85%
      em cima sumia. Navy literal, como o resto do interior do vídeo. */
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.36), rgba(10, 31, 59, 0.60));
-  backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255,255,255,0.16);
   border-radius: var(--via-radius-md);
 }
@@ -712,8 +712,8 @@
 .vds-video .vid-quality {
   padding: 5px 10px;
   background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: 1px solid rgba(255, 255, 255, 0.20);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   border-radius: var(--via-radius-sm);
@@ -751,8 +751,8 @@
   gap: var(--via-space-2);
   padding: 6px 12px;
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: var(--via-radius-pill);
   opacity: 0.85;

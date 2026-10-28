@@ -658,8 +658,8 @@
   padding: 12px 16px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -800,8 +800,8 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
   border: 1px solid rgba(255,255,255,0.22);
   color: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .via-mesh-navy .vds-auth-cta.ghost:hover,
@@ -831,8 +831,8 @@
 .via-mesh-navy .vds-auth-field {
   background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
   border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .via-mesh-navy .vds-auth-field:focus-within {
   background: linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.06) 100%);
@@ -854,8 +854,8 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
   border: 1px solid rgba(255,255,255,0.22);
   color: var(--via-white);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0,0,0,0.10);
@@ -925,8 +925,8 @@
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.18);
   color: rgba(255,255,255,0.78);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 /* …e o envelope precisa descer pra não colidir com a pill que voltou a existir
@@ -941,8 +941,8 @@
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.18);
   color: rgba(255,255,255,0.86);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 .via-mesh-navy .vds-auth-meta-pill strong,
 .vds-auth-card.success .vds-auth-meta-pill strong {
@@ -990,8 +990,8 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 6px 14px -4px rgba(0,0,0,0.30);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 /* Success ring (envelope) em context navy ------------------- */
@@ -1002,8 +1002,8 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 12px 24px -8px rgba(0,0,0,0.32);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .vds-auth-card.success .vds-auth-success-ring-pulse {
   border-color: rgba(255,255,255,0.30);

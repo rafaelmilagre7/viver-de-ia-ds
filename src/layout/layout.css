@@ -33,8 +33,8 @@
   padding: 0 28px;
   height: 64px;
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   /* Borda de rolagem (WWDC scroll edge effect) · .is-scrolled vem do
      useScrollEdge — só existe com conteúdo rolado por baixo */
   border-bottom: 0.5px solid transparent;
@@ -146,8 +146,8 @@
   /* chrome de navegação · vidro de barra pra a atmosfera do shell passar
      desfocada por baixo (mesma matéria do header sticky) */
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   padding: 32px 24px 64px;
   overflow-y: auto;
   position: sticky;
@@ -346,8 +346,8 @@
   inset: 64px 0 0;
   z-index: 40;
   background: rgba(2, 22, 42, 0.55);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   animation: vds-cmdk-scrim-in 200ms var(--via-ease-out);
 }
 
@@ -361,8 +361,8 @@
     bottom: 0;
     width: 300px;
     background: var(--via-glass-card);
-    backdrop-filter: var(--via-glass-blur);
     -webkit-backdrop-filter: var(--via-glass-blur);
+    backdrop-filter: var(--via-glass-blur);
     border-right: 0.5px solid var(--via-navy-12);
     transform: translateX(-100%);
     transition: transform 320ms var(--via-ease-out);

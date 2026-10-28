@@ -93,8 +93,8 @@
   padding: 14px 18px;
   border-radius: var(--via-radius-md);
   background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -358,8 +358,8 @@
   padding: 22px 22px 20px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
 }
@@ -624,8 +624,8 @@
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
@@ -816,8 +816,8 @@
   padding: 14px 22px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -857,8 +857,8 @@
   padding: 7px 14px;
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -921,8 +921,8 @@
   padding: 32px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--via-border-soft);
   position: relative;
   overflow: hidden;
