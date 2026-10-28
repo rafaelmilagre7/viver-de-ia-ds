@@ -1166,6 +1166,13 @@
 
 .vds-pa-gs-sitelinks strong:hover { text-decoration: underline; }
 
+/* Google Search ad · headline azul precisa virar variante dark-safe
+   (veio de tokens.css · regra só desta página) */
+[data-theme="dark"] .vds-pa-gs-headline,
+[data-theme="dark"] .vds-pa-gs-sitelinks strong {
+  color: #8AB4F8;  /* Google blue acessível em dark · WCAG AA */
+}
+
 .vds-pa-gs-sitelinks em {
   font-style: normal;
   font-size: var(--via-fs-label);

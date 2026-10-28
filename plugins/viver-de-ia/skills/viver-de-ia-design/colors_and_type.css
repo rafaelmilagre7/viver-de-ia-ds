@@ -308,23 +308,6 @@
   --via-success-text: #4FBF8B;
 }
 
-/* Google Search ad · headline azul precisa virar variante dark-safe */
-[data-theme="dark"] .vds-pa-gs-headline,
-[data-theme="dark"] .vds-pa-gs-sitelinks strong {
-  color: #8AB4F8;  /* Google blue acessível em dark · WCAG AA */
-}
-
-/* Anatomy rows · quote/content slides em dark */
-[data-theme="dark"] .vds-slide.quote .vds-quote-body,
-[data-theme="dark"] .vds-slide.content h3 {
-  color: var(--via-text-primary) !important;
-}
-
-[data-theme="dark"] .vds-slide-bullets strong,
-[data-theme="dark"] .vds-slide-bullets p {
-  color: var(--via-text-body) !important;
-}
-
 /* =============================================================
    SYSTEM TOKENS · fora de :root principal pra resolver dependência
    circular com os media queries acima. Tudo abaixo é base do DS.
@@ -679,6 +662,21 @@ h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-siz
 p { margin: 0; }
 a { color: var(--via-navy); text-decoration: none; }
 a:hover { text-decoration: underline; }
+/* link em texto corrido = sublinhado (WCAG 1.4.1 · cor não pode ser o único sinal).
+   Só <a> SEM classe dentro de <p> · nav, botão, card e pill-link têm classe e
+   ficam como estão. :where() deixa o peso igual ao de `a` → qualquer regra com
+   classe ainda decide. Traço fino + afastado; no hover ganha a cor do texto. */
+:where(p) a:where(:not([class])) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--via-navy-40);
+  text-underline-offset: 0.2em;
+}
+/* mesmo peso de a:hover e vem depois → o shorthand dele não apaga o traço fino */
+:where(p) a:where(:not([class])):hover {
+  text-decoration-thickness: 1px;
+  text-decoration-color: currentColor;
+}
 /* links crus (sem classe) · navy some no dark → azul claro legível */
 [data-theme="dark"] a:not([class]) { color: #8FB8F6; }
 
