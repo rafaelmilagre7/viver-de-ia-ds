@@ -112,6 +112,14 @@ Rodada de melhorias (28/out, aprovada pelo Rafael: "pode executar todas as corre
   "Manual de Identidade Visual" do Notion de Marketing (`#02162A`/`#2081E3`/`#0A4F95`, Avenir;
   Design.json com Inter, `#0F172A`, azul `#3B82F6`, verde `#10B981`). Apontar os dois pro DS
   ou arquivar.
+  **Decidido (28/out, Rafael):** o DS é a referência oficial — Geist, navy `#0A1F3B`. O brandbook
+  do designer (Drive, mar/2026, 24 p.) é a origem e bate com o DS em fundo claro, paleta, logo,
+  vidro e voz; só a letra difere (Avenir). Erros do brandbook: a amostra escreve `#0A4F95` e pinta
+  `#05223F` (p. 4); `#2081E3` só aparece nos usos proibidos do logo (p. 13) — o manual do Notion
+  copiou os rótulos, não as cores. Com ok do Rafael (28/out): os 2 manuais do Notion (Marketing
+  Team e Tools via) apontam pro DS com paleta/Geist corretas; os 2 `Design.json` viraram link pras
+  instruções de IA do DS; o doc do Drive ganhou `[DESATUALIZADO]` no título e descrição.
+  A página vazia de mesmo nome em Marketing / Paid Media foi pra lixeira do Notion (restaurável).
 - Uso real mostrou lacunas: regras de legibilidade do vidro medidas contra o fundo real (o
   Builder criou guarda ≥4,5:1), vidro nunca visto em Safari/iPhone, falta camada de tema por
   produto/sub-marca (o Subido está saindo do DS: Poppins, `#0B91F8`, sem vidro).
