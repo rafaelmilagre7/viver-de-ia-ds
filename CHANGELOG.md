@@ -6,6 +6,31 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Corrigido (28/out · auditoria do DS · plugin 1.7.0)
+
+- **Camada única de sobreposição na lib** (`_shared/overlay.ts` + `Portal`): os 14 overlays/popups (Modal, Drawer, Sheet, Lightbox, Command, Select, MultiSelect, Combobox, DropdownMenu, ContextMenu, Popover, HoverCard, Tooltip, DatePicker/DateRangePicker) vão pra um portal no `body` — Select dentro de Card/Modal não corta mais; pilha de Esc (só o de cima fecha); trava de scroll com contagem que devolve o `overflow` anterior; foco volta pro gatilho; popup fecha ao perder o foco. z-index vira escala `--via-z-*` (196 → 203 tokens).
+- **Gestos de fechar**: `useDragDismiss` guarda os callbacks em ref — re-render do pai não cancela mais a animação de saída (Sheet ficava meio fechado com a página travada; Toast idem). Drawer/Sheet/Lightbox voltam ao lugar se o consumidor mantém `open` (antes ficava um scrim invisível bloqueando a tela).
+- **Acessibilidade das peças compostas** (nada disso aparecia no axe, que não renderizava a lib): Select/DatePicker no padrão combobox (leitor de tela anuncia o valor escolhido); chips do MultiSelect fora do botão; grade do Calendar/DatePicker com linhas e células; grupos do Command; DropdownMenu com `aria-haspopup/expanded/controls`; TreeView com foco no `treeitem`; Icon com `role="img"`; Modal liga a descrição; Stepper anuncia etapa concluída; Toast pausa no hover/foco e usa uma região viva só; Carousel com pausa (WCAG 2.2.2) e slides escondidos fora do Tab; Tooltip/HoverCard fecham com Esc.
+- **Comportamento**: OTPInput não embaralha dígitos; "Últimos 7 dias" = 7; "Hoje" respeita min/max; TimePicker respeita min/max; TagInput com label ligado e foco mantido no máximo; Input com `useId` (sem id novo a cada tecla); Button `loading` não derruba o foco; ColorPicker com setas; Splitter no toque; Avatar cai pras iniciais se a foto falha; ThemeProvider não quebra com `localStorage` bloqueado e `useTheme` sem provider responde claro.
+- **Docs que prometiam o que não existe**: `/api/modal` documentava `dismissOnScrim` (agora existe), Pill `icon` era `iconLeft`, Slider sem 8 props, Drawer sem `footer`/`hideClose`, defaults errados (Tooltip 500 → 200 ms, Card `as`, Drawer `side`…).
+- **Busca**: as ~180 rotas serviam o mesmo título, descrição e canonical da home; agora cada rota tem os seus (`RouteMeta`), e 404/placeholder levam `noindex`.
+- **`/guia` sem barra final** carregava capa, monograma e botão de PDF quebrados (caminho relativo) — caminhos absolutos.
+- **Segurança**: `react-router-dom` 7.15.1 → 7.18.4 (5 alertas, 2 altos); `bun audit --prod` zerado.
+- **Coerência com a própria regra**: link em texto corrido sublinhado; seletores de páginas do site saíram do `tokens.css` (vazavam pra lib, kit e plugin com `!important`); kit para de levar Geist Italic; README do kit e `/via-deck` com logo e capa light-first; `/via-check` não manda mais usar itálico; preços e contagens de alunos de exemplo viram `R$ [valor]` / `[N]` com a regra "nunca invente".
+- **Travas**: `dist/lib/package.json` com `"private": true` (sem `publishConfig` público); starter usava `--via-surface-1/2` (não existem).
+- `heading-order` em `/patterns/paid-ads`; changelog apontava pro repositório errado.
+
+### Melhorado (28/out · auditoria do DS)
+
+- **Velocidade no celular**: CSS do site minificado (lightningcss, vidro conferido), Geist servida pelo próprio site com preload (sem Google Fonts), React/roteador em chunk próprio, logos com tamanho e cópias leves, capa do `/guia` em WebP. Lighthouse mobile: home 85 → 95, `/guia` 69 → 93 (LCP 7,7 → 2,6 s).
+- **Docs geradas do código**: `scripts/gen-props.mjs` lê os tipos da lib e alimenta as tabelas das 46 páginas `/api` (roda no `build`; `--check` barra arquivo velho); teste de drift falha se a página descreve prop que não existe ou deixa prop sem descrição. Botão **Copiar** em todo bloco de código e **playground** ao vivo em 14 componentes.
+- **Microcopy de produto**: `/guidelines/microcopy` com 65 frases canônicas (erro, vazio, confirmação, sucesso, carregamento, onboarding, botão, ajuda), fonte única em `src/content/microcopy.ts`, espelhada em `microcopy.md` da skill e no kit. Produto e emails em **"você"**: 7 templates que usavam tu/teu/tua corrigidos; `/via-check` passa a cobrar.
+- **Testes**: axe passa a rodar nas 46 páginas `/api` (a lib nunca era renderizada); 519 → 793 testes unitários; cobertura da lib 87 → 93% (piso de 30 → 80%).
+
+### Adicionado
+
+- Lib: `Modal.dismissOnScrim`, `DataTable.rowKey`, `DataTable.onSortStateChange`, `DataTable.sortBy` aceita `null`, tokens `--via-z-*`.
+
 ### Melhorado (28/out · rodada de melhorias)
 
 - **Marca abre clara também no CSS cru**: saiu o bloco `@media (prefers-color-scheme: dark) :root:not([data-theme])` — ele virava um escuro PARCIAL (só fundo e texto principal) em quem usava o `tokens.css` sem React. Escuro agora só com `data-theme="dark"`. Site e `<ThemeProvider>` não mudam (sempre setam o tema). O anti-FOUC do starter e o snippet da skill seguiam o SO por padrão — agora claro, igual ao Provider.
