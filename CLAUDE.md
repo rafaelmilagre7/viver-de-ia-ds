@@ -59,6 +59,8 @@ scripts/                   build/guard scripts · fix-*.mjs e migrate-glass.mjs 
 | qualquer coisa notável | `CHANGELOG.md` em `[Não lançado]` |
 
 A skill local do Rafael (`~/.claude/skills/viver-de-ia-design/`) vive fora do repo e deriva calada — avisar quando a do plugin mudar.
+No Mac dele, depois de push com bump do plugin: `claude plugin marketplace update viver-de-ia-ds && claude plugin update viver-de-ia@viver-de-ia-ds`,
+e copiar `SKILL.md`, `guidelines.md` e as 3 folhas CSS do plugin pra skill local (o resto da pasta local é só dela).
 
 ## Regras que mais quebram (detalhe na SKILL.md)
 

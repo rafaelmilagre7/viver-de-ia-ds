@@ -24,12 +24,23 @@ Tudo abaixo foi medido no repo ou no site, não estimado.
 | test:unit | 519/519 |
 | a11y (axe, WCAG 2.1 AA, todas as rotas) | 109/109 |
 | contraste (axe, claro + escuro, fora do CI) | 211/218 rota×tema limpas (96,8%) — ver P1 |
-| visual (Playwright) | não roda fora do macOS (baselines darwin) |
+| visual (Playwright, no Mac do Rafael, após o merge) | 218/218 — os consertos da retomada não mudaram pixel |
+| a11y + unit + build + kit repetidos no Mac | 109/109 · 519/519 · verde · ZIP idêntico byte a byte |
 
 ### Site no ar
 
-`viver-de-ia-ds.vercel.app` está no estado de ~6/ago: falta o email 14 (`welcome-plataforma`),
-e a partir desta branch faltam os consertos abaixo. Deploy é manual.
+`viver-de-ia-ds.vercel.app` está no estado de ~6/ago (último deploy de produção há 83 dias,
+time `viver-de-ia` na Vercel): falta o email 14 (`welcome-plataforma`) e os consertos abaixo.
+Deploy é manual (`vercel --prod` a partir do Mac, projeto já linkado em `.vercel/`).
+
+### Ferramentas do Rafael (Mac)
+
+- Plugin `viver-de-ia` instalado estava no **1.2.0** (25/jul) — os `/via-*` rodavam sem a lei
+  pós-auditoria (1.3.0) nem a física de gesto (1.4.0). Atualizado pro 1.4.1 em 28/out.
+- A skill local `~/.claude/skills/viver-de-ia-design/` é uma **segunda cópia** da mesma skill
+  (carrega junto com a do plugin). Estava sem o email 14 e com o vidro na ordem velha;
+  ressincronizada em 28/out. Enquanto existirem as duas, toda mudança na skill precisa ser
+  copiada pra lá (ou a cópia local é aposentada e fica só o plugin).
 
 ## Consertado na retomada
 
@@ -51,8 +62,12 @@ e a partir desta branch faltam os consertos abaixo. Deploy é manual.
 ## Achados em aberto
 
 ### P0 · colocar no ar
-- Mergear esta branch, **republicar o site** e avisar os produtos que vendorizam o CSS da lib
-  (Subido fixou no commit `ed6fb6b`) pra atualizar — o conserto do vidro só chega neles assim.
+- ~~Mergear esta branch~~ (PR #1, 28/out). Falta **republicar o site** e dar push do plugin 1.4.2.
+- **Nenhum consumidor tem o conserto do vidro** (levantamento no Mac, 28/out — tabela no fim).
+  Só `claude-viverdeia` e `via-talentos` linkam o `dist/lib` vivo (pedem reinstalar); o resto
+  vendoriza ou copiou tokens e precisa re-vendorizar ou corrigir a ordem no próprio CSS.
+- O rótulo "0.6.1" cobre `b17f062`, `ed6fb6b` e o HEAD — não distingue quem tem o conserto.
+  Subir a versão do pacote (0.6.2) junto com o aviso aos produtos.
 
 ### P1 · bugs e incoerências pequenas
 - **`--via-border-strong` muda de tipo**: cor no tema escuro, shorthand `1px solid …` no claro
@@ -93,9 +108,26 @@ e a partir desta branch faltam os consertos abaixo. Deploy é manual.
 
 ## Quem consome o DS hoje
 
-| Produto | Como |
-|---|---|
-| Subido | CSS da lib vendorizado em `src/design-system/via/` (0.6.1, `ed6fb6b`) + gate de drift; 19 dos 47 componentes; redesign paralelo saindo do DS |
-| Viver de IA Builder | pacote DS interno próprio, vidro forte estilo iOS 26 |
-| Aurora (painel) | tokens copiados à mão da skill local |
-| Emails, anúncios, peças | plugin `/via-*` e skill local |
+Levantamento no Mac do Rafael em 28/out (só leitura). "Vidro velho" = blocos com
+`backdrop-filter` antes do `-webkit-` no CSS próprio do projeto (contagem aproximada).
+
+| Projeto | Como consome | Fixado em | Vidro velho | Último commit | Fora do DS? |
+|---|---|---|---|---|---|
+| Subido (`~/Developer/Subido-Claude` + clone `subido-reunioes-capacidade-0930`) | lib + CSS vendorizados em `src/design-system/via/` + gate de drift | `ed6fb6b` (0.6.1) | 62 | 22/out | `main` segue Geist + vidro; branch `claude/redesign-1021` traz Poppins e `#0B91F8` |
+| Viver de IA Builder (`~/Developer/VIA-Builder` + worktrees `VIA-Builder-*`; 2º clone em `~/.cache/claude/builder-work`) | `vendor/viverdeia-design-system-0.6.1.tgz` + tokens próprios | `b17f062` (08/jul, mais velho que o Subido) | 4–20 por worktree; o `style.css` do tgz tem 7 de 61 regras de vidro com o blur padrão | 28/out | tokens bem forkados no `-Claude`; Poppins em 2 pontos |
+| claude-viverdeia (treinamento gratuito) | `file:../viver-de-ia-ds/dist/lib` | 0.6.1 (cópia de 06/jul) | 9 | 20/out | não |
+| via-talentos (recrutamento) | `file:` absoluto pro `dist/lib` | 0.6.1 (cópia de 17/jul) | 0 | 17/jul | não |
+| viver-de-ia-os (plataforma Íris) | cópia do `dist/lib` em `vendor/` | **0.4.0** (20/mai) — `style.css` sem nenhum blur padrão | 13 | 03/jun | leve (Inter) |
+| Aurora / CRM de vendas (`~/Projects/crm-pay-notification`, `~/iris-via-crm-notify-20260916`) | tokens portados à mão (`via-tokens.css`) | não dá pra fixar | 54–57 | 14/out | sim, de propósito: páginas públicas com Poppins e ciano |
+| Pessoas (`~/Projects/viver-people`, v0.28.0) | lib + tokens vendorizados em `src/vendor/via/` | ≈`92379bc` (0.6.1) | 64 | 22/set | não |
+| Site institucional (`~/site-viver-de-ia`) | tokens copiados | ≈`4932250` (22/jun) | 59 | 09/set | não |
+| Landing de proposta (`~/Developer/via-landing-proposta`) | 4 cópias de tokens | — | 77 | 10/set | keyframes "aurora" |
+| via-dossie, via-safra (páginas confidenciais) | `tokens.css` copiado | ≈`6dfb511` (30/mai) | 11 / 14 | ago / jul | não |
+| Dose Diária de IA (`~/Developer/dose-*`) | tokens próprios com `--via-*` | — | 0 | 28/out | não |
+| quebra-objecao, nina-connect-ai (+ worktrees) | cópia parcial de tokens | ≈`4dae03c` | 5 / 12 | jun / 24/out | não |
+| Emails, anúncios, peças | plugin `/via-*` e skill local | plugin 1.4.1 | — | — | — |
+
+Leitura: o desvio real de marca está só em 2 lugares (redesign do Subido, ainda fora do `main`,
+e as páginas públicas do Aurora). O resto ainda é Geist + navy + vidro, só que em versões
+velhas e sem o conserto do vidro. Builder, Subido e o CRM têm clones duplicados — atualização
+precisa chegar em todos.

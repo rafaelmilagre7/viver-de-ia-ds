@@ -23,6 +23,10 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 - Sondas da auditoria esquecidas na raiz (`__shadowcheck.mjs`, `__shadowcheck2.mjs`, `.shadow-check.mjs`).
 
+### Plugin
+
+- `viver-de-ia` **1.4.1 → 1.4.2**: leva a ordem do vidro corrigida nas 3 folhas empacotadas e o email 14 na skill. O conteúdo tinha mudado sem bump, então quem já estava no 1.4.1 não recebia.
+
 ### Jul–ago (sem release)
 
 - **Fluidez Apple** (04/ago): motor de mola próprio (`_shared/spring.ts` + `useDragDismiss`) com arrasto-pra-fechar em Drawer/Sheet/Lightbox/Toast, saída animada, origem espacial, materialização, resposta no apertar (`--via-dur-press` 110ms) e borda de rolagem. Plugin 1.4.0.
