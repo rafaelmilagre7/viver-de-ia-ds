@@ -34,9 +34,8 @@
     <meta name="twitter:description" content="Marca editorial, engenharia de precisão. Tokens, 46 componentes React e as regras da marca." />
     <meta name="twitter:image" content="https://viver-de-ia-ds.vercel.app/og-cover.png" />
 
-    <!-- Preconnect a fonts (caso adicionemos Geist via Google Fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonte principal self-hosted · baixa junto com o HTML, sem esperar o CSS -->
+    <link rel="preload" href="/src/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <script>
