@@ -1954,7 +1954,7 @@
         "name": "caption",
         "type": "ReactNode",
         "required": false,
-        "description": "Optional caption (visible header above the table)"
+        "description": "Optional caption · real `<caption>` (names the table for screen readers)"
       },
       {
         "name": "emptyState",
@@ -1970,9 +1970,9 @@
       },
       {
         "name": "sortBy",
-        "type": "string",
+        "type": "string | null",
         "required": false,
-        "description": "Controlled sort (overrides internal state when provided)",
+        "description": "Controlled sort (overrides internal state when provided) · `null` = controlled, unsorted",
         "control": {
           "kind": "string"
         }
@@ -1993,7 +1993,19 @@
         "name": "onSortChange",
         "type": "(key: string, dir: SortDir) => void",
         "required": false,
-        "description": "Notified when the user changes sort"
+        "description": "Notified when the user sets a sort (unchanged contract: never called on clear)"
+      },
+      {
+        "name": "onSortStateChange",
+        "type": "(sort: { key: string; dir: SortDir } | null) => void",
+        "required": false,
+        "description": "Notified on EVERY sort change, including the third click that clears it\n(`null`). Use it for controlled mode: `sortBy={sort?.key ?? null}`."
+      },
+      {
+        "name": "rowKey",
+        "type": "keyof T | ((row: T, index: number) => string | number)",
+        "required": false,
+        "description": "Stable row identity (key name or function) · default = index. Keeps cell state (checkboxes, inputs) attached to the right row after sorting."
       },
       {
         "name": "onRowClick",
@@ -3292,6 +3304,17 @@
         "type": "boolean",
         "required": false,
         "default": "true",
+        "description": "Renderiza o fundo escurecido · default true",
+        "control": {
+          "kind": "boolean"
+        }
+      },
+      {
+        "name": "dismissOnScrim",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Clicar no fundo fecha · default true · `false` protege formulário com dado não salvo (só X/ESC fecham)",
         "control": {
           "kind": "boolean"
         }

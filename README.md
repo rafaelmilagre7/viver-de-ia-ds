@@ -59,7 +59,7 @@ tests/           · Visual regression suite (Playwright)
 scripts/
   finalize-lib.mjs   · pós-build da library: gera package.json pronto pra consumo interno (não publica no npm)
 
-tokens.css         · 195 tokens --via-* (cores, type, spacing, glass, mesh)
+tokens.css         · 203 tokens --via-* (cores, type, spacing, glass, mesh, z-index)
 ```
 
 ---

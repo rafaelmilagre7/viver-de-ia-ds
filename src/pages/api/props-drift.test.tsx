@@ -28,13 +28,10 @@ vi.mock('../../components/docs/ComponentDoc', () => ({
 }));
 
 /**
- * Descrições aceitas antes da prop existir no código.
- * `dismissOnScrim` está sendo implementado no Modal em paralelo — quando a prop
- * entrar no código (e o gen:props rodar), tire daqui: o último teste avisa.
+ * Descrições aceitas antes da prop existir no código (vazio = nenhuma pendente).
+ * Quando a prop entrar no código (e o gen:props rodar), tire daqui: o último teste avisa.
  */
-const PENDING: Record<string, string[]> = {
-  Modal: ['dismissOnScrim'],
-};
+const PENDING: Record<string, string[]> = {};
 
 const pages = import.meta.glob<{ default: () => ReactNode }>('./Api*.tsx', { eager: true });
 const meta = generated as Record<string, ComponentMeta>;
