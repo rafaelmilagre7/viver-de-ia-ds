@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Combobox } from '../../lib/Combobox/Combobox';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Combobox as meta } from './props.generated.json';
 
 const CITIES = [
   { value: 'sp', label: 'São Paulo · SP' },
@@ -43,18 +44,20 @@ export default function ApiCombobox() {
         { part: 'via-combobox__empty', description: 'Empty state quando query não match nada' },
         { part: 'via-combobox__option', description: 'Item · highlight letras matched + check se selected' },
       ]}
-      props={[
-        { name: 'options', type: 'ComboboxOption[]', required: true, description: 'Array { value, label }' },
-        { name: 'value', type: 'string', description: 'Valor selecionado (controlado)' },
-        { name: 'defaultValue', type: 'string', description: 'Inicial (uncontrolled)' },
-        { name: 'onValueChange', type: '(value: string) => void', description: 'Callback ao escolher' },
-        { name: 'placeholder', type: 'string', default: "'Buscar…'", description: 'Texto vazio' },
-        { name: 'emptyLabel', type: 'string', default: "'Nenhum resultado'", description: 'Quando query não encontra nada' },
-        { name: 'label', type: 'string', description: 'Label visível acima' },
-        { name: 'size', type: "'sm' | 'md'", default: "'md'", description: 'Altura do input' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado' },
-        { name: 'ariaLabel', type: 'string', description: 'Pra screen reader quando não tem label' },
-      ]}
+      meta={meta}
+      descriptions={{
+        options: 'Array { value, label }',
+        value: 'Valor selecionado (controlado)',
+        defaultValue: 'Inicial (uncontrolled)',
+        onValueChange: 'Callback ao escolher',
+        placeholder: 'Texto vazio',
+        emptyLabel: 'Quando query não encontra nada',
+        label: 'Label visível acima',
+        size: 'Altura do input',
+        disabled: 'Bloqueado',
+        ariaLabel: 'Pra screen reader quando não tem label',
+        className: 'Classe extra no container',
+      }}
       examples={[
         {
           title: 'Combobox de cidades · digite pra filtrar',

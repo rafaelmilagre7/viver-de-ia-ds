@@ -1,5 +1,6 @@
 import { DataTable, type SortDir } from '../../lib/DataTable/DataTable';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { DataTable as meta } from './props.generated.json';
 
 type Operator = {
   id: string;
@@ -51,18 +52,20 @@ export default function ApiDataTable() {
         { part: 'via-dt__row', description: 'Linha · hover bg navy-04 + cursor (se onRowClick)' },
         { part: 'via-dt__cell', description: 'Célula · format opcional + align' },
       ]}
-      props={[
-        { name: 'data', type: 'T[]', required: true, description: 'Array de rows · T extends Record<string, unknown>' },
-        { name: 'columns', type: 'DataTableColumn<T>[]', required: true, description: 'Definição de colunas (key, label, accessor, render, sortable, align, width, meta)' },
-        { name: 'caption', type: 'ReactNode', description: 'Header acima da tabela (opcional)' },
-        { name: 'emptyState', type: 'ReactNode', description: 'Conteúdo quando data está vazio' },
-        { name: 'initialSort', type: '{ key: string; dir: SortDir }', description: 'Sort inicial (uncontrolled)' },
-        { name: 'sortBy / sortDir', type: 'string / SortDir', description: 'Sort controlado · ambos juntos sobrescrevem state interno' },
-        { name: 'onSortChange', type: '(key: string, dir: SortDir) => void', description: 'Callback quando user clica em coluna sortable' },
-        { name: 'onRowClick', type: '(row: T) => void', description: 'Click handler · adiciona cursor pointer + tabIndex' },
-        { name: 'density', type: "'comfortable' | 'compact'", default: "'comfortable'", description: 'padding das células' },
-        { name: 'zebra', type: 'boolean', default: 'false', description: 'Linhas alternadas com bg navy-02' },
-      ]}
+      meta={meta}
+      descriptions={{
+        data: 'Array de rows · T extends Record<string, unknown>',
+        columns: 'Definição de colunas (key, label, accessor, render, sortable, align, width, meta)',
+        caption: 'Header acima da tabela (opcional)',
+        emptyState: 'Conteúdo quando data está vazio',
+        initialSort: 'Sort inicial (uncontrolled)',
+        sortBy: 'Coluna do sort controlado · junto com sortDir sobrescreve o state interno',
+        sortDir: 'Direção do sort controlado · junto com sortBy sobrescreve o state interno',
+        onSortChange: 'Callback quando user clica em coluna sortable',
+        onRowClick: 'Click handler · adiciona cursor pointer + tabIndex',
+        density: 'padding das células',
+        zebra: 'Linhas alternadas com bg navy-02',
+      }}
       examples={[
         {
           title: 'Tabela sortable de operadores',

@@ -1,5 +1,6 @@
-import { Alert } from '../../lib/Alert/Alert';
+import { Alert, type AlertProps } from '../../lib/Alert/Alert';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Alert as meta } from './props.generated.json';
 
 export default function ApiAlert() {
   return (
@@ -16,15 +17,24 @@ export default function ApiAlert() {
         { part: 'via-alert__action', description: 'Botão action opcional (Reverter, Ver detalhes)' },
         { part: 'via-alert__close', description: 'X dismissible opcional · hover rotate' },
       ]}
-      props={[
-        { name: 'tone', type: "'info' | 'attn' | 'danger' | 'success'", default: "'info'", description: 'Cor + ícone semântico' },
-        { name: 'title', type: 'ReactNode', description: 'Bold lead line · primeira linha do alerta' },
-        { name: 'children', type: 'ReactNode', description: 'Corpo do alert · explicação detalhada' },
-        { name: 'icon', type: 'ReactNode', description: 'Ícone custom · sobrescreve o default do tone' },
-        { name: 'action', type: 'ReactNode', description: 'Action inline no canto direito (link, botão)' },
-        { name: 'onDismiss', type: '() => void', description: 'Se passar, mostra X · usuário pode fechar' },
-        { name: 'size', type: "'compact' | 'banner'", default: "'banner'", description: 'compact=inline / banner=full-bleed' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { title: 'Pagamento confirmado', children: 'Sua assinatura renova em 12/nov.' },
+        render: (v) => (
+          <div style={{ width: '100%' }}>
+            <Alert {...(v as AlertProps)} />
+          </div>
+        ),
+      }}
+      descriptions={{
+        tone: 'Cor + ícone semântico',
+        title: 'Bold lead line · primeira linha do alerta',
+        children: 'Corpo do alert · explicação detalhada',
+        icon: 'Ícone custom · sobrescreve o default do tone',
+        action: 'Action inline no canto direito (link, botão)',
+        onDismiss: 'Se passar, mostra X · usuário pode fechar',
+        size: 'compact=inline / banner=full-bleed',
+      }}
       variants={[
         { name: 'info', label: 'Informação', description: 'Aviso neutro · atualização, novidade' },
         { name: 'attn', label: 'Atenção', description: 'Algo precisa de revisão · não-bloqueante' },

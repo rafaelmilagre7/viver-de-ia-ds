@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ColorPicker } from '../../lib/ColorPicker/ColorPicker';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { ColorPicker as meta } from './props.generated.json';
 
 function ColorPickerDemo() {
   const [color, setColor] = useState('#0A1F3B');
@@ -28,14 +29,15 @@ export default function ApiColorPicker() {
         { part: 'via-color-picker__current', description: 'Swatch selecionado · ring navy + check' },
         { part: 'via-color-picker__custom', description: 'Input hex · #RRGGBB · validação ao blur' },
       ]}
-      props={[
-        { name: 'value', type: 'string', description: 'Cor selecionada (hex) · "#0A1F3B"' },
-        { name: 'onChange', type: '(hex: string) => void', description: 'Callback ao escolher · sempre hex válido' },
-        { name: 'palette', type: 'ColorSwatch[]', description: 'Paleta custom · default = 12 swatches Viver de IA' },
-        { name: 'label', type: 'string', description: 'Label visível' },
-        { name: 'allowCustom', type: 'boolean', default: 'true', description: 'Mostra input hex livre' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado' },
-      ]}
+      meta={meta}
+      descriptions={{
+        value: 'Cor selecionada (hex) · "#0A1F3B"',
+        onChange: 'Callback ao escolher · sempre hex válido',
+        palette: 'Paleta custom · default = 12 swatches Viver de IA',
+        label: 'Label visível',
+        allowCustom: 'Mostra input hex livre',
+        disabled: 'Bloqueado',
+      }}
       sizes={[
         { name: 'ColorSwatch.hex', label: 'string · obrigatório', description: 'Hex da cor · "#0A1F3B"' },
         { name: 'ColorSwatch.name', label: 'string · obrigatório', description: 'Nome editorial · "Navy · marca"' },

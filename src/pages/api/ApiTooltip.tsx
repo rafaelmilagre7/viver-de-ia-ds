@@ -1,6 +1,7 @@
-import { Tooltip } from '../../lib/Tooltip/Tooltip';
+import { Tooltip, type TooltipProps } from '../../lib/Tooltip/Tooltip';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Tooltip as meta } from './props.generated.json';
 
 export default function ApiTooltip() {
   return (
@@ -14,12 +15,22 @@ export default function ApiTooltip() {
         { part: 'via-tooltip-trigger', description: 'Wrapper do trigger · adiciona handlers hover/focus' },
         { part: 'via-tooltip', description: 'Bubble · gradient navy + shadow 4-stack + animation' },
       ]}
-      props={[
-        { name: 'children', type: 'ReactNode', required: true, description: 'Elemento trigger (button, icon, link)' },
-        { name: 'content', type: 'ReactNode', required: true, description: 'Texto do tooltip · short (max ~40 chars)' },
-        { name: 'side', type: "'top' | 'bottom' | 'left' | 'right'", default: "'top'", description: 'Posição relativa ao trigger' },
-        { name: 'delay', type: 'number', default: '500', description: 'Delay antes de aparecer em ms' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { content: 'Salvo automaticamente' },
+        render: (v) => (
+          <Tooltip {...(v as Partial<TooltipProps>)} content={String(v.content ?? '')}>
+            <Button variant="secondary">Passe o mouse ou foque</Button>
+          </Tooltip>
+        ),
+        codeChildren: '<Button variant="secondary">Passe o mouse ou foque</Button>',
+      }}
+      descriptions={{
+        children: 'Elemento trigger (button, icon, link)',
+        content: 'Texto do tooltip · short (max ~40 chars)',
+        side: 'Posição relativa ao trigger',
+        delay: 'Delay antes de aparecer em ms',
+      }}
       examples={[
         {
           title: 'Tooltip em ícone-only',

@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Slider } from '../../lib/Slider/Slider';
+import { Slider, type SliderProps } from '../../lib/Slider/Slider';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Slider as meta } from './props.generated.json';
 
 function SliderDemo() {
   const [v, setV] = useState(40);
@@ -30,16 +31,34 @@ export default function ApiSlider() {
         { part: 'via-slider__fill', description: 'Preenchimento · gradient + inset highlight + glow externo' },
         { part: 'via-slider__thumb', description: 'Knob · radial gradient white + spring 1.12 hover' },
       ]}
-      props={[
-        { name: 'value', type: 'number', required: true, description: 'Valor atual (controlado)' },
-        { name: 'onChange', type: '(value: number) => void', required: true, description: 'Callback ao arrastar' },
-        { name: 'min', type: 'number', default: '0', description: 'Mínimo' },
-        { name: 'max', type: 'number', default: '100', description: 'Máximo' },
-        { name: 'step', type: 'number', default: '1', description: 'Incremento por movimento (1 = inteiro)' },
-        { name: 'label', type: 'string', description: 'Label visível acima · pode incluir valor (template)' },
-        { name: 'tone', type: "'navy' | 'accent' | 'coral'", default: "'navy'", description: 'Tom semântico do fill' },
-        { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Track height · sm=2 / md=4 / lg=6' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { value: 40, label: 'Volume da live', hint: '' },
+        render: (v, set) => (
+          <div style={{ width: '100%', maxWidth: 420 }}>
+            <Slider {...(v as Partial<SliderProps>)} value={Number(v.value ?? 0)} onChange={(value) => set({ value })} />
+          </div>
+        ),
+        codeProps: ['onChange={setValue}'],
+      }}
+      descriptions={{
+        value: 'Valor atual (controlado)',
+        onChange: 'Callback ao arrastar',
+        min: 'Mínimo',
+        max: 'Máximo',
+        step: 'Incremento por movimento (1 = inteiro)',
+        label: 'Label visível acima · pode incluir valor (template)',
+        hint: 'Texto de apoio abaixo do track',
+        showValue: 'Mostra o valor atual no fim do track',
+        formatValue: 'Formata o valor exibido (ex.: n => `${n}%`)',
+        tone: 'Tom semântico do fill',
+        size: 'Track height · sm=2 / md=4 / lg=6',
+        disabled: 'Bloqueia a interação',
+        ariaLabel: 'Nome acessível quando não há label visível',
+        marks: 'Marcas ao longo do track · { value, label? }',
+        name: 'Nome do campo no envio de formulário',
+        id: 'Id do input · gerado automaticamente se omitido',
+      }}
       examples={[
         {
           title: 'Slider com label dinâmica',

@@ -2,6 +2,7 @@ import { DropdownMenu } from '../../lib/DropdownMenu/DropdownMenu';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
 import { MoreHorizontal, Edit, Share2, Archive, Trash2 } from 'lucide-react';
+import { DropdownMenu as meta } from './props.generated.json';
 
 function DropdownDemo() {
   return (
@@ -36,14 +37,15 @@ export default function ApiDropdownMenu() {
         { part: 'via-dropdown__separator', description: 'Linha 1px navy-08 entre groups' },
         { part: 'destructive item', description: 'Vermelho · hover bg coral-08 · pra ações irreversíveis' },
       ]}
-      props={[
-        { name: 'trigger', type: 'ReactNode', required: true, description: 'Elemento que dispara · wrapped automaticamente' },
-        { name: 'items', type: 'DropdownMenuItem[]', description: 'Items planos (sem groups)' },
-        { name: 'groups', type: 'DropdownMenuGroup[]', description: 'Items agrupados com separator entre cada' },
-        { name: 'align', type: "'start' | 'end'", default: "'start'", description: 'Alinhamento do menu vs trigger' },
-        { name: 'ariaLabel', type: 'string', default: "'Menu'", description: 'Label do menu pra screen reader' },
-        { name: 'className', type: 'string', description: 'Classe custom no container' },
-      ]}
+      meta={meta}
+      descriptions={{
+        trigger: 'Elemento que dispara · wrapped automaticamente',
+        items: 'Items planos (sem groups)',
+        groups: 'Items agrupados com separator entre cada',
+        align: 'Alinhamento do menu vs trigger',
+        ariaLabel: 'Label do menu pra screen reader',
+        className: 'Classe custom no container',
+      }}
       sizes={[
         { name: 'DropdownMenuItem.id', label: 'string · obrigatório', description: 'Identificador único do item' },
         { name: 'DropdownMenuItem.label', label: 'ReactNode · obrigatório', description: 'Texto principal' },

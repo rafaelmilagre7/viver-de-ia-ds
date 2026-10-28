@@ -1,6 +1,7 @@
 import { ArrowRight, Mail, Trash2 } from 'lucide-react';
-import { Button } from '../../lib/Button/Button';
+import { Button, type ButtonProps } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Button as meta } from './props.generated.json';
 
 export default function ApiButton() {
   return (
@@ -17,17 +18,22 @@ export default function ApiButton() {
         { part: 'via-btn__spinner', description: 'Spinner currentColor exibido quando `loading={true}` (substitui ícone)' },
         { part: '::after (shine sweep)', description: 'Pseudo-element com gradient branco diagonal · transla -120% → 120% em hover' },
       ]}
-      props={[
-        { name: 'variant', type: "'primary' | 'secondary' | 'ghost' | 'destructive' | 'accent'", default: "'primary'", description: 'Tom visual do botão. Primary é o CTA principal (1 por section)' },
-        { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Tamanho · sm=7px×14px / md=10px×18px / lg=13px×24px' },
-        { name: 'iconLeft', type: 'ReactNode', description: 'Ícone à esquerda do label · use Lucide stroke 1.8-2' },
-        { name: 'iconRight', type: 'ReactNode', description: 'Ícone à direita · padrão CTA com ArrowRight' },
-        { name: 'loading', type: 'boolean', default: 'false', description: 'Exibe spinner e desabilita interação · mantém width' },
-        { name: 'fullWidth', type: 'boolean', default: 'false', description: 'Ocupa 100% do container pai (formulários, mobile)' },
-        { name: 'children', type: 'ReactNode', required: true, description: 'Texto do botão · sentence-case · evite caps lock' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Estado bloqueado · opacity 0.6 · cursor not-allowed' },
-        { name: '...rest', type: 'ButtonHTMLAttributes', description: 'Todos os atributos HTML <button> são aceitos (onClick, type, aria-*)' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { children: 'Continuar', loading: false, fullWidth: false, disabled: false },
+        render: (v) => <Button {...(v as ButtonProps)} />,
+      }}
+      descriptions={{
+        variant: 'Tom visual do botão. Primary é o CTA principal (1 por section)',
+        size: 'Tamanho · sm=7px×14px / md=10px×18px / lg=13px×24px',
+        iconLeft: 'Ícone à esquerda do label · use Lucide stroke 1.8-2',
+        iconRight: 'Ícone à direita · padrão CTA com ArrowRight',
+        loading: 'Exibe spinner e desabilita interação · mantém width',
+        fullWidth: 'Ocupa 100% do container pai (formulários, mobile)',
+        children: 'Texto do botão · sentence-case · evite caps lock',
+        disabled: 'Estado bloqueado · opacity 0.6 · cursor not-allowed',
+        '...rest': 'Todos os atributos HTML <button> são aceitos (onClick, type, aria-*)',
+      }}
       variants={[
         { name: 'primary', label: 'Navy gradient', description: 'CTA principal · gradient navy + inset highlight + drop shadow navy-40' },
         { name: 'secondary', label: 'Glass white', description: 'CTA secundário · glass blur 16 + border white 96% + inset highlight' },

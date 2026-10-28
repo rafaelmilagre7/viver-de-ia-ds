@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { RadioGroup } from '../../lib/RadioGroup/RadioGroup';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { RadioGroup as meta } from './props.generated.json';
 
 function RadioDemo() {
   const [plan, setPlan] = useState('anual');
@@ -33,15 +34,16 @@ export default function ApiRadioGroup() {
         { part: 'via-radio__dot::after', description: 'Inner dot 6×6 · spring scale + radial gradient' },
         { part: 'via-radio__copy', description: 'Label + description vertical stack' },
       ]}
-      props={[
-        { name: 'options', type: 'RadioOption[]', required: true, description: 'Array { value, label, description? }' },
-        { name: 'value', type: 'string', description: 'Valor selecionado (controlado)' },
-        { name: 'defaultValue', type: 'string', description: 'Valor inicial (uncontrolled)' },
-        { name: 'onValueChange', type: '(value: string) => void', description: 'Callback ao trocar de opção' },
-        { name: 'name', type: 'string', description: 'Name do form group (HTML form submission)' },
-        { name: 'ariaLabel', type: 'string', description: 'Label do grupo pra screen readers' },
-        { name: 'className', type: 'string', description: 'Classe custom no container' },
-      ]}
+      meta={meta}
+      descriptions={{
+        options: 'Array { value, label, description? }',
+        value: 'Valor selecionado (controlado)',
+        defaultValue: 'Valor inicial (uncontrolled)',
+        onValueChange: 'Callback ao trocar de opção',
+        name: 'Name do form group (HTML form submission)',
+        ariaLabel: 'Label do grupo pra screen readers',
+        className: 'Classe custom no container',
+      }}
       examples={[
         {
           title: 'Plano com 3 opções e descrições',

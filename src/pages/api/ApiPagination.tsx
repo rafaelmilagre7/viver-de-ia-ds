@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Pagination } from '../../lib/Pagination/Pagination';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Pagination as meta } from './props.generated.json';
 
 function PaginationDemo() {
   const [page, setPage] = useState(7);
@@ -28,14 +29,15 @@ export default function ApiPagination() {
         { part: 'via-pagination__prev/next', description: 'Setas extremas · disabled quando no limite' },
         { part: 'via-pagination__ellipsis', description: '… visualmente · indica páginas omitidas (não clicável)' },
       ]}
-      props={[
-        { name: 'page', type: 'number', required: true, description: 'Página atual (1-based)' },
-        { name: 'totalPages', type: 'number', required: true, description: 'Total de páginas' },
-        { name: 'onPageChange', type: '(page: number) => void', required: true, description: 'Callback ao clicar' },
-        { name: 'maxVisible', type: 'number', default: '7', description: 'Máximo de botões numerados visíveis · ímpar recomendado (centra current)' },
-        { name: 'ariaLabel', type: 'string', default: "'Paginação'", description: 'Label do nav' },
-        { name: 'className', type: 'string', description: 'Classe custom' },
-      ]}
+      meta={meta}
+      descriptions={{
+        page: 'Página atual (1-based)',
+        totalPages: 'Total de páginas',
+        onPageChange: 'Callback ao clicar',
+        maxVisible: 'Máximo de botões numerados visíveis · ímpar recomendado (centra current)',
+        ariaLabel: 'Label do nav',
+        className: 'Classe custom',
+      }}
       examples={[
         {
           title: '42 páginas · current 7',

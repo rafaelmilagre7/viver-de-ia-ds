@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Stepper } from '../../lib/Stepper/Stepper';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Stepper as meta } from './props.generated.json';
 
 function StepperDemo() {
   const [step, setStep] = useState(1);
@@ -45,14 +46,15 @@ export default function ApiStepper() {
         { part: 'via-stepper__copy', description: 'Label + description vertical' },
         { part: 'via-stepper__connector', description: 'Linha entre steps · cor depende do estado' },
       ]}
-      props={[
-        { name: 'steps', type: 'StepItem[]', required: true, description: 'Array { id, label, description? }' },
-        { name: 'current', type: 'number', required: true, description: 'Índice 0-based do passo em progresso' },
-        { name: 'orientation', type: "'horizontal' | 'vertical'", default: "'horizontal'", description: 'horizontal=hero/dashboard · vertical=settings/wizard mobile' },
-        { name: 'onStepClick', type: '(index: number) => void', description: 'Permite voltar pra passos anteriores · sem essa prop, é só visual' },
-        { name: 'ariaLabel', type: 'string', default: "'Progresso'", description: 'Label da navegação' },
-        { name: 'className', type: 'string', description: 'Classe custom no container' },
-      ]}
+      meta={meta}
+      descriptions={{
+        steps: 'Array { id, label, description? }',
+        current: 'Índice 0-based do passo em progresso',
+        orientation: 'horizontal=hero/dashboard · vertical=settings/wizard mobile',
+        onStepClick: 'Permite voltar pra passos anteriores · sem essa prop, é só visual',
+        ariaLabel: 'Label da navegação',
+        className: 'Classe custom no container',
+      }}
       examples={[
         {
           title: 'Onboarding 4 steps · clique pra voltar',

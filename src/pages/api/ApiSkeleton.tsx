@@ -1,5 +1,6 @@
 import { Skeleton } from '../../lib/Skeleton/Skeleton';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Skeleton as meta } from './props.generated.json';
 
 export default function ApiSkeleton() {
   return (
@@ -15,15 +16,16 @@ export default function ApiSkeleton() {
         { part: 'variant circle', description: 'border-radius 50% · pra avatars' },
         { part: 'variant rect', description: 'border-radius var(--via-radius-md) · pra cards/images' },
       ]}
-      props={[
-        { name: 'variant', type: "'text' | 'circle' | 'rect'", default: "'text'", description: 'Shape do skeleton' },
-        { name: 'width', type: 'number | string', description: 'Largura · número em px ou string CSS (%)' },
-        { name: 'height', type: 'number | string', description: 'Altura · número em px ou string CSS' },
-        { name: 'lines', type: 'number', default: '1', description: 'Quantidade de linhas (só variant=text) · última 60% width automático' },
-        { name: 'ariaLabel', type: 'string', default: "'Carregando'", description: 'Label pra screen reader' },
-        { name: 'className', type: 'string', description: 'Classe custom' },
-        { name: 'style', type: 'CSSProperties', description: 'Inline styles custom' },
-      ]}
+      meta={meta}
+      descriptions={{
+        variant: 'Shape do skeleton',
+        width: 'Largura · número em px ou string CSS (%)',
+        height: 'Altura · número em px ou string CSS',
+        lines: 'Quantidade de linhas (só variant=text) · última 60% width automático',
+        ariaLabel: 'Label pra screen reader',
+        className: 'Classe custom',
+        style: 'Inline styles custom',
+      }}
       examples={[
         {
           title: 'Mock de card · avatar + 3 linhas',

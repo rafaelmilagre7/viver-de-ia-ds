@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TimePicker } from '../../lib/TimePicker/TimePicker';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { TimePicker as meta } from './props.generated.json';
 
 function TimePickerDemo() {
   const [t, setT] = useState('14:30');
@@ -31,18 +32,19 @@ export default function ApiTimePicker() {
         { part: 'separator ":"', description: 'Aria-hidden · navy-50 · centra os fields' },
         { part: 'arrow keys', description: 'esq/dir naveg · cima/baixo incrementa/decrementa step' },
       ]}
-      props={[
-        { name: 'value', type: 'string', description: 'Valor controlado · formato "HH:MM" (24h)' },
-        { name: 'onChange', type: '(value: string) => void', description: 'Callback ao mudar · sempre HH:MM padded' },
-        { name: 'label', type: 'string', description: 'Label visível' },
-        { name: 'hint', type: 'string', description: 'Hint abaixo · contextualiza range' },
-        { name: 'step', type: '5 | 10 | 15 | 30 | 60', default: '15', description: 'Step em minutos pra arrow keys' },
-        { name: 'min', type: 'string', description: 'Mínimo "HH:MM" · não deixa selecionar abaixo' },
-        { name: 'max', type: 'string', description: 'Máximo "HH:MM"' },
-        { name: 'error', type: 'boolean', default: 'false', description: 'true = wrapper danger ring' },
-        { name: 'disabled', type: 'boolean', default: 'false', description: 'Bloqueado' },
-        { name: 'size', type: "'sm' | 'md'", default: "'md'", description: 'Tamanho dos campos' },
-      ]}
+      meta={meta}
+      descriptions={{
+        value: 'Valor controlado · formato "HH:MM" (24h)',
+        onChange: 'Callback ao mudar · sempre HH:MM padded',
+        label: 'Label visível',
+        hint: 'Hint abaixo · contextualiza range',
+        step: 'Step em minutos pra arrow keys',
+        min: 'Mínimo "HH:MM" · não deixa selecionar abaixo',
+        max: 'Máximo "HH:MM"',
+        error: 'true = wrapper danger ring',
+        disabled: 'Bloqueado',
+        size: 'Tamanho dos campos',
+      }}
       examples={[
         {
           title: 'TimePicker 09:00-20:00 · step 15min',

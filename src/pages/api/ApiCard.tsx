@@ -1,5 +1,6 @@
-import { Card } from '../../lib/Card/Card';
+import { Card, type CardProps } from '../../lib/Card/Card';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Card as meta } from './props.generated.json';
 
 export default function ApiCard() {
   return (
@@ -15,14 +16,19 @@ export default function ApiCard() {
         { part: '::after (shine sweep)', description: 'Só em via-card--hoverable · gradient branco diagonal' },
         { part: 'children', description: 'Conteúdo livre · padding default 22px×24px (use noPadding pra controle total)' },
       ]}
-      props={[
-        { name: 'variant', type: "'default' | 'glass' | 'atmospheric' | 'featured' | 'dark'", default: "'default'", description: 'Estilo visual. default=branco, dark=navy escuro com mesh' },
-        { name: 'hoverable', type: 'boolean', default: 'false', description: 'Ativa hover lift + shine sweep diagonal' },
-        { name: 'noPadding', type: 'boolean', default: 'false', description: 'Remove padding interno (use pra imagens fullbleed)' },
-        { name: 'children', type: 'ReactNode', required: true, description: 'Conteúdo do card' },
-        { name: 'as', type: '"div" | "article" | "section" | "a"', default: '"div"', description: 'Tag HTML renderizada · use "a" pra card-link clicável inteiro' },
-        { name: '...rest', type: 'HTMLAttributes', description: 'Aceita className extra, onClick, etc' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { children: 'Mentoria 1:1 · 4 sessões por mês' },
+        render: (v) => <Card {...(v as CardProps)} style={{ maxWidth: 360 }} />,
+      }}
+      descriptions={{
+        variant: 'Estilo visual. default=branco, dark=navy escuro com mesh',
+        hoverable: 'Ativa hover lift + shine sweep diagonal',
+        noPadding: 'Remove padding interno (use pra imagens fullbleed)',
+        children: 'Conteúdo do card',
+        as: 'Tag HTML renderizada · article, div ou section',
+        '...rest': 'Aceita className extra, onClick, etc',
+      }}
       variants={[
         { name: 'default', label: 'Branco editorial', description: 'Surface branca com border hairline · padrão de listagens' },
         { name: 'glass', label: 'Liquid glass', description: 'Branco translúcido com blur 20px · use sobre imagens ou mesh' },

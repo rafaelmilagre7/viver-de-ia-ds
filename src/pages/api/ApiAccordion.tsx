@@ -1,5 +1,6 @@
 import { Accordion } from '../../lib/Accordion/Accordion';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Accordion as meta } from './props.generated.json';
 
 function AccordionDemo() {
   return (
@@ -55,13 +56,14 @@ export default function ApiAccordion() {
         { part: 'via-accordion__content', description: 'Painel · height spring + opacity fade' },
         { part: 'separated variant', description: 'Cada item vira card com glass + shadow stack' },
       ]}
-      props={[
-        { name: 'items', type: 'AccordionItem[]', required: true, description: 'Array { id, title, content, disabled? }' },
-        { name: 'defaultOpen', type: 'string | string[]', description: 'ID(s) inicialmente abertos · array se multiple=true' },
-        { name: 'multiple', type: 'boolean', default: 'false', description: 'true = vários abertos simultâneos · false = FAQ-style' },
-        { name: 'variant', type: "'default' | 'separated'", default: "'default'", description: 'separated=cards individuais glass · default=lista borderless' },
-        { name: 'className', type: 'string', description: 'Classe custom no container' },
-      ]}
+      meta={meta}
+      descriptions={{
+        items: 'Array { id, title, content, disabled? }',
+        defaultOpen: 'ID(s) inicialmente abertos · array se multiple=true',
+        multiple: 'true = vários abertos simultâneos · false = FAQ-style',
+        variant: 'separated=cards individuais glass · default=lista borderless',
+        className: 'Classe custom no container',
+      }}
       examples={[
         {
           title: 'FAQ de 3 perguntas · default open na 1ª',

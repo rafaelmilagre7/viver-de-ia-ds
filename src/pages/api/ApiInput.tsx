@@ -1,6 +1,7 @@
 import { Mail, Search } from 'lucide-react';
-import { Input } from '../../lib/Input/Input';
+import { Input, type InputProps } from '../../lib/Input/Input';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Input as meta } from './props.generated.json';
 
 export default function ApiInput() {
   return (
@@ -18,16 +19,25 @@ export default function ApiInput() {
         { part: '::after (underline)', description: 'Gradient navy→blue bottom · expande 50%→8% no focus' },
         { part: 'via-input__msg', description: 'Hint/erro abaixo · 11px ink-3 (ou coral-dark em error)' },
       ]}
-      props={[
-        { name: 'label', type: 'string', description: 'Label visível acima do field' },
-        { name: 'hint', type: 'string', description: 'Mensagem abaixo do field · hint editorial' },
-        { name: 'error', type: 'string', description: 'Mensagem de erro (substitui hint) · borda + underline coral' },
-        { name: 'iconLeft', type: 'ReactNode', description: 'Ícone à esquerda · Lucide stroke 1.8' },
-        { name: 'iconRight', type: 'ReactNode', description: 'Ícone à direita · útil pra clear button, search' },
-        { name: 'variant', type: "'default'", default: "'default'", description: 'Variant visual · reservado pra extensões futuras' },
-        { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Padding do field · sm=7×11 / md=10×14 / lg=13×16' },
-        { name: '...rest', type: 'InputHTMLAttributes', description: 'Aceita todos atributos <input> (type, placeholder, value, onChange, etc)' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { label: 'Email', placeholder: 'voce@empresa.com', hint: 'Usamos só pra login', error: '', disabled: false },
+        render: (v) => (
+          <div style={{ width: '100%', maxWidth: 340 }}>
+            <Input {...(v as InputProps)} />
+          </div>
+        ),
+      }}
+      descriptions={{
+        label: 'Label visível acima do field',
+        hint: 'Mensagem abaixo do field · hint editorial',
+        error: 'Mensagem de erro (substitui hint) · borda + underline coral',
+        iconLeft: 'Ícone à esquerda · Lucide stroke 1.8',
+        iconRight: 'Ícone à direita · útil pra clear button, search',
+        variant: 'Estado visual do campo · error também é aplicado sozinho quando há prop error',
+        size: 'Padding do field · sm=7×11 / md=10×14 / lg=13×16',
+        '...rest': 'Aceita todos atributos <input> (type, placeholder, value, onChange, etc)',
+      }}
       sizes={[
         { name: 'sm', label: '32px altura', description: 'Use em filtros, search inline, table cells' },
         { name: 'md', label: '40px altura', description: 'Padrão · forms gerais, settings' },

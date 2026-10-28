@@ -2,6 +2,7 @@ import { EmptyState } from '../../lib/EmptyState/EmptyState';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
 import { Inbox } from 'lucide-react';
+import { EmptyState as meta } from './props.generated.json';
 
 export default function ApiEmptyState() {
   return (
@@ -9,7 +10,7 @@ export default function ApiEmptyState() {
       eyebrow="api · empty-state"
       name="EmptyState"
       headline="placeholder editorial · ícone + título + ação"
-      description="EmptyState pra listas/queries vazias. Ícone editorial (Lucide 20-24px) + title + description + ação primária (+ secondary opcional). Variants: default (centrado) ou compact (inline). Liquid glass leve + atmosphere."
+      description="EmptyState pra listas/queries vazias. Ícone editorial (Lucide 20-24px) + title + description + ação primária (+ secondary opcional). Variants: default (sem fundo), soft (vidro tracejado) ou navy (bloco escuro). Liquid glass leve + atmosphere."
       importLine={`import { EmptyState, type EmptyStateProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-empty', description: 'Container · stack vertical centrado · padding generoso' },
@@ -18,15 +19,16 @@ export default function ApiEmptyState() {
         { part: 'via-empty__description', description: 'Texto secundário · max-width 320 · navy-60' },
         { part: 'via-empty__actions', description: 'Stack horizontal · primary + secondary side-by-side' },
       ]}
-      props={[
-        { name: 'icon', type: 'ReactNode', description: 'Ícone (Lucide 20-24px) · vai no tile glass' },
-        { name: 'title', type: 'ReactNode', required: true, description: 'Headline curto e direto · "Nenhuma mentoria agendada"' },
-        { name: 'description', type: 'ReactNode', description: 'Explicação 1-2 frases · diz o porquê e o próximo passo' },
-        { name: 'action', type: 'ReactNode', description: 'CTA primário · "Agendar agora"' },
-        { name: 'secondary', type: 'ReactNode', description: 'CTA secundário · "Ver disponibilidades"' },
-        { name: 'variant', type: "'default' | 'compact'", default: "'default'", description: 'default=centrado generoso · compact=inline em listas' },
-        { name: 'className', type: 'string', description: 'Classe custom' },
-      ]}
+      meta={meta}
+      descriptions={{
+        icon: 'Ícone (Lucide 20-24px) · vai no tile glass',
+        title: 'Headline curto e direto · "Nenhuma mentoria agendada"',
+        description: 'Explicação 1-2 frases · diz o porquê e o próximo passo',
+        action: 'CTA primário · "Agendar agora"',
+        secondary: 'CTA secundário · "Ver disponibilidades"',
+        variant: 'default=sem fundo · soft=vidro com borda tracejada · navy=bloco navy escuro',
+        className: 'Classe custom',
+      }}
       examples={[
         {
           title: 'Empty state com ação primária + secundária',

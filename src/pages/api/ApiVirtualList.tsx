@@ -1,5 +1,6 @@
 import { VirtualList } from '../../lib/VirtualList/VirtualList';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { VirtualList as meta } from './props.generated.json';
 
 interface LogRow {
   id: string;
@@ -66,15 +67,16 @@ export default function ApiVirtualList() {
         { part: 'visible window', description: 'Calculado a cada scroll · renderItem(item) só pra items visíveis' },
         { part: 'overscan', description: 'Buffer · renderiza +N items acima/abaixo · evita flash em scroll rápido' },
       ]}
-      props={[
-        { name: 'items', type: 'T[]', required: true, description: 'Array de items · qualquer tipo' },
-        { name: 'renderItem', type: '(item: T, index: number) => ReactNode', required: true, description: 'Render function · roda só pra items visíveis' },
-        { name: 'itemHeight', type: 'number', default: '48', description: 'Altura FIXA em px · obrigatório saber pra calcular janela' },
-        { name: 'height', type: 'number', default: '400', description: 'Altura do container em px' },
-        { name: 'overscan', type: 'number', default: '5', description: 'Buffer · items extras renderizados acima/abaixo da janela' },
-        { name: 'label', type: 'string', description: 'aria-label do list pra screen reader' },
-        { name: 'emptyState', type: 'ReactNode', description: 'Render quando items.length=0' },
-      ]}
+      meta={meta}
+      descriptions={{
+        items: 'Array de items · qualquer tipo',
+        renderItem: 'Render function · roda só pra items visíveis',
+        itemHeight: 'Altura FIXA em px · obrigatório saber pra calcular janela',
+        height: 'Altura do container em px',
+        overscan: 'Buffer · items extras renderizados acima/abaixo da janela',
+        label: 'aria-label do list pra screen reader',
+        emptyState: 'Render quando items.length=0',
+      }}
       examples={[
         {
           title: '5000 rows · só ~10 renderizam',

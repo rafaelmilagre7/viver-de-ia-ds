@@ -1,23 +1,26 @@
 import { useState } from 'react';
-import { Tabs } from '../../lib/Tabs/Tabs';
+import { Tabs, type TabItem, type TabsProps } from '../../lib/Tabs/Tabs';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Tabs as meta } from './props.generated.json';
+
+const panel = (label: string) => (
+  <div style={{ padding: '16px 0', fontSize: 13.5, color: 'var(--via-text-body)' }}>
+    Painel <strong style={{ color: 'var(--via-text-primary)' }}>{label}</strong> ativo.
+  </div>
+);
+const PLAY_ITEMS: TabItem[] = [
+  { id: 'overview', label: 'Visão geral', content: panel('Visão geral') },
+  { id: 'team', label: 'Equipe', badge: '8', content: panel('Equipe') },
+  { id: 'billing', label: 'Cobrança', content: panel('Cobrança') },
+];
 
 function TabsDemoUnderline() {
   const [active, setActive] = useState('overview');
-  const panel = (label: string) => (
-    <div style={{ padding: '16px 0', fontSize: 13.5, color: 'var(--via-text-body)' }}>
-      Painel <strong style={{ color: 'var(--via-text-primary)' }}>{label}</strong> ativo.
-    </div>
-  );
   return (
     <div style={{ width: '100%', maxWidth: 480 }}>
       <Tabs
         variant="underline"
-        items={[
-          { id: 'overview', label: 'Visão geral', content: panel('Visão geral') },
-          { id: 'team', label: 'Equipe', badge: '8', content: panel('Equipe') },
-          { id: 'billing', label: 'Cobrança', content: panel('Cobrança') },
-        ]}
+        items={PLAY_ITEMS}
         activeId={active}
         onChange={setActive}
       />
@@ -56,14 +59,25 @@ export default function ApiTabs() {
         { part: '::after (underline)', description: 'Underline animado · gradient navy→blue · width spring 32% → 100%' },
         { part: 'via-tabs__badge', description: 'Counter chip opcional · ARIA hidden (texto duplica info)' },
       ]}
-      props={[
-        { name: 'items', type: 'TabItem[]', required: true, description: 'Array · cada item com {id, label, content, badge?}' },
-        { name: 'activeId', type: 'string', description: 'ID do tab ativo (controlado) · se omitir, vira uncontrolled' },
-        { name: 'defaultActiveId', type: 'string', description: 'Tab ativo inicial (uncontrolled)' },
-        { name: 'onChange', type: '(id: string) => void', description: 'Callback ao trocar de tab' },
-        { name: 'variant', type: "'underline' | 'pills'", default: "'underline'", description: 'underline=padrão editorial · pills=segmented control glass' },
-        { name: 'className', type: 'string', description: 'Classe custom · passada pro container' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { activeId: 'overview' },
+        exclude: ['activeId'],
+        render: (v, set) => (
+          <div style={{ width: '100%', maxWidth: 480 }}>
+            <Tabs {...(v as Partial<TabsProps>)} items={PLAY_ITEMS} onChange={(id) => set({ activeId: id })} />
+          </div>
+        ),
+        codeProps: ['items={items}', 'activeId={aba}', 'onChange={setAba}'],
+      }}
+      descriptions={{
+        items: 'Array · cada item com {id, label, content, badge?}',
+        activeId: 'ID do tab ativo (controlado) · se omitir, vira uncontrolled',
+        defaultActiveId: 'Tab ativo inicial (uncontrolled)',
+        onChange: 'Callback ao trocar de tab',
+        variant: 'underline=padrão editorial · pills=segmented control glass',
+        className: 'Classe custom · passada pro container',
+      }}
       variants={[
         { name: 'underline', label: 'Underline editorial', description: 'Tab ativo com underline gradient navy→blue · padrão de página interna' },
         { name: 'pills', label: 'Pills glass segmented', description: 'Segmented control com glass · use pra alternar período/dimensão' },

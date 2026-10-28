@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build-tokens.mjs && node scripts/generate-sitemap.mjs && tsc -b && vite build",
+    "build": "node scripts/build-tokens.mjs && node scripts/generate-sitemap.mjs && node scripts/gen-props.mjs && tsc -b && vite build",
+    "gen:props": "node scripts/gen-props.mjs",
     "build:lib": "node scripts/build-tokens.mjs && vite build --config vite.config.lib.ts && tsc -p tsconfig.lib.json && node scripts/finalize-lib.mjs",
     "build:tokens": "node scripts/build-tokens.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { DateRangePicker, type DateRange } from '../../lib/DateRangePicker/DateRangePicker';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { DateRangePicker as meta } from './props.generated.json';
 
 function DateRangeDemo() {
   const [range, setRange] = useState<DateRange>({ start: null, end: null });
@@ -22,15 +23,16 @@ export default function ApiDateRangePicker() {
         { part: 'via-drp__range', description: 'Bg navy-04 entre start e end · spring spread' },
         { part: 'via-drp__presets', description: 'Sidebar · "Últimos 7/30/90 dias" + custom' },
       ]}
-      props={[
-        { name: 'value', type: 'DateRange', description: '{ start: Date | null, end: Date | null }' },
-        { name: 'onChange', type: '(range: DateRange) => void', description: 'Callback ao mudar' },
-        { name: 'defaultMonth', type: 'Date', description: 'Mês inicial · default atual' },
-        { name: 'min', type: 'Date', description: 'Data mínima permitida' },
-        { name: 'max', type: 'Date', description: 'Data máxima permitida' },
-        { name: 'locale', type: 'string', default: "'pt-BR'", description: 'Locale dos labels' },
-        { name: 'showPresets', type: 'boolean', default: 'false', description: 'Mostra sidebar com Últimos 7/30/90 dias' },
-      ]}
+      meta={meta}
+      descriptions={{
+        value: '{ start: Date | null, end: Date | null }',
+        onChange: 'Callback ao mudar',
+        defaultMonth: 'Mês inicial · default atual',
+        min: 'Data mínima permitida',
+        max: 'Data máxima permitida',
+        locale: 'Locale dos labels',
+        showPresets: 'Mostra sidebar com Últimos 7/30/90 dias',
+      }}
       examples={[
         {
           title: 'Range picker com presets · sidebar com atalhos',

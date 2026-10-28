@@ -1,5 +1,6 @@
-import { Pill } from '../../lib/Pill/Pill';
+import { Pill, type PillProps } from '../../lib/Pill/Pill';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Pill as meta } from './props.generated.json';
 
 export default function ApiPill() {
   return (
@@ -14,12 +15,17 @@ export default function ApiPill() {
         { part: 'via-pill__icon', description: 'Slot opcional pra ícone antes do label (mr 5px)' },
         { part: 'via-pill__live-dot', description: 'Só em variant="live" · dot coral 6px + ring expansivo' },
       ]}
-      props={[
-        { name: 'variant', type: "'default' | 'attn' | 'churn' | 'live' | 'success'", default: "'default'", description: 'Tom semântico · default=navy soft, attn=warning, churn=destrutivo coral, success=navy editorial, live=broadcast navy+coral dot' },
-        { name: 'size', type: "'sm' | 'md'", default: "'md'", description: 'sm=10.5px / md=11px' },
-        { name: 'icon', type: 'ReactNode', description: 'Ícone antes do label · Lucide stroke 1.8' },
-        { name: 'children', type: 'ReactNode', required: true, description: 'Label da pill · sentence-case ou lowercase · nunca CAPS LOCK' },
-      ]}
+      meta={meta}
+      playground={{
+        initial: { children: 'em produção' },
+        render: (v) => <Pill {...(v as PillProps)} />,
+      }}
+      descriptions={{
+        variant: 'Tom semântico · default=navy soft, attn=warning, churn=destrutivo coral, success=navy editorial, live=broadcast navy+coral dot',
+        size: 'sm=10.5px / md=11px',
+        iconLeft: 'Ícone antes do label · Lucide stroke 1.8',
+        children: 'Label da pill · sentence-case ou lowercase · nunca CAPS LOCK',
+      }}
       variants={[
         { name: 'default', label: 'Navy soft glass', description: 'Padrão · status neutro · "em produção", "verificado"' },
         { name: 'attn', label: 'Warning editorial', description: 'Atenção real · "expira em 8 dias", "requer revisão"' },

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Lightbox } from '../../lib/Lightbox/Lightbox';
 import { Button } from '../../lib/Button/Button';
 import ComponentDoc from '../../components/docs/ComponentDoc';
+import { Lightbox as meta } from './props.generated.json';
 
 const IMAGES = [
   { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80&auto=format', alt: 'Sala de reunião editorial', caption: 'Encontro mensal de mentores · 14 mai 2026' },
@@ -35,13 +36,14 @@ export default function ApiLightbox() {
         { part: 'via-lightbox__close', description: 'X canto superior direito' },
         { part: 'via-lightbox__download', description: 'Botão "Baixar" · barra inferior, ao lado da legenda (opcional)' },
       ]}
-      props={[
-        { name: 'open', type: 'boolean', required: true, description: 'Estado controlado' },
-        { name: 'onClose', type: '() => void', required: true, description: 'Callback close (ESC, scrim, X)' },
-        { name: 'images', type: 'LightboxImage[]', required: true, description: 'Array { src, alt, caption? }' },
-        { name: 'index', type: 'number', default: '0', description: 'Index inicial · 0-based' },
-        { name: 'showDownload', type: 'boolean', default: 'false', description: 'Mostra botão download · src vira href' },
-      ]}
+      meta={meta}
+      descriptions={{
+        open: 'Estado controlado',
+        onClose: 'Callback close (ESC, scrim, X)',
+        images: 'Array { src, alt, caption? }',
+        index: 'Index inicial · 0-based',
+        showDownload: 'Mostra botão download · src vira href',
+      }}
       sizes={[
         { name: 'LightboxImage.src', label: 'string · obrigatório', description: 'URL da imagem' },
         { name: 'LightboxImage.alt', label: 'string · obrigatório', description: 'Alt text · acessibilidade' },
