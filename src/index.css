@@ -3,11 +3,27 @@
    Fonts + tokens + minimal reset.
    ============================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
 @import './styles/tokens.css';
 @import './styles/form-fields.css';
 @import './styles/surfaces.css';
 @import './styles/data.css';
+
+/* Geist self-hosted (variável 100–900) — sem ida ao Google Fonts antes do 1º paint.
+   Só o estilo normal, como vinha do Google: a marca não usa itálico. */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./assets/fonts/GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 

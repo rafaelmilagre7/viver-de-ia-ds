@@ -22,6 +22,9 @@ export default function PlaceholderPage({ area }: Props) {
 
   return (
     <>
+      {/* Slug fora do mapa = página que não existe ainda: fora do Google */}
+      <title>{`${label ?? 'Página em construção'} · Viver de IA Design System`}</title>
+      <meta name="robots" content="noindex" />
       <DocsHeader
         eyebrow={`${area} · em breve`}
         title={

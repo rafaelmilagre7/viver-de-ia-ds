@@ -1,5 +1,6 @@
-import monogramBlack from '../assets/logos/VIA_monogram_hq.png';
-import monogramWhite from '../assets/logos/VIA_monogram_hq_white.png';
+// Monograma em 145×80 (2× do maior tamanho, lg) — o original 434×239 pesava 3× mais à toa
+import monogramBlack from '../assets/logos/VIA_monogram_hq_80h.png';
+import monogramWhite from '../assets/logos/VIA_monogram_hq_white_80h.png';
 import wordmarkBlack from '../assets/logos/VIVER_DE_IA_black.png';
 import wordmarkWhite from '../assets/logos/VIVER_DE_IA_white.png';
 
@@ -11,6 +12,10 @@ const sizes: Record<Size, { mono: number; word: number; gap: number }> = {
   md: { mono: 28, word: 22, gap: 14 },
   lg: { mono: 40, word: 30, gap: 18 },
 };
+
+// width/height reservam o espaço antes da imagem chegar (sem pulo de layout)
+const MONO_RATIO = 434 / 239;
+const WORD_RATIO = 373 / 31;
 
 type Props = {
   variant?: Variant;
@@ -26,6 +31,8 @@ export default function BrandLogo({
   monoOnly = false,
 }: Props) {
   const s = sizes[size];
+  const monoDims = { width: Math.round(s.mono * MONO_RATIO), height: s.mono };
+  const wordDims = { width: Math.round(s.word * WORD_RATIO), height: s.word };
   const wrap = {
     display: 'inline-flex',
     alignItems: 'center',
@@ -38,12 +45,12 @@ export default function BrandLogo({
   if (variant === 'auto') {
     return (
       <span className={className} style={wrap} role="img" aria-label="Viver de IA">
-        <img src={monogramBlack} alt="" className="vds-brand-mono vds-brand-img--light" style={{ height: s.mono, width: 'auto' }} />
-        <img src={monogramWhite} alt="" className="vds-brand-mono vds-brand-img--dark" style={{ height: s.mono, width: 'auto' }} />
+        <img src={monogramBlack} {...monoDims} alt="" className="vds-brand-mono vds-brand-img--light" style={{ height: s.mono, width: 'auto' }} />
+        <img src={monogramWhite} {...monoDims} alt="" className="vds-brand-mono vds-brand-img--dark" style={{ height: s.mono, width: 'auto' }} />
         {!monoOnly && (
           <>
-            <img src={wordmarkBlack} alt="" className="vds-brand-wordmark vds-brand-img--light" style={{ height: s.word, width: 'auto' }} />
-            <img src={wordmarkWhite} alt="" className="vds-brand-wordmark vds-brand-img--dark" style={{ height: s.word, width: 'auto' }} />
+            <img src={wordmarkBlack} {...wordDims} alt="" className="vds-brand-wordmark vds-brand-img--light" style={{ height: s.word, width: 'auto' }} />
+            <img src={wordmarkWhite} {...wordDims} alt="" className="vds-brand-wordmark vds-brand-img--dark" style={{ height: s.word, width: 'auto' }} />
           </>
         )}
       </span>
@@ -55,9 +62,9 @@ export default function BrandLogo({
 
   return (
     <span className={className} style={wrap} role="img" aria-label="Viver de IA">
-      <img src={mono} alt="" className="vds-brand-mono" style={{ height: s.mono, width: 'auto' }} />
+      <img src={mono} {...monoDims} alt="" className="vds-brand-mono" style={{ height: s.mono, width: 'auto' }} />
       {!monoOnly && (
-        <img src={word} alt="" className="vds-brand-wordmark" style={{ height: s.word, width: 'auto' }} />
+        <img src={word} {...wordDims} alt="" className="vds-brand-wordmark" style={{ height: s.word, width: 'auto' }} />
       )}
     </span>
   );
