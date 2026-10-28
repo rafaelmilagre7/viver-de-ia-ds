@@ -7,7 +7,7 @@ import { Text } from '@react-email/components';
 export const meta = {
   id: 'winback',
   name: 'Recuperação (win-back)',
-  subject: 'tua vaga continua aqui',
+  subject: 'sua vaga continua aqui',
   when: 'Reengajamento de quem deu uma pausa. Caloroso, sem dark pattern.',
 };
 

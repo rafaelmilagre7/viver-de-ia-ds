@@ -40,6 +40,8 @@ O usuário colou conteúdo (HTML, JSX, copy, screenshot description) em `$ARGUME
 - [ ] Sem emoji decorativo no corpo (✨🚀💪🔥)
 - [ ] Número específico quando possível (não "centenas", "muito mais")
 - [ ] Ação concreta no fim (não "ficamos à disposição")
+- [ ] "Você" sempre em UI de produto e email transacional/de ciclo de vida · qualquer tu, teu, tua, teus, tuas ou contigo é vermelho
+- [ ] Microcopy de produto (erro, estado vazio, confirmação, toast, carregamento, onboarding, botão, ajuda de campo) reusa o texto canônico de `microcopy.md` (skill viver-de-ia-design) quando a situação bate · troca só os {campos} · texto próprio pra situação que já tem canônico é amarelo
 
 ### 5. CTAs
 - [ ] Sentence-case (não caps lock)
@@ -123,6 +125,7 @@ Auditoria · social post LinkedIn pessoal
 Quando reportar violação, sempre cite a página canônica:
 - `/foundations/philosophy` · 6 regras não-negociáveis
 - `/foundations/voice-extended` · 9 contextos de voz
+- `/guidelines/microcopy` · textos canônicos de interface (espelho: `microcopy.md` na skill)
 - `/foundations/logo-usage` · sizes + clear space + surface
 - `/foundations/color` · paleta restrita
 - `/patterns/email-coverage` · email coverage 13

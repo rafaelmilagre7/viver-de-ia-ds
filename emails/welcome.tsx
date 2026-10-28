@@ -6,7 +6,7 @@ import { Lede, Para, Strong, CTA, Step, Signature } from './components/ui';
 export const meta = {
   id: 'welcome',
   name: 'Boas-vindas',
-  subject: 'tua vaga tá confirmada · bora começar?',
+  subject: 'sua vaga tá confirmada · bora começar?',
   when: 'Disparado quando um aluno confirma a matrícula numa turma.',
 };
 
@@ -20,12 +20,12 @@ export interface WelcomeEmailProps {
 export default function WelcomeEmail({ firstName, turma, daysToStart, platformUrl }: WelcomeEmailProps) {
   return (
     <Layout
-      preview={`Tua vaga na turma ${turma} tá confirmada. Começa em ${daysToStart} dias.`}
+      preview={`Sua vaga na turma ${turma} tá confirmada. Começa em ${daysToStart} dias.`}
       reason="Você recebeu este email porque confirmou sua matrícula na Viver de IA."
       hero={{ eyebrow: 'Boas-vindas', title: <>Que bom te ver aqui, {firstName}.</> }}
     >
       <Lede>
-        Tua vaga na turma <Strong>{turma}</Strong> tá confirmada. Começa em{' '}
+        Sua vaga na turma <Strong>{turma}</Strong> tá confirmada. Começa em{' '}
         <Strong>{daysToStart} dias</Strong> — e dá pra chegar na semana 1 já com contexto.
       </Lede>
 
@@ -38,8 +38,8 @@ export default function WelcomeEmail({ firstName, turma, daysToStart, platformUr
         <Step n={2} title="Assiste o intro de 12 min">
           contextualiza o método antes do primeiro encontro
         </Step>
-        <Step n={3} title="Marca tua primeira mentoria 1:1">
-          30 min pra alinhar teu caso real
+        <Step n={3} title="Marca sua primeira mentoria 1:1">
+          30 min pra alinhar seu caso real
         </Step>
       </Section>
 

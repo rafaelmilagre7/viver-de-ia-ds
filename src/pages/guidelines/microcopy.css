@@ -1,0 +1,215 @@
+/* ============================================
+   Microcopy de produto · /guidelines/microcopy
+   Lista densa de texto → card sólido + hairline,
+   sem vidro (vidro em lista densa mata a leitura).
+   ============================================ */
+
+/* ---------- Regras ---------- */
+.vds-mc-rules {
+  margin: 0;
+  padding: 0 0 0 var(--via-space-4_5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2_5);
+  max-width: 720px;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-body);
+}
+.vds-mc-rules strong {
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+}
+.vds-mc-rules code {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-caption);
+  color: var(--via-text-primary);
+}
+
+/* ---------- Busca + filtros ---------- */
+.vds-mc-toolbar {
+  margin-top: var(--via-space-16);
+  padding-top: var(--via-space-10);
+  border-top: 0.5px solid var(--via-navy-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-4);
+}
+.vds-mc-toolbar .via-input-wrap { max-width: 480px; }
+
+.vds-mc-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--via-space-2);
+}
+.vds-mc-count {
+  font-family: var(--via-font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--via-text-muted);
+}
+/* Filtro ativo · token semântico inverte sozinho no dark
+   (o --solid é navy fixo e some sobre o fundo escuro). */
+.vds-mc-filters .via-pill-link[aria-pressed='true'] {
+  background: var(--via-text-primary);
+  border-color: var(--via-text-primary);
+  color: var(--via-bg);
+}
+.vds-mc-filters .via-pill-link[aria-pressed='true'] .vds-mc-count { color: inherit; opacity: 0.8; }
+
+.vds-mc-status {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  color: var(--via-text-muted);
+}
+
+/* ---------- Vazio (usa o próprio vazio-sem-resultados) ---------- */
+.vds-mc-empty {
+  margin-top: var(--via-space-8);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--via-space-4);
+}
+.vds-mc-empty p {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-body);
+  color: var(--via-text-body);
+}
+
+/* ---------- Grupo ---------- */
+:where(.vds-section-body) p.vds-mc-group-rule {
+  font-size: var(--via-fs-sm);
+  color: var(--via-text-muted);
+  margin-bottom: var(--via-space-5);
+}
+
+.vds-mc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3);
+}
+
+.vds-mc-item {
+  padding: var(--via-space-5) var(--via-space-6);
+  border-radius: var(--via-radius-lg);
+  background: var(--via-surface);
+  border: 1px solid var(--via-border-soft);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 8px var(--via-shadow-ink-03);
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3);
+}
+
+.vds-mc-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--via-space-3);
+  flex-wrap: wrap;
+}
+.vds-mc-head h3 {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-muted);
+  letter-spacing: -0.004em;
+}
+.vds-mc-id {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-soft);
+}
+
+/* Texto canônico · o protagonista do card */
+.vds-mc-text-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--via-space-4);
+  padding: var(--via-space-3_5) var(--via-space-4);
+  border-radius: var(--via-radius-md);
+  background: var(--via-bg-soft);
+  border: 0.5px solid var(--via-border-hairline);
+}
+:where(.vds-section-body) p.vds-mc-text {
+  flex: 1;
+  margin: 0;
+  max-width: none;
+  font-size: var(--via-fs-body);
+  font-weight: var(--via-fw-medium);
+  line-height: var(--via-lh-normal);
+  letter-spacing: -0.008em;
+  color: var(--via-text-primary);
+}
+
+.vds-mc-copy {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-1_5);
+  padding: var(--via-space-1_5) var(--via-space-3);
+  border-radius: var(--via-radius-pill);
+  background: var(--via-surface);
+  border: 1px solid var(--via-border-hairline);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
+  cursor: pointer;
+  transition:
+    transform var(--via-dur) var(--via-ease-snap),
+    border-color var(--via-dur) var(--via-ease-snap),
+    box-shadow var(--via-dur) var(--via-ease-snap);
+}
+.vds-mc-copy:hover {
+  transform: translateY(-1px);
+  border-color: var(--via-navy-20);
+  box-shadow: 0 4px 12px -6px var(--via-shadow-ink-14);
+}
+.vds-mc-copy:active { transform: translateY(0); }
+.vds-mc-copy:focus-visible {
+  outline: none;
+  box-shadow: var(--via-shadow-focus);
+}
+
+/* Quando usar · não escreva */
+.vds-mc-meta {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--via-space-3) var(--via-space-6);
+}
+.vds-mc-meta dt {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+  margin-bottom: var(--via-space-1);
+}
+.vds-mc-meta dd {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-body);
+}
+.vds-mc-meta dd.vds-mc-dont {
+  color: var(--via-text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--via-text-faint);
+}
+
+@media (max-width: 560px) {
+  .vds-mc-item { padding: var(--via-space-4); }
+  .vds-mc-text-row { flex-direction: column; }
+}

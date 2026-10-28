@@ -2,16 +2,16 @@
   {
     "id": "welcome",
     "name": "Boas-vindas",
-    "subject": "tua vaga tá confirmada · bora começar?",
+    "subject": "sua vaga tá confirmada · bora começar?",
     "when": "Disparado quando um aluno confirma a matrícula numa turma.",
     "bytes": 28759
   },
   {
     "id": "welcome-plataforma",
     "name": "Boas-vindas à plataforma",
-    "subject": "teu acesso à plataforma tá liberado",
+    "subject": "seu acesso à plataforma tá liberado",
     "when": "Disparado quando o acesso do aluno à plataforma é liberado (primeiro login). Se coincidir com a confirmação de matrícula, o welcome de turma vence — nunca os dois na mesma janela.",
-    "bytes": 27748
+    "bytes": 27757
   },
   {
     "id": "enrollment",
@@ -86,7 +86,7 @@
   {
     "id": "winback",
     "name": "Recuperação (win-back)",
-    "subject": "tua vaga continua aqui",
+    "subject": "sua vaga continua aqui",
     "when": "Reengajamento de quem deu uma pausa. Caloroso, sem dark pattern.",
     "bytes": 19332
   },

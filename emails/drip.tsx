@@ -38,7 +38,7 @@ export default function DripEmail({ firstName, readUrl, talkUrl }: DripEmailProp
       </Para>
 
       <CTA href={readUrl}>Ler o caso completo</CTA>
-      <SubLink href={talkUrl}>quer ver se faz sentido pro teu caso? me chama →</SubLink>
+      <SubLink href={talkUrl}>quer ver se faz sentido pro seu caso? me chama →</SubLink>
 
       <Signature name="Caio Ribeiro" role="fundador · Viver de IA" />
     </Layout>

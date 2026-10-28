@@ -146,6 +146,7 @@ const KEYWORD_OVERLAYS: Record<string, Pick<SearchEntry, 'description' | 'keywor
   // Guidelines
   '/guidelines/voice': { description: 'Voz editorial · do/dont', keywords: ['voice', 'tom', 'copy', 'writing'] },
   '/guidelines/copy': { description: 'Microcopy · CTAs · errors', keywords: ['copy', 'microcopy', 'cta', 'wording'] },
+  '/guidelines/microcopy': { description: 'Textos canônicos de interface · erro · vazio · confirmação · toast · botão', keywords: ['microcopy', 'ux writing', 'erro', 'error', 'empty state', 'vazio', 'toast', 'confirmação', 'botão', 'placeholder', 'helper text', 'você'] },
   '/guidelines/dos-donts': { description: 'O que fazer · o que evitar', keywords: ['rules', 'guidelines', 'principles'] },
 };
 

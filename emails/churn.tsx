@@ -29,9 +29,9 @@ export default function ChurnEmail({ firstName, daysQuiet, resumeUrl, talkUrl }:
         de verdade. Quando alguém some, normalmente é um de dois motivos.
       </Lede>
       <Para>
-        Ou a <Strong>vida apertou</Strong> (acontece, e a gente segura tua vaga), ou tem{' '}
+        Ou a <Strong>vida apertou</Strong> (acontece, e a gente segura sua vaga), ou tem{' '}
         <Strong>algo travando</Strong> que dava pra destravar em 15 minutos de conversa. Os dois têm
-        solução — só preciso saber qual é o teu.
+        solução — só preciso saber qual é o seu.
       </Para>
 
       <CTA href={resumeUrl}>Voltar de onde parei</CTA>
