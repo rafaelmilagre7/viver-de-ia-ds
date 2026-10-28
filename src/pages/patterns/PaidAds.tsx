@@ -524,9 +524,10 @@ function YouTubePreRollSection() {
         </article>
 
         <div className="vds-pa-yt-script">
+          {/* h4 visual, nível 3 pro leitor de tela: vem logo abaixo do h2 da seção */}
           <header>
             <span className="vds-pa-yt-script-eyebrow">estrutura de roteiro · 15s skippable</span>
-            <h4>3 atos editoriais</h4>
+            <h4 aria-level={3}>3 atos editoriais</h4>
           </header>
           <ol>
             <li>
@@ -760,7 +761,7 @@ function PreflightSection() {
         <article className="vds-pa-preflight">
           <header>
             <span className="vds-pa-preflight-eyebrow">brief editorial obrigatório</span>
-            <h4>Antes de subir qualquer ad, time responde 16 perguntas</h4>
+            <h4 aria-level={3}>Antes de subir qualquer ad, time responde 16 perguntas</h4>
           </header>
 
           <div className="vds-pa-preflight-grid">
@@ -971,7 +972,7 @@ function CompareLibrary({ items }: { items: { cat: string; good: string[]; bad: 
     <div className="vds-pa-headlines">
       {items.map((c) => (
         <article key={c.cat}>
-          <h4>{c.cat}</h4>
+          <h4 aria-level={3}>{c.cat}</h4>
           <div className="vds-pa-headlines-pair">
             <div className="good">
               <span className="lbl"><Check size={11} strokeWidth={2.6} /> tom certo</span>
