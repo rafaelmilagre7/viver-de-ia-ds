@@ -30,10 +30,10 @@ export function App() {
         <p style={{ margin: 0, fontSize: 17, lineHeight: 1.6, color: 'var(--via-text-body)', maxWidth: 640 }}>
           Você está numa base editorial pronta — tokens, tipografia, glass, paleta restrita,
           ThemeProvider e a library de componentes já configurados. Comece editando{' '}
-          <code style={{ background: 'var(--via-surface-2, rgba(10,31,59,0.06))', padding: '2px 6px', borderRadius: 4, fontSize: 14 }}>
+          <code style={{ background: 'var(--via-navy-06)', padding: '2px 6px', borderRadius: 4, fontSize: 14 }}>
             src/App.tsx
           </code>{' '}
-          ou exporte o que precisar de <code style={{ background: 'var(--via-surface-2, rgba(10,31,59,0.06))', padding: '2px 6px', borderRadius: 4, fontSize: 14 }}>@viverdeia/design-system</code>.
+          ou exporte o que precisar de <code style={{ background: 'var(--via-navy-06)', padding: '2px 6px', borderRadius: 4, fontSize: 14 }}>@viverdeia/design-system</code>.
         </p>
       </header>
 
@@ -67,7 +67,7 @@ export function App() {
       <section
         style={{
           padding: 24,
-          background: 'var(--via-surface-1)',
+          background: 'var(--via-surface)',
           border: '1px solid var(--via-border)',
           borderRadius: 14,
           display: 'flex',
