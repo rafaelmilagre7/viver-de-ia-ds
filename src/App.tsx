@@ -196,6 +196,7 @@ const ShowcaseCheckout = lazy(() => import('./pages/showcase/Checkout'));
 // Guidelines
 const Voice = lazy(() => import('./pages/guidelines/Voice'));
 const Copy = lazy(() => import('./pages/guidelines/Copy'));
+const Microcopy = lazy(() => import('./pages/guidelines/Microcopy'));
 const DosDonts = lazy(() => import('./pages/guidelines/DosDonts'));
 
 export default function App() {
@@ -402,6 +403,7 @@ export default function App() {
                 <Route path="guidelines">
                   <Route path="voice" element={<Voice />} />
                   <Route path="copy" element={<Copy />} />
+                  <Route path="microcopy" element={<Microcopy />} />
                   <Route path="dos-donts" element={<DosDonts />} />
                   <Route path=":slug" element={<PlaceholderPage area="Diretrizes" />} />
                 </Route>

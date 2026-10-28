@@ -188,6 +188,7 @@ export const navigation: NavGroup[] = [
     items: [
       { label: 'Voz & tom', to: '/guidelines/voice' },
       { label: 'Copy patterns', to: '/guidelines/copy' },
+      { label: 'Microcopy de produto', to: '/guidelines/microcopy' },
       { label: "Do's & Don'ts", to: '/guidelines/dos-donts' },
     ],
   },
