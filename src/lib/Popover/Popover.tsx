@@ -1,4 +1,6 @@
 import { useEffect, useRef, useId, type ReactNode } from 'react';
+import { bridgeTab, useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { Anchored } from '../_shared/Portal';
 import './Popover.css';
 
 type Side = 'top' | 'bottom' | 'left' | 'right';
@@ -27,7 +29,10 @@ export interface PopoverProps {
 
 /**
  * Popover · floating panel anchored to a trigger.
- * Controlled. Closes on outside click + ESC. Editorial atmosphere.
+ * Controlled. Closes on outside click, focus leaving trigger + panel, and ESC
+ * (only the topmost layer closes — a Popover inside a Modal keeps the Modal).
+ * The panel renders in a portal anchored to the trigger; Tab still follows
+ * the visual order (trigger → panel → next control). Editorial atmosphere.
  *
  * @example
  * const [open, setOpen] = useState(false);
@@ -56,6 +61,7 @@ export function Popover({
 }: PopoverProps) {
   const rootRef = useRef<HTMLSpanElement>(null);
   const triggerWrapRef = useRef<HTMLSpanElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const panelId = useId();
 
   /**
@@ -86,46 +92,43 @@ export function Popover({
     }
   }, [open, panelId, trigger]);
 
-  // outside click
-  useEffect(() => {
-    if (!open || !closeOnOutsideClick) return;
-    const onDown = (e: MouseEvent) => {
-      if (!rootRef.current) return;
-      if (!rootRef.current.contains(e.target as Node)) onOpenChange(false);
-    };
-    document.addEventListener('mousedown', onDown);
-    return () => document.removeEventListener('mousedown', onDown);
-  }, [open, closeOnOutsideClick, onOpenChange]);
+  // Outside click + focus leaving trigger and panel (both opt-out together:
+  // closeOnOutsideClick=false means a persistent panel)
+  useDismiss(open, [rootRef, panelRef], () => onOpenChange(false), {
+    pointer: closeOnOutsideClick,
+    focus: closeOnOutsideClick,
+  });
 
-  // ESC
-  useEffect(() => {
-    if (!open || !closeOnEscape) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onOpenChange(false);
-        // return focus to the real focusable trigger
-        getTriggerEl()?.focus();
-      }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open, closeOnEscape, onOpenChange]);
+  // ESC · only when this is the topmost layer; returns focus to the trigger
+  const layer = useEscapeLayer(open && closeOnEscape, () => {
+    onOpenChange(false);
+    getTriggerEl()?.focus();
+  });
 
   return (
-    <span ref={rootRef} className="via-popover-wrap" data-side={side} data-align={align}>
+    <span
+      ref={rootRef}
+      className="via-popover-wrap"
+      data-side={side}
+      data-align={align}
+      onKeyDown={(e) => open && bridgeTab(e, getTriggerEl(), panelRef.current)}
+    >
       <span ref={triggerWrapRef} data-popover-trigger>
         {trigger}
       </span>
       {open && (
-        <div
-          id={panelId}
-          className={`via-popover via-popover--${side} via-popover--align-${align}`}
-          role="dialog"
-          aria-label={label}
-        >
-          <div className="via-popover__arrow" aria-hidden="true" />
-          <div className="via-popover__body">{children}</div>
-        </div>
+        <Anchored anchorRef={rootRef} z="popover" layer={layer}>
+          <div
+            ref={panelRef}
+            id={panelId}
+            className={`via-popover via-popover--${side} via-popover--align-${align}`}
+            role="dialog"
+            aria-label={label}
+          >
+            <div className="via-popover__arrow" aria-hidden="true" />
+            <div className="via-popover__body">{children}</div>
+          </div>
+        </Anchored>
       )}
     </span>
   );

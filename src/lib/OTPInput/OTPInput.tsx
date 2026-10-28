@@ -30,6 +30,11 @@ export interface OTPInputProps {
  * Cada dígito em campo separado · navegação automática · paste detecta código
  * completo · backspace navega pra trás.
  *
+ * Internamente o código é um array de `length` posições: digitar na 4ª célula
+ * fica na 4ª, apagar uma do meio não arrasta as seguintes. `onChange` recebe os
+ * dígitos preenchidos em ordem (string compacta, como antes) e `onComplete` só
+ * dispara com todas as células cheias.
+ *
  * @example
  * <OTPInput length={6} onComplete={(code) => verify(code)} />
  */
@@ -45,47 +50,45 @@ export function OTPInput({
   inputType = 'numeric',
   disabled = false,
 }: OTPInputProps) {
-  const [internalValue, setInternalValue] = useState('');
-  const value = controlledValue !== undefined ? controlledValue : internalValue;
+  const toCells = (v: string) => Array.from({ length }, (_, i) => v[i] ?? '');
+  const [ownCells, setOwnCells] = useState<string[]>(() => toCells(controlledValue ?? ''));
+  // Controlado: enquanto o pai devolve o mesmo código que emitimos, valem as
+  // posições daqui (com buracos); valor diferente vindo de fora redesenha tudo
+  const cells =
+    controlledValue === undefined || ownCells.join('') === controlledValue
+      ? Array.from({ length }, (_, i) => ownCells[i] ?? '')
+      : toCells(controlledValue);
   const refs = useRef<Array<HTMLInputElement | null>>([]);
 
-  const setValue = (v: string) => {
-    if (controlledValue === undefined) setInternalValue(v);
-    onChange?.(v);
-    if (v.length === length) onComplete?.(v);
+  const commit = (next: string[]) => {
+    if (next.every((c, i) => c === cells[i])) return; // nada mudou: não emite
+    setOwnCells(next);
+    const code = next.join('');
+    onChange?.(code);
+    if (next.every(Boolean)) onComplete?.(code);
   };
 
   const updateAt = (index: number, char: string) => {
     const sanitized =
       inputType === 'numeric' ? char.replace(/\D/g, '') : char.replace(/\s/g, '');
-    if (!sanitized) {
-      const next = value.slice(0, index) + value.slice(index + 1);
-      // Só emite se o keystroke realmente mudou algo. Caractere rejeitado
-      // (ex.: letra em modo numérico) sobre célula vazia não dispara onChange.
-      if (next !== value) setValue(next);
-      return;
-    }
-    const single = sanitized.slice(0, 1);
-    const arr = value.split('');
-    arr[index] = single;
-    const next = arr.join('').slice(0, length);
-    // Só emite quando o valor muda de fato; um re-digitar do mesmo dígito
-    // ainda avança o foco, mas não dispara onChange à toa.
-    if (next !== value) setValue(next);
-    // focus next
-    if (index < length - 1) refs.current[index + 1]?.focus();
+    const next = [...cells];
+    // Vazio (apagou) ou caractere rejeitado: só esta célula fica vazia — nada
+    // desliza. Rejeitado sobre célula vazia não muda nada e não emite.
+    next[index] = sanitized ? sanitized.slice(0, 1) : '';
+    commit(next);
+    if (sanitized && index < length - 1) refs.current[index + 1]?.focus();
   };
 
   const handleKeyDown = (index: number, e: KeyboardEvent<HTMLInputElement>) => {
     if (disabled) return;
     if (e.key === 'Backspace') {
-      if (!value[index] && index > 0) {
-        // empty + backspace = vai pro anterior
+      if (!cells[index] && index > 0) {
+        // empty + backspace = vai pro anterior e limpa ele
         e.preventDefault();
         refs.current[index - 1]?.focus();
-        const arr = value.split('');
-        arr[index - 1] = '';
-        setValue(arr.join(''));
+        const next = [...cells];
+        next[index - 1] = '';
+        commit(next);
       }
     } else if (e.key === 'ArrowLeft' && index > 0) {
       e.preventDefault();
@@ -103,7 +106,7 @@ export function OTPInput({
     const sanitized =
       inputType === 'numeric' ? pasted.replace(/\D/g, '') : pasted.replace(/\s/g, '');
     const next = sanitized.slice(0, length);
-    setValue(next);
+    commit(toCells(next));
     // focus no último preenchido
     const lastIdx = Math.min(next.length, length - 1);
     refs.current[lastIdx]?.focus();
@@ -129,7 +132,7 @@ export function OTPInput({
             maxLength={1}
             autoComplete={i === 0 ? 'one-time-code' : 'off'}
             autoFocus={autoFocus && i === 0}
-            value={value[i] || ''}
+            value={cells[i]}
             onChange={(e) => handleChange(i, e)}
             onKeyDown={(e) => handleKeyDown(i, e)}
             onPaste={handlePaste}

@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { routes } from './routes';
+import { routes, type Route } from './routes';
 
 /**
- * Accessibility audit · axe-core em todas as 96 rotas
+ * Accessibility audit · axe-core em todas as rotas de tests/routes.ts + as
+ * 46 páginas de API (/api/*)
  *
  * Roda em 1 viewport (desktop) — a11y issues estruturais não mudam
- * entre desktop/mobile, então 96 testes é suficiente. Mobile-specific
- * tem cobertura no visual regression suite.
+ * entre desktop/mobile. Mobile-specific tem cobertura no visual regression suite.
  *
  * Filtra impact: só falha se violations sérias ou críticas aparecem.
  * Warnings (impact 'minor' ou 'moderate') ficam logged mas não bloqueiam.
@@ -19,7 +19,24 @@ import { routes } from './routes';
 
 const STRICT = process.env.A11Y_STRICT === '1';
 
-for (const r of routes) {
+/**
+ * Páginas de API (/api/*, uma por componente da lib — espelho de src/App.tsx).
+ * Ficam SÓ no axe: não entram em tests/routes.ts porque lá cada rota vira
+ * baseline visual (2 snapshots), e a doc de API não precisa disso.
+ */
+const API_PAGES = [
+  'button', 'card', 'input', 'modal', 'avatar', 'pill', 'tabs', 'switch',
+  'toast', 'tooltip', 'slider', 'alert', 'progress', 'drawer', 'data-table',
+  'checkbox', 'radio-group', 'select', 'combobox', 'dropdown-menu', 'popover',
+  'command', 'date-picker', 'stepper', 'accordion', 'breadcrumb', 'pagination',
+  'spinner', 'skeleton', 'empty-state', 'icon', 'hover-card', 'otp-input',
+  'tag-input', 'calendar', 'carousel', 'time-picker', 'sheet', 'context-menu',
+  'multi-select', 'date-range-picker', 'tree-view', 'splitter', 'virtual-list',
+  'lightbox', 'color-picker',
+];
+const apiRoutes: Route[] = API_PAGES.map((name) => ({ path: `/api/${name}` }));
+
+for (const r of [...routes, ...apiRoutes]) {
   test(`a11y · ${r.path}`, async ({ page }) => {
     await page.goto(r.path, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
@@ -30,7 +47,8 @@ for (const r of routes) {
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .disableRules([
-        // Contraste já é design intencional · navy/gold/coral validados visualmente
+        // Contraste tem varredura própria nos 2 temas (tests/contrast.spec.ts, sob
+        // demanda) — paleta restrita navy/cinza, coral só destrutivo
         'color-contrast',
         // Code blocks de exemplo são estáticos · scroll funciona via mouse/trackpad/wheel
         // e screen readers leem o texto inteiro. Não há perda real de acessibilidade.

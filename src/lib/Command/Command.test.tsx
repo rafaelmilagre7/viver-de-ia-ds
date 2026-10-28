@@ -40,10 +40,12 @@ describe('<Command />', () => {
     render(<Command open onClose={() => {}} onSelect={() => {}} groups={groups} />);
     const first = screen.getByRole('option', { name: /Aluno · jornada/ });
     expect(first).toHaveAttribute('aria-selected', 'true');
+    // id prefixado por useId (várias paletas na mesma página não colidem)
     expect(screen.getByRole('textbox', { name: 'Buscar' })).toHaveAttribute(
       'aria-activedescendant',
-      'via-cmd-item-/aluno',
+      first.id,
     );
+    expect(first.id).toMatch(/-item-\/aluno$/);
   });
 
   it('filters items live by label and keywords', async () => {
@@ -142,10 +144,10 @@ describe('<Command />', () => {
   it('clicking the scrim calls onClose', async () => {
     const onClose = vi.fn();
     const user = userEvent.setup();
-    const { container } = render(
+    render(
       <Command open onClose={onClose} onSelect={() => {}} groups={groups} />,
     );
-    const scrim = container.querySelector('.via-cmd-scrim') as HTMLElement;
+    const scrim = document.body.querySelector('.via-cmd-scrim') as HTMLElement;
     expect(scrim).toBeInTheDocument();
     await user.click(scrim);
     expect(onClose).toHaveBeenCalledOnce();

@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { useDialogFocus } from '../_shared/useDialogFocus';
 import { useDragDismiss } from '../_shared/useDragDismiss';
+import { useEscapeLayer, useScrollLock } from '../_shared/overlay';
+import { Portal } from '../_shared/Portal';
 import './Lightbox.css';
 
 export interface LightboxImage {
@@ -77,6 +79,10 @@ function LightboxView({ onClose, images, index, showDownload }: LightboxViewProp
     dir: 1,
     onDismiss: handleDismiss,
     scrimRef,
+    // Consumidor manteve aberto: a foto voltou, o próximo pedido de fechar vale
+    onKeptOpen: () => {
+      closingRef.current = false;
+    },
   });
 
   // X/ESC/fundo saem pela mesma mola do gesto; onClose só dispara no settle
@@ -97,20 +103,21 @@ function LightboxView({ onClose, images, index, showDownload }: LightboxViewProp
     });
   }, [images.length]);
 
+  // ESC fecha só se for a camada do topo · e.repeat: ESC segurado não
+  // reinicia a mola de saída a cada auto-repeat
+  const layer = useEscapeLayer(true, (e) => {
+    if (!e.repeat) requestClose();
+  });
+  useScrollLock(true);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      // e.repeat: ESC segurado não reinicia a mola de saída a cada auto-repeat
-      if (e.key === 'Escape' && !e.repeat) requestClose();
       if (e.key === 'ArrowLeft') go(-1);
       if (e.key === 'ArrowRight') go(1);
     };
     document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
-    };
-  }, [requestClose, go]);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [go]);
 
   // Foco acessível: focus-first ao abrir, trap com Tab, restore ao fechar
   const { onKeyDown } = useDialogFocus(true, dialogRef);
@@ -129,85 +136,87 @@ function LightboxView({ onClose, images, index, showDownload }: LightboxViewProp
   const img = images[current];
 
   return (
-    <div
-      ref={dialogRef}
-      className="via-lightbox"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Visualização de imagem"
-      tabIndex={-1}
-      onKeyDown={onKeyDown}
-    >
-      <div ref={scrimRef} className="via-lightbox__scrim" aria-hidden="true" />
-
-      <button
-        type="button"
-        className="via-lightbox__close"
-        onClick={requestClose}
-        aria-label="Fechar"
-      >
-        <X size={18} strokeWidth={1.8} />
-      </button>
-
-      {images.length > 1 && (
-        <>
-          <button
-            type="button"
-            className="via-lightbox__arrow via-lightbox__arrow--prev"
-            onClick={() => go(-1)}
-            aria-label="Imagem anterior"
-          >
-            <ChevronLeft size={20} strokeWidth={2} />
-          </button>
-          <button
-            type="button"
-            className="via-lightbox__arrow via-lightbox__arrow--next"
-            onClick={() => go(1)}
-            aria-label="Próxima imagem"
-          >
-            <ChevronRight size={20} strokeWidth={2} />
-          </button>
-        </>
-      )}
-
+    <Portal layer={layer}>
       <div
-        ref={panelRef}
-        className="via-lightbox__content"
-        onPointerDown={onPanelPointerDown}
-        onClick={onPanelClick}
+        ref={dialogRef}
+        className="via-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Visualização de imagem"
+        tabIndex={-1}
+        onKeyDown={onKeyDown}
       >
-        <img
-          src={img.src}
-          alt={img.alt}
-          className="via-lightbox__img"
-          draggable={false}
-          onClick={(e) => e.stopPropagation()}
-        />
-      </div>
+        <div ref={scrimRef} className="via-lightbox__scrim" aria-hidden="true" />
 
-      {(img.caption || images.length > 1 || showDownload) && (
-        <footer className="via-lightbox__foot">
-          <div className="via-lightbox__caption">
-            {img.caption && <span>{img.caption}</span>}
-            {images.length > 1 && (
-              <span className="via-lightbox__counter">
-                {current + 1} / {images.length}
-              </span>
-            )}
-          </div>
-          {showDownload && (
-            <a
-              href={img.downloadHref || img.src}
-              download
-              className="via-lightbox__download"
-              onClick={(e) => e.stopPropagation()}
+        <button
+          type="button"
+          className="via-lightbox__close"
+          onClick={requestClose}
+          aria-label="Fechar"
+        >
+          <X size={18} strokeWidth={1.8} />
+        </button>
+
+        {images.length > 1 && (
+          <>
+            <button
+              type="button"
+              className="via-lightbox__arrow via-lightbox__arrow--prev"
+              onClick={() => go(-1)}
+              aria-label="Imagem anterior"
             >
-              <Download size={13} strokeWidth={2} />
-              Baixar
-            </a>
-          )}
-        </footer>
-      )}
-    </div>
+              <ChevronLeft size={20} strokeWidth={2} />
+            </button>
+            <button
+              type="button"
+              className="via-lightbox__arrow via-lightbox__arrow--next"
+              onClick={() => go(1)}
+              aria-label="Próxima imagem"
+            >
+              <ChevronRight size={20} strokeWidth={2} />
+            </button>
+          </>
+        )}
+
+        <div
+          ref={panelRef}
+          className="via-lightbox__content"
+          onPointerDown={onPanelPointerDown}
+          onClick={onPanelClick}
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            className="via-lightbox__img"
+            draggable={false}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+
+        {(img.caption || images.length > 1 || showDownload) && (
+          <footer className="via-lightbox__foot">
+            <div className="via-lightbox__caption">
+              {img.caption && <span>{img.caption}</span>}
+              {images.length > 1 && (
+                <span className="via-lightbox__counter">
+                  {current + 1} / {images.length}
+                </span>
+              )}
+            </div>
+            {showDownload && (
+              <a
+                href={img.downloadHref || img.src}
+                download
+                className="via-lightbox__download"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Download size={13} strokeWidth={2} />
+                Baixar
+              </a>
+            )}
+          </footer>
+        )}
+      </div>
+    </Portal>
   );
 }

@@ -7,8 +7,9 @@ import {
   isValidElement,
   type ReactNode,
   type ReactElement,
-  type KeyboardEvent,
 } from 'react';
+import { useEscapeLayer } from '../_shared/overlay';
+import { Anchored } from '../_shared/Portal';
 import './Tooltip.css';
 
 type Side = 'top' | 'bottom' | 'left' | 'right';
@@ -24,8 +25,10 @@ export interface TooltipProps {
  * Tooltip · editorial wrapper · hover + focus aware · ARIA-described
  *
  * Follows the WAI-ARIA tooltip pattern: `aria-describedby` lands on the focusable
- * trigger (so screen readers announce the description on focus), and Escape
- * dismisses the tooltip while keeping focus on the trigger.
+ * trigger ALWAYS (closed, it points at a hidden node with the same text — so the
+ * description is announced on focus even before the delay), and Escape anywhere
+ * on the page dismisses the open tooltip (WCAG 1.4.13) while focus stays put.
+ * The bubble renders in a portal anchored to the trigger (never clipped).
  *
  * @example
  * <Tooltip content="Adicionar ao calendário" side="top">
@@ -34,6 +37,7 @@ export interface TooltipProps {
  */
 export function Tooltip({ content, children, side = 'top', delay = 200 }: TooltipProps) {
   const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLSpanElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const tipId = useId();
 
@@ -47,13 +51,9 @@ export function Tooltip({ content, children, side = 'top', delay = 200 }: Toolti
     setOpen(false);
   };
 
-  // APG tooltip: Escape dismisses without moving focus off the trigger.
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape' && open) {
-      e.stopPropagation();
-      hide();
-    }
-  };
+  // APG tooltip: Escape (document-level, topmost layer) dismisses without
+  // moving focus off the trigger.
+  const layer = useEscapeLayer(open, hide);
 
   useEffect(() => () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -65,30 +65,36 @@ export function Tooltip({ content, children, side = 'top', delay = 200 }: Toolti
   if (isValidElement(children)) {
     const child = children as ReactElement<{ 'aria-describedby'?: string }>;
     const existing = child.props['aria-describedby'];
-    const describedBy = open
-      ? [existing, tipId].filter(Boolean).join(' ')
-      : existing;
+    const describedBy = [existing, tipId].filter(Boolean).join(' ');
     trigger = cloneElement(child, { 'aria-describedby': describedBy });
   }
 
   return (
     <span
+      ref={wrapRef}
       className="via-tooltip-wrap"
       onMouseEnter={show}
       onMouseLeave={hide}
       onFocus={show}
       onBlur={hide}
-      onKeyDown={handleKeyDown}
     >
       {trigger}
-      {open && (
-        <span
-          id={tipId}
-          role="tooltip"
-          className={`via-tooltip via-tooltip--${side}`}
-        >
+      {/* Fechado: mesmo texto num nó oculto — a descrição nunca fica pendurada */}
+      {!open && (
+        <span id={tipId} hidden>
           {content}
         </span>
+      )}
+      {open && (
+        <Anchored anchorRef={wrapRef} z="tooltip" layer={layer}>
+          <span
+            id={tipId}
+            role="tooltip"
+            className={`via-tooltip via-tooltip--${side}`}
+          >
+            {content}
+          </span>
+        </Anchored>
       )}
     </span>
   );

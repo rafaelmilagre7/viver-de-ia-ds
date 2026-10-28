@@ -143,8 +143,8 @@ describe('<TreeView />', () => {
   it('roving tabindex: only the active row is tabbable (tabIndex 0), the rest are -1', () => {
     render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
     // With no selection and nothing focused yet, the first visible row is the roving one.
-    const buttons = screen.getAllByRole('treeitem').map((li) => li.querySelector('button')!);
-    const cursoA = screen.getByText('Curso A').closest('button')!;
+    const buttons = screen.getAllByRole('treeitem');
+    const cursoA = screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!;
     expect(cursoA).toHaveAttribute('tabindex', '0');
     buttons
       .filter((b) => b !== cursoA)
@@ -153,41 +153,41 @@ describe('<TreeView />', () => {
 
   it('roving tabindex: the selected row is the tabbable one when it is visible', () => {
     render(<TreeView nodes={nodes} selected="avulsa" />);
-    expect(screen.getByText('Aula avulsa').closest('button')!).toHaveAttribute('tabindex', '0');
-    expect(screen.getByText('Curso A').closest('button')!).toHaveAttribute('tabindex', '-1');
+    expect(screen.getByText('Aula avulsa').closest<HTMLElement>('[role="treeitem"]')!).toHaveAttribute('tabindex', '0');
+    expect(screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!).toHaveAttribute('tabindex', '-1');
   });
 
   it('ArrowDown / ArrowUp move focus between VISIBLE rows', async () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
 
-    const cursoA = screen.getByText('Curso A').closest('button')!;
+    const cursoA = screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!;
     cursoA.focus();
     expect(cursoA).toHaveFocus();
 
     // Down walks into the expanded children, then back out to the next top-level node.
     await user.keyboard('{ArrowDown}');
-    expect(screen.getByText('Aula 1').closest('button')!).toHaveFocus();
+    expect(screen.getByText('Aula 1').closest<HTMLElement>('[role="treeitem"]')!).toHaveFocus();
     await user.keyboard('{ArrowDown}');
-    expect(screen.getByText('Aula 2').closest('button')!).toHaveFocus();
+    expect(screen.getByText('Aula 2').closest<HTMLElement>('[role="treeitem"]')!).toHaveFocus();
     await user.keyboard('{ArrowDown}');
-    expect(screen.getByText('Curso B').closest('button')!).toHaveFocus();
+    expect(screen.getByText('Curso B').closest<HTMLElement>('[role="treeitem"]')!).toHaveFocus();
 
     // Up reverses it.
     await user.keyboard('{ArrowUp}');
-    expect(screen.getByText('Aula 2').closest('button')!).toHaveFocus();
+    expect(screen.getByText('Aula 2').closest<HTMLElement>('[role="treeitem"]')!).toHaveFocus();
   });
 
   it('ArrowDown stops at the last visible row and ArrowUp stops at the first', async () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} />);
 
-    const cursoA = screen.getByText('Curso A').closest('button')!;
+    const cursoA = screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!;
     cursoA.focus();
     await user.keyboard('{ArrowUp}');
     expect(cursoA).toHaveFocus(); // already first, no wrap
 
-    const avulsa = screen.getByText('Aula avulsa').closest('button')!;
+    const avulsa = screen.getByText('Aula avulsa').closest<HTMLElement>('[role="treeitem"]')!;
     avulsa.focus();
     await user.keyboard('{ArrowDown}');
     expect(avulsa).toHaveFocus(); // already last, no wrap
@@ -197,12 +197,12 @@ describe('<TreeView />', () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
 
-    const aula1 = screen.getByText('Aula 1').closest('button')!;
+    const aula1 = screen.getByText('Aula 1').closest<HTMLElement>('[role="treeitem"]')!;
     aula1.focus();
     await user.keyboard('{End}');
-    expect(screen.getByText('Aula avulsa').closest('button')!).toHaveFocus();
+    expect(screen.getByText('Aula avulsa').closest<HTMLElement>('[role="treeitem"]')!).toHaveFocus();
     await user.keyboard('{Home}');
-    expect(screen.getByText('Curso A').closest('button')!).toHaveFocus();
+    expect(screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!).toHaveFocus();
   });
 
   it('ArrowRight on a collapsed parent expands it (focus stays on the parent)', async () => {
@@ -210,7 +210,7 @@ describe('<TreeView />', () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} onExpandedChange={onExpandedChange} />);
 
-    const cursoA = screen.getByText('Curso A').closest('button')!;
+    const cursoA = screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!;
     cursoA.focus();
     await user.keyboard('{ArrowRight}');
 
@@ -223,10 +223,10 @@ describe('<TreeView />', () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
 
-    const cursoA = screen.getByText('Curso A').closest('button')!;
+    const cursoA = screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!;
     cursoA.focus();
     await user.keyboard('{ArrowRight}');
-    expect(screen.getByText('Aula 1').closest('button')!).toHaveFocus();
+    expect(screen.getByText('Aula 1').closest<HTMLElement>('[role="treeitem"]')!).toHaveFocus();
   });
 
   it('ArrowRight on a leaf does nothing', async () => {
@@ -235,7 +235,7 @@ describe('<TreeView />', () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} onExpandedChange={onExpandedChange} onSelect={onSelect} />);
 
-    const avulsa = screen.getByText('Aula avulsa').closest('button')!;
+    const avulsa = screen.getByText('Aula avulsa').closest<HTMLElement>('[role="treeitem"]')!;
     avulsa.focus();
     await user.keyboard('{ArrowRight}');
 
@@ -251,7 +251,7 @@ describe('<TreeView />', () => {
       <TreeView nodes={nodes} defaultExpanded={['curso-a']} onExpandedChange={onExpandedChange} />,
     );
 
-    const cursoA = screen.getByText('Curso A').closest('button')!;
+    const cursoA = screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!;
     cursoA.focus();
     await user.keyboard('{ArrowLeft}');
 
@@ -264,10 +264,10 @@ describe('<TreeView />', () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} defaultExpanded={['curso-a']} />);
 
-    const aula1 = screen.getByText('Aula 1').closest('button')!;
+    const aula1 = screen.getByText('Aula 1').closest<HTMLElement>('[role="treeitem"]')!;
     aula1.focus();
     await user.keyboard('{ArrowLeft}');
-    expect(screen.getByText('Curso A').closest('button')!).toHaveFocus();
+    expect(screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!).toHaveFocus();
   });
 
   it('ArrowLeft on a top-level collapsed/leaf row with no parent does nothing', async () => {
@@ -275,7 +275,7 @@ describe('<TreeView />', () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} onExpandedChange={onExpandedChange} />);
 
-    const avulsa = screen.getByText('Aula avulsa').closest('button')!;
+    const avulsa = screen.getByText('Aula avulsa').closest<HTMLElement>('[role="treeitem"]')!;
     avulsa.focus();
     await user.keyboard('{ArrowLeft}');
 
@@ -289,7 +289,7 @@ describe('<TreeView />', () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} onSelect={onSelect} onExpandedChange={onExpandedChange} />);
 
-    screen.getByText('Curso A').closest('button')!.focus();
+    screen.getByText('Curso A').closest<HTMLElement>('[role="treeitem"]')!.focus();
     await user.keyboard('{Enter}');
 
     expect(onSelect).toHaveBeenLastCalledWith('curso-a');
@@ -302,7 +302,7 @@ describe('<TreeView />', () => {
     const user = userEvent.setup();
     render(<TreeView nodes={nodes} onSelect={onSelect} />);
 
-    screen.getByText('Aula avulsa').closest('button')!.focus();
+    screen.getByText('Aula avulsa').closest<HTMLElement>('[role="treeitem"]')!.focus();
     await user.keyboard(' ');
 
     expect(onSelect).toHaveBeenLastCalledWith('avulsa');

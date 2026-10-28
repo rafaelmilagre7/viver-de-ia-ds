@@ -65,7 +65,11 @@ export function TimePicker({
   const emit = (hh: string, mm: string) => {
     const hNum = Math.max(0, Math.min(23, parseInt(hh || '0', 10) || 0));
     const mNum = Math.max(0, Math.min(59, parseInt(mm || '0', 10) || 0));
-    const next = `${pad(hNum)}:${pad(mNum)}`;
+    let next = `${pad(hNum)}:${pad(mNum)}`;
+    // Digitado também respeita a faixa (antes só as setinhas validavam):
+    // fora dela, o valor emitido encosta no limite. "HH:MM" compara como texto.
+    if (min && next < min) next = min;
+    if (max && next > max) next = max;
     if (!isControlled) setInternal(next);
     onChange?.(next);
   };
@@ -134,9 +138,11 @@ export function TimePicker({
           className="via-tp__cell"
           aria-label="Minuto"
         />
+        {/* Atalho de mouse: fora da árvore de acessibilidade E fora do Tab
+            (focável dentro de aria-hidden é armadilha pro leitor de tela) */}
         <div className="via-tp__steps" aria-hidden="true">
-          <button type="button" onClick={() => handleStep(1)} disabled={disabled}>▲</button>
-          <button type="button" onClick={() => handleStep(-1)} disabled={disabled}>▼</button>
+          <button type="button" tabIndex={-1} onClick={() => handleStep(1)} disabled={disabled}>▲</button>
+          <button type="button" tabIndex={-1} onClick={() => handleStep(-1)} disabled={disabled}>▼</button>
         </div>
       </div>
       {hint && <p className={`via-tp__hint${error ? ' is-error' : ''}`}>{hint}</p>}

@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
+import { bridgeTab, useEscapeLayer } from '../_shared/overlay';
+import { Anchored, Portal } from '../_shared/Portal';
 import './HoverCard.css';
 
 export interface HoverCardProps {
@@ -23,6 +25,10 @@ export interface HoverCardProps {
  * em links, ou rich tooltip que precisa de conteúdo complexo. Diferente de
  * Tooltip (texto simples) e Popover (click-trigger).
  *
+ * ESC fecha (WCAG 1.4.13, mesmo com o foco em outro lugar). O trigger aponta
+ * `aria-describedby` pro conteúdo do card SEMPRE (fechado, ele fica num nó
+ * oculto). O card abre num portal ancorado — nunca cortado por overflow.
+ *
  * @example
  * <HoverCard trigger={<a>@caioribeiro</a>}>
  *   <Avatar alt="Caio Ribeiro" />
@@ -42,6 +48,7 @@ export function HoverCard({
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLSpanElement>(null);
   const triggerWrapRef = useRef<HTMLSpanElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const bodyId = useId();
@@ -65,6 +72,12 @@ export function HoverCard({
 
   useEffect(() => () => cancel(), []);
 
+  // ESC fecha o card aberto (só se for a camada do topo)
+  const layer = useEscapeLayer(open, () => {
+    cancel();
+    setOpen(false);
+  });
+
   /**
    * Resolve the real focusable trigger control. The consumer passes an
    * arbitrary node (usually an <a> or <button>); we wire ARIA onto that inner
@@ -86,7 +99,9 @@ export function HoverCard({
     if (!el) return;
     el.setAttribute('aria-haspopup', 'dialog');
     el.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }, [open, trigger]);
+    const described = (el.getAttribute('aria-describedby') ?? '').split(' ').filter(Boolean);
+    if (!described.includes(bodyId)) el.setAttribute('aria-describedby', [...described, bodyId].join(' '));
+  }, [open, trigger, bodyId]);
 
   return (
     <span
@@ -96,20 +111,33 @@ export function HoverCard({
       onMouseLeave={handleClose}
       onFocus={handleOpen}
       onBlur={handleClose}
+      onKeyDown={(e) => open && bridgeTab(e, getTriggerEl(), cardRef.current)}
     >
       <span ref={triggerWrapRef} className="via-hovercard__trigger">
         {trigger}
       </span>
+      {/* Fechado: o conteúdo fica num nó oculto só pra descrever o trigger
+          (no <body>: conteúdo rico não fica aninhado num <p> de quem usa) */}
+      {!open && (
+        <Portal>
+          <div id={bodyId} hidden>
+            {children}
+          </div>
+        </Portal>
+      )}
       {open && (
-        <div
-          className={`via-hovercard via-hovercard--${side} via-hovercard--align-${align}`}
-          role="dialog"
-          aria-labelledby={bodyId}
-          onMouseEnter={handleOpen}
-          onMouseLeave={handleClose}
-        >
-          <div id={bodyId} className="via-hovercard__body">{children}</div>
-        </div>
+        <Anchored anchorRef={wrapRef} z="popover" layer={layer}>
+          <div
+            ref={cardRef}
+            className={`via-hovercard via-hovercard--${side} via-hovercard--align-${align}`}
+            role="dialog"
+            aria-labelledby={bodyId}
+            onMouseEnter={handleOpen}
+            onMouseLeave={handleClose}
+          >
+            <div id={bodyId} className="via-hovercard__body">{children}</div>
+          </div>
+        </Anchored>
       )}
     </span>
   );

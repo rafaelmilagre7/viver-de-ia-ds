@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
+import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { Anchored } from '../_shared/Portal';
 import './DropdownMenu.css';
 
 export interface DropdownMenuItem {
@@ -34,6 +36,8 @@ export interface DropdownMenuProps {
  * Navegação por teclado (WAI-ARIA menu): ao abrir foca o primeiro item;
  * ArrowDown/Up movem o foco (roving tabindex) pulando disabled, Home/End vão
  * pro primeiro/último, Enter/Space ativam, Escape fecha e devolve foco ao trigger.
+ * Tab, clique fora ou foco fora fecham. O menu abre num portal ancorado (não é
+ * cortado por card/modal) e o trigger recebe aria-haspopup/expanded/controls.
  *
  * @example
  * <DropdownMenu
@@ -59,6 +63,7 @@ export function DropdownMenu({
   const [focusIndex, setFocusIndex] = useState(0);
   const wrapRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const resolvedGroups: DropdownMenuGroup[] = groups
@@ -78,8 +83,19 @@ export function DropdownMenu({
     return -1;
   };
 
-  const focusTrigger = () =>
-    triggerRef.current?.querySelector<HTMLElement>('button, [tabindex]')?.focus();
+  const getTriggerEl = () =>
+    triggerRef.current?.querySelector<HTMLElement>('button, [href], [tabindex]') ?? null;
+  const focusTrigger = () => getTriggerEl()?.focus();
+
+  // ARIA do menu button no controle focável que o consumidor passou
+  useEffect(() => {
+    const el = getTriggerEl();
+    if (!el) return;
+    el.setAttribute('aria-haspopup', 'menu');
+    el.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) el.setAttribute('aria-controls', menuId);
+    else el.removeAttribute('aria-controls');
+  }, [open, menuId, trigger]);
 
   const toggleOpen = () => {
     setOpen((wasOpen) => {
@@ -116,6 +132,13 @@ export function DropdownMenu({
 
   const handleMenuKey = (e: React.KeyboardEvent) => {
     const { key } = e;
+    // Tab fecha o menu e devolve o foco ao trigger (o menu mora no fim do <body>)
+    if (key === 'Tab') {
+      e.preventDefault();
+      setOpen(false);
+      focusTrigger();
+      return;
+    }
     if (
       key !== 'ArrowDown' &&
       key !== 'ArrowUp' &&
@@ -148,30 +171,14 @@ export function DropdownMenu({
     }
   };
 
-  // Click outside fecha
-  useEffect(() => {
-    if (!open) return;
-    const onClick = (e: MouseEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', onClick);
-    return () => document.removeEventListener('mousedown', onClick);
-  }, [open]);
+  // Clique fora / foco fora fecha (o menu em portal conta como dentro)
+  useDismiss(open, [wrapRef, menuRef], () => setOpen(false));
 
-  // ESC fecha
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setOpen(false);
-        focusTrigger();
-      }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open]);
+  // ESC fecha só o menu (camada do topo) e devolve o foco ao trigger
+  const layer = useEscapeLayer(open, () => {
+    setOpen(false);
+    focusTrigger();
+  });
 
   // Índice plano (atravessando grupos) por chave grupo+item, pra roving tabindex
   const flatIndexFor = (gi: number, ii: number) => {
@@ -191,49 +198,52 @@ export function DropdownMenu({
       </div>
 
       {open && (
-        <div
-          id={menuId}
-          role="menu"
-          aria-label={ariaLabel}
-          className={`via-dropdown__menu via-dropdown__menu--${align}`}
-          onKeyDown={handleMenuKey}
-        >
-          {resolvedGroups.map((group, gi) => (
-            <div key={group.id} className="via-dropdown__group" role="group" aria-label={typeof group.label === 'string' ? group.label : undefined}>
-              {group.label && (
-                <div className="via-dropdown__group-label" aria-hidden="true">
-                  {group.label}
-                </div>
-              )}
-              {group.items.map((item, ii) => {
-                const flatIndex = flatIndexFor(gi, ii);
-                return (
-                  <button
-                    key={item.id}
-                    ref={(el) => {
-                      itemRefs.current[flatIndex] = el;
-                    }}
-                    type="button"
-                    role="menuitem"
-                    tabIndex={flatIndex === focusIndex ? 0 : -1}
-                    className={`via-dropdown__item ${item.destructive ? 'is-destructive' : ''} ${item.disabled ? 'is-disabled' : ''}`}
-                    disabled={item.disabled}
-                    onClick={() => handleSelect(item)}
-                  >
-                    {item.icon && <span className="via-dropdown__icon" aria-hidden="true">{item.icon}</span>}
-                    <span className="via-dropdown__label">{item.label}</span>
-                    {item.shortcut && (
-                      <kbd className="via-dropdown__shortcut" aria-hidden="true">{item.shortcut}</kbd>
-                    )}
-                  </button>
-                );
-              })}
-              {gi < resolvedGroups.length - 1 && (
-                <div className="via-dropdown__separator" role="separator" aria-hidden="true" />
-              )}
-            </div>
-          ))}
-        </div>
+        <Anchored anchorRef={wrapRef} z="dropdown" layer={layer}>
+          <div
+            ref={menuRef}
+            id={menuId}
+            role="menu"
+            aria-label={ariaLabel}
+            className={`via-dropdown__menu via-dropdown__menu--${align}`}
+            onKeyDown={handleMenuKey}
+          >
+            {resolvedGroups.map((group, gi) => (
+              <div key={group.id} className="via-dropdown__group" role="group" aria-label={typeof group.label === 'string' ? group.label : undefined}>
+                {group.label && (
+                  <div className="via-dropdown__group-label" aria-hidden="true">
+                    {group.label}
+                  </div>
+                )}
+                {group.items.map((item, ii) => {
+                  const flatIndex = flatIndexFor(gi, ii);
+                  return (
+                    <button
+                      key={item.id}
+                      ref={(el) => {
+                        itemRefs.current[flatIndex] = el;
+                      }}
+                      type="button"
+                      role="menuitem"
+                      tabIndex={flatIndex === focusIndex ? 0 : -1}
+                      className={`via-dropdown__item ${item.destructive ? 'is-destructive' : ''} ${item.disabled ? 'is-disabled' : ''}`}
+                      disabled={item.disabled}
+                      onClick={() => handleSelect(item)}
+                    >
+                      {item.icon && <span className="via-dropdown__icon" aria-hidden="true">{item.icon}</span>}
+                      <span className="via-dropdown__label">{item.label}</span>
+                      {item.shortcut && (
+                        <kbd className="via-dropdown__shortcut" aria-hidden="true">{item.shortcut}</kbd>
+                      )}
+                    </button>
+                  );
+                })}
+                {gi < resolvedGroups.length - 1 && (
+                  <div className="via-dropdown__separator" role="separator" aria-hidden="true" />
+                )}
+              </div>
+            ))}
+          </div>
+        </Anchored>
       )}
     </div>
   );

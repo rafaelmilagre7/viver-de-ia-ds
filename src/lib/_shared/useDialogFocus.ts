@@ -1,8 +1,33 @@
 import { useEffect, useRef } from 'react';
+import { FOCUSABLE } from './overlay';
 
-/* Elementos que recebem foco por Tab dentro do diálogo */
-const FOCUSABLE =
-  'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+/**
+ * Tab/Shift+Tab ciclam só entre os focáveis de `container` (trap).
+ * Eventos que chegam de um popup em portal aninhado (borbulham pela árvore
+ * do React, não pelo DOM) são ignorados — o popup cuida do próprio Tab.
+ */
+export function trapTab(e: React.KeyboardEvent, container: HTMLElement | null) {
+  if (e.key !== 'Tab' || !container) return;
+  if (!container.contains(e.target as Node)) return;
+  const focusables = Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE));
+  if (focusables.length === 0) {
+    e.preventDefault();
+    container.focus();
+    return;
+  }
+  const first = focusables[0];
+  const last = focusables[focusables.length - 1];
+  const active = document.activeElement;
+  if (e.shiftKey) {
+    if (active === first || !container.contains(active)) {
+      e.preventDefault();
+      last.focus();
+    }
+  } else if (active === last || !container.contains(active)) {
+    e.preventDefault();
+    first.focus();
+  }
+}
 
 /**
  * useDialogFocus · foco acessível de diálogo modal (WCAG 2.4.3 + dialog pattern)
@@ -35,32 +60,7 @@ export function useDialogFocus(
     (focusable ?? dialogRef.current).focus();
   }, [open, dialogRef]);
 
-  // Trap: Tab/Shift+Tab ciclam só entre os focáveis internos
-  const onKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key !== 'Tab' || !dialogRef.current) return;
-    const focusables = Array.from(
-      dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE),
-    );
-    if (focusables.length === 0) {
-      e.preventDefault();
-      dialogRef.current.focus();
-      return;
-    }
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-    const active = document.activeElement;
-    if (e.shiftKey) {
-      if (active === first || !dialogRef.current.contains(active)) {
-        e.preventDefault();
-        last.focus();
-      }
-    } else {
-      if (active === last || !dialogRef.current.contains(active)) {
-        e.preventDefault();
-        first.focus();
-      }
-    }
-  };
+  const onKeyDown = (e: React.KeyboardEvent) => trapTab(e, dialogRef.current);
 
   return { onKeyDown };
 }

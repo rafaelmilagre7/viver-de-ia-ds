@@ -15,7 +15,7 @@ const JUNE_2024 = new Date(2024, 5, 1);
  */
 function junDay(day: number): HTMLElement {
   const re = new RegExp(`\\b${day} de junho de 2024`, 'i');
-  return screen.getByRole('button', { name: re });
+  return screen.getByRole('gridcell', { name: re });
 }
 
 describe('<DateRangePicker />', () => {

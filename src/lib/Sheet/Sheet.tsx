@@ -1,7 +1,9 @@
-import { useCallback, useEffect, useId, useRef, type ReactNode } from 'react';
+import { useCallback, useId, useRef, type ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { useDialogFocus } from '../_shared/useDialogFocus';
 import { useDragDismiss } from '../_shared/useDragDismiss';
+import { useEscapeLayer, useScrollLock } from '../_shared/overlay';
+import { Portal } from '../_shared/Portal';
 import './Sheet.css';
 
 export interface SheetProps {
@@ -90,55 +92,53 @@ function SheetOpen({
     close();
   }, [close]);
 
-  useEffect(() => {
-    if (!open) return;
-    // e.repeat: ESC segurado não reinicia a mola de saída a cada auto-repeat
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape' && !e.repeat) requestClose(); };
-    document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
-    };
-  }, [open, requestClose]);
+  // ESC fecha só se for a camada do topo · e.repeat: ESC segurado não
+  // reinicia a mola de saída a cada auto-repeat
+  const layer = useEscapeLayer(open, (e) => {
+    if (!e.repeat) requestClose();
+  });
+  // Trava contada: fechar o Sheet aberto de dentro de um Modal não destrava a página
+  useScrollLock(open);
 
   // Foco acessível: focus-first ao abrir, trap com Tab, restore ao fechar
   const { onKeyDown } = useDialogFocus(open, sheetRef);
 
   return (
-    <div className="via-sheet-root" role="presentation">
-      <div ref={scrimRef} className="via-sheet-scrim" onClick={requestClose} aria-hidden="true" />
-      <div
-        ref={sheetRef}
-        className="via-sheet"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={title ? titleId : undefined}
-        aria-describedby={description ? descriptionId : undefined}
-        tabIndex={-1}
-        onKeyDown={onKeyDown}
-        style={{ maxHeight }}
-      >
-        {showHandle && <span className="via-sheet__handle" aria-hidden="true" />}
-        {(title || description) && (
-          <header className="via-sheet__head">
-            <div className="via-sheet__head-text">
-              {title && <h2 id={titleId}>{title}</h2>}
-              {description && <p id={descriptionId}>{description}</p>}
-            </div>
-            <button
-              type="button"
-              className="via-sheet__close"
-              onClick={requestClose}
-              aria-label="Fechar"
-            >
-              <X size={16} strokeWidth={1.8} />
-            </button>
-          </header>
-        )}
-        <div ref={bodyRef} className="via-sheet__body">{children}</div>
-        {footer && <footer className="via-sheet__foot">{footer}</footer>}
+    <Portal layer={layer}>
+      <div className="via-sheet-root" role="presentation">
+        <div ref={scrimRef} className="via-sheet-scrim" onClick={requestClose} aria-hidden="true" />
+        <div
+          ref={sheetRef}
+          className="via-sheet"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={title ? titleId : undefined}
+          aria-describedby={description ? descriptionId : undefined}
+          tabIndex={-1}
+          onKeyDown={onKeyDown}
+          style={{ maxHeight }}
+        >
+          {showHandle && <span className="via-sheet__handle" aria-hidden="true" />}
+          {(title || description) && (
+            <header className="via-sheet__head">
+              <div className="via-sheet__head-text">
+                {title && <h2 id={titleId}>{title}</h2>}
+                {description && <p id={descriptionId}>{description}</p>}
+              </div>
+              <button
+                type="button"
+                className="via-sheet__close"
+                onClick={requestClose}
+                aria-label="Fechar"
+              >
+                <X size={16} strokeWidth={1.8} />
+              </button>
+            </header>
+          )}
+          <div ref={bodyRef} className="via-sheet__body">{children}</div>
+          {footer && <footer className="via-sheet__foot">{footer}</footer>}
+        </div>
       </div>
-    </div>
+    </Portal>
   );
 }

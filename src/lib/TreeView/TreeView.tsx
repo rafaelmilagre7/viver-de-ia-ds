@@ -44,7 +44,7 @@ interface FlatNode {
  * Use pra: navegação de arquivos, taxonomias de categoria, sumários, sitemap.
  * Expand/collapse com chevron · keyboard arrow nav (WAI-ARIA tree) · ARIA tree.
  *
- * Teclado (roving tabindex · só a linha ativa tem tabIndex 0):
+ * Teclado (roving tabindex no próprio `li[role=treeitem]` · só o item ativo tem tabIndex 0):
  * - ↓/↑ movem entre linhas VISÍVEIS · Home/End primeira/última visível
  * - → expande (ou foca o primeiro filho se já expandido) · ← colapsa (ou foca o pai)
  * - Enter/Space ativa/seleciona (e alterna expansão num nó-pai)
@@ -135,6 +135,8 @@ export function TreeView({
   };
 
   const handleKey = (e: React.KeyboardEvent, index: number) => {
+    // keydown de um item filho borbulha pelo li do pai — só o item focado responde
+    if (e.target !== e.currentTarget) return;
     const current = visible[index];
     if (!current) return;
 
@@ -208,14 +210,15 @@ export function TreeView({
     return (
       <li
         key={node.id}
+        id={`${baseId}-row-${node.id}`}
         role="treeitem"
         aria-expanded={hasChildren ? isExpanded : undefined}
         aria-selected={isSelected}
+        tabIndex={isRoving ? 0 : -1}
+        onKeyDown={(e) => handleKey(e, index)}
       >
-        <button
-          type="button"
-          id={`${baseId}-row-${node.id}`}
-          tabIndex={isRoving ? 0 : -1}
+        {/* A linha é visual: o foco e o papel ARIA ficam no li (treeitem) */}
+        <div
           className={`via-tv__row${isSelected ? ' is-selected' : ''}${node.highlighted ? ' is-highlighted' : ''}`}
           style={{ paddingLeft: `${10 + depth * 18}px` }}
           onClick={() => {
@@ -223,7 +226,6 @@ export function TreeView({
             if (hasChildren) toggle(node.id);
             onSelect?.(node.id);
           }}
-          onKeyDown={(e) => handleKey(e, index)}
         >
           <span
             className={`via-tv__chev${hasChildren ? '' : ' is-leaf'}${isExpanded ? ' is-open' : ''}`}
@@ -236,7 +238,7 @@ export function TreeView({
           {typeof node.count === 'number' && (
             <span className="via-tv__count">{node.count}</span>
           )}
-        </button>
+        </div>
         {hasChildren && isExpanded && (
           <ul role="group" className="via-tv__children">
             {node.children!.map((c) => {

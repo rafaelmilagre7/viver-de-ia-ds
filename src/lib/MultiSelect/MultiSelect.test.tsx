@@ -13,7 +13,7 @@ const options = [
 describe('<MultiSelect />', () => {
   it('renders the placeholder and a closed listbox trigger by default', () => {
     render(<MultiSelect options={options} placeholder="Selecione skills" />);
-    const trigger = screen.getByRole('button', { name: /selecione skills/i });
+    const trigger = screen.getByRole('combobox', { name: /selecione skills/i });
     expect(trigger).toHaveAttribute('aria-haspopup', 'listbox');
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
@@ -22,11 +22,11 @@ describe('<MultiSelect />', () => {
   it('opens the listbox on trigger click and exposes the options with ARIA', async () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} placeholder="Selecione" />);
-    await user.click(screen.getByRole('button', { name: /selecione/i }));
+    await user.click(screen.getByRole('combobox', { name: /selecione/i }));
 
     const listbox = screen.getByRole('listbox');
     expect(listbox).toHaveAttribute('aria-multiselectable', 'true');
-    expect(screen.getByRole('button', { name: /selecione/i })).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('combobox', { name: /selecione/i })).toHaveAttribute('aria-expanded', 'true');
 
     const opts = screen.getAllByRole('option');
     expect(opts).toHaveLength(4);
@@ -38,7 +38,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} onChange={onChange} />);
 
-    await user.click(screen.getByRole('button', { name: /selecione/i }));
+    await user.click(screen.getByRole('combobox', { name: /selecione/i }));
     await user.click(screen.getByRole('option', { name: 'React' }));
 
     expect(onChange).toHaveBeenCalledWith(['react']);
@@ -52,7 +52,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} onChange={onChange} />);
 
-    await user.click(screen.getByRole('button', { name: /selecione/i }));
+    await user.click(screen.getByRole('combobox', { name: /selecione/i }));
     await user.click(screen.getByRole('option', { name: 'Vue' }));
     expect(screen.getByRole('option', { name: 'Vue' })).toHaveAttribute('aria-selected', 'true');
 
@@ -78,7 +78,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} onChange={onChange} />);
 
-    await user.click(screen.getByRole('button', { name: /selecione/i }));
+    await user.click(screen.getByRole('combobox', { name: /selecione/i }));
     await user.click(screen.getByRole('option', { name: 'Angular' }));
 
     expect(onChange).not.toHaveBeenCalled();
@@ -92,7 +92,7 @@ describe('<MultiSelect />', () => {
 
     // the trigger keeps a stable accessible name from the placeholder even once
     // chips are selected (the name no longer collapses into the chip labels)
-    await user.click(screen.getByRole('button', { name: /selecione/i }));
+    await user.click(screen.getByRole('combobox', { name: /selecione/i }));
 
     // adding a third is blocked
     await user.click(screen.getByRole('option', { name: 'Svelte' }));
@@ -109,7 +109,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     const { rerender } = render(<MultiSelect options={options} value={[]} onChange={onChange} />);
 
-    await user.click(screen.getByRole('button', { name: /selecione/i }));
+    await user.click(screen.getByRole('combobox', { name: /selecione/i }));
     await user.click(screen.getByRole('option', { name: 'React' }));
 
     // onChange fires but the selection stays empty until the parent re-renders
@@ -124,7 +124,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} />);
 
-    await user.click(screen.getByRole('button', { name: /selecione/i }));
+    await user.click(screen.getByRole('combobox', { name: /selecione/i }));
     expect(screen.getByRole('listbox')).toBeInTheDocument();
 
     await user.keyboard('{Escape}');
@@ -150,22 +150,22 @@ describe('<MultiSelect />', () => {
   it('when disabled the trigger is disabled and chip remove buttons are hidden', () => {
     render(<MultiSelect options={options} value={['react']} placeholder="Selecione" disabled />);
     // accessible name comes from the placeholder, not the chip labels
-    expect(screen.getByRole('button', { name: /selecione/i })).toBeDisabled();
+    expect(screen.getByRole('combobox', { name: /selecione/i })).toBeDisabled();
     // remove buttons are not rendered while disabled
     expect(screen.queryByRole('button', { name: 'Remover React' })).not.toBeInTheDocument();
   });
 
-  it('names the trigger from the label prop via aria-labelledby (not the chip labels)', () => {
+  it('names the combobox from the label prop plus the current selection', () => {
     render(<MultiSelect options={options} label="Frameworks" value={['react', 'vue']} />);
-    // the trigger is reachable by the label text, even though chips are present
-    const trigger = screen.getByRole('button', { name: 'Frameworks' });
+    // nome = rótulo + valores escolhidos (os chips visíveis ficam fora do botão)
+    const trigger = screen.getByRole('combobox', { name: 'Frameworks React, Vue' });
     expect(trigger).toHaveAttribute('aria-haspopup', 'listbox');
   });
 
   it('falls back to the placeholder for the accessible name when there is no label', () => {
     render(<MultiSelect options={options} placeholder="Escolha um framework" value={['react']} />);
     expect(
-      screen.getByRole('button', { name: 'Escolha um framework' }),
+      screen.getByRole('combobox', { name: 'Escolha um framework' }),
     ).toBeInTheDocument();
   });
 
@@ -174,7 +174,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} onChange={onChange} />);
 
-    const trigger = screen.getByRole('button', { name: /selecione/i });
+    const trigger = screen.getByRole('combobox', { name: /selecione/i });
     await user.click(trigger);
 
     // opening highlights the first enabled option (React)
@@ -204,7 +204,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} onChange={onChange} />);
 
-    await user.click(screen.getByRole('button', { name: /selecione/i }));
+    await user.click(screen.getByRole('combobox', { name: /selecione/i }));
 
     // ArrowUp from the first option wraps to the last *enabled* option
     // (Angular is disabled, so it lands on Svelte)
@@ -227,7 +227,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} />);
 
-    const trigger = screen.getByRole('button', { name: /selecione/i });
+    const trigger = screen.getByRole('combobox', { name: /selecione/i });
     await user.click(trigger);
 
     await user.keyboard('{End}');
@@ -246,7 +246,7 @@ describe('<MultiSelect />', () => {
     // assert keyboard nav never highlights the disabled option.
     render(<MultiSelect options={options} onChange={onChange} />);
 
-    const trigger = screen.getByRole('button', { name: /selecione/i });
+    const trigger = screen.getByRole('combobox', { name: /selecione/i });
     await user.click(trigger);
 
     // cycle all the way around with ArrowDown; Angular must never become active
@@ -262,7 +262,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} />);
 
-    const trigger = screen.getByRole('button', { name: /selecione/i });
+    const trigger = screen.getByRole('combobox', { name: /selecione/i });
     trigger.focus();
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
 
@@ -279,7 +279,7 @@ describe('<MultiSelect />', () => {
     const user = userEvent.setup();
     render(<MultiSelect options={options} />);
 
-    const trigger = screen.getByRole('button', { name: /selecione/i });
+    const trigger = screen.getByRole('combobox', { name: /selecione/i });
     await user.click(trigger);
     expect(screen.getByRole('listbox')).toBeInTheDocument();
 

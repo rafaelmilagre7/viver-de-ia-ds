@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, type ReactNode, type TouchEvent } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import './Carousel.css';
 
 export interface CarouselProps {
@@ -27,6 +27,11 @@ export interface CarouselProps {
  * Use pra: depoimentos, galerias de fotos, onboarding slides, casos de uso.
  * Suporta touch swipe (mobile), setas de teclado, auto-play opcional.
  *
+ * Auto-play acessível (WCAG 2.2.2 + APG carousel): botão de pausar/retomar,
+ * pausa enquanto o ponteiro está em cima ou o foco está dentro, região viva
+ * desligada enquanto gira sozinho (não interrompe o leitor de tela) e slides
+ * ocultos ficam `inert` (nada focável escondido).
+ *
  * @example
  * <Carousel autoPlay={5000} loop>
  *   <div>Slide 1</div>
@@ -49,6 +54,11 @@ export function Carousel({
   const total = children.length;
   const trackRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
+  // Preferência do usuário (botão) + pausas temporárias (hover / foco dentro)
+  const [playing, setPlaying] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [focusWithin, setFocusWithin] = useState(false);
+  const autoplaying = autoPlay > 0 && total > 1 && playing && !hovered && !focusWithin;
 
   const setIndex = (i: number) => {
     let next = i;
@@ -63,13 +73,13 @@ export function Carousel({
 
   // Auto-play
   useEffect(() => {
-    if (!autoPlay || autoPlay <= 0) return;
+    if (!autoplaying) return;
     const t = setInterval(() => {
       setIndex(index + 1);
     }, autoPlay);
     return () => clearInterval(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index, autoPlay, total, loop]);
+  }, [index, autoplaying, autoPlay, total, loop]);
 
   // Touch
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
@@ -96,13 +106,29 @@ export function Carousel({
         if (e.key === 'ArrowRight') goNext();
       }}
       tabIndex={0}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocus={() => setFocusWithin(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFocusWithin(false);
+      }}
     >
       <div className="via-carousel__viewport" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+        {autoPlay > 0 && total > 1 && (
+          <button
+            type="button"
+            className="via-carousel__toggle"
+            onClick={() => setPlaying((p) => !p)}
+            aria-label={playing ? 'Pausar carrossel' : 'Retomar carrossel'}
+          >
+            {playing ? <Pause size={12} strokeWidth={2.4} /> : <Play size={12} strokeWidth={2.4} />}
+          </button>
+        )}
         <div
           ref={trackRef}
           className="via-carousel__track"
           style={{ transform: `translate3d(-${index * 100}%, 0, 0)` }}
-          aria-live="polite"
+          aria-live={autoplaying ? 'off' : 'polite'}
         >
           {children.map((child, i) => (
             <div
@@ -112,6 +138,7 @@ export function Carousel({
               aria-roledescription="slide"
               aria-label={`Slide ${i + 1} de ${total}`}
               aria-hidden={i !== index}
+              inert={i !== index}
             >
               {child}
             </div>

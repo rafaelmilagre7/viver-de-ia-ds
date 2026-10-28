@@ -100,7 +100,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: var(--via-z-dropdown, 1100);
   margin: var(--via-space-1) 0 0;
   padding: var(--via-space-1);
   list-style: none;

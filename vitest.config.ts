@@ -33,11 +33,12 @@ export default defineConfig({
         'src/lib/tokens.ts', // auto-generated
       ],
       thresholds: {
-        // start lenient · ratchet up as we add coverage
-        lines: 30,
-        branches: 30,
-        functions: 30,
-        statements: 30,
+        // catraca: em 28/out/26 a lib estava em ~93% stmts · 87% branches ·
+        // 97% funcs · 96% lines — piso em 80 pra regressão de cobertura quebrar o CI
+        lines: 80,
+        branches: 80,
+        functions: 80,
+        statements: 80,
       },
     },
   },

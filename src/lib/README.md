@@ -214,6 +214,9 @@ const [open, setOpen] = useState(false);
 ```
 
 ESC fecha · scrim clicável · focus trap · scroll lock. `size: sm | md | lg`.
+`dismissOnScrim={false}` impede que o clique no fundo feche (formulário com dado não salvo).
+Renderiza num portal no `<body>` — como todo overlay da lib (Drawer, Sheet, Select, menus,
+Popover, Tooltip…): nunca é cortado por `overflow: hidden` e só a camada do topo fecha no ESC.
 
 ### `<Tabs>`
 

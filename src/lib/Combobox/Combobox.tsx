@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import { Search, ChevronDown, Check } from 'lucide-react';
+import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { Anchored } from '../_shared/Portal';
 import './Combobox.css';
 
 export interface ComboboxOption {
@@ -100,32 +102,16 @@ export function Combobox({
     listRef.current.querySelector('.is-active')?.scrollIntoView({ block: 'nearest' });
   }, [active]);
 
-  // Click outside
-  useEffect(() => {
-    if (!open) return;
-    const onClick = (e: MouseEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
-        setOpen(false);
-        setQuery('');
-      }
-    };
-    document.addEventListener('mousedown', onClick);
-    return () => document.removeEventListener('mousedown', onClick);
-  }, [open]);
+  const close = () => {
+    setOpen(false);
+    setQuery('');
+  };
 
-  // ESC fecha
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setOpen(false);
-        setQuery('');
-        inputRef.current?.blur();
-      }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open]);
+  // Clique fora / foco fora fecha (a lista mora num portal: conta como dentro)
+  useDismiss(open, [wrapRef, listRef], close);
+
+  // ESC fecha só a lista (camada do topo) · o foco CONTINUA no campo
+  const layer = useEscapeLayer(open, close);
 
   return (
     <div ref={wrapRef} className={`via-combobox via-combobox--${size} ${className}`}>
@@ -177,32 +163,43 @@ export function Combobox({
       </div>
 
       {open && (
-        <ul id={listId} ref={listRef} role="listbox" className="via-combobox__list">
-          {filtered.length === 0 ? (
-            <li className="via-combobox__empty">{emptyLabel}</li>
-          ) : (
-            filtered.map((opt, idx) => {
-              const isSelected = opt.value === current;
-              return (
-                <li
-                  key={opt.value}
-                  id={`${listId}-opt-${idx}`}
-                  role="option"
-                  aria-selected={isSelected}
-                  className={`via-combobox__option ${isSelected ? 'is-selected' : ''} ${idx === active ? 'is-active' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
-                  aria-disabled={opt.disabled}
-                  onMouseEnter={() => !opt.disabled && setActive(idx)}
-                  onClick={() => !opt.disabled && handleSelect(opt.value)}
-                >
-                  <span>{opt.label}</span>
-                  {isSelected && (
-                    <Check size={12} strokeWidth={2.4} aria-hidden="true" className="via-combobox__check" />
-                  )}
-                </li>
-              );
-            })
-          )}
-        </ul>
+        <Anchored anchorRef={wrapRef} z="dropdown" layer={layer}>
+          <ul
+            id={listId}
+            ref={listRef}
+            role="listbox"
+            aria-labelledby={label ? labelId : undefined}
+            aria-label={!label ? ariaLabel ?? placeholder : undefined}
+            className="via-combobox__list"
+            // Clique numa opção não tira o foco do campo
+            onMouseDown={(e) => e.preventDefault()}
+          >
+            {filtered.length === 0 ? (
+              <li className="via-combobox__empty">{emptyLabel}</li>
+            ) : (
+              filtered.map((opt, idx) => {
+                const isSelected = opt.value === current;
+                return (
+                  <li
+                    key={opt.value}
+                    id={`${listId}-opt-${idx}`}
+                    role="option"
+                    aria-selected={isSelected}
+                    className={`via-combobox__option ${isSelected ? 'is-selected' : ''} ${idx === active ? 'is-active' : ''} ${opt.disabled ? 'is-disabled' : ''}`}
+                    aria-disabled={opt.disabled}
+                    onMouseEnter={() => !opt.disabled && setActive(idx)}
+                    onClick={() => !opt.disabled && handleSelect(opt.value)}
+                  >
+                    <span>{opt.label}</span>
+                    {isSelected && (
+                      <Check size={12} strokeWidth={2.4} aria-hidden="true" className="via-combobox__check" />
+                    )}
+                  </li>
+                );
+              })
+            )}
+          </ul>
+        </Anchored>
       )}
     </div>
   );

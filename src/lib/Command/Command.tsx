@@ -1,5 +1,8 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Search, X, CornerDownLeft } from 'lucide-react';
+import { useDialogFocus } from '../_shared/useDialogFocus';
+import { useEscapeLayer, useScrollLock } from '../_shared/overlay';
+import { Portal } from '../_shared/Portal';
 import './Command.css';
 
 export interface CommandItem {
@@ -69,7 +72,10 @@ export function Command({
   placeholder = 'Buscar comandos, páginas, ações…',
   emptyLabel = 'Nada encontrado.',
 }: CommandProps) {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const baseId = useId();
+  const listId = `${baseId}-list`;
+  const itemId = (id: string) => `${baseId}-item-${id}`;
   const [query, setQuery] = useState('');
   const [highlight, setHighlight] = useState(0);
 
@@ -105,10 +111,8 @@ export function Command({
     }
   }
 
-  // foco no input ao abrir (side-effect de DOM)
-  useEffect(() => {
-    if (open) requestAnimationFrame(() => inputRef.current?.focus());
-  }, [open]);
+  // Foco: input ao abrir (1º focável), Tab preso no diálogo, devolve ao fechar
+  const { onKeyDown: trapKeyDown } = useDialogFocus(open, dialogRef);
 
   // clamp highlight quando a lista filtrada encolhe — ajuste em render-phase.
   // Guarda flat.length > 0: com a lista vazia, highlight=0 e "0 >= 0" disparava
@@ -117,23 +121,9 @@ export function Command({
     setHighlight(flat.length - 1);
   }
 
-  // ESC + body scroll lock
-  useEffect(() => {
-    if (!open) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        onClose();
-      }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [open, onClose]);
+  // ESC fecha (só se for a camada do topo) + trava o scroll da página
+  const layer = useEscapeLayer(open, () => onClose());
+  useScrollLock(open);
 
   if (!open) return null;
 
@@ -157,77 +147,101 @@ export function Command({
   let runningIndex = -1;
 
   return (
-    <div className="via-cmd-root" role="presentation">
-      <div className="via-cmd-scrim" onClick={onClose} aria-hidden="true" />
-      <div className="via-cmd" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
-        <header className="via-cmd__head">
-          <Search size={15} strokeWidth={1.8} aria-hidden="true" />
-          <input
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setHighlight(0);
-            }}
-            onKeyDown={onInputKey}
-            placeholder={placeholder}
-            aria-label="Buscar"
-            aria-autocomplete="list"
-            aria-controls="via-cmd-list"
-            aria-activedescendant={flat[highlight] ? `via-cmd-item-${flat[highlight].id}` : undefined}
-          />
-          <button type="button" onClick={onClose} aria-label="Fechar" className="via-cmd__close">
-            <X size={13} strokeWidth={2.2} />
-          </button>
-        </header>
+    <Portal layer={layer}>
+      <div className="via-cmd-root" role="presentation">
+        <div className="via-cmd-scrim" onClick={onClose} aria-hidden="true" />
+        <div
+          ref={dialogRef}
+          className="via-cmd"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Paleta de comandos"
+          tabIndex={-1}
+          onKeyDown={trapKeyDown}
+        >
+          <header className="via-cmd__head">
+            <Search size={15} strokeWidth={1.8} aria-hidden="true" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setHighlight(0);
+              }}
+              onKeyDown={onInputKey}
+              placeholder={placeholder}
+              aria-label="Buscar"
+              aria-autocomplete="list"
+              aria-controls={listId}
+              aria-activedescendant={flat[highlight] ? itemId(flat[highlight].id) : undefined}
+            />
+            <button type="button" onClick={onClose} aria-label="Fechar" className="via-cmd__close">
+              <X size={13} strokeWidth={2.2} />
+            </button>
+          </header>
 
-        <div className="via-cmd__list" id="via-cmd-list" role="listbox">
-          {flat.length === 0 ? (
-            <p className="via-cmd__empty">{emptyLabel}</p>
-          ) : (
-            filtered.map((g, gi) => (
-              <div key={gi} className="via-cmd__group">
-                {g.heading && <span className="via-cmd__heading">{g.heading}</span>}
-                <ul>
-                  {g.items.map((it) => {
-                    runningIndex += 1;
-                    const isOn = runningIndex === highlight;
-                    const idx = runningIndex;
-                    return (
-                      <li
-                        key={it.id}
-                        id={`via-cmd-item-${it.id}`}
-                        role="option"
-                        aria-selected={isOn}
-                        className={isOn ? 'on' : ''}
-                        onMouseEnter={() => setHighlight(idx)}
-                        onClick={() => {
-                          onSelect(it.id);
-                          onClose();
-                        }}
-                      >
-                        {it.icon && <span className="via-cmd__icon">{it.icon}</span>}
-                        <div className="via-cmd__label">
-                          <strong>{it.label}</strong>
-                          {it.hint && <em>{it.hint}</em>}
-                        </div>
-                        {it.shortcut && <kbd className="via-cmd__kbd">{it.shortcut}</kbd>}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))
-          )}
+          {/* Vazio: a mensagem fica fora de role=listbox (listbox só aceita option/group) */}
+          <div
+            className="via-cmd__list"
+            id={listId}
+            role={flat.length === 0 ? undefined : 'listbox'}
+            aria-label={flat.length === 0 ? undefined : 'Resultados'}
+          >
+            {flat.length === 0 ? (
+              <p className="via-cmd__empty">{emptyLabel}</p>
+            ) : (
+              filtered.map((g, gi) => (
+                <div
+                  key={gi}
+                  className="via-cmd__group"
+                  role="group"
+                  aria-labelledby={g.heading ? `${baseId}-group-${gi}` : undefined}
+                >
+                  {g.heading && (
+                    <span className="via-cmd__heading" id={`${baseId}-group-${gi}`}>
+                      {g.heading}
+                    </span>
+                  )}
+                  <ul role="none">
+                    {g.items.map((it) => {
+                      runningIndex += 1;
+                      const isOn = runningIndex === highlight;
+                      const idx = runningIndex;
+                      return (
+                        <li
+                          key={it.id}
+                          id={itemId(it.id)}
+                          role="option"
+                          aria-selected={isOn}
+                          className={isOn ? 'on' : ''}
+                          onMouseEnter={() => setHighlight(idx)}
+                          onClick={() => {
+                            onSelect(it.id);
+                            onClose();
+                          }}
+                        >
+                          {it.icon && <span className="via-cmd__icon">{it.icon}</span>}
+                          <div className="via-cmd__label">
+                            <strong>{it.label}</strong>
+                            {it.hint && <em>{it.hint}</em>}
+                          </div>
+                          {it.shortcut && <kbd className="via-cmd__kbd">{it.shortcut}</kbd>}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))
+            )}
+          </div>
+
+          <footer className="via-cmd__foot">
+            <span><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
+            <span><kbd><CornerDownLeft size={10} strokeWidth={2.4} /></kbd> abrir</span>
+            <span><kbd>esc</kbd> fechar</span>
+          </footer>
         </div>
-
-        <footer className="via-cmd__foot">
-          <span><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
-          <span><kbd><CornerDownLeft size={10} strokeWidth={2.4} /></kbd> abrir</span>
-          <span><kbd>esc</kbd> fechar</span>
-        </footer>
       </div>
-    </div>
+    </Portal>
   );
 }

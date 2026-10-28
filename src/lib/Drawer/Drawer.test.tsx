@@ -124,12 +124,12 @@ describe('<Drawer />', () => {
 
   it('calls onClose after the exit animation when the scrim is clicked', async () => {
     const onClose = vi.fn();
-    const { container } = render(
+    render(
       <Drawer open onClose={onClose} title="Filtros">
         <p>x</p>
       </Drawer>,
     );
-    const scrim = container.querySelector('.via-drawer-scrim');
+    const scrim = document.body.querySelector('.via-drawer-scrim');
     expect(scrim).not.toBeNull();
     fireEvent.click(scrim as Element);
     expect(onClose).not.toHaveBeenCalled();
@@ -160,22 +160,22 @@ describe('<Drawer />', () => {
   });
 
   it('renders no header when there is neither title nor close button', () => {
-    const { container } = render(
+    render(
       <Drawer open onClose={() => {}} hideClose>
         <p>so corpo</p>
       </Drawer>,
     );
-    expect(container.querySelector('.via-drawer__head')).toBeNull();
+    expect(document.body.querySelector('.via-drawer__head')).toBeNull();
     expect(screen.getByText('so corpo')).toBeInTheDocument();
   });
 
   it('applies the side and size modifier classes', () => {
-    const { container, rerender } = render(
+    const { rerender } = render(
       <Drawer open onClose={() => {}} side="left" size="lg" title="Filtros">
         <p>x</p>
       </Drawer>,
     );
-    let dialog = container.querySelector('.via-drawer');
+    let dialog = document.body.querySelector('.via-drawer');
     expect(dialog).toHaveClass('via-drawer--left');
     expect(dialog).toHaveClass('via-drawer--lg');
 
@@ -184,18 +184,18 @@ describe('<Drawer />', () => {
         <p>x</p>
       </Drawer>,
     );
-    dialog = container.querySelector('.via-drawer');
+    dialog = document.body.querySelector('.via-drawer');
     expect(dialog).toHaveClass('via-drawer--bottom');
     expect(dialog).toHaveClass('via-drawer--sm');
   });
 
   it('defaults to side=right and size=md when not specified', () => {
-    const { container } = render(
+    render(
       <Drawer open onClose={() => {}} title="Filtros">
         <p>x</p>
       </Drawer>,
     );
-    const dialog = container.querySelector('.via-drawer');
+    const dialog = document.body.querySelector('.via-drawer');
     expect(dialog).toHaveClass('via-drawer--right');
     expect(dialog).toHaveClass('via-drawer--md');
   });
@@ -325,12 +325,12 @@ describe('<Drawer />', () => {
 
   it('keeps focus on the dialog itself when there are no focusable children', async () => {
     const user = userEvent.setup();
-    const { container } = render(
+    render(
       <Drawer open onClose={() => {}} hideClose>
         <p>so texto, nada focavel</p>
       </Drawer>,
     );
-    const dialog = container.querySelector('.via-drawer') as HTMLElement;
+    const dialog = document.body.querySelector('.via-drawer') as HTMLElement;
     dialog.focus();
     expect(dialog).toHaveFocus();
     // Tab não pode escapar: sem focáveis, o foco fica no painel

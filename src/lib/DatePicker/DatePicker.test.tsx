@@ -32,16 +32,17 @@ function Controlled({
 
 /** The day cells that belong to the visible month (not the leading/trailing outside days). */
 function monthCell(name: string) {
+  // o nome acessível é a data por extenso; o número visível é o texto
   const inMonth = screen
-    .getAllByRole('gridcell', { name })
-    .filter((el) => !el.className.includes('outside'));
+    .getAllByRole('gridcell')
+    .filter((el) => el.textContent === name && !el.className.includes('outside'));
   return inMonth[0];
 }
 
 describe('<DatePicker />', () => {
   it('renders the trigger closed by default with placeholder + ARIA', () => {
     render(<DatePicker value={null} onChange={() => {}} />);
-    const trigger = screen.getByRole('button', { name: 'Selecionar data' });
+    const trigger = screen.getByRole('combobox', { name: /^Selecionar data/ });
     expect(trigger).toHaveAttribute('aria-haspopup', 'dialog');
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
     expect(screen.getByText('Selecione uma data')).toBeInTheDocument();
@@ -52,7 +53,8 @@ describe('<DatePicker />', () => {
     render(<DatePicker value={null} onChange={() => {}} label="Data da live" />);
     // <label> text is shown, and the trigger borrows it as its aria-label.
     expect(screen.getByText('Data da live')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Data da live' })).toBeInTheDocument();
+    // nome = rótulo + valor atual (padrão select-only combobox)
+    expect(screen.getByRole('combobox', { name: 'Data da live Selecione uma data' })).toBeInTheDocument();
   });
 
   it('shows the formatted selected value instead of the placeholder', () => {
@@ -64,7 +66,7 @@ describe('<DatePicker />', () => {
   it('opens the calendar dialog on trigger click and flips aria-expanded', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
-    const trigger = screen.getByRole('button', { name: 'Selecionar data' });
+    const trigger = screen.getByRole('combobox', { name: /^Selecionar data/ });
 
     await user.click(trigger);
     const dialog = screen.getByRole('dialog', { name: 'Calendário' });
@@ -79,7 +81,7 @@ describe('<DatePicker />', () => {
     const user = userEvent.setup();
     const today = new Date();
     render(<DatePicker value={today} onChange={() => {}} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     const todayCell = monthCell(String(today.getDate()));
     expect(todayCell).toHaveAttribute('aria-selected', 'true');
@@ -91,7 +93,7 @@ describe('<DatePicker />', () => {
     const user = userEvent.setup();
     render(<Controlled initial={JUN_15_2026} onChange={onChange} />);
 
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     await user.click(monthCell('20'));
 
     expect(onChange).toHaveBeenCalledTimes(1);
@@ -108,7 +110,7 @@ describe('<DatePicker />', () => {
   it('next / previous buttons move the visible month', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     await user.click(screen.getByRole('button', { name: 'Mês seguinte' }));
     expect(screen.getByText('julho')).toBeInTheDocument();
@@ -123,7 +125,7 @@ describe('<DatePicker />', () => {
     const user = userEvent.setup();
     const { unmount } = render(<Controlled initial={JUN_15_2026} onChange={onChange} />);
 
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     await user.click(screen.getByRole('button', { name: 'Limpar' }));
     expect(onChange).toHaveBeenLastCalledWith(null);
     expect(screen.getByText('Selecione uma data')).toBeInTheDocument();
@@ -131,7 +133,7 @@ describe('<DatePicker />', () => {
 
     onChange.mockClear();
     render(<Controlled onChange={onChange} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     await user.click(screen.getByRole('button', { name: 'Hoje' }));
     const picked = onChange.mock.calls[0][0] as Date;
     const today = new Date();
@@ -142,7 +144,7 @@ describe('<DatePicker />', () => {
   it('Escape closes the open calendar', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     expect(screen.getByRole('dialog')).toBeInTheDocument();
 
     await user.keyboard('{Escape}');
@@ -157,7 +159,7 @@ describe('<DatePicker />', () => {
         <button type="button">outside</button>
       </div>,
     );
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     expect(screen.getByRole('dialog')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'outside' }));
@@ -167,7 +169,7 @@ describe('<DatePicker />', () => {
   it('disabled trigger does not open the calendar', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={null} onChange={() => {}} disabled />);
-    const trigger = screen.getByRole('button', { name: 'Selecionar data' });
+    const trigger = screen.getByRole('combobox', { name: /^Selecionar data/ });
     expect(trigger).toBeDisabled();
 
     await user.click(trigger);
@@ -185,7 +187,7 @@ describe('<DatePicker />', () => {
         max={new Date(2026, 5, 20)}
       />,
     );
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     // 5th is before min → disabled; 25th is after max → disabled.
     expect(monthCell('5')).toBeDisabled();
@@ -203,13 +205,13 @@ describe('<DatePicker />', () => {
     const { rerender } = render(
       <DatePicker value={JUN_15_2026} onChange={() => {}} weekStartsOn={1} />,
     );
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     let headers = screen.getAllByRole('columnheader').map((h) => h.textContent);
     expect(headers[0]).toBe('seg');
 
     await user.keyboard('{Escape}');
     rerender(<DatePicker value={JUN_15_2026} onChange={() => {}} weekStartsOn={0} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     headers = screen.getAllByRole('columnheader').map((h) => h.textContent);
     expect(headers[0]).toBe('dom');
   });
@@ -227,7 +229,7 @@ describe('<DatePicker />', () => {
   it('opening focuses the selected day and makes only it tabbable (roving tabindex)', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     const day15 = monthCell('15');
     expect(day15).toHaveFocus();
@@ -240,7 +242,7 @@ describe('<DatePicker />', () => {
   it('Arrow keys move focus by one day (←/→) and one week (↑/↓)', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     expect(focusedDay()).toHaveTextContent('15');
 
     await user.keyboard('{ArrowRight}');
@@ -260,7 +262,7 @@ describe('<DatePicker />', () => {
   it('Home / End jump to the first / last day of the focused week (clamped to month)', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     // move to Wed Jun 17, then Home → Mon Jun 15, End → Sun Jun 21
     await user.keyboard('{ArrowRight}{ArrowRight}');
@@ -274,7 +276,7 @@ describe('<DatePicker />', () => {
   it('Arrow across a month boundary switches the visible month and keeps focus on the grid', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={new Date(2026, 5, 1)} onChange={() => {}} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
     expect(focusedDay()).toHaveTextContent('1');
 
     await user.keyboard('{ArrowLeft}'); // Jun 1 → May 31
@@ -286,7 +288,7 @@ describe('<DatePicker />', () => {
   it('PageUp / PageDown move the focus by a whole month', async () => {
     const user = userEvent.setup();
     render(<DatePicker value={JUN_15_2026} onChange={() => {}} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     await user.keyboard('{PageDown}'); // June → July
     expect(screen.getByText('julho')).toBeInTheDocument();
@@ -301,7 +303,7 @@ describe('<DatePicker />', () => {
     const onChange = vi.fn();
     const user = userEvent.setup();
     render(<Controlled initial={JUN_15_2026} onChange={onChange} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     await user.keyboard('{ArrowRight}{ArrowRight}{Enter}'); // focus 17, select
     expect(onChange).toHaveBeenCalledTimes(1);
@@ -314,7 +316,7 @@ describe('<DatePicker />', () => {
     const onChange = vi.fn();
     const user = userEvent.setup();
     render(<Controlled initial={JUN_15_2026} onChange={onChange} />);
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     await user.keyboard('{ArrowDown}[Space]'); // focus 22, select
     expect(onChange).toHaveBeenCalledTimes(1);
@@ -331,7 +333,7 @@ describe('<DatePicker />', () => {
         min={new Date(2026, 5, 10)}
       />,
     );
-    await user.click(screen.getByRole('button', { name: 'Selecionar data' }));
+    await user.click(screen.getByRole('combobox', { name: /^Selecionar data/ }));
 
     // walk left to the min edge (Jun 10), then try to go past it
     await user.keyboard('{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}'); // 15→10
@@ -352,7 +354,7 @@ describe('<DatePicker />', () => {
     );
     expect(screen.getByText('dia 15')).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: 'Escolher a data do evento' }),
+      screen.getByRole('combobox', { name: 'Escolher a data do evento dia 15' }),
     ).toBeInTheDocument();
   });
 });

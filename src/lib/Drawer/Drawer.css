@@ -4,7 +4,7 @@
 .via-drawer-root {
   position: fixed;
   inset: 0;
-  z-index: 9990;
+  z-index: var(--via-z-overlay, 1000);
   pointer-events: none;
 }
 

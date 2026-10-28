@@ -10,7 +10,7 @@
 
 .via-popover {
   position: absolute;
-  z-index: 90;
+  z-index: var(--via-z-popover, 1100);
   min-width: 240px;
   max-width: 360px;
   background: var(--via-glass-card);

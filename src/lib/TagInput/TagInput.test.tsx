@@ -81,16 +81,24 @@ describe('<TagInput />', () => {
     expect(screen.getAllByText('dup')).toHaveLength(2);
   });
 
-  it('stops accepting tags once max is reached and disables the input', async () => {
+  it('stops accepting tags once max is reached — read-only, focus kept', async () => {
     const user = userEvent.setup();
     render(<TagInput max={2} />);
     const input = screen.getByRole('textbox');
     await user.type(input, 'a{Enter}b{Enter}');
     expect(screen.getByText('a')).toBeInTheDocument();
     expect(screen.getByText('b')).toBeInTheDocument();
-    // at max: input becomes disabled and placeholder is cleared
-    expect(input).toBeDisabled();
+    // at max: input goes read-only (not disabled) so keyboard focus is not dropped
+    expect(input).not.toBeDisabled();
+    expect(input).toHaveAttribute('readonly');
+    expect(input).toHaveFocus();
     expect(input).toHaveAttribute('placeholder', '');
+    // typing does nothing; Backspace still removes the last tag
+    await user.keyboard('c{Enter}');
+    expect(screen.queryByText('c')).not.toBeInTheDocument();
+    await user.keyboard('{Backspace}');
+    expect(screen.queryByText('b')).not.toBeInTheDocument();
+    expect(input).not.toHaveAttribute('readonly');
   });
 
   it('renders suggestions, filters already-added ones, and adds on click', async () => {

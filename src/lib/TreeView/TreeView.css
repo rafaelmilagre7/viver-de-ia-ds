@@ -32,6 +32,19 @@
   border-radius: var(--via-radius-sm);
   transition: background .15s ease, color .15s ease;
   position: relative;
+  /* era <button>: mantém as métricas dele (o foco agora mora no li) */
+  box-sizing: border-box;
+  line-height: normal;
+  user-select: none;
+}
+
+/* Foco no treeitem (li) · o anel aparece na linha, não em volta dos filhos */
+.via-tv [role="treeitem"] {
+  outline: none;
+}
+.via-tv [role="treeitem"]:focus-visible > .via-tv__row {
+  outline: 2px solid var(--via-navy-60);
+  outline-offset: -2px;
 }
 
 .via-tv__row:hover {

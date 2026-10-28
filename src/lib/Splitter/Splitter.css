@@ -36,6 +36,8 @@
   justify-content: center;
   transition: background var(--via-dur) ease;
   outline: none;
+  /* arrasto por toque não vira scroll da página */
+  touch-action: none;
 }
 
 .via-splitter--horizontal .via-splitter__handle {

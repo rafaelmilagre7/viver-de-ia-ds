@@ -21,7 +21,7 @@ const options = [
 describe('<Select />', () => {
   it('renders the placeholder and stays closed by default', () => {
     render(<Select options={options} label="Plano" placeholder="Selecione um plano" />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
     expect(trigger).toHaveAttribute('aria-haspopup', 'listbox');
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
     expect(trigger).toHaveTextContent('Selecione um plano');
@@ -32,7 +32,7 @@ describe('<Select />', () => {
   it('opens the listbox on trigger click and exposes the options', async () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
 
     await user.click(trigger);
 
@@ -49,28 +49,28 @@ describe('<Select />', () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" onValueChange={onValueChange} />);
 
-    await user.click(screen.getByRole('button', { name: 'Plano' }));
+    await user.click(screen.getByRole('combobox', { name: /^Plano/ }));
     await user.click(screen.getByRole('option', { name: 'Pro · R$ 290/mês' }));
 
     expect(onValueChange).toHaveBeenCalledWith('pro');
     // listbox closes after a selection
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
     // and the chosen label now shows on the trigger
-    expect(screen.getByRole('button', { name: 'Plano' })).toHaveTextContent('Pro · R$ 290/mês');
+    expect(screen.getByRole('combobox', { name: /^Plano/ })).toHaveTextContent('Pro · R$ 290/mês');
   });
 
   it('marks the selected option with aria-selected when reopened', async () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" defaultValue="free" />);
 
-    await user.click(screen.getByRole('button', { name: 'Plano' }));
+    await user.click(screen.getByRole('combobox', { name: /^Plano/ }));
     expect(screen.getByRole('option', { name: 'Free' })).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByRole('option', { name: 'Pro · R$ 290/mês' })).toHaveAttribute('aria-selected', 'false');
   });
 
   it('honors defaultValue on first render (uncontrolled)', () => {
     render(<Select options={options} label="Plano" defaultValue="pro" />);
-    expect(screen.getByRole('button', { name: 'Plano' })).toHaveTextContent('Pro · R$ 290/mês');
+    expect(screen.getByRole('combobox', { name: /^Plano/ })).toHaveTextContent('Pro · R$ 290/mês');
   });
 
   it('does not select a disabled option', async () => {
@@ -78,7 +78,7 @@ describe('<Select />', () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" onValueChange={onValueChange} />);
 
-    await user.click(screen.getByRole('button', { name: 'Plano' }));
+    await user.click(screen.getByRole('combobox', { name: /^Plano/ }));
     const disabledOpt = screen.getByRole('option', { name: 'Team · R$ 890/mês' });
     expect(disabledOpt).toHaveAttribute('aria-disabled', 'true');
 
@@ -95,28 +95,28 @@ describe('<Select />', () => {
       <Select options={options} label="Plano" value="free" onValueChange={onValueChange} />,
     );
 
-    await user.click(screen.getByRole('button', { name: 'Plano' }));
+    await user.click(screen.getByRole('combobox', { name: /^Plano/ }));
     await user.click(screen.getByRole('option', { name: 'Pro · R$ 290/mês' }));
 
     // callback fires but internal state is ignored while controlled
     expect(onValueChange).toHaveBeenCalledWith('pro');
-    expect(screen.getByRole('button', { name: 'Plano' })).toHaveTextContent('Free');
+    expect(screen.getByRole('combobox', { name: /^Plano/ })).toHaveTextContent('Free');
 
     // parent confirms the new value
     rerender(<Select options={options} label="Plano" value="pro" onValueChange={onValueChange} />);
-    expect(screen.getByRole('button', { name: 'Plano' })).toHaveTextContent('Pro · R$ 290/mês');
+    expect(screen.getByRole('combobox', { name: /^Plano/ })).toHaveTextContent('Pro · R$ 290/mês');
   });
 
   it('closes the open listbox when Escape is pressed', async () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" />);
 
-    await user.click(screen.getByRole('button', { name: 'Plano' }));
+    await user.click(screen.getByRole('combobox', { name: /^Plano/ }));
     expect(screen.getByRole('listbox')).toBeInTheDocument();
 
     await user.keyboard('{Escape}');
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Plano' })).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByRole('combobox', { name: /^Plano/ })).toHaveAttribute('aria-expanded', 'false');
   });
 
   it('closes the listbox when clicking outside the component', async () => {
@@ -128,7 +128,7 @@ describe('<Select />', () => {
       </div>,
     );
 
-    await user.click(screen.getByRole('button', { name: 'Plano' }));
+    await user.click(screen.getByRole('combobox', { name: /^Plano/ }));
     expect(screen.getByRole('listbox')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'outside' }));
@@ -138,9 +138,10 @@ describe('<Select />', () => {
   it('uses ariaLabel for accessibility when no visible label is provided', async () => {
     const user = userEvent.setup();
     render(<Select options={options} ariaLabel="Escolha um plano" />);
-    const trigger = screen.getByRole('button', { name: 'Escolha um plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Escolha um plano/ });
     expect(trigger).toHaveAttribute('aria-label', 'Escolha um plano');
-    expect(trigger).not.toHaveAttribute('aria-labelledby');
+    // nome = aria-label do próprio trigger + valor atual (aria-labelledby aponta pra si mesmo)
+    expect(trigger).toHaveAccessibleName('Escolha um plano Selecione…');
 
     // still fully operable without a visible label
     await user.click(trigger);
@@ -150,7 +151,7 @@ describe('<Select />', () => {
   it('does not open when disabled', async () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" disabled />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
     expect(trigger).toBeDisabled();
 
     await user.click(trigger);
@@ -160,7 +161,7 @@ describe('<Select />', () => {
   it('renders the error message and flags the trigger with has-error', () => {
     render(<Select options={options} label="Plano" error="Campo obrigatório" />);
     expect(screen.getByText('Campo obrigatório')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Plano' })).toHaveClass('has-error');
+    expect(screen.getByRole('combobox', { name: /^Plano/ })).toHaveClass('has-error');
   });
 
   // ===== Keyboard navigation (WAI-ARIA listbox) =====
@@ -168,7 +169,7 @@ describe('<Select />', () => {
   it('opens the listbox with ArrowDown when closed and highlights the first enabled option', async () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
     trigger.focus();
 
     await user.keyboard('{ArrowDown}');
@@ -185,7 +186,7 @@ describe('<Select />', () => {
   it('opens the listbox with ArrowUp when closed', async () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
     trigger.focus();
 
     await user.keyboard('{ArrowUp}');
@@ -197,7 +198,7 @@ describe('<Select />', () => {
   it('ArrowDown moves the highlight down the options', async () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
 
     await user.click(trigger); // opens, highlights first enabled (Free)
     expect(screen.getByRole('option', { name: 'Free' })).toHaveClass('is-active');
@@ -215,7 +216,7 @@ describe('<Select />', () => {
     const user = userEvent.setup();
     // disabled 'team' sits at index 2; from 'pro' (1) ArrowDown wraps past it to 'free' (0)
     render(<Select options={options} label="Plano" onValueChange={onValueChange} />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
 
     await user.click(trigger); // active = Free (0)
     await user.keyboard('{ArrowDown}'); // → Pro (1)
@@ -235,7 +236,7 @@ describe('<Select />', () => {
     ];
     const user = userEvent.setup();
     render(<Select options={fourOpts} label="Letra" />);
-    const trigger = screen.getByRole('button', { name: 'Letra' });
+    const trigger = screen.getByRole('combobox', { name: /^Letra/ });
 
     await user.click(trigger);
 
@@ -251,7 +252,7 @@ describe('<Select />', () => {
     const onValueChange = vi.fn();
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" onValueChange={onValueChange} />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
 
     await user.click(trigger); // active = Free
     await user.keyboard('{ArrowDown}'); // → Pro
@@ -259,14 +260,14 @@ describe('<Select />', () => {
 
     expect(onValueChange).toHaveBeenCalledWith('pro');
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Plano' })).toHaveTextContent('Pro · R$ 290/mês');
+    expect(screen.getByRole('combobox', { name: /^Plano/ })).toHaveTextContent('Pro · R$ 290/mês');
   });
 
   it('Space selects the highlighted option when the listbox is open', async () => {
     const onValueChange = vi.fn();
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" onValueChange={onValueChange} />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
 
     await user.click(trigger); // active = Free
     await user.keyboard('{ArrowDown}'); // → Pro
@@ -280,7 +281,7 @@ describe('<Select />', () => {
     const onValueChange = vi.fn();
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" onValueChange={onValueChange} />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
     trigger.focus();
 
     await user.keyboard('{Enter}');
@@ -293,7 +294,7 @@ describe('<Select />', () => {
   it('opens the listbox highlighting the currently selected option', async () => {
     const user = userEvent.setup();
     render(<Select options={options} label="Plano" defaultValue="pro" />);
-    const trigger = screen.getByRole('button', { name: 'Plano' });
+    const trigger = screen.getByRole('combobox', { name: /^Plano/ });
 
     await user.click(trigger);
 
@@ -313,7 +314,7 @@ describe('<Select />', () => {
       { value: 'b', label: 'Bravo' },
     ];
     render(<Select options={opts} label="Letra" onValueChange={onValueChange} />);
-    const trigger = screen.getByRole('button', { name: 'Letra' });
+    const trigger = screen.getByRole('combobox', { name: /^Letra/ });
 
     await user.click(trigger); // first enabled is Bravo (Alpha disabled)
     expect(screen.getByRole('option', { name: 'Bravo' })).toHaveClass('is-active');

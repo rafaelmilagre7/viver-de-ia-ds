@@ -53,7 +53,7 @@
 
 .via-dp__pop {
   position: absolute;
-  z-index: 50;
+  z-index: var(--via-z-dropdown, 1100);
   top: calc(100% + 8px);
   left: 0;
   width: 304px;
@@ -144,6 +144,14 @@
   padding: var(--via-space-0_5) var(--via-space-1);
 }
 
+/* Semana (role=row) · subgrid: as células seguem as 7 colunas e o gap do
+   .via-dp__grid como se a linha não existisse */
+.via-dp__row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+
 .via-dp__cell {
   aspect-ratio: 1;
   display: inline-flex;
@@ -200,8 +208,9 @@
   border-radius: var(--via-radius-sm);
   transition: background 120ms ease, color 120ms ease;
 }
-.via-dp__ghost:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-text-primary); }
-.via-dp__ghost:active { background: var(--via-navy-08); transition-duration: var(--via-dur-press); }
+.via-dp__ghost:disabled { opacity: 0.32; cursor: not-allowed; }
+.via-dp__ghost:hover:not(:disabled) { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-text-primary); }
+.via-dp__ghost:active:not(:disabled) { background: var(--via-navy-08); transition-duration: var(--via-dur-press); }
 
 @keyframes via-dp-in {
   from { opacity: 0; transform: translateY(-3px); }

@@ -1,5 +1,8 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Calendar as CalIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { trapTab } from '../_shared/useDialogFocus';
+import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { Anchored } from '../_shared/Portal';
 import './DatePicker.css';
 
 export interface DatePickerProps {
@@ -47,6 +50,12 @@ const defaultFormat = (d: Date) =>
 /**
  * DatePicker · single date selection · editorial month grid.
  *
+ * Trigger role=combobox (popup = dialog) com nome = rótulo + data atual. O
+ * calendário abre num portal ancorado (não é cortado por card/modal), com
+ * grade ARIA completa (row/columnheader/gridcell) e nome de data por extenso
+ * em cada dia. ESC fecha só o calendário e devolve o foco ao trigger; clique
+ * fora ou foco fora também fecham. "Hoje" respeita min/max.
+ *
  * @example
  * const [date, setDate] = useState<Date | null>(null);
  * <DatePicker value={date} onChange={setDate} label="Data da live" />
@@ -69,7 +78,14 @@ export function DatePicker({
   const [activeDay, setActiveDay] = useState<Date>(() => value ?? new Date());
   const rootRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const popRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const baseId = useId();
+  const labelId = `${baseId}-label`;
+  const valueId = `${baseId}-value`;
+  const triggerId = `${baseId}-trigger`;
+  const popId = `${baseId}-pop`;
+  const monthId = `${baseId}-month`;
 
   // sync view quando value muda externamente — ajuste em render-phase
   // (padrão oficial React, evita setState dentro de effect)
@@ -80,20 +96,16 @@ export function DatePicker({
     if (value) setView(startOfMonth(value));
   }
 
-  // close on outside click + ESC
-  useEffect(() => {
-    if (!open) return;
-    const onDown = (e: MouseEvent) => {
-      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
-    document.addEventListener('mousedown', onDown);
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('mousedown', onDown);
-      document.removeEventListener('keydown', onKey);
-    };
-  }, [open]);
+  // fecha e devolve o foco ao trigger (ESC, escolha de data, Limpar/Hoje)
+  const closeToTrigger = () => {
+    setOpen(false);
+    triggerRef.current?.focus();
+  };
+
+  // clique fora / foco fora fecha (o calendário em portal conta como dentro)
+  useDismiss(open, [rootRef, popRef], () => setOpen(false));
+  // ESC fecha só o calendário (camada do topo)
+  const layer = useEscapeLayer(open, closeToTrigger);
 
   const cells = useMemo(() => {
     const first = startOfMonth(view);
@@ -130,7 +142,9 @@ export function DatePicker({
     return false;
   };
 
-  const today = new Date();
+  const now = new Date();
+  // dia de hoje à meia-noite (comparável com min/max e com as células)
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const dow = weekStartsOn === 1 ? PT_DOW_MON : PT_DOW_SUN;
 
   // first selectable in-month day of the visible month (fallback target)
@@ -164,7 +178,9 @@ export function DatePicker({
   useEffect(() => {
     if (!open) return;
     const root = rootRef.current;
-    if (root && !root.contains(document.activeElement)) return;
+    const pop = popRef.current;
+    const active = document.activeElement;
+    if (root && !root.contains(active) && !pop?.contains(active)) return;
     const id = `${baseId}-day-${isoKey(new Date(effectiveTime))}`;
     gridRef.current?.querySelector<HTMLButtonElement>(`[id="${id}"]`)?.focus();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -198,7 +214,7 @@ export function DatePicker({
       e.preventDefault();
       if (!isDisabled(from)) {
         onChange(from);
-        setOpen(false);
+        closeToTrigger();
       }
       return;
     }
@@ -271,95 +287,132 @@ export function DatePicker({
     setView(startOfMonth(candidate));
   };
 
+  const fullDate = (d: Date) =>
+    d.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+  // Linhas da grade (6 × 7) — role=row exige o agrupamento no DOM
+  const rows = Array.from({ length: cells.length / 7 }, (_, r) => cells.slice(r * 7, r * 7 + 7));
+
+  // nome = rótulo + data atual; sem label visível, o aria-label do próprio trigger
+  const nameSource = ariaLabel || !label ? triggerId : labelId;
+
   return (
     <div ref={rootRef} className="via-dp">
-      {label && <label className="via-dp__label">{label}</label>}
+      {label && <label id={labelId} className="via-dp__label">{label}</label>}
       <button
+        ref={triggerRef}
+        id={triggerId}
         type="button"
+        role="combobox"
         className={`via-dp__input ${value ? 'has-value' : ''}`}
         onClick={() => !disabled && setOpen((o) => !o)}
         disabled={disabled}
-        aria-label={ariaLabel ?? label ?? 'Selecionar data'}
+        aria-label={ariaLabel || !label ? ariaLabel ?? 'Selecionar data' : undefined}
+        aria-labelledby={`${nameSource} ${valueId}`}
         aria-expanded={open}
         aria-haspopup="dialog"
+        aria-controls={popId}
       >
         <CalIcon size={14} strokeWidth={1.8} aria-hidden="true" />
-        <span>{value ? formatLabel(value) : placeholder}</span>
+        <span id={valueId}>{value ? formatLabel(value) : placeholder}</span>
       </button>
 
       {open && (
-        <div className="via-dp__pop" role="dialog" aria-label="Calendário">
-          <header className="via-dp__head">
-            <button
-              type="button"
-              onClick={() => setView((v) => addMonths(v, -1))}
-              aria-label="Mês anterior"
-              className="via-dp__nav"
-            >
-              <ChevronLeft size={14} strokeWidth={2.2} />
-            </button>
-            <strong>
-              {PT_MONTHS[view.getMonth()]} <span className="mono">{view.getFullYear()}</span>
-            </strong>
-            <button
-              type="button"
-              onClick={() => setView((v) => addMonths(v, 1))}
-              aria-label="Mês seguinte"
-              className="via-dp__nav"
-            >
-              <ChevronRight size={14} strokeWidth={2.2} />
-            </button>
-          </header>
+        <Anchored anchorRef={rootRef} z="dropdown" layer={layer}>
+          <div
+            ref={popRef}
+            id={popId}
+            className="via-dp__pop"
+            role="dialog"
+            aria-label="Calendário"
+            onKeyDown={(e) => trapTab(e, popRef.current)}
+          >
+            <header className="via-dp__head">
+              <button
+                type="button"
+                onClick={() => setView((v) => addMonths(v, -1))}
+                aria-label="Mês anterior"
+                className="via-dp__nav"
+              >
+                <ChevronLeft size={14} strokeWidth={2.2} />
+              </button>
+              <strong id={monthId}>
+                {PT_MONTHS[view.getMonth()]} <span className="mono">{view.getFullYear()}</span>
+              </strong>
+              <button
+                type="button"
+                onClick={() => setView((v) => addMonths(v, 1))}
+                aria-label="Mês seguinte"
+                className="via-dp__nav"
+              >
+                <ChevronRight size={14} strokeWidth={2.2} />
+              </button>
+            </header>
 
-          <div className="via-dp__dow" role="row">
-            {dow.map((d) => (
-              <span key={d} role="columnheader">{d}</span>
-            ))}
+            {/* Grade ARIA: cabeçalho dos dias DENTRO do grid; cada semana é uma row */}
+            <div role="grid" aria-labelledby={monthId} ref={gridRef} onKeyDown={onGridKeyDown}>
+              <div className="via-dp__dow" role="row">
+                {dow.map((d) => (
+                  <span key={d} role="columnheader">{d}</span>
+                ))}
+              </div>
+
+              <div className="via-dp__grid" role="rowgroup">
+                {rows.map((week, r) => (
+                  <div key={r} className="via-dp__row" role="row">
+                    {week.map((c, i) => {
+                      const sel = value && sameDay(c.date, value);
+                      const isToday = sameDay(c.date, today);
+                      const dis = isDisabled(c.date);
+                      // roving tabindex · only the active, in-month, enabled cell is tabbable
+                      const isActive = !c.outside && !dis && sameDay(c.date, effectiveActive);
+                      return (
+                        <button
+                          // chave por posição: a célula focada sobrevive à troca de mês
+                        key={i}
+                          id={`${baseId}-day-${isoKey(c.date)}`}
+                          type="button"
+                          role="gridcell"
+                          aria-label={fullDate(c.date)}
+                          aria-selected={!!sel}
+                          aria-current={isToday ? 'date' : undefined}
+                          disabled={dis}
+                          tabIndex={isActive ? 0 : -1}
+                          className={[
+                            'via-dp__cell',
+                            c.outside && 'outside',
+                            sel && 'sel',
+                            isToday && 'today',
+                          ].filter(Boolean).join(' ')}
+                          onClick={() => {
+                            onChange(c.date);
+                            closeToTrigger();
+                          }}
+                        >
+                          {c.date.getDate()}
+                        </button>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <footer className="via-dp__foot">
+              <button type="button" className="via-dp__ghost" onClick={() => { onChange(null); closeToTrigger(); }}>
+                Limpar
+              </button>
+              <button
+                type="button"
+                className="via-dp__ghost"
+                disabled={isDisabled(today)}
+                onClick={() => { onChange(today); setView(startOfMonth(today)); closeToTrigger(); }}
+              >
+                Hoje
+              </button>
+            </footer>
           </div>
-
-          <div className="via-dp__grid" role="grid" ref={gridRef} onKeyDown={onGridKeyDown}>
-            {cells.map((c, i) => {
-              const sel = value && sameDay(c.date, value);
-              const isToday = sameDay(c.date, today);
-              const dis = isDisabled(c.date);
-              // roving tabindex · only the active, in-month, enabled cell is tabbable
-              const isActive = !c.outside && !dis && sameDay(c.date, effectiveActive);
-              return (
-                <button
-                  key={i}
-                  id={`${baseId}-day-${isoKey(c.date)}`}
-                  type="button"
-                  role="gridcell"
-                  aria-selected={!!sel}
-                  aria-current={isToday ? 'date' : undefined}
-                  disabled={dis}
-                  tabIndex={isActive ? 0 : -1}
-                  className={[
-                    'via-dp__cell',
-                    c.outside && 'outside',
-                    sel && 'sel',
-                    isToday && 'today',
-                  ].filter(Boolean).join(' ')}
-                  onClick={() => {
-                    onChange(c.date);
-                    setOpen(false);
-                  }}
-                >
-                  {c.date.getDate()}
-                </button>
-              );
-            })}
-          </div>
-
-          <footer className="via-dp__foot">
-            <button type="button" className="via-dp__ghost" onClick={() => { onChange(null); setOpen(false); }}>
-              Limpar
-            </button>
-            <button type="button" className="via-dp__ghost" onClick={() => { onChange(today); setView(startOfMonth(today)); setOpen(false); }}>
-              Hoje
-            </button>
-          </footer>
-        </div>
+        </Anchored>
       )}
     </div>
   );

@@ -225,6 +225,62 @@ export function Calendar({
     moveTo(target);
   };
 
+  // Uma célula do grid (dia). Semanas em linhas de 7 (role=row exige o agrupamento)
+  const renderDay = ({ date, outOfMonth }: { date: Date | null; outOfMonth: boolean }, i: number) => {
+    if (!date) return <span key={i} className="via-cal__cell-empty" />;
+    const isToday = sameDay(date, today);
+    const isSelected = value && sameDay(date, value);
+    const dis = isDisabled(date);
+    const isActive = sameDay(date, activeDate);
+    const dayMarkers = markers.filter((m) => sameDay(m.date, date));
+
+    return (
+      <button
+        key={i}
+        id={dayId(date)}
+        type="button"
+        role="gridcell"
+        className={[
+          'via-cal__cell',
+          outOfMonth ? 'is-out' : '',
+          isToday ? 'is-today' : '',
+          isSelected ? 'is-selected' : '',
+          dis ? 'is-disabled' : '',
+        ].filter(Boolean).join(' ')}
+        disabled={dis}
+        tabIndex={dis ? -1 : isActive ? 0 : -1}
+        onClick={() => {
+          if (dis) return;
+          setActiveDate(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+          onChange?.(date);
+        }}
+        onKeyDown={(e) => handleKey(e, date)}
+        aria-label={date.toLocaleDateString(locale, {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+        })}
+        aria-current={isToday ? 'date' : undefined}
+        aria-selected={!!isSelected}
+      >
+        <span className="via-cal__cell-num">{date.getDate()}</span>
+        {dayMarkers.length > 0 && (
+          <span className="via-cal__cell-markers" aria-hidden="true">
+            {dayMarkers.slice(0, 3).map((m, mi) => (
+              <span
+                key={mi}
+                className={`via-cal__cell-dot via-cal__cell-dot--${m.tone || 'navy'}`}
+                title={m.label}
+              />
+            ))}
+          </span>
+        )}
+      </button>
+    );
+  };
+  const weeks = Array.from({ length: Math.ceil(days.length / 7) }, (_, r) => days.slice(r * 7, r * 7 + 7));
+
   return (
     <div className="via-cal" role="application" aria-label="Calendário">
       <div className="via-cal__head">
@@ -236,7 +292,7 @@ export function Calendar({
         >
           <ChevronLeft size={14} strokeWidth={2.2} />
         </button>
-        <h4 className="via-cal__month">{monthLabel}</h4>
+        <h4 className="via-cal__month" id={`${baseId}-month`}>{monthLabel}</h4>
         <button
           type="button"
           className="via-cal__nav"
@@ -247,67 +303,23 @@ export function Calendar({
         </button>
       </div>
 
-      {showWeekdays && (
-        <div className="via-cal__weekdays" aria-hidden="true">
-          {weekdayLabels.map((w) => (
-            <span key={w}>{w}</span>
+      {/* Grade ARIA: cabeçalho dos dias DENTRO do grid; cada semana é uma row */}
+      <div className="via-cal__table" role="grid" aria-labelledby={`${baseId}-month`}>
+        {showWeekdays && (
+          <div className="via-cal__weekdays" role="row">
+            {weekdayLabels.map((w) => (
+              <span key={w} role="columnheader">{w}</span>
+            ))}
+          </div>
+        )}
+
+        <div className="via-cal__grid" role="rowgroup">
+          {weeks.map((week, r) => (
+            <div key={r} className="via-cal__row" role="row">
+              {week.map(renderDay)}
+            </div>
           ))}
         </div>
-      )}
-
-      <div className="via-cal__grid" role="grid">
-        {days.map(({ date, outOfMonth }, i) => {
-          if (!date) return <span key={i} className="via-cal__cell-empty" />;
-          const isToday = sameDay(date, today);
-          const isSelected = value && sameDay(date, value);
-          const dis = isDisabled(date);
-          const isActive = sameDay(date, activeDate);
-          const dayMarkers = markers.filter((m) => sameDay(m.date, date));
-
-          return (
-            <button
-              key={i}
-              id={dayId(date)}
-              type="button"
-              className={[
-                'via-cal__cell',
-                outOfMonth ? 'is-out' : '',
-                isToday ? 'is-today' : '',
-                isSelected ? 'is-selected' : '',
-                dis ? 'is-disabled' : '',
-              ].filter(Boolean).join(' ')}
-              disabled={dis}
-              tabIndex={dis ? -1 : isActive ? 0 : -1}
-              onClick={() => {
-                if (dis) return;
-                setActiveDate(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
-                onChange?.(date);
-              }}
-              onKeyDown={(e) => handleKey(e, date)}
-              aria-label={date.toLocaleDateString(locale, {
-                weekday: 'long',
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              })}
-              aria-current={isToday ? 'date' : undefined}
-              aria-selected={!!isSelected}
-            >
-              <span className="via-cal__cell-num">{date.getDate()}</span>
-              {dayMarkers.length > 0 && (
-                <span className="via-cal__cell-markers" aria-hidden="true">
-                  {dayMarkers.slice(0, 3).map((m, mi) => (
-                    <span
-                      key={mi}
-                      className={`via-cal__cell-dot via-cal__cell-dot--${m.tone || 'navy'}`}
-                      title={m.label}
-                    />
-                  ))}
-                </span>
-              )}
-            </button>
-          );
-        })}
       </div>
     </div>
   );

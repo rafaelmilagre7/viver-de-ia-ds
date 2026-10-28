@@ -16,6 +16,9 @@
 }
 
 .via-dt__caption {
+  /* <caption> de verdade: alinhamento de bloco à esquerda, como o header antigo */
+  caption-side: top;
+  text-align: left;
   padding: var(--via-space-3_5) var(--via-space-4);
   font-family: var(--via-font, inherit);
   font-size: var(--via-fs-caption);

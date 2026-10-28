@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useRef, useId, type ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { useDragDismiss } from '../_shared/useDragDismiss';
+import { trapTab } from '../_shared/useDialogFocus';
+import { FOCUSABLE, useEscapeLayer, useScrollLock } from '../_shared/overlay';
+import { Portal } from '../_shared/Portal';
 import './Drawer.css';
 
 type Side = 'right' | 'left' | 'bottom';
@@ -28,10 +31,6 @@ export interface DrawerProps {
  *   <RadioGroup options={...} />
  * </Drawer>
  */
-// Selector dos elementos que recebem foco por Tab dentro do painel
-const FOCUSABLE =
-  'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
 export function Drawer(props: DrawerProps) {
   // Painel monta do zero a cada abertura — o estado do gesto (offset vivo
   // da mola) não pode vazar de um ciclo de abre/fecha pro outro
@@ -96,6 +95,11 @@ function DrawerPanel({
     onDismiss: handleDismiss,
     canStart,
     scrimRef,
+    // Consumidor manteve `open` (ex.: "alterações não salvas"): painel voltou,
+    // próximo pedido de fechar tem que valer de novo
+    onKeptOpen: () => {
+      closingRef.current = false;
+    },
   });
 
   // X/ESC/scrim saem pela mesma mola do gesto; onClose só dispara no settle
@@ -108,17 +112,9 @@ function DrawerPanel({
     close();
   }, [close]);
 
-  // ESC fecha + lock body scroll
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && requestClose();
-    document.addEventListener('keydown', onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [requestClose]);
+  // ESC fecha (só se for a camada do topo) + trava o scroll da página
+  const layer = useEscapeLayer(true, () => requestClose());
+  useScrollLock(true);
 
   // Focus return: ao abrir, guarda quem tinha o foco; ao fechar, devolve a ele
   useEffect(() => {
@@ -136,69 +132,43 @@ function DrawerPanel({
   }, []);
 
   // Focus trap: Tab/Shift+Tab ciclam só entre os focáveis dentro do painel
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key !== 'Tab' || !dialogRef.current) return;
-    const focusables = Array.from(
-      dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE),
-    );
-    if (focusables.length === 0) {
-      // Sem focáveis: mantém o foco no painel
-      e.preventDefault();
-      dialogRef.current.focus();
-      return;
-    }
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-    const active = document.activeElement;
-
-    if (e.shiftKey) {
-      // Shift+Tab no primeiro (ou foco fora) → vai pro último
-      if (active === first || !dialogRef.current.contains(active)) {
-        e.preventDefault();
-        last.focus();
-      }
-    } else {
-      // Tab no último (ou foco fora) → volta pro primeiro
-      if (active === last || !dialogRef.current.contains(active)) {
-        e.preventDefault();
-        first.focus();
-      }
-    }
-  };
+  const handleKeyDown = (e: React.KeyboardEvent) => trapTab(e, dialogRef.current);
 
   return (
-    <div className="via-drawer-root" role="presentation">
-      <div ref={scrimRef} className="via-drawer-scrim" onClick={requestClose} aria-hidden="true" />
-      <div
-        ref={dialogRef}
-        className={`via-drawer via-drawer--${side} via-drawer--${size}`}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={title ? titleId : undefined}
-        tabIndex={-1}
-        onKeyDown={handleKeyDown}
-      >
-        {(title || !hideClose) && (
-          <header className="via-drawer__head">
-            <div>
-              {title && <h2 id={titleId}>{title}</h2>}
-              {description && <p>{description}</p>}
-            </div>
-            {!hideClose && (
-              <button
-                type="button"
-                className="via-drawer__close"
-                onClick={requestClose}
-                aria-label="Fechar drawer"
-              >
-                <X size={14} strokeWidth={2.2} />
-              </button>
-            )}
-          </header>
-        )}
-        <div className="via-drawer__body">{children}</div>
-        {footer && <footer className="via-drawer__foot">{footer}</footer>}
+    <Portal layer={layer}>
+      <div className="via-drawer-root" role="presentation">
+        <div ref={scrimRef} className="via-drawer-scrim" onClick={requestClose} aria-hidden="true" />
+        <div
+          ref={dialogRef}
+          className={`via-drawer via-drawer--${side} via-drawer--${size}`}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={title ? titleId : undefined}
+          tabIndex={-1}
+          onKeyDown={handleKeyDown}
+        >
+          {(title || !hideClose) && (
+            <header className="via-drawer__head">
+              <div>
+                {title && <h2 id={titleId}>{title}</h2>}
+                {description && <p>{description}</p>}
+              </div>
+              {!hideClose && (
+                <button
+                  type="button"
+                  className="via-drawer__close"
+                  onClick={requestClose}
+                  aria-label="Fechar drawer"
+                >
+                  <X size={14} strokeWidth={2.2} />
+                </button>
+              )}
+            </header>
+          )}
+          <div className="via-drawer__body">{children}</div>
+          {footer && <footer className="via-drawer__foot">{footer}</footer>}
+        </div>
       </div>
-    </div>
+    </Portal>
   );
 }

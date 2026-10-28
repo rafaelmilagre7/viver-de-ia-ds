@@ -131,7 +131,8 @@
 .via-taginput__input::placeholder {
   color: var(--via-ink-3, #6B7891);
 }
-.via-taginput__input:disabled { cursor: not-allowed; }
+.via-taginput__input:disabled,
+.via-taginput__input:read-only { cursor: not-allowed; }
 
 /* Suggestions */
 .via-taginput__suggestions {
