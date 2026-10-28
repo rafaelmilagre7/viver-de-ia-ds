@@ -29,8 +29,8 @@ Tudo abaixo foi medido no repo ou no site, não estimado.
 
 ### Site no ar
 
-`viver-de-ia-ds.vercel.app` está no estado de ~6/ago (último deploy de produção há 83 dias,
-time `viver-de-ia` na Vercel): falta o email 14 (`welcome-plataforma`) e os consertos abaixo.
+`viver-de-ia-ds.vercel.app` republicado em 28/out com o `main` atual (antes estava no estado
+de ~6/ago, 83 dias sem deploy, sem o email 14). Time `viver-de-ia` na Vercel.
 Deploy é manual (`vercel --prod` a partir do Mac, projeto já linkado em `.vercel/`).
 
 ### Ferramentas do Rafael (Mac)
@@ -62,7 +62,8 @@ Deploy é manual (`vercel --prod` a partir do Mac, projeto já linkado em `.verc
 ## Achados em aberto
 
 ### P0 · colocar no ar
-- ~~Mergear esta branch~~ (PR #1, 28/out). Falta **republicar o site** e dar push do plugin 1.4.2.
+- ~~Mergear esta branch~~ (PR #1), ~~republicar o site~~ e ~~push do plugin 1.4.2~~ — feitos em 28/out
+  (site conferido no ar: email 14 publicado, mesmo pacote do build local).
 - **Nenhum consumidor tem o conserto do vidro** (levantamento no Mac, 28/out — tabela no fim).
   Só `claude-viverdeia` e `via-talentos` linkam o `dist/lib` vivo (pedem reinstalar); o resto
   vendoriza ou copiou tokens e precisa re-vendorizar ou corrigir a ordem no próprio CSS.
