@@ -28,8 +28,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
+  backdrop-filter: blur(28px) saturate(160%);
   overflow: hidden;
   isolation: isolate;
   box-shadow:
@@ -185,8 +185,8 @@
 
 .vds-cp-mod-head:hover {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -282,8 +282,8 @@
 
 .vds-cp-lesson:hover:not(.locked) {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -305,8 +305,8 @@
    definida à direita. */
 .vds-cp-lesson.playing {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -434,8 +434,8 @@
   padding: 10px 16px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   border: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
@@ -591,8 +591,8 @@
   border-radius: 50%;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.08));
   border: 1px solid rgba(255, 255, 255, 0.44);
-  backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
+  backdrop-filter: blur(28px) saturate(160%);
   /* triângulo BRANCO · em navy sobre o disco escuro o CTA principal sumia */
   color: var(--via-white);
   cursor: pointer;
@@ -654,8 +654,8 @@
      em cima de vídeo escuro, com os ícones brancos sumindo. Cor fixa de
      contexto escuro — a mesma receita da barra do broadcast. */
   background: rgba(2, 22, 42, 0.62);
-  backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 3;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
@@ -794,8 +794,8 @@
   padding: 6px 12px;
   border-radius: var(--via-radius-sm);
   background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.20);
   color: var(--via-white);
   cursor: pointer;
@@ -849,8 +849,8 @@
   padding: 24px 26px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
   position: relative;
   overflow: hidden;
@@ -917,8 +917,8 @@
   padding: 11px 16px;
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   font-family: inherit;
@@ -1037,8 +1037,8 @@
   padding: 24px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
 }
@@ -1198,8 +1198,8 @@
   padding: 12px 14px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   transition:
@@ -1261,8 +1261,8 @@
   height: 28px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   cursor: pointer;
@@ -1339,8 +1339,8 @@
 
 .vds-cp-chapters li:hover {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -1358,8 +1358,8 @@
 
 .vds-cp-chapters li.on {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -1501,8 +1501,8 @@
   border-radius: var(--via-radius-pill);
   background: rgba(184, 92, 92, 0.20);
   border: 1px solid rgba(184, 92, 92, 0.42);
-  backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
   color: var(--via-white);
   white-space: nowrap;
   line-height: 1.4;
@@ -1545,8 +1545,8 @@
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
   color: var(--via-white);
   font-size: var(--via-fs-xs);
   letter-spacing: -0.006em;
@@ -1599,8 +1599,8 @@
   border-radius: var(--via-radius-md);
   background: rgba(10, 31, 59, 0.42);
   border: 1px solid rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
   max-width: 460px;
   z-index: 3;
   box-shadow:
@@ -1771,8 +1771,8 @@
   padding: 12px 16px;
   border-radius: var(--via-radius-md);
   background: rgba(2, 22, 42, 0.62);
-  backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
+  backdrop-filter: blur(28px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 3;
   box-shadow:
@@ -1906,8 +1906,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
+  backdrop-filter: blur(28px) saturate(160%);
   overflow: hidden;
   isolation: isolate;
   box-shadow:

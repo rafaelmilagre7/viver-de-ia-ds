@@ -2,8 +2,8 @@
   position: relative;
   padding: 44px;
   background: var(--via-glass-card);
-  backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   overflow: hidden;
@@ -159,8 +159,8 @@
   gap: var(--via-space-3_5);
   padding: 18px 20px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);
@@ -294,8 +294,8 @@
 /* Secundário em vidro · era transparente, sem corpo */
 .vds-ob .btn.ghost {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   color: var(--via-text-body);
   border-color: var(--via-border-soft);
   box-shadow:
@@ -365,8 +365,8 @@
   isolation: isolate;
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   box-shadow: var(--via-glass-shadow-lift);
   min-height: 620px;
 }
@@ -679,8 +679,8 @@
   padding: 14px 16px;
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   cursor: pointer;
@@ -835,8 +835,8 @@
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 2px 6px -3px var(--via-shadow-ink-10);

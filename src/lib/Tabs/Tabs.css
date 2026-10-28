@@ -90,8 +90,8 @@
 .via-tabs--pills .via-tabs__list {
   padding: 4px;
   background: linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 0.5px solid var(--via-navy-08);
   border-radius: var(--via-radius-sm);
   align-self: flex-start;
@@ -114,8 +114,8 @@
 
 .via-tabs--pills .via-tabs__tab.is-active {
   background: var(--via-glass-card);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   color: var(--via-text-primary);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,

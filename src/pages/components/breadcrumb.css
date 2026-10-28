@@ -26,8 +26,8 @@
 .via-bc a:hover {
   color: var(--via-text-primary);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   box-shadow:
     inset 0 0 0 1px var(--via-navy-20),
     inset 0 1px 0 var(--via-edge-hi),
@@ -63,8 +63,8 @@
   background:
     radial-gradient(540px 200px at 0% 0%, var(--via-navy-04), transparent 60%),
     var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-radius: var(--via-radius-lg);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);

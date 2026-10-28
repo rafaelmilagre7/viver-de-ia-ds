@@ -4,8 +4,8 @@
   background:
     radial-gradient(540px 220px at 0% 0%, var(--via-navy-04), transparent 60%),
     var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-lg);
   box-shadow: var(--via-glass-shadow);
@@ -18,8 +18,8 @@
   gap: var(--via-space-3_5);
   padding: 13px 20px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
@@ -104,8 +104,8 @@
   padding: 6px;
   margin: 0;
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   /* A camada rasa era `0 2px 8px var(--via-navy-04)`: no escuro esse token

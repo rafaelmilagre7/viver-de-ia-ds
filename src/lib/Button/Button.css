@@ -120,8 +120,8 @@
 .via-btn--secondary {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
   border-color: var(--via-edge-hi);
   color: var(--via-text-primary);
   box-shadow:
@@ -154,8 +154,8 @@
 
 .via-btn--ghost:hover:not(:disabled) {
   background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-03));
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   color: var(--via-text-primary);
 }
 

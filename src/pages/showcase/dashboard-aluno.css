@@ -26,8 +26,8 @@
   gap: var(--via-space-6);
   padding: 14px 40px;
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -196,8 +196,8 @@
 .dba-card {
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   padding: 24px;
   box-shadow: var(--via-glass-shadow);
@@ -240,8 +240,8 @@
   margin-right: -5px;
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   /* sombra de elevação FIXA em navy: navy-10/22 viram branco no dark e a
      pill ganhava halo branco (pior no hover). */

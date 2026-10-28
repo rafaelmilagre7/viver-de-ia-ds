@@ -10,8 +10,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 18px 40px -22px var(--via-shadow-ink-14);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
 }
 
 .vds-faq-head {
@@ -170,8 +170,8 @@
 
 .vds-faq-cats li button:hover {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   transform: translateY(-1px);
   box-shadow:
@@ -191,8 +191,8 @@
 /* categoria ativa · anel fino UNIFORME nos 4 lados (nunca barra lateral) */
 .vds-faq-cats li.on button {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border-color: var(--via-navy-20);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -257,8 +257,8 @@
 .vds-faq-item {
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
   transition:
@@ -400,8 +400,8 @@
   padding: 6px 12px;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   color: var(--via-ink-2);
   font-family: inherit;
@@ -598,8 +598,8 @@
 /* Sobre fundo navy · vidro CLARO translúcido (vidro branco sumiria) */
 .vds-faq-contact-btn.ghost {
   background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.20);
   color: var(--via-white);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);

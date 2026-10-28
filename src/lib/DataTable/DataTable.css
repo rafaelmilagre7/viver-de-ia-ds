@@ -5,8 +5,8 @@
 .via-dt {
   width: 100%;
   background: var(--via-glass-card);
-  backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-navy-10);
   border-radius: var(--via-radius-md);
   overflow: hidden;

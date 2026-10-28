@@ -11,8 +11,8 @@
   gap: var(--via-space-5_5);
   align-items: center;
   background: var(--via-glass-card);
-  backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   padding: 18px 22px;

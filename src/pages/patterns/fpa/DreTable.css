@@ -478,8 +478,8 @@
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
   font-size: var(--via-fs-caption);
   line-height: 1.6;

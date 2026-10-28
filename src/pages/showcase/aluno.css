@@ -14,8 +14,8 @@
   gap: var(--via-space-7);
   padding: 14px 48px;
   background: var(--via-glass-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
+  backdrop-filter: var(--via-glass-blur-bar);
   border-bottom: 0;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -151,8 +151,8 @@
 /* secundário · liquid glass (era chapado transparente) */
 .al-cta-row .btn.ghost {
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   color: var(--via-text-primary);
   border: var(--via-glass-ring);
   box-shadow:
@@ -184,8 +184,8 @@
   gap: var(--via-space-3_5);
   text-align: center;
   background: var(--via-glass-card);
-  backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -266,8 +266,8 @@
   align-items: center;
   padding: 18px 22px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);
@@ -334,8 +334,8 @@
 .al-side .card {
   padding: 22px 24px;
   background: var(--via-glass-card);
-  backdrop-filter: var(--via-glass-blur);
   -webkit-backdrop-filter: var(--via-glass-blur);
+  backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);
