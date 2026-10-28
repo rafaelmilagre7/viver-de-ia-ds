@@ -27,6 +27,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseTokens } from './parse-tokens.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
@@ -39,56 +40,7 @@ if (!existsSync(tokensCss)) {
   process.exit(1);
 }
 
-const css = readFileSync(tokensCss, 'utf8');
-
-// Strip CSS comments to avoid false matches.
-const stripped = css.replace(/\/\*[\s\S]*?\*\//g, '');
-
-// Match `--name: value;` lines. Value can contain anything but `;`.
-const re = /(--[a-z0-9-]+)\s*:\s*([^;]+);/gi;
-
-const seen = new Map();
-let m;
-while ((m = re.exec(stripped)) !== null) {
-  const fullName = m[1].trim();
-  const value = m[2].trim();
-  // Last definition wins (mirrors CSS cascade for the same selector).
-  seen.set(fullName, value);
-}
-
-function categorize(name, value) {
-  const n = name.toLowerCase();
-  const v = value.toLowerCase();
-  if (n.includes('font') || n.includes('display') || n.includes('mono')) return 'font';
-  if (n.includes('radius')) return 'radius';
-  if (n.includes('shadow')) return 'shadow';
-  if (n.includes('space') || n.includes('gap') || n.includes('padding')) return 'spacing';
-  if (n.includes('motion') || n.includes('ease') || n.includes('duration') || n === '--via-t') return 'motion';
-  if (n.includes('noise') || n.includes('mesh') || n.includes('bg-')) return 'surface';
-  if (
-    /^#[0-9a-f]{3,8}$/i.test(value) ||
-    v.startsWith('rgb') ||
-    v.startsWith('hsl') ||
-    v.startsWith('var(--via-')
-  ) {
-    return 'color';
-  }
-  return 'other';
-}
-
-const tokens = [...seen.entries()].map(([fullName, value]) => {
-  const name = fullName.replace(/^--/, '');
-  return {
-    name,
-    css: fullName,
-    value,
-    category: categorize(fullName, value),
-  };
-});
-
-tokens.sort((a, b) =>
-  a.category === b.category ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category),
-);
+const tokens = parseTokens(readFileSync(tokensCss, 'utf8'));
 
 // 1. emit TypeScript runtime
 const tsHeader = `/**

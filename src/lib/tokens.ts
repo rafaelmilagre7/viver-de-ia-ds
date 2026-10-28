@@ -47,13 +47,13 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-accent-warm",
     "css": "--via-accent-warm",
-    "value": "var(--via-text-primary)",
+    "value": "var(--via-navy-deep)",
     "category": "color"
   },
   {
     "name": "via-bg",
     "css": "--via-bg",
-    "value": "#0B1220",
+    "value": "var(--via-white)",
     "category": "color"
   },
   {
@@ -77,61 +77,61 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-border",
     "css": "--via-border",
-    "value": "rgba(255, 255, 255, 0.18)",
+    "value": "rgba(10, 31, 59, 0.16)",
     "category": "color"
   },
   {
     "name": "via-border-hairline",
     "css": "--via-border-hairline",
-    "value": "rgba(255, 255, 255, 0.10)",
+    "value": "var(--via-gray-200)",
     "category": "color"
   },
   {
     "name": "via-border-soft",
     "css": "--via-border-soft",
-    "value": "rgba(255, 255, 255, 0.45)",
+    "value": "rgba(10, 31, 59, 0.05)",
     "category": "color"
   },
   {
     "name": "via-chart-1",
     "css": "--via-chart-1",
-    "value": "#6E8CB4",
+    "value": "#0A1F3B",
     "category": "color"
   },
   {
     "name": "via-chart-2",
     "css": "--via-chart-2",
-    "value": "#8BA3C4",
+    "value": "#335379",
     "category": "color"
   },
   {
     "name": "via-chart-3",
     "css": "--via-chart-3",
-    "value": "#A8BAD4",
+    "value": "#5E7B9E",
     "category": "color"
   },
   {
     "name": "via-chart-4",
     "css": "--via-chart-4",
-    "value": "#C5D1E2",
+    "value": "#93A8C2",
     "category": "color"
   },
   {
     "name": "via-chart-5",
     "css": "--via-chart-5",
-    "value": "#E0E7F1",
+    "value": "#C4CFDD",
     "category": "color"
   },
   {
     "name": "via-chart-ink",
     "css": "--via-chart-ink",
-    "value": "#9FBDE4",
+    "value": "var(--via-navy)",
     "category": "color"
   },
   {
     "name": "via-chart-ink-2",
     "css": "--via-chart-ink-2",
-    "value": "#6E8CB4",
+    "value": "var(--via-blue)",
     "category": "color"
   },
   {
@@ -143,7 +143,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-coral-dark",
     "css": "--via-coral-dark",
-    "value": "#E89B9B",
+    "value": "#8C2C2C",
     "category": "color"
   },
   {
@@ -155,7 +155,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-danger",
     "css": "--via-danger",
-    "value": "#E58A8A",
+    "value": "#B83A3A",
     "category": "color"
   },
   {
@@ -203,37 +203,25 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-edge-hi",
     "css": "--via-edge-hi",
-    "value": "rgba(255, 255, 255, 0.08)",
+    "value": "rgba(255, 255, 255, 0.95)",
     "category": "color"
   },
   {
     "name": "via-edge-lo",
     "css": "--via-edge-lo",
-    "value": "rgba(255, 255, 255, 0.05)",
+    "value": "rgba(255, 255, 255, 0.4)",
     "category": "color"
   },
   {
     "name": "via-glass-bar",
     "css": "--via-glass-bar",
-    "value": "var(--via-surface)",
-    "category": "color"
-  },
-  {
-    "name": "via-glass-card",
-    "css": "--via-glass-card",
-    "value": "var(--via-surface)",
-    "category": "color"
-  },
-  {
-    "name": "via-glass-card-2",
-    "css": "--via-glass-card-2",
-    "value": "var(--via-surface)",
+    "value": "rgba(255, 255, 255, 0.6)",
     "category": "color"
   },
   {
     "name": "via-gray-100",
     "css": "--via-gray-100",
-    "value": "#17213A",
+    "value": "#F0F2F5",
     "category": "color"
   },
   {
@@ -257,7 +245,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-gray-50",
     "css": "--via-gray-50",
-    "value": "#0F1729",
+    "value": "#F7F8FA",
     "category": "color"
   },
   {
@@ -293,13 +281,13 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-ink-2",
     "css": "--via-ink-2",
-    "value": "#B4BBC9",
+    "value": "#5E6B82",
     "category": "color"
   },
   {
     "name": "via-ink-3",
     "css": "--via-ink-3",
-    "value": "#98A2B3",
+    "value": "#525C72",
     "category": "color"
   },
   {
@@ -311,109 +299,109 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-navy-02",
     "css": "--via-navy-02",
-    "value": "rgba(255, 255, 255, 0.025)",
+    "value": "rgba(10, 31, 59, 0.02)",
     "category": "color"
   },
   {
     "name": "via-navy-03",
     "css": "--via-navy-03",
-    "value": "rgba(255, 255, 255, 0.035)",
+    "value": "rgba(10, 31, 59, 0.03)",
     "category": "color"
   },
   {
     "name": "via-navy-04",
     "css": "--via-navy-04",
-    "value": "rgba(255, 255, 255, 0.045)",
+    "value": "rgba(10, 31, 59, 0.04)",
     "category": "color"
   },
   {
     "name": "via-navy-05",
     "css": "--via-navy-05",
-    "value": "rgba(255, 255, 255, 0.055)",
+    "value": "rgba(10, 31, 59, 0.05)",
     "category": "color"
   },
   {
     "name": "via-navy-06",
     "css": "--via-navy-06",
-    "value": "rgba(255, 255, 255, 0.07)",
+    "value": "rgba(10, 31, 59, 0.06)",
     "category": "color"
   },
   {
     "name": "via-navy-08",
     "css": "--via-navy-08",
-    "value": "rgba(255, 255, 255, 0.09)",
+    "value": "rgba(10, 31, 59, 0.08)",
     "category": "color"
   },
   {
     "name": "via-navy-10",
     "css": "--via-navy-10",
-    "value": "rgba(255, 255, 255, 0.11)",
+    "value": "rgba(10, 31, 59, 0.10)",
     "category": "color"
   },
   {
     "name": "via-navy-12",
     "css": "--via-navy-12",
-    "value": "rgba(255, 255, 255, 0.13)",
+    "value": "rgba(10, 31, 59, 0.12)",
     "category": "color"
   },
   {
     "name": "via-navy-14",
     "css": "--via-navy-14",
-    "value": "rgba(255, 255, 255, 0.15)",
+    "value": "rgba(10, 31, 59, 0.14)",
     "category": "color"
   },
   {
     "name": "via-navy-16",
     "css": "--via-navy-16",
-    "value": "rgba(255, 255, 255, 0.17)",
+    "value": "rgba(10, 31, 59, 0.16)",
     "category": "color"
   },
   {
     "name": "via-navy-18",
     "css": "--via-navy-18",
-    "value": "rgba(255, 255, 255, 0.19)",
+    "value": "rgba(10, 31, 59, 0.18)",
     "category": "color"
   },
   {
     "name": "via-navy-20",
     "css": "--via-navy-20",
-    "value": "rgba(255, 255, 255, 0.22)",
+    "value": "rgba(10, 31, 59, 0.20)",
     "category": "color"
   },
   {
     "name": "via-navy-22",
     "css": "--via-navy-22",
-    "value": "rgba(255, 255, 255, 0.24)",
+    "value": "rgba(10, 31, 59, 0.22)",
     "category": "color"
   },
   {
     "name": "via-navy-25",
     "css": "--via-navy-25",
-    "value": "rgba(255, 255, 255, 0.28)",
+    "value": "rgba(10, 31, 59, 0.25)",
     "category": "color"
   },
   {
     "name": "via-navy-30",
     "css": "--via-navy-30",
-    "value": "rgba(255, 255, 255, 0.32)",
+    "value": "rgba(10, 31, 59, 0.30)",
     "category": "color"
   },
   {
     "name": "via-navy-40",
     "css": "--via-navy-40",
-    "value": "rgba(255, 255, 255, 0.42)",
+    "value": "rgba(10, 31, 59, 0.40)",
     "category": "color"
   },
   {
     "name": "via-navy-60",
     "css": "--via-navy-60",
-    "value": "rgba(255, 255, 255, 0.55)",
+    "value": "rgba(10, 31, 59, 0.60)",
     "category": "color"
   },
   {
     "name": "via-navy-80",
     "css": "--via-navy-80",
-    "value": "rgba(255, 255, 255, 0.72)",
+    "value": "rgba(10, 31, 59, 0.80)",
     "category": "color"
   },
   {
@@ -431,19 +419,19 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-stage-1",
     "css": "--via-stage-1",
-    "value": "#131C30",
+    "value": "var(--via-gray-300)",
     "category": "color"
   },
   {
     "name": "via-stage-2",
     "css": "--via-stage-2",
-    "value": "#0B1220",
+    "value": "var(--via-gray-400)",
     "category": "color"
   },
   {
     "name": "via-stage-soft",
     "css": "--via-stage-soft",
-    "value": "#1B273F",
+    "value": "var(--via-gray-200)",
     "category": "color"
   },
   {
@@ -455,19 +443,19 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-surface",
     "css": "--via-surface",
-    "value": "#131C30",
+    "value": "var(--via-white)",
     "category": "color"
   },
   {
     "name": "via-surface-elev",
     "css": "--via-surface-elev",
-    "value": "#1B273F",
+    "value": "var(--via-white)",
     "category": "color"
   },
   {
     "name": "via-text",
     "css": "--via-text",
-    "value": "#D0D5DD",
+    "value": "var(--via-gray-700)",
     "category": "color"
   },
   {
@@ -485,13 +473,13 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-text-inverse",
     "css": "--via-text-inverse",
-    "value": "var(--via-navy)",
+    "value": "var(--via-white)",
     "category": "color"
   },
   {
     "name": "via-text-muted",
     "css": "--via-text-muted",
-    "value": "var(--via-gray-500)",
+    "value": "#4F596B",
     "category": "color"
   },
   {
@@ -503,7 +491,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-text-soft",
     "css": "--via-text-soft",
-    "value": "var(--via-gray-500)",
+    "value": "#636D80",
     "category": "color"
   },
   {
@@ -755,13 +743,25 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-glass-blur",
     "css": "--via-glass-blur",
-    "value": "none",
+    "value": "blur(24px) saturate(175%)",
     "category": "other"
   },
   {
     "name": "via-glass-blur-bar",
     "css": "--via-glass-blur-bar",
-    "value": "none",
+    "value": "blur(26px) saturate(185%)",
+    "category": "other"
+  },
+  {
+    "name": "via-glass-card",
+    "css": "--via-glass-card",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%)",
+    "category": "other"
+  },
+  {
+    "name": "via-glass-card-2",
+    "css": "--via-glass-card-2",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62))",
     "category": "other"
   },
   {
@@ -773,7 +773,7 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-glass-sheen",
     "css": "--via-glass-sheen",
-    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent)",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent)",
     "category": "other"
   },
   {
@@ -1023,9 +1023,21 @@ export const tokensList: readonly Token[] = [
     "category": "shadow"
   },
   {
+    "name": "via-space-0_5",
+    "css": "--via-space-0_5",
+    "value": "2px",
+    "category": "spacing"
+  },
+  {
     "name": "via-space-1",
     "css": "--via-space-1",
     "value": "4px",
+    "category": "spacing"
+  },
+  {
+    "name": "via-space-1_5",
+    "css": "--via-space-1_5",
+    "value": "6px",
     "category": "spacing"
   },
   {
@@ -1059,6 +1071,12 @@ export const tokensList: readonly Token[] = [
     "category": "spacing"
   },
   {
+    "name": "via-space-2_5",
+    "css": "--via-space-2_5",
+    "value": "10px",
+    "category": "spacing"
+  },
+  {
     "name": "via-space-20",
     "css": "--via-space-20",
     "value": "80px",
@@ -1077,6 +1095,12 @@ export const tokensList: readonly Token[] = [
     "category": "spacing"
   },
   {
+    "name": "via-space-3_5",
+    "css": "--via-space-3_5",
+    "value": "14px",
+    "category": "spacing"
+  },
+  {
     "name": "via-space-32",
     "css": "--via-space-32",
     "value": "128px",
@@ -1089,9 +1113,21 @@ export const tokensList: readonly Token[] = [
     "category": "spacing"
   },
   {
+    "name": "via-space-4_5",
+    "css": "--via-space-4_5",
+    "value": "18px",
+    "category": "spacing"
+  },
+  {
     "name": "via-space-5",
     "css": "--via-space-5",
     "value": "20px",
+    "category": "spacing"
+  },
+  {
+    "name": "via-space-5_5",
+    "css": "--via-space-5_5",
+    "value": "22px",
     "category": "spacing"
   },
   {
@@ -1121,19 +1157,19 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-bg-2",
     "css": "--via-bg-2",
-    "value": "#131C30",
+    "value": "var(--via-gray-50)",
     "category": "surface"
   },
   {
     "name": "via-bg-3",
     "css": "--via-bg-3",
-    "value": "#1B273F",
+    "value": "var(--via-gray-100)",
     "category": "surface"
   },
   {
     "name": "via-bg-soft",
     "css": "--via-bg-soft",
-    "value": "rgba(255, 255, 255, 0.04)",
+    "value": "rgba(10, 31, 59, 0.025)",
     "category": "surface"
   },
   {
@@ -1197,8 +1233,6 @@ export type TokenName =
   | 'via-edge-hi'
   | 'via-edge-lo'
   | 'via-glass-bar'
-  | 'via-glass-card'
-  | 'via-glass-card-2'
   | 'via-gray-100'
   | 'via-gray-200'
   | 'via-gray-300'
@@ -1288,6 +1322,8 @@ export type TokenName =
   | 'via-fw-semibold'
   | 'via-glass-blur'
   | 'via-glass-blur-bar'
+  | 'via-glass-card'
+  | 'via-glass-card-2'
   | 'via-glass-ring'
   | 'via-glass-sheen'
   | 'via-glow-navy'
@@ -1331,18 +1367,24 @@ export type TokenName =
   | 'via-shadow-sm'
   | 'via-shadow-xl'
   | 'via-shadow-xs'
+  | 'via-space-0_5'
   | 'via-space-1'
+  | 'via-space-1_5'
   | 'via-space-10'
   | 'via-space-12'
   | 'via-space-14'
   | 'via-space-16'
   | 'via-space-2'
+  | 'via-space-2_5'
   | 'via-space-20'
   | 'via-space-24'
   | 'via-space-3'
+  | 'via-space-3_5'
   | 'via-space-32'
   | 'via-space-4'
+  | 'via-space-4_5'
   | 'via-space-5'
+  | 'via-space-5_5'
   | 'via-space-6'
   | 'via-space-7'
   | 'via-space-8'
