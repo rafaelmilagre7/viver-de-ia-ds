@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { Check, X } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
@@ -34,16 +34,16 @@ export default function Philosophy() {
    valor exibido muda junto — e no dark mostra o valor do dark. */
 function useTokenValues(names: readonly string[]): Record<string, string> {
   const { theme } = useTheme();
-  const [values, setValues] = useState<Record<string, string>>({});
 
-  useEffect(() => {
+  // Lido no render: o useTheme só muda depois que o data-theme já trocou no
+  // <html>, então o CSS computado já está no tema novo.
+  return useMemo(() => {
     const cs = getComputedStyle(document.documentElement);
     const next: Record<string, string> = {};
     for (const n of names) next[n] = cs.getPropertyValue(n).trim().toUpperCase();
-    setValues(next);
+    return next;
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- theme é o gatilho da releitura
   }, [theme, names]);
-
-  return values;
 }
 
 /* ---------- Regra 1 · Paleta restrita · navy + cinza + branco + preto ---------- */
