@@ -2,10 +2,12 @@
 
 Site de referência + library React do design system da Viver de IA. Marca editorial, engenharia de precisão.
 
-- **108 páginas vivas** documentando fundamentos, glass, iconografia, componentes, padrões e páginas-modelo.
+- **166 páginas vivas** (46 delas de API) documentando fundamentos, glass, iconografia, componentes, padrões e páginas-modelo.
 - **46 componentes de UI + ThemeProvider**, empacotáveis como `@viverdeia/design-system` (interno · não publicado no npm) — drop-in em Nina, Iris, ExecSeats, plataforma.
-- **Visual regression suite** com 108 rotas × 2 viewports (216 testes Playwright).
+- **Visual regression suite** com 109 rotas × 2 viewports (218 testes Playwright) + a11y (axe) nas mesmas rotas.
 - **TypeScript estrito** + dark mode + code-splitting por rota.
+
+Pra trabalhar no repo: [`CLAUDE.md`](CLAUDE.md) (mapa, cadeia de derivação, regras) · estado e roadmap em [`docs/estado-e-roadmap.md`](docs/estado-e-roadmap.md).
 
 ---
 
@@ -28,7 +30,8 @@ Site de referência + library React do design system da Viver de IA. Marca edito
 | `bun run build:lib` | gera o pacote `@viverdeia/design-system` em `dist/lib/` |
 | `bun run preview` | serve a build de produção localmente |
 | `bun run lint` | ESLint estrito (`noUnusedLocals` + `noUnusedParameters`) |
-| `bun run test:visual` | roda 216 testes de regressão visual contra baselines |
+| `bun run lint:tokens` · `lint:sync` · `lint:glass` | guardas do CI: valor cru com token exato · plugin espelha a fonte · ordem do `backdrop-filter` |
+| `bun run test:visual` | roda 218 testes de regressão visual contra baselines (só macOS) |
 | `bun run test:visual:update` | regenera baselines depois de mudança intencional |
 | `bun run test:visual:report` | abre HTML report do último run |
 
@@ -40,7 +43,7 @@ Site de referência + library React do design system da Viver de IA. Marca edito
 src/
   layout/        · Shell + Header + Sidebar + Footer
   components/    · Pieces auxiliares (BrandLogo, ThemeToggle, RouteLoader, docs/)
-  pages/         · 108 páginas (Home, foundations, glass, iconography,
+  pages/         · 166 páginas (Home, foundations, glass, iconography,
                    components, patterns, showcase, guidelines, api docs)
   lib/           · 46 componentes de UI + ThemeProvider (base, formulário, overlay,
                    navegação, dados, feedback) — índice em src/lib/index.ts
@@ -49,14 +52,14 @@ src/
   assets/        · logos (PNG VIA monograma + wordmark)
 
 tests/           · Visual regression suite (Playwright)
-  routes.ts        · lista declarativa de 108 rotas testadas
+  routes.ts        · lista declarativa de 109 rotas testadas
   visual.spec.ts   · 1 test por rota × 2 viewports
   visual.spec.ts-snapshots/  · baselines PNG
 
 scripts/
   finalize-lib.mjs   · pós-build da library: gera package.json pronto pra consumo interno (não publica no npm)
 
-tokens.css         · 156 tokens semânticos (cores, type, spacing, glass, mesh)
+tokens.css         · 195 tokens --via-* (cores, type, spacing, glass, mesh)
 ```
 
 ---

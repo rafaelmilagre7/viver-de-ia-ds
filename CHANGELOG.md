@@ -6,7 +6,34 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Corrigido
+
+- **Vidro sumia no build minificado** (lib, kit e quem vendoriza o CSS): 595 regras tinham `backdrop-filter` antes de `-webkit-backdrop-filter`; o lightningcss (Vite 8 / Next.js) trata o prefixado como sobrescrita e apaga o padrão → Chrome/Firefox sem blur (no `style.css` da lib, só 7 de 61 regras de vidro mantinham o blur padrão). Ordem invertida em todo o CSS + plugin (zero diff de pixel no site).
+- **Tokens em JS/JSON com valores do tema escuro**: `tokens.ts`, `dist/lib/tokens.json` e o `tokens.json` do kit pegavam a última definição do arquivo inteiro — 56 tokens saíam com o valor do dark/`prefers-reduced-transparency` (`via-bg` = `#0B1220`, `via-glass-blur` = `none`) e os 6 half-steps (`--via-space-0_5`…`5_5`) faltavam. Os 3 parsers duplicados viraram 1 (`scripts/parse-tokens.mjs`), lendo só o `:root` padrão. 189 → 195 tokens.
+- Kit ZIP regenerado (passa a levar o email 14, o vidro e os tokens corrigidos).
+- Lint volta a 0 warnings (`Philosophy` lia o CSS com `setState` dentro de effect).
+
 ### Adicionado
+
+- Guarda `lint:glass` (`scripts/glass-order.mjs`) no CI.
+- Teste dos tokens gerados (`src/lib/tokens.test.ts`).
+- `CLAUDE.md` (mapa e regras pra quem trabalha no repo), `docs/estado-e-roadmap.md`, `playwright.cloud.config.ts` (Playwright com o Chromium da máquina, pra sessão em nuvem).
+
+### Removido
+
+- Sondas da auditoria esquecidas na raiz (`__shadowcheck.mjs`, `__shadowcheck2.mjs`, `.shadow-check.mjs`).
+
+### Jul–ago (sem release)
+
+- **Fluidez Apple** (04/ago): motor de mola próprio (`_shared/spring.ts` + `useDragDismiss`) com arrasto-pra-fechar em Drawer/Sheet/Lightbox/Toast, saída animada, origem espacial, materialização, resposta no apertar (`--via-dur-press` 110ms) e borda de rolagem. Plugin 1.4.0.
+- **Material acessível** (04/ago): `prefers-reduced-transparency` solidifica o vidro e `prefers-contrast: more` engrossa bordas, resolvido nos tokens.
+- **Auditoria visual completa** (27–28/jul): as 108 rotas revisadas em claro e escuro, em 6 lotes + passada final (~550 correções): texto invisível, barras laterais, superfície chapada, dark quebrado, 15 tokens do escuro anulados, 453 sombras migradas pra tinta `--via-shadow-ink-*`, fim do itálico sintético. Plugin 1.3.0 com a lei pós-auditoria.
+- **Camada de dados** (`src/styles/data.css`) e pattern **FP&A** (DRE · ponte · caixa · runway); gráficos com paleta validada por script e sem eixo duplo; gráficos interativos com `role=group`.
+- **Acabamento**: liquid glass em 112 superfícies e 252 controles (hover/active/focus), cantos na escala de raio, fim da linha lateral em cards, avatar de vidro sem anel colorido.
+- **Marca** (25/jul): light-first de verdade, logo sempre em lockup, glass card como padrão.
+- **Distribuição**: `AGENTS.md` pro Codex no kit (08/jul), system-prompt atualizado (19/jul), guarda `lint:sync` (06/ago) e plugin 1.4.1.
+
+### Adicionado (ago)
 
 - **Email `welcome-plataforma`** (Boas-vindas à plataforma · 14º template de produção): disparado quando o acesso do aluno à plataforma é liberado (primeiro login). Variáveis `firstName`, `loginEmail`, `platformUrl` · 3 passos (login → trilha de início → apresentação na comunidade) · CTA "Acessar a plataforma". Distinto do `welcome` (que confirma vaga em turma). Registrado no motor (`build-emails.mjs`) e no mostruário `/patterns/email` · 27.5KB, checagens bulletproof ✓.
 
