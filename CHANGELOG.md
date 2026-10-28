@@ -242,5 +242,5 @@ Passe world-class: auditoria multi-agente (120 agentes · 157 folhas de estilo �
 
 Estamos em `0.x` durante adoção interna (Nina, Iris, ExecSeats, plataforma). Breaking changes podem ocorrer em minors até `1.0.0`. Após estabilização, semver estrito (breaking em major).
 
-[0.2.0]: https://github.com/viverdeia/design-system/releases/tag/v0.2.0
-[0.1.0]: https://github.com/viverdeia/design-system/releases/tag/v0.1.0
+[0.2.0]: https://github.com/rafaelmilagre7/viver-de-ia-ds/releases/tag/v0.2.0
+[0.1.0]: https://github.com/rafaelmilagre7/viver-de-ia-ds/releases/tag/v0.1.0
