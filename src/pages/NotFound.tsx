@@ -5,6 +5,9 @@ import './not-found.css';
 export default function NotFound() {
   return (
     <section className="vds-404 via-mesh-navy via-noise">
+      {/* O servidor responde 200 em qualquer URL (SPA) — o noindex tira a página do Google */}
+      <title>Página não encontrada · Viver de IA Design System</title>
+      <meta name="robots" content="noindex" />
       <div className="vds-404-inner">
         <span className="vds-404-pill">
           <Compass size={12} strokeWidth={2} />
