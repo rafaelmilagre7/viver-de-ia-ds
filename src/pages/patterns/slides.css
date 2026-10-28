@@ -551,6 +551,18 @@
   letter-spacing: -0.003em;
 }
 
+/* Anatomy rows · quote/content slides em dark
+   (veio de tokens.css · regra só desta página) */
+[data-theme="dark"] .vds-slide.quote .vds-quote-body,
+[data-theme="dark"] .vds-slide.content h3 {
+  color: var(--via-text-primary) !important;
+}
+
+[data-theme="dark"] .vds-slide-bullets strong,
+[data-theme="dark"] .vds-slide-bullets p {
+  color: var(--via-text-body) !important;
+}
+
 /* ============================================
    06 · CLOSING SLIDE (CTA final)
    ============================================ */

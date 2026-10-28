@@ -197,17 +197,18 @@ NUNCA:
 - Emoji decorativo: ✨🚀💪🔥 banidos
 - "Olá! Esperamos que esteja bem" · "Ficamos à disposição"
 - Exclamação · raríssimo, só em contextos pessoais social
+- Inventar preço ou número de alunos/operadores/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
 
 Voz muda de registro por contexto (mas mantém esqueleto):
 
 | Contexto | Registro | Exemplo |
 |---|---|---|
 | Marketing landing | editorial-comercial | "Em 2026, operador que não opera IA, não opera." |
-| Email transacional | concierge-direto | "Cobrança em 2 dias · R$ 6.000 · mentoria mensal" |
+| Email transacional | concierge-direto | "Cobrança em 2 dias · R$ [valor] · mentoria mensal" |
 | Email editorial | crônica-pessoal | "Essa semana vi a Nina passar de 11k pra 13k conversas" |
 | Comunidade | mentor-presente | "oi pessoal, esse caso do João..." |
 | Suporte 1:1 | pragmático-humano | "vi aqui que o webhook tá retornando 504..." |
-| Paid ads | editorial-comprimido | "+220 operadores. R$ 1,8M destravado. 90 dias." |
+| Paid ads | editorial-comprimido | "+[N] operadores. R$ [valor] destravado. 90 dias." |
 | Social orgânico | crônica-pessoal | "7 meses atrás a Nina perdia 40% das conversas..." |
 | Sales B2B | consultivo-objetivo | "Vocês perdem ~4h/semana com triagem..." |
 | Eventos palco | palco-operacional | "Vou contar 3 erros que cometi construindo a Nina..." |

@@ -32,16 +32,18 @@ O usuário descreveu o tipo de email em `$ARGUMENTS`. Identifica em qual das 5 c
 | Categoria | Voz | Sample subject |
 |---|---|---|
 | Transacional welcome | caloroso-operacional | "Bem-vindo. Próximos passos em 3 atos." |
-| Transacional billing | concierge-direto | "Cobrança em 2 dias · R$ 2.400 · mentoria mensal" |
+| Transacional billing | concierge-direto | "Cobrança em 2 dias · R$ [valor] · mentoria mensal" |
 | Editorial newsletter | crônica-pessoal | "A Nina passou de 11k pra 13k conversas · 2 detalhes mudaram tudo" |
 | Editorial drip | stand-alone editorial | "O agente que paga a mentoria" |
 | Concierge ops | timeline-tecnico | "Webhook timeout · 504 desde 14:08 · provider embedding" |
 | Concierge NPS | pessoal-curioso | "Como tá indo a mentoria? 1 pergunta direta" |
 | Comercial evento | factual-editorial | "Sex 14h · auditoria de 3 prompts ao vivo" |
-| Comercial lançamento | fato + condição | "Turma 2026.3 abre amanhã 9h · 30 vagas · 4 meses" |
+| Comercial lançamento | fato + condição | "Turma 2026.3 abre amanhã 9h · [N] vagas · 4 meses" |
 | Comercial oferta | observacional | "Pelo que vi no teu agente, faria sentido conversar" |
 | Lifecycle churn | curioso-humano | "Tu sumiu há 19 dias · tô curioso, o que rolou" |
 | Lifecycle win-back | observa-mudanças | "3 coisas mudaram desde que tu saiu · acho que faz sentido voltar" |
+
+Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] vagas`.
 
 ## Estrutura canônica
 

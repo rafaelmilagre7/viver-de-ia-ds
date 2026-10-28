@@ -36,10 +36,11 @@ if (!existsSync(out)) {
 const rootPkg = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'));
 const version = rootPkg.version === '0.0.0' ? '0.1.0' : rootPkg.version;
 
-// 1 · publishable package.json
+// 1 · package.json do pacote INTERNO · private barra `npm publish` acidental
 const pkg = {
   name: '@viverdeia/design-system',
   version,
+  private: true,
   description: 'Design System Viver de IA — navy editorial + liquid glass + 80+ patterns. React + TypeScript.',
   keywords: ['design-system', 'viver-de-ia', 'react', 'typescript', 'editorial', 'navy', 'liquid-glass'],
   author: 'Viver de IA',
@@ -73,10 +74,6 @@ const pkg = {
     react: '^18.0.0 || ^19.0.0',
     'react-dom': '^18.0.0 || ^19.0.0',
     'lucide-react': '*',
-  },
-  publishConfig: {
-    access: 'public',
-    provenance: true,
   },
   repository: {
     type: 'git',

@@ -21,18 +21,18 @@ O usuário descreveu o tipo de material em `$ARGUMENTS`. Identifica:
 
 | # | Slide | Conteúdo |
 |---|---|---|
-| 01 | Capa | Wordmark central · tagline curta · navy mesh |
+| 01 | Capa | Lockup central (monograma + wordmark) · tagline curta · fundo claro + atmosfera radial navy suave |
 | 02 | Problema | "Operador médio brasileiro não opera IA" · declaração forte |
-| 03 | Mercado | +220 operadores · R$ 1,8M · prova com número |
+| 03 | Mercado | +[N] operadores · R$ [valor] · prova com número |
 | 04 | Método | 3 atos overview (estuda · constrói · opera) |
 | 05 | Ato 1 · Estuda | 18 aulas + stack real (Claude SDK, OpenAI) |
 | 06 | Ato 2 · Constrói | 4 lives + 2 estudos de caso + mentoria 1:1 mensal |
 | 07 | Ato 3 · Opera | Agente em produção · responsabilidade do operador |
 | 08 | Caso 1 | Caio Ribeiro · Nina · 11.920 conversas/mês |
 | 09 | Caso 2 | Camila Moraes · proposta · 73% menos token |
-| 10 | Preço + garantia | R$ 2.400/mês · 4 meses · 90 dias até produção |
+| 10 | Preço + garantia | R$ [valor]/mês · 4 meses · 90 dias até produção |
 | 11 | Próximo passo | "30min de call · sex 22/mai · audito teu caso" |
-| 12 | Thank-you | Monogram big + contato (caio@viverdeia.ai · @caioribeiro) |
+| 12 | Thank-you | Lockup + contato (caio@viverdeia.ai · @caioribeiro) · único slide que pode ter fundo navy |
 
 ## Regras canônicas do deck
 
@@ -40,15 +40,17 @@ O usuário descreveu o tipo de material em `$ARGUMENTS`. Identifica:
 - **1 ideia por slide** · headline + 1 frase suporte (não 5 bullets)
 - **Número como protagonista** · Geist Display peso 500 · tabular
 - **Monogram bottom-right** · 24px · opacity 0.5 · marca a sequência
-- **Sem foto stock** · navy mesh + tipografia carrega o slide
-- **Capa + thank-you · wordmark central** · só esses 2 slides têm wordmark
+- **Light-first** · fundo claro (branco/off-white + atmosfera radial navy suave) em todos os slides, capa inclusive · navy de fundo só se o usuário pedir ou no thank-you (regra zero)
+- **Sem foto stock** · tipografia + atmosfera carregam o slide
+- **Capa + thank-you · lockup central** (monograma + wordmark juntos · nunca wordmark solto) · só esses 2 slides têm o lockup; nos internos, monograma no canto
+- **Nunca invente preço nem número de alunos/operadores** · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
 
 ## One-pager B2B (PDF A4)
 
 ```
-Header · wordmark + tag editorial
-Hero · "Operadores formando operadores · método codificado em 220 alunos"
-4 stats grid (220 · R$ 1,8M · 92% · 90 dias)
+Header · lockup + tag editorial
+Hero · "Operadores formando operadores · método codificado em [N] alunos"
+4 stats grid ([N] · R$ [valor] · [N]% · 90 dias)
 3 colunas:
   · Pra quem é (perfil operador PME)
   · O que recebe (checklist 6 itens)
@@ -68,7 +70,7 @@ Estrutura:
 ## Proposta / orçamento
 
 ```
-Header · wordmark + número (PRO-YYYY-NNNNN)
+Header · lockup + número (PRO-YYYY-NNNNN)
 "Emitida" · "Válida até" (data clara)
 "Para" · razão social + CNPJ + endereço + att
 Escopo · lista checklist do que está incluído
@@ -89,7 +91,7 @@ Footer · "Próximo passo" + CTA "Aceitar proposta"
 
 ## Reference completa
 
-`viver-de-ia-ds/src/pages/patterns/Commercial.tsx` tem:
+`viver-de-ia-ds/src/pages/patterns/Commercial.tsx` tem (atenção: a capa de lá ainda está em navy mesh com wordmark, anterior à regra light-first · para cor de fundo e logo vale este comando):
 - 12 slides do deck visualmente renderizados
 - one-pager A4 PDF-ready
 - case study editorial completo (Camila Moraes)
@@ -98,7 +100,7 @@ Footer · "Próximo passo" + CTA "Aceitar proposta"
 
 ## Output
 
-Para deck: gere os 12 slides numerados com conteúdo + nota visual (qual layout · navy mesh ou light · monogram position).
+Para deck: gere os 12 slides numerados com conteúdo + nota visual (qual layout · claro por padrão, navy só no thank-you ou se pedirem · monogram position).
 
 Para one-pager: gere conteúdo completo dos 3 blocos (perfil · benefícios · garantia).
 

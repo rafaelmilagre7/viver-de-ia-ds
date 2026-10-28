@@ -96,10 +96,8 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 │   └── ...
 ├── fonts/                   ← Geist self-hosted (OFL/MIT)
 │   ├── fonts.css            ← @font-face pronto · @import e usa
-│   ├── Geist-Variable.woff2          (100–900)
-│   ├── Geist-Italic-Variable.woff2
+│   ├── Geist-Variable.woff2          (100–900 · só reto · itálico é banido)
 │   ├── GeistMono-Variable.woff2
-│   ├── GeistMono-Italic-Variable.woff2
 │   └── LICENSE.txt
 └── examples/                ← HTML specimens prontos
     ├── email-welcome.html
@@ -111,9 +109,10 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 1. **Paleta restrita** · branco · cinza · navy · preto · coral só destrutivo · sem gold/amarelo
 2. **Pill canônica** · 11px · 500 · letter-spacing -0.004em · nowrap · sem dot · sem caps lock
 3. **Geist single family** · ZERO itálico (\`<em>\` reto · ênfase = peso + cor) · letterspacing negativo em corpo
-4. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA
+4. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA · nunca invente preço nem nº de alunos (pergunte ou use \`R$ [valor]\` / \`[N] alunos\`)
 5. **Sparkles banido** · usar Compass · Award · Crown · Layers · MessageCircle
-6. **Logo correta por contexto** · monogram pequeno · wordmark grande · app icon em profile
+6. **Light-first** · fundo claro (branco/off-white) é o padrão de tudo · navy é cor da marca, não do fundo
+7. **Logo = lockup** · monograma + wordmark SEMPRE juntos (\`logos/\`, nunca redesenhar nem usar o wordmark solto) · monograma sozinho só em espaço mínimo (favicon, app/profile icon, canto de slide) · versão navy sobre claro, branca só sobre navy
 
 ## Reference site canônico
 
@@ -183,9 +182,7 @@ console.log(`  wrote logos/ (${copiedLogos} files)`);
 const fontSrc = resolve(root, 'src/assets/fonts');
 const fontFiles = [
   'Geist-Variable.woff2',
-  'Geist-Italic-Variable.woff2',
   'GeistMono-Variable.woff2',
-  'GeistMono-Italic-Variable.woff2',
   'LICENSE.txt',
 ];
 let copiedFonts = 0;
@@ -196,8 +193,8 @@ for (const f of fontFiles) {
     copiedFonts++;
   }
 }
-// fonts.css · @font-face self-hosted (variável · 100-900 · normal + italic)
-const fontsCss = `/* Geist · self-hosted · variável (100–900) · normal + italic
+// fonts.css · @font-face self-hosted (variável · 100-900 · só normal: itálico é banido na marca)
+const fontsCss = `/* Geist · self-hosted · variável (100–900) · só normal (itálico é banido na marca)
    Geist é open-source (SIL OFL 1.1 / MIT) da Vercel — ver LICENSE.txt.
    Importe este arquivo OU use o CDN do Google Fonts (ver system-prompt.md).
    Casa com os tokens --via-font ('Geist') e --via-font-mono ('Geist Mono'). */
@@ -209,24 +206,10 @@ const fontsCss = `/* Geist · self-hosted · variável (100–900) · normal + i
   font-display: swap;
 }
 @font-face {
-  font-family: 'Geist';
-  src: url('./Geist-Italic-Variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
   font-family: 'Geist Mono';
   src: url('./GeistMono-Variable.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Geist Mono';
-  src: url('./GeistMono-Italic-Variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: italic;
   font-display: swap;
 }
 `;
@@ -358,12 +341,12 @@ const examples = {
   <section class="hero">
     <span class="eyebrow">formação técnico-operativa em IA</span>
     <h1>Viver de IA, <em>não de prompt</em>.</h1>
-    <p class="lede">220 operadores formados · R$ 1,8M destravado em 12 meses · método codificado em 18 aulas</p>
+    <p class="lede">[N] operadores formados · R$ [valor] destravado em 12 meses · método codificado em 18 aulas</p>
     <a class="cta" href="#">Conhecer o método</a>
   </section>
   <section class="stats">
-    <div class="stat"><strong>+220</strong><em>operadores formados</em></div>
-    <div class="stat"><strong>R$ 1,8M</strong><em>destravado em 12 meses</em></div>
+    <div class="stat"><strong>+[N]</strong><em>operadores formados</em></div>
+    <div class="stat"><strong>R$ [valor]</strong><em>destravado em 12 meses</em></div>
     <div class="stat"><strong>11.920</strong><em>conversas/mês via Nina</em></div>
     <div class="stat"><strong>90 dias</strong><em>até agente em produção</em></div>
   </section>

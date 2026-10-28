@@ -46,7 +46,7 @@ src/
 
    ```css
    .my-card {
-     background: var(--via-surface-1);
+     background: var(--via-surface);
      color: var(--via-text-primary);
      border-radius: var(--via-radius-md);
    }
