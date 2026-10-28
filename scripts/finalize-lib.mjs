@@ -21,6 +21,7 @@
 import { writeFileSync, copyFileSync, existsSync, readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseTokens } from './parse-tokens.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
@@ -103,32 +104,7 @@ if (existsSync(tokensSrc)) {
 // 2.5 · gerar tokens.json (machine-readable) a partir de tokens.css
 const tokensCssPath = resolve(root, 'src/styles/tokens.css');
 if (existsSync(tokensCssPath)) {
-  const css = readFileSync(tokensCssPath, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-  const declRe = /(--[a-z0-9-]+)\s*:\s*([^;]+);/gi;
-  const seen = new Map();
-  for (const match of css.matchAll(declRe)) {
-    seen.set(match[1].trim(), match[2].trim());
-  }
-
-  const cat = (n, v) => {
-    const ln = n.toLowerCase(); const lv = v.toLowerCase();
-    if (ln.includes('font') || ln.includes('display') || ln.includes('mono')) return 'font';
-    if (ln.includes('radius')) return 'radius';
-    if (ln.includes('shadow')) return 'shadow';
-    if (ln.includes('space') || ln.includes('gap') || ln.includes('padding')) return 'spacing';
-    if (ln.includes('motion') || ln.includes('ease') || ln.includes('duration') || ln === '--via-t') return 'motion';
-    if (ln.includes('noise') || ln.includes('mesh') || ln.includes('bg-')) return 'surface';
-    if (/^#[0-9a-f]{3,8}$/i.test(v) || lv.startsWith('rgb') || lv.startsWith('hsl') || lv.startsWith('var(--via-')) return 'color';
-    return 'other';
-  };
-
-  const tokens = [...seen.entries()].map(([full, value]) => ({
-    name: full.replace(/^--/, ''),
-    css: full,
-    value,
-    category: cat(full, value),
-  }));
-  tokens.sort((a, b) => a.category === b.category ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category));
+  const tokens = parseTokens(readFileSync(tokensCssPath, 'utf8'));
 
   writeFileSync(resolve(out, 'tokens.json'), JSON.stringify({
     $version: version,

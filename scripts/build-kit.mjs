@@ -21,6 +21,7 @@ import { existsSync, mkdirSync, copyFileSync, readFileSync, writeFileSync, rmSyn
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
+import { parseTokens } from './parse-tokens.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
@@ -137,30 +138,7 @@ const dataCss = readFileSync(resolve(root, 'src/styles/data.css'), 'utf8');
 writeFileSync(resolve(out, 'tokens/data.css'), dataCss);
 
 // Gera tokens.json (parse de tokens.css)
-const cssStripped = tokensCss.replace(/\/\*[\s\S]*?\*\//g, '');
-const tokenDecl = /(--[a-z0-9-]+)\s*:\s*([^;]+);/gi;
-const tokenMap = new Map();
-for (const match of cssStripped.matchAll(tokenDecl)) {
-  tokenMap.set(match[1].trim(), match[2].trim());
-}
-const cat = (n, v) => {
-  const ln = n.toLowerCase(); const lv = v.toLowerCase();
-  if (ln.includes('font') || ln.includes('display') || ln.includes('mono')) return 'font';
-  if (ln.includes('radius')) return 'radius';
-  if (ln.includes('shadow')) return 'shadow';
-  if (ln.includes('space') || ln.includes('gap') || ln.includes('padding')) return 'spacing';
-  if (ln.includes('motion') || ln.includes('ease') || ln.includes('duration') || ln === '--via-t') return 'motion';
-  if (ln.includes('noise') || ln.includes('mesh') || ln.includes('bg-')) return 'surface';
-  if (/^#[0-9a-f]{3,8}$/i.test(v) || lv.startsWith('rgb') || lv.startsWith('hsl') || lv.startsWith('var(--via-')) return 'color';
-  return 'other';
-};
-const tokens = [...tokenMap.entries()].map(([full, value]) => ({
-  name: full.replace(/^--/, ''),
-  css: full,
-  value,
-  category: cat(full, value),
-}));
-tokens.sort((a, b) => a.category === b.category ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category));
+const tokens = parseTokens(tokensCss);
 writeFileSync(resolve(out, 'tokens/tokens.json'), JSON.stringify({
   $version: JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8')).version,
   // sem timestamp de build: mantém o artefato determinístico (a data fica no git).
