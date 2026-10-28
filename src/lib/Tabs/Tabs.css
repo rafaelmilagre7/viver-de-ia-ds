@@ -46,7 +46,7 @@
 }
 
 .via-tabs--underline .via-tabs__tab {
-  padding: 12px 16px 14px;
+  padding: var(--via-space-3) var(--via-space-4) var(--via-space-3_5);
   color: var(--via-ink-2, #5E6B82);
 }
 
@@ -88,7 +88,7 @@
 
 /* ===== Pills variant · glass ===== */
 .via-tabs--pills .via-tabs__list {
-  padding: 4px;
+  padding: var(--via-space-1);
   background: linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -99,7 +99,7 @@
 }
 
 .via-tabs--pills .via-tabs__tab {
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   /* um degrau abaixo do .via-tabs__list (sm) — canto interno não vaza */
   border-radius: var(--via-radius-xs);
   color: var(--via-ink-2, #5E6B82);
@@ -125,7 +125,7 @@
 
 /* ===== Panel ===== */
 .via-tabs__panel {
-  padding-top: 18px;
+  padding-top: var(--via-space-4_5);
   animation: via-tabs-fade var(--via-dur) ease;
 }
 

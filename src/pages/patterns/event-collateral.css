@@ -23,7 +23,7 @@
   position: relative;
   min-height: 320px;
   border-radius: var(--via-radius-lg);
-  padding: 40px 32px;
+  padding: var(--via-space-10) var(--via-space-8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +155,7 @@
 /* Side text · glass card */
 .vds-ev-relation-text {
   position: relative;
-  padding: 36px 32px;
+  padding: var(--via-space-9) var(--via-space-8);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -190,7 +190,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 
 .vds-ev-relation-text h3 {
@@ -200,7 +200,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.20;
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
 }
 
 .vds-ev-relation-text h3 em {
@@ -223,7 +223,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-1);
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   position: relative;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -306,7 +306,7 @@
   grid-template-columns: 32px 36px 1fr;
   align-items: center;
   gap: var(--via-space-3);
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -343,7 +343,7 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
-  margin-bottom: 2px;
+  margin-bottom: var(--via-space-0_5);
   line-height: 1.25;
 }
 
@@ -357,7 +357,7 @@
 
 /* Body · briefing editorial */
 .vds-ev-piece-body {
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
 }
 
 .vds-ev-piece-eyebrow {
@@ -368,7 +368,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-primary);
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 
 .vds-ev-piece-body p {
@@ -383,7 +383,7 @@
 /* Footer · spec física */
 .vds-ev-piece-mock {
   margin-top: auto;
-  padding: 14px 22px 16px;
+  padding: var(--via-space-3_5) var(--via-space-5_5) var(--via-space-4);
   background: var(--via-navy-03);
   border-top: 1px solid var(--via-border-soft);
 }
@@ -396,7 +396,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin-bottom: 6px;
+  margin-bottom: var(--via-space-1_5);
 }
 
 .vds-ev-piece-mock p {
@@ -414,7 +414,7 @@
    ============================================ */
 .vds-ev-rules {
   position: relative;
-  padding: 36px 40px;
+  padding: var(--via-space-9) var(--via-space-10);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -445,8 +445,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-1_5);
-  margin-bottom: 28px;
-  padding-bottom: 22px;
+  margin-bottom: var(--via-space-7);
+  padding-bottom: var(--via-space-5_5);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -514,7 +514,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
   line-height: 1.35;
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 
 .vds-ev-rules-list p {
@@ -543,7 +543,7 @@
       transparent 100%);
   }
   .vds-ev-rules {
-    padding: 28px 24px;
+    padding: var(--via-space-7) var(--via-space-6);
   }
   .vds-ev-rules-list li {
     grid-template-columns: 36px 1fr;

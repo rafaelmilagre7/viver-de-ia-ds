@@ -132,7 +132,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  padding: 4px 10px;
+  padding: var(--via-space-1) var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   display: inline-flex;
   align-items: center;
@@ -171,7 +171,7 @@
 
 /* Body */
 .vds-article .body {
-  padding: 20px 22px;
+  padding: var(--via-space-5) var(--via-space-5_5);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
@@ -206,7 +206,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding-top: 14px;
+  padding-top: var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
   margin-top: auto;
   font-family: var(--via-font);

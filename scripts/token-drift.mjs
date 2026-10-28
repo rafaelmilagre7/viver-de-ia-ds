@@ -10,6 +10,8 @@
  *   - gap: Npx;            → --via-space-*
  *   - font-size: Npx;      → --via-fs-*
  *   - letter-spacing: Nem; → --via-ls-*
+ *   - padding/margin (e lados) em px → --via-space-*  (cada valor do shorthand;
+ *     ignora função, negativo e off-scale)
  *
  * Uso:   node scripts/token-drift.mjs
  * CI:    sai com código 1 se achar drift (mantém a base tokenizada).
@@ -58,10 +60,15 @@ const CHECKS = [
   { prop: 'letter-spacing', re: /letter-spacing:\s*(-?[0-9.]+em);/g, map: lsMap },
 ];
 
+// padding/margin: shorthand de até 4 valores · fora de comentário · sem calc()/var()
+const BOX = /(?<=[\s{;])((?:padding|margin)(?:-[a-z-]+)?)\s*:\s*([^;{}!()]+?)\s*(?:!important)?\s*(?=[;}])/g;
+
 const findings = [];
 for (const file of walk(SRC)) {
   const rel = path.relative(ROOT, file);
+  if (rel === path.join('src', 'styles', 'tokens.css')) continue;
   const lines = fs.readFileSync(file, 'utf8').split('\n');
+  let inComment = false;
   lines.forEach((line, i) => {
     for (const { prop, re, map } of CHECKS) {
       for (const m of line.matchAll(re)) {
@@ -69,6 +76,19 @@ for (const file of walk(SRC)) {
         if (token) {
           findings.push({ rel, line: i + 1, prop, value: m[1], token });
         }
+      }
+    }
+    // remove trechos comentados antes de olhar padding/margin
+    let code = '';
+    for (let j = 0; j < line.length; j++) {
+      if (!inComment && line.startsWith('/*', j)) { inComment = true; j++; continue; }
+      if (inComment && line.startsWith('*/', j)) { inComment = false; j++; continue; }
+      if (!inComment) code += line[j];
+    }
+    for (const m of (' ' + code).matchAll(BOX)) {
+      for (const v of m[2].trim().split(/\s+/)) {
+        const token = spaceMap.get(v);
+        if (token) findings.push({ rel, line: i + 1, prop: m[1], value: v, token });
       }
     }
   });

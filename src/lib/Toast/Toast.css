@@ -24,7 +24,7 @@
   grid-template-columns: 28px 1fr auto auto;
   gap: var(--via-space-3);
   align-items: start;
-  padding: 14px 12px 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-3) var(--via-space-3_5) var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -153,7 +153,7 @@
 
 .via-toast__action {
   align-self: center;
-  padding: 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));

@@ -5,7 +5,7 @@
   display: inline-flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3);
-  padding: 12px;
+  padding: var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: var(--via-bg-2, var(--via-gray-50));
   border: 1px solid var(--via-border-soft);
@@ -131,7 +131,7 @@
 }
 
 .via-cp__custom input {
-  padding: 8px 12px;
+  padding: var(--via-space-2) var(--via-space-3);
   font-family: var(--via-font-mono, monospace);
   font-size: var(--via-fs-xs);
   letter-spacing: 0.04em;

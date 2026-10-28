@@ -77,7 +77,8 @@ e copiar `SKILL.md`, `guidelines.md` e as 3 folhas CSS do plugin pra skill local
 - Bun mais novo reordena o `bun.lock` sem mudar versões; não commite esse ruído.
 - O site builda com `cssMinify: false` (vite.config.ts); a lib minifica com lightningcss — por isso o `lint:glass`.
 - Sessão em nuvem (claude.ai/code): use `--config=playwright.cloud.config.ts` (Chromium pré-instalado). Visual regression não roda fora do macOS.
-- Canonical/OG/sitemap apontam pra `https://viverdeia.ai/design`, que hoje não responde (ver `docs/estado-e-roadmap.md`).
+- Endereço oficial = `https://viver-de-ia-ds.vercel.app` (canonical/OG/sitemap/robots). Se a marca ganhar `viverdeia.ai/design`, trocar nos 4 + `SITE_URL` do sitemap.
+- `lint:tokens` também barra `padding`/`margin` em px que já têm `--via-space-*` (off-scale passa).
 
 ## Definição de pronto
 

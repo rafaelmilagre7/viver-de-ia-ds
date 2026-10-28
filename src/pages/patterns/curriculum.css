@@ -23,7 +23,7 @@
   min-width: 0;
   min-height: 340px;
   border-radius: var(--via-radius-lg);
-  padding: 32px;
+  padding: var(--via-space-8);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -42,7 +42,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .vds-course-cover h2 {
@@ -51,7 +51,7 @@
   letter-spacing: var(--via-ls-tighter);
   line-height: 1.06;
   color: var(--via-white);
-  margin: 0 0 20px;
+  margin: 0 0 var(--via-space-5);
   max-width: 280px;
 }
 
@@ -101,7 +101,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-5);
-  padding: 32px;
+  padding: var(--via-space-8);
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
@@ -116,7 +116,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--via-space-3);
-  padding-bottom: 20px;
+  padding-bottom: var(--via-space-5);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -145,7 +145,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 
 .vds-course-progress .lbl {
@@ -179,7 +179,7 @@
 }
 
 .vds-course-progress .next {
-  margin: 10px 0 0;
+  margin: var(--via-space-2_5) 0 0;
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
@@ -198,7 +198,7 @@
 
 /* Próximas lives · conteúdo real no lugar do vazio entre progresso e CTA */
 .vds-course-upnext {
-  padding-top: 18px;
+  padding-top: var(--via-space-4_5);
   border-top: 1px solid var(--via-border-soft);
 }
 
@@ -212,7 +212,7 @@
 
 .vds-course-upnext ul {
   list-style: none;
-  margin: 8px 0 0;
+  margin: var(--via-space-2) 0 0;
   padding: 0;
 }
 
@@ -262,7 +262,7 @@
   gap: var(--via-space-2);
   align-self: stretch;
   margin-top: auto;
-  padding: 14px 20px;
+  padding: var(--via-space-3_5) var(--via-space-5);
   background: var(--via-navy);
   color: var(--via-white);
   border: 1px solid var(--via-navy);
@@ -334,7 +334,7 @@
   align-items: center;
   gap: var(--via-space-5);
   width: 100%;
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   border: 1px solid transparent;
   border-radius: var(--via-radius-md);
   background: transparent;
@@ -393,7 +393,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   letter-spacing: -0.01em;
 }
 
@@ -414,7 +414,7 @@
 .vds-module-pill {
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
@@ -466,9 +466,9 @@
 .vds-lessons {
   list-style: none;
   margin: 0;
-  padding: 0 24px 20px 88px;
+  padding: 0 var(--via-space-6) var(--via-space-5) 88px;
   border-top: 1px solid var(--via-border-soft);
-  padding-top: 12px;
+  padding-top: var(--via-space-3);
 }
 
 .vds-lesson {
@@ -476,7 +476,7 @@
   grid-template-columns: 28px 56px 1fr 100px 64px 30px;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding: 12px 14px;
+  padding: var(--via-space-3) var(--via-space-3_5);
   margin: 0 -14px;
   border-radius: var(--via-radius-sm);
   /* hairline UNIFORME nos 4 lados · divisor só no bottom por padrão */
@@ -636,7 +636,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
-  padding: 4px 8px;
+  padding: var(--via-space-1) var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 1px solid var(--via-navy-06);
@@ -730,7 +730,7 @@
   grid-template-columns: 64px 1fr auto;
   gap: var(--via-space-5);
   align-items: center;
-  padding: 24px;
+  padding: var(--via-space-6);
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
@@ -739,7 +739,7 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 8px 24px -16px var(--via-shadow-ink-10);
-  margin-top: 6px;
+  margin-top: var(--via-space-1_5);
 }
 
 .vds-cert-icon {
@@ -758,7 +758,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   letter-spacing: -0.005em;
 }
 
@@ -772,7 +772,7 @@
 .vds-cert-pill {
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  padding: 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-3);
   border-radius: var(--via-radius-pill);
   /* token (não rgba navy fixo) · senão o pill some no escuro */
   background: var(--via-navy-08);
@@ -787,10 +787,10 @@
   }
   .vds-module-meta {
     grid-column: 1 / -1;
-    margin-top: 8px;
+    margin-top: var(--via-space-2);
   }
   .vds-lessons {
-    padding-left: 24px;
+    padding-left: var(--via-space-6);
   }
   .vds-lesson {
     grid-template-columns: 24px 1fr auto;

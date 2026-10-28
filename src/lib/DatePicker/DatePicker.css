@@ -24,7 +24,7 @@
   align-items: center;
   gap: var(--via-space-2);
   width: 100%;
-  padding: 9px 12px;
+  padding: 9px var(--via-space-3);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -62,7 +62,7 @@
   backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
-  padding: 12px;
+  padding: var(--via-space-3);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-10),
@@ -86,7 +86,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-2);
-  padding: 2px 4px 10px;
+  padding: var(--via-space-0_5) var(--via-space-1) var(--via-space-2_5);
 }
 .via-dp__head strong {
   flex: 1;
@@ -102,7 +102,7 @@
   font-family: var(--via-mono, var(--via-font-mono, ui-monospace, monospace));
   font-size: var(--via-fs-xs);
   color: var(--via-ink-3, #6B7891);
-  margin-left: 2px;
+  margin-left: var(--via-space-0_5);
 }
 .via-dp__nav {
   width: 26px;
@@ -124,7 +124,7 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: var(--via-space-0_5);
-  padding: 4px;
+  padding: var(--via-space-1);
 }
 .via-dp__dow span {
   text-align: center;
@@ -134,14 +134,14 @@
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
-  padding: 6px 0;
+  padding: var(--via-space-1_5) 0;
 }
 
 .via-dp__grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: var(--via-space-0_5);
-  padding: 2px 4px;
+  padding: var(--via-space-0_5) var(--via-space-1);
 }
 
 .via-dp__cell {
@@ -185,8 +185,8 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-2);
-  padding-top: 10px;
-  margin-top: 4px;
+  padding-top: var(--via-space-2_5);
+  margin-top: var(--via-space-1);
   border-top: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
 }
 .via-dp__ghost {
@@ -196,7 +196,7 @@
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2, #5E6B82);
   cursor: pointer;
-  padding: 6px 10px;
+  padding: var(--via-space-1_5) var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   transition: background 120ms ease, color 120ms ease;
 }

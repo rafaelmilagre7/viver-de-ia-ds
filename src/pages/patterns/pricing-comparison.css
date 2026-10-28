@@ -39,7 +39,7 @@
 
 .vds-pricing-tier {
   position: relative;
-  padding: 32px 28px 28px;
+  padding: var(--via-space-8) var(--via-space-7) var(--via-space-7);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-4_5);
@@ -120,7 +120,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 4px 10px;
+  padding: var(--via-space-1) var(--via-space-2_5);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border-radius: var(--via-radius-pill);
@@ -143,7 +143,7 @@
   color: var(--via-text-muted);
   line-height: 1.5;
   letter-spacing: -0.004em;
-  margin: -8px 0 4px;
+  margin: -8px 0 var(--via-space-1);
 }
 
 /* Price block ----------------------------------------------------- */
@@ -151,7 +151,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--via-space-1_5);
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
 }
 .vds-pricing-tier__amount {
   font-family: var(--via-font-display);
@@ -176,7 +176,7 @@
 }
 
 /* CTA · cada coluna tem ----------------------------------------- */
-.vds-pricing-tier__cta { margin-top: 6px; }
+.vds-pricing-tier__cta { margin-top: var(--via-space-1_5); }
 .vds-pricing-tier__cta button { width: 100%; }
 
 /* ===== FEATURE ROWS ===================================== */
@@ -193,7 +193,7 @@
 }
 .vds-pricing-group__title {
   grid-column: 1 / -1;
-  padding: 28px 24px 12px;
+  padding: var(--via-space-7) var(--via-space-6) var(--via-space-3);
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
@@ -215,7 +215,7 @@
 
 /* Feature row · uma linha completa -------------------------------- */
 .vds-pricing-feature {
-  padding: 16px 24px;
+  padding: var(--via-space-4) var(--via-space-6);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
@@ -240,7 +240,7 @@
 .vds-pricing-row:last-of-type .vds-pricing-feature::after { display: none; }
 
 .vds-pricing-cell {
-  padding: 16px 24px;
+  padding: var(--via-space-4) var(--via-space-6);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
@@ -337,7 +337,7 @@
 }
 .vds-pricing-principle {
   position: relative;
-  padding: 22px 22px 20px;
+  padding: var(--via-space-5_5) var(--via-space-5_5) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   backdrop-filter: blur(22px) saturate(180%);
@@ -381,11 +381,11 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-pricing-principle h3 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
@@ -408,7 +408,7 @@
   }
   .vds-pricing-tier {
     border-radius: var(--via-radius-xl);
-    margin-bottom: 16px;
+    margin-bottom: var(--via-space-4);
     border-bottom: 1px solid rgba(255,255,255,1);
     box-shadow:
       inset 0 1px 0 var(--via-edge-hi),
@@ -416,12 +416,12 @@
   }
   .vds-pricing-tier.is-recommended {
     transform: none;
-    margin-bottom: 16px;
+    margin-bottom: var(--via-space-4);
   }
   .vds-pricing-tier-spacer,
   .vds-pricing-group__title,
   .vds-pricing-feature,
-  .vds-pricing-cell { padding: 14px 20px; }
+  .vds-pricing-cell { padding: var(--via-space-3_5) var(--via-space-5); }
   .vds-pricing-cell.is-recommended {
     border-left: 0;
     border-right: 0;

@@ -5,7 +5,7 @@
 .vds-404 {
   position: relative;
   border-radius: var(--via-radius-2xl);
-  padding: 120px 64px;
+  padding: 120px var(--via-space-16);
   overflow: hidden;
   color: var(--via-white);
   min-height: 540px;
@@ -21,7 +21,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   backdrop-filter: blur(16px) saturate(160%);
@@ -32,7 +32,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(255,255,255,0.85);
-  margin-bottom: 28px;
+  margin-bottom: var(--via-space-7);
   white-space: nowrap;
   line-height: 1.4;
 }
@@ -43,7 +43,7 @@
   line-height: 1.0;
   letter-spacing: -0.03em;
   color: var(--via-white);
-  margin: 0 0 24px;
+  margin: 0 0 var(--via-space-6);
 }
 .vds-404 h1 em {
   font-style: normal;
@@ -55,7 +55,7 @@
   font-size: var(--via-fs-h4);
   line-height: 1.55;
   color: rgba(255,255,255,0.72);
-  margin: 0 0 40px;
+  margin: 0 0 var(--via-space-10);
 }
 
 /* "404" gigante decorativo no fundo */
@@ -76,6 +76,6 @@
 }
 
 @media (max-width: 720px) {
-  .vds-404 { padding: 80px 32px; border-radius: var(--via-radius-xl); min-height: 420px; }
+  .vds-404 { padding: var(--via-space-20) var(--via-space-8); border-radius: var(--via-radius-xl); min-height: 420px; }
   .vds-404-big { font-size: 200px; bottom: -30px; right: -10px; }
 }

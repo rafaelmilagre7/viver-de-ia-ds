@@ -5,7 +5,7 @@
 /* ---- Cookie banner ---- */
 .vds-cookie-stage {
   position: relative;
-  padding: 56px 40px;
+  padding: var(--via-space-14) var(--via-space-10);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.18) 0%, transparent 55%),
@@ -24,7 +24,7 @@
   align-items: center;
   width: 100%;
   max-width: 720px;
-  padding: 20px 24px;
+  padding: var(--via-space-5) var(--via-space-6);
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   backdrop-filter: blur(28px) saturate(180%);
@@ -50,7 +50,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   color: var(--via-white);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 .vds-cookie-body p {
   font-family: var(--via-font);
@@ -64,11 +64,11 @@
   font-weight: var(--via-fw-bold);
   text-decoration: underline;
   cursor: pointer;
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
 }
 .vds-cookie-actions { display: flex; gap: var(--via-space-2); flex-shrink: 0; }
 .vds-cookie-actions button {
-  padding: 11px 20px;
+  padding: 11px var(--via-space-5);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
@@ -153,7 +153,7 @@
 /* ---- Newsletter ---- */
 .vds-news {
   position: relative;
-  padding: 56px 48px;
+  padding: var(--via-space-14) var(--via-space-12);
   border-radius: var(--via-radius-xl);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
@@ -181,7 +181,7 @@
   pointer-events: none;
 }
 .vds-news > * { position: relative; z-index: 1; }
-.vds-news-l .vds-eyebrow { color: rgba(255,255,255,0.55); margin-bottom: 16px; }
+.vds-news-l .vds-eyebrow { color: rgba(255,255,255,0.55); margin-bottom: var(--via-space-4); }
 .vds-news-l h3 {
   font-family: var(--via-font-display);
   font-size: clamp(32px, 4vw, 48px);
@@ -189,7 +189,7 @@
   letter-spacing: var(--via-ls-tighter);
   line-height: 1.0;
   color: var(--via-white);
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
 }
 .vds-news-l .lede {
   font-family: var(--via-font);
@@ -204,7 +204,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 6px 6px 6px 18px;
+  padding: var(--via-space-1_5) var(--via-space-1_5) var(--via-space-1_5) var(--via-space-4_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   backdrop-filter: blur(16px) saturate(160%);
@@ -219,7 +219,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-white);
-  padding: 10px 0;
+  padding: var(--via-space-2_5) 0;
 }
 .vds-news-input input::placeholder { color: rgba(255,255,255,0.45); }
 .vds-news-input button {
@@ -227,7 +227,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 12px 20px;
+  padding: var(--via-space-3) var(--via-space-5);
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-20);
@@ -271,16 +271,16 @@
   font-size: var(--via-fs-label);
   color: rgba(255,255,255,0.55);
   margin: 0;
-  padding-left: 18px;
+  padding-left: var(--via-space-4_5);
 }
 
 @media (max-width: 720px) {
-  .vds-news { grid-template-columns: 1fr; padding: 40px 28px; }
+  .vds-news { grid-template-columns: 1fr; padding: var(--via-space-10) var(--via-space-7); }
 }
 
 /* ---- Comment thread ---- */
 .vds-comments {
-  padding: 32px;
+  padding: var(--via-space-8);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -288,8 +288,8 @@
   border-radius: var(--via-radius-xl);
   box-shadow: var(--via-glass-shadow);
 }
-.vds-comments > header { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 0.5px solid var(--via-navy-08); }
-.vds-comments > header .vds-eyebrow { margin-bottom: 4px; }
+.vds-comments > header { margin-bottom: var(--via-space-5); padding-bottom: var(--via-space-4); border-bottom: 0.5px solid var(--via-navy-08); }
+.vds-comments > header .vds-eyebrow { margin-bottom: var(--via-space-1); }
 .vds-comments > header h3 {
   font-family: var(--via-font-display);
   font-size: 20px;
@@ -327,7 +327,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--via-space-2_5);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 .vds-comments .body strong {
   font-family: var(--via-font);
@@ -346,14 +346,14 @@
   font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-body);
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
 }
 .vds-comments .body footer { display: flex; gap: var(--via-space-1); align-items: center; }
 .vds-comments .act {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -390,15 +390,15 @@
     var(--via-shadow-focus);
 }
 .vds-comments .act.ghost { color: var(--via-text-primary); }
-.vds-comments .act.ico { padding: 5px 8px; }
+.vds-comments .act.ico { padding: 5px var(--via-space-2); }
 
 .vds-comments-input {
   display: grid;
   grid-template-columns: 32px 1fr auto;
   gap: var(--via-space-2_5);
   align-items: center;
-  margin-top: 24px;
-  padding: 12px 14px;
+  margin-top: var(--via-space-6);
+  padding: var(--via-space-3) var(--via-space-3_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -437,7 +437,7 @@
 }
 .vds-comments-input input::placeholder { color: var(--via-gray-400); }
 .vds-comments-input button {
-  padding: 9px 16px;
+  padding: 9px var(--via-space-4);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: 1px solid var(--via-navy);
@@ -477,7 +477,7 @@
   grid-template-columns: 56px 1fr auto;
   gap: var(--via-space-4);
   align-items: center;
-  padding: 16px 18px;
+  padding: var(--via-space-4) var(--via-space-4_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -529,7 +529,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 .vds-file-meta span {
   font-family: var(--via-font);
@@ -576,7 +576,7 @@
 /* ---- Calendar ---- */
 .vds-cal-stage {
   position: relative;
-  padding: 48px 32px;
+  padding: var(--via-space-12) var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.16) 0%, transparent 55%),
@@ -589,7 +589,7 @@
 .vds-cal {
   width: 100%;
   max-width: 380px;
-  padding: 22px;
+  padding: var(--via-space-5_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   backdrop-filter: blur(24px) saturate(180%);
@@ -603,9 +603,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4px 16px;
+  padding: 0 var(--via-space-1) var(--via-space-4);
   border-bottom: 0.5px solid var(--via-navy-08);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 .vds-cal > header strong {
   font-family: var(--via-font-display);
@@ -655,7 +655,7 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: var(--via-space-1);
-  padding: 4px 0 6px;
+  padding: var(--via-space-1) 0 var(--via-space-1_5);
 }
 .vds-cal-days .dow {
   font-family: var(--via-font);
@@ -720,8 +720,8 @@
 .vds-cal-cell.picked .dot { background: var(--via-surface); }
 
 .vds-cal > footer {
-  margin-top: 14px;
-  padding-top: 14px;
+  margin-top: var(--via-space-3_5);
+  padding-top: var(--via-space-3_5);
   border-top: 0.5px solid var(--via-navy-08);
   display: flex;
   align-items: center;
@@ -738,7 +738,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 9px 14px;
+  padding: 9px var(--via-space-3_5);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: 1px solid var(--via-navy);

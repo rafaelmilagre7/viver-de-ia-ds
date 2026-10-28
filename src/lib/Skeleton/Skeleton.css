@@ -41,7 +41,7 @@
 .via-skeleton--text {
   height: 13px;
   border-radius: 4px;
-  margin: 6px 0;
+  margin: var(--via-space-1_5) 0;
 }
 
 .via-skeleton--rect {

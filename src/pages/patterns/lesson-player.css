@@ -16,7 +16,7 @@
   gap: var(--via-space-2);
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
-  padding: 12px 16px;
+  padding: var(--via-space-3) var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
@@ -77,7 +77,7 @@
 .vds-lesson-video .vid-idle {
   position: absolute;
   inset: 0;
-  padding: 24px 28px 88px;
+  padding: var(--via-space-6) var(--via-space-7) 88px;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
   color: var(--via-white);
@@ -99,7 +99,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 
 .vds-lesson-video .vid-idle h2 {
@@ -108,7 +108,7 @@
   letter-spacing: -0.022em;
   line-height: 1.15;
   color: var(--via-white);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
 }
 
 .vds-lesson-video .vid-idle h2 em {
@@ -174,7 +174,7 @@
   left: 16px;
   right: 16px;
   bottom: 16px;
-  padding: 12px 16px;
+  padding: var(--via-space-3) var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: rgba(10, 31, 59, 0.55);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -188,7 +188,7 @@
   height: 3px;
   background: rgba(255, 255, 255, 0.14);
   border-radius: var(--via-radius-pill);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
   overflow: visible;
 }
 
@@ -271,7 +271,7 @@
   font-weight: var(--via-fw-medium);
   color: rgba(255, 255, 255, 0.85);
   font-feature-settings: 'tnum' 1;
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
   letter-spacing: 0.02em;
   /* timecode é um bloco só · sem ele o "04:28 / 13:54" quebra em 3 linhas
      e a barra de controles dobra de altura no estreito */
@@ -287,7 +287,7 @@
 .vds-lesson-video .vid-quality {
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.20);
@@ -328,7 +328,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 6px 12px 6px 8px;
+  padding: var(--via-space-1_5) var(--via-space-3) var(--via-space-1_5) var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -356,12 +356,12 @@
    metade do poster, e não sobra espaço pra copy + play. Em vez de adivinhar
    pelo viewport, o poster reage à própria altura. */
 @container (max-height: 300px) {
-  .vds-lesson-video .vid-idle { padding: 16px 16px 84px; }
+  .vds-lesson-video .vid-idle { padding: var(--via-space-4) var(--via-space-4) 84px; }
   .vds-lesson-video .vid-idle-copy { display: none; }
 }
 
 @container (max-height: 210px) {
-  .vds-lesson-video .vid-idle { padding: 12px 12px 78px; }
+  .vds-lesson-video .vid-idle { padding: var(--via-space-3) var(--via-space-3) 78px; }
   .vds-lesson-video .vid-play-big { width: 56px; height: 56px; }
   /* marca d'água e controles secundários saem · o que sobra é o essencial:
      tocar, volume, tempo, tela cheia — sem timecode passando por baixo de botão */
@@ -372,7 +372,7 @@
 
 /* Info below video */
 .vds-lesson-info {
-  padding: 24px;
+  padding: var(--via-space-6);
   border-radius: var(--via-radius-md);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
@@ -386,7 +386,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--via-space-4);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .vds-lesson-info .eyebrow {
@@ -396,7 +396,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 
 .vds-lesson-info h3 {
@@ -412,7 +412,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -454,7 +454,7 @@
   font-size: var(--via-fs-caption);
   line-height: 1.6;
   color: var(--via-text-soft);
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
 }
 
 .vds-lesson-desc em {
@@ -467,7 +467,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3);
-  padding-top: 16px;
+  padding-top: var(--via-space-4);
   border-top: 1px solid var(--via-border-soft);
 }
 
@@ -497,7 +497,7 @@
   font-style: normal;
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 
 /* ---------- Aside / tabs ---------- */
@@ -516,7 +516,7 @@
 .vds-lesson-tabs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 6px;
+  padding: var(--via-space-1_5);
   gap: var(--via-space-1);
   border-bottom: 1px solid var(--via-border-soft);
   background: var(--via-navy-03);
@@ -527,7 +527,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-1_5);
-  padding: 9px 8px;
+  padding: 9px var(--via-space-2);
   border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
@@ -574,7 +574,7 @@
 }
 
 .vds-lesson-panel {
-  padding: 18px;
+  padding: var(--via-space-4_5);
   max-height: 560px;
   overflow-y: auto;
 }
@@ -593,11 +593,11 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 8px 12px;
+  padding: var(--via-space-2) var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .vds-transcript-search svg {
@@ -631,7 +631,7 @@
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: var(--via-space-2_5);
-  padding: 10px;
+  padding: var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card-2);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -732,7 +732,7 @@
 .vds-notes-input {
   width: 100%;
   min-height: 130px;
-  padding: 16px;
+  padding: var(--via-space-4);
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-surface);
@@ -757,8 +757,8 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  margin-top: 12px;
-  padding: 9px 16px;
+  margin-top: var(--via-space-3);
+  padding: 9px var(--via-space-4);
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
@@ -794,7 +794,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
-  margin: 26px 0 12px;
+  margin: 26px 0 var(--via-space-3);
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
@@ -817,7 +817,7 @@
 }
 
 .vds-notes-list li {
-  padding: 12px 14px;
+  padding: var(--via-space-3) var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background:
     radial-gradient(220px 80px at 0% 0%, var(--via-navy-04), transparent 70%),
@@ -843,7 +843,7 @@
   color: var(--via-text-soft);
   background: var(--via-navy-06);
   border-radius: var(--via-radius-xs);
-  padding: 3px 6px;
+  padding: 3px var(--via-space-1_5);
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
   align-self: flex-start;
@@ -872,7 +872,7 @@
   grid-template-columns: 40px 1fr 32px;
   gap: var(--via-space-3);
   align-items: center;
-  padding: 14px;
+  padding: var(--via-space-3_5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -983,7 +983,7 @@
   display: grid;
   grid-template-columns: 38px 1fr;
   gap: var(--via-space-3);
-  padding: 14px;
+  padding: var(--via-space-3_5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
@@ -1027,7 +1027,7 @@
 }
 
 .vds-disc-meta {
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
@@ -1051,7 +1051,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  padding: 2px 6px;
+  padding: var(--via-space-0_5) var(--via-space-1_5);
   border-radius: var(--via-radius-pill);
   /* token, não navy cru · navy 7% chapado some sobre superfície escura */
   background: var(--via-navy-06);
@@ -1071,7 +1071,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  margin-top: 8px;
+  margin-top: var(--via-space-2);
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
 }
@@ -1101,7 +1101,7 @@
    Quiz inline
    ============================================ */
 .vds-quiz {
-  padding: 36px;
+  padding: var(--via-space-9);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -1124,19 +1124,19 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
-  margin: 10px 0 6px;
+  margin: var(--via-space-2_5) 0 var(--via-space-1_5);
   line-height: 1.2;
 }
 
 .vds-quiz-head p {
   font-size: var(--via-fs-caption);
   color: var(--via-text-soft);
-  margin: 0 0 24px;
+  margin: 0 0 var(--via-space-6);
 }
 
 .vds-quiz-options {
   list-style: none;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -1149,7 +1149,7 @@
   align-items: center;
   gap: var(--via-space-3_5);
   width: 100%;
-  padding: 16px 18px;
+  padding: var(--via-space-4) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
@@ -1254,7 +1254,7 @@
 .vds-quiz-feedback {
   font-size: var(--via-fs-caption);
   line-height: 1.55;
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-navy-03);
@@ -1284,7 +1284,7 @@
 
 .vds-quiz-feedback strong {
   font-weight: var(--via-fw-semibold);
-  margin-right: 4px;
+  margin-right: var(--via-space-1);
 }
 
 /* ============================================
@@ -1307,7 +1307,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding: 20px 22px;
+  padding: var(--via-space-5) var(--via-space-5_5);
   border-radius: var(--via-radius-md);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
@@ -1337,7 +1337,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-soft);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 
 .vds-lesson-nav-card p {
@@ -1367,7 +1367,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 0 22px;
+  padding: 0 var(--via-space-5_5);
   border-radius: var(--via-radius-md);
   background: var(--via-navy);
   color: var(--via-white);

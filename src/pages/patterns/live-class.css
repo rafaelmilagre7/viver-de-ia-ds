@@ -5,7 +5,7 @@
 /* ---------- Live HERO ---------- */
 .vds-live-hero {
   position: relative;
-  padding: 56px 56px 36px;
+  padding: var(--via-space-14) var(--via-space-14) var(--via-space-9);
   border-radius: var(--via-radius-xl);
   background-color: var(--via-navy-darker);
   color: var(--via-white);
@@ -47,14 +47,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 64px;
+  margin-bottom: var(--via-space-16);
 }
 
 .vds-live-pill {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 6px 14px 6px 11px;
+  padding: var(--via-space-1_5) var(--via-space-3_5) var(--via-space-1_5) 11px;
   border-radius: var(--via-radius-pill);
   background: rgba(184, 92, 92, 0.18);
   border: 1px solid rgba(184, 92, 92, 0.4);
@@ -111,7 +111,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   text-transform: none;
-  padding-left: 10px;
+  padding-left: var(--via-space-2_5);
   border-left: 1px solid rgba(255, 255, 255, 0.22);
   font-feature-settings: 'tnum' 1;
 }
@@ -120,7 +120,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 8px 16px;
+  padding: var(--via-space-2) var(--via-space-4);
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -135,12 +135,12 @@
 .vds-live-viewers strong {
   color: var(--via-white);
   font-weight: var(--via-fw-bold);
-  margin-right: 2px;
+  margin-right: var(--via-space-0_5);
 }
 
 /* Body */
 .vds-live-body {
-  margin-bottom: 32px;
+  margin-bottom: var(--via-space-8);
 }
 
 .vds-live-eyebrow {
@@ -153,7 +153,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-gray-300);
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 
 .vds-live-hero h1 {
@@ -162,7 +162,7 @@
   letter-spacing: -0.034em;
   line-height: 1.04;
   color: var(--via-white);
-  margin: 0 0 20px;
+  margin: 0 0 var(--via-space-5);
   max-width: 720px;
 }
 
@@ -189,7 +189,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-4_5);
-  padding: 16px 20px;
+  padding: var(--via-space-4) var(--via-space-5);
   border-radius: var(--via-radius-lg);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -245,7 +245,7 @@
   font-size: var(--via-fs-label);
   color: var(--via-gray-300);
   letter-spacing: -0.006em;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
   font-weight: var(--via-fw-regular);
 }
 
@@ -260,7 +260,7 @@
    não overlay. Ela ocupa a faixa entre o card de hosts e os botões (sem vão morto). */
 .vds-live-heart {
   pointer-events: none;
-  margin-bottom: 32px;
+  margin-bottom: var(--via-space-8);
 }
 
 .vds-live-heart-svg {
@@ -299,7 +299,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 15px 28px;
+  padding: 15px var(--via-space-7);
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
@@ -345,7 +345,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 11px 16px;
+  padding: 11px var(--via-space-4);
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.20);
@@ -386,9 +386,9 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   color: var(--via-gray-300);
-  padding-left: 8px;
+  padding-left: var(--via-space-2);
   border-left: 1px solid rgba(255, 255, 255, 0.16);
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
   letter-spacing: 0.04em;
   font-feature-settings: 'tnum' 1;
 }
@@ -431,7 +431,7 @@
 }
 
 .vds-live-next-l {
-  padding: 36px;
+  padding: var(--via-space-9);
   position: relative;
 }
 
@@ -450,11 +450,11 @@
 
 .vds-live-next-l .vds-live-eyebrow {
   color: var(--via-text-soft);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .vds-live-next-l h3 {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
@@ -469,7 +469,7 @@
 }
 
 .vds-live-next-l p {
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
   font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-text-soft);
@@ -481,7 +481,7 @@
   align-items: center;
   gap: var(--via-space-2);
   flex-wrap: wrap;
-  padding: 10px 16px;
+  padding: var(--via-space-2_5) var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
@@ -498,7 +498,7 @@
 
 /* Right · navy mesh */
 .vds-live-next-r {
-  padding: 36px;
+  padding: var(--via-space-9);
   background:
     radial-gradient(ellipse at 100% 0%, var(--via-navy-08) 0%, transparent 55%),
     radial-gradient(ellipse at 0% 100%, rgba(46, 76, 118, 0.5) 0%, transparent 55%),
@@ -512,7 +512,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-0_5);
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   /* sobre navy os alphas têm que ser brancos — espelha o vidro dos tiles do countdown */
   background: rgba(255, 255, 255, 0.06);
@@ -520,7 +520,7 @@
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   backdrop-filter: blur(14px) saturate(160%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
   text-align: center;
 }
 
@@ -553,14 +553,14 @@
   align-items: baseline;
   justify-content: center;
   gap: var(--via-space-1_5);
-  margin-bottom: 20px;
+  margin-bottom: var(--via-space-5);
 }
 
 .vds-live-countdown > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px 14px;
+  padding: var(--via-space-3) var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -579,7 +579,7 @@
 }
 
 .vds-live-countdown em {
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
   font-style: normal;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
@@ -603,7 +603,7 @@
   justify-content: center;
   gap: var(--via-space-2);
   width: 100%;
-  padding: 13px 20px;
+  padding: 13px var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-navy-20);
@@ -637,7 +637,7 @@
 }
 
 .vds-live-next-tip {
-  margin: 12px 0 0;
+  margin: var(--via-space-3) 0 0;
   font-size: var(--via-fs-label);
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: -0.005em;
@@ -694,7 +694,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 14px;
+  padding: var(--via-space-2_5) var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background: rgba(10, 31, 59, 0.6);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
@@ -720,7 +720,7 @@
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 
 .vds-live-past-play {
@@ -790,14 +790,14 @@
 }
 
 .vds-live-past-body {
-  padding: 22px;
+  padding: var(--via-space-5_5);
 }
 
 .vds-live-past-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
   letter-spacing: var(--via-ls-label);
@@ -806,7 +806,7 @@
 }
 
 .vds-live-past-card h4 {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);

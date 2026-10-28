@@ -4,9 +4,9 @@
 
 .vds-manifesto-hero {
   position: relative;
-  padding: 96px 56px 80px;
+  padding: var(--via-space-24) var(--via-space-14) var(--via-space-20);
   border-radius: var(--via-radius-2xl);
-  margin-bottom: 40px;
+  margin-bottom: var(--via-space-10);
   overflow: hidden;
   color: var(--via-white);
   text-align: left;
@@ -15,7 +15,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   backdrop-filter: blur(16px) saturate(160%);
@@ -26,7 +26,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   color: rgba(255,255,255,0.85);
-  margin-bottom: 28px;
+  margin-bottom: var(--via-space-7);
   position: relative;
   z-index: 2;
   white-space: nowrap;
@@ -41,7 +41,7 @@
   line-height: 1.0;
   letter-spacing: -0.03em;
   color: var(--via-white);
-  margin: 0 0 24px;
+  margin: 0 0 var(--via-space-6);
   max-width: 720px;
 }
 .vds-manifesto-hero h1 em {
@@ -67,7 +67,7 @@
 }
 .vds-principle {
   position: relative;
-  padding: 32px;
+  padding: var(--via-space-8);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   backdrop-filter: blur(28px) saturate(180%);
@@ -100,7 +100,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 .vds-principle .num {
   font-family: var(--via-font-mono);
@@ -127,7 +127,7 @@
   letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   line-height: 1.2;
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
 }
 .vds-principle p {
   font-family: var(--via-font);
@@ -138,6 +138,6 @@
 }
 
 @media (max-width: 720px) {
-  .vds-manifesto-hero { padding: 64px 32px 48px; border-radius: var(--via-radius-xl); }
-  .vds-principle { padding: 24px; }
+  .vds-manifesto-hero { padding: var(--via-space-16) var(--via-space-8) var(--via-space-12); border-radius: var(--via-radius-xl); }
+  .vds-principle { padding: var(--via-space-6); }
 }

@@ -12,7 +12,7 @@
 .vds-hero-card {
   position: relative;
   border-radius: var(--via-radius-lg);
-  padding: 56px 56px 48px;
+  padding: var(--via-space-14) var(--via-space-14) var(--via-space-12);
   overflow: hidden;
   isolation: isolate;
   border: 1px solid var(--via-border-soft);
@@ -36,7 +36,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 
 .vds-hero-eyebrow.dark {
@@ -49,12 +49,12 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  padding: 4px 12px;
+  padding: var(--via-space-1) var(--via-space-3);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
   color: var(--via-text-primary);
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
   white-space: nowrap;
   line-height: 1.4;
 }
@@ -64,7 +64,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   line-height: 1.06;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   color: var(--via-white);
   max-width: 620px;
 }
@@ -88,7 +88,7 @@
 }
 
 .vds-hero-lede {
-  margin: 0 0 28px;
+  margin: 0 0 var(--via-space-7);
   font-size: var(--via-fs-sm);
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.72);
@@ -108,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 13px 22px;
+  padding: 13px var(--via-space-5_5);
   border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -214,7 +214,7 @@
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: var(--via-space-12);
-  padding: 48px;
+  padding: var(--via-space-12);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -24px var(--via-shadow-ink-14);
@@ -234,8 +234,8 @@
 .vds-hero-stats {
   display: flex;
   gap: var(--via-space-8);
-  margin: 24px 0 28px;
-  padding: 16px 0;
+  margin: var(--via-space-6) 0 var(--via-space-7);
+  padding: var(--via-space-4) 0;
   border-top: 1px solid var(--via-border-soft);
   border-bottom: 1px solid var(--via-border-soft);
 }
@@ -259,7 +259,7 @@
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
 }
 
 .vds-hero-card.split .vds-hero-cta {
@@ -269,7 +269,7 @@
 .vds-hero-mock {
   position: relative;
   border-radius: var(--via-radius-md);
-  padding: 22px;
+  padding: var(--via-space-5_5);
   color: var(--via-white);
   overflow: hidden;
   height: 100%;
@@ -285,7 +285,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  padding: 4px 11px;
+  padding: var(--via-space-1) 11px;
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -302,7 +302,7 @@
 }
 
 .mock-kpi {
-  padding: 12px;
+  padding: var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -321,7 +321,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 
 .mock-kpi strong {
@@ -356,7 +356,7 @@
   backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   box-shadow: var(--via-glass-shadow);
-  padding: 56px;
+  padding: var(--via-space-14);
 }
 
 .vds-hero-grid {
@@ -382,7 +382,7 @@
    Logo wall
    ============================================ */
 .vds-logowall-card {
-  padding: 36px;
+  padding: var(--via-space-9);
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
@@ -391,12 +391,12 @@
 }
 
 .vds-logowall-card header {
-  margin-bottom: 28px;
+  margin-bottom: var(--via-space-7);
   max-width: 580px;
 }
 
 .vds-logowall-card .eyebrow {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-label);
@@ -448,7 +448,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 22px;
+  padding: var(--via-space-5_5);
   transition: all 200ms ease;
 }
 
@@ -475,7 +475,7 @@
 }
 
 .vds-logowall-card footer {
-  margin-top: 24px;
+  margin-top: var(--via-space-6);
   display: flex;
   justify-content: flex-end;
 }
@@ -506,7 +506,7 @@
    Timeline
    ============================================ */
 .vds-timeline {
-  padding: 36px;
+  padding: var(--via-space-9);
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
@@ -537,7 +537,7 @@
   border: 3px solid var(--via-white);
   box-shadow: 0 0 0 1px var(--via-navy-16);
   z-index: 2;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 
 .vds-tl-item.now .vds-tl-dot {
@@ -572,7 +572,7 @@
 }
 
 .vds-tl-body {
-  padding-bottom: 36px;
+  padding-bottom: var(--via-space-9);
 }
 
 .vds-tl-item:last-child .vds-tl-body {
@@ -583,7 +583,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 
 .vds-tl-year {
@@ -597,7 +597,7 @@
 .vds-tl-tag {
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
-  padding: 3px 10px;
+  padding: 3px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   color: var(--via-text-soft);
@@ -612,7 +612,7 @@
 }
 
 .vds-tl-body h4 {
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -651,7 +651,7 @@
 
 .vds-process-step {
   position: relative;
-  padding: 28px;
+  padding: var(--via-space-7);
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
@@ -677,7 +677,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
   box-shadow: 0 8px 16px -8px var(--via-shadow-ink-40);
 }
 
@@ -687,7 +687,7 @@
   right: -8px;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  padding: 3px 6px;
+  padding: 3px var(--via-space-1_5);
   border-radius: var(--via-radius-xs);
   background: var(--via-surface);
   color: var(--via-text-primary);
@@ -696,7 +696,7 @@
 }
 
 .vds-process-step h4 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -749,7 +749,7 @@
 }
 
 .vds-comparison-col {
-  padding: 32px 28px;
+  padding: var(--via-space-8) var(--via-space-7);
   border-radius: var(--via-radius-lg);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
@@ -794,7 +794,7 @@
   transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
-  padding: 4px 13px;
+  padding: var(--via-space-1) 13px;
   border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy));
   color: var(--via-white);
@@ -808,7 +808,7 @@
 }
 
 .vds-comparison-col h4 {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.06em;
@@ -821,7 +821,7 @@
 }
 
 .vds-comparison-price {
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-tighter);
@@ -837,7 +837,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
-  margin-left: 6px;
+  margin-left: var(--via-space-1_5);
   letter-spacing: -0.005em;
 }
 
@@ -859,7 +859,7 @@
 .vds-comparison-list {
   list-style: none;
   margin: 0;
-  padding: 18px 0 6px;
+  padding: var(--via-space-4_5) 0 var(--via-space-1_5);
   border-top: 1px solid var(--via-border-soft);
   display: flex;
   flex-direction: column;
@@ -900,7 +900,7 @@
 .vds-comparison-list .val {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  padding: 3px 8px;
+  padding: 3px var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
@@ -928,7 +928,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-2);
-  padding: 14px 20px;
+  padding: var(--via-space-3_5) var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -1037,7 +1037,7 @@
   justify-content: space-between;
   gap: var(--via-space-4);
   width: 100%;
-  padding: 20px 22px;
+  padding: var(--via-space-5) var(--via-space-5_5);
   border: none;
   border-radius: var(--via-radius-md);
   background: transparent;
@@ -1070,7 +1070,7 @@
 
 .vds-faq-a {
   margin: 0;
-  padding: 0 22px 22px 22px;
+  padding: 0 var(--via-space-5_5) var(--via-space-5_5) var(--via-space-5_5);
   font-size: var(--via-fs-sm);
   line-height: 1.65;
   color: var(--via-text-soft);

@@ -4,7 +4,7 @@
 .vds-route-loader {
   max-width: var(--via-container, 1280px);
   margin: 0 auto;
-  padding: 56px 32px;
+  padding: var(--via-space-14) var(--via-space-8);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
@@ -60,7 +60,7 @@
   height: 12px;
   width: 240px;
   border-radius: 999px;
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .vds-route-loader__title {
@@ -78,7 +78,7 @@
   height: 16px;
   width: 70%;
   max-width: 640px;
-  margin-top: 12px;
+  margin-top: var(--via-space-3);
 }
 
 .vds-route-loader__lede--short {
@@ -88,13 +88,13 @@
 
 .vds-route-loader__block {
   height: 220px;
-  margin-top: 32px;
+  margin-top: var(--via-space-8);
   border-radius: 22px;
 }
 
 .vds-route-loader__block--alt {
   height: 320px;
-  margin-top: 14px;
+  margin-top: var(--via-space-3_5);
 }
 
 @keyframes vds-shimmer {

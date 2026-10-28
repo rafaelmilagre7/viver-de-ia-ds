@@ -26,7 +26,7 @@
 }
 
 .via-stat {
-  padding: 32px 28px;
+  padding: var(--via-space-8) var(--via-space-7);
   border-right: 1px solid var(--via-border-soft);
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@
   letter-spacing: 0.06em;
   color: var(--via-text-soft);
   text-transform: uppercase;
-  margin-left: 6px;
+  margin-left: var(--via-space-1_5);
 }
 
 .via-stat .sub {
@@ -77,7 +77,7 @@
     radial-gradient(ellipse 50% 60% at 100% 100%, var(--via-navy-05) 0%, transparent 60%),
     linear-gradient(135deg, var(--via-navy), var(--via-navy-darker));
   border-radius: var(--via-radius-xl);
-  padding: 40px;
+  padding: var(--via-space-10);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: var(--via-space-6);

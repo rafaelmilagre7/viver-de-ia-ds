@@ -7,7 +7,7 @@
   align-items: center;
   text-align: center;
   gap: var(--via-space-3_5);
-  padding: 48px 32px;
+  padding: var(--via-space-12) var(--via-space-8);
   border-radius: var(--via-radius-md);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
@@ -70,7 +70,7 @@
     0 1px 0 var(--via-edge-hi) inset,
     0 4px 10px -6px var(--via-shadow-ink-14);
   color: var(--via-text-primary);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 
 .via-empty-state--navy .via-empty-state__icon {
@@ -109,7 +109,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  margin-top: 8px;
+  margin-top: var(--via-space-2);
   flex-wrap: wrap;
   justify-content: center;
 }

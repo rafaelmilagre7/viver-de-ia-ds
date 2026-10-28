@@ -5,7 +5,7 @@
 /* ---------- Mission · navy mesh statement ---------- */
 .vds-bs-statement {
   position: relative;
-  padding: 56px 48px 44px;
+  padding: var(--via-space-14) var(--via-space-12) 44px;
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 80% 60% at 0% 0%, rgba(46, 76, 118, 0.42) 0%, transparent 55%),
@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: var(--via-space-5);
   background: rgba(255, 255, 255, 0.10);
   border: 0.5px solid rgba(255, 255, 255, 0.18);
   color: var(--via-white);
@@ -61,7 +61,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.78);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 .vds-bs-eyebrow.alt { color: var(--via-ink-3); }
 
@@ -70,7 +70,7 @@
   font-size: clamp(28px, 4vw, 44px);
   line-height: 1.12;
   letter-spacing: -0.026em;
-  margin: 0 0 20px;
+  margin: 0 0 var(--via-space-5);
   font-weight: var(--via-fw-medium);
   max-width: 800px;
 }
@@ -95,18 +95,18 @@
 
 .vds-bs-statement-lede {
   font-size: 18px !important;
-  margin-top: 12px !important;
+  margin-top: var(--via-space-3) !important;
 }
 
 .vds-bs-proof {
   list-style: none;
   padding: 0;
-  margin: 36px 0 0;
+  margin: var(--via-space-9) 0 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: var(--via-space-3_5);
   border-top: 0.5px solid rgba(255, 255, 255, 0.14);
-  padding-top: 28px;
+  padding-top: var(--via-space-7);
 }
 .vds-bs-proof li {
   display: flex;
@@ -129,8 +129,8 @@
 
 /* ---------- Rationale (mission explanation) ---------- */
 .vds-bs-rationale {
-  margin-top: 28px;
-  padding: 28px 32px;
+  margin-top: var(--via-space-7);
+  padding: var(--via-space-7) var(--via-space-8);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -145,14 +145,14 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
 }
 .vds-bs-rationale p {
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   line-height: 1.65;
   color: var(--via-text);
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
 }
 .vds-bs-rationale p:last-child { margin-bottom: 0; }
 .vds-bs-rationale p em {
@@ -163,8 +163,8 @@
 
 /* ---------- Vision trajectory ---------- */
 .vds-bs-trajectory {
-  margin-top: 28px;
-  padding: 28px 32px 32px;
+  margin-top: var(--via-space-7);
+  padding: var(--via-space-7) var(--via-space-8) var(--via-space-8);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -180,7 +180,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 .vds-bs-trajectory ol {
   list-style: none;
@@ -196,7 +196,7 @@
   grid-template-columns: 96px 1fr auto;
   gap: var(--via-space-4_5);
   align-items: center;
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -236,7 +236,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
   letter-spacing: -0.004em;
 }
 .vds-bs-trajectory li em {
@@ -253,7 +253,7 @@
   text-transform: uppercase;
   color: var(--via-text-primary);
   background: var(--via-surface);
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   border: 0.5px solid var(--via-navy-20);
   white-space: nowrap;
@@ -272,12 +272,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--via-space-3_5);
-  margin-top: 8px;
+  margin-top: var(--via-space-2);
 }
 .vds-bs-value {
   display: flex;
   gap: var(--via-space-4);
-  padding: 22px;
+  padding: var(--via-space-5_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -302,7 +302,7 @@
   color: var(--via-ink-3);
   letter-spacing: -0.005em;
   flex-shrink: 0;
-  padding-top: 2px;
+  padding-top: var(--via-space-0_5);
 }
 .vds-bs-value h4 {
   font-family: var(--via-font-display);
@@ -311,7 +311,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.02em;
   line-height: 1.2;
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
 }
 .vds-bs-value p {
   font-family: var(--via-font);
@@ -326,7 +326,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: var(--via-space-7);
-  padding: 40px 36px;
+  padding: var(--via-space-10) var(--via-space-9);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -346,7 +346,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 .vds-bs-positioning h3 {
   font-family: var(--via-font-display);
@@ -390,7 +390,7 @@
   gap: var(--via-space-3_5);
 }
 .vds-bs-positioning-r article {
-  padding: 20px 22px;
+  padding: var(--via-space-5) var(--via-space-5_5);
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-08);
   border-radius: var(--via-radius-md);
@@ -404,7 +404,7 @@
   text-transform: uppercase;
   padding: 3px 9px;
   border-radius: var(--via-radius-pill);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 .vds-bs-positioning-tag.is {
   background: var(--via-navy-04);
@@ -429,7 +429,7 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
-  padding-left: 14px;
+  padding-left: var(--via-space-3_5);
   position: relative;
 }
 .vds-bs-positioning-r li::before {
@@ -445,7 +445,7 @@
 /* ---------- Promise ---------- */
 .vds-bs-promise {
   position: relative;
-  padding: 48px 40px 40px;
+  padding: var(--via-space-12) var(--via-space-10) var(--via-space-10);
   border-radius: var(--via-radius-lg);
   background:
     radial-gradient(ellipse 75% 55% at 20% 10%, rgba(46, 76, 118, 0.36) 0%, transparent 55%),
@@ -469,7 +469,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
   background: rgba(255, 255, 255, 0.10);
   border: 0.5px solid rgba(255, 255, 255, 0.18);
   color: var(--via-white);
@@ -482,14 +482,14 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.78);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 .vds-bs-promise h2 {
   font-family: var(--via-font-display);
   font-size: clamp(24px, 3.4vw, 36px);
   line-height: 1.18;
   letter-spacing: -0.022em;
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
   font-weight: var(--via-fw-medium);
   max-width: 760px;
   color: inherit;
@@ -507,14 +507,14 @@
   font-size: var(--via-fs-body);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.82);
-  margin: 0 0 32px;
+  margin: 0 0 var(--via-space-8);
   max-width: 660px;
 }
 .vds-bs-promise-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-7);
-  padding-top: 28px;
+  padding-top: var(--via-space-7);
   border-top: 0.5px solid rgba(255, 255, 255, 0.14);
 }
 @media (max-width: 720px) { .vds-bs-promise-grid { grid-template-columns: 1fr; } }
@@ -526,7 +526,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 .vds-bs-promise-grid ul {
   list-style: none;
@@ -541,7 +541,7 @@
   font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.55;
-  padding-left: 14px;
+  padding-left: var(--via-space-3_5);
   position: relative;
 }
 .vds-bs-promise-grid li::before {

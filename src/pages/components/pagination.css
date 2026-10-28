@@ -2,7 +2,7 @@
   display: inline-flex;
   gap: var(--via-space-1);
   align-items: center;
-  padding: 4px;
+  padding: var(--via-space-1);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -17,7 +17,7 @@
 .via-pag .arr {
   min-width: 34px;
   height: 34px;
-  padding: 0 10px;
+  padding: 0 var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: transparent;
   border: 1px solid transparent;
@@ -91,7 +91,7 @@
 .via-pag .ell {
   font-family: var(--via-font);
   color: var(--via-text-soft);
-  padding: 0 4px;
+  padding: 0 var(--via-space-1);
   letter-spacing: 0.1em;
   user-select: none;
 }

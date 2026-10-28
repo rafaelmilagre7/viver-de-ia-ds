@@ -6,7 +6,7 @@
  * do design system. Roda automaticamente via `bun run sitemap` ou
  * pode ser integrado ao `bun run build`.
  *
- * Domínio base lido de SITE_URL env ou fallback `https://viverdeia.ai/design`.
+ * Domínio base lido de SITE_URL env ou fallback `https://viver-de-ia-ds.vercel.app` (endereço oficial enquanto viverdeia.ai/design não existir).
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 
-const SITE_URL = (process.env.SITE_URL || 'https://viverdeia.ai/design').replace(/\/$/, '');
+const SITE_URL = (process.env.SITE_URL || 'https://viver-de-ia-ds.vercel.app').replace(/\/$/, '');
 
 // Parse routes.ts via regex — sem precisar transpilar TS
 const routesSrc = readFileSync(resolve(root, 'tests/routes.ts'), 'utf8');

@@ -90,8 +90,8 @@
 .vds-fpa-var-eyebrow {
   display: inline-flex;
   align-items: center;
-  padding: 5px 12px;
-  margin-bottom: 14px;
+  padding: 5px var(--via-space-3);
+  margin-bottom: var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
@@ -105,7 +105,7 @@
 }
 
 .vds-fpa-var-titulo {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-family: var(--via-font-display);
   font-size: clamp(28px, 3.4vw, 40px);
   font-weight: var(--via-fw-medium);
@@ -141,7 +141,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 6px 13px;
+  padding: var(--via-space-1_5) 13px;
   border-radius: var(--via-radius-pill);
   background: var(--vds-fpa-var-ok-bg);
   border: 1px solid var(--vds-fpa-var-ok-line);
@@ -180,7 +180,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-1);
-  padding: 20px 22px 18px;
+  padding: var(--via-space-5) var(--via-space-5_5) var(--via-space-4_5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -212,7 +212,7 @@
 
 .vds-fpa-var-kpi-tag {
   font-style: normal;
-  padding: 2px 7px;
+  padding: var(--via-space-0_5) 7px;
   border-radius: var(--via-radius-pill);
   background: var(--vds-fpa-var-ok-bg);
   border: 1px solid var(--vds-fpa-var-ok-line);
@@ -228,7 +228,7 @@
 }
 
 .vds-fpa-var-kpi-val {
-  margin: 4px 0 2px;
+  margin: var(--via-space-1) 0 var(--via-space-0_5);
   font-family: var(--via-font-display);
   font-size: clamp(24px, 2.3vw, 30px);
   font-weight: var(--via-fw-medium);
@@ -282,7 +282,7 @@
 .vds-fpa-var-painel {
   position: relative;
   isolation: isolate;
-  padding: 28px 30px 26px;
+  padding: var(--via-space-7) 30px 26px;
   border-radius: var(--via-radius-xl);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
@@ -312,10 +312,10 @@
   justify-content: space-between;
   gap: var(--via-space-5);
   flex-wrap: wrap;
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 .vds-fpa-var-painel-head h3 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
@@ -336,7 +336,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
@@ -369,7 +369,7 @@
    ============================================ */
 .vds-fpa-var-chart-wrap {
   overflow-x: auto;
-  padding: 14px 16px 10px;
+  padding: var(--via-space-3_5) var(--via-space-4) var(--via-space-2_5);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
@@ -426,9 +426,9 @@
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-2_5);
-  margin: 16px 0 0;
+  margin: var(--via-space-4) 0 0;
   max-width: none;
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
@@ -441,7 +441,7 @@
 }
 .vds-fpa-var-chart-nota svg {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
   color: var(--via-text-primary);
 }
 .vds-fpa-var-chart-nota strong {
@@ -467,7 +467,7 @@
 }
 
 .vds-fpa-var-lista-head {
-  padding: 0 18px 2px;
+  padding: 0 var(--via-space-4_5) var(--via-space-0_5);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-wide);
@@ -505,7 +505,7 @@
 .vds-fpa-var-row-nome svg {
   display: inline-block;
   vertical-align: -2px;
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
   color: var(--via-text-faint);
   opacity: 0;
   transform: translateX(-2px);
@@ -588,7 +588,7 @@
   justify-content: space-between;
   gap: var(--via-space-4);
   margin-top: var(--via-space-1);
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
@@ -612,16 +612,16 @@
    Demonstrativo · TABELA DENSA · superfície limpa, sem vidro
    ============================================ */
 .vds-fpa-var-dre {
-  padding: 26px 28px 22px;
+  padding: 26px var(--via-space-7) var(--via-space-5_5);
   border-radius: var(--via-radius-xl);
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
   box-shadow: var(--via-shadow-sm);
 }
 
-.vds-fpa-var-dre-head { margin-bottom: 18px; }
+.vds-fpa-var-dre-head { margin-bottom: var(--via-space-4_5); }
 .vds-fpa-var-dre-head h3 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
@@ -656,7 +656,7 @@
   white-space: nowrap;
 }
 .vds-fpa-var-tabela thead th {
-  padding: 11px 18px;
+  padding: 11px var(--via-space-4_5);
   background: var(--via-navy-02);
   border-bottom: 1px solid var(--via-navy-12);
   font-size: var(--via-fs-label);
@@ -670,7 +670,7 @@
 
 .vds-fpa-var-tabela tbody th,
 .vds-fpa-var-tabela tbody td {
-  padding: 13px 18px;
+  padding: 13px var(--via-space-4_5);
   border-bottom: 1px solid var(--via-border-hairline);
   letter-spacing: -0.008em;
 }
@@ -710,7 +710,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-5);
-  margin-top: 16px;
+  margin-top: var(--via-space-4);
   flex-wrap: wrap;
 }
 .vds-fpa-var-dre-nota {
@@ -726,7 +726,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 10px 16px;
+  padding: var(--via-space-2_5) var(--via-space-4);
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid transparent;
@@ -803,10 +803,10 @@
 
 @media (max-width: 720px) {
   .vds-fpa-var-kpis { grid-template-columns: minmax(0, 1fr); }
-  .vds-fpa-var-painel { padding: 22px 18px 20px; }
-  .vds-fpa-var-dre { padding: 22px 18px 20px; }
-  .vds-fpa-var-chart-wrap { padding: 12px 10px 8px; }
-  .vds-fpa-var-legenda { padding: 7px 12px; gap: var(--via-space-2_5); flex-wrap: wrap; }
+  .vds-fpa-var-painel { padding: var(--via-space-5_5) var(--via-space-4_5) var(--via-space-5); }
+  .vds-fpa-var-dre { padding: var(--via-space-5_5) var(--via-space-4_5) var(--via-space-5); }
+  .vds-fpa-var-chart-wrap { padding: var(--via-space-3) var(--via-space-2_5) var(--via-space-2); }
+  .vds-fpa-var-legenda { padding: 7px var(--via-space-3); gap: var(--via-space-2_5); flex-wrap: wrap; }
   .vds-fpa-var-total { flex-direction: column; align-items: flex-start; gap: var(--via-space-2); }
   .vds-fpa-var-dre-foot { flex-direction: column; align-items: flex-start; }
 }

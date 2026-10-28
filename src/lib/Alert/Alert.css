@@ -17,7 +17,7 @@
   backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-alert-border);
   border-radius: var(--via-radius-md);
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   font-family: var(--via-font, inherit);
   color: var(--via-text, #344054);
   line-height: 1.5;
@@ -60,8 +60,8 @@
 }
 
 /* --- Sizes --- */
-.via-alert--compact { padding: 10px 12px; border-radius: var(--via-radius-sm); gap: var(--via-space-2_5); }
-.via-alert--banner  { padding: 14px 16px; border-radius: var(--via-radius-md); gap: var(--via-space-3); }
+.via-alert--compact { padding: var(--via-space-2_5) var(--via-space-3); border-radius: var(--via-radius-sm); gap: var(--via-space-2_5); }
+.via-alert--banner  { padding: var(--via-space-3_5) var(--via-space-4); border-radius: var(--via-radius-md); gap: var(--via-space-3); }
 
 .via-alert__icon {
   width: 28px;
@@ -101,7 +101,7 @@
   color: var(--via-text, #344054);
 }
 .via-alert__text p { margin: 0; }
-.via-alert__text p + p { margin-top: 6px; }
+.via-alert__text p + p { margin-top: var(--via-space-1_5); }
 .via-alert__text a {
   color: var(--via-alert-accent);
   text-decoration: underline;
@@ -112,7 +112,7 @@
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
-  padding-left: 4px;
+  padding-left: var(--via-space-1);
 }
 .via-alert__action a,
 .via-alert__action button {
@@ -123,7 +123,7 @@
   color: var(--via-alert-accent);
   background: transparent;
   border: 0.5px solid var(--via-alert-border);
-  padding: 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-3);
   border-radius: var(--via-radius-pill);
   cursor: pointer;
   text-decoration: none;

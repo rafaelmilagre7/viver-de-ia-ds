@@ -6,6 +6,14 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Melhorado (28/out · rodada de melhorias)
+
+- **Marca abre clara também no CSS cru**: saiu o bloco `@media (prefers-color-scheme: dark) :root:not([data-theme])` — ele virava um escuro PARCIAL (só fundo e texto principal) em quem usava o `tokens.css` sem React. Escuro agora só com `data-theme="dark"`. Site e `<ThemeProvider>` não mudam (sempre setam o tema). O anti-FOUC do starter e o snippet da skill seguiam o SO por padrão — agora claro, igual ao Provider.
+- **Vitrine de anúncios em fundo claro** (`/patterns/paid-ads`): os 9 formatos (Meta, carrossel, story, reel, LinkedIn, carrossel LinkedIn, Google Display, YouTube, A/B) passam a seguir a regra zero — fundo claro com atmosfera navy, lockup e CTA navy; navy de fundo só no card de fechamento do carrossel. Cores fixas no mockup (igual nos 2 temas da página).
+- **Espaçamento tokenizado**: 3.820 `padding`/`margin` em px viraram `var(--via-space-*)` em 153 folhas (mesmo px, zero diff visual). 553 valores fora da escala (3, 5, 7, 9, 11, 26px…) ficam crus — pedem decisão de design. `token-drift` passa a barrar padding/margin em px que já têm token.
+- **Endereço oficial e prévia de link**: canonical, OG, sitemap e robots apontavam pra `viverdeia.ai/design` (404) e a imagem de prévia não existia. Agora `viver-de-ia-ds.vercel.app` é o endereço oficial (até a marca ganhar o domínio próprio) e há `og-cover.png` 1200×630 no padrão claro. Descrições de compartilhamento atualizadas (eram "49 páginas · 15 componentes").
+- **Vidro conferido no Safari e no iPhone** (WebKit 26.4 via Playwright, Desktop Safari + iPhone 15 Pro): mesma contagem de superfícies com vidro ativo que o Chrome em 5 rotas; `style.css` minificado da lib com 61/61 regras de vidro com o blur padrão (eram 7/61 antes do conserto de ordem).
+
 ### Corrigido
 
 - **Rodada pós-retomada (28/out)** — erros medidos no Mac, todos com verificação de contraste:
@@ -35,6 +43,7 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ### Plugin
 
+- `viver-de-ia` **1.5.0 → 1.6.0**: `colors_and_type.css` nasce claro sem `data-theme`, `surfaces.css`/`data.css` com espaçamento em token, skill com anti-FOUC claro por padrão.
 - `viver-de-ia` **1.4.2 → 1.5.0**: token `--via-success-text`, `data.css` e `colors_and_type.css` atualizados, `/via-paid` light-first, skill com exemplos de vidro na ordem certa.
 - `viver-de-ia` **1.4.1 → 1.4.2**: leva a ordem do vidro corrigida nas 3 folhas empacotadas e o email 14 na skill. O conteúdo tinha mudado sem bump, então quem já estava no 1.4.1 não recebia.
 

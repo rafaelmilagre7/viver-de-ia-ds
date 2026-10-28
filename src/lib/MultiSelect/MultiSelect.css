@@ -23,7 +23,7 @@
   justify-content: space-between;
   gap: var(--via-space-2_5);
   width: 100%;
-  padding: 6px 10px 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-2_5) var(--via-space-1_5) var(--via-space-3);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   backdrop-filter: blur(12px) saturate(140%);
@@ -49,7 +49,7 @@
   transition-duration: var(--via-dur-press);
 }
 
-.via-ms--sm .via-ms__trigger { padding: 4px 8px 4px 10px; min-height: 30px; }
+.via-ms--sm .via-ms__trigger { padding: var(--via-space-1) var(--via-space-2) var(--via-space-1) var(--via-space-2_5); min-height: 30px; }
 
 .via-ms__trigger:hover:not(:disabled) {
   border-color: var(--via-navy-22);
@@ -75,14 +75,14 @@
 .via-ms__placeholder {
   color: var(--via-ink-3, #6B7891);
   font-weight: var(--via-fw-regular);
-  padding: 4px 0;
+  padding: var(--via-space-1) 0;
 }
 
 .via-ms__chip {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-0_5);
-  padding: 2px 3px 2px 8px;
+  padding: var(--via-space-0_5) 3px var(--via-space-0_5) var(--via-space-2);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
@@ -130,7 +130,7 @@
   right: 0;
   z-index: 100;
   margin: 0;
-  padding: 4px;
+  padding: var(--via-space-1);
   list-style: none;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -155,7 +155,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 7px 8px;
+  padding: 7px var(--via-space-2);
   border-radius: var(--via-radius-xs);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);

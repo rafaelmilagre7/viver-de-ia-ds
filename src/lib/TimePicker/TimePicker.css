@@ -20,7 +20,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 8px 10px 8px 12px;
+  padding: var(--via-space-2) var(--via-space-2_5) var(--via-space-2) var(--via-space-3);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   backdrop-filter: blur(12px) saturate(140%);
@@ -32,7 +32,7 @@
     0 1px 2px var(--via-shadow-ink-03);
 }
 
-.via-tp--sm .via-tp__field { padding: 6px 8px 6px 10px; }
+.via-tp--sm .via-tp__field { padding: var(--via-space-1_5) var(--via-space-2) var(--via-space-1_5) var(--via-space-2_5); }
 
 .via-tp__field:hover {
   border-color: var(--via-navy-22);
@@ -83,7 +83,7 @@
 .via-tp__steps {
   display: inline-flex;
   flex-direction: column;
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
   gap: 1px;
 }
 .via-tp__steps button {

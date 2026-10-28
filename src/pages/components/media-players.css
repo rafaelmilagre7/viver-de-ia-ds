@@ -4,7 +4,7 @@
 
 .vds-media-stage {
   position: relative;
-  padding: 48px 32px;
+  padding: var(--via-space-12) var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.20) 0%, transparent 55%),
@@ -36,7 +36,7 @@
   grid-template-columns: 64px 1fr auto;
   gap: var(--via-space-4_5);
   align-items: center;
-  padding: 14px 18px 14px 14px;
+  padding: var(--via-space-3_5) var(--via-space-4_5) var(--via-space-3_5) var(--via-space-3_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
   backdrop-filter: blur(32px) saturate(200%);
@@ -81,7 +81,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   letter-spacing: -0.005em;
   white-space: nowrap;
   overflow: hidden;
@@ -193,7 +193,7 @@
   position: relative;
   width: 100%;
   max-width: 720px;
-  padding: 40px 40px 32px;
+  padding: var(--via-space-10) var(--via-space-10) var(--via-space-8);
   border-radius: var(--via-radius-xl);
   overflow: hidden;
   color: var(--via-white);
@@ -205,7 +205,7 @@
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: var(--via-space-7);
-  margin-bottom: 32px;
+  margin-bottom: var(--via-space-8);
 }
 .vds-fullep .ep-cover {
   position: relative;
@@ -241,7 +241,7 @@
   letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
 }
 .vds-fullep .ep-meta h2 {
   font-family: var(--via-font-display);
@@ -258,7 +258,7 @@
   font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: rgba(255,255,255,0.72);
-  margin: 14px 0 16px;
+  margin: var(--via-space-3_5) 0 var(--via-space-4);
   max-width: 420px;
 }
 .vds-fullep .ep-attrs { display: flex; align-items: center; gap: var(--via-space-3_5); flex-wrap: wrap; }
@@ -299,8 +299,8 @@
   align-items: center;
   gap: 2.5px;
   height: 64px;
-  padding: 0 6px;
-  margin-bottom: 6px;
+  padding: 0 var(--via-space-1_5);
+  margin-bottom: var(--via-space-1_5);
 }
 .vds-fullep .ep-wave .bar {
   flex: 1;
@@ -320,7 +320,7 @@
   font-size: var(--via-fs-label);
   color: rgba(255,255,255,0.55);
   letter-spacing: 0.06em;
-  margin-bottom: 24px;
+  margin-bottom: var(--via-space-6);
   font-variant-numeric: tabular-nums;
 }
 .vds-fullep .ep-times .now { color: var(--via-white); }
@@ -331,7 +331,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-4_5);
-  margin-bottom: 20px;
+  margin-bottom: var(--via-space-5);
 }
 /* Sobre navy · vidro claro translúcido */
 .vds-fullep .ep-controls .ctrl {
@@ -394,12 +394,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: var(--via-space-5);
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 .vds-fullep .ep-speed { display: flex; gap: var(--via-space-0_5); }
 .vds-fullep .ep-speed button {
-  padding: 6px 10px;
+  padding: var(--via-space-1_5) var(--via-space-2_5);
   background: transparent;
   border: 1px solid transparent;
   border-radius: var(--via-radius-pill);
@@ -441,7 +441,7 @@
   border: 1px solid transparent;
   color: rgba(255,255,255,0.72);
   cursor: pointer;
-  padding: 6px;
+  padding: var(--via-space-1_5);
   border-radius: var(--via-radius-pill);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -478,7 +478,7 @@
 }
 
 @media (max-width: 720px) {
-  .vds-fullep { padding: 28px 24px 24px; }
+  .vds-fullep { padding: var(--via-space-7) var(--via-space-6) var(--via-space-6); }
   .vds-fullep > header { grid-template-columns: 1fr; }
   .vds-fullep .ep-cover { width: 100px; height: 100px; }
 }
@@ -515,7 +515,7 @@
   position: absolute;
   inset: 0;
   z-index: 3;
-  padding: 36px;
+  padding: var(--via-space-9);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -534,7 +534,7 @@
   letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
 }
 .vds-video .vid-idle-meta h2 {
   font-family: var(--via-font-display);
@@ -550,7 +550,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: rgba(255,255,255,0.72);
-  margin: 12px 0 0;
+  margin: var(--via-space-3) 0 0;
 }
 
 .vds-video .vid-play-big {
@@ -579,7 +579,7 @@
     0 16px 40px var(--via-shadow-ink-60);
   transition: all 240ms var(--via-ease);
 }
-.vds-video .vid-play-big .ring svg { margin-left: 4px; }
+.vds-video .vid-play-big .ring svg { margin-left: var(--via-space-1); }
 .vds-video .vid-play-big::before {
   content: '';
   position: absolute;
@@ -610,7 +610,7 @@
   right: 16px;
   bottom: 16px;
   z-index: 4;
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   /* "Chrome dark glass" de verdade nos DOIS temas: --via-navy-60 inverte
      pra branco 55% no dark e a barra virava vidro CLARO — ícone branco 85%
      em cima sumia. Navy literal, como o resto do interior do vídeo. */
@@ -625,7 +625,7 @@
   height: 4px;
   background: rgba(255,255,255,0.18);
   border-radius: var(--via-radius-pill);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
   cursor: pointer;
 }
 .vds-video .vid-played {
@@ -702,7 +702,7 @@
   border-color: rgba(255, 255, 255, 0.20);
 }
 .vds-video .vid-time {
-  margin-left: 10px;
+  margin-left: var(--via-space-2_5);
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-label);
   color: rgba(255,255,255,0.78);
@@ -710,7 +710,7 @@
   font-variant-numeric: tabular-nums;
 }
 .vds-video .vid-quality {
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   background: rgba(255, 255, 255, 0.10);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -749,7 +749,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-3);
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   backdrop-filter: blur(14px) saturate(160%);

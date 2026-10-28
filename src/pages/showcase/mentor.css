@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-6);
-  padding: 14px 40px;
+  padding: var(--via-space-3_5) var(--via-space-10);
   background: var(--via-glass-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
   backdrop-filter: var(--via-glass-blur-bar);
@@ -39,7 +39,7 @@
 .mtr-nav nav {
   display: flex;
   gap: 26px;
-  margin-left: 20px;
+  margin-left: var(--via-space-5);
   margin-right: auto;
 }
 
@@ -76,14 +76,14 @@
 }
 
 @media (max-width: 860px) {
-  .mtr-nav { padding: 12px 20px; }
+  .mtr-nav { padding: var(--via-space-3) var(--via-space-5); }
   .mtr-nav nav { display: none; }
 }
 
 /* HERO */
 .mtr-hero {
   position: relative;
-  padding: 56px 48px 0;
+  padding: var(--via-space-14) var(--via-space-12) 0;
   background-color: var(--via-navy);
   color: var(--via-white);
   overflow: hidden;
@@ -165,7 +165,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--via-gray-300);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 
 .mtr-hero-info h1 {
@@ -173,7 +173,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
   color: var(--via-white);
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   line-height: 1;
 }
 
@@ -181,7 +181,7 @@
   font-size: var(--via-fs-body);
   line-height: 1.6;
   color: var(--via-gray-200);
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
   max-width: 560px;
   letter-spacing: -0.006em;
 }
@@ -197,7 +197,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 13px 24px;
+  padding: 13px var(--via-space-6);
   border-radius: var(--via-radius-pill);
   /* superfície branca FIXA sobre hero navy (navy nos 2 temas) · não pode
      herdar edge-hi do tema, que muda de 0,95 pra 0,08 no escuro */
@@ -239,7 +239,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 13px 22px;
+  padding: 13px var(--via-space-5_5);
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.20);
@@ -280,7 +280,7 @@
   position: relative;
   z-index: 2;
   max-width: 1000px;
-  margin: 40px auto 0;
+  margin: var(--via-space-10) auto 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
@@ -291,7 +291,7 @@
 
 .mtr-hero-stats > div {
   background: var(--via-navy);
-  padding: 22px 20px;
+  padding: var(--via-space-5_5) var(--via-space-5);
   text-align: center;
 }
 
@@ -311,11 +311,11 @@
   color: var(--via-gray-300);
   letter-spacing: 0.02em;
   display: block;
-  margin-top: 6px;
+  margin-top: var(--via-space-1_5);
 }
 
 @media (max-width: 860px) {
-  .mtr-hero { padding: 40px 24px 0; }
+  .mtr-hero { padding: var(--via-space-10) var(--via-space-6) 0; }
   .mtr-hero-inner { flex-direction: column; text-align: center; gap: var(--via-space-5); }
   .mtr-hero-info h1 { font-size: var(--via-fs-h2); }
   .mtr-hero-cta-row { justify-content: center; }
@@ -326,7 +326,7 @@
 .mtr-body {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 48px;
+  padding: var(--via-space-12);
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: var(--via-space-8);
@@ -334,7 +334,7 @@
 }
 
 @media (max-width: 920px) {
-  .mtr-body { grid-template-columns: 1fr; padding: 32px 24px; }
+  .mtr-body { grid-template-columns: 1fr; padding: var(--via-space-8) var(--via-space-6); }
 }
 
 .mtr-main {
@@ -351,7 +351,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .mtr-block h2 {
@@ -359,12 +359,12 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   line-height: 1.2;
 }
 
 .mtr-block p {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-sm);
   line-height: 1.65;
   color: var(--via-text-body);
@@ -382,7 +382,7 @@
 
 /* rótulo de especialidade · vidro, sem hover (não é ação) */
 .mtr-tag {
-  padding: 7px 14px;
+  padding: 7px var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -405,7 +405,7 @@
 }
 
 .mtr-case {
-  padding: 20px;
+  padding: var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -422,11 +422,11 @@
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 
 .mtr-case-r {
-  margin: 0 0 6px !important;
+  margin: 0 0 var(--via-space-1_5) !important;
   font-size: 14px !important;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary) !important;
@@ -453,7 +453,7 @@
 }
 
 .mtr-depoimento {
-  padding: 24px;
+  padding: var(--via-space-6);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -465,11 +465,11 @@
 .mtr-depoimento-mark {
   color: var(--via-text-primary);
   opacity: 0.28;
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 
 .mtr-depoimento blockquote {
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   line-height: 1.5;
@@ -500,7 +500,7 @@
   position: sticky;
   /* abaixo do header do shell + da nav da página (senão cola atrás delas) */
   top: calc(var(--mtr-shell-h) + var(--mtr-nav-h) + 16px);
-  padding: 28px;
+  padding: var(--via-space-7);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -517,7 +517,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 
 .mtr-schedule h3 {
@@ -525,12 +525,12 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.016em;
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   line-height: 1.2;
 }
 
 .mtr-schedule > p {
-  margin: 0 0 20px;
+  margin: 0 0 var(--via-space-5);
   font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: var(--via-text-body);
@@ -541,7 +541,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--via-space-2);
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 
 /* Sombra de elevação usa --via-shadow-ink-* (tinta que NÃO inverte: navy
@@ -611,7 +611,7 @@
   justify-content: center;
   gap: var(--via-space-2);
   width: 100%;
-  padding: 14px;
+  padding: var(--via-space-3_5);
   border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
@@ -649,8 +649,8 @@
 
 .mtr-schedule-meta {
   list-style: none;
-  margin: 18px 0 0;
-  padding: 18px 0 0;
+  margin: var(--via-space-4_5) 0 0;
+  padding: var(--via-space-4_5) 0 0;
   border-top: 1px solid var(--via-border-soft);
   display: flex;
   flex-direction: column;

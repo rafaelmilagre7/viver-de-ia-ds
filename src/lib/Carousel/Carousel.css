@@ -84,7 +84,7 @@
   display: inline-flex;
   align-self: center;
   gap: var(--via-space-2);
-  padding: 4px;
+  padding: var(--via-space-1);
 }
 
 .via-carousel__dot {

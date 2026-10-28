@@ -110,8 +110,10 @@ console.log(cssVar('via-radius-md')); // → 'var(--via-radius-md)'
 
 A library suporta `data-theme="dark"` no `<html>`:
 
+Padrão da marca é **claro**: sem `data-theme`, o `tokens.css` abre claro mesmo com o sistema em escuro. Siga o sistema só se o produto pedir:
+
 ```tsx
-// detectar preferência do sistema
+// opcional · seguir a preferência do sistema
 useEffect(() => {
   const mq = window.matchMedia('(prefers-color-scheme: dark)');
   document.documentElement.dataset.theme = mq.matches ? 'dark' : 'light';

@@ -12,7 +12,7 @@
   flex-wrap: wrap;
   gap: var(--via-space-3);
   align-items: center;
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -36,7 +36,7 @@
     0 14px 32px -18px var(--via-shadow-ink-40);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
-  padding: 24px 22px;
+  padding: var(--via-space-6) var(--via-space-5_5);
 }
 
 .vds-lib-card-grid {
@@ -52,7 +52,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.014em;
   color: var(--via-text-primary);
-  margin-bottom: 6px;
+  margin-bottom: var(--via-space-1_5);
 }
 
 .vds-lib-card-grid .via-card.via-card--dark strong {
@@ -74,7 +74,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--via-space-4_5);
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -85,7 +85,7 @@
 
 .vds-lib-code {
   margin: 0;
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, var(--via-navy-deep), var(--via-navy));
   color: rgba(255, 255, 255, 0.94);
@@ -103,7 +103,7 @@
 
 @media (max-width: 720px) {
   .vds-lib-row {
-    padding: 14px 16px;
+    padding: var(--via-space-3_5) var(--via-space-4);
     gap: var(--via-space-2_5);
   }
   /* Conteúdo largo (paginação numerada) rola dentro da própria caixa ·
@@ -114,7 +114,7 @@
     -webkit-overflow-scrolling: touch;
   }
   .vds-lib-code {
-    padding: 14px 16px;
+    padding: var(--via-space-3_5) var(--via-space-4);
     font-size: var(--via-fs-label);
   }
 }

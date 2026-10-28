@@ -7,17 +7,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--via-space-2);
-  padding: 12px;
+  padding: var(--via-space-3);
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
-  margin-bottom: 40px;
+  margin-bottom: var(--via-space-10);
 }
 .vds-ec-nav-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 9px 16px;
+  padding: 9px var(--via-space-4);
   background: transparent;
   border: 0.5px solid transparent;
   border-radius: 999px;
@@ -43,7 +43,7 @@
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   background: var(--via-navy-04);
-  padding: 1px 6px;
+  padding: 1px var(--via-space-1_5);
   border-radius: 4px;
 }
 .vds-ec-nav-btn.is-active .mono { color: var(--via-text-primary); }
@@ -79,13 +79,13 @@
   border: 0.5px solid var(--via-navy-08);
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 /* e-mail = papel branco nos 2 temas · neutraliza o link azul do dark global */
 [data-theme="dark"] .vds-ec-card a:not([class]) { color: var(--via-ink-3); }
 
 .vds-ec-meta {
-  padding: 22px 26px 18px;
+  padding: var(--via-space-5_5) 26px var(--via-space-4_5);
   border-bottom: 0.5px solid var(--via-navy-08);
   background: var(--via-gray-50);
 }
@@ -97,14 +97,14 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 .vds-ec-subject-line {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: var(--via-space-3);
-  margin-bottom: 6px;
+  margin-bottom: var(--via-space-1_5);
 }
 .vds-ec-from {
   font-family: var(--via-font);
@@ -124,7 +124,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.25;
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
 }
 .vds-ec-preview {
   font-family: var(--via-font);
@@ -137,7 +137,7 @@
 /* ---------- Email frame (the actual email) ---------- */
 .vds-ec-frame {
   background: var(--via-gray-100);
-  padding: 24px;
+  padding: var(--via-space-6);
   display: flex;
   justify-content: center;
 }
@@ -153,7 +153,7 @@
 }
 
 .vds-ec-em-hdr {
-  padding: 22px 32px;
+  padding: var(--via-space-5_5) var(--via-space-8);
   border-radius: 12px 12px 0 0;
   border: 0.5px solid var(--via-navy-08);
   border-bottom: none;
@@ -162,7 +162,7 @@
 }
 
 .vds-ec-em-body {
-  padding: 28px 32px 20px;
+  padding: var(--via-space-7) var(--via-space-8) var(--via-space-5);
   border-left: 0.5px solid var(--via-navy-08);
   border-right: 0.5px solid var(--via-navy-08);
   font-size: var(--via-fs-body);
@@ -171,7 +171,7 @@
   letter-spacing: -0.004em;
 }
 .vds-ec-em-body > p {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
 }
 .vds-ec-em-body > p:last-child { margin-bottom: 0; }
 
@@ -185,14 +185,14 @@
   font-style: normal;
   font-size: var(--via-fs-caption);
   background: var(--via-navy-04);
-  padding: 1px 6px;
+  padding: 1px var(--via-space-1_5);
   border-radius: 4px;
   color: var(--via-text-primary);
 }
 
 .vds-ec-em-greet {
   font-size: var(--via-fs-body);
-  margin-bottom: 16px !important;
+  margin-bottom: var(--via-space-4) !important;
 }
 
 .vds-ec-em-h2-flat {
@@ -202,7 +202,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.2;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
 }
 .vds-ec-em-h2-flat em {
   font-style: normal;
@@ -217,13 +217,13 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin: 28px 0 14px;
+  margin: var(--via-space-7) 0 var(--via-space-3_5);
 }
 
 .vds-ec-em-steps {
   list-style: none;
   padding: 0;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
@@ -261,7 +261,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 12px 22px;
+  padding: var(--via-space-3) var(--via-space-5_5);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   text-decoration: none;
@@ -274,7 +274,7 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 6px 14px -4px var(--via-shadow-ink-30);
-  margin: 12px 0 16px;
+  margin: var(--via-space-3) 0 var(--via-space-4);
 }
 .vds-ec-em-cta:hover {
   transform: translateY(-1px);
@@ -299,7 +299,7 @@
   display: flex;
   gap: var(--via-space-2);
   flex-wrap: wrap;
-  margin: 12px 0 16px;
+  margin: var(--via-space-3) 0 var(--via-space-4);
 }
 .vds-ec-em-actions .vds-ec-em-cta { margin: 0; }
 
@@ -323,13 +323,13 @@
   font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
   line-height: 1.55;
-  margin-top: 14px;
+  margin-top: var(--via-space-3_5);
 }
 .vds-ec-em-fine strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 
 .vds-ec-em-sign {
-  margin-top: 24px !important;
-  padding-top: 14px;
+  margin-top: var(--via-space-6) !important;
+  padding-top: var(--via-space-3_5);
   border-top: 0.5px solid var(--via-navy-08);
   font-size: 13px !important;
   line-height: 1.5 !important;
@@ -349,12 +349,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-3_5);
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   /* e-mail: sem var()/backdrop-filter · borda fina UNIFORME nos 4 lados */
   background: #F7F8FA;
   border: 1px solid rgba(10, 31, 59, 0.10);
   border-radius: 10px;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
 }
 .vds-ec-em-billing-plate .lbl {
   display: block;
@@ -364,7 +364,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin-bottom: 6px;
+  margin-bottom: var(--via-space-1_5);
 }
 .vds-ec-em-billing-plate strong {
   font-family: var(--via-mono);
@@ -379,7 +379,7 @@
   font-style: normal;
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 
 /* ---------- Alert block (urgent / billing falhou) ---------- */
@@ -387,12 +387,12 @@
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-3);
-  padding: 16px 20px;
+  padding: var(--via-space-4) var(--via-space-5);
   /* e-mail: destaque por fundo tinto + tipografia · borda uniforme, sem barra lateral */
   background: rgba(184, 92, 92, 0.07);
   border: 1px solid rgba(184, 92, 92, 0.28);
   border-radius: 10px;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
 }
 .vds-ec-em-alert .ico {
   width: 28px;
@@ -411,7 +411,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-coral-dark);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 .vds-ec-em-alert em {
   font-style: normal;
@@ -422,13 +422,13 @@
 /* ---------- Hero plate (newsletter) ---------- */
 .vds-ec-em-hero-plate {
   position: relative;
-  padding: 28px 28px;
+  padding: var(--via-space-7) var(--via-space-7);
   border-radius: 14px;
   background:
     radial-gradient(ellipse 75% 60% at 0% 0%, rgba(46, 76, 118, 0.4) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
   overflow: hidden;
 }
 .vds-ec-em-hero-eyebrow {
@@ -439,7 +439,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 .vds-ec-em-hero-plate h2 {
   font-family: var(--via-font-display);
@@ -448,7 +448,7 @@
   line-height: 1.18;
   letter-spacing: -0.022em;
   color: var(--via-white);
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
 }
 .vds-ec-em-hero-plate h2 em {
   font-style: normal;
@@ -464,12 +464,12 @@
 
 /* Newsletter pull-quote */
 .vds-ec-em-pull {
-  padding: 16px 18px;
+  padding: var(--via-space-4) var(--via-space-4_5);
   /* e-mail: sem var()/backdrop-filter · o peso vem do fundo + mono medium */
   background: #F4F6FA;
   border: 1px solid rgba(10, 31, 59, 0.10);
   border-radius: 10px;
-  margin: 14px 0 18px;
+  margin: var(--via-space-3_5) 0 var(--via-space-4_5);
 }
 .vds-ec-em-pull strong {
   font-family: var(--via-mono);
@@ -483,7 +483,7 @@
 .vds-ec-em-recap {
   list-style: none;
   padding: 0;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3);
@@ -492,7 +492,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-3_5);
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 10px;
@@ -527,7 +527,7 @@
 .vds-ec-em-timeline {
   list-style: none;
   padding: 0;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
@@ -546,7 +546,7 @@
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
   background: var(--via-navy-04);
-  padding: 4px 8px;
+  padding: var(--via-space-1) var(--via-space-2);
   border-radius: 5px;
   border: 0.5px solid var(--via-navy-12);
   white-space: nowrap;
@@ -560,13 +560,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2);
-  margin: 14px 0 16px;
+  margin: var(--via-space-3_5) 0 var(--via-space-4);
 }
 .vds-ec-em-nps .opt {
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 10px;
@@ -598,11 +598,11 @@
 /* ---------- Event plate ---------- */
 .vds-ec-em-event-plate {
   position: relative;
-  padding: 28px 28px;
+  padding: var(--via-space-7) var(--via-space-7);
   border-radius: 14px;
   color: var(--via-white);
   overflow: hidden;
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
 }
 .vds-ec-em-event-plate .lbl {
   display: inline-flex;
@@ -614,7 +614,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 .vds-ec-em-event-plate h2 {
   font-family: var(--via-font-display);
@@ -623,7 +623,7 @@
   line-height: 1.18;
   letter-spacing: -0.022em;
   color: var(--via-white);
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
 }
 .vds-ec-em-event-plate h2 em {
   font-style: normal;
@@ -640,11 +640,11 @@
 /* ---------- Launch plate ---------- */
 .vds-ec-em-launch-plate {
   position: relative;
-  padding: 32px 28px 30px;
+  padding: var(--via-space-8) var(--via-space-7) 30px;
   border-radius: 14px;
   color: var(--via-white);
   overflow: hidden;
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
 }
 .vds-ec-em-launch-eyebrow {
   display: inline-block;
@@ -654,7 +654,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 .vds-ec-em-launch-plate h2 {
   font-family: var(--via-font-display);
@@ -663,7 +663,7 @@
   line-height: 1.15;
   letter-spacing: -0.024em;
   color: var(--via-white);
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
 }
 .vds-ec-em-launch-plate h2 em {
   font-style: normal;
@@ -681,7 +681,7 @@
 .vds-ec-em-checklist {
   list-style: none;
   padding: 0;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -706,7 +706,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2);
-  padding: 24px 28px;
+  padding: var(--via-space-6) var(--via-space-7);
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
   border-radius: 14px;
@@ -715,7 +715,7 @@
 .vds-ec-drip-step {
   display: flex;
   gap: var(--via-space-4);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -755,11 +755,11 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
-  margin: 4px 0 0;
+  margin: var(--via-space-1) 0 0;
 }
 .vds-ec-drip-notes {
-  margin: 10px 0 0;
-  padding: 14px 16px;
+  margin: var(--via-space-2_5) 0 0;
+  padding: var(--via-space-3_5) var(--via-space-4);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -775,7 +775,7 @@
 
 /* ---------- Footer ---------- */
 .vds-ec-em-foot {
-  padding: 22px 32px 28px;
+  padding: var(--via-space-5_5) var(--via-space-8) var(--via-space-7);
   border-radius: 0 0 12px 12px;
   border: 0.5px solid var(--via-navy-08);
   border-top: 0.5px solid var(--via-navy-08);
@@ -788,12 +788,12 @@
 .vds-ec-em-foot .mono {
   width: 22px;
   height: 22px;
-  margin: 0 auto 8px;
+  margin: 0 auto var(--via-space-2);
   display: block;
   opacity: 0.7;
 }
 .vds-ec-em-foot p {
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
   line-height: 1.55;
 }
 .vds-ec-em-foot strong {
@@ -804,7 +804,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  margin-top: 6px !important;
+  margin-top: var(--via-space-1_5) !important;
 }
 .vds-ec-em-foot-links a {
   color: var(--via-ink-3);
@@ -821,7 +821,7 @@
 
 /* ---------- Notes (after each email) ---------- */
 .vds-ec-notes {
-  padding: 18px 26px;
+  padding: var(--via-space-4_5) 26px;
   background: var(--via-surface);
   border-top: 0.5px solid var(--via-navy-08);
   display: grid;
@@ -836,7 +836,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin-bottom: 6px;
+  margin-bottom: var(--via-space-1_5);
 }
 .vds-ec-note p {
   font-family: var(--via-font);
@@ -854,11 +854,11 @@
 /* ---------- Mobile ---------- */
 @media (max-width: 720px) {
   .vds-ec-em-billing-plate { grid-template-columns: 1fr; }
-  .vds-ec-frame { padding: 14px; }
+  .vds-ec-frame { padding: var(--via-space-3_5); }
   .vds-ec-em-hdr,
   .vds-ec-em-body,
   .vds-ec-em-foot {
-    padding-left: 22px;
-    padding-right: 22px;
+    padding-left: var(--via-space-5_5);
+    padding-right: var(--via-space-5_5);
   }
 }

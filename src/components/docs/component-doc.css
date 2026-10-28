@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-4_5);
-  padding: 28px 30px;
+  padding: var(--via-space-7) 30px;
   border-radius: 16px;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -23,7 +23,7 @@
   grid-template-columns: 48px 1fr;
   gap: var(--via-space-4_5);
   align-items: baseline;
-  padding-bottom: 14px;
+  padding-bottom: var(--via-space-3_5);
   border-bottom: 0.5px solid var(--via-border-soft);
 }
 .vds-cdoc-anatomy-row:last-child {
@@ -50,7 +50,7 @@
 }
 
 .vds-cdoc-anatomy-row p {
-  margin: 4px 0 0;
+  margin: var(--via-space-1) 0 0;
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
@@ -78,7 +78,7 @@
 
 .vds-cdoc-props th {
   text-align: left;
-  padding: 12px 16px;
+  padding: var(--via-space-3) var(--via-space-4);
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
@@ -89,7 +89,7 @@
 }
 
 .vds-cdoc-props td {
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   border-bottom: 0.5px solid var(--via-border-soft);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
@@ -125,7 +125,7 @@
 }
 
 .vds-cdoc-hint {
-  margin: 8px 0 0;
+  margin: var(--via-space-2) 0 0;
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
 }
@@ -138,7 +138,7 @@
 }
 
 .vds-cdoc-variant-card {
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   border-radius: 14px;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
@@ -162,7 +162,7 @@
 }
 
 .vds-cdoc-variant-label {
-  margin: 8px 0 4px;
+  margin: var(--via-space-2) 0 var(--via-space-1);
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
@@ -179,7 +179,7 @@
 
 /* ---------- Examples ---------- */
 .vds-cdoc-ex-desc {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-ink-2);
@@ -188,8 +188,8 @@
 
 .vds-cdoc-preview {
   position: relative;
-  padding: 32px;
-  margin: 0 0 14px;
+  padding: var(--via-space-8);
+  margin: 0 0 var(--via-space-3_5);
   border-radius: 16px;
   background:
     radial-gradient(ellipse 70% 60% at 20% 0%, var(--via-navy-04) 0%, transparent 60%),
@@ -220,7 +220,7 @@
 .vds-cdoc-do,
 .vds-cdoc-dont {
   position: relative;
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -262,7 +262,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.20em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 /* Marca tipográfica (traço), nunca bolinha/semáforo */
 .vds-cdoc-do-lbl::before,
@@ -285,7 +285,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
   letter-spacing: -0.014em;
 }
 
@@ -300,7 +300,7 @@
 /* ---------- A11Y notes ---------- */
 .vds-cdoc-a11y {
   list-style: none;
-  padding: 24px 30px;
+  padding: var(--via-space-6) 30px;
   margin: 0;
   border-radius: 14px;
   background: var(--via-glass-card);
@@ -314,7 +314,7 @@
 
 .vds-cdoc-a11y li {
   position: relative;
-  padding-left: 22px;
+  padding-left: var(--via-space-5_5);
   font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text);
@@ -338,7 +338,7 @@
 
 .vds-cdoc-related-card {
   display: block;
-  padding: 16px 18px;
+  padding: var(--via-space-4) var(--via-space-4_5);
   border-radius: 12px;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(10px);
@@ -363,7 +363,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 
 .vds-cdoc-related-card p {

@@ -10,9 +10,9 @@
       // Anti-FOUC · aplica tema antes do React montar
       (function () {
         try {
+          // Light é o padrão da marca · escuro só se o usuário escolheu (igual ao ThemeProvider)
           var stored = localStorage.getItem('via-theme');
-          var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          var theme = stored && stored !== 'system' ? stored : sys;
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'light';
           document.documentElement.dataset.theme = theme;
         } catch (e) {}
       })();

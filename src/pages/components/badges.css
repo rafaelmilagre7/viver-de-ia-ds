@@ -72,7 +72,7 @@
   height: 6px;
   border-radius: var(--via-radius-pill);
   background: currentColor;
-  margin-right: 6px;
+  margin-right: var(--via-space-1_5);
   flex-shrink: 0;
 }
 

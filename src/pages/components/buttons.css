@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   gap: var(--via-space-2_5);
   align-items: center;
-  margin: 16px 0 8px;
+  margin: var(--via-space-4) 0 var(--via-space-2);
 }
 
 .via-btn {
@@ -75,17 +75,17 @@
 /* Sizes — editorial scale */
 .via-btn.sm {
   font-size: var(--via-fs-xs);
-  padding: 9px 16px;
+  padding: 9px var(--via-space-4);
 }
 
 .via-btn.md {
   font-size: var(--via-fs-caption);
-  padding: 12px 22px;
+  padding: var(--via-space-3) var(--via-space-5_5);
 }
 
 .via-btn.lg {
   font-size: var(--via-fs-sm);
-  padding: 15px 28px;
+  padding: 15px var(--via-space-7);
 }
 
 /* PRIMARY — navy gradient com inner highlight */
@@ -163,16 +163,16 @@
 .via-btn.ghost {
   background: transparent;
   color: var(--via-text-primary);
-  padding: 12px 16px;
+  padding: var(--via-space-3) var(--via-space-4);
   font-weight: var(--via-fw-medium);
 }
 
 .via-btn.ghost.sm {
-  padding: 9px 12px;
+  padding: 9px var(--via-space-3);
 }
 
 .via-btn.ghost.lg {
-  padding: 15px 20px;
+  padding: 15px var(--via-space-5);
 }
 
 .via-btn.ghost:hover,

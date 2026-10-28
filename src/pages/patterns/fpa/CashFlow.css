@@ -52,8 +52,8 @@
 
 .vds-fpa-cash-eyebrow {
   display: inline-block;
-  padding: 4px 11px;
-  margin-bottom: 12px;
+  padding: var(--via-space-1) 11px;
+  margin-bottom: var(--via-space-3);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
@@ -67,7 +67,7 @@
 }
 
 .vds-fpa-cash-head h3 {
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
   font-family: var(--via-font-display);
   font-size: clamp(24px, 2.6vw, 32px);
   font-weight: var(--via-fw-medium);
@@ -89,7 +89,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--via-space-2);
-  margin-top: 16px;
+  margin-top: var(--via-space-4);
 }
 
 .vds-fpa-cash-action { flex-shrink: 0; }
@@ -107,7 +107,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 20px 20px 18px;
+  padding: var(--via-space-5) var(--via-space-5) var(--via-space-4_5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(175%);
@@ -153,7 +153,7 @@
 }
 
 .vds-fpa-cash-kpi-val {
-  margin: 10px 0 10px;
+  margin: var(--via-space-2_5) 0 var(--via-space-2_5);
   font-family: var(--via-font-display);
   font-size: clamp(21px, 2vw, 26px);
   font-weight: var(--via-fw-medium);
@@ -182,7 +182,7 @@
 .vds-fpa-cash-kpi-tag.neutro { color: var(--via-text-muted); }
 
 .vds-fpa-cash-kpi-note {
-  margin: 12px 0 0;
+  margin: var(--via-space-3) 0 0;
   padding-top: 11px;
   border-top: 1px solid var(--via-navy-06);
   font-size: var(--via-fs-micro);
@@ -199,7 +199,7 @@
   position: relative;
   isolation: isolate;
   margin: 0;
-  padding: 26px 28px 22px;
+  padding: 26px var(--via-space-7) var(--via-space-5_5);
   border-radius: var(--via-radius-xl);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(26px) saturate(190%);
@@ -229,10 +229,10 @@
   justify-content: space-between;
   gap: var(--via-space-5);
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: var(--via-space-5);
 }
 .vds-fpa-cash-panel-head h4 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.016em;
@@ -255,7 +255,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--via-space-3);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
@@ -325,8 +325,8 @@
   justify-content: space-between;
   gap: var(--via-space-4);
   flex-wrap: wrap;
-  margin-bottom: 12px;
-  padding: 11px 16px;
+  margin-bottom: var(--via-space-3);
+  padding: 11px var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
@@ -347,7 +347,7 @@
 }
 .vds-fpa-cash-readout .ro-ttl em {
   font-style: normal;
-  padding: 2px 8px;
+  padding: var(--via-space-0_5) var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-08);
@@ -473,8 +473,8 @@
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-2_5);
-  margin: 16px 0 0;
-  padding: 13px 16px;
+  margin: var(--via-space-4) 0 0;
+  padding: 13px var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
@@ -482,7 +482,7 @@
 }
 .vds-fpa-cash-note svg {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
   color: var(--via-text-primary);
   opacity: 0.6;
 }
@@ -514,7 +514,7 @@
   justify-content: space-between;
   gap: var(--via-space-5);
   flex-wrap: wrap;
-  padding: 20px 24px 17px;
+  padding: var(--via-space-5) var(--via-space-6) 17px;
   border-bottom: 1px solid var(--via-navy-08);
 }
 .vds-fpa-cash-tbl-head h4 {
@@ -548,7 +548,7 @@
 
 .vds-fpa-cash-tbl th,
 .vds-fpa-cash-tbl td {
-  padding: 11px 24px;
+  padding: 11px var(--via-space-6);
   text-align: left;
   vertical-align: baseline;
   white-space: nowrap;
@@ -561,8 +561,8 @@
 }
 
 .vds-fpa-cash-tbl thead th {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: var(--via-space-2_5);
+  padding-bottom: var(--via-space-2_5);
   background: var(--via-navy-03);
   border-bottom: 1px solid var(--via-navy-12);
   font-size: var(--via-fs-label);
@@ -635,8 +635,8 @@
 /* Total do exercício */
 .vds-fpa-cash-tbl tfoot th,
 .vds-fpa-cash-tbl tfoot td {
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: var(--via-space-3_5);
+  padding-bottom: var(--via-space-3_5);
   background: var(--via-navy-06);
   border-top: 1px solid var(--via-navy-16);
   font-weight: var(--via-fw-semibold);
@@ -659,7 +659,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding: 16px 20px;
+  padding: var(--via-space-4) var(--via-space-5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -732,10 +732,10 @@
 
 @media (max-width: 720px) {
   .vds-fpa-cash-kpis { grid-template-columns: minmax(0, 1fr); }
-  .vds-fpa-cash-panel { padding: 22px 18px 18px; }
-  .vds-fpa-cash-tbl-head { padding: 18px 18px 15px; }
+  .vds-fpa-cash-panel { padding: var(--via-space-5_5) var(--via-space-4_5) var(--via-space-4_5); }
+  .vds-fpa-cash-tbl-head { padding: var(--via-space-4_5) var(--via-space-4_5) 15px; }
   .vds-fpa-cash-tbl th,
-  .vds-fpa-cash-tbl td { padding-left: 18px; padding-right: 18px; }
+  .vds-fpa-cash-tbl td { padding-left: var(--via-space-4_5); padding-right: var(--via-space-4_5); }
   .vds-fpa-cash-recon { align-items: flex-start; }
   /* legenda longa demais pra pílula no celular · vira bloco */
   .vds-fpa-cash-legend {

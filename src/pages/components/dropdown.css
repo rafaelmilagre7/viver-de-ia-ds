@@ -1,6 +1,6 @@
 .via-dd-stage {
   position: relative;
-  padding: 28px;
+  padding: var(--via-space-7);
   background:
     radial-gradient(540px 220px at 0% 0%, var(--via-navy-04), transparent 60%),
     var(--via-glass-card);
@@ -16,7 +16,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding: 13px 20px;
+  padding: 13px var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -101,7 +101,7 @@
   left: 28px;
   min-width: 280px;
   list-style: none;
-  padding: 6px;
+  padding: var(--via-space-1_5);
   margin: 0;
   background: var(--via-glass-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);

@@ -4,7 +4,7 @@
 
 .vds-wa-stage {
   position: relative;
-  padding: 64px 32px;
+  padding: var(--via-space-16) var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 65% 70% at 15% 0%, rgba(30,58,95,0.32) 0%, transparent 55%),
@@ -35,7 +35,7 @@
   height: 760px;
   border-radius: 56px;
   background: var(--via-black);
-  padding: 14px;
+  padding: var(--via-space-3_5);
   box-shadow:
     inset 0 0 0 2px rgba(60,60,70,0.85),
     inset 0 0 0 3px rgba(20,20,28,0.95),
@@ -81,7 +81,7 @@
 .vds-wa-status {
   position: relative;
   height: 44px;
-  padding: 0 28px;
+  padding: 0 var(--via-space-7);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -116,7 +116,7 @@
   grid-template-columns: auto auto 1fr auto;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 10px 14px;
+  padding: var(--via-space-2_5) var(--via-space-3_5);
   border-bottom: 0.5px solid rgba(0,0,0,0.12);
 }
 .vds-wa-h .back {
@@ -206,7 +206,7 @@
 .vds-wa-conv {
   position: relative;
   z-index: 1;
-  padding: 12px 10px;
+  padding: var(--via-space-3) var(--via-space-2_5);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-1_5);
@@ -220,9 +220,9 @@
   font-weight: var(--via-fw-medium);
   color: rgba(0,0,0,0.55);
   background: rgba(225,245,254,0.92);
-  padding: 5px 12px;
+  padding: 5px var(--via-space-3);
   border-radius: var(--via-radius-sm);
-  margin: 8px 0;
+  margin: var(--via-space-2) 0;
   box-shadow: 0 1px 1px rgba(0,0,0,0.08);
 }
 
@@ -243,7 +243,7 @@
 /* Bubbles WhatsApp */
 .vds-wa-bubble {
   position: relative;
-  padding: 7px 10px 6px;
+  padding: 7px var(--via-space-2_5) var(--via-space-1_5);
   border-radius: var(--via-radius-sm);
   box-shadow: 0 1px 1px rgba(0,0,0,0.10);
 }
@@ -307,7 +307,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 6px 8px 8px;
+  padding: var(--via-space-1_5) var(--via-space-2) var(--via-space-2);
   background: #F6F6F6;
 }
 .vds-wa-field {
@@ -317,7 +317,7 @@
   gap: var(--via-space-1);
   background: #FFFFFF;
   border-radius: var(--via-radius-pill);
-  padding: 4px 6px 4px 10px;
+  padding: var(--via-space-1) var(--via-space-1_5) var(--via-space-1) var(--via-space-2_5);
   box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 }
 .vds-wa-field .ico {
@@ -337,7 +337,7 @@
   border: none;
   outline: none;
   background: transparent;
-  padding: 8px 4px;
+  padding: var(--via-space-2) var(--via-space-1);
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   color: rgba(0,0,0,0.85);

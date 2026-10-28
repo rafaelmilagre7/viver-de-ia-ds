@@ -1,7 +1,7 @@
 /* Segmented control · glass pill */
 .via-seg {
   display: inline-flex;
-  padding: 4px;
+  padding: var(--via-space-1);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   backdrop-filter: blur(18px) saturate(160%);
@@ -25,7 +25,7 @@
 }
 
 .via-seg-item {
-  padding: 9px 18px;
+  padding: 9px var(--via-space-4_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
@@ -112,7 +112,7 @@
 
 .via-ultab {
   position: relative;
-  padding: 14px 0;
+  padding: var(--via-space-3_5) 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -176,8 +176,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-left: 6px;
-  padding: 2px 7px;
+  margin-left: var(--via-space-1_5);
+  padding: var(--via-space-0_5) 7px;
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-08);
   color: var(--via-text-soft);

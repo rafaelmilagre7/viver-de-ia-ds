@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
+  padding: var(--via-space-4) var(--via-space-10);
   background: var(--via-glass-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
   backdrop-filter: var(--via-glass-blur-bar);
@@ -39,14 +39,14 @@
 .ckt-secure svg { color: var(--via-text-muted); }
 
 @media (max-width: 860px) {
-  .ckt-nav { padding: 14px 20px; }
+  .ckt-nav { padding: var(--via-space-3_5) var(--via-space-5); }
 }
 
 /* BODY */
 .ckt-body {
   max-width: 920px;
   margin: 0 auto;
-  padding: 40px;
+  padding: var(--via-space-10);
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: var(--via-space-7);
@@ -54,7 +54,7 @@
 }
 
 @media (max-width: 860px) {
-  .ckt-body { grid-template-columns: 1fr; padding: 28px 20px; }
+  .ckt-body { grid-template-columns: 1fr; padding: var(--via-space-7) var(--via-space-5); }
 }
 
 /* Stepper */
@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  margin-bottom: 28px;
+  margin-bottom: var(--via-space-7);
 }
 
 .ckt-step {
@@ -77,7 +77,7 @@
   flex: 1;
   height: 1px;
   background: var(--via-border-soft);
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
 }
 
 .ckt-step.done:not(:last-child)::after { background: var(--via-navy-30); }
@@ -129,7 +129,7 @@
 
 /* Panel */
 .ckt-panel {
-  padding: 28px;
+  padding: var(--via-space-7);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -143,11 +143,11 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.020em;
   color: var(--via-text-primary);
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
 }
 
 .ckt-panel-sub {
-  margin: 0 0 24px;
+  margin: 0 0 var(--via-space-6);
   font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
   letter-spacing: -0.005em;
@@ -158,7 +158,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
-  margin-bottom: 24px;
+  margin-bottom: var(--via-space-6);
 }
 
 .ckt-plano {
@@ -166,7 +166,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -280,7 +280,7 @@
   position: absolute;
   top: -8px;
   right: 16px;
-  padding: 3px 10px;
+  padding: 3px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
@@ -295,7 +295,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-4);
-  margin-bottom: 24px;
+  margin-bottom: var(--via-space-6);
 }
 
 .ckt-fields-row {
@@ -319,7 +319,7 @@
 
 .ckt-field input {
   height: 44px;
-  padding: 0 14px;
+  padding: 0 var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-bg-2);
   border: 1px solid var(--via-border-soft);
@@ -344,7 +344,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-2);
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 
 .ckt-pgto-tabs button {
@@ -423,8 +423,8 @@
 .ckt-pix {
   display: flex;
   gap: var(--via-space-5);
-  margin-bottom: 24px;
-  padding: 20px;
+  margin-bottom: var(--via-space-6);
+  padding: var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-bg-2);
   border: 1px solid var(--via-border-soft);
@@ -437,7 +437,7 @@
   height: 120px;
   border-radius: var(--via-radius-sm);
   background: var(--via-surface-onnavy);
-  padding: 10px;
+  padding: var(--via-space-2_5);
   flex-shrink: 0;
   box-shadow: 0 2px 8px -2px var(--via-shadow-ink-14);
 }
@@ -459,11 +459,11 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.010em;
-  margin-bottom: 6px;
+  margin-bottom: var(--via-space-1_5);
 }
 
 .ckt-pix-info p {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-text-muted);
@@ -471,7 +471,7 @@
 }
 
 .ckt-pix-copy {
-  padding: 9px 16px;
+  padding: 9px var(--via-space-4);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -522,7 +522,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 12px 18px;
+  padding: var(--via-space-3) var(--via-space-4_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -568,7 +568,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 13px 24px;
+  padding: 13px var(--via-space-6);
   border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
@@ -609,7 +609,7 @@
 .ckt-summary {
   position: sticky;
   top: 40px;
-  padding: 24px;
+  padding: var(--via-space-6);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -626,13 +626,13 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 
 .ckt-summary-item {
-  padding-bottom: 16px;
+  padding-bottom: var(--via-space-4);
   border-bottom: 1px solid var(--via-border-soft);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 
 .ckt-summary-item strong {
@@ -653,7 +653,7 @@
 
 .ckt-summary-incl {
   list-style: none;
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -675,10 +675,10 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: var(--via-space-4) 0;
   border-top: 1px solid var(--via-border-soft);
   border-bottom: 1px solid var(--via-border-soft);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 
 .ckt-summary-total span {
@@ -699,7 +699,7 @@
   display: flex;
   gap: var(--via-space-2_5);
   align-items: flex-start;
-  padding: 14px;
+  padding: var(--via-space-3_5);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);

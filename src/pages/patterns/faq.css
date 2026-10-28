@@ -15,7 +15,7 @@
 }
 
 .vds-faq-head {
-  padding: 28px 32px 22px;
+  padding: var(--via-space-7) var(--via-space-8) var(--via-space-5_5);
   border-bottom: 1px solid var(--via-border-soft);
   background:
     radial-gradient(540px 220px at 0% 0%, var(--via-navy-04), transparent 60%),
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3);
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-surface);
   border: 1px solid var(--via-border);
@@ -34,7 +34,7 @@
     0 1px 0 var(--via-edge-hi) inset,
     0 8px 18px -10px var(--via-shadow-ink-14);
   transition: border-color .22s ease, box-shadow .22s ease;
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 
 .vds-faq-search:focus-within {
@@ -115,7 +115,7 @@
 
 /* Categories sidebar */
 .vds-faq-cats {
-  padding: 22px 16px 22px 22px;
+  padding: var(--via-space-5_5) var(--via-space-4) var(--via-space-5_5) var(--via-space-5_5);
   border-right: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
 }
@@ -128,7 +128,7 @@
 }
 
 .vds-faq-cats-eyebrow {
-  margin: 0 12px 10px;
+  margin: 0 var(--via-space-3) var(--via-space-2_5);
   font-family: var(--via-mono);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
@@ -152,7 +152,7 @@
   grid-template-columns: 24px 1fr auto;
   gap: 11px;
   align-items: center;
-  padding: 9px 12px;
+  padding: 9px var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
@@ -247,7 +247,7 @@
 /* Questions list */
 .vds-faq-questions {
   list-style: none;
-  padding: 14px 22px 22px;
+  padding: var(--via-space-3_5) var(--via-space-5_5) var(--via-space-5_5);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -288,7 +288,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-4);
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   background: transparent;
   border: none;
   border-radius: var(--via-radius-md);
@@ -304,7 +304,7 @@
 }
 
 .vds-faq-item.open .vds-faq-q {
-  padding-bottom: 14px;
+  padding-bottom: var(--via-space-3_5);
 }
 
 .vds-faq-q-text {
@@ -320,7 +320,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  padding: 2px 8px;
+  padding: var(--via-space-0_5) var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   color: var(--via-accent-warm);
@@ -369,7 +369,7 @@
 
 /* Answer */
 .vds-faq-a {
-  padding: 0 22px 18px;
+  padding: 0 var(--via-space-5_5) var(--via-space-4_5);
   animation: vds-faq-down .26s cubic-bezier(.2,.7,.2,1) backwards;
 }
 
@@ -391,13 +391,13 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-3);
-  margin-top: 16px;
-  padding-top: 14px;
+  margin-top: var(--via-space-4);
+  padding-top: var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
 }
 
 .vds-faq-feedback {
-  padding: 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -471,7 +471,7 @@
   grid-template-columns: 1fr auto;
   gap: var(--via-space-8);
   align-items: center;
-  padding: 32px 36px;
+  padding: var(--via-space-8) var(--via-space-9);
   border-radius: var(--via-radius-lg);
   color: var(--via-white);
   isolation: isolate;
@@ -505,11 +505,11 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.72);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 
 .vds-faq-contact h3 {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-family: var(--via-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
@@ -553,7 +553,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 11px 18px;
+  padding: 11px var(--via-space-4_5);
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);

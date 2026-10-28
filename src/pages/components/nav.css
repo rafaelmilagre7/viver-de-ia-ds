@@ -1,5 +1,5 @@
 .via-nav-stage {
-  padding: 28px;
+  padding: var(--via-space-7);
   border-radius: var(--via-radius-lg);
   position: relative;
   overflow: hidden;
@@ -64,7 +64,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-6);
-  padding: 14px 24px;
+  padding: var(--via-space-3_5) var(--via-space-6);
   border-radius: var(--via-radius-pill);
 }
 
@@ -111,7 +111,7 @@
   text-decoration: none;
   cursor: pointer;
   transition: color 200ms ease;
-  padding: 4px 0;
+  padding: var(--via-space-1) 0;
 }
 
 .via-nav-l a::after,
@@ -169,7 +169,7 @@
 
 .via-nav-l button,
 .via-nav-d button {
-  padding: 10px 20px;
+  padding: var(--via-space-2_5) var(--via-space-5);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);

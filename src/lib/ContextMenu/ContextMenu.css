@@ -49,7 +49,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   width: 100%;
-  padding: 7px 10px;
+  padding: 7px var(--via-space-2_5);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -109,7 +109,7 @@
 .via-cm__sep {
   height: 1px;
   background: var(--via-navy-08);
-  margin: 4px 6px;
+  margin: var(--via-space-1) var(--via-space-1_5);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -10,11 +10,11 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 
 .vds-fp-hint {
-  margin: 8px 0 0;
+  margin: var(--via-space-2) 0 0;
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   letter-spacing: -0.004em;
@@ -33,7 +33,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   min-height: 46px;
-  padding: 7px 10px 7px 12px;
+  padding: 7px var(--via-space-2_5) 7px var(--via-space-3);
   border-radius: var(--via-radius-md);
   background: var(--via-surface);
   border: 1px solid var(--via-border);
@@ -63,7 +63,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 4px 8px 4px 11px;
+  padding: var(--via-space-1) var(--via-space-2) var(--via-space-1) 11px;
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -118,7 +118,7 @@
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   cursor: pointer;
-  padding: 2px 6px;
+  padding: var(--via-space-0_5) var(--via-space-1_5);
   border-radius: var(--via-radius-sm);
   transition: color .2s ease, background .2s ease;
 }
@@ -167,7 +167,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 10px 14px;
+  padding: var(--via-space-2_5) var(--via-space-3_5);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -187,7 +187,7 @@
 .vds-fp-mselect-pop ul {
   list-style: none;
   margin: 0;
-  padding: 6px;
+  padding: var(--via-space-1_5);
   max-height: 280px;
   overflow-y: auto;
 }
@@ -198,7 +198,7 @@
   grid-template-columns: 18px 1fr auto;
   gap: var(--via-space-3);
   align-items: center;
-  padding: 9px 10px;
+  padding: 9px var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
@@ -251,7 +251,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 14px;
+  padding: var(--via-space-2_5) var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
   font-size: var(--via-fs-label);
@@ -271,7 +271,7 @@
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 4px 10px -4px var(--via-shadow-ink-40);
-  padding: 6px 14px;
+  padding: var(--via-space-1_5) var(--via-space-3_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -310,7 +310,7 @@
 
 .vds-fp-drop-zone {
   position: relative;
-  padding: 36px 24px 28px;
+  padding: var(--via-space-9) var(--via-space-6) var(--via-space-7);
   border: 1.5px dashed var(--via-navy-22);
   border-radius: var(--via-radius-lg);
   background:
@@ -370,8 +370,8 @@
 }
 
 .vds-fp-drop-cta {
-  margin-top: 8px;
-  padding: 8px 18px;
+  margin-top: var(--via-space-2);
+  padding: var(--via-space-2) var(--via-space-4_5);
   border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
@@ -420,7 +420,7 @@
   grid-template-columns: 30px 1fr auto 24px;
   gap: var(--via-space-3);
   align-items: center;
-  padding: 10px 12px;
+  padding: var(--via-space-2_5) var(--via-space-3);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -481,7 +481,7 @@
 }
 
 .vds-fp-drop-progress {
-  margin-top: 6px;
+  margin-top: var(--via-space-1_5);
   height: 3px;
   border-radius: 2px;
   background: var(--via-navy-06);
@@ -575,7 +575,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 0 12px 0 14px;
+  padding: 0 var(--via-space-3) 0 var(--via-space-3_5);
   background: var(--via-navy-03);
   border: none;
   border-right: 1px solid var(--via-border-soft);
@@ -621,7 +621,7 @@
   border: none;
   outline: none;
   background: transparent;
-  padding: 12px 14px;
+  padding: var(--via-space-3) var(--via-space-3_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
@@ -646,7 +646,7 @@
     0 18px 40px -16px var(--via-shadow-ink-20);
   list-style: none;
   margin: 0;
-  padding: 6px;
+  padding: var(--via-space-1_5);
   max-height: 280px;
   overflow-y: auto;
 }
@@ -657,7 +657,7 @@
   grid-template-columns: 24px 1fr auto;
   gap: var(--via-space-3);
   align-items: center;
-  padding: 8px 10px;
+  padding: var(--via-space-2) var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   background: transparent;
   border: none;
@@ -776,7 +776,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-4);
-  padding: 20px 22px;
+  padding: var(--via-space-5) var(--via-space-5_5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -921,7 +921,7 @@
 }
 
 .vds-fp-crop-rotation button {
-  padding: 6px 0;
+  padding: var(--via-space-1_5) 0;
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -969,14 +969,14 @@
 .vds-fp-crop-actions {
   display: flex;
   gap: var(--via-space-2);
-  margin-top: 6px;
-  padding-top: 14px;
+  margin-top: var(--via-space-1_5);
+  padding-top: var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
 }
 
 .vds-fp-crop-btn {
   flex: 1;
-  padding: 9px 14px;
+  padding: 9px var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -1059,7 +1059,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  padding: var(--via-space-2) var(--via-space-3);
   border-bottom: 1px solid var(--via-border-soft);
   background: var(--via-glass-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
@@ -1106,19 +1106,19 @@
   width: 1px;
   height: 18px;
   background: var(--via-border-soft);
-  margin: 0 4px;
+  margin: 0 var(--via-space-1);
 }
 
 .vds-fp-md-tabs {
   display: flex;
   gap: var(--via-space-1);
-  padding: 2px;
+  padding: var(--via-space-0_5);
   background: var(--via-navy-04);
   border-radius: var(--via-radius-sm);
 }
 
 .vds-fp-md-tabs button {
-  padding: 5px 12px;
+  padding: 5px var(--via-space-3);
   border-radius: var(--via-radius-xs);
   background: transparent;
   border: none;
@@ -1158,7 +1158,7 @@
   border: none;
   outline: none;
   background: transparent;
-  padding: 20px 24px;
+  padding: var(--via-space-5) var(--via-space-6);
   font-family: var(--via-mono);
   font-size: var(--via-fs-caption);
   line-height: 1.65;
@@ -1168,12 +1168,12 @@
 }
 
 .vds-fp-md-preview {
-  padding: 22px 28px 28px;
+  padding: var(--via-space-5_5) var(--via-space-7) var(--via-space-7);
   min-height: 280px;
 }
 
 .vds-fp-md-preview h3 {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-family: var(--via-display);
   font-size: 20px;
   font-weight: var(--via-fw-medium);
@@ -1182,7 +1182,7 @@
 }
 
 .vds-fp-md-preview p {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-sm);
   line-height: 1.65;
   color: var(--via-text);
@@ -1194,16 +1194,16 @@
 }
 
 .vds-fp-md-preview ul {
-  margin: 0 0 14px;
-  padding-left: 22px;
+  margin: 0 0 var(--via-space-3_5);
+  padding-left: var(--via-space-5_5);
   font-size: var(--via-fs-caption);
   line-height: 1.7;
   color: var(--via-text);
 }
 
 .vds-fp-md-preview blockquote {
-  margin: 0 0 14px;
-  padding: 14px 18px;
+  margin: 0 0 var(--via-space-3_5);
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -1240,7 +1240,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 14px 10px 24px;
+  padding: var(--via-space-2_5) var(--via-space-3_5) var(--via-space-2_5) var(--via-space-6);
   border-top: 1px solid var(--via-border-soft);
   background: var(--via-glass-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
@@ -1254,7 +1254,7 @@
 }
 
 .vds-fp-md-send {
-  padding: 7px 16px;
+  padding: 7px var(--via-space-4);
   border-radius: var(--via-radius-sm);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);

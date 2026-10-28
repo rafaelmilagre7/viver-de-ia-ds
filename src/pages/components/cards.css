@@ -40,7 +40,7 @@
   color: var(--via-text-primary);
   letter-spacing: -0.022em;
   line-height: 1.18;
-  margin: 4px 0 0;
+  margin: var(--via-space-1) 0 0;
 }
 
 .via-card .body {
@@ -48,7 +48,7 @@
   font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-text-soft);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
 }
 
 .via-card .link {
@@ -154,7 +154,7 @@
 
 /* Stat card · glass premium */
 .via-card-stat-stage {
-  padding: 48px;
+  padding: var(--via-space-12);
   background:
     radial-gradient(ellipse at 20% 0%, rgba(42, 74, 110, 0.55) 0%, transparent 55%),
     /* palco navy FIXO nos dois temas → literal (o token navy-06 vira branco no dark) */
@@ -233,7 +233,7 @@
   letter-spacing: 0.12em;
   color: var(--via-text-soft);
   text-transform: uppercase;
-  margin-left: 6px;
+  margin-left: var(--via-space-1_5);
 }
 
 .via-card-stat .sub {

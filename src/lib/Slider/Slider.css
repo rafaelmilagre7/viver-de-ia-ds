@@ -180,7 +180,7 @@
 }
 /* Reserva a faixa do rótulo abaixo da trilha (só quando há marks). */
 .via-slider__track-wrap:has(.via-slider__marks) {
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 
 .via-slider__mark {
@@ -206,7 +206,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
   font-style: normal;
   font-family: var(--via-mono, var(--via-font-mono, ui-monospace, monospace));
   font-size: var(--via-fs-micro);

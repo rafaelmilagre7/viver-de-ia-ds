@@ -20,7 +20,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 6px 8px;
+  padding: var(--via-space-1_5) var(--via-space-2);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   backdrop-filter: blur(12px) saturate(140%);
@@ -38,7 +38,7 @@
 }
 
 .via-taginput--sm .via-taginput__field {
-  padding: 4px 6px;
+  padding: var(--via-space-1) var(--via-space-1_5);
   min-height: 32px;
 }
 
@@ -75,7 +75,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  padding: 3px 4px 3px 10px;
+  padding: 3px var(--via-space-1) 3px var(--via-space-2_5);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
@@ -124,9 +124,9 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.008em;
   color: var(--via-text-primary);
-  padding: 4px 6px;
+  padding: var(--via-space-1) var(--via-space-1_5);
 }
-.via-taginput--sm .via-taginput__input { font-size: var(--via-fs-xs); padding: 2px 6px; }
+.via-taginput--sm .via-taginput__input { font-size: var(--via-fs-xs); padding: var(--via-space-0_5) var(--via-space-1_5); }
 
 .via-taginput__input::placeholder {
   color: var(--via-ink-3, #6B7891);
@@ -159,12 +159,12 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
-  margin-right: 4px;
+  margin-right: var(--via-space-1);
 }
 .via-taginput__suggestion {
   display: inline-flex;
   align-items: center;
-  padding: 3px 10px;
+  padding: 3px var(--via-space-2_5);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;

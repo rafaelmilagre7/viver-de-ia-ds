@@ -16,7 +16,7 @@
 }
 
 .via-dt__caption {
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   font-family: var(--via-font, inherit);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -40,7 +40,7 @@
   background: linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
 }
 .via-dt th {
-  padding: 10px 14px;
+  padding: var(--via-space-2_5) var(--via-space-3_5);
   font-family: var(--via-font, inherit);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
@@ -73,7 +73,7 @@
 }
 .via-dt__th-meta {
   display: block;
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
   font-style: normal;
   font-size: var(--via-fs-micro);
   color: var(--via-ink-3, #6B7891);
@@ -82,7 +82,7 @@
 }
 
 .via-dt td {
-  padding: 12px 14px;
+  padding: var(--via-space-3) var(--via-space-3_5);
   font-size: var(--via-fs-caption);
   color: var(--via-text, #344054);
   border-bottom: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
@@ -91,10 +91,10 @@
 .via-dt tbody tr:last-child td { border-bottom: none; }
 
 /* --- Density --- */
-.via-dt--compact th { padding: 8px 12px; }
-.via-dt--compact td { padding: 9px 12px; }
-.via-dt--comfortable th { padding: 12px 16px; }
-.via-dt--comfortable td { padding: 13px 16px; }
+.via-dt--compact th { padding: var(--via-space-2) var(--via-space-3); }
+.via-dt--compact td { padding: 9px var(--via-space-3); }
+.via-dt--comfortable th { padding: var(--via-space-3) var(--via-space-4); }
+.via-dt--comfortable td { padding: 13px var(--via-space-4); }
 
 /* --- Zebra --- */
 .via-dt--zebra tbody tr:nth-child(even) {
@@ -118,7 +118,7 @@
 
 .via-dt__empty {
   text-align: center;
-  padding: 40px 16px !important;
+  padding: var(--via-space-10) var(--via-space-4) !important;
   color: var(--via-ink-3, #6B7891);
   font-size: var(--via-fs-caption);
 }

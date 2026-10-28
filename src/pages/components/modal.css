@@ -14,7 +14,7 @@
 .vds-modal-stage {
   position: relative;
   min-height: 420px;
-  padding: 24px;
+  padding: var(--via-space-6);
   background:
     radial-gradient(ellipse 60% 80% at 20% 0%, rgba(46, 76, 118, 0.55) 0%, transparent 60%),
     radial-gradient(ellipse 50% 60% at 100% 100%, var(--via-navy-05) 0%, transparent 60%),
@@ -55,7 +55,7 @@
   z-index: 2;
   width: 100%;
   max-width: 480px;
-  padding: 32px;
+  padding: var(--via-space-8);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   backdrop-filter: blur(28px) saturate(180%);
@@ -129,7 +129,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
   gap: var(--via-space-3_5);
 }
 
@@ -202,7 +202,7 @@
 
 .vds-modal-demo .btn-ghost,
 .vds-modal-demo .btn-primary {
-  padding: 12px 22px;
+  padding: var(--via-space-3) var(--via-space-5_5);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);

@@ -5,7 +5,7 @@
   --dash-1: var(--via-data-1);
 
   position: relative;
-  padding: 40px;
+  padding: var(--via-space-10);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.22) 0%, transparent 55%),
@@ -42,12 +42,12 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
-  margin: 6px 0 0;
+  margin: var(--via-space-1_5) 0 0;
 }
 .vds-dash .filters {
   display: flex;
   gap: var(--via-space-1);
-  padding: 4px;
+  padding: var(--via-space-1);
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.45);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
@@ -64,7 +64,7 @@
 [data-theme="dark"] .vds-dash { --dash-1: var(--via-data-1-dark); }
 
 .vds-dash .filt {
-  padding: 7px 14px;
+  padding: 7px var(--via-space-3_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -133,7 +133,7 @@
 }
 
 .dash-metric.via-metric {
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   gap: var(--via-space-1_5);
   transition: var(--via-t);
 }
@@ -194,7 +194,7 @@
   backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
-  padding: 26px 28px;
+  padding: 26px var(--via-space-7);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 var(--via-edge-lo),
@@ -218,7 +218,7 @@
   justify-content: space-between;
 }
 /* .main é flex-column com gap — margem extra dobraria o respiro */
-.vds-dash .side header { margin-bottom: 16px; }
+.vds-dash .side header { margin-bottom: var(--via-space-4); }
 .vds-dash .more {
   width: 24px; height: 24px;
   border-radius: var(--via-radius-pill);
@@ -259,7 +259,7 @@
    nome da etapa carrega o peso da linha.
    --------------------------------------------------------------- */
 .vds-dash .via-table tbody th[scope='row'] {
-  padding: 9px 14px;
+  padding: 9px var(--via-space-3_5);
   text-align: left;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
@@ -296,7 +296,7 @@
 
 .vds-dash .side ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--via-space-2_5); }
 .vds-dash .side li {
-  padding: 10px 0;
+  padding: var(--via-space-2_5) 0;
   border-bottom: 0.5px solid var(--via-navy-08);
   display: grid;
   grid-template-columns: 1fr auto;

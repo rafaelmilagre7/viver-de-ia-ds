@@ -3,7 +3,7 @@
    ============================================ */
 
 .vds-receipt-stage {
-  padding: 56px;
+  padding: var(--via-space-14);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(900px 380px at 50% 0%, var(--via-navy-05), transparent 70%),
@@ -14,7 +14,7 @@
 }
 
 .vds-receipt-stage.compact {
-  padding: 48px;
+  padding: var(--via-space-12);
 }
 
 .vds-receipt {
@@ -75,7 +75,7 @@
   --via-glass-ring: 1px solid rgba(10, 31, 59, 0.05);
   --via-shadow-focus: 0 0 0 3px rgba(10, 31, 59, 0.15);
   border-radius: var(--via-radius-lg);
-  padding: 56px 56px 36px;
+  padding: var(--via-space-14) var(--via-space-14) var(--via-space-9);
   border: 1px solid var(--via-navy-08);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -107,9 +107,9 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--via-space-8);
-  padding-bottom: 28px;
+  padding-bottom: var(--via-space-7);
   border-bottom: 1px solid var(--via-navy-08);
-  margin-bottom: 28px;
+  margin-bottom: var(--via-space-7);
 }
 
 .vds-receipt-brand {
@@ -135,7 +135,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 5px 12px;
+  padding: 5px var(--via-space-3);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-08);
   border: 1px solid var(--via-navy-12);
@@ -148,7 +148,7 @@
 }
 
 .vds-receipt-num {
-  margin: 12px 0 4px;
+  margin: var(--via-space-3) 0 var(--via-space-1);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.02em;
@@ -160,7 +160,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
-  margin-right: 4px;
+  margin-right: var(--via-space-1);
   letter-spacing: 0;
 }
 
@@ -176,9 +176,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-9);
-  padding-bottom: 28px;
+  padding-bottom: var(--via-space-7);
   border-bottom: 1px solid var(--via-navy-08);
-  margin-bottom: 32px;
+  margin-bottom: var(--via-space-8);
 }
 
 .vds-receipt-eyebrow {
@@ -187,14 +187,14 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
 }
 
 .vds-receipt-name {
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   letter-spacing: -0.01em;
 }
 
@@ -212,7 +212,7 @@
 .vds-receipt-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 32px;
+  margin-bottom: var(--via-space-8);
 }
 
 .vds-receipt-table thead th {
@@ -222,7 +222,7 @@
   text-transform: uppercase;
   color: var(--via-text-soft);
   text-align: left;
-  padding: 0 0 10px;
+  padding: 0 0 var(--via-space-2_5);
   border-bottom: 1px solid var(--via-navy-12);
 }
 
@@ -234,7 +234,7 @@
 }
 
 .vds-receipt-table tbody td {
-  padding: 18px 0;
+  padding: var(--via-space-4_5) 0;
   border-bottom: 1px solid var(--via-navy-06);
   vertical-align: top;
 }
@@ -255,7 +255,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   letter-spacing: -0.005em;
 }
 
@@ -271,7 +271,7 @@
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: var(--via-space-9);
-  margin-bottom: 28px;
+  margin-bottom: var(--via-space-7);
   align-items: end;
 }
 
@@ -289,7 +289,7 @@
 }
 
 .vds-receipt-totals-card {
-  padding: 20px 24px;
+  padding: var(--via-space-5) var(--via-space-6);
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.96), rgba(10, 31, 59, 1));
   border-radius: var(--via-radius-md);
   color: var(--via-white);
@@ -312,7 +312,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 8px 0;
+  padding: var(--via-space-2) 0;
   font-size: var(--via-fs-caption);
   position: relative;
 }
@@ -332,8 +332,8 @@
 }
 
 .vds-receipt-totals-card .row.total {
-  margin-top: 8px;
-  padding-top: 14px;
+  margin-top: var(--via-space-2);
+  padding-top: var(--via-space-3_5);
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -357,18 +357,18 @@
   grid-template-columns: 1fr 88px;
   gap: var(--via-space-6);
   align-items: center;
-  padding: 20px;
+  padding: var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-navy-06);
-  margin-bottom: 28px;
+  margin-bottom: var(--via-space-7);
 }
 
 .vds-receipt-pay-name {
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   letter-spacing: -0.005em;
 }
 
@@ -376,12 +376,12 @@
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-label);
   color: var(--via-text-primary);
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
   background: var(--via-navy-06);
-  padding: 6px 10px;
+  padding: var(--via-space-1_5) var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   letter-spacing: -0.01em;
 }
@@ -475,7 +475,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-6);
-  padding-top: 20px;
+  padding-top: var(--via-space-5);
   border-top: 1px solid var(--via-navy-06);
 }
 
@@ -504,7 +504,7 @@
   gap: var(--via-space-1_5);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  padding: 9px 14px;
+  padding: 9px var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
@@ -571,7 +571,7 @@
   background: var(--via-surface);
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-navy-08);
-  padding: 32px;
+  padding: var(--via-space-8);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 24px 48px -28px var(--via-shadow-ink-20);
@@ -590,7 +590,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-4);
-  padding-bottom: 20px;
+  padding-bottom: var(--via-space-5);
   border-bottom: 1px solid var(--via-navy-06);
 }
 
@@ -598,7 +598,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  padding: 5px 12px 5px 10px;
+  padding: 5px var(--via-space-3) 5px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-14);
@@ -613,7 +613,7 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.03em;
   color: var(--via-text-primary);
-  margin: 24px 0 28px;
+  margin: var(--via-space-6) 0 var(--via-space-7);
   line-height: 1.05;
   font-feature-settings: 'tnum' 1;
 }
@@ -622,14 +622,14 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
-  margin-left: 6px;
+  margin-left: var(--via-space-1_5);
   letter-spacing: -0.005em;
 }
 
 .vds-receipt-mini-meta {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px;
+  margin: 0 0 var(--via-space-6);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3);
@@ -660,7 +660,7 @@
   width: 100%;
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -708,10 +708,10 @@
 /* Responsive */
 @media (max-width: 720px) {
   .vds-receipt-stage {
-    padding: 24px;
+    padding: var(--via-space-6);
   }
   .vds-receipt {
-    padding: 32px 24px;
+    padding: var(--via-space-8) var(--via-space-6);
   }
   .vds-receipt-head,
   .vds-receipt-parties,
@@ -738,7 +738,7 @@
   }
   .vds-receipt-table tbody td {
     text-align: left !important;
-    padding: 8px 0 !important;
+    padding: var(--via-space-2) 0 !important;
   }
 }
 
@@ -863,7 +863,7 @@
     background: var(--via-navy) !important;
     color: var(--via-white) !important;
     border: none !important;
-    padding: 3px 10px !important;
+    padding: 3px var(--via-space-2_5) !important;
     border-radius: 999px !important;
     font-size: 8pt !important;
     letter-spacing: 0.04em !important;
@@ -1174,7 +1174,7 @@
 .vds-print-guide {
   position: relative;
   border-radius: var(--via-radius-lg);
-  padding: 32px 32px 28px;
+  padding: var(--via-space-8) var(--via-space-8) var(--via-space-7);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -1199,7 +1199,7 @@
 
 .vds-print-guide header {
   max-width: 640px;
-  margin-bottom: 28px;
+  margin-bottom: var(--via-space-7);
 }
 
 .vds-print-eyebrow {
@@ -1212,11 +1212,11 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-accent-warm);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .vds-print-guide h3 {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-family: var(--via-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
@@ -1259,7 +1259,7 @@
 
 .vds-print-list {
   list-style: none;
-  margin: 0 0 32px;
+  margin: 0 0 var(--via-space-8);
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1277,7 +1277,7 @@
   grid-template-columns: 36px 1fr;
   gap: var(--via-space-3_5);
   align-items: start;
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
@@ -1331,7 +1331,7 @@
 
 .vds-print-guide footer {
   border-top: 1px solid var(--via-border-soft);
-  padding-top: 22px;
+  padding-top: var(--via-space-5_5);
 }
 
 .vds-print-tip {
@@ -1347,7 +1347,7 @@
   justify-content: center;
   min-width: 36px;
   height: 28px;
-  padding: 0 10px;
+  padding: 0 var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border);
@@ -1379,7 +1379,7 @@
    ============================================ */
 .vds-receipt-stage[data-print-preview="on"] {
   background: var(--via-stage-soft);
-  padding: 32px;
+  padding: var(--via-space-8);
   border-radius: var(--via-radius-lg);
 }
 

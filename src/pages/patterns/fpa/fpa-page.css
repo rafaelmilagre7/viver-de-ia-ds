@@ -19,7 +19,7 @@
   line-height: 1.06;
   letter-spacing: -0.032em;
   color: var(--via-text-primary);
-  margin: 12px 0 0;
+  margin: var(--via-space-3) 0 0;
 }
 .vds-fpa-page__head h1 em {
   font-style: normal;
@@ -31,7 +31,7 @@
   font-size: var(--via-fs-h4);
   line-height: 1.55;
   color: var(--via-text-body);
-  margin: 20px 0 0;
+  margin: var(--via-space-5) 0 0;
   max-width: 660px;
 }
 
@@ -50,7 +50,7 @@
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin: 0;
-  padding-bottom: 14px;
+  padding-bottom: var(--via-space-3_5);
   border-bottom: 1px solid var(--via-border-soft);
 }
 

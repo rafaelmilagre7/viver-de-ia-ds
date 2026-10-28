@@ -10,11 +10,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--via-space-3_5);
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 .vds-mail-how-card {
   position: relative;
-  padding: 20px;
+  padding: var(--via-space-5);
   border-radius: var(--via-radius-lg);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(247, 248, 250, 0.5));
   -webkit-backdrop-filter: blur(14px) saturate(140%);
@@ -31,7 +31,7 @@
   border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 .vds-mail-how-card h3 {
   margin: 0 0 5px;
@@ -57,7 +57,7 @@
 
 .vds-mail-code {
   margin: 0;
-  padding: 20px 22px;
+  padding: var(--via-space-5) var(--via-space-5_5);
   border-radius: var(--via-radius-lg);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: rgba(255, 255, 255, 0.92);
@@ -82,7 +82,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--via-space-4);
-  padding: 16px 18px;
+  padding: var(--via-space-4) var(--via-space-4_5);
   border-bottom: 1px solid var(--via-border-soft);
   background: linear-gradient(180deg, var(--via-bg-2), transparent);
 }
@@ -134,7 +134,7 @@
 
 /* palco cinza atrás do email — combina com o bg do próprio email */
 .vds-mail-stage {
-  padding: 24px;
+  padding: var(--via-space-6);
   background:
     radial-gradient(600px 260px at 50% 0%, var(--via-navy-04), transparent 70%),
     #edf0f4;
@@ -163,6 +163,6 @@
     gap: var(--via-space-2_5);
   }
   .vds-mail-stage {
-    padding: 12px;
+    padding: var(--via-space-3);
   }
 }

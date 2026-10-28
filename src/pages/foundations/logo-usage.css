@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3);
-  padding: 20px 22px;
+  padding: var(--via-space-5) var(--via-space-5_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -44,7 +44,7 @@
   font-family: var(--via-mono);
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
-  margin-top: 6px;
+  margin-top: var(--via-space-1_5);
 }
 
 /* ---------- Spec demo box ----------
@@ -58,7 +58,7 @@
   align-items: center;
   justify-content: center;
   height: 140px;
-  padding: 24px;
+  padding: var(--via-space-6);
   border-radius: var(--via-radius-sm);
   position: relative;
 }
@@ -89,7 +89,7 @@
   gap: var(--via-space-5);
 }
 .vds-lu-variants article {
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -104,7 +104,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
 }
 
 .vds-lu-var-grid {
@@ -124,7 +124,7 @@
   flex-direction: column;
   gap: var(--via-space-2);
   align-items: center;
-  padding: 18px 16px 14px;
+  padding: var(--via-space-4_5) var(--via-space-4) var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
 }
 /* palco de espécime · cores fixas (assets de cor fixa · ver .vds-lu-spec) */
@@ -163,7 +163,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-7);
-  padding: 32px 36px 36px;
+  padding: var(--via-space-8) var(--via-space-9) var(--via-space-9);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -202,7 +202,7 @@
   color: #0A1F3B;
   background: #FFFFFF;
   border: 0.5px solid rgba(10, 31, 59, 0.20);
-  padding: 3px 8px;
+  padding: 3px var(--via-space-2);
   border-radius: var(--via-radius-sm);
   letter-spacing: -0.005em;
 }
@@ -220,7 +220,7 @@
 
 .vds-lu-clear-note {
   margin: 0;
-  padding: 16px 20px;
+  padding: var(--via-space-4) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -243,14 +243,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: var(--via-space-3_5);
-  padding: 28px 32px;
+  padding: var(--via-space-7) var(--via-space-8);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 /* palco de espécime · cores fixas (monogram navy em todos · ver .vds-lu-spec) */
 .vds-lu-sizing article {
@@ -258,7 +258,7 @@
   flex-direction: column;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 18px 14px;
+  padding: var(--via-space-4_5) var(--via-space-3_5);
   background: #FFFFFF;
   border: 0.5px solid rgba(10, 31, 59, 0.08);
   border-radius: var(--via-radius-sm);
@@ -267,7 +267,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
   min-height: 24px;
 }
 .vds-lu-size-demo img {
@@ -294,12 +294,12 @@
   font-size: var(--via-fs-label);
   color: #525C72;
   text-align: center;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
   line-height: 1.4;
 }
 
 .vds-lu-size-min {
-  padding: 22px 26px;
+  padding: var(--via-space-5_5) 26px;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -315,14 +315,14 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 .vds-lu-size-min h4 {
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
   letter-spacing: -0.022em;
 }
 .vds-lu-size-min h4 em {
@@ -346,7 +346,7 @@
   gap: var(--via-space-3_5);
 }
 .vds-lu-surface article {
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -371,7 +371,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-3_5);
-  padding: 28px 20px;
+  padding: var(--via-space-7) var(--via-space-5);
   border-radius: var(--via-radius-sm);
   min-height: 160px;
 }
@@ -415,7 +415,7 @@
 .vds-lu-surface li code {
   font-family: var(--via-mono);
   font-size: var(--via-fs-label);
-  padding: 2px 6px;
+  padding: var(--via-space-0_5) var(--via-space-1_5);
   border-radius: var(--via-radius-xs);
   background: var(--via-navy-04);
   color: var(--via-text-primary);
@@ -437,7 +437,7 @@
   background: var(--via-gray-50);
 }
 .vds-lu-context th {
-  padding: 12px 18px;
+  padding: var(--via-space-3) var(--via-space-4_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
@@ -448,7 +448,7 @@
   border-bottom: 0.5px solid var(--via-navy-08);
 }
 .vds-lu-context td {
-  padding: 13px 18px;
+  padding: 13px var(--via-space-4_5);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   border-bottom: 0.5px solid var(--via-navy-08);
@@ -474,7 +474,7 @@
 @media (max-width: 760px) { .vds-lu-dosdonts { grid-template-columns: 1fr; } }
 .vds-lu-do,
 .vds-lu-dont {
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -494,7 +494,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 .vds-lu-dd-eyebrow.alt { color: var(--via-text-muted); }
 .vds-lu-do ul,
@@ -512,7 +512,7 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
-  padding-left: 16px;
+  padding-left: var(--via-space-4);
   position: relative;
 }
 .vds-lu-do li::before,

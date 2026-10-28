@@ -17,7 +17,7 @@
 .auth-aside {
   position: relative;
   z-index: 1;
-  padding: 64px 56px;
+  padding: var(--via-space-16) var(--via-space-14);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,7 +39,7 @@
   letter-spacing: -0.03em;
   line-height: 1.0;
   color: var(--via-white);
-  margin: 16px 0 28px;
+  margin: var(--via-space-4) 0 var(--via-space-7);
 }
 .auth-pull h2 em { font-style: normal; font-weight: var(--via-fw-regular); color: rgba(255,255,255,0.62); }
 .auth-pull .lede {
@@ -48,14 +48,14 @@
   font-weight: var(--via-fw-medium);
   line-height: 1.4;
   color: rgba(255,255,255,0.82);
-  margin: 0 0 24px;
+  margin: 0 0 var(--via-space-6);
 }
 
 .quote-attrib {
   display: flex;
   align-items: center;
   gap: var(--via-space-3);
-  padding-top: 20px;
+  padding-top: var(--via-space-5);
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 .quote-attrib .av {
@@ -89,7 +89,7 @@
 .auth-card-wrap {
   position: relative;
   z-index: 2;
-  padding: 64px 44px;
+  padding: var(--via-space-16) 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +130,7 @@
   --via-shadow-focus: 0 0 0 3px rgba(10, 31, 59, 0.15);
   width: 100%;
   max-width: 440px;
-  padding: 40px;
+  padding: var(--via-space-10);
   background: var(--via-surface-onnavy);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
   backdrop-filter: blur(40px) saturate(200%);
@@ -143,15 +143,15 @@
   overflow: hidden;
   color: var(--via-text-primary);
 }
-.auth-card header { margin-bottom: 24px; }
-.auth-card header .vds-eyebrow { margin-bottom: 10px; }
+.auth-card header { margin-bottom: var(--via-space-6); }
+.auth-card header .vds-eyebrow { margin-bottom: var(--via-space-2_5); }
 .auth-card h1 {
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
 }
 .auth-card .lede {
   font-family: var(--via-font);
@@ -165,7 +165,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-2);
-  margin-bottom: 20px;
+  margin-bottom: var(--via-space-5);
 }
 .prov {
   display: inline-flex;
@@ -177,7 +177,7 @@
      marca desalinhada). O texto completo vive no aria-label. */
   min-height: 40px;
   white-space: nowrap;
-  padding: 10px 12px;
+  padding: var(--via-space-2_5) var(--via-space-3);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -229,7 +229,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  margin: 12px 0 20px;
+  margin: var(--via-space-3) 0 var(--via-space-5);
 }
 .auth-divider::before,
 .auth-divider::after {
@@ -262,7 +262,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: var(--via-space-1);
   border-radius: var(--via-radius-xs);
   transition: var(--via-t);
 }
@@ -277,7 +277,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 6px 0 4px;
+  margin: var(--via-space-1_5) 0 var(--via-space-1);
 }
 .auth-row .check {
   display: inline-flex;
@@ -325,8 +325,8 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-2_5);
-  margin-top: 8px;
-  padding: 14px 24px;
+  margin-top: var(--via-space-2);
+  padding: var(--via-space-3_5) var(--via-space-6);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: 1px solid var(--via-navy);
@@ -375,7 +375,7 @@
 }
 
 .auth-foot {
-  margin: 24px 0 0;
+  margin: var(--via-space-6) 0 0;
   text-align: center;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
@@ -394,9 +394,9 @@
 
 @media (max-width: 960px) {
   .vds-showcase.auth { grid-template-columns: minmax(0, 1fr); }
-  .auth-aside { padding: 40px 32px 0; }
-  .auth-card-wrap { padding: 32px; }
-  .auth-card { padding: 28px; }
+  .auth-aside { padding: var(--via-space-10) var(--via-space-8) 0; }
+  .auth-card-wrap { padding: var(--via-space-8); }
+  .auth-card { padding: var(--via-space-7); }
 }
 
 /* o lockup `lg` mede 452px e não cabe em tela estreita — troca pelo `md` */

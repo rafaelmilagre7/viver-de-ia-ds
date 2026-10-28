@@ -1,5 +1,5 @@
 .via-tag-stage {
-  padding: 32px;
+  padding: var(--via-space-8);
   border-radius: var(--via-radius-lg);
   background:
     radial-gradient(ellipse 70% 60% at 20% 0%, var(--via-navy-10) 0%, transparent 60%),
@@ -14,7 +14,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 9px 16px;
+  padding: 9px var(--via-space-4);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);

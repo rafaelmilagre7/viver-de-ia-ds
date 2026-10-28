@@ -54,7 +54,7 @@
   font-size: var(--via-fs-micro);
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
-  padding: 4px 8px;
+  padding: var(--via-space-1) var(--via-space-2);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
@@ -64,7 +64,7 @@
 
 /* ---------- Body ---------- */
 .vds-loc-body {
-  padding: 32px 32px 26px;
+  padding: var(--via-space-8) var(--via-space-8) 26px;
   display: flex;
   flex-direction: column;
   gap: var(--via-space-5_5);
@@ -78,7 +78,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-accent-warm);
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 
 .vds-loc-eyebrow.accent {
@@ -86,7 +86,7 @@
 }
 
 .vds-loc-body header h3 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
@@ -108,7 +108,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-2_5);
-  padding: 16px;
+  padding: var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
@@ -157,7 +157,7 @@
 
 /* Section eyebrow inline */
 .vds-loc-section-eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-family: var(--via-mono);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
@@ -180,7 +180,7 @@
   display: grid;
   grid-template-columns: 26px 1fr;
   gap: 11px;
-  padding: 10px 12px;
+  padding: var(--via-space-2_5) var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: var(--via-surface);
   border: 1px solid var(--via-border-soft);
@@ -209,7 +209,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 
 .vds-loc-access li > div {
@@ -244,7 +244,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 11px 16px;
+  padding: 11px var(--via-space-4);
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
@@ -314,7 +314,7 @@
   justify-content: space-between;
   gap: var(--via-space-3_5);
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: var(--via-space-4_5);
   border-top: 1px solid var(--via-border-soft);
 }
 
@@ -415,7 +415,7 @@
 }
 
 .vds-loc-compact-body {
-  padding: 18px 20px 16px;
+  padding: var(--via-space-4_5) var(--via-space-5) var(--via-space-4);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-1);
@@ -429,7 +429,7 @@
 }
 
 .vds-loc-compact-body h4 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-family: var(--via-display);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
@@ -442,7 +442,7 @@
 }
 
 .vds-loc-compact-body p {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-size: var(--via-fs-label);
   line-height: 1.5;
   color: var(--via-ink-3);
@@ -457,7 +457,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 7px 12px;
+  padding: 7px var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);

@@ -4,7 +4,7 @@
 .via-tv {
   list-style: none;
   margin: 0;
-  padding: 6px 0;
+  padding: var(--via-space-1_5) 0;
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
 }
 
@@ -19,7 +19,7 @@
   align-items: center;
   gap: var(--via-space-2);
   width: 100%;
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -102,7 +102,7 @@
   font-family: var(--via-font-mono, monospace);
   font-size: var(--via-fs-micro);
   color: var(--via-ink-3, #6B7891);
-  padding: 1px 6px;
+  padding: 1px var(--via-space-1_5);
   background: var(--via-navy-04);
   border-radius: var(--via-radius-pill);
   font-variant-numeric: tabular-nums;

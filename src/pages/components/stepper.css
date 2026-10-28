@@ -1,7 +1,7 @@
 .via-stepper {
   display: flex;
   width: 100%;
-  margin-top: 8px;
+  margin-top: var(--via-space-2);
 }
 
 .via-stepper .step {
@@ -55,7 +55,7 @@
   flex: 1;
   height: 2px;
   background: var(--via-navy-10);
-  margin: 0 10px;
+  margin: 0 var(--via-space-2_5);
   min-width: 24px;
   border-radius: var(--via-radius-pill);
 }

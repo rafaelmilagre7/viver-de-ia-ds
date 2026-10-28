@@ -1,6 +1,6 @@
 .via-upload {
   position: relative;
-  padding: 60px 32px;
+  padding: 60px var(--via-space-8);
   background:
     radial-gradient(540px 220px at 50% 0%, var(--via-navy-04), transparent 70%),
     var(--via-glass-card);
@@ -53,7 +53,7 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.022em;
-  margin: 8px 0 0;
+  margin: var(--via-space-2) 0 0;
 }
 
 .via-upload p {
@@ -68,7 +68,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 13px 24px;
+  padding: 13px var(--via-space-6);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: 1px solid var(--via-navy);
@@ -78,7 +78,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.005em;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: var(--via-space-2_5);
   /* sombra em LITERAL: o botão é navy sólido nos DOIS temas, então não pode
      herdar navy-40/60 — esses tokens viram BRANCO no dark e a pílula ganhava
      halo branco sobre o palco escuro. */
@@ -134,7 +134,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding: 16px 18px;
+  padding: var(--via-space-4) var(--via-space-4_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -198,7 +198,7 @@
   height: 4px;
   background: var(--via-navy-06);
   border-radius: var(--via-radius-pill);
-  margin-top: 8px;
+  margin-top: var(--via-space-2);
   overflow: hidden;
 }
 

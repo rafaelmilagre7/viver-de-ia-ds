@@ -25,7 +25,7 @@
   gap: var(--via-space-1_5);
   min-width: 32px;
   height: 32px;
-  padding: 0 10px;
+  padding: 0 var(--via-space-2_5);
   font-family: inherit;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);

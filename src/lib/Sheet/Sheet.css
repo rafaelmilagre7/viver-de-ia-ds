@@ -72,7 +72,7 @@
   height: 4px;
   border-radius: 2px;
   background: var(--via-navy-16);
-  margin: 10px auto 6px;
+  margin: var(--via-space-2_5) auto var(--via-space-1_5);
   flex-shrink: 0;
   cursor: grab;
 }
@@ -89,7 +89,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--via-space-4);
-  padding: 14px 22px 14px;
+  padding: var(--via-space-3_5) var(--via-space-5_5) var(--via-space-3_5);
   border-bottom: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
 }
 
@@ -138,7 +138,7 @@
 
 .via-sheet__body {
   flex: 1;
-  padding: 16px 22px 22px;
+  padding: var(--via-space-4) var(--via-space-5_5) var(--via-space-5_5);
   overflow-y: auto;
   overscroll-behavior: contain;
   color: var(--via-text, var(--via-gray-700));

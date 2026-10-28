@@ -11,7 +11,7 @@
   backdrop-filter: var(--via-glass-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
-  padding: 36px 40px;
+  padding: var(--via-space-9) var(--via-space-10);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding-top: 22px;
+  padding-top: var(--via-space-5_5);
   border-top: 1px solid var(--via-border-soft);
 }
 
@@ -119,12 +119,12 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 
 .vds-testi .outcome {
   margin-left: auto;
-  padding: 12px 18px;
+  padding: var(--via-space-3) var(--via-space-4_5);
   background: linear-gradient(180deg, var(--via-navy-03), transparent);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
@@ -151,7 +151,7 @@
   letter-spacing: -0.028em;
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
   line-height: 1;
 }
 
@@ -160,5 +160,5 @@
   color: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-sm);
-  margin-left: 2px;
+  margin-left: var(--via-space-0_5);
 }

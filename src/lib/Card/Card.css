@@ -8,7 +8,7 @@
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   transition:
     transform .26s var(--via-ease-snap),
     box-shadow .26s ease,

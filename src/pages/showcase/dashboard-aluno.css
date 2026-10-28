@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-6);
-  padding: 14px 40px;
+  padding: var(--via-space-3_5) var(--via-space-10);
   background: var(--via-glass-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
   backdrop-filter: var(--via-glass-blur-bar);
@@ -34,7 +34,7 @@
 .dba-nav nav {
   display: flex;
   gap: 26px;
-  margin-left: 20px;
+  margin-left: var(--via-space-5);
   margin-right: auto;
 }
 
@@ -61,7 +61,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-3);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   border: 1px solid var(--via-border-soft);
@@ -93,7 +93,7 @@
 }
 
 @media (max-width: 860px) {
-  .dba-nav { padding: 12px 20px; }
+  .dba-nav { padding: var(--via-space-3) var(--via-space-5); }
   .dba-nav nav { display: none; }
 }
 
@@ -101,11 +101,11 @@
 .dba-body {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px;
+  padding: var(--via-space-10);
 }
 
 @media (max-width: 860px) {
-  .dba-body { padding: 28px 20px; }
+  .dba-body { padding: var(--via-space-7) var(--via-space-5); }
 }
 
 /* Greeting */
@@ -114,7 +114,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-6);
-  margin-bottom: 32px;
+  margin-bottom: var(--via-space-8);
 }
 
 .dba-eyebrow {
@@ -125,7 +125,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 
 .dba-greeting h1 {
@@ -133,7 +133,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   color: var(--via-text-primary);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   line-height: 1.1;
 }
 
@@ -199,7 +199,7 @@
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
   border: var(--via-glass-ring);
-  padding: 24px;
+  padding: var(--via-space-6);
   box-shadow: var(--via-glass-shadow);
 }
 
@@ -208,7 +208,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-3);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 
 .dba-card-eyebrow {
@@ -319,7 +319,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--via-gray-300);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .dba-continue h2 {
@@ -327,14 +327,14 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-white);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   line-height: 1.12;
 }
 
 .dba-continue p {
   font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   letter-spacing: -0.005em;
 }
 
@@ -343,7 +343,7 @@
   background: rgba(255, 255, 255, 0.14);
   border-radius: var(--via-radius-pill);
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: var(--via-space-5);
 }
 
 /* O card é navy FIXO nos 2 temas → a barra tem que ser branca FIXA.
@@ -363,7 +363,7 @@
   gap: var(--via-space-2);
   align-self: flex-start;
   margin-top: auto;
-  padding: 12px 22px;
+  padding: var(--via-space-3) var(--via-space-5_5);
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
@@ -638,7 +638,7 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.012em;
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 
 .dba-achievement p {
@@ -666,7 +666,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .dba-time strong {
@@ -682,7 +682,7 @@
   font-style: normal;
   font-size: var(--via-fs-label);
   color: var(--via-text-muted);
-  margin: 6px 0 16px;
+  margin: var(--via-space-1_5) 0 var(--via-space-4);
   letter-spacing: -0.004em;
 }
 

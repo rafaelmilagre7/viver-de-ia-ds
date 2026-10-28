@@ -4,4 +4,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://viverdeia.ai/design/sitemap.xml
+Sitemap: https://viver-de-ia-ds.vercel.app/sitemap.xml

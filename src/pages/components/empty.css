@@ -1,6 +1,6 @@
 .vds-empty {
   position: relative;
-  padding: 72px 32px 56px;
+  padding: 72px var(--via-space-8) var(--via-space-14);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.12) 0%, transparent 55%),
@@ -34,7 +34,7 @@
   width: 120px;
   height: 120px;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
   animation: vds-empty-mark-in 800ms var(--via-ease-out);
 }
 
@@ -72,7 +72,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 14px 24px;
+  padding: var(--via-space-3_5) var(--via-space-6);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border: none;
@@ -82,7 +82,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: var(--via-space-2);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 8px 24px var(--via-shadow-ink-20);

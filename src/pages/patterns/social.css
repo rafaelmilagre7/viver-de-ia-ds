@@ -4,7 +4,7 @@
 
 .vds-soc-stage {
   position: relative;
-  padding: 48px 32px;
+  padding: var(--via-space-12) var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.20) 0%, transparent 55%),
@@ -45,7 +45,7 @@
   grid-template-columns: 32px 1fr auto;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 10px 12px;
+  padding: var(--via-space-2_5) var(--via-space-3);
 }
 .ig-av {
   position: relative;
@@ -57,7 +57,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 2px;
+  padding: var(--via-space-0_5);
 }
 .ig-av img { width: 70%; height: 70%; object-fit: contain; }
 .ig-av.sm { width: 28px; height: 28px; padding: 1.5px; }
@@ -81,7 +81,7 @@
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
-  padding: 40px 32px;
+  padding: var(--via-space-10) var(--via-space-8);
   overflow: hidden;
   color: var(--via-white);
 }
@@ -96,7 +96,7 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-  margin: 18px 0 14px;
+  margin: var(--via-space-4_5) 0 var(--via-space-3_5);
 }
 .ig-content h2 {
   font-family: var(--via-font-display);
@@ -115,20 +115,20 @@
   font-weight: var(--via-fw-regular);
   color: rgba(255,255,255,0.62);
   letter-spacing: var(--via-ls-tight);
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
 }
 .ig-content .lede {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   line-height: 1.5;
   color: rgba(255,255,255,0.78);
-  margin: 18px 0 22px;
+  margin: var(--via-space-4_5) 0 var(--via-space-5_5);
   max-width: 240px;
 }
 .ig-content .tag {
   display: inline-flex;
   align-items: center;
-  padding: 7px 14px;
+  padding: 7px var(--via-space-3_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04));
   backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255,255,255,0.22);
@@ -143,7 +143,7 @@
 }
 
 /* Quote variant */
-.ig-content.quote-variant { padding-top: 16px; }
+.ig-content.quote-variant { padding-top: var(--via-space-4); }
 .ig-content .quote-mark {
   position: absolute;
   top: -32px;
@@ -162,7 +162,7 @@
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--via-white);
-  margin: 0 0 32px;
+  margin: 0 0 var(--via-space-8);
 }
 .ig-content .quote em {
   display: block;
@@ -175,7 +175,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3);
-  padding-top: 16px;
+  padding-top: var(--via-space-4);
   border-top: 1px solid rgba(255,255,255,0.16);
 }
 .ig-attr-av {
@@ -206,18 +206,18 @@
 }
 
 /* Post footer (acts + caption) */
-.ig-f { padding: 8px 12px 14px; }
-.ig-acts { display: flex; gap: var(--via-space-3); padding: 4px 0; }
+.ig-f { padding: var(--via-space-2) var(--via-space-3) var(--via-space-3_5); }
+.ig-acts { display: flex; gap: var(--via-space-3); padding: var(--via-space-1) 0; }
 .ig-acts button {
   background: transparent;
   border: none;
   color: rgba(0,0,0,0.90);
   cursor: pointer;
-  padding: 4px;
+  padding: var(--via-space-1);
 }
 .ig-acts .bk { margin-left: auto; }
 .ig-caption {
-  margin: 6px 0 0;
+  margin: var(--via-space-1_5) 0 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   line-height: 1.4;
@@ -285,7 +285,7 @@
 .story-content {
   flex: 1;
   position: relative;
-  padding: 80px 28px 28px;
+  padding: var(--via-space-20) var(--via-space-7) var(--via-space-7);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -299,7 +299,7 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
 }
 .story-content h2 {
   font-family: var(--via-font-display);
@@ -320,12 +320,12 @@
   font-size: var(--via-fs-caption);
   line-height: 1.5;
   color: rgba(255,255,255,0.78);
-  margin: 16px 0 24px;
+  margin: var(--via-space-4) 0 var(--via-space-6);
 }
 .story-cta {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   align-self: flex-start;
-  padding: 12px 22px;
+  padding: var(--via-space-3) var(--via-space-5_5);
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: none;
@@ -351,7 +351,7 @@
 }
 .story-f input {
   flex: 1;
-  padding: 10px 16px;
+  padding: var(--via-space-2_5) var(--via-space-4);
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.30);
   backdrop-filter: blur(16px);
@@ -390,7 +390,7 @@
   grid-template-columns: 48px 1fr auto;
   align-items: flex-start;
   gap: var(--via-space-3);
-  padding: 14px 16px 8px;
+  padding: var(--via-space-3_5) var(--via-space-4) var(--via-space-2);
 }
 .li-av {
   width: 48px;
@@ -416,14 +416,14 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: rgba(0,0,0,0.60);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 .li-time {
   font-size: 11px !important;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 .li-follow {
-  padding: 6px 14px;
+  padding: var(--via-space-1_5) var(--via-space-3_5);
   background: transparent;
   border: 1.5px solid var(--via-blue);
   color: var(--via-blue);
@@ -434,7 +434,7 @@
   cursor: pointer;
 }
 .li-text {
-  padding: 4px 16px 12px;
+  padding: var(--via-space-1) var(--via-space-4) var(--via-space-3);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   line-height: 1.5;
@@ -448,7 +448,7 @@
   aspect-ratio: 3 / 1;
   display: flex;
   align-items: center;
-  padding: 28px 40px;
+  padding: var(--via-space-7) var(--via-space-10);
   overflow: hidden;
   color: var(--via-white);
 }
@@ -460,7 +460,7 @@
   letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-  margin: 14px 0 8px;
+  margin: var(--via-space-3_5) 0 var(--via-space-2);
 }
 .li-content h2 {
   font-family: var(--via-font-display);
@@ -478,7 +478,7 @@
   font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
   letter-spacing: 0.05em;
-  margin-left: 2px;
+  margin-left: var(--via-space-0_5);
   vertical-align: 1px;
 }
 .li-content .lede {
@@ -486,16 +486,16 @@
   font-size: var(--via-fs-caption);
   line-height: 1.45;
   color: rgba(255,255,255,0.78);
-  margin: 10px 0 0;
+  margin: var(--via-space-2_5) 0 0;
   max-width: 280px;
 }
 
 .li-f {
-  padding: 6px 12px 8px;
+  padding: var(--via-space-1_5) var(--via-space-3) var(--via-space-2);
   border-top: 0.5px solid rgba(0,0,0,0.10);
 }
 .li-stats {
-  padding: 6px 4px 6px;
+  padding: var(--via-space-1_5) var(--via-space-1) var(--via-space-1_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: rgba(0,0,0,0.60);
@@ -504,13 +504,13 @@
 .li-acts {
   display: flex;
   justify-content: space-around;
-  padding: 4px 0;
+  padding: var(--via-space-1) 0;
 }
 .li-acts button {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   background: transparent;
   border: none;
   color: rgba(0,0,0,0.60);

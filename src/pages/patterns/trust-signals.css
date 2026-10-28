@@ -8,7 +8,7 @@
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
-  padding: 32px 36px 28px;
+  padding: var(--via-space-8) var(--via-space-9) var(--via-space-7);
   isolation: isolate;
   overflow: hidden;
   box-shadow:
@@ -35,7 +35,7 @@
   justify-content: space-between;
   gap: var(--via-space-5_5);
   margin-bottom: 26px;
-  padding-bottom: 20px;
+  padding-bottom: var(--via-space-5);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -47,7 +47,7 @@
   text-transform: uppercase;
   color: var(--via-accent-warm);
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 
 .vds-trust-strip h3 {
@@ -92,7 +92,7 @@
 .vds-trust-clients {
   list-style: none;
   padding: 0;
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px 32px;
@@ -115,7 +115,7 @@
   grid-template-columns: 32px 1fr;
   gap: var(--via-space-3_5);
   align-items: center;
-  padding: 10px 12px;
+  padding: var(--via-space-2_5) var(--via-space-3);
   border: 1px solid transparent;
   border-radius: var(--via-radius-sm);
   position: relative;
@@ -168,7 +168,7 @@
 }
 
 .vds-trust-strip footer {
-  padding-top: 18px;
+  padding-top: var(--via-space-4_5);
   border-top: 1px solid var(--via-border-soft);
 }
 
@@ -182,7 +182,7 @@
   color: var(--via-text-primary);
   text-decoration: none;
   letter-spacing: -0.008em;
-  padding: 4px 8px;
+  padding: var(--via-space-1) var(--via-space-2);
   border-radius: var(--via-radius-xs);
   transition: gap var(--via-dur) var(--via-ease-snap), box-shadow var(--via-dur) var(--via-ease-snap);
 }
@@ -221,7 +221,7 @@
 
 .vds-trust-stat {
   position: relative;
-  padding: 26px 24px 22px;
+  padding: 26px var(--via-space-6) var(--via-space-5_5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -268,7 +268,7 @@
 }
 
 .vds-trust-stat-v {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-display);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
@@ -279,7 +279,7 @@
 }
 
 .vds-trust-stat-l {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
@@ -291,7 +291,7 @@
   font-size: var(--via-fs-label);
   color: var(--via-ink-3);
   line-height: 1.45;
-  padding-top: 10px;
+  padding-top: var(--via-space-2_5);
   border-top: 1px solid var(--via-border-soft);
 }
 
@@ -315,7 +315,7 @@
 .vds-trust-reviews-rating {
   position: sticky;
   top: 100px;
-  padding: 26px 24px 22px;
+  padding: 26px var(--via-space-6) var(--via-space-5_5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   border: 1px solid var(--via-border-soft);
@@ -331,7 +331,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--via-space-1);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 
 .vds-trust-rating-num .num {
@@ -354,7 +354,7 @@
 .vds-trust-rating-stars {
   display: flex;
   gap: var(--via-space-1);
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 
 /* Estrelas preenchidas em ink adaptativo · navy fixo sumia no dark.
@@ -366,7 +366,7 @@
 }
 
 .vds-trust-rating-meta {
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
 }
@@ -380,7 +380,7 @@
   display: block;
   height: 1px;
   background: var(--via-border-soft);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .vds-trust-rating-breakdown {
@@ -439,7 +439,7 @@
 
 .vds-trust-review {
   position: relative;
-  padding: 24px 26px 20px;
+  padding: var(--via-space-6) 26px var(--via-space-5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -472,17 +472,17 @@
 .vds-trust-review-mark {
   color: var(--via-accent-warm);
   opacity: 0.6;
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 
 .vds-trust-review-stars {
   display: flex;
   gap: var(--via-space-0_5);
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
 }
 
 .vds-trust-review h4 {
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-style: normal;
@@ -493,7 +493,7 @@
 }
 
 .vds-trust-review p {
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
   font-size: var(--via-fs-caption);
   line-height: 1.55;
   color: var(--via-ink-2);
@@ -504,7 +504,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-3);
-  padding-top: 14px;
+  padding-top: var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
 }
 
@@ -558,7 +558,7 @@
 
 .vds-trust-award {
   position: relative;
-  padding: 24px 22px 20px;
+  padding: var(--via-space-6) var(--via-space-5_5) var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -607,12 +607,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
   box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
 }
 
 .vds-trust-award h4 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-family: var(--via-display);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
@@ -622,7 +622,7 @@
 }
 
 .vds-trust-award p {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
   line-height: 1.45;
@@ -630,7 +630,7 @@
 
 .vds-trust-award-year {
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: var(--via-space-2_5);
   border-top: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-micro);
   color: var(--via-ink-3);

@@ -28,8 +28,8 @@
 /* Stepper editorial */
 .vds-ob .ob-stepper {
   display: flex;
-  margin-bottom: 36px;
-  padding-bottom: 24px;
+  margin-bottom: var(--via-space-9);
+  padding-bottom: var(--via-space-6);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -77,7 +77,7 @@
   flex: 1;
   height: 2px;
   background: var(--via-navy-10);
-  margin: 0 16px;
+  margin: 0 var(--via-space-4);
   min-width: 24px;
   border-radius: var(--via-radius-pill);
   position: relative;
@@ -126,7 +126,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.028em;
   color: var(--via-text-primary);
-  margin: 6px 0 14px;
+  margin: var(--via-space-1_5) 0 var(--via-space-3_5);
   line-height: 1.06;
 }
 
@@ -140,7 +140,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   color: var(--via-text-soft);
-  margin: 0 0 32px;
+  margin: 0 0 var(--via-space-8);
   line-height: 1.55;
   max-width: 520px;
 }
@@ -150,14 +150,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
-  margin-bottom: 32px;
+  margin-bottom: var(--via-space-8);
 }
 
 .vds-ob .ob-opt {
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-3_5);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -253,7 +253,7 @@
 }
 
 .vds-ob .btn {
-  padding: 14px 24px;
+  padding: var(--via-space-3_5) var(--via-space-6);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
@@ -325,7 +325,7 @@
 .vds-ob .btn.ghost:active { transform: translateY(0); }
 
 .vds-ob .ob-skip {
-  margin: 24px 0 0;
+  margin: var(--via-space-6) 0 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
@@ -382,7 +382,7 @@
 .vds-wiz-aside {
   position: relative;
   color: var(--via-white);
-  padding: 30px 28px 28px;
+  padding: 30px var(--via-space-7) var(--via-space-7);
   display: flex;
   flex-direction: column;
   isolation: isolate;
@@ -406,7 +406,7 @@
 }
 
 .vds-wiz-aside header {
-  margin-bottom: 36px;
+  margin-bottom: var(--via-space-9);
 }
 
 .vds-wiz-aside-body {
@@ -425,7 +425,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-gray-300);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
   align-self: flex-start;
 }
 
@@ -443,7 +443,7 @@
 }
 
 .vds-wiz-aside h3 {
-  margin: 0 0 12px;
+  margin: 0 0 var(--via-space-3);
   font-family: var(--via-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
@@ -461,7 +461,7 @@
 }
 
 .vds-wiz-aside-body > p {
-  margin: 0 0 28px;
+  margin: 0 0 var(--via-space-7);
   font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
@@ -482,7 +482,7 @@
   grid-template-columns: 26px 1fr;
   gap: var(--via-space-3_5);
   align-items: center;
-  padding: 12px 10px;
+  padding: var(--via-space-3) var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   transition: background .22s ease;
   position: relative;
@@ -572,12 +572,12 @@
 /* Aside foot — progress */
 .vds-wiz-aside-foot {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 18px;
-  margin-top: 22px;
+  padding-top: var(--via-space-4_5);
+  margin-top: var(--via-space-5_5);
 }
 
 .vds-wiz-aside-foot p {
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
   font-size: var(--via-fs-label);
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.5;
@@ -608,14 +608,14 @@
 .vds-wiz-main {
   display: flex;
   flex-direction: column;
-  padding: 36px 38px 30px;
+  padding: var(--via-space-9) 38px 30px;
   background:
     radial-gradient(560px 320px at 100% 0%, var(--via-navy-04), transparent 60%),
     radial-gradient(420px 280px at 0% 100%, var(--via-navy-04), transparent 60%);
 }
 
 .vds-wiz-main header {
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 
 .vds-wiz-step-tag {
@@ -626,11 +626,11 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--via-accent-warm);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 
 .vds-wiz-main h2 {
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
   font-family: var(--via-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
@@ -661,7 +661,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-2_5);
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 
 @media (max-width: 720px) {
@@ -676,7 +676,7 @@
   grid-template-columns: 22px 40px 1fr;
   gap: var(--via-space-3);
   align-items: center;
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -794,7 +794,7 @@
 /* Footer */
 .vds-wiz-main footer {
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: var(--via-space-4_5);
   border-top: 1px solid var(--via-border-soft);
   display: flex;
   align-items: center;
@@ -813,7 +813,7 @@
   font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
-  margin-right: 4px;
+  margin-right: var(--via-space-1);
 }
 
 .vds-wiz-actions {
@@ -826,7 +826,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 10px 18px;
+  padding: var(--via-space-2_5) var(--via-space-4_5);
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
@@ -885,7 +885,7 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);
-  padding-right: 22px;
+  padding-right: var(--via-space-5_5);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 8px 18px -8px var(--via-shadow-ink-40);
@@ -906,7 +906,7 @@
 }
 
 .vds-wiz-skip {
-  margin: 14px 0 0;
+  margin: var(--via-space-3_5) 0 0;
   font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
   text-align: center;

@@ -6,7 +6,7 @@
   --toast-lift:    var(--via-navy-10);
   --toast-lift-hi: var(--via-navy-22);
 
-  padding: 32px;
+  padding: var(--via-space-8);
   border-radius: var(--via-radius-lg);
   background:
     radial-gradient(ellipse 70% 60% at 20% 0%, var(--via-navy-10) 0%, transparent 60%),
@@ -29,7 +29,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-3_5);
-  padding: 16px 20px;
+  padding: var(--via-space-4) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   backdrop-filter: blur(28px) saturate(200%);
@@ -77,7 +77,7 @@
 .via-toast.success .ico { background: var(--via-navy-08); color: var(--via-text-primary); border: 1px solid var(--via-navy-12); }
 .via-toast.warning .ico { background: var(--via-navy-06); color: var(--via-text-primary); border: 1px solid var(--via-navy-14); }
 .via-toast.danger .ico { background: rgba(184, 92, 92, 0.12); color: var(--via-coral-dark); border: 1px solid rgba(184, 92, 92, 0.26); }
-.via-toast .body { flex: 1; min-width: 0; position: relative; z-index: 1; padding-top: 2px; }
+.via-toast .body { flex: 1; min-width: 0; position: relative; z-index: 1; padding-top: var(--via-space-0_5); }
 .via-toast .title {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
@@ -101,7 +101,7 @@
   letter-spacing: -0.004em;
   align-self: center;
   cursor: pointer;
-  padding: 7px 14px;
+  padding: 7px var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -143,7 +143,7 @@
   color: var(--via-text-muted);
   cursor: pointer;
   align-self: flex-start;
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
   background: transparent;
   border: 1px solid transparent;
   transition:

@@ -219,7 +219,7 @@
   font-size: 2.15cqi;
   color: var(--via-text-muted);
   font-weight: var(--via-fw-regular);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
   letter-spacing: -0.005em;
 }
 
@@ -659,7 +659,7 @@
 .vds-anatomy-row {
   display: flex;
   gap: var(--via-space-3_5);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -694,7 +694,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   letter-spacing: -0.008em;
 }
 

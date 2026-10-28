@@ -20,7 +20,7 @@
   backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
-  margin-bottom: 8px;
+  margin-bottom: var(--via-space-2);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 0 0 0.5px var(--via-navy-06),
@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-4);
-  padding: 16px 4px;
+  padding: var(--via-space-4) var(--via-space-1);
   background: none;
   border: none;
   cursor: pointer;
@@ -70,7 +70,7 @@
 }
 
 .via-accordion--separated .via-accordion__trigger {
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   /* um degrau abaixo do card (md) — canto do press não vaza */
   border-radius: calc(var(--via-radius-md) - 1px);
 }
@@ -118,14 +118,14 @@
 }
 
 .via-accordion__content {
-  padding: 0 4px 18px;
+  padding: 0 var(--via-space-1) var(--via-space-4_5);
   font-size: var(--via-fs-caption);
   line-height: 1.6;
   color: var(--via-text, var(--via-gray-700));
 }
 
 .via-accordion--separated .via-accordion__content {
-  padding: 0 16px 16px;
+  padding: 0 var(--via-space-4) var(--via-space-4);
 }
 
 .via-accordion__content > p:first-child { margin-top: 0; }

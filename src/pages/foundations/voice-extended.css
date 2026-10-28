@@ -9,7 +9,7 @@
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-md);
   box-shadow: var(--via-glass-shadow);
-  padding: 24px 28px;
+  padding: var(--via-space-6) var(--via-space-7);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-4_5);
@@ -52,7 +52,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 .vds-ve-rhythm {
   font-family: var(--via-font-display);
@@ -72,7 +72,7 @@
 @media (max-width: 760px) { .vds-ve-samples { grid-template-columns: 1fr; } }
 
 .vds-ve-sample {
-  padding: 16px 18px;
+  padding: var(--via-space-4) var(--via-space-4_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-gray-50);
   border: 0.5px solid var(--via-navy-08);
@@ -111,7 +111,7 @@
 
 /* ---------- Rules ---------- */
 .vds-ve-rules {
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-sm);
@@ -124,7 +124,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 .vds-ve-rules ul {
   list-style: none;
@@ -139,7 +139,7 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
-  padding-left: 16px;
+  padding-left: var(--via-space-4);
   position: relative;
 }
 .vds-ve-rules li::before {
@@ -154,7 +154,7 @@
 
 /* ---------- Spine (5 invariants) ---------- */
 .vds-ve-spine {
-  padding: 36px 40px;
+  padding: var(--via-space-9) var(--via-space-10);
   background:
     radial-gradient(ellipse 70% 50% at 0% 0%, var(--via-navy-04) 0%, transparent 55%),
     /* --via-white é FIXO (#FFF nos 2 temas): no dark o gradient varria

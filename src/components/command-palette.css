@@ -12,7 +12,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 120px 20px 40px;
+  padding: 120px var(--via-space-5) var(--via-space-10);
   animation: vds-cmdk-scrim-in 200ms var(--via-ease-out);
 }
 @keyframes vds-cmdk-scrim-in {
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3);
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   border-bottom: 0.5px solid var(--via-navy-08);
   color: var(--via-text-muted);
 }
@@ -80,7 +80,7 @@
 .vds-cmdk-inner ul {
   list-style: none;
   margin: 0;
-  padding: 8px;
+  padding: var(--via-space-2);
   overflow-y: auto;
   flex: 1;
 }
@@ -91,7 +91,7 @@
   transition: background 150ms;
 }
 .vds-cmdk-inner li:not(.vds-cmdk__heading):not(.empty) {
-  padding: 10px 14px;
+  padding: var(--via-space-2_5) var(--via-space-3_5);
 }
 .vds-cmdk-inner li.active {
   background: linear-gradient(90deg, var(--via-navy-08), var(--via-navy-04));
@@ -100,7 +100,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
-  padding: 32px;
+  padding: var(--via-space-8);
   text-align: center;
 }
 .vds-cmdk-inner li.vds-cmdk__heading {
@@ -110,7 +110,7 @@
   letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-muted);
-  padding: 16px 14px 6px;
+  padding: var(--via-space-4) var(--via-space-3_5) var(--via-space-1_5);
   cursor: default;
   display: flex;
   align-items: center;
@@ -136,7 +136,7 @@
   text-transform: uppercase;
   color: var(--via-text-muted);
   background: var(--via-gray-100);
-  padding: 4px 8px;
+  padding: var(--via-space-1) var(--via-space-2);
   border-radius: var(--via-radius-xs);
   min-width: 100px;
   text-align: center;
@@ -168,7 +168,7 @@
   display: flex;
   gap: var(--via-space-4);
   align-items: center;
-  padding: 12px 22px;
+  padding: var(--via-space-3) var(--via-space-5_5);
   border-top: 0.5px solid var(--via-navy-08);
   background: var(--via-gray-50);
 }
@@ -188,7 +188,7 @@
   background: var(--via-surface);
   border: 0.5px solid var(--via-navy-12);
   border-radius: 4px;
-  padding: 2px 6px;
+  padding: var(--via-space-0_5) var(--via-space-1_5);
   color: var(--via-text-primary);
 }
 .vds-cmdk-inner footer .count {

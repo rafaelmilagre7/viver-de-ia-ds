@@ -12,7 +12,7 @@
 
 .vds-fpa-dre {
   position: relative;
-  padding: 32px 34px 26px;
+  padding: var(--via-space-8) 34px 26px;
   border-radius: var(--via-radius-xl);
   border: 1px solid var(--via-border-soft);
   /* atmosfera navy direto no background (não em ::before) pra o vidro
@@ -55,7 +55,7 @@
 
 .vds-fpa-dre-eyebrow {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
@@ -65,7 +65,7 @@
 }
 
 .vds-fpa-dre-title {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
@@ -131,7 +131,7 @@
 
 /* .via-tile traz a receita de vidro · aqui só o ajuste de densidade */
 .vds-fpa-dre-card {
-  padding: 18px 20px 16px;
+  padding: var(--via-space-4_5) var(--via-space-5) var(--via-space-4);
   border-radius: var(--via-radius-lg);
 }
 
@@ -148,7 +148,7 @@
   display: flex;
   align-items: baseline;
   gap: 5px;
-  margin: 8px 0 12px;
+  margin: var(--via-space-2) 0 var(--via-space-3);
   line-height: 1;
 }
 .vds-fpa-dre-card-val .cur {
@@ -240,7 +240,7 @@
   position: sticky;
   top: 0;
   z-index: 2;
-  padding: 13px 16px 11px;
+  padding: 13px var(--via-space-4) 11px;
   background: var(--via-surface);
   text-align: right;
   white-space: nowrap;
@@ -257,7 +257,7 @@
 /* ---- corpo ---- */
 .vds-fpa-dre-table tbody th,
 .vds-fpa-dre-table tbody td {
-  padding: 10px 16px;
+  padding: var(--via-space-2_5) var(--via-space-4);
   background: var(--via-surface);
   border-bottom: 1px solid var(--via-border-hairline);
   vertical-align: baseline;
@@ -288,8 +288,8 @@
   /* resultado pesa mais que total de bloco por TAMANHO + peso, nunca por cor */
   font-size: var(--via-fs-sm);
   border-top: 1px solid var(--via-navy-18);
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: var(--via-space-3);
+  padding-bottom: var(--via-space-3);
 }
 .vds-fpa-dre-row.is-result .vds-fpa-dre-acct-note { font-size: var(--via-fs-micro); }
 /* evita linha dupla: quem vem antes de um resultado abre mão da borda inferior */
@@ -346,7 +346,7 @@
   align-items: center;
   gap: var(--via-space-2);
   margin: -3px 0 0 -8px;
-  padding: 3px 8px;
+  padding: 3px var(--via-space-2);
   border: 1px solid transparent;
   border-radius: var(--via-radius-xs);
   background: transparent;
@@ -473,8 +473,8 @@
 }
 
 .vds-fpa-dre-note {
-  margin: 0 0 10px;
-  padding: 14px 18px;
+  margin: 0 0 var(--via-space-2_5);
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
@@ -522,7 +522,7 @@
    RESPONSIVO
    ============================================ */
 @media (max-width: 900px) {
-  .vds-fpa-dre { padding: 24px 20px 22px; }
+  .vds-fpa-dre { padding: var(--via-space-6) var(--via-space-5) var(--via-space-5_5); }
   .vds-fpa-dre-head {
     flex-direction: column;
     align-items: flex-start;

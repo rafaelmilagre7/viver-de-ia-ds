@@ -15,7 +15,7 @@
   backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   transition: all 220ms var(--via-ease-out);
   overflow: hidden;
   isolation: isolate;
@@ -60,7 +60,7 @@
   text-align: center;
   line-height: 1;
   font-feature-settings: 'tnum' 1;
-  padding: 8px 0;
+  padding: var(--via-space-2) 0;
   border-radius: var(--via-radius-sm);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
@@ -123,7 +123,7 @@
   align-items: center;
   gap: var(--via-space-0_5);
   height: 22px;
-  padding: 0 6px;
+  padding: 0 var(--via-space-1_5);
   border-radius: var(--via-radius-pill);
   /* navy-06 adapta: tinta navy no claro, tinta branca no escuro
      (o rgba fixo virava mancha invisível no dark) */

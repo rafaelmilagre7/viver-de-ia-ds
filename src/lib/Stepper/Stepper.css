@@ -37,7 +37,7 @@
 .via-stepper--vertical .via-stepper__item {
   flex-direction: row;
   gap: var(--via-space-3_5);
-  padding-bottom: 22px;
+  padding-bottom: var(--via-space-5_5);
 }
 
 .via-stepper__node {

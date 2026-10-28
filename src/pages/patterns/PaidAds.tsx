@@ -6,6 +6,7 @@ import {
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
+import monogramNavy from '../../assets/logos/VIA_monogram_hq.png';
 import appIcon from '../../assets/logos/VIA_app_icon.png';
 import './paid-ads.css';
 
@@ -77,14 +78,14 @@ function MetaSingleSection() {
             <p>220 operadores formados · próxima turma fecha em 9 dias.</p>
           </div>
 
-          <div className="vds-pa-meta-canvas via-mesh-navy via-noise">
+          <div className="vds-pa-meta-canvas vds-pa-light">
             <span className="vds-pa-aura" aria-hidden="true" />
             <span className="vds-pa-meta-eyebrow">turma 2026.3 · 30 vagas · 4 meses</span>
             <h2>
               90 dias. <em>1 agente em produção</em>.
             </h2>
             <p>ou seu dinheiro de volta</p>
-            <img src={monogramWhite} alt="" className="vds-pa-meta-mono" />
+            <img src={monogramNavy} alt="" className="vds-pa-meta-mono" />
           </div>
 
           <footer className="vds-pa-meta-footer">
@@ -135,14 +136,14 @@ function MetaCarouselSection() {
       <div className="vds-pa-stage">
         <div className="vds-pa-carousel-row">
           {cards.map((c) => (
-            <article key={c.n} className={`vds-pa-carousel-card ${c.type}`}>
+            <article key={c.n} className={`vds-pa-carousel-card ${c.type}${c.type === 'cta' ? '' : ' vds-pa-light'}`}>
               <span className="vds-pa-aura" aria-hidden="true" />
               <span className="vds-pa-carousel-num">{c.n}/5</span>
               <div>
                 <h3>{c.h}</h3>
                 <p>{c.sub}</p>
               </div>
-              {(c.n === 1 || c.n === 5) && <img src={monogramWhite} alt="" />}
+              {(c.n === 1 || c.n === 5) && <img src={c.type === 'cta' ? monogramWhite : monogramNavy} alt="" />}
             </article>
           ))}
         </div>
@@ -169,7 +170,7 @@ function MetaStorySection() {
       meta="9:16 vertical · safe area top + bottom · CTA sticker"
     >
       <div className="vds-pa-stage vds-pa-stage-row">
-        <article className="vds-pa-story">
+        <article className="vds-pa-story vds-pa-light">
           <div className="vds-pa-story-progress">
             <span style={{ width: '45%' }} />
           </div>
@@ -178,7 +179,7 @@ function MetaStorySection() {
             <strong>viverdeia.ai</strong>
             <em>Patrocinado</em>
           </header>
-          <div className="vds-pa-story-canvas via-mesh-navy via-noise">
+          <div className="vds-pa-story-canvas">
             <span className="vds-pa-aura" aria-hidden="true" />
             <span className="vds-pa-story-eyebrow">turma 2026.3</span>
             <h2>
@@ -190,7 +191,7 @@ function MetaStorySection() {
               <span>Saiba mais</span>
               <ArrowRight size={13} strokeWidth={2.4} />
             </a>
-            <img src={monogramWhite} alt="" className="vds-pa-story-mono" />
+            <img src={monogramNavy} alt="" className="vds-pa-story-mono" />
           </div>
         </article>
 
@@ -218,7 +219,7 @@ function MetaReelSection() {
     >
       <div className="vds-pa-stage">
         <article className="vds-pa-reel">
-          <div className="vds-pa-reel-canvas via-mesh-navy via-noise">
+          <div className="vds-pa-reel-canvas vds-pa-light">
             <span className="vds-pa-aura" aria-hidden="true" />
             <span className="vds-pa-reel-eyebrow">3 cicatrizes</span>
             <h2>
@@ -226,8 +227,8 @@ function MetaReelSection() {
               <em>cometi 3 erros</em>.
             </h2>
             <p>todos custaram caro · vídeo de 90s</p>
-            <img src={monogramWhite} alt="" className="vds-pa-reel-mono" />
-            <span className="vds-pa-reel-play"><Play size={22} strokeWidth={0} style={{ fill: 'var(--via-navy)' }} /></span>
+            <img src={monogramNavy} alt="" className="vds-pa-reel-mono" />
+            <span className="vds-pa-reel-play"><Play size={22} strokeWidth={0} style={{ fill: 'currentColor' }} /></span>
           </div>
           <aside>
             <strong>viverdeia.ai</strong>
@@ -275,14 +276,14 @@ function LinkedInSingleSection() {
             </p>
           </div>
 
-          <div className="vds-pa-li-canvas via-mesh-navy via-noise">
+          <div className="vds-pa-li-canvas vds-pa-light">
             <span className="vds-pa-aura" aria-hidden="true" />
             <span className="vds-pa-li-eyebrow">programa técnico-operativo</span>
             <h2>
               90 dias até <em>1 agente em produção</em>.
             </h2>
             <p>4 meses · mentoria 1:1 · comunidade de 220 operadores</p>
-            <img src={monogramWhite} alt="" className="vds-pa-li-mono" />
+            <img src={monogramNavy} alt="" className="vds-pa-li-mono" />
           </div>
 
           <footer className="vds-pa-li-footer">
@@ -333,11 +334,11 @@ function LinkedInCarouselSection() {
       <div className="vds-pa-stage">
         <div className="vds-pa-li-carousel">
           {cards.map((c) => (
-            <article key={c.n} className={`vds-pa-li-card via-mesh-navy via-noise ${c.type}`}>
+            <article key={c.n} className={`vds-pa-li-card vds-pa-light ${c.type}`}>
               <span className="vds-pa-aura" aria-hidden="true" />
               <span className="vds-pa-li-card-num">{c.n} / {cards.length}</span>
               <h3>{c.h}</h3>
-              {c.n === 1 && <img src={monogramWhite} alt="" className="vds-pa-li-card-mono" />}
+              {c.n === 1 && <img src={monogramNavy} alt="" className="vds-pa-li-card-mono" />}
               {c.n === cards.length && (
                 <span className="vds-pa-li-card-next">arraste pra ver mais →</span>
               )}
@@ -450,7 +451,7 @@ function GoogleDisplaySection() {
                 <span className="vds-pa-gdn-size">{s.size}</span>
                 <em>{s.use}</em>
               </header>
-              <div className={`vds-pa-gdn-banner ${s.class} via-mesh-navy via-noise`}>
+              <div className={`vds-pa-gdn-banner ${s.class} vds-pa-light`}>
                 <span className="vds-pa-aura" aria-hidden="true" />
                 <div className="vds-pa-gdn-text">
                   <h3>
@@ -460,7 +461,7 @@ function GoogleDisplaySection() {
                   <p>turma 2026.3 · 30 vagas</p>
                 </div>
                 <a href="#" className="vds-pa-gdn-cta">Ver programa</a>
-                <img src={monogramWhite} alt="" />
+                <img src={monogramNavy} alt="" />
               </div>
             </article>
           ))}
@@ -491,7 +492,7 @@ function YouTubePreRollSection() {
       <div className="vds-pa-stage">
         <article className="vds-pa-yt">
           <div className="vds-pa-yt-player">
-            <div className="vds-pa-yt-canvas via-mesh-navy via-noise">
+            <div className="vds-pa-yt-canvas vds-pa-light">
               <span className="vds-pa-aura" aria-hidden="true" />
               <div className="vds-pa-yt-text">
                 <span className="vds-pa-yt-eyebrow">90s de transparência</span>
@@ -499,7 +500,7 @@ function YouTubePreRollSection() {
                   Construindo a Nina, <em>cometi 3 erros</em> que custaram caro.
                 </h2>
               </div>
-              <img src={monogramWhite} alt="" className="vds-pa-yt-mono" />
+              <img src={monogramNavy} alt="" className="vds-pa-yt-mono" />
             </div>
 
             {/* Player overlay */}
@@ -688,11 +689,11 @@ function ABVariantSection() {
                 <em>{v.what}</em>
               </header>
 
-              <div className="vds-pa-ab-mock via-mesh-navy via-noise">
+              <div className="vds-pa-ab-mock vds-pa-light">
                 <span className="vds-pa-aura" aria-hidden="true" />
                 <h3>{v.h}</h3>
                 <p>{v.sub}</p>
-                <img src={monogramWhite} alt="" />
+                <img src={monogramNavy} alt="" />
               </div>
 
               <footer>

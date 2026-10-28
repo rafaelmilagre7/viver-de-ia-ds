@@ -1,6 +1,6 @@
 .via-slider-card {
   position: relative;
-  padding: 32px;
+  padding: var(--via-space-8);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -25,7 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 
 .via-slider-card .lbl {
@@ -157,7 +157,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
-  margin-top: 12px;
+  margin-top: var(--via-space-3);
   letter-spacing: 0.04em;
   font-feature-settings: 'tnum' 1;
 }

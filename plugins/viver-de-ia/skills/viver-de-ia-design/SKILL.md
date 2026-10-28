@@ -18,6 +18,7 @@ Starter: `create-viverdeia-app` (scaffold Vite + React 19 + TS com ThemeProvider
 - **NUNCA entregue peça de fundo escuro por padrão.** Escuro só se o usuário pedir ("versão dark") ou no respiro canônico: **1 seção full-bleed navy por página** (hero imersivo, CTA de fechamento, footer) — o resto claro.
 - Dark mode é **modo alternativo do usuário** (ele aperta o botão), não a estética de partida. Em dúvida: claro.
 - `<ThemeProvider>` já nasce **claro** por padrão. Só passe `defaultMode="system"` se o usuário quiser seguir o SO.
+- O `colors_and_type.css` cru (HTML sem React) também nasce **claro**, mesmo com o SO em escuro: escuro só com `data-theme="dark"` no `<html>`.
 - Liquid glass **funciona lindamente sobre claro** — é a assinatura da casa. Não escureça a peça "pra o glass aparecer" (ver receita de glass card claro na seção 5).
 
 **Estado atual:** 100% WCAG AA de contraste nos 2 temas · 0 violação séria de a11y. Em código, use SEMPRE tokens semânticos que adaptam claro↔escuro (`var(--via-text-primary|body|muted|soft)`, `var(--via-surface)`, `var(--via-border-soft)`) — nunca hardcode navy/branco em texto/superfície. Link em texto corrido = sublinhado. De-ênfase por cor (token mais suave), não opacity. E-mail trava tudo em claro.
@@ -385,7 +386,8 @@ CSS-first · tokens `--via-*` respondem a `[data-theme]` no `<html>`.
 
 **Camada 2 · anti-FOUC inline (no `<head>` antes do bundle):**
 ```html
-<script>(function(){var s=localStorage.getItem('via-theme');var sys=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=s&&s!=='system'?s:sys;})();</script>
+<script>(function(){var s=localStorage.getItem('via-theme');document.documentElement.dataset.theme=s==='light'||s==='dark'?s:s==='system'&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';})();</script>
+<!-- sem preferência salva: CLARO (padrão da marca) · o tokens.css cru também abre claro, mesmo com o SO em escuro -->
 ```
 ```ts
 import { applyTheme } from '@viverdeia/design-system';

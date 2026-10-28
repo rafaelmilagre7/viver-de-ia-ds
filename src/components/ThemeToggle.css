@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 6px 12px 6px 10px;
+  padding: var(--via-space-1_5) var(--via-space-3) var(--via-space-1_5) var(--via-space-2_5);
   border-radius: 999px;
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);

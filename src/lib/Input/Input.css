@@ -119,14 +119,14 @@
 }
 
 .via-input--md {
-  padding: 10px 14px;
+  padding: var(--via-space-2_5) var(--via-space-3_5);
 }
 .via-input--md input {
   font-size: var(--via-fs-sm);
 }
 
 .via-input--lg {
-  padding: 13px 16px;
+  padding: 13px var(--via-space-4);
 }
 .via-input--lg input {
   font-size: var(--via-fs-body);

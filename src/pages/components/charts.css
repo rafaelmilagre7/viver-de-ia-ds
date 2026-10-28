@@ -44,7 +44,7 @@
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
   box-shadow: var(--via-glass-shadow);
-  padding: 20px 20px 22px;
+  padding: var(--via-space-5) var(--via-space-5) var(--via-space-5_5);
   overflow: hidden;
   isolation: isolate;
 }
@@ -55,7 +55,7 @@
   justify-content: center;
   min-width: 26px;
   height: 20px;
-  padding: 0 6px;
+  padding: 0 var(--via-space-1_5);
   border-radius: var(--via-radius-xs);
   background: var(--via-navy-06);
   color: var(--via-text-muted);
@@ -74,7 +74,7 @@
   display: block;
   width: 100%;
   height: 40px;
-  margin: 14px 0 12px;
+  margin: var(--via-space-3_5) 0 var(--via-space-3);
   overflow: visible;
 }
 
@@ -108,7 +108,7 @@
 }
 
 .vds-rule-card h4 {
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.01em;
@@ -149,7 +149,7 @@
     0 1px 0 var(--via-edge-hi) inset,
     0 24px 48px -28px var(--via-shadow-ink-20),
     0 2px 8px var(--via-shadow-ink-03);
-  padding: 36px;
+  padding: var(--via-space-9);
   overflow: hidden;
   isolation: isolate;
 }
@@ -174,7 +174,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--via-space-6);
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 
 .vds-chart-head .eyebrow {
@@ -186,7 +186,7 @@
   letter-spacing: var(--via-ls-wide);
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
 }
 
 .vds-chart-head h3 {
@@ -195,7 +195,7 @@
   letter-spacing: var(--via-ls-tighter);
   line-height: 1.05;
   color: var(--via-text-primary);
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -203,7 +203,7 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
   letter-spacing: -0.01em;
 }
 
@@ -225,7 +225,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-06);
@@ -247,8 +247,8 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--via-space-2);
-  margin-top: 24px;
-  padding-top: 20px;
+  margin-top: var(--via-space-6);
+  padding-top: var(--via-space-5);
   border-top: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-label);
   color: var(--dv-ink);
@@ -262,7 +262,7 @@
 
 /* nota editorial fora do card */
 .vds-note {
-  margin: 16px 2px 0;
+  margin: var(--via-space-4) var(--via-space-0_5) 0;
   font-size: var(--via-fs-xs);
   line-height: 1.6;
   color: var(--via-text-soft);
@@ -278,8 +278,8 @@
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-2_5);
-  margin: 22px 0 0;
-  padding: 14px 16px;
+  margin: var(--via-space-5_5) 0 0;
+  padding: var(--via-space-3_5) var(--via-space-4);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
@@ -288,7 +288,7 @@
 
 .vds-note.is-inline svg {
   flex: 0 0 auto;
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
   color: var(--via-text-muted);
 }
 
@@ -300,8 +300,8 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--via-space-2) var(--via-space-6);
-  margin: 0 0 18px;
-  padding: 0 0 16px;
+  margin: 0 0 var(--via-space-4_5);
+  padding: 0 0 var(--via-space-4);
   border-bottom: 1px solid var(--via-border-soft);
 }
 
@@ -319,7 +319,7 @@
   appearance: none;
   border: 1px solid transparent;
   background: transparent;
-  padding: 5px 10px 5px 8px;
+  padding: 5px var(--via-space-2_5) 5px var(--via-space-2);
   margin: -5px 0;
   border-radius: var(--via-radius-pill);
   cursor: pointer;
@@ -620,7 +620,7 @@
     0 1px 0 var(--via-edge-hi) inset,
     0 16px 32px -24px var(--via-shadow-ink-20),
     0 2px 6px var(--via-shadow-ink-03);
-  padding: 22px 22px 18px;
+  padding: var(--via-space-5_5) var(--via-space-5_5) var(--via-space-4_5);
   overflow: hidden;
   isolation: isolate;
   transition: box-shadow 0.26s ease, transform 0.26s cubic-bezier(0.16, 1, 0.3, 1);
@@ -656,7 +656,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.01em;
-  padding: 3px 8px;
+  padding: 3px var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
@@ -664,7 +664,7 @@
 }
 
 .vds-kpi-value {
-  margin: 14px 0 14px;
+  margin: var(--via-space-3_5) 0 var(--via-space-3_5);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.03em;
@@ -709,7 +709,7 @@
 .vds-kpi-foot {
   display: flex;
   justify-content: space-between;
-  margin: 8px 0 0;
+  margin: var(--via-space-2) 0 0;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.06em;
@@ -724,7 +724,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
-  margin-top: 10px;
+  margin-top: var(--via-space-2_5);
 }
 
 .vds-bar-row {
@@ -732,7 +732,7 @@
   grid-template-columns: 168px 1fr 132px;
   gap: var(--via-space-5);
   align-items: center;
-  padding: 5px 8px;
+  padding: 5px var(--via-space-2);
   margin: 0 -8px;
   border-radius: var(--via-radius-sm);
   transition: background 160ms ease;
@@ -763,7 +763,7 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-wide);
   text-transform: uppercase;
-  padding: 2px 6px;
+  padding: var(--via-space-0_5) var(--via-space-1_5);
   border-radius: var(--via-radius-xs);
   background: var(--via-navy-06);
   color: var(--via-text-muted);
@@ -807,7 +807,7 @@
   top: calc(100% + 6px);
   left: 0;
   z-index: 3;
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   border-radius: var(--via-radius-xs);
   background: var(--via-navy);
   color: var(--via-white);
@@ -852,7 +852,7 @@
   display: grid;
   grid-template-columns: 168px 1fr 132px;
   gap: var(--via-space-5);
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
 }
 
 .vds-bar-axis-line {
@@ -888,7 +888,7 @@
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
-  padding: 16px 16px 10px;
+  padding: var(--via-space-4) var(--via-space-4) var(--via-space-2_5);
 }
 
 .vds-sm-head {
@@ -896,7 +896,7 @@
   align-items: baseline;
   justify-content: space-between;
   gap: var(--via-space-3);
-  margin-bottom: 6px;
+  margin-bottom: var(--via-space-1_5);
 }
 
 .vds-sm-head h4 {
@@ -1025,7 +1025,7 @@
 }
 
 .vds-side-title {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -1033,7 +1033,7 @@
 }
 
 .vds-side-lede {
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
   font-size: var(--via-fs-xs);
   line-height: 1.55;
   color: var(--via-text-soft);
@@ -1050,11 +1050,11 @@
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
-  padding: 14px 16px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4) var(--via-space-4);
 }
 
 .vds-tail-label {
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-wide);
@@ -1066,7 +1066,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--via-space-2);
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.03em;
@@ -1099,14 +1099,14 @@
    Funil · duas medidas, dois painéis (nunca eixo duplo)
    ============================================================ */
 .vds-funnel {
-  margin-top: 6px;
+  margin-top: var(--via-space-1_5);
 }
 
 .vds-funnel-head {
   display: grid;
   grid-template-columns: 172px 1fr 1fr;
   gap: var(--via-space-6);
-  padding: 0 8px 10px;
+  padding: 0 var(--via-space-2) var(--via-space-2_5);
   border-bottom: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
@@ -1120,7 +1120,7 @@
   grid-template-columns: 172px 1fr 1fr;
   gap: var(--via-space-6);
   align-items: center;
-  padding: 12px 8px;
+  padding: var(--via-space-3) var(--via-space-2);
   border-bottom: 1px solid var(--via-border-soft);
   transition: background 160ms ease;
   animation: vds-funnel-fade 500ms var(--via-ease-out) both;
@@ -1160,7 +1160,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-wide);
-  padding: 3px 6px;
+  padding: 3px var(--via-space-1_5);
   border-radius: var(--via-radius-xs);
   background: var(--via-navy-06);
   color: var(--via-text-muted);
@@ -1243,7 +1243,7 @@
 }
 
 @media (max-width: 760px) {
-  .vds-chart-card { padding: 24px 20px; }
+  .vds-chart-card { padding: var(--via-space-6) var(--via-space-5); }
   .vds-chart-head { flex-direction: column; gap: var(--via-space-3_5); }
   .vds-chart-head h3 { font-size: var(--via-fs-h2); }
 

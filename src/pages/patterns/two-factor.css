@@ -36,7 +36,7 @@
   position: relative;
   max-width: 560px;
   margin: 0 auto;
-  padding: 36px 36px 32px;
+  padding: var(--via-space-9) var(--via-space-9) var(--via-space-8);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   backdrop-filter: blur(28px) saturate(200%);
@@ -78,8 +78,8 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3);
-  margin-bottom: 24px;
-  padding-bottom: 20px;
+  margin-bottom: var(--via-space-6);
+  padding-bottom: var(--via-space-5);
   position: relative;
 }
 .vds-2fa-card__head::after {
@@ -134,7 +134,7 @@
 .vds-2fa-card__counter {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
+  padding: var(--via-space-1) var(--via-space-2_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -150,7 +150,7 @@
 
 /* ===== Step heading ========================================= */
 .vds-2fa-step h3 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
@@ -159,7 +159,7 @@
   color: var(--via-text-primary);
 }
 .vds-2fa-step > p.lede {
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
   font-size: var(--via-fs-sm);
   line-height: 1.55;
   color: var(--via-text-muted);
@@ -177,7 +177,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-3_5);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   width: 100%;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
@@ -286,8 +286,8 @@
 /* ===== QR tile · glass + mesh navy ========================== */
 .vds-2fa-qr-wrap {
   position: relative;
-  padding: 22px;
-  margin-bottom: 18px;
+  padding: var(--via-space-5_5);
+  margin-bottom: var(--via-space-4_5);
   background:
     radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
     radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
@@ -358,15 +358,15 @@
 
 /* ===== OTP wrap · sub-card ================================== */
 .vds-2fa-otp-wrap {
-  padding: 4px 0 8px;
-  margin-bottom: 16px;
+  padding: var(--via-space-1) 0 var(--via-space-2);
+  margin-bottom: var(--via-space-4);
 }
 
 /* ===== Backup codes · mono glass grid ======================= */
 .vds-2fa-backup {
   position: relative;
-  padding: 22px;
-  margin-bottom: 16px;
+  padding: var(--via-space-5_5);
+  margin-bottom: var(--via-space-4);
   background:
     radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
     radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
@@ -388,7 +388,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.04em;
   color: var(--via-text-primary);
-  padding: 8px 12px;
+  padding: var(--via-space-2) var(--via-space-3);
   background: var(--via-glass-card);
   border-radius: var(--via-radius-sm);
   border: 1px solid var(--via-border-soft);
@@ -399,19 +399,19 @@
 }
 
 /* ===== CTA wide · ocupa o card =============================== */
-.vds-2fa-cta-wide button { width: 100%; margin-top: 4px; }
-.vds-2fa-back { margin-bottom: 14px; }
+.vds-2fa-cta-wide button { width: 100%; margin-top: var(--via-space-1); }
+.vds-2fa-back { margin-bottom: var(--via-space-3_5); }
 
 /* ===== "Done" state · big check glass tile ================== */
 .vds-2fa-done {
   text-align: center;
-  padding: 8px 0 0;
+  padding: var(--via-space-2) 0 0;
 }
 .vds-2fa-done__tile {
   position: relative;
   width: 72px;
   height: 72px;
-  margin: 0 auto 18px;
+  margin: 0 auto var(--via-space-4_5);
   border-radius: var(--via-radius-pill);
   background: radial-gradient(circle at 32% 28%, var(--via-blue), var(--via-navy) 65%, var(--via-navy-deep));
   display: inline-flex;
@@ -438,7 +438,7 @@
   pointer-events: none;
 }
 .vds-2fa-done h3 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-font-display);
   font-size: 28px;
   font-weight: var(--via-fw-medium);
@@ -446,7 +446,7 @@
   color: var(--via-text-primary);
 }
 .vds-2fa-done p {
-  margin: 0 auto 22px;
+  margin: 0 auto var(--via-space-5_5);
   max-width: 360px;
   font-size: var(--via-fs-sm);
   line-height: 1.55;
@@ -462,7 +462,7 @@
 }
 .vds-2fa-anatomy-card {
   position: relative;
-  padding: 22px 22px 20px;
+  padding: var(--via-space-5_5) var(--via-space-5_5) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   backdrop-filter: blur(22px) saturate(180%);
@@ -500,7 +500,7 @@
 .vds-2fa-anatomy-card:hover::before { opacity: 1; }
 .vds-2fa-anatomy-card__step {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 3px var(--via-space-2_5);
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
@@ -509,11 +509,11 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-2fa-anatomy-card h3 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
@@ -521,7 +521,7 @@
   color: var(--via-text-primary);
 }
 .vds-2fa-anatomy-card .purpose {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   line-height: 1.55;
@@ -539,6 +539,6 @@
 }
 
 @media (max-width: 600px) {
-  .vds-2fa-card { padding: 28px 22px; }
+  .vds-2fa-card { padding: var(--via-space-7) var(--via-space-5_5); }
   .vds-2fa-backup { grid-template-columns: 1fr; }
 }

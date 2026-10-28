@@ -17,7 +17,7 @@
     color var(--via-dur) var(--via-ease-snap),
     background var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
-  padding: 4px 8px;
+  padding: var(--via-space-1) var(--via-space-2);
   margin: -4px -8px;
   border-radius: var(--via-radius-sm);
 }
@@ -59,7 +59,7 @@
 
 .via-bc-frame {
   position: relative;
-  padding: 32px;
+  padding: var(--via-space-8);
   background:
     radial-gradient(540px 200px at 0% 0%, var(--via-navy-04), transparent 60%),
     var(--via-glass-card);

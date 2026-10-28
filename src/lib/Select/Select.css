@@ -51,11 +51,11 @@
 }
 
 .via-select--md .via-select__trigger {
-  padding: 9px 12px;
+  padding: 9px var(--via-space-3);
 }
 
 .via-select--sm .via-select__trigger {
-  padding: 6px 10px;
+  padding: var(--via-space-1_5) var(--via-space-2_5);
   font-size: var(--via-fs-xs);
 }
 
@@ -126,8 +126,8 @@
   left: 0;
   right: 0;
   z-index: 100;
-  margin: 4px 0 0;
-  padding: 4px;
+  margin: var(--via-space-1) 0 0;
+  padding: var(--via-space-1);
   list-style: none;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -155,7 +155,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-3);
-  padding: 8px 10px;
+  padding: var(--via-space-2) var(--via-space-2_5);
   /* um degrau abaixo do .via-select__list (sm) — canto interno não vaza */
   border-radius: var(--via-radius-xs);
   font-size: var(--via-fs-caption);

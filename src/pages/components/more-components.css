@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-4_5);
-  padding: 14px 20px;
+  padding: var(--via-space-3_5) var(--via-space-5);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border-radius: var(--via-radius-md);
@@ -55,7 +55,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 4px 10px;
+  padding: var(--via-space-1) var(--via-space-2_5);
   background: rgba(255,255,255,0.14);
   border: 1px solid rgba(255,255,255,0.20);
   border-radius: var(--via-radius-pill);
@@ -81,7 +81,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 9px 18px;
+  padding: 9px var(--via-space-4_5);
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: 1px solid var(--via-navy-20);
@@ -155,7 +155,7 @@
   gap: var(--via-space-4);
 }
 .vds-skel-card {
-  padding: 24px;
+  padding: var(--via-space-6);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -202,7 +202,7 @@
 /* ---- NOTIFICATION ---- */
 .vds-notif-stage {
   position: relative;
-  padding: 56px 40px;
+  padding: var(--via-space-14) var(--via-space-10);
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(ellipse 60% 70% at 15% 0%, rgba(46,76,118,0.50) 0%, transparent 60%),
@@ -227,7 +227,7 @@
   z-index: 1;
   width: 100%;
   max-width: 380px;
-  padding: 22px;
+  padding: var(--via-space-5_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   backdrop-filter: blur(28px) saturate(180%);
@@ -242,10 +242,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding-bottom: 18px;
+  padding-bottom: var(--via-space-4_5);
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
-.vds-notif header .vds-eyebrow { color: rgba(255,255,255,0.55); margin: 0 0 4px; }
+.vds-notif header .vds-eyebrow { color: rgba(255,255,255,0.55); margin: 0 0 var(--via-space-1); }
 .vds-notif header h3 {
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
@@ -262,7 +262,7 @@
   color: rgba(255,255,255,0.65);
   background: rgba(255,255,255,0.10);
   border: 1px solid rgba(255,255,255,0.16);
-  padding: 7px 12px;
+  padding: 7px var(--via-space-3);
   border-radius: var(--via-radius-pill);
   cursor: pointer;
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -292,7 +292,7 @@
 .vds-notif ul {
   list-style: none;
   padding: 0;
-  margin: 16px 0 0;
+  margin: var(--via-space-4) 0 0;
   display: flex;
   flex-direction: column;
   gap: var(--via-space-1);
@@ -301,7 +301,7 @@
   display: flex;
   gap: var(--via-space-3);
   align-items: flex-start;
-  padding: 12px;
+  padding: var(--via-space-3);
   border-radius: var(--via-radius-md);
   border: 1px solid transparent;
   transition:
@@ -352,7 +352,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
-  margin-bottom: 2px;
+  margin-bottom: var(--via-space-0_5);
 }
 .vds-notif li span {
   display: block;
@@ -362,7 +362,7 @@
   line-height: 1.45;
 }
 .vds-notif li .time {
-  margin-top: 6px;
+  margin-top: var(--via-space-1_5);
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-micro);
   color: rgba(255,255,255,0.45);
@@ -374,7 +374,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-1);
-  padding: 28px;
+  padding: var(--via-space-7);
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-xl);
   background: var(--via-glass-card);
@@ -384,7 +384,7 @@
   display: grid;
   grid-template-columns: 28px 1fr;
   gap: var(--via-space-4);
-  padding: 14px 0;
+  padding: var(--via-space-3_5) 0;
   align-items: flex-start;
 }
 .vds-feed-ico {
@@ -416,7 +416,7 @@
   align-items: baseline;
   justify-content: space-between;
   gap: var(--via-space-3);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 .vds-feed-body strong {
   font-family: var(--via-font);
@@ -444,8 +444,8 @@
 }
 .vds-feed-stat {
   display: inline-block;
-  margin-top: 6px;
-  padding: 3px 10px;
+  margin-top: var(--via-space-1_5);
+  padding: 3px var(--via-space-2_5);
   background: var(--via-navy-08);
   border: 1px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
@@ -461,7 +461,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-6);
-  margin-bottom: 32px;
+  margin-bottom: var(--via-space-8);
 }
 .vds-avgroup {
   display: inline-flex;
@@ -542,7 +542,7 @@
   grid-template-columns: auto 1fr auto;
   gap: var(--via-space-4);
   align-items: center;
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -579,13 +579,13 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 .vds-avgroup-card .link {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 6px 13px;
+  padding: var(--via-space-1_5) 13px;
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);

@@ -18,7 +18,7 @@
   overflow: hidden;
 }
 .vds-le-hero-card > header {
-  padding: 16px 22px;
+  padding: var(--via-space-4) var(--via-space-5_5);
   background: var(--via-gray-50);
   border-bottom: 0.5px solid var(--via-navy-08);
   display: flex;
@@ -40,7 +40,7 @@
 
 .vds-le-hero-canvas {
   position: relative;
-  padding: 56px 48px 48px;
+  padding: var(--via-space-14) var(--via-space-12) var(--via-space-12);
   color: var(--via-white);
   overflow: hidden;
   isolation: isolate;
@@ -53,7 +53,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 .vds-le-hero-canvas h2 {
   font-family: var(--via-font-display);
@@ -62,7 +62,7 @@
   line-height: 1.05;
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   max-width: 640px;
 }
 .vds-le-hero-canvas h2 em {
@@ -74,7 +74,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 28px;
+  margin: 0 0 var(--via-space-7);
   max-width: 520px;
   line-height: 1.55;
 }
@@ -87,7 +87,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 11px 22px;
+  padding: 11px var(--via-space-5_5);
   /* sobre hero navy · superfície clara fixa (var(--via-surface) some no tema escuro) */
   background: var(--via-surface-onnavy);
   color: var(--via-navy);
@@ -122,7 +122,7 @@
 .vds-le-hero-ghost {
   display: inline-flex;
   align-items: center;
-  padding: 11px 18px;
+  padding: 11px var(--via-space-4_5);
   background: rgba(255, 255, 255, 0.10);
   color: var(--via-white);
   border: 1px solid rgba(255, 255, 255, 0.20);
@@ -167,13 +167,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--via-space-3_5);
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 .vds-le-cta-card {
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -190,7 +190,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 9px 16px;
+  padding: 9px var(--via-space-4);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
@@ -278,7 +278,7 @@
 .vds-le-cta:focus-visible { outline: none; }
 
 .vds-le-cta-rules {
-  padding: 24px 28px;
+  padding: var(--via-space-6) var(--via-space-7);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -293,7 +293,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
 }
 .vds-le-cta-rules ul {
   list-style: none;
@@ -308,7 +308,7 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   line-height: 1.55;
-  padding-left: 16px;
+  padding-left: var(--via-space-4);
   position: relative;
 }
 .vds-le-cta-rules li::before {
@@ -326,7 +326,7 @@
   gap: var(--via-space-3_5);
 }
 .vds-le-trust-grid article {
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -342,7 +342,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 .vds-le-trust-numbers ul,
 .vds-le-trust-cases ul {
@@ -357,7 +357,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--via-space-3);
-  padding-bottom: 10px;
+  padding-bottom: var(--via-space-2_5);
   border-bottom: 0.5px solid var(--via-navy-08);
 }
 .vds-le-trust-numbers li:last-child { border-bottom: none; }
@@ -375,7 +375,7 @@
   color: var(--via-text);
 }
 .vds-le-trust-quote blockquote {
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
   font-family: var(--via-font-display);
   font-style: normal;
   font-size: var(--via-fs-h4);
@@ -387,7 +387,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding-top: 14px;
+  padding-top: var(--via-space-3_5);
   border-top: 0.5px solid var(--via-navy-08);
 }
 .vds-le-trust-quote .av {
@@ -419,7 +419,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-0_5);
-  padding-bottom: 10px;
+  padding-bottom: var(--via-space-2_5);
   border-bottom: 0.5px solid var(--via-navy-08);
 }
 .vds-le-trust-cases li:last-child { border-bottom: none; }
@@ -459,7 +459,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
+  padding: var(--via-space-4) var(--via-space-5);
   cursor: pointer;
   list-style: none;
 }
@@ -493,7 +493,7 @@
 .vds-le-faq-item[open] summary svg { transform: rotate(180deg); }
 .vds-le-faq-item p {
   margin: 0;
-  padding: 0 20px 18px;
+  padding: 0 var(--via-space-5) var(--via-space-4_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text);
@@ -505,13 +505,13 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: var(--via-space-8);
-  padding: 40px 44px;
+  padding: var(--via-space-10) 44px;
   border-radius: var(--via-radius-lg);
   color: var(--via-white);
   overflow: hidden;
   position: relative;
 }
-@media (max-width: 880px) { .vds-le-lead-magnet { grid-template-columns: 1fr; padding: 28px 24px; } }
+@media (max-width: 880px) { .vds-le-lead-magnet { grid-template-columns: 1fr; padding: var(--via-space-7) var(--via-space-6); } }
 
 .vds-le-lead-magnet-eyebrow {
   display: inline-flex;
@@ -523,7 +523,7 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 .vds-le-lead-magnet h3 {
   font-family: var(--via-font-display);
@@ -532,7 +532,7 @@
   line-height: 1.15;
   letter-spacing: -0.022em;
   color: var(--via-white);
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
 }
 .vds-le-lead-magnet h3 em {
   font-style: normal;
@@ -543,7 +543,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
   line-height: 1.55;
 }
 .vds-le-lead-magnet-l ul {
@@ -568,7 +568,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
-  padding: 24px;
+  padding: var(--via-space-6);
   background: rgba(255, 255, 255, 0.08);
   border: 0.5px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--via-radius-md);
@@ -586,7 +586,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 11px 14px;
+  padding: 11px var(--via-space-3_5);
   background: var(--via-surface);
   border-radius: var(--via-radius-sm);
   color: var(--via-ink-3);
@@ -608,7 +608,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-2);
-  padding: 12px 18px;
+  padding: var(--via-space-3) var(--via-space-4_5);
   /* sobre painel navy · superfície clara fixa nos 2 temas */
   background: var(--via-surface-onnavy);
   color: var(--via-navy);
@@ -649,7 +649,7 @@
 /* ---------- Countdown ---------- */
 .vds-le-countdown {
   position: relative;
-  padding: 44px 48px 40px;
+  padding: 44px var(--via-space-12) var(--via-space-10);
   border-radius: var(--via-radius-lg);
   color: var(--via-white);
   overflow: hidden;
@@ -674,7 +674,7 @@
   align-items: baseline;
   justify-content: center;
   gap: var(--via-space-2);
-  margin-bottom: 24px;
+  margin-bottom: var(--via-space-6);
 }
 .vds-le-countdown-grid > div {
   display: flex;
@@ -703,13 +703,13 @@
   font-size: var(--via-fs-h1);
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: -0.02em;
-  padding: 0 6px;
+  padding: 0 var(--via-space-1_5);
 }
 .vds-le-countdown p {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 24px;
+  margin: 0 0 var(--via-space-6);
   line-height: 1.5;
 }
 .vds-le-countdown p strong { color: var(--via-white); font-weight: var(--via-fw-medium); }
@@ -717,7 +717,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 11px 22px;
+  padding: 11px var(--via-space-5_5);
   /* sobre bloco navy · superfície clara fixa nos 2 temas */
   background: var(--via-surface-onnavy);
   color: var(--via-navy);
@@ -749,8 +749,8 @@
     0 0 0 3px rgba(255, 255, 255, 0.40);
 }
 .vds-le-countdown-rule {
-  margin-top: 16px;
-  padding: 14px 20px;
+  margin-top: var(--via-space-4);
+  padding: var(--via-space-3_5) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -784,7 +784,7 @@
 }
 .vds-le-compare-row:last-child { border-bottom: none; }
 .vds-le-compare .cell {
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
@@ -811,7 +811,7 @@
   color: var(--via-ink-3);
 }
 .vds-le-compare header .cell {
-  padding: 18px;
+  padding: var(--via-space-4_5);
   background: transparent;
   flex-direction: column;
   align-items: flex-start;
@@ -832,8 +832,8 @@
 }
 
 .vds-le-compare-rule {
-  margin-top: 16px;
-  padding: 14px 20px;
+  margin-top: var(--via-space-4);
+  padding: var(--via-space-3_5) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);

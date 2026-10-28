@@ -37,7 +37,7 @@
 /* ----- PAINEL PRINCIPAL · liquid glass world-class ---------- */
 .vds-billing-panel {
   position: relative;
-  padding: 36px 36px 28px;
+  padding: var(--via-space-9) var(--via-space-9) var(--via-space-7);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   backdrop-filter: blur(28px) saturate(200%);
@@ -70,8 +70,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--via-space-2);
-  margin-bottom: 28px;
-  padding-bottom: 28px;
+  margin-bottom: var(--via-space-7);
+  padding-bottom: var(--via-space-7);
   position: relative;
 }
 .vds-billing-stepper::after {
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 6px 4px;
+  padding: var(--via-space-1_5) var(--via-space-1);
 }
 .vds-billing-step__dot {
   position: relative;
@@ -145,10 +145,10 @@
   letter-spacing: -0.022em;
   line-height: 1.2;
   color: var(--via-text-primary);
-  margin: 0 0 6px;
+  margin: 0 0 var(--via-space-1_5);
 }
 .vds-billing-step-content > p.lede {
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
   font-size: var(--via-fs-sm);
   line-height: 1.55;
   color: var(--via-text-muted);
@@ -166,7 +166,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--via-space-3_5);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   /* o card é <button> · o UA centraliza o texto e a descrição do plano saía
      centralizada, desalinhada do nome. Coluna editorial = flush left. */
   text-align: left;
@@ -303,7 +303,7 @@
   align-items: baseline;
   justify-content: space-between;
   gap: var(--via-space-3);
-  margin-bottom: 4px;
+  margin-bottom: var(--via-space-1);
 }
 .vds-billing-plan__name {
   font-family: var(--via-font);
@@ -324,7 +324,7 @@
   font-size: var(--via-fs-label);
   color: var(--via-text-muted);
   font-weight: var(--via-fw-regular);
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
 }
 .vds-billing-plan__desc {
   font-family: var(--via-font);
@@ -338,7 +338,7 @@
   position: absolute;
   top: -8px;
   right: 16px;
-  padding: 2px 9px 3px;
+  padding: var(--via-space-0_5) 9px 3px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   border-radius: var(--via-radius-pill);
@@ -367,13 +367,13 @@
 /* ----- REVIEW BLOCK · glass forte interno ------------------- */
 .vds-billing-review {
   position: relative;
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   backdrop-filter: blur(14px) saturate(160%);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 1px 2px var(--via-shadow-ink-03);
@@ -424,8 +424,8 @@
 .vds-billing-nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 28px;
-  padding-top: 22px;
+  margin-top: var(--via-space-7);
+  padding-top: var(--via-space-5_5);
   border-top: 0;
   gap: var(--via-space-3);
   position: relative;
@@ -444,7 +444,7 @@
 .vds-billing-summary {
   position: sticky;
   top: 96px;
-  padding: 24px 22px;
+  padding: var(--via-space-6) var(--via-space-5_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   backdrop-filter: blur(28px) saturate(200%);
@@ -475,7 +475,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 .vds-billing-summary__head svg { color: var(--via-text-primary); }
 .vds-billing-summary__head span {
@@ -491,8 +491,8 @@
   position: relative;
   /* alinhado com o bloco de linhas acima · o -4px lateral deixava a caixa 8px
      mais larga que o bloco vizinho e as bordas brigavam na mesma coluna. */
-  margin: 16px 0 0;
-  padding: 18px 16px;
+  margin: var(--via-space-4) 0 0;
+  padding: var(--via-space-4_5) var(--via-space-4);
   background:
     radial-gradient(280px 120px at 0% 0%, rgba(30,58,95,0.10), transparent 65%),
     linear-gradient(180deg, rgba(10,31,59,0.04) 0%, rgba(10,31,59,0.06) 100%);
@@ -522,7 +522,7 @@
   color: var(--via-text-primary);
 }
 .vds-billing-summary__total-hint {
-  margin: 6px 0 0;
+  margin: var(--via-space-1_5) 0 0;
   font-size: var(--via-fs-label);
   line-height: 1.5;
   color: var(--via-text-muted);
@@ -531,8 +531,8 @@
 
 .vds-billing-summary__ready {
   position: relative;
-  margin-top: 14px;
-  padding: 12px 14px;
+  margin-top: var(--via-space-3_5);
+  padding: var(--via-space-3) var(--via-space-3_5);
   background: linear-gradient(180deg, rgba(10,31,59,0.05), rgba(10,31,59,0.08));
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-md);
@@ -558,7 +558,7 @@
 }
 .vds-billing-principle {
   position: relative;
-  padding: 22px 22px 20px;
+  padding: var(--via-space-5_5) var(--via-space-5_5) var(--via-space-5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
@@ -602,11 +602,11 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.004em;
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-billing-principle h3 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--via-space-2);
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
@@ -632,5 +632,5 @@
   .vds-billing-summary { position: static; }
   .vds-billing-stepper { gap: var(--via-space-1); }
   .vds-billing-step__label { display: none; }
-  .vds-billing-panel { padding: 28px 24px 22px; }
+  .vds-billing-panel { padding: var(--via-space-7) var(--via-space-6) var(--via-space-5_5); }
 }

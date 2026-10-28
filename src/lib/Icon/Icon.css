@@ -39,7 +39,7 @@
 
 /* ===== Surfaces (chip around icon) ===== */
 .via-icon--surface-soft {
-  padding: 8px;
+  padding: var(--via-space-2);
   border-radius: var(--via-radius-md);
   background: rgba(10, 31, 59, 0.05);
   border: 1px solid var(--via-border-soft);
@@ -48,7 +48,7 @@
 
 .via-icon--surface-glass {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
-  padding: 8px;
+  padding: var(--via-space-2);
   border-radius: var(--via-radius-md);
   background: var(--via-surface-onnavy);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
@@ -59,7 +59,7 @@
 }
 
 .via-icon--surface-navy {
-  padding: 8px;
+  padding: var(--via-space-2);
   border-radius: var(--via-radius-md);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
@@ -70,7 +70,7 @@
 
 /* Accent · navy intensificado · tile premium (vidro abaulado + glow) · ícone branco */
 .via-icon--surface-accent {
-  padding: 8px;
+  padding: var(--via-space-2);
   border-radius: var(--via-radius-md);
   background:
     radial-gradient(120% 130% at 50% -25%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 60%),
@@ -90,14 +90,14 @@
 .via-icon--surface-soft.via-icon--sm,
 .via-icon--surface-glass.via-icon--sm,
 .via-icon--surface-navy.via-icon--sm,
-.via-icon--surface-accent.via-icon--sm { padding: 6px; }
+.via-icon--surface-accent.via-icon--sm { padding: var(--via-space-1_5); }
 
 .via-icon--surface-soft.via-icon--lg,
 .via-icon--surface-glass.via-icon--lg,
 .via-icon--surface-navy.via-icon--lg,
-.via-icon--surface-accent.via-icon--lg { padding: 10px; }
+.via-icon--surface-accent.via-icon--lg { padding: var(--via-space-2_5); }
 
 .via-icon--surface-soft.via-icon--xl,
 .via-icon--surface-glass.via-icon--xl,
 .via-icon--surface-navy.via-icon--xl,
-.via-icon--surface-accent.via-icon--xl { padding: 12px; }
+.via-icon--surface-accent.via-icon--xl { padding: var(--via-space-3); }

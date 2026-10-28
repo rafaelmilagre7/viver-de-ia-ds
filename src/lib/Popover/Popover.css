@@ -27,7 +27,7 @@
 }
 
 .via-popover__body {
-  padding: 14px 16px;
+  padding: var(--via-space-3_5) var(--via-space-4);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
@@ -35,7 +35,7 @@
 
 .via-popover__body > h4,
 .via-popover__body > h5 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-family: var(--via-font, inherit);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);

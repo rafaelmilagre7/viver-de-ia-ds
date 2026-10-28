@@ -16,7 +16,7 @@
   top: calc(100% + 6px);
   z-index: 200;
   min-width: 200px;
-  padding: 6px;
+  padding: var(--via-space-1_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   backdrop-filter: blur(20px) saturate(160%);
@@ -53,14 +53,14 @@
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
-  padding: 8px 10px 4px;
+  padding: var(--via-space-2) var(--via-space-2_5) var(--via-space-1);
 }
 
 .via-dropdown__item {
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 8px 10px;
+  padding: var(--via-space-2) var(--via-space-2_5);
   background: none;
   border: none;
   border-radius: var(--via-radius-xs);
@@ -139,7 +139,7 @@
 .via-dropdown__separator {
   height: 1px;
   background: var(--via-border-soft, rgba(10, 31, 59, 0.08));
-  margin: 6px 0;
+  margin: var(--via-space-1_5) 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -27,7 +27,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 7px 14px;
+  padding: 7px var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -98,7 +98,7 @@
    --------------------------------------------------------------- */
 .via-row-card {
   position: relative;
-  padding: 16px 18px;
+  padding: var(--via-space-4) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -136,7 +136,7 @@ button.via-row-card {
    --------------------------------------------------------------- */
 .via-tile {
   position: relative;
-  padding: 24px 26px;
+  padding: var(--via-space-6) 26px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -173,7 +173,7 @@ button.via-row-card {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 4px 10px;
+  padding: var(--via-space-1) var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-border-soft);

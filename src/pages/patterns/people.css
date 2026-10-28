@@ -43,7 +43,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  padding: 4px 12px;
+  padding: var(--via-space-1) var(--via-space-3);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-10);
   border: 1px solid rgba(10, 31, 59, 0.17);
@@ -57,7 +57,7 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: var(--via-space-9);
-  padding: 36px;
+  padding: var(--via-space-9);
   align-items: start;
 }
 
@@ -85,11 +85,11 @@
   border: 4px solid var(--via-surface);
   box-shadow: 0 8px 18px -8px var(--via-shadow-ink-30);
   position: relative;
-  margin-bottom: 18px;
+  margin-bottom: var(--via-space-4_5);
 }
 
 .vds-mentor-card h3 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-size: 28px;
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.024em;
@@ -97,14 +97,14 @@
 }
 
 .vds-mentor-role {
-  margin: 0 0 18px;
+  margin: 0 0 var(--via-space-4_5);
   font-size: var(--via-fs-sm);
   color: var(--via-text-soft);
   letter-spacing: -0.005em;
 }
 
 .vds-mentor-bio {
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
   font-size: var(--via-fs-sm);
   line-height: 1.6;
   color: var(--via-text);
@@ -113,7 +113,7 @@
 
 .vds-mentor-meta {
   list-style: none;
-  margin: 0 0 22px;
+  margin: 0 0 var(--via-space-5_5);
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -159,11 +159,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--via-space-3);
-  padding: 18px;
+  padding: var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  margin-bottom: 20px;
+  margin-bottom: var(--via-space-5);
 }
 
 .vds-mentor-stats > div {
@@ -193,7 +193,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2);
-  margin-bottom: 20px;
+  margin-bottom: var(--via-space-5);
 }
 
 .vds-mentor-btn {
@@ -201,7 +201,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-2);
-  padding: 14px 18px;
+  padding: var(--via-space-3_5) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
@@ -273,7 +273,7 @@
 
 .vds-mentor-quote {
   position: relative;
-  padding: 20px 22px 18px 22px;
+  padding: var(--via-space-5) var(--via-space-5_5) var(--via-space-4_5) var(--via-space-5_5);
   border-radius: var(--via-radius-md);
   background:
     radial-gradient(280px 120px at 0% 0%, var(--via-navy-05), transparent 70%),
@@ -292,11 +292,11 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.2em;
   color: var(--via-text-primary);
-  padding: 4px 10px;
+  padding: var(--via-space-1) var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: rgba(10, 31, 59, 0.07);
   border: 1px solid var(--via-navy-16);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
   white-space: nowrap;
   line-height: 1.4;
 }
@@ -333,7 +333,7 @@
 
 .vds-team-card {
   position: relative;
-  padding: 0 22px 18px;
+  padding: 0 var(--via-space-5_5) var(--via-space-4_5);
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
@@ -408,7 +408,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 22px;
+  padding-top: var(--via-space-5_5);
   gap: var(--via-space-3);
 }
 
@@ -471,7 +471,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  padding: 4px 11px;
+  padding: var(--via-space-1) 11px;
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
@@ -514,7 +514,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--via-space-2);
-  padding: 12px 14px;
+  padding: var(--via-space-3) var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
@@ -546,7 +546,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding-top: 14px;
+  padding-top: var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
   margin-top: auto;
 }
@@ -602,7 +602,7 @@
   color: var(--via-text-primary);
   text-decoration: none;
   letter-spacing: -0.005em;
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   transition: background 140ms ease;
 }
@@ -633,11 +633,11 @@
   justify-content: space-between;
   gap: var(--via-space-4);
   flex-wrap: wrap;
-  margin-bottom: 22px;
+  margin-bottom: var(--via-space-5_5);
 }
 
 .vds-member-list h3 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--via-space-1);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -660,7 +660,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 8px 12px;
+  padding: var(--via-space-2) var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -697,7 +697,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -850,7 +850,7 @@
   gap: 5px;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
-  padding: 4px 10px 4px 8px;
+  padding: var(--via-space-1) var(--via-space-2_5) var(--via-space-1) var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
@@ -890,7 +890,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 5px 10px 5px 8px;
+  padding: 5px var(--via-space-2_5) 5px var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-08);
   border: 1px solid var(--via-border-soft);
@@ -929,7 +929,7 @@
 
 .vds-userpop-card {
   position: relative;
-  padding: 22px;
+  padding: var(--via-space-5_5);
   border-radius: var(--via-radius-md);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
@@ -943,7 +943,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-3);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
 }
 
 .vds-userpop-card .av.big {
@@ -968,7 +968,7 @@
 .vds-userpop-plan {
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
-  padding: 4px 11px;
+  padding: var(--via-space-1) 11px;
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-soft);
@@ -988,7 +988,7 @@
 }
 
 .vds-userpop-card h4 {
-  margin: 0 0 2px;
+  margin: 0 0 var(--via-space-0_5);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
@@ -996,13 +996,13 @@
 }
 
 .vds-userpop-role {
-  margin: 0 0 10px;
+  margin: 0 0 var(--via-space-2_5);
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
 }
 
 .vds-userpop-bio {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-xs);
   line-height: 1.5;
   color: var(--via-text);
@@ -1013,19 +1013,19 @@
   align-items: center;
   gap: var(--via-space-1_5);
   flex-wrap: wrap;
-  padding: 10px 12px;
+  padding: var(--via-space-2_5) var(--via-space-3);
   border-radius: var(--via-radius-sm);
   background: var(--via-navy-03);
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
-  margin-bottom: 14px;
+  margin-bottom: var(--via-space-3_5);
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-userpop-stats strong {
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  margin-right: 2px;
+  margin-right: var(--via-space-0_5);
 }
 
 .vds-userpop-stats svg {
@@ -1042,7 +1042,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 9px 12px;
+  padding: 9px var(--via-space-3);
   border-radius: var(--via-radius-sm);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);

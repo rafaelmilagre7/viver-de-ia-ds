@@ -91,16 +91,16 @@ Rodada de correção feita em 28/out (CHANGELOG `[Não lançado]`), aprovada pel
   `public/llms.txt` (era cópia de maio, sem light-first e com `defaultMode="system"`) e a cópia
   pública agora são cópias exatas, guardadas pelo `lint:sync`. Skill: v0.6.1 e starter honesto.
 
-Ainda aberto (decisão do Rafael):
-- **Light-first só vale com ThemeProvider**: o `tokens.css` cru vira escuro sozinho quando o SO
-  está em dark (`@media (prefers-color-scheme: dark) :root:not([data-theme])`). Quem usa o CSS
-  sem React (Aurora) teve que travar `data-theme="light"`. Decidir se o CSS cru deve nascer claro.
-- **Endereço oficial**: canonical/OG/sitemap apontam pra `viverdeia.ai/design` (404) e a imagem
-  de prévia não existe — levar o site pra lá ou assumir `viver-de-ia-ds.vercel.app`.
+Rodada de melhorias (28/out, aprovada pelo Rafael: "pode executar todas as correções e melhorias"):
+- ~~Light-first só vale com ThemeProvider~~ → `tokens.css` cru abre claro; escuro só com `data-theme`.
+- ~~Endereço oficial~~ → `viver-de-ia-ds.vercel.app` até a marca ter domínio próprio; `og-cover.png` criado.
+- ~~Criativos de `/patterns/paid-ads` em navy~~ → 9 formatos em fundo claro.
 
 ### P2 · fundação (a "Onda 3")
 - Tipografia: 97% tokenizada (2.361 vs 76 px crus).
-- **Espaçamento interno**: 4.516 `padding/margin` em px cru contra 1.563 tokenizados.
+- ~~Espaçamento interno com token exato~~ → 3.820 trocados (zero diff visual) e `token-drift` cobre
+  padding/margin. **Em aberto:** 553 valores fora da escala pedem decisão de design.
+- (histórico) Espaçamento interno: 4.516 `padding/margin` em px cru contra 1.563 tokenizados.
   **3.826 têm token exato** (troca sem mudar pixel, 153 arquivos) e 514 estão fora da escala
   (3, 5, 7, 9, 11, 13, 26, 44px…) e pedem decisão de design. Depois, estender o `token-drift`
   pra padding/margin.
@@ -116,8 +116,10 @@ Ainda aberto (decisão do Rafael):
   Builder criou guarda ≥4,5:1), vidro nunca visto em Safari/iPhone, falta camada de tema por
   produto/sub-marca (o Subido está saindo do DS: Poppins, `#0B91F8`, sem vidro).
 - `bunx create-viverdeia-app` não existe no npm e o template depende de `file:../../viver-de-ia-ds`.
-- Canonical, OG e sitemap apontam pra `viverdeia.ai/design` (404) e `og-cover.png` não existe.
-- Visual regression só no macOS; deploy manual (avaliar Vercel ligado ao `main`).
+- ~~Canonical, OG e sitemap apontam pra `viverdeia.ai/design` (404)~~ → resolvido (ver P1).
+- ~~Vidro nunca visto em Safari/iPhone~~ → conferido no WebKit (Desktop Safari + iPhone 15 Pro), igual ao Chrome.
+- Visual regression só no macOS; deploy manual. **Ligar a Vercel ao `main`** (publicação automática)
+  precisa do ok explícito do Rafael — a permissão automática barrou a mudança de configuração.
 
 ## Quem consome o DS hoje
 

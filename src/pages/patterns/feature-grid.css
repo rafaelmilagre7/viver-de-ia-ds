@@ -4,7 +4,7 @@
   gap: var(--via-space-4_5);
 }
 .vds-feat {
-  padding: 24px;
+  padding: var(--via-space-6);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);

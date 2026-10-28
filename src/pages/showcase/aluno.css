@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-7);
-  padding: 14px 48px;
+  padding: var(--via-space-3_5) var(--via-space-12);
   background: var(--via-glass-bar);
   -webkit-backdrop-filter: var(--via-glass-blur-bar);
   backdrop-filter: var(--via-glass-blur-bar);
@@ -80,14 +80,14 @@
   pointer-events: none;
 }
 
-.al-container { max-width: 1200px; margin: 0 auto; padding: 56px 48px 96px; }
+.al-container { max-width: 1200px; margin: 0 auto; padding: var(--via-space-14) var(--via-space-12) var(--via-space-24); }
 
 .al-hero {
   display: grid;
   grid-template-columns: 1.4fr 240px;
   gap: var(--via-space-14);
   align-items: center;
-  padding-bottom: 64px;
+  padding-bottom: var(--via-space-16);
   border-bottom: 0.5px solid var(--via-navy-08);
 }
 .al-hero h1 {
@@ -96,7 +96,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.035em;
   color: var(--via-text-primary);
-  margin: 18px 0 16px;
+  margin: var(--via-space-4_5) 0 var(--via-space-4);
   line-height: 1.02;
 }
 .al-hero h1 em { font-style: normal; color: var(--via-text-muted); }
@@ -108,12 +108,12 @@
   max-width: 540px;
   margin: 0;
 }
-.al-cta-row { display: flex; gap: var(--via-space-3_5); margin-top: 28px; flex-wrap: wrap; }
+.al-cta-row { display: flex; gap: var(--via-space-3_5); margin-top: var(--via-space-7); flex-wrap: wrap; }
 .al-cta-row .btn {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  padding: 14px 26px;
+  padding: var(--via-space-3_5) 26px;
   border: 1px solid transparent;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
@@ -177,7 +177,7 @@
 
 .al-progress {
   position: relative;
-  padding: 28px 24px 24px;
+  padding: var(--via-space-7) var(--via-space-6) var(--via-space-6);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -225,7 +225,7 @@
   color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
 }
-.al-progress .pct em { font-style: normal; color: var(--via-text-muted); font-size: var(--via-fs-h4); margin-left: 2px; font-weight: var(--via-fw-medium); }
+.al-progress .pct em { font-style: normal; color: var(--via-text-muted); font-size: var(--via-fs-h4); margin-left: var(--via-space-0_5); font-weight: var(--via-fw-medium); }
 .al-progress .sub {
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
@@ -234,7 +234,7 @@
 }
 
 .al-row {
-  margin-top: 64px;
+  margin-top: var(--via-space-16);
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: var(--via-space-8);
@@ -244,7 +244,7 @@
   flex-wrap: wrap; /* eyebrow em cima, h2 (width:100%) quebra pra linha de baixo — sem isso colavam na mesma linha */
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: var(--via-space-4);
 }
 .al-row-h h2 {
   font-family: var(--via-font-display);
@@ -252,7 +252,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.02em;
   color: var(--via-text-primary);
-  margin: 6px 0 0;
+  margin: var(--via-space-1_5) 0 0;
   width: 100%;
 }
 .al-row-h h2 em { font-style: normal; color: var(--via-text-muted); }
@@ -264,7 +264,7 @@
   grid-template-columns: 44px 1fr auto;
   gap: var(--via-space-4_5);
   align-items: center;
-  padding: 18px 22px;
+  padding: var(--via-space-4_5) var(--via-space-5_5);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -322,7 +322,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 .al-modules .dur {
   font-family: var(--via-font);
@@ -332,7 +332,7 @@
 
 .al-side { display: flex; flex-direction: column; gap: var(--via-space-3_5); }
 .al-side .card {
-  padding: 22px 24px;
+  padding: var(--via-space-5_5) var(--via-space-6);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -345,7 +345,7 @@
   display: grid;
   grid-template-columns: 90px 1fr;
   gap: var(--via-space-2);
-  padding: 8px 0;
+  padding: var(--via-space-2) 0;
   border-bottom: 0.5px solid var(--via-navy-08);
 }
 .al-side .next li:last-child { border-bottom: none; }
@@ -366,7 +366,7 @@
   font-size: var(--via-fs-xs);
   line-height: 1.55;
   color: var(--via-text-body);
-  padding: 8px 0;
+  padding: var(--via-space-2) 0;
   border-bottom: 0.5px solid var(--via-navy-08);
 }
 .al-side .act li:last-child { border-bottom: none; }
@@ -407,7 +407,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: 9px 16px;
+  padding: 9px var(--via-space-4);
   /* card navy é FIXO nos 2 temas → o botão também fixa (surface adaptava e
      virava pill escura ilegível no dark) */
   background: var(--via-surface-onnavy);
@@ -419,7 +419,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
   cursor: pointer;
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
   white-space: nowrap;
   line-height: 1.4;
   box-shadow:
@@ -444,9 +444,9 @@
 }
 
 @media (max-width: 960px) {
-  .al-nav { padding: 14px 24px; }
+  .al-nav { padding: var(--via-space-3_5) var(--via-space-6); }
   .al-nav nav { display: none; }
-  .al-container { padding: 32px 24px; }
+  .al-container { padding: var(--via-space-8) var(--via-space-6); }
   .al-hero { grid-template-columns: 1fr; gap: var(--via-space-8); }
   .al-row { grid-template-columns: 1fr; }
 }

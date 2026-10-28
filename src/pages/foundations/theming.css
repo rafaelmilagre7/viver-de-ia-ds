@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
   gap: var(--via-space-4);
-  margin-top: 16px;
+  margin-top: var(--via-space-4);
 }
 
 /* Tinta de sombra em vez de navy. --via-glass-shadow (usado por .via-tile) é
@@ -27,7 +27,7 @@
 }
 
 .vds-thm-tile h3 {
-  margin: 12px 0 8px;
+  margin: var(--via-space-3) 0 var(--via-space-2);
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
@@ -43,7 +43,7 @@
 }
 
 .vds-thm-tile p + p {
-  margin-top: 8px;
+  margin-top: var(--via-space-2);
   color: var(--via-text-muted);
 }
 
@@ -57,16 +57,16 @@
   letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: var(--via-text-muted);
-  margin-bottom: 10px;
+  margin-bottom: var(--via-space-2_5);
 }
 
 /* Painel do demo interativo */
 .vds-thm-demo {
-  margin-top: 24px;
+  margin-top: var(--via-space-6);
 }
 
 .vds-thm-demo-note {
-  margin: 0 0 14px;
+  margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-caption);
   line-height: 1.6;
   color: var(--via-text-muted);
@@ -82,7 +82,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--via-space-2);
-  margin-bottom: 12px;
+  margin-bottom: var(--via-space-3);
 }
 
 .vds-thm-switch {
@@ -93,7 +93,7 @@
 
 /* Texto corrido das seções (mesmo ritmo do resto dos fundamentos) */
 .vds-thm-lead {
-  margin: 0 0 16px;
+  margin: 0 0 var(--via-space-4);
   max-width: 68ch;
   font-size: var(--via-fs-sm);
   line-height: 1.65;
@@ -101,7 +101,7 @@
 }
 
 .vds-thm-after {
-  margin: 14px 0 0;
+  margin: var(--via-space-3_5) 0 0;
   max-width: 68ch;
   font-size: var(--via-fs-caption);
   line-height: 1.65;
@@ -110,14 +110,14 @@
 
 .vds-thm-list {
   margin: 0;
-  padding-left: 18px;
+  padding-left: var(--via-space-4_5);
   font-size: var(--via-fs-caption);
   line-height: 1.75;
   color: var(--via-text-body);
 }
 
 .vds-thm-list li + li {
-  margin-top: 4px;
+  margin-top: var(--via-space-1);
 }
 
 @media (max-width: 720px) {

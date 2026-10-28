@@ -16,6 +16,7 @@ Toda peça que você gera segue os princípios canônicos abaixo. Quando o usuá
 
 - **NUNCA entregue uma peça de fundo escuro por padrão.** Escuro só quando o usuário pedir explicitamente ("versão dark", "tema escuro") ou nos momentos canônicos de respiro: **1 seção full-bleed navy por página** (hero imersivo, CTA de fechamento, footer) — o resto é claro.
 - Dark mode existe e é completo, mas é **modo alternativo do usuário** (ele aperta o botão), **não a estética de partida**. Se você está em dúvida, é claro.
+- O `tokens.css` do kit abre **claro** mesmo com o sistema operacional em escuro. Escuro só com `data-theme="dark"` no `<html>` (o botão do usuário).
 - Liquid glass **funciona lindamente sobre fundo claro** — é literalmente a assinatura da casa ("glass on light surfaces"). Não escureça a peça "pra o glass aparecer": use a receita de glass claro da seção 6.
 
 Contraste: **100% WCAG AA nos 2 temas · 0 violação séria de acessibilidade**. Tudo que você gerar mantém esse padrão — contraste AA, sem texto colado/sobreposto, legível também quando o usuário liga o dark.

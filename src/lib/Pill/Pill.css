@@ -21,7 +21,7 @@
 }
 
 .via-pill--md {
-  padding: 4px 11px;
+  padding: var(--via-space-1) 11px;
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
 }
@@ -89,7 +89,7 @@
 /* ===== Live broadcast pill · navy editorial com coral dot ===== */
 .via-pill--live {
   gap: 7px;
-  padding: 4px 12px 4px 9px;
+  padding: var(--via-space-1) var(--via-space-3) var(--via-space-1) 9px;
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border-color: var(--via-navy);
   color: var(--via-white);

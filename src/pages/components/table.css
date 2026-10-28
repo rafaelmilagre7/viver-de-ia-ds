@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-3_5);
-  padding: 16px 20px;
+  padding: var(--via-space-4) var(--via-space-5);
   border-bottom: 1px solid var(--via-border-soft);
   position: relative;
 }
@@ -48,7 +48,7 @@
 }
 
 .vds-tbl-toolbar.compact {
-  padding: 14px 20px;
+  padding: var(--via-space-3_5) var(--via-space-5);
 }
 
 .vds-tbl-toolbar.compact strong {
@@ -62,14 +62,14 @@
 .vds-tbl-toolbar.compact span {
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
 }
 
 .vds-tbl-search {
   display: flex;
   align-items: center;
   gap: 9px;
-  padding: 9px 14px;
+  padding: 9px var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -126,7 +126,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 8px 14px;
+  padding: var(--via-space-2) var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -166,7 +166,7 @@
 }
 
 .vds-tbl-tool.sm {
-  padding: 6px 10px;
+  padding: var(--via-space-1_5) var(--via-space-2_5);
   font-size: var(--via-fs-label);
 }
 
@@ -182,7 +182,7 @@
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
-  margin-left: 2px;
+  margin-left: var(--via-space-0_5);
 }
 
 .vds-tbl-density {
@@ -240,7 +240,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-3_5);
-  padding: 12px 20px;
+  padding: var(--via-space-3) var(--via-space-5);
   background:
     radial-gradient(540px 80px at 0% 0%, var(--via-navy-05), transparent 70%),
     linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
@@ -282,7 +282,7 @@
 }
 
 .vds-tbl-batch-l button:not(.vds-tbl-batch-clear) {
-  padding: 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-3);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -325,7 +325,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 6px 12px;
+  padding: var(--via-space-1_5) var(--via-space-3);
   border-radius: var(--via-radius-pill);
   background: transparent;
   border: 1px solid var(--via-border);
@@ -432,11 +432,11 @@
 }
 
 .vds-tbl thead th:first-child {
-  padding-left: 20px;
+  padding-left: var(--via-space-5);
 }
 
 .vds-tbl thead th:last-child {
-  padding-right: 20px;
+  padding-right: var(--via-space-5);
 }
 
 .vds-tbl thead th .vds-tbl-th-label {
@@ -454,7 +454,7 @@
 
 .vds-tbl thead th .sort {
   color: var(--via-text-soft);
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
   vertical-align: middle;
   cursor: pointer;
   opacity: 0.55;
@@ -479,11 +479,11 @@
 }
 
 .vds-tbl tbody td:first-child {
-  padding-left: 20px;
+  padding-left: var(--via-space-5);
 }
 
 .vds-tbl tbody td:last-child {
-  padding-right: 20px;
+  padding-right: var(--via-space-5);
 }
 
 /* Cell · checkbox */
@@ -588,7 +588,7 @@
   font-style: normal;
   font-size: var(--via-fs-label);
   color: var(--via-text-soft);
-  margin-top: 2px;
+  margin-top: var(--via-space-0_5);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -610,7 +610,7 @@
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.004em;
-  padding: 4px 11px;
+  padding: var(--via-space-1) 11px;
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
@@ -649,7 +649,7 @@
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
-  margin-right: 4px;
+  margin-right: var(--via-space-1);
   letter-spacing: 0.04em;
 }
 
@@ -696,7 +696,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  padding: 4px 10px 4px 8px;
+  padding: var(--via-space-1) var(--via-space-2_5) var(--via-space-1) var(--via-space-2);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
@@ -724,7 +724,7 @@
 .vds-tbl-status {
   display: inline-flex;
   align-items: center;
-  padding: 4px 11px;
+  padding: var(--via-space-1) 11px;
   border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -788,7 +788,7 @@
     border-color var(--via-dur) var(--via-ease-snap),
     background var(--via-dur) var(--via-ease-snap),
     color var(--via-dur) var(--via-ease-snap);
-  margin-left: 4px;
+  margin-left: var(--via-space-1);
   font-family: var(--via-font);
 }
 
@@ -825,7 +825,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--via-space-3_5);
-  padding: 14px 20px;
+  padding: var(--via-space-3_5) var(--via-space-5);
   border-top: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
   flex-wrap: wrap;
@@ -852,7 +852,7 @@
 .vds-tbl-pag button {
   min-width: 30px;
   height: 30px;
-  padding: 0 8px;
+  padding: 0 var(--via-space-2);
   border-radius: var(--via-radius-sm);
   background: transparent;
   border: 1px solid transparent;
@@ -906,7 +906,7 @@
 
 .vds-tbl-pag-ell {
   color: var(--via-text-soft);
-  padding: 0 4px;
+  padding: 0 var(--via-space-1);
   font-size: var(--via-fs-xs);
 }
 
@@ -922,7 +922,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  padding: 5px 10px;
+  padding: 5px var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);

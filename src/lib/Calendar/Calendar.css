@@ -5,7 +5,7 @@
   display: inline-flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
-  padding: 18px 20px;
+  padding: var(--via-space-4_5) var(--via-space-5);
   width: 320px;
   background: var(--via-glass-card);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -83,7 +83,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--via-ink-3, #6B7891);
-  padding-bottom: 4px;
+  padding-bottom: var(--via-space-1);
 }
 
 .via-cal__grid {
@@ -110,7 +110,7 @@
   background: transparent;
   border: 1px solid transparent;
   cursor: pointer;
-  padding: 4px;
+  padding: var(--via-space-1);
   transition:
     background .18s ease,
     color .18s ease,
