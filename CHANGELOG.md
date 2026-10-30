@@ -6,6 +6,14 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Design · rodada 1 — defeitos visíveis (30/out)
+
+- **Header e sidebar fixos de verdade**: `html, body, #root { height: 100% }` prendia o shell em uma tela e o header/sidebar sticky soltavam depois de ~600px de rolagem (inclusive em produção). Agora só `html, body` têm altura fixa; `#root` cresce com o conteúdo.
+- **Etiqueta "Design System" do header**: herdava `line-height: 0` do logo e colapsava (texto vazando da borda em todas as páginas).
+- **Botão primary no escuro**: navy sobre o palco escuro dava 1,03:1 — agora invertido (branco com texto navy).
+- **Foco**: `border-radius: inherit` no `:focus-visible` tirava o raio próprio de links/itens arredondados; e o anel some no alto contraste do sistema — ganha `outline` em `forced-colors`.
+- **Mola sem tranco**: o 1º quadro do `animateSpring` podia ter tempo negativo e o painel solto andava pra trás antes de seguir; `dt` travado em [0, 32ms] + teste.
+
 ### Ficha de fatos do negócio (30/out · plugin 1.9.0)
 
 - **Números das peças vêm do site oficial**: `scripts/fatos-sync.mjs` lê viverdeia.ai (cases, soluções, setores, planos e preços, mentoria por plano, garantia real, meta, liderança) e grava `public/fatos.json`, `public/fatos.md` (viva em `viver-de-ia-ds.vercel.app/fatos.md`) e `fatos.md` na skill e no kit. Só grava quando algum fato muda; frase que some do site vira "conferir", nunca valor inventado. Divergências do próprio site são listadas (hoje: 515 × 521 cases; Enterprise 50 check-ins × ilimitada).

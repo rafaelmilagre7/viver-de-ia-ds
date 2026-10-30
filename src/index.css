@@ -30,8 +30,10 @@
 html, body, #root {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
+/* só html/body travam na altura da tela · #root cresce com o conteúdo
+   (com height:100% o shell ficava preso em 1 tela e o header/sidebar sticky soltavam ao rolar) */
+html, body { height: 100%; }
 
 html {
   font-size: var(--via-fs-body);
@@ -72,7 +74,10 @@ html { scroll-behavior: smooth; }
   box-shadow:
     0 0 0 2px var(--via-white),
     0 0 0 4px rgba(10, 31, 59, 0.5);
-  border-radius: inherit;
+}
+/* alto contraste do sistema some com box-shadow · contorno real pra quem usa */
+@media (forced-colors: active) {
+  *:focus-visible { outline: 2px solid CanvasText; outline-offset: 2px; }
 }
 
 button:focus-visible,

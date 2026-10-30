@@ -116,6 +116,17 @@
     0 4px 10px -6px var(--via-shadow-ink-40);
 }
 
+/* Primary no escuro · invertido (branco com texto navy) — navy sobre o palco escuro sumia (1,03:1) */
+[data-theme="dark"] .via-btn--primary {
+  background: linear-gradient(180deg, var(--via-white), #E6ECF4);
+  border-color: rgba(255, 255, 255, 0.9);
+  color: var(--via-navy);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 -1px 0 rgba(10, 31, 59, 0.08) inset,
+    0 8px 18px -6px var(--via-shadow-ink-40);
+}
+
 /* Secondary · liquid glass white */
 .via-btn--secondary {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);

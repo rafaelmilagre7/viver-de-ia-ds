@@ -75,6 +75,7 @@
   display: block;
 }
 .vds-brand-tag {
+  line-height: var(--via-lh-snug); /* o header herda line-height 0 do logo · sem isso a etiqueta colapsa */
   font-family: var(--via-font);
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);

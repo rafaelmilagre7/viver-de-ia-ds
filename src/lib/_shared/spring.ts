@@ -85,8 +85,9 @@ export function animateSpring(opts: {
 
   const tick = (now: number) => {
     if (!alive) return;
-    // dt travado em 32ms — aba oculta/hiccup não explode a integração
-    const dt = Math.min((now - last) / 1000, 0.032);
+    // dt travado em [0, 32ms] — aba oculta/hiccup não explode a integração, e o 1º
+    // frame (timestamp do rAF anterior ao performance.now() inicial) não roda a mola pra trás
+    const dt = Math.min(Math.max((now - last) / 1000, 0), 0.032);
     last = now;
     state = springStep(state, opts.to, opts.params, dt);
     if (springSettled(state, opts.to)) {
