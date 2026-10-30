@@ -6,6 +6,17 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Design · rodada 4 — chrome do site (30/out)
+
+- **Sidebar legível**: os 120 rótulos viraram nomes de 1 a 3 palavras em PT-BR, sem parêntese ("Form power (multi-select · drag-drop…)" → "Campos especiais"); o detalhe foi pra descrição e palavras-chave do ⌘K, então a busca pelo nome antigo continua achando. O link ativo tem um indicador só (preenchimento + peso) — saiu a barrinha lateral de 2px; o preenchimento segue deslizando na troca de rota. Footer com os mesmos nomes.
+- **Header**: abaixo de 960px o campo de busca vira uma lupa que abre o ⌘K. Busca, lupa, tema e "Tela cheia" são pílulas do material control, todas com 34px; header e sidebar no material chrome; o ⌘K no thick (`.via-glass-strong`) sobre o scrim do sistema — nenhum blur escrito à mão no chrome.
+- **"Nesta página"** nas docs de API (≥1360px): trilho fixo com as seções do `ComponentDoc` (exemplos agrupados), marca a seção atual na rolagem, link direto pra seção (`/api/select#acessibilidade`) funciona. Seções do template em PT-BR (Variantes, Tamanhos, Faça e evite).
+- **Coluna de conteúdo centrada**: o main tinha largura máxima própria e ficava preso à esquerda (64px de um lado, 144px do outro em 1440); agora a coluna (até 1040px) fica centrada, 64/64 em 1440.
+- **Realce de sintaxe** nos blocos de código (TSX/JSX, HTML, CSS, bash) sem dependência: tokenizador próprio (`src/components/docs/highlight.ts`) e cores só da paleta — primário + semibold pra palavra-chave/tag, primário pra string, corpo pra atributo, cinza recuado pra pontuação/comentário, sem itálico. Copiar continua levando o texto idêntico.
+- **Playground** com os componentes da própria library: Select, Switch e Input no lugar de `<select>`/checkbox nativos.
+- **Acessibilidade**: "Pular para o conteúdo" é o 1º Tab da página; anel de foco virou `outline` + `outline-offset` (segue o raio e sobrevive ao alto contraste); gaveta mobile fechada sai da ordem do Tab, abre com `aria-expanded` e fecha com ESC devolvendo o foco; sidebar é `<nav>`.
+- **Páginas-modelo** ocupam a coluna inteira (antes ~950px) e ganharam **Tela cheia** (`?tela-cheia=1`): some header, sidebar e footer do site — acaba o header duplo — e uma pílula "Sair da tela cheia" fica no canto. As margens negativas que cada showcase repetia na mão deixaram de depender do respiro do main.
+
 ### Design · rodada 3 — movimento (30/out · plugin 1.11.0)
 
 - **Escala de movimento por papel** em `tokens.css`: 5 durações (`--via-dur-press` 100 · `-quick` 160 · `-base` 220 · `-panel` 320 · `-page` 400ms) e a saída sempre um degrau abaixo da entrada; 3 curvas (`--via-ease-enter`, `--via-ease-exit`, `--via-ease-snap`); molas em `linear()` geradas pela física do `spring.ts` (`--via-spring-smooth`, `--via-spring-bounce` — overshoot só em check/radio/switch); distâncias `--via-enter-scale` (.97) e `--via-enter-shift` (8px). Os nomes antigos (`--via-dur`, `--via-ease`, `--via-ease-out`, `--via-ease-spring`, `--via-t*`) seguem como apelido da escala nova. A lib saiu de ~20 durações e ~10 curvas soltas (o `ease` padrão era o mais usado) para a escala; troca de cor em hover passou a `quick`.
