@@ -10,7 +10,7 @@ O usuário descreveu contexto em `$ARGUMENTS`. Identifica que tipo de landing:
 
 | Contexto | Hero variant a usar |
 |---|---|
-| Turma abrindo amanhã/hoje | `Lançamento` |
+| Lançamento abrindo amanhã/hoje (data fornecida por quem pediu) | `Lançamento` |
 | Landing principal sempre no ar | `Evergreen sales` |
 | Leaders AI Conference / live / mentoria coletiva | `Evento` |
 | Captura de email / lead magnet / ebook | `Opt-in` |
@@ -50,7 +50,7 @@ O usuário descreveu contexto em `$ARGUMENTS`. Identifica que tipo de landing:
 | Contexto | CTA correto | CTA errado |
 |---|---|---|
 | Navegação descoberta | "Ver programa" | "Conheça mais!!!" |
-| Conversão decisão | "Entrar na turma" | "GARANTA JÁ" |
+| Conversão decisão | "Escolher plano" | "GARANTA JÁ" |
 | Consultoria alto-ticket | "Falar com mentor" | "Receba uma demonstração" |
 | Lead magnet | "Baixar guia gratuito" | "Quero o material agora" |
 | Evento | "Confirmar presença" | "INSCREVA-SE AGORA" |
@@ -60,44 +60,46 @@ O usuário descreveu contexto em `$ARGUMENTS`. Identifica que tipo de landing:
 
 **Prova com número:**
 ```
-+[N] operadores formados desde 2024
-R$ [valor] destravado por alunos em 12 meses
-11.920 conversas/mês rodando via Nina
-90 dias até primeiro agente em produção
+521 cases reais de implementação de IA em empresas brasileiras
+157 soluções de IA prontas para usar
+29 setores já transformados com IA
+R$ [valor] destravado por [empresa] em [N] meses   ← só com dado fornecido
 ```
 
-Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N]`.
-Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
+Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos · leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual) · sem acesso à internet, use o `fatos.md` da skill viver-de-ia-design (ou do kit) e cite a data dele · use a frase pronta. O que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu · senão placeholder.
+Nunca invente preço (só o da ficha) nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N]`.
+Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que está na ficha ou o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
 
 **Prova atribuída** (depoimento):
 ```
-"Ela fez isso com pouquíssimas horas. Sem saber nada."
-— Márisson Lage · CTO Efizi · turma 2025.3
+"[frase curta, primeira pessoa, na fala da pessoa]"
+— [nome · cargo · empresa]
 ```
 
 **Casos reais nominais:**
 ```
-Caio Ribeiro · construiu a Nina · 11.920 conversas/mês
-Camila Moraes · agente proposta · 73% menos token
-Daniel Pinheiro · onboarding agente · 2h → 20min
+[nome · cargo · empresa] · [resultado do caso]
+[nome · cargo · empresa] · [resultado do caso]
 ```
+
+Depoimento e caso nominal não estão na ficha: só com texto, nome e número fornecidos por quem pediu.
 
 ## FAQ canônico (6 categorias)
 
 1. Pré-requisito (preciso programar?)
 2. Tempo (quantas horas/semana?)
-3. Garantia (e se não chegar em 90 dias?)
+3. Garantia (e se em 90 dias não tiver resultado?)
 4. Devolução (tem reembolso?)
 5. Mentoria (com quem é?)
 6. Operação (e se minha operação for específica?)
 
 Resposta sempre direta · sem rodeio · sem "consulte nosso time".
 
-**Garantia, devolução, preço e pagamento: a resposta vem SÓ do texto da pessoa** (condições, prazo, como pedir, parcelamento). Se ela não informou, a resposta é o placeholder (`[condições da garantia]`, `[prazo de devolução]`, `R$ [valor]`, `[condições de pagamento]`) ou uma pergunta a ela — nunca um prazo "plausível" inventado.
+**Garantia, planos e preço: a resposta vem SÓ da ficha de fatos, na frase pronta** (garantia inteira, com os 3 requisitos e a cláusula 7 dos termos). **Devolução e pagamento** (como pedir, prazo, parcelamento) **vêm SÓ do texto da pessoa**. Se não está na ficha nem a pessoa informou, a resposta é o placeholder (`[condições da garantia]`, `[prazo de devolução]`, `R$ [valor]`, `[condições de pagamento]`) ou uma pergunta a ela — nunca um prazo "plausível" inventado.
 
 ## Countdown editorial
 
-**Regra crítica:** só mostra countdown se urgência é REAL (turma realmente fecha, evento realmente começa, preço realmente sobe). Nunca "criar urgência" inventando deadline. Se a turma sempre abre, não mostra countdown.
+**Regra crítica:** só mostra countdown se urgência é REAL (inscrição realmente fecha, evento realmente começa, preço realmente sobe). Nunca "criar urgência" inventando deadline. Se a oferta está sempre aberta (planos), não mostra countdown.
 
 ## Comparativo concorrente
 

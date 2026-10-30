@@ -28,7 +28,7 @@ O usuário descreveu plataforma + formato em `$ARGUMENTS`. Identifica:
 |---|---|
 | Headline | 1 linha · ≤40 chars · afirmação NÃO pergunta |
 | Body / primary text | Hook + razão · até 125 chars antes do "Ver mais" |
-| CTA button | Verbal infinitivo · 2-4 palavras · o botão-padrão da plataforma (preset do Meta: "Saiba mais", "Inscreva-se") é escolha de menu, não copy · no criativo e no texto a chamada é verbo concreto ("Ver a turma", "Ver programa", "Confirmar presença") · nunca "saiba mais" nem "Garanta sua vaga" (hype) |
+| CTA button | Verbal infinitivo · 2-4 palavras · o botão-padrão da plataforma (preset do Meta: "Saiba mais", "Inscreva-se") é escolha de menu, não copy · no criativo e no texto a chamada é verbo concreto ("Ver os planos", "Ver programa", "Confirmar presença") · nunca "saiba mais" nem "Garanta sua vaga" (hype) |
 | Pill/chip na arte | os 11px são pra tela · em 1080px escale ~2× (≈22px de texto, padding proporcional) · fundo em token de superfície, não branco fixo |
 | Image | **Fundo claro** (branco/off-white + atmosfera radial navy suave) · tipografia navy · zero foto literal · sem gold. Navy de fundo só se o usuário pedir ou no card de fechamento do carrossel (regra zero · light-first) |
 
@@ -39,15 +39,16 @@ O usuário descreveu plataforma + formato em `$ARGUMENTS`. Identifica:
 - "IA não te aposenta. Operador que não usa IA aposenta."
 
 **Prova com número** (use quando funil mid):
-- "[N] operadores. R$ [valor] destravado. 90 dias."
-- "11.920 conversas/mês rodando. Eu te ensino como."
+- "521 cases reais de implementação de IA."
+- "157 soluções de IA prontas para usar."
 
-Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N]`.
-Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
+Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos · leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual) · sem acesso à internet, use o `fatos.md` da skill viver-de-ia-design (ou do kit) e cite a data dele · use a frase pronta. O que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu · senão placeholder.
+Nunca invente preço (só o da ficha) nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N]`.
+Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que está na ficha ou o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
 
 **Convite direto** (use quando funil bottom):
-- "Turma 2026.3 · [N] vagas · 4 meses"
-- "Próxima turma é em outubro. Ou agora."
+- "Pro: R$ 3.780 por mês, em contratação anual"
+- "Starter, Pro ou Enterprise. Contratação anual."
 
 **Identificação** (use pra targeting específico):
 - "Pra fundador que já tentou prompt sozinho e travou."
@@ -76,11 +77,11 @@ CTA button: preset do Meta ("Saiba mais" / "Inscreva-se") · é o botão da plat
 
 ### Meta carousel 5 cards
 ```
-Card 1: HOOK (número grande · ex: +[N] operadores)
-Card 2: contexto (90 dias até produção)
-Card 3: contexto (4 meses · mentoria 1:1)
+Card 1: HOOK (número grande da ficha · ex: 521 cases reais de implementação de IA)
+Card 2: contexto (157 soluções de IA prontas para usar)
+Card 3: contexto (formações · comunidade · mentoria em grupo no Pro, individual no Enterprise)
 Card 4: resultado (R$ [valor] destravado · só com número fornecido)
-Card 5: CTA (Ver programa · próxima turma) · único card que pode ter fundo navy (respiro canônico)
+Card 5: CTA (Ver os planos) · único card que pode ter fundo navy (respiro canônico)
 ```
 
 ### Google Display Banner

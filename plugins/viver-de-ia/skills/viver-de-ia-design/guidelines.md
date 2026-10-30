@@ -11,9 +11,10 @@ A voz da Viver de IA é a de um operador experiente compartilhando o que funcion
 ### Princípios
 
 - **Transformação maior que ferramenta.** Toda história é sobre o que o operador consegue depois — receita, margem, autonomia. A stack é meio, nunca fim.
-- **Toda afirmação carrega número ou citação.** "+11.920 conversas", "R$ [valor]/mês", "100% automatizado". Sem isso é blog, não é cases.
-- **Nunca invente preço nem número de alunos/operadores/vagas.** Pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`.
-- **Nunca invente termo comercial** — garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data ou local de evento. Só vale o que a pessoa informou; senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`.
+- **Toda afirmação carrega número ou citação.** "521 cases reais de implementação de IA", "R$ [valor]/mês", "100% automatizado". Sem isso é blog, não é cases.
+- **Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos** — leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual); sem acesso à internet, use o `fatos.md` desta skill e cite a data dele. Use a frase pronta. O que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu — senão placeholder.
+- **Nunca invente preço nem número de alunos/operadores/vagas.** Preço só da ficha; o resto, pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`.
+- **Nunca invente termo comercial** — garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data ou local de evento. Só vale o que está na ficha de fatos ou o que a pessoa informou; senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`.
 - **Pontos finais, não exclamações.** Confiante sem ser estridente.
 - **Brasilidade quente, sem clichê.** PT-BR direto, "você" infinitivo, nunca "o senhor". Sem emoji, sem unicode decorativo.
 - **Tratamento.** Interface/microcopy fala "você" no imperativo (confira, tente). Email e social podem usar o imperativo coloquial (responde, marca, faz). Nunca tu/teu/tua/contigo.
@@ -23,9 +24,9 @@ A voz da Viver de IA é a de um operador experiente compartilhando o que funcion
 | Tom | Quando usar | Exemplo |
 |---|---|---|
 | Editorial calmo | Hero, manifesto | "Viver de IA, não de prompt." |
-| Operacional direto | Botão, label, alerta | "Entrar na turma" · "Inscrições fecham em 3 dias" |
-| Atribuído humano | Depoimentos | "Sem saber nada. Em pouquíssimas horas." — Márisson |
-| Métrica seca | Stat card, KPI, headline de case | "+11.920 conversas analisadas em 90 dias" |
+| Operacional direto | Botão, label, alerta | "Escolher plano" · "Inscrições fecham em [data]" |
+| Atribuído humano | Depoimentos | "[frase curta, na fala da pessoa]" — [nome · cargo · empresa] |
+| Métrica seca | Stat card, KPI, headline de case | "157 soluções de IA prontas para usar" · case: "[Empresa]: [resultado do caso]" |
 
 ### Comprimento
 
@@ -45,14 +46,14 @@ A voz da Viver de IA é a de um operador experiente compartilhando o que funcion
 
 Padrão: **`<Empresa>: <outcome com métrica>`**.
 
-✅ "Efizi: +11.920 conversas analisadas em 90 dias"
-❌ "Como a Efizi revolucionou as vendas com IA"
+✅ "[Empresa]: [resultado do caso com métrica]" (forma: "[Empresa]: +[N] conversas analisadas em [N] dias" · número só com dado fornecido)
+❌ "Como a [Empresa] revolucionou as vendas com IA"
 
 ### Depoimentos
 
 Curtas, primeira pessoa, sempre atribuídas. Mantenha a oralidade. **Sem italic** (Geist não tem italic real) — peso 500 + cor navy.
 
-✅ "Ela fez isso com pouquíssimas horas. Sem saber nada." — Márisson Lage
+✅ "[frase curta, primeira pessoa, na fala da pessoa]" — [nome · cargo · empresa] (só com texto e nome fornecidos por quem pediu)
 
 ### Números & moeda
 
@@ -60,14 +61,14 @@ Curtas, primeira pessoa, sempre atribuídas. Mantenha a oralidade. **Sem italic*
 |---|---|---|
 | Reais | R$ + espaço + ponto | R$ 1.234 · R$ 2,5M |
 | Porcentagem | sem espaço | 100% · +42% |
-| Plus | com sinal | +11.920 |
+| Plus | com sinal | +1.234 |
 | Tempo | sem espaço · slash | 24/7 · 16 semanas |
 
 ### Botões
 
 | Função | Padrão | Errado |
 |---|---|---|
-| Conversão | Entrar na turma | Saiba mais / Quero saber |
+| Conversão | Escolher plano | Saiba mais / Quero saber |
 | Navegação | Ver cases | Clique aqui |
 | Confirmação | Confirmar inscrição | OK / Sim |
 

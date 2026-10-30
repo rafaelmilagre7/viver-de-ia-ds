@@ -76,6 +76,7 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 ├── lovable-system-prompt.md ← denso · Knowledge do Lovable / custom instructions
 ├── AGENTS.md                ← pro Codex · copia pra raiz do projeto (lê sozinho)
 ├── microcopy.md             ← frases canônicas de produto (erro, vazio, confirmação, botão…)
+├── fatos.md                 ← números do negócio que podem ir em peça (lidos do site oficial · versão viva: viver-de-ia-ds.vercel.app/fatos.md)
 ├── system-prompts/          ← sub-prompts por contexto
 │   ├── email.md
 │   ├── social.md
@@ -117,7 +118,7 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 1. **Paleta restrita** · branco · cinza · navy · preto · coral só destrutivo · sem gold/amarelo
 2. **Pill canônica** · 11px · 500 · letter-spacing -0.004em · nowrap · sem dot · sem caps lock
 3. **Geist single family** · ZERO itálico (\`<em>\` reto · ênfase = peso + cor) · letterspacing negativo em corpo
-4. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA · nunca invente preço, nº de alunos/vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local (pergunte ou use \`R$ [valor]\` / \`[N] alunos\` / \`[condições da garantia]\` / \`[prazo de devolução]\` / \`[data]\` / \`[local]\`)
+4. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA · números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos: leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual); sem acesso à internet, use o \`fatos.md\` deste kit e cite a data dele · use a frase pronta · o que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu · fora isso, nunca invente preço, nº de alunos/vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local (pergunte ou use \`R$ [valor]\` / \`[N] alunos\` / \`[condições da garantia]\` / \`[prazo de devolução]\` / \`[data]\` / \`[local]\`)
 5. **Sparkles banido** · usar Compass · Award · Crown · Layers · MessageCircle
 6. **Light-first** · fundo claro (branco/off-white) é o padrão de tudo · navy é cor da marca, não do fundo
 7. **Logo = lockup** · monograma + wordmark SEMPRE juntos (\`logos/lockup-*.svg\` em vetor, nunca redesenhar nem usar o wordmark solto) · monograma sozinho só em espaço mínimo (favicon, app/profile icon, canto de slide) · versão navy sobre claro, branca só sobre navy · e-mail usa \`logos/lockup-navy.png\` (o Gmail não renderiza SVG)
@@ -235,6 +236,7 @@ console.log(`  wrote fonts/ (${copiedFonts} woff2/license + fonts.css)`);
 const promptGeneral = readFileSync(resolve(root, 'plugins/viver-de-ia/skills/viver-de-ia-design/SKILL.md'), 'utf8');
 writeFileSync(resolve(out, 'system-prompt.md'), promptGeneral);
 copyFileSync(resolve(root, 'plugins/viver-de-ia/skills/viver-de-ia-design/microcopy.md'), resolve(out, 'microcopy.md'));
+copyFileSync(resolve(root, 'plugins/viver-de-ia/skills/viver-de-ia-design/fatos.md'), resolve(out, 'fatos.md'));
 
 // Versão denso pra Lovable (cola direto em custom instructions)
 const lovablePath = resolve(root, 'docs/system-prompt.md');
@@ -251,7 +253,7 @@ if (existsSync(lovablePath)) {
 
 Este projeto segue o **Viver de IA Design System**. Aplique as regras abaixo em TUDO que gerar aqui (UI, email, copy, assets) — sem precisar perguntar.
 
-Setup obrigatório do projeto (se ainda não existir): crie \`src/styles/via-tokens.css\` com o conteúdo de \`tokens/tokens.css\` deste kit e importe no entrypoint; carregue as fontes Geist + Geist Mono (Google Fonts). Logos oficiais em vetor em \`logos/\` (\`lockup-navy.svg\`, \`lockup-white.svg\`, \`monogram-*.svg\`) — nunca recriar · em e-mail use \`lockup-navy.png\` (o Gmail não renderiza SVG). Nunca invente preço, nº de alunos/vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento — use placeholder (\`R$ [valor]\`, \`[N] vagas\`, \`[condições da garantia]\`, \`[prazo de devolução]\`, \`[data]\`, \`[local]\`) ou pergunte. Referência visual viva: https://viver-de-ia-ds.vercel.app
+Setup obrigatório do projeto (se ainda não existir): crie \`src/styles/via-tokens.css\` com o conteúdo de \`tokens/tokens.css\` deste kit e importe no entrypoint; carregue as fontes Geist + Geist Mono (Google Fonts). Logos oficiais em vetor em \`logos/\` (\`lockup-navy.svg\`, \`lockup-white.svg\`, \`monogram-*.svg\`) — nunca recriar · em e-mail use \`lockup-navy.png\` (o Gmail não renderiza SVG). Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos — leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual); sem acesso à internet, use o \`fatos.md\` deste kit e cite a data dele. Use a frase pronta. O que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu — senão placeholder. Fora isso, nunca invente preço, nº de alunos/vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento — use placeholder (\`R$ [valor]\`, \`[N] vagas\`, \`[condições da garantia]\`, \`[prazo de devolução]\`, \`[data]\`, \`[local]\`) ou pergunte. Referência visual viva: https://viver-de-ia-ds.vercel.app
 
 ${body}`);
 }
@@ -294,16 +296,17 @@ const examples = {
     </header>
     <div class="body">
       <p>Oi <strong>{aluno_first_name}</strong>,</p>
-      <p>sua vaga na turma <strong>{turma_codename}</strong> tá confirmada. começa em <strong>14 dias</strong>.</p>
+      <p>seu acesso à plataforma tá liberado · plano <strong>{plano}</strong>.</p>
       <ol>
         <li><strong>Acessa a plataforma</strong> app.viverdeia.ai · login com esse email</li>
-        <li><strong>Assiste o intro de 12min</strong> · contextualiza o método</li>
-        <li><strong>Marca a primeira mentoria 1:1</strong> · 30min pra alinhar seu caso real</li>
+        <li><strong>Faz a trilha de onboarding</strong> · contextualiza o método</li>
+        <li><strong>Começa pelas 3 soluções</strong> que você escolheu na adesão</li>
       </ol>
-      <p>não tem prazo apertado nem nada · só ajuda a chegar na semana 1 com contexto.</p>
+      <p>se travar em algo, responde esse email.</p>
       <a class="cta" href="#">Acessar a plataforma</a>
       <p style="margin-top:24px;padding-top:14px;border-top:0.5px solid rgba(10,31,59,0.08);font-size:13.5px;">
-        <strong>Caio Ribeiro</strong> · fundador
+        <!-- assinatura humana real · liderança oficial na ficha de fatos (fatos.md) -->
+        <strong>[nome]</strong> · [cargo]
       </p>
     </div>
   </article>
@@ -327,9 +330,10 @@ const examples = {
 </head>
 <body>
   <div class="post">
-    <span class="eyebrow">turma 2026.2 · 45 dias dentro</span>
-    <h2>+<em>11.920</em><br />conversas/mês.</h2>
-    <p>operação real · auditada · método codificado em 18 aulas</p>
+    <!-- número da ficha de fatos (fatos.md · 30/out/2026) · confira o valor atual antes de publicar -->
+    <span class="eyebrow">viver de ia · cases</span>
+    <h2><em>521</em><br />cases reais.</h2>
+    <p>de implementação de IA em empresas brasileiras</p>
     <img src="../logos/lockup-navy.svg" alt="Viver de IA" />
   </div>
 </body>
@@ -357,14 +361,15 @@ const examples = {
   <section class="hero">
     <span class="eyebrow">formação técnico-operativa em IA</span>
     <h1>Viver de IA, <em>não de prompt</em>.</h1>
-    <p class="lede">[N] operadores formados · R$ [valor] destravado em 12 meses · método codificado em 18 aulas</p>
+    <p class="lede">521 cases reais de implementação de IA em empresas brasileiras · 157 soluções de IA prontas para usar</p>
     <a class="cta" href="#">Conhecer o método</a>
   </section>
+  <!-- números da ficha de fatos (fatos.md · 30/out/2026) · confira o valor atual antes de publicar · R$ [valor] só com dado fornecido -->
   <section class="stats">
-    <div class="stat"><strong>+[N]</strong><em>operadores formados</em></div>
-    <div class="stat"><strong>R$ [valor]</strong><em>destravado em 12 meses</em></div>
-    <div class="stat"><strong>11.920</strong><em>conversas/mês via Nina</em></div>
-    <div class="stat"><strong>90 dias</strong><em>até agente em produção</em></div>
+    <div class="stat"><strong>521</strong><em>cases reais de implementação de IA</em></div>
+    <div class="stat"><strong>157</strong><em>soluções de IA prontas para usar</em></div>
+    <div class="stat"><strong>29</strong><em>setores já transformados com IA</em></div>
+    <div class="stat"><strong>R$ [valor]</strong><em>destravado em [N] meses</em></div>
   </section>
 </body>
 </html>`,

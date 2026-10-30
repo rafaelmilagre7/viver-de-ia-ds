@@ -31,7 +31,8 @@ Se a categoria não bate em nenhuma, gere direto seguindo os princípios canôni
 5. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA · sem emoji decorativo
 6. **Sparkles banido** · usar Compass · Award · Crown · Layers · MessageCircle
 7. **Logo correta por contexto** · lockup (monograma + wordmark juntos) por padrão · monograma sozinho só em espaço mínimo · nunca wordmark solto · app icon em profile · Leaders AI mark em material de evento (arquivo branco no fundo escuro, navy no fundo claro)
-8. **Nunca invente** preço, vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local · placeholder (`R$ [valor]`, `[N] vagas`, `[condições da garantia]`, `[prazo de devolução]`, `[data]`, `[local]`) ou pergunte
+8. **Números do negócio só da ficha de fatos** (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) · leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual) · sem acesso à internet, use o `fatos.md` da skill viver-de-ia-design e cite a data dele · use a frase pronta · o que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu
+9. **Nunca invente** preço, vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local · o que não está na ficha nem veio da pessoa vira placeholder (`R$ [valor]`, `[N] vagas`, `[condições da garantia]`, `[prazo de devolução]`, `[data]`, `[local]`) ou pergunte
 
 ## Reference site canônico
 

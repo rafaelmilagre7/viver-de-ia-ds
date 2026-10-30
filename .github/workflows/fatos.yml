@@ -1,0 +1,44 @@
+name: Fatos do negócio · leitura diária
+
+# Lê o site oficial (viverdeia.ai) todo dia e atualiza a ficha de fatos que as IAs
+# usam nas peças (public/fatos.json + public/fatos.md + cópia no plugin). Só commita
+# quando algum fato muda; o push no main republica o site (Vercel) e a versão viva
+# fica em viver-de-ia-ds.vercel.app/fatos.md. O kit .zip leva a cópia do dia em que
+# for reconstruído (bun run kit) e aponta pra versão viva.
+
+on:
+  schedule:
+    - cron: '0 11 * * *' # 08:00 em Brasília
+  workflow_dispatch:
+
+concurrency:
+  group: fatos
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: lê o site e commita se mudou
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: ler fatos do site oficial
+        run: node scripts/fatos-sync.mjs
+      - name: commit fatos (se mudaram)
+        run: |
+          git config user.name  "viver-de-ia-bot"
+          git config user.email "bot@viverdeia.ai"
+          git add public/fatos.json public/fatos.md plugins/viver-de-ia/skills/viver-de-ia-design/fatos.md
+          if git diff --cached --quiet; then
+            echo "Site oficial sem mudança - ficha mantida."
+          else
+            git commit -m "chore(fatos): site oficial mudou (auto)"
+            git push
+            echo "Ficha de fatos atualizada."
+          fi

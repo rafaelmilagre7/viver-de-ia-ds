@@ -130,8 +130,9 @@ Live minúsculo "ao vivo" — nunca caps lock "AO VIVO". O `<em>` fica RETO (gua
 - PT-BR direto · "você" infinitivo
 - **Tratamento:** interface/microcopy fala "você" no imperativo (confira, tente) · email e social podem usar o imperativo coloquial (responde, marca, faz) · nunca tu/teu/tua/contigo
 - Sempre número ou citação atribuída · sem "centenas" genérico
-- **Nunca invente preço nem número de alunos/operadores/vagas** · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
-- **Nunca invente termo comercial:** garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data nem local de evento · só vale o que a pessoa informou · senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`
+- **Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos** — leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual); sem acesso à internet, use o `fatos.md` desta skill e cite a data dele. Use a frase pronta. O que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu — senão placeholder. Número da ficha que aparece em exemplo (aqui e nos `/via-*`) é foto de 30/out/2026: na peça, vale a ficha atual.
+- **Nunca invente preço nem número de alunos/operadores/vagas** · preço só da ficha · o resto, pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
+- **Nunca invente termo comercial:** garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data nem local de evento · só vale o que está na ficha de fatos ou o que a pessoa informou · senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`
 - Sem clichê IA ("revolucione", "transforme", "o futuro chegou")
 - Sem emoji decorativo (✨🚀💪🔥) · sem urgência fabricada
 - Sentence-case em CTAs · não caps lock
@@ -431,7 +432,7 @@ Emails de verdade que **não quebram no inbox** (Gmail, Outlook, Apple Mail). Vi
 ```ts
 import { render } from '@react-email/render';
 import WelcomeEmail from 'emails/welcome';
-const html = await render(<WelcomeEmail firstName="Marina" turma="Operadores · T08" daysToStart={14} platformUrl="https://app.viverdeia.ai" />);
+const html = await render(<WelcomeEmail firstName="Marina" turma={turma} daysToStart={diasParaComecar} platformUrl="https://app.viverdeia.ai" />);
 await resend.emails.send({ from: 'Viver de IA <oi@viverdeia.ai>', to, subject: 'sua vaga tá confirmada · bora começar?', html });
 ```
 
@@ -552,7 +553,7 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 15. Email: tabela + inline + CTA navy sólido + fallback de background sólido + `lockup-navy.png` ~18px (PNG, nunca SVG)
 16. Raio na escala (card 20 · filho um degrau abaixo) · dataviz na régua (séries `--via-data-*`, UM eixo, zero-anchored, projeção tracejada)
 17. Mockup interno pina as próprias cores (não herda tema) · testar a peça nos 2 temas ANTES de entregar (o dark é onde tudo quebra)
-18. Zero termo comercial inventado (preço, vagas, garantia, devolução, contrato, pagamento, política, data, local) · o que não veio da pessoa vira placeholder
+18. Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos, na frase pronta · zero termo comercial inventado (vagas, devolução, contrato, pagamento, política, data, local) · o que não está na ficha nem veio da pessoa vira placeholder
 
 ---
 
@@ -577,6 +578,7 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 - `data.css` — tabelas, números e métricas (via-table, via-num, via-metric, via-delta, via-spark)
 - `guidelines.md` — aprofundamento: voz, copy, do's & don'ts com cite de página canônica
 - `microcopy.md` — frases canônicas de produto (erro, vazio, confirmação, sucesso, botão…) · gerado de `src/content/microcopy.ts`
+- `fatos.md` — ficha de fatos do negócio (cases, soluções, setores, planos e preços, mentoria, garantia, liderança) lida do site oficial · única fonte de número do negócio numa peça · versão sempre atual: https://viver-de-ia-ds.vercel.app/fatos.md
 - `assets/logos/` — logo oficial em vetor (`lockup-navy.svg`, `lockup-white.svg`, `monogram-navy.svg`, `monogram-white.svg`, extraídos do arquivo original do designer) + `lockup-navy.png` / `lockup-white.png` (720px · só pra e-mail) + PNGs legados + Leaders AI mark em PNG (`leaders-ai-conference-logo.png` branco pra fundo escuro · `leaders-ai-conference-logo-navy.png` pra fundo claro)
 
 ## Fontes & ícones (CDN)

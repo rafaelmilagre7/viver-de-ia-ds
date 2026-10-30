@@ -1,0 +1,116 @@
+{
+  "atualizado_em": "2026-10-30",
+  "fonte": "https://viverdeia.ai",
+  "lideranca": [
+    "Rafael Milagre · Fundador",
+    "Yago Martins · Co-fundador",
+    "Luccas Riedo · CEO"
+  ],
+  "fatos": [
+    {
+      "id": "cases",
+      "rotulo": "Cases reais de implementação",
+      "valor": 521,
+      "frase": "521 cases reais de implementação de IA em empresas brasileiras",
+      "fonte": "https://viverdeia.ai/cases",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "solucoes",
+      "rotulo": "Soluções prontas na plataforma",
+      "valor": 157,
+      "frase": "157 soluções de IA prontas para usar",
+      "fonte": "https://viverdeia.ai/",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "setores",
+      "rotulo": "Setores com implementação",
+      "valor": 29,
+      "frase": "29 setores já transformados com IA",
+      "fonte": "https://viverdeia.ai/experiencia",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "plano-starter",
+      "rotulo": "Plano Starter",
+      "valor": 2580,
+      "frase": "Starter: R$ 2.580 por mês, em contratação anual",
+      "fonte": "https://viverdeia.ai/planos",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "plano-pro",
+      "rotulo": "Plano Pro",
+      "valor": 3780,
+      "frase": "Pro: R$ 3.780 por mês, em contratação anual · inclui mentoria em grupo",
+      "fonte": "https://viverdeia.ai/planos",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "plano-enterprise",
+      "rotulo": "Plano Enterprise",
+      "valor": 6180,
+      "frase": "Enterprise: R$ 6.180 por mês, em contratação anual · inclui mentoria individual",
+      "fonte": "https://viverdeia.ai/planos",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "mentoria-grupo-pro",
+      "rotulo": "Mentoria em grupo no Pro",
+      "valor": 10,
+      "frase": "10 check-ins por mês de mentoria em grupo no plano Pro",
+      "fonte": "https://viverdeia.ai/planos",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "mentoria-individual-enterprise",
+      "rotulo": "Mentoria individual no Enterprise",
+      "valor": 1,
+      "frase": "1 hora por mês de mentoria individual no plano Enterprise",
+      "fonte": "https://viverdeia.ai/planos",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "garantia",
+      "rotulo": "Garantia",
+      "valor": "Devolvemos 100% do investimento se, em 90 dias, sua empresa não tiver nem aumento de receita nem redução de custos operacionais. Para ter direito, é preciso cumprir três requisitos no mesmo prazo: concluir a trilha de onboarding, concluir 3 formações e implementar as 3 soluções escolhidas na adesão.",
+      "frase": "Devolvemos 100% do investimento se, em 90 dias, sua empresa não tiver nem aumento de receita nem redução de custos operacionais. Para ter direito, é preciso cumprir três requisitos no mesmo prazo: concluir a trilha de onboarding, concluir 3 formações e implementar as 3 soluções escolhidas na adesão. Condições completas na cláusula 7 dos termos de uso.",
+      "fonte": "https://viverdeia.ai/faq",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    },
+    {
+      "id": "meta",
+      "rotulo": "Meta pública (não é resultado)",
+      "valor": "R$ 1 bilhão em receita e economia",
+      "frase": "Meta: gerar R$ 1 bilhão em receita e economia para empresas com IA (é meta, não resultado)",
+      "fonte": "https://viverdeia.ai/experiencia",
+      "lido_em": "2026-10-30",
+      "desde": "2026-10-30",
+      "status": "ok"
+    }
+  ],
+  "divergencias": [
+    "/experiencia diz 515 cases; /cases diz 521",
+    "mentoria em grupo do Enterprise: /planos diz 50 check-ins/mês, /faq diz ilimitada"
+  ],
+  "avisos": []
+}

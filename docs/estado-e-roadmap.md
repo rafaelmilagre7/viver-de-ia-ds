@@ -110,7 +110,16 @@ Pedido do Rafael: o marketing não desenha à mão; o foco é a IA criar as peç
   `--via-navy-XX` dentro de `box-shadow` → halo branco no escuro (a regra que a skill proíbe). Agora
   `--via-shadow-ink-*` (+ novo `--via-shadow-ink-08`); no claro o valor é idêntico.
 
-**Perguntas de negócio em aberto (Rafael):**
+**Ficha de fatos (30/out, mesmo dia):** Rafael pediu números "dinâmicos de acordo com a realidade atual",
+lidos automaticamente. Fonte escolhida: o site oficial viverdeia.ai (público, sem credencial) →
+`scripts/fatos-sync.mjs` + Action diária `fatos.yml` → `public/fatos.md` (viva). Achado: as instruções
+vendiam a oferta antiga (turma de 4 meses); o site vende 3 planos anuais (Starter/Pro/Enterprise) com garantia
+condicional de 90 dias. Dados internos (conversas da Nina, alunos) ficam fora — pediriam acesso aos bancos.
+Divergências do site pra corrigir lá: 515 × 521 cases (/experiencia × /cases); mentoria em grupo do
+Enterprise 50/mês (/planos) × ilimitada (/faq). Emails de produção assinam "Caio Ribeiro · fundador",
+mas o site lista Rafael (fundador) e Yago (cofundador) — decisão do Rafael.
+
+**Perguntas de negócio em aberto (Rafael) — antes da ficha; as 3 primeiras ficaram resolvidas por ela:**
 - "11.920" aparece como "conversas/mês rodando via Nina" (via-paid, via-landing, via-deck, via-brand, kit)
   e como "Efizi: +11.920 conversas analisadas em 90 dias" (guidelines) — qual é o fato?
 - Política real de garantia e devolução (o `/via-deck` tinha "60 dias devolução" — virou placeholder).

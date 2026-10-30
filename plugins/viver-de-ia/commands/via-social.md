@@ -58,7 +58,7 @@ O usuário descreveu canal + formato em `$ARGUMENTS`. Identifica:
 ```
 Card 1 (hook): número grande + sub curta + lockup pequeno no rodapé
 Cards 2-9: contexto → problema → solução → resultado · monograma no canto (como slide interior)
-Card 10 (CTA): "vou ensinar isso" + [data] da turma + lockup · único card que pode ter fundo navy
+Card 10 (CTA): "vou ensinar isso" + próximo passo real (ver os planos · [data] só se houver evento) + lockup · único card que pode ter fundo navy
 
 Cada card: portrait 1080×1350 · headline 38-52px Geist Display
 ```
@@ -79,7 +79,8 @@ Cada card: portrait 1080×1350 · headline 38-52px Geist Display
 - **CTA discreto no fim** · texto natural ("se quiser ver o código, comenta aqui")
 - **Paleta restrita** · navy + cinza + branco · zero gold/amarelo
 - **Pill em arte grande** · os 11px da pill são pra tela · em canvas de 1080px escale ~2× (≈22px de texto, padding proporcional) · fundo em token de superfície (`var(--via-glass-card)` / `var(--via-surface)`), não branco fixo
-- **Nunca invente** preço, vagas, data, local ou condição comercial · use `[N] vagas` / `[data]` / `[local]` ou pergunte
+- **Números do negócio só da ficha de fatos** (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) · leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual) · sem acesso à internet, use o `fatos.md` da skill viver-de-ia-design (ou do kit) e cite a data dele · use a frase pronta · o que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu
+- **Nunca invente** preço, vagas, data, local ou condição comercial · o que não está na ficha nem veio da pessoa: `[N] vagas` / `[data]` / `[local]` ou pergunte
 - **Hashtags** · poucas e relevantes · não 30 hashtags genéricas
 
 ## Reference completa

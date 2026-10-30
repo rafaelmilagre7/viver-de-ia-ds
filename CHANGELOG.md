@@ -6,6 +6,12 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Ficha de fatos do negócio (30/out · plugin 1.9.0)
+
+- **Números das peças vêm do site oficial**: `scripts/fatos-sync.mjs` lê viverdeia.ai (cases, soluções, setores, planos e preços, mentoria por plano, garantia real, meta, liderança) e grava `public/fatos.json`, `public/fatos.md` (viva em `viver-de-ia-ds.vercel.app/fatos.md`) e `fatos.md` na skill e no kit. Só grava quando algum fato muda; frase que some do site vira "conferir", nunca valor inventado. Divergências do próprio site são listadas (hoje: 515 × 521 cases; Enterprise 50 check-ins × ilimitada).
+- **Leitura diária automática**: GitHub Action `fatos.yml` (08:00 BRT + manual) commita a ficha quando o site muda — o push republica o site.
+- **Instruções das IAs sem a oferta antiga**: SKILL, guidelines, system prompt, comandos `/via-*` e kit diziam "mentoria de 4 meses", "turma", "18 aulas", "90 dias até produção", "1:1", "R$ 2.400/6.000" e números de casos sem fonte (11.920, 73%, depoimentos nominais). Agora: fatos só da ficha (frase pronta), o resto vira placeholder; assinatura de email = liderança real.
+
 ### IA criando na marca (30/out · plugin 1.8.0)
 
 - **Logo oficial em vetor**: o lockup e o monograma foram extraídos do arquivo original do designer (BrandBook, dez/2025 — formas vetoriais da capa) e viram `lockup-navy.svg`, `lockup-white.svg`, `monogram-navy.svg`, `monogram-white.svg` (+ `lockup-*.png` 720px pra email, que não renderiza SVG). Ficam em `public/logos/` (servidos em `viver-de-ia-ds.vercel.app/logos/…`), na skill e no kit. Tinta oficial do logo = `#010F1D` (a do arquivo do designer).

@@ -32,19 +32,20 @@ O usuário descreveu o tipo de email em `$ARGUMENTS`. Identifica em qual das 5 c
 | Categoria | Voz | Sample subject |
 |---|---|---|
 | Transacional welcome | caloroso-operacional | "Bem-vindo. Próximos passos em 3 atos." |
-| Transacional billing | concierge-direto | "Cobrança em 2 dias · R$ [valor] · mentoria mensal" |
-| Editorial newsletter | crônica-pessoal | "A Nina passou de 11k pra 13k conversas · 2 detalhes mudaram tudo" |
-| Editorial drip | stand-alone editorial | "O agente que paga a mentoria" |
+| Transacional billing | concierge-direto | "Cobrança em 2 dias · R$ [valor] · plano [nome]" |
+| Editorial newsletter | crônica-pessoal | "A Nina passou de [N] pra [N] conversas · 2 detalhes mudaram tudo" |
+| Editorial drip | stand-alone editorial | "O agente que paga o plano" |
 | Concierge ops | timeline-tecnico | "Webhook timeout · 504 desde 14:08 · provider embedding" |
-| Concierge NPS | pessoal-curioso | "Como tá indo a mentoria? 1 pergunta direta" |
-| Comercial evento | factual-editorial | "Sex 14h · auditoria de 3 prompts ao vivo" |
-| Comercial lançamento | fato + condição | "Turma 2026.3 abre amanhã 9h · [N] vagas · 4 meses" |
+| Concierge NPS | pessoal-curioso | "Como tá indo a plataforma? 1 pergunta direta" |
+| Comercial evento | factual-editorial | "[dia] [hora] · auditoria de 3 prompts ao vivo" |
+| Comercial lançamento | fato + condição | "[o que abre] abre [data] às [hora] · [condição fornecida]" |
 | Comercial oferta | observacional | "Pelo que vi no seu agente, faria sentido conversar" |
 | Lifecycle churn | curioso-humano | "Você sumiu há 19 dias · tô curioso, o que rolou" |
 | Lifecycle win-back | observa-mudanças | "3 coisas mudaram desde que você saiu · acho que faz sentido voltar" |
 
-Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] vagas`.
-Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
+Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos · leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual) · sem acesso à internet, use o `fatos.md` da skill viver-de-ia-design (ou do kit) e cite a data dele · use a frase pronta. O que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu · senão placeholder.
+Nunca invente preço (só o da ficha) nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] vagas`.
+Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que está na ficha ou o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
 
 ## Estrutura canônica
 
@@ -57,7 +58,7 @@ Nunca invente garantia, prazo de devolução, termos de contrato, condição de 
   - corpo editorial (parágrafos curtos · sem listas decorativas)
   - 1 CTA principal (pílula navy · sentence-case · 2-4 palavras)
   - fine print opcional (cinza · 12.5px · contextualiza prazo/limite)
-  - assinatura humana (Caio · time Viver de IA)
+  - assinatura humana real: [nome] · [cargo] (liderança oficial na ficha de fatos)
 
 [email footer]
   - monograma pequeno (`monogram-navy.png` · URL absoluta `https://viver-de-ia-ds.vercel.app/logos/monogram-navy.png`)

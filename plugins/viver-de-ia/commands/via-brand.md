@@ -61,18 +61,19 @@ O usuário fez pergunta sobre brand em `$ARGUMENTS`. Identifica o tipo:
 
 | Contexto | Registro | Sample bom |
 |---|---|---|
-| Marketing landing | editorial-comercial | "+[N] operadores. 90 dias até o primeiro agente em produção." |
-| Email transacional | concierge-direto | "Cobrança em 2 dias · R$ [valor] · mentoria mensal" |
-| Email editorial | crônica-operacional | "Essa semana vi a Nina passar de 11k pra 13k conversas" |
+| Marketing landing | editorial-comercial | "521 cases reais de implementação de IA em empresas brasileiras." |
+| Email transacional | concierge-direto | "Cobrança em 2 dias · R$ [valor] · plano [nome]" |
+| Email editorial | crônica-operacional | "Essa semana vi a Nina passar de [N] pra [N] conversas" |
 | Comunidade Discord | mentor-presente | "oi pessoal, esse caso do João é exatamente o que conversei" |
 | Suporte 1:1 | pragmático-humano | "vi aqui que o webhook tá retornando 504 desde ontem 14h" |
 | Paid ads | editorial-comprimido | "Em 2026, operador que não opera IA, não opera." |
-| Social orgânico | crônica-pessoal | "7 meses atrás a Nina perdia 40% das conversas no primeiro turno" |
+| Social orgânico | crônica-pessoal | "[N] meses atrás a Nina perdia [N]% das conversas no primeiro turno" |
 | Sales B2B | consultivo-objetivo | "Vocês perdem ~4h/semana só com triagem de leads no Meta" |
 | Eventos palco | palco-operacional | "Vou contar 3 erros que cometi construindo a Nina" |
 
-Nunca invente preço nem número de alunos/operadores/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`.
-Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
+Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos · leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual) · sem acesso à internet, use o `fatos.md` da skill viver-de-ia-design (ou do kit) e cite a data dele · use a frase pronta. O que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu · senão placeholder.
+Nunca invente preço (só o da ficha) nem número de alunos/operadores/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`.
+Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que está na ficha ou o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
 
 ## Personality · 7 atributos
 
@@ -82,7 +83,7 @@ Nunca invente garantia, prazo de devolução, termos de contrato, condição de 
 4. **Sem guru-bro** · confiante sem ser estridente
 5. **Pragmático** · sempre a coisa menor que resolve
 6. **Navy-protagonista** · atmosfera navy + branco · sem dourado
-7. **Número-sobre-adjetivo** · "11.920 conversas/mês", não "muito mais conversas"
+7. **Número-sobre-adjetivo** · "521 cases reais de implementação de IA", não "centenas de cases"
 
 ## Esqueleto invariante (5 regras)
 

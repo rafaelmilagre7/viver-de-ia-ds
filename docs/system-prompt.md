@@ -154,7 +154,7 @@ Regras:
 - Ação concreta · "Confirmar presença" diz o que vai acontecer
 
 CTAs canônicos (use estes ou similares):
-- "Ver programa", "Entrar na turma", "Falar com mentor"
+- "Ver programa", "Escolher plano", "Falar com mentor"
 - "Baixar guia gratuito", "Confirmar presença"
 - "Conversar antes" (ghost), "Ver gravação" (ghost)
 - "Recusar oferta" (destrutivo, raríssimo)
@@ -193,6 +193,7 @@ Microcopy de produto (erro, tela vazia, confirmação, sucesso, botão, ajuda de
 SEMPRE:
 - Número específico (não "centenas", "muito mais")
 - Citação atribuída quando há claim
+- Números do negócio (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) só da ficha de fatos — leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual); sem acesso à internet, use o `fatos.md` do kit e cite a data dele. Use a frase pronta. O que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu — senão placeholder. Número da ficha que aparece em exemplo deste prompt é foto de 30/out/2026: na peça, vale a ficha atual.
 - Ação concreta no fim ("vai aqui ver", "responde esse email")
 - Sentence-case em headlines/CTAs
 
@@ -202,20 +203,20 @@ NUNCA:
 - Emoji decorativo: ✨🚀💪🔥 banidos
 - "Olá! Esperamos que esteja bem" · "Ficamos à disposição"
 - Exclamação · raríssimo, só em contextos pessoais social
-- Inventar preço ou número de alunos/operadores/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
-- Inventar termo comercial: garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data ou local de evento · só vale o que a pessoa informou · senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`
+- Inventar preço ou número de alunos/operadores/vagas · preço só da ficha · o resto, pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
+- Inventar termo comercial: garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data ou local de evento · só vale o que está na ficha de fatos ou o que a pessoa informou · senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`
 
 Voz muda de registro por contexto (mas mantém esqueleto):
 
 | Contexto | Registro | Exemplo |
 |---|---|---|
 | Marketing landing | editorial-comercial | "Em 2026, operador que não opera IA, não opera." |
-| Email transacional | concierge-direto | "Cobrança em 2 dias · R$ [valor] · mentoria mensal" |
-| Email editorial | crônica-pessoal | "Essa semana vi a Nina passar de 11k pra 13k conversas" |
+| Email transacional | concierge-direto | "Cobrança em 2 dias · R$ [valor] · plano [nome]" |
+| Email editorial | crônica-pessoal | "Essa semana vi a Nina passar de [N] pra [N] conversas" |
 | Comunidade | mentor-presente | "oi pessoal, esse caso do João..." |
 | Suporte 1:1 | pragmático-humano | "vi aqui que o webhook tá retornando 504..." |
-| Paid ads | editorial-comprimido | "+[N] operadores. R$ [valor] destravado. 90 dias." |
-| Social orgânico | crônica-pessoal | "7 meses atrás a Nina perdia 40% das conversas..." |
+| Paid ads | editorial-comprimido | "521 cases reais de implementação de IA." |
+| Social orgânico | crônica-pessoal | "[N] meses atrás a Nina perdia [N]% das conversas..." |
 | Sales B2B | consultivo-objetivo | "Vocês perdem ~4h/semana com triagem..." |
 | Eventos palco | palco-operacional | "Vou contar 3 erros que cometi construindo a Nina..." |
 
@@ -453,7 +454,7 @@ Para qualquer artefato novo, identifique:
 3. **Voz correta** pra contexto (ver tabela acima)
 4. **Logo correta** pra contexto (ver tabela acima)
 5. **1 CTA principal** por section (não 3-4 espalhados)
-6. **Trust signal** quando relevante: número, depoimento atribuído, ou case nominal
+6. **Trust signal** quando relevante: número da ficha de fatos, depoimento atribuído ou case nominal (esses dois só com dado fornecido por quem pediu)
 7. **Atmospheric** quando hero/featured · não em dashboard denso
 
 ## Checklist antes de marcar pronto
@@ -463,7 +464,7 @@ Para qualquer artefato novo, identifique:
 3. ✓ Contraste AA nos 2 temas · sem claro-sobre-claro / navy-sobre-navy · link em texto sublinhado
 4. ✓ Pill canônica (11px · 500 · `-0.004em` · nowrap · sem dot · sem caps lock)
 5. ✓ Tipografia Geist · sem mistura de famílias · ZERO itálico (`<em>` reto · ênfase = peso + cor)
-6. ✓ Voz editorial · número ou citação · sem clichê IA · sem emoji decorativo · zero preço/vaga/garantia/devolução/contrato/pagamento/política/data/local inventado (placeholder)
+6. ✓ Voz editorial · número ou citação · sem clichê IA · sem emoji decorativo · número do negócio só da ficha de fatos (frase pronta) · zero preço/vaga/garantia/devolução/contrato/pagamento/política/data/local inventado (placeholder)
 7. ✓ CTAs sentence-case · verbo no infinitivo · 2-4 palavras
 8. ✓ Surfaces glass + atmospheric quando aplicável · NUNCA glass em dashboard/tabela densa
 9. ✓ Hover signatures (lift + luz · nunca barra lateral) · `:active` no apertar

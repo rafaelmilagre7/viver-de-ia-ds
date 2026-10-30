@@ -24,16 +24,16 @@ O usuário descreveu o tipo de material em `$ARGUMENTS`. Identifica:
 |---|---|---|
 | 01 | Capa | Lockup central (monograma + wordmark) · tagline curta · fundo claro + atmosfera radial navy suave |
 | 02 | Problema | "Operador médio brasileiro não opera IA" · declaração forte |
-| 03 | Mercado | +[N] operadores · R$ [valor] · prova com número |
+| 03 | Mercado | 521 cases reais de implementação de IA · 29 setores já transformados com IA · prova com número da ficha |
 | 04 | Método | 3 atos overview (estuda · constrói · opera) |
-| 05 | Ato 1 · Estuda | 18 aulas + stack real (Claude SDK, OpenAI) |
-| 06 | Ato 2 · Constrói | 4 lives + 2 estudos de caso + mentoria 1:1 mensal |
+| 05 | Ato 1 · Estuda | formações da plataforma + stack real (Claude SDK, OpenAI) |
+| 06 | Ato 2 · Constrói | 157 soluções de IA prontas para usar + comunidade + mentoria (em grupo no Pro · individual no Enterprise) |
 | 07 | Ato 3 · Opera | Agente em produção · responsabilidade do operador |
-| 08 | Caso 1 | Caio Ribeiro · Nina · 11.920 conversas/mês |
-| 09 | Caso 2 | Camila Moraes · proposta · 73% menos token |
-| 10 | Preço + garantia | R$ [valor]/mês · 4 meses · 90 dias até produção · [condições da garantia] |
+| 08 | Caso 1 | [nome · cargo · empresa] · [resultado do caso] · só com dado fornecido |
+| 09 | Caso 2 | [nome · cargo · empresa] · [resultado do caso] · só com dado fornecido |
+| 10 | Planos + garantia | Starter, Pro e Enterprise com o preço da ficha (contratação anual) · garantia na frase pronta da ficha (3 requisitos · cláusula 7 dos termos) |
 | 11 | Próximo passo | "30min de call · [data] · audito seu caso" |
-| 12 | Thank-you | Lockup + contato (caio@viverdeia.ai · @caioribeiro) · único slide que pode ter fundo navy |
+| 12 | Thank-you | Lockup + contato (`[email]` · `[@perfil]`) · único slide que pode ter fundo navy |
 
 ## Regras canônicas do deck
 
@@ -45,8 +45,9 @@ O usuário descreveu o tipo de material em `$ARGUMENTS`. Identifica:
 - **Light-first** · fundo claro (branco/off-white + atmosfera radial navy suave) em todos os slides, capa inclusive · navy de fundo só se o usuário pedir ou no thank-you (regra zero)
 - **Sem foto stock** · tipografia + atmosfera carregam o slide
 - **Capa + thank-you · lockup central** (monograma + wordmark juntos · nunca wordmark solto) · só esses 2 slides têm o lockup; nos internos, monograma no canto
-- **Nunca invente preço nem número de alunos/operadores** · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
-- **Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local** · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte
+- **Números do negócio só da ficha de fatos** (cases, soluções, setores, preços, planos, mentoria, garantia, liderança) · leia https://viver-de-ia-ds.vercel.app/fatos.md (sempre atual) · sem acesso à internet, use o `fatos.md` da skill viver-de-ia-design (ou do kit) e cite a data dele · use a frase pronta · o que não está na ficha (números de casos individuais, conversas da Nina, alunos formados, vagas, datas, locais, depoimentos) só com dado fornecido por quem pediu
+- **Nunca invente preço (só o da ficha) nem número de alunos/operadores** · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
+- **Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local** · só o que está na ficha ou o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte
 
 ## Deck de palestra (evento) · estrutura curta
 
@@ -55,7 +56,7 @@ O usuário descreveu o tipo de material em `$ARGUMENTS`. Identifica:
 | 01 | Capa | Fundo claro · lockup + título da palestra + `[nome do evento] · [data] · [seu nome]` |
 | 02 | Tese | 1 frase que a palestra defende |
 | 03-05 | Método | 2–3 slides de cards (um passo por card) |
-| 06 | Caso | 1 caso com número · só fatos dados pela pessoa ou já documentados |
+| 06 | Caso | 1 caso com número · só fatos dados pela pessoa ou da ficha de fatos |
 | 07 | Métrica / próximo passo | o número que a plateia deve acompanhar ou a ação de amanhã |
 | 08 | Encerramento | contato · fundo navy permitido |
 
@@ -66,12 +67,12 @@ Mesmas regras do pitch deck: 1 ideia por slide · monograma no canto dos interno
 ```
 Header · lockup + tag editorial
 Hero · "Operadores formando operadores · método codificado em [N] alunos"
-4 stats grid ([N] · R$ [valor] · [N]% · 90 dias)
+4 stats grid (cases reais · soluções prontas · setores, da ficha de fatos · [N]% só com dado fornecido)
 3 colunas:
   · Pra quem é (perfil operador PME)
   · O que recebe (checklist 6 itens)
-  · Garantia (90 dias até produção · [condições da garantia] · [prazo de devolução] · só o que a pessoa informou)
-Footer · próxima turma + CTA url
+  · Garantia (frase pronta da ficha de fatos, com os 3 requisitos e a cláusula 7 · [prazo de devolução] só se a pessoa informou)
+Footer · planos (ficha de fatos) + CTA url
 ```
 
 ## Case study editorial
@@ -99,7 +100,7 @@ Footer · "Próximo passo" + CTA "Aceitar proposta"
 5 cláusulas mínimas:
 1. Partes (contratante + contratada)
 2. Objeto (período + escopo)
-3. Garantia (90 dias até produção · [condições da garantia])
+3. Garantia (frase pronta da ficha de fatos · cláusula 7 dos termos de uso)
 4. Devolução ([prazo de devolução])
 5. Propriedade intelectual (licença vitalícia)
 
@@ -110,7 +111,7 @@ Footer · "Próximo passo" + CTA "Aceitar proposta"
 `viver-de-ia-ds/src/pages/patterns/Commercial.tsx` tem (atenção: a capa de lá ainda está em navy mesh com wordmark, anterior à regra light-first · para cor de fundo e logo vale este comando):
 - 12 slides do deck visualmente renderizados
 - one-pager A4 PDF-ready
-- case study editorial completo (Camila Moraes)
+- case study editorial completo (nome e números de lá são ilustrativos, não fatos)
 - proposta com todos os blocos
 - contract visual minimalista
 
