@@ -21,7 +21,7 @@ export default function ApiSwitch() {
       eyebrow="api · switch"
       name="Switch"
       headline="toggle binário · spring overshoot · thumb radial gradient"
-      description="Toggle on/off pra preferências persistentes. Track com gradient navy-14→20 + inset shadow profundo. Thumb com radial gradient (white realista) + 5-layer shadow. Transition spring 0.4s cubic-bezier(.34, 1.56, .64, 1). Checked: gradient navy + glow externo."
+      description="Toggle on/off pra preferências persistentes. Track com gradient navy-14→20 + inset shadow profundo. Thumb com radial gradient (white realista) + 5-layer shadow. Thumb anda na mola --via-spring-bounce (overshoot reservado a controle). Checked: gradient navy + glow externo."
       importLine={`import { Switch, type SwitchProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-switch', description: 'Container · label + track + description vertical stack' },

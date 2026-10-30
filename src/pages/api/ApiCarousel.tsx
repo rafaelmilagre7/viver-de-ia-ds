@@ -33,8 +33,8 @@ export default function ApiCarousel() {
     <ComponentDoc
       eyebrow="api · carousel"
       name="Carousel"
-      headline="gallery slider · touch swipe · auto-play · dots animados"
-      description="Carousel pra galerias, depoimentos, onboarding slides, casos de uso. Touch swipe mobile · keyboard arrow keys · auto-play opcional com pause em hover. Dots animados glass + setas opcionais. Loop infinito por default."
+      headline="gallery slider · arrasto na mola · auto-play · dots animados"
+      description="Carousel pra galerias, depoimentos, onboarding slides, casos de uso. Arrasto 1:1 (toque e mouse) com projeção de embalo e mola · keyboard arrow keys · auto-play opcional com pause em hover. Dots animados glass + setas opcionais. Loop infinito por default."
       importLine={`import { Carousel, type CarouselProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-carousel', description: 'Container · overflow hidden · region role' },
@@ -72,7 +72,7 @@ export default function ApiCarousel() {
         },
         {
           do: { title: 'autoPlay >= 5000ms', description: 'Menos = usuário não lê · 5-7s é o sweet spot.' },
-          dont: { title: 'Não use Carousel em mobile-only', description: 'Touch swipe ajuda mas ocupa altura · considere Bento ou Sheet.' },
+          dont: { title: 'Não use Carousel em mobile-only', description: 'O arrasto ajuda mas ocupa altura · considere Bento ou Sheet.' },
         },
       ]}
       a11y={[

@@ -2,6 +2,7 @@ import { useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Search, X, CornerDownLeft } from 'lucide-react';
 import { useDialogFocus } from '../_shared/useDialogFocus';
 import { useEscapeLayer, useScrollLock } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Portal } from '../_shared/Portal';
 import '../_shared/material.css';
 import './Command.css';
@@ -73,6 +74,7 @@ export function Command({
   placeholder = 'Buscar comandos, páginas, ações…',
   emptyLabel = 'Nada encontrado.',
 }: CommandProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const baseId = useId();
   const listId = `${baseId}-list`;
@@ -122,11 +124,16 @@ export function Command({
     setHighlight(flat.length - 1);
   }
 
-  // ESC fecha (só se for a camada do topo) + trava o scroll da página
-  const layer = useEscapeLayer(open, () => onClose());
-  useScrollLock(open);
+  // Fica montado durante a saída animada; desmonta quando ela termina
+  const { mounted, state, closing } = usePresence(open, rootRef);
 
-  if (!open) return null;
+  // ESC fecha (só se for a camada do topo) + trava o scroll da página. A
+  // trava segue até desmontar: a barra de rolagem voltando no meio do fade
+  // empurraria a página por baixo do scrim.
+  const layer = useEscapeLayer(open, () => onClose());
+  useScrollLock(mounted);
+
+  if (!mounted) return null;
 
   const onInputKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
@@ -149,10 +156,12 @@ export function Command({
 
   return (
     <Portal layer={layer}>
-      <div className="via-cmd-root" role="presentation">
-        <div className="via-cmd-scrim" onClick={onClose} aria-hidden="true" />
+      {/* inert na saída: o fantasma que some não recebe clique nem foco */}
+      <div ref={rootRef} className="via-cmd-root" role="presentation" inert={closing}>
+        <div className="via-cmd-scrim" data-state={state} onClick={onClose} aria-hidden="true" />
         <div
           ref={dialogRef}
+          data-state={state}
           className="via-cmd"
           role="dialog"
           aria-modal="true"

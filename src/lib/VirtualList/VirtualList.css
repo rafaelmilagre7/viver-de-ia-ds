@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.05));
-  transition: background .15s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-vl__item:hover {

@@ -159,7 +159,9 @@ function destructuredDefaults(sf, componentFn, propsType) {
   const visit = (node) => {
     if (ts.isFunctionLike(node) && node !== componentFn) {
       const t = node.parameters?.[0]?.type;
-      if (t && ts.isTypeReferenceNode(t) && t.typeName.getText() === propsType) fromFn(node);
+      // `<Comp>Props` puro ou numa interseção (painel interno com props extras: `DrawerProps & {…}`)
+      const refs = t && ts.isIntersectionTypeNode(t) ? t.types : t ? [t] : [];
+      if (refs.some((r) => ts.isTypeReferenceNode(r) && r.typeName.getText() === propsType)) fromFn(node);
     }
     ts.forEachChild(node, visit);
   };

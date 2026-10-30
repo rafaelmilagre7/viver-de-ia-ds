@@ -34,7 +34,7 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   cursor: pointer;
-  transition: border-color 120ms ease, box-shadow 120ms ease;
+  transition: border-color var(--via-dur-quick) var(--via-ease-snap), box-shadow var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-dp__input:hover:not(:disabled) {
   border-color: var(--via-navy-40, rgba(10,31,59,0.4));
@@ -65,8 +65,24 @@
   border-radius: var(--via-radius-md);
   padding: var(--via-space-3);
   box-shadow: var(--via-material-thick-shadow);
-  animation: via-dp-in .26s var(--via-ease-out) both;
+  /* Entra em quick, sai em press · escala nasce no trigger (transform-origin
+     posto pela camada de overlay, acompanha o flip) */
+  transition:
+    opacity var(--via-dur-quick) var(--via-ease-enter),
+    scale var(--via-dur-quick) var(--via-ease-enter);
   isolation: isolate;
+}
+
+@starting-style {
+  .via-dp__pop { opacity: 0; scale: var(--via-enter-scale); }
+}
+
+/* Saída: um degrau mais curta, acelerando; reabrir no meio reverte */
+.via-dp__pop[data-state='closed'] {
+  opacity: 0;
+  scale: var(--via-enter-scale);
+  transition-duration: var(--via-dur-press);
+  transition-timing-function: var(--via-ease-exit);
 }
 
 .via-dp__pop::before {
@@ -112,7 +128,7 @@
   border-radius: var(--via-radius-sm);
   color: var(--via-ink-2, #5E6B82);
   cursor: pointer;
-  transition: background 120ms ease, color 120ms ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-dp__nav:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-text-primary); }
 .via-dp__nav:active { background: var(--via-navy-08); transition-duration: var(--via-dur-press); }
@@ -161,7 +177,7 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
   cursor: pointer;
-  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-dp__cell:hover:not(:disabled):not(.sel) {
   background: var(--via-navy-04, rgba(10,31,59,0.04));
@@ -203,17 +219,8 @@
   cursor: pointer;
   padding: var(--via-space-1_5) var(--via-space-2_5);
   border-radius: var(--via-radius-sm);
-  transition: background 120ms ease, color 120ms ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-dp__ghost:disabled { opacity: 0.32; cursor: not-allowed; }
 .via-dp__ghost:hover:not(:disabled) { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-text-primary); }
 .via-dp__ghost:active:not(:disabled) { background: var(--via-navy-08); transition-duration: var(--via-dur-press); }
-
-@keyframes via-dp-in {
-  from { opacity: 0; transform: translateY(-3px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .via-dp__pop { animation: none !important; }
-}

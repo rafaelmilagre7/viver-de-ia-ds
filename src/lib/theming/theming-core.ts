@@ -4,6 +4,7 @@ import {
   useEffect,
   useState,
 } from 'react';
+import { withViewTransition } from '../_shared/motion';
 
 /* ============================================================
    Theming · core (sem componentes)
@@ -88,7 +89,9 @@ export function useTheme(): ThemeContextValue {
 
   const setMode = (next: ThemeMode) => {
     const resolved: Theme = next === 'system' ? resolveSystem() : next;
-    applyTheme(resolved);
+    // crossfade da página inteira (sem rasgo) · troca seca sem suporte
+    if (resolved === domTheme) applyTheme(resolved);
+    else withViewTransition(() => applyTheme(resolved));
     try {
       window.localStorage.setItem(STORAGE_KEY, next);
     } catch {

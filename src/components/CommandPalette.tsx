@@ -9,6 +9,7 @@ import {
   type SearchResult,
   type SearchEntry,
 } from '../data/searchIndex';
+import { usePresence } from '../lib/_shared/motion';
 import './command-palette.css';
 
 type Props = {
@@ -21,7 +22,16 @@ export default function CommandPalette({ open, onClose }: Props) {
   const [selected, setSelected] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  // Fica montada durante a saída (ESC, clique fora ou escolher um resultado)
+  const { mounted, state, closing } = usePresence(open, rootRef);
+  // Abrir uma página pela paleta troca de rota com view transition
+  const go = (to: string) => {
+    pushRecent(to);
+    navigate(to, { viewTransition: true });
+    onClose();
+  };
 
   const index = useMemo(() => buildSearchIndex(), []);
   const [recents, setRecents] = useState<SearchEntry[]>([]);
@@ -65,15 +75,13 @@ export default function CommandPalette({ open, onClose }: Props) {
       } else if (e.key === 'Enter') {
         e.preventDefault();
         const r = results[selected];
-        if (r) {
-          pushRecent(r.to);
-          navigate(r.to);
-          onClose();
-        }
+        if (r) go(r.to);
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
+    // go muda de identidade a cada render; o que importa está nas deps abaixo
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, results, selected, navigate, onClose]);
 
   useEffect(() => {
@@ -82,7 +90,7 @@ export default function CommandPalette({ open, onClose }: Props) {
     if (el) el.scrollIntoView({ block: 'nearest' });
   }, [selected]);
 
-  if (!open) return null;
+  if (!mounted) return null;
 
   // Agrupa resultados por categoria pra display (quando há query)
   const grouped = isShowingRecents
@@ -92,8 +100,17 @@ export default function CommandPalette({ open, onClose }: Props) {
   let runningIndex = 0;
 
   return (
-    <div className="vds-cmdk" role="dialog" aria-modal="true" aria-label="Buscar no design system" onClick={onClose}>
-      <div className="vds-cmdk-inner" onClick={(e) => e.stopPropagation()}>
+    <div
+      ref={rootRef}
+      className="vds-cmdk"
+      data-state={state}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Buscar no design system"
+      inert={closing}
+      onClick={onClose}
+    >
+      <div className="vds-cmdk-inner" data-state={state} onClick={(e) => e.stopPropagation()}>
         <header>
           <Search size={16} strokeWidth={2} />
           <input
@@ -137,11 +154,7 @@ export default function CommandPalette({ open, onClose }: Props) {
                       aria-selected={i === selected}
                       className={i === selected ? 'active' : ''}
                       onMouseEnter={() => setSelected(i)}
-                      onClick={() => {
-                        pushRecent(r.to);
-                        navigate(r.to);
-                        onClose();
-                      }}
+                      onClick={() => go(r.to)}
                     >
                       <div className="vds-cmdk__row">
                         <div className="vds-cmdk__main">
@@ -162,11 +175,7 @@ export default function CommandPalette({ open, onClose }: Props) {
                   aria-selected={i === selected}
                   className={i === selected ? 'active' : ''}
                   onMouseEnter={() => setSelected(i)}
-                  onClick={() => {
-                    pushRecent(r.to);
-                    navigate(r.to);
-                    onClose();
-                  }}
+                  onClick={() => go(r.to)}
                 >
                   <div className="vds-cmdk__row">
                     <span className="kbd">{r.group}</span>

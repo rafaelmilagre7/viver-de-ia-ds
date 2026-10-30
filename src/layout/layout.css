@@ -39,8 +39,8 @@
      useScrollEdge — só existe com conteúdo rolado por baixo */
   border-bottom: 0.5px solid transparent;
   transition:
-    border-color var(--via-dur) var(--via-ease-out),
-    box-shadow var(--via-dur) var(--via-ease-out);
+    border-color var(--via-dur-base) var(--via-ease-enter),
+    box-shadow var(--via-dur-base) var(--via-ease-enter);
 }
 .vds-header.is-scrolled {
   border-bottom-color: var(--via-navy-12);
@@ -223,10 +223,23 @@
 }
 .vds-sidebar-link.active {
   color: var(--via-text-primary);
-  background: var(--via-navy-08);
   font-weight: var(--via-fw-semibold);
 }
-.vds-sidebar-link.active::before {
+/* O fundo e a barrinha do ativo moram num elemento próprio (não no link):
+   na troca de rota ele ganha view-transition-name e desliza do link velho
+   pro novo. Mesmo raio e mesma posição de antes — idêntico parado. */
+.vds-sidebar-link.active,
+.vds-sidebar-link.active:hover {
+  background: transparent;
+}
+.vds-sidebar-indicator {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--via-navy-08);
+  pointer-events: none;
+}
+.vds-sidebar-indicator::before {
   content: '';
   position: absolute;
   left: -24px;
@@ -235,6 +248,10 @@
   width: 2px;
   background: var(--via-navy);
   border-radius: 2px;
+}
+/* texto acima do fundo posicionado (ordem de pintura) */
+.vds-sidebar-link > :not(.vds-sidebar-indicator) {
+  position: relative;
 }
 .vds-sidebar-soon {
   font-family: var(--via-font);
@@ -259,16 +276,82 @@
      por cima do footer). O piso de uma tela vem da altura da sidebar. */
 }
 
-/* Page transition: subtle fade + slide on route change */
+/* ---------- TROCA DE ROTA ----------
+   Fade de entrada · 1ª carga e navegador sem View Transitions (a div
+   remonta por rota). Com View Transitions a coreografia é a de baixo. */
 .vds-page-transition {
-  animation: vds-fade-in 380ms var(--via-ease-out);
+  animation: vds-fade-in var(--via-dur-page) var(--via-ease-enter);
 }
 @keyframes vds-fade-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; translate: 0 var(--via-enter-shift); }
+  to   { opacity: 1; translate: 0 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .vds-page-transition { animation: none; }
+}
+
+/* View Transitions · só o conteúdo anda
+   - header e sidebar ganham nome próprio e ficam PARADOS (sem animação,
+     imagem velha escondida): não sobem junto com a página;
+   - a página velha sai rápido (120ms, acelerando) e a nova entra subindo
+     8px (base, desacelerando);
+   - título da página e marcador do link ativo têm nome compartilhado:
+     deslizam do lugar velho pro novo.
+   Os nomes só existem DURANTE a transição (:active-view-transition) e
+   nunca na troca de tema (.via-theme-swap = crossfade simples da página
+   inteira, tokens.css). Navegador sem :active-view-transition fica com o
+   crossfade padrão do browser — header e sidebar idênticos nas duas
+   imagens não piscam. Reduced-motion: tokens.css desliga tudo. */
+@supports selector(:active-view-transition) {
+  :root:active-view-transition:not(.via-theme-swap) .vds-header { view-transition-name: vds-header; }
+  :root:active-view-transition:not(.via-theme-swap) .vds-sidebar { view-transition-name: vds-sidebar; }
+  :root:active-view-transition:not(.via-theme-swap) .vds-docs-title { view-transition-name: vds-page-title; }
+  :root:active-view-transition:not(.via-theme-swap) .vds-sidebar-indicator { view-transition-name: vds-nav-indicator; }
+
+  ::view-transition-group(vds-header),
+  ::view-transition-group(vds-sidebar),
+  ::view-transition-new(vds-header),
+  ::view-transition-new(vds-sidebar) {
+    animation: none;
+  }
+  ::view-transition-old(vds-header),
+  ::view-transition-old(vds-sidebar) {
+    display: none;
+  }
+
+  :root:not(.via-theme-swap)::view-transition-old(root) {
+    animation: vds-vt-out calc(var(--via-dur-quick) * 0.75) var(--via-ease-exit) both;
+  }
+  :root:not(.via-theme-swap)::view-transition-new(root) {
+    animation: vds-vt-in var(--via-dur-base) var(--via-ease-enter) both;
+  }
+
+  ::view-transition-group(vds-page-title),
+  ::view-transition-group(vds-nav-indicator) {
+    animation-duration: var(--via-dur-base);
+    animation-timing-function: var(--via-ease-enter);
+  }
+  /* Título: o grupo desliza, mas o texto NÃO estica — cada imagem fica no
+     tamanho natural, presa no canto, e troca no mesmo ritmo da página */
+  ::view-transition-old(vds-page-title),
+  ::view-transition-new(vds-page-title) {
+    width: auto;
+    height: auto;
+    object-fit: none;
+    object-position: left top;
+  }
+  ::view-transition-old(vds-page-title) {
+    animation: vds-vt-out calc(var(--via-dur-quick) * 0.75) var(--via-ease-exit) both;
+  }
+  ::view-transition-new(vds-page-title) {
+    animation: vds-vt-in var(--via-dur-base) var(--via-ease-enter) both;
+  }
+}
+@keyframes vds-vt-out {
+  to { opacity: 0; }
+}
+@keyframes vds-vt-in {
+  from { opacity: 0; translate: 0 var(--via-enter-shift); }
 }
 
 /* ---------- FOOTER editorial expandido ---------- */
@@ -350,7 +433,10 @@
   background: var(--via-scrim);
   -webkit-backdrop-filter: var(--via-scrim-blur);
   backdrop-filter: var(--via-scrim-blur);
-  animation: vds-cmdk-scrim-in 200ms var(--via-ease-out);
+  animation: vds-scrim-in var(--via-dur-quick) var(--via-ease-enter);
+}
+@keyframes vds-scrim-in {
+  from { opacity: 0; }
 }
 
 @media (max-width: 960px) {
@@ -368,7 +454,7 @@
     backdrop-filter: var(--via-material-thick-blur);
     border-right: 0.5px solid var(--via-navy-12);
     transform: translateX(-100%);
-    transition: transform 320ms var(--via-ease-out);
+    transition: transform var(--via-dur-panel) var(--via-ease-enter);
     z-index: 45;
     box-shadow: 0 24px 48px var(--via-shadow-ink-20);
     padding: var(--via-space-6) var(--via-space-5) var(--via-space-16);

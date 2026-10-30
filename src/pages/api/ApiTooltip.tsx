@@ -9,7 +9,7 @@ export default function ApiTooltip() {
       eyebrow="api · tooltip"
       name="Tooltip"
       headline="contextual hint · navy gradient · 4 posições"
-      description="Tooltip pra dicas curtas em ícones-only e ações ambíguas. Gradient navy→navy-deep · dual inset shadow · 4 stack box-shadow · animation spring 0.22s cubic-bezier(.16, 1, .3, 1). Hover/focus trigger · delay configurável."
+      description="Tooltip pra dicas curtas em ícones-only e ações ambíguas. Gradient navy→navy-deep · dual inset shadow · 4 stack box-shadow · entra em --via-dur-quick (opacidade + escala .97 a partir do trigger) e sai em --via-dur-press. Hover/focus trigger · delay configurável."
       importLine={`import { Tooltip, type TooltipProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-tooltip-trigger', description: 'Wrapper do trigger · adiciona handlers hover/focus' },

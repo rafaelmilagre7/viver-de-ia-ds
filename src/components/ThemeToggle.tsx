@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { Sun, Moon } from 'lucide-react';
+import { withViewTransition } from '../lib/_shared/motion';
 import './ThemeToggle.css';
 
 type Theme = 'light' | 'dark';
@@ -37,10 +39,15 @@ export default function ThemeToggle() {
     return () => obs.disconnect();
   }, []);
 
-  /* Persistir SÓ na escolha explícita do usuário — montar a página não é escolha. */
+  /* Persistir SÓ na escolha explícita do usuário — montar a página não é escolha.
+     A troca vai dentro de uma view transition: a página inteira faz
+     crossfade e nenhuma transição por elemento roda no meio (sem rasgo).
+     flushSync: o rótulo deste botão já está trocado na captura nova. */
   const choose = (t: Theme) => {
-    setTheme(t);
-    applyTheme(t);
+    withViewTransition(() => {
+      flushSync(() => setTheme(t));
+      applyTheme(t);
+    });
     try {
       window.localStorage.setItem('via-theme', t);
     } catch {

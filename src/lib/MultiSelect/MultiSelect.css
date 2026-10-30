@@ -42,10 +42,10 @@
   font-size: var(--via-fs-caption);
   line-height: normal;
   transition:
-    border-color var(--via-dur) ease,
-    background var(--via-dur) ease,
-    box-shadow var(--via-dur) ease,
-    transform var(--via-dur) var(--via-ease-snap);
+    border-color var(--via-dur-quick) var(--via-ease-snap),
+    background var(--via-dur-quick) var(--via-ease-snap),
+    box-shadow var(--via-dur-base) var(--via-ease-snap),
+    transform var(--via-dur-base) var(--via-ease-snap);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 1px 2px var(--via-shadow-ink-03);
@@ -129,7 +129,7 @@
   color: var(--via-text-primary);
   cursor: pointer;
   opacity: 0.6;
-  transition: opacity .15s ease, background .15s ease;
+  transition: opacity var(--via-dur-quick) var(--via-ease-snap), background var(--via-dur-quick) var(--via-ease-snap);
   /* acima do combobox que cobre a caixa */
   position: relative;
   z-index: 1;
@@ -139,7 +139,7 @@
 .via-ms__chev {
   color: var(--via-ink-2, #5E6B82);
   flex-shrink: 0;
-  transition: transform var(--via-dur) var(--via-ease-out), color var(--via-dur) ease;
+  transition: transform var(--via-dur-base) var(--via-ease-enter), color var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-ms__trigger.is-open .via-ms__chev { color: var(--via-text-primary); }
 
@@ -169,12 +169,23 @@
   box-shadow: var(--via-material-thick-shadow);
   max-height: 280px;
   overflow-y: auto;
-  animation: via-ms-in var(--via-dur) var(--via-ease-out);
+  /* Entra em quick, sai em press · escala nasce no trigger (transform-origin
+     posto pela camada de overlay, acompanha o flip) */
+  transition:
+    opacity var(--via-dur-quick) var(--via-ease-enter),
+    scale var(--via-dur-quick) var(--via-ease-enter);
 }
 
-@keyframes via-ms-in {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
+@starting-style {
+  .via-ms__list { opacity: 0; scale: var(--via-enter-scale); }
+}
+
+/* Saída: um degrau mais curta, acelerando; reabrir no meio reverte */
+.via-ms__list[data-state='closed'] {
+  opacity: 0;
+  scale: var(--via-enter-scale);
+  transition-duration: var(--via-dur-press);
+  transition-timing-function: var(--via-ease-exit);
 }
 
 .via-ms__option {
@@ -188,7 +199,7 @@
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
   cursor: pointer;
-  transition: background .15s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-ms__option:hover:not(.is-disabled) { background: var(--via-navy-06); }
 .via-ms__option.is-active:not(.is-disabled) { background: var(--via-navy-06); }
@@ -206,7 +217,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background var(--via-dur) ease, border-color var(--via-dur) ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-ms__option.is-selected .via-ms__option-check {
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
@@ -225,5 +236,7 @@
 .via-ms__count { font-family: var(--via-font-mono, monospace); }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-ms__list, .via-ms__chev, .via-ms__trigger, .via-ms__option { transition: none !important; animation: none !important; }
+  /* a lista (data-state) fica fora: em reduced-motion ela troca escala por
+     crossfade sozinha (tokens de distância zeram) */
+  .via-ms__chev, .via-ms__trigger, .via-ms__option { transition: none !important; animation: none !important; }
 }

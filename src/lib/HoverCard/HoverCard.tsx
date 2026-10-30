@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import { bridgeTab, useEscapeLayer } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Anchored, Portal } from '../_shared/Portal';
 import '../_shared/material.css';
 import './HoverCard.css';
@@ -50,6 +51,8 @@ export function HoverCard({
   const wrapRef = useRef<HTMLSpanElement>(null);
   const triggerWrapRef = useRef<HTMLSpanElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  // Card fica montado durante a saída animada
+  const { mounted, state, closing } = usePresence(open, cardRef);
   const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const bodyId = useId();
@@ -126,17 +129,22 @@ export function HoverCard({
           </div>
         </Portal>
       )}
-      {open && (
+      {mounted && (
         <Anchored anchorRef={wrapRef} z="popover" layer={layer}>
+          {/* Saindo, o id fica com o nó oculto acima (descrição nunca some
+              nem duplica) e o card vira só imagem */}
           <div
             ref={cardRef}
+            data-state={state}
+            inert={closing}
+            aria-hidden={closing || undefined}
             className={`via-hovercard via-hovercard--${side} via-hovercard--align-${align}`}
             role="dialog"
-            aria-labelledby={bodyId}
+            aria-labelledby={closing ? undefined : bodyId}
             onMouseEnter={handleOpen}
             onMouseLeave={handleClose}
           >
-            <div id={bodyId} className="via-hovercard__body">{children}</div>
+            <div id={closing ? undefined : bodyId} className="via-hovercard__body">{children}</div>
           </div>
         </Anchored>
       )}

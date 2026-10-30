@@ -8,6 +8,7 @@ import {
   useSyncExternalStore,
   type RefObject,
 } from 'react';
+import { measureAtRest } from './motion';
 
 /**
  * Camada de overlay compartilhada · tudo que flutua no DS passa por aqui.
@@ -169,12 +170,16 @@ export function useAnchorPosition(
     if (!box || !anchor) return;
 
     let rel = { x: 0, y: 0, w: 0, h: 0 };
+    // Mede o retângulo FINAL: a entrada (escala .97 via @starting-style) é
+    // parada no fim só durante a leitura e volta de onde estava
     const measure = () => {
       const pop = box.firstElementChild;
       if (!pop) return;
-      const b = box.getBoundingClientRect();
-      const p = pop.getBoundingClientRect();
-      rel = { x: p.left - b.left, y: p.top - b.top, w: p.width, h: p.height };
+      measureAtRest(pop, () => {
+        const b = box.getBoundingClientRect();
+        const p = pop.getBoundingClientRect();
+        rel = { x: p.left - b.left, y: p.top - b.top, w: p.width, h: p.height };
+      });
     };
 
     const place = () => {
@@ -220,20 +225,25 @@ export function useAnchorPosition(
       box.style.left = `${a.left + dx}px`;
       box.style.width = `${a.width}px`;
       box.style.height = `${a.height}px`;
+
+      // Escala de entrada/saída nasce no TRIGGER (centro dele, no espaço
+      // local do popup — offset* ignora transform, então translateX(-50%)
+      // de centralização não entra na conta) e acompanha o flip
+      const pop = box.firstElementChild as HTMLElement | null;
+      if (pop) {
+        const ox = a.width / 2 - dx - pop.offsetLeft;
+        const oy = a.height / 2 - dy - pop.offsetTop;
+        pop.style.transformOrigin = `${Math.round(ox)}px ${Math.round(oy)}px`;
+      }
     };
 
-    // 1ª medida com a animação de entrada desligada (escala/translate dela
-    // distorceria o retângulo). Ainda não houve pintura → religar é invisível.
     const pop = box.firstElementChild as HTMLElement | null;
     const a0 = anchor.getBoundingClientRect();
     box.style.top = `${a0.top}px`;
     box.style.left = `${a0.left}px`;
     box.style.width = `${a0.width}px`;
     box.style.height = `${a0.height}px`;
-    const prevAnimation = pop?.style.animation ?? '';
-    if (pop) pop.style.animation = 'none';
     measure();
-    if (pop) pop.style.animation = prevAnimation;
     place();
 
     const onMove = () => place();

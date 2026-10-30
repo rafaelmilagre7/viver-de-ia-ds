@@ -22,7 +22,7 @@
   border-radius: var(--via-radius-md);
   margin-bottom: var(--via-space-2);
   box-shadow: var(--via-material-regular-shadow);
-  transition: box-shadow .26s ease, transform .26s ease;
+  transition: box-shadow var(--via-dur-base) var(--via-ease-snap), transform var(--via-dur-base) var(--via-ease-snap);
 }
 
 .via-accordion--separated .via-accordion__item.is-open {
@@ -54,7 +54,7 @@
   color: var(--via-text-primary);
   text-align: left;
   border-radius: var(--via-radius-xs);
-  transition: color 0.18s ease, background var(--via-dur) ease;
+  transition: color var(--via-dur-quick) var(--via-ease-snap), background var(--via-dur-quick) var(--via-ease-snap);
 }
 
 /* Press · tom mais fundo (scale distorceria a linha inteira) */
@@ -92,8 +92,8 @@
   color: var(--via-ink-2, #5E6B82);
   flex-shrink: 0;
   transition:
-    transform 0.32s var(--via-ease-out),
-    color var(--via-dur) ease;
+    transform var(--via-dur-panel) var(--via-ease-enter),
+    color var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-accordion__item.is-open .via-accordion__chevron {
@@ -101,14 +101,48 @@
   color: var(--via-text-primary);
 }
 
+/* Altura de verdade, sem medir em JS: a faixa da grade vai de 0fr a 1fr
+   (o conteúdo abaixo desce/sobe junto). A ALTURA usa o mesmo tempo e a
+   mesma curva nos dois sentidos — no modo FAQ um painel fecha enquanto
+   outro abre, e o item entre eles só anda numa direção se as duas
+   alturas mudarem no mesmo ritmo (tempos diferentes = item quicando).
+   A opacidade sai um degrau mais curta, acelerando. É transição: clicar
+   de novo no meio reverte do ponto atual. */
 .via-accordion__panel {
+  display: grid;
+  grid-template-rows: 1fr;
   overflow: hidden;
-  animation: via-accordion-in var(--via-dur) ease;
+  opacity: 1;
+  transition:
+    grid-template-rows var(--via-dur-base) var(--via-ease-enter),
+    opacity var(--via-dur-base) var(--via-ease-enter);
 }
 
-@keyframes via-accordion-in {
-  from { opacity: 0; transform: translateY(-2px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* `display: grid` acima venceria o [hidden] do navegador */
+.via-accordion__panel[hidden] {
+  display: none;
+}
+
+/* Abrir parte do zero — só depois da montagem (painel aberto no 1º render
+   aparece pronto, sem animar no carregamento) */
+@starting-style {
+  .via-accordion[data-ready] .via-accordion__panel {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+}
+
+.via-accordion__panel[data-state='closed'] {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--via-dur-base) var(--via-ease-enter),
+    opacity var(--via-dur-quick) var(--via-ease-exit);
+}
+
+.via-accordion__clip {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .via-accordion__content {
@@ -127,5 +161,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .via-accordion__chevron { transition: none; }
-  .via-accordion__panel { animation: none; }
+  /* sem altura animada: o painel abre/fecha seco e só a opacidade cruza */
+  .via-accordion__panel { transition-property: opacity; }
 }

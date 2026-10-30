@@ -26,7 +26,7 @@
   backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: var(--via-radius-sm);
-  transition: border-color var(--via-dur) ease, background var(--via-dur) ease, box-shadow var(--via-dur) ease;
+  transition: border-color var(--via-dur-quick) var(--via-ease-snap), background var(--via-dur-quick) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 1px 2px var(--via-shadow-ink-03);
@@ -50,7 +50,7 @@
 .via-tp__icon {
   color: var(--via-ink-2, #5E6B82);
   flex-shrink: 0;
-  transition: color var(--via-dur) ease;
+  transition: color var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-tp__field:focus-within .via-tp__icon { color: var(--via-text-primary); }
 
@@ -98,7 +98,7 @@
   font-size: 8px;
   cursor: pointer;
   border-radius: 3px;
-  transition: background .15s ease, color .15s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
   padding: 0;
   line-height: 1;
 }

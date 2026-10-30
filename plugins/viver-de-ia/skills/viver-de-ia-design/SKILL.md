@@ -156,7 +156,7 @@ Em buttons / cards hoverable — uma mancha de luz que acompanha o mouse. Anda p
   content: ''; position: absolute; top: 0; left: 0; width: 240px; height: 240px;
   border-radius: 50%; background: var(--via-specular); pointer-events: none; z-index: -1;
   transform: translate(calc(var(--mx, -9999px) - 120px), calc(var(--my, -9999px) - 120px));
-  opacity: 0; transition: opacity var(--via-dur) var(--via-ease-out);
+  opacity: 0; transition: opacity var(--via-dur-quick) var(--via-ease-enter);
 }
 .elem:hover::before { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .elem::before { display: none; } }
@@ -164,22 +164,32 @@ Em buttons / cards hoverable — uma mancha de luz que acompanha o mouse. Anda p
    el.style.setProperty('--mx', x + 'px') / ('--my', y + 'px') relativos ao elemento */
 ```
 
-### 2. Spring physics (animações orgânicas) — use os tokens de motion
+### 2. Movimento — escala por PAPEL (tokens reais em `tokens.css`)
 
-Tokens reais em `tokens.css`:
+**5 durações**, uma por tipo de gesto · a **saída usa o degrau de baixo** (~0,65–0,75× da entrada — sair é mais rápido que chegar):
 
-- `--via-ease-out: cubic-bezier(0.16, 1, 0.3, 1)` — spring suave sem overshoot (transitions · 0.22-0.36s)
-- `--via-ease-spring: cubic-bezier(.34, 1.56, .64, 1)` — overshoot (entrada de elementos, checkmarks, radio dots)
-- `--via-ease-snap: cubic-bezier(.2, .7, .2, 1)` — resposta rápida (hover/press)
-- `--via-ease: cubic-bezier(0.32, 0.08, 0.24, 1)` · durações `--via-t-fast` (120ms) · `--via-t` (180ms) · `--via-t-slow` (360ms)
+| Token | Valor | Papel | Saída usa |
+|---|---|---|---|
+| `--via-dur-press` | 100ms | apertar (`:active`, resposta no pointer-down) | — |
+| `--via-dur-quick` | 160ms | hover, cor, borda · menu/tooltip/lista entrando | press |
+| `--via-dur-base` | 220ms | modal, popover, aba, acordeão, toast | quick |
+| `--via-dur-panel` | 320ms | painel grande, deslize de conteúdo | base |
+| `--via-dur-page` | 400ms | rota, troca de contexto | panel |
+
+**3 curvas:** `--via-ease-enter` (desacelera · tudo que ENTRA) · `--via-ease-exit` (acelera · tudo que SAI) · `--via-ease-snap` (resposta de interação · hover/press/troca de estado). **Molas em CSS** (geradas pela física do `spring.ts`, via `linear()`): `--via-spring-smooth` (sem quique) e `--via-spring-bounce` (~9% de overshoot — **SÓ** na marca de check/radio/switch; nunca em modal, toast, card, layout ou rota). Apelidos antigos (`--via-dur`, `--via-ease`, `--via-ease-out`, `--via-ease-spring`, `--via-t*`) seguem funcionando, apontando pra escala nova — não use em código novo. Na lib o CI (`lint:tokens` → motion-drift) barra duração/curva escrita à mão.
+
+**Tudo que aparece também SAI animado.** Camada (modal, menu, popover, tooltip, toast, paleta) entra por opacidade + escala `--via-enter-scale` (.97, a partir do gatilho) e sai pelo mesmo caminho, um degrau mais rápido, acelerando. Use **transição + `@starting-style`** (não keyframe): reabrir no meio da saída reverte do ponto atual.
 
 ```css
-@keyframes via-modal-in {
-  0%   { opacity: 0; transform: translateY(20px) scale(0.94); }
-  60%  { opacity: 1; transform: translateY(-2px) scale(1.005); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+.menu { transition: opacity var(--via-dur-quick) var(--via-ease-enter), scale var(--via-dur-quick) var(--via-ease-enter); }
+@starting-style { .menu { opacity: 0; scale: var(--via-enter-scale); } }     /* depois da regra base */
+.menu[data-state='closed'] {                                                  /* fica montado até a saída acabar */
+  opacity: 0; scale: var(--via-enter-scale);
+  transition-duration: var(--via-dur-press); transition-timing-function: var(--via-ease-exit);
 }
 ```
+
+Na lib isso já vem pronto (`usePresence` mantém montado durante a saída · `data-state="open|closed"` + `inert` na saída). Painel arrastável (Sheet/Drawer/Lightbox) entra, sai e responde ao dedo na **mesma mola** (entra de 100%, agarrar no meio da entrada continua do ponto vivo).
 
 ### 3. Atmosphere radial (signature do DS)
 
@@ -196,7 +206,7 @@ Cards e cards de componente sempre ganham `::before` com radial gradient sutil:
   pointer-events: none;
   z-index: -1;
   opacity: 0.6;
-  transition: opacity .26s ease;
+  transition: opacity var(--via-dur-base) var(--via-ease-snap);
 }
 .card:hover::before { opacity: 1; }
 ```
@@ -257,7 +267,7 @@ Glass **não precisa de fundo escuro**. Card de vidro sobre claro é a assinatur
   backdrop-filter: var(--via-material-regular-blur);         /* ordem inversa = o minify do Vite 8/Next apaga o vidro */
   border: var(--via-material-regular-ring);                  /* hairline · desenha a borda sobre branco */
   box-shadow: var(--via-material-regular-shadow);            /* brilho interno + linha de base + drop */
-  transition: transform .26s var(--via-ease-snap), box-shadow .26s ease;
+  transition: transform var(--via-dur-base) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap);
 }
 /* 3. aro especular (receita acima, com --via-material-regular-rim) */
 /* 4. hover: sobe e a luz aumenta */
@@ -276,9 +286,9 @@ O dark se resolve sozinho (os materiais têm valor próprio no escuro). **Erros 
 - Ícones SVG dentro de tiles navy: `color: var(--via-white)` (não accent, que vira navy).
 - Headings globais usam `:where(h1,h2,h3,h4) { color: var(--via-text-primary) }` (specificity 0) — qualquer container que declare `color:#fff` ganha por cascata. Não precisa override h2 em cards dark.
 
-### 7. prefers-reduced-motion
+### 7. prefers-reduced-motion — trocar movimento por crossfade (não matar tudo)
 
-Sempre respeitar — animações de entrada/pulse e o reflexo que segue o ponteiro desligam sob `@media (prefers-reduced-motion: reduce)`.
+Reduzir movimento ≠ zero animação: deslocamento, escala e mola somem; **fica um crossfade curto de opacidade** (sem ele a camada "pisca" e o olho perde de onde veio a mudança). Já resolvido nos tokens: `--via-enter-scale`/`--via-enter-shift` viram neutros, a rede global zera o resto e as camadas do DS com `data-state` mantêm o fade. Loops e pulsos param; o reflexo que segue o ponteiro desliga; troca de rota/tema vira troca seca.
 
 ### 8. Cantos generosos — escala de raio (parente > filho)
 
@@ -323,8 +333,10 @@ Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz d
 - **Acessibilidade de material é AUTOMÁTICA nos tokens**: `prefers-reduced-transparency` deixa os 4 materiais sólidos (sem blur, sem grão), o scrim chapado e desliga a lente; `prefers-contrast: more` solidifica e engrossa o ring pra 0.4/0.45 — já resolvido em `colors_and_type.css`, nenhum componente precisa tratar. Não desfaça isso com `backdrop-filter` literal fora dos tokens (na lib o CI barra `blur(` cru).
 
 **Física de gesto (motor canônico da library — 29/Jul):**
-- A library tem motor de mola próprio (`src/lib/_shared/spring.ts` + `useDragDismiss.ts`) na linguagem da Apple: **damping ratio** (1.0 = sem quique · ~0.8 = quica leve, SÓ após gesto com embalo) + **response** (segundos até o alvo; não é "duração" — o assentar emerge). Valores que a Apple usa e o DS adotou: mover = 1.0/0.4 · drawer/sheet = 0.8/0.3.
-- **Drawer, Sheet, Lightbox e Toast já vêm com o gesto completo**: arrasto 1:1 respeitando onde agarrou, histerese de 10px (clique continua clique), soltura decidida pela PROJEÇÃO do momentum (flick curto fecha; arrasto lento e curto volta), mola recebe a velocidade do dedo (sem emenda), rubber-band no sentido contrário, agarrar no meio da animação re-captura do valor vivo, saída por X/ESC animada pela mesma mola. Não reimplemente nada disso à mão.
+- A library tem motor de mola próprio (`src/lib/_shared/spring.ts` + `useDragDismiss.ts`) na linguagem da Apple: **damping ratio** (1.0 = sem quique · ~0.8 = quica leve, SÓ após gesto com embalo) + **response** (segundos até o alvo; não é "duração" — o assentar emerge). Presets por papel (`SPRING`): mover = 1.0/0.4 · entrada de painel = 1.0/0.35 · gesto drawer/sheet = 0.8/0.3.
+- **Drawer, Sheet, Lightbox e Toast já vêm com o gesto completo**: entrada na mola a partir de 100% (a mesma da saída e do arrasto), arrasto 1:1 respeitando onde agarrou, histerese de 10px (clique continua clique), soltura decidida pela PROJEÇÃO do momentum (flick curto fecha; arrasto lento e curto volta), mola recebe a velocidade do dedo (sem emenda), rubber-band no sentido contrário, agarrar no meio da animação (inclusive da entrada) re-captura do valor vivo, saída por X/ESC/fechamento de fora animada pela mesma mola. Toast que expira sai pelo mesmo caminho do X e os vizinhos deslizam. Não reimplemente nada disso à mão.
+- **Mudança de layout anima por transform** (FLIP): aba com indicador ÚNICO que desliza (translateX + scaleX na mola), carrossel arrastado 1:1 na mola, pilha de toasts que escorrega; acordeão por `grid-template-rows: 0fr → 1fr`. Barra de progresso desliza por translateX (nunca `width`).
+- **Rota e tema por View Transitions**: rota = página velha sai em ~120ms, nova entra em 220ms, cabeçalho/sidebar parados e o marcador ativo desliza; tema = um crossfade da página inteira com as transições por elemento desligadas (sem rasgo). Sem suporte: troca seca / fade antigo.
 - Em app React FORA da library (Lovable etc.), a tradução pra Framer Motion/Motion: `type: 'spring'` com `bounce: 0` por padrão e `bounce: 0.2` só após flick; `duration` ≈ response. Nunca anime gesto com transition CSS de duração fixa — não dá pra agarrar no meio.
 - Anime SÓ `transform` e `opacity` (compositor); nunca `left/top/width/height` em keyframe.
 - Menus/balões escalam DA ORIGEM (transform-origin apontando pro gatilho conforme o lado), nunca do próprio centro.
@@ -550,11 +562,11 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 5. Sem semáforo verde/vermelho em pills genéricas · sem bolinha decorativa em chip que não é status real
 6. Buttons sentence-case (não `letter-spacing: 0.10em + uppercase`)
 7. Vidro por um dos 4 materiais (`--via-material-<chrome|regular|thick|control>-*`, com aro) · sombras SÓ em `--via-shadow-ink-*` ou na pilha do material (zero token que inverte em box-shadow escrito à mão) · conferido nos 2 temas sobre fundo movimentado
-8. Spring physics via tokens (`--via-ease-out`, `--via-ease-spring`) · reflexo por transform/opacity (nunca animar `left` ou `backdrop-filter`)
+8. Movimento pela escala (`--via-dur-{press,quick,base,panel,page}` · `--via-ease-{enter,exit,snap}` · overshoot só em controle) · tudo que entra também sai animado · só `transform`/`opacity` (nunca `left`, `width` ou `backdrop-filter`)
 9. Tabelas sortable → `<DataTable>` da library · tabela/finanças em HTML cru → classes do `data.css` (tabela densa SEM vidro)
 10. Eyebrows uppercase mono com `--via-ls-label` (0.18em) · ZERO itálico (`<em>` reto · ênfase = peso + cor)
 11. Sparkles banido (Compass/Award/Crown/etc.) · **zero barra lateral colorida** (3 mecanismos) · zero anel colorido em avatar
-12. Contraste WCAG AA garantido em dark mode (tokens semânticos) · `prefers-reduced-motion` respeitado
+12. Contraste WCAG AA garantido em dark mode (tokens semânticos) · `prefers-reduced-motion` respeitado (movimento vira crossfade curto)
 13. App React com `<ThemeProvider>` no root (+ anti-FOUC script no `index.html`)
 14. Sem dark pattern em fluxos críticos (cancellation, billing, errors)
 15. Email: tabela + inline + CTA navy sólido + fallback de background sólido + `lockup-navy.png` ~18px (PNG, nunca SVG)

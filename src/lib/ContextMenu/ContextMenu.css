@@ -22,13 +22,23 @@
   /* Origem espacial (WWDC): o menu nasce do ponto do clique — o canto
      superior esquerdo ancora no cursor */
   transform-origin: top left;
-  animation: via-cm-in 0.2s var(--via-ease-out);
+  /* Entra em quick, sai em press */
+  transition:
+    opacity var(--via-dur-quick) var(--via-ease-enter),
+    scale var(--via-dur-quick) var(--via-ease-enter);
   isolation: isolate;
 }
 
-@keyframes via-cm-in {
-  from { opacity: 0; transform: scale(0.96); }
-  to   { opacity: 1; transform: scale(1); }
+@starting-style {
+  .via-cm { opacity: 0; scale: var(--via-enter-scale); }
+}
+
+/* Saída: um degrau mais curta, acelerando; reabrir no meio reverte */
+.via-cm[data-state='closed'] {
+  opacity: 0;
+  scale: var(--via-enter-scale);
+  transition-duration: var(--via-dur-press);
+  transition-timing-function: var(--via-ease-exit);
 }
 
 .via-cm::before {
@@ -57,7 +67,7 @@
   color: var(--via-text-primary);
   border-radius: calc(var(--via-radius-sm) - 5px); /* concêntrico: menu 10 − padding 5 */
   text-align: left;
-  transition: background .15s ease, color .15s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-cm__item:hover:not(:disabled) {
@@ -110,6 +120,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-cm { animation: none !important; }
   .via-cm__item { transition: none !important; }
 }

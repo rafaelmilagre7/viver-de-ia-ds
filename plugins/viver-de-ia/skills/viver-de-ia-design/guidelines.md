@@ -121,7 +121,7 @@ Checklist obrigatório antes de marcar tela como pronta.
 
 ### Hover signatures (assinatura comportamental do DS)
 
-✅ **O elemento sobe e a luz aumenta** em hover (rows, cards, lessons, articles, audit log, billing, member list): lift `translateY(-1px/-2px/-3px)` + sombra/luz mais presente (`var(--via-material-regular-lift)`, reflexo que segue o ponteiro só por transform/opacity — nunca varredura animando `left`) · `:active` com `scale(0.97)` no apertar · gap animation em text links com chevron · underline animation 50%→0% em tabs (abre do meio)
+✅ **O elemento sobe e a luz aumenta** em hover (rows, cards, lessons, articles, audit log, billing, member list): lift `translateY(-1px/-2px/-3px)` + sombra/luz mais presente (`var(--via-material-regular-lift)`, reflexo que segue o ponteiro só por transform/opacity — nunca varredura animando `left`) · `:active` com `scale(0.97)` no apertar (`--via-dur-press`) · gap animation em text links com chevron · aba com indicador ÚNICO que desliza na mola entre as abas
 ❌ **Barra lateral em hover** (banida nos 3 mecanismos: `border-left` colorido, `::before` fino à esquerda, `box-shadow inset` horizontal) · spring bouncy · parallax · partículas · ripple · autoplay infinito · zoom-em-hover gritante
 
 ### Fotografia
@@ -282,7 +282,8 @@ background: var(--via-scrim); -webkit-backdrop-filter: var(--via-scrim-blur); ba
 ```
 - **Lente (opt-in, só Chromium):** `enableGlassLens()` + `.via-glass--lens` em no máximo 1-2 peças-assinatura. Fora do Chromium fica o blur normal. Não em barra que rola.
 - **Raio concêntrico:** filho encostado na borda = raio do pai − padding do pai (`calc(var(--via-radius-lg) - var(--via-space-2))`).
-- **Movimento:** nunca anime `backdrop-filter`, `left` ou `top` — só `transform` e `opacity`.
+- **Movimento:** nunca anime `backdrop-filter`, `left`, `top` ou `width` — só `transform` e `opacity`. Escala por papel: press 100 · quick 160 · base 220 · panel 320 · page 400ms; a saída usa o degrau de baixo; curvas `--via-ease-enter` (entra) · `--via-ease-exit` (sai) · `--via-ease-snap` (interação). Tudo que entra também SAI animado (opacidade + escala .97 rumo ao gatilho) e pode ser interrompido no meio. Overshoot só em check/radio/switch.
+- **Reduzir movimento = crossfade curto**, não corte seco: deslocamento/escala/mola somem, a opacidade fica (já resolvido nos tokens).
 - Vidro só "aparece" com algo atrás pra desfocar (fundo atmosférico/escuro/conteúdo rolando). Sobre branco liso ele **some** — ali use card sólido + hairline.
 - **NUNCA** glass em: tabela/dashboard denso (mata a leitura), card DENTRO de card (vira sopa de vidro), fundo de e-mail (sem suporte), e nunca ao custo do contraste AA.
 

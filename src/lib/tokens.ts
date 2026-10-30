@@ -207,6 +207,12 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-dur",
+    "css": "--via-dur",
+    "value": "var(--via-dur-base)",
+    "category": "color"
+  },
+  {
     "name": "via-edge-hi",
     "css": "--via-edge-hi",
     "value": "rgba(255, 255, 255, 0.95)",
@@ -507,6 +513,18 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-t-fast",
+    "css": "--via-t-fast",
+    "value": "var(--via-dur-quick) var(--via-ease-snap)",
+    "category": "color"
+  },
+  {
+    "name": "via-t-slow",
+    "css": "--via-t-slow",
+    "value": "var(--via-dur-panel) var(--via-ease-enter)",
+    "category": "color"
+  },
+  {
     "name": "via-text",
     "css": "--via-text",
     "value": "var(--via-gray-700)",
@@ -599,31 +617,43 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-ease",
     "css": "--via-ease",
-    "value": "cubic-bezier(0.32, 0.08, 0.24, 1)",
+    "value": "var(--via-ease-snap)",
+    "category": "motion"
+  },
+  {
+    "name": "via-ease-enter",
+    "css": "--via-ease-enter",
+    "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "category": "motion"
+  },
+  {
+    "name": "via-ease-exit",
+    "css": "--via-ease-exit",
+    "value": "cubic-bezier(0.4, 0, 1, 1)",
     "category": "motion"
   },
   {
     "name": "via-ease-out",
     "css": "--via-ease-out",
-    "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "value": "var(--via-ease-enter)",
     "category": "motion"
   },
   {
     "name": "via-ease-snap",
     "css": "--via-ease-snap",
-    "value": "cubic-bezier(.2, .7, .2, 1)",
+    "value": "cubic-bezier(0.2, 0.7, 0.2, 1)",
     "category": "motion"
   },
   {
     "name": "via-ease-spring",
     "css": "--via-ease-spring",
-    "value": "cubic-bezier(.34, 1.56, .64, 1)",
+    "value": "var(--via-spring-bounce)",
     "category": "motion"
   },
   {
     "name": "via-t",
     "css": "--via-t",
-    "value": "180ms var(--via-ease)",
+    "value": "var(--via-dur-quick) var(--via-ease-snap)",
     "category": "motion"
   },
   {
@@ -675,15 +705,45 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
-    "name": "via-dur",
-    "css": "--via-dur",
+    "name": "via-dur-base",
+    "css": "--via-dur-base",
     "value": "220ms",
+    "category": "other"
+  },
+  {
+    "name": "via-dur-page",
+    "css": "--via-dur-page",
+    "value": "400ms",
+    "category": "other"
+  },
+  {
+    "name": "via-dur-panel",
+    "css": "--via-dur-panel",
+    "value": "320ms",
     "category": "other"
   },
   {
     "name": "via-dur-press",
     "css": "--via-dur-press",
-    "value": "110ms",
+    "value": "100ms",
+    "category": "other"
+  },
+  {
+    "name": "via-dur-quick",
+    "css": "--via-dur-quick",
+    "value": "160ms",
+    "category": "other"
+  },
+  {
+    "name": "via-enter-scale",
+    "css": "--via-enter-scale",
+    "value": "0.97",
+    "category": "other"
+  },
+  {
+    "name": "via-enter-shift",
+    "css": "--via-enter-shift",
+    "value": "8px",
     "category": "other"
   },
   {
@@ -1011,21 +1071,21 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-spring-bounce",
+    "css": "--via-spring-bounce",
+    "value": "linear(0, 0.032 2.5%, 0.124 5.4%, 0.648 16.2%, 0.849 21.1%, 0.984 26%, 1.063 31.1%, 1.088 34.9%, 1.093 39%, 1.019 57.8%, 0.998 66.2%, 0.991 76.6%, 1)",
+    "category": "other"
+  },
+  {
+    "name": "via-spring-smooth",
+    "css": "--via-spring-smooth",
+    "value": "linear(0, 0.021 2.7%, 0.082 5.8%, 0.453 19%, 0.62 26.1%, 0.744 33.1%, 0.837 40.6%, 0.912 50.4%, 0.959 62.3%, 0.985 77.5%, 1)",
+    "category": "other"
+  },
+  {
     "name": "via-surface-onnavy",
     "css": "--via-surface-onnavy",
     "value": "linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%)",
-    "category": "other"
-  },
-  {
-    "name": "via-t-fast",
-    "css": "--via-t-fast",
-    "value": "120ms var(--via-ease)",
-    "category": "other"
-  },
-  {
-    "name": "via-t-slow",
-    "css": "--via-t-slow",
-    "value": "360ms var(--via-ease)",
     "category": "other"
   },
   {
@@ -1459,6 +1519,7 @@ export type TokenName =
   | 'via-data-axis'
   | 'via-data-grid'
   | 'via-data-ink'
+  | 'via-dur'
   | 'via-edge-hi'
   | 'via-edge-lo'
   | 'via-glass-bar'
@@ -1509,6 +1570,8 @@ export type TokenName =
   | 'via-success-text'
   | 'via-surface'
   | 'via-surface-elev'
+  | 'via-t-fast'
+  | 'via-t-slow'
   | 'via-text'
   | 'via-text-body'
   | 'via-text-faint'
@@ -1525,6 +1588,8 @@ export type TokenName =
   | 'via-fs-display'
   | 'via-mono'
   | 'via-ease'
+  | 'via-ease-enter'
+  | 'via-ease-exit'
   | 'via-ease-out'
   | 'via-ease-snap'
   | 'via-ease-spring'
@@ -1537,8 +1602,13 @@ export type TokenName =
   | 'via-border-fine'
   | 'via-container'
   | 'via-content'
-  | 'via-dur'
+  | 'via-dur-base'
+  | 'via-dur-page'
+  | 'via-dur-panel'
   | 'via-dur-press'
+  | 'via-dur-quick'
+  | 'via-enter-scale'
+  | 'via-enter-shift'
   | 'via-fs-body'
   | 'via-fs-caption'
   | 'via-fs-h1'
@@ -1593,9 +1663,9 @@ export type TokenName =
   | 'via-scrim'
   | 'via-scrim-blur'
   | 'via-specular'
+  | 'via-spring-bounce'
+  | 'via-spring-smooth'
   | 'via-surface-onnavy'
-  | 'via-t-fast'
-  | 'via-t-slow'
   | 'via-z-dropdown'
   | 'via-z-modal'
   | 'via-z-overlay'

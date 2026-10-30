@@ -119,6 +119,49 @@ describe('<ThemeProvider />', () => {
   });
 });
 
+describe('troca de tema sem rasgo', () => {
+  type DocVT = { startViewTransition?: (cb: () => void) => { finished: Promise<void> } };
+  afterEach(() => {
+    delete (document as unknown as DocVT).startViewTransition;
+    document.documentElement.classList.remove('via-theme-swap');
+  });
+
+  it('com View Transitions a troca roda dentro de startViewTransition (crossfade)', async () => {
+    // a captura "depois" acontece num tick seguinte, como no browser
+    const start = vi.fn((cb: () => void) => ({
+      finished: Promise.resolve().then(() => cb()),
+    }));
+    (document as unknown as DocVT).startViewTransition = start;
+    render(
+      <ThemeProvider>
+        <Probe />
+      </ThemeProvider>,
+    );
+    await userEvent.click(screen.getByText('toggle'));
+    expect(start).toHaveBeenCalledTimes(1);
+    await act(async () => {
+      await start.mock.results[0].value.finished;
+    });
+    expect(document.documentElement.dataset.theme).toBe('dark');
+    expect(screen.getByTestId('theme')).toHaveTextContent('dark');
+  });
+
+  it('pedir o tema que já está ativo não abre transição', async () => {
+    const start = vi.fn((cb: () => void) => {
+      cb();
+      return { finished: Promise.resolve() };
+    });
+    (document as unknown as DocVT).startViewTransition = start;
+    render(
+      <ThemeProvider defaultMode="dark">
+        <Probe />
+      </ThemeProvider>,
+    );
+    await userEvent.click(screen.getByRole('button', { name: 'dark' }));
+    expect(start).not.toHaveBeenCalled();
+  });
+});
+
 describe('useTheme sem Provider', () => {
   it('sem data-theme no <html> reporta claro — não chuta o tema do SO', () => {
     systemDark = true;

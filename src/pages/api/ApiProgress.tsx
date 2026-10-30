@@ -14,7 +14,7 @@ export default function ApiProgress() {
         { part: 'via-progress', description: 'Container · label + value (opcional) + track' },
         { part: 'via-progress__head', description: 'Header · label à esq + value à dir' },
         { part: 'via-progress__track', description: 'Trilho · gradient navy alpha + inset shadow' },
-        { part: 'via-progress__fill', description: 'Fill animado · width transition spring + shimmer ::after' },
+        { part: 'via-progress__fill', description: 'Fill com a largura do trilho, deslizando por translateX (só compositor) + shimmer ::after' },
       ]}
       meta={meta}
       playground={{

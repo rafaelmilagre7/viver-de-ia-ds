@@ -54,7 +54,7 @@ export function Progress({
       >
         <div
           className="via-progress__fill"
-          style={{ width: `${clamped}%` }}
+          style={{ transform: `translateX(${clamped - 100}%)` }}
         />
       </div>
     </div>

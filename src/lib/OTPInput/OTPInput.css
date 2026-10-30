@@ -36,10 +36,10 @@
   border-radius: var(--via-radius-sm);
   outline: none;
   transition:
-    border-color var(--via-dur) ease,
-    box-shadow var(--via-dur) ease,
-    background var(--via-dur) ease,
-    transform .18s var(--via-ease-spring);
+    border-color var(--via-dur-quick) var(--via-ease-snap),
+    box-shadow var(--via-dur-base) var(--via-ease-snap),
+    background var(--via-dur-quick) var(--via-ease-snap),
+    transform var(--via-dur-quick) var(--via-ease-snap);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 1px 2px var(--via-shadow-ink-03);

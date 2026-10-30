@@ -1,6 +1,7 @@
 import { useState, useRef, useId } from 'react';
 import { ChevronDown, Check, X } from 'lucide-react';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Anchored } from '../_shared/Portal';
 import '../_shared/sr-only.css';
 import '../_shared/material.css';
@@ -69,6 +70,8 @@ export function MultiSelect({
   const valueId = `${baseId}-value`;
   const hintId = `${baseId}-hint`;
   const listRef = useRef<HTMLUListElement>(null);
+  // Lista fica montada durante a saída animada
+  const { mounted, state, closing } = usePresence(open, listRef);
   const optionId = (i: number) => `${baseId}-opt-${i}`;
 
   const setValues = (next: string[]) => {
@@ -228,11 +231,13 @@ export function MultiSelect({
         />
       </div>
 
-      {open && (
+      {mounted && (
         <Anchored anchorRef={ref} z="dropdown" layer={layer}>
           <ul
             id={listId}
             ref={listRef}
+            data-state={state}
+            inert={closing}
             className="via-ms__list"
             role="listbox"
             aria-multiselectable="true"

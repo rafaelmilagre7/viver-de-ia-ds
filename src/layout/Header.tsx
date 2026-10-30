@@ -22,7 +22,7 @@ export default function Header({ onOpenSearch, onToggleDrawer, drawerOpen }: Pro
         >
           {drawerOpen ? <X size={18} strokeWidth={2} /> : <Menu size={18} strokeWidth={2} />}
         </button>
-        <Link to="/" className="vds-brand">
+        <Link to="/" className="vds-brand" viewTransition>
           <BrandLogo variant="auto" size="md" />
           <span className="vds-brand-tag">Design System</span>
         </Link>

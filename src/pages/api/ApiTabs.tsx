@@ -49,14 +49,14 @@ export default function ApiTabs() {
     <ComponentDoc
       eyebrow="api · tabs"
       name="Tabs"
-      headline="underline animado spring · pills glass · counter integrado"
-      description="2 variants: underline (default) com gradient navy→blue→navy animado spring cubic-bezier(.16,1,.3,1) · pills com glass + spring active state. Suporta counter/badge por item. Keyboard arrow nav + roving tabindex."
+      headline="indicador único na mola · pills glass · counter integrado"
+      description="2 variants: underline (default) com gradient navy→blue→navy · pills com glass. Um indicador único desliza entre as abas na mola (só transform, interrompível). Suporta counter/badge por item. Keyboard arrow nav + roving tabindex."
       importLine={`import { Tabs, type TabsProps, type TabItem } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-tabs', description: 'Container flex column · agrupa lista + panel' },
         { part: 'via-tabs__list', description: 'Lista horizontal de tabs · role tablist' },
         { part: 'via-tabs__tab', description: 'Botão tab · role tab · aria-selected · keyboard nav' },
-        { part: '::after (underline)', description: 'Underline animado · gradient navy→blue · width spring 32% → 100%' },
+        { part: 'via-tabs__indicator', description: 'Indicador único (underline ou pill) · desliza por translateX + scaleX na mola · aria-hidden' },
         { part: 'via-tabs__badge', description: 'Counter chip opcional · ARIA hidden (texto duplica info)' },
       ]}
       meta={meta}

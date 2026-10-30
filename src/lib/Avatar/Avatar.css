@@ -24,7 +24,7 @@
     0 5px 12px -4px var(--via-shadow-ink-20);
   overflow: hidden;
   isolation: isolate;
-  transition: transform var(--via-dur) var(--via-ease-snap), box-shadow var(--via-dur) ease;
+  transition: transform var(--via-dur-base) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap);
 }
 
 .via-avatar img {

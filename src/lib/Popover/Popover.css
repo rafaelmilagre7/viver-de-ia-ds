@@ -20,7 +20,11 @@
   border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-lg, 16px);
   box-shadow: var(--via-material-thick-shadow);
-  animation: via-popover-in 160ms var(--via-ease-snap) both;
+  /* Entra em quick, sai em press · só opacity + scale (propriedade própria,
+     compõe com o translate estático de centralização) */
+  transition:
+    opacity var(--via-dur-quick) var(--via-ease-enter),
+    scale var(--via-dur-quick) var(--via-ease-enter);
 }
 
 .via-popover__body {
@@ -50,32 +54,24 @@
 
 /* --- Sides ---
    Origem espacial (WWDC): transform-origin aponta pro trigger, então o
-   scale nasce DELE — nunca do centro. As vars --via-pop-from/to alimentam
-   o keyframe único (placements com translate estático precisam repetir o
-   translate no keyframe, senão a animação o descarta e o painel pula). */
+   scale nasce DELE — nunca do centro. A camada de overlay sobrescreve com
+   o centro real do trigger (e acompanha o flip). A animação usa a
+   propriedade `scale`, que compõe com o translate estático abaixo. */
 .via-popover--bottom {
   top: calc(100% + 10px);
   transform-origin: top center;
-  --via-pop-from: translateY(-2px) scale(0.98);
-  --via-pop-to:   translateY(0) scale(1);
 }
 .via-popover--top {
   bottom: calc(100% + 10px);
   transform-origin: bottom center;
-  --via-pop-from: translateY(2px) scale(0.98);
-  --via-pop-to:   translateY(0) scale(1);
 }
 .via-popover--left {
   right: calc(100% + 10px); top: 50%; transform: translateY(-50%);
   transform-origin: right center;
-  --via-pop-from: translateY(-50%) translateX(2px) scale(0.98);
-  --via-pop-to:   translateY(-50%) translateX(0) scale(1);
 }
 .via-popover--right {
   left: calc(100% + 10px); top: 50%; transform: translateY(-50%);
   transform-origin: left center;
-  --via-pop-from: translateY(-50%) translateX(-2px) scale(0.98);
-  --via-pop-to:   translateY(-50%) translateX(0) scale(1);
 }
 
 /* --- Alignment along the cross-axis --- */
@@ -90,14 +86,6 @@
 .via-popover--bottom.via-popover--align-end   { transform-origin: top right; }
 .via-popover--top.via-popover--align-start    { transform-origin: bottom left; }
 .via-popover--top.via-popover--align-end      { transform-origin: bottom right; }
-.via-popover--bottom.via-popover--align-center {
-  --via-pop-from: translateX(-50%) translateY(-2px) scale(0.98);
-  --via-pop-to:   translateX(-50%) translateY(0) scale(1);
-}
-.via-popover--top.via-popover--align-center {
-  --via-pop-from: translateX(-50%) translateY(2px) scale(0.98);
-  --via-pop-to:   translateX(-50%) translateY(0) scale(1);
-}
 
 /* --- Arrow --- */
 .via-popover__arrow {
@@ -143,11 +131,14 @@
 .via-popover--top.via-popover--align-start    .via-popover__arrow { left: 18px; }
 .via-popover--top.via-popover--align-end      .via-popover__arrow { left: auto; right: 18px; margin: 0; }
 
-@keyframes via-popover-in {
-  from { opacity: 0; transform: var(--via-pop-from, translateY(-2px) scale(0.98)); }
-  to   { opacity: 1; transform: var(--via-pop-to, translateY(0) scale(1)); }
+@starting-style {
+  .via-popover { opacity: 0; scale: var(--via-enter-scale); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .via-popover { animation: none !important; }
+/* Saída: um degrau mais curta, acelerando; reabrir no meio reverte */
+.via-popover[data-state='closed'] {
+  opacity: 0;
+  scale: var(--via-enter-scale);
+  transition-duration: var(--via-dur-press);
+  transition-timing-function: var(--via-ease-exit);
 }

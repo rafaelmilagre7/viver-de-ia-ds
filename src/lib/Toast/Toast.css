@@ -7,7 +7,9 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
-  max-width: 380px;
+  /* Largura FIXA (não a do toast mais largo): um toast novo mais largo não
+     pode esticar os outros de lado — a pilha só se mexe na vertical (FLIP) */
+  width: min(380px, calc(100vw - 48px));
   pointer-events: none;
 }
 
@@ -17,6 +19,12 @@
 .via-toast-stack--top-center    { top: 24px;    left: 50%; transform: translateX(-50%); }
 .via-toast-stack--bottom-right  { bottom: 24px; right: 24px; }
 .via-toast-stack--bottom-center { bottom: 24px; left: 50%; transform: translateX(-50%); }
+
+/* O toast novo chega pela borda da tela onde a pilha mora */
+.via-toast-stack--top-right,
+.via-toast-stack--top-center    { --via-toast-from: calc(var(--via-enter-shift) * -1); }
+.via-toast-stack--bottom-right,
+.via-toast-stack--bottom-center { --via-toast-from: var(--via-enter-shift); }
 
 .via-toast {
   --via-rim: var(--via-material-thick-rim);
@@ -32,7 +40,13 @@
   backdrop-filter: var(--via-material-thick-blur);
   border: var(--via-material-thick-ring);
   box-shadow: var(--via-material-thick-shadow);
-  animation: via-toast-in .32s var(--via-ease-out);
+  /* Entrada sem overshoot (quique é só de controle). Saída e swipe: mola
+     pintada inline (useDragDismiss); vizinhos: FLIP na propriedade
+     `translate` (compõe com o `transform` do swipe) */
+  transition:
+    opacity var(--via-dur-base) var(--via-ease-enter),
+    translate var(--via-dur-base) var(--via-ease-enter),
+    scale var(--via-dur-base) var(--via-ease-enter);
   isolation: isolate;
   overflow: hidden;
   /* swipe horizontal de dispensar: o touch não pode virar scroll da página
@@ -52,10 +66,12 @@
   z-index: -1;
 }
 
-@keyframes via-toast-in {
-  0%   { opacity: 0; transform: translateY(-10px) scale(0.96); }
-  60%  { opacity: 1; transform: translateY(1px) scale(1.01); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+@starting-style {
+  .via-toast {
+    opacity: 0;
+    translate: 0 var(--via-toast-from, 0px);
+    scale: var(--via-enter-scale);
+  }
 }
 
 /* Destructive · pulse sutil pra chamar atenção */
@@ -66,9 +82,8 @@
     0 0 0 0.5px rgba(184, 92, 92, 0.24),
     0 22px 44px -16px rgba(184, 92, 92, 0.32),
     0 8px 18px -10px rgba(184, 92, 92, 0.18);
-  animation:
-    via-toast-in .32s var(--via-ease-out),
-    via-toast-destructive-breathe 3.2s ease-in-out 1s infinite;
+  /* loop ambiente (fora da escala de movimento) */
+  animation: via-toast-destructive-breathe 3.2s ease-in-out 1s infinite;
 }
 
 @keyframes via-toast-destructive-breathe {
@@ -160,7 +175,7 @@
   letter-spacing: -0.006em;
   cursor: pointer;
   white-space: nowrap;
-  transition: background .2s ease, border-color .2s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-toast__action:hover {
@@ -181,11 +196,18 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background .2s ease, color .2s ease, border-color .2s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-toast__close:hover {
   background: var(--via-navy-05);
   color: var(--via-text-primary);
   border-color: var(--via-border-soft, rgba(10, 31, 59, 0.08));
+}
+
+/* Reduced-motion: o card tem fase de presença (data-state), então fica fora
+   da rede global — a entrada vira crossfade sozinha (distâncias neutras) e o
+   pulso do destrutivo para aqui */
+@media (prefers-reduced-motion: reduce) {
+  .via-toast--destructive { animation: none; }
 }

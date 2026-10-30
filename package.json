@@ -11,7 +11,7 @@
     "build:tokens": "node scripts/build-tokens.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
-    "lint:tokens": "node scripts/token-drift.mjs",
+    "lint:tokens": "node scripts/token-drift.mjs && node scripts/motion-drift.mjs",
     "lint:sync": "node scripts/check-plugin-sync.mjs",
     "lint:glass": "node scripts/glass-order.mjs",
     "preview": "vite preview",

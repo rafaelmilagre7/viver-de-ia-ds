@@ -20,7 +20,10 @@
     radial-gradient(circle at 50% 40%, rgba(10, 31, 59, 0.86), rgba(2, 22, 42, 0.96));
   -webkit-backdrop-filter: var(--via-scrim-blur);
   backdrop-filter: var(--via-scrim-blur);
-  animation: via-lightbox-in .26s var(--via-ease-out);
+  /* Entrada em keyframe (não transição): a mola de saída pinta a opacidade
+     inline a cada quadro e uma transição de CSS atrasaria cada passo.
+     Saída (X/ESC/fundo/fechar de fora) = a mesma mola do gesto. */
+  animation: via-lightbox-in var(--via-dur-base) var(--via-ease-enter);
 }
 
 @keyframes via-lightbox-in {
@@ -47,12 +50,13 @@
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.08),
     0 32px 80px -16px rgba(0, 0, 0, 0.62);
-  animation: via-lightbox-img-in .32s var(--via-ease-out);
+  animation: via-lightbox-img-in var(--via-dur-base) var(--via-ease-enter);
 }
 
+/* Sem overshoot · em reduced-motion o token de escala vira 1 (só fade) */
 @keyframes via-lightbox-img-in {
-  from { opacity: 0; transform: scale(0.94); }
-  to   { opacity: 1; transform: scale(1); }
+  from { opacity: 0; scale: var(--via-enter-scale); }
+  to   { opacity: 1; scale: 1; }
 }
 
 .via-lightbox__close,
@@ -69,7 +73,7 @@
   cursor: pointer;
   border-radius: var(--via-radius-pill);
   z-index: 1;
-  transition: background var(--via-dur) ease, transform var(--via-dur) var(--via-ease-spring);
+  transition: background var(--via-dur-quick) var(--via-ease-snap), transform var(--via-dur-base) var(--via-ease-snap);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.20) inset,
     0 4px 12px rgba(0, 0, 0, 0.3);
@@ -140,7 +144,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--via-radius-pill);
   text-decoration: none;
-  transition: background var(--via-dur) ease, transform .15s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), transform var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-lightbox__download:hover {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.10));
@@ -148,7 +152,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-lightbox__scrim, .via-lightbox__img, .via-lightbox__close, .via-lightbox__arrow, .via-lightbox__download {
+  /* fundo e foto (data-state) ficam fora: a entrada deles vira crossfade
+     sozinha (token de escala neutro); a saída vira fade no motor da mola */
+  .via-lightbox__close, .via-lightbox__arrow, .via-lightbox__download {
     animation: none !important;
     transition: none !important;
   }

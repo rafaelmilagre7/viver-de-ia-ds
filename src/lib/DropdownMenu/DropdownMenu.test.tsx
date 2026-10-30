@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { DropdownMenu } from './DropdownMenu';
 
@@ -383,5 +383,82 @@ describe('<DropdownMenu />', () => {
     await user.keyboard('{Escape}');
     expect(screen.queryByRole('menu')).not.toBeInTheDocument();
     expect(trigger).toHaveFocus();
+  });
+});
+
+/* ---------- Saída animada (fase de presença) ----------
+   Animação falsa e controlável no lugar da transição de
+   [data-state='closed'] (jsdom não tem Web Animations). */
+
+function fakeExit() {
+  let resolve!: () => void;
+  let reject!: (e: unknown) => void;
+  const finished = new Promise<void>((res, rej) => {
+    resolve = res;
+    reject = rej;
+  });
+  finished.catch(() => {});
+  return {
+    playState: 'running',
+    pending: false,
+    currentTime: 0 as number | null,
+    effect: { getComputedTiming: () => ({ endTime: 100 }) },
+    finished,
+    finish: () => resolve(),
+    cancel: () => reject(new DOMException('cancel', 'AbortError')),
+  };
+}
+
+describe('<DropdownMenu /> · saída animada', () => {
+  let anim: ReturnType<typeof fakeExit>;
+  beforeEach(() => {
+    anim = fakeExit();
+    Element.prototype.getAnimations = vi.fn(() => [anim]) as unknown as Element['getAnimations'];
+  });
+  afterEach(() => {
+    // @ts-expect-error · remove o mock de Web Animations
+    delete Element.prototype.getAnimations;
+  });
+
+  it('ESC: menu fica em data-state=closed e inert enquanto sai, foco já no trigger; desmonta no fim', async () => {
+    const user = userEvent.setup();
+    render(<DropdownMenu trigger={<button>Abrir</button>} items={items} />);
+    const trigger = screen.getByRole('button', { name: 'Abrir' });
+    await user.click(trigger);
+    const menu = screen.getByRole('menu');
+
+    await user.keyboard('{Escape}');
+    expect(menu).toBeInTheDocument();
+    expect(menu).toHaveAttribute('data-state', 'closed');
+    expect(menu).toHaveAttribute('inert');
+    expect(trigger).toHaveFocus();
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+    await act(async () => {
+      anim.finish();
+      await anim.finished;
+    });
+    expect(menu).not.toBeInTheDocument();
+  });
+
+  it('reabrir no meio da saída reverte no MESMO nó e devolve o foco ao 1º item', async () => {
+    const user = userEvent.setup();
+    render(<DropdownMenu trigger={<button>Abrir</button>} items={items} />);
+    const trigger = screen.getByRole('button', { name: 'Abrir' });
+    await user.click(trigger);
+    const menu = screen.getByRole('menu');
+
+    await user.keyboard('{Escape}');
+    expect(menu).toHaveAttribute('data-state', 'closed');
+    await user.click(trigger);
+    await act(async () => {
+      anim.cancel(); // a transição revertida cancela a de saída
+      await Promise.resolve();
+    });
+
+    expect(screen.getByRole('menu')).toBe(menu);
+    expect(menu).toHaveAttribute('data-state', 'open');
+    expect(menu).not.toHaveAttribute('inert');
+    expect(screen.getByRole('menuitem', { name: 'Editar perfil' })).toHaveFocus();
   });
 });

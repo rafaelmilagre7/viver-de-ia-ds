@@ -65,7 +65,7 @@
     calc(var(--via-my, -9999px) - var(--via-spec-size, 240px) / 2)
   );
   opacity: 0;
-  transition: opacity var(--via-dur) var(--via-ease-out);
+  transition: opacity var(--via-dur-base) var(--via-ease-enter);
   pointer-events: none;
   z-index: -1; /* acima do fill do host (isolation: isolate), abaixo do conteúdo */
 }

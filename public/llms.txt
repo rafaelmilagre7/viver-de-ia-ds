@@ -178,7 +178,7 @@ CTA primário · pílula 999 · navy gradient:
     inset 0 1px 0 rgba(255,255,255,0.15),
     0 8px 18px -6px var(--via-shadow-ink-40);
   text-decoration: none;
-  transition: transform 200ms cubic-bezier(.2,.7,.2,1);
+  transition: transform var(--via-dur-base) var(--via-ease-snap);
 }
 .cta-primary:hover { transform: translateY(-1px); }
 ```
@@ -306,7 +306,7 @@ Glass **não precisa de fundo escuro**. O card de vidro sobre claro é a assinat
   backdrop-filter: var(--via-material-regular-blur);
   border: var(--via-material-regular-ring);        /* hairline · desenha a borda sobre branco */
   box-shadow: var(--via-material-regular-shadow);  /* brilho interno + linha de base + drop */
-  transition: transform .26s var(--via-ease-snap), box-shadow .26s ease;
+  transition: transform var(--via-dur-base) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap);
 }
 /* 5. aro especular (receita .glass::after acima) + atmosfera própria no ::before */
 .glass-card::before {
@@ -365,7 +365,10 @@ REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos c
 - Feedback no APERTAR, não no soltar — todo interativo tem `:active` instantâneo (`scale(0.97)` ou tom mais fundo).
 - Vidro claro NUNCA empilha sobre vidro claro (legibilidade colapsa) — card interno vira superfície sólida.
 - Texto sobre vidro pede um passo a mais de contraste/peso do que sobre superfície sólida; cor de destaque mora em camada sólida, nunca solta no vidro.
-- Vidro que entra em cena (modal/popover) chega por escala + opacidade — "materializa", não é fade seco. NUNCA anime `backdrop-filter` (repinta o blur da tela inteira) nem `left`/`top`.
+- Vidro que entra em cena (modal/popover) chega por escala + opacidade — "materializa", não é fade seco. NUNCA anime `backdrop-filter` (repinta o blur da tela inteira) nem `left`/`top`/`width`.
+- Movimento tem UMA escala por papel (tokens): `--via-dur-press` 100ms (apertar) · `--via-dur-quick` 160ms (hover, cor, menu entrando) · `--via-dur-base` 220ms (modal, popover, aba, acordeão, toast) · `--via-dur-panel` 320ms · `--via-dur-page` 400ms (rota). A SAÍDA usa o degrau de baixo (~0,7× da entrada). Curvas: `--via-ease-enter` (tudo que entra), `--via-ease-exit` (tudo que sai), `--via-ease-snap` (hover/press). Overshoot (`--via-spring-bounce`) só na marca de check/radio/switch — nunca em modal, toast, card ou rota.
+- Tudo que aparece também SAI animado: camada entra por opacidade + `scale: var(--via-enter-scale)` (.97, a partir do gatilho) e sai pelo mesmo caminho, mais rápido. Use transição + `@starting-style` (não keyframe) pra poder reverter do meio se reabrir.
+- `prefers-reduced-motion`: troque deslocamento/escala por crossfade curto de opacidade — não corte tudo (os tokens `--via-enter-scale`/`--via-enter-shift` já viram neutros).
 - Reflexo de luz em botão/card segue o ponteiro por `transform`/`opacity` (só mouse, desliga em reduced-motion) — nada de varredura animando `left`.
 - Acessibilidade de material já é automática nos tokens: `prefers-reduced-transparency` deixa os 4 materiais sólidos (sem blur, sem grão, scrim chapado) e `prefers-contrast: more` solidifica e engrossa o ring. Não desfaça com `backdrop-filter` literal fora dos tokens.
 - Física de gesto (React/Motion): mola com `bounce: 0` por padrão; `bounce: 0.2` SÓ depois de flick/arremesso. Gesto arrastável segue o dedo 1:1 e decide fechar×voltar pelo EMBALO (projeção), não pela posição. Nunca anime gesto com transition de duração fixa (não dá pra agarrar no meio). Anime só `transform`/`opacity`. Menu/balão escala DA ORIGEM (transform-origin no gatilho), nunca do centro.
@@ -374,13 +377,13 @@ REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos c
 
 Hover = **o elemento sobe e a luz aumenta** — nunca uma barra colorida na lateral (banida nos 3 mecanismos: `border-left` colorido, `::before` fino à esquerda, `box-shadow inset` horizontal).
 ```css
-.row-card { transition: transform .2s var(--via-ease-snap), box-shadow .2s ease, border-color .2s ease; }
+.row-card { transition: transform var(--via-dur-base) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap); }
 .row-card:hover  { transform: translateY(-1px); box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 12px 28px -18px var(--via-shadow-ink-20); }
 .row-card:active { transform: scale(0.97); }     /* resposta no APERTAR */
 ```
 Em HTML cru, `.via-row-card` / `.via-tile--lift` (do `surfaces.css`) já entregam isso.
 
-Lift em cards interativos: `translateY(-1px)` a `translateY(-3px)` · transition cubic-bezier(.2,.7,.2,1).
+Lift em cards interativos: `translateY(-1px)` a `translateY(-3px)` · `transition` em `var(--via-dur-base) var(--via-ease-snap)`.
 
 Gap animation em text links com chevron: 8px → 12px.
 

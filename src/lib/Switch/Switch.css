@@ -30,9 +30,9 @@
   background: linear-gradient(180deg, var(--via-navy-14), var(--via-navy-20));
   border-radius: var(--via-radius-pill);
   transition:
-    background 0.32s var(--via-ease-out),
-    box-shadow 0.32s ease,
-    transform var(--via-dur) var(--via-ease-snap);
+    background var(--via-dur-panel) var(--via-ease-enter),
+    box-shadow var(--via-dur-panel) var(--via-ease-snap),
+    transform var(--via-dur-base) var(--via-ease-snap);
   box-shadow:
     inset 0 1px 2px var(--via-shadow-ink-14),
     inset 0 -1px 0 rgba(255, 255, 255, 0.10);
@@ -65,7 +65,7 @@
     0 -1px 0 var(--via-navy-08) inset,
     0 0 0 0.5px var(--via-navy-12),
     0 1px 3px var(--via-shadow-ink-20);
-  transition: transform 0.4s var(--via-ease-spring);
+  transition: transform var(--via-dur-page) var(--via-spring-bounce);
 }
 
 .via-switch--md .via-switch__thumb {

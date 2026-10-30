@@ -47,7 +47,7 @@ export default function ApiAccordion() {
       eyebrow="api · accordion"
       name="Accordion"
       headline="expandir/colapsar editorial · FAQ-style · 2 variants"
-      description="Accordion pra FAQ ou settings groups. Default: 1 aberto por vez (multiple=false). Spring height transition com cubic-bezier(.16,1,.3,1). 2 variants: default (sem borda) ou separated (cards individuais)."
+      description="Accordion pra FAQ ou settings groups. Default: 1 aberto por vez (multiple=false). Altura anima por grid-template-rows 0fr→1fr (--via-dur-base, curva enter) e o item de baixo desliza junto; o painel só some do DOM acessível depois que a saída termina. 2 variants: default (sem borda) ou separated (cards individuais)."
       importLine={`import { Accordion, type AccordionProps, type AccordionItem } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-accordion', description: 'Container · stack vertical · borda top/bottom (default)' },

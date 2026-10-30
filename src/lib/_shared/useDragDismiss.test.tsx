@@ -121,3 +121,46 @@ describe('consumidor veta o fechamento', () => {
     expect(scrim.style.opacity).toBe('1');
   });
 });
+
+describe('reduced-motion troca o deslize por crossfade curto', () => {
+  it('Sheet entra e sai em fade (painel + scrim), onClose no fim do fade', async () => {
+    reduced = true;
+    const calls: Array<{ el: Element; frames: Keyframe[]; opts: KeyframeAnimationOptions }> = [];
+    const finishers: Array<() => void> = [];
+    Object.defineProperty(HTMLElement.prototype, 'animate', {
+      configurable: true,
+      value(this: HTMLElement, frames: Keyframe[], opts: KeyframeAnimationOptions) {
+        calls.push({ el: this, frames, opts });
+        let done!: () => void;
+        const finished = new Promise<void>((r) => (done = r));
+        finishers.push(done);
+        return { finished, cancel() {} };
+      },
+    });
+    try {
+      const onClose = vi.fn();
+      render(<Sheet open onClose={onClose} title="S">x</Sheet>);
+      const dialog = screen.getByRole('dialog');
+      const scrim = document.querySelector('.via-sheet-scrim')!;
+      // entrada: só opacidade, 0 → 1, nada de transform
+      expect(calls.map((c) => c.el)).toEqual([dialog, scrim]);
+      expect(calls[0].frames).toEqual([{ opacity: 0 }, { opacity: 1 }]);
+      expect(dialog.style.transform).toBe('');
+
+      fireEvent.click(screen.getByRole('button', { name: 'Fechar' }));
+      const exitFade = calls.slice(2);
+      expect(exitFade).toHaveLength(2);
+      expect(exitFade[0].frames[1]).toEqual({ opacity: 0 });
+      expect(exitFade[0].opts.duration).toBe(160);
+      expect(onClose).not.toHaveBeenCalled();
+      await act(async () => {
+        finishers.slice(2).forEach((f) => f());
+        await Promise.resolve();
+        await Promise.resolve();
+      });
+      expect(onClose).toHaveBeenCalledTimes(1);
+    } finally {
+      delete (HTMLElement.prototype as { animate?: unknown }).animate;
+    }
+  });
+});

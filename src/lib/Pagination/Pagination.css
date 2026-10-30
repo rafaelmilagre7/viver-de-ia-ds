@@ -36,11 +36,11 @@
   border-radius: var(--via-radius-sm);
   cursor: pointer;
   transition:
-    background var(--via-dur) ease,
-    color var(--via-dur) ease,
-    border-color var(--via-dur) ease,
-    box-shadow var(--via-dur) ease,
-    transform 0.18s ease;
+    background var(--via-dur-quick) var(--via-ease-snap),
+    color var(--via-dur-quick) var(--via-ease-snap),
+    border-color var(--via-dur-quick) var(--via-ease-snap),
+    box-shadow var(--via-dur-base) var(--via-ease-snap),
+    transform var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-pagination__page:hover,

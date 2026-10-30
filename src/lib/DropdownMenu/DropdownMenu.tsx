@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Anchored } from '../_shared/Portal';
 import '../_shared/material.css';
 import './DropdownMenu.css';
@@ -66,6 +67,8 @@ export function DropdownMenu({
   const triggerRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  // Menu fica montado durante a saída animada
+  const { mounted, state, closing } = usePresence(open, menuRef);
 
   const resolvedGroups: DropdownMenuGroup[] = groups
     ? groups
@@ -198,11 +201,13 @@ export function DropdownMenu({
         {trigger}
       </div>
 
-      {open && (
+      {mounted && (
         <Anchored anchorRef={wrapRef} z="dropdown" layer={layer}>
           <div
             ref={menuRef}
             id={menuId}
+            data-state={state}
+            inert={closing}
             role="menu"
             aria-label={ariaLabel}
             className={`via-dropdown__menu via-dropdown__menu--${align}`}

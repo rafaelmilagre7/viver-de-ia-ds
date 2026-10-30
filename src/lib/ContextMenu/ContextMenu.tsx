@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, type ReactNode, type MouseEvent } from 'react';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { measureAtRest, usePresence } from '../_shared/motion';
 import { Portal } from '../_shared/Portal';
 import '../_shared/material.css';
 import './ContextMenu.css';
@@ -53,6 +54,8 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const menuRef = useRef<HTMLDivElement>(null);
+  // Menu fica montado durante a saída animada
+  const { mounted, state, closing } = usePresence(open, menuRef);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
   // Quem tinha o foco quando o menu abriu — volta pra ele em ESC/Tab/seleção
   const invokerRef = useRef<HTMLElement | null>(null);
@@ -143,7 +146,9 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
   // Adjust menu position if it would overflow viewport
   useEffect(() => {
     if (!open || !menuRef.current) return;
-    const rect = menuRef.current.getBoundingClientRect();
+    const menu = menuRef.current;
+    // Retângulo FINAL (a entrada em escala .97 já está rodando aqui)
+    const rect = measureAtRest(menu, () => menu.getBoundingClientRect());
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     let x = pos.x;
@@ -166,10 +171,12 @@ export function ContextMenu({ children, items, label = 'Menu de contexto' }: Con
       <span onContextMenu={openMenu} className="via-cm-wrap">
         {children}
       </span>
-      {open && (
+      {mounted && (
         <Portal layer={layer}>
           <div
             ref={menuRef}
+            data-state={state}
+            inert={closing}
             className="via-cm"
             role="menu"
             aria-label={label}

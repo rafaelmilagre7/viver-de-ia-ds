@@ -19,7 +19,8 @@
   background: var(--via-scrim);
   -webkit-backdrop-filter: var(--via-scrim-blur);
   backdrop-filter: var(--via-scrim-blur);
-  animation: via-cmd-scrim-in .26s var(--via-ease-snap) both;
+  /* Só opacity: animar backdrop-filter repinta o blur da tela inteira */
+  transition: opacity var(--via-dur-base) var(--via-ease-enter);
 }
 
 .via-cmd {
@@ -35,10 +36,14 @@
   box-shadow: var(--via-material-thick-shadow);
   overflow: hidden;
   transform-origin: top center;
-  animation: via-cmd-in var(--via-dur) var(--via-ease-out) both;
-  /* Materialização (WWDC): o material chega por escala + opacidade; o blur
-     não anima (caro) e não há will-change permanente — camada fixa muda a
-     rasterização do blur em GPU de software (flagrado no robô de CI) */
+  /* Materialização (WWDC): o material chega por escala + opacidade (desce
+     um pouco, a paleta mora no alto da tela); o blur não anima (caro) e
+     não há will-change permanente — camada fixa muda a rasterização do
+     blur em GPU de software (flagrado no robô de CI) */
+  transition:
+    opacity var(--via-dur-base) var(--via-ease-enter),
+    scale var(--via-dur-base) var(--via-ease-enter),
+    translate var(--via-dur-base) var(--via-ease-enter);
   display: flex;
   flex-direction: column;
   max-height: min(72vh, 640px);
@@ -93,7 +98,7 @@
   cursor: pointer;
   color: var(--via-ink-3, #6B7891);
   border-radius: var(--via-radius-sm);
-  transition: background 120ms ease, color 120ms ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-cmd__close:hover { background: var(--via-navy-04, rgba(10,31,59,0.04)); color: var(--via-text-primary); }
 
@@ -138,7 +143,7 @@
   padding: 9px var(--via-space-2_5);
   border-radius: calc(var(--via-radius-lg) - var(--via-space-2)); /* concêntrico: painel 20 − lista 8 */
   cursor: pointer;
-  transition: background 120ms ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap);
 }
 .via-cmd__group li.on,
 .via-cmd__group li:hover {
@@ -212,22 +217,27 @@
   gap: var(--via-space-1);
 }
 
-@keyframes via-cmd-in {
-  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes via-cmd-scrim-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* ENTRADA · estado de partida (@starting-style: sem JS, sem quadro vazio).
+   Em reduced-motion os tokens de distância zeram: sobra o crossfade. */
+@starting-style {
+  .via-cmd-scrim { opacity: 0; }
+  .via-cmd {
+    opacity: 0;
+    scale: var(--via-enter-scale);
+    translate: 0 calc(var(--via-enter-shift) * -1);
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  /* Sem scale/blur animado: vira crossfade simples */
-  .via-cmd { animation-name: via-cmd-fade; }
+/* SAÍDA · um degrau mais curta (quick) e acelerando; reabrir no meio
+   reverte do ponto atual */
+.via-cmd-scrim[data-state='closed'],
+.via-cmd[data-state='closed'] {
+  opacity: 0;
+  transition-duration: var(--via-dur-quick);
+  transition-timing-function: var(--via-ease-exit);
 }
-@keyframes via-cmd-fade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.via-cmd[data-state='closed'] {
+  scale: var(--via-enter-scale);
 }
 
 @media (max-width: 520px) {

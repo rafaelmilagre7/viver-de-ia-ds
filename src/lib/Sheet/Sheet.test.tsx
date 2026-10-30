@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Sheet } from './Sheet';
 
@@ -356,13 +356,107 @@ describe('<Sheet /> · saída animada', () => {
     expect(translateY(dialog)).toBe(480);
   });
 
-  it('closes synchronously (no animation) under prefers-reduced-motion', () => {
+  it('prefers-reduced-motion: no slide — without Web Animations (jsdom) it closes at once', () => {
     stubMatchMedia(true);
     const onClose = vi.fn();
     renderOpenSheet(onClose);
 
     fireEvent.keyDown(document, { key: 'Escape' });
     expect(onClose).toHaveBeenCalledOnce();
+  });
+
+  it('fechado DE FORA (open → false): fica montado, sai pela mola e desmonta sem novo onClose', () => {
+    const { step } = mockRaf();
+    const onClose = vi.fn();
+    const Harness = ({ open }: { open: boolean }) => (
+      <Sheet open={open} onClose={onClose} title="Filtros">
+        <p>x</p>
+      </Sheet>
+    );
+    const { rerender } = render(<Harness open />);
+    const dialog = screen.getByRole('dialog');
+    Object.defineProperty(dialog, 'offsetHeight', { value: 480, configurable: true });
+
+    rerender(<Harness open={false} />);
+    // ainda montado, fora de alcance (inert) e sem trava de scroll
+    expect(dialog).toBeInTheDocument();
+    expect(document.querySelector('.via-sheet-root')).toHaveAttribute('inert');
+    expect(document.body.style.overflow).not.toBe('hidden');
+
+    act(() => {
+      step();
+    });
+    const mid = translateY(dialog);
+    expect(mid!).toBeGreaterThan(0);
+    expect(mid!).toBeLessThan(480);
+    act(() => {
+      for (let i = 0; i < 400 && dialog.isConnected; i++) if (!step()) break;
+    });
+    expect(dialog).not.toBeInTheDocument();
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('reabrir no meio da saída de fora volta pela mola, sem remontar', () => {
+    const { step } = mockRaf();
+    const Harness = ({ open }: { open: boolean }) => (
+      <Sheet open={open} onClose={() => {}} title="Filtros">
+        <p>x</p>
+      </Sheet>
+    );
+    const { rerender } = render(<Harness open />);
+    const dialog = screen.getByRole('dialog');
+    Object.defineProperty(dialog, 'offsetHeight', { value: 480, configurable: true });
+    rerender(<Harness open={false} />);
+    act(() => {
+      step();
+      step();
+    });
+    const out = translateY(dialog)!;
+    expect(out).toBeGreaterThan(0);
+    rerender(<Harness open />);
+    act(() => {
+      for (let i = 0; i < 400; i++) if (!step()) break;
+    });
+    expect(screen.getByRole('dialog')).toBe(dialog);
+    expect(translateY(dialog)).toBe(0);
+  });
+
+  it('ENTRA pela mesma mola (de 100% a 0) e agarrar no meio segue do ponto vivo', () => {
+    const { step } = mockRaf();
+    const proto = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetHeight');
+    Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, get: () => 480 });
+    HTMLElement.prototype.setPointerCapture ??= () => {};
+    try {
+      render(
+        <Sheet open onClose={() => {}} title="Filtros">
+          <p>x</p>
+        </Sheet>,
+      );
+      const dialog = screen.getByRole('dialog');
+      // pintado fora da tela ANTES do 1º quadro (sem flash no lugar final)
+      expect(translateY(dialog)).toBe(480);
+      expect((document.querySelector('.via-sheet-scrim') as HTMLElement).style.opacity).toBe('0');
+      act(() => {
+        for (let i = 0; i < 4; i++) step();
+      });
+      const live = translateY(dialog)!;
+      expect(live).toBeGreaterThan(0);
+      expect(live).toBeLessThan(480);
+
+      // agarra no meio da entrada: a mola para sob o dedo…
+      const handle = document.querySelector('.via-sheet__handle') as HTMLElement;
+      fireEvent.pointerDown(handle, { button: 0, clientY: 600, pointerId: 1 });
+      act(() => {
+        step();
+      });
+      expect(translateY(dialog)).toBe(live);
+      // …e o arrasto segue 1:1 a partir do valor vivo (sem pulo)
+      fireEvent.pointerMove(handle, { clientY: 620, pointerId: 1 });
+      expect(translateY(dialog)).toBe(live + 20);
+    } finally {
+      if (proto) Object.defineProperty(HTMLElement.prototype, 'offsetHeight', proto);
+      else delete (HTMLElement.prototype as { offsetHeight?: number }).offsetHeight;
+    }
   });
 
   it('X button exits through the spring as well', () => {

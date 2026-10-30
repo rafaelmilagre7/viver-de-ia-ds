@@ -5,6 +5,8 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { flushSync } from 'react-dom';
+import { withViewTransition } from '../_shared/motion';
 import {
   ThemeContext,
   applyTheme,
@@ -85,7 +87,25 @@ export function ThemeProvider({
 
   const setMode = useCallback(
     (next: ThemeMode) => {
-      setModeState(next);
+      const nextTheme: Theme = next === 'system' ? systemTheme : next;
+      if (nextTheme === theme) {
+        setModeState(next);
+      } else {
+        // Troca de tema sem rasgo: crossfade da página inteira por view
+        // transition, com as transições por elemento desligadas durante a
+        // troca. flushSync + applyTheme aqui dentro: a captura "depois" já
+        // tem o tema novo (o efeito abaixo só confirma). Sem suporte ou com
+        // reduced-motion, troca seca.
+        // flushSync só quando a troca roda DEPOIS (dentro da transição): no
+        // caminho seco ela é síncrona e pode vir de um efeito do consumidor
+        let sync = true;
+        withViewTransition(() => {
+          if (sync) setModeState(next);
+          else flushSync(() => setModeState(next));
+          applyTheme(nextTheme);
+        });
+        sync = false;
+      }
       if (persist && typeof window !== 'undefined') {
         try {
           window.localStorage.setItem(STORAGE_KEY, next);
@@ -94,7 +114,7 @@ export function ThemeProvider({
         }
       }
     },
-    [persist],
+    [persist, systemTheme, theme],
   );
 
   const toggle = useCallback(() => {

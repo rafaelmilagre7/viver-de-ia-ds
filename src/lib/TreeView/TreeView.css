@@ -30,7 +30,7 @@
   color: var(--via-text-body, var(--via-gray-700));
   text-align: left;
   border-radius: var(--via-radius-sm);
-  transition: background .15s ease, color .15s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
   position: relative;
   /* era <button>: mantém as métricas dele (o foco agora mora no li) */
   box-sizing: border-box;
@@ -85,7 +85,7 @@
   width: 14px;
   height: 14px;
   color: var(--via-ink-3, #6B7891);
-  transition: transform .25s var(--via-ease-out);
+  transition: transform var(--via-dur-base) var(--via-ease-enter);
   flex-shrink: 0;
 }
 

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import { Search, ChevronDown, Check } from 'lucide-react';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Anchored } from '../_shared/Portal';
 import '../_shared/material.css';
 import './Combobox.css';
@@ -65,6 +66,8 @@ export function Combobox({
   const wrapRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
+  // Lista fica montada durante a saída animada
+  const { mounted, state, closing } = usePresence(open, listRef);
   const [active, setActive] = useState(-1);
 
   const selectedOption = options.find((o) => o.value === current);
@@ -163,11 +166,13 @@ export function Combobox({
         />
       </div>
 
-      {open && (
+      {mounted && (
         <Anchored anchorRef={wrapRef} z="dropdown" layer={layer}>
           <ul
             id={listId}
             ref={listRef}
+            data-state={state}
+            inert={closing}
             role="listbox"
             aria-labelledby={label ? labelId : undefined}
             aria-label={!label ? ariaLabel ?? placeholder : undefined}

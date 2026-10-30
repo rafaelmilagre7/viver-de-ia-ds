@@ -1,4 +1,4 @@
-import { useCallback, useId, useRef, type ReactNode } from 'react';
+import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { useDialogFocus } from '../_shared/useDialogFocus';
 import { useDragDismiss } from '../_shared/useDragDismiss';
@@ -33,8 +33,9 @@ export interface SheetProps {
  *
  * Igual a `<Drawer side="bottom">` mas semanticamente "Sheet" pra mobile UX
  * (configurações rápidas, filtros, contextual actions). Vem com handle grip
- * no topo e arrasto-pra-baixo real (física de mola · projeção de momentum);
- * X/ESC/scrim saem animados pela mesma mola.
+ * no topo e arrasto-pra-baixo real (física de mola · projeção de momentum).
+ * Entrada, saída (X/ESC/scrim), gesto e fechamento de fora (`open` → false)
+ * andam na MESMA mola — agarrar no meio da entrada segue do ponto vivo.
  *
  * @example
  * <Sheet open={open} onClose={close} title="Filtros">
@@ -42,23 +43,25 @@ export interface SheetProps {
  * </Sheet>
  */
 export function Sheet(props: SheetProps) {
-  // Remonta por ciclo de abertura: o estado do gesto (offset/velocidade da mola)
-  // vive em refs — se o instância sobrevivesse fechada, o próximo close() partiria
-  // do offset velho e pularia sem animar
-  if (!props.open) return null;
-  return <SheetOpen {...props} />;
+  // Monta do zero a cada ciclo de abertura (o estado do gesto vive em refs e
+  // não pode vazar pro próximo ciclo) e fica montado durante a saída de fora
+  const [present, setPresent] = useState(props.open);
+  if (props.open && !present) setPresent(true);
+  if (!present && !props.open) return null;
+  return <SheetOpen {...props} onExited={() => setPresent(false)} />;
 }
 
 function SheetOpen({
   open,
   onClose,
+  onExited,
   title,
   description,
   children,
   footer,
   maxHeight = '85vh',
   showHandle = true,
-}: SheetProps) {
+}: SheetProps & { onExited: () => void }) {
   const sheetRef = useRef<HTMLDivElement>(null);
   const scrimRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -75,7 +78,7 @@ function SheetOpen({
     return !body || body.scrollTop === 0;
   }, []);
 
-  const { close } = useDragDismiss({
+  const { close, exit, show } = useDragDismiss({
     panelRef: sheetRef,
     axis: 'y',
     dir: 1,
@@ -83,15 +86,26 @@ function SheetOpen({
     onDismiss: onClose,
     canStart,
     scrimRef,
+    open,
+    enter: true,
   });
 
   // Saída animada: X/ESC/scrim pedem close(); onClose só dispara quando a mola assenta
-  const requestClose = useCallback(() => {
-    // Fechar durante a entrada CSS: mola assume sem disputa com a animação
-    if (sheetRef.current) sheetRef.current.style.animation = 'none';
-    if (scrimRef.current) scrimRef.current.style.animation = 'none';
-    close();
-  }, [close]);
+  const requestClose = useCallback(() => close(), [close]);
+
+  // Fechado DE FORA (open → false sem passar pelo X/ESC/gesto): mesma mola,
+  // sem chamar onClose de novo; reabrir no meio volta pela mola
+  const onExitedRef = useRef(onExited);
+  useEffect(() => {
+    onExitedRef.current = onExited;
+  });
+  const wasOpen = useRef(open);
+  useEffect(() => {
+    if (open === wasOpen.current) return;
+    wasOpen.current = open;
+    if (open) show();
+    else exit(() => onExitedRef.current());
+  }, [open, exit, show]);
 
   // ESC fecha só se for a camada do topo · e.repeat: ESC segurado não
   // reinicia a mola de saída a cada auto-repeat
@@ -106,7 +120,8 @@ function SheetOpen({
 
   return (
     <Portal layer={layer}>
-      <div className="via-sheet-root" role="presentation">
+      {/* inert na saída de fora: o painel que some não recebe clique nem foco */}
+      <div className="via-sheet-root" role="presentation" inert={!open}>
         <div ref={scrimRef} className="via-sheet-scrim" onClick={requestClose} aria-hidden="true" />
         <div
           ref={sheetRef}

@@ -29,14 +29,25 @@
     inset 0 -1px 0 var(--via-shadow-ink-06),
     0 8px 18px -6px var(--via-shadow-ink-30),
     0 2px 6px -2px var(--via-shadow-ink-14);
-  animation: via-tip-in var(--via-dur) var(--via-ease-out);
+  /* Entra em quick, sai em press · só opacity + scale (propriedade própria,
+     compõe com o translate estático de cada lado) */
+  transition:
+    opacity var(--via-dur-quick) var(--via-ease-enter),
+    scale var(--via-dur-quick) var(--via-ease-enter);
 }
 
 /* Origem espacial (WWDC): cada side define transform-origin apontando
-   pro trigger — a escala nasce dele, nunca do centro */
-@keyframes via-tip-in {
-  from { opacity: 0; transform: var(--via-tip-from); }
-  to   { opacity: 1; transform: var(--via-tip-to); }
+   pro trigger — a camada de overlay troca pelo centro real dele */
+@starting-style {
+  .via-tooltip { opacity: 0; scale: var(--via-enter-scale); }
+}
+
+/* Saída: um degrau mais curta, acelerando; reabrir no meio reverte */
+.via-tooltip[data-state='closed'] {
+  opacity: 0;
+  scale: var(--via-enter-scale);
+  transition-duration: var(--via-dur-press);
+  transition-timing-function: var(--via-ease-exit);
 }
 
 .via-tooltip::after {
@@ -53,8 +64,6 @@
   left: 50%;
   transform: translateX(-50%);
   transform-origin: bottom center;
-  --via-tip-from: translate(-50%, 4px) scale(0.96);
-  --via-tip-to:   translate(-50%, 0) scale(1);
 }
 
 .via-tooltip--top::after {
@@ -71,8 +80,6 @@
   left: 50%;
   transform: translateX(-50%);
   transform-origin: top center;
-  --via-tip-from: translate(-50%, -4px) scale(0.96);
-  --via-tip-to:   translate(-50%, 0) scale(1);
 }
 
 .via-tooltip--bottom::after {
@@ -89,8 +96,6 @@
   top: 50%;
   transform: translateY(-50%);
   transform-origin: right center;
-  --via-tip-from: translate(4px, -50%) scale(0.96);
-  --via-tip-to:   translate(0, -50%) scale(1);
 }
 
 .via-tooltip--left::after {
@@ -107,8 +112,6 @@
   top: 50%;
   transform: translateY(-50%);
   transform-origin: left center;
-  --via-tip-from: translate(-4px, -50%) scale(0.96);
-  --via-tip-to:   translate(0, -50%) scale(1);
 }
 
 .via-tooltip--right::after {
@@ -119,6 +122,3 @@
   border-color: transparent var(--via-material-thick-solid) transparent transparent;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .via-tooltip { animation: none !important; }
-}

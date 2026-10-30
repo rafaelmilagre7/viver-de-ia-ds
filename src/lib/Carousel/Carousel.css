@@ -19,12 +19,19 @@
   border-radius: var(--via-radius-lg, 14px);
   overflow: hidden;
   background: var(--via-bg, #FFFFFF);
+  /* arrasto horizontal é do carrossel; vertical continua rolando a página */
+  touch-action: pan-y;
+}
+
+.via-carousel__viewport.is-dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .via-carousel__track {
   display: flex;
   width: 100%;
-  transition: transform .42s var(--via-ease-snap);
+  /* sem transição de CSS: quem move a trilha é a mola (Carousel.tsx) */
   will-change: transform;
 }
 
@@ -51,7 +58,7 @@
   color: var(--via-text-primary);
   cursor: pointer;
   box-shadow: var(--via-material-control-shadow);
-  transition: transform var(--via-dur) var(--via-ease-spring), background var(--via-dur) ease, box-shadow var(--via-dur) ease;
+  transition: transform var(--via-dur-base) var(--via-ease-snap), background var(--via-dur-quick) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap);
 }
 
 .via-carousel__arrow--prev { left: 14px; }
@@ -91,7 +98,7 @@
   color: var(--via-text-primary);
   cursor: pointer;
   box-shadow: var(--via-material-control-shadow);
-  transition: transform var(--via-dur) var(--via-ease-spring), box-shadow var(--via-dur) ease;
+  transition: transform var(--via-dur-base) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap);
 }
 
 .via-carousel__toggle:hover {
@@ -124,7 +131,9 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: width .26s var(--via-ease-out), background var(--via-dur) ease;
+  /* troca de tamanho anima por FLIP (transform, no Carousel.tsx) — nunca width */
+  transform-origin: 0 50%;
+  transition: background var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-carousel__dot:hover {
@@ -142,7 +151,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-carousel__track,
   .via-carousel__dot,
   .via-carousel__arrow,
   .via-carousel__toggle { transition: none !important; }

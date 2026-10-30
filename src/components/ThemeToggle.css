@@ -13,10 +13,10 @@
   letter-spacing: -0.006em;
   cursor: pointer;
   transition:
-    background .22s ease,
-    border-color .22s ease,
-    color .22s ease,
-    transform .2s ease;
+    background var(--via-dur-quick) var(--via-ease-snap),
+    border-color var(--via-dur-quick) var(--via-ease-snap),
+    color var(--via-dur-quick) var(--via-ease-snap),
+    transform var(--via-dur-base) var(--via-ease-snap);
 }
 
 .via-theme-toggle:hover {

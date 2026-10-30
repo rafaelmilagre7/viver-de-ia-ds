@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Carousel } from './Carousel';
 
@@ -162,5 +162,49 @@ describe('<Carousel />', () => {
     } finally {
       vi.useRealTimers();
     }
+  });
+});
+
+/* Arrasto no motor de mola: 1:1, projeção escolhe ±1 slide, borda não dá a volta */
+describe('<Carousel /> · arrasto', () => {
+  const widthSpy = () =>
+    vi.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(400);
+  const drag = (el: Element, dx: number) => {
+    fireEvent.pointerDown(el, { pointerId: 1, button: 0, clientX: 200, clientY: 50, pointerType: 'mouse' });
+    for (let i = 1; i <= 5; i++) {
+      fireEvent.pointerMove(el, { pointerId: 1, clientX: 200 + (dx * i) / 5, clientY: 50, pointerType: 'mouse' });
+    }
+    fireEvent.pointerUp(el, { pointerId: 1, clientX: 200 + dx, clientY: 50, pointerType: 'mouse' });
+  };
+  const current = () => screen.getByRole('tab', { selected: true }).getAttribute('aria-label');
+
+  it('arrastar pra esquerda acompanha o ponteiro 1:1 e solta no próximo slide', () => {
+    const spy = widthSpy();
+    const { container } = render(<Carousel>{slides}</Carousel>);
+    const vp = container.querySelector('.via-carousel__viewport')!;
+    const track = container.querySelector<HTMLElement>('.via-carousel__track')!;
+    fireEvent.pointerDown(vp, { pointerId: 1, button: 0, clientX: 200, clientY: 50, pointerType: 'mouse' });
+    fireEvent.pointerMove(vp, { pointerId: 1, clientX: 150, clientY: 50, pointerType: 'mouse' });
+    fireEvent.pointerMove(vp, { pointerId: 1, clientX: 80, clientY: 50, pointerType: 'mouse' });
+    expect(track.style.transform).toBe('translate3d(-120px, 0, 0)');
+    fireEvent.pointerUp(vp, { pointerId: 1, clientX: 80, clientY: 50, pointerType: 'mouse' });
+    expect(current()).toBe('Ir pro slide 2');
+    spy.mockRestore();
+  });
+
+  it('movimento abaixo da histerese é clique, não arrasto', () => {
+    const spy = widthSpy();
+    const { container } = render(<Carousel>{slides}</Carousel>);
+    drag(container.querySelector('.via-carousel__viewport')!, -6);
+    expect(current()).toBe('Ir pro slide 1');
+    spy.mockRestore();
+  });
+
+  it('na borda o gesto não dá a volta (mesmo com loop): resiste e volta pro lugar', () => {
+    const spy = widthSpy();
+    const { container } = render(<Carousel loop>{slides}</Carousel>);
+    drag(container.querySelector('.via-carousel__viewport')!, 300);
+    expect(current()).toBe('Ir pro slide 1');
+    spy.mockRestore();
   });
 });

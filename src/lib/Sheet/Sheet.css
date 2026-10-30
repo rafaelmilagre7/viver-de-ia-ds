@@ -15,13 +15,9 @@
   background: var(--via-scrim);
   -webkit-backdrop-filter: var(--via-scrim-blur);
   backdrop-filter: var(--via-scrim-blur);
-  animation: via-sheet-scrim-in .26s var(--via-ease-snap);
+  /* opacidade pintada pela mola (acompanha o painel) · só opacity — animar
+     backdrop-filter repintaria o blur da tela inteira a cada quadro */
   pointer-events: auto;
-}
-
-@keyframes via-sheet-scrim-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 
 .via-sheet {
@@ -44,17 +40,13 @@
     0 -10px 24px -10px var(--via-shadow-ink-20);
   pointer-events: auto;
   isolation: isolate;
-  animation: via-sheet-in .42s var(--via-ease-out);
+  /* Entrada/saída/gesto: transform pintado pela mola (useDragDismiss ·
+     SPRING.panel pra entrar, SPRING.sheet pra sair) — sem keyframe */
   max-width: 720px;
   margin: 0 auto;
   /* Handle/header/rodapé: o pan é do gesto de fechar, não do navegador.
      Não alcança o scroll interno do corpo (o scroller é .via-sheet__body). */
   touch-action: none;
-}
-
-@keyframes via-sheet-in {
-  from { transform: translateY(100%); }
-  to   { transform: translateY(0); }
 }
 
 .via-sheet::before {
@@ -128,7 +120,7 @@
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background var(--via-dur) ease, color var(--via-dur) ease, border-color var(--via-dur) ease, transform .3s var(--via-ease-snap);
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap), transform var(--via-dur-panel) var(--via-ease-snap);
 }
 .via-sheet__close:hover {
   background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-03));
@@ -158,6 +150,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-sheet, .via-sheet-scrim { animation: none !important; }
+  /* painel e scrim trocam o deslize por crossfade curto (em JS) */
   .via-sheet__close { transition: none !important; }
 }

@@ -13,11 +13,8 @@
   align-items: flex-start;
   justify-content: center;
   padding: 120px var(--via-space-5) var(--via-space-10);
-  animation: vds-cmdk-scrim-in 200ms var(--via-ease-out);
-}
-@keyframes vds-cmdk-scrim-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  /* scrim: só opacidade (animar o blur repinta a tela inteira por quadro) */
+  transition: opacity var(--via-dur-base) var(--via-ease-enter);
 }
 
 .vds-cmdk-inner {
@@ -33,14 +30,44 @@
     0 32px 80px rgba(0,0,0,0.40),
     0 12px 24px rgba(0,0,0,0.20);
   overflow: hidden;
-  animation: vds-cmdk-card-in 280ms var(--via-ease-out);
+  transition:
+    opacity var(--via-dur-base) var(--via-ease-enter),
+    scale var(--via-dur-base) var(--via-ease-enter),
+    translate var(--via-dur-base) var(--via-ease-enter);
   display: flex;
   flex-direction: column;
   max-height: 70vh;
 }
-@keyframes vds-cmdk-card-in {
-  from { opacity: 0; transform: scale(0.96) translateY(-8px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
+
+/* ENTRADA · @starting-style (sem JS) · a paleta desce um pouco do topo */
+@starting-style {
+  .vds-cmdk { opacity: 0; }
+  .vds-cmdk-inner {
+    opacity: 0;
+    scale: var(--via-enter-scale);
+    translate: 0 calc(var(--via-enter-shift) * -1);
+  }
+}
+
+/* SAÍDA · um degrau mais curta, acelerando · reabrir no meio reverte do
+   ponto atual (transição, não keyframe) */
+.vds-cmdk[data-state='closed'],
+.vds-cmdk-inner[data-state='closed'] {
+  opacity: 0;
+  transition-duration: var(--via-dur-quick);
+  transition-timing-function: var(--via-ease-exit);
+}
+.vds-cmdk-inner[data-state='closed'] {
+  scale: var(--via-enter-scale);
+}
+
+/* Reduced-motion: os tokens de distância zeram e sobra o crossfade curto
+   (o !important vence a rede global, que zeraria até a opacidade) */
+@media (prefers-reduced-motion: reduce) {
+  .vds-cmdk,
+  .vds-cmdk-inner {
+    transition-duration: var(--via-dur-quick) !important;
+  }
 }
 
 .vds-cmdk-inner header {
@@ -88,7 +115,7 @@
   list-style: none;
   border-radius: var(--via-radius-md);
   cursor: pointer;
-  transition: background 150ms;
+  transition: background var(--via-dur-quick) var(--via-ease-snap);
 }
 .vds-cmdk-inner li:not(.vds-cmdk__heading):not(.empty) {
   padding: var(--via-space-2_5) var(--via-space-3_5);

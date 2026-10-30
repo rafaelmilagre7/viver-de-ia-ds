@@ -2,6 +2,7 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Calendar as CalIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import { trapTab } from '../_shared/useDialogFocus';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Anchored } from '../_shared/Portal';
 import '../_shared/material.css';
 import './DatePicker.css';
@@ -80,6 +81,8 @@ export function DatePicker({
   const rootRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const popRef = useRef<HTMLDivElement>(null);
+  // Calendário fica montado durante a saída animada
+  const { mounted, state, closing } = usePresence(open, popRef);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const baseId = useId();
   const labelId = `${baseId}-label`;
@@ -318,11 +321,13 @@ export function DatePicker({
         <span id={valueId}>{value ? formatLabel(value) : placeholder}</span>
       </button>
 
-      {open && (
+      {mounted && (
         <Anchored anchorRef={rootRef} z="dropdown" layer={layer}>
           <div
             ref={popRef}
             id={popId}
+            data-state={state}
+            inert={closing}
             className="via-dp__pop"
             role="dialog"
             aria-label="Calendário"

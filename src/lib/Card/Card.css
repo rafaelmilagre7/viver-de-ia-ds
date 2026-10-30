@@ -18,9 +18,9 @@
   padding: var(--via-space-5_5) var(--via-space-6);
   --via-spec-size: 360px;
   transition:
-    transform .26s var(--via-ease-snap),
-    box-shadow .26s ease,
-    border-color .26s ease;
+    transform var(--via-dur-base) var(--via-ease-snap),
+    box-shadow var(--via-dur-base) var(--via-ease-snap),
+    border-color var(--via-dur-quick) var(--via-ease-snap);
   /* papel: só o assento de 1-2px · quem flutua é o vidro */
   box-shadow: 0 1px 2px var(--via-shadow-ink-06);
 }

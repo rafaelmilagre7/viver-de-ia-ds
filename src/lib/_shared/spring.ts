@@ -11,12 +11,14 @@ export interface SpringParams {
   response: number;
 }
 
-/** Valores que a Apple usa (Designing Fluid Interfaces) */
+/** Presets por PAPEL (valores da Apple · Designing Fluid Interfaces) */
 export const SPRING = {
   /** Reposicionar / mover (PiP) */
   move: { damping: 1.0, response: 0.4 } satisfies SpringParams,
-  /** Drawer / sheet — gesto com embalo */
+  /** Drawer / sheet — saída e gesto com embalo (quica de leve só com velocidade do dedo) */
   sheet: { damping: 0.8, response: 0.3 } satisfies SpringParams,
+  /** Entrada de painel (Sheet, Drawer) — chega da borda sem quicar */
+  panel: { damping: 1.0, response: 0.35 } satisfies SpringParams,
 } as const;
 
 export interface SpringState {

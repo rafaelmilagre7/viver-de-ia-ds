@@ -9,6 +9,7 @@ import {
   type ReactElement,
 } from 'react';
 import { useEscapeLayer } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Anchored } from '../_shared/Portal';
 import './Tooltip.css';
 
@@ -38,6 +39,9 @@ export interface TooltipProps {
 export function Tooltip({ content, children, side = 'top', delay = 200 }: TooltipProps) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLSpanElement>(null);
+  const tipRef = useRef<HTMLSpanElement>(null);
+  // Balão fica montado durante a saída animada
+  const { mounted, state, closing } = usePresence(open, tipRef);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const tipId = useId();
 
@@ -85,11 +89,17 @@ export function Tooltip({ content, children, side = 'top', delay = 200 }: Toolti
           {content}
         </span>
       )}
-      {open && (
+      {mounted && (
         <Anchored anchorRef={wrapRef} z="tooltip" layer={layer}>
+          {/* Saindo, o id fica com o nó oculto acima (descrição nunca some
+              nem duplica) e o balão vira só imagem */}
           <span
-            id={tipId}
+            ref={tipRef}
+            id={closing ? undefined : tipId}
             role="tooltip"
+            data-state={state}
+            inert={closing}
+            aria-hidden={closing || undefined}
             className={`via-tooltip via-tooltip--${side}`}
           >
             {content}

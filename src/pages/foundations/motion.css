@@ -1,0 +1,256 @@
+/* ==============================================================
+   /foundations/motion · demonstrações vivas da escala de movimento
+   Durações e curvas só por token — a página que prega a escala não
+   pode escrever 300ms à mão.
+   ============================================================== */
+
+.vds-mo-lede {
+  max-width: 68ch;
+  margin: 0 0 var(--via-space-5);
+  font-size: var(--via-fs-sm);
+  line-height: 1.65;
+  color: var(--via-text-body);
+}
+
+/* ---------- Escala (pistas de ida e volta) ---------- */
+.vds-mo-scale,
+.vds-mo-css-springs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2);
+}
+.vds-mo-css-springs { margin-top: var(--via-space-8); }
+
+.vds-mo-scale__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--via-space-3_5);
+  margin-bottom: var(--via-space-2);
+}
+.vds-mo-scale__legend {
+  font-size: var(--via-fs-caption);
+  color: var(--via-text-muted);
+  line-height: 1.5;
+}
+
+.vds-mo-row {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 240px;
+  align-items: center;
+  gap: var(--via-space-4);
+  padding: var(--via-space-3) 0;
+  border-bottom: 0.5px solid var(--via-border-soft);
+}
+.vds-mo-row:last-child { border-bottom: none; }
+.vds-mo-row .vds-motion-use { margin: 0; }
+.vds-mo-row__ms {
+  margin: var(--via-space-1) 0 0;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-primary);
+}
+.vds-mo-row__ms span { color: var(--via-text-muted); }
+@media (max-width: 760px) {
+  .vds-mo-row { grid-template-columns: minmax(0, 1fr); gap: var(--via-space-2); }
+}
+
+/* Pista · a bola vai com --lane-in/--lane-in-ease e volta com
+   --lane-out/--lane-out-ease (padrão: entrada desacelera, saída acelera) */
+.vds-mo-lane {
+  position: relative;
+  height: 28px;
+  container-type: inline-size;
+  border-radius: var(--via-radius-pill);
+  background: linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
+  border: 1px solid var(--via-border-soft);
+  overflow: hidden;
+  --lane-end: calc(100cqw - 28px);
+}
+/* mola com overshoot precisa de pista sobrando no fim */
+.vds-mo-lane--overshoot { --lane-end: calc(86cqw - 28px); }
+
+.vds-mo-lane__dot {
+  position: absolute;
+  top: 50%;
+  left: var(--via-space-1);
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
+  box-shadow: 0 3px 8px -2px var(--via-shadow-ink-30);
+  translate: 0 0;
+  transition: translate var(--lane-out, var(--via-dur-quick)) var(--lane-out-ease, var(--via-ease-exit));
+}
+.vds-mo-lane[data-on] .vds-mo-lane__dot {
+  translate: var(--lane-end) 0;
+  transition: translate var(--lane-in, var(--via-dur-base)) var(--lane-in-ease, var(--via-ease-enter));
+}
+/* a bola de luz da casa no escuro (navy→blue some sobre a pista escura) */
+[data-theme='dark'] .vds-mo-lane__dot {
+  background: radial-gradient(circle at 30% 25%, var(--via-white), var(--via-gray-50));
+}
+
+/* ---------- Curvas ---------- */
+.vds-mo-curves { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 960px) {
+  .vds-mo-curves { grid-template-columns: minmax(0, 1fr); }
+}
+.vds-mo-curve-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--via-space-3);
+}
+.vds-mo-plot {
+  width: 96px;
+  height: 56px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+.vds-mo-plot__diag {
+  stroke: var(--via-border-soft);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+.vds-mo-plot__handle {
+  stroke: var(--via-text-muted);
+  stroke-width: 1;
+  opacity: 0.5;
+}
+.vds-mo-plot__curve {
+  fill: none;
+  stroke: var(--via-text-primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+/* loop de demonstração (ambiente, fora da escala de papéis) */
+.vds-mo-curves .vds-motion-dot {
+  animation-duration: calc(var(--via-dur-page) * 6);
+}
+
+/* ---------- Molas ---------- */
+/* 5 colunas: os números ficam estreitos e o papel ganha a sobra */
+.vds-mo-springs-table td.tok { width: 22%; }
+.vds-mo-springs-table td.val { width: 14%; white-space: nowrap; }
+/* celular: 5 colunas não cabem em 375px — os números quebram linha em vez
+   de empurrar a página pro lado */
+@media (max-width: 640px) {
+  .vds-mo-springs-table { table-layout: fixed; width: 100%; }
+  .vds-mo-springs-table td.tok,
+  .vds-mo-springs-table td.val { width: auto; white-space: normal; overflow-wrap: anywhere; }
+}
+.vds-mo-springs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2_5);
+  margin-top: var(--via-space-5);
+}
+.vds-mo-spring {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--via-space-3);
+}
+.vds-mo-fire {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-primary);
+  background: var(--via-navy-04);
+  border: 0.5px solid var(--via-navy-12);
+  border-radius: var(--via-radius-pill);
+  padding: var(--via-space-1_5) var(--via-space-3);
+  cursor: pointer;
+  transition:
+    background var(--via-dur-quick) var(--via-ease-snap),
+    scale var(--via-dur-press) var(--via-ease-snap);
+}
+.vds-mo-fire:hover { background: var(--via-navy-08); }
+.vds-mo-fire:active { scale: 0.97; }
+.vds-mo-fire:focus-visible {
+  outline: 2px solid var(--via-navy-60);
+  outline-offset: 2px;
+}
+/* a mola JS escreve transform direto · sem transição de CSS por baixo */
+.vds-mo-lane--js .vds-mo-lane__dot { transition: none; }
+
+/* ---------- Presença ---------- */
+.vds-mo-stage {
+  --mo-slow: 1;
+  margin-bottom: var(--via-space-5);
+  padding: var(--via-space-5);
+  border: 0.5px solid var(--via-navy-12);
+  border-radius: var(--via-radius-lg);
+  background:
+    radial-gradient(420px 160px at 0% 0%, var(--via-navy-04), transparent 70%),
+    var(--via-surface);
+}
+.vds-mo-stage[data-slow] { --mo-slow: 5; }
+/* o que o tokens.css faz sob prefers-reduced-motion, só nesta caixa */
+.vds-mo-stage[data-reduced] {
+  --via-enter-scale: 1;
+  --via-enter-shift: 0px;
+}
+.vds-mo-stage__bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--via-space-4);
+}
+.vds-mo-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-1_5);
+  font-size: var(--via-fs-caption);
+  color: var(--via-text-body);
+  cursor: pointer;
+}
+.vds-mo-stage__area {
+  position: relative;
+  height: 148px;
+  margin-top: var(--via-space-2);
+}
+.vds-mo-stage__hint {
+  margin: var(--via-space-2) 0 0;
+  font-size: var(--via-fs-caption);
+  color: var(--via-text-muted);
+}
+.vds-mo-stage__hint strong { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
+
+/* A mesma receita dos menus da library: entra em quick, sai em press */
+.vds-mo-pop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  padding: var(--via-space-1);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
+  border-radius: var(--via-radius-sm);
+  box-shadow: var(--via-material-thick-shadow);
+  transform-origin: 24px -8px;
+  transition:
+    opacity calc(var(--via-dur-quick) * var(--mo-slow)) var(--via-ease-enter),
+    scale calc(var(--via-dur-quick) * var(--mo-slow)) var(--via-ease-enter);
+}
+@starting-style {
+  .vds-mo-pop { opacity: 0; scale: var(--via-enter-scale); }
+}
+.vds-mo-pop[data-state='closed'] {
+  opacity: 0;
+  scale: var(--via-enter-scale);
+  transition-duration: calc(var(--via-dur-press) * var(--mo-slow));
+  transition-timing-function: var(--via-ease-exit);
+}
+.vds-mo-pop__item {
+  margin: 0;
+  padding: var(--via-space-2) var(--via-space-2_5);
+  border-radius: var(--via-radius-xs);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
+}
+.vds-mo-pop__item:first-child { background: var(--via-navy-06); }

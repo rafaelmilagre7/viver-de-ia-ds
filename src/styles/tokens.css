@@ -646,16 +646,44 @@
   --via-blur-lg: blur(28px) saturate(180%);
   --via-blur-xl: blur(48px) saturate(180%);
 
-  /* ========== MOTION ========================================== */
-  --via-ease:        cubic-bezier(0.32, 0.08, 0.24, 1);
-  --via-ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-  --via-ease-spring: cubic-bezier(.34, 1.56, .64, 1);  /* overshoot suave (check/radio/toggle) */
-  --via-ease-snap:   cubic-bezier(.2, .7, .2, 1);      /* resposta rápida (hover/press) */
-  --via-t-fast:      120ms var(--via-ease);
-  --via-t:           180ms var(--via-ease);
-  --via-t-slow:      360ms var(--via-ease);
-  --via-dur:         220ms;                             /* duração de interação padrão (era .22s solto) */
-  --via-dur-press:   110ms;                             /* feedback de APERTAR (WWDC: resposta no pointer-down, instantânea — nunca a 220ms) */
+  /* ========== MOTION ==========================================
+     Escala por PAPEL. Cinco durações, uma por tipo de gesto; a SAÍDA usa
+     o degrau de baixo (~0,65–0,75× da entrada) — sair é mais rápido que
+     chegar. Três curvas: enter desacelera, exit acelera, snap responde.
+     Overshoot só na marca de um controle (check, radio, switch).
+     Mola de verdade (velocidade, interrupção, gesto) mora em JS
+     (src/lib/_shared/spring.ts · presets SPRING por papel); aqui ela vem
+     aproximada em linear() pra transição de CSS.
+     ============================================================ */
+  --via-dur-press:   100ms;   /* apertar · resposta no pointer-down (WWDC: instantânea) */
+  --via-dur-quick:   160ms;   /* hover, cor, borda · menu/tooltip entrando · saída de base */
+  --via-dur-base:    220ms;   /* modal, popover, aba, acordeão, toast · saída de panel */
+  --via-dur-panel:   320ms;   /* painel grande, deslize de conteúdo · saída de page */
+  --via-dur-page:    400ms;   /* rota, troca de contexto */
+  --via-dur:         var(--via-dur-base);   /* apelido histórico (= base) */
+
+  --via-ease-enter:  cubic-bezier(0.16, 1, 0.3, 1);    /* chega rápido e assenta · tudo que ENTRA */
+  --via-ease-exit:   cubic-bezier(0.4, 0, 1, 1);       /* acelera pra fora · tudo que SAI */
+  --via-ease-snap:   cubic-bezier(0.2, 0.7, 0.2, 1);   /* resposta de interação · hover, press, troca de estado */
+
+  /* Molas em linear() · geradas pela mesma física do spring.ts */
+  /* smooth · damping 1.0 · response .35 — move sem quicar (use com --via-dur-page) */
+  --via-spring-smooth: linear(0, 0.021 2.7%, 0.082 5.8%, 0.453 19%, 0.62 26.1%, 0.744 33.1%, 0.837 40.6%, 0.912 50.4%, 0.959 62.3%, 0.985 77.5%, 1);
+  /* bounce · damping .6 · response .3 — ~9% de overshoot · SÓ check/radio/switch */
+  --via-spring-bounce: linear(0, 0.032 2.5%, 0.124 5.4%, 0.648 16.2%, 0.849 21.1%, 0.984 26%, 1.063 31.1%, 1.088 34.9%, 1.093 39%, 1.019 57.8%, 0.998 66.2%, 0.991 76.6%, 1);
+
+  /* Distância de uma camada que entra/sai (menu, modal, toast). Em
+     reduced-motion viram neutras: sobra só o crossfade de opacidade. */
+  --via-enter-scale: 0.97;
+  --via-enter-shift: 8px;
+
+  /* Apelidos históricos · apontam pra escala nova (não use em código novo) */
+  --via-ease:        var(--via-ease-snap);
+  --via-ease-out:    var(--via-ease-enter);
+  --via-ease-spring: var(--via-spring-bounce);
+  --via-t-fast:      var(--via-dur-quick) var(--via-ease-snap);
+  --via-t:           var(--via-dur-quick) var(--via-ease-snap);
+  --via-t-slow:      var(--via-dur-panel) var(--via-ease-enter);
 
   /* ========== LAYOUT ========================================== */
   --via-container: 1280px;
@@ -1002,17 +1030,54 @@ a:hover { text-decoration: underline; }
 }
 
 /* =============================================================
-   ACESSIBILIDADE · prefers-reduced-motion (rede de segurança global)
-   Zera animações/transições pra quem pede menos movimento — cobre
-   qualquer componente, além dos blocos por-componente já existentes.
+   ACESSIBILIDADE · prefers-reduced-motion
+   Reduzir movimento ≠ matar tudo (HIG): deslocamento e escala somem,
+   o crossfade curto fica — sem ele a camada "pisca" e o olho perde
+   de onde veio a mudança.
+   - As distâncias de entrada viram neutras (sobra só opacidade).
+   - Rede de segurança: zera animação/transição de QUALQUER elemento…
+   - …menos as camadas do DS com fase de presença ([data-state]): elas
+     já trocam movimento por fade no próprio CSS e precisam da duração.
    ============================================================= */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  :root {
+    --via-enter-scale: 1;
+    --via-enter-shift: 0px;
+  }
+  /* :where() zera a especificidade: o !important de um componente
+     (ex.: Progress que mantém um deslize curto) continua vencendo */
+  :where(*:not(:is([class^='via-'], [class*=' via-'])[data-state])),
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  /* view transitions (rota, tema) viram troca seca */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* =============================================================
+   TROCA DE TEMA · sem rasgo
+   Durante a troca (classe posta por withViewTransition), nenhuma
+   transição por elemento roda — senão 180 elementos trocam de cor em
+   tempos diferentes e o texto fica escuro sobre escuro por um instante.
+   Com View Transitions a página inteira faz crossfade; sem, troca seca.
+   ============================================================= */
+:root.via-theme-swap *,
+:root.via-theme-swap *::before,
+:root.via-theme-swap *::after {
+  transition: none !important;
+}
+:root.via-theme-swap::view-transition-old(root),
+:root.via-theme-swap::view-transition-new(root) {
+  animation-duration: var(--via-dur-base);
+  animation-timing-function: var(--via-ease-snap);
 }
 
 /* =============================================================

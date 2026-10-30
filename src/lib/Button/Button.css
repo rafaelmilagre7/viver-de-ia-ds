@@ -17,12 +17,12 @@
   overflow: hidden;
   isolation: isolate;
   transition:
-    background var(--via-dur) ease,
-    border-color var(--via-dur) ease,
-    color var(--via-dur) ease,
-    transform .2s var(--via-ease-snap),
-    box-shadow var(--via-dur) ease,
-    filter .2s ease;
+    background var(--via-dur-quick) var(--via-ease-snap),
+    border-color var(--via-dur-quick) var(--via-ease-snap),
+    color var(--via-dur-quick) var(--via-ease-snap),
+    transform var(--via-dur-base) var(--via-ease-snap),
+    box-shadow var(--via-dur-base) var(--via-ease-snap),
+    filter var(--via-dur-base) var(--via-ease-snap);
 }
 
 /* Reflexo que segue o ponteiro (substitui a varredura de brilho que animava

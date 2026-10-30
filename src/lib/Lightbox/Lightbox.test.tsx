@@ -140,6 +140,7 @@ describe('<Lightbox />', () => {
     const onClose = vi.fn();
     const user = userEvent.setup();
     render(<Lightbox open onClose={onClose} images={images} />);
+    givePanelHeight(700); // sem percurso a mola não tem o que animar (fecha na hora)
 
     await user.keyboard('{Escape}');
     expect(onClose).not.toHaveBeenCalled(); // saída é animada, não imediata
@@ -155,6 +156,7 @@ describe('<Lightbox />', () => {
     const onClose = vi.fn();
     const user = userEvent.setup();
     render(<Lightbox open onClose={onClose} images={single} />);
+    givePanelHeight(700);
 
     // clicking the img stops propagation → no close
     await user.click(screen.getByRole('img', { name: 'Foto única' }));
@@ -166,6 +168,25 @@ describe('<Lightbox />', () => {
     expect(onClose).not.toHaveBeenCalled();
     settle(() => onClose.mock.calls.length > 0);
     expect(onClose).toHaveBeenCalledOnce();
+  });
+
+  it('fechar de fora (open=false) sai pela mesma mola e só então desmonta — sem repetir onClose', () => {
+    const onClose = vi.fn();
+    const { rerender } = render(<Lightbox open onClose={onClose} images={single} />);
+    givePanelHeight(700);
+    rerender(<Lightbox open={false} onClose={onClose} images={single} />);
+    // continua montado, inerte, saindo
+    const root = document.querySelector('.via-lightbox') as HTMLElement;
+    expect(root).not.toBeNull();
+    expect(root).toHaveAttribute('inert');
+    act(() => {
+      frame();
+      frame();
+    });
+    expect(panelEl().style.transform).toMatch(/translateY\((\d|\.)+px\)/);
+    settle(() => document.querySelector('.via-lightbox') === null);
+    expect(document.querySelector('.via-lightbox')).toBeNull();
+    expect(onClose).not.toHaveBeenCalled();
   });
 
   it('ESC exit is animated: intermediate transform + scrim fade before onClose', () => {
@@ -283,6 +304,10 @@ describe('<Lightbox />', () => {
     expect(document.body.style.overflow).toBe('hidden');
 
     rerender(<Lightbox open={false} onClose={() => {}} images={images} />);
+    // a trava segue durante a saída (a barra não volta no meio do fade)…
+    settle(() => document.querySelector('.via-lightbox') === null);
+    // …e solta quando a vista desmonta
+    expect(document.querySelector('.via-lightbox')).toBeNull();
     expect(document.body.style.overflow).not.toBe('hidden');
   });
 
@@ -329,8 +354,9 @@ describe('<Lightbox />', () => {
     await user.click(screen.getByRole('button', { name: 'Próxima imagem' }));
     expect(screen.getByText('2 / 3')).toBeInTheDocument();
 
-    // close then reopen → current snaps back to the index prop
+    // close (saída termina e desmonta) then reopen → current snaps back to the index prop
     rerender(<Lightbox open={false} onClose={() => {}} images={images} index={0} />);
+    settle(() => document.querySelector('.via-lightbox') === null);
     rerender(<Lightbox open onClose={() => {}} images={images} index={0} />);
     expect(screen.getByText('1 / 3')).toBeInTheDocument();
   });

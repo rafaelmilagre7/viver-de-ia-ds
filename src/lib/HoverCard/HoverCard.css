@@ -24,7 +24,11 @@
   border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-lg, 14px);
   box-shadow: var(--via-material-thick-shadow);
-  animation: via-hovercard-in var(--via-dur) var(--via-ease-out);
+  /* Entra em quick, sai em press · só opacity + scale (propriedade própria,
+     compõe com o translate estático de cada placement) */
+  transition:
+    opacity var(--via-dur-quick) var(--via-ease-enter),
+    scale var(--via-dur-quick) var(--via-ease-enter);
   isolation: isolate;
 }
 
@@ -48,32 +52,23 @@
 
 /* --- Sides ---
    Origem espacial (WWDC): transform-origin aponta pro trigger — o scale
-   nasce dele. Vars --via-hc-from/to alimentam o keyframe único; placements
-   com translate estático repetem o translate, senão a animação o descarta
-   e o card pula no fim da entrada. */
+   nasce dele (a camada de overlay troca pelo centro real e acompanha o
+   flip). `scale` é propriedade própria: compõe com o translate estático. */
 .via-hovercard--bottom {
   top: calc(100% + 8px);
   transform-origin: top center;
-  --via-hc-from: translateY(-4px) scale(0.98);
-  --via-hc-to:   translateY(0) scale(1);
 }
 .via-hovercard--top {
   bottom: calc(100% + 8px);
   transform-origin: bottom center;
-  --via-hc-from: translateY(4px) scale(0.98);
-  --via-hc-to:   translateY(0) scale(1);
 }
 .via-hovercard--left {
   right: calc(100% + 8px); top: 50%; transform: translateY(-50%);
   transform-origin: right center;
-  --via-hc-from: translateY(-50%) translateX(4px) scale(0.98);
-  --via-hc-to:   translateY(-50%) translateX(0) scale(1);
 }
 .via-hovercard--right {
   left: calc(100% + 8px); top: 50%; transform: translateY(-50%);
   transform-origin: left center;
-  --via-hc-from: translateY(-50%) translateX(-4px) scale(0.98);
-  --via-hc-to:   translateY(-50%) translateX(0) scale(1);
 }
 
 /* Cross-axis alignment */
@@ -88,20 +83,16 @@
 .via-hovercard--bottom.via-hovercard--align-end   { transform-origin: top right; }
 .via-hovercard--top.via-hovercard--align-start    { transform-origin: bottom left; }
 .via-hovercard--top.via-hovercard--align-end      { transform-origin: bottom right; }
-.via-hovercard--bottom.via-hovercard--align-center {
-  --via-hc-from: translateX(-50%) translateY(-4px) scale(0.98);
-  --via-hc-to:   translateX(-50%) translateY(0) scale(1);
-}
-.via-hovercard--top.via-hovercard--align-center {
-  --via-hc-from: translateX(-50%) translateY(4px) scale(0.98);
-  --via-hc-to:   translateX(-50%) translateY(0) scale(1);
+
+@starting-style {
+  .via-hovercard { opacity: 0; scale: var(--via-enter-scale); }
 }
 
-@keyframes via-hovercard-in {
-  from { opacity: 0; transform: var(--via-hc-from, translateY(-4px) scale(0.98)); }
-  to   { opacity: 1; transform: var(--via-hc-to, translateY(0) scale(1)); }
+/* Saída: um degrau mais curta, acelerando; voltar o mouse no meio reverte */
+.via-hovercard[data-state='closed'] {
+  opacity: 0;
+  scale: var(--via-enter-scale);
+  transition-duration: var(--via-dur-press);
+  transition-timing-function: var(--via-ease-exit);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .via-hovercard { animation: none !important; }
-}

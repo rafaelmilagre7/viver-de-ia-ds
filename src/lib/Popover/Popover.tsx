@@ -1,5 +1,6 @@
 import { useEffect, useRef, useId, type ReactNode } from 'react';
 import { bridgeTab, useDismiss, useEscapeLayer } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Anchored } from '../_shared/Portal';
 import '../_shared/material.css';
 import './Popover.css';
@@ -64,6 +65,8 @@ export function Popover({
   const triggerWrapRef = useRef<HTMLSpanElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const panelId = useId();
+  // Painel fica montado durante a saída animada
+  const { mounted, state, closing } = usePresence(open, panelRef);
 
   /**
    * Resolve the real focusable trigger control. The consumer passes an
@@ -117,11 +120,13 @@ export function Popover({
       <span ref={triggerWrapRef} data-popover-trigger>
         {trigger}
       </span>
-      {open && (
+      {mounted && (
         <Anchored anchorRef={rootRef} z="popover" layer={layer}>
           <div
             ref={panelRef}
             id={panelId}
+            data-state={state}
+            inert={closing}
             className={`via-popover via-popover--${side} via-popover--align-${align}`}
             role="dialog"
             aria-label={label}

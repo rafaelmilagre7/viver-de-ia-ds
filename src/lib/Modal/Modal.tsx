@@ -2,6 +2,7 @@ import { useRef, useId, type ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { useDialogFocus } from '../_shared/useDialogFocus';
 import { useEscapeLayer, useScrollLock } from '../_shared/overlay';
+import { usePresence } from '../_shared/motion';
 import { Portal } from '../_shared/Portal';
 import '../_shared/material.css';
 import './Modal.css';
@@ -46,31 +47,41 @@ export function Modal({
   scrim = true,
   dismissOnScrim = true,
 }: ModalProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const descriptionId = useId();
 
-  // ESC fecha (só se for a camada do topo) + trava o scroll da página
+  // Fica montado durante a saída animada; desmonta quando ela termina
+  const { mounted, state, closing } = usePresence(open, rootRef);
+
+  // ESC fecha (só se for a camada do topo) + trava o scroll da página.
+  // A trava segue até desmontar: a barra de rolagem voltando no meio do
+  // fade empurraria a página por baixo do scrim.
   const layer = useEscapeLayer(open, () => onClose());
-  useScrollLock(open);
+  useScrollLock(mounted);
 
   // Foco acessível: focus-first ao abrir, trap com Tab, restore ao fechar
+  // (o foco volta ao trigger já no início da saída)
   const { onKeyDown } = useDialogFocus(open, dialogRef);
 
-  if (!open) return null;
+  if (!mounted) return null;
 
   return (
     <Portal layer={layer}>
-      <div className="via-modal-root" role="presentation">
+      {/* inert na saída: o fantasma que some não recebe clique nem foco */}
+      <div ref={rootRef} className="via-modal-root" role="presentation" inert={closing}>
         {scrim && (
           <div
             className="via-modal-scrim"
+            data-state={state}
             onClick={dismissOnScrim ? onClose : undefined}
             aria-hidden="true"
           />
         )}
         <div
           ref={dialogRef}
+          data-state={state}
           className={`via-modal via-modal--${size}`}
           role="dialog"
           aria-modal="true"

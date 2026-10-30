@@ -84,6 +84,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-spinner__svg { animation-duration: 3s; }
-  .via-spinner__head { animation-duration: 4s; }
+  /* loop ambiente (fora da escala): só desacelera */
+  .via-spinner__svg { animation: via-spinner-rotate 3s linear infinite; }
+  .via-spinner__head { animation: via-spinner-dash 4s cubic-bezier(.4, 0, .2, 1) infinite; }
 }

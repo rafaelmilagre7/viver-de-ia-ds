@@ -35,8 +35,8 @@ export default function ApiModal() {
     <ComponentDoc
       eyebrow="api · modal"
       name="Modal"
-      headline="dialog editorial · scrim radial · spring overshoot"
-      description="Dialog modal pra ações focadas (confirmar, formulário curto, escolha). Backdrop radial gradient + blur progressivo · painel animation spring 3-step (0.94 → 1.005 → 1.0 overshoot) · close rotaciona 90° no hover · atmosphere dupla via radials. 3 sizes."
+      headline="dialog editorial · scrim radial · entra e sai animado"
+      description="Dialog modal pra ações focadas (confirmar, formulário curto, escolha). Backdrop radial gradient + blur progressivo · painel materializa em 220ms (opacidade + escala .97 + 8px, sem overshoot) e sai em 160ms acelerando — reabrir no meio reverte do ponto atual · close rotaciona 90° no hover · atmosphere dupla via radials. 3 sizes."
       importLine={`import { Modal, type ModalProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-modal-root', description: 'Portal container · fixed inset 0 · z-index 9990' },

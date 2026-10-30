@@ -17,13 +17,8 @@
   background: var(--via-scrim);
   -webkit-backdrop-filter: var(--via-scrim-blur);
   backdrop-filter: var(--via-scrim-blur);
-  animation: via-modal-scrim-in .28s var(--via-ease-snap);
-}
-
-/* Só opacity: animar backdrop-filter repinta o blur da tela inteira a cada quadro */
-@keyframes via-modal-scrim-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  /* Só opacity: animar backdrop-filter repinta o blur da tela inteira a cada quadro */
+  transition: opacity var(--via-dur-base) var(--via-ease-enter);
 }
 
 .via-modal {
@@ -39,27 +34,39 @@
   border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-lg);
   box-shadow: var(--via-material-thick-shadow);
-  /* Materialização (WWDC): o material "chega" por escala + opacidade.
-     O blur NÃO anima (repintar backdrop-filter por quadro é caro) e não há
-     will-change permanente — camada promovida fixa muda a rasterização do
-     blur em GPU de software (flagrado no robô de CI). */
-  animation: via-modal-in var(--via-dur) var(--via-ease-out);
+  /* Materialização (WWDC): o material "chega" por escala + opacidade, sem
+     overshoot (quique é só de controle). O blur NÃO anima (repintar
+     backdrop-filter por quadro é caro) e não há will-change permanente —
+     camada promovida fixa muda a rasterização do blur em GPU de software. */
+  transition:
+    opacity var(--via-dur-base) var(--via-ease-enter),
+    scale var(--via-dur-base) var(--via-ease-enter),
+    translate var(--via-dur-base) var(--via-ease-enter);
   overflow: hidden;
   isolation: isolate;
 }
 
-@keyframes via-modal-in {
-  0%   { opacity: 0; transform: translateY(20px) scale(0.94); }
-  60%  { opacity: 1; transform: translateY(-2px) scale(1.005); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+/* ENTRADA · estado de partida (@starting-style: sem JS, sem quadro vazio) */
+@starting-style {
+  .via-modal-scrim { opacity: 0; }
+  .via-modal {
+    opacity: 0;
+    scale: var(--via-enter-scale);
+    translate: 0 var(--via-enter-shift);
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .via-modal, .via-modal-scrim { animation-name: via-modal-fade; }
+/* SAÍDA · um degrau mais curta e acelerando. Reabrir no meio reverte do
+   ponto atual (é transição, não keyframe). Em reduced-motion os tokens de
+   distância zeram e sobra o crossfade. */
+.via-modal-scrim[data-state='closed'],
+.via-modal[data-state='closed'] {
+  opacity: 0;
+  transition-duration: var(--via-dur-quick);
+  transition-timing-function: var(--via-ease-exit);
 }
-@keyframes via-modal-fade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.via-modal[data-state='closed'] {
+  scale: var(--via-enter-scale);
 }
 
 .via-modal::before {
@@ -114,7 +121,7 @@
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background .2s ease, color .2s ease, border-color .2s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-modal__close:hover {
@@ -122,7 +129,7 @@
   color: var(--via-text-primary);
   border-color: var(--via-border-soft, rgba(10, 31, 59, 0.10));
   transform: rotate(90deg);
-  transition: background var(--via-dur) ease, color var(--via-dur) ease, border-color var(--via-dur) ease, transform .3s var(--via-ease-snap);
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap), transform var(--via-dur-panel) var(--via-ease-snap);
 }
 
 /* Body */

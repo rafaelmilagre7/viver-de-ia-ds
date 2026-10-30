@@ -19,6 +19,12 @@ describe('springStep', () => {
     expect(Math.max(...trace)).toBeLessThanOrEqual(100.5);
   });
 
+  it('SPRING.panel (entrada de Sheet/Drawer) chega sem quicar', () => {
+    const { final, trace } = simulate(480, 0, SPRING.panel);
+    expect(springSettled(final, 0)).toBe(true);
+    expect(Math.min(...trace)).toBeGreaterThanOrEqual(-0.5);
+  });
+
   it('damping 0.8 quica de leve (overshoot pequeno e controlado)', () => {
     const { trace } = simulate(0, 100, SPRING.sheet);
     const peak = Math.max(...trace);

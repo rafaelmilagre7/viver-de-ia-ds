@@ -136,7 +136,24 @@ describe('<Drawer />', () => {
     await waitFor(() => expect(onClose).toHaveBeenCalledOnce());
   });
 
-  it('closes synchronously under prefers-reduced-motion', () => {
+  it('fechado DE FORA (open → false): fica montado durante a saída e desmonta sem novo onClose', async () => {
+    const onClose = vi.fn();
+    const Harness = ({ open }: { open: boolean }) => (
+      <Drawer open={open} onClose={onClose} title="Filtros" footer={<button type="button">Aplicar</button>}>
+        <p>x</p>
+      </Drawer>
+    );
+    const { rerender } = render(<Harness open />);
+    const dialog = screen.getByRole('dialog');
+    rerender(<Harness open={false} />);
+    // a saída ainda está andando: painel montado e inerte
+    expect(dialog).toBeInTheDocument();
+    expect(document.querySelector('.via-drawer-root')).toHaveAttribute('inert');
+    await waitFor(() => expect(dialog).not.toBeInTheDocument());
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('prefers-reduced-motion: no slide — without Web Animations (jsdom) it closes at once', () => {
     reducedMotion = true;
     const onClose = vi.fn();
     render(

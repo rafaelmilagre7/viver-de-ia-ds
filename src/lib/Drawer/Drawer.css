@@ -14,14 +14,9 @@
   background: var(--via-scrim);
   -webkit-backdrop-filter: var(--via-scrim-blur);
   backdrop-filter: var(--via-scrim-blur);
-  animation: via-drawer-scrim-in .3s var(--via-ease-snap);
+  /* opacidade pintada pela mola (acompanha o painel) · só opacity — animar
+     backdrop-filter repintaria o blur da tela inteira a cada quadro */
   pointer-events: auto;
-}
-
-/* Só opacity: animar backdrop-filter repinta o blur da tela inteira a cada quadro */
-@keyframes via-drawer-scrim-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 
 .via-drawer {
@@ -36,6 +31,8 @@
   flex-direction: column;
   pointer-events: auto;
   isolation: isolate;
+  /* Entrada/saída/gesto: transform pintado pela mola (useDragDismiss) —
+     entra de 100% da borda com SPRING.panel, sem keyframe */
 }
 
 /* Atmosphere radial sutil */
@@ -56,12 +53,6 @@
   right: 0;
   bottom: 0;
   border-radius: var(--via-radius-lg) 0 0 var(--via-radius-lg);
-  animation: via-drawer-in-right .3s var(--via-ease-snap);
-}
-
-@keyframes via-drawer-in-right {
-  from { transform: translateX(24px); opacity: 0; }
-  to   { transform: translateX(0); opacity: 1; }
 }
 
 /* Left */
@@ -70,12 +61,6 @@
   left: 0;
   bottom: 0;
   border-radius: 0 var(--via-radius-lg) var(--via-radius-lg) 0;
-  animation: via-drawer-in-left .3s var(--via-ease-snap);
-}
-
-@keyframes via-drawer-in-left {
-  from { transform: translateX(-24px); opacity: 0; }
-  to   { transform: translateX(0); opacity: 1; }
 }
 
 /* Bottom · útil pra mobile */
@@ -84,14 +69,9 @@
   right: 0;
   bottom: 0;
   border-radius: var(--via-radius-lg) var(--via-radius-lg) 0 0;
-  animation: via-drawer-in-bottom .3s var(--via-ease-snap);
   max-height: 85vh;
 }
 
-@keyframes via-drawer-in-bottom {
-  from { transform: translateY(24px); opacity: 0; }
-  to   { transform: translateY(0); opacity: 1; }
-}
 
 /* Sizes */
 .via-drawer--right.via-drawer--sm,
@@ -143,7 +123,7 @@
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background .2s ease, color .2s ease, border-color .2s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-drawer__close:hover {

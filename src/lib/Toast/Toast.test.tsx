@@ -169,7 +169,7 @@ describe('ToastCard · saída animada', () => {
     expect(card.style.transform).toBe('translateX(380px)');
   });
 
-  it('prefers-reduced-motion: X fecha seco, sem animação', () => {
+  it('prefers-reduced-motion: X sem mola (crossfade; sem Web Animations fecha na hora)', () => {
     reducedMotion = true;
     const onDismiss = vi.fn();
     renderSticky(onDismiss);
@@ -179,21 +179,105 @@ describe('ToastCard · saída animada', () => {
     expect(rafCbs.size).toBe(0);
   });
 
-  it('auto-dismiss por tempo continua direto (sem mola)', () => {
-    vi.useFakeTimers();
+  it('auto-dismiss sai pela MESMA mola do X: nada some no tick do timer', () => {
+    // só o relógio dos timers é falso — os quadros seguem na mão (frame())
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'Date'] });
     const onDismiss = vi.fn();
     render(
       <ToastStack toasts={[{ id: 't2', title: 'Sincronizado' }]} onDismiss={onDismiss} />,
     );
+    const card = document.querySelector('.via-toast') as HTMLElement;
+    Object.defineProperty(card, 'offsetWidth', { value: 380 });
 
     act(() => {
-      vi.advanceTimersByTime(4499);
+      vi.advanceTimersByTime(4500);
     });
+    // o tempo acabou, mas a saída é animada: onDismiss só no fim da mola
     expect(onDismiss).not.toHaveBeenCalled();
     act(() => {
-      vi.advanceTimersByTime(1);
+      frame();
+      frame();
+    });
+    const mid = parseFloat(card.style.transform.replace(/[^\d.-]/g, ''));
+    expect(mid).toBeGreaterThan(0);
+    expect(mid).toBeLessThan(380);
+    expect(Number(card.style.opacity)).toBeLessThan(1);
+
+    act(() => {
+      for (let i = 0; i < 200 && onDismiss.mock.calls.length === 0; i++) frame();
     });
     expect(onDismiss).toHaveBeenCalledExactlyOnceWith('t2');
     vi.useRealTimers();
+  });
+
+  it('removido pelo consumidor (clear): fica montado na saída e sai sem novo onDismiss', () => {
+    const onDismiss = vi.fn();
+    const sticky = (id: string) => ({ id, title: `Toast ${id}`, duration: 0 });
+    const { rerender } = render(
+      <ToastStack toasts={[sticky('a'), sticky('b')]} onDismiss={onDismiss} />,
+    );
+    const [cardA] = Array.from(document.querySelectorAll<HTMLElement>('.via-toast'));
+    Object.defineProperty(cardA, 'offsetWidth', { value: 380 });
+
+    rerender(<ToastStack toasts={[sticky('b')]} onDismiss={onDismiss} />);
+    // ainda no DOM, marcado como saindo e fora de alcance (inert)
+    expect(cardA).toBeInTheDocument();
+    expect(cardA).toHaveAttribute('data-state', 'closed');
+    expect(cardA).toHaveAttribute('inert');
+    // anúncio do leitor de tela já não inclui quem saiu
+    expect(screen.getByRole('status')).not.toHaveTextContent('Toast a');
+
+    act(() => {
+      frame();
+      frame();
+    });
+    expect(parseFloat(cardA.style.transform.replace(/[^\d.-]/g, ''))).toBeGreaterThan(0);
+    act(() => {
+      for (let i = 0; i < 200 && cardA.isConnected; i++) frame();
+    });
+    expect(cardA).not.toBeInTheDocument();
+    expect(screen.getByText('Toast b')).toBeInTheDocument();
+    expect(onDismiss).not.toHaveBeenCalled();
+  });
+
+  it('reduced-motion: removido pelo consumidor sai na hora (sem Web Animations)', () => {
+    reducedMotion = true;
+    const sticky = (id: string) => ({ id, title: `Toast ${id}`, duration: 0 });
+    const { rerender } = render(<ToastStack toasts={[sticky('a')]} onDismiss={() => {}} />);
+    rerender(<ToastStack toasts={[]} onDismiss={() => {}} />);
+    expect(document.querySelector('.via-toast')).toBeNull();
+  });
+
+  it('vizinhos DESLIZAM até o lugar novo (FLIP em translate, não pulo)', () => {
+    // jsdom não tem layout nem Web Animations: posição pela ordem no DOM
+    const animate = vi.fn(() => ({ id: '', cancel() {} }));
+    Object.defineProperty(HTMLElement.prototype, 'animate', { value: animate, configurable: true });
+    const offsetTop = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetTop');
+    Object.defineProperty(HTMLElement.prototype, 'offsetTop', {
+      configurable: true,
+      get(this: HTMLElement) {
+        const cards = Array.from(this.parentElement?.querySelectorAll(':scope > .via-toast') ?? []);
+        return cards.indexOf(this) * 80;
+      },
+    });
+    try {
+      const sticky = (id: string) => ({ id, title: `Toast ${id}`, duration: 0 });
+      const { rerender } = render(
+        <ToastStack toasts={[sticky('a'), sticky('b')]} onDismiss={() => {}} />,
+      );
+      // jsdom sem largura: a saída de 'a' assenta no 1º quadro
+      rerender(<ToastStack toasts={[sticky('b')]} onDismiss={() => {}} />);
+      act(() => {
+        for (let i = 0; i < 5; i++) frame();
+      });
+      // 'b' subiu 80px no layout → anima de +80px até 0 com translate
+      expect(animate).toHaveBeenCalledWith(
+        [{ translate: '0px 80px' }, { translate: '0px 0px' }],
+        expect.objectContaining({ duration: 220 }),
+      );
+    } finally {
+      delete (HTMLElement.prototype as { animate?: unknown }).animate;
+      if (offsetTop) Object.defineProperty(HTMLElement.prototype, 'offsetTop', offsetTop);
+    }
   });
 });

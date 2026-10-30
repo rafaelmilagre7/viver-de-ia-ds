@@ -92,7 +92,7 @@ button.via-stepper__node:focus-visible {
   -webkit-backdrop-filter: var(--via-material-control-blur);
   backdrop-filter: var(--via-material-control-blur);
   color: var(--via-ink-3, #6B7891);
-  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform var(--via-dur) var(--via-ease-snap);
+  transition: background var(--via-dur-quick) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap), transform var(--via-dur-base) var(--via-ease-snap);
   position: relative;
   z-index: 1;
 }
@@ -130,7 +130,7 @@ button.via-stepper__node:focus-visible {
   color: var(--via-text-primary);
   letter-spacing: -0.006em;
   line-height: 1.35;
-  transition: color 0.18s ease;
+  transition: color var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-stepper__item.is-future .via-stepper__label {
@@ -150,7 +150,7 @@ button.via-stepper__node:focus-visible {
 /* ===== Connector line ===== */
 .via-stepper__connector {
   background: var(--via-border, #D0D5DD);
-  transition: background var(--via-dur) ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-stepper--horizontal .via-stepper__connector {

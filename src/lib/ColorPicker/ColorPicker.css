@@ -101,7 +101,7 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: transform var(--via-dur) var(--via-ease-spring), box-shadow var(--via-dur) ease;
+  transition: transform var(--via-dur-base) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap);
 }
 
 .via-cp__cell:hover:not(:disabled) {
@@ -140,7 +140,7 @@
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: var(--via-radius-sm);
   outline: none;
-  transition: border-color var(--via-dur) ease, box-shadow var(--via-dur) ease;
+  transition: border-color var(--via-dur-quick) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap);
 }
 
 .via-cp__custom input:focus {

@@ -18,12 +18,20 @@ export default function Sidebar() {
                 <NavLink
                   to={item.to}
                   end={item.to === '/'}
+                  viewTransition
                   className={({ isActive }) =>
                     'vds-sidebar-link' + (isActive ? ' active' : '')
                   }
                 >
-                  <span>{item.label}</span>
-                  {item.soon && <span className="vds-sidebar-soon">em breve</span>}
+                  {({ isActive }) => (
+                    <>
+                      {/* Marcador do ativo num elemento próprio: na troca de
+                          rota ele desliza de um link pro outro (view transition) */}
+                      {isActive && <span className="vds-sidebar-indicator" aria-hidden="true" />}
+                      <span>{item.label}</span>
+                      {item.soon && <span className="vds-sidebar-soon">em breve</span>}
+                    </>
+                  )}
                 </NavLink>
               </li>
             ))}

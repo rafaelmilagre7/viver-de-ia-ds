@@ -24,18 +24,27 @@
   border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-sm);
   box-shadow: var(--via-material-thick-shadow);
-  animation: via-dropdown-in var(--via-dur) var(--via-ease-out);
+  /* Entra em quick, sai em press. Origem espacial (WWDC): a camada de
+     overlay põe o transform-origin no trigger e acompanha o flip */
+  transition:
+    opacity var(--via-dur-quick) var(--via-ease-enter),
+    scale var(--via-dur-quick) var(--via-ease-enter);
   isolation: isolate;
 }
 
-/* Origem espacial (WWDC): o menu abre pra baixo — escala nasce do canto
-   ancorado no trigger, não do centro */
 .via-dropdown__menu--start { left: 0; transform-origin: top left; }
 .via-dropdown__menu--end { right: 0; transform-origin: top right; }
 
-@keyframes via-dropdown-in {
-  from { opacity: 0; transform: translateY(-4px) scale(0.96); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+@starting-style {
+  .via-dropdown__menu { opacity: 0; scale: var(--via-enter-scale); }
+}
+
+/* Saída: um degrau mais curta, acelerando; reabrir no meio reverte */
+.via-dropdown__menu[data-state='closed'] {
+  opacity: 0;
+  scale: var(--via-enter-scale);
+  transition-duration: var(--via-dur-press);
+  transition-timing-function: var(--via-ease-exit);
 }
 
 .via-dropdown__group {
@@ -68,7 +77,7 @@
   color: var(--via-text-primary);
   cursor: pointer;
   text-align: left;
-  transition: background 0.14s ease;
+  transition: background var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .via-dropdown__item:hover:not(:disabled) {
@@ -139,6 +148,3 @@
   margin: var(--via-space-1_5) 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .via-dropdown__menu { animation: none !important; }
-}

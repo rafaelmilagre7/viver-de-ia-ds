@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useId, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useId, useState, type ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { useDragDismiss } from '../_shared/useDragDismiss';
 import { trapTab } from '../_shared/useDialogFocus';
@@ -24,7 +24,9 @@ export interface DrawerProps {
 
 /**
  * Drawer · sheet lateral · acessível · ESC fecha · scrim clicável ·
- * arrasto-pra-fechar (spring física) · saída animada em X/ESC/scrim
+ * arrasto-pra-fechar (spring física). Entrada (vinda de 100% da borda),
+ * saída em X/ESC/scrim, gesto e fechamento de fora (`open` → false) andam
+ * na MESMA mola — agarrar no meio da entrada segue do ponto vivo.
  *
  * @example
  * <Drawer open={open} onClose={() => setOpen(false)} side="right" title="Filtros">
@@ -34,13 +36,18 @@ export interface DrawerProps {
  */
 export function Drawer(props: DrawerProps) {
   // Painel monta do zero a cada abertura — o estado do gesto (offset vivo
-  // da mola) não pode vazar de um ciclo de abre/fecha pro outro
-  if (!props.open) return null;
-  return <DrawerPanel {...props} />;
+  // da mola) não pode vazar de um ciclo de abre/fecha pro outro — e fica
+  // montado durante a saída quando o consumidor fecha de fora
+  const [present, setPresent] = useState(props.open);
+  if (props.open && !present) setPresent(true);
+  if (!present && !props.open) return null;
+  return <DrawerPanel {...props} onExited={() => setPresent(false)} />;
 }
 
 function DrawerPanel({
+  open,
   onClose,
+  onExited,
   side = 'right',
   size = 'md',
   title,
@@ -48,7 +55,7 @@ function DrawerPanel({
   children,
   footer,
   hideClose = false,
-}: DrawerProps) {
+}: DrawerProps & { onExited: () => void }) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const scrimRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
@@ -89,13 +96,16 @@ function DrawerPanel({
     [axis],
   );
 
-  const { close } = useDragDismiss({
+  const { close, exit, show } = useDragDismiss({
     panelRef: dialogRef,
     axis,
     dir,
+    enabled: open,
     onDismiss: handleDismiss,
     canStart,
     scrimRef,
+    open,
+    enter: true,
     // Consumidor manteve `open` (ex.: "alterações não salvas"): painel voltou,
     // próximo pedido de fechar tem que valer de novo
     onKeptOpen: () => {
@@ -107,37 +117,49 @@ function DrawerPanel({
   const requestClose = useCallback(() => {
     if (closingRef.current) return;
     closingRef.current = true;
-    // Entrada CSS ainda rodando venceria o transform inline da mola
-    if (dialogRef.current) dialogRef.current.style.animation = 'none';
-    if (scrimRef.current) scrimRef.current.style.animation = 'none';
     close();
   }, [close]);
 
-  // ESC fecha (só se for a camada do topo) + trava o scroll da página
-  const layer = useEscapeLayer(true, () => requestClose());
-  useScrollLock(true);
-
-  // Focus return: ao abrir, guarda quem tinha o foco; ao fechar, devolve a ele
+  // Fechado DE FORA (open → false sem X/ESC/gesto): mesma mola, sem chamar
+  // onClose de novo; reabrir no meio da saída volta pela mola
+  const onExitedRef = useRef(onExited);
   useEffect(() => {
+    onExitedRef.current = onExited;
+  });
+  const wasOpen = useRef(open);
+  useEffect(() => {
+    if (open === wasOpen.current) return;
+    wasOpen.current = open;
+    if (open) {
+      closingRef.current = false;
+      show();
+    } else {
+      exit(() => onExitedRef.current());
+    }
+  }, [open, exit, show]);
+
+  // ESC fecha (só se for a camada do topo) + trava o scroll da página
+  const layer = useEscapeLayer(open, () => requestClose());
+  useScrollLock(open);
+
+  // Foco: ao abrir guarda quem tinha o foco e entra no 1º focável; ao
+  // fechar (já no início da saída) ou desmontar, devolve a quem abriu
+  useEffect(() => {
+    if (!open) return;
     prevFocusRef.current = document.activeElement as HTMLElement | null;
+    dialogRef.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
     return () => {
       prevFocusRef.current?.focus?.();
     };
-  }, []);
-
-  // Focus first focusable on open
-  useEffect(() => {
-    if (!dialogRef.current) return;
-    const focusable = dialogRef.current.querySelector<HTMLElement>(FOCUSABLE);
-    focusable?.focus();
-  }, []);
+  }, [open]);
 
   // Focus trap: Tab/Shift+Tab ciclam só entre os focáveis dentro do painel
   const handleKeyDown = (e: React.KeyboardEvent) => trapTab(e, dialogRef.current);
 
   return (
     <Portal layer={layer}>
-      <div className="via-drawer-root" role="presentation">
+      {/* inert na saída de fora: o painel que some não recebe clique nem foco */}
+      <div className="via-drawer-root" role="presentation" inert={!open}>
         <div ref={scrimRef} className="via-drawer-scrim" onClick={requestClose} aria-hidden="true" />
         <div
           ref={dialogRef}
