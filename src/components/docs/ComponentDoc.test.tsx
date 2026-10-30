@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, afterEach } from 'vitest';
+import { describe, it, expect, vi, afterEach, beforeAll } from 'vitest';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import ComponentDoc, { type ComponentMeta } from './ComponentDoc';
 
@@ -48,20 +48,43 @@ describe('<ComponentDoc /> · tabela gerada', () => {
 });
 
 describe('<ComponentDoc /> · playground', () => {
-  it('controles nascem das props e o snippet acompanha', () => {
+  beforeAll(() => {
+    // jsdom não tem scrollIntoView (o Select usa pra manter a opção ativa visível)
+    Element.prototype.scrollIntoView ??= () => {};
+  });
+
+  it('controles são os componentes da library, nascem das props e o snippet acompanha', () => {
     renderDoc();
     const snippet = () => screen.getAllByText((_, el) => el?.classList.contains('vds-code') ?? false).at(-1)!;
-    expect(screen.getByLabelText('size')).toHaveValue('md');
+    const size = () => screen.getByRole('combobox', { name: /^size/ });
+    expect(size()).toHaveTextContent('md');
+    expect(screen.getByRole('switch', { name: 'loading' })).not.toBeChecked();
     expect(snippet()).toHaveTextContent('<Demo>Oi</Demo>');
 
-    fireEvent.change(screen.getByLabelText('size'), { target: { value: 'sm' } });
+    fireEvent.click(size());
+    fireEvent.click(screen.getByRole('option', { name: 'sm' }));
     fireEvent.click(screen.getByLabelText('loading'));
     fireEvent.change(screen.getByLabelText('children'), { target: { value: 'Olá' } });
+    expect(size()).toHaveTextContent('sm');
     expect(snippet()).toHaveTextContent('<Demo size="sm" loading>Olá</Demo>');
     expect(screen.getByTestId('out')).toHaveTextContent('"size":"sm"');
 
     fireEvent.click(screen.getByRole('button', { name: 'Restaurar' }));
     expect(snippet()).toHaveTextContent('<Demo>Oi</Demo>');
+    expect(size()).toHaveTextContent('md');
+  });
+});
+
+describe('<ComponentDoc /> · Nesta página', () => {
+  it('lista as seções com âncora e marca a atual', () => {
+    renderDoc();
+    const toc = screen.getByRole('navigation', { name: 'Nesta página' });
+    const links = within(toc).getAllByRole('link');
+    expect(links.map((a) => a.textContent)).toEqual(['Importar', 'Playground', 'Props']);
+    for (const a of links) {
+      const id = a.getAttribute('href')!.slice(1);
+      expect(document.getElementById(id)).toHaveClass('vds-section');
+    }
   });
 });
 

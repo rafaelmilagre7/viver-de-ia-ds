@@ -2,6 +2,73 @@
    ComponentDoc · template canônico de docs API por componente
    ============================================================== */
 
+/* ---------- Coluna + trilho "Nesta página" ----------
+   Trilho só em tela larga (≥1360px): abaixo disso ele sumiria espremendo
+   as demos. A largura total sobe pra --via-container no layout.css. */
+.vds-toc { display: none; }
+
+@media (min-width: 1360px) {
+  .vds-cdoc-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 184px;
+    gap: var(--via-space-14);
+    align-items: start;
+  }
+  .vds-toc {
+    display: block;
+    position: sticky;
+    top: calc(64px + var(--via-space-10));
+    max-height: calc(100vh - 64px - var(--via-space-16));
+    overflow-y: auto;
+    /* respiro pro anel de foco dos links não ser cortado pelo overflow */
+    padding: var(--via-space-1);
+    margin: calc(var(--via-space-1) * -1);
+  }
+}
+
+.vds-toc-title {
+  margin: 0 0 var(--via-space-3);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-bold);
+  letter-spacing: var(--via-ls-mark);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+.vds-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-0_5);
+}
+.vds-toc-link,
+.vds-toc-group {
+  display: block;
+  padding: var(--via-space-1) 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  line-height: var(--via-lh-snug);
+}
+.vds-toc-link {
+  color: var(--via-text-muted);
+  text-decoration: none;
+  border-radius: var(--via-radius-xs);
+  transition: color var(--via-dur-quick) var(--via-ease-snap);
+}
+.vds-toc-link:hover { color: var(--via-text-primary); }
+/* Seção atual · só tom + peso (sem barra lateral, sem trilho colorido) */
+.vds-toc-link[aria-current='location'] {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+.vds-toc-group {
+  margin-top: var(--via-space-2);
+  color: var(--via-text-soft);
+}
+.vds-toc .is-sub .vds-toc-link { padding-left: var(--via-space-3); }
+
 /* ---------- Anatomy ---------- */
 .vds-cdoc-anatomy {
   display: flex;
@@ -9,13 +76,11 @@
   gap: var(--via-space-4_5);
   padding: var(--via-space-7) 30px;
   border-radius: 16px;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid var(--via-border-soft);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 8px 22px -14px var(--via-shadow-ink-14);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
 }
 
 .vds-cdoc-anatomy-row {
@@ -140,13 +205,11 @@
 .vds-cdoc-variant-card {
   padding: var(--via-space-4_5) var(--via-space-5);
   border-radius: 14px;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
-  border: 1px solid var(--via-border-soft);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 4px 10px -6px var(--via-shadow-ink-10);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
 }
 
 .vds-cdoc-variant-card strong {
@@ -303,10 +366,11 @@
   padding: var(--via-space-6) 30px;
   margin: 0;
   border-radius: 14px;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2_5);
@@ -340,21 +404,20 @@
   display: block;
   padding: var(--via-space-4) var(--via-space-4_5);
   border-radius: 12px;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 0.5px solid var(--via-navy-08);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
   text-decoration: none;
   transition:
-    border-color .22s ease,
-    box-shadow .22s ease,
-    transform .22s cubic-bezier(.2, .7, .2, 1);
+    box-shadow var(--via-dur-quick) var(--via-ease-snap),
+    transform var(--via-dur-quick) var(--via-ease-snap);
 }
 
 .vds-cdoc-related-card:hover {
-  border-color: var(--via-navy-22);
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px -8px var(--via-shadow-ink-14);
+  box-shadow: var(--via-material-regular-lift);
 }
 
 .vds-cdoc-related-card strong {
@@ -476,45 +539,21 @@
   grid-column: 1 / -1;
 }
 
-.vds-cdoc-ctl {
-  display: flex;
-  flex-direction: column;
-  gap: var(--via-space-1);
+/* Controles = Select, Switch e Input da library. Aqui só o encaixe na
+   coluna estreita e o nome da prop em mono (é código, não rótulo de form). */
+.vds-cdoc-ctl .via-select,
+.vds-cdoc-ctl .via-input-wrap {
+  width: 100%;
+  min-width: 0;
 }
-.vds-cdoc-ctl--bool {
-  flex-direction: row;
-  align-items: center;
-  gap: var(--via-space-2);
-  cursor: pointer;
-}
-.vds-cdoc-ctl-name {
+.vds-cdoc-ctl-name,
+.vds-cdoc-ctl .via-select__label,
+.vds-cdoc-ctl .via-input__label {
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-regular);
+  letter-spacing: 0;
   color: var(--via-text-primary);
-}
-.vds-cdoc-ctl select,
-.vds-cdoc-ctl input:not([type='checkbox']) {
-  width: 100%;
-  min-height: 34px;
-  padding: var(--via-space-1_5) var(--via-space-3);
-  border-radius: var(--via-radius-sm);
-  border: 0.5px solid var(--via-navy-20);
-  background: var(--via-surface);
-  color: var(--via-text-primary);
-  font-family: var(--via-font);
-  font-size: var(--via-fs-caption);
-}
-.vds-cdoc-ctl input[type='checkbox'] {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-  accent-color: var(--via-text-primary);
-  cursor: pointer;
-}
-.vds-cdoc-ctl select:focus-visible,
-.vds-cdoc-ctl input:focus-visible {
-  outline: none;
-  box-shadow: var(--via-shadow-focus);
 }
 
 .vds-cdoc-play-reset {

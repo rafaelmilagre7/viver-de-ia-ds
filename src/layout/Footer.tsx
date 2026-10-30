@@ -28,16 +28,16 @@ export default function Footer() {
             <p className="vds-footer-h">Marca</p>
             <ul>
               <li><a href="/manifesto">Manifesto</a></li>
-              <li><a href="/guidelines/voice">Voz &amp; tom</a></li>
-              <li><a href="/guidelines/copy">Copy patterns</a></li>
-              <li><a href="/guidelines/dos-donts">Do's &amp; Don'ts</a></li>
+              <li><a href="/guidelines/voice">Voz e tom</a></li>
+              <li><a href="/guidelines/copy">Padrões de copy</a></li>
+              <li><a href="/guidelines/dos-donts">Faça e evite</a></li>
             </ul>
           </div>
 
           <div className="vds-footer-col">
             <p className="vds-footer-h">Produto</p>
             <ul>
-              <li><a href="/showcase/marketing">Marketing site</a></li>
+              <li><a href="/showcase/marketing">Site de marketing</a></li>
               <li><a href="/showcase/leaders-ai">Leaders AI</a></li>
               <li><a href="/showcase/aluno">Área do aluno</a></li>
               <li><a href="https://viverdeia.ai" target="_blank" rel="noreferrer">viverdeia.ai ↗</a></li>

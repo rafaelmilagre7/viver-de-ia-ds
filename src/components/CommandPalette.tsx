@@ -110,7 +110,7 @@ export default function CommandPalette({ open, onClose }: Props) {
       inert={closing}
       onClick={onClose}
     >
-      <div className="vds-cmdk-inner" data-state={state} onClick={(e) => e.stopPropagation()}>
+      <div className="vds-cmdk-inner via-glass-strong" data-state={state} onClick={(e) => e.stopPropagation()}>
         <header>
           <Search size={16} strokeWidth={2} />
           <input

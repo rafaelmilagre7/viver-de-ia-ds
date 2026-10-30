@@ -48,6 +48,8 @@
   margin-top: var(--via-space-16); /* 64px · 72 não era token */
   padding-top: var(--via-space-10);
   border-top: 0.5px solid var(--via-navy-12);
+  /* âncora (#secao, trilho "Nesta página") não para embaixo do header fixo */
+  scroll-margin-top: 64px;
 }
 .vds-section:first-of-type { border-top: none; padding-top: 0; }
 .vds-section-header {
@@ -231,12 +233,34 @@
   border-radius: var(--via-radius-md);
   padding: var(--via-space-4_5) var(--via-space-5);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-xs);
-  color: var(--via-text-primary);
-  line-height: 1.6;
+  font-size: var(--via-fs-caption);
+  color: var(--via-text-muted);
+  line-height: var(--via-lh-loose);
   overflow-x: auto;
   white-space: pre;
+  tab-size: 2;
 }
+/* Realce (highlight.ts) · paleta restrita: só tom navy, cinzas e PESO.
+   Sem matiz e sem itálico (nem no comentário). Do mais forte ao mais quieto:
+     estrutura  palavra-chave, tag, seletor   → primário + semibold
+     conteúdo   string, número                → primário
+     nome       atributo, propriedade, flag   → corpo + medium
+     resto      identificador, valor          → muted (cor base do bloco)
+     ruído      pontuação, comentário         → soft
+   Tokens de TEXTO: o escuro se resolve sozinho e tudo passa AA no fundo. */
+.vds-tok--keyword,
+.vds-tok--tag {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}
+.vds-tok--string,
+.vds-tok--number { color: var(--via-text-primary); }
+.vds-tok--attr {
+  color: var(--via-text-body);
+  font-weight: var(--via-fw-medium);
+}
+.vds-tok--punct,
+.vds-tok--comment { color: var(--via-text-soft); }
 .vds-code-inline {
   display: inline-block;
   font-family: var(--via-font-mono);

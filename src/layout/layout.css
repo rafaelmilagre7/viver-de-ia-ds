@@ -21,7 +21,36 @@
   background-attachment: fixed, fixed, fixed, fixed;
 }
 
-/* ---------- HEADER ---------- */
+/* ---------- PULAR PRO CONTEÚDO ----------
+   1º foco da página (antes do header e da sidebar). Escondido acima da
+   tela; aparece no foco do teclado como pílula de vidro (material control). */
+.vds-skip-link {
+  position: fixed;
+  top: var(--via-space-3);
+  left: var(--via-space-3);
+  z-index: var(--via-z-sticky);
+  padding: var(--via-space-2_5) var(--via-space-4);
+  border-radius: var(--via-radius-pill);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
+  box-shadow: var(--via-material-control-shadow);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  text-decoration: none;
+  translate: 0 -200%;
+  transition: translate var(--via-dur-quick) var(--via-ease-enter);
+}
+.vds-skip-link:focus { translate: 0 0; }
+/* o <main> recebe o foco do atalho · sem moldura em volta da página inteira */
+.vds-main:focus { outline: none; }
+
+/* ---------- HEADER ----------
+   Barra = material CHROME (translúcido de verdade: o conteúdo passa
+   desfocado por baixo). Nada de blur à mão. */
 .vds-header {
   grid-area: header;
   position: sticky;
@@ -32,9 +61,9 @@
   justify-content: space-between;
   padding: 0 var(--via-space-7);
   height: 64px;
-  background: var(--via-glass-bar);
-  -webkit-backdrop-filter: var(--via-glass-blur-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
+  background: var(--via-material-chrome-fill);
+  -webkit-backdrop-filter: var(--via-material-chrome-blur);
+  backdrop-filter: var(--via-material-chrome-blur);
   /* Borda de rolagem (WWDC scroll edge effect) · .is-scrolled vem do
      useScrollEdge — só existe com conteúdo rolado por baixo */
   border-bottom: 0.5px solid transparent;
@@ -43,8 +72,8 @@
     box-shadow var(--via-dur-base) var(--via-ease-enter);
 }
 .vds-header.is-scrolled {
-  border-bottom-color: var(--via-navy-12);
-  box-shadow: 0 8px 20px -16px var(--via-shadow-ink-20);
+  border-bottom: var(--via-material-chrome-ring);
+  box-shadow: var(--via-material-chrome-shadow);
 }
 .vds-header-left { display: flex; align-items: center; gap: var(--via-space-3); }
 .vds-drawer-toggle {
@@ -94,26 +123,49 @@
   gap: var(--via-space-3);
 }
 
-.vds-search {
+/* Controles do header (busca, lupa, tela cheia, tema) · material CONTROL,
+   mesma altura (34px) e mesma pílula */
+.vds-search,
+.vds-header-btn {
   display: inline-flex;
   align-items: center;
-  gap: var(--via-space-2_5);
-  padding: var(--via-space-2) var(--via-space-3) var(--via-space-2) var(--via-space-3_5);
-  min-width: 260px;
+  height: 34px;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
-  background: var(--via-navy-04);
-  border: 0.5px solid var(--via-navy-12);
-  border-radius: var(--via-radius-pill);
+  background: var(--via-material-control-fill);
   -webkit-backdrop-filter: var(--via-material-control-blur);
   backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
+  border-radius: var(--via-radius-pill);
+  box-shadow: var(--via-material-control-shadow);
   cursor: pointer;
-  transition: var(--via-t);
+  transition:
+    color var(--via-dur-quick) var(--via-ease-snap),
+    box-shadow var(--via-dur-quick) var(--via-ease-snap);
 }
-.vds-search:hover {
-  border-color: var(--via-navy-40);
-  background: var(--via-navy-08);
+.vds-search:hover,
+.vds-header-btn:hover {
+  color: var(--via-text-primary);
+  box-shadow: var(--via-material-control-lift);
+}
+.vds-search {
+  gap: var(--via-space-2_5);
+  padding: 0 var(--via-space-1_5) 0 var(--via-space-3_5);
+  min-width: 260px;
+}
+.vds-header-btn {
+  gap: var(--via-space-2);
+  padding: 0 var(--via-space-3_5);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-body);
+}
+/* lupa só aparece quando o campo de busca some (≤960px) */
+.vds-search-icon {
+  display: none;
+  justify-content: center;
+  width: 34px;
+  padding: 0;
 }
 .vds-search .vds-kbd {
   margin-left: auto;
@@ -144,12 +196,12 @@
 /* ---------- SIDEBAR ---------- */
 .vds-sidebar {
   grid-area: sidebar;
-  border-right: 0.5px solid var(--via-navy-12);
-  /* chrome de navegação · vidro de barra pra a atmosfera do shell passar
-     desfocada por baixo (mesma matéria do header sticky) */
-  background: var(--via-glass-bar);
-  -webkit-backdrop-filter: var(--via-glass-blur-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
+  /* chrome de navegação · material CHROME, o mesmo do header sticky: a
+     atmosfera do shell passa desfocada por baixo */
+  border-right: var(--via-material-chrome-ring);
+  background: var(--via-material-chrome-fill);
+  -webkit-backdrop-filter: var(--via-material-chrome-blur);
+  backdrop-filter: var(--via-material-chrome-blur);
   padding: var(--via-space-8) var(--via-space-6) var(--via-space-16);
   overflow-y: auto;
   position: sticky;
@@ -225,9 +277,10 @@
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
 }
-/* O fundo e a barrinha do ativo moram num elemento próprio (não no link):
-   na troca de rota ele ganha view-transition-name e desliza do link velho
-   pro novo. Mesmo raio e mesma posição de antes — idêntico parado. */
+/* Ativo = UM indicador: preenchimento (+ peso do texto). Sem barrinha
+   lateral (padrão banido da marca). O fundo mora num elemento próprio (não
+   no link): na troca de rota ele ganha view-transition-name e desliza do
+   link velho pro novo. */
 .vds-sidebar-link.active,
 .vds-sidebar-link.active:hover {
   background: transparent;
@@ -238,16 +291,6 @@
   border-radius: inherit;
   background: var(--via-navy-08);
   pointer-events: none;
-}
-.vds-sidebar-indicator::before {
-  content: '';
-  position: absolute;
-  left: -24px;
-  top: 9px;
-  bottom: 9px;
-  width: 2px;
-  background: var(--via-navy);
-  border-radius: 2px;
 }
 /* texto acima do fundo posicionado (ordem de pintura) */
 .vds-sidebar-link > :not(.vds-sidebar-indicator) {
@@ -268,13 +311,71 @@
 /* ---------- MAIN ---------- */
 .vds-main {
   grid-area: main;
+  min-width: 0;
   padding: var(--via-space-14) var(--via-space-16) var(--via-space-24);
-  max-width: 1080px;
-  width: 100%;
   /* sem min-height aqui: min-height num grid item torna o mínimo automático
      definido e a faixa 1fr para de crescer com o conteúdo (o conteúdo vaza
      por cima do footer). O piso de uma tela vem da altura da sidebar. */
 }
+/* Coluna de conteúdo CENTRADA na área livre, com teto de largura · antes o
+   main tinha max-width próprio e ficava preso à esquerda (64px de um lado,
+   144px do outro em 1440). A medida do texto corrido (≈640px) continua no
+   parágrafo; aqui é o teto das demos/tabelas. */
+.vds-page-transition {
+  max-width: 1040px;
+  margin-inline: auto;
+}
+/* Doc de componente em tela larga: coluna + trilho "Nesta página" */
+@media (min-width: 1360px) {
+  .vds-page-transition:has(> .vds-cdoc-layout) { max-width: var(--via-container); }
+}
+
+/* ---------- PÁGINAS-MODELO ----------
+   Ocupam a coluna inteira, de borda a borda: o main perde o respiro e a
+   página perde a margem negativa que compensava esse respiro (cada CSS de
+   showcase repetia -56/-64/-96px na mão e quebrava a cada ajuste de layout). */
+.vds-main:has(> .vds-page-transition > .vds-showcase) { padding: 0; }
+.vds-page-transition:has(> .vds-showcase) { max-width: none; }
+.vds-page-transition > .vds-showcase.vds-showcase { margin: 0; }
+
+/* Tela cheia (?tela-cheia) · sem header, sidebar e footer do site */
+.vds-shell.is-fullscreen {
+  grid-template-rows: auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'main';
+}
+/* Navs próprias das páginas-modelo colam a 64px (abaixo do header do site).
+   Sem o header, colam no topo — mesmo deslocamento tirado de cada uma. */
+.vds-shell.is-fullscreen :is(.mk-nav, .al-nav, .la-nav, .dba-nav, .cmu-nav) { top: 0; }
+.vds-shell.is-fullscreen :is(.cmu-cats, .cmu-side) { top: 88px; }
+.vds-shell.is-fullscreen .vds-set-tabs { top: 20px; }
+.vds-shell.is-fullscreen .vds-showcase.mtr { --mtr-shell-h: 0px; }
+
+/* Saída da tela cheia · pílula de vidro fixa no canto, sempre à mão */
+.vds-fullscreen-exit {
+  position: fixed;
+  right: var(--via-space-5);
+  bottom: var(--via-space-5);
+  z-index: var(--via-z-sticky);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  height: 38px;
+  padding: 0 var(--via-space-4);
+  border-radius: var(--via-radius-pill);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
+  box-shadow: var(--via-material-control-shadow);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
+  cursor: pointer;
+  transition: box-shadow var(--via-dur-quick) var(--via-ease-snap);
+}
+.vds-fullscreen-exit:hover { box-shadow: var(--via-material-control-lift); }
 
 /* ---------- TROCA DE ROTA ----------
    Fade de entrada · 1ª carga e navegador sem View Transitions (a div
@@ -452,18 +553,27 @@
     background: var(--via-material-thick-fill);
     -webkit-backdrop-filter: var(--via-material-thick-blur);
     backdrop-filter: var(--via-material-thick-blur);
-    border-right: 0.5px solid var(--via-navy-12);
+    border-right: var(--via-material-thick-ring);
     transform: translateX(-100%);
-    transition: transform var(--via-dur-panel) var(--via-ease-enter);
+    /* fechada = fora da ordem do Tab (visibility), não só fora da tela;
+       a visibilidade só vira depois do deslize de saída */
+    visibility: hidden;
+    transition:
+      transform var(--via-dur-panel) var(--via-ease-enter),
+      visibility 0s linear var(--via-dur-panel);
     z-index: 45;
-    box-shadow: 0 24px 48px var(--via-shadow-ink-20);
+    box-shadow: var(--via-material-thick-shadow);
     padding: var(--via-space-6) var(--via-space-5) var(--via-space-16);
     /* drawer fixo: quem manda na altura é top/bottom, não a faixa do grid */
     height: auto;
     max-height: calc(100vh - 64px);
     overflow-y: auto;
   }
-  .vds-shell.drawer-open .vds-sidebar { transform: translateX(0); }
+  .vds-shell.drawer-open .vds-sidebar {
+    transform: translateX(0);
+    visibility: visible;
+    transition-delay: 0s;
+  }
   .vds-shell.drawer-open .vds-drawer-scrim { display: block; }
   .vds-drawer-toggle { display: inline-flex; }
   .vds-main { padding: var(--via-space-8) var(--via-space-5) var(--via-space-16); max-width: 100%; min-width: 0; }
@@ -472,6 +582,17 @@
   .vds-footer-cols { grid-template-columns: 1fr 1fr; }
   .vds-footer-bottom-meta { margin-left: 0; width: 100%; }
   .vds-search { display: none; }
+  .vds-search-icon { display: inline-flex; }
+  /* "Tela cheia" vira só o ícone · o nome continua pro leitor de tela */
+  .vds-header-btn-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .vds-fullscreen-btn { width: 34px; padding: 0; justify-content: center; }
   .vds-brand-tag { display: none; }
   .vds-header-link { display: none; }
   .vds-header { padding: 0 var(--via-space-4); }

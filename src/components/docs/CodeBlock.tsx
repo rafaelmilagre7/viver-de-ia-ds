@@ -1,8 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { highlight, type Lang } from './highlight';
 import './docs.css';
 import './component-doc.css'; // botão Copiar + texto só pra leitor de tela
 
-type Props = { children: string };
+type Props = {
+  children: string;
+  /** Linguagem do realce · sem ela, adivinha pelo conteúdo (TSX, CSS ou bash) */
+  lang?: Lang;
+};
 type Status = 'idle' | 'copied' | 'failed';
 
 const ANNOUNCE: Record<Status, string> = {
@@ -11,8 +16,9 @@ const ANNOUNCE: Record<Status, string> = {
   failed: 'Não foi possível copiar · código selecionado, use Cmd+C ou Ctrl+C',
 };
 
-export default function CodeBlock({ children }: Props) {
+export default function CodeBlock({ children, lang }: Props) {
   const text = children.trim();
+  const tokens = useMemo(() => highlight(text, lang), [text, lang]);
   const [status, setStatus] = useState<Status>('idle');
   const codeRef = useRef<HTMLElement>(null);
   const timer = useRef<number | undefined>(undefined);
@@ -37,7 +43,11 @@ export default function CodeBlock({ children }: Props) {
 
   return (
     <div className="vds-codeblock">
-      <code ref={codeRef} className="vds-code">{text}</code>
+      <code ref={codeRef} className="vds-code">
+        {tokens.map((t, i) =>
+          t.kind === 'plain' ? t.text : <span key={i} className={`vds-tok vds-tok--${t.kind}`}>{t.text}</span>,
+        )}
+      </code>
       <button type="button" className="via-pill-link vds-codeblock-copy" onClick={copy}>
         {status === 'copied' ? 'Copiado' : status === 'failed' ? 'Selecionado' : <>Copiar <span className="vds-cdoc-sr">código</span></>}
       </button>

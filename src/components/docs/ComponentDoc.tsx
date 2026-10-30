@@ -1,4 +1,7 @@
-import { Fragment, useCallback, useId, useState, type ReactNode } from 'react';
+import { Fragment, useCallback, useEffect, useState, type ReactNode } from 'react';
+import { Select } from '../../lib/Select/Select';
+import { Switch } from '../../lib/Switch/Switch';
+import { Input } from '../../lib/Input/Input';
 import DocsHeader from './DocsHeader';
 import Section from './Section';
 import CodeBlock from './CodeBlock';
@@ -187,43 +190,55 @@ function buildSnippet(meta: ComponentMeta, controls: Control[], values: Playgrou
   return multiline ? `${open}>\n  ${children}\n</${tag}>` : `${open}>${children}</${tag}>`;
 }
 
+/* Os controles do playground SÃO componentes da library (Select, Switch,
+   Input) — a doc mostra o sistema usando o próprio sistema. */
 function ControlField({ control, value, onChange }: { control: Control; value: unknown; onChange: (v: unknown) => void }) {
-  const id = useId();
-  const label = <span className="vds-cdoc-ctl-name">{control.name}</span>;
-
   if (control.kind === 'boolean') {
     return (
-      <label className="vds-cdoc-ctl vds-cdoc-ctl--bool" htmlFor={id}>
-        <input id={id} type="checkbox" checked={value === true} onChange={(e) => onChange(e.target.checked)} />
-        {label}
-      </label>
+      <Switch
+        size="sm"
+        className="vds-cdoc-ctl vds-cdoc-ctl--bool"
+        label={<span className="vds-cdoc-ctl-name">{control.name}</span>}
+        checked={value === true}
+        onChange={(e) => onChange(e.target.checked)}
+      />
+    );
+  }
+
+  if (control.kind === 'enum') {
+    // valor sempre controlado ('' = nenhum): undefined faria o Select cair no estado interno
+    const options = [
+      ...(control.optional && control.def === undefined ? [{ value: '', label: '—' }] : []),
+      ...(control.options ?? []).map((o) => ({ value: o, label: o })),
+    ];
+    return (
+      <div className="vds-cdoc-ctl">
+        <Select
+          size="sm"
+          label={control.name}
+          options={options}
+          value={typeof value === 'string' ? value : ''}
+          onValueChange={(v) => onChange(v || undefined)}
+        />
+      </div>
     );
   }
 
   return (
     <div className="vds-cdoc-ctl">
-      <label htmlFor={id}>{label}</label>
-      {control.kind === 'enum' ? (
-        <select id={id} value={typeof value === 'string' ? value : ''} onChange={(e) => onChange(e.target.value || undefined)}>
-          {control.optional && control.def === undefined && <option value="">—</option>}
-          {control.options?.map((o) => (
-            <option key={o} value={o}>{o}</option>
-          ))}
-        </select>
-      ) : (
-        <input
-          id={id}
-          type={control.kind === 'number' ? 'number' : 'text'}
-          inputMode={control.kind === 'number' ? 'decimal' : undefined}
-          value={value === undefined ? '' : String(value)}
-          onChange={(e) => {
-            const raw = e.target.value;
-            if (control.kind !== 'number') return onChange(raw);
-            const n = Number(raw);
-            onChange(raw === '' || Number.isNaN(n) ? undefined : n);
-          }}
-        />
-      )}
+      <Input
+        size="sm"
+        label={control.name}
+        type={control.kind === 'number' ? 'number' : 'text'}
+        inputMode={control.kind === 'number' ? 'decimal' : undefined}
+        value={value === undefined ? '' : String(value)}
+        onChange={(e) => {
+          const raw = e.target.value;
+          if (control.kind !== 'number') return onChange(raw);
+          const n = Number(raw);
+          onChange(raw === '' || Number.isNaN(n) ? undefined : n);
+        }}
+      />
     </div>
   );
 }
@@ -258,6 +273,89 @@ function Playground({ meta, config }: { meta: ComponentMeta; config: PlaygroundC
   );
 }
 
+/* ---------------- Nesta página ---------------- */
+
+interface TocEntry {
+  /** sem id = rótulo de grupo (ex.: "Exemplos"), não é link */
+  id?: string;
+  label: string;
+  sub?: boolean;
+}
+
+/** "Exemplo · CTA primário com ícone" → "exemplo-cta-primario-com-icone" */
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/** Seção "atual" = a última cujo topo já passou da linha logo abaixo do header */
+const SPY_LINE = 120;
+
+function OnThisPage({ entries }: { entries: TocEntry[] }) {
+  const ids = entries.flatMap((e) => (e.id ? [e.id] : []));
+  const idsKey = ids.join(' ');
+  const [current, setCurrent] = useState(ids[0]);
+
+  useEffect(() => {
+    const list = idsKey.split(' ');
+    // link direto pra uma seção (#props): a página chega depois do load, então
+    // o navegador não achou a âncora sozinho
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    if (hash && list.includes(hash)) document.getElementById(hash)?.scrollIntoView();
+
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const doc = document.documentElement;
+      const atEnd = window.innerHeight + window.scrollY >= doc.scrollHeight - 2;
+      let next = list[0];
+      for (const id of list) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        if (atEnd || el.getBoundingClientRect().top <= SPY_LINE) next = id;
+        else break;
+      }
+      setCurrent(next);
+    };
+    const schedule = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    schedule();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    return () => {
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [idsKey]);
+
+  return (
+    <nav className="vds-toc" aria-label="Nesta página">
+      <p className="vds-toc-title">Nesta página</p>
+      <ul>
+        {entries.map((e) =>
+          e.id ? (
+            <li key={e.id} className={e.sub ? 'is-sub' : undefined}>
+              <a className="vds-toc-link" href={`#${e.id}`} aria-current={e.id === current ? 'location' : undefined}>
+                {e.label}
+              </a>
+            </li>
+          ) : (
+            <li key={`g-${e.label}`} className="vds-toc-group">
+              {e.label}
+            </li>
+          ),
+        )}
+      </ul>
+    </nav>
+  );
+}
+
 /**
  * Template canônico de documentação por componente
  * Estilo Radix/Shadcn: anatomy + props table (gerada do código) + playground + examples + a11y + related
@@ -281,152 +379,186 @@ export default function ComponentDoc({
 }: ComponentDocProps) {
   const rows = buildRows(meta, descriptions);
 
+  // Âncoras das seções (o trilho "Nesta página" aponta pra elas)
+  const seen = new Map<string, number>();
+  const exampleIds = examples.map((ex) => {
+    const base = `exemplo-${slugify(ex.title)}`;
+    const n = (seen.get(base) ?? 0) + 1;
+    seen.set(base, n);
+    return n > 1 ? `${base}-${n}` : base;
+  });
+  const has = {
+    anatomy: !!anatomy?.length,
+    variants: !!variants?.length,
+    sizes: !!sizes?.length,
+    dosDonts: !!dosDonts?.length,
+    a11y: !!a11y?.length,
+    related: !!related?.length,
+  };
+  const toc: TocEntry[] = [
+    { id: 'importar', label: 'Importar' },
+    ...(playground ? [{ id: 'playground', label: 'Playground' }] : []),
+    ...(has.anatomy ? [{ id: 'anatomia', label: 'Anatomia' }] : []),
+    { id: 'props', label: 'Props' },
+    ...(has.variants ? [{ id: 'variantes', label: 'Variantes' }] : []),
+    ...(has.sizes ? [{ id: 'tamanhos', label: 'Tamanhos' }] : []),
+    ...(examples.length
+      ? [{ label: 'Exemplos' }, ...examples.map((ex, i) => ({ id: exampleIds[i], label: ex.title, sub: true }))]
+      : []),
+    ...(has.dosDonts ? [{ id: 'faca-e-evite', label: 'Faça e evite' }] : []),
+    ...(has.a11y ? [{ id: 'acessibilidade', label: 'Acessibilidade' }] : []),
+    ...(has.related ? [{ id: 'relacionados', label: 'Relacionados' }] : []),
+  ];
+
   return (
-    <>
-      <DocsHeader
-        eyebrow={eyebrow}
-        title={<>{name} · <em>{headline}</em></>}
-        lede={description}
-      />
+    <div className="vds-cdoc-layout">
+      <div className="vds-cdoc-body">
+        <DocsHeader
+          eyebrow={eyebrow}
+          title={<>{name} · <em>{headline}</em></>}
+          lede={description}
+        />
 
-      <Section title="Importar" meta="ESM · types · CSS auto-included">
-        <CodeBlock>{importLine}</CodeBlock>
-      </Section>
-
-      {playground && (
-        <Section title="Playground" meta="ao vivo · controles gerados das props">
-          <Playground meta={meta} config={playground} />
+        <Section id="importar" title="Importar" meta="ESM · tipos · CSS incluído">
+          <CodeBlock>{importLine}</CodeBlock>
         </Section>
-      )}
 
-      {anatomy && anatomy.length > 0 && (
-        <Section title="Anatomia" meta={`${anatomy.length} parte${anatomy.length > 1 ? 's' : ''}`}>
-          <div className="vds-cdoc-anatomy">
-            {anatomy.map((a, i) => (
-              <article key={i} className="vds-cdoc-anatomy-row">
-                <span className="vds-cdoc-anatomy-num mono">{String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <strong className="mono">{a.part}</strong>
-                  <p>{a.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Section>
-      )}
+        {playground && (
+          <Section id="playground" title="Playground" meta="ao vivo · controles gerados das props">
+            <Playground meta={meta} config={playground} />
+          </Section>
+        )}
 
-      <Section title="Props · API completa" meta={`${rows.length} props · gerada do código`}>
-        <div className="vds-cdoc-props-wrap">
-          <table className="vds-cdoc-props">
-            <thead>
-              <tr>
-                <th>Prop</th>
-                <th>Tipo</th>
-                <th>Default</th>
-                <th>Descrição</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((p) => (
-                <tr key={p.name}>
-                  <td className="mono">
-                    {p.name}
-                    {p.required && <span className="vds-cdoc-req"> *</span>}
-                    {p.inherited && <span className="vds-cdoc-inh">nativa</span>}
-                  </td>
-                  <td className="mono vds-cdoc-type">{p.type}</td>
-                  <td className="mono vds-cdoc-default">{p.default || '—'}</td>
-                  <td>{p.description ?? '—'}</td>
-                </tr>
+        {anatomy && anatomy.length > 0 && (
+          <Section id="anatomia" title="Anatomia" meta={`${anatomy.length} parte${anatomy.length > 1 ? 's' : ''}`}>
+            <div className="vds-cdoc-anatomy">
+              {anatomy.map((a, i) => (
+                <article key={i} className="vds-cdoc-anatomy-row">
+                  <span className="vds-cdoc-anatomy-num mono">{String(i + 1).padStart(2, '0')}</span>
+                  <div>
+                    <strong className="mono">{a.part}</strong>
+                    <p>{a.description}</p>
+                  </div>
+                </article>
               ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="vds-cdoc-hint">
-          <strong className="mono">*</strong> · prop obrigatória · tipos e defaults lidos de{' '}
-          <span className="mono">{meta.source}</span>
-        </p>
-      </Section>
+            </div>
+          </Section>
+        )}
 
-      {variants && variants.length > 0 && (
-        <Section title="Variants" meta={`${variants.length} valor${variants.length > 1 ? 'es' : ''} permitido${variants.length > 1 ? 's' : ''}`}>
-          <div className="vds-cdoc-variants">
-            {variants.map((v) => (
-              <article key={v.name} className="vds-cdoc-variant-card">
-                <strong className="mono">{v.name}</strong>
-                <p className="vds-cdoc-variant-label">{v.label}</p>
-                <p>{v.description}</p>
-              </article>
-            ))}
+        <Section id="props" title="Props" meta={`${rows.length} props · geradas do código`}>
+          <div className="vds-cdoc-props-wrap">
+            <table className="vds-cdoc-props">
+              <thead>
+                <tr>
+                  <th>Prop</th>
+                  <th>Tipo</th>
+                  <th>Default</th>
+                  <th>Descrição</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((p) => (
+                  <tr key={p.name}>
+                    <td className="mono">
+                      {p.name}
+                      {p.required && <span className="vds-cdoc-req"> *</span>}
+                      {p.inherited && <span className="vds-cdoc-inh">nativa</span>}
+                    </td>
+                    <td className="mono vds-cdoc-type">{p.type}</td>
+                    <td className="mono vds-cdoc-default">{p.default || '—'}</td>
+                    <td>{p.description ?? '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+          <p className="vds-cdoc-hint">
+            <strong className="mono">*</strong> · prop obrigatória · tipos e defaults lidos de{' '}
+            <span className="mono">{meta.source}</span>
+          </p>
         </Section>
-      )}
 
-      {sizes && sizes.length > 0 && (
-        <Section title="Sizes" meta="proporção respeita contexto">
-          <div className="vds-cdoc-variants">
-            {sizes.map((s) => (
-              <article key={s.name} className="vds-cdoc-variant-card">
-                <strong className="mono">{s.name}</strong>
-                <p className="vds-cdoc-variant-label">{s.label}</p>
-                <p>{s.description}</p>
-              </article>
-            ))}
-          </div>
-        </Section>
-      )}
-
-      {examples.map((ex, i) => (
-        <Section key={i} title={`Exemplo · ${ex.title}`} meta="preview + code">
-          {ex.description && <p className="vds-cdoc-ex-desc">{ex.description}</p>}
-          <div className="vds-cdoc-preview">{ex.preview}</div>
-          <CodeBlock>{ex.code}</CodeBlock>
-        </Section>
-      ))}
-
-      {dosDonts && dosDonts.length > 0 && (
-        <Section title="Do's & Don'ts" meta="regras editoriais consolidadas">
-          <div className="vds-cdoc-dos">
-            {dosDonts.map((p, i) => (
-              <Fragment key={i}>
-                <article className="vds-cdoc-do">
-                  <span className="vds-cdoc-do-lbl">Faça</span>
-                  <strong>{p.do.title}</strong>
-                  <p>{p.do.description}</p>
+        {variants && variants.length > 0 && (
+          <Section id="variantes" title="Variantes" meta={`${variants.length} valor${variants.length > 1 ? 'es' : ''} permitido${variants.length > 1 ? 's' : ''}`}>
+            <div className="vds-cdoc-variants">
+              {variants.map((v) => (
+                <article key={v.name} className="vds-cdoc-variant-card">
+                  <strong className="mono">{v.name}</strong>
+                  <p className="vds-cdoc-variant-label">{v.label}</p>
+                  <p>{v.description}</p>
                 </article>
-                <article className="vds-cdoc-dont">
-                  <span className="vds-cdoc-dont-lbl">Não faça</span>
-                  <strong>{p.dont.title}</strong>
-                  <p>{p.dont.description}</p>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {sizes && sizes.length > 0 && (
+          <Section id="tamanhos" title="Tamanhos" meta="proporção respeita contexto">
+            <div className="vds-cdoc-variants">
+              {sizes.map((s) => (
+                <article key={s.name} className="vds-cdoc-variant-card">
+                  <strong className="mono">{s.name}</strong>
+                  <p className="vds-cdoc-variant-label">{s.label}</p>
+                  <p>{s.description}</p>
                 </article>
-              </Fragment>
-            ))}
-          </div>
-        </Section>
-      )}
+              ))}
+            </div>
+          </Section>
+        )}
 
-      {a11y && a11y.length > 0 && (
-        <Section title="Acessibilidade" meta="WCAG 2.1 AA · ARIA · keyboard">
-          <ul className="vds-cdoc-a11y">
-            {a11y.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </Section>
-      )}
+        {examples.map((ex, i) => (
+          <Section key={exampleIds[i]} id={exampleIds[i]} title={`Exemplo · ${ex.title}`} meta="prévia + código">
+            {ex.description && <p className="vds-cdoc-ex-desc">{ex.description}</p>}
+            <div className="vds-cdoc-preview">{ex.preview}</div>
+            <CodeBlock>{ex.code}</CodeBlock>
+          </Section>
+        ))}
 
-      {related && related.length > 0 && (
-        <Section title="Relacionados" meta="componentes que combinam">
-          <div className="vds-cdoc-related">
-            {related.map((r) => (
-              <a key={r.href} href={r.href} className="vds-cdoc-related-card">
-                <strong className="mono">{r.name}</strong>
-                <p>{r.description}</p>
-              </a>
-            ))}
-          </div>
-        </Section>
-      )}
-    </>
+        {dosDonts && dosDonts.length > 0 && (
+          <Section id="faca-e-evite" title="Faça e evite" meta="regras editoriais consolidadas">
+            <div className="vds-cdoc-dos">
+              {dosDonts.map((p, i) => (
+                <Fragment key={i}>
+                  <article className="vds-cdoc-do">
+                    <span className="vds-cdoc-do-lbl">Faça</span>
+                    <strong>{p.do.title}</strong>
+                    <p>{p.do.description}</p>
+                  </article>
+                  <article className="vds-cdoc-dont">
+                    <span className="vds-cdoc-dont-lbl">Evite</span>
+                    <strong>{p.dont.title}</strong>
+                    <p>{p.dont.description}</p>
+                  </article>
+                </Fragment>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {a11y && a11y.length > 0 && (
+          <Section id="acessibilidade" title="Acessibilidade" meta="WCAG 2.1 AA · ARIA · teclado">
+            <ul className="vds-cdoc-a11y">
+              {a11y.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </Section>
+        )}
+
+        {related && related.length > 0 && (
+          <Section id="relacionados" title="Relacionados" meta="componentes que combinam">
+            <div className="vds-cdoc-related">
+              {related.map((r) => (
+                <a key={r.href} href={r.href} className="vds-cdoc-related-card">
+                  <strong className="mono">{r.name}</strong>
+                  <p>{r.description}</p>
+                </a>
+              ))}
+            </div>
+          </Section>
+        )}
+      </div>
+      <OnThisPage entries={toc} />
+    </div>
   );
 }
