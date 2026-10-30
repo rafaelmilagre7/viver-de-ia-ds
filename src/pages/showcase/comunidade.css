@@ -45,7 +45,6 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   text-decoration: none;
-  letter-spacing: -0.006em;
   cursor: pointer;
 }
 
@@ -103,9 +102,9 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-3_5);
@@ -170,7 +169,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
-  letter-spacing: -0.005em;
 }
 
 .cmu-cats li.active .cmu-cat-label { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
@@ -179,7 +177,7 @@
 
 .cmu-cat-count {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;
 }
@@ -233,7 +231,6 @@
   font-family: inherit;
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
-  letter-spacing: -0.005em;
   outline: none;
   /* o campo é fluido (flex:1) — sem isso o placeholder corta no meio da
      palavra em vez de reticenciar */
@@ -305,7 +302,6 @@
   color: var(--via-white) !important;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 6px 14px -6px var(--via-shadow-ink-40);
@@ -347,10 +343,8 @@
   gap: 5px;
   margin-bottom: var(--via-space-3);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 
@@ -382,34 +376,31 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.010em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .cmu-post-meta em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 .cmu-post-cat {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   padding: var(--via-space-1) var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
-  letter-spacing: -0.004em;
   white-space: nowrap;
 }
 
 .cmu-post-txt {
   margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-sm);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
-  letter-spacing: -0.006em;
 }
 
 .cmu-post-code {
@@ -424,10 +415,8 @@
 .cmu-post-code-lang {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   /* 0.42 sobre --via-navy-darker dava 3,7:1 — reprovava em AA num rótulo de
      11px. 0.58 sobe pra ~6,5:1 e continua "quieto" ao lado do código.
      Mesma faixa do chrome de código escuro em components/code-block.css. */
@@ -463,7 +452,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.004em;
   font-feature-settings: 'tnum' 1;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -554,7 +542,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
 }
@@ -600,7 +588,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
-  letter-spacing: -0.006em;
 }
 
 .cmu-members-more {
@@ -643,7 +630,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
 }
@@ -653,12 +640,11 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
-  letter-spacing: -0.006em;
 }
 
 .cmu-rank-pts {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;

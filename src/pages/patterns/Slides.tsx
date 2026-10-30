@@ -105,7 +105,7 @@ function DeckSection() {
         <article className="vds-slide quote">
           <div className="vds-slide-canvas">
             <header className="vds-slide-top">
-              <Quote size={28} strokeWidth={1.4} className="vds-quote-mark" />
+              <Quote size={24} strokeWidth={1.75} className="vds-quote-mark" />
               <span className="vds-slide-eyebrow-dark">Testemunho · cliente</span>
             </header>
 
@@ -190,7 +190,7 @@ function DeckSection() {
             <footer className="vds-slide-foot transparent">
               <a className="vds-slide-cta" href="#">
                 viverdeia.ai/comecar
-                <ArrowRight size={14} strokeWidth={2.4} />
+                <ArrowRight size={16} strokeWidth={1.75} />
               </a>
               <span className="vds-slide-eyebrow-foot">Caio Ribeiro · 17 mai 2026</span>
             </footer>

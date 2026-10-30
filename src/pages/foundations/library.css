@@ -50,7 +50,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin-bottom: var(--via-space-1_5);
 }
@@ -62,7 +62,7 @@
 .vds-lib-card-grid .via-card p {
   margin: 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-2);
 }
 
@@ -91,8 +91,7 @@
   color: rgba(255, 255, 255, 0.94);
   font-family: var(--via-mono);
   font-size: var(--via-fs-xs);
-  line-height: 1.6;
-  letter-spacing: 0.01em;
+  line-height: var(--via-lh-loose);
   overflow-x: auto;
   max-width: 100%;
   min-width: 0;
@@ -115,6 +114,6 @@
   }
   .vds-lib-code {
     padding: var(--via-space-3_5) var(--via-space-4);
-    font-size: var(--via-fs-label);
+    font-size: var(--via-fs-xs);
   }
 }

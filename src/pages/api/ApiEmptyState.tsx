@@ -9,8 +9,8 @@ export default function ApiEmptyState() {
     <ComponentDoc
       eyebrow="api · empty-state"
       name="EmptyState"
-      headline="placeholder editorial · ícone + título + ação"
-      description="EmptyState pra listas/queries vazias. Ícone editorial (Lucide 20-24px) + title + description + ação primária (+ secondary opcional). Variants: default (sem fundo), soft (vidro tracejado) ou navy (bloco escuro). Liquid glass leve + atmosphere."
+      headline="o vazio que aponta o próximo passo."
+      description="Placeholder editorial · ícone + título + ação. EmptyState pra listas/queries vazias. Ícone editorial (Lucide 20-24px) + title + description + ação primária (+ secondary opcional). Variants: default (sem fundo), soft (vidro tracejado) ou navy (bloco escuro). Liquid glass leve + atmosphere."
       importLine={`import { EmptyState, type EmptyStateProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-empty', description: 'Container · stack vertical centrado · padding generoso' },
@@ -34,7 +34,7 @@ export default function ApiEmptyState() {
           title: 'Empty state com ação primária + secundária',
           preview: (
             <EmptyState
-              icon={<Inbox size={20} strokeWidth={1.8} />}
+              icon={<Inbox size={20} strokeWidth={1.75} />}
               title="Nenhuma mentoria agendada"
               description="Sua próxima sessão aparece aqui assim que o mentor confirmar o horário."
               action={<Button>Agendar agora</Button>}

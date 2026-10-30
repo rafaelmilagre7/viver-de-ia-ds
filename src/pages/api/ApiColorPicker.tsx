@@ -20,8 +20,8 @@ export default function ApiColorPicker() {
     <ComponentDoc
       eyebrow="api · color-picker"
       name="ColorPicker"
-      headline="paleta canônica Viver de IA · hex livre opcional"
-      description="ColorPicker pra escolha de cor de marca. Paleta default = 12 swatches canônicos do Viver de IA (navy/blue/gray/coral · NUNCA gold/yellow/purple). allowCustom permite hex livre. Use pra branding workflows internos."
+      headline="a paleta da marca a um clique."
+      description="Paleta canônica Viver de IA · hex livre opcional. ColorPicker pra escolha de cor de marca. Paleta default = 12 swatches canônicos do Viver de IA (navy/blue/gray/coral · NUNCA gold/yellow/purple). allowCustom permite hex livre. Use pra branding workflows internos."
       importLine={`import { ColorPicker, type ColorPickerProps, type ColorSwatch } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-color-picker', description: 'Container · label + swatches grid + custom input' },

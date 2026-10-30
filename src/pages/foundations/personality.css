@@ -9,8 +9,8 @@
   padding: var(--via-space-9) var(--via-space-9) var(--via-space-8);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   isolation: isolate;
   overflow: hidden;
@@ -51,7 +51,7 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-navy-12);
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-variant-numeric: tabular-nums;
 }
 
@@ -67,8 +67,8 @@
   font-family: var(--via-font-display);
   font-size: 28px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.024em;
-  line-height: 1.14;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
   max-width: 720px;
 }
@@ -84,7 +84,7 @@
   font-style: normal;
   font-weight: var(--via-fw-regular);
   font-size: var(--via-fs-h4);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-3);
   margin: 0;
   max-width: 640px;
@@ -132,8 +132,8 @@
   padding: var(--via-space-5_5) var(--via-space-6);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -145,10 +145,8 @@
 .vds-pers-dont .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
   margin-bottom: var(--via-space-2_5);
 }
 .vds-pers-do  .lbl { color: var(--via-text-primary); }
@@ -159,7 +157,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   margin: 0;
 }
 
@@ -172,8 +170,8 @@
   padding: var(--via-space-9) 38px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -210,9 +208,8 @@
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   font-style: normal;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-primary);
   background: var(--via-surface-onnavy);
   padding: 5px var(--via-space-3_5);
@@ -258,8 +255,8 @@
   padding: var(--via-space-7) 30px;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -298,10 +295,8 @@
 .vds-pers-opt .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
   margin-bottom: var(--via-space-2_5);
 }
 .vds-pers-opt.good .lbl { color: var(--via-text-primary); }
@@ -311,7 +306,7 @@
   font-style: normal;
   font-size: var(--via-fs-body);
   color: var(--via-text-primary);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   margin: 0;
 }
 .vds-pers-opt.bad p {
@@ -326,7 +321,7 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   margin: var(--via-space-1_5) 0 0;
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   padding-top: var(--via-space-4);
   border-top: 0.5px solid var(--via-navy-08);
 }

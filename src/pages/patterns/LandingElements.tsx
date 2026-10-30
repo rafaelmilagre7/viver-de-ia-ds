@@ -199,7 +199,7 @@ function CTAVariantsSection() {
           <article key={c.label} className="vds-le-cta-card">
             <Button
               variant={c.kind}
-              iconRight={c.kind === 'primary' || c.kind === 'accent' ? <ArrowRight size={14} strokeWidth={1.75} /> : undefined}
+              iconRight={c.kind === 'primary' || c.kind === 'accent' ? <ArrowRight size={16} strokeWidth={1.75} /> : undefined}
             >
               {c.label}
             </Button>
@@ -314,9 +314,9 @@ function LeadMagnetSection() {
           <h3>7 erros que cometi construindo agente em <em>produção</em>.</h3>
           <p>PDF editorial · cases reais · o que mudaria se começasse hoje · envio direto no email em 60 segundos.</p>
           <ul>
-            <li><Check size={14} strokeWidth={1.75} /> Cicatrizes reais documentadas</li>
-            <li><Check size={14} strokeWidth={1.75} /> Código-base junto · pra copiar</li>
-            <li><Check size={14} strokeWidth={1.75} /> Sem upsell · sem call de venda</li>
+            <li><Check size={16} strokeWidth={1.75} /> Cicatrizes reais documentadas</li>
+            <li><Check size={16} strokeWidth={1.75} /> Código-base junto · pra copiar</li>
+            <li><Check size={16} strokeWidth={1.75} /> Sem upsell · sem call de venda</li>
           </ul>
         </div>
         <form className="vds-le-lead-magnet-form" onSubmit={(e) => e.preventDefault()}>
@@ -348,7 +348,7 @@ function CountdownSection() {
     >
       <article className="vds-le-countdown via-mesh-navy via-noise">
         <span className="vds-le-countdown-eyebrow">
-          <Calendar size={14} strokeWidth={1.75} />
+          <Calendar size={16} strokeWidth={1.75} />
           Turma 2026.3 fecha em
         </span>
         <div className="vds-le-countdown-grid">
@@ -406,7 +406,7 @@ function CompetitorComparisonSection() {
           <div key={r.feature} className="vds-le-compare-row">
             <div className="cell feature">{r.feature}</div>
             <div className="cell us">
-              <Check size={14} strokeWidth={1.75} />
+              <Check size={16} strokeWidth={1.75} />
               {r.us}
             </div>
             <div className="cell them">{r.them}</div>

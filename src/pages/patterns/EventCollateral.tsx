@@ -148,7 +148,7 @@ function PiecesSection() {
               <header>
                 <span className="vds-ev-piece-num">{String(i + 1).padStart(2, '0')}</span>
                 <span className="vds-ev-piece-icon">
-                  <Icon size={15} strokeWidth={1.8} />
+                  <Icon size={16} strokeWidth={1.75} />
                 </span>
                 <div>
                   <strong>{p.name}</strong>

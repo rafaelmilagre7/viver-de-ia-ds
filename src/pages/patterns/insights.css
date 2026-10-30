@@ -25,8 +25,8 @@
 .vds-ins {
   border-radius: var(--via-radius-xl);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(200%);
-  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   box-shadow:
@@ -72,9 +72,9 @@
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
   margin-bottom: var(--via-space-3_5);
@@ -104,7 +104,6 @@
   margin: 0 0 var(--via-space-5_5);
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 .vds-ins-head h2 {
@@ -112,7 +111,7 @@
   font-family: var(--via-font-display);
   font-size: clamp(34px, 4vw, 44px);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.028em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1.1;
   color: var(--via-text-primary);
 }
@@ -126,10 +125,10 @@
 .vds-ins-lede {
   margin: 0;
   font-size: var(--via-fs-body);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
   max-width: 720px;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 /* ============================================
@@ -180,7 +179,7 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  line-height: 1.35;
+  line-height: var(--via-lh-normal);
 }
 .vds-ins-kpi .via-metric__label svg { color: var(--via-text-primary); opacity: 0.85; flex-shrink: 0; }
 
@@ -193,19 +192,18 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
   margin-left: 5px;
 }
 
 .vds-ins-kpi .via-metric__foot {
   gap: var(--via-space-2);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
 }
 .vds-ins-kpi .via-delta {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
 }
 /* Sparkline · marca fina de verdade (2px reais, não 2px escalados)
    + ponto do valor corrente ≥8px. Coral aqui é STATUS (movimento
@@ -270,14 +268,13 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 .vds-ins-chart > header p {
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 /* SMALL MULTIPLES · um eixo e uma série por painel.
@@ -318,11 +315,11 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-ins-panel figcaption .s {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
 }
@@ -349,10 +346,9 @@
   font-family: var(--via-font);
   /* rem dentro do SVG resolve pelo root → 10 unidades de usuário,
      exatamente o que a malha foi desenhada pra receber. */
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-variant-numeric: tabular-nums;
   fill: var(--via-data-ink);
-  letter-spacing: 0.01em;
 }
 .vds-ins-plot .tick--strong {
   fill: var(--via-text-primary);
@@ -388,8 +384,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
-  line-height: 1.55;
-  letter-spacing: -0.004em;
+  line-height: var(--via-lh-normal);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 .vds-ins-chart-note strong {
@@ -421,14 +416,13 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 .vds-ins-quotes > header p {
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 .vds-ins-quotes-grid {
@@ -445,8 +439,8 @@
   margin: 0;
   padding: var(--via-space-5_5) var(--via-space-5_5) var(--via-space-4_5);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   isolation: isolate;
@@ -491,9 +485,9 @@
   margin: 0 0 var(--via-space-4);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   font-style: normal;
 }
 
@@ -507,14 +501,13 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-ins-quote footer em {
   font-style: normal;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 /* ============================================
@@ -537,9 +530,9 @@
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
   margin-bottom: var(--via-space-3_5);
@@ -551,7 +544,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
 }
 
@@ -571,8 +564,8 @@
   gap: var(--via-space-3_5);
   padding: var(--via-space-3_5) var(--via-space-4_5);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   box-shadow:
@@ -600,9 +593,8 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.004em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 0 0 1px rgba(255,255,255,0.85),
@@ -614,7 +606,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: var(--via-space-0_5);
 }
 .vds-ins-foot-list em {
@@ -622,8 +614,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  line-height: 1.5;
-  letter-spacing: -0.004em;
+  line-height: var(--via-lh-normal);
 }
 
 /* Sidebar right · tip + CTA */
@@ -642,8 +633,8 @@
   background:
     radial-gradient(220px 120px at 0% 0%, rgba(30,58,95,0.10), transparent 60%),
     var(--via-glass-card);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   box-shadow:
@@ -658,9 +649,8 @@
 .vds-ins-foot-tip p {
   margin: 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
-  letter-spacing: -0.004em;
 }
 .vds-ins-foot-tip p strong {
   color: var(--via-text-primary);
@@ -680,7 +670,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   text-decoration: none;
   cursor: pointer;
   transition: all 220ms cubic-bezier(.16, 1, .3, 1);
@@ -712,7 +702,6 @@
   text-align: center;
   padding: var(--via-space-2) 0 0;
   border-top: 1px solid var(--via-navy-06);
-  letter-spacing: -0.004em;
   transition: color 200ms cubic-bezier(.16, 1, .3, 1);
 }
 .vds-ins-foot-share:hover { color: var(--via-text-primary); }
@@ -746,8 +735,7 @@
   gap: var(--via-space-1);
 }
 .vds-ins-tile .metric-foot-note {
-  font-size: var(--via-fs-micro);
-  letter-spacing: 0.02em;
+  font-size: var(--via-fs-xs);
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;

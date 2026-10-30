@@ -55,7 +55,7 @@
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   line-height: 1.1;
   margin: 0;
   max-width: 480px;
@@ -65,7 +65,7 @@
   font-size: var(--via-fs-sm);
   color: var(--via-text-body);
   max-width: 460px;
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   margin: 0;
 }
 .vds-empty .cta {
@@ -80,7 +80,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   cursor: pointer;
   margin-top: var(--via-space-2);
   box-shadow:
@@ -92,7 +91,7 @@
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .vds-empty .cta::before {
   content: '';

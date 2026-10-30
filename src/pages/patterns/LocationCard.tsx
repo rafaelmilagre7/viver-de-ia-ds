@@ -104,7 +104,7 @@ function LocationVenueSection() {
           <div className="vds-loc-dates">
             <article>
               <div className="vds-loc-date-icon">
-                <Calendar size={13} strokeWidth={1.8} />
+                <Calendar size={14} strokeWidth={1.75} />
               </div>
               <div>
                 <strong>18 · 19 · 20 jun 2026</strong>
@@ -113,7 +113,7 @@ function LocationVenueSection() {
             </article>
             <article>
               <div className="vds-loc-date-icon">
-                <Clock size={13} strokeWidth={1.8} />
+                <Clock size={14} strokeWidth={1.75} />
               </div>
               <div>
                 <strong>08h30 — 18h00</strong>
@@ -127,21 +127,21 @@ function LocationVenueSection() {
             <p className="vds-loc-section-eyebrow">Como chegar</p>
             <ul>
               <li>
-                <span className="vds-loc-access-icon"><Train size={12} strokeWidth={1.8} /></span>
+                <span className="vds-loc-access-icon"><Train size={14} strokeWidth={1.75} /></span>
                 <div>
                   <strong>Metrô · Estação Higienópolis-Mackenzie</strong>
                   <em>linha amarela · 6 min caminhando</em>
                 </div>
               </li>
               <li>
-                <span className="vds-loc-access-icon"><Car size={12} strokeWidth={1.8} /></span>
+                <span className="vds-loc-access-icon"><Car size={14} strokeWidth={1.75} /></span>
                 <div>
                   <strong>Estacionamento conveniado</strong>
                   <em>R$ 25 / dia · vagas limitadas · validação no check-in</em>
                 </div>
               </li>
               <li>
-                <span className="vds-loc-access-icon"><Building2 size={12} strokeWidth={1.8} /></span>
+                <span className="vds-loc-access-icon"><Building2 size={14} strokeWidth={1.75} /></span>
                 <div>
                   <strong>Hotéis parceiros · 4 opções</strong>
                   <em>desconto 15% com código LEADERS26</em>
@@ -153,12 +153,12 @@ function LocationVenueSection() {
           {/* CTAs */}
           <div className="vds-loc-actions">
             <button className="vds-loc-btn primary">
-              <Navigation size={13} strokeWidth={2.2} />
+              <Navigation size={14} strokeWidth={1.75} />
               Abrir rota no Google Maps
-              <ArrowUpRight size={11} strokeWidth={2.4} />
+              <ArrowUpRight size={14} strokeWidth={1.75} />
             </button>
             <button className="vds-loc-btn ghost">
-              <Calendar size={13} strokeWidth={2.2} />
+              <Calendar size={14} strokeWidth={1.75} />
               Adicionar ao calendário
             </button>
           </div>
@@ -167,11 +167,11 @@ function LocationVenueSection() {
           <footer className="vds-loc-contact">
             <div>
               <span className="vds-loc-contact-lbl">
-                <Phone size={10} strokeWidth={2.2} />
+                <Phone size={14} strokeWidth={1.75} />
                 +55 11 4040-1820
               </span>
               <span className="vds-loc-contact-lbl">
-                <Mail size={10} strokeWidth={2.2} />
+                <Mail size={14} strokeWidth={1.75} />
                 eventos@viverdeia.ai
               </span>
             </div>
@@ -215,7 +215,7 @@ function LocationCompactSection() {
             <p>Bela Vista · São Paulo · SP · CEP 01310-200</p>
             <button className="vds-loc-compact-cta">
               Ver no mapa
-              <ArrowUpRight size={11} strokeWidth={2.4} />
+              <ArrowUpRight size={14} strokeWidth={1.75} />
             </button>
           </div>
         </article>
@@ -243,7 +243,7 @@ function LocationCompactSection() {
             <p>Pinheiros · São Paulo · SP · CEP 05422-001</p>
             <button className="vds-loc-compact-cta dark">
               Ver no mapa
-              <ArrowUpRight size={11} strokeWidth={2.4} />
+              <ArrowUpRight size={14} strokeWidth={1.75} />
             </button>
           </div>
         </article>

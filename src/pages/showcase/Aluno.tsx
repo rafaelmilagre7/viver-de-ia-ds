@@ -46,7 +46,7 @@ export default function ShowcaseAluno() {
             <h1>Você está em <em>módulo 03</em>.</h1>
             <p className="lede">Esta semana — modelar o primeiro agente. Sessão ao vivo na quarta. Caio revisa rascunhos na sexta.</p>
             <div className="al-cta-row">
-              <button className="btn primary">Continuar módulo <ArrowRight size={14} strokeWidth={2.5} /></button>
+              <button className="btn primary">Continuar módulo <ArrowRight size={16} strokeWidth={1.75} /></button>
               <button className="btn ghost">Ver cronograma</button>
             </div>
           </div>
@@ -77,9 +77,9 @@ export default function ShowcaseAluno() {
               {modules.map((m) => (
                 <li key={m.n} className={`mod ${m.state}`}>
                   <span className="ico">
-                    {m.state === 'done' && <Check size={14} strokeWidth={3} />}
-                    {m.state === 'current' && <Play size={12} strokeWidth={0} style={{ fill: "currentColor" }} />}
-                    {m.state === 'locked' && <Lock size={12} strokeWidth={2} />}
+                    {m.state === 'done' && <Check size={16} strokeWidth={1.75} />}
+                    {m.state === 'current' && <Play size={14} strokeWidth={0} style={{ fill: "currentColor" }} />}
+                    {m.state === 'locked' && <Lock size={14} strokeWidth={1.75} />}
                     {m.state === 'todo' && m.n}
                   </span>
                   <div className="meta">
@@ -96,7 +96,7 @@ export default function ShowcaseAluno() {
             <div className="card">
               <header className="al-row-h">
                 <span className="vds-eyebrow">Próximas</span>
-                <Calendar size={14} strokeWidth={2} className="ico-mut" />
+                <Calendar size={16} strokeWidth={1.75} className="ico-mut" />
               </header>
               <ul className="next">
                 {next.map((n) => (
@@ -111,7 +111,7 @@ export default function ShowcaseAluno() {
             <div className="card">
               <header className="al-row-h">
                 <span className="vds-eyebrow">Atividade</span>
-                <MessageCircle size={14} strokeWidth={2} className="ico-mut" />
+                <MessageCircle size={16} strokeWidth={1.75} className="ico-mut" />
               </header>
               <ul className="act">
                 {activity.map((a, i) => (
@@ -121,10 +121,10 @@ export default function ShowcaseAluno() {
             </div>
 
             <div className="card mini-cta">
-              <BookOpen size={20} strokeWidth={1.5} />
+              <BookOpen size={20} strokeWidth={1.75} />
               <strong>206 cases publicados</strong>
               <p>Explore o diretório e veja o que outros operadores estão fazendo.</p>
-              <button>Abrir <ArrowRight size={12} strokeWidth={2.5} /></button>
+              <button>Abrir <ArrowRight size={14} strokeWidth={1.75} /></button>
             </div>
           </aside>
         </section>

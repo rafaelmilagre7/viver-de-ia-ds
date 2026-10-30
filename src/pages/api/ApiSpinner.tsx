@@ -7,8 +7,8 @@ export default function ApiSpinner() {
     <ComponentDoc
       eyebrow="api · spinner"
       name="Spinner"
-      headline="loader inline · 3 sizes · 3 tones · ARIA live region"
-      description="Spinner pra loading indeterminado. SVG dual-circle (track + head animado). Rotação 0.8s linear infinite. Pra loading determinístico (X% conhecido), use Progress."
+      headline="espera curta, sem barulho."
+      description="Loader inline · 3 sizes · 3 tones · ARIA live region. Spinner pra loading indeterminado. SVG dual-circle (track + head animado). Rotação 0.8s linear infinite. Pra loading determinístico (X% conhecido), use Progress."
       importLine={`import { Spinner, type SpinnerProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-spinner', description: 'Wrapper span · role=status · aria-live=polite' },

@@ -34,8 +34,8 @@ export default function ApiMultiSelect() {
     <ComponentDoc
       eyebrow="api · multi-select"
       name="MultiSelect"
-      headline="dropdown com checkboxes · chips no trigger · max limit"
-      description="MultiSelect = Select com múltiplas seleções. Opções pré-definidas (não livres como TagInput). Trigger mostra valores como chips clicáveis pra remover. Dropdown tem checkboxes pra marcar/desmarcar. Suporta max."
+      headline="várias opções num só campo."
+      description="Dropdown com checkboxes · chips no trigger · max limit. MultiSelect = Select com múltiplas seleções. Opções pré-definidas (não livres como TagInput). Trigger mostra valores como chips clicáveis pra remover. Dropdown tem checkboxes pra marcar/desmarcar. Suporta max."
       importLine={`import { MultiSelect, type MultiSelectProps, type MultiSelectOption } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-multi-select', description: 'Container · label + trigger + listbox' },

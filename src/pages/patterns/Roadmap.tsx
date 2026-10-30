@@ -160,16 +160,16 @@ function RoadmapKanbanSection() {
           </div>
           <div className="vds-rm-tools-r">
             <button className="vds-rm-tool">
-              <Filter size={12} strokeWidth={2.2} />
+              <Filter size={14} strokeWidth={1.75} />
               Filtros
               <span className="vds-rm-tool-count">2</span>
             </button>
             <button className="vds-rm-tool">
-              <MessageCircle size={12} strokeWidth={2.2} />
+              <MessageCircle size={16} strokeWidth={1.75} />
               Sugerir frente
             </button>
             <button className="vds-rm-tool primary">
-              <Calendar size={12} strokeWidth={2.2} />
+              <Calendar size={14} strokeWidth={1.75} />
               Inscrever no changelog
             </button>
           </div>
@@ -183,7 +183,7 @@ function RoadmapKanbanSection() {
               <section key={col.key} className={`vds-rm-col ${col.key}`}>
                 <header className="vds-rm-col-head">
                   <div className="vds-rm-col-icon">
-                    <Icon size={14} strokeWidth={1.8} />
+                    <Icon size={16} strokeWidth={1.75} />
                   </div>
                   <div className="vds-rm-col-meta">
                     <h4>{col.label}</h4>
@@ -215,11 +215,11 @@ function RoadmapKanbanSection() {
 
                       <footer className="vds-rm-card-foot">
                         <span className="vds-rm-card-owner">
-                          <Users size={11} strokeWidth={2} />
+                          <Users size={14} strokeWidth={1.75} />
                           {c.owner}
                         </span>
                         <button className="vds-rm-card-vote">
-                          <ThumbsUp size={11} strokeWidth={2.2} />
+                          <ThumbsUp size={14} strokeWidth={1.75} />
                           <strong className="mono">{c.votes}</strong>
                         </button>
                       </footer>
@@ -232,7 +232,7 @@ function RoadmapKanbanSection() {
                 {col.key === 'later' && (
                   <button className="vds-rm-col-more">
                     + Ver 12 ideias adicionais na fila
-                    <ArrowUpRight size={11} strokeWidth={2.2} />
+                    <ArrowUpRight size={14} strokeWidth={1.75} />
                   </button>
                 )}
               </section>

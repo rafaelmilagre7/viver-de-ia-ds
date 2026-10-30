@@ -216,7 +216,7 @@ function EspecimeCanonicoSection() {
               <th className="via-num">Realizado · R$</th>
               <th className="via-num">Meta · R$</th>
               <th className="via-num">Ating.</th>
-              <th className="via-num">vs. 1º sem. 2025</th>
+              <th className="via-num">Vs. 1º sem. 2025</th>
             </tr>
           </thead>
           <tbody>

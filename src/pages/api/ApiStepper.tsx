@@ -36,8 +36,8 @@ export default function ApiStepper() {
     <ComponentDoc
       eyebrow="api · stepper"
       name="Stepper"
-      headline="wizard editorial · horizontal/vertical · completed/current/upcoming"
-      description="Stepper pra fluxos sequenciais (onboarding, checkout, multi-step form). 3 estados visuais: completed (check + ring navy), current (number + glow), upcoming (number + muted). Permite onStepClick pra voltar."
+      headline="um processo longo em passos claros."
+      description="Wizard editorial · horizontal/vertical · completed/current/upcoming. Stepper pra fluxos sequenciais (onboarding, checkout, multi-step form). 3 estados visuais: completed (check + ring navy), current (number + glow), upcoming (number + muted). Permite onStepClick pra voltar."
       importLine={`import { Stepper, type StepperProps, type StepItem } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-stepper', description: 'Container · role=list horizontal/vertical' },

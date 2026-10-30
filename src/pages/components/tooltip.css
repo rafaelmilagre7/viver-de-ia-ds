@@ -52,10 +52,9 @@
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   padding: var(--via-space-1_5) 11px;
   border-radius: var(--via-radius-sm);
   /* mesmo stack do <Tooltip> da library — o hairline navy-08 inverte pra
@@ -81,9 +80,7 @@
 .via-tt.right::after { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--via-navy); }
 .via-tt-pos {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-gray-400);
 }

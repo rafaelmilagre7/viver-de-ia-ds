@@ -12,7 +12,7 @@ export default function NotFound() {
       <meta name="robots" content="noindex" />
       <div className="vds-404-inner">
         <span className="vds-404-pill via-liquid">
-          <Compass size={14} strokeWidth={1.75} />
+          <Compass size={16} strokeWidth={1.75} />
           404 · página não encontrada
         </span>
         <h1>

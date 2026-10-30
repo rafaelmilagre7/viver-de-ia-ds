@@ -280,14 +280,14 @@ export default function CashFlow() {
         </div>
         <a href="#premissas" className="via-pill-link vds-fpa-cash-action">
           Ver premissas da projeção
-          <ArrowRight size={13} strokeWidth={2.2} />
+          <ArrowRight size={14} strokeWidth={1.75} />
         </a>
       </header>
 
       {/* ---------- KPIs ---------- */}
       <div className="vds-fpa-cash-kpis">
         <Kpi
-          icone={<Wallet size={12} strokeWidth={2.2} />}
+          icone={<Wallet size={14} strokeWidth={1.75} />}
           rotulo="Saldo em 30/jun"
           valor={brl(SALDO_1S)}
           tag={brlSinal(AG_REAL.fluxo)}
@@ -295,7 +295,7 @@ export default function CashFlow() {
           nota={`abertura de ${brl(SALDO_INICIAL)} · 6 meses fechados`}
         />
         <Kpi
-          icone={<TrendingUp size={12} strokeWidth={2.2} />}
+          icone={<TrendingUp size={16} strokeWidth={1.75} />}
           rotulo="Fluxo líquido · 2º semestre"
           valor={brl(AG_PROJ.fluxo)}
           tag={`${pct(VAR_SEMESTRE)} vs. 1º sem`}
@@ -303,7 +303,7 @@ export default function CashFlow() {
           nota={`${brl(AG_PROJ.entradas)} de entrada ${MENOS} ${brl(AG_PROJ.saidas)} de saída`}
         />
         <Kpi
-          icone={<ArrowDownRight size={12} strokeWidth={2.2} />}
+          icone={<ArrowDownRight size={14} strokeWidth={1.75} />}
           rotulo={`Vale da projeção · ${VALE.nome.toLowerCase()}`}
           valor={brl(VALE.saldo)}
           tag={`${brlSinal(VALE.fluxo)} no mês`}
@@ -311,7 +311,7 @@ export default function CashFlow() {
           nota="menor saldo do 2º semestre · produção do Leaders AI concentrada"
         />
         <Kpi
-          icone={<Landmark size={12} strokeWidth={2.2} />}
+          icone={<Landmark size={14} strokeWidth={1.75} />}
           rotulo="Saldo em 31/dez"
           valor={brl(SALDO_FIM)}
           tag="projetado"
@@ -407,10 +407,10 @@ export default function CashFlow() {
               PAINEL A · fluxo mensal
               ================================================== */}
           <text x={10} y={A_LABEL_Y} className="vds-fpa-cash-panel-title">
-            fluxo mensal · R$
+            Fluxo mensal · R$
           </text>
           <text x={W - 10} y={A_LABEL_Y} textAnchor="end" className="vds-fpa-cash-axis-title">
-            escala única nas duas direções
+            Escala única nas duas direções
           </text>
 
           {/* grade recessiva · mesmos degraus para cima e para baixo */}
@@ -465,11 +465,11 @@ export default function CashFlow() {
           {/* rótulo direto dentro do plot — identidade nunca só por cor */}
           <rect x={PAD.left + 2} y={A_TOP + 3} width="9" height="9" rx="2.5" fill="var(--via-data-1-c)" fillOpacity="0.94" />
           <text x={PAD.left + 16} y={A_TOP + 11} className="vds-fpa-cash-inplot">
-            entradas ▲
+            Entradas ▲
           </text>
           <rect x={PAD.left + 2} y={A_BOT - 14} width="9" height="9" rx="2.5" fill="url(#fpa-cash-hatch)" stroke="var(--via-data-2-c)" strokeWidth="0.8" strokeOpacity="0.6" />
           <text x={PAD.left + 16} y={A_BOT - 6} className="vds-fpa-cash-inplot">
-            saídas ▼
+            Saídas ▼
           </text>
 
           {/* linha do zero — a base das barras */}
@@ -496,10 +496,10 @@ export default function CashFlow() {
               PAINEL B · saldo acumulado · escala PRÓPRIA
               ================================================== */}
           <text x={10} y={B_LABEL_Y} className="vds-fpa-cash-panel-title">
-            saldo acumulado · R$
+            Saldo acumulado · R$
           </text>
           <text x={W - 10} y={B_LABEL_Y} textAnchor="end" className="vds-fpa-cash-axis-title">
-            estoque de caixa no fim de cada mês
+            Estoque de caixa no fim de cada mês
           </text>
 
           {TICKS_SALDO.map((t) => (
@@ -600,10 +600,10 @@ export default function CashFlow() {
             </g>
           ))}
           <text x={f2(PAD.left + (CORTE_X - PAD.left) / 2)} y={B_BOT + 41} textAnchor="middle" className="vds-fpa-cash-axis-title">
-            realizado · jan–jun
+            Realizado · jan–jun
           </text>
           <text x={f2(CORTE_X + (PLOT_R - CORTE_X) / 2)} y={B_BOT + 41} textAnchor="middle" className="vds-fpa-cash-axis-title">
-            projetado · jul–dez
+            Projetado · jul–dez
           </text>
 
           {/* ---------- linha-guia + captura do cursor ---------- */}
@@ -628,7 +628,7 @@ export default function CashFlow() {
         </svg>
 
         <figcaption className="vds-fpa-cash-note">
-          <Info size={13} strokeWidth={2} />
+          <Info size={14} strokeWidth={1.75} />
           <p>
             {NEGATIVOS.length} meses fecham negativos no ano —{' '}
             {NEGATIVOS.map((m, i) => (
@@ -732,7 +732,7 @@ export default function CashFlow() {
 
       {/* ---------- Prova da conta ---------- */}
       <div className="vds-fpa-cash-recon" id="premissas">
-        <Info size={14} strokeWidth={2} className="vds-fpa-cash-recon-icon" />
+        <Info size={16} strokeWidth={1.75} className="vds-fpa-cash-recon-icon" />
         <div className="vds-fpa-cash-eq">
           <span><em>saldo inicial</em><b>{brl(SALDO_INICIAL)}</b></span>
           <i aria-hidden="true">+</i>

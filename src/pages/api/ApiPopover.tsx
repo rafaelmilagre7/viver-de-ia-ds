@@ -35,8 +35,8 @@ export default function ApiPopover() {
     <ComponentDoc
       eyebrow="api · popover"
       name="Popover"
-      headline="floating panel · 4 sides × 3 align · close outside/ESC"
-      description="Popover floating ancorado num trigger. Controlado (open/onOpenChange). 4 sides (top/right/bottom/left) × 3 align (start/center/end). Glass + atmosphere + spring open. Close em outside click ou ESC."
+      headline="um painel que flutua junto do gatilho."
+      description="Floating panel · 4 sides × 3 align · close outside/ESC. Popover floating ancorado num trigger. Controlado (open/onOpenChange). 4 sides (top/right/bottom/left) × 3 align (start/center/end). Glass + atmosphere + spring open. Close em outside click ou ESC."
       importLine={`import { Popover, type PopoverProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-popover__trigger', description: 'Wrapper inline do elemento trigger' },

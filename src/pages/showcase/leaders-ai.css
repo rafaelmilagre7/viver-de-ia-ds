@@ -14,18 +14,16 @@
   gap: var(--via-space-7);
   padding: var(--via-space-3_5) var(--via-space-12);
   background: linear-gradient(180deg, rgba(2,22,42,0.85), rgba(10,31,59,0.65));
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-chrome-blur);
+  backdrop-filter: var(--via-material-chrome-blur);
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 .la-nav img { height: 28px; filter: brightness(0) invert(1); }
 .la-nav nav { display: flex; gap: var(--via-space-7); flex: 1; justify-content: center; }
 .la-nav a {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.62);
   cursor: pointer;
 }
@@ -42,12 +40,11 @@
   border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
     0 8px 18px -8px rgba(0, 0, 0, 0.45);
@@ -73,7 +70,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255,255,255,0.55);
 }
@@ -111,7 +108,7 @@
   font-family: var(--via-font-display);
   font-size: clamp(48px, 7vw, 96px);
   font-weight: var(--via-fw-medium);
-  line-height: 0.96;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.04em;
   color: var(--via-white);
   margin: var(--via-space-5) 0 var(--via-space-7);
@@ -123,7 +120,7 @@
   color: rgba(255,255,255,0.72);
   margin: 0 auto var(--via-space-8);
   max-width: 540px;
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
 }
 .la-pill {
   display: inline-flex;
@@ -131,7 +128,8 @@
   gap: var(--via-space-2_5);
   padding: var(--via-space-3) var(--via-space-5_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
@@ -149,7 +147,7 @@
   letter-spacing: -0.035em;
   color: var(--via-white);
   margin: var(--via-space-4) 0 0;
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
 }
 .la-section-h h2 em { font-style: normal; color: rgba(255,255,255,0.55); font-weight: var(--via-fw-medium); }
 
@@ -161,7 +159,8 @@
 .la-day {
   padding: var(--via-space-8);
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: var(--via-radius-xl);
 }
@@ -191,7 +190,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-white);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 
 .la-speakers {
@@ -221,7 +220,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   flex-shrink: 0;
 }
 .la-speaker strong {
@@ -258,7 +257,8 @@
 .la-tier.feat {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   background: var(--via-surface-onnavy);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid rgba(255,255,255,0.9); /* card é branco FIXO · edge-hi adaptava e a borda sumia no dark */
   color: var(--via-text-primary);
   box-shadow: 0 32px 64px var(--via-shadow-ink-40);
@@ -270,8 +270,8 @@
   background: var(--via-navy);
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label); font-weight: var(--via-fw-medium);
-  letter-spacing: 0.2em;
+  font-size: var(--via-fs-xs); font-weight: var(--via-fw-medium);
+  letter-spacing: var(--via-ls-label);
   border-radius: var(--via-radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
@@ -281,8 +281,7 @@
 }
 .la-tier .tag {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro); font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-label); text-transform: uppercase;
+  font-size: var(--via-fs-xs); font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
 }
 .la-tier.feat .tag { color: var(--via-text-muted); }
@@ -299,12 +298,12 @@
   font-size: var(--via-fs-h1); font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
 }
 .la-tier p {
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: rgba(255,255,255,0.72);
   margin: 0;
 }
@@ -323,15 +322,14 @@
   border-radius: var(--via-radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.85);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   cursor: pointer;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   color: var(--via-navy);
   margin-top: auto;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
     0 8px 18px -8px rgba(0, 0, 0, 0.45);

@@ -32,7 +32,7 @@ function Tile({
       </span>
       <span className="via-metric__foot">
         <span className="via-delta via-delta--up">
-          <ChevronUp size={10} strokeWidth={2.5} aria-hidden="true" />
+          <ChevronUp size={14} strokeWidth={1.75} aria-hidden="true" />
           {delta}
         </span>
         <span className="meta">{meta}</span>

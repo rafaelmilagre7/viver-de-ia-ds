@@ -18,11 +18,11 @@ export default function Breadcrumb() {
               ([data-theme="dark"] a:not([class]) → azul link) vence .via-bc a
               por especificidade e pintava o caminho de azul — breadcrumb é cinza. */}
           <a className="crumb">Mentoria</a>
-          <ChevronRight size={12} strokeWidth={2} className="sep" />
+          <ChevronRight size={14} strokeWidth={1.75} className="sep" />
           <a className="crumb">Cases</a>
-          <ChevronRight size={12} strokeWidth={2} className="sep" />
+          <ChevronRight size={14} strokeWidth={1.75} className="sep" />
           <a className="crumb">E-commerce</a>
-          <ChevronRight size={12} strokeWidth={2} className="sep" />
+          <ChevronRight size={14} strokeWidth={1.75} className="sep" />
           <span className="current">Efizi · +11.920 conversas</span>
         </nav>
       </Section>
@@ -31,7 +31,7 @@ export default function Breadcrumb() {
         <div className="via-bc-frame">
           <nav className="via-bc">
             <a className="crumb">Cases</a>
-            <ChevronRight size={12} strokeWidth={2} className="sep" />
+            <ChevronRight size={14} strokeWidth={1.75} className="sep" />
             <span className="current">Balzani &amp; Zimbel</span>
           </nav>
           <h2 style={{ marginTop: 16, fontFamily: 'var(--via-font-display)', fontWeight: 500, fontSize: 36, letterSpacing: '-0.025em', color: 'var(--via-text-primary)' }}>

@@ -30,7 +30,7 @@ export default function ShowcaseCheckout() {
       {/* NAV minimal */}
       <header className="ckt-nav">
         <BrandLogo variant="auto" size="md" />
-        <span className="ckt-secure"><Lock size={12} strokeWidth={2.2} /> Pagamento seguro</span>
+        <span className="ckt-secure"><Lock size={14} strokeWidth={1.75} /> Pagamento seguro</span>
       </header>
 
       <div className="ckt-body">
@@ -44,7 +44,7 @@ export default function ShowcaseCheckout() {
               { n: 3, t: 'Pagamento' },
             ].map((s) => (
               <div key={s.n} className={`ckt-step ${step === s.n ? 'active' : ''} ${step > s.n ? 'done' : ''}`}>
-                <span className="ckt-step-num">{step > s.n ? <Check size={13} strokeWidth={2.6} /> : s.n}</span>
+                <span className="ckt-step-num">{step > s.n ? <Check size={14} strokeWidth={1.75} /> : s.n}</span>
                 <span className="ckt-step-label">{s.t}</span>
               </div>
             ))}
@@ -74,7 +74,7 @@ export default function ShowcaseCheckout() {
               </div>
               <button className="ckt-next" onClick={() => setStep(2)}>
                 Continuar
-                <ArrowRight size={15} strokeWidth={2.4} />
+                <ArrowRight size={16} strokeWidth={1.75} />
               </button>
             </div>
           )}
@@ -104,12 +104,12 @@ export default function ShowcaseCheckout() {
               </div>
               <div className="ckt-nav-row">
                 <button className="ckt-back" onClick={() => setStep(1)}>
-                  <ArrowLeft size={15} strokeWidth={2.4} />
+                  <ArrowLeft size={16} strokeWidth={1.75} />
                   Voltar
                 </button>
                 <button className="ckt-next" onClick={() => setStep(3)}>
                   Continuar
-                  <ArrowRight size={15} strokeWidth={2.4} />
+                  <ArrowRight size={16} strokeWidth={1.75} />
                 </button>
               </div>
             </div>
@@ -123,10 +123,10 @@ export default function ShowcaseCheckout() {
 
               <div className="ckt-pgto-tabs">
                 <button className={pgto === 'cartao' ? 'active' : ''} onClick={() => setPgto('cartao')}>
-                  <CreditCard size={15} strokeWidth={2} /> Cartão
+                  <CreditCard size={16} strokeWidth={1.75} /> Cartão
                 </button>
                 <button className={pgto === 'pix' ? 'active' : ''} onClick={() => setPgto('pix')}>
-                  <Landmark size={15} strokeWidth={2} /> Pix
+                  <Landmark size={16} strokeWidth={1.75} /> Pix
                 </button>
               </div>
 
@@ -171,11 +171,11 @@ export default function ShowcaseCheckout() {
 
               <div className="ckt-nav-row">
                 <button className="ckt-back" onClick={() => setStep(2)}>
-                  <ArrowLeft size={15} strokeWidth={2.4} />
+                  <ArrowLeft size={16} strokeWidth={1.75} />
                   Voltar
                 </button>
                 <button className="ckt-confirm">
-                  <Lock size={14} strokeWidth={2.2} />
+                  <Lock size={16} strokeWidth={1.75} />
                   Finalizar · {planoSel.id === 'vista' ? 'R$ 4.800' : '12× R$ 480'}
                 </button>
               </div>
@@ -194,10 +194,10 @@ export default function ShowcaseCheckout() {
           </div>
 
           <ul className="ckt-summary-incl">
-            <li><Check size={13} strokeWidth={2.4} /> Mentoria 1:1 individual</li>
-            <li><Check size={13} strokeWidth={2.4} /> Comunidade de 220 operadores</li>
-            <li><Check size={13} strokeWidth={2.4} /> Acesso vitalício ao material</li>
-            <li><Check size={13} strokeWidth={2.4} /> Certificado de conclusão</li>
+            <li><Check size={14} strokeWidth={1.75} /> Mentoria 1:1 individual</li>
+            <li><Check size={14} strokeWidth={1.75} /> Comunidade de 220 operadores</li>
+            <li><Check size={14} strokeWidth={1.75} /> Acesso vitalício ao material</li>
+            <li><Check size={14} strokeWidth={1.75} /> Certificado de conclusão</li>
           </ul>
 
           <div className="ckt-summary-total">
@@ -206,7 +206,7 @@ export default function ShowcaseCheckout() {
           </div>
 
           <div className="ckt-summary-guarantee">
-            <Shield size={15} strokeWidth={2} />
+            <Shield size={16} strokeWidth={1.75} />
             <div>
               <strong>7 dias de garantia</strong>
               <p>Não era pra você? Devolvemos 100%. Sem perguntas.</p>

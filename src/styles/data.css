@@ -63,12 +63,12 @@
   text-align: left;
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--via-text-muted);
   white-space: nowrap;
   background: var(--via-surface);
   border-bottom: 1px solid var(--via-border-soft);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
 }
 
 /* Cabeçalho que gruda ao rolar — some quando a tabela é curta */
@@ -131,10 +131,10 @@
 .via-row-group td {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--via-text-muted);
   background: var(--via-navy-02);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
 }
 .via-table tbody tr.via-row-group:hover { background: var(--via-navy-02); }
 
@@ -199,18 +199,16 @@
   z-index: -1;
 }
 .via-metric__label {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 .via-metric__value {
   font-family: var(--via-font-display);
   font-size: clamp(28px, 3vw, 38px);
   font-weight: var(--via-fw-medium);
-  line-height: 1;
-  letter-spacing: -0.03em;
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
 }
@@ -227,7 +225,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   flex-wrap: wrap;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 

@@ -49,8 +49,8 @@ export default function ApiTabs() {
     <ComponentDoc
       eyebrow="api · tabs"
       name="Tabs"
-      headline="indicador único na mola · pills glass · counter integrado"
-      description="2 variants: underline (default) com gradient navy→blue→navy · pills com glass. Um indicador único desliza entre as abas na mola (só transform, interrompível). Suporta counter/badge por item. Keyboard arrow nav + roving tabindex."
+      headline="seções do mesmo assunto, lado a lado."
+      description="Indicador único na mola · pills glass · counter integrado. 2 variants: underline (default) com gradient navy→blue→navy · pills com glass. Um indicador único desliza entre as abas na mola (só transform, interrompível). Suporta counter/badge por item. Keyboard arrow nav + roving tabindex."
       importLine={`import { Tabs, type TabsProps, type TabItem } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-tabs', description: 'Container flex column · agrupa lista + panel' },

@@ -55,7 +55,7 @@ function LoadersSection() {
           </div>
 
           <div className="vds-loader-inline alt">
-            <Loader2 size={14} strokeWidth={2.2} className="spin" />
+            <Loader2 size={16} strokeWidth={1.75} className="spin" />
             <p>Carregando transcript da aula 02.02…</p>
           </div>
 
@@ -102,7 +102,7 @@ function ErrorPagesSection() {
           </p>
           <div className="vds-error-actions">
             <button className="vds-error-btn primary on-dark">
-              <RefreshCw size={13} strokeWidth={2.4} />
+              <RefreshCw size={14} strokeWidth={1.75} />
               Tentar de novo
             </button>
             <a href="#" className="vds-error-btn ghost on-dark">Voltar ao começo</a>
@@ -116,7 +116,7 @@ function ErrorPagesSection() {
         {/* 403 forbidden — plan gating, editorial accent tag */}
         <article className="vds-error-card e403">
           <div className="vds-error-icon">
-            <ShieldOff size={22} strokeWidth={1.5} />
+            <ShieldOff size={20} strokeWidth={1.75} />
           </div>
           <span className="vds-error-code">Acesso restrito</span>
           <h3>
@@ -141,7 +141,7 @@ function ErrorPagesSection() {
           <div className="vds-error-actions">
             <button className="vds-error-btn primary">
               Ver opções do plano
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
             <a href="#" className="vds-error-btn ghost">Voltar pra comunidade</a>
           </div>
@@ -150,7 +150,7 @@ function ErrorPagesSection() {
         {/* Maintenance — accent + progress + live status */}
         <article className="vds-error-card maintenance">
           <div className="vds-error-icon">
-            <Wrench size={22} strokeWidth={1.5} />
+            <Wrench size={20} strokeWidth={1.75} />
           </div>
           <span className="vds-error-code maint">
             <span className="vds-error-live-dot" />
@@ -175,7 +175,7 @@ function ErrorPagesSection() {
           <div className="vds-error-actions">
             <button className="vds-error-btn primary accent">
               Acompanhar status
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
           </div>
           <p className="vds-error-id">
@@ -196,7 +196,7 @@ function EmptyStatesSection() {
         {/* No results */}
         <article className="vds-empty-card">
           <div className="vds-empty-glyph">
-            <Search size={22} strokeWidth={1.4} />
+            <Search size={20} strokeWidth={1.75} />
           </div>
           <h4>Nenhuma aula com "few-shot tuning"</h4>
           <p>Tente um termo mais geral, ou veja as 3 aulas em <em>"prompt engineering"</em> — costuma cobrir o que você procura.</p>
@@ -208,20 +208,20 @@ function EmptyStatesSection() {
         {/* No data yet (first time) */}
         <article className="vds-empty-card">
           <div className="vds-empty-glyph">
-            <Compass size={22} strokeWidth={1.4} />
+            <Compass size={20} strokeWidth={1.75} />
           </div>
           <h4>Bem-vindo · seu primeiro dashboard</h4>
           <p>Quando você completar a primeira aula, esse painel mostra progresso, próximos passos e métricas da sua trilha. Começa em <strong>01.01 · O que mudou de 2022 pra cá</strong>.</p>
           <button className="vds-empty-btn primary">
             Começar primeira aula
-            <ArrowRight size={13} strokeWidth={2.4} />
+            <ArrowRight size={14} strokeWidth={1.75} />
           </button>
         </article>
 
         {/* No permission */}
         <article className="vds-empty-card">
           <div className="vds-empty-glyph">
-            <Lock size={22} strokeWidth={1.4} />
+            <Lock size={20} strokeWidth={1.75} />
           </div>
           <h4>Você ainda não tem acesso</h4>
           <p>Essa área é dos administradores do plano Corporate. Se você acha que deveria ter acesso, fala com seu admin ou com o time da Viver de IA.</p>
@@ -231,7 +231,7 @@ function EmptyStatesSection() {
         {/* All done */}
         <article className="vds-empty-card all-done">
           <div className="vds-empty-glyph done">
-            <ListChecks size={22} strokeWidth={1.4} />
+            <ListChecks size={20} strokeWidth={1.75} />
           </div>
           <h4>Sua caixa de entrada está limpa</h4>
           <p>Todas as 8 notificações desta semana já foram respondidas — boa. A próxima chega quando alguém te marcar no Discord ou tiver atualização da sua mentoria.</p>
@@ -265,7 +265,7 @@ function EmptyPremiumSection() {
             </p>
             <ol className="vds-empty-prem-steps">
               <li className="done">
-                <span className="bullet"><Check size={11} strokeWidth={3} /></span>
+                <span className="bullet"><Check size={14} strokeWidth={1.75} /></span>
                 <div>
                   <strong>Conta criada</strong>
                   <em>terça · 14h12</em>
@@ -289,7 +289,7 @@ function EmptyPremiumSection() {
             <div className="vds-empty-prem-actions">
               <button className="vds-empty-prem-btn primary on-dark">
                 Continuar pelo passo 2
-                <ArrowRight size={13} strokeWidth={2.4} />
+                <ArrowRight size={14} strokeWidth={1.75} />
               </button>
               <a href="#" className="vds-empty-prem-btn ghost on-dark">Faço depois</a>
             </div>
@@ -299,7 +299,7 @@ function EmptyPremiumSection() {
         {/* Offline — soft atmosphere with reconnection */}
         <article className="vds-empty-prem offline">
           <div className="vds-empty-prem-icon">
-            <WifiOff size={20} strokeWidth={1.5} />
+            <WifiOff size={20} strokeWidth={1.75} />
           </div>
           <span className="vds-empty-prem-eyebrow soft">
             Sem conexão · tentando voltar
@@ -314,14 +314,14 @@ function EmptyPremiumSection() {
             <div className="vds-empty-prem-trail-dots">
               <span /><span /><span /><span /><span />
             </div>
-            <span className="vds-empty-prem-trail-lbl">próxima tentativa em 3s</span>
+            <span className="vds-empty-prem-trail-lbl">Próxima tentativa em 3s</span>
           </div>
         </article>
 
         {/* No notifications · zen */}
         <article className="vds-empty-prem zen">
           <div className="vds-empty-prem-icon zen">
-            <Bell size={20} strokeWidth={1.5} />
+            <Bell size={20} strokeWidth={1.75} />
           </div>
           <h4>
             Nada a relatar hoje.
@@ -330,7 +330,7 @@ function EmptyPremiumSection() {
             A semana abriu calma — sem menções no Discord, sem mudança nos seus alunos, sem nota da mentoria. Use o silêncio.
           </p>
           <div className="vds-empty-prem-stat">
-            <span className="lbl">última atualização</span>
+            <span className="lbl">Última atualização</span>
             <strong>há 6h</strong>
           </div>
         </article>
@@ -338,7 +338,7 @@ function EmptyPremiumSection() {
         {/* Filter no results · with suggestion chips */}
         <article className="vds-empty-prem filter">
           <div className="vds-empty-prem-icon">
-            <Filter size={20} strokeWidth={1.5} />
+            <Filter size={20} strokeWidth={1.75} />
           </div>
           <h4>
             Nenhum operador casa com esses <em>3 filtros</em>.
@@ -369,7 +369,7 @@ function EmptyPremiumSection() {
         {/* Inbox zen — domingo */}
         <article className="vds-empty-prem inbox">
           <div className="vds-empty-prem-icon coffee">
-            <Coffee size={20} strokeWidth={1.5} />
+            <Coffee size={20} strokeWidth={1.75} />
           </div>
           <span className="vds-empty-prem-eyebrow">Domingo · 18h32</span>
           <h4>
@@ -394,7 +394,7 @@ function EmptyPremiumSection() {
         {/* Empty calendar · week ahead clear */}
         <article className="vds-empty-prem calendar">
           <div className="vds-empty-prem-icon">
-            <CalendarDays size={20} strokeWidth={1.5} />
+            <CalendarDays size={20} strokeWidth={1.75} />
           </div>
           <span className="vds-empty-prem-eyebrow">Semana de 18 · 24 mai</span>
           <h4>
@@ -415,7 +415,7 @@ function EmptyPremiumSection() {
             </div>
           </div>
           <button className="vds-empty-prem-btn primary">
-            <Plus size={13} strokeWidth={2.4} />
+            <Plus size={14} strokeWidth={1.75} />
             Marcar sessão
           </button>
         </article>
@@ -431,7 +431,7 @@ function SuccessStatesSection() {
       <div className="vds-success-row">
         <article className="vds-success-card">
           <div className="vds-success-mark">
-            <Check size={32} strokeWidth={2.5} />
+            <Check size={32} strokeWidth={1.75} />
             <span className="vds-success-pulse" />
           </div>
           <span className="vds-success-eyebrow">Pagamento aprovado</span>
@@ -444,7 +444,7 @@ function SuccessStatesSection() {
           <div className="vds-success-actions">
             <button className="vds-success-btn primary">
               Ir pra sua área
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
             <a href="#" className="vds-success-btn ghost">Baixar recibo</a>
           </div>
@@ -452,7 +452,7 @@ function SuccessStatesSection() {
 
         <article className="vds-success-card minor">
           <div className="vds-success-mark sm">
-            <Check size={16} strokeWidth={2.6} />
+            <Check size={16} strokeWidth={1.75} />
           </div>
           <span className="vds-success-eyebrow">Aula concluída</span>
           <h3>
@@ -462,7 +462,7 @@ function SuccessStatesSection() {
           <div className="vds-success-actions">
             <button className="vds-success-btn primary">
               Ir pra próxima aula
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
           </div>
         </article>

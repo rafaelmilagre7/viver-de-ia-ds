@@ -66,7 +66,7 @@ function TwoFactorFlowDemo() {
     <div className="vds-2fa-card">
       <div className="vds-2fa-card__head">
         <span className="vds-2fa-card__icon" aria-hidden="true">
-          <Shield size={17} strokeWidth={1.8} />
+          <Shield size={16} strokeWidth={1.75} />
         </span>
         <span className="vds-2fa-card__eyebrow">Configurar 2FA</span>
         <span className="vds-2fa-card__counter">{stepLabel(step)}</span>
@@ -78,7 +78,7 @@ function TwoFactorFlowDemo() {
           <p className="lede">App de autenticação é mais seguro — funciona offline e não depende do celular.</p>
           <div className="vds-2fa-methods" role="radiogroup" aria-label="Método 2FA">
             <MethodCard
-              icon={<Smartphone size={18} strokeWidth={1.8} />}
+              icon={<Smartphone size={16} strokeWidth={1.75} />}
               title="App de autenticação"
               sub="Google Authenticator, Authy, 1Password · recomendado"
               onClick={() => {
@@ -87,7 +87,7 @@ function TwoFactorFlowDemo() {
               }}
             />
             <MethodCard
-              icon={<Key size={18} strokeWidth={1.8} />}
+              icon={<Key size={16} strokeWidth={1.75} />}
               title="SMS"
               sub="Receber por mensagem · menos seguro, mas funciona"
               onClick={() => {
@@ -102,7 +102,7 @@ function TwoFactorFlowDemo() {
       {step === 'verify' && (
         <div className="vds-2fa-step">
           <div className="vds-2fa-back">
-            <Button variant="ghost" size="sm" iconLeft={<ArrowLeft size={13} />} onClick={() => setStep('choose')}>
+            <Button variant="ghost" size="sm" iconLeft={<ArrowLeft size={14} />} onClick={() => setStep('choose')}>
               Voltar
             </Button>
           </div>
@@ -161,7 +161,7 @@ function TwoFactorFlowDemo() {
       {step === 'done' && (
         <div className="vds-2fa-done">
           <div className="vds-2fa-done__tile" aria-hidden="true">
-            <Check size={32} strokeWidth={2.4} />
+            <Check size={32} strokeWidth={1.75} />
           </div>
           <h3>2FA ativado</h3>
           <p>Próximo login vai pedir o código de 6 dígitos. Pode desativar nas configurações de segurança.</p>
@@ -199,7 +199,7 @@ function MethodCard({
         <strong className="vds-2fa-method__title">{title}</strong>
         <span className="vds-2fa-method__sub">{sub}</span>
       </span>
-      <ChevronRight size={14} strokeWidth={2} className="vds-2fa-method__chev" />
+      <ChevronRight size={16} strokeWidth={1.75} className="vds-2fa-method__chev" />
     </button>
   );
 }

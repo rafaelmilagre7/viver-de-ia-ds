@@ -8,8 +8,8 @@ export default function ApiInput() {
     <ComponentDoc
       eyebrow="api · input"
       name="Input"
-      headline="liquid glass · focus underline animado · ícone reativo"
-      description="Campo de texto editorial. Glass underlay com blur 12px · focus underline expansão centro→bordas com gradient navy→blue · ícone à esquerda ganha color navy no focus · placeholder fade pro gray-400 no focus. 3 sizes, error/success states, mensagem hint."
+      headline="o campo que mostra onde está o foco."
+      description="Liquid glass · focus underline animado · ícone reativo. Campo de texto editorial. Glass underlay com blur 12px · focus underline expansão centro→bordas com gradient navy→blue · ícone à esquerda ganha color navy no focus · placeholder fade pro gray-400 no focus. 3 sizes, error/success states, mensagem hint."
       importLine={`import { Input, type InputProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-input-wrap', description: 'Container externo · label + field + msg vertical stack' },
@@ -51,7 +51,7 @@ export default function ApiInput() {
               label="E-mail"
               type="email"
               placeholder="você@empresa.com"
-              iconLeft={<Mail size={14} strokeWidth={1.8} />}
+              iconLeft={<Mail size={16} strokeWidth={1.75} />}
               hint="Use email corporativo se possível"
             />
           ),
@@ -59,7 +59,7 @@ export default function ApiInput() {
   label="E-mail"
   type="email"
   placeholder="você@empresa.com"
-  iconLeft={<Mail size={14} strokeWidth={1.8} />}
+  iconLeft={<Mail size={16} strokeWidth={1.75} />}
   hint="Use email corporativo se possível"
 />`,
         },
@@ -70,14 +70,14 @@ export default function ApiInput() {
               size="sm"
               type="search"
               placeholder="Buscar fundamentos, componentes…"
-              iconLeft={<Search size={13} strokeWidth={1.8} />}
+              iconLeft={<Search size={14} strokeWidth={1.75} />}
             />
           ),
           code: `<Input
   size="sm"
   type="search"
   placeholder="Buscar fundamentos, componentes…"
-  iconLeft={<Search size={13} strokeWidth={1.8} />}
+  iconLeft={<Search size={14} strokeWidth={1.75} />}
 />`,
         },
         {

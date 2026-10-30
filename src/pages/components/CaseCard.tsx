@@ -49,7 +49,7 @@ export default function CaseCard() {
                 <cite>— {c.author}</cite>
               </blockquote>
               <a className="link">
-                Ler case <ArrowUpRight size={14} strokeWidth={2.5} />
+                Ler case <ArrowUpRight size={16} strokeWidth={1.75} />
               </a>
             </article>
           ))}

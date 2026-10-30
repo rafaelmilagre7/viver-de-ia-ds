@@ -8,27 +8,27 @@ const nodes: TreeNode[] = [
   {
     id: 'curso-a',
     label: 'Curso · IA do zero',
-    icon: <BookOpen size={13} />,
+    icon: <BookOpen size={14} />,
     count: 24,
     children: [
       {
         id: 'm1',
         label: 'Módulo 1 · Fundamentos',
-        icon: <Folder size={13} />,
+        icon: <Folder size={14} />,
         children: [
-          { id: 'a1', label: 'Aula 1 · O que é IA generativa', icon: <FileText size={13} /> },
-          { id: 'a2', label: 'Aula 2 · LLMs explicados', icon: <FileText size={13} /> },
-          { id: 'a3', label: 'Aula 3 · Prompts eficazes', icon: <FileText size={13} />, highlighted: true },
+          { id: 'a1', label: 'Aula 1 · O que é IA generativa', icon: <FileText size={14} /> },
+          { id: 'a2', label: 'Aula 2 · LLMs explicados', icon: <FileText size={14} /> },
+          { id: 'a3', label: 'Aula 3 · Prompts eficazes', icon: <FileText size={14} />, highlighted: true },
         ],
       },
       {
         id: 'm2',
         label: 'Módulo 2 · Aplicações',
-        icon: <Folder size={13} />,
+        icon: <Folder size={14} />,
         count: 8,
         children: [
-          { id: 'a4', label: 'Aula 4 · Chatbots', icon: <FileText size={13} /> },
-          { id: 'a5', label: 'Aula 5 · RAG na prática', icon: <FileText size={13} /> },
+          { id: 'a4', label: 'Aula 4 · Chatbots', icon: <FileText size={14} /> },
+          { id: 'a5', label: 'Aula 5 · RAG na prática', icon: <FileText size={14} /> },
         ],
       },
     ],
@@ -57,8 +57,8 @@ export default function ApiTreeView() {
     <ComponentDoc
       eyebrow="api · tree-view"
       name="TreeView"
-      headline="árvore hierárquica · expand/collapse · keyboard arrow"
-      description="TreeView pra navegação filesystem-style. Use em: navegação de cursos/módulos/aulas, sitemap, taxonomias, sumários. Expand/collapse com chevron animado · selected glow · count badges à direita. Keyboard ARIA tree."
+      headline="hierarquia que abre e fecha."
+      description="Árvore hierárquica · expand/collapse · keyboard arrow. TreeView pra navegação filesystem-style. Use em: navegação de cursos/módulos/aulas, sitemap, taxonomias, sumários. Expand/collapse com chevron animado · selected glow · count badges à direita. Keyboard ARIA tree."
       importLine={`import { TreeView, type TreeViewProps, type TreeNode } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-tree', description: 'Container · role=tree' },

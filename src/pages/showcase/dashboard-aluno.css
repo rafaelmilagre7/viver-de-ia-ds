@@ -43,7 +43,6 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   text-decoration: none;
-  letter-spacing: -0.006em;
   cursor: pointer;
   transition: color 160ms ease;
 }
@@ -68,7 +67,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.004em;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -85,7 +83,6 @@
   justify-content: center;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   /* superfície navy FIXA (não adapta) → linha de luz FIXA.
      Com var(--via-edge-hi) virava 0.95 no claro (risco branco duro) e
      0.08 no escuro (some). */
@@ -120,9 +117,9 @@
 .dba-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-2);
@@ -131,7 +128,7 @@
 .dba-greeting h1 {
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.028em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-2);
   line-height: 1.1;
@@ -148,7 +145,6 @@
   margin: 0;
   font-size: var(--via-fs-sm);
   color: var(--via-text-body);
-  letter-spacing: -0.005em;
 }
 
 .dba-greeting p strong { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
@@ -168,17 +164,15 @@
   /* era var(--via-navy-deep) — hex fixo #02162A: no tema escuro o número
      ficava navy sobre navy (1,07:1, ilegível). text-primary adapta. */
   fill: var(--via-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   font-feature-settings: 'tnum' 1;
 }
 
 .dba-ring-lbl {
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 8px;
-  font-weight: var(--via-fw-semibold);
+  font-weight: var(--via-fw-medium);
   fill: var(--via-text-muted);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 @media (max-width: 560px) {
@@ -216,9 +210,9 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.12em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
 }
@@ -226,7 +220,7 @@
 .dba-card-eyebrow svg { color: var(--via-text-primary); }
 
 .dba-card-meta {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;
 }
@@ -248,11 +242,10 @@
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 2px 6px -3px var(--via-shadow-ink-14);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
-  letter-spacing: -0.004em;
   white-space: nowrap;
   cursor: pointer;
   transition:
@@ -314,9 +307,9 @@
 .dba-continue-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-gray-300);
   margin-bottom: var(--via-space-3_5);
@@ -325,17 +318,16 @@
 .dba-continue h2 {
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-2);
-  line-height: 1.12;
+  line-height: var(--via-lh-snug);
 }
 
 .dba-continue p {
   font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
   margin: 0 0 var(--via-space-4_5);
-  letter-spacing: -0.005em;
 }
 
 .dba-continue-bar {
@@ -371,7 +363,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 10px 24px -8px rgba(0, 0, 0, 0.45),
@@ -431,9 +423,7 @@
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 8px;
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 
@@ -441,7 +431,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -449,9 +439,7 @@
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
   font-size: 8px;
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   margin-bottom: 3px;
 }
@@ -461,13 +449,13 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
-  line-height: 1.3;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
 }
 
 .dba-agenda-info em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;
 }
@@ -502,7 +490,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   font-feature-settings: 'tnum' 1;
 }
@@ -522,9 +510,8 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
-  letter-spacing: -0.006em;
   margin-bottom: 5px;
-  line-height: 1.3;
+  line-height: var(--via-lh-snug);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -551,7 +538,7 @@
 
 .dba-modulo-pct {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   text-align: right;
@@ -585,9 +572,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   flex-shrink: 0;
 }
 
@@ -595,15 +581,14 @@
   margin: 0;
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
-  line-height: 1.45;
-  letter-spacing: -0.005em;
+  line-height: var(--via-lh-normal);
 }
 
 .dba-activity-list p strong { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
 
 .dba-activity-list em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 
@@ -637,7 +622,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: var(--via-space-1);
 }
 
@@ -645,8 +630,7 @@
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
-  line-height: 1.45;
-  letter-spacing: -0.004em;
+  line-height: var(--via-lh-normal);
 }
 
 /* Time (2 wide) */
@@ -673,17 +657,16 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.02em;
-  line-height: 1;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
 .dba-time em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin: var(--via-space-1_5) 0 var(--via-space-4);
-  letter-spacing: -0.004em;
 }
 
 .dba-time-spark {

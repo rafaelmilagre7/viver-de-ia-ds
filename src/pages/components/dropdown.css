@@ -69,10 +69,8 @@
 }
 
 .via-dd-trigger .lbl {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -82,7 +80,7 @@
   color: var(--via-text-primary);
   flex: 1;
   text-align: left;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .via-dd-trigger .chev {
@@ -154,7 +152,6 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text);
   cursor: pointer;
-  letter-spacing: -0.005em;
   border: 1px solid transparent;
   transition:
     background var(--via-dur) var(--via-ease-snap),

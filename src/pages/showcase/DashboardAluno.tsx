@@ -42,7 +42,7 @@ export default function ShowcaseDashboardAluno() {
           <a>Comunidade</a>
         </nav>
         <div className="dba-user">
-          <span className="dba-streak"><Flame size={13} strokeWidth={2.2} /> 14 dias</span>
+          <span className="dba-streak"><Flame size={14} strokeWidth={1.75} /> 14 dias</span>
           <span className="dba-av">RM</span>
         </div>
       </header>
@@ -74,7 +74,7 @@ export default function ShowcaseDashboardAluno() {
                 </linearGradient>
               </defs>
               <text x="60" y="58" textAnchor="middle" className="dba-ring-pct">42%</text>
-              <text x="60" y="74" textAnchor="middle" className="dba-ring-lbl">completo</text>
+              <text x="60" y="74" textAnchor="middle" className="dba-ring-lbl">Completo</text>
             </svg>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function ShowcaseDashboardAluno() {
             <p>Você parou em 05:51 de 22:18. Faltam 16 minutos pra fechar a aula.</p>
             <div className="dba-continue-bar"><span style={{ width: '26%' }} /></div>
             <button className="dba-continue-cta">
-              <Play size={15} strokeWidth={0} style={{ fill: 'var(--via-navy)' }} />
+              <Play size={16} strokeWidth={0} style={{ fill: 'var(--via-navy)' }} />
               Continuar aula
             </button>
           </article>
@@ -97,7 +97,7 @@ export default function ShowcaseDashboardAluno() {
           {/* Próxima agenda */}
           <article className="dba-card dba-agenda">
             <header className="dba-card-head">
-              <span className="dba-card-eyebrow"><Calendar size={12} strokeWidth={2.2} /> Próximos encontros</span>
+              <span className="dba-card-eyebrow"><Calendar size={14} strokeWidth={1.75} /> Próximos encontros</span>
             </header>
             <ul className="dba-agenda-list">
               {agenda.map((a) => (
@@ -119,14 +119,14 @@ export default function ShowcaseDashboardAluno() {
           {/* Progresso por módulo */}
           <article className="dba-card dba-modulos">
             <header className="dba-card-head">
-              <span className="dba-card-eyebrow"><TrendingUp size={12} strokeWidth={2.2} /> Seu progresso</span>
+              <span className="dba-card-eyebrow"><TrendingUp size={16} strokeWidth={1.75} /> Seu progresso</span>
               <span className="dba-card-meta">6 de 18 aulas</span>
             </header>
             <ul className="dba-modulos-list">
               {modulos.map((m) => (
                 <li key={m.n} className={`dba-modulo ${m.state}`}>
                   <span className="dba-modulo-num">
-                    {m.state === 'done' ? <Check size={12} strokeWidth={2.6} /> : m.n}
+                    {m.state === 'done' ? <Check size={14} strokeWidth={1.75} /> : m.n}
                   </span>
                   <div className="dba-modulo-body">
                     <strong>{m.t}</strong>
@@ -141,8 +141,8 @@ export default function ShowcaseDashboardAluno() {
           {/* Atividade da comunidade */}
           <article className="dba-card dba-activity">
             <header className="dba-card-head">
-              <span className="dba-card-eyebrow"><MessageCircle size={12} strokeWidth={2.2} /> Atividade recente</span>
-              <a href="#" className="dba-card-link">Ver tudo <ChevronRight size={12} strokeWidth={2.4} /></a>
+              <span className="dba-card-eyebrow"><MessageCircle size={16} strokeWidth={1.75} /> Atividade recente</span>
+              <a href="#" className="dba-card-link">Ver tudo <ChevronRight size={14} strokeWidth={1.75} /></a>
             </header>
             <ul className="dba-activity-list">
               {atividade.map((a, i) => (
@@ -159,7 +159,7 @@ export default function ShowcaseDashboardAluno() {
 
           {/* Conquista / streak */}
           <article className="dba-card dba-achievement">
-            <span className="dba-achievement-medal"><Award size={20} strokeWidth={1.6} /></span>
+            <span className="dba-achievement-medal"><Award size={20} strokeWidth={1.75} /></span>
             <div>
               <strong>14 dias de streak</strong>
               <p>Maior sequência da turma · mais que 87% dos operadores do mês.</p>
@@ -168,7 +168,7 @@ export default function ShowcaseDashboardAluno() {
 
           {/* Tempo investido */}
           <article className="dba-card dba-time">
-            <span className="dba-time-icon"><Clock size={18} strokeWidth={1.8} /></span>
+            <span className="dba-time-icon"><Clock size={16} strokeWidth={1.75} /></span>
             <strong>11h 24min</strong>
             <em>investidos nas últimas 4 semanas</em>
             <div className="dba-time-spark">

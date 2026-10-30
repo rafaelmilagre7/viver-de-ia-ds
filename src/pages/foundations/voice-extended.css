@@ -47,7 +47,7 @@
 .vds-ve-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -60,7 +60,7 @@
   font-size: var(--via-fs-body);
   color: var(--via-text-primary);
   margin: 0;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 /* ---------- Samples · good vs bad ---------- */
@@ -89,21 +89,18 @@
 }
 .vds-ve-sample .lbl {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
 }
 .vds-ve-sample.good .lbl { color: var(--via-text-primary); }
 .vds-ve-sample.bad  .lbl { color: var(--via-text-muted); }
 .vds-ve-sample pre {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-primary);
   margin: 0;
   white-space: pre-wrap;
-  letter-spacing: -0.004em;
 }
 .vds-ve-sample.bad pre {
   color: var(--via-text-body);  /* sobrevive ao opacity:0.85 do bloco · AA */
@@ -119,7 +116,7 @@
 .vds-ve-rules-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -138,7 +135,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   padding-left: var(--via-space-4);
   position: relative;
 }
@@ -179,7 +176,7 @@
   position: relative;
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text);
 }
 .vds-ve-spine li::before {
@@ -191,7 +188,7 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-ve-spine li strong {
   font-family: var(--via-font);

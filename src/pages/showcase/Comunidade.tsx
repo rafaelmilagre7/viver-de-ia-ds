@@ -75,7 +75,7 @@ export default function ShowcaseComunidade() {
           <ul>
             {categorias.map((c) => (
               <li key={c.t} className={c.active ? 'active' : ''}>
-                <span className="cmu-cat-label"><Hash size={13} strokeWidth={2.2} /> {c.t}</span>
+                <span className="cmu-cat-label"><Hash size={14} strokeWidth={1.75} /> {c.t}</span>
                 <span className="cmu-cat-count">{c.n}</span>
               </li>
             ))}
@@ -90,8 +90,8 @@ export default function ShowcaseComunidade() {
             <div className="cmu-composer-field">
               <input type="text" placeholder="Compartilhe um win, uma dúvida ou um agente novo" />
               <div className="cmu-composer-actions">
-                <button aria-label="Imagem"><ImageIcon size={15} strokeWidth={2} /></button>
-                <button aria-label="Código"><Code2 size={15} strokeWidth={2} /></button>
+                <button aria-label="Imagem"><ImageIcon size={16} strokeWidth={1.75} /></button>
+                <button aria-label="Código"><Code2 size={16} strokeWidth={1.75} /></button>
                 <button className="cmu-composer-send">Publicar</button>
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function ShowcaseComunidade() {
           {posts.map((p, i) => (
             <article key={i} className={`cmu-post ${p.pinned ? 'pinned' : ''}`}>
               {p.pinned && (
-                <span className="cmu-post-pin"><Pin size={10} strokeWidth={2.4} /> fixado pelo fundador</span>
+                <span className="cmu-post-pin"><Pin size={14} strokeWidth={1.75} /> Fixado pelo fundador</span>
               )}
               <header className="cmu-post-head">
                 <span className="cmu-post-av">{p.av}</span>
@@ -114,14 +114,14 @@ export default function ShowcaseComunidade() {
               <p className="cmu-post-txt">{p.txt}</p>
               {p.code && (
                 <div className="cmu-post-code">
-                  <span className="cmu-post-code-lang">python · agente.py</span>
+                  <span className="cmu-post-code-lang">Python · agente.py</span>
                   <code>system = build_prompt(examples=load_canonical(3))</code>
                 </div>
               )}
               <footer className="cmu-post-foot">
-                <button><Heart size={14} strokeWidth={2} /> {p.likes}</button>
-                <button><MessageCircle size={14} strokeWidth={2} /> {p.comments}</button>
-                <button><Share2 size={14} strokeWidth={2} /> Compartilhar</button>
+                <button><Heart size={16} strokeWidth={1.75} /> {p.likes}</button>
+                <button><MessageCircle size={16} strokeWidth={1.75} /> {p.comments}</button>
+                <button><Share2 size={16} strokeWidth={1.75} /> Compartilhar</button>
               </footer>
             </article>
           ))}
@@ -150,7 +150,7 @@ export default function ShowcaseComunidade() {
 
           <article className="cmu-side-card">
             <header className="cmu-side-head">
-              <span className="cmu-side-eyebrow"><TrendingUp size={11} strokeWidth={2.4} /> ranking do mês</span>
+              <span className="cmu-side-eyebrow"><TrendingUp size={16} strokeWidth={1.75} /> ranking do mês</span>
             </header>
             <ul className="cmu-ranking">
               {ranking.map((r) => (

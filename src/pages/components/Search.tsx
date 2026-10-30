@@ -23,16 +23,16 @@ export default function Search() {
         <div className="via-search-stage">
           <div className="via-search">
             <header>
-              <SearchIcon size={16} strokeWidth={2} />
+              <SearchIcon size={16} strokeWidth={1.75} />
               <input aria-label="Busca" placeholder="Buscar fundamentos, componentes, padrões…" defaultValue="navy" />
-              <button className="clear" aria-label="Limpar busca"><X size={12} strokeWidth={2.5} /></button>
+              <button className="clear" aria-label="Limpar busca"><X size={14} strokeWidth={1.75} /></button>
             </header>
             <ul>
               {results.map((r) => (
                 <li key={r.t}>
                   <span className="kbd">{r.kbd}</span>
                   <span className="t">{r.t}</span>
-                  <ArrowUpRight size={12} strokeWidth={2} className="arr" />
+                  <ArrowUpRight size={14} strokeWidth={1.75} className="arr" />
                 </li>
               ))}
             </ul>

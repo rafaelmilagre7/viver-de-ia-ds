@@ -122,7 +122,7 @@ function RulesSection() {
 
         <article className="vds-rule-card is-veto">
           <span className="vds-rule-n">
-            <Ban size={13} strokeWidth={2.4} />
+            <Ban size={14} strokeWidth={1.75} />
           </span>
           <svg viewBox="0 0 88 34" className="vds-rule-art" aria-hidden="true">
             <line x1="10" y1="4" x2="10" y2="30" className="ra-axis" />
@@ -216,9 +216,9 @@ function KPISection() {
               <span className="vds-kpi-label">{k.label}</span>
               <span className={`vds-kpi-delta ${k.up ? 'up' : 'down'}`}>
                 {k.up ? (
-                  <ArrowUpRight size={12} strokeWidth={2.6} />
+                  <ArrowUpRight size={14} strokeWidth={1.75} />
                 ) : (
-                  <ArrowDownRight size={12} strokeWidth={2.6} />
+                  <ArrowDownRight size={14} strokeWidth={1.75} />
                 )}
                 {k.delta}
               </span>
@@ -356,7 +356,7 @@ function AreaSection() {
         <header className="vds-chart-head">
           <div>
             <p className="eyebrow">
-              <TrendingUp size={11} strokeWidth={2.2} /> Receita Viver de IA
+              <TrendingUp size={16} strokeWidth={1.75} /> Receita Viver de IA
             </p>
             <h3>
               R$ 5,09M<span className="unit"> realizado</span>
@@ -367,7 +367,7 @@ function AreaSection() {
             </p>
           </div>
           <div className="vds-chart-delta up">
-            <ArrowUpRight size={14} strokeWidth={2.5} />
+            <ArrowUpRight size={16} strokeWidth={1.75} />
             +293% vs jan
           </div>
         </header>
@@ -444,7 +444,7 @@ function AreaSection() {
               className="zone-label"
               textAnchor="middle"
             >
-              projeção
+              Projeção
             </text>
 
             {/* áreas + linhas */}
@@ -556,7 +556,7 @@ function IndexedSection() {
         <header className="vds-chart-head">
           <div>
             <p className="eyebrow">
-              <TrendingUp size={11} strokeWidth={2.2} /> Receita × leads
+              <TrendingUp size={16} strokeWidth={1.75} /> Receita × leads
             </p>
             <h3>
               3,9×<span className="unit"> receita vs 1,8× leads</span>
@@ -567,7 +567,7 @@ function IndexedSection() {
             </p>
           </div>
           <div className="vds-chart-delta up">
-            <ArrowUpRight size={14} strokeWidth={2.5} />
+            <ArrowUpRight size={16} strokeWidth={1.75} />
             índice da receita 2,2× o de leads
           </div>
         </header>
@@ -614,7 +614,7 @@ function IndexedSection() {
             {/* linha de referência da base */}
             <line x1={PAD_L} x2={W - PAD_R} y1={py(100)} y2={py(100)} className="ref-line" />
             <text x={PAD_L + 6} y={py(100) + 18} className="ref-label">
-              base 100 · jan/2026
+              Base 100 · jan/2026
             </text>
 
             {/* série 2 primeiro (fica atrás) */}
@@ -749,7 +749,7 @@ function BarSection() {
         <header className="vds-chart-head">
           <div>
             <p className="eyebrow">
-              <BarChart3 size={11} strokeWidth={2.2} /> Aquisição por canal
+              <BarChart3 size={14} strokeWidth={1.75} /> Aquisição por canal
             </p>
             <h3>
               {nf(total)}
@@ -761,7 +761,7 @@ function BarSection() {
             </p>
           </div>
           <div className="vds-chart-delta up">
-            <ArrowUpRight size={14} strokeWidth={2.5} />
+            <ArrowUpRight size={16} strokeWidth={1.75} />
             +24% vs ago
           </div>
         </header>
@@ -929,7 +929,7 @@ function SmallMultiplesSection() {
         <header className="vds-chart-head">
           <div>
             <p className="eyebrow">
-              <Grid2X2 size={11} strokeWidth={2.2} /> Três séries, três painéis
+              <Grid2X2 size={14} strokeWidth={1.75} /> Três séries, três painéis
             </p>
             <h3>
               R$ 563K<span className="unit"> MRR somado · ago</span>
@@ -940,7 +940,7 @@ function SmallMultiplesSection() {
             </p>
           </div>
           <div className="vds-chart-delta up">
-            <ArrowUpRight size={14} strokeWidth={2.5} />
+            <ArrowUpRight size={16} strokeWidth={1.75} />
             +77% vs jan
           </div>
         </header>
@@ -1028,7 +1028,7 @@ function DonutSection() {
         <header className="vds-chart-head">
           <div>
             <p className="eyebrow">
-              <PieIcon size={11} strokeWidth={2.2} /> Composição MRR
+              <PieIcon size={14} strokeWidth={1.75} /> Composição MRR
             </p>
             <h3>
               R$ 1,84M<span className="unit"> recorrente + novo</span>
@@ -1039,7 +1039,7 @@ function DonutSection() {
             </p>
           </div>
           <div className="vds-chart-delta up">
-            <ArrowUpRight size={14} strokeWidth={2.5} />
+            <ArrowUpRight size={16} strokeWidth={1.75} />
             recorrente +4pp vs ago
           </div>
         </header>
@@ -1155,7 +1155,7 @@ function FunnelSection() {
         <header className="vds-chart-head">
           <div>
             <p className="eyebrow">
-              <Filter size={11} strokeWidth={2.2} /> Funil · 30 dias
+              <Filter size={14} strokeWidth={1.75} /> Funil · 30 dias
             </p>
             <h3>
               0,44%<span className="unit"> taxa fim-a-fim</span>
@@ -1167,7 +1167,7 @@ function FunnelSection() {
             </p>
           </div>
           <div className="vds-chart-delta up">
-            <ArrowUpRight size={14} strokeWidth={2.5} />
+            <ArrowUpRight size={16} strokeWidth={1.75} />
             +18% receita vs ago
           </div>
         </header>
@@ -1222,7 +1222,7 @@ function FunnelSection() {
         </div>
 
         <p className="vds-note is-inline">
-          <Ban size={13} strokeWidth={2.4} />
+          <Ban size={14} strokeWidth={1.75} />
           Duas medidas em escalas diferentes: <strong>dois painéis</strong>, cada um ancorado no próprio zero.
           Empilhar as duas num eixo duplo é o erro nº 1 de gráfico.
         </p>

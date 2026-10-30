@@ -41,7 +41,7 @@ export default function Accordion() {
               <div key={f.q} className={`item ${isOpen ? 'open' : ''}`}>
                 <button className="head" onClick={() => setOpen(isOpen ? -1 : i)}>
                   <span className="q">{f.q}</span>
-                  <ChevronDown size={16} strokeWidth={2.5} className={`chev ${isOpen ? 'rot' : ''}`} />
+                  <ChevronDown size={16} strokeWidth={1.75} className={`chev ${isOpen ? 'rot' : ''}`} />
                 </button>
                 {isOpen && <div className="body">{f.a}</div>}
               </div>

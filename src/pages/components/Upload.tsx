@@ -14,7 +14,7 @@ export default function Upload() {
 
       <Section title="Dropzone" meta="dashed glass">
         <div className="via-upload">
-          <UploadIcon size={28} strokeWidth={1.6} />
+          <UploadIcon size={24} strokeWidth={1.75} />
           <h3>Arraste arquivos aqui</h3>
           <p>Ou clique para escolher. PDF, PNG, JPG até 20MB.</p>
           <button className="cta">Escolher arquivo</button>
@@ -24,21 +24,21 @@ export default function Upload() {
       <Section title="Lista de arquivos" meta="hairline · remover">
         <ul className="via-upload-list">
           <li>
-            <span className="ico"><FileText size={16} strokeWidth={2} /></span>
+            <span className="ico"><FileText size={16} strokeWidth={1.75} /></span>
             <div className="meta">
               <span className="name">case-balzani-zimbel.pdf</span>
               <span className="size">2.4 MB · enviado</span>
             </div>
-            <button className="x" aria-label="Remover arquivo"><X size={12} strokeWidth={2.5} /></button>
+            <button className="x" aria-label="Remover arquivo"><X size={14} strokeWidth={1.75} /></button>
           </li>
           <li>
-            <span className="ico"><FileText size={16} strokeWidth={2} /></span>
+            <span className="ico"><FileText size={16} strokeWidth={1.75} /></span>
             <div className="meta">
               <span className="name">depoimento-marisson.png</span>
               <span className="size">1.1 MB · 64% enviado</span>
               <div className="bar"><span style={{ width: '64%' }} /></div>
             </div>
-            <button className="x" aria-label="Remover arquivo"><X size={12} strokeWidth={2.5} /></button>
+            <button className="x" aria-label="Remover arquivo"><X size={14} strokeWidth={1.75} /></button>
           </li>
         </ul>
       </Section>

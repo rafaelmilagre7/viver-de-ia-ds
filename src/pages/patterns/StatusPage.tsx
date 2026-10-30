@@ -109,7 +109,7 @@ function StatusServicesSection() {
                   <li key={s.name} className={`vds-st-row ${s.status}`}>
                     <div className="vds-st-row-l">
                       <div className="vds-st-row-icon">
-                        <Icon size={14} strokeWidth={1.8} />
+                        <Icon size={16} strokeWidth={1.75} />
                       </div>
                       <div>
                         <p className="vds-st-row-name">{s.name}</p>
@@ -190,9 +190,9 @@ function StatusIncidentsSection() {
             <p>3 incidentes · todos resolvidos · 1 manutenção em maio</p>
           </div>
           <a href="#archive" className="vds-st-incidents-archive">
-            <History size={11} strokeWidth={2.2} />
+            <History size={14} strokeWidth={1.75} />
             Ver arquivo completo
-            <ChevronRight size={11} strokeWidth={2.4} />
+            <ChevronRight size={14} strokeWidth={1.75} />
           </a>
         </header>
 
@@ -226,7 +226,7 @@ function StatusIncidentsSection() {
 
                 <footer>
                   <span className="vds-st-inc-status">
-                    <Check size={10} strokeWidth={3} />
+                    <Check size={14} strokeWidth={1.75} />
                     Resolvido · sem ação necessária do cliente
                   </span>
                 </footer>

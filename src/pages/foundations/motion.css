@@ -8,7 +8,7 @@
   max-width: 68ch;
   margin: 0 0 var(--via-space-5);
   font-size: var(--via-fs-sm);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
 }
 
@@ -31,7 +31,7 @@
 .vds-mo-scale__legend {
   font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-mo-row {
@@ -47,7 +47,7 @@
 .vds-mo-row__ms {
   margin: var(--via-space-1) 0 0;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
 }
 .vds-mo-row__ms span { color: var(--via-text-muted); }
@@ -155,7 +155,7 @@
 }
 .vds-mo-fire {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);

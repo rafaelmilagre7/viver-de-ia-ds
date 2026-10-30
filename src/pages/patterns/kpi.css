@@ -50,7 +50,7 @@
   align-items: center;
   gap: var(--via-space-1);
 }
-.vds-kpi-tile .meta { letter-spacing: -0.004em; }
+.vds-kpi-tile .meta { }
 
 /* A sparkline fecha o card — encosta na base sem margem morta */
 .vds-kpi-tile .via-spark { height: 40px; margin-top: var(--via-space-0_5); }

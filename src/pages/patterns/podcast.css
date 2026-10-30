@@ -11,8 +11,8 @@
   gap: var(--via-space-5_5);
   align-items: center;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   padding: var(--via-space-4_5) var(--via-space-5_5);
@@ -56,9 +56,9 @@
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.03em;
+  letter-spacing: var(--via-ls-tighter);
   text-align: center;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
   padding: var(--via-space-2) 0;
   border-radius: var(--via-radius-sm);
@@ -88,7 +88,7 @@
 
 .vds-pod .eyebrow {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -106,9 +106,9 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
-  line-height: 1.3;
+  line-height: var(--via-lh-snug);
 }
 
 .vds-pod .title em {

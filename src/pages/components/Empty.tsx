@@ -42,7 +42,7 @@ export default function Empty() {
           <p>Tente outro setor, remova um filtro, ou veja os 206 cases publicados sem filtro.</p>
           <button className="cta">
             Ver todos os cases
-            <ArrowRight size={14} strokeWidth={2.5} />
+            <ArrowRight size={16} strokeWidth={1.75} />
           </button>
         </div>
       </Section>
@@ -54,7 +54,7 @@ export default function Empty() {
           <p>Quando publicar o primeiro, ele aparece aqui. Dura ~10 minutos: empresa, setor, headline com métrica e quote do operador.</p>
           <button className="cta">
             Publicar primeiro case
-            <ArrowRight size={14} strokeWidth={2.5} />
+            <ArrowRight size={16} strokeWidth={1.75} />
           </button>
         </div>
       </Section>

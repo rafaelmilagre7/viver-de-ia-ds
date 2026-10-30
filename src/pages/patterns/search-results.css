@@ -59,7 +59,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-sr-search-clear {
@@ -106,7 +106,7 @@
 }
 
 .vds-sr-search-shortcut {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
   padding: 3px 7px;
   border-radius: var(--via-radius-sm);
@@ -150,9 +150,9 @@
 .vds-sr-section-eyebrow {
   margin: 0 0 var(--via-space-2_5);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
 }
@@ -256,7 +256,7 @@
 .vds-sr-facet-label {
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-sr-facet-list li.on .vds-sr-facet-label {
@@ -264,9 +264,8 @@
 }
 
 .vds-sr-facet-count {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
   padding: 1px 7px;
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
@@ -289,7 +288,6 @@
   cursor: pointer;
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
-  letter-spacing: -0.006em;
   transition: background .2s ease, color .2s ease;
 }
 
@@ -376,10 +374,8 @@
 
 .vds-sr-toolbar-lbl {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   margin-right: var(--via-space-0_5);
 }
 
@@ -395,12 +391,11 @@
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 2px 6px -3px var(--via-shadow-ink-10);
@@ -440,12 +435,11 @@
   border: none;
   color: var(--via-ink-3);
   font-family: inherit;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: var(--via-navy-20);
   text-underline-offset: 2px;
-  letter-spacing: -0.004em;
   padding: var(--via-space-0_5) var(--via-space-1_5);
   border-radius: var(--via-radius-xs);
   transition: color var(--via-dur) var(--via-ease-snap), box-shadow var(--via-dur) var(--via-ease-snap);
@@ -475,9 +469,8 @@
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.006em;
   cursor: pointer;
   flex-shrink: 0;
   box-shadow:
@@ -557,13 +550,12 @@
 
 .vds-sr-result-type {
   display: inline-block;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   padding: var(--via-space-0_5) 9px;
   border-radius: var(--via-radius-pill);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-sr-result-type.navy {
@@ -589,9 +581,8 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-sr-result-score {
@@ -604,8 +595,8 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
-  line-height: 1.3;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
 }
 
 .vds-sr-result h3 a {
@@ -632,7 +623,7 @@
 .vds-sr-result-snippet {
   margin: 0 0 var(--via-space-2_5);
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-2);
   max-width: 720px;
 }
@@ -644,15 +635,14 @@
 }
 
 .vds-sr-result-meta-pill {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
   padding: 3px 9px;
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-03);
   border: 1px solid var(--via-border-soft);
-  letter-spacing: -0.004em;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 /* ---------- Pagination ---------- */
@@ -754,7 +744,6 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   text-decoration: none;
-  letter-spacing: -0.006em;
   padding: var(--via-space-1) var(--via-space-2);
   border-radius: var(--via-radius-xs);
   transition: gap var(--via-dur) var(--via-ease-snap), box-shadow var(--via-dur) var(--via-ease-snap);

@@ -51,7 +51,7 @@
   position: absolute;
   bottom: 12px;
   right: 14px;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   letter-spacing: 0.04em;
   padding: var(--via-space-1) var(--via-space-2);
@@ -73,9 +73,9 @@
 .vds-loc-eyebrow {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-accent-warm);
   margin-bottom: var(--via-space-2);
@@ -90,15 +90,15 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
-  line-height: 1.2;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
 .vds-loc-address {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
   font-feature-settings: 'tnum' 1;
 }
@@ -144,24 +144,23 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-loc-dates em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 /* Section eyebrow inline */
 .vds-loc-section-eyebrow {
   margin: 0 0 var(--via-space-3);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
 }
@@ -223,14 +222,14 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-loc-access em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 
 /* Actions */
@@ -245,11 +244,11 @@
   align-items: center;
   gap: 7px;
   padding: 11px var(--via-space-4);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -329,9 +328,8 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-loc-foot-link {
@@ -339,7 +337,6 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   text-decoration: none;
-  letter-spacing: -0.006em;
   transition: opacity .22s ease;
 }
 
@@ -433,7 +430,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.016em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
@@ -443,8 +440,8 @@
 
 .vds-loc-compact-body p {
   margin: 0 0 var(--via-space-3);
-  font-size: var(--via-fs-label);
-  line-height: 1.5;
+  font-size: var(--via-fs-xs);
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-3);
 }
 
@@ -458,7 +455,7 @@
   align-items: center;
   gap: 5px;
   padding: 7px var(--via-space-3);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -468,10 +465,9 @@
     0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.006em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),

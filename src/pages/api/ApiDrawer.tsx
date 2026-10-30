@@ -13,7 +13,7 @@ function DrawerDemo() {
         open={open}
         onClose={() => setOpen(false)}
         title="Notificações"
-        description="Você tem 4 atualizações desde a última visita."
+        description="Painel lateral editorial · scrim radial · atmosphere dupla. Você tem 4 atualizações desde a última visita."
         side="right"
         size="md"
       >
@@ -31,7 +31,7 @@ export default function ApiDrawer() {
     <ComponentDoc
       eyebrow="api · drawer"
       name="Drawer"
-      headline="painel lateral editorial · scrim radial · atmosphere dupla"
+      headline="um painel lateral sem perder o contexto."
       description="Drawer lateral pra fluxos secundários (filtros, settings, detalhes). Scrim radial navy 42→58% + blur 10px progressivo. Atmosphere dupla via radials. Shadow stack 4-layer. 4 sides + 3 sizes."
       importLine={`import { Drawer, type DrawerProps } from '@viverdeia/design-system';`}
       anatomy={[

@@ -42,8 +42,8 @@ export default function ApiDataTable() {
     <ComponentDoc
       eyebrow="api · datatable"
       name="DataTable"
-      headline="tabela sortable · zebra + density + ARIA · accessor pra derived sort"
-      description="Tabela com sort, density compact/cozy, zebra, ARIA grid · accessor pra sort em valor derivado (ex: full name a partir de first/last). Suporta format custom por coluna, align right/center."
+      headline="dados densos que ainda se leem."
+      description="Tabela sortable · zebra + density + ARIA · accessor pra derived sort. Tabela com sort, density compact/cozy, zebra, ARIA grid · accessor pra sort em valor derivado (ex: full name a partir de first/last). Suporta format custom por coluna, align right/center."
       importLine={`import { DataTable, type DataTableProps, type DataTableColumn, type SortDir } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-dt', description: 'Container · overflow scroll horizontal · scrollbar editorial' },

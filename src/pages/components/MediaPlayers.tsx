@@ -48,11 +48,11 @@ function MiniAudioSection() {
             </div>
           </div>
           <div className="vds-mini-controls">
-            <button aria-label="Faixa anterior" className="ctrl"><SkipBack size={16} strokeWidth={2.2} /></button>
+            <button aria-label="Faixa anterior" className="ctrl"><SkipBack size={16} strokeWidth={1.75} /></button>
             <button className="play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
-              {playing ? <Pause size={18} strokeWidth={0} style={{ fill: 'currentColor' }} /> : <Play size={18} strokeWidth={0} style={{ fill: 'currentColor' }} />}
+              {playing ? <Pause size={16} strokeWidth={0} style={{ fill: 'currentColor' }} /> : <Play size={16} strokeWidth={0} style={{ fill: 'currentColor' }} />}
             </button>
-            <button aria-label="Próxima faixa" className="ctrl"><SkipForward size={16} strokeWidth={2.2} /></button>
+            <button aria-label="Próxima faixa" className="ctrl"><SkipForward size={16} strokeWidth={1.75} /></button>
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@ function FullEpisodeSection() {
               <img src={monogramWhite} alt="" />
             </div>
             <div className="ep-meta">
-              <p className="eyebrow"><Headphones size={11} strokeWidth={2.2} /> Episódio 042 · 42min</p>
+              <p className="eyebrow"><Headphones size={14} strokeWidth={1.75} /> Episódio 042 · 42min</p>
               <h2>Quando a IA vira receita,<br /><em>lições da Efizi</em>.</h2>
               <p className="lede">
                 Caio conversa com Márisson sobre os 90 dias de implementação na Efizi — o que travou, o que destravou, e como passou a medir +11.920 conversas analisadas no canal.
@@ -116,13 +116,13 @@ function FullEpisodeSection() {
 
           {/* Controls */}
           <div className="ep-controls">
-            <button aria-label="Aleatório" className="ctrl"><Shuffle size={16} strokeWidth={2} /></button>
-            <button aria-label="Faixa anterior" className="ctrl"><SkipBack size={20} strokeWidth={2.2} /></button>
+            <button aria-label="Aleatório" className="ctrl"><Shuffle size={16} strokeWidth={1.75} /></button>
+            <button aria-label="Faixa anterior" className="ctrl"><SkipBack size={20} strokeWidth={1.75} /></button>
             <button className="play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
-              {playing ? <Pause size={26} strokeWidth={0} style={{ fill: 'currentColor' }} /> : <Play size={26} strokeWidth={0} style={{ fill: 'currentColor' }} />}
+              {playing ? <Pause size={24} strokeWidth={0} style={{ fill: 'currentColor' }} /> : <Play size={24} strokeWidth={0} style={{ fill: 'currentColor' }} />}
             </button>
-            <button aria-label="Próxima faixa" className="ctrl"><SkipForward size={20} strokeWidth={2.2} /></button>
-            <button aria-label="Repetir" className="ctrl"><Repeat size={16} strokeWidth={2} /></button>
+            <button aria-label="Próxima faixa" className="ctrl"><SkipForward size={20} strokeWidth={1.75} /></button>
+            <button aria-label="Repetir" className="ctrl"><Repeat size={16} strokeWidth={1.75} /></button>
           </div>
 
           {/* Secondary controls */}
@@ -133,9 +133,9 @@ function FullEpisodeSection() {
               ))}
             </div>
             <div className="ep-extras">
-              <button aria-label="Curtir"><Heart size={15} strokeWidth={2} /></button>
+              <button aria-label="Curtir"><Heart size={16} strokeWidth={1.75} /></button>
               <button aria-label="Volume · 70%">
-                <Volume2 size={15} strokeWidth={2} />
+                <Volume2 size={16} strokeWidth={1.75} />
                 <span className="vol-bar"><span style={{ width: '70%' }} /></span>
               </button>
             </div>
@@ -162,7 +162,7 @@ function VideoPlayerSection() {
           {!playing && (
             <div className="vid-idle">
               <div className="vid-idle-meta">
-                <p className="eyebrow"><Headphones size={11} strokeWidth={2.2} /> Módulo 03 · Aula 04</p>
+                <p className="eyebrow"><Headphones size={14} strokeWidth={1.75} /> Módulo 03 · Aula 04</p>
                 <h2>Modelagem do seu<br /><em>primeiro agente</em>.</h2>
                 <p className="lede">Caio Ribeiro · 48 min · sessão ao vivo gravada</p>
               </div>
@@ -190,17 +190,17 @@ function VideoPlayerSection() {
                 <button className="vid-ctrl play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
                   {playing ? <Pause size={16} strokeWidth={0} style={{ fill: 'currentColor' }} /> : <Play size={16} strokeWidth={0} style={{ fill: 'currentColor' }} />}
                 </button>
-                <button aria-label="Faixa anterior" className="vid-ctrl"><SkipBack size={16} strokeWidth={2.2} /></button>
-                <button aria-label="Próxima faixa" className="vid-ctrl"><SkipForward size={16} strokeWidth={2.2} /></button>
+                <button aria-label="Faixa anterior" className="vid-ctrl"><SkipBack size={16} strokeWidth={1.75} /></button>
+                <button aria-label="Próxima faixa" className="vid-ctrl"><SkipForward size={16} strokeWidth={1.75} /></button>
                 <button className="vid-ctrl vol" aria-label={muted ? 'Desmutar' : 'Mutar'} onClick={() => setMuted(!muted)}>
-                  {muted ? <VolumeX size={16} strokeWidth={2.2} /> : <Volume2 size={16} strokeWidth={2.2} />}
+                  {muted ? <VolumeX size={16} strokeWidth={1.75} /> : <Volume2 size={16} strokeWidth={1.75} />}
                 </button>
                 <span className="vid-time">13:42 / 48:24</span>
               </div>
               <div className="vid-row-r">
                 <button className="vid-quality">1080p</button>
-                <button aria-label="Configurações" className="vid-ctrl"><Settings size={16} strokeWidth={2} /></button>
-                <button aria-label="Tela cheia" className="vid-ctrl"><Maximize2 size={16} strokeWidth={2} /></button>
+                <button aria-label="Configurações" className="vid-ctrl"><Settings size={16} strokeWidth={1.75} /></button>
+                <button aria-label="Tela cheia" className="vid-ctrl"><Maximize2 size={16} strokeWidth={1.75} /></button>
               </div>
             </div>
           </div>

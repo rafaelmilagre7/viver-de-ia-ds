@@ -96,7 +96,7 @@ function NewsletterSection() {
           <article className="vds-ed-nl-cta">
             <a href="#" className="vds-ed-nl-link-arrow">
               ver o código que reduziu a latência
-              <ArrowRight size={12} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
           </article>
 
@@ -149,7 +149,7 @@ function BlogPostSection() {
             </div>
             <div className="vds-ed-blog-meta-r">
               <span>18 mai 2026</span>
-              <span><Clock size={11} strokeWidth={1.8} /> 8 min</span>
+              <span><Clock size={14} strokeWidth={1.75} /> 8 min</span>
             </div>
           </div>
         </header>
@@ -202,9 +202,9 @@ function BlogPostSection() {
               <li><a href="#resultado">Resultado mensurado</a></li>
             </ol>
             <div className="vds-ed-blog-share">
-              <button aria-label="Curtir"><ThumbsUp size={13} strokeWidth={1.8} /></button>
-              <button aria-label="Comentar"><MessageCircle size={13} strokeWidth={1.8} /></button>
-              <button aria-label="Salvar"><Bookmark size={13} strokeWidth={1.8} /></button>
+              <button aria-label="Curtir"><ThumbsUp size={14} strokeWidth={1.75} /></button>
+              <button aria-label="Comentar"><MessageCircle size={16} strokeWidth={1.75} /></button>
+              <button aria-label="Salvar"><Bookmark size={14} strokeWidth={1.75} /></button>
             </div>
           </aside>
         </div>
@@ -232,8 +232,8 @@ function PodcastNotesSection() {
           </div>
           <div className="vds-ed-podcast-meta">
             <span className="vds-ed-podcast-tag">
-              <Headphones size={11} strokeWidth={2.2} />
-              episódio 18
+              <Headphones size={14} strokeWidth={1.75} />
+              Episódio 18
             </span>
             <h2>
               Construindo Nina · 3 erros e o que mudou
@@ -244,10 +244,10 @@ function PodcastNotesSection() {
               palestra.
             </p>
             <div className="vds-ed-podcast-where">
-              <a href="#"><Play size={11} strokeWidth={2.4} /> Spotify</a>
-              <a href="#"><Play size={11} strokeWidth={2.4} /> Apple</a>
-              <a href="#"><Play size={11} strokeWidth={2.4} /> YouTube</a>
-              <a href="#"><Play size={11} strokeWidth={2.4} /> RSS feed</a>
+              <a href="#"><Play size={16} strokeWidth={1.75} /> Spotify</a>
+              <a href="#"><Play size={16} strokeWidth={1.75} /> Apple</a>
+              <a href="#"><Play size={16} strokeWidth={1.75} /> YouTube</a>
+              <a href="#"><Play size={16} strokeWidth={1.75} /> RSS feed</a>
             </div>
           </div>
         </header>
@@ -337,8 +337,8 @@ function YoutubeDescriptionSection() {
           <h2>Auditando 3 prompts ao vivo · live ep 18 · turma 2026.2</h2>
           <div className="vds-ed-youtube-meta">
             <span>1.247 visualizações · 19 mai 2026</span>
-            <button><ThumbsUp size={13} strokeWidth={2} /> 184</button>
-            <button><Bookmark size={13} strokeWidth={2} /> Salvar</button>
+            <button><ThumbsUp size={14} strokeWidth={1.75} /> 184</button>
+            <button><Bookmark size={14} strokeWidth={1.75} /> Salvar</button>
           </div>
 
           <div className="vds-ed-youtube-desc">
@@ -368,7 +368,7 @@ Posta no Discord até quarta pra ser auditado.
 
             <a href="#" className="vds-ed-youtube-subscribe">
               Inscreva-se
-              <ChevronRight size={11} strokeWidth={2.4} />
+              <ChevronRight size={14} strokeWidth={1.75} />
             </a>
           </div>
         </div>
@@ -467,7 +467,7 @@ df['latencia_ms'] = (df['timestamp_out'] - df['timestamp_in']) * 1000`}</pre>
             <strong>Próximo tutorial:</strong> como reduzir latência percebida sem trocar
             modelo (cache de contexto + warm-up + streaming).
           </p>
-          <a href="#">Ver próximo <ArrowRight size={13} strokeWidth={2.4} /></a>
+          <a href="#">Ver próximo <ArrowRight size={14} strokeWidth={1.75} /></a>
         </footer>
       </article>
     </Section>

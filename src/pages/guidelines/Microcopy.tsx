@@ -68,7 +68,7 @@ export default function Microcopy() {
           id="vds-mc-busca"
           label="Buscar na biblioteca"
           placeholder="Buscar por situação, texto ou id"
-          iconLeft={<Search size={15} strokeWidth={1.8} />}
+          iconLeft={<Search size={16} strokeWidth={1.75} />}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -118,7 +118,7 @@ export default function Microcopy() {
                       onClick={() => copy(m.id, m.texto)}
                       aria-label={copiedId === m.id ? 'Copiado' : `Copiar texto: ${m.situacao}`}
                     >
-                      {copiedId === m.id ? <Check size={14} strokeWidth={2} /> : <Copy size={14} strokeWidth={1.8} />}
+                      {copiedId === m.id ? <Check size={16} strokeWidth={1.75} /> : <Copy size={16} strokeWidth={1.75} />}
                       <span aria-hidden="true">{copiedId === m.id ? 'Copiado' : 'Copiar'}</span>
                     </button>
                   </div>

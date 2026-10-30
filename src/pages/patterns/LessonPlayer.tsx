@@ -57,13 +57,13 @@ function PlayerSection() {
               {!playing && (
                 <div className="vid-idle">
                   <div className="vid-idle-copy">
-                    <span className="eyebrow"><Headphones size={11} strokeWidth={2.2} /> Aula 02.02 · 13min 54s</span>
+                    <span className="eyebrow"><Headphones size={14} strokeWidth={1.75} /> Aula 02.02 · 13min 54s</span>
                     <h2>Few-shot · <em>quando incluir exemplos é decisivo</em>.</h2>
                     <p className="lede">Caio Ribeiro · sessão gravada · transcript completo na lateral</p>
                   </div>
                   <button className="vid-play-big" onClick={() => setPlaying(true)} aria-label="Tocar">
                     <span className="ring">
-                      <Play size={28} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+                      <Play size={24} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
                     </span>
                   </button>
                 </div>
@@ -81,20 +81,20 @@ function PlayerSection() {
                   <div className="vid-row-l">
                     <button className="vid-ctrl play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
                       {playing ? (
-                        <Pause size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+                        <Pause size={16} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
                       ) : (
-                        <Play size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+                        <Play size={16} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
                       )}
                     </button>
-                    <button aria-label="Faixa anterior" className="vid-ctrl skip"><SkipBack size={14} strokeWidth={2.2} /></button>
-                    <button aria-label="Próxima faixa" className="vid-ctrl skip"><SkipForward size={14} strokeWidth={2.2} /></button>
-                    <button aria-label="Volume" className="vid-ctrl"><Volume2 size={14} strokeWidth={2.2} /></button>
+                    <button aria-label="Faixa anterior" className="vid-ctrl skip"><SkipBack size={16} strokeWidth={1.75} /></button>
+                    <button aria-label="Próxima faixa" className="vid-ctrl skip"><SkipForward size={16} strokeWidth={1.75} /></button>
+                    <button aria-label="Volume" className="vid-ctrl"><Volume2 size={16} strokeWidth={1.75} /></button>
                     <span className="vid-time">04:28 / 13:54</span>
                   </div>
                   <div className="vid-row-r">
                     <button className="vid-quality">1×</button>
-                    <button aria-label="Configurações" className="vid-ctrl"><Settings size={14} strokeWidth={2} /></button>
-                    <button aria-label="Tela cheia" className="vid-ctrl"><Maximize2 size={14} strokeWidth={2} /></button>
+                    <button aria-label="Configurações" className="vid-ctrl"><Settings size={16} strokeWidth={1.75} /></button>
+                    <button aria-label="Tela cheia" className="vid-ctrl"><Maximize2 size={16} strokeWidth={1.75} /></button>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ function PlayerSection() {
                   <h3>Few-shot · quando incluir exemplos é decisivo.</h3>
                 </div>
                 <button className="vds-lesson-mark">
-                  <Check size={13} strokeWidth={2.4} />
+                  <Check size={14} strokeWidth={1.75} />
                   Marcar como concluída
                 </button>
               </div>
@@ -135,10 +135,10 @@ function PlayerSection() {
           {/* Aside: tabs */}
           <aside className="vds-lesson-aside">
             <div className="vds-lesson-tabs" role="tablist">
-              <TabBtn k="transcript" active={tab} set={setTab} icon={<FileText size={13} strokeWidth={2} />} label="Transcript" />
-              <TabBtn k="notes" active={tab} set={setTab} icon={<Pencil size={13} strokeWidth={2} />} label="Notas" />
-              <TabBtn k="material" active={tab} set={setTab} icon={<Download size={13} strokeWidth={2} />} label="Material" />
-              <TabBtn k="discussion" active={tab} set={setTab} icon={<MessageCircle size={13} strokeWidth={2} />} label="Discussão" />
+              <TabBtn k="transcript" active={tab} set={setTab} icon={<FileText size={14} strokeWidth={1.75} />} label="Transcript" />
+              <TabBtn k="notes" active={tab} set={setTab} icon={<Pencil size={14} strokeWidth={1.75} />} label="Notas" />
+              <TabBtn k="material" active={tab} set={setTab} icon={<Download size={14} strokeWidth={1.75} />} label="Material" />
+              <TabBtn k="discussion" active={tab} set={setTab} icon={<MessageCircle size={16} strokeWidth={1.75} />} label="Discussão" />
             </div>
 
             <div className="vds-lesson-panel">
@@ -183,7 +183,7 @@ function TranscriptPanel() {
   return (
     <>
       <div className="vds-transcript-search">
-        <Search size={13} strokeWidth={2} />
+        <Search size={14} strokeWidth={1.75} />
         <input placeholder="Buscar no transcript" />
       </div>
       <ol className="vds-transcript">
@@ -207,7 +207,7 @@ function NotesPanel() {
         defaultValue="Few-shot só vale a pena quando o FORMATO é difícil de descrever em palavras. Resumir não pede. Gerar JSON com 4 campos específicos pede."
       />
       <button className="vds-notes-save">
-        <Bookmark size={13} strokeWidth={2.2} />
+        <Bookmark size={14} strokeWidth={1.75} />
         Salvar nota em 02:22
       </button>
 
@@ -238,14 +238,14 @@ function MaterialPanel() {
       {files.map((f) => (
         <li key={f.name}>
           <span className="vds-material-icon">
-            <FileText size={14} strokeWidth={2} />
+            <FileText size={16} strokeWidth={1.75} />
           </span>
           <div className="vds-material-meta">
             <p className="name">{f.name}</p>
             <p className="size">{f.size}</p>
           </div>
           <button aria-label="Baixar" className="vds-material-dl">
-            <Download size={13} strokeWidth={2.2} />
+            <Download size={14} strokeWidth={1.75} />
           </button>
         </li>
       ))}
@@ -326,7 +326,7 @@ function QuizSection() {
                   <span className="vds-quiz-text">{o}</span>
                   {reveal && isCorrect && (
                     <span className="vds-quiz-icon ok">
-                      <Check size={13} strokeWidth={2.6} />
+                      <Check size={14} strokeWidth={1.75} />
                     </span>
                   )}
                 </button>
@@ -356,7 +356,7 @@ function NavSection() {
     <Section title="Navegação entre aulas · footer do player" meta="prev / next contextual editorial">
       <div className="vds-lesson-nav">
         <a className="vds-lesson-nav-card prev" href="#prev">
-          <ArrowLeft size={14} strokeWidth={2.4} />
+          <ArrowLeft size={16} strokeWidth={1.75} />
           <div>
             <span className="lbl">Aula anterior</span>
             <p>02.01 · A anatomia de um prompt sólido</p>
@@ -364,7 +364,7 @@ function NavSection() {
         </a>
 
         <button className="vds-lesson-nav-mark">
-          <Check size={13} strokeWidth={2.6} />
+          <Check size={14} strokeWidth={1.75} />
           Concluir e ir pra próxima
         </button>
 
@@ -373,7 +373,7 @@ function NavSection() {
             <span className="lbl">Próxima aula</span>
             <p>02.03 · Live · auditoria de 3 prompts reais do grupo</p>
           </div>
-          <ArrowRight size={14} strokeWidth={2.4} />
+          <ArrowRight size={16} strokeWidth={1.75} />
         </a>
       </div>
     </Section>

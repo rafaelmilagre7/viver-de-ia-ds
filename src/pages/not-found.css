@@ -40,7 +40,7 @@
   font-size: clamp(48px, 6vw, 80px);
   font-weight: var(--via-fw-medium);
   line-height: var(--via-lh-tight);
-  letter-spacing: -0.03em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-6);
 }
@@ -65,7 +65,7 @@
   font-family: var(--via-font-display);
   font-size: clamp(280px, 30vw, 460px);
   font-weight: var(--via-fw-bold);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.06em;
   color: var(--via-navy-04);
   pointer-events: none;

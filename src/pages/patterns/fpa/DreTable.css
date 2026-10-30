@@ -59,7 +59,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
 }
@@ -69,23 +69,22 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
-  line-height: 1.15;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
 }
 .vds-fpa-dre-title-status {
   font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-fpa-dre-lede {
   margin: 0;
   max-width: 56ch;
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
-  letter-spacing: -0.006em;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
 }
 
@@ -99,8 +98,7 @@
 
 .vds-fpa-dre-updated {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  letter-spacing: 0.02em;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-faint);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
@@ -138,9 +136,8 @@
 .vds-fpa-dre-card-lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-muted);
 }
 
@@ -149,21 +146,21 @@
   align-items: baseline;
   gap: 5px;
   margin: var(--via-space-2) 0 var(--via-space-3);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
 }
 .vds-fpa-dre-card-val .cur {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-fpa-dre-card-val .num {
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
 }
 
@@ -184,10 +181,9 @@
   background: var(--via-glass-card);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.004em;
   white-space: nowrap;
   color: var(--via-text-primary);
 }
@@ -247,10 +243,10 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--via-text-muted);
   box-shadow: inset 0 -1px 0 var(--via-navy-14);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
 }
 .vds-fpa-dre-table thead th:first-child { text-align: left; }
 
@@ -291,7 +287,7 @@
   padding-top: var(--via-space-3);
   padding-bottom: var(--via-space-3);
 }
-.vds-fpa-dre-row.is-result .vds-fpa-dre-acct-note { font-size: var(--via-fs-micro); }
+.vds-fpa-dre-row.is-result .vds-fpa-dre-acct-note { font-size: var(--via-fs-xs); }
 /* evita linha dupla: quem vem antes de um resultado abre mão da borda inferior */
 .vds-fpa-dre-table tbody tr:has(+ tr.is-result) > * { border-bottom: 0; }
 .vds-fpa-dre-table tbody tr.is-result:hover > * { background: var(--via-navy-06); }
@@ -326,16 +322,15 @@
 .vds-fpa-dre-acct-name {
   display: inline-block;
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   font-weight: inherit;
 }
 .vds-fpa-dre-acct-note {
   display: block;
   margin-top: 3px;
   margin-left: 46px;   /* alinha com o nome da conta, não com o chevron */
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
-  letter-spacing: 0.01em;
   color: var(--via-text-soft);   /* faint (gray-400) dava 2,5:1 no fundo da tabela */
   font-variant-numeric: tabular-nums;
 }
@@ -380,7 +375,6 @@
   text-align: right;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.006em;
   color: var(--via-text-primary);
 }
 .vds-fpa-dre-num.is-plan { color: var(--via-text-muted); }
@@ -469,7 +463,7 @@
 .vds-fpa-dre-legend-note {
   white-space: normal;
   text-align: left;
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-fpa-dre-note {
@@ -482,8 +476,7 @@
   backdrop-filter: var(--via-glass-blur);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
-  letter-spacing: -0.006em;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
   font-variant-numeric: tabular-nums;
 }
@@ -494,9 +487,8 @@
 
 .vds-fpa-dre-source {
   margin: 0;
-  font-size: var(--via-fs-micro);
-  line-height: 1.55;
-  letter-spacing: 0.01em;
+  font-size: var(--via-fs-xs);
+  line-height: var(--via-lh-normal);
   color: var(--via-text-faint);
 }
 

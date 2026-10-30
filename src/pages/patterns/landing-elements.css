@@ -414,10 +414,8 @@
 }
 .vds-le-cta-rules h4 {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
   margin: 0 0 var(--via-space-3_5);
 }
@@ -433,7 +431,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   padding-left: var(--via-space-4);
   position: relative;
 }
@@ -463,7 +461,7 @@
 .vds-le-trust-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -492,7 +490,7 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   min-width: 112px;
   white-space: nowrap;
 }
@@ -507,8 +505,8 @@
   font-style: normal;
   font-size: var(--via-fs-h4);
   color: var(--via-text-primary);
-  line-height: 1.45;
-  letter-spacing: -0.018em;
+  line-height: var(--via-lh-normal);
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-le-trust-quote footer {
   display: flex;
@@ -539,7 +537,7 @@
 }
 .vds-le-trust-quote em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-le-trust-cases li {
@@ -600,10 +598,8 @@
 .vds-le-faq-item summary > div { display: flex; flex-direction: column; gap: var(--via-space-1); }
 .vds-le-faq-cat {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
 }
 .vds-le-faq-item summary strong {
@@ -611,7 +607,6 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.004em;
 }
 .vds-le-faq-item summary svg {
   color: var(--via-ink-3);
@@ -624,7 +619,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
 }
 
 /* ---------- Lead magnet ----------
@@ -738,16 +733,14 @@
 .vds-le-countdown-grid em {
   font-style: normal;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.6);
 }
 .vds-le-countdown-sep {
   font-family: var(--via-mono);
   font-size: var(--via-fs-h1);
   color: rgba(255, 255, 255, 0.3);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   padding: 0 var(--via-space-1_5);
 }
 .vds-le-countdown p {
@@ -755,7 +748,7 @@
   font-size: var(--via-fs-sm);
   color: rgba(255, 255, 255, 0.7);
   margin: 0 0 var(--via-space-6);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 .vds-le-countdown p strong { color: var(--via-white); font-weight: var(--via-fw-medium); }
 .vds-le-countdown-rule {
@@ -770,7 +763,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
 }
 .vds-le-countdown-rule strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 
@@ -798,7 +791,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   border-right: 0.5px solid var(--via-navy-08);
   display: flex;
   align-items: center;
@@ -808,7 +801,6 @@
 .vds-le-compare .cell.feature {
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.004em;
   background: var(--via-gray-50);
 }
 .vds-le-compare .cell.us {
@@ -833,11 +825,10 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.004em;
 }
 .vds-le-compare header em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 
@@ -853,7 +844,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
 }
 .vds-le-compare-rule strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
 

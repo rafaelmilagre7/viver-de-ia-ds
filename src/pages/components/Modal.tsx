@@ -18,7 +18,7 @@ export default function Modal() {
           <div className="vds-modal-demo">
             <header>
               <h3>Confirmar inscrição?</h3>
-              <button className="close" aria-label="Fechar"><X size={12} strokeWidth={2.5} /></button>
+              <button className="close" aria-label="Fechar"><X size={14} strokeWidth={1.75} /></button>
             </header>
             <p>
               Sua inscrição na turma 2026.2 será confirmada. O pagamento de

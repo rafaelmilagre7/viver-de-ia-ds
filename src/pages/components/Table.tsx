@@ -172,17 +172,17 @@ function FullTableSection() {
         {/* Header bar — search + filter + density */}
         <header className="vds-tbl-toolbar">
           <div className="vds-tbl-search">
-            <Search size={13} strokeWidth={2.2} />
+            <Search size={14} strokeWidth={1.75} />
             <input aria-label="Buscar na tabela" placeholder="Buscar operador, empresa, plano…" />
           </div>
           <div className="vds-tbl-toolbar-r">
             <button className="vds-tbl-tool">
-              <Filter size={13} strokeWidth={2.2} />
+              <Filter size={14} strokeWidth={1.75} />
               Filtros
               <span className="vds-tbl-tool-count">3</span>
             </button>
             <button className="vds-tbl-tool">
-              <Download size={13} strokeWidth={2.2} />
+              <Download size={14} strokeWidth={1.75} />
               Exportar
             </button>
             <div className="vds-tbl-density">
@@ -207,7 +207,7 @@ function FullTableSection() {
               <button>Enviar mensagem</button>
             </div>
             <button className="vds-tbl-batch-clear" onClick={() => setSelected([])}>
-              <X size={11} strokeWidth={2.4} />
+              <X size={14} strokeWidth={1.75} />
               Limpar
             </button>
           </div>
@@ -226,12 +226,12 @@ function FullTableSection() {
                       checked={allSelected}
                       onChange={() => setSelected(allSelected ? [] : rows.map((r) => r.av))}
                     />
-                    <span><Check size={10} strokeWidth={3} /></span>
+                    <span><Check size={14} strokeWidth={1.75} /></span>
                   </label>
                 </th>
                 <th>
                   <span className="vds-tbl-th-label">Operador</span>
-                  <ArrowUpDown size={10} strokeWidth={2} className="sort" />
+                  <ArrowUpDown size={14} strokeWidth={1.75} className="sort" />
                 </th>
                 <th>
                   <span className="vds-tbl-th-label">ID</span>
@@ -241,7 +241,7 @@ function FullTableSection() {
                 </th>
                 <th className="num via-num">
                   <span className="vds-tbl-th-label">MRR</span>
-                  <ArrowUpDown size={10} strokeWidth={2} className="sort" />
+                  <ArrowUpDown size={14} strokeWidth={1.75} className="sort" />
                 </th>
                 <th>
                   <span className="vds-tbl-th-label">Progresso</span>
@@ -266,7 +266,7 @@ function FullTableSection() {
                     <td className="check">
                       <label className="vds-tbl-check">
                         <input type="checkbox" aria-label={`Selecionar ${r.name}`} checked={sel} onChange={() => toggle(r.av)} />
-                        <span><Check size={10} strokeWidth={3} /></span>
+                        <span><Check size={14} strokeWidth={1.75} /></span>
                       </label>
                     </td>
 
@@ -306,7 +306,7 @@ function FullTableSection() {
                     {/* Delta com trend arrow · cor pela camada de dados (semântica) */}
                     <td className="num via-num">
                       <span className={`via-delta vds-tbl-delta ${r.delta > 0 ? 'up via-delta--up' : 'down via-delta--down'}`}>
-                        {r.delta > 0 ? <TrendingUp size={10} strokeWidth={2.4} /> : <TrendingDown size={10} strokeWidth={2.4} />}
+                        {r.delta > 0 ? <TrendingUp size={16} strokeWidth={1.75} /> : <TrendingDown size={14} strokeWidth={1.75} />}
                         {r.delta > 0 ? '+' : ''}{r.delta}%
                       </span>
                     </td>
@@ -324,10 +324,10 @@ function FullTableSection() {
                     {/* Actions trailing */}
                     <td className="actions">
                       <button className="vds-tbl-action-btn" title="Ver perfil">
-                        <ArrowRight size={12} strokeWidth={2.4} />
+                        <ArrowRight size={14} strokeWidth={1.75} />
                       </button>
                       <button className="vds-tbl-action-btn ghost" title="Mais opções">
-                        <MoreHorizontal size={13} strokeWidth={2} />
+                        <MoreHorizontal size={14} strokeWidth={1.75} />
                       </button>
                     </td>
                   </tr>
@@ -354,7 +354,7 @@ function FullTableSection() {
           <div className="vds-tbl-pag-size">
             <span>linhas por página</span>
             <button>
-              6 <ChevronDown size={11} strokeWidth={2.2} />
+              6 <ChevronDown size={16} strokeWidth={1.75} />
             </button>
           </div>
         </footer>

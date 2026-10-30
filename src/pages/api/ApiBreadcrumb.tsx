@@ -7,8 +7,8 @@ export default function ApiBreadcrumb() {
     <ComponentDoc
       eyebrow="api · breadcrumb"
       name="Breadcrumb"
-      headline="hierarquia editorial · chevron separator · last=current"
-      description="Breadcrumb pra navegação hierárquica. Último item sem href = current page (aria-current=page). Separator default ChevronRight 12px. Items podem usar href OU onClick (não ambos). ARIA nav + ordered list."
+      headline="onde você está, em uma linha."
+      description="Hierarquia editorial · chevron separator · last=current. Breadcrumb pra navegação hierárquica. Último item sem href = current page (aria-current=page). Separator default ChevronRight 12px. Items podem usar href OU onClick (não ambos). ARIA nav + ordered list."
       importLine={`import { Breadcrumb, type BreadcrumbProps, type BreadcrumbItem } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-breadcrumb', description: 'Nav semântica · aria-label customizável' },

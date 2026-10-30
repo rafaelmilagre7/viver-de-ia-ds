@@ -23,8 +23,8 @@ export default function ApiTagInput() {
     <ComponentDoc
       eyebrow="api · tag-input"
       name="TagInput"
-      headline="chips multi com input livre · suggestions · max limit"
-      description="TagInput pra adicionar tags arbitrárias (artigos, skills, filtros). Enter ou vírgula adiciona · backspace no campo vazio remove última. Suporta suggestions (sugestões clicáveis) + max (limite máximo)."
+      headline="várias etiquetas num campo livre."
+      description="Chips multi com input livre · suggestions · max limit. TagInput pra adicionar tags arbitrárias (artigos, skills, filtros). Enter ou vírgula adiciona · backspace no campo vazio remove última. Suporta suggestions (sugestões clicáveis) + max (limite máximo)."
       importLine={`import { TagInput, type TagInputProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-tag-input', description: 'Container · label + wrapper inputs + hint' },

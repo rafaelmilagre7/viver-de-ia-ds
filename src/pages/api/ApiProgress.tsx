@@ -7,8 +7,8 @@ export default function ApiProgress() {
     <ComponentDoc
       eyebrow="api · progress"
       name="Progress"
-      headline="barra editorial · shimmer contínuo · 3 tones"
-      description="Barra de progresso pra mostrar avanço determinístico. Track com gradient navy-10→06 + inset shadow. Fill com inset highlight + glow externo + shimmer light contínuo (2.4s ease-in-out infinite). 3 tones + 3 sizes."
+      headline="quanto falta, numa barra."
+      description="Barra editorial · shimmer contínuo · 3 tones. Barra de progresso pra mostrar avanço determinístico. Track com gradient navy-10→06 + inset shadow. Fill com inset highlight + glow externo + shimmer light contínuo (2.4s ease-in-out infinite). 3 tones + 3 sizes."
       importLine={`import { Progress, type ProgressProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-progress', description: 'Container · label + value (opcional) + track' },

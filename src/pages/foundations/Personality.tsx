@@ -174,7 +174,7 @@ export default function Personality() {
                   <p className="vds-pers-sum">{t.summary}</p>
                 </div>
                 <div className="vds-pers-icon">
-                  <I size={18} strokeWidth={1.6} />
+                  <I size={16} strokeWidth={1.75} />
                 </div>
               </header>
 

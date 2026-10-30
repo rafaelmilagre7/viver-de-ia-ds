@@ -25,7 +25,7 @@ export default function Stepper() {
             <div key={s.l} className={`step ${s.state}`}>
               <div className="cell">
                 <span className="circle">
-                  {s.state === 'done' ? <Check size={12} strokeWidth={3} /> : i + 1}
+                  {s.state === 'done' ? <Check size={14} strokeWidth={1.75} /> : i + 1}
                 </span>
                 {i < steps.length - 1 && <span className="line" />}
               </div>

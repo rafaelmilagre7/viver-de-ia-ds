@@ -32,7 +32,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 /* ícone do cadeado acompanha o rótulo (nada de verde de semáforo) */
@@ -117,7 +116,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
-  letter-spacing: -0.005em;
   white-space: nowrap;
 }
 
@@ -141,7 +139,7 @@
 .ckt-panel h2 {
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.020em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-1_5);
 }
@@ -150,7 +148,6 @@
   margin: 0 0 var(--via-space-6);
   font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
-  letter-spacing: -0.005em;
 }
 
 /* Planos */
@@ -258,20 +255,18 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.010em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .ckt-plano-info em {
   font-style: normal;
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
-  letter-spacing: -0.005em;
 }
 
 .ckt-plano-total {
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
   white-space: nowrap;
   font-feature-settings: 'tnum' 1;
 }
@@ -284,9 +279,8 @@
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   box-shadow: 0 4px 10px -3px var(--via-shadow-ink-40);
 }
 
@@ -314,7 +308,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
-  letter-spacing: -0.004em;
 }
 
 .ckt-field input {
@@ -326,7 +319,6 @@
   font-family: inherit;
   font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
   outline: none;
   transition: all 180ms ease;
 }
@@ -366,7 +358,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.005em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -458,16 +449,15 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.010em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: var(--via-space-1_5);
 }
 
 .ckt-pix-info p {
   margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-xs);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 .ckt-pix-copy {
@@ -485,7 +475,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
-  letter-spacing: -0.005em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -536,7 +525,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.005em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -577,7 +565,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
-  letter-spacing: -0.006em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 8px 18px -4px var(--via-shadow-ink-40);
@@ -621,9 +608,9 @@
 .ckt-summary-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-4);
@@ -640,7 +627,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: 3px;
 }
 
@@ -648,7 +635,6 @@
   font-style: normal;
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 .ckt-summary-incl {
@@ -666,7 +652,6 @@
   gap: var(--via-space-2);
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
-  letter-spacing: -0.004em;
 }
 
 .ckt-summary-incl svg { color: var(--via-text-primary); flex-shrink: 0; }
@@ -684,14 +669,13 @@
 .ckt-summary-total span {
   font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
-  letter-spacing: -0.005em;
 }
 
 .ckt-summary-total strong {
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -712,14 +696,13 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: 3px;
 }
 
 .ckt-summary-guarantee p {
   margin: 0;
-  font-size: var(--via-fs-label);
-  line-height: 1.45;
+  font-size: var(--via-fs-xs);
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }

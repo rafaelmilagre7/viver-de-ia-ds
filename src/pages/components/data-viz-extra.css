@@ -59,7 +59,7 @@
 
 .vds-hm-eyebrow {
   margin: 0 0 var(--via-space-2);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -72,7 +72,7 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   font-variant-numeric: tabular-nums;
   font-feature-settings: 'tnum' 1;
 }
@@ -82,13 +82,13 @@
   font-weight: var(--via-fw-regular);
   color: var(--via-text-muted);
   margin-left: var(--via-space-1);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-hm-lede {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
   max-width: 52ch;
 }
@@ -101,7 +101,7 @@
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-10);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   white-space: nowrap;
@@ -123,10 +123,8 @@
 .vds-hm-months span {
   position: absolute;
   top: 0;
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-data-ink); /* rótulo de eixo · token de TEXTO, nunca a cor da série */
 }
 
@@ -144,7 +142,7 @@
 }
 
 .vds-hm-days span {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-data-ink);
   display: flex;
@@ -216,11 +214,11 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-hm-tip span {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   opacity: 0.72;
   font-variant-numeric: tabular-nums;
 }
@@ -241,7 +239,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
   flex-wrap: wrap;
@@ -265,15 +263,13 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--via-space-2_5);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
 }
 
 .vds-hm-legend-cap {
-  text-transform: uppercase;
-  letter-spacing: var(--via-ls-wide);
-  font-weight: var(--via-fw-semibold);
+  font-weight: var(--via-fw-medium);
   color: var(--via-data-ink);
 }
 
@@ -319,10 +315,8 @@
 
 .vds-sk-label {
   margin: 0 0 var(--via-space-3);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 
@@ -354,7 +348,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -440,7 +434,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--via-space-1_5);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-data-ink);
   font-variant-numeric: tabular-nums;
   min-height: 26px;
@@ -448,7 +442,6 @@
 }
 
 .vds-sk-read-when {
-  letter-spacing: 0.02em;
 }
 
 .vds-sk-read.is-on .vds-sk-read-when {
@@ -476,9 +469,8 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: 0.02em;
 }
 
 .vds-sk-swatch {
@@ -503,7 +495,7 @@
   border: 1px solid var(--via-border-soft);
   background: var(--via-navy-03);
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-muted);
   max-width: 78ch;
 }
@@ -545,7 +537,7 @@
 
 .vds-gz-eyebrow {
   margin: 0 0 var(--via-space-2_5);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -599,19 +591,16 @@
 
 .vds-gz-anchor {
   font-family: inherit;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   fill: var(--via-data-ink);
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
 }
 
 .vds-gz-label {
   margin: var(--via-space-1) 0 0;
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-data-ink);
 }
 
@@ -625,7 +614,7 @@
   justify-content: center;
   gap: var(--via-space-4);
   flex-wrap: wrap;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
 }
@@ -667,10 +656,8 @@
   border-radius: var(--via-radius-pill);
   border: 1px solid var(--via-navy-10);
   background: var(--via-navy-04);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
 }
 
 .vds-gz-dot {
@@ -688,7 +675,7 @@
 .vds-gz-meta {
   margin: var(--via-space-3) 0 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
   text-align: center;
 }

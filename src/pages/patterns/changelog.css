@@ -13,8 +13,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 24px 56px -22px var(--via-shadow-ink-20);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
 }
 
 .vds-cl-featured::before {
@@ -54,9 +54,9 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-accent-warm);
   margin-bottom: var(--via-space-1_5);
@@ -66,7 +66,6 @@
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-cl-version {
@@ -82,15 +81,14 @@
   font-size: 28px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   font-variant-numeric: tabular-nums;
 }
 
 .vds-cl-version-tag {
   display: inline-block;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   padding: 3px 11px;
   border-radius: var(--via-radius-pill);
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
@@ -99,7 +97,7 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 2px 6px var(--via-shadow-ink-20);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-cl-featured-body {
@@ -111,8 +109,8 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.03em;
-  line-height: 1.12;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
@@ -126,7 +124,7 @@
 .vds-cl-lede {
   margin: 0 0 var(--via-space-6);
   font-size: var(--via-fs-body);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
   max-width: 640px;
 }
@@ -231,8 +229,8 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
-  line-height: 1.2;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-white);
 }
 
@@ -245,14 +243,14 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tight);
-  line-height: 1.25;
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
 .vds-cl-hl p {
   margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-2);
 }
 
@@ -305,7 +303,6 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   text-decoration: none;
-  letter-spacing: -0.006em;
   white-space: nowrap;
   width: fit-content;
   transition:
@@ -355,17 +352,15 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
   font-variant-numeric: tabular-nums;
 }
 
 .vds-cl-stat em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 .vds-cl-stat-sep {
@@ -401,8 +396,8 @@
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset;
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
 }
 
 .vds-cl-toc header {
@@ -414,9 +409,9 @@
 .vds-cl-toc-eyebrow {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-ink-3);
   margin-bottom: var(--via-space-1);
@@ -447,7 +442,6 @@
   text-decoration: none;
   color: var(--via-text-primary);
   font-size: var(--via-fs-xs);
-  letter-spacing: -0.006em;
   border: 1px solid transparent;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -487,9 +481,8 @@
 }
 
 .vds-cl-toc-d {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
 }
 
 .vds-cl-toc-more {
@@ -611,19 +604,18 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   font-variant-numeric: tabular-nums;
 }
 
 .vds-cl-entry-tag {
   display: inline-block;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   padding: 3px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-cl-entry-tag.major {
@@ -645,9 +637,8 @@
 }
 
 .vds-cl-entry-date {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
   margin-left: auto;
 }
 
@@ -656,7 +647,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
@@ -732,9 +723,8 @@
 }
 
 .vds-cl-change-tag {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-ink-2);
   white-space: nowrap;
 }
@@ -746,8 +736,7 @@
 .vds-cl-change-text {
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
-  line-height: 1.45;
-  letter-spacing: -0.006em;
+  line-height: var(--via-lh-normal);
 }
 
 @media (prefers-reduced-motion: reduce) {

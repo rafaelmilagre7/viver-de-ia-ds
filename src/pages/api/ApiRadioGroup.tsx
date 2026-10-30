@@ -24,8 +24,8 @@ export default function ApiRadioGroup() {
     <ComponentDoc
       eyebrow="api · radio-group"
       name="RadioGroup"
-      headline="escolha exclusiva editorial · keyboard arrow nav"
-      description="RadioGroup pra escolha única entre N opções. Cada item com label + description opcional. ARIA radiogroup com keyboard arrow nav (esq/dir/cima/baixo). Editorial: dot radial gradient + spring overshoot + glow no selected."
+      headline="uma escolha entre poucas."
+      description="Escolha exclusiva editorial · keyboard arrow nav. RadioGroup pra escolha única entre N opções. Cada item com label + description opcional. ARIA radiogroup com keyboard arrow nav (esq/dir/cima/baixo). Editorial: dot radial gradient + spring overshoot + glow no selected."
       importLine={`import { RadioGroup, type RadioGroupProps, type RadioOption } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-radio-group', description: 'Container role=radiogroup · stack vertical default' },

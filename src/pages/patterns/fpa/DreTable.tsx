@@ -229,11 +229,11 @@ export default function DreTable() {
               <div className="vds-fpa-dre-card-meta">
                 <span className={`vds-fpa-dre-card-delta is-${tone}`}>
                   {tone === 'goal' ? (
-                    <CircleCheck size={11} strokeWidth={2.2} aria-hidden="true" />
+                    <CircleCheck size={14} strokeWidth={1.75} aria-hidden="true" />
                   ) : v >= 0 ? (
-                    <ArrowUpRight size={11} strokeWidth={2.4} aria-hidden="true" />
+                    <ArrowUpRight size={14} strokeWidth={1.75} aria-hidden="true" />
                   ) : (
-                    <ArrowDownRight size={11} strokeWidth={2.4} aria-hidden="true" />
+                    <ArrowDownRight size={14} strokeWidth={1.75} aria-hidden="true" />
                   )}
                   {fIntSigned.format(v)} · {pctSigned((v / row.plan) * 100)}
                 </span>
@@ -291,9 +291,9 @@ export default function DreTable() {
                       >
                         <span className="vds-fpa-dre-acct-chev">
                           {aberto ? (
-                            <ChevronDown size={14} strokeWidth={2.2} aria-hidden="true" />
+                            <ChevronDown size={16} strokeWidth={1.75} aria-hidden="true" />
                           ) : (
-                            <ChevronRight size={14} strokeWidth={2.2} aria-hidden="true" />
+                            <ChevronRight size={16} strokeWidth={1.75} aria-hidden="true" />
                           )}
                         </span>
                         <span className="vds-fpa-dre-acct-prefix">{row.prefix ?? ''}</span>

@@ -131,7 +131,7 @@ function CourseHero() {
               <span style={{ width: '28%' }} />
             </div>
             <p className="next">
-              <Play size={11} strokeWidth={0} style={{ fill: 'currentColor' }} />
+              <Play size={14} strokeWidth={0} style={{ fill: 'currentColor' }} />
               <span>Próxima aula <strong>02.02 · Few-shot · quando incluir exemplos é decisivo</strong></span>
             </p>
           </div>
@@ -154,7 +154,7 @@ function CourseHero() {
 
           <button className="vds-course-cta">
             Continuar de onde parou
-            <ArrowRight size={14} strokeWidth={2.5} />
+            <ArrowRight size={16} strokeWidth={1.75} />
           </button>
         </div>
       </div>
@@ -185,7 +185,7 @@ function ModulesList() {
               <button className="vds-module-head" onClick={() => toggle(m.num)}>
                 <div className="vds-module-num">
                   {allDone ? (
-                    <Check size={16} strokeWidth={2.5} />
+                    <Check size={16} strokeWidth={1.75} />
                   ) : (
                     <span>{m.num}</span>
                   )}
@@ -214,10 +214,10 @@ function ModulesList() {
                   {m.lessons.map((l) => (
                     <li key={l.n} className={`vds-lesson ${l.state}`}>
                       <span className="vds-lesson-icon">
-                        {l.state === 'done' && <Check size={13} strokeWidth={2.6} />}
-                        {l.state === 'playing' && <Play size={13} strokeWidth={0} style={{ fill: 'currentColor' }} />}
+                        {l.state === 'done' && <Check size={14} strokeWidth={1.75} />}
+                        {l.state === 'playing' && <Play size={14} strokeWidth={0} style={{ fill: 'currentColor' }} />}
                         {l.state === 'available' && lessonTypeIcon(l.type)}
-                        {l.state === 'locked' && <Lock size={13} strokeWidth={2.2} />}
+                        {l.state === 'locked' && <Lock size={14} strokeWidth={1.75} />}
                       </span>
                       <span className="vds-lesson-num">{l.n}</span>
                       <span className="vds-lesson-title">{l.title}</span>
@@ -225,7 +225,7 @@ function ModulesList() {
                       <span className="vds-lesson-dur">{l.duration}</span>
                       {(l.state === 'playing' || l.state === 'available') && (
                         <button aria-label="Avançar" className="vds-lesson-go">
-                          <ArrowRight size={13} strokeWidth={2.4} />
+                          <ArrowRight size={14} strokeWidth={1.75} />
                         </button>
                       )}
                     </li>
@@ -239,7 +239,7 @@ function ModulesList() {
         {/* Certificate card */}
         <div className="vds-cert-card">
           <div className="vds-cert-icon">
-            <Award size={22} strokeWidth={1.4} />
+            <Award size={20} strokeWidth={1.75} />
           </div>
           <div>
             <p className="vds-cert-name">Certificado de conclusão</p>
@@ -255,11 +255,11 @@ function ModulesList() {
 }
 
 function lessonTypeIcon(t: LessonType) {
-  if (t === 'video') return <PlayCircle size={13} strokeWidth={2} />;
-  if (t === 'exercise') return <PenTool size={13} strokeWidth={2} />;
-  if (t === 'reading') return <BookOpen size={13} strokeWidth={2} />;
-  if (t === 'live') return <Headphones size={13} strokeWidth={2} />;
-  return <FileText size={13} strokeWidth={2} />;
+  if (t === 'video') return <PlayCircle size={14} strokeWidth={1.75} />;
+  if (t === 'exercise') return <PenTool size={14} strokeWidth={1.75} />;
+  if (t === 'reading') return <BookOpen size={14} strokeWidth={1.75} />;
+  if (t === 'live') return <Headphones size={14} strokeWidth={1.75} />;
+  return <FileText size={14} strokeWidth={1.75} />;
 }
 function lessonTypeLabel(t: LessonType) {
   if (t === 'video') return 'Vídeo';

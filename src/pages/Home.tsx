@@ -49,7 +49,7 @@ export default function Home() {
       {/* HERO · light-first: papel claro + atmosfera navy sutil (o navy é a tinta, não o fundo) */}
       <section className="vds-home-hero">
         <span className="vds-home-hero-pill via-liquid">
-          <Layers size={14} strokeWidth={1.75} />
+          <Layers size={16} strokeWidth={1.75} />
           Versão 0.6 · 166 páginas vivas
         </span>
         <h1 className="vds-home-hero-title">

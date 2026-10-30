@@ -91,9 +91,9 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   max-width: 380px;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-loader-msg em {
@@ -104,9 +104,8 @@
 
 .vds-loader-sub {
   margin: 0;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.02em;
 }
 
 /* Inline */
@@ -147,7 +146,7 @@
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-text);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-loader-inline p strong {
@@ -266,8 +265,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -343,16 +342,15 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: rgba(255, 255, 255, 0.82);
   padding: 5px var(--via-space-2_5) 5px var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.18);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 /* estado de sistema ≠ ação destrutiva · coral fica reservado a destrutivo */
@@ -386,7 +384,7 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   margin: 0;
   font-feature-settings: 'tnum' 1;
   text-shadow: 0 4px 24px rgba(10, 31, 59, 0.15);
@@ -459,10 +457,8 @@
 }
 
 .vds-error-plan .lbl {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -470,15 +466,14 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-error-plan em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-feature-settings: 'tnum' 1;
-  letter-spacing: -0.005em;
 }
 
 .vds-error-plans-arrow {
@@ -515,9 +510,8 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: inherit;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-primary);
   padding: 5px var(--via-space-2_5) 5px var(--via-space-2);
   border-radius: var(--via-radius-pill);
@@ -527,7 +521,7 @@
   border: 1px solid var(--via-navy-16);
   width: fit-content;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-error-live-dot {
@@ -564,7 +558,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   color: var(--via-text-soft);
@@ -574,9 +568,8 @@
 .vds-error-progress-row .mid {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-bold);
-  letter-spacing: -0.005em;
   text-transform: none;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
 }
 
 .vds-error-progress-bar {
@@ -630,9 +623,8 @@
 
 .vds-error-code {
   font-family: inherit;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-soft);
   margin: 0;
   padding: 5px var(--via-space-2_5);
@@ -641,7 +633,7 @@
   border: 1px solid var(--via-border-soft);
   width: fit-content;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-error-code.mono {
@@ -651,8 +643,8 @@
 .vds-error-card h3 {
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.022em;
-  line-height: 1.2;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
   margin: 0;
   max-width: 360px;
@@ -666,7 +658,7 @@
 
 .vds-error-card p {
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-soft);
   margin: 0;
   max-width: 380px;
@@ -689,13 +681,12 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 11px var(--via-space-4);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
   border: 1px solid;
   cursor: pointer;
-  letter-spacing: -0.005em;
   font-family: inherit;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -778,8 +769,8 @@
   background: rgba(255, 255, 255, 0.10);
   border-color: rgba(255, 255, 255, 0.20);
   color: var(--via-white);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
@@ -800,19 +791,16 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin-top: auto;
   padding-top: var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
-  letter-spacing: 0.02em;
 }
 
 .vds-error-id span {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   padding: var(--via-space-0_5) 7px;
   border-radius: var(--via-radius-xs);
@@ -889,14 +877,14 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
-  line-height: 1.25;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
 }
 
 .vds-empty-card p {
   margin: 0 0 var(--via-space-2);
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
   max-width: 320px;
 }
@@ -930,7 +918,6 @@
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   text-decoration: none;
-  letter-spacing: -0.005em;
   font-family: inherit;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -1078,9 +1065,9 @@
 
 .vds-success-eyebrow {
   display: inline-flex;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.2em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
 }
@@ -1089,9 +1076,9 @@
   margin: 0;
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
-  line-height: 1.15;
+  line-height: var(--via-lh-snug);
   max-width: 460px;
 }
 
@@ -1109,7 +1096,7 @@
 .vds-success-card p {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
   max-width: 440px;
 }
@@ -1125,13 +1112,12 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: var(--via-space-3) var(--via-space-5);
-  border-radius: var(--via-radius-md);
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   text-decoration: none;
-  letter-spacing: -0.005em;
   font-family: inherit;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -1349,9 +1335,9 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-accent-warm);
   margin-bottom: var(--via-space-3_5);
@@ -1388,7 +1374,7 @@
   font-size: 28px;
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tighter);
-  line-height: 1.16;
+  line-height: var(--via-lh-snug);
   color: inherit;
 }
 
@@ -1406,8 +1392,8 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
-  line-height: 1.22;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
@@ -1420,7 +1406,7 @@
 .vds-empty-prem p {
   margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
 }
 
@@ -1484,7 +1470,7 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.66);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   display: flex;
   align-items: center;
@@ -1517,15 +1503,14 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: rgba(255, 255, 255, 0.94);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-empty-prem-steps em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.62);
-  letter-spacing: 0.01em;
 }
 
 /* Generic icon for premium empties */
@@ -1616,9 +1601,8 @@
 
 .vds-empty-prem-trail-lbl {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
 }
 
 /* Zen mini stat */
@@ -1634,10 +1618,8 @@
 
 .vds-empty-prem-stat .lbl {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 .vds-empty-prem-stat strong {
@@ -1645,7 +1627,7 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 /* Filter chips */
@@ -1709,15 +1691,14 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-regular);
   color: var(--via-ink-3);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
 }
 
 .vds-empty-prem-chip em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 /* Inbox mini stats */
@@ -1741,15 +1722,14 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-empty-prem-mini em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
 }
 
 .vds-empty-prem-sep {
@@ -1784,7 +1764,7 @@
   font-family: var(--via-mono);
   font-size: 8px;
   color: var(--via-ink-3);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
 }
 
 .vds-empty-prem-day .num {
@@ -1816,11 +1796,11 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: 9px var(--via-space-4);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   background: var(--via-glass-card);

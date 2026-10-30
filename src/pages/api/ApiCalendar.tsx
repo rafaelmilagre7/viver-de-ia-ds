@@ -18,8 +18,8 @@ export default function ApiCalendar() {
     <ComponentDoc
       eyebrow="api · calendar"
       name="Calendar"
-      headline="calendário standalone · pt-BR · markers coloridos"
-      description="Calendar inline (vs DatePicker que tem trigger + popover). Use em dashboards, painéis de agenda, eventos. Header pt-BR (janeiro, fevereiro...) · markers coloridos (navy/coral/success) pra eventos. Keyboard arrow nav."
+      headline="o mês inteiro, em português."
+      description="Calendário standalone · pt-BR · markers coloridos. Calendar inline (vs DatePicker que tem trigger + popover). Use em dashboards, painéis de agenda, eventos. Header pt-BR (janeiro, fevereiro...) · markers coloridos (navy/coral/success) pra eventos. Keyboard arrow nav."
       importLine={`import { Calendar, type CalendarProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-calendar', description: 'Container · header + grid 7×6' },

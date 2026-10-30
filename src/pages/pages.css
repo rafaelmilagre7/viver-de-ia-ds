@@ -50,7 +50,7 @@
   font-size: clamp(48px, 6.5vw, 84px);
   font-weight: var(--via-fw-medium);
   line-height: var(--via-lh-tight);
-  letter-spacing: -0.03em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-7);
   max-width: 880px;
@@ -200,15 +200,15 @@
   font-family: var(--via-font-display);
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-h3);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: var(--via-lh-snug);
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin: var(--via-space-1) 0 0;
 }
 .vds-home-card-body {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   margin: 0;
 }
@@ -274,16 +274,14 @@
   font-family: var(--via-font-display);
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-display);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.04em;
   color: var(--via-white);
 }
 .vds-home-stat-lbl {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
 }
 
@@ -468,7 +466,7 @@
   background: #F7F8FA;
   padding: 0 var(--via-space-2);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: #667085;
 }
 
@@ -544,7 +542,7 @@
 .vds-spacing-half-note {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-muted);
   max-width: 640px;
   margin: 0 0 var(--via-space-3_5);
@@ -630,10 +628,8 @@
 .vds-radii-tile:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 16px 36px var(--via-shadow-ink-20); }
 .vds-radii-label {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 .vds-radii-value {
@@ -679,7 +675,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: var(--via-ls-wide);
@@ -739,13 +735,13 @@
 }
 .vds-motion-curve {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin: var(--via-space-1_5) 0 0;
 }
 .vds-motion-use {
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   margin: 0;
 }
@@ -809,7 +805,7 @@
   margin: var(--via-space-4) 0 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-muted);
 }
 .vds-motion-note strong {
@@ -852,10 +848,8 @@
 
 .vds-type-label {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -865,7 +859,7 @@
   display: block;
   margin-top: 5px;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
   letter-spacing: 0;
   text-transform: none;
@@ -880,12 +874,12 @@
 .vds-type-sample {
   color: var(--via-text-primary);
   font-size: var(--vds-sample-size, var(--via-fs-body));
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-type-meta {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   text-align: right;
   letter-spacing: 0.04em;
@@ -935,7 +929,7 @@
 }
 .vds-icon-cell span {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 

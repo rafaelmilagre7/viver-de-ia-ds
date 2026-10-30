@@ -22,8 +22,8 @@ export default function ApiSlider() {
     <ComponentDoc
       eyebrow="api · slider"
       name="Slider"
-      headline="range editorial · thumb radial · glow signature"
-      description="Slider pra valores contínuos. Track gradient navy-10→06 + inset shadow profundo. Thumb com radial gradient + 5-layer shadow + spring hover 1.12. 3 tones (navy · accent · coral) e 3 sizes."
+      headline="um valor dentro de um intervalo."
+      description="Range editorial · thumb radial · glow signature. Slider pra valores contínuos. Track gradient navy-10→06 + inset shadow profundo. Thumb com radial gradient + 5-layer shadow + spring hover 1.12. 3 tones (navy · accent · coral) e 3 sizes."
       importLine={`import { Slider, type SliderProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-slider', description: 'Container · label + track + value vertical stack' },

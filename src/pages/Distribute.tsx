@@ -64,25 +64,25 @@ type Role = { role: string; icon: React.ReactNode; what: string; cta: string };
 const roles: Role[] = [
   {
     role: 'Marketing / conteúdo',
-    icon: <Megaphone size={18} strokeWidth={1.8} />,
+    icon: <Megaphone size={16} strokeWidth={1.75} />,
     what: 'Email, post, anúncio, landing, newsletter.',
     cta: 'Copie o prompt-mestre (logo abaixo) → cole no ChatGPT ou Lovable → peça em português. Sai no padrão.',
   },
   {
     role: 'Design / produto',
-    icon: <PenTool size={18} strokeWidth={1.8} />,
+    icon: <PenTool size={16} strokeWidth={1.75} />,
     what: 'Telas, protótipos, mockups.',
     cta: 'Navegue o site de referência pra ver tudo pronto, ou use o Lovable com o prompt. Cores, tipografia e componentes já alinhados.',
   },
   {
     role: 'Desenvolvimento',
-    icon: <Code2 size={18} strokeWidth={1.8} />,
+    icon: <Code2 size={16} strokeWidth={1.75} />,
     what: 'App, plataforma, landing em código.',
     cta: 'No Claude Code: instale o plugin (2 comandos, na seção abaixo). Ou consuma a library React + tokens.',
   },
   {
     role: 'Qualquer um · qualquer IA',
-    icon: <MessageCircle size={18} strokeWidth={1.8} />,
+    icon: <MessageCircle size={16} strokeWidth={1.75} />,
     what: 'Na dúvida, ou em outra ferramenta.',
     cta: 'Cole o prompt-mestre em QUALQUER IA e descreva o que quer. Ela já segue a marca.',
   },
@@ -129,16 +129,16 @@ export default function Distribute() {
       <Section title="Comece aqui" meta="1 prompt · 3 formatos">
         <div className="vds-dist-actions">
           <button className="vds-dist-primary" onClick={copyPrompt}>
-            {copied ? <Check size={17} strokeWidth={2.2} /> : <Copy size={17} strokeWidth={2} />}
+            {copied ? <Check size={16} strokeWidth={1.75} /> : <Copy size={16} strokeWidth={1.75} />}
             {copied ? 'Prompt copiado' : 'Copiar prompt-mestre'}
           </button>
           <a className="vds-dist-secondary" href="/viver-de-ia-kit.zip" download>
-            <Package size={16} strokeWidth={2} />
+            <Package size={16} strokeWidth={1.75} />
             Baixar kit completo
             <span className="vds-dist-meta">.zip · tokens + logos + prompts + exemplos</span>
           </a>
           <a className="vds-dist-secondary" href="/viver-de-ia-system-prompt.md" target="_blank" rel="noreferrer">
-            <FileText size={16} strokeWidth={2} />
+            <FileText size={16} strokeWidth={1.75} />
             Abrir prompt (.md)
             <span className="vds-dist-meta">pra salvar como .cursorrules ou colar</span>
           </a>
@@ -154,7 +154,7 @@ export default function Distribute() {
           {tools.map((t) => (
             <article key={t.name} className="vds-dist-tool">
               <header>
-                {t.name.includes('Code') ? <Terminal size={18} strokeWidth={1.8} /> : <ArrowUpRight size={18} strokeWidth={1.8} />}
+                {t.name.includes('Code') ? <Terminal size={16} strokeWidth={1.75} /> : <ArrowUpRight size={16} strokeWidth={1.75} />}
                 <div>
                   <h3>{t.name}</h3>
                   <span className="vds-dist-tooltag">{t.tag}</span>

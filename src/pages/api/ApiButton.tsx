@@ -8,8 +8,8 @@ export default function ApiButton() {
     <ComponentDoc
       eyebrow="api · button"
       name="Button"
-      headline="pill 999 · sentence-case · reflexo que segue o ponteiro"
-      description="CTA primário do sistema. Pill com gradient navy primary, secondary no material control do vidro (claro no claro, controle escuro no escuro), fantasma ghost, coral destrutivo e accent editorial singular. Loading state com spinner currentColor · ícones iconLeft/iconRight com spacing automático · reflexo que segue o ponteiro no hover (só transform/opacity) · press scale 0.985."
+      headline="a ação principal, sempre em pílula."
+      description="Pill 999 · sentence-case · reflexo que segue o ponteiro. CTA primário do sistema. Pill com gradient navy primary, secondary no material control do vidro (claro no claro, controle escuro no escuro), fantasma ghost, coral destrutivo e accent editorial singular. Loading state com spinner currentColor · ícones iconLeft/iconRight com spacing automático · reflexo que segue o ponteiro no hover (só transform/opacity) · press scale 0.985."
       importLine={`import { Button, type ButtonProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-btn', description: 'Container base · pill 999 · padding por size · overflow:hidden pra confinar o reflexo' },
@@ -52,11 +52,11 @@ export default function ApiButton() {
           title: 'CTA primário com ícone',
           description: 'Padrão hero · primary navy + ArrowRight + sentence-case.',
           preview: (
-            <Button variant="primary" size="lg" iconRight={<ArrowRight size={14} strokeWidth={2.5} />}>
+            <Button variant="primary" size="lg" iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>
               Começar agora
             </Button>
           ),
-          code: `<Button variant="primary" size="lg" iconRight={<ArrowRight size={14} strokeWidth={2.5} />}>
+          code: `<Button variant="primary" size="lg" iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>
   Começar agora
 </Button>`,
         },
@@ -65,11 +65,11 @@ export default function ApiButton() {
           description: 'Padrão de hero com 2 ações · primary à esquerda, ghost à direita.',
           preview: (
             <>
-              <Button variant="secondary" iconLeft={<Mail size={14} strokeWidth={1.8} />}>Continuar com email</Button>
+              <Button variant="secondary" iconLeft={<Mail size={16} strokeWidth={1.75} />}>Continuar com email</Button>
               <Button variant="ghost">Voltar</Button>
             </>
           ),
-          code: `<Button variant="secondary" iconLeft={<Mail size={14} strokeWidth={1.8} />}>
+          code: `<Button variant="secondary" iconLeft={<Mail size={16} strokeWidth={1.75} />}>
   Continuar com email
 </Button>
 <Button variant="ghost">Voltar</Button>`,
@@ -78,11 +78,11 @@ export default function ApiButton() {
           title: 'Destructive · cancelar plano',
           description: 'Ação destrutiva real · começa transparent + coral border, vira coral gradient no hover.',
           preview: (
-            <Button variant="destructive" iconLeft={<Trash2 size={14} strokeWidth={1.8} />}>
+            <Button variant="destructive" iconLeft={<Trash2 size={16} strokeWidth={1.75} />}>
               Cancelar inscrição
             </Button>
           ),
-          code: `<Button variant="destructive" iconLeft={<Trash2 size={14} strokeWidth={1.8} />}>
+          code: `<Button variant="destructive" iconLeft={<Trash2 size={16} strokeWidth={1.75} />}>
   Cancelar inscrição
 </Button>`,
         },

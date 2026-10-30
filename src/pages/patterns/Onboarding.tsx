@@ -28,7 +28,7 @@ export default function Onboarding() {
             {steps.map((s, i) => (
               <div key={s.n} className={`ob-step ${s.s}`}>
                 <span className="circle">
-                  {s.s === 'done' ? <Check size={12} strokeWidth={3} /> : s.n}
+                  {s.s === 'done' ? <Check size={14} strokeWidth={1.75} /> : s.n}
                 </span>
                 <span className="t">{s.t}</span>
                 {i < steps.length - 1 && <span className="line" />}
@@ -50,7 +50,7 @@ export default function Onboarding() {
                 { l: 'Acelerar uma análise', d: 'Conversas, dados, contratos — sair do Excel.' },
               ].map((o, i) => (
                 <label key={o.l} className={`ob-opt ${i === 0 ? 'on' : ''}`}>
-                  <span className={`box ${i === 0 ? 'on' : ''}`}>{i === 0 && <Check size={12} strokeWidth={3} />}</span>
+                  <span className={`box ${i === 0 ? 'on' : ''}`}>{i === 0 && <Check size={14} strokeWidth={1.75} />}</span>
                   <div>
                     <strong>{o.l}</strong>
                     <span>{o.d}</span>
@@ -106,7 +106,7 @@ function WizardPremiumSection() {
               {wizSteps.map((s) => (
                 <li key={s.n} className={s.s}>
                   <span className="vds-wiz-step-bullet">
-                    {s.s === 'done' ? <Check size={11} strokeWidth={3} /> : s.n}
+                    {s.s === 'done' ? <Check size={14} strokeWidth={1.75} /> : s.n}
                   </span>
                   <div>
                     <strong>{s.t}</strong>
@@ -142,10 +142,10 @@ function WizardPremiumSection() {
           <div className="vds-wiz-options">
             <label className="vds-wiz-opt on">
               <span className="vds-wiz-opt-check">
-                <Check size={12} strokeWidth={3} />
+                <Check size={14} strokeWidth={1.75} />
               </span>
               <div className="vds-wiz-opt-icon nv">
-                <MessageCircle size={18} strokeWidth={1.6} />
+                <MessageCircle size={16} strokeWidth={1.75} />
               </div>
               <div className="vds-wiz-opt-body">
                 <strong>Automatizar atendimento</strong>
@@ -156,10 +156,10 @@ function WizardPremiumSection() {
 
             <label className="vds-wiz-opt on">
               <span className="vds-wiz-opt-check">
-                <Check size={12} strokeWidth={3} />
+                <Check size={14} strokeWidth={1.75} />
               </span>
               <div className="vds-wiz-opt-icon gd">
-                <Database size={18} strokeWidth={1.6} />
+                <Database size={16} strokeWidth={1.75} />
               </div>
               <div className="vds-wiz-opt-body">
                 <strong>Internalizar uma ferramenta</strong>
@@ -171,7 +171,7 @@ function WizardPremiumSection() {
             <label className="vds-wiz-opt">
               <span className="vds-wiz-opt-check" />
               <div className="vds-wiz-opt-icon">
-                <Compass size={18} strokeWidth={1.6} />
+                <Compass size={16} strokeWidth={1.75} />
               </div>
               <div className="vds-wiz-opt-body">
                 <strong>Acelerar análise / decisão</strong>
@@ -183,7 +183,7 @@ function WizardPremiumSection() {
             <label className="vds-wiz-opt">
               <span className="vds-wiz-opt-check" />
               <div className="vds-wiz-opt-icon">
-                <Building2 size={18} strokeWidth={1.6} />
+                <Building2 size={16} strokeWidth={1.75} />
               </div>
               <div className="vds-wiz-opt-body">
                 <strong>Montar squad IA na empresa</strong>
@@ -195,7 +195,7 @@ function WizardPremiumSection() {
             <label className="vds-wiz-opt">
               <span className="vds-wiz-opt-check" />
               <div className="vds-wiz-opt-icon">
-                <Users size={18} strokeWidth={1.6} />
+                <Users size={16} strokeWidth={1.75} />
               </div>
               <div className="vds-wiz-opt-body">
                 <strong>Treinar time existente</strong>
@@ -207,7 +207,7 @@ function WizardPremiumSection() {
             <label className="vds-wiz-opt">
               <span className="vds-wiz-opt-check" />
               <div className="vds-wiz-opt-icon">
-                <Briefcase size={18} strokeWidth={1.6} />
+                <Briefcase size={16} strokeWidth={1.75} />
               </div>
               <div className="vds-wiz-opt-body">
                 <strong>Lançar produto IA-first</strong>
@@ -223,12 +223,12 @@ function WizardPremiumSection() {
             </span>
             <div className="vds-wiz-actions">
               <button className="vds-wiz-btn ghost">
-                <ArrowLeft size={13} strokeWidth={2.4} />
+                <ArrowLeft size={14} strokeWidth={1.75} />
                 Voltar
               </button>
               <button className="vds-wiz-btn primary">
                 Continuar
-                <ArrowRight size={13} strokeWidth={2.4} />
+                <ArrowRight size={14} strokeWidth={1.75} />
               </button>
             </div>
           </footer>

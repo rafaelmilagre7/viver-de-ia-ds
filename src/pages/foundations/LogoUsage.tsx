@@ -394,7 +394,7 @@ function DontsSection() {
         <article className="vds-lu-do">
           <header>
             <span className="vds-lu-dd-eyebrow">
-              <Check size={11} strokeWidth={2.6} />
+              <Check size={14} strokeWidth={1.75} />
               Use
             </span>
           </header>
@@ -405,7 +405,7 @@ function DontsSection() {
         <article className="vds-lu-dont">
           <header>
             <span className="vds-lu-dd-eyebrow alt">
-              <X size={11} strokeWidth={2.6} />
+              <X size={14} strokeWidth={1.75} />
               Não use
             </span>
           </header>

@@ -34,7 +34,7 @@
   font-family: var(--via-font-display);
   font-weight: var(--via-fw-medium);
   font-size: clamp(36px, 4.6vw, 64px);
-  line-height: 0.98;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.045em;
   color: var(--via-text-primary);
   margin: 0;
@@ -42,7 +42,7 @@
 .gl-hero__lede {
   margin-top: var(--via-space-5);
   font-size: var(--via-fs-sm);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
   max-width: 44ch;
 }
@@ -57,7 +57,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.03em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
 }
 .gl-hero__metrics span { font-size: var(--via-fs-xs); color: var(--via-text-muted); }
@@ -97,10 +97,10 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   margin: var(--via-space-2) 0 0;
 }
-.gl-drag p { margin: var(--via-space-2) 0 0; font-size: var(--via-fs-caption); color: var(--via-text-body); line-height: 1.55; }
+.gl-drag p { margin: var(--via-space-2) 0 0; font-size: var(--via-fs-caption); color: var(--via-text-body); line-height: var(--via-lh-normal); }
 .gl-hint {
   margin-top: var(--via-space-3);
   font-size: var(--via-fs-xs);
@@ -121,10 +121,8 @@
 .gl-photo__label {
   position: relative;
   margin: 0 0 var(--via-space-5);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: rgba(255, 255, 255, 0.78); /* fixo: a foto é escura nos 2 temas */
 }
 .gl-photo__title {
@@ -132,7 +130,7 @@
   font-family: var(--via-font-display);
   font-weight: var(--via-fw-medium);
   font-size: clamp(32px, 4.4vw, 52px);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.035em;
   color: var(--via-white);
   margin: 0 0 var(--via-space-6);
@@ -153,7 +151,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
 }
 .gl-stat span { display: block; margin-top: var(--via-space-1_5); font-size: var(--via-fs-xs); color: var(--via-text-body); }
 .gl-row {
@@ -187,7 +185,7 @@
 .gl-scroll__brand {
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-brand);
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
 }
@@ -202,10 +200,10 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.03em;
+  letter-spacing: var(--via-ls-tighter);
   margin: 0;
 }
-.gl-scroll__body p { margin: 0; font-size: var(--via-fs-sm); line-height: 1.6; color: var(--via-text-body); max-width: 62ch; }
+.gl-scroll__body p { margin: 0; font-size: var(--via-fs-sm); line-height: var(--via-lh-loose); color: var(--via-text-body); max-width: 62ch; }
 .gl-scroll__strip {
   height: 140px;
   border-radius: var(--via-radius-md);
@@ -243,7 +241,7 @@
   font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   color: var(--via-text-primary);
 }
 .gl-overlay__page i {
@@ -268,10 +266,10 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   margin: 0;
 }
-.gl-overlay p { margin: var(--via-space-3) 0 0; font-size: var(--via-fs-sm); line-height: 1.55; color: var(--via-text-body); }
+.gl-overlay p { margin: var(--via-space-3) 0 0; font-size: var(--via-fs-sm); line-height: var(--via-lh-normal); color: var(--via-text-body); }
 .gl-actions { display: flex; gap: var(--via-space-2_5); justify-content: flex-end; margin-top: var(--via-space-6); }
 
 /* bloco de código longo rola dentro da própria coluna em vez de esmagar o

@@ -6,8 +6,8 @@
   border-radius: var(--via-radius-lg);
   overflow: hidden;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 1px 4px var(--via-shadow-ink-03);
@@ -43,7 +43,7 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -51,9 +51,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.06em;
   color: var(--via-text-soft);
-  text-transform: uppercase;
   margin-left: var(--via-space-1_5);
 }
 
@@ -62,8 +60,7 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin: 0;
-  letter-spacing: -0.005em;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 /* Dark variant — premium navy mesh */

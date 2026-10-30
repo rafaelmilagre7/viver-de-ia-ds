@@ -42,10 +42,8 @@
   top: 18px;
   left: 24px;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: rgba(255, 255, 255, 0.55);
   z-index: 2;
 }
@@ -57,8 +55,8 @@
   max-width: 480px;
   padding: var(--via-space-8);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-xl);
   /* SOMBRA DE PAIRAR · em TINTA PRETA fixa, não em token navy-*.
@@ -138,9 +136,9 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   margin: 0;
-  line-height: 1.2;
+  line-height: var(--via-lh-snug);
 }
 
 .vds-modal-demo .close {
@@ -189,7 +187,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text-soft);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   margin: 0 0 26px;
 }
 
@@ -207,7 +205,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
   transition:

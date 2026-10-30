@@ -10,7 +10,7 @@ function CheckboxDemo() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <Checkbox
         label="Aceito os termos de uso"
-        description="Leia em viverdeia.ai/termos antes de marcar."
+        description="Seleção múltipla editorial · suporta indeterminate. Leia em viverdeia.ai/termos antes de marcar."
         checked={terms}
         onChange={(e) => setTerms(e.target.checked)}
       />
@@ -29,7 +29,7 @@ export default function ApiCheckbox() {
     <ComponentDoc
       eyebrow="api · checkbox"
       name="Checkbox"
-      headline="seleção múltipla editorial · suporta indeterminate"
+      headline="várias escolhas, inclusive a parcial."
       description="Checkbox controlado ou uncontrolled. Suporta estado indeterminate (parent de lista). Editorial: box com gradient navy-04→02 + inset shadow + check spring overshoot. Label + description vertical stack."
       importLine={`import { Checkbox, type CheckboxProps } from '@viverdeia/design-system';`}
       anatomy={[

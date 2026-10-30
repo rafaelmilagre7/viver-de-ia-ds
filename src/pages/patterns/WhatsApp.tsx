@@ -54,9 +54,9 @@ export default function WhatsApp() {
             <div className="vds-wa-status">
               <span>9:41</span>
               <div className="status-r">
-                <Signal size={11} strokeWidth={2.4} />
-                <Wifi size={12} strokeWidth={2.4} />
-                <BatteryFull size={14} strokeWidth={1.8} />
+                <Signal size={14} strokeWidth={1.75} />
+                <Wifi size={14} strokeWidth={1.75} />
+                <BatteryFull size={16} strokeWidth={1.75} />
               </div>
             </div>
 
@@ -65,7 +65,7 @@ export default function WhatsApp() {
 
             {/* WhatsApp header */}
             <header className="vds-wa-h">
-              <button aria-label="Anterior" className="back"><ChevronLeft size={20} strokeWidth={2.2} /></button>
+              <button aria-label="Anterior" className="back"><ChevronLeft size={20} strokeWidth={1.75} /></button>
               <span className="vds-wa-av">
                 <img src={monogramWhite} alt="" />
               </span>
@@ -74,9 +74,9 @@ export default function WhatsApp() {
                 <span><span className="online" />online</span>
               </div>
               <div className="vds-wa-actions">
-                <button aria-label="Videochamada"><Video size={18} strokeWidth={2} /></button>
-                <button aria-label="Ligar"><Phone size={17} strokeWidth={2} /></button>
-                <button aria-label="Mais opções"><MoreVertical size={18} strokeWidth={2} /></button>
+                <button aria-label="Videochamada"><Video size={16} strokeWidth={1.75} /></button>
+                <button aria-label="Ligar"><Phone size={16} strokeWidth={1.75} /></button>
+                <button aria-label="Mais opções"><MoreVertical size={16} strokeWidth={1.75} /></button>
               </div>
             </header>
 
@@ -111,12 +111,12 @@ export default function WhatsApp() {
             {/* Input */}
             <footer className="vds-wa-input">
               <div className="vds-wa-field">
-                <button aria-label="Anexar arquivo" className="ico"><Paperclip size={18} strokeWidth={2} /></button>
+                <button aria-label="Anexar arquivo" className="ico"><Paperclip size={16} strokeWidth={1.75} /></button>
                 <input placeholder="Mensagem" />
-                <button aria-label="Tirar foto" className="ico"><Camera size={18} strokeWidth={2} /></button>
+                <button aria-label="Tirar foto" className="ico"><Camera size={16} strokeWidth={1.75} /></button>
               </div>
               <button aria-label="Gravar áudio" className="vds-wa-send">
-                <Mic size={18} strokeWidth={2} />
+                <Mic size={16} strokeWidth={1.75} />
               </button>
             </footer>
 

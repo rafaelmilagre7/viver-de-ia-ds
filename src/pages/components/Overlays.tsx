@@ -42,7 +42,7 @@ function DrawerSection() {
           <header>
             <BrandLogo variant="auto" size="sm" />
             <button className="vds-drawer-close" aria-label="Fechar">
-              <X size={14} strokeWidth={2.2} />
+              <X size={16} strokeWidth={1.75} />
             </button>
           </header>
 
@@ -76,9 +76,9 @@ function DrawerSection() {
 
             <p className="vds-drawer-eyebrow">Conta</p>
             <ul>
-              <li><a><User size={13} strokeWidth={2} /> Meu perfil</a></li>
-              <li><a><Settings size={13} strokeWidth={2} /> Configurações</a></li>
-              <li><a className="sub"><LogOut size={13} strokeWidth={2} /> Sair</a></li>
+              <li><a><User size={14} strokeWidth={1.75} /> Meu perfil</a></li>
+              <li><a><Settings size={14} strokeWidth={1.75} /> Configurações</a></li>
+              <li><a className="sub"><LogOut size={14} strokeWidth={1.75} /> Sair</a></li>
             </ul>
           </nav>
 
@@ -110,7 +110,7 @@ function SheetSection() {
               <h3>Márisson Lage</h3>
               <p>Efizi Soluções · plano Mentoria · ingressou em out 2024</p>
             </div>
-            <button className="vds-sheet-close" aria-label="Fechar sheet"><X size={16} strokeWidth={2.2} /></button>
+            <button className="vds-sheet-close" aria-label="Fechar sheet"><X size={16} strokeWidth={1.75} /></button>
           </header>
 
           <div className="vds-sheet-body">
@@ -164,12 +164,12 @@ function SheetSection() {
 
           <footer>
             <button className="vds-sheet-btn ghost">
-              <Share2 size={13} strokeWidth={2} />
+              <Share2 size={14} strokeWidth={1.75} />
               Compartilhar perfil
             </button>
             <button className="vds-sheet-btn primary">
               Abrir mentoria
-              <ChevronRight size={13} strokeWidth={2.5} />
+              <ChevronRight size={14} strokeWidth={1.75} />
             </button>
           </footer>
         </aside>
@@ -217,17 +217,17 @@ function BottomSheetSection() {
                 <h3>Reservar próxima live</h3>
               </div>
               <button className="vds-bs-close" aria-label="Fechar">
-                <X size={14} strokeWidth={2.2} />
+                <X size={16} strokeWidth={1.75} />
               </button>
             </header>
 
             <div className="vds-bs-body">
               <div className="vds-bs-when">
-                <span className="vds-bs-when-day">qui</span>
+                <span className="vds-bs-when-day">Qui</span>
                 <strong>22</strong>
                 <span className="vds-bs-when-month">mai 2026</span>
                 <span className="vds-bs-when-time">
-                  <Calendar size={11} strokeWidth={2.4} />
+                  <Calendar size={14} strokeWidth={1.75} />
                   14h00 BRT · 2h 30min
                 </span>
               </div>
@@ -242,7 +242,7 @@ function BottomSheetSection() {
               <ul className="vds-bs-options">
                 <li className="on">
                   <span className="vds-bs-opt-ic">
-                    <Check size={13} strokeWidth={2.6} />
+                    <Check size={14} strokeWidth={1.75} />
                   </span>
                   <div>
                     <strong>Confirmar presença</strong>
@@ -251,7 +251,7 @@ function BottomSheetSection() {
                 </li>
                 <li>
                   <span className="vds-bs-opt-ic">
-                    <Bookmark size={13} strokeWidth={2} />
+                    <Bookmark size={14} strokeWidth={1.75} />
                   </span>
                   <div>
                     <strong>Marcar pra assistir depois</strong>
@@ -260,7 +260,7 @@ function BottomSheetSection() {
                 </li>
                 <li>
                   <span className="vds-bs-opt-ic">
-                    <Heart size={13} strokeWidth={2} />
+                    <Heart size={14} strokeWidth={1.75} />
                   </span>
                   <div>
                     <strong>Indicar pra um colega</strong>
@@ -273,7 +273,7 @@ function BottomSheetSection() {
             <footer>
               <button className="vds-bs-cta">
                 Reservar lugar
-                <ChevronRight size={13} strokeWidth={2.5} />
+                <ChevronRight size={14} strokeWidth={1.75} />
               </button>
             </footer>
           </aside>
@@ -310,7 +310,7 @@ function BottomSheetSection() {
                 <h3>Como exibir a lista</h3>
               </div>
               <button className="vds-bs-close" aria-label="Fechar">
-                <X size={14} strokeWidth={2.2} />
+                <X size={16} strokeWidth={1.75} />
               </button>
             </header>
 
@@ -358,16 +358,16 @@ function PopoverSection() {
         {/* Anchor 1 — three dots menu */}
         <div className="vds-pop-anchor-wrap">
           <button aria-label="Mais opções" className="vds-pop-anchor">
-            <MoreHorizontal size={14} strokeWidth={2.2} />
+            <MoreHorizontal size={16} strokeWidth={1.75} />
           </button>
           <div className="vds-popover top-right">
             <div className="vds-pop-arrow" />
             <ul>
-              <li><a><Star size={13} strokeWidth={2} /> Favoritar aula</a></li>
-              <li><a><ArrowDownToLine size={13} strokeWidth={2} /> Baixar transcript</a></li>
-              <li><a><Share2 size={13} strokeWidth={2} /> Copiar link</a></li>
+              <li><a><Star size={16} strokeWidth={1.75} /> Favoritar aula</a></li>
+              <li><a><ArrowDownToLine size={14} strokeWidth={1.75} /> Baixar transcript</a></li>
+              <li><a><Share2 size={14} strokeWidth={1.75} /> Copiar link</a></li>
               <li className="divider"></li>
-              <li className="danger"><a><Trash2 size={13} strokeWidth={2} /> Apagar nota</a></li>
+              <li className="danger"><a><Trash2 size={14} strokeWidth={1.75} /> Apagar nota</a></li>
             </ul>
           </div>
         </div>
@@ -375,7 +375,7 @@ function PopoverSection() {
         {/* Anchor 2 — filter popover */}
         <div className="vds-pop-anchor-wrap mid">
           <button className="vds-pop-anchor pill">
-            <Filter size={12} strokeWidth={2.2} />
+            <Filter size={14} strokeWidth={1.75} />
             Filtrar por tipo
           </button>
           <div className="vds-popover top-left wide">
@@ -409,11 +409,11 @@ function PopoverSection() {
               </div>
             </div>
             <ul>
-              <li><a><User size={13} strokeWidth={2} /> Meu perfil</a></li>
-              <li><a><Bell size={13} strokeWidth={2} /> Notificações</a></li>
-              <li><a><Settings size={13} strokeWidth={2} /> Configurações</a></li>
+              <li><a><User size={14} strokeWidth={1.75} /> Meu perfil</a></li>
+              <li><a><Bell size={14} strokeWidth={1.75} /> Notificações</a></li>
+              <li><a><Settings size={14} strokeWidth={1.75} /> Configurações</a></li>
               <li className="divider"></li>
-              <li><a><LogOut size={13} strokeWidth={2} /> Sair</a></li>
+              <li><a><LogOut size={14} strokeWidth={1.75} /> Sair</a></li>
             </ul>
           </div>
         </div>
@@ -432,7 +432,7 @@ function DialogSection() {
           <div className="vds-dialog-scrim" />
           <div className="vds-dialog destructive">
             <div className="vds-dialog-icon destructive">
-              <AlertTriangle size={22} strokeWidth={1.6} />
+              <AlertTriangle size={20} strokeWidth={1.75} />
             </div>
             <span className="vds-dialog-eyebrow danger">Ação irreversível</span>
             <h3>Cancelar plano Mentoria?</h3>
@@ -454,7 +454,7 @@ function DialogSection() {
           <div className="vds-dialog-scrim" />
           <div className="vds-dialog">
             <div className="vds-dialog-icon">
-              <Check size={22} strokeWidth={1.8} />
+              <Check size={20} strokeWidth={1.75} />
             </div>
             <span className="vds-dialog-eyebrow">Confirmar ação</span>
             <h3>Marcar todas as 8 notificações como lidas?</h3>
@@ -477,9 +477,9 @@ function LightboxSection() {
   return (
     <Section title="Image lightbox · mídia em foco" meta="galeria · screenshot · slide ampliado">
       <div className="vds-lightbox-stage via-mesh-navy via-noise">
-        <button className="vds-lightbox-close" aria-label="Fechar lightbox"><X size={16} strokeWidth={2} /></button>
-        <button aria-label="Anterior" className="vds-lightbox-nav prev"><ChevronLeft size={20} strokeWidth={2} /></button>
-        <button aria-label="Avançar" className="vds-lightbox-nav next"><ArrowRightIcon size={20} strokeWidth={2} /></button>
+        <button className="vds-lightbox-close" aria-label="Fechar lightbox"><X size={16} strokeWidth={1.75} /></button>
+        <button aria-label="Anterior" className="vds-lightbox-nav prev"><ChevronLeft size={20} strokeWidth={1.75} /></button>
+        <button aria-label="Avançar" className="vds-lightbox-nav next"><ArrowRightIcon size={20} strokeWidth={1.75} /></button>
 
         <div className="vds-lightbox-main">
           <div className="vds-lightbox-img via-mesh-navy via-noise">
@@ -493,11 +493,11 @@ function LightboxSection() {
             </p>
             <div className="vds-lightbox-actions">
               <button className="vds-lightbox-btn">
-                <ZoomIn size={13} strokeWidth={2.2} />
+                <ZoomIn size={14} strokeWidth={1.75} />
                 100%
               </button>
               <button className="vds-lightbox-btn">
-                <ArrowDownToLine size={13} strokeWidth={2.2} />
+                <ArrowDownToLine size={14} strokeWidth={1.75} />
                 Baixar
               </button>
             </div>

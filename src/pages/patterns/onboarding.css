@@ -2,8 +2,8 @@
   position: relative;
   padding: 44px;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   overflow: hidden;
@@ -57,19 +57,17 @@
   background: var(--via-surface);
   flex-shrink: 0;
   z-index: 1;
-  letter-spacing: 0.02em;
   transition: all 240ms ease;
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-ob .ob-step .t {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
   color: var(--via-text-soft);
   white-space: nowrap;
-  letter-spacing: -0.005em;
   transition: color 240ms ease;
 }
 
@@ -124,10 +122,10 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.028em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: var(--via-space-1_5) 0 var(--via-space-3_5);
-  line-height: 1.06;
+  line-height: var(--via-lh-tight);
 }
 
 .vds-ob h2 em {
@@ -141,7 +139,7 @@
   font-size: var(--via-fs-body);
   color: var(--via-text-soft);
   margin: 0 0 var(--via-space-8);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   max-width: 520px;
 }
 
@@ -233,7 +231,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-ob .ob-opt span {
@@ -242,7 +240,7 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin-top: 3px;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 /* Actions */
@@ -258,7 +256,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
   transition:
@@ -420,9 +417,9 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-gray-300);
   margin-bottom: var(--via-space-3_5);
@@ -448,7 +445,7 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tighter);
-  line-height: 1.18;
+  line-height: var(--via-lh-snug);
   color: var(--via-white);
 }
 
@@ -464,7 +461,7 @@
   margin: 0 0 var(--via-space-7);
   font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
 }
 
 /* Steps list — vertical */
@@ -521,7 +518,7 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.7);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   display: flex;
   align-items: center;
@@ -558,15 +555,14 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: rgba(255, 255, 255, 0.94);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-wiz-steps em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.01em;
 }
 
 /* Aside foot — progress */
@@ -578,9 +574,9 @@
 
 .vds-wiz-aside-foot p {
   margin: 0 0 var(--via-space-2_5);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.55);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-wiz-progress {
@@ -621,10 +617,8 @@
 .vds-wiz-step-tag {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-accent-warm);
   margin-bottom: var(--via-space-3);
 }
@@ -634,8 +628,8 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.028em;
-  line-height: 1.14;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
@@ -651,7 +645,7 @@
 .vds-wiz-lede {
   margin: 0;
   font-size: var(--via-fs-sm);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
   max-width: 540px;
 }
@@ -781,14 +775,14 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-wiz-opt-body em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 
 /* Footer */
@@ -805,7 +799,6 @@
 .vds-wiz-count {
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
-  letter-spacing: -0.006em;
 }
 
 .vds-wiz-count strong {
@@ -827,11 +820,11 @@
   align-items: center;
   gap: var(--via-space-2);
   padding: var(--via-space-2_5) var(--via-space-4_5);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   background: var(--via-glass-card);

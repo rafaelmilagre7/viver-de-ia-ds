@@ -17,20 +17,19 @@
   gap: var(--via-space-2);
   padding: var(--via-space-2) var(--via-space-3_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid rgba(255,255,255,0.20);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: rgba(255,255,255,0.85);
   margin-bottom: var(--via-space-7);
   position: relative;
   z-index: 2;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .vds-manifesto-hero h1 {
   position: relative;
@@ -38,8 +37,8 @@
   font-family: var(--via-font-display);
   font-size: clamp(40px, 6vw, 76px);
   font-weight: var(--via-fw-medium);
-  line-height: 1.0;
-  letter-spacing: -0.03em;
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-6);
   max-width: 720px;
@@ -54,7 +53,7 @@
   z-index: 2;
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: rgba(255,255,255,0.72);
   max-width: 540px;
   margin: 0;
@@ -69,8 +68,8 @@
   position: relative;
   padding: var(--via-space-8);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -126,13 +125,13 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
-  line-height: 1.2;
+  line-height: var(--via-lh-snug);
   margin: 0 0 var(--via-space-3);
 }
 .vds-principle p {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
   margin: 0;
 }

@@ -36,8 +36,8 @@
   font-family: var(--via-font-display);
   font-size: clamp(36px, 4.5vw, 56px);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.03em;
-  line-height: 1.0;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: var(--via-space-4) 0 var(--via-space-7);
 }
@@ -46,7 +46,7 @@
   font-family: var(--via-font-display);
   font-size: 20px;
   font-weight: var(--via-fw-medium);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   color: rgba(255,255,255,0.82);
   margin: 0 0 var(--via-space-6);
 }
@@ -132,8 +132,8 @@
   max-width: 440px;
   padding: var(--via-space-10);
   background: var(--via-surface-onnavy);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
-  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -149,14 +149,14 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-2);
 }
 .auth-card .lede {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   margin: 0;
 }
@@ -240,10 +240,8 @@
 }
 .auth-divider span {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 
@@ -263,7 +261,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--via-space-1);
-  border-radius: var(--via-radius-xs);
+  border-radius: var(--via-radius-pill);
   transition: var(--via-t);
 }
 .auth-form .btn-ico:hover { background: var(--via-navy-08); color: var(--via-text-primary); }
@@ -296,7 +294,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: transparent;
   background: var(--via-surface);
 }
@@ -334,7 +332,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,

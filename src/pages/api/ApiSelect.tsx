@@ -27,8 +27,8 @@ export default function ApiSelect() {
     <ComponentDoc
       eyebrow="api · select"
       name="Select"
-      headline="dropdown editorial · ARIA listbox · keyboard nav"
-      description="Select pra escolha exclusiva entre 6+ opções. Trigger com label + value + chevron. Listbox glass com hover bg navy-02 + spring open. Keyboard nav arrow esq/dir/Enter/ESC. Error state + hint opcional."
+      headline="uma opção de uma lista curta."
+      description="Dropdown editorial · ARIA listbox · keyboard nav. Select pra escolha exclusiva entre 6+ opções. Trigger com label + value + chevron. Listbox glass com hover bg navy-02 + spring open. Keyboard nav arrow esq/dir/Enter/ESC. Error state + hint opcional."
       importLine={`import { Select, type SelectProps, type SelectOption } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-select', description: 'Container · label + trigger + listbox (portal)' },

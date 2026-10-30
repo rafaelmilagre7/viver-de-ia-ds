@@ -48,7 +48,7 @@ function BentoSection() {
           <div className="vds-bento-cta-row">
             <a className="vds-bento-cta primary" href="#">
               Entrar na turma
-              <ArrowRight size={14} strokeWidth={2.5} />
+              <ArrowRight size={16} strokeWidth={1.75} />
             </a>
             <a className="vds-bento-cta ghost" href="#">Ver método</a>
           </div>
@@ -62,7 +62,7 @@ function BentoSection() {
             <em>acumulado 2026</em>
           </p>
           <div className="vds-bento-delta">
-            <TrendingUp size={11} strokeWidth={2.5} />
+            <TrendingUp size={16} strokeWidth={1.75} />
             <strong>+293%</strong>
             <span>vs jan</span>
           </div>
@@ -116,12 +116,12 @@ function BentoSection() {
               <em>ao vivo</em>
             </span>
             <span className="vds-bento-live-views">
-              <Users size={11} strokeWidth={2.4} />
+              <Users size={14} strokeWidth={1.75} />
               148
             </span>
           </header>
           <p className="vds-bento-live-eyebrow">
-            <Headphones size={10} strokeWidth={2.4} />
+            <Headphones size={14} strokeWidth={1.75} />
             Mentoria · 2026.2
           </p>
           <h4>Auditoria de 3 prompts</h4>
@@ -130,14 +130,14 @@ function BentoSection() {
           </p>
           <a href="#" className="vds-bento-live-cta">
             Entrar agora
-            <ArrowRight size={11} strokeWidth={2.5} />
+            <ArrowRight size={14} strokeWidth={1.75} />
           </a>
         </article>
 
         {/* Tile 6 — Featured · próxima live */}
         <article className="vds-bento-card next">
           <header>
-            <Calendar size={14} strokeWidth={2} />
+            <Calendar size={16} strokeWidth={1.75} />
             <span className="vds-bento-eyebrow alt">Próxima live</span>
           </header>
           <p className="vds-bento-num small">22 mai · 14h</p>
@@ -156,7 +156,7 @@ function BentoSection() {
         {/* Tile 7 — KPI accent */}
         <article className="vds-bento-card achievement">
           <span className="vds-bento-medal">
-            <Crown size={18} strokeWidth={1.6} />
+            <Crown size={16} strokeWidth={1.75} />
           </span>
           <p className="vds-bento-num accent">
             14 dias

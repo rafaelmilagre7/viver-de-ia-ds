@@ -15,8 +15,8 @@
   position: relative;
   padding: var(--via-space-8);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -77,12 +77,11 @@
   background: var(--via-navy);
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   border-radius: var(--via-radius-pill);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   box-shadow: 0 6px 14px -4px var(--via-shadow-ink-40);
   z-index: 3;
 }
@@ -90,8 +89,7 @@
 /* badge ::before dot removido — peso editorial vem da tipografia */
 .vds-tier .tag {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro); font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark); text-transform: uppercase;
+  font-size: var(--via-fs-xs); font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 .vds-tier.feat .tag { color: rgba(255,255,255,0.55); }
@@ -109,7 +107,7 @@
   font-size: var(--via-fs-h1); font-weight: var(--via-fw-medium);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-variant-numeric: tabular-nums;
 }
 .vds-tier.feat .num { color: var(--via-white); }
@@ -117,7 +115,7 @@
 .vds-tier .desc {
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   margin: 0;
 }
@@ -139,11 +137,12 @@
 .vds-tier.feat .ck { color: var(--via-white); }
 
 /* CTA do tier = Button da library (pílula). No tier navy a pílula é branca
-   nos 2 temas: o secondary (material control) já é claro no tema claro; no
-   escuro o material escurece, então o tier fixa a superfície clara. */
+   e sólida nos 2 temas: o material control translúcido acinzentava sobre o
+   navy (parecia desabilitado), então o tier fixa a superfície clara. */
 .vds-tier-cta { margin-top: auto; }
-:root[data-theme='dark'] .vds-tier.feat .vds-tier-cta {
+.vds-tier.feat .vds-tier-cta {
   --via-material-control-fill: var(--via-surface-onnavy);
+  --via-text-primary: var(--via-navy);
   color: var(--via-navy);
 }
 
@@ -190,9 +189,9 @@
 .vds-cmp-eyebrow {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-accent-warm);
   margin-bottom: var(--via-space-2_5);
@@ -202,7 +201,7 @@
   margin: 0;
   font-size: var(--via-fs-caption);
   color: var(--via-ink-2);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-cmp-plan {
@@ -245,24 +244,21 @@
   position: absolute;
   top: 14px;
   right: 18px;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-accent-warm);
   padding: 3px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-05);
   border: 1px solid var(--via-navy-14);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-cmp-plan-name {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   margin-bottom: var(--via-space-2);
 }
@@ -289,7 +285,7 @@
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.028em;
+  letter-spacing: var(--via-ls-tighter);
   font-variant-numeric: tabular-nums;
 }
 
@@ -304,14 +300,14 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-cmp-plan-desc {
   margin: 0 0 var(--via-space-4);
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   flex: 1;
 }
 
@@ -334,10 +330,8 @@
   margin: 0;
   padding: var(--via-space-3_5) 26px var(--via-space-2_5);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   background: var(--via-navy-02);
   border-bottom: 1px solid var(--via-border-soft);
@@ -367,15 +361,17 @@
 
 @media (max-width: 920px) {
   .vds-cmp-row {
-    grid-template-columns: 1fr 64px 64px 64px;
+    grid-template-columns: 1fr repeat(3, 72px);
   }
+  .vds-cmp-row .vds-cmp-cell { padding: var(--via-space-3) var(--via-space-1); }
+  .vds-cmp-row .vds-cmp-text { padding: var(--via-space-0_5) var(--via-space-1_5); }
 }
 
 .vds-cmp-feat {
   padding: var(--via-space-3_5) 26px;
   font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   border-right: 1px solid var(--via-border-soft);
 }
 
@@ -425,13 +421,13 @@
 
 .vds-cmp-text {
   display: inline-block;
+  white-space: nowrap;
   padding: 3px var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   color: var(--via-text-primary);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.01em;
 }
 
 .vds-cmp-cell.highlight .vds-cmp-text {
@@ -450,7 +446,7 @@
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   max-width: 760px;
 }
 

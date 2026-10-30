@@ -119,7 +119,7 @@ export default function ShowcaseLancamentoTurma() {
           <div className="lt-hero-cta-row">
             <a href="#oferta" className="lt-cta-primary">
               Garantir minha vaga
-              <ArrowRight size={16} strokeWidth={2.4} />
+              <ArrowRight size={16} strokeWidth={1.75} />
             </a>
             <a href="#metodo" className="lt-cta-ghost">Ver o método</a>
           </div>
@@ -176,7 +176,7 @@ export default function ShowcaseLancamentoTurma() {
             const Icon = p.I;
             return (
               <article key={p.t} className="lt-pilar">
-                <span className="lt-pilar-icon"><Icon size={20} strokeWidth={1.7} /></span>
+                <span className="lt-pilar-icon"><Icon size={20} strokeWidth={1.75} /></span>
                 <strong>{p.t}</strong>
                 <p>{p.d}</p>
               </article>
@@ -234,7 +234,7 @@ export default function ShowcaseLancamentoTurma() {
         <div className="lt-depoimentos">
           {depoimentos.map((d) => (
             <article key={d.nome} className="lt-depoimento">
-              <Quote size={28} strokeWidth={1.5} className="lt-depoimento-mark" />
+              <Quote size={24} strokeWidth={1.75} className="lt-depoimento-mark" />
               <blockquote>{d.q}</blockquote>
               <footer>
                 <span className="lt-depoimento-av">{d.av}</span>
@@ -261,7 +261,7 @@ export default function ShowcaseLancamentoTurma() {
             <ul className="lt-incluso">
               {incluso.map((i) => (
                 <li key={i}>
-                  <Check size={15} strokeWidth={2.4} />
+                  <Check size={16} strokeWidth={1.75} />
                   {i}
                 </li>
               ))}
@@ -277,15 +277,15 @@ export default function ShowcaseLancamentoTurma() {
             </div>
             <a href="#" className="lt-oferta-cta">
               Garantir minha vaga
-              <ArrowRight size={16} strokeWidth={2.4} />
+              <ArrowRight size={16} strokeWidth={1.75} />
             </a>
             <p className="lt-oferta-guarantee">
-              <Shield size={13} strokeWidth={2} />
+              <Shield size={14} strokeWidth={1.75} />
               7 dias de garantia incondicional · devolução 100%
             </p>
             <div className="lt-oferta-meta">
-              <span><Calendar size={12} strokeWidth={2.2} /> Início {CONFIG.inicio}</span>
-              <span><Users size={12} strokeWidth={2.2} /> {CONFIG.vagas} vagas</span>
+              <span><Calendar size={14} strokeWidth={1.75} /> Início {CONFIG.inicio}</span>
+              <span><Users size={14} strokeWidth={1.75} /> {CONFIG.vagas} vagas</span>
             </div>
           </aside>
         </div>
@@ -302,7 +302,7 @@ export default function ShowcaseLancamentoTurma() {
             <details key={i} className="lt-faq-item" open={i === 0}>
               <summary>
                 {f.q}
-                <ChevronDown size={16} strokeWidth={2.2} />
+                <ChevronDown size={16} strokeWidth={1.75} />
               </summary>
               <p>{f.a}</p>
             </details>
@@ -318,7 +318,7 @@ export default function ShowcaseLancamentoTurma() {
           <p>{CONFIG.turma} fecha em {CONFIG.fecha}. {CONFIG.vagas} vagas. Próximo ciclo só no segundo semestre.</p>
           <a href="#" className="lt-cta-primary lg">
             Garantir minha vaga agora
-            <ArrowRight size={18} strokeWidth={2.4} />
+            <ArrowRight size={16} strokeWidth={1.75} />
           </a>
         </div>
       </section>

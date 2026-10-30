@@ -27,8 +27,8 @@
   width: 100%;
   max-width: 580px;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -69,7 +69,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .via-search input::placeholder {
@@ -161,7 +161,7 @@
 
 .via-search li .kbd {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -180,7 +180,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .via-search li .arr {
@@ -203,9 +203,8 @@
 
 .via-search .hint {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
-  letter-spacing: -0.005em;
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
@@ -214,7 +213,7 @@
 .via-search kbd {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);

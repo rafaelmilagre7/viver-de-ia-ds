@@ -98,8 +98,8 @@ function PricingTable() {
             <span className="vds-pricing-tier__name">{t.name}</span>
             {t.recommended && (
               <span className="vds-pricing-tier__badge">
-                <Crown size={11} strokeWidth={2.2} />
-                recomendado
+                <Crown size={14} strokeWidth={1.75} />
+                Recomendado
               </span>
             )}
           </div>
@@ -131,11 +131,11 @@ function PricingTable() {
                 >
                   {v === true ? (
                     <span className="vds-pricing-mark vds-pricing-mark--check" aria-label="incluído">
-                      <Check size={13} strokeWidth={2.6} />
+                      <Check size={14} strokeWidth={1.75} />
                     </span>
                   ) : v === false ? (
                     <span className="vds-pricing-mark vds-pricing-mark--x" aria-label="não incluído">
-                      <X size={13} strokeWidth={1.8} />
+                      <X size={14} strokeWidth={1.75} />
                     </span>
                   ) : (
                     <span className="vds-pricing-value">{v}</span>

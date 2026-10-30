@@ -8,8 +8,8 @@ export default function ApiHoverCard() {
     <ComponentDoc
       eyebrow="api · hover-card"
       name="HoverCard"
-      headline="rich preview · hover/focus · 4 sides × 3 align"
-      description="HoverCard mostra preview rico ao passar mouse no trigger. Diferente de Tooltip (texto simples) e Popover (click). Use pra: preview de @username, info adicional em link, card de mentor. openDelay/closeDelay configuráveis."
+      headline="a prévia rica sem sair da página."
+      description="Rich preview · hover/focus · 4 sides × 3 align. HoverCard mostra preview rico ao passar mouse no trigger. Diferente de Tooltip (texto simples) e Popover (click). Use pra: preview de @username, info adicional em link, card de mentor. openDelay/closeDelay configuráveis."
       importLine={`import { HoverCard, type HoverCardProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-hovercard__trigger', description: 'Inline · onMouseEnter / onFocus dispara' },

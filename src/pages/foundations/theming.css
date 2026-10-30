@@ -31,14 +31,14 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
 .vds-thm-tile p {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
 }
 
@@ -53,8 +53,8 @@
 .vds-thm-rule-mark {
   display: block;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
-  letter-spacing: var(--via-ls-mark);
+  font-size: var(--via-fs-label);
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-2_5);
@@ -68,7 +68,7 @@
 .vds-thm-demo-note {
   margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-muted);
 }
 
@@ -96,7 +96,7 @@
   margin: 0 0 var(--via-space-4);
   max-width: 68ch;
   font-size: var(--via-fs-sm);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-muted);
 }
 
@@ -104,7 +104,7 @@
   margin: var(--via-space-3_5) 0 0;
   max-width: 68ch;
   font-size: var(--via-fs-caption);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-muted);
 }
 
@@ -112,7 +112,7 @@
   margin: 0;
   padding-left: var(--via-space-4_5);
   font-size: var(--via-fs-caption);
-  line-height: 1.75;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
 }
 

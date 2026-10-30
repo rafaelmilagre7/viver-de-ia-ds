@@ -18,13 +18,13 @@ export default function Cards() {
             <p className="vds-eyebrow">Mentoria · turma 2026.2</p>
             <h3>16 semanas com Caio</h3>
             <p className="body">Sessões ao vivo + acompanhamento individual de implementação. Sai com pelo menos um Superagente em produção.</p>
-            <a className="link">Saber mais <ArrowUpRight size={14} strokeWidth={2.5} /></a>
+            <a className="link">Saber mais <ArrowUpRight size={16} strokeWidth={1.75} /></a>
           </article>
           <article className="via-card">
             <p className="vds-eyebrow">Case · Efizi</p>
             <h3>+11.920 conversas analisadas</h3>
             <p className="body">Análise automática de WhatsApp em 90 dias. Receita por canal mapeada pela primeira vez.</p>
-            <a className="link">Ler case <ArrowUpRight size={14} strokeWidth={2.5} /></a>
+            <a className="link">Ler case <ArrowUpRight size={16} strokeWidth={1.75} /></a>
           </article>
           <article className="via-card featured">
             <p className="vds-eyebrow" style={{ color: 'rgba(255,255,255,0.55)' }}>Featured · destaque</p>
@@ -32,7 +32,7 @@ export default function Cards() {
             <p className="body" style={{ color: 'rgba(255,255,255,0.72)' }}>
               Páginas-modelo navegáveis mostrando tudo aplicado ao vivo. Marketing site, Leaders AI, área do aluno.
             </p>
-            <a className="link" style={{ color: 'var(--via-white)' }}>Ver <ArrowUpRight size={14} strokeWidth={2.5} /></a>
+            <a className="link" style={{ color: 'var(--via-white)' }}>Ver <ArrowUpRight size={16} strokeWidth={1.75} /></a>
           </article>
         </div>
       </Section>
@@ -40,13 +40,13 @@ export default function Cards() {
       <Section title="Stat card · glass" meta="hero use">
         <div className="via-card-stat-stage">
           <div className="via-card-stat">
-            <MessageCircle size={14} strokeWidth={2} style={{ color: 'var(--via-text-muted)' }} />
+            <MessageCircle size={16} strokeWidth={1.75} style={{ color: 'var(--via-text-muted)' }} />
             <p className="vds-eyebrow">Conversas analisadas</p>
             <div className="num">+11.920</div>
             <p className="sub"><em>Efizi</em> · 90 dias</p>
           </div>
           <div className="via-card-stat">
-            <TrendingUp size={14} strokeWidth={2} style={{ color: 'var(--via-text-muted)' }} />
+            <TrendingUp size={16} strokeWidth={1.75} style={{ color: 'var(--via-text-muted)' }} />
             <p className="vds-eyebrow">Economia recorrente</p>
             <div className="num">R$ 4.600<span className="suffix">/mês</span></div>
             <p className="sub"><em>Balzani &amp; Zimbel</em></p>

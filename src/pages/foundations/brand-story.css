@@ -68,8 +68,8 @@
 .vds-bs-statement h2 {
   font-family: var(--via-font-display);
   font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.12;
-  letter-spacing: -0.026em;
+  line-height: var(--via-lh-snug);
+  letter-spacing: var(--via-ls-tighter);
   margin: 0 0 var(--via-space-5);
   font-weight: var(--via-fw-medium);
   max-width: 800px;
@@ -86,7 +86,7 @@
 .vds-bs-statement p {
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: rgba(255, 255, 255, 0.82);
   margin: 0;
   max-width: 700px;
@@ -118,13 +118,13 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-bs-proof em {
   font-style: normal;
   font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.6);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 /* ---------- Rationale (mission explanation) ---------- */
@@ -140,17 +140,15 @@
 }
 .vds-bs-rationale h4 {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
   margin: 0 0 var(--via-space-3_5);
 }
 .vds-bs-rationale p {
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text);
   margin: 0 0 var(--via-space-3);
 }
@@ -228,7 +226,7 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-bs-trajectory li strong {
   display: block;
@@ -237,20 +235,17 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: var(--via-space-1);
-  letter-spacing: -0.004em;
 }
 .vds-bs-trajectory li em {
   font-style: normal;
   font-size: var(--via-fs-caption);
   color: var(--via-ink-3);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 .vds-bs-pin {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-text-primary);
   background: var(--via-surface);
   padding: 5px var(--via-space-2_5);
@@ -300,7 +295,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
-  letter-spacing: -0.005em;
   flex-shrink: 0;
   padding-top: var(--via-space-0_5);
 }
@@ -309,14 +303,14 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
   margin: 0 0 var(--via-space-2);
 }
 .vds-bs-value p {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text);
   margin: 0;
 }
@@ -352,8 +346,8 @@
   font-family: var(--via-font-display);
   font-size: clamp(20px, 2.4vw, 26px);
   font-weight: var(--via-fw-medium);
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  line-height: var(--via-lh-normal);
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin: 0;
   max-width: 520px;
@@ -398,10 +392,8 @@
 .vds-bs-positioning-tag {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   padding: 3px 9px;
   border-radius: var(--via-radius-pill);
   margin-bottom: var(--via-space-3);
@@ -428,7 +420,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   padding-left: var(--via-space-3_5);
   position: relative;
 }
@@ -487,8 +479,8 @@
 .vds-bs-promise h2 {
   font-family: var(--via-font-display);
   font-size: clamp(24px, 3.4vw, 36px);
-  line-height: 1.18;
-  letter-spacing: -0.022em;
+  line-height: var(--via-lh-snug);
+  letter-spacing: var(--via-ls-tighter);
   margin: 0 0 var(--via-space-4);
   font-weight: var(--via-fw-medium);
   max-width: 760px;
@@ -505,7 +497,7 @@
 .vds-bs-promise-lede {
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: rgba(255, 255, 255, 0.82);
   margin: 0 0 var(--via-space-8);
   max-width: 660px;
@@ -521,10 +513,8 @@
 .vds-bs-promise-grid strong {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: var(--via-space-3);
 }
@@ -540,7 +530,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.85);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   padding-left: var(--via-space-3_5);
   position: relative;
 }

@@ -8,8 +8,8 @@ export default function ApiContextMenu() {
     <ComponentDoc
       eyebrow="api · context-menu"
       name="ContextMenu"
-      headline="right-click menu · cursor-anchored · shortcuts inline"
-      description="ContextMenu acionado por right-click (event nativo contextmenu). Posiciona no cursor · keyboard arrow nav · fecha em click fora, ESC ou seleção. Items podem ter icon, shortcut (display), separator, destructive variant."
+      headline="as ações certas no clique direito."
+      description="Right-click menu · cursor-anchored · shortcuts inline. ContextMenu acionado por right-click (event nativo contextmenu). Posiciona no cursor · keyboard arrow nav · fecha em click fora, ESC ou seleção. Items podem ter icon, shortcut (display), separator, destructive variant."
       importLine={`import { ContextMenu, type ContextMenuProps, type ContextMenuOption } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'children wrapper', description: 'Captura contextmenu event · posiciona menu no cursor' },
@@ -39,10 +39,10 @@ export default function ApiContextMenu() {
           preview: (
             <ContextMenu
               items={[
-                { label: 'Editar', icon: <Edit size={13} />, shortcut: '⌘E', onSelect: () => alert('Editar') },
-                { label: 'Duplicar', icon: <Copy size={13} />, shortcut: '⌘D' },
-                { label: 'Arquivar', icon: <Archive size={13} />, separatorBefore: true },
-                { label: 'Excluir', icon: <Trash2 size={13} />, destructive: true },
+                { label: 'Editar', icon: <Edit size={14} />, shortcut: '⌘E', onSelect: () => alert('Editar') },
+                { label: 'Duplicar', icon: <Copy size={14} />, shortcut: '⌘D' },
+                { label: 'Arquivar', icon: <Archive size={14} />, separatorBefore: true },
+                { label: 'Excluir', icon: <Trash2 size={14} />, destructive: true },
               ]}
             >
               <div

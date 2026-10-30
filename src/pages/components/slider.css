@@ -30,10 +30,8 @@
 
 .via-slider-card .lbl {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -44,7 +42,7 @@
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
 }
 
 .via-slider {
@@ -154,7 +152,7 @@
   display: flex;
   justify-content: space-between;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
   margin-top: var(--via-space-3);

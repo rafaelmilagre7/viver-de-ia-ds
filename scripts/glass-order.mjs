@@ -19,6 +19,11 @@
  * var(--via-material-<chrome|regular|thick|control>-blur) ou --via-scrim-blur.
  * Receita à mão foi o que espalhou 15 blur/saturate diferentes por 53 peças.
  *
+ * Regra 3 (rodada 4 · conteúdo): nas páginas do site (src/pages) e nas folhas
+ * de acabamento (src/styles/surfaces.css, data.css), `backdrop-filter` também
+ * só aceita material ou scrim. `filter: blur()` de aura decorativa continua livre
+ * (não é vidro). Eram ~180 receitas à mão.
+ *
  * Uso:   node scripts/glass-order.mjs
  * CI:    sai com código 1 se achar a ordem invertida.
  */
@@ -47,6 +52,8 @@ const PREFIXED = /-webkit-backdrop-filter\s*:/g;
 
 const findings = [];
 const rawBlur = [];
+const rawGlass = [];
+const SITE = [path.join('src', 'pages') + path.sep, path.join('src', 'styles', 'surfaces.css'), path.join('src', 'styles', 'data.css')];
 for (const file of DIRS.flatMap((d) => walk(path.join(ROOT, d)))) {
   const rel = path.relative(ROOT, file);
   // comentários viram espaço (preserva offsets pra calcular a linha)
@@ -54,6 +61,11 @@ for (const file of DIRS.flatMap((d) => walk(path.join(ROOT, d)))) {
   if (rel.startsWith(path.join('src', 'lib') + path.sep)) {
     for (const m of css.matchAll(/\bblur\(/g)) {
       rawBlur.push(`${rel}:${css.slice(0, m.index).split('\n').length}`);
+    }
+  }
+  if (SITE.some((p) => rel.startsWith(p))) {
+    for (const m of css.matchAll(/backdrop-filter\s*:[^;}]*\bblur\(/g)) {
+      rawGlass.push(`${rel}:${css.slice(0, m.index).split('\n').length}`);
     }
   }
   for (const block of css.matchAll(/\{([^{}]*)\}/g)) {
@@ -67,9 +79,10 @@ for (const file of DIRS.flatMap((d) => walk(path.join(ROOT, d)))) {
   }
 }
 
-if (findings.length === 0 && rawBlur.length === 0) {
+if (findings.length === 0 && rawBlur.length === 0 && rawGlass.length === 0) {
   console.log('✓ glass-order: todo -webkit-backdrop-filter vem antes do backdrop-filter.');
   console.log('✓ glass-material: nenhum blur( cru na lib — todo vidro usa um dos 4 materiais.');
+  console.log('✓ glass-material (páginas): todo backdrop-filter do site usa material ou scrim.');
   process.exit(0);
 }
 
@@ -83,5 +96,11 @@ if (rawBlur.length) {
   for (const f of rawBlur) console.error(`  ${f}`);
   console.error('\nUse o material da elevação: var(--via-material-<chrome|regular|thick|control>-blur)');
   console.error('ou var(--via-scrim-blur) — definidos em src/styles/tokens.css.');
+}
+if (rawGlass.length) {
+  console.error(`✗ glass-material (páginas): ${rawGlass.length} backdrop-filter com blur( cru:\n`);
+  for (const f of rawGlass) console.error(`  ${f}`);
+  console.error('\nUse var(--via-material-<chrome|regular|thick|control>-blur) ou var(--via-scrim-blur).');
+  console.error('Palco sobre papel liso não precisa de vidro — superfície sólida.');
 }
 process.exit(1);

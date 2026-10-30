@@ -87,7 +87,7 @@ function MetricCard({ m, className = '', children }: {
   return (
     <article className={`via-metric via-metric--atmos ${className}`.trim()}>
       <span className="via-metric__label">
-        {Icon && <Icon size={11} strokeWidth={2.2} aria-hidden="true" />}
+        {Icon && <Icon size={14} strokeWidth={1.75} aria-hidden="true" />}
         {m.label}
       </span>
       <p className="via-metric__value">
@@ -97,7 +97,7 @@ function MetricCard({ m, className = '', children }: {
       </p>
       <span className="via-metric__foot">
         <span className={`via-delta ${m.down ? 'via-delta--down' : 'via-delta--up'}`}>
-          <Trend size={11} strokeWidth={2.4} aria-hidden="true" />
+          <Trend size={14} strokeWidth={1.75} aria-hidden="true" />
           {m.delta}
         </span>
         {m.foot && <span className="via-mono metric-foot-note">{m.foot}</span>}
@@ -354,7 +354,7 @@ function InsightsWeeklySection() {
           </header>
           <div className="vds-ins-quotes-grid">
             <blockquote className="vds-ins-quote">
-              <Quote size={14} strokeWidth={1.8} className="vds-ins-quote-mark" />
+              <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
               <p>"Fiz minha primeira venda usando o agente Nina como copiloto na sexta — o cliente nem percebeu, e eu fechei 23% acima do meu ticket médio."</p>
               <footer>
                 <strong>Camila Moraes</strong>
@@ -362,7 +362,7 @@ function InsightsWeeklySection() {
               </footer>
             </blockquote>
             <blockquote className="vds-ins-quote">
-              <Quote size={14} strokeWidth={1.8} className="vds-ins-quote-mark" />
+              <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
               <p>"A mentoria 1:1 dessa semana mudou meu approach inteiro — o Caio simplesmente desenhou o squad que eu precisava no quadro."</p>
               <footer>
                 <strong>Daniel Pinheiro</strong>
@@ -370,7 +370,7 @@ function InsightsWeeklySection() {
               </footer>
             </blockquote>
             <blockquote className="vds-ins-quote subtle">
-              <Quote size={14} strokeWidth={1.8} className="vds-ins-quote-mark" />
+              <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
               <p>"Achei que o conteúdo seria muito raso e fui surpreendida — vocês entregam mais do que prometem. Mas o Discord ainda é confuso pra navegar."</p>
               <footer>
                 <strong>Bruna Carvalho</strong>
@@ -412,14 +412,14 @@ function InsightsWeeklySection() {
 
           <aside className="vds-ins-foot-r">
             <div className="vds-ins-foot-tip">
-              <AlertCircle size={14} strokeWidth={2} className="vds-ins-foot-tip-icon" />
+              <AlertCircle size={16} strokeWidth={1.75} className="vds-ins-foot-tip-icon" />
               <p>
                 <strong>Ponto de atenção:</strong> MRR negativo pela primeira vez no trimestre. Não é tendência ainda, mas merece a primeira conversa de quarta.
               </p>
             </div>
             <a href="#" className="vds-ins-foot-cta">
               Ver relatório completo
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
             <a href="#" className="vds-ins-foot-share">
               Compartilhar com a turma →
@@ -445,7 +445,7 @@ function InsightsKpiTilesSection() {
       <div className="via-metric-grid vds-ins-tiles">
         {TILES.map((t) => (
           <MetricCard key={t.id} m={t} className={`vds-ins-tile${t.down ? ' down' : ''}`}>
-            <Activity size={42} strokeWidth={1} className="vds-ins-tile-ghost" aria-hidden="true" />
+            <Activity size={42} strokeWidth={1.75} className="vds-ins-tile-ghost" aria-hidden="true" />
           </MetricCard>
         ))}
       </div>

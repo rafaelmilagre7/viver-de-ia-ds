@@ -46,7 +46,6 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
   text-decoration: none;
-  letter-spacing: -0.006em;
   transition: color 160ms ease;
 }
 
@@ -62,7 +61,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
-  letter-spacing: -0.006em;
   /* Pill navy FIXA (navy nos 2 temas) → sombra e linha de luz FIXAS.
      navy-40/60 viram branco 42%/55% no dark e o botão ganhava um halo
      branco de 14px (pior no hover). */
@@ -158,12 +156,11 @@
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
-  letter-spacing: -0.005em;
   margin-bottom: var(--via-space-7);
 }
 
@@ -187,7 +184,7 @@
   font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.036em;
-  line-height: 1.04;
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: 0 0 var(--via-space-6);
 }
@@ -201,11 +198,11 @@
 
 .lt-hero-lede {
   font-size: var(--via-fs-h4);
-  line-height: 1.62;
+  line-height: var(--via-lh-loose);
   color: var(--via-gray-200);
   margin: 0 auto var(--via-space-9);
   max-width: 620px;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .lt-hero-cta-row {
@@ -229,7 +226,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 14px 32px -10px var(--via-shadow-ink-60),
@@ -267,13 +264,12 @@
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.20);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   color: var(--via-white);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
-  letter-spacing: -0.006em;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -320,9 +316,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   border: 2px solid var(--via-navy);
   margin-left: -7px;
 }
@@ -337,13 +332,12 @@
   padding: 0 9px;
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.12);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
 }
 
 .lt-hero-proof-txt {
   font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
-  letter-spacing: -0.005em;
 }
 
 @media (max-width: 860px) {
@@ -377,7 +371,7 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: -0.034em;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -385,7 +379,6 @@
   font-style: normal;
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 
 @media (max-width: 860px) {
@@ -413,7 +406,7 @@
   font-family: var(--via-font-mono, var(--via-font));
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-3_5);
@@ -424,7 +417,7 @@
 .lt-section-head h2 {
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.030em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1.10;
   color: var(--via-text-primary);
   margin: 0;
@@ -484,19 +477,18 @@
 .lt-dores li p {
   margin: 0;
   font-size: var(--via-fs-sm);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
-  letter-spacing: -0.006em;
 }
 
 .lt-dores-fecho {
   text-align: center;
   font-size: var(--via-fs-body);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
   max-width: 620px;
   margin: 0 auto;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .lt-dores-fecho strong { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
@@ -558,16 +550,15 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: var(--via-space-2);
 }
 
 .lt-pilar p {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
-  letter-spacing: -0.005em;
 }
 
 @media (max-width: 980px) {
@@ -621,7 +612,7 @@
   font-size: 28px;
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   opacity: 0.4;
   font-feature-settings: 'tnum' 1;
 }
@@ -631,16 +622,15 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: 5px;
 }
 
 .lt-modulo-body p {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
-  letter-spacing: -0.005em;
 }
 
 .lt-modulo-dur {
@@ -648,7 +638,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
-  letter-spacing: 0.02em;
   white-space: nowrap;
   font-feature-settings: 'tnum' 1;
 }
@@ -692,7 +681,6 @@
   justify-content: center;
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   flex-shrink: 0;
   /* avatar navy FIXO → sombra FIXA. navy-40 vira branco 42% no dark e
      virava um aro/halo branco em volta do avatar (proibido pela régua:
@@ -707,7 +695,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .lt-mentor em {
@@ -716,15 +704,13 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin: 3px 0 var(--via-space-2_5);
-  letter-spacing: -0.004em;
 }
 
 .lt-mentor p {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
-  letter-spacing: -0.005em;
 }
 
 @media (max-width: 720px) {
@@ -774,8 +760,8 @@
   margin: 0 0 var(--via-space-5_5);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-regular);
-  line-height: 1.45;
-  letter-spacing: -0.014em;
+  line-height: var(--via-lh-normal);
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
@@ -804,7 +790,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .lt-depoimento footer em {
@@ -856,7 +842,7 @@
 .lt-oferta-l h2 {
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.028em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1.1;
   color: var(--via-white);
   margin: var(--via-space-3) 0 var(--via-space-4);
@@ -864,10 +850,9 @@
 
 .lt-oferta-lede {
   font-size: var(--via-fs-body);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-gray-200);
   margin: 0 0 var(--via-space-7);
-  letter-spacing: -0.006em;
 }
 
 .lt-incluso {
@@ -885,8 +870,7 @@
   gap: var(--via-space-2_5);
   font-size: var(--via-fs-sm);
   color: var(--via-gray-200);
-  letter-spacing: -0.005em;
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 
 .lt-incluso li svg {
@@ -901,8 +885,8 @@
   border-radius: var(--via-radius-lg);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   /* Card de vidro sobre navy FIXO (a seção é navy nos 2 temas) → a linha de luz
      também tem que ser FIXA. Herdando --via-edge-hi ela caía de 0.95 pro 0.08
      do dark e o topo do card sumia: mesma superfície, dois acabamentos. */
@@ -914,9 +898,9 @@
 .lt-oferta-card-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-gray-300);
   margin-bottom: var(--via-space-4);
@@ -933,7 +917,6 @@
   font-size: var(--via-fs-xs);
   color: var(--via-gray-300);
   text-decoration: line-through;
-  letter-spacing: -0.004em;
   display: none;
 }
 
@@ -941,8 +924,8 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
-  letter-spacing: -0.030em;
-  line-height: 1;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -950,7 +933,6 @@
   font-style: normal;
   font-size: var(--via-fs-caption);
   color: var(--via-gray-300);
-  letter-spacing: -0.005em;
 }
 
 .lt-oferta-cta {
@@ -961,14 +943,14 @@
   gap: var(--via-space-2);
   width: 100%;
   padding: 15px var(--via-space-6);
-  border-radius: var(--via-radius-md);
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   border: 1px solid var(--via-edge-hi);
   color: var(--via-text-primary);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 12px 28px -8px rgba(0, 0, 0, 0.50),
@@ -999,9 +981,8 @@
   justify-content: center;
   gap: var(--via-space-1_5);
   margin: var(--via-space-3_5) 0 0;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-gray-300);
-  letter-spacing: -0.004em;
 }
 
 .lt-oferta-guarantee svg { color: var(--via-success); }
@@ -1019,9 +1000,8 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-gray-300);
-  letter-spacing: -0.004em;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -1061,7 +1041,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.010em;
+  letter-spacing: var(--via-ls-tight);
   cursor: pointer;
   list-style: none;
   transition:
@@ -1093,9 +1073,8 @@
   margin: 0;
   padding: 0 var(--via-space-6) var(--via-space-5_5);
   font-size: var(--via-fs-sm);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
-  letter-spacing: -0.005em;
 }
 
 /* ============================================
@@ -1136,7 +1115,7 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.032em;
-  line-height: 1.08;
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: 0 0 var(--via-space-4);
 }
@@ -1150,10 +1129,9 @@
 
 .lt-final-inner p {
   font-size: var(--via-fs-body);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-gray-200);
   margin: 0 0 var(--via-space-8);
-  letter-spacing: -0.006em;
 }
 
 @media (max-width: 860px) {
@@ -1180,11 +1158,9 @@
   margin: 0;
   font-size: var(--via-fs-caption);
   color: var(--via-text-muted);
-  letter-spacing: -0.005em;
 }
 
 .lt-footer span {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-faint);
-  letter-spacing: -0.004em;
 }

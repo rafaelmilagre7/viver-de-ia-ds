@@ -10,8 +10,8 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 24px 56px -22px var(--via-shadow-ink-20);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
 }
 
 /* Toolbar */
@@ -30,7 +30,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
@@ -55,7 +55,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.006em;
   border: var(--via-glass-ring);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -121,7 +120,7 @@
   background: var(--via-navy);
   color: var(--via-white);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
 }
 
@@ -216,16 +215,15 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
 .vds-rm-col-meta p {
   margin: 0;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-rm-col-count {
@@ -328,16 +326,15 @@
 
 .vds-rm-card-tag {
   display: inline-block;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-ink-2);
   padding: 3px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-rm-card.featured .vds-rm-card-tag {
@@ -347,9 +344,8 @@
 }
 
 .vds-rm-card-eta {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
 }
 
 .vds-rm-card h5 {
@@ -358,14 +354,14 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tight);
-  line-height: 1.25;
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
 .vds-rm-card p {
   margin: 0 0 var(--via-space-3);
   font-size: var(--via-fs-xs);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-2);
 }
 
@@ -400,10 +396,9 @@
 }
 
 .vds-rm-card-prog-lbl {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
-  letter-spacing: 0.01em;
   min-width: 28px;
   text-align: right;
 }
@@ -422,9 +417,8 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
-  letter-spacing: -0.004em;
 }
 
 .vds-rm-card-owner svg {
@@ -443,7 +437,7 @@
   border: var(--via-glass-ring);
   color: var(--via-text-primary);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   cursor: pointer;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -473,7 +467,7 @@
 }
 
 .vds-rm-card-vote strong {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
 }
 
@@ -490,7 +484,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.006em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -535,7 +528,7 @@
 .vds-rm-foot p {
   margin: 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
   max-width: 880px;
 }

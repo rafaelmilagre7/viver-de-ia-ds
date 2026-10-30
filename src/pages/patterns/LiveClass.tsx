@@ -42,7 +42,7 @@ function HeroLiveSection() {
             <span className="vds-live-elapsed">há 18 min</span>
           </span>
           <span className="vds-live-viewers">
-            <Users size={13} strokeWidth={2} />
+            <Users size={14} strokeWidth={1.75} />
             <strong>148</strong> assistindo
           </span>
         </header>
@@ -50,7 +50,7 @@ function HeroLiveSection() {
         {/* Main */}
         <div className="vds-live-body">
           <span className="vds-live-eyebrow">
-            <Radio size={11} strokeWidth={2.4} />
+            <Radio size={14} strokeWidth={1.75} />
             Mentoria · turma 2026.2
           </span>
           <h1>
@@ -107,17 +107,17 @@ function HeroLiveSection() {
         {/* Actions bottom */}
         <footer className="vds-live-foot">
           <button className="vds-live-cta">
-            <Play size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
+            <Play size={16} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />
             Entrar agora · 42 min restantes
           </button>
           <div className="vds-live-secondary">
             <button>
-              <Hand size={13} strokeWidth={2} />
+              <Hand size={14} strokeWidth={1.75} />
               Levantar mão
               <em>3 na fila</em>
             </button>
             <button>
-              <MessageCircle size={13} strokeWidth={2} />
+              <MessageCircle size={16} strokeWidth={1.75} />
               Chat
               <em>+24 msg</em>
             </button>
@@ -137,7 +137,7 @@ function UpcomingLiveSection() {
       <article className="vds-live-next">
         <div className="vds-live-next-l">
           <span className="vds-live-eyebrow">
-            <Calendar size={11} strokeWidth={2.4} />
+            <Calendar size={14} strokeWidth={1.75} />
             Próxima sessão · turma 2026.2
           </span>
           <h3>
@@ -179,7 +179,7 @@ function UpcomingLiveSection() {
           </div>
           <button className="vds-live-next-cta">
             Confirmar presença
-            <ChevronRight size={13} strokeWidth={2.5} />
+            <ChevronRight size={14} strokeWidth={1.75} />
           </button>
           <p className="vds-live-next-tip">
             Adiciono no calendário automaticamente · lembrete 30min antes
@@ -210,13 +210,13 @@ function PastLivesSection() {
                 <strong>2026</strong>
               </span>
               <button aria-label="Reproduzir" className="vds-live-past-play">
-                <Play size={18} strokeWidth={0} style={{ fill: 'currentColor' }} />
+                <Play size={16} strokeWidth={0} style={{ fill: 'currentColor' }} />
               </button>
               <span className="vds-live-past-dur">{p.duration}</span>
             </div>
             <div className="vds-live-past-body">
               <p className="vds-live-past-eyebrow">
-                <Headphones size={10} strokeWidth={2.4} />
+                <Headphones size={14} strokeWidth={1.75} />
                 Live · {p.host}
               </p>
               <h4>

@@ -174,7 +174,7 @@ export default function VoiceExtended() {
             <article className="vds-ve-context">
               <header>
                 <div className="vds-ve-icon">
-                  <Icon size={15} strokeWidth={1.8} />
+                  <Icon size={16} strokeWidth={1.75} />
                 </div>
                 <div>
                   <span className="vds-ve-eyebrow">Ritmo</span>

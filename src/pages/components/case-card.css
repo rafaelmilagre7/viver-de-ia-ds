@@ -8,8 +8,8 @@
   position: relative;
   padding: var(--via-space-8);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   display: flex;
@@ -73,16 +73,16 @@
 
 .via-case .sector {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.2em;
+  letter-spacing: var(--via-ls-label);
   color: var(--via-text-soft);
   padding: var(--via-space-1) var(--via-space-2_5);
   border: 1px solid var(--via-border-soft);
   background: var(--via-navy-04);
   border-radius: var(--via-radius-pill);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .via-case h3 {
@@ -90,8 +90,8 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.022em;
-  line-height: 1.22;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   margin: 0;
 }
 
@@ -112,15 +112,13 @@
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
 }
 
 .via-case .l {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -130,7 +128,7 @@
   font-family: var(--via-font);
   font-style: normal;
   font-size: var(--via-fs-body);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text);
   display: flex;
   flex-direction: column;
@@ -147,9 +145,8 @@
 .via-case cite {
   font-family: var(--via-font);
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
   color: var(--via-text-soft);
 }
 
@@ -160,7 +157,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
   color: var(--via-text-primary);
   cursor: pointer;
   margin-top: auto;

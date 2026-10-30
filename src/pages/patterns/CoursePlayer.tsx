@@ -101,7 +101,7 @@ function PlayerSection() {
                 <article key={m.n} className={`vds-cp-mod ${expanded ? 'open' : ''} ${hasPlaying ? 'current' : ''}`}>
                   <button className="vds-cp-mod-head" onClick={() => toggle(m.n)}>
                     <span className={`vds-cp-mod-num ${allDone ? 'done' : ''}`}>
-                      {allDone ? <Check size={12} strokeWidth={2.6} /> : m.n}
+                      {allDone ? <Check size={14} strokeWidth={1.75} /> : m.n}
                     </span>
                     <div className="vds-cp-mod-text">
                       <strong>{m.title}</strong>
@@ -109,7 +109,7 @@ function PlayerSection() {
                         {done}/{m.lessons.length} aulas · {m.duration}
                       </em>
                     </div>
-                    <ChevronDown size={14} strokeWidth={2} className={`vds-cp-mod-chev ${expanded ? 'rot' : ''}`} />
+                    <ChevronDown size={16} strokeWidth={1.75} className={`vds-cp-mod-chev ${expanded ? 'rot' : ''}`} />
                   </button>
 
                   {expanded && (
@@ -117,10 +117,10 @@ function PlayerSection() {
                       {m.lessons.map((l) => (
                         <li key={l.n} className={`vds-cp-lesson ${l.state}`}>
                           <span className="vds-cp-lesson-mark">
-                            {l.state === 'done' && <Check size={11} strokeWidth={2.6} />}
-                            {l.state === 'playing' && <Play size={11} strokeWidth={0} style={{ fill: 'currentColor' }} />}
+                            {l.state === 'done' && <Check size={14} strokeWidth={1.75} />}
+                            {l.state === 'playing' && <Play size={14} strokeWidth={0} style={{ fill: 'currentColor' }} />}
                             {l.state === 'available' && lessonTypeIcon(l.type)}
-                            {l.state === 'locked' && <Lock size={10} strokeWidth={2.2} />}
+                            {l.state === 'locked' && <Lock size={14} strokeWidth={1.75} />}
                           </span>
                           <span className="vds-cp-lesson-num">{l.n}</span>
                           <span className="vds-cp-lesson-title">{l.title}</span>
@@ -139,7 +139,7 @@ function PlayerSection() {
         <div className="vds-cp-main">
           {/* Breadcrumb */}
           <nav className="vds-cp-breadcrumb">
-            <Layers size={11} strokeWidth={2.2} />
+            <Layers size={14} strokeWidth={1.75} />
             <span>Construindo agentes IA</span>
             <span className="sep">/</span>
             <span>Módulo 02</span>
@@ -156,7 +156,7 @@ function PlayerSection() {
             {!playing && (
               <div className="vid-idle">
                 <span className="eyebrow">
-                  <Headphones size={11} strokeWidth={2.4} />
+                  <Headphones size={14} strokeWidth={1.75} />
                   Aula 02.02 · 13min 54s
                 </span>
                 <h2>
@@ -165,7 +165,7 @@ function PlayerSection() {
                 <p>Caio Ribeiro · transcript com timestamps na lateral · 12 notas suas</p>
 
                 <button className="vid-play-big" onClick={() => setPlaying(true)} aria-label="Tocar vídeo">
-                  <Play size={26} strokeWidth={0} style={{ fill: 'currentColor' }} />
+                  <Play size={24} strokeWidth={0} style={{ fill: 'currentColor' }} />
                 </button>
               </div>
             )}
@@ -182,17 +182,17 @@ function PlayerSection() {
               <div className="vid-row">
                 <div className="vid-row-l">
                   <button className="vid-ctrl play" aria-label={playing ? 'Pausar' : 'Tocar'} onClick={() => setPlaying(!playing)}>
-                    {playing ? <Pause size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} /> : <Play size={14} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
+                    {playing ? <Pause size={16} strokeWidth={0} style={{ fill: "var(--via-navy)" }} /> : <Play size={16} strokeWidth={0} style={{ fill: "var(--via-navy)" }} />}
                   </button>
-                  <button aria-label="Faixa anterior" className="vid-ctrl vid-ctrl-skip"><SkipBack size={14} strokeWidth={2.2} /></button>
-                  <button aria-label="Próxima faixa" className="vid-ctrl vid-ctrl-skip"><SkipForward size={14} strokeWidth={2.2} /></button>
-                  <button aria-label="Volume" className="vid-ctrl"><Volume2 size={14} strokeWidth={2.2} /></button>
+                  <button aria-label="Faixa anterior" className="vid-ctrl vid-ctrl-skip"><SkipBack size={16} strokeWidth={1.75} /></button>
+                  <button aria-label="Próxima faixa" className="vid-ctrl vid-ctrl-skip"><SkipForward size={16} strokeWidth={1.75} /></button>
+                  <button aria-label="Volume" className="vid-ctrl"><Volume2 size={16} strokeWidth={1.75} /></button>
                   <span className="vid-time">05:51 / 13:54</span>
                 </div>
                 <div className="vid-row-r">
                   <button className="vid-speed">1×</button>
-                  <button aria-label="Configurações" className="vid-ctrl vid-ctrl-opt"><Settings size={14} strokeWidth={2} /></button>
-                  <button aria-label="Tela cheia" className="vid-ctrl"><Maximize2 size={14} strokeWidth={2} /></button>
+                  <button aria-label="Configurações" className="vid-ctrl vid-ctrl-opt"><Settings size={16} strokeWidth={1.75} /></button>
+                  <button aria-label="Tela cheia" className="vid-ctrl"><Maximize2 size={16} strokeWidth={1.75} /></button>
                 </div>
               </div>
             </div>
@@ -213,12 +213,12 @@ function PlayerSection() {
             </div>
             <div className="vds-cp-info-r">
               <button className="vds-cp-mark">
-                <Check size={13} strokeWidth={2.5} />
+                <Check size={14} strokeWidth={1.75} />
                 Marcar concluída
               </button>
               <button className="vds-cp-next">
                 Próxima
-                <ArrowRight size={13} strokeWidth={2.4} />
+                <ArrowRight size={14} strokeWidth={1.75} />
               </button>
             </div>
           </div>
@@ -318,7 +318,7 @@ function LiveLessonSection() {
             <div className="vds-cp-live-host">
               <div className="host-av">CR</div>
               <div>
-                <strong>Caio Ribeiro <span className="host-tag">host</span></strong>
+                <strong>Caio Ribeiro <span className="host-tag">Host</span></strong>
                 <em>Auditando 3 prompts em produção · ao vivo</em>
               </div>
               <div className="host-elapsed">
@@ -338,19 +338,19 @@ function LiveLessonSection() {
             {/* Bottom — minimal controls (live = no scrub) */}
             <div className="vds-cp-live-controls">
               <button className="vid-ctrl play live" aria-label="Pausar broadcast">
-                <Pause size={14} strokeWidth={0} style={{ fill: 'var(--via-navy)' }} />
+                <Pause size={16} strokeWidth={0} style={{ fill: 'var(--via-navy)' }} />
               </button>
               <button aria-label="Volume" className="vid-ctrl">
-                <Volume2 size={14} strokeWidth={2.2} />
+                <Volume2 size={16} strokeWidth={1.75} />
               </button>
               <span className="vds-cp-live-time">
                 <span className="live-dot" />
                 <span>ao vivo · sem replay até 22:00</span>
               </span>
               <div className="vds-cp-live-react-bar">
-                <button aria-label="Aplaudir"><Heart size={13} strokeWidth={2.2} /></button>
-                <button aria-label="Mão pra cima"><Hand size={13} strokeWidth={2.2} /></button>
-                <button aria-label="Tela cheia"><Maximize2 size={13} strokeWidth={2} /></button>
+                <button aria-label="Aplaudir"><Heart size={14} strokeWidth={1.75} /></button>
+                <button aria-label="Mão pra cima"><Hand size={14} strokeWidth={1.75} /></button>
+                <button aria-label="Tela cheia"><Maximize2 size={14} strokeWidth={1.75} /></button>
               </div>
             </div>
 
@@ -367,7 +367,7 @@ function LiveLessonSection() {
                 <h4>Tira-dúvidas em tempo real</h4>
               </div>
               <span className="vds-cp-chat-count">
-                <MessageCircle size={11} strokeWidth={2.4} />
+                <MessageCircle size={16} strokeWidth={1.75} />
                 {CHAT_MSGS.length} mensagens
               </span>
             </header>
@@ -377,8 +377,8 @@ function LiveLessonSection() {
                 <li key={m.id} className={`vds-cp-chat-msg ${m.own ? 'own' : ''} ${m.pinned ? 'pinned' : ''} ${m.role === 'host' ? 'host' : ''}`}>
                   {m.pinned && (
                     <span className="vds-cp-chat-pin">
-                      <Pin size={9} strokeWidth={2.4} />
-                      fixado pelo host
+                      <Pin size={14} strokeWidth={1.75} />
+                      Fixado pelo host
                     </span>
                   )}
                   <div className="msg-row">
@@ -386,7 +386,7 @@ function LiveLessonSection() {
                     <div className="msg-body">
                       <div className="msg-meta">
                         <strong>{m.name}</strong>
-                        {m.role === 'host' && <span className="host-tag">host</span>}
+                        {m.role === 'host' && <span className="host-tag">Host</span>}
                         <span className="msg-time">{m.time}</span>
                       </div>
                       <p>{m.text}</p>
@@ -405,7 +405,7 @@ function LiveLessonSection() {
                 className="vds-cp-chat-input"
               />
               <button className="vds-cp-chat-send" aria-label="Enviar">
-                <Send size={13} strokeWidth={2.2} />
+                <Send size={14} strokeWidth={1.75} />
               </button>
             </footer>
           </aside>
@@ -423,11 +423,11 @@ function NotesAndProgressSection() {
         <article className="vds-cp-notes">
           <header>
             <span className="vds-cp-extras-eyebrow">
-              <PenTool size={11} strokeWidth={2.2} />
+              <PenTool size={14} strokeWidth={1.75} />
               Suas notas · 12 total
             </span>
             <button className="vds-cp-add-note">
-              <Bookmark size={11} strokeWidth={2.4} />
+              <Bookmark size={14} strokeWidth={1.75} />
               Nota em 05:51
             </button>
           </header>
@@ -461,7 +461,7 @@ function NotesAndProgressSection() {
         <article className="vds-cp-materials">
           <header>
             <span className="vds-cp-extras-eyebrow">
-              <FileText size={11} strokeWidth={2.2} />
+              <FileText size={14} strokeWidth={1.75} />
               Material da aula
             </span>
           </header>
@@ -502,9 +502,9 @@ function NotesAndProgressSection() {
 }
 
 function lessonTypeIcon(t: string) {
-  if (t === 'video') return <Play size={11} strokeWidth={2} />;
-  if (t === 'exercise') return <PenTool size={11} strokeWidth={2} />;
-  if (t === 'reading') return <BookOpen size={11} strokeWidth={2} />;
-  if (t === 'live') return <Headphones size={11} strokeWidth={2} />;
-  return <FileText size={11} strokeWidth={2} />;
+  if (t === 'video') return <Play size={16} strokeWidth={1.75} />;
+  if (t === 'exercise') return <PenTool size={14} strokeWidth={1.75} />;
+  if (t === 'reading') return <BookOpen size={14} strokeWidth={1.75} />;
+  if (t === 'live') return <Headphones size={14} strokeWidth={1.75} />;
+  return <FileText size={14} strokeWidth={1.75} />;
 }

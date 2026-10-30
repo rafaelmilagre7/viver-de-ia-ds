@@ -1,14 +1,4 @@
-import {
-  ArrowRight, ArrowUpRight, Check, X, Plus, Minus, Search, Settings,
-  User, Users, MessageCircle, Mail, Phone, Calendar, Clock,
-  TrendingUp, TrendingDown, Zap, Lightbulb, Compass, Navigation,
-  Folder, FileText, Download, Upload, Link as LinkIcon, ExternalLink,
-  Bookmark, Star, Heart, Bell, Lock, Unlock,
-  ChevronDown, ChevronUp, ChevronLeft, ChevronRight,
-  MoreHorizontal, MoreVertical, Filter, SortAsc,
-  Eye, EyeOff, Globe, Briefcase, Award, Crown, Rocket, Layers,
-  CheckCircle, AlertCircle, Brain, Radar,
-} from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, X, Plus, Minus, Search, Settings, User, Users, MessageCircle, Mail, Phone, Calendar, Clock, TrendingUp, TrendingDown, Zap, Lightbulb, Compass, Navigation, Folder, FileText, Download, Upload, Link as LinkIcon, ExternalLink, Bookmark, Star, Heart, Bell, Lock, Unlock, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, MoreHorizontal, MoreVertical, Filter, SortAsc, Eye, EyeOff, Globe, Briefcase, Award, Crown, Layers, CheckCircle, AlertCircle, Brain, Radar, Target } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import CodeBlock from '../../components/docs/CodeBlock';
@@ -29,7 +19,7 @@ const icons = [
   { name: 'file-text', I: FileText }, { name: 'download', I: Download },
   { name: 'upload', I: Upload }, { name: 'link', I: LinkIcon },
   { name: 'external-link', I: ExternalLink }, { name: 'award', I: Award },
-  { name: 'crown', I: Crown }, { name: 'rocket', I: Rocket }, { name: 'layers', I: Layers },
+  { name: 'crown', I: Crown }, { name: 'target', I: Target }, { name: 'layers', I: Layers },
   { name: 'brain', I: Brain }, { name: 'radar', I: Radar },
   { name: 'bookmark', I: Bookmark }, { name: 'star', I: Star },
   { name: 'heart', I: Heart }, { name: 'bell', I: Bell },
@@ -74,10 +64,10 @@ export default function IconographyIcons() {
         <CodeBlock>{`import { ArrowRight } from 'lucide-react';
 
 // default Lucide · 2px, round cap/join
-<ArrowRight size={14} strokeWidth={2} />
+<ArrowRight size={16} strokeWidth={1.75} />
 
 // inline em label 12px · engrossa pra não sumir
-<ArrowRight size={12} strokeWidth={2.4} />
+<ArrowRight size={14} strokeWidth={1.75} />
 
 // wrapper do DS · força stroke 1.8 e tamanho do token
 <Icon size="lg" tone="navy"><ArrowRight /></Icon>`}</CodeBlock>
@@ -88,7 +78,7 @@ export default function IconographyIcons() {
         <div className="vds-icon-grid">
           {icons.map(({ name, I }) => (
             <div key={name} className="vds-icon-cell" title={name}>
-              <I size={18} strokeWidth={2} />
+              <I size={16} strokeWidth={1.75} />
               <span>{name}</span>
             </div>
           ))}
@@ -149,7 +139,7 @@ export default function IconographyIcons() {
             marca têm identidade própria, premium e contextual — Sparkle destrói essa
             diferenciação. Use ícones contextuais: <strong>Award</strong> (mestria),
             <strong> Compass</strong> (direção), <strong>Crown</strong> (destaque),
-            <strong> Layers</strong> (sistema), <strong>Rocket</strong> (deploy),
+            <strong> Layers</strong> (sistema), <strong>Target</strong> (meta),
             <strong> MessageCircle</strong> (conversas), <strong>Calendar</strong> (agenda),
             <strong> Brain</strong> (análise IA), <strong>Radar</strong> (monitoramento).
           </p>

@@ -43,7 +43,7 @@ function WebhooksSection() {
             <p>4 ativos · 1 com falhas nas últimas 24h · próximo retry em 2 min</p>
           </div>
           <button className="vds-wh-add">
-            <Plus size={13} strokeWidth={2.4} />
+            <Plus size={14} strokeWidth={1.75} />
             Novo endpoint
           </button>
         </header>
@@ -53,7 +53,7 @@ function WebhooksSection() {
           <article className="vds-wh-row">
             <div className="vds-wh-row-l">
               <div className="vds-wh-icon">
-                <Webhook size={16} strokeWidth={1.8} />
+                <Webhook size={16} strokeWidth={1.75} />
               </div>
               <div>
                 <p className="vds-wh-url mono">
@@ -73,7 +73,7 @@ function WebhooksSection() {
                 <em>últimos 30d</em>
               </span>
               <button className="vds-wh-row-more" aria-label="Mais opções">
-                <MoreHorizontal size={14} strokeWidth={2} />
+                <MoreHorizontal size={16} strokeWidth={1.75} />
               </button>
             </div>
           </article>
@@ -82,7 +82,7 @@ function WebhooksSection() {
           <article className="vds-wh-row attention">
             <div className="vds-wh-row-l">
               <div className="vds-wh-icon attn">
-                <Webhook size={16} strokeWidth={1.8} />
+                <Webhook size={16} strokeWidth={1.75} />
               </div>
               <div>
                 <p className="vds-wh-url mono">
@@ -102,7 +102,7 @@ function WebhooksSection() {
                 <em>últimos 30d</em>
               </span>
               <button className="vds-wh-row-more" aria-label="Mais opções">
-                <MoreHorizontal size={14} strokeWidth={2} />
+                <MoreHorizontal size={16} strokeWidth={1.75} />
               </button>
             </div>
           </article>
@@ -111,7 +111,7 @@ function WebhooksSection() {
           <article className="vds-wh-row">
             <div className="vds-wh-row-l">
               <div className="vds-wh-icon">
-                <Webhook size={16} strokeWidth={1.8} />
+                <Webhook size={16} strokeWidth={1.75} />
               </div>
               <div>
                 <p className="vds-wh-url mono">
@@ -131,7 +131,7 @@ function WebhooksSection() {
                 <em>últimos 30d</em>
               </span>
               <button className="vds-wh-row-more" aria-label="Mais opções">
-                <MoreHorizontal size={14} strokeWidth={2} />
+                <MoreHorizontal size={16} strokeWidth={1.75} />
               </button>
             </div>
           </article>
@@ -141,7 +141,7 @@ function WebhooksSection() {
         <div className="vds-wh-secret">
           <header>
             <div className="vds-wh-secret-icon">
-              <KeyRound size={16} strokeWidth={1.8} />
+              <KeyRound size={16} strokeWidth={1.75} />
             </div>
             <div>
               <h4>Signing secret · HMAC-SHA256</h4>
@@ -153,15 +153,15 @@ function WebhooksSection() {
             <span className="key mono">whsec_a4f8c0e29f7b4e83b521·····6c1f7a09b482</span>
             <div className="vds-wh-secret-actions">
               <button className="vds-wh-secret-btn">
-                <Eye size={12} strokeWidth={2.2} />
+                <Eye size={14} strokeWidth={1.75} />
                 Revelar
               </button>
               <button className="vds-wh-secret-btn">
-                <Copy size={12} strokeWidth={2.2} />
+                <Copy size={14} strokeWidth={1.75} />
                 Copiar
               </button>
               <button className="vds-wh-secret-btn warn">
-                <RefreshCw size={12} strokeWidth={2.2} />
+                <RefreshCw size={14} strokeWidth={1.75} />
                 Rotacionar
               </button>
             </div>
@@ -198,8 +198,8 @@ function PermissionsMatrixSection() {
             <p>Define o que cada papel pode fazer no produto. Mudanças são auditadas automaticamente — só Owner pode aprovar.</p>
           </div>
           <div className="vds-perm-tag">
-            <Shield size={12} strokeWidth={2.2} />
-            sincronizado · há 4 min
+            <Shield size={14} strokeWidth={1.75} />
+            Sincronizado · há 4 min
           </div>
         </header>
 
@@ -224,7 +224,7 @@ function PermissionsMatrixSection() {
                     <td key={j} className={`vds-perm-cell ${v ? 'on' : ''} ${j === 0 ? 'highlight' : ''}`}>
                       {v ? (
                         <span className="vds-perm-mark">
-                          <Check size={11} strokeWidth={3} />
+                          <Check size={14} strokeWidth={1.75} />
                         </span>
                       ) : (
                         <span className="vds-perm-empty">—</span>
@@ -245,7 +245,7 @@ function PermissionsMatrixSection() {
             <button className="vds-perm-btn ghost">Exportar como CSV</button>
             <button className="vds-perm-btn primary">
               Editar matriz
-              <ArrowRight size={12} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
           </div>
         </footer>
@@ -281,7 +281,7 @@ function SettingsSection() {
             <div className="vds-settings-field">
               <input className="vds-settings-input" aria-label="Email primário" defaultValue="rafael@viverdeia.ai" />
               <span className="vds-settings-verified">
-                <CheckCircle2 size={12} strokeWidth={2.4} />
+                <CheckCircle2 size={14} strokeWidth={1.75} />
                 Verificado
               </span>
             </div>
@@ -336,7 +336,7 @@ function SettingsSection() {
           </div>
           <div className="vds-settings-r">
             <button className="vds-settings-danger">
-              <Trash2 size={13} strokeWidth={2.2} />
+              <Trash2 size={14} strokeWidth={1.75} />
               Apagar minha conta
             </button>
           </div>
@@ -361,7 +361,7 @@ function ApiKeySection() {
             <p>Você pode criar até 3 chaves simultâneas. Cada uma tem permissões e logs de uso separados.</p>
           </div>
           <button className="vds-apikeys-new">
-            <Key size={13} strokeWidth={2.2} />
+            <Key size={14} strokeWidth={1.75} />
             Nova chave
           </button>
         </header>
@@ -369,7 +369,7 @@ function ApiKeySection() {
         <article className="vds-apikey-card">
           <div className="vds-apikey-top">
             <div>
-              <span className="vds-apikey-tag prod">production</span>
+              <span className="vds-apikey-tag prod">Production</span>
               <h4>nina-classifier · produção</h4>
               <p>Criada por <strong>Rafael Milagre</strong> em 12 mai 2026 · escopo <em>read+write</em></p>
             </div>
@@ -381,11 +381,11 @@ function ApiKeySection() {
           <div className="vds-apikey-token">
             <code className="vds-apikey-code">{revealed ? fullKey : masked}</code>
             <button className="vds-apikey-eye" onClick={() => setRevealed(!revealed)}>
-              {revealed ? <EyeOff size={12} strokeWidth={2} /> : <Eye size={12} strokeWidth={2} />}
+              {revealed ? <EyeOff size={14} strokeWidth={1.75} /> : <Eye size={14} strokeWidth={1.75} />}
               {revealed ? 'Ocultar' : 'Revelar'}
             </button>
             <button className="vds-apikey-copy">
-              <Copy size={12} strokeWidth={2} /> Copiar
+              <Copy size={14} strokeWidth={1.75} /> Copiar
             </button>
           </div>
 
@@ -399,11 +399,11 @@ function ApiKeySection() {
             </div>
             <div className="vds-apikey-actions">
               <button className="vds-apikey-btn ghost">
-                <RefreshCw size={12} strokeWidth={2} />
+                <RefreshCw size={14} strokeWidth={1.75} />
                 Rotacionar
               </button>
               <button className="vds-apikey-btn danger">
-                <Trash2 size={12} strokeWidth={2} />
+                <Trash2 size={14} strokeWidth={1.75} />
                 Revogar
               </button>
             </div>
@@ -413,12 +413,12 @@ function ApiKeySection() {
         <article className="vds-apikey-card warn">
           <div className="vds-apikey-top">
             <div>
-              <span className="vds-apikey-tag dev">development</span>
+              <span className="vds-apikey-tag dev">Development</span>
               <h4>nina-classifier · staging</h4>
               <p>Criada por <strong>Diego Martins</strong> em 03 fev 2026 · escopo <em>read</em></p>
             </div>
             <span className="vds-apikey-status warn">
-              <AlertTriangle size={11} strokeWidth={2.2} />
+              <AlertTriangle size={14} strokeWidth={1.75} />
               expira em 8 dias
             </span>
           </div>
@@ -426,10 +426,10 @@ function ApiKeySection() {
           <div className="vds-apikey-token">
             <code className="vds-apikey-code">sk-dev-via-2026-3f••••••••••••••••••••••8a</code>
             <button className="vds-apikey-eye">
-              <Eye size={12} strokeWidth={2} /> Revelar
+              <Eye size={14} strokeWidth={1.75} /> Revelar
             </button>
             <button className="vds-apikey-copy">
-              <Copy size={12} strokeWidth={2} /> Copiar
+              <Copy size={14} strokeWidth={1.75} /> Copiar
             </button>
           </div>
 
@@ -441,7 +441,7 @@ function ApiKeySection() {
             </div>
             <div className="vds-apikey-actions">
               <button className="vds-apikey-btn primary">
-                <RefreshCw size={12} strokeWidth={2} />
+                <RefreshCw size={14} strokeWidth={1.75} />
                 Renovar agora
               </button>
             </div>
@@ -461,7 +461,7 @@ function BillingSection() {
           <header>
             <span className="vds-billing-eyebrow">Plano atual</span>
             <h3>
-              <Crown size={18} strokeWidth={1.6} />
+              <Crown size={16} strokeWidth={1.75} />
               Mentoria · trimestral
             </h3>
             <p>R$ 1.840 / trimestre · próxima cobrança em <strong>17 ago 2026</strong></p>
@@ -484,12 +484,12 @@ function BillingSection() {
 
           <div className="vds-billing-actions">
             <button className="vds-billing-btn primary">
-              <CreditCard size={13} strokeWidth={2.2} />
+              <CreditCard size={14} strokeWidth={1.75} />
               Alterar método
             </button>
             <button className="vds-billing-btn ghost">
               Mudar pra anual <span>(2 meses grátis)</span>
-              <ChevronRight size={13} strokeWidth={2.4} />
+              <ChevronRight size={14} strokeWidth={1.75} />
             </button>
           </div>
         </div>
@@ -510,36 +510,36 @@ function BillingSection() {
         <div className="vds-billing-history">
           <header>
             <h4>Histórico de cobranças</h4>
-            <a href="#">Ver todas <ChevronRight size={12} strokeWidth={2.4} /></a>
+            <a href="#">Ver todas <ChevronRight size={14} strokeWidth={1.75} /></a>
           </header>
           <ul>
             <li>
               <span className="d">17 mai 2026</span>
               <span className="desc">Mentoria · trimestre · renovação</span>
               <span className="amt">R$ 1.840,00</span>
-              <span className="st ok"><CheckCircle2 size={11} strokeWidth={2.4} /> pago</span>
-              <button aria-label="Baixar"><Download size={12} strokeWidth={2.2} /></button>
+              <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
+              <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
             <li>
               <span className="d">17 fev 2026</span>
               <span className="desc">Mentoria · trimestre</span>
               <span className="amt">R$ 1.840,00</span>
-              <span className="st ok"><CheckCircle2 size={11} strokeWidth={2.4} /> pago</span>
-              <button aria-label="Baixar"><Download size={12} strokeWidth={2.2} /></button>
+              <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
+              <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
             <li>
               <span className="d">17 nov 2025</span>
               <span className="desc">Mentoria · trimestre</span>
               <span className="amt">R$ 1.840,00</span>
-              <span className="st ok"><CheckCircle2 size={11} strokeWidth={2.4} /> pago</span>
-              <button aria-label="Baixar"><Download size={12} strokeWidth={2.2} /></button>
+              <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
+              <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
             <li>
               <span className="d">17 ago 2025</span>
               <span className="desc">Mentoria · trimestre · primeira parcela</span>
               <span className="amt">R$ 1.840,00</span>
-              <span className="st ok"><CheckCircle2 size={11} strokeWidth={2.4} /> pago</span>
-              <button aria-label="Baixar"><Download size={12} strokeWidth={2.2} /></button>
+              <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
+              <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
           </ul>
         </div>
@@ -584,7 +584,7 @@ function AuditLogSection() {
                   <span className="day">{e.day}</span>
                 </div>
                 <span className="vds-audit-icon">
-                  <Icon size={13} strokeWidth={2} />
+                  <Icon size={14} strokeWidth={1.75} />
                 </span>
                 <div className="vds-audit-text">
                   <p>

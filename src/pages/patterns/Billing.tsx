@@ -80,7 +80,7 @@ function BillingFlowDemo() {
               aria-current={i === step ? 'step' : undefined}
             >
               <span className="vds-billing-step__dot" aria-hidden="true">
-                {i < step ? <Check size={13} strokeWidth={2.4} /> : i + 1}
+                {i < step ? <Check size={14} strokeWidth={1.75} /> : i + 1}
               </span>
               <span className="vds-billing-step__label">{s.label}</span>
             </li>
@@ -158,7 +158,7 @@ function BillingFlowDemo() {
                   value={card.number}
                   onChange={(e) => setCard({ ...card, number: e.target.value })}
                   placeholder="0000 0000 0000 0000"
-                  iconLeft={<CreditCard size={14} />}
+                  iconLeft={<CreditCard size={16} />}
                 />
                 <div className="vds-billing-fields-row">
                   <Input
@@ -201,16 +201,16 @@ function BillingFlowDemo() {
             variant="ghost"
             disabled={step === 0}
             onClick={() => setStep((step - 1) as Step)}
-            iconLeft={<ArrowLeft size={13} />}
+            iconLeft={<ArrowLeft size={14} />}
           >
             Voltar
           </Button>
           {step < 3 ? (
-            <Button onClick={() => setStep((step + 1) as Step)} iconRight={<ArrowRight size={13} />}>
+            <Button onClick={() => setStep((step + 1) as Step)} iconRight={<ArrowRight size={14} />}>
               Avançar
             </Button>
           ) : (
-            <Button iconLeft={<Lock size={13} />}>
+            <Button iconLeft={<Lock size={14} />}>
               Confirmar · R$ {planPrice.toLocaleString('pt-BR')}
             </Button>
           )}
@@ -220,7 +220,7 @@ function BillingFlowDemo() {
       {/* Resumo lateral · glass sticky */}
       <aside className="vds-billing-summary">
         <header className="vds-billing-summary__head">
-          <Receipt size={13} strokeWidth={2} />
+          <Receipt size={14} strokeWidth={1.75} />
           <span>Resumo</span>
         </header>
 
@@ -244,7 +244,7 @@ function BillingFlowDemo() {
 
         {step === 3 && (
           <div className="vds-billing-summary__ready" role="status">
-            <Check size={13} strokeWidth={2.4} />
+            <Check size={14} strokeWidth={1.75} />
             <span>Pronto pra confirmar</span>
           </div>
         )}

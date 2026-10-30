@@ -25,8 +25,8 @@
   position: absolute;
   inset: 0;
   background: rgba(10, 31, 59, 0.32);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
 }
 
 /* ============================================
@@ -39,8 +39,8 @@
   left: 0;
   width: 320px;
   background: rgba(251, 250, 247, 0.96);
-  -webkit-backdrop-filter: blur(28px) saturate(140%);
-  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border-right: 1px solid var(--via-border-soft);
   box-shadow: 24px 0 56px -32px var(--via-shadow-ink-30);
   display: flex;
@@ -104,9 +104,9 @@
 }
 
 .vds-drawer-eyebrow {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   margin: var(--via-space-4_5) var(--via-space-2) var(--via-space-2);
@@ -131,7 +131,6 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text);
   text-decoration: none;
-  letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
   transition:
@@ -223,15 +222,14 @@
 .vds-drawer-chip {
   margin-left: auto;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   padding: var(--via-space-0_5) 7px;
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-08);
   color: var(--via-text-primary);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-drawer nav li.on .vds-drawer-chip {
@@ -263,9 +261,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
 }
 
 .vds-drawer-user p {
@@ -273,15 +270,12 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
 }
 
 .vds-drawer-user span {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 /* ============================================
@@ -317,9 +311,9 @@
 
 .vds-sheet-eyebrow {
   display: inline-flex;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   margin-bottom: var(--via-space-1_5);
@@ -337,7 +331,7 @@
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-sheet-close {
@@ -408,27 +402,24 @@
 .vds-sheet-stats strong {
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-sheet-stats em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
   margin-top: var(--via-space-1);
-  letter-spacing: 0.02em;
 }
 
 .vds-sheet-section-title {
   margin: 0 0 var(--via-space-3);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -447,7 +438,7 @@
   padding: var(--via-space-2_5) 0;
   border-bottom: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-xs);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
   color: var(--via-text);
 }
 
@@ -456,11 +447,9 @@
 }
 
 .vds-sheet-section .d {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 .vds-sheet-section li strong {
@@ -484,7 +473,7 @@
 .vds-sheet-note p {
   margin: 0 0 var(--via-space-2_5);
   font-size: var(--via-fs-xs);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-primary);
 }
 
@@ -492,11 +481,9 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-weight: var(--via-fw-medium);
   padding-top: var(--via-space-2);
   border-top: 1px solid var(--via-navy-08);
   width: 100%;
@@ -516,13 +503,12 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: var(--via-space-2_5) var(--via-space-3_5);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   font-family: inherit;
-  letter-spacing: -0.005em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -660,7 +646,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-bold);
   color: var(--via-white);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-bs-status-icons {
@@ -726,7 +712,7 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-bs-faded-content p {
@@ -754,8 +740,8 @@
   position: absolute;
   inset: 0;
   background: rgba(6, 21, 40, 0.55);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
   z-index: 1;
 }
 
@@ -766,8 +752,8 @@
   right: 0;
   bottom: 0;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(150%);
-  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border-radius: var(--via-radius-xl) var(--via-radius-xl) 0 0;
   z-index: 2;
   display: flex;
@@ -816,9 +802,9 @@
 
 .vds-bs-eyebrow {
   display: inline-flex;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.2em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
   margin-bottom: var(--via-space-1);
@@ -829,8 +815,8 @@
   font-size: 20px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.018em;
-  line-height: 1.25;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
 }
 
 .vds-bs-close {
@@ -896,10 +882,8 @@
 }
 
 .vds-bs-when-day {
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -908,7 +892,7 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.035em;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -916,7 +900,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
-  letter-spacing: -0.005em;
 }
 
 .vds-bs-when-time {
@@ -929,12 +912,11 @@
   /* tokens que flipam — a pill sumia inteira no tema escuro */
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-14);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   width: fit-content;
   margin-top: var(--via-space-2);
-  letter-spacing: -0.005em;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -943,8 +925,8 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.018em;
-  line-height: 1.3;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
 }
 
 .vds-bs-title em {
@@ -956,7 +938,7 @@
 .vds-bs-desc {
   margin: 0 0 var(--via-space-5_5);
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
 }
 
@@ -1035,16 +1017,16 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-bs-options em {
   font-style: normal;
   display: block;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin-top: 3px;
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 
 /* Footer CTA */
@@ -1061,14 +1043,13 @@
   gap: var(--via-space-2);
   width: 100%;
   padding: var(--via-space-3_5) var(--via-space-4_5);
-  border-radius: var(--via-radius-md);
+  border-radius: var(--via-radius-pill);
   background: var(--ov-cta-fill);
   border: 1px solid var(--ov-cta-edge);
   color: var(--ov-cta-ink);
   font-family: inherit;
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   box-shadow:
     var(--ov-cta-inset),
@@ -1115,7 +1096,6 @@
   cursor: pointer;
   font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
   transition:
     background var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
@@ -1176,10 +1156,8 @@
 
 .vds-bs-radios em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -1262,7 +1240,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   font-family: inherit;
-  letter-spacing: -0.005em;
 }
 
 .vds-pop-anchor.avatar {
@@ -1353,7 +1330,6 @@
   color: var(--via-text);
   text-decoration: none;
   cursor: pointer;
-  letter-spacing: -0.005em;
   border: 1px solid transparent;
   transition:
     background var(--via-dur) var(--via-ease-snap),
@@ -1426,7 +1402,7 @@
 
 .vds-pop-eyebrow {
   margin: 0 0 var(--via-space-3);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -1453,7 +1429,6 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text);
   cursor: pointer;
-  letter-spacing: -0.005em;
   border: 1px solid transparent;
   transition:
     background var(--via-dur) var(--via-ease-snap),
@@ -1477,7 +1452,7 @@
 .vds-pop-section label .count {
   margin-left: auto;
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-semibold);
   font-feature-settings: 'tnum' 1;
@@ -1538,13 +1513,12 @@
 .vds-pop-clear {
   background: transparent;
   border: none;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
   padding: var(--via-space-1_5) var(--via-space-1);
-  letter-spacing: -0.005em;
   border-radius: var(--via-radius-xs);
   transition:
     color var(--via-dur) var(--via-ease-snap),
@@ -1570,11 +1544,10 @@
   border: 1px solid var(--ov-cta-edge);
   border-radius: var(--via-radius-sm);
   padding: 9px var(--via-space-3_5);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   font-family: inherit;
-  letter-spacing: -0.005em;
   box-shadow:
     var(--ov-cta-inset),
     0 4px 10px -4px var(--via-shadow-ink-40);
@@ -1623,7 +1596,6 @@
   justify-content: center;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.15) inset,
     0 4px 10px -4px var(--via-shadow-ink-40);
@@ -1634,13 +1606,13 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-pop-user-head em {
   display: block;
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin-top: var(--via-space-0_5);
 }
@@ -1673,8 +1645,8 @@
   max-width: 440px;
   padding: var(--via-space-9) var(--via-space-8) var(--via-space-7);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(150%);
-  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   box-shadow:
@@ -1733,9 +1705,8 @@
 .vds-dialog-eyebrow {
   display: inline-flex;
   align-items: center;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-soft);
   padding: var(--via-space-1) var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
@@ -1743,7 +1714,7 @@
   border: 1px solid var(--via-navy-10);
   margin-top: var(--via-space-1);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-dialog-eyebrow.danger {
@@ -1759,27 +1730,26 @@
   border-radius: var(--via-radius-sm);
   background: rgba(184, 92, 92, 0.06);
   border: 1px solid rgba(184, 92, 92, 0.18);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-coral-dark);
   margin-top: var(--via-space-1);
-  letter-spacing: -0.005em;
 }
 
 .vds-dialog h3 {
   margin: 0;
   font-size: 20px;
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
-  line-height: 1.25;
+  line-height: var(--via-lh-snug);
   max-width: 320px;
 }
 
 .vds-dialog p {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-soft);
   max-width: 340px;
 }
@@ -1805,13 +1775,12 @@
 .vds-dialog-btn {
   flex: 1;
   padding: var(--via-space-3) var(--via-space-4);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   border: 1px solid;
   cursor: pointer;
   font-family: inherit;
-  letter-spacing: -0.005em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     background var(--via-dur) var(--via-ease-snap),
@@ -2037,17 +2006,16 @@
   top: 18px;
   left: 18px;
   display: inline-flex;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   padding: 5px var(--via-space-3);
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.9);
-  letter-spacing: -0.004em;
   z-index: 2;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-lightbox-meta {
@@ -2063,7 +2031,7 @@
   margin: 0;
   font-size: var(--via-fs-caption);
   color: rgba(255, 255, 255, 0.75);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   max-width: 420px;
 }
 
@@ -2077,18 +2045,17 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: var(--via-space-2) var(--via-space-3_5);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.20);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color: var(--via-white);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
-  letter-spacing: -0.005em;
   font-feature-settings: 'tnum' 1;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -2126,7 +2093,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.55);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   display: inline-flex;

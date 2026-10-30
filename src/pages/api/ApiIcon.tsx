@@ -1,6 +1,6 @@
 import { Icon } from '../../lib/Icon/Icon';
 import ComponentDoc from '../../components/docs/ComponentDoc';
-import { Compass, Award, Crown, Layers, Rocket } from 'lucide-react';
+import { Compass, Award, Crown, Layers, Target } from 'lucide-react';
 import { Icon as meta } from './props.generated.json';
 
 export default function ApiIcon() {
@@ -8,8 +8,8 @@ export default function ApiIcon() {
     <ComponentDoc
       eyebrow="api · icon"
       name="Icon"
-      headline="wrapper Lucide · 3 sizes · 4 surfaces · tons semânticos"
-      description="Icon é o wrapper consistente para Lucide icons no DS. Padroniza size (xs/sm/md/lg/xl), tone (default/soft/navy/accent/coral/inverse) e surface (none/soft/glass/navy/accent tile). Use Icon em vez de Lucide direto pra manter consistência editorial."
+      headline="Lucide no tamanho e no tom certos."
+      description="Wrapper Lucide · 3 sizes · 4 surfaces · tons semânticos. Icon é o wrapper consistente para Lucide icons no DS. Padroniza size (xs/sm/md/lg/xl), tone (default/soft/navy/accent/coral/inverse) e surface (none/soft/glass/navy/accent tile). Use Icon em vez de Lucide direto pra manter consistência editorial."
       importLine={`import { Icon, type IconProps } from '@viverdeia/design-system';
 import { Compass, Award } from 'lucide-react';`}
       anatomy={[
@@ -36,7 +36,7 @@ import { Compass, Award } from 'lucide-react';`}
               <Icon size="md" tone="navy"><Award /></Icon>
               <Icon size="lg" tone="accent"><Crown /></Icon>
               <Icon surface="glass" size="md"><Layers /></Icon>
-              <Icon surface="navy" size="md"><Rocket /></Icon>
+              <Icon surface="navy" size="md"><Target /></Icon>
               <Icon surface="accent" size="md"><Crown /></Icon>
             </div>
           ),
@@ -46,14 +46,14 @@ import { Compass, Award } from 'lucide-react';`}
 
 {/* Com tile glass/navy/accent */}
 <Icon surface="glass" size="md"><Layers /></Icon>
-<Icon surface="navy" size="md"><Rocket /></Icon>
+<Icon surface="navy" size="md"><Target /></Icon>
 <Icon surface="accent" size="md"><Crown /></Icon>`,
         },
       ]}
       dosDonts={[
         {
           do: { title: 'Use Icon em vez de <Compass /> direto', description: 'Centraliza size/tone · consistência automática · usa tokens.' },
-          dont: { title: 'Não use sparkle/sparkles · ESTRELINHA BANIDA', description: 'Cliché global de IA · use Compass, Award, Crown, Rocket, Layers (regra de marca).' },
+          dont: { title: 'Não use sparkle/sparkles · ESTRELINHA BANIDA', description: 'Cliché global de IA · use Compass, Award, Crown, Target, Layers (regra de marca).' },
         },
         {
           do: { title: 'label obrigatório quando solitário', description: '<Icon label="Sucesso"><Check /></Icon> · screen reader anuncia.' },

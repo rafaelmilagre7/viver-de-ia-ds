@@ -73,7 +73,7 @@ function FAQPremiumSection() {
       <article className="vds-faq">
         <header className="vds-faq-head">
           <div className="vds-faq-search">
-            <Search size={14} strokeWidth={2} />
+            <Search size={16} strokeWidth={1.75} />
             <input placeholder="O que você quer saber? · ex: 'como cancelar', 'mentoria 1:1'…" />
             <span className="vds-faq-search-shortcut mono">⌘ K</span>
           </div>
@@ -93,7 +93,7 @@ function FAQPremiumSection() {
                   <li key={c.id} className={c.id === activeCat ? 'on' : ''}>
                     <button onClick={() => setActiveCat(c.id)}>
                       <span className="vds-faq-cat-icon">
-                        <Icon size={13} strokeWidth={1.8} />
+                        <Icon size={14} strokeWidth={1.75} />
                       </span>
                       <span className="vds-faq-cat-label">{c.label}</span>
                       <span className="vds-faq-cat-count mono">{c.count}</span>
@@ -119,7 +119,7 @@ function FAQPremiumSection() {
                       <h4>{item.q}</h4>
                     </div>
                     <span className="vds-faq-q-icon">
-                      {isOpen ? <Minus size={14} strokeWidth={2} /> : <Plus size={14} strokeWidth={2} />}
+                      {isOpen ? <Minus size={16} strokeWidth={1.75} /> : <Plus size={16} strokeWidth={1.75} />}
                     </span>
                   </button>
                   {isOpen && (
@@ -129,7 +129,7 @@ function FAQPremiumSection() {
                         <button className="vds-faq-feedback">Foi útil?</button>
                         <a href="#" className="vds-faq-more">
                           Ver pergunta no help center
-                          <ArrowRight size={11} strokeWidth={2.4} />
+                          <ArrowRight size={14} strokeWidth={1.75} />
                         </a>
                       </footer>
                     </div>
@@ -159,7 +159,7 @@ function FAQContactSection() {
         </div>
         <div className="vds-faq-contact-actions">
           <a href="#" className="vds-faq-contact-btn primary">
-            <MessageCircle size={13} strokeWidth={2.2} />
+            <MessageCircle size={16} strokeWidth={1.75} />
             Conversar agora
           </a>
           <a href="#" className="vds-faq-contact-btn ghost">

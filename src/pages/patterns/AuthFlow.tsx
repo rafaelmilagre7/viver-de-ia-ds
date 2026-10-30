@@ -74,7 +74,7 @@ function AuthMagicLinkSection() {
             Um link de acesso foi enviado para <strong>marisson@efizi.com.br</strong>. Geralmente chega em até 30 segundos — verifique também o spam.
           </p>
           <span className="vds-af-meta">
-            <Clock size={14} strokeWidth={1.75} />
+            <Clock size={16} strokeWidth={1.75} />
             Link expira em <strong>9:47</strong>
           </span>
           <Button variant="secondary" size="lg" fullWidth>
@@ -116,7 +116,7 @@ function Auth2FASection() {
         <div className="vds-af-2fa-r">
           <OTPInput length={6} value={code} onChange={setCode} inputType="numeric" label="Código de verificação" />
           <span className="vds-af-meta">
-            <Clock size={14} strokeWidth={1.75} />
+            <Clock size={16} strokeWidth={1.75} />
             Novo código em <strong>00:24</strong>
           </span>
           <Button size="lg" fullWidth iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>

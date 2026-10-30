@@ -399,7 +399,7 @@ export default function VarianceWaterfall() {
         </div>
 
         <p className="vds-fpa-var-chart-nota">
-          <Info size={13} strokeWidth={2} aria-hidden="true" />
+          <Info size={14} strokeWidth={1.75} aria-hidden="true" />
           <span>
             <strong>Leitura ·</strong> o mês vendeu mais e ganhou menos. Marketing e aquisição sozinho estourou{' '}
             {money(impactoDe('des-mkt'))} — mais do que todo o avanço da receita. E esse avanço não veio do recorrente:
@@ -444,14 +444,14 @@ export default function VarianceWaterfall() {
                 <span className="vds-fpa-var-row-id">
                   <span className="vds-fpa-var-row-nome">
                     {c.label}
-                    <ChevronRight size={13} strokeWidth={2.2} aria-hidden="true" />
+                    <ChevronRight size={14} strokeWidth={1.75} aria-hidden="true" />
                   </span>
                   <span className="vds-fpa-var-row-nota">{notaDa(c)}</span>
                 </span>
 
                 <span className="vds-fpa-var-row-vals">
                   <span className="v">{money(c.plan)}</span>
-                  <ArrowRight size={11} strokeWidth={2.2} aria-hidden="true" />
+                  <ArrowRight size={14} strokeWidth={1.75} aria-hidden="true" />
                   <span className="v forte">{money(c.real)}</span>
                 </span>
 
@@ -468,9 +468,9 @@ export default function VarianceWaterfall() {
 
                 <span className={`vds-fpa-var-row-num ${favoravel ? 'vds-fpa-var-num-ok' : 'vds-fpa-var-num-ruim'}`}>
                   {favoravel ? (
-                    <ArrowUpRight size={13} strokeWidth={2.4} aria-hidden="true" />
+                    <ArrowUpRight size={14} strokeWidth={1.75} aria-hidden="true" />
                   ) : (
-                    <ArrowDownRight size={13} strokeWidth={2.4} aria-hidden="true" />
+                    <ArrowDownRight size={14} strokeWidth={1.75} aria-hidden="true" />
                   )}
                   {moneySigned(c.impacto)}
                 </span>
@@ -543,7 +543,7 @@ export default function VarianceWaterfall() {
             logo acima nesta página.
           </p>
           <button type="button" className="vds-fpa-var-cta">
-            <Calculator size={13} strokeWidth={2.2} aria-hidden="true" />
+            <Calculator size={14} strokeWidth={1.75} aria-hidden="true" />
             Abrir memória de cálculo
           </button>
         </footer>

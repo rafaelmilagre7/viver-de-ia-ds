@@ -69,7 +69,7 @@ function ThemeSwitcher() {
           size="sm"
           variant={mode === 'light' ? 'primary' : 'secondary'}
           onClick={() => setMode('light')}
-          iconLeft={<Sun size={14} />}
+          iconLeft={<Sun size={16} />}
         >
           Claro
         </Button>
@@ -77,7 +77,7 @@ function ThemeSwitcher() {
           size="sm"
           variant={mode === 'dark' ? 'primary' : 'secondary'}
           onClick={() => setMode('dark')}
-          iconLeft={<Moon size={14} />}
+          iconLeft={<Moon size={16} />}
         >
           Escuro
         </Button>
@@ -85,7 +85,7 @@ function ThemeSwitcher() {
           size="sm"
           variant={mode === 'system' ? 'primary' : 'secondary'}
           onClick={() => setMode('system')}
-          iconLeft={<Monitor size={14} />}
+          iconLeft={<Monitor size={16} />}
         >
           Sistema
         </Button>

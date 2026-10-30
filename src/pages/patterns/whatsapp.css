@@ -150,7 +150,6 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: #0B0B0B;
-  letter-spacing: -0.005em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -216,7 +215,7 @@
 .vds-wa-sys {
   align-self: center;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: rgba(0,0,0,0.55);
   background: rgba(225,245,254,0.92);
@@ -282,7 +281,7 @@
   margin: 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   color: inherit;
   padding-right: 50px;
 }
@@ -296,7 +295,7 @@
   align-items: center;
   gap: 3px;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: rgba(0,0,0,0.45);
 }
 .vds-wa-bubble .check { color: rgba(0,0,0,0.32); }

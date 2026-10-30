@@ -32,8 +32,8 @@
   max-width: 560px;
   padding: var(--via-space-8);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(32px) saturate(200%);
-  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -75,8 +75,8 @@
   position: relative;
   padding: var(--via-space-3_5) var(--via-space-4_5);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-md);
   box-shadow:
@@ -95,10 +95,8 @@
 .via-field .lbl {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-1_5);
   transition: color 200ms;
@@ -115,7 +113,7 @@
   outline: none;
   padding: 0;
   resize: none;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 .via-field .val::placeholder { color: var(--via-gray-400); font-weight: var(--via-fw-regular); }
 
@@ -181,14 +179,13 @@
   top: 16px;
   right: 18px;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
-  letter-spacing: -0.004em;
+  font-size: var(--via-fs-xs);
   padding: var(--via-space-1) var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-muted);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .via-field .cue.navy { background: var(--via-navy-10); color: var(--via-text-primary); }
 .via-field .cue.danger { background: rgba(184,58,58,0.10); color: var(--via-danger); }
@@ -236,8 +233,7 @@
   bottom: 12px;
   right: 18px;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
-  letter-spacing: 0.02em;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 
@@ -251,8 +247,8 @@
   gap: var(--via-space-3_5);
   padding: var(--via-space-3_5) var(--via-space-4);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-md);
   box-shadow:
@@ -362,7 +358,7 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   margin-top: var(--via-space-0_5);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-form-radio-group { padding-top: var(--via-space-2); }

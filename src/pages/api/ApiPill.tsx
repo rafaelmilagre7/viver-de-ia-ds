@@ -7,8 +7,8 @@ export default function ApiPill() {
     <ComponentDoc
       eyebrow="api · pill"
       name="Pill"
-      headline="11px lowercase peso 500 · glass · sem caps lock"
-      description="Pill canônica do Viver de IA. 11px font-size · weight 500 · letter-spacing -0.004em · nowrap · glass surface backdrop-blur 8px · SEM caps lock · SEM bolinha decorativa. Live variant tem dot coral pulsante + ring expansivo. Use pra status, tags, metadata."
+      headline="o rótulo pequeno, sem caixa alta."
+      description="11px lowercase peso 500 · glass · sem caps lock. Pill canônica do Viver de IA. 11px font-size · weight 500 · letter-spacing -0.004em · nowrap · glass surface backdrop-blur 8px · SEM caps lock · SEM bolinha decorativa. Live variant tem dot coral pulsante + ring expansivo. Use pra status, tags, metadata."
       importLine={`import { Pill, type PillProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-pill', description: 'Container pill · padding 4×11 · border-radius 999px · glass backdrop' },

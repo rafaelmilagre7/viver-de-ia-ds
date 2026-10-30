@@ -13,8 +13,8 @@ export default function ApiDateRangePicker() {
     <ComponentDoc
       eyebrow="api · date-range-picker"
       name="DateRangePicker"
-      headline="intervalo · 2 cliques · highlight range · presets"
-      description="DateRangePicker pra intervalos (de/até). 2 cliques: primeiro define start, segundo define end. Range fica highlighted entre os 2. Presets opcionais (Últimos 7 / 30 / 90 dias). Usa Calendar interno."
+      headline="um intervalo em dois cliques."
+      description="Intervalo · 2 cliques · highlight range · presets. DateRangePicker pra intervalos (de/até). 2 cliques: primeiro define start, segundo define end. Range fica highlighted entre os 2. Presets opcionais (Últimos 7 / 30 / 90 dias). Usa Calendar interno."
       importLine={`import { DateRangePicker, type DateRangePickerProps, type DateRange } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-drp', description: 'Container · trigger + popover · controlled' },

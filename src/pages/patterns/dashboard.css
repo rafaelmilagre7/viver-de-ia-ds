@@ -40,7 +40,7 @@
   font-family: var(--via-font-display);
   font-size: 28px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin: var(--via-space-1_5) 0 0;
 }
@@ -50,8 +50,8 @@
   padding: var(--via-space-1);
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.45);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 12px -4px var(--via-shadow-ink-06);
 }
@@ -66,9 +66,8 @@
 .vds-dash .filt {
   padding: 7px var(--via-space-3_5);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   border-radius: var(--via-radius-pill);
   background: transparent;
   color: var(--via-text-soft);
@@ -81,7 +80,7 @@
     background var(--via-dur) var(--via-ease-snap),
     color var(--via-dur) var(--via-ease-snap);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-dash .filt:hover {
@@ -166,9 +165,8 @@
   gap: var(--via-space-0_5);
 }
 .dash-metric-ref {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -190,8 +188,8 @@
 .vds-dash .side {
   position: relative;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   padding: 26px var(--via-space-7);
@@ -313,7 +311,7 @@
 }
 .vds-dash .side .when {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   grid-column: 2;
   grid-row: 1;
@@ -324,7 +322,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .vds-dash .side .what em { font-style: normal; color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
 

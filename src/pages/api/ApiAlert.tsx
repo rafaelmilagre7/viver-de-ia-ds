@@ -7,8 +7,8 @@ export default function ApiAlert() {
     <ComponentDoc
       eyebrow="api · alert"
       name="Alert"
-      headline="banner inline persistente · liquid glass + atmosphere"
-      description="Alert inline pra avisos persistentes (não-bloqueantes). 4 tones: info · attn · danger · success. Dismissible opcional · ação inline (botão). Liquid glass forte + atmosphere radial + shadow stack."
+      headline="o aviso que fica até ser resolvido."
+      description="Banner inline persistente · liquid glass + atmosphere. Alert inline pra avisos persistentes (não-bloqueantes). 4 tones: info · attn · danger · success. Dismissible opcional · ação inline (botão). Liquid glass forte + atmosphere radial + shadow stack."
       importLine={`import { Alert, type AlertProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-alert', description: 'Container · gradient white 96→82 + blur + atmosphere' },

@@ -178,7 +178,7 @@ function TransactionalSection() {
 
             <a href="#" className="vds-ec-em-cta">
               Acessar a plataforma
-              <ArrowRight size={13} strokeWidth={2.2} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-sign">
@@ -262,7 +262,7 @@ function TransactionalSection() {
           <div className="vds-ec-em-body">
             <div className="vds-ec-em-alert">
               <span className="ico">
-                <AlertCircle size={16} strokeWidth={2} />
+                <AlertCircle size={16} strokeWidth={1.75} />
               </span>
               <div>
                 <strong>Cobrança não passou · R$ 2.400</strong>
@@ -289,7 +289,7 @@ function TransactionalSection() {
 
             <a href="#" className="vds-ec-em-cta">
               Resolver agora
-              <ArrowRight size={13} strokeWidth={2.2} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-fine">
@@ -370,7 +370,7 @@ function EditorialSection() {
             </p>
 
             <a href="#" className="vds-ec-em-link-arrow">
-              ver o código que reduziu a latência <ArrowRight size={12} strokeWidth={2.4} />
+              ver o código que reduziu a latência <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-sign">
@@ -444,7 +444,7 @@ function EditorialSection() {
 
             <a href="#" className="vds-ec-em-cta secondary">
               Ver gravação completa (1h 24min)
-              <ArrowRight size={13} strokeWidth={2.2} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p>
@@ -548,7 +548,7 @@ function ConciergeSection() {
           <div className="vds-ec-em-body">
             <div className="vds-ec-em-alert">
               <span className="ico">
-                <AlertCircle size={16} strokeWidth={2} />
+                <AlertCircle size={16} strokeWidth={1.75} />
               </span>
               <div>
                 <strong>Provider de embeddings · 504 timeout</strong>
@@ -585,7 +585,7 @@ function ConciergeSection() {
 
             <a href="#" className="vds-ec-em-cta secondary">
               Ver dashboard completo
-              <ArrowRight size={13} strokeWidth={2.2} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-sign">
@@ -629,15 +629,15 @@ function ConciergeSection() {
 
             <div className="vds-ec-em-nps">
               <a href="#" className="opt good">
-                <CheckCircle2 size={16} strokeWidth={2} />
+                <CheckCircle2 size={16} strokeWidth={1.75} />
                 ajudando · vou na velocidade
               </a>
               <a href="#" className="opt mid">
-                <MessageCircle size={16} strokeWidth={2} />
+                <MessageCircle size={16} strokeWidth={1.75} />
                 ok · mas algo poderia mudar
               </a>
               <a href="#" className="opt bad">
-                <AlertCircle size={16} strokeWidth={2} />
+                <AlertCircle size={16} strokeWidth={1.75} />
                 atrapalhando · responde aqui e marco call hoje
               </a>
             </div>
@@ -682,7 +682,7 @@ function CommercialSection() {
           <div className="vds-ec-em-body">
             <div className="vds-ec-em-event-plate via-mesh-navy via-noise">
               <span className="lbl">
-                <Calendar size={11} strokeWidth={2.2} />
+                <Calendar size={14} strokeWidth={1.75} />
                 Live · sex 23 mai · 14h00 BRT
               </span>
               <h2>
@@ -708,7 +708,7 @@ function CommercialSection() {
 
             <a href="#" className="vds-ec-em-cta">
               Confirmar presença · 47 vagas
-              <ArrowRight size={13} strokeWidth={2.2} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-fine">
@@ -785,7 +785,7 @@ function CommercialSection() {
 
             <a href="#" className="vds-ec-em-cta">
               Ver programa completo
-              <ArrowRight size={13} strokeWidth={2.2} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-fine">
@@ -973,7 +973,7 @@ function LifecycleSection() {
 
             <a href="#" className="vds-ec-em-cta secondary">
               Ver o que mudou
-              <ArrowRight size={13} strokeWidth={2.2} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-sign">
@@ -991,7 +991,7 @@ function LifecycleSection() {
 function Check() {
   return (
     <span className="vds-ec-em-check">
-      <CheckCircle2 size={14} strokeWidth={2.2} />
+      <CheckCircle2 size={16} strokeWidth={1.75} />
     </span>
   );
 }

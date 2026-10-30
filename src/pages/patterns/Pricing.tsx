@@ -53,7 +53,7 @@ export default function Pricing() {
               <ul>
                 {t.items.map((i) => (
                   <li key={i}>
-                    <Check size={14} strokeWidth={1.75} className="ck" />
+                    <Check size={16} strokeWidth={1.75} className="ck" />
                     {i}
                   </li>
                 ))}
@@ -143,11 +143,11 @@ function ComparisonTableSection() {
               </div>
               <p className="vds-cmp-plan-desc">{p.desc}</p>
               {p.price === 'sob medida' ? (
-                <Button size="sm" variant="secondary" iconLeft={<MessageCircle size={14} strokeWidth={1.75} />}>
+                <Button size="sm" variant="secondary" iconLeft={<MessageCircle size={16} strokeWidth={1.75} />}>
                   Falar com o time
                 </Button>
               ) : (
-                <Button size="sm" variant={p.highlight ? 'primary' : 'secondary'} iconRight={<ArrowRight size={14} strokeWidth={1.75} />}>
+                <Button size="sm" variant={p.highlight ? 'primary' : 'secondary'} iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>
                   Começar
                 </Button>
               )}
@@ -170,11 +170,11 @@ function ComparisonTableSection() {
                     >
                       {v === true ? (
                         <span className="vds-cmp-mark">
-                          <Check size={14} strokeWidth={1.75} />
+                          <Check size={16} strokeWidth={1.75} />
                         </span>
                       ) : v === false ? (
                         <span className="vds-cmp-no">
-                          <Minus size={14} strokeWidth={1.75} />
+                          <Minus size={16} strokeWidth={1.75} />
                         </span>
                       ) : (
                         <span className="vds-cmp-text mono">{v}</span>

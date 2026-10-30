@@ -38,8 +38,8 @@
   margin: 0 auto;
   padding: var(--via-space-9) var(--via-space-9) var(--via-space-8);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(200%);
-  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -136,15 +136,14 @@
   align-items: center;
   padding: var(--via-space-1) var(--via-space-2_5);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.004em;
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
 
@@ -154,16 +153,16 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
-  line-height: 1.2;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 .vds-2fa-step > p.lede {
   margin: 0 0 var(--via-space-5_5);
   font-size: var(--via-fs-sm);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 /* ===== Method cards · selectable glass ====================== */
@@ -180,8 +179,8 @@
   padding: var(--via-space-4_5) var(--via-space-5);
   width: 100%;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
   text-align: left;
@@ -266,15 +265,14 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: 3px;
 }
 .vds-2fa-method__sub {
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 .vds-2fa-method__chev {
   color: var(--via-text-muted);
@@ -292,8 +290,8 @@
     radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
     radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
     var(--via-glass-card);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
   display: flex;
@@ -350,10 +348,8 @@
 }
 .vds-2fa-qr-caption {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
-  letter-spacing: 0.06em;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  text-transform: uppercase;
 }
 
 /* ===== OTP wrap · sub-card ================================== */
@@ -371,8 +367,8 @@
     radial-gradient(380px 200px at 0% 0%, rgba(30,58,95,0.08), transparent 60%),
     radial-gradient(280px 160px at 100% 100%, rgba(10,31,59,0.06), transparent 60%),
     var(--via-glass-card);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-navy-08);
   border-radius: var(--via-radius-lg);
   display: grid;
@@ -442,16 +438,16 @@
   font-family: var(--via-font-display);
   font-size: 28px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
 }
 .vds-2fa-done p {
   margin: 0 auto var(--via-space-5_5);
   max-width: 360px;
   font-size: var(--via-fs-sm);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 /* ===== Anatomy cards (rodapé) =============================== */
@@ -464,8 +460,8 @@
   position: relative;
   padding: var(--via-space-5_5) var(--via-space-5_5) var(--via-space-5);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(22px) saturate(180%);
-  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -505,10 +501,9 @@
   border: 1px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.004em;
   margin-bottom: var(--via-space-3_5);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
 }
@@ -517,25 +512,23 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 .vds-2fa-anatomy-card .purpose {
   margin: 0 0 var(--via-space-2);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 .vds-2fa-anatomy-card .hint {
   margin: 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
   font-style: normal;
-  letter-spacing: -0.004em;
 }
 
 @media (max-width: 600px) {

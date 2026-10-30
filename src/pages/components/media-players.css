@@ -38,8 +38,8 @@
   align-items: center;
   padding: var(--via-space-3_5) var(--via-space-4_5) var(--via-space-3_5) var(--via-space-3_5);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(32px) saturate(200%);
-  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -69,10 +69,8 @@
 .vds-mini-meta { min-width: 0; }
 .vds-mini-meta .ep {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   margin: 0 0 3px;
 }
@@ -82,7 +80,6 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-2);
-  letter-spacing: -0.005em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -128,7 +125,7 @@
 }
 .vds-mini-track .time {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -236,9 +233,9 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   margin: 0 0 var(--via-space-3_5);
@@ -248,7 +245,7 @@
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tighter);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: 0;
 }
@@ -256,7 +253,7 @@
 .vds-fullep .ep-meta .lede {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: rgba(255,255,255,0.72);
   margin: var(--via-space-3_5) 0 var(--via-space-4);
   max-width: 420px;
@@ -267,7 +264,7 @@
   align-items: center;
   gap: var(--via-space-2);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: rgba(255,255,255,0.78);
 }
@@ -281,15 +278,15 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-display);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
   color: var(--via-white);
 }
 .vds-fullep .ep-date {
   margin-left: auto;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
-  letter-spacing: 0.10em;
+  font-size: var(--via-fs-xs);
+  letter-spacing: var(--via-ls-wide);
   color: rgba(255,255,255,0.45);
 }
 
@@ -317,9 +314,9 @@
   display: flex;
   justify-content: space-between;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.55);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
   margin-bottom: var(--via-space-6);
   font-variant-numeric: tabular-nums;
 }
@@ -404,7 +401,7 @@
   border: 1px solid transparent;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
   cursor: pointer;
@@ -529,9 +526,9 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   margin: 0 0 var(--via-space-3_5);
@@ -541,7 +538,7 @@
   font-size: clamp(28px, 4vw, 44px);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tighter);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: 0;
 }
@@ -567,8 +564,8 @@
   height: 96px;
   border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid rgba(255,255,255,0.30);
   display: inline-flex;
   align-items: center;
@@ -615,8 +612,8 @@
      pra branco 55% no dark e a barra virava vidro CLARO — ícone branco 85%
      em cima sumia. Navy literal, como o resto do interior do vídeo. */
   background: linear-gradient(180deg, rgba(10, 31, 59, 0.36), rgba(10, 31, 59, 0.60));
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid rgba(255,255,255,0.16);
   border-radius: var(--via-radius-md);
 }
@@ -704,9 +701,9 @@
 .vds-video .vid-time {
   margin-left: var(--via-space-2_5);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.78);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
   font-variant-numeric: tabular-nums;
 }
 .vds-video .vid-quality {
@@ -718,7 +715,7 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   cursor: pointer;
@@ -751,8 +748,8 @@
   gap: var(--via-space-2);
   padding: var(--via-space-1_5) var(--via-space-3);
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: var(--via-radius-pill);
   opacity: 0.85;
@@ -760,10 +757,8 @@
 .vds-video .vid-watermark img { width: 14px; height: 14px; object-fit: contain; }
 .vds-video .vid-watermark span {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.85);
 }
 

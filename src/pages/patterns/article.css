@@ -8,8 +8,8 @@
   display: flex;
   flex-direction: column;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   overflow: hidden;
@@ -128,24 +128,22 @@
 
 .vds-article .cover .tag {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
   padding: var(--via-space-1) var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-article .cover.navy .tag {
   color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  -webkit-backdrop-filter: blur(8px) saturate(140%);
-  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
 }
 
 .vds-article .cover.light .tag {
@@ -156,7 +154,7 @@
 
 .vds-article .cover .time {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
 }
@@ -182,8 +180,8 @@
   font-family: var(--via-font);
   font-size: 20px;
   font-weight: var(--via-fw-semibold);
-  line-height: 1.25;
-  letter-spacing: -0.022em;
+  line-height: var(--via-lh-snug);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0;
 }
@@ -198,7 +196,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-soft);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   margin: 0;
 }
 
@@ -210,7 +208,7 @@
   border-top: 1px solid var(--via-border-soft);
   margin-top: auto;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
 }
 
 .vds-article .av {
@@ -220,9 +218,8 @@
   background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
   color: var(--via-white);
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,15 +235,13 @@
 .vds-article .author {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
 }
 
 .vds-article .date {
   color: var(--via-text-soft);
   margin-left: auto;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
 }

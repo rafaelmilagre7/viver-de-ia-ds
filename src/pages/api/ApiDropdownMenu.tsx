@@ -9,14 +9,14 @@ function DropdownDemo() {
     <DropdownMenu
       trigger={
         <Button variant="ghost" size="sm" aria-label="Mais opções">
-          <MoreHorizontal size={16} strokeWidth={2} />
+          <MoreHorizontal size={16} strokeWidth={1.75} />
         </Button>
       }
       items={[
-        { id: 'edit', label: 'Editar perfil', icon: <Edit size={13} /> },
-        { id: 'share', label: 'Compartilhar', icon: <Share2 size={13} /> },
-        { id: 'archive', label: 'Arquivar', icon: <Archive size={13} /> },
-        { id: 'delete', label: 'Excluir', icon: <Trash2 size={13} />, destructive: true },
+        { id: 'edit', label: 'Editar perfil', icon: <Edit size={14} /> },
+        { id: 'share', label: 'Compartilhar', icon: <Share2 size={14} /> },
+        { id: 'archive', label: 'Arquivar', icon: <Archive size={14} /> },
+        { id: 'delete', label: 'Excluir', icon: <Trash2 size={14} />, destructive: true },
       ]}
     />
   );
@@ -27,8 +27,8 @@ export default function ApiDropdownMenu() {
     <ComponentDoc
       eyebrow="api · dropdown-menu"
       name="DropdownMenu"
-      headline="context menu editorial · groups com separador · destructive"
-      description="DropdownMenu pra ações contextuais (overflow ⋯). Suporta items planos ou groups com separator automático. Itens podem ter icon, shortcut, destructive variant. Glass + atmosphere + spring open. Keyboard arrow nav + Enter."
+      headline="ações agrupadas atrás de um botão."
+      description="Context menu editorial · groups com separador · destructive. DropdownMenu pra ações contextuais (overflow ⋯). Suporta items planos ou groups com separator automático. Itens podem ter icon, shortcut, destructive variant. Glass + atmosphere + spring open. Keyboard arrow nav + Enter."
       importLine={`import { DropdownMenu, type DropdownMenuProps, type DropdownMenuItem } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-dropdown__trigger', description: 'Wrapper do elemento trigger · click toggle' },

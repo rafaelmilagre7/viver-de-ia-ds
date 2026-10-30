@@ -440,7 +440,7 @@ export default function BurnRunway() {
             <article className="via-tile via-tile--atmos via-tile--lift vds-fpa-burn-card">
               <header className="vds-fpa-burn-card-head">
                 <span className="vds-fpa-burn-card-lbl">
-                  <Wallet size={12} strokeWidth={2.1} />
+                  <Wallet size={14} strokeWidth={1.75} />
                   Caixa atual
                 </span>
                 <span className="vds-fpa-burn-card-ref">30/jun/2026</span>
@@ -451,7 +451,7 @@ export default function BurnRunway() {
               </p>
               <div className="vds-fpa-burn-card-foot">
                 <span className="vds-fpa-burn-chip is-desfavoravel">
-                  <TrendingDown size={11} strokeWidth={2.3} />
+                  <TrendingDown size={14} strokeWidth={1.75} />
                   <span className="t">{pct(VAR_CAIXA_PCT)} no semestre</span>
                 </span>
                 <Sparkline
@@ -465,7 +465,7 @@ export default function BurnRunway() {
             <article className="via-tile via-tile--atmos via-tile--lift vds-fpa-burn-card">
               <header className="vds-fpa-burn-card-head">
                 <span className="vds-fpa-burn-card-lbl">
-                  <Flame size={12} strokeWidth={2.1} />
+                  <Flame size={14} strokeWidth={1.75} />
                   Burn líquido médio
                 </span>
                 <span className="vds-fpa-burn-card-ref">3 meses</span>
@@ -477,7 +477,7 @@ export default function BurnRunway() {
               </p>
               <div className="vds-fpa-burn-card-foot">
                 <span className="vds-fpa-burn-chip is-favoravel">
-                  <TrendingDown size={11} strokeWidth={2.3} />
+                  <TrendingDown size={14} strokeWidth={1.75} />
                   <span className="t">{pct(VAR_BURN_PCT)} vs. média de 6 meses</span>
                 </span>
                 <Sparkline
@@ -491,7 +491,7 @@ export default function BurnRunway() {
             <article className="via-tile via-tile--atmos via-tile--lift vds-fpa-burn-card">
               <header className="vds-fpa-burn-card-head">
                 <span className="vds-fpa-burn-card-lbl">
-                  <Hourglass size={12} strokeWidth={2.1} />
+                  <Hourglass size={14} strokeWidth={1.75} />
                   Runway
                 </span>
                 <span className="vds-fpa-burn-card-ref">{cenario.label}</span>
@@ -502,7 +502,7 @@ export default function BurnRunway() {
               </p>
               <div className="vds-fpa-burn-card-foot is-stack">
                 <span className={`vds-fpa-burn-chip ${acimaDoPiso ? 'is-favoravel' : 'is-desfavoravel'}`}>
-                  {acimaDoPiso ? <TrendingUp size={11} strokeWidth={2.3} /> : <AlertCircle size={11} strokeWidth={2.3} />}
+                  {acimaDoPiso ? <TrendingUp size={16} strokeWidth={1.75} /> : <AlertCircle size={14} strokeWidth={1.75} />}
                   <span className="t">
                     {dec(Math.abs(folga))} {mes(folga)} {acimaDoPiso ? 'acima' : 'abaixo'} do piso de {PISO_MESES}
                   </span>
@@ -516,7 +516,7 @@ export default function BurnRunway() {
             <article className="via-tile via-tile--atmos via-tile--lift vds-fpa-burn-card">
               <header className="vds-fpa-burn-card-head">
                 <span className="vds-fpa-burn-card-lbl">
-                  <Repeat size={12} strokeWidth={2.1} />
+                  <Repeat size={14} strokeWidth={1.75} />
                   Receita recorrente
                 </span>
                 <span className="vds-fpa-burn-card-ref">jun/2026</span>
@@ -528,7 +528,7 @@ export default function BurnRunway() {
               </p>
               <div className="vds-fpa-burn-card-foot">
                 <span className="vds-fpa-burn-chip is-favoravel">
-                  <TrendingUp size={11} strokeWidth={2.3} />
+                  <TrendingUp size={16} strokeWidth={1.75} />
                   <span className="t">{pct(VAR_MRR_PCT)} vs. mai</span>
                 </span>
                 <Sparkline
@@ -597,7 +597,7 @@ export default function BurnRunway() {
               </ul>
 
               <p className="vds-fpa-burn-note">
-                <AlertCircle size={13} strokeWidth={2.1} />
+                <AlertCircle size={14} strokeWidth={1.75} />
                 <span>
                   O burn caiu {brl(PRIMEIRO.burn - ULTIMO.burn)} no semestre — de {brl(PRIMEIRO.burn)} em
                   janeiro para {brl(ULTIMO.burn)} em junho, uma queda média de {brl(QUEDA_BURN_MES)} por mês.
@@ -670,7 +670,7 @@ export default function BurnRunway() {
           </div>
 
           <p className="vds-fpa-burn-foot">
-            <Info size={13} strokeWidth={2.1} />
+            <Info size={14} strokeWidth={1.75} />
             <span>
               Regime de caixa, não de competência. Burn líquido = saídas − entradas; saldo final = saldo
               inicial − burn. O burn médio usado no runway é a média dos três últimos meses:{' '}

@@ -59,9 +59,9 @@
   border: 1px solid var(--via-navy-08);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
 }
@@ -71,8 +71,8 @@
   font-family: var(--via-font-display);
   font-size: clamp(24px, 2.6vw, 32px);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.026em;
-  line-height: 1.14;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
@@ -80,8 +80,7 @@
   margin: 0;
   max-width: 62ch;
   font-size: var(--via-fs-sm);
-  line-height: 1.6;
-  letter-spacing: -0.006em;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-body);
 }
 
@@ -110,8 +109,8 @@
   padding: var(--via-space-5) var(--via-space-5) var(--via-space-4_5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(175%);
-  backdrop-filter: blur(20px) saturate(175%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -141,9 +140,8 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.002em;
   color: var(--via-text-muted);
 }
 .vds-fpa-cash-kpi-lbl svg {
@@ -157,8 +155,8 @@
   font-family: var(--via-font-display);
   font-size: clamp(21px, 2vw, 26px);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.028em;
-  line-height: 1;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-tight);
   color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
 }
@@ -171,9 +169,8 @@
   background: var(--via-glass-card);
   border: 1px solid var(--via-navy-08);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.002em;
   font-variant-numeric: tabular-nums;
   color: var(--via-text-body);
 }
@@ -185,9 +182,8 @@
   margin: var(--via-space-3) 0 0;
   padding-top: 11px;
   border-top: 1px solid var(--via-navy-06);
-  font-size: var(--via-fs-micro);
-  line-height: 1.5;
-  letter-spacing: -0.002em;
+  font-size: var(--via-fs-xs);
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
 }
@@ -202,8 +198,8 @@
   padding: 26px var(--via-space-7) var(--via-space-5_5);
   border-radius: var(--via-radius-xl);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(26px) saturate(190%);
-  backdrop-filter: blur(26px) saturate(190%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -235,15 +231,14 @@
   margin: 0 0 var(--via-space-1);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.016em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 .vds-fpa-cash-panel-head p {
   margin: 0;
   max-width: 58ch;
   font-size: var(--via-fs-xs);
-  line-height: 1.5;
-  letter-spacing: -0.004em;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
   font-variant-numeric: tabular-nums;
 }
@@ -265,9 +260,8 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.002em;
   color: var(--via-text-body);
   white-space: nowrap;
 }
@@ -341,7 +335,7 @@
   gap: var(--via-space-2);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   white-space: nowrap;
 }
@@ -351,10 +345,8 @@
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-08);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: var(--via-text-muted);
 }
 
@@ -372,10 +364,8 @@
 }
 .vds-fpa-cash-readout .ro-vals em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--via-text-faint);
 }
 /* Rótulo usa token de TEXTO — a cor da série fica na marca, nunca na letra */
@@ -383,7 +373,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-body);
   white-space: nowrap;
 }
@@ -409,40 +399,32 @@
   font-family: var(--via-font);
   font-size: 9.5px;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.01em;
   fill: var(--via-data-ink);
 }
 .vds-fpa-cash-axis-title {
   font-family: var(--via-font);
   font-size: 8.5px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   fill: var(--via-text-faint);
 }
 /* título de cada um dos dois gráficos */
 .vds-fpa-cash-panel-title {
   font-family: var(--via-font);
   font-size: 9.5px;
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
+  font-weight: var(--via-fw-medium);
   fill: var(--via-text-primary);
 }
 /* rótulo direto dentro do plot (entradas ▲ / saídas ▼) */
 .vds-fpa-cash-inplot {
   font-family: var(--via-font);
   font-size: 9px;
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  font-weight: var(--via-fw-medium);
   fill: var(--via-data-ink);
 }
 .vds-fpa-cash-mes {
   font-family: var(--via-font);
   font-size: 10.5px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.01em;
   fill: var(--via-text-body);
 }
 .vds-fpa-cash-mes.is-proj { fill: var(--via-text-faint); }
@@ -455,7 +437,6 @@
   font-size: 10.5px;
   font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.004em;
   fill: var(--via-text-primary);
 }
 /* anotação de status · atenção, não série */
@@ -464,7 +445,6 @@
   font-size: 9.5px;
   font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.002em;
   fill: var(--via-coral-dark);
 }
 
@@ -489,8 +469,7 @@
 .vds-fpa-cash-note p {
   margin: 0;
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
-  letter-spacing: -0.004em;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   font-variant-numeric: tabular-nums;
 }
@@ -521,13 +500,12 @@
   margin: 0 0 3px;
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.016em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 .vds-fpa-cash-tbl-head p {
   margin: 0;
   font-size: var(--via-fs-xs);
-  letter-spacing: -0.004em;
   color: var(--via-text-muted);
 }
 
@@ -543,7 +521,6 @@
   border-collapse: collapse;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  letter-spacing: -0.004em;
 }
 
 .vds-fpa-cash-tbl th,
@@ -567,9 +544,9 @@
   border-bottom: 1px solid var(--via-navy-12);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   color: var(--via-text-muted);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
 }
 
 .vds-fpa-cash-tbl tbody th {
@@ -603,9 +580,9 @@
   background: var(--via-navy-05);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   color: var(--via-text-muted);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
 }
 .vds-fpa-cash-tbl tr.grp .sw {
   width: 16px;
@@ -690,10 +667,8 @@
 }
 .vds-fpa-cash-eq em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
   color: var(--via-text-faint);
 }
 .vds-fpa-cash-eq b {
@@ -701,7 +676,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-body);
   white-space: nowrap;
 }
