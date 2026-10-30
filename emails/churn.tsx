@@ -41,7 +41,7 @@ export default function ChurnEmail({ firstName, daysQuiet, resumeUrl, talkUrl }:
         Responde este email em uma linha que eu leio — não é robô.
       </Para>
 
-      <Signature name="Caio Ribeiro" role="fundador · Viver de IA" />
+      <Signature name="Rafael Milagre" role="fundador · Viver de IA" />
     </Layout>
   );
 }

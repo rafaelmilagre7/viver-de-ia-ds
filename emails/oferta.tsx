@@ -39,7 +39,7 @@ export default function OfertaEmail({ firstName, observation, talkUrl, detailsUr
       <CTA href={talkUrl}>Marcar 20 min</CTA>
       <SubLink href={detailsUrl}>ou ver como funciona primeiro →</SubLink>
 
-      <Signature name="Caio Ribeiro" role="fundador · Viver de IA" />
+      <Signature name="Rafael Milagre" role="fundador · Viver de IA" />
     </Layout>
   );
 }

@@ -49,7 +49,7 @@ export default function WelcomePlataformaEmail({ firstName, loginEmail, platform
         Se algo travar no acesso, responde este email — a gente resolve com você.
       </Para>
 
-      <Signature name="Caio Ribeiro" role="fundador · Viver de IA" />
+      <Signature name="Rafael Milagre" role="fundador · Viver de IA" />
     </Layout>
   );
 }

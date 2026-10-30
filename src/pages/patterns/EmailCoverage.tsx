@@ -138,7 +138,7 @@ function TransactionalSection() {
       >
         <EmailFrame
           category="Transacional · welcome"
-          from="Caio · Viver de IA"
+          from="Rafael · Viver de IA"
           subject="Bem-vindo. Próximos passos em 3 atos."
           preview="sua turma 2026.2 começa em 14 dias. antes disso, faz isso aqui pra entrar no ritmo."
           time="hoje · 09:14"
@@ -182,7 +182,7 @@ function TransactionalSection() {
             </a>
 
             <p className="vds-ec-em-sign">
-              <strong>Caio Ribeiro</strong> · fundador
+              <strong>Rafael Milagre</strong> · fundador
               <br />
               <em>responde direto · 14h média</em>
             </p>
@@ -396,7 +396,7 @@ function EditorialSection() {
       >
         <EmailFrame
           category="Editorial · recap"
-          from="Caio · Viver de IA"
+          from="Rafael · Viver de IA"
           subject="O que rolou na live de ontem · 3 prompts auditados ao vivo"
           preview="ontem auditamos 3 prompts da turma na live. quem não foi, vai aqui o resumo + os 3 prints que mais geraram pergunta."
           time="ter · 11:14"
@@ -454,7 +454,7 @@ function EditorialSection() {
             </p>
 
             <p className="vds-ec-em-sign">
-              <strong>Caio</strong>
+              <strong>Rafael</strong>
             </p>
           </div>
           <EmailFooter />
@@ -604,7 +604,7 @@ function ConciergeSection() {
       >
         <EmailFrame
           category="Concierge · feedback"
-          from="Caio · Viver de IA"
+          from="Rafael · Viver de IA"
           subject="Como tá indo a mentoria? 1 pergunta direta"
           preview="você entrou na turma 2026.2 há 45 dias. quero saber se o ritmo tá ajudando ou atrapalhando."
           time="qua · 10:08"
@@ -648,7 +648,7 @@ function ConciergeSection() {
             </p>
 
             <p className="vds-ec-em-sign">
-              <strong>Caio</strong>
+              <strong>Rafael</strong>
             </p>
           </div>
           <EmailFooter />
@@ -668,7 +668,7 @@ function CommercialSection() {
       >
         <EmailFrame
           category="Comercial · evento"
-          from="Caio · Viver de IA"
+          from="Rafael · Viver de IA"
           subject="Sex 14h · auditoria de 3 prompts ao vivo"
           preview="3 alunos vão postar prompts antes da live. audito ao vivo, expondo o que mudaria + por quê. 47 vagas, primeiro vem."
           time="seg · 16:22"
@@ -717,7 +717,7 @@ function CommercialSection() {
             </p>
 
             <p className="vds-ec-em-sign">
-              <strong>Caio</strong>
+              <strong>Rafael</strong>
             </p>
           </div>
           <EmailFooter />
@@ -730,7 +730,7 @@ function CommercialSection() {
       >
         <EmailFrame
           category="Comercial · lançamento"
-          from="Caio · Viver de IA"
+          from="Rafael · Viver de IA"
           subject="Turma 2026.3 abre amanhã 9h · 30 vagas · 4 meses"
           preview="próxima turma sai em outubro · entre agora ou daqui 4 meses. não tem turma intermediária."
           time="ter · 17:08"
@@ -794,7 +794,7 @@ function CommercialSection() {
             </p>
 
             <p className="vds-ec-em-sign">
-              <strong>Caio</strong>
+              <strong>Rafael</strong>
             </p>
           </div>
           <EmailFooter />
@@ -807,7 +807,7 @@ function CommercialSection() {
       >
         <EmailFrame
           category="Comercial · oferta"
-          from="Caio · Viver de IA"
+          from="Rafael · Viver de IA"
           subject="Pelo que vi no seu agente, faria sentido conversar"
           preview="vi sua entrega do módulo 3 · operação tem padrão pra 2-3 agentes paralelos · tem plano cohort que cabe melhor."
           time="qui · 09:42"
@@ -851,7 +851,7 @@ function CommercialSection() {
             </p>
 
             <p className="vds-ec-em-sign">
-              <strong>Caio</strong>
+              <strong>Rafael</strong>
             </p>
           </div>
           <EmailFooter />
@@ -871,7 +871,7 @@ function LifecycleSection() {
       >
         <EmailFrame
           category="Lifecycle · churn"
-          from="Caio · Viver de IA"
+          from="Rafael · Viver de IA"
           subject="Você sumiu há 19 dias · tô curioso, o que rolou"
           preview="vi que você não entra na plataforma há 19 dias. não tô cobrando · só curioso se foi algo que aconteceu (no curso ou na vida)."
           time="seg · 11:14"
@@ -917,7 +917,7 @@ function LifecycleSection() {
             </p>
 
             <p className="vds-ec-em-sign">
-              <strong>Caio</strong>
+              <strong>Rafael</strong>
             </p>
           </div>
           <EmailFooter />
@@ -930,7 +930,7 @@ function LifecycleSection() {
       >
         <EmailFrame
           category="Lifecycle · win-back"
-          from="Caio · Viver de IA"
+          from="Rafael · Viver de IA"
           subject="3 coisas mudaram desde que você saiu · acho que faz sentido voltar"
           preview="cancelou mentoria em fev. desde então: mentoria virou 1:1 toda semana · plataforma ganhou laboratório de prompt · turma fechou em 25, não 50."
           time="qua · 14:42"
@@ -977,7 +977,7 @@ function LifecycleSection() {
             </a>
 
             <p className="vds-ec-em-sign">
-              <strong>Caio</strong>
+              <strong>Rafael</strong>
             </p>
           </div>
           <EmailFooter />

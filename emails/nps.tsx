@@ -36,7 +36,7 @@ export default function NpsEmail({ firstName, surveyUrl }: NpsEmailProps) {
       <CTA href={surveyUrl}>Responder em 30s</CTA>
       <SubLink href={surveyUrl}>prefiro escrever o que tô achando →</SubLink>
 
-      <Signature name="Caio Ribeiro" role="fundador · Viver de IA" />
+      <Signature name="Rafael Milagre" role="fundador · Viver de IA" />
     </Layout>
   );
 }

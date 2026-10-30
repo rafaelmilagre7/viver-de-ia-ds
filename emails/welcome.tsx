@@ -49,7 +49,7 @@ export default function WelcomeEmail({ firstName, turma, daysToStart, platformUr
         Sem prazo apertado nem nada — isso é só pra chegar na primeira semana sabendo onde pisar.
       </Para>
 
-      <Signature name="Caio Ribeiro" role="fundador · Viver de IA" />
+      <Signature name="Rafael Milagre" role="fundador · Viver de IA" />
     </Layout>
   );
 }

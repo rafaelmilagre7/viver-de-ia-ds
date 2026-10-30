@@ -10,6 +10,7 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 - **Números das peças vêm do site oficial**: `scripts/fatos-sync.mjs` lê viverdeia.ai (cases, soluções, setores, planos e preços, mentoria por plano, garantia real, meta, liderança) e grava `public/fatos.json`, `public/fatos.md` (viva em `viver-de-ia-ds.vercel.app/fatos.md`) e `fatos.md` na skill e no kit. Só grava quando algum fato muda; frase que some do site vira "conferir", nunca valor inventado. Divergências do próprio site são listadas (hoje: 515 × 521 cases; Enterprise 50 check-ins × ilimitada).
 - **Leitura diária automática**: GitHub Action `fatos.yml` (08:00 BRT + manual) commita a ficha quando o site muda — o push republica o site.
+- **Assinatura dos emails aos alunos** (decisão do Rafael, 30/out): os 6 templates que assinavam "Caio Ribeiro · fundador" (o site oficial lista Rafael Milagre como fundador e Yago Martins como cofundador) agora assinam **Rafael Milagre · fundador · Viver de IA**; vitrine `/patterns/email-coverage` acompanha (o email de comunidade "operador da semana" mantém o Caio).
 - **Instruções das IAs sem a oferta antiga**: SKILL, guidelines, system prompt, comandos `/via-*` e kit diziam "mentoria de 4 meses", "turma", "18 aulas", "90 dias até produção", "1:1", "R$ 2.400/6.000" e números de casos sem fonte (11.920, 73%, depoimentos nominais). Agora: fatos só da ficha (frase pronta), o resto vira placeholder; assinatura de email = liderança real.
 
 ### IA criando na marca (30/out · plugin 1.8.0)
