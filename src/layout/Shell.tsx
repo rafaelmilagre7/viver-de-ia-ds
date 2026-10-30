@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Outlet, useLocation, useViewTransitionState } from 'react-router-dom';
+import { Outlet, useLocation, useSearchParams, useViewTransitionState } from 'react-router-dom';
+import { Minimize2 } from 'lucide-react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
@@ -18,9 +19,14 @@ import './layout.css';
 const supportsViewTransitions =
   typeof document !== 'undefined' && typeof document.startViewTransition === 'function';
 
+/** Página-modelo em tela cheia: ?tela-cheia na URL (dá pra mandar o link) */
+const FULLSCREEN_PARAM = 'tela-cheia';
+
 function useScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
+    // link pra uma seção (#props) fica onde a âncora mandar
+    if (window.location.hash) return;
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, [pathname]);
 }
@@ -54,9 +60,25 @@ function useFallbackFade(pathname: string) {
 export default function Shell() {
   useScrollToTop();
   const { pathname } = useLocation();
+  const [params, setParams] = useSearchParams();
   const pageRef = useFallbackFade(pathname);
   const [cmdkOpen, setCmdkOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Páginas-modelo ocupam a coluna inteira (sem a margem do texto) e podem
+  // abrir em tela cheia, sem header/sidebar/footer do site
+  const isShowcase = pathname.startsWith('/showcase/');
+  const fullscreen = isShowcase && params.has(FULLSCREEN_PARAM);
+  const setFullscreen = (on: boolean) =>
+    setParams(
+      (p) => {
+        const next = new URLSearchParams(p);
+        if (on) next.set(FULLSCREEN_PARAM, '1');
+        else next.delete(FULLSCREEN_PARAM);
+        return next;
+      },
+      { viewTransition: true },
+    );
 
   // Lente do vidro (opt-in · só Chromium; fora dele nada muda)
   useEffect(() => {
@@ -74,6 +96,18 @@ export default function Shell() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  // Gaveta aberta: ESC fecha e devolve o foco ao botão que abriu
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' || e.defaultPrevented) return;
+      setDrawerOpen(false);
+      document.querySelector<HTMLButtonElement>('.vds-drawer-toggle')?.focus();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [drawerOpen]);
+
   // fecha o drawer ao trocar de rota — ajuste em render-phase (sem effect)
   const [prevPathname, setPrevPathname] = useState(pathname);
   if (pathname !== prevPathname) {
@@ -81,16 +115,41 @@ export default function Shell() {
     setDrawerOpen(false);
   }
 
+  // Pular pro conteúdo: foco no <main> sem mexer no hash da URL
+  const skipToContent = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const main = document.getElementById('conteudo');
+    main?.focus({ preventScroll: true });
+    main?.scrollIntoView();
+  };
+
+  const shellClass = [
+    'vds-shell',
+    drawerOpen && 'drawer-open',
+    isShowcase && 'is-showcase',
+    fullscreen && 'is-fullscreen',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div className={`vds-shell${drawerOpen ? ' drawer-open' : ''}`}>
-      <ScrollProgress />
-      <Header
-        onOpenSearch={() => setCmdkOpen(true)}
-        onToggleDrawer={() => setDrawerOpen((d) => !d)}
-        drawerOpen={drawerOpen}
-      />
-      <Sidebar />
-      <main className="vds-main">
+    <div className={shellClass}>
+      <a className="vds-skip-link" href="#conteudo" onClick={skipToContent}>
+        Pular para o conteúdo
+      </a>
+      {!fullscreen && (
+        <>
+          <ScrollProgress />
+          <Header
+            onOpenSearch={() => setCmdkOpen(true)}
+            onToggleDrawer={() => setDrawerOpen((d) => !d)}
+            drawerOpen={drawerOpen}
+            onEnterFullscreen={isShowcase ? () => setFullscreen(true) : undefined}
+          />
+          <Sidebar />
+        </>
+      )}
+      <main id="conteudo" className="vds-main" tabIndex={-1}>
         {supportsViewTransitions ? (
           <div ref={pageRef} className="vds-page-transition">
             <Outlet />
@@ -101,7 +160,13 @@ export default function Shell() {
           </div>
         )}
       </main>
-      <Footer />
+      {!fullscreen && <Footer />}
+      {fullscreen && (
+        <button type="button" className="vds-fullscreen-exit" onClick={() => setFullscreen(false)}>
+          <Minimize2 size={14} strokeWidth={1.8} aria-hidden="true" />
+          Sair da tela cheia
+        </button>
+      )}
       <CommandPalette open={cmdkOpen} onClose={() => setCmdkOpen(false)} />
       {drawerOpen && <div className="vds-drawer-scrim" onClick={() => setDrawerOpen(false)} />}
     </div>

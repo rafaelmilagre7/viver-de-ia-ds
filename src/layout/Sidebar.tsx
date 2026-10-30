@@ -3,7 +3,7 @@ import { navigation } from '../data/nav';
 
 export default function Sidebar() {
   return (
-    <aside className="vds-sidebar" aria-label="Navegação do design system">
+    <nav id="vds-sidebar" className="vds-sidebar" aria-label="Navegação do design system">
       {navigation.map((group) => (
         <div key={group.label} className="vds-sidebar-group">
           <div className="vds-sidebar-eyebrow">
@@ -25,7 +25,7 @@ export default function Sidebar() {
                 >
                   {({ isActive }) => (
                     <>
-                      {/* Marcador do ativo num elemento próprio: na troca de
+                      {/* Fundo do ativo num elemento próprio: na troca de
                           rota ele desliza de um link pro outro (view transition) */}
                       {isActive && <span className="vds-sidebar-indicator" aria-hidden="true" />}
                       <span>{item.label}</span>
@@ -38,6 +38,6 @@ export default function Sidebar() {
           </ul>
         </div>
       ))}
-    </aside>
+    </nav>
   );
 }

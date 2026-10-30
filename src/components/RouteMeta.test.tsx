@@ -33,9 +33,9 @@ describe('RouteMeta', () => {
     expect(m.ogUrl).toBe(m.canonical);
   });
 
-  it('título sai do rótulo da nav, sem o parêntese', () => {
+  it('título sai do rótulo da nav; o detalhe vem da descrição da busca', () => {
     const m = at('/patterns/paid-ads');
-    expect(m.title).toBe('Paid ads · Viver de IA Design System');
+    expect(m.title).toBe('Anúncios pagos · Viver de IA Design System');
     expect(m.ogTitle).toBe(m.title);
     expect(m.description).toContain('Meta + Google');
     expect(m.canonical).toBe('https://viver-de-ia-ds.vercel.app/patterns/paid-ads');
