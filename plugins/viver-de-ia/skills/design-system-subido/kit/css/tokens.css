@@ -1,0 +1,825 @@
+/* ==============================================================
+   VIVER DE IA · DESIGN SYSTEM — FUNDAÇÃO (tokens + base)
+   --------------------------------------------------------------
+   Fonte: https://viver-de-ia-ds.vercel.app (tokens.css de produção).
+   White-first · navy + cinza + branco + preto · liquid glass.
+
+   COMO USAR
+   1. Copie este arquivo para src/styles/via-tokens.css
+   2. Importe como PRIMEIRA linha do CSS global (index.css / globals.css)
+   3. Coloque o bootstrap de tema no <head> (ver SKILL.md)
+
+   REGRA DE OURO: nunca escreva px/hex crus. Sempre var(--via-*).
+   ============================================================== */
+/* Geist é carregada por <link> no <head> (src/routes/__root.tsx): num build
+   com bundler o @import remoto é resolvido como caminho de arquivo e quebra
+   a compilação. O <link> também evita a cascata de download do @import. */
+
+:root {
+  /* ========== COLORS ========================================== */
+
+  /* Navy — the brand color. Used for primary text and primary surfaces. */
+  --via-navy:        #0A1F3B;   /* primary navy */
+  --via-navy-deep:   #02162A;   /* deep, used for full-bleed dark moments */
+  --via-navy-darker: #010B1A;   /* darkest, footers / borders */
+  --via-blue:        #1E3A5F;   /* mid azul-escuro */
+  --via-blue-soft:   #2A4A6E;   /* hover state on navy / borders on navy */
+
+  /* Data-viz · rampa monocromática de 5 passos com separação REAL de valor
+     (navy → azul-aço → azul-claro). Resolve "cor próxima e escura": cada
+     série/segmento vira um tom nitidamente distinto, sem sair da paleta. */
+  --via-chart-1:     #0A1F3B;   /* navy — anchor, série dominante */
+  --via-chart-2:     #335379;   /* azul-aço escuro */
+  --via-chart-3:     #5E7B9E;   /* azul-aço médio */
+  --via-chart-4:     #93A8C2;   /* azul claro */
+  --via-chart-5:     #C4CFDD;   /* azul-cinza claro */
+  --via-chart-ink:   var(--via-navy);   /* cor primária de dado (linha/barra/funil) · adapta no dark */
+  --via-chart-ink-2: var(--via-blue);   /* fim do gradiente de dado */
+
+  /* Navy transparency stops (for hairlines, hovers, soft surfaces) */
+  --via-navy-80: rgba(10, 31, 59, 0.80);
+  --via-navy-60: rgba(10, 31, 59, 0.60);
+  --via-navy-40: rgba(10, 31, 59, 0.40);
+  --via-navy-30: rgba(10, 31, 59, 0.30);
+  --via-navy-25: rgba(10, 31, 59, 0.25);
+  --via-navy-22: rgba(10, 31, 59, 0.22);
+  --via-navy-20: rgba(10, 31, 59, 0.20);
+  --via-navy-18: rgba(10, 31, 59, 0.18);
+  --via-navy-16: rgba(10, 31, 59, 0.16);
+  --via-navy-14: rgba(10, 31, 59, 0.14);
+  --via-navy-12: rgba(10, 31, 59, 0.12);
+  --via-navy-10: rgba(10, 31, 59, 0.10);
+  --via-navy-08: rgba(10, 31, 59, 0.08);
+  --via-navy-06: rgba(10, 31, 59, 0.06);
+  --via-navy-05: rgba(10, 31, 59, 0.05);
+  --via-navy-04: rgba(10, 31, 59, 0.04);
+  --via-navy-03: rgba(10, 31, 59, 0.03);
+  --via-navy-02: rgba(10, 31, 59, 0.02);
+
+  /* Grayscale — the secondary palette */
+  --via-gray-50:  #F7F8FA;   /* page bg (alt) */
+  --via-gray-100: #F0F2F5;   /* subtle surface */
+  --via-gray-200: #E4E7EC;   /* hairline border */
+  --via-gray-300: #D0D5DD;   /* stronger border */
+  --via-gray-400: #98A2B3;   /* muted text on light */
+  --via-gray-500: #667085;   /* secondary text */
+  --via-gray-600: #475467;   /* tertiary text */
+  --via-gray-700: #344054;   /* body emphasis */
+  --via-gray-800: #1D2939;   /* close to navy */
+  --via-gray-900: #101828;   /* near black */
+
+  /* STAGE · fundo de "palco" (chat, overlay, empty state, streak).
+     ⚠️ BUG CORRIGIDO: estes 3 existiam SÓ em [data-theme="dark"]. No tema
+     CLARO — que é o padrão da casa — o var() ficava vazio e INVALIDAVA a
+     declaração `background` inteira, derrubando junto as camadas de
+     atmosfera. Resultado: palco chapado e, onde o texto era branco por
+     contar com fundo escuro, TEXTO INVISÍVEL (branco no branco).
+     Agora existem nos dois temas. Nunca declare um stage só no dark. */
+  --via-stage-soft: var(--via-gray-200);
+  --via-stage-1:    var(--via-gray-300);
+  --via-stage-2:    var(--via-gray-400);
+
+  --via-black: #000000;
+  --via-white: #FFFFFF;
+
+  /* Page / surface tokens — LIGHT-FIRST */
+  --via-bg:           var(--via-white);
+  --via-bg-2:         var(--via-gray-50);
+  --via-bg-3:         var(--via-gray-100);
+  --via-surface:      var(--via-white);
+  --via-surface-elev: var(--via-white);
+
+  /* Semantic text */
+  --via-text-primary:  var(--via-navy);
+  --via-text-body:     var(--via-gray-700);
+  --via-text-muted:    #4F596B;   /* secondary · passo nítido vs body e vs soft (ladder com range) */
+  --via-text-faint:    var(--via-gray-400);
+  --via-text-inverse:  var(--via-white);
+
+  /* Semantic borders */
+  --via-border-hairline: var(--via-gray-200);
+  --via-border:          rgba(10, 31, 59, 0.16);   /* hairline navy-tint p/ controles (era gray-300 frio) · visível mas glassy */
+  --via-border-soft:     rgba(10, 31, 59, 0.05);  /* hairline frameless (Apple) · 583 usos · a sombra+brilho definem o card */
+  --via-border-strong:   var(--via-navy-40);
+
+  /* Status — desaturated, navy-adjacent */
+  --via-success: #1F8A5B;
+  --via-warning: #0A1F3B;
+  --via-danger:  #B83A3A;
+
+  /* ========== EDITORIAL INK SCALE =============================
+     Aliases curtos · 100% mapeados nos CSS dos componentes (700+ usos)
+     Não remover sem migrar todas as referências.
+     ============================================================ */
+  --via-text:        var(--via-gray-700);   /* corpo padrão */
+  --via-text-soft:   #636D80;   /* terciário · um passo mais claro que muted · range, não colapso */
+  --via-ink-2:       #5E6B82;               /* texto secundário editorial · 76+ usos */
+  --via-ink-3:       #525C72;               /* terciário · timestamps · 224 usos · mais legível (era #5F6981) */
+
+  /* ========== ACCENT (navy / cinza · paleta restrita) ==========
+     Paleta canônica VIA: branco · off-white · cinza · azul-escuro · navy · preto.
+     Sem gold/amarelo/dourado em nenhum nível — accent é só intensidade
+     editorial dentro da própria família navy + cinza.
+     ============================================================ */
+  --via-accent:       var(--via-navy);        /* navy primário · CTA · headers fortes */
+  --via-accent-deep:  var(--via-navy-deep);   /* navy mais profundo · gradient stops */
+  --via-accent-soft:  var(--via-gray-300);    /* cinza claro · gradient highlights */
+  --via-accent-warm:  var(--via-navy-deep);   /* alias semântico legado · navy-deep */
+  --via-accent-light: var(--via-gray-300);    /* alias semântico legado · cinza claro */
+
+  /* ========== CORAL (destrutivo only) ========================= */
+  --via-coral:       #B85C5C;               /* destrutivo · cancel · error */
+  --via-coral-dark:  #8C2C2C;               /* destrutivo texto */
+  --via-coral-deep:  #A14848;               /* destrutivo hover */
+
+  /* ========== ALIASES (compat) ================================
+     Aliases curtos pra Geist Display / Mono · 159+ usos
+     ============================================================ */
+  --via-display: var(--via-font-display);
+  --via-mono:    var(--via-font-mono);
+
+  /* ========== BG SOFT (surfaces) ============================== */
+  --via-bg-soft: rgba(10, 31, 59, 0.025);   /* card soft alternate */
+}
+/* =============================================================
+   DARK MODE · [data-theme="dark"] no <html>
+   Mantém navy como cor central · troca surfaces white → navy-dark
+   ============================================================= */
+:root[data-theme="dark"] {
+  /* =================================================
+     SURFACES · escala com mais separação entre camadas
+     Tons levemente warm pra não ficar "preto técnico"
+     ================================================= */
+  --via-bg:           #0B1220;    /* canvas principal · warm dark */
+  --via-bg-2:         #131C30;    /* surface alt · separação clara */
+  --via-bg-3:         #1B273F;    /* surface elevated */
+  --via-surface:      #131C30;    /* card base */
+  --via-surface-elev: #1B273F;    /* card elevado · modals/popovers */
+  --via-bg-soft:      rgba(255, 255, 255, 0.04);
+
+  /* =================================================
+     GRAYS CLAROS como SUPERFÍCIE · adaptam no dark
+     Razão: gray-50/100 são usados SÓ como background
+     (0 usos como texto) em ~66 lugares · seções, painéis,
+     command palette, docs, mockups. No dark precisam virar
+     painel escuro sutil, senão viram "mancha clara" (ex: o
+     rodapé que clareava embaixo, o container dos cards da home).
+     gray-200+ NÃO adaptam (são usados como texto claro). */
+  --via-gray-50:  #0F1729;        /* painel sutil · 1 passo acima do canvas */
+  --via-gray-100: #17213A;        /* painel · 2 passos acima */
+  /* STAGE · backdrops/wells/avatares que usam gray-200/300/400 como FUNDO.
+     Não dá pra adaptar gray-200/300/400 direto (são usados como TEXTO claro
+     em contexto escuro). Então: tokens de palco que no light valem o mesmo
+     cinza (no-op) e no dark viram superfície escura. Migração via
+     scripts/fix-stage-bg.mjs (só backgrounds). */
+  --via-stage-soft: #1B273F;      /* era gray-200 (#E4E7EC) */
+  --via-stage-1:    #131C30;      /* era gray-300 (#D0D5DD) */
+  --via-stage-2:    #0B1220;      /* era gray-400 (#98A2B3) */
+
+  /* =================================================
+     TEXT · cores SÓLIDAS (não rgba com opacity)
+     Razão: rgba(white, 0.X) sobre dark = alfa-composted
+     em cinza escurecido, perde contraste WCAG
+     ================================================= */
+  --via-text-primary: #F4F6FA;   /* near-white · headlines, links primários */
+  --via-text-body:    #D0D5DD;   /* gray-300 sólido · body text · WCAG AAA */
+  --via-text-muted:   #AEB8C6;   /* secondary · passa AA mesmo sobre vidro elevado · ainda claramente "quieto" vs body */
+  --via-text-faint:   #9CA5B5;   /* helper · o mais discreto, mas legível sobre vidro */
+  --via-text-inverse: var(--via-navy);
+
+  /* Data-viz dark · rampa clara (visível sobre navy escuro) */
+  --via-chart-1:     #6E8CB4;
+  --via-chart-2:     #8BA3C4;
+  --via-chart-3:     #A8BAD4;
+  --via-chart-4:     #C5D1E2;
+  --via-chart-5:     #E0E7F1;
+  --via-chart-ink:   #9FBDE4;   /* dado em azul claro · legível sobre card escuro */
+  --via-chart-ink-2: #6E8CB4;
+
+  --via-text:      #D0D5DD;
+  --via-text-soft: #AEB8C6;
+  --via-ink-2:     #B4BBC9;
+  --via-ink-3:     #AEB8C6;
+
+  /* =================================================
+     BORDERS · mais visíveis que antes (0.06 → 0.12)
+     ================================================= */
+  --via-border-hairline: rgba(255, 255, 255, 0.10);
+  --via-border:          rgba(255, 255, 255, 0.18);
+  --via-border-soft:     rgba(255, 255, 255, 0.08);
+  --via-border-strong:   rgba(255, 255, 255, 0.30);
+
+  /* =================================================
+     NAVY ALPHAS · TODOS invertidos pra rgba(white, X)
+     Razão: em dark, navy alpha real fica invisível sobre
+     bg dark. Atmospheres radiais, hairlines, backgrounds
+     sutis precisam usar white com mesma intensidade.
+     ================================================= */
+  --via-navy-02: rgba(255, 255, 255, 0.025);
+  --via-navy-03: rgba(255, 255, 255, 0.035);
+  --via-navy-04: rgba(255, 255, 255, 0.045);
+  --via-navy-05: rgba(255, 255, 255, 0.055);
+  --via-navy-06: rgba(255, 255, 255, 0.07);
+  --via-navy-08: rgba(255, 255, 255, 0.09);
+  --via-navy-10: rgba(255, 255, 255, 0.11);
+  --via-navy-12: rgba(255, 255, 255, 0.13);
+  --via-navy-14: rgba(255, 255, 255, 0.15);
+  --via-navy-16: rgba(255, 255, 255, 0.17);
+  --via-navy-18: rgba(255, 255, 255, 0.19);
+  --via-navy-20: rgba(255, 255, 255, 0.22);
+  --via-navy-22: rgba(255, 255, 255, 0.24);
+  --via-navy-25: rgba(255, 255, 255, 0.28);
+  --via-navy-30: rgba(255, 255, 255, 0.32);
+  --via-navy-40: rgba(255, 255, 255, 0.42);
+  --via-navy-60: rgba(255, 255, 255, 0.55);
+  --via-navy-80: rgba(255, 255, 255, 0.72);
+
+  /* SHADOWS · as sombras navy somem no escuro · usar preto com mais opacidade */
+  --via-shadow-xs: 0 1px 2px rgba(0,0,0,0.30);
+  --via-shadow-sm: 0 2px 6px rgba(0,0,0,0.34), 0 1px 2px rgba(0,0,0,0.24);
+  --via-shadow-md: 0 6px 18px rgba(0,0,0,0.42), 0 1px 3px rgba(0,0,0,0.30);
+  --via-shadow-lg: 0 16px 40px rgba(0,0,0,0.52), 0 2px 8px rgba(0,0,0,0.34);
+  --via-shadow-xl: 0 32px 80px rgba(0,0,0,0.62), 0 4px 16px rgba(0,0,0,0.40);
+  --via-shadow-focus: 0 0 0 3px rgba(255,255,255,0.22);
+  /* Tinta de sombra no ESCURO: preta e mais densa — navy sobre navy
+     não produz sombra nenhuma, e token que inverte vira halo branco. */
+  --via-shadow-ink-03: rgba(0, 0, 0, 0.18);
+  --via-shadow-ink-06: rgba(0, 0, 0, 0.26);
+  --via-shadow-ink-10: rgba(0, 0, 0, 0.34);
+  --via-shadow-ink-14: rgba(0, 0, 0, 0.40);
+  --via-shadow-ink-20: rgba(0, 0, 0, 0.46);
+  --via-shadow-ink-30: rgba(0, 0, 0, 0.54);
+  --via-shadow-ink-40: rgba(0, 0, 0, 0.62);
+  --via-shadow-ink-60: rgba(0, 0, 0, 0.72);
+
+
+  color-scheme: dark;
+}
+/* If prefers-color-scheme: dark and no explicit theme set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    /* Note: light é nosso padrão da marca · esse bloco só ativa
+       quando NÃO há [data-theme] no <html> · útil pra evitar flash
+       em casos extremos (SSR sem hidratação) */
+    --via-bg:           #0B1220;
+    --via-bg-2:         #131C30;
+    --via-surface:      #131C30;
+    --via-text-primary: #F4F6FA;
+    --via-text-body:    #D0D5DD;
+    --via-text:         #D0D5DD;
+    --via-text-soft:    #98A2B3;
+    --via-ink-2:        #B4BBC9;
+    --via-ink-3:        #98A2B3;
+    --via-border-soft:  rgba(255, 255, 255, 0.08);
+    color-scheme: dark;
+  }
+}
+/* =================================================
+   GLASS SURFACES · tokens semânticos (resolvem dark sozinhos)
+   =================================================
+   --via-glass-card  · superfície de card glass forte
+   --via-glass-card-2· superfície de card glass média (alt)
+   Componentes usam var(--via-glass-card) em vez de gradient
+   branco hardcoded → adapta light/dark automaticamente.
+   Substituição em massa feita via scripts/migrate-glass.mjs
+   ================================================= */
+:root {
+  --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);  /* sheen de topo embutido · luz no vidro */
+  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
+  /* Vidro de BARRA/chrome (nav sticky, toolbar, painel flutuante) · translúcido
+     DE VERDADE pra o conteúdo passar DESFOCADO por baixo (frosted estilo Apple).
+     Só usar com backdrop-filter blur. NÃO usar em card de conteúdo (texto
+     precisa de fundo mais sólido). */
+  --via-glass-bar:    rgba(255, 255, 255, 0.6);
+  /* Superfície branca FIXA · pra botões/cards SOBRE hero navy (navy nos
+     2 temas) · NÃO adapta · sempre clara porque texto sobre ela é navy */
+  --via-surface-onnavy: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
+  /* Edge highlight (a "linha de luz" no topo dos cards glass) · forte em
+     light, sutil em dark · senão vira moldura branca berrante no escuro */
+  --via-edge-hi: rgba(255, 255, 255, 0.95);
+  /* Edge highlight inferior/sutil · 1px de luz na base · quase nulo em dark */
+  --via-edge-lo: rgba(255, 255, 255, 0.4);
+  /* Sheen · o "brilho" branco que desce do topo dos cards glass (::before).
+     Forte em light (vidro pega luz), quase nulo em dark (vidro escuro reflete
+     pouco) · senão o topo do card vira um lavado branco berrante no escuro */
+  --via-glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
+}
+:root[data-theme="dark"] {
+  --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0.022) 100%);  /* sheen de topo · luz no vidro escuro */
+  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018));
+  --via-glass-bar:    rgba(11, 18, 32, 0.55);
+  /* onnavy NÃO muda · permanece branco mesmo em dark */
+  --via-edge-hi: rgba(255, 255, 255, 0.08);
+  --via-edge-lo: rgba(255, 255, 255, 0.05);
+  --via-glass-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent);
+  /* accent-warm = alias legado de navy-deep · só usado como COR DE TEXTO (33x,
+     ênfase: keynote, main stage…) · navy-deep não adapta → invisível no dark.
+     Vira texto claro pra continuar legível sobre superfícies escuras. */
+  --via-accent-warm: var(--via-text-primary);
+  /* coral-dark = texto destrutivo/erro (#8C2C2C) · 42 usos como cor de texto
+     sobre fundo coral-tint · escuro demais no dark → coral CLARO legível,
+     mantendo o sinal "erro/destrutivo" */
+  --via-coral-dark: #E89B9B;
+  /* danger (#B83A3A) usado como texto de erro em campos · clareia no dark */
+  --via-danger: #E58A8A;
+}
+/* =============================================================
+   SYSTEM TOKENS · fora de :root principal pra resolver dependência
+   circular com os media queries acima. Tudo abaixo é base do DS.
+   ============================================================= */
+:root {
+  /* ========== TYPOGRAPHY ====================================== */
+
+  /* Single-family system: Geist (variable sans, Vercel).
+     Same family for display + UI. Geist Mono para código.
+     Italic é synthesized em Geist (não tem italic axis) — contraste
+     editorial vem por peso + cor (não por inclinação). */
+  --via-font-display: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+  --via-font:         'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+  --via-font-mono:    'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Weights */
+  --via-fw-light:    300;
+  --via-fw-regular:  400;
+  --via-fw-medium:   500;
+  --via-fw-semibold: 600;
+  --via-fw-bold:     700;
+  --via-fw-black:    900;
+
+  /* Type scale */
+  --via-fs-hero:    5rem;       /* 80px */
+  --via-fs-display: 3.5rem;     /* 56px */
+  --via-fs-h1:      2.5rem;     /* 40px */
+  --via-fs-h2:      2rem;       /* 32px */
+  --via-fs-h3:      1.5rem;     /* 24px */
+  --via-fs-h4:      1.125rem;   /* 18px */
+  --via-fs-body:    1rem;       /* 16px */
+  --via-fs-sm:      0.875rem;   /* 14px */
+  --via-fs-caption: 0.8125rem;  /* 13px · meta densa / legendas */
+  --via-fs-xs:      0.75rem;    /* 12px */
+  --via-fs-label:   0.6875rem;  /* 11px · canônico (pill/eyebrow) */
+  --via-fs-micro:   0.625rem;   /* 10px · micro-rótulos / kbd / badges */
+
+  /* Letter-spacing buckets — Geist precisa menos tight no display */
+  --via-ls-brand: 0.32em;
+  --via-ls-mark:  0.22em;
+  --via-ls-label: 0.18em;
+  --via-ls-wide:  0.08em;
+  --via-ls-tight: -0.015em;
+  --via-ls-tighter: -0.025em;
+
+  /* Line heights */
+  --via-lh-tight:  1.02;
+  --via-lh-snug:   1.2;
+  --via-lh-normal: 1.5;
+  --via-lh-loose:  1.65;
+
+  /* ========== SPACING · base 4px + half-steps de 2px (conv. Tailwind) ===== */
+  --via-space-0_5: 2px;
+  --via-space-1:   4px;
+  --via-space-1_5: 6px;
+  --via-space-2:   8px;
+  --via-space-2_5: 10px;
+  --via-space-3:   12px;
+  --via-space-3_5: 14px;
+  --via-space-4:   16px;
+  --via-space-4_5: 18px;
+  --via-space-5:   20px;
+  --via-space-5_5: 22px;
+  --via-space-6:   24px;
+  --via-space-7:   28px;
+  --via-space-8:   32px;
+  --via-space-9:   36px;
+  --via-space-10:  40px;
+  --via-space-12:  48px;
+  --via-space-14:  56px;
+  --via-space-16:  64px;
+  --via-space-20:  80px;
+  --via-space-24:  96px;
+  --via-space-32:  128px;
+
+  /* ========== RADII ===========================================
+     Escala generosa (cantos suaves = leitura premium/Apple). Cada degrau
+     é perceptivelmente diferente do vizinho — nada de 14 vs 16 vs 18, que
+     só tira o ritmo. SEMPRE usar o token, nunca px cru.
+       xs  chip/tag minúscula · sm  badge, input pequeno, thumb
+       md  botão, input, card pequeno · lg  CARD PADRÃO
+       xl  card grande, modal, drawer · 2xl painel hero / seção full  */
+  --via-radius-xs:   6px;
+  --via-radius-sm:   10px;
+  --via-radius-md:   14px;
+  --via-radius-lg:   20px;
+  --via-radius-xl:   28px;
+  --via-radius-2xl:  40px;
+  --via-radius-pill: 999px;
+
+  /* ========== TINTA DE SOMBRA · use ISTO em box-shadow ==========
+     ⚠️ A ARMADILHA Nº1 DO DS (139 ocorrências achadas em auditoria):
+     `--via-navy-40`, `--via-edge-hi` e `--via-white` INVERTEM no tema
+     escuro — viram branco. Quem usa esses tokens numa SOMBRA ganha um
+     HALO BRANCO no escuro (medimos glow de 24px em botão, auréola em
+     card, anel branco em avatar). E sombra navy fixa some sobre fundo
+     navy, deixando o elemento sem elevação nenhuma.
+
+     REGRA: em `box-shadow` de elevação, use SEMPRE --via-shadow-ink-*.
+     Ele já é navy no claro e PRETO no escuro (sombra no escuro precisa
+     ser mais densa pra existir). Nunca --via-navy-* numa sombra.
+
+     Exceção legítima: `inset 0 1px 0 var(--via-edge-hi)` — a linha de
+     luz no topo do vidro. Ali o branco é o efeito desejado. */
+  --via-shadow-ink-03: rgba(10, 31, 59, 0.03);
+  --via-shadow-ink-06: rgba(10, 31, 59, 0.06);
+  --via-shadow-ink-10: rgba(10, 31, 59, 0.10);
+  --via-shadow-ink-14: rgba(10, 31, 59, 0.14);
+  --via-shadow-ink-20: rgba(10, 31, 59, 0.20);
+  --via-shadow-ink-30: rgba(10, 31, 59, 0.30);
+  --via-shadow-ink-40: rgba(10, 31, 59, 0.40);
+  --via-shadow-ink-60: rgba(10, 31, 59, 0.60);
+
+  /* ========== DATAVIZ · paleta de série (VALIDADA por script) ===
+     Regra desta marca: a paleta é navy-only, o que torna gráfico
+     multi-série por COR matematicamente impossível — medido, não
+     achismo. Validador (CVD/contraste/ΔE) reprovou toda tentativa
+     de 3+ séries na família fria: azul×petróleo dá ΔE 4.9 pra
+     deuteranopia (indistinguível). O que PASSOU em todos os checks:
+     o par abaixo, no claro.
+
+     COMO USAR — a regra que evita gráfico ilegível:
+       1 série   → --via-data-1 (ou o navy da marca). Sem legenda:
+                   o título já nomeia a série.
+       2 séries  → --via-data-1 + --via-data-2 e SEMPRE um segundo
+                   canal além da cor (tracejado/textura/marcador) +
+                   rótulo direto. Assim funciona no dark e pra CVD.
+       3+ séries → NÃO invente uma 3ª cor. Use small multiples (um
+                   gráfico por série) ou agrupe o resto em "Outros".
+     Status (bom/atenção/crítico) é reservado — NUNCA vira série. */
+  --via-data-1:      #2E6FC4;   /* série primária · passou light */
+  --via-data-2:      #7FB0EE;   /* série secundária · exige 2º canal */
+  --via-data-1-dark: #5C9BEA;   /* passo próprio do dark, não flip */
+  --via-data-2-dark: #2E6FC4;
+  --via-data-grid:   var(--via-navy-08);   /* grade recessiva */
+  --via-data-axis:   var(--via-navy-20);   /* linha de base/eixo */
+  --via-data-ink:    var(--via-text-muted);/* rótulo de eixo — texto usa token de TEXTO, nunca a cor da série */
+
+  /* ========== LIQUID GLASS · receitas prontas ==================
+     Assinatura da marca. Use a receita inteira (superfície + borda fina +
+     linha de luz no topo + sombra navy), não só o fundo.
+       via-glass-card  card/painel de conteúdo (mais sólido, texto legível)
+       via-glass-bar   nav sticky/toolbar/overlay (translúcido de verdade)
+     Vidro só "aparece" com algo atrás pra desfocar — sobre fundo
+     atmosférico/escuro/conteúdo rolando. Sobre branco liso ele some. */
+  --via-glass-blur:      blur(24px) saturate(175%);
+  --via-glass-blur-bar:  blur(26px) saturate(185%);
+  --via-glass-ring:      1px solid var(--via-border-soft);
+  --via-glass-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 12px 32px -14px var(--via-navy-14),
+    0 2px 8px -4px var(--via-navy-06);
+  --via-glass-shadow-lift:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 24px 56px -20px var(--via-navy-20),
+    0 4px 12px -6px var(--via-navy-08);
+
+  /* ========== BORDERS ========================================= */
+  --via-border-fine:   0.5px solid var(--via-border-hairline);
+  --via-border-1:      1px solid var(--via-border);
+  --via-border-strong: 1px solid var(--via-navy-40);
+
+  /* ========== SHADOWS ========================================= */
+  /* Navy-tinted, gentle. The brand never uses gray-black shadows. */
+  --via-shadow-xs: 0 1px 2px rgba(10,31,59,0.04);
+  --via-shadow-sm: 0 2px 6px rgba(10,31,59,0.05), 0 1px 2px rgba(10,31,59,0.03);
+  --via-shadow-md: 0 6px 18px rgba(10,31,59,0.07), 0 1px 3px rgba(10,31,59,0.04);
+  --via-shadow-lg: 0 16px 40px rgba(10,31,59,0.10), 0 2px 8px rgba(10,31,59,0.05);
+  --via-shadow-xl: 0 32px 80px rgba(10,31,59,0.14), 0 4px 16px rgba(10,31,59,0.06);
+
+  /* Glass-specific shadow: inner highlight + soft outer drop */
+  --via-shadow-glass-light:
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    inset 0 -1px 0 rgba(255,255,255,0.30),
+    0 12px 32px rgba(10,31,59,0.08),
+    0 2px 8px rgba(10,31,59,0.04);
+
+  --via-shadow-glass-dark:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    inset 0 -1px 0 rgba(255,255,255,0.06),
+    0 16px 40px rgba(0,0,0,0.30),
+    0 4px 12px rgba(0,0,0,0.15);
+
+  --via-shadow-focus: 0 0 0 3px rgba(10,31,59,0.15);
+
+  /* ========== BLUR =========================================== */
+  --via-blur-sm: blur(8px)  saturate(140%);
+  --via-blur-md: blur(16px) saturate(160%);
+  --via-blur-lg: blur(28px) saturate(180%);
+  --via-blur-xl: blur(48px) saturate(180%);
+
+  /* ========== MOTION ========================================== */
+  --via-ease:        cubic-bezier(0.32, 0.08, 0.24, 1);
+  --via-ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --via-ease-spring: cubic-bezier(.34, 1.56, .64, 1);  /* overshoot suave (check/radio/toggle) */
+  --via-ease-snap:   cubic-bezier(.2, .7, .2, 1);      /* resposta rápida (hover/press) */
+  --via-t-fast:      120ms var(--via-ease);
+  --via-t:           180ms var(--via-ease);
+  --via-t-slow:      360ms var(--via-ease);
+  --via-dur:         220ms;                             /* duração de interação padrão (era .22s solto) */
+  --via-dur-press:   110ms;                             /* feedback de APERTAR (WWDC: resposta no pointer-down, instantânea — nunca a 220ms) */
+
+  /* ========== LAYOUT ========================================== */
+  --via-container: 1280px;
+  --via-content:   760px;
+  --via-narrow:    560px;
+
+  /* ========== SIGNATURE ATMOSPHERES =========================== */
+  /* Mesh light — base cinza-azulada com 4 stops de cor navy */
+  --via-mesh-light:
+    radial-gradient(ellipse 60% 70% at 12% 0%,  rgba(30,58,95,0.28) 0%,  transparent 55%),
+    radial-gradient(ellipse 50% 60% at 95% 8%,  rgba(46,76,118,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 80% at 100% 100%, rgba(10,31,59,0.30) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 5% 100%, rgba(30,58,95,0.18) 0%, transparent 55%),
+    linear-gradient(135deg, #CCD4DD 0%, #A7B2C0 100%);
+
+  /* Mesh navy — fundo dark dramático com glow azul */
+  --via-mesh-navy:
+    radial-gradient(ellipse 60% 70% at 12% 0%,  rgba(46,76,118,0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 95% 8%,  rgba(30,58,95,0.50)  0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 100% 100%, rgba(2,22,42,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 5% 100%, rgba(46,76,118,0.40) 0%, transparent 55%),
+    linear-gradient(135deg, #0A1F3B 0%, #02162A 100%);
+
+  /* Noise texture: data-URI SVG turbulence em 4% opacity */
+  --via-noise:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+
+  /* Glow navy — aura sutil pra elementos navy sólidos */
+  --via-glow-navy:
+    0 0 0 1px rgba(10,31,59,0.05),
+    0 8px 24px rgba(10,31,59,0.20),
+    0 16px 48px rgba(10,31,59,0.14);
+
+  --via-glow-navy-strong:
+    0 0 0 1px rgba(10,31,59,0.10),
+    0 16px 48px rgba(10,31,59,0.30),
+    0 32px 80px rgba(10,31,59,0.20);
+}
+/* =============================================================
+   SIGNATURE UTILITIES
+   ============================================================= */
+/* Atmosphere wrappers — drop on any container */
+.via-mesh-light {
+  background: var(--via-mesh-light);
+  position: relative;
+}
+.via-mesh-navy {
+  background: var(--via-mesh-navy);
+  color: var(--via-white);
+  position: relative;
+}
+/* Noise overlay — add on top of any mesh */
+.via-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--via-noise);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  pointer-events: none;
+  border-radius: inherit;
+}
+/* =============================================================
+   BASE
+   ============================================================= */
+html { font-size: var(--via-fs-body); -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--via-font);
+  font-weight: var(--via-fw-regular);
+  font-size: var(--via-fs-body);
+  line-height: var(--via-lh-loose);
+  color: var(--via-text-body);
+  background: var(--via-bg);
+}
+/* Headings · color usa :where() pra ter specificity ZERO.
+   Qualquer container com `color: #fff` (cards navy escuros, glass dark, etc)
+   sobrescreve sem precisar de override por classe — o color herda da cadeia. */
+:where(h1, h2, h3, h4) { color: var(--via-text-primary); }
+h1, h2, h3, h4 { margin: 0; }
+h1 { font-family: var(--via-font-display); font-weight: var(--via-fw-medium); font-size: var(--via-fs-h1); line-height: var(--via-lh-tight); letter-spacing: var(--via-ls-tighter); }
+h2 { font-family: var(--via-font-display); font-weight: var(--via-fw-medium); font-size: var(--via-fs-h2); line-height: var(--via-lh-snug);  letter-spacing: var(--via-ls-tighter); }
+h3 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-size: var(--via-fs-h3); line-height: var(--via-lh-snug); letter-spacing: var(--via-ls-tight); }
+h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-size: var(--via-fs-h4); }
+/* Cards/heroes em superfície navy escura — herdam color pra ficarem brancos.
+   Resolve bug onde `h1,h2,h3,h4 { color: var(--via-text-primary) }` global
+   sobrescrevia `color: #fff` setado no container ancestral.
+
+   Cobre: .via-mesh-navy · .via-glass-dark · [data-on-dark] (utility opt-in)
+   e cards específicos que usam fundo navy direto (sem class semântica). */
+.via-mesh-navy h1, .via-mesh-navy h2, .via-mesh-navy h3, .via-mesh-navy h4,
+.via-glass-dark h1, .via-glass-dark h2, .via-glass-dark h3, .via-glass-dark h4,
+[data-on-dark] h1, [data-on-dark] h2, [data-on-dark] h3, [data-on-dark] h4 {
+  color: inherit;
+}
+/* ===============================================================
+   FIX SISTÊMICO · gradient text em containers escuros
+   ===============================================================
+   Quando um <em> dentro de h1-h4 está em container escuro (mesh navy,
+   glass dark, on-dark, ou cards navy customizados), o gradient navy→
+   navy-deep com -webkit-text-fill-color: transparent fica INVISÍVEL
+   (texto escuro sobre fundo escuro).
+
+   Solução: dentro desses containers, qualquer `em` ganha gradient
+   white→gray-200 que contrasta corretamente. Specificity alta (3 níveis)
+   pra sobrescrever a regra do componente.
+   =============================================================== */
+.via-mesh-navy :is(h1, h2, h3, h4) em,
+.via-glass-dark :is(h1, h2, h3, h4) em,
+[data-on-dark] :is(h1, h2, h3, h4) em {
+  background: linear-gradient(135deg, var(--via-white) 0%, rgba(255, 255, 255, 0.78) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: var(--via-white); /* fallback se gradient não suportado */
+}
+/* ── Fix sistêmico · clip do glifo itálico em gradient-text ──────────────
+   `background-clip: text` pinta o gradiente só dentro da caixa inline do <em>.
+   O glifo itálico inclina pra direita e seu traço final ("o", "t", "s"…)
+   ultrapassa a borda da caixa em ~3–6px — região que o gradiente não pinta,
+   então o último glifo aparece cortado. (Palavras terminadas em "." não mostram
+   o bug: o ponto ocupa essa folga.) padding-right estende a caixa de pintura
+   pra cobrir o overhang; margin-right negativo cancela 100% do deslocamento de
+   layout (medido: texto seguinte move 0px). No-op visual em <em> sem gradiente. */
+:is(h1, h2, h3, h4, h5) em,
+:is(h1, h2, h3, h4, h5) i {
+  padding-right: 0.16em;
+  margin-right: -0.16em;
+}
+p { margin: 0; }
+a { color: var(--via-navy); text-decoration: none; }
+a:hover { text-decoration: underline; }
+/* links crus (sem classe) · navy some no dark → azul claro legível */
+[data-theme="dark"] a:not([class]) { color: #8FB8F6; }
+/* =============================================================
+   GLASS — light-first
+   ============================================================= */
+/* Light glass: white-tinted, used on gray-50 / gray-100 surfaces */
+.via-glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.42) 100%);
+  -webkit-backdrop-filter: var(--via-blur-md);
+  backdrop-filter: var(--via-blur-md);
+  border: 1px solid rgba(255,255,255,0.80);
+  border-radius: var(--via-radius-lg);
+  box-shadow: var(--via-shadow-glass-light);
+}
+.via-glass-strong {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.58) 100%);
+  -webkit-backdrop-filter: var(--via-blur-lg);
+  backdrop-filter: var(--via-blur-lg);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: var(--via-radius-lg);
+  box-shadow: var(--via-shadow-glass-light);
+}
+/* Dark glass: used in the rare full-bleed navy moments (footer, CTA) */
+.via-glass-dark {
+  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 100%);
+  -webkit-backdrop-filter: var(--via-blur-md);
+  backdrop-filter: var(--via-blur-md);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--via-radius-lg);
+  box-shadow: var(--via-shadow-glass-dark);
+  color: var(--via-white);
+}
+/* Liquid pill — for status / announcement labels */
+.via-liquid {
+  background: linear-gradient(180deg, rgba(255,255,255,0.80), rgba(255,255,255,0.55));
+  -webkit-backdrop-filter: var(--via-blur-md);
+  backdrop-filter: var(--via-blur-md);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: var(--via-radius-pill);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(10,31,59,0.08);
+}
+/* Dark: vidro branco hardcoded vira vidro escuro translúcido (senão estes
+   utilitários viram blocos brancos berrantes no tema escuro) */
+[data-theme="dark"] .via-glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
+  border-color: rgba(255,255,255,0.10);
+}
+[data-theme="dark"] .via-glass-strong {
+  background: linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.05) 100%);
+  border-color: rgba(255,255,255,0.14);
+}
+[data-theme="dark"] .via-liquid {
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 16px rgba(0,0,0,0.3);
+}
+/* .via-onlight · superfície SEMPRE clara (demos de vidro claro, peças que
+   mostram fundo branco de propósito) · re-pina o texto pra escuro nos 2 temas
+   senão o texto claro do dark fica branco-no-branco. */
+.via-onlight {
+  --via-text-primary: var(--via-navy);
+  --via-text-body: var(--via-gray-700);
+  --via-text-muted: var(--via-gray-500);
+  --via-text-soft: var(--via-gray-500);
+  --via-text-faint: var(--via-gray-400);
+}
+/* =============================================================
+   SURFACES
+   ============================================================= */
+.via-surface {
+  background: var(--via-surface);
+  border: var(--via-border-fine);
+  border-radius: var(--via-radius-md);
+}
+.via-card {
+  background: var(--via-white);
+  border: var(--via-border-fine);
+  border-radius: var(--via-radius-lg);
+  box-shadow: var(--via-shadow-sm);
+  padding: var(--via-space-6);
+}
+.via-card-dark {
+  background: var(--via-navy);
+  border-radius: var(--via-radius-lg);
+  padding: var(--via-space-6);
+  color: var(--via-white);
+}
+/* =============================================================
+   TYPE UTILITIES
+   ============================================================= */
+.via-hero {
+  font-family: var(--via-font-display);
+  font-size: clamp(2.5rem, 6vw, var(--via-fs-hero));
+  font-weight: var(--via-fw-medium);
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+}
+.via-display {
+  font-family: var(--via-font-display);
+  font-size: clamp(2rem, 4.5vw, var(--via-fs-display));
+  font-weight: var(--via-fw-medium);
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+}
+.via-label {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+.via-wordmark {
+  font-family: var(--via-font);
+  font-weight: var(--via-fw-light);
+  letter-spacing: var(--via-ls-brand);
+  text-transform: uppercase;
+  color: currentColor;
+}
+/* =============================================================
+   ACESSIBILIDADE · prefers-reduced-motion (rede de segurança global)
+   Zera animações/transições pra quem pede menos movimento — cobre
+   qualquer componente, além dos blocos por-componente já existentes.
+   ============================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* =============================================================
+   ACESSIBILIDADE DE MATERIAL · prefers-reduced-transparency +
+   prefers-contrast (HIG/WWDC: material translúcido vira sólido
+   quando o usuário pede). O DS inteiro bebe destes tokens, então
+   a curva fecha aqui — nenhum componente precisa saber disso.
+   ============================================================= */
+@media (prefers-reduced-transparency: reduce) {
+  :root,
+  :root[data-theme='dark'] {
+    --via-glass-blur: none;
+    --via-glass-blur-bar: none;
+    --via-glass-card: var(--via-surface);
+    --via-glass-card-2: var(--via-surface);
+    --via-glass-bar: var(--via-surface);
+  }
+}
+@media (prefers-contrast: more) {
+  :root {
+    --via-border-soft: rgba(10, 31, 59, 0.4);
+  }
+  :root[data-theme='dark'] {
+    --via-border-soft: rgba(255, 255, 255, 0.45);
+  }
+  /* superfície quase-sólida + borda definida (via glass-ring, que deriva
+     de border-soft) — vidro decorativo não pode custar legibilidade */
+  :root,
+  :root[data-theme='dark'] {
+    --via-glass-card: var(--via-surface);
+    --via-glass-card-2: var(--via-surface);
+    --via-glass-bar: var(--via-surface);
+  }
+}
+/* ==============================================================

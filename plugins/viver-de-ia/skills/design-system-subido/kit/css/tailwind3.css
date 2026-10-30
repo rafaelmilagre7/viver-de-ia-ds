@@ -1,0 +1,105 @@
+/* ==============================================================
+   DS SUBIDO · adaptador para Tailwind v3 + shadcn (tokens em HSL)
+   --------------------------------------------------------------
+   Projetos shadcn com Tailwind v3 (tailwind.config.ts, cores como
+   hsl(var(--background))) usam TRIPLETS HSL. Este arquivo reescreve os
+   triplets com as cores do DS. Importe DEPOIS do index.css do projeto:
+     import "./index.css";
+     import "./styles/ds/tokens.css";
+     import "./styles/ds/tailwind3.css";
+     import "./styles/ds/revenue.css";
+     import "./styles/ds/subido.css";
+   E acrescente o preset (kit/tailwind.preset.cjs) no tailwind.config.
+   O tema escuro segue data-theme="dark" no <html> (ou .dark).
+   ============================================================== */
+:root,
+[data-theme="light"] {
+  --background: 220 23% 97%; /* #F7F8FA */
+  --foreground: 218 24% 27%; /* #344054 */
+  --card: 0 0% 100%; /* #FFFFFF */
+  --card-foreground: 214 71% 14%; /* #0A1F3B */
+  --popover: 0 0% 100%; /* #FFFFFF */
+  --popover-foreground: 214 71% 14%; /* #0A1F3B */
+  --primary: 214 71% 14%; /* #0A1F3B */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary: 216 20% 95%; /* #F0F2F5 */
+  --secondary-foreground: 214 71% 14%; /* #0A1F3B */
+  --muted: 216 20% 95%; /* #F0F2F5 */
+  --muted-foreground: 219 15% 36%; /* #4F596B */
+  --accent: 216 20% 95%; /* #F0F2F5 */
+  --accent-foreground: 214 71% 14%; /* #0A1F3B */
+  --destructive: 0 39% 54%; /* #B85C5C */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --border: 218 17% 91%; /* #E4E7EC */
+  --input: 215 19% 87%; /* #D9DEE5 */
+  --ring: 214 71% 14%; /* #0A1F3B */
+  --sidebar-background: 0 0% 100%; /* #FFFFFF */
+  --sidebar-foreground: 214 71% 14%; /* #0A1F3B */
+  --sidebar-primary: 214 71% 14%; /* #0A1F3B */
+  --sidebar-primary-foreground: 220 37% 97%; /* #F4F6FA */
+  --sidebar-accent: 216 20% 95%; /* #F0F2F5 */
+  --sidebar-accent-foreground: 214 71% 14%; /* #0A1F3B */
+  --sidebar-border: 216 17% 94%; /* #EEF0F3 */
+  --sidebar-ring: 215 16% 79%; /* #C2C9D3 */
+  --success: 214 71% 14%; /* #0A1F3B */
+  --success-foreground: 0 0% 100%; /* #FFFFFF */
+  --warning: 216 26% 93%; /* #E7EBF1 */
+  --warning-foreground: 214 71% 14%; /* #0A1F3B */
+  --radius: 0.875rem; /* 14px · --via-radius-md */
+  /* cores diretas (sem hsl) que o kit usa em classes text-sidebar-* */
+  --sidebar-eyebrow: var(--via-text-soft);
+  --sidebar-icon: var(--via-text-soft);
+  --sidebar-meta: var(--via-text-muted);
+}
+[data-theme="dark"],
+.dark {
+  --background: 220 49% 8%; /* #0B1220 */
+  --foreground: 217 16% 84%; /* #D0D5DD */
+  --card: 221 43% 13%; /* #131C30 */
+  --card-foreground: 220 37% 97%; /* #F4F6FA */
+  --popover: 221 43% 13%; /* #131C30 */
+  --popover-foreground: 220 37% 97%; /* #F4F6FA */
+  --primary: 220 37% 97%; /* #F4F6FA */
+  --primary-foreground: 214 71% 14%; /* #0A1F3B */
+  --secondary: 221 43% 13%; /* #131C30 */
+  --secondary-foreground: 220 37% 97%; /* #F4F6FA */
+  --muted: 220 40% 18%; /* #1B273F */
+  --muted-foreground: 215 17% 73%; /* #AEB8C6 */
+  --accent: 221 43% 13%; /* #131C30 */
+  --accent-foreground: 220 37% 97%; /* #F4F6FA */
+  --destructive: 0 64% 72%; /* #E58A8A */
+  --destructive-foreground: 214 71% 14%; /* #0A1F3B */
+  --border: 222 32% 22%; /* #26314A */
+  --input: 221 29% 25%; /* #2E3A54 */
+  --ring: 221 20% 36%; /* #4A5670 */
+  --sidebar-background: 221 43% 13%; /* #131C30 */
+  --sidebar-foreground: 220 37% 97%; /* #F4F6FA */
+  --sidebar-primary: 220 37% 97%; /* #F4F6FA */
+  --sidebar-primary-foreground: 214 71% 14%; /* #0A1F3B */
+  --sidebar-accent: 220 40% 18%; /* #1B273F */
+  --sidebar-accent-foreground: 220 37% 97%; /* #F4F6FA */
+  --sidebar-border: 221 36% 19%; /* #1F2A42 */
+  --sidebar-ring: 221 20% 36%; /* #4A5670 */
+  --success: 220 37% 97%; /* #F4F6FA */
+  --success-foreground: 214 71% 14%; /* #0A1F3B */
+  --warning: 220 40% 18%; /* #1B273F */
+  --warning-foreground: 220 37% 97%; /* #F4F6FA */
+  --sidebar-eyebrow: var(--via-text-muted);
+  --sidebar-icon: var(--via-text-muted);
+  --sidebar-meta: var(--via-text-muted);
+}
+
+/* base que o v4 faz em base.css */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--via-font);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--via-font-display);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
+  letter-spacing: var(--via-ls-tighter);
+}
+[data-on-dark] :is(h1, h2, h3, h4, h5, h6) { color: inherit; }

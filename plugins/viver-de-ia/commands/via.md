@@ -19,6 +19,7 @@ O usuário descreveu o que precisa em `$ARGUMENTS`. Identifica a categoria e dir
 | pitch deck, slides, apresentação, proposta, one-pager, case study | `/via-deck` |
 | anúncio, ad, paid, Meta, Google Display | `/via-paid` |
 | auditar, revisar, está dentro do padrão? | `/via-check` |
+| tela de produto, app de solução, padronizar UI, "igual ao My Dashboard" | `/via-subido` |
 
 Se a categoria não bate em nenhuma, gere direto seguindo os princípios canônicos:
 

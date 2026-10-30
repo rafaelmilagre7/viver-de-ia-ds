@@ -6,6 +6,11 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Adicionado (30/out · plugin 1.8.0)
+
+- **Design System SUBIDO no plugin do time**: skill `design-system-subido` (v1.0 de 28/out) — a UI do My Dashboard (Flat SUBIDO · Revenue++) como moldura, componentes e telas padrão das soluções VIA / SUBIDO AI, sobre os tokens `--via-*`. Inclui `kit/`, `references/` 01–08, `scripts/auditar-ds.js` e capturas de referência; comando novo `/via-subido` e rota no `/via`.
+- **DS SUBIDO, revisão de acabamento**: entrada em cascata da tela e dos KPIs, hover dos cards pela hairline (card clicável no padrão navy-20 + lavagem navy-02), foco de teclado e press na sidebar, progresso que se enche, integração que abre no lugar, `.ds-grow-y` para barras de gráfico, `scrollbar-gutter: stable` — tudo em `--via-*`, desligado em `prefers-reduced-motion`. Corrigido: North Star da `KpiRow` nunca destacava (seletor e especificidade) e, no escuro, tinta `--via-navy` sumia sobre o fundo (selo de alta, passos, progresso, selo "pronto", botão primário) — agora `--via-text-primary`.
+
 ### Corrigido (28/out · auditoria do DS · plugin 1.7.0)
 
 - **Camada única de sobreposição na lib** (`_shared/overlay.ts` + `Portal`): os 14 overlays/popups (Modal, Drawer, Sheet, Lightbox, Command, Select, MultiSelect, Combobox, DropdownMenu, ContextMenu, Popover, HoverCard, Tooltip, DatePicker/DateRangePicker) vão pra um portal no `body` — Select dentro de Card/Modal não corta mais; pilha de Esc (só o de cima fecha); trava de scroll com contagem que devolve o `overflow` anterior; foco volta pro gatilho; popup fecha ao perder o foco. z-index vira escala `--via-z-*` (196 → 203 tokens).
