@@ -92,6 +92,29 @@ integrado na branch `rodada-ds-out28`. Detalhe item a item no CHANGELOG `[Não l
   DTCG pra Figma/Canva — precisa dos arquivos originais do designer), E (peças novas: Textarea, Field,
   FileUpload, AlertDialog, Charts, AppShell, DataTable com filtro), F (lib por componente / CSS por componente).
 
+## Qualidade de design (30/out) — 4 rodadas publicadas
+
+Pedido do Rafael: "melhorar a nível de design — transições, animações, liquid glass, qualidade visual".
+Auditoria em 3 frentes (vidro, movimento, visual geral; evidências em scratchpad da sessão), depois 4 rodadas,
+cada uma verificada (lint/unit/a11y/visual) e publicada (Rafael autorizou publicar sem perguntar):
+1. **Defeitos visíveis** (12e7011): header/sidebar soltavam após ~600px de rolagem (#root height:100%),
+   etiqueta do header colapsada, primary invisível no escuro, foco sem raio, tranco da mola (dt negativo).
+2. **Vidro líquido** (fd2a75e): 4 materiais por elevação (chrome/regular/thick/control) com aro especular,
+   grão, piso de leitura no escuro (contraste 1,7 → 7,2 no pior caso), lente SVG opt-in (só Chromium),
+   reflexo que segue o ponteiro; lib sem `blur(` cru (guarda no lint:glass); páginas /glass refeitas.
+3. **Movimento** (f417c24): tudo que abre fecha animado e interrompível (usePresence + @starting-style),
+   painéis na mesma mola, View Transitions na troca de página e de tema, Tabs/Accordion deslizando,
+   escala única (100/160/220/320/400ms, 3 curvas) + guarda `motion-drift`. Router virou data router.
+4. **Acabamento** (aab79d2 + 8eb7bba): sidebar com rótulos curtos e um indicador só, lupa no mobile,
+   trilho "Nesta página", coluna centrada, realce de código na paleta, playground com a própria lib,
+   skip link, tela cheia nas vitrines; demos light-first, palcos claros, botões pílula, tipografia
+   consolidada (letter-spacing cru 1.470 → 110), ícones 14/16 traço 1,75, vidro das páginas nos materiais.
+
+Ficou pra próxima: vitrine ainda com números/oferta antigos em ~30 páginas de exemplo (ex.: "220
+operadores", "R$ 1,8M", "turma 2026"); 86 classes de botão próprias (já pílula); eyebrows em inglês nas
+páginas; `top: 64px` fixo nos navs das vitrines; MultiSelect demora ~180ms pra fechar; mola só conferida
+em Chromium headless.
+
 ## IA criando na marca (30/out) — logo em vetor + prova real com IAs
 
 Pedido do Rafael: o marketing não desenha à mão; o foco é a IA criar as peças já na marca.
