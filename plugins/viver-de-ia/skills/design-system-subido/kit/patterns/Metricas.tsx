@@ -37,6 +37,7 @@ export function Kpi({
   return (
     <div className="@container h-full">
       <div
+        data-destaque={destaque || undefined}
         className={cn(
           "ds-metric flex h-full min-h-[8.5rem] flex-col rounded-[var(--via-radius-lg)] border bg-[var(--via-surface)] px-6 py-5",
           destaque ? "border-[var(--via-navy-20)]" : "border-[var(--via-border-soft)]",
@@ -59,7 +60,7 @@ export function Kpi({
             <span
               className={cn(
                 "inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-mono text-[0.6875rem] font-medium tabular-nums",
-                pos && "bg-[var(--via-navy-06)] text-[var(--via-navy)]",
+                pos && "bg-[var(--via-navy-06)] text-[var(--via-text-primary)]",
                 neg && "bg-[var(--via-coral)]/10 text-[var(--via-coral-dark)]",
                 !pos && !neg && "bg-[var(--via-gray-100)] text-[var(--via-text-muted)]",
               )}
@@ -78,7 +79,7 @@ export function Kpi({
 
 /** Fileira de KPIs: 4 por linha no desktop, 2 no tablet, 1 no celular. */
 export function KpiRow({ children }: { children: React.ReactNode }) {
-  return <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{children}</div>;
+  return <div className="ds-kpi-row grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{children}</div>;
 }
 
 /** "R$ 482,6 mil" a partir de 10 mil; exato abaixo disso. */

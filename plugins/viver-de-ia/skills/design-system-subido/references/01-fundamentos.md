@@ -160,6 +160,19 @@ Botão: `active:scale-[0.985]`. Entradas sobem 10–16px com fade. Tudo respeita
 Movimento com significado: o check do passo concluído se desenha, o número conta até o valor, a barra de
 progresso cresce. Nada de animação decorativa contínua no app (o palco do login é a exceção).
 
+**Acabamento pronto no `kit/css/subido.css`** (só por classe-gancho; o componente do kit já traz a dele):
+
+| Gancho | O que faz |
+|---|---|
+| `.ds-content` (AppShell) | os blocos de 1º nível da tela sobem em cascata de 50ms (teto 300ms) |
+| `.ds-kpi-row` (KpiRow) | os KPIs entram um a um logo depois |
+| `[data-ds-stagger]` | opcional: cascata nos filhos de qualquer grade (cards de lista, galeria) |
+| `.ds-progress-fill` | a barra de progresso se enche ao chegar (FirstSteps, SetupBanner) |
+| `.ds-reveal` | conteúdo que abre (IntegrationCard) desce no lugar |
+| `.ds-grow-y` + `--i` | barra de gráfico próprio cresce da base (Recharts já anima, não aplique lá) |
+| `.ds-nav-link` | foco de teclado visível, ícone acende no hover, cede no clique, pílula ativa assenta |
+| cards (`.ds-card`, `.ds-metric`, `.ds-integration`) | hover escurece a hairline para navy-10 (North Star fica no navy-20) |
+
 ## 8. Ícones e logos de marca
 
 - **Lucide**, traço 2 (menu) ou 1.75 (estado vazio), 16px em botão/linha, 18px no menu, 20px em estado vazio.
@@ -177,4 +190,8 @@ progresso cresce. Nada de animação decorativa contínua no app (o palco do log
 
 Por `data-theme="dark"` no `<html>` (e `.dark` para compatibilidade). Os tokens já trazem o par escuro —
 use sempre token e o escuro vem junto. No escuro o item ativo inverte (pílula clara, texto navy).
+**Tinta é `--via-text-primary`, não `--via-navy`**: ícone, texto de estado, círculo de passo, barra de
+progresso e selo "pronto" usam `--via-text-primary` (navy no claro, quase-branco no escuro), e o texto
+sobre esse preenchimento usa `--via-surface`. `--via-navy` cru fica para fundo de marca (próxima ação,
+palco). O botão primário inverte no escuro do mesmo jeito que o item ativo.
 Telas de acesso (login etc.) ficam sempre no claro (`data-theme="light"` na raiz delas).

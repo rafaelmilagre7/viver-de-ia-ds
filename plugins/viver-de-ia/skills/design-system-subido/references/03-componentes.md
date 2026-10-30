@@ -59,7 +59,7 @@ Escolha entre **provedores/ferramentas** nunca é `<select>` de texto: use cart�
 | Respiro | 24–32px (`p-6`/`p-8`); card de lista 20px |
 | Título | 16px · 500 · primary; apoio 14px muted |
 
-Card clicável: hover borda `--via-navy-20` + lavagem `--via-navy-02`, nunca "levitar" com sombra.
+Card clicável: hover borda `--via-navy-20` + lavagem `--via-navy-02`, nunca "levitar" com sombra. Já vem no kit: marque o card com `data-interactive` (ou use `<a>`/`<button>` com `ds-card`). Card não clicável escurece a hairline para navy-10 no hover.
 
 ## KPI / stat tile (`kit/patterns/Metricas.tsx`)
 

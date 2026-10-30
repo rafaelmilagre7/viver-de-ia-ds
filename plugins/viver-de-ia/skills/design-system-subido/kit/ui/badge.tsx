@@ -11,7 +11,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "ds-pill--default border-transparent bg-[var(--via-navy-06)] text-[var(--via-navy)] hover:bg-[var(--via-navy-10)]",
+          "ds-pill--default border-transparent bg-[var(--via-navy-06)] text-[var(--via-text-primary)] hover:bg-[var(--via-navy-10)]",
         secondary:
           "ds-pill--secondary border-transparent bg-[var(--via-gray-100)] text-[var(--via-text-muted)]",
         destructive:

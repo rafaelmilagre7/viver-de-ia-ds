@@ -38,7 +38,7 @@ export function NextStep({
         className,
       )}
     >
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--via-navy-08)] text-[var(--via-navy)]">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--via-navy-08)] text-[var(--via-text-primary)]">
         <Icon className="h-[18px] w-[18px]" />
       </span>
       <span className="min-w-0 flex-1">
@@ -83,11 +83,11 @@ export function EmptyState({
   return (
     <div
       className={cn(
-        "rounded-[var(--via-radius-lg)] border border-[var(--via-border-soft)] bg-[var(--via-surface)] px-6 py-12 text-center",
+        "ds-empty rounded-[var(--via-radius-lg)] border border-[var(--via-border-soft)] bg-[var(--via-surface)] px-6 py-12 text-center",
         className,
       )}
     >
-      <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--via-navy-04)] text-[var(--via-navy)]">
+      <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--via-navy-04)] text-[var(--via-text-primary)]">
         <Icon className="h-5 w-5" strokeWidth={1.75} />
       </span>
       <p className="text-base font-medium text-[var(--via-text-primary)]">{titulo}</p>
@@ -123,14 +123,14 @@ export function SetupBanner({
 }) {
   return (
     <div className="ds-setup-banner mb-6 flex items-center gap-3 rounded-xl border px-4 py-3">
-      <Rocket className="h-5 w-5 shrink-0 text-[var(--via-navy)]" />
+      <Rocket className="h-5 w-5 shrink-0 text-[var(--via-text-primary)]" />
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium text-[var(--via-text-primary)]">
           Você já começou: {feitos} de {total} passos
         </p>
         <p className="text-sm text-[var(--via-text-muted)]">{proximo}</p>
         <div className="mt-2 h-1 max-w-[240px] overflow-hidden rounded-full bg-[var(--via-navy-08)]">
-          <div className="h-full rounded-full bg-[var(--via-navy)]" style={{ width: `${(feitos / total) * 100}%` }} />
+          <div className="ds-progress-fill h-full rounded-full bg-[var(--via-text-primary)]" style={{ width: `${(feitos / total) * 100}%` }} />
         </div>
       </div>
       <button
@@ -162,7 +162,7 @@ export function SetupBanner({
 export function SampleFlag({ acao }: { acao?: ReactNode }) {
   return (
     <div className="ds-sample-flag mb-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-[var(--via-border)] bg-[var(--via-surface)] px-3 py-1.5 text-[0.8125rem] text-[var(--via-text-body)]">
-      <span className="h-1.5 w-1.5 rounded-full bg-[var(--via-navy)]" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[var(--via-text-primary)]" />
       Dados de exemplo · estes números não são da sua empresa.
       {acao}
     </div>

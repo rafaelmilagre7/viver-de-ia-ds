@@ -12,15 +12,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "ds-btn--primary bg-[linear-gradient(180deg,var(--via-navy),var(--via-navy-deep))] text-[var(--via-white)] shadow-[0_1px_0_var(--via-edge-hi)_inset,0_6px_16px_-10px_var(--via-shadow-ink-20)] hover:brightness-110",
+          "ds-btn--primary bg-[linear-gradient(180deg,var(--via-navy),var(--via-navy-deep))] text-[var(--via-white)] shadow-[0_1px_0_var(--via-edge-hi)_inset,0_6px_16px_-10px_var(--via-shadow-ink-20)] hover:brightness-110 dark:bg-none dark:bg-[var(--via-text-primary)] dark:text-[var(--via-surface)] dark:hover:brightness-95",
         destructive:
           "ds-btn--destructive bg-[var(--via-coral)] text-[var(--via-white)] hover:bg-[var(--via-coral-deep)]",
         outline:
           "ds-btn--outline border border-[var(--via-border)] bg-transparent text-[var(--via-text-primary)] hover:bg-[var(--via-navy-06)] hover:border-[var(--via-navy-20)]",
         secondary:
-          "ds-btn--secondary bg-[var(--via-gray-100)] text-[var(--via-navy)] hover:bg-[var(--via-navy-06)]",
+          "ds-btn--secondary bg-[var(--via-gray-100)] text-[var(--via-text-primary)] hover:bg-[var(--via-navy-06)]",
         ghost: "ds-btn--ghost text-[var(--via-text-body)] hover:bg-[var(--via-navy-06)]",
-        link: "ds-btn--link text-[var(--via-navy)] underline-offset-4 hover:underline",
+        link: "ds-btn--link text-[var(--via-text-primary)] underline-offset-4 hover:underline",
       },
       size: {
         default: "ds-btn--md h-9 px-[18px] py-[10px]",

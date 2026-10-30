@@ -9,6 +9,7 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 ### Adicionado (30/out · plugin 1.8.0)
 
 - **Design System SUBIDO no plugin do time**: skill `design-system-subido` (v1.0 de 28/out) — a UI do My Dashboard (Flat SUBIDO · Revenue++) como moldura, componentes e telas padrão das soluções VIA / SUBIDO AI, sobre os tokens `--via-*`. Inclui `kit/`, `references/` 01–08, `scripts/auditar-ds.js` e capturas de referência; comando novo `/via-subido` e rota no `/via`.
+- **DS SUBIDO, revisão de acabamento**: entrada em cascata da tela e dos KPIs, hover dos cards pela hairline (card clicável no padrão navy-20 + lavagem navy-02), foco de teclado e press na sidebar, progresso que se enche, integração que abre no lugar, `.ds-grow-y` para barras de gráfico, `scrollbar-gutter: stable` — tudo em `--via-*`, desligado em `prefers-reduced-motion`. Corrigido: North Star da `KpiRow` nunca destacava (seletor e especificidade) e, no escuro, tinta `--via-navy` sumia sobre o fundo (selo de alta, passos, progresso, selo "pronto", botão primário) — agora `--via-text-primary`.
 
 ### Corrigido (28/out · auditoria do DS · plugin 1.7.0)
 

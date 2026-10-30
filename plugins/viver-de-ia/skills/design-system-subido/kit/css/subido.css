@@ -188,3 +188,115 @@
     animation: none;
   }
 }
+
+/* ==============================================================
+   Acabamento de movimento (30/10/2026)
+   O mesmo DS plano do Revenue++ (sem sombra nova, sem cor nova), só com a
+   resposta que faltava: cada bloco chega, cada card responde ao cursor,
+   cada barra mostra que se encheu. Durações e curvas são as do DS
+   (--via-dur, --via-dur-press, --via-ease-out, --via-ease-snap).
+   Ganchos: .ds-content (AppShell), .ds-kpi-row, .ds-progress-fill,
+   .ds-integration/.ds-reveal, .ds-empty, .ds-nav-link e, por opção,
+   [data-ds-stagger] (filhos em cascata) e .ds-grow-y (barra de gráfico).
+   ============================================================== */
+/* Trocar de tela curta para longa não empurra o conteúdo para o lado
+   quando a barra de rolagem aparece. */
+html { scrollbar-gutter: stable; }
+
+@keyframes ds-rise {
+  from { opacity: 0; transform: translateY(8px); }
+}
+@keyframes ds-fill {
+  from { width: 0; }
+}
+@keyframes ds-reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+}
+@keyframes ds-pill-in {
+  from { opacity: 0.4; transform: scale(0.97); }
+}
+@keyframes ds-grow-y {
+  from { transform: scaleY(0); }
+}
+
+/* Entrada da tela: os blocos sobem em cascata curta (teto de ~0,4 s, para
+   nunca parecer lento). Só o 1º nível da página, a fileira de KPIs e quem
+   pedir com data-ds-stagger: animar tudo vira ruído. */
+:root :is(.ds-content > *, .ds-kpi-row > *, [data-ds-stagger] > *) {
+  animation: ds-rise 520ms var(--via-ease-out) both;
+}
+:root :is(.ds-content, .ds-kpi-row, [data-ds-stagger]) > :nth-child(2) { animation-delay: 50ms; }
+:root :is(.ds-content, .ds-kpi-row, [data-ds-stagger]) > :nth-child(3) { animation-delay: 100ms; }
+:root :is(.ds-content, .ds-kpi-row, [data-ds-stagger]) > :nth-child(4) { animation-delay: 150ms; }
+:root :is(.ds-content, .ds-kpi-row, [data-ds-stagger]) > :nth-child(5) { animation-delay: 200ms; }
+:root :is(.ds-content, .ds-kpi-row, [data-ds-stagger]) > :nth-child(6) { animation-delay: 250ms; }
+:root :is(.ds-content, .ds-kpi-row, [data-ds-stagger]) > :nth-child(n + 7) { animation-delay: 300ms; }
+/* a fileira de KPIs já entra com o bloco dela: a cascata interna começa depois */
+:root .ds-kpi-row.ds-kpi-row > * { animation-delay: calc(var(--ds-kpi-i, 0) * 50ms + 80ms); }
+:root .ds-kpi-row > :nth-child(2) { --ds-kpi-i: 1; }
+:root .ds-kpi-row > :nth-child(3) { --ds-kpi-i: 2; }
+:root .ds-kpi-row > :nth-child(n + 4) { --ds-kpi-i: 3; }
+
+/* Cards: a hairline escurece sob o cursor (é a única "profundidade" do
+   Revenue++). O North Star mantém a borda navy-20 dele. */
+:root :is(.ds-card, .glass-card, .ds-metric, .ds-first-steps, .ds-integration, .ds-empty) {
+  transition:
+    border-color var(--via-dur) var(--via-ease-snap),
+    transform var(--via-dur) var(--via-ease-snap);
+}
+/* !important pelo mesmo motivo do North Star (revenue.css): a regra de
+   superfície plana tem especificidade 0,5,1. O North Star fica fora: a
+   borda navy-20 dele já é mais forte que o hover. */
+:root :is(.ds-card, .glass-card, .ds-metric, .ds-integration):not([data-destaque]):hover {
+  border-color: var(--via-navy-10) !important;
+}
+:root .ds-kpi-row > :first-child:not(:only-child) .ds-metric:hover {
+  border-color: var(--via-navy-20) !important;
+}
+/* Card clicável (03-componentes): borda navy-20 + lavagem navy-02, nunca
+   levitar. A lavagem vai em background-image porque a cor de fundo do card
+   é travada com !important na camada Revenue. No clique, cede como botão. */
+:root :is(a.ds-card, button.ds-card, .ds-card[data-interactive], a > .ds-card, a .ds-metric):hover {
+  border-color: var(--via-navy-20) !important;
+  background-image: linear-gradient(var(--via-navy-02), var(--via-navy-02));
+}
+:root :is(a.ds-card, button.ds-card, .ds-card[data-interactive]):active {
+  transform: scale(0.995);
+  transition-duration: var(--via-dur-press);
+}
+
+/* Integração aberta: o conteúdo desce no lugar, sem pulo seco */
+.ds-reveal { animation: ds-reveal 240ms var(--via-ease-out) both; }
+
+/* Progresso: a barra se enche ao chegar (onboarding, banner de configuração) */
+.ds-progress-fill { animation: ds-fill 900ms var(--via-ease-out) 200ms both; }
+
+/* Barra de gráfico próprio: cresce da linha de base. Use --i para a cascata
+   (style={{ "--i": index }}). Recharts já anima sozinho: não aplique lá. */
+.ds-grow-y {
+  transform-origin: 50% 100%;
+  animation: ds-grow-y 700ms var(--via-ease-out) both;
+  animation-delay: calc(var(--i, 0) * 60ms + 120ms);
+}
+
+/* Sidebar: foco visível no teclado, ícone acende com o rótulo no hover,
+   item cede no clique e a pílula ativa assenta ao trocar de tela. */
+.ds-nav-link svg { transition: color var(--via-dur) var(--via-ease-snap); }
+.ds-nav-link:not([data-active]):hover svg { color: var(--sidebar-foreground); }
+.ds-nav-link:focus-visible { box-shadow: 0 0 0 2px var(--sidebar), 0 0 0 4px var(--sidebar-ring); }
+.ds-nav-link:active { transform: scale(0.985); transition-duration: var(--via-dur-press); }
+.ds-nav-link[data-active] { animation: ds-pill-in 280ms var(--via-ease-out) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root :is(.ds-content > *, .ds-kpi-row > *, [data-ds-stagger] > *),
+  .ds-reveal,
+  .ds-progress-fill,
+  .ds-grow-y,
+  .ds-nav-link[data-active] {
+    animation: none;
+  }
+  :root :is(a.ds-card, button.ds-card, .ds-card[data-interactive]):active,
+  .ds-nav-link:active {
+    transform: none;
+  }
+}

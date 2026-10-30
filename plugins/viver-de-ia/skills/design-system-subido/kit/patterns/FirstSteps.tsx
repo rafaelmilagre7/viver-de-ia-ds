@@ -62,7 +62,7 @@ export function FirstSteps({
         aria-label="Progresso da configuração"
       >
         <div
-          className="h-full rounded-full bg-[var(--via-navy)] transition-[width] duration-500"
+          className="ds-progress-fill h-full rounded-full bg-[var(--via-text-primary)] transition-[width] duration-500 ease-[var(--via-ease-out)]"
           style={{ width: `${(done / passos.length) * 100}%` }}
         />
       </div>
@@ -78,9 +78,9 @@ export function FirstSteps({
               <span
                 className={
                   s.done
-                    ? "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--via-navy)] text-white"
+                    ? "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--via-text-primary)] text-[var(--via-surface)]"
                     : active
-                      ? "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[var(--via-navy)] text-xs font-semibold text-[var(--via-navy)]"
+                      ? "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[var(--via-text-primary)] text-xs font-semibold text-[var(--via-text-primary)]"
                       : "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[var(--via-border)] text-xs text-[var(--via-text-muted)]"
                 }
               >

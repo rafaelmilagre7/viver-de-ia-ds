@@ -60,12 +60,27 @@
   font-variant-numeric: tabular-nums;
   color: var(--via-text-muted);
 }
+/* KpiRow: o Kpi mora sozinho no wrapper @container, então o 1º da fileira é
+   o 1º WRAPPER (antes ".ds-metric:first-child:not(:only-child)" nunca casava
+   ali, e o North Star saía igual aos outros). `destaque` marca à mão.
+   !important: a regra de superfície acima (especificidade 0,5,1) apagava a
+   borda navy-20. */
 :root
-  :is(.ds-metric:first-child:not(:only-child), [class*="col-span"]:first-child > * > .ds-metric) {
-  border-color: var(--via-navy-20);
+  :is(
+    .ds-metric:first-child:not(:only-child),
+    [class*="col-span"]:first-child > * > .ds-metric,
+    .ds-kpi-row > :first-child:not(:only-child) .ds-metric,
+    .ds-metric[data-destaque]
+  ) {
+  border-color: var(--via-navy-20) !important;
 }
 :root
-  :is(.ds-metric:first-child:not(:only-child), [class*="col-span"]:first-child > * > .ds-metric)
+  :is(
+    .ds-metric:first-child:not(:only-child),
+    [class*="col-span"]:first-child > * > .ds-metric,
+    .ds-kpi-row > :first-child:not(:only-child) .ds-metric,
+    .ds-metric[data-destaque]
+  )
   .ds-metric-value {
   /* acompanha a largura do card (o KPI tem @container): no modo TV, 4
      por linha, 44px fixos viravam "R$ 312 …" */

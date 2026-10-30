@@ -73,7 +73,7 @@ export function IntegrationCard({
 }) {
   const [aberto, setAberto] = useState(abrirPorPadrao);
   return (
-    <article className="overflow-hidden rounded-[var(--via-radius-lg)] border border-[var(--via-border-soft)] bg-[var(--via-surface)]">
+    <article className="ds-integration overflow-hidden rounded-[var(--via-radius-lg)] border border-[var(--via-border-soft)] bg-[var(--via-surface)]">
       <button
         type="button"
         onClick={() => setAberto((v) => !v)}
@@ -98,7 +98,7 @@ export function IntegrationCard({
               className={cn(
                 "inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[0.6875rem] font-medium",
                 pronto
-                  ? "bg-[var(--via-navy)] text-white"
+                  ? "bg-[var(--via-text-primary)] text-[var(--via-surface)]"
                   : "border border-dashed border-[var(--via-border)] text-[var(--via-text-muted)]",
               )}
             >
@@ -108,10 +108,10 @@ export function IntegrationCard({
           </span>
         </span>
         <ChevronDown
-          className={cn("mt-1 h-4 w-4 shrink-0 text-[var(--via-text-muted)] transition-transform", aberto && "rotate-180")}
+          className={cn("mt-1 h-4 w-4 shrink-0 text-[var(--via-text-muted)] transition-transform duration-[var(--via-dur)] ease-[var(--via-ease-out)]", aberto && "rotate-180")}
         />
       </button>
-      {aberto && <div className="border-t border-[var(--via-border-soft)] p-5">{children}</div>}
+      {aberto && <div className="ds-reveal border-t border-[var(--via-border-soft)] p-5">{children}</div>}
     </article>
   );
 }
@@ -148,7 +148,7 @@ export function ProviderChoice<T extends string>({
               className={cn(
                 "flex items-center gap-3 rounded-[var(--via-radius-md)] border bg-[var(--via-surface)] p-3 text-left transition-colors",
                 on
-                  ? "border-[var(--via-navy)] shadow-[0_0_0_1px_var(--via-navy)]"
+                  ? "border-[var(--via-text-primary)] shadow-[0_0_0_1px_var(--via-text-primary)]"
                   : "border-[var(--via-border-soft)] hover:border-[var(--via-navy-20)]",
               )}
             >
@@ -156,7 +156,7 @@ export function ProviderChoice<T extends string>({
               <span className="min-w-0 flex-1">
                 <span className="block truncate text-sm font-medium text-[var(--via-text-primary)]">{p.nome}</span>
                 {p.estado && (
-                  <span className={cn("block text-xs", p.pronto ? "text-[var(--via-navy)]" : "text-[var(--via-text-soft)]")}>
+                  <span className={cn("block text-xs", p.pronto ? "text-[var(--via-text-primary)]" : "text-[var(--via-text-soft)]")}>
                     {p.estado}
                   </span>
                 )}

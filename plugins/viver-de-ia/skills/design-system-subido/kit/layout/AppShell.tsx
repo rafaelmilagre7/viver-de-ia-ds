@@ -99,7 +99,7 @@ function SidebarNav({
                   onClick={onNavigate}
                   data-active={isActive ? "true" : undefined}
                   className={cn(
-                    "ds-nav-link flex items-center gap-3 rounded-[var(--via-radius-md)] px-3 py-2.5 text-sm font-medium",
+                    "ds-nav-link flex items-center gap-3 rounded-[var(--via-radius-md)] px-3 py-2.5 text-sm font-medium focus-visible:outline-none",
                     "transition-all duration-[var(--via-dur)] ease-[var(--via-ease-snap)]",
                     isActive
                       ? "bg-sidebar-primary text-sidebar-primary-foreground shadow-[0_6px_16px_-10px_var(--via-shadow-ink-20)]"
@@ -173,7 +173,7 @@ export function AppShell(props: AppShellProps) {
         </header>
 
         {/* overflow-x-hidden: a página nunca rola de lado — tabela e gráfico rolam dentro do próprio contêiner */}
-        <div className="mx-auto min-w-0 max-w-6xl overflow-x-hidden px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10">
+        <div className="ds-content mx-auto min-w-0 max-w-6xl overflow-x-hidden px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10">
           {banner}
           {children}
         </div>

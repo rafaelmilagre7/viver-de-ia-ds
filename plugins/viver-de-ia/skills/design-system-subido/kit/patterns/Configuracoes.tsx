@@ -56,7 +56,7 @@ export function SettingsLayout<T extends string>({
                   {n.label}
                 </span>
                 {n.pendencia ? (
-                  <span className="hidden text-xs font-medium text-[var(--via-navy)] md:block">{n.pendencia}</span>
+                  <span className="hidden text-xs font-medium text-[var(--via-text-primary)] md:block">{n.pendencia}</span>
                 ) : (
                   <span className="hidden text-xs text-[var(--via-text-muted)] md:block">{n.hint}</span>
                 )}
