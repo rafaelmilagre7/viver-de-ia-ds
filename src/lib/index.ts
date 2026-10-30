@@ -14,6 +14,7 @@ export { Card, type CardProps } from './Card/Card';
 export { Input, type InputProps } from './Input/Input';
 export { Avatar, type AvatarProps } from './Avatar/Avatar';
 export { Icon, type IconProps } from './Icon/Icon';
+export { BrandLogo, type BrandLogoProps } from './BrandLogo/BrandLogo';
 export { ToastStack, type ToastItem, type ToastStackProps } from './Toast/Toast';
 export { useToasts } from './Toast/useToasts';
 export { Tooltip, type TooltipProps } from './Tooltip/Tooltip';

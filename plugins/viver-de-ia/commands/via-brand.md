@@ -19,21 +19,21 @@ O usuário fez pergunta sobre brand em `$ARGUMENTS`. Identifica o tipo:
 
 | Contexto | Logo correta |
 |---|---|
-| Shell header (app/site) | Monogram navy 32px · clica volta pra / |
-| Shell footer | Monogram + wordmark stacked |
-| Tab do browser | Favicon `icon_black.png` 32×32 |
-| OG image | Wordmark navy centralizado sobre off-white |
-| Email header | Wordmark navy 200px width |
+| Shell header (app/site) | **Lockup** navy (`lockup-navy.svg` / `<BrandLogo>`) · clica volta pra / · monograma sozinho só em barra estreita (mobile) |
+| Shell footer | Lockup |
+| Tab do browser | Favicon `icon_black.png` 32×32 (monograma) |
+| OG image | **Lockup** navy centralizado sobre off-white |
+| Email header | **`lockup-navy.png`** pequeno (~18px de altura · letterhead · PNG porque o Gmail não renderiza SVG) |
 | WhatsApp profile pic | `VIA_app_icon.png` · navy bg |
-| Slide deck capa | Wordmark white sobre mesh-navy |
-| Slide deck interior | Monogram white 16px canto inferior direito |
-| Invoice | Wordmark navy 120px header + monogram 24px footer |
-| Cert/diploma | Wordmark navy hero + selo monogram |
+| Slide deck capa | **Lockup** navy sobre fundo claro · white sobre navy só a pedido ou no encerramento |
+| Slide deck interior | Monograma 24px em slide 1920×1080 (≈1,25% da largura) · opacidade 0.5 · canto inferior direito (cor conforme o fundo) |
+| Invoice | Lockup navy no header + monograma 24px no footer |
+| Cert/diploma | Lockup navy no hero + selo monograma |
 | Avatar mentor (chat) | Iniciais do mentor, **NÃO** monogram VIA |
 | Loading | Monogram navy 80px pulsando opacity 0.4-1 |
 | Social profile pic | App icon (não monogram) · navy bg |
-| Social post cover | Monogram white canto · não centralizado massivo |
-| Material Leaders AI | Sub-brand `leaders-ai-conference-logo` |
+| Social post cover | **Lockup** pequeno no canto/rodapé · navy sobre fundo claro (white só sobre navy) · não centralizado massivo |
+| Material Leaders AI | Sub-brand Leaders AI no lugar do monogram VIA · cor do arquivo pelo fundo (ver tabela de surface abaixo) |
 
 ## Clear space
 
@@ -49,9 +49,11 @@ O usuário fez pergunta sobre brand em `$ARGUMENTS`. Identifica o tipo:
 
 | Fundo | Logo |
 |---|---|
-| Branco / off-white / gray-50-200 | Navy (`VIA_monogram_hq.png`, `VIVER_DE_IA_black.png`) |
-| Navy / mesh-navy / dark | White (`VIA_monogram_hq_white.png`, `VIVER_DE_IA_white.png`) |
+| Branco / off-white / gray-50-200 | Navy (`lockup-navy.svg`, `monogram-navy.svg` · `<BrandLogo variant="black">`) |
+| Navy / mesh-navy / dark | White (`lockup-white.svg`, `monogram-white.svg` · `<BrandLogo variant="white">`) |
 | Foto com cores variadas | White + scrim navy 60% |
+| Leaders AI · fundo claro | `leaders-ai-conference-logo-navy.png` · sem faixa navy só pra segurar a logo |
+| Leaders AI · fundo escuro | `leaders-ai-conference-logo.png` |
 
 **NUNCA:** inverter via CSS `filter:invert()` · sempre arquivo dedicado.
 
@@ -70,6 +72,7 @@ O usuário fez pergunta sobre brand em `$ARGUMENTS`. Identifica o tipo:
 | Eventos palco | palco-operacional | "Vou contar 3 erros que cometi construindo a Nina" |
 
 Nunca invente preço nem número de alunos/operadores/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`.
+Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
 
 ## Personality · 7 atributos
 

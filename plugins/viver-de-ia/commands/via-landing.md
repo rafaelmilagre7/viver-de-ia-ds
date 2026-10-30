@@ -32,16 +32,17 @@ O usuário descreveu contexto em `$ARGUMENTS`. Identifica que tipo de landing:
 ## Hero canônico (estrutura)
 
 ```jsx
-<div className="hero via-mesh-navy via-noise">
-  <span className="eyebrow">{contexto · data · vagas}</span>
-  <h2>Headline editorial em 2 linhas · <em>palavra emphasized italic</em>.</h2>
+{/* fundo CLARO: branco/off-white + atmosfera radial navy suave · hero navy só se o usuário pedir */}
+<div className="hero">
+  <span className="eyebrow">{contexto · [data] · [N] vagas}</span>
+  <h2>Headline editorial em 2 linhas · <em>palavra em destaque</em>.</h2>  {/* em RETO: ênfase = peso + cor, nunca itálico */}
   <p>Sub editorial · 1-2 linhas · contextualiza sem repetir</p>
   <div className="actions">
     <a className="cta">{Verbo no infinitivo · 2-4 palavras}</a>
     <a className="ghost">{CTA secundário · ghost}</a>
   </div>
-  <img src="monogram_white" className="hero-mono" />
 </div>
+{/* logo: lockup navy no header da página (lockup-navy.svg / <BrandLogo>) · sem monograma solto no hero */}
 ```
 
 ## CTAs por contexto (sentence-case sempre)
@@ -66,6 +67,7 @@ R$ [valor] destravado por alunos em 12 meses
 ```
 
 Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N]`.
+Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
 
 **Prova atribuída** (depoimento):
 ```
@@ -91,6 +93,8 @@ Daniel Pinheiro · onboarding agente · 2h → 20min
 
 Resposta sempre direta · sem rodeio · sem "consulte nosso time".
 
+**Garantia, devolução, preço e pagamento: a resposta vem SÓ do texto da pessoa** (condições, prazo, como pedir, parcelamento). Se ela não informou, a resposta é o placeholder (`[condições da garantia]`, `[prazo de devolução]`, `R$ [valor]`, `[condições de pagamento]`) ou uma pergunta a ela — nunca um prazo "plausível" inventado.
+
 ## Countdown editorial
 
 **Regra crítica:** só mostra countdown se urgência é REAL (turma realmente fecha, evento realmente começa, preço realmente sobe). Nunca "criar urgência" inventando deadline. Se a turma sempre abre, não mostra countdown.
@@ -112,7 +116,7 @@ Resposta sempre direta · sem rodeio · sem "consulte nosso time".
 
 ## Output
 
-Para landing completa: gere HTML/JSX estruturado com todas as seções, citando paleta restrita + Geist + atmospheric mesh em hero.
+Para landing completa: gere HTML/JSX estruturado com todas as seções, citando paleta restrita + Geist + hero claro com atmosfera radial navy suave (navy de fundo só a pedido).
 
 Para elemento isolado (só hero, só FAQ): foca naquele e cita onde encaixa.
 

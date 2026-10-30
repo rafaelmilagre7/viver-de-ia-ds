@@ -39,6 +39,7 @@ O usuário colou conteúdo (HTML, JSX, copy, screenshot description) em `$ARGUME
 - [ ] Sem urgência fabricada ("GARANTA JÁ", "ÚLTIMAS HORAS", "OPORTUNIDADE ÚNICA")
 - [ ] Sem emoji decorativo no corpo (✨🚀💪🔥)
 - [ ] Número específico quando possível (não "centenas", "muito mais")
+- [ ] Nada inventado: preço, nº de alunos/vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local · o que não veio da pessoa é placeholder (`R$ [valor]`, `[N] vagas`, `[condições da garantia]`, `[prazo de devolução]`, `[data]`, `[local]`) · número/termo sem fonte é vermelho
 - [ ] Ação concreta no fim (não "ficamos à disposição")
 - [ ] "Você" sempre em UI de produto e email transacional/de ciclo de vida · qualquer tu, teu, tua, teus, tuas ou contigo é vermelho
 - [ ] Microcopy de produto (erro, estado vazio, confirmação, toast, carregamento, onboarding, botão, ajuda de campo) reusa o texto canônico de `microcopy.md` (skill viver-de-ia-design) quando a situação bate · troca só os {campos} · texto próprio pra situação que já tem canônico é amarelo
@@ -55,17 +56,17 @@ O usuário colou conteúdo (HTML, JSX, copy, screenshot description) em `$ARGUME
 - [ ] Ícone navy default (sem gold)
 
 ### 7. Surfaces & glass
-- [ ] Glass quando aplicável (`backdrop-filter: blur 20px saturate 140%`)
+- [ ] Glass quando aplicável, sempre pela receita (`--via-glass-*` · `-webkit-backdrop-filter` antes do `backdrop-filter`), nunca número solto
 - [ ] Atmospheric mesh em hero/featured cards
 - [ ] Não usar glass em dashboard denso ou tabela de dados
 
 ### 8. Hover signatures
-- [ ] Bar lateral navy fade em rows/items
+- [ ] Hover = o elemento sobe e a luz aumenta (sombra `--via-glass-shadow-lift` / atmosfera mais presente) · zero barra lateral (banida nos 3 mecanismos)
 - [ ] Lift `translateY(-1px/-2px/-3px)` em cards
 - [ ] Gap animation em text links
 
 ### 9. Logo
-- [ ] Logo correta por contexto (monogram pequeno · wordmark grande · app icon em profile · leaders AI em material de evento)
+- [ ] Logo correta por contexto (lockup por padrão · monograma sozinho só em espaço mínimo · nunca wordmark solto · app icon em profile · Leaders AI em material de evento · e-mail com `lockup-navy.png`, nunca SVG)
 - [ ] Clear space respeitado (X/2 monogram · 1X wordmark)
 - [ ] Tamanho mínimo (16px monogram · 96px wordmark)
 - [ ] Cor correta por surface (navy em light · white em dark · scrim em foto)
@@ -79,12 +80,12 @@ O usuário colou conteúdo (HTML, JSX, copy, screenshot description) em `$ARGUME
 ### 11. Status indicators
 - [ ] Sem semáforo verde/vermelho em pills genéricas
 - [ ] Live broadcast em minúsculas sem exclamação ("ao vivo"), não caps lock "AO VIVO"
-- [ ] Eyebrows preservados em mono small caps 0.04-0.08em
+- [ ] Eyebrows uppercase mono com `--via-ls-label` (0.18em)
 
 ### 12. Princípios de cobertura
 - [ ] Bate com a página de referência mais próxima (cite qual)
 - [ ] Voz alinhada com contexto (transacional vs editorial vs comercial)
-- [ ] Material de evento usa Leaders AI mark (não monogram VIA principal)
+- [ ] Material de evento usa Leaders AI mark (não monogram VIA principal) · arquivo branco no fundo escuro, navy no fundo claro (sem faixa navy só pra segurar a logo)
 
 ## Formato de resposta
 
@@ -106,7 +107,7 @@ Auditoria · social post LinkedIn pessoal
 
 ✓ Verdes
   · Voz editorial 1ª pessoa correta · gancho com número
-  · Paleta navy mesh respeitada · sem gold
+  · Fundo claro (light-first) · paleta restrita respeitada · sem gold
   · Sem emoji decorativo · sem clichê IA
 
 ⚠ Amarelos

@@ -390,18 +390,11 @@
   .vds-header-right { gap: var(--via-space-1_5); flex-shrink: 0; }
 }
 
-/* Brand logo · default: ambos visíveis em block */
-.vds-brand-mono, .vds-brand-wordmark { display: block; }
-
-/* Logo "auto" · alterna preto↔branco conforme o tema (variant="auto").
-   Mostra preto no claro, branco no escuro · troca instantânea no toggle. */
-.vds-brand-img--dark { display: none; }
-[data-theme="dark"] .vds-brand-img--light { display: none; }
-[data-theme="dark"] .vds-brand-img--dark { display: block; }
-
-/* Mobile estrito · 560-px-down: esconder wordmark, só monograma
-   (precisa vencer a regra de tema acima → repete com [data-theme]) */
+/* Brand logo · lockup no desktop; mobile estrito (560-px-down) mostra só o monograma.
+   variant="auto" troca a cor com o tema dentro do próprio BrandLogo da lib. */
+.vds-brand { display: inline-flex; line-height: 0; }
+.vds-brand-compact { display: none; }
 @media (max-width: 560px) {
-  .vds-brand-wordmark { display: none; }
-  [data-theme="dark"] .vds-brand-wordmark { display: none; }
+  .vds-brand-full { display: none; }
+  .vds-brand-compact { display: inline-block; }
 }

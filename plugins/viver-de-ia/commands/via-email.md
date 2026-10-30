@@ -14,7 +14,7 @@ description: Gera email Viver de IA — produção à prova de bala (react-email
 - **Tabela + estilo inline**, ~600px, `<102KB`. NUNCA flex/grid/`backdrop-filter`/`position`/CSS vars em email.
 - **CTA navy SÓLIDO** (`background-color`). Degradê puro de fundo SOME no Outlook → botão invisível.
 - **Liquid glass simulado OK** (hero navy, painéis frosted, CTA glossy) MAS todo `background-image: gradient` precisa de `background-color` sólido de fallback na mesma regra.
-- **Logo = lockup pequeno** (monograma + wordmark ~18px) em URL absoluta. Trava em claro (`color-scheme: light only`). Preheader sempre.
+- **Logo = `lockup-navy.png`** (monograma + wordmark · ~18px de altura · PNG porque o Gmail não renderiza SVG) em URL absoluta (`https://viver-de-ia-ds.vercel.app/logos/lockup-navy.png`). Trava em claro (`color-scheme: light only`). Preheader sempre.
 - A IA escreve só o editorial; o motor renderiza. Pra enviar: `render(<WelcomeEmail .../>)` → `resend.emails.send({ from, to, subject, html })`.
 
 ## Entrada
@@ -44,11 +44,12 @@ O usuário descreveu o tipo de email em `$ARGUMENTS`. Identifica em qual das 5 c
 | Lifecycle win-back | observa-mudanças | "3 coisas mudaram desde que você saiu · acho que faz sentido voltar" |
 
 Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] vagas`.
+Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
 
 ## Estrutura canônica
 
 ```
-[email header com BrandLogo black sm]
+[email header com lockup-navy.png · ~18px de altura · URL absoluta (SVG e <BrandLogo> não aparecem no Gmail)]
 
 [email body · max 600px]
   - subject (frase de amigo · sem "Olá" · sem emoji · sem urgência fabricada)
@@ -59,7 +60,7 @@ Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholde
   - assinatura humana (Caio · time Viver de IA)
 
 [email footer]
-  - monogram pequeno
+  - monograma pequeno (`monogram-navy.png` · URL absoluta `https://viver-de-ia-ds.vercel.app/logos/monogram-navy.png`)
   - "Viver de IA · operadores formando operadores · São Paulo, BR"
   - "Atualizar preferências" · "Não quero mais" (links)
 ```
@@ -68,6 +69,7 @@ Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholde
 
 - **Subject** = frase de amigo, sem "Olá", sem emoji, sem urgência fabricada
 - **Primeira frase do body** = já entrega o fato · sem "esperamos que esteja bem"
+- **Tratamento** · "você" sempre · imperativo coloquial liberado (responde, marca, faz) · nunca tu/teu/tua/contigo
 - **Sempre 1 ação concreta** · não só informe
 - **Variáveis dinâmicas** · use `{aluno_first_name}`, `{cobranca_valor}`, etc.
 - **Hero plate em emails editoriais** · navy mesh com 1 número grande

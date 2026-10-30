@@ -29,7 +29,7 @@ const API_PAGES = [
   'toast', 'tooltip', 'slider', 'alert', 'progress', 'drawer', 'data-table',
   'checkbox', 'radio-group', 'select', 'combobox', 'dropdown-menu', 'popover',
   'command', 'date-picker', 'stepper', 'accordion', 'breadcrumb', 'pagination',
-  'spinner', 'skeleton', 'empty-state', 'icon', 'hover-card', 'otp-input',
+  'spinner', 'brand-logo', 'skeleton', 'empty-state', 'icon', 'hover-card', 'otp-input',
   'tag-input', 'calendar', 'carousel', 'time-picker', 'sheet', 'context-menu',
   'multi-select', 'date-range-picker', 'tree-view', 'splitter', 'virtual-list',
   'lightbox', 'color-picker',

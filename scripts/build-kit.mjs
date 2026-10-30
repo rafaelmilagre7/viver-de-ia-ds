@@ -12,7 +12,7 @@
  *   /system-prompt.md           prompt geral
  *   /system-prompts/            sub-prompts por contexto
  *   /tokens/                    tokens.json + tokens.css + style.css
- *   /logos/                     logos PNG renomeados
+ *   /logos/                     logo oficial em SVG + PNGs renomeados
  *   /examples/                  HTML specimens prontos
  *
  * Run: bun run build:kit
@@ -87,13 +87,20 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 │   ├── tokens.json          ← machine-readable
 │   ├── tokens.css           ← CSS variables
 │   └── style.css            ← CSS completo da library (quando lib foi buildada)
-├── logos/                   ← assets de marca PNG
+├── logos/                   ← logo oficial em vetor (use estes) + PNGs legados
+│   ├── lockup-navy.svg      ← logo completo · fundo claro
+│   ├── lockup-white.svg     ← logo completo · fundo escuro
+│   ├── monogram-navy.svg    ← só o monograma (favicon, canto de slide)
+│   ├── monogram-white.svg
+│   ├── lockup-navy.png      ← só pra E-MAIL (720px · o Gmail não renderiza SVG)
+│   ├── lockup-white.png
+│   ├── leaders-ai-conference-logo.png       ← Leaders AI · fundo escuro
+│   ├── leaders-ai-conference-logo-navy.png  ← Leaders AI · fundo claro
 │   ├── monogram-navy.png
 │   ├── monogram-white.png
 │   ├── wordmark-navy.png
 │   ├── wordmark-white.png
 │   ├── app-icon.png
-│   ├── leaders-ai-conference.png
 │   └── ...
 ├── fonts/                   ← Geist self-hosted (OFL/MIT)
 │   ├── fonts.css            ← @font-face pronto · @import e usa
@@ -110,10 +117,10 @@ ln -s viver-de-ia-ds/plugins/viver-de-ia ~/.claude/plugins/
 1. **Paleta restrita** · branco · cinza · navy · preto · coral só destrutivo · sem gold/amarelo
 2. **Pill canônica** · 11px · 500 · letter-spacing -0.004em · nowrap · sem dot · sem caps lock
 3. **Geist single family** · ZERO itálico (\`<em>\` reto · ênfase = peso + cor) · letterspacing negativo em corpo
-4. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA · nunca invente preço nem nº de alunos (pergunte ou use \`R$ [valor]\` / \`[N] alunos\`)
+4. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA · nunca invente preço, nº de alunos/vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local (pergunte ou use \`R$ [valor]\` / \`[N] alunos\` / \`[condições da garantia]\` / \`[prazo de devolução]\` / \`[data]\` / \`[local]\`)
 5. **Sparkles banido** · usar Compass · Award · Crown · Layers · MessageCircle
 6. **Light-first** · fundo claro (branco/off-white) é o padrão de tudo · navy é cor da marca, não do fundo
-7. **Logo = lockup** · monograma + wordmark SEMPRE juntos (\`logos/\`, nunca redesenhar nem usar o wordmark solto) · monograma sozinho só em espaço mínimo (favicon, app/profile icon, canto de slide) · versão navy sobre claro, branca só sobre navy
+7. **Logo = lockup** · monograma + wordmark SEMPRE juntos (\`logos/lockup-*.svg\` em vetor, nunca redesenhar nem usar o wordmark solto) · monograma sozinho só em espaço mínimo (favicon, app/profile icon, canto de slide) · versão navy sobre claro, branca só sobre navy · e-mail usa \`logos/lockup-navy.png\` (o Gmail não renderiza SVG)
 
 ## Reference site canônico
 
@@ -157,6 +164,13 @@ console.log(`  wrote tokens/ (${tokens.length} tokens · ${existsSync(styleCss) 
 // ---------- 3. Logos ----------
 const logoSrc = resolve(root, 'src/assets/logos');
 const logoMap = {
+  'lockup-navy.svg': 'lockup-navy.svg',
+  'lockup-navy.png': 'lockup-navy.png',
+  'lockup-white.png': 'lockup-white.png',
+  'leaders-ai-conference-logo-navy.png': 'leaders-ai-conference-logo-navy.png',
+  'lockup-white.svg': 'lockup-white.svg',
+  'monogram-navy.svg': 'monogram-navy.svg',
+  'monogram-white.svg': 'monogram-white.svg',
   'VIA_monogram_hq.png': 'monogram-navy.png',
   'VIA_monogram_hq_white.png': 'monogram-white.png',
   'VIVER_DE_IA_black.png': 'wordmark-navy.png',
@@ -165,7 +179,7 @@ const logoMap = {
   'VIA_app_icon_white.png': 'app-icon-white.png',
   'icon_black.png': 'favicon-black.png',
   'icon_white.png': 'favicon-white.png',
-  'leaders-ai-conference-logo.png': 'leaders-ai-conference.png',
+  'leaders-ai-conference-logo.png': 'leaders-ai-conference-logo.png',
   'VIA_black.png': 'mark-black.png',
   'VIA_white.png': 'mark-white.png',
 };
@@ -237,7 +251,7 @@ if (existsSync(lovablePath)) {
 
 Este projeto segue o **Viver de IA Design System**. Aplique as regras abaixo em TUDO que gerar aqui (UI, email, copy, assets) — sem precisar perguntar.
 
-Setup obrigatório do projeto (se ainda não existir): crie \`src/styles/via-tokens.css\` com o conteúdo de \`tokens/tokens.css\` deste kit e importe no entrypoint; carregue as fontes Geist + Geist Mono (Google Fonts). Logos oficiais em \`logos/\` — nunca recriar. Referência visual viva: https://viver-de-ia-ds.vercel.app
+Setup obrigatório do projeto (se ainda não existir): crie \`src/styles/via-tokens.css\` com o conteúdo de \`tokens/tokens.css\` deste kit e importe no entrypoint; carregue as fontes Geist + Geist Mono (Google Fonts). Logos oficiais em vetor em \`logos/\` (\`lockup-navy.svg\`, \`lockup-white.svg\`, \`monogram-*.svg\`) — nunca recriar · em e-mail use \`lockup-navy.png\` (o Gmail não renderiza SVG). Nunca invente preço, nº de alunos/vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento — use placeholder (\`R$ [valor]\`, \`[N] vagas\`, \`[condições da garantia]\`, \`[prazo de devolução]\`, \`[data]\`, \`[local]\`) ou pergunte. Referência visual viva: https://viver-de-ia-ds.vercel.app
 
 ${body}`);
 }
@@ -265,7 +279,7 @@ const examples = {
   body { margin:0; background:#F0F2F5; font-family:'Geist',system-ui,sans-serif; padding:24px; }
   .email { max-width:600px; margin:0 auto; background:#fff; border:0.5px solid rgba(10,31,59,0.08); border-radius:12px; overflow:hidden; }
   .hdr { padding:22px 32px; border-bottom:0.5px solid rgba(10,31,59,0.08); }
-  .hdr img { width:100px; }
+  .hdr img { height:18px; width:auto; }
   .body { padding:28px 32px; font-size:15px; line-height:1.65; color:#344054; }
   .body strong { color:#0A1F3B; font-weight:500; }
   .cta { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; background:linear-gradient(180deg,#0A1F3B,#02162A); color:#fff; border-radius:999px; text-decoration:none; font-weight:500; margin:14px 0; }
@@ -276,7 +290,7 @@ const examples = {
 <body>
   <article class="email">
     <header class="hdr">
-      <img src="../logos/wordmark-navy.png" alt="Viver de IA" />
+      <img src="../logos/lockup-navy.png" alt="Viver de IA" />
     </header>
     <div class="body">
       <p>Oi <strong>{aluno_first_name}</strong>,</p>
@@ -284,7 +298,7 @@ const examples = {
       <ol>
         <li><strong>Acessa a plataforma</strong> app.viverdeia.ai · login com esse email</li>
         <li><strong>Assiste o intro de 12min</strong> · contextualiza o método</li>
-        <li><strong>Marca a primeira mentoria 1:1</strong> · 30min pra alinhar caso real teu</li>
+        <li><strong>Marca a primeira mentoria 1:1</strong> · 30min pra alinhar seu caso real</li>
       </ol>
       <p>não tem prazo apertado nem nada · só ajuda a chegar na semana 1 com contexto.</p>
       <a class="cta" href="#">Acessar a plataforma</a>
@@ -304,11 +318,11 @@ const examples = {
 <style>
   body { margin:0; background:#F0F2F5; padding:24px; display:flex; justify-content:center; }
   .post { width:480px; aspect-ratio:1/1; background:radial-gradient(ellipse 80% 60% at 0% 0%,rgba(10,31,59,0.06),transparent 60%),linear-gradient(180deg,#FFFFFF,#F5F7FA); padding:48px; color:#0A1F3B; display:flex; flex-direction:column; justify-content:center; position:relative; border-radius:12px; overflow:hidden; font-family:'Geist',sans-serif; }
-  .eyebrow { font-size:13px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#4F596B; margin-bottom:22px; }
+  .eyebrow { font-family:'Geist Mono',monospace; font-size:13px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#4F596B; margin-bottom:22px; }
   h2 { font-size:72px; font-weight:500; line-height:1.02; letter-spacing:-0.025em; margin:0 0 14px; }
   em { font-style:normal; font-weight:400; color:#5E6B82; }
   p { font-size:14px; color:#4F596B; margin:0; max-width:320px; line-height:1.5; }
-  img { position:absolute; bottom:30px; left:48px; width:38px; opacity:0.7; }
+  img { position:absolute; bottom:30px; left:48px; height:16px; width:auto; }
 </style>
 </head>
 <body>
@@ -316,7 +330,7 @@ const examples = {
     <span class="eyebrow">turma 2026.2 · 45 dias dentro</span>
     <h2>+<em>11.920</em><br />conversas/mês.</h2>
     <p>operação real · auditada · método codificado em 18 aulas</p>
-    <img src="../logos/monogram-navy.png" alt="" />
+    <img src="../logos/lockup-navy.svg" alt="Viver de IA" />
   </div>
 </body>
 </html>`,
@@ -328,12 +342,12 @@ const examples = {
 <title>Landing evergreen · Viver de IA</title>
 <style>
   body { margin:0; background:#fff; font-family:'Geist',system-ui,sans-serif; color:#344054; }
-  .hero { padding:80px 40px; background:linear-gradient(135deg,#0A1F3B,#02162A); color:#fff; text-align:center; }
-  .eyebrow { font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.65); margin-bottom:20px; }
+  .hero { padding:80px 40px; background:radial-gradient(ellipse 80% 60% at 15% 0%,rgba(10,31,59,0.06),transparent 60%),linear-gradient(180deg,#FFFFFF,#F7F8FA); color:#0A1F3B; text-align:center; }
+  .eyebrow { font-family:'Geist Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#5F6981; margin-bottom:20px; }
   h1 { font-size:60px; font-weight:500; line-height:1.05; letter-spacing:-0.025em; margin:0 0 16px; }
-  h1 em { font-style:normal; font-weight:400; color:rgba(255,255,255,0.75); }
-  .lede { font-size:18px; color:rgba(255,255,255,0.7); max-width:600px; margin:0 auto 32px; line-height:1.55; }
-  .cta { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; background:#fff; color:#0A1F3B; border-radius:999px; text-decoration:none; font-weight:500; }
+  h1 em { font-style:normal; font-weight:400; color:#5E6B82; }
+  .lede { font-size:18px; color:#4F596B; max-width:600px; margin:0 auto 32px; line-height:1.55; }
+  .cta { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; background:#0A1F3B; background-image:linear-gradient(180deg,#0A1F3B,#02162A); color:#fff; border-radius:999px; text-decoration:none; font-weight:500; }
   .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding:48px 40px; background:#F7F8FA; max-width:1200px; margin:0 auto; }
   .stat strong { display:block; font-size:32px; font-weight:500; color:#0A1F3B; font-family:'Geist Mono',monospace; }
   .stat em { display:block; font-style:normal; font-size:12px; color:#6B7891; margin-top:4px; }

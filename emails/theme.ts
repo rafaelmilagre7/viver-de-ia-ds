@@ -59,8 +59,7 @@ export const s = {
 
   /* marca · lockup monograma + wordmark · discreto (letterhead) */
   brandRow: { padding: '24px 4px 14px' } as React.CSSProperties,
-  brandMono: { display: 'block', border: 0 } as React.CSSProperties,
-  brandWord: { display: 'block', border: 0 } as React.CSSProperties,
+  brandLockup: { display: 'block', border: 0 } as React.CSSProperties,
 
   /* card · padding 0; o hero e o corpo trazem o respiro */
   card: {

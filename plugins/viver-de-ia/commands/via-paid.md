@@ -28,7 +28,8 @@ O usuário descreveu plataforma + formato em `$ARGUMENTS`. Identifica:
 |---|---|
 | Headline | 1 linha · ≤40 chars · afirmação NÃO pergunta |
 | Body / primary text | Hook + razão · até 125 chars antes do "Ver mais" |
-| CTA button | Verbal infinitivo · 2-4 palavras |
+| CTA button | Verbal infinitivo · 2-4 palavras · o botão-padrão da plataforma (preset do Meta: "Saiba mais", "Inscreva-se") é escolha de menu, não copy · no criativo e no texto a chamada é verbo concreto ("Ver a turma", "Ver programa", "Confirmar presença") · nunca "saiba mais" nem "Garanta sua vaga" (hype) |
+| Pill/chip na arte | os 11px são pra tela · em 1080px escale ~2× (≈22px de texto, padding proporcional) · fundo em token de superfície, não branco fixo |
 | Image | **Fundo claro** (branco/off-white + atmosfera radial navy suave) · tipografia navy · zero foto literal · sem gold. Navy de fundo só se o usuário pedir ou no card de fechamento do carrossel (regra zero · light-first) |
 
 ## Headlines canônicas (4 categorias)
@@ -42,9 +43,10 @@ O usuário descreveu plataforma + formato em `$ARGUMENTS`. Identifica:
 - "11.920 conversas/mês rodando. Eu te ensino como."
 
 Nunca invente preço nem número de alunos/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N]`.
+Nunca invente garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local de evento · só o que a pessoa informou · senão `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]` ou pergunte.
 
 **Convite direto** (use quando funil bottom):
-- "Turma 2026.3 · 30 vagas · 4 meses"
+- "Turma 2026.3 · [N] vagas · 4 meses"
 - "Próxima turma é em outubro. Ou agora."
 
 **Identificação** (use pra targeting específico):
@@ -69,7 +71,7 @@ Page card: Viver de IA · Patrocinado · 🌐
 Primary text: hook editorial + razão (até 125 chars)
 Image: 1080×1080 fundo claro + atmosfera radial navy suave + lockup navy no canto + headline editorial navy
 Footer: VIVERDEIA.AI · "Ver programa" · sub-headline
-CTA button: "Saiba mais"
+CTA button: preset do Meta ("Saiba mais" / "Inscreva-se") · é o botão da plataforma, a chamada do criativo continua verbo concreto
 ```
 
 ### Meta carousel 5 cards
@@ -77,7 +79,7 @@ CTA button: "Saiba mais"
 Card 1: HOOK (número grande · ex: +[N] operadores)
 Card 2: contexto (90 dias até produção)
 Card 3: contexto (4 meses · mentoria 1:1)
-Card 4: resultado (R$ 1,8M destravado)
+Card 4: resultado (R$ [valor] destravado · só com número fornecido)
 Card 5: CTA (Ver programa · próxima turma) · único card que pode ter fundo navy (respiro canônico)
 ```
 

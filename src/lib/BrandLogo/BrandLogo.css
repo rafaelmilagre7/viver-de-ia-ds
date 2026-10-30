@@ -1,0 +1,10 @@
+/* BrandLogo · tinta oficial do logo = #010F1D (arquivo original do designer) */
+.via-brand-logo {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.via-brand-logo--black,
+.via-brand-logo--auto { color: #010F1D; }
+.via-brand-logo--white,
+[data-theme="dark"] .via-brand-logo--auto { color: var(--via-white); }

@@ -62,6 +62,7 @@ const ApiAccordion = lazy(() => import('./pages/api/ApiAccordion'));
 const ApiBreadcrumb = lazy(() => import('./pages/api/ApiBreadcrumb'));
 const ApiPagination = lazy(() => import('./pages/api/ApiPagination'));
 const ApiSpinner = lazy(() => import('./pages/api/ApiSpinner'));
+const ApiBrandLogo = lazy(() => import('./pages/api/ApiBrandLogo'));
 const ApiSkeleton = lazy(() => import('./pages/api/ApiSkeleton'));
 const ApiEmptyState = lazy(() => import('./pages/api/ApiEmptyState'));
 const ApiIcon = lazy(() => import('./pages/api/ApiIcon'));
@@ -259,6 +260,7 @@ export default function App() {
                   <Route path="breadcrumb" element={<ApiBreadcrumb />} />
                   <Route path="pagination" element={<ApiPagination />} />
                   <Route path="spinner" element={<ApiSpinner />} />
+                  <Route path="brand-logo" element={<ApiBrandLogo />} />
                   <Route path="skeleton" element={<ApiSkeleton />} />
                   <Route path="empty-state" element={<ApiEmptyState />} />
                   <Route path="icon" element={<ApiIcon />} />

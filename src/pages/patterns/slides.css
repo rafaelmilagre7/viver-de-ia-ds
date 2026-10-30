@@ -126,10 +126,9 @@
   color: var(--via-text-muted);
 }
 
-/* BrandLogo (closing) usa height inline em px → trava a escala do
-   header em slides estreitos; o !important scoped devolve o cqi */
-.vds-slide .vds-brand-mono { height: 4.29cqi !important; }
-.vds-slide .vds-brand-wordmark { height: 3.86cqi !important; }
+/* BrandLogo (closing) usa height em px → trava a escala em slides estreitos;
+   o !important scoped devolve o cqi (lockup do livro: altura = monograma) */
+.vds-slide .via-brand-logo { height: 4.29cqi !important; width: auto !important; }
 
 .vds-slide-mark {
   width: 7.73cqi;

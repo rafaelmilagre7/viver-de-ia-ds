@@ -13,8 +13,10 @@ A voz da Viver de IA é a de um operador experiente compartilhando o que funcion
 - **Transformação maior que ferramenta.** Toda história é sobre o que o operador consegue depois — receita, margem, autonomia. A stack é meio, nunca fim.
 - **Toda afirmação carrega número ou citação.** "+11.920 conversas", "R$ [valor]/mês", "100% automatizado". Sem isso é blog, não é cases.
 - **Nunca invente preço nem número de alunos/operadores/vagas.** Pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`.
+- **Nunca invente termo comercial** — garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data ou local de evento. Só vale o que a pessoa informou; senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`.
 - **Pontos finais, não exclamações.** Confiante sem ser estridente.
 - **Brasilidade quente, sem clichê.** PT-BR direto, "você" infinitivo, nunca "o senhor". Sem emoji, sem unicode decorativo.
+- **Tratamento.** Interface/microcopy fala "você" no imperativo (confira, tente). Email e social podem usar o imperativo coloquial (responde, marca, faz). Nunca tu/teu/tua/contigo.
 
 ### Quatro tons em que escrever
 
@@ -69,6 +71,8 @@ Curtas, primeira pessoa, sempre atribuídas. Mantenha a oralidade. **Sem italic*
 | Navegação | Ver cases | Clique aqui |
 | Confirmação | Confirmar inscrição | OK / Sim |
 
+Exceção: o botão-padrão da plataforma de anúncio (preset do Meta: "Saiba mais", "Inscreva-se") não é copy nossa. No criativo e no texto do anúncio, a chamada é sempre verbo concreto.
+
 ---
 
 ## 3. Do's & Don'ts — design system
@@ -90,12 +94,12 @@ Checklist obrigatório antes de marcar tela como pronta.
 
 ### Tipografia — Geist single family
 
-✅ Geist (variable 100-900) pra display + UI + corpo · Geist Mono pra código/tokens/timestamps · ênfase em palavra = peso reduzido (400 vs 500/600) + cor `text-soft`, NÃO inclinação · letterspacing `-0.005em` a `-0.04em` em texto · uppercase chips/eyebrows entre 0.16-0.2em
-❌ Italic (Geist não tem italic real) · Inter/Fraunces (legados removidos) · mistura de famílias · letterspacing positivo em corpo · uppercase em texto corrente · `letter-spacing: 0.22em+`
+✅ Geist (variable 100-900) pra display + UI + corpo · Geist Mono pra código/tokens/timestamps · ênfase em palavra = peso reduzido (400 vs 500/600) + cor `text-soft`, NÃO inclinação · letterspacing `-0.005em` a `-0.04em` em texto · eyebrows uppercase mono com `--via-ls-label` (0.18em) · pill/chip nunca uppercase
+❌ Italic (Geist não tem italic real) · Inter/Fraunces (legados removidos) · mistura de famílias · letterspacing positivo em corpo · uppercase em texto corrente · `letter-spacing` acima de `--via-ls-mark` (0.22em)
 
 ### Buttons & CTAs
 
-✅ Pill 999 · sentence-case 13-14px peso 500 · gradient navy → navy-deep + inset highlight `0 1px 0 rgba(255,255,255,0.15) inset` + shadow `0 8px 18px -6px rgba(10,31,59,0.4)` + lift `translateY(-1px)` no hover
+✅ Pill 999 · sentence-case 13-14px peso 500 · gradient navy → navy-deep + inset highlight `0 1px 0 rgba(255,255,255,0.15) inset` + shadow `0 8px 18px -6px var(--via-shadow-ink-40)` + lift `translateY(-1px)` no hover
 ❌ `letter-spacing: 0.10em + text-transform: uppercase` (caps lock alérgico de framework) · botões quadrados · cor de semáforo no primary · verbos genéricos ("Clique aqui")
 
 ### Surfaces — glass + atmospheric
@@ -111,12 +115,12 @@ Checklist obrigatório antes de marcar tela como pronta.
 ### Iconografia
 
 ✅ Lucide stroke 2-2.4px, currentColor, tamanho proporcional · ícone em chip glass quando relevante
-❌ **SPARKLES BANIDO** em toda identidade VIA (`Sparkles`, ✨) — cliché de IA desde 2023. Substituir contextualmente: Compass, Award, Crown, MessageCircle, Rocket, Layers, etc. · brand icons removidos do lucide-react (Linkedin, Twitter) — usar Link2, AtSign, Globe genéricos · emoji ★ ✓ → como ícone · outlined + filled juntos
+❌ **SPARKLES BANIDO** em toda identidade VIA (`Sparkles`, ✨) — cliché de IA desde 2023. Substituir contextualmente: Compass, Award, Crown, MessageCircle, Layers, etc. (Rocket também é clichê de "launch" — use ArrowRight, Calendar, Target) · brand icons removidos do lucide-react (Linkedin, Twitter) — usar Link2, AtSign, Globe genéricos · emoji ★ ✓ → como ícone · outlined + filled juntos
 
 ### Hover signatures (assinatura comportamental do DS)
 
-✅ **Bar lateral 2-3px** fade navy aparecendo à esquerda do item em hover (rows, cards, lessons, articles, audit log, billing, member list) · lift `translateY(-1px/-2px/-3px)` em cards interativos · gap animation em text links com chevron · underline animation 50%→0% em tabs (abre do meio)
-❌ Spring bouncy · parallax · partículas · ripple · autoplay infinito · zoom-em-hover gritante
+✅ **O elemento sobe e a luz aumenta** em hover (rows, cards, lessons, articles, audit log, billing, member list): lift `translateY(-1px/-2px/-3px)` + sombra/luz mais presente (`var(--via-glass-shadow-lift)`, atmosfera `::before` de 0.6 → 1) · `:active` com `scale(0.97)` no apertar · gap animation em text links com chevron · underline animation 50%→0% em tabs (abre do meio)
+❌ **Barra lateral em hover** (banida nos 3 mecanismos: `border-left` colorido, `::before` fino à esquerda, `box-shadow inset` horizontal) · spring bouncy · parallax · partículas · ripple · autoplay infinito · zoom-em-hover gritante
 
 ### Fotografia
 
@@ -130,8 +134,8 @@ Checklist obrigatório antes de marcar tela como pronta.
 
 ### Sombras
 
-✅ Navy-tinted sempre (`rgba(10,31,59,...)`) · inner highlight `0 1px 0 rgba(255,255,255,...) inset` + outer drop
-❌ Preto puro · sombra material-design pesada
+✅ Tinta de sombra sempre: `var(--via-shadow-ink-03..60)` (navy no claro, preto no escuro) ou as pilhas prontas `var(--via-glass-shadow)` / `var(--via-glass-shadow-lift)` · inner highlight `0 1px 0 var(--via-edge-hi) inset` + outer drop
+❌ Preto puro ou `rgba(10,31,59,…)` / `--via-navy-XX` escritos à mão em `box-shadow` (no dark viram halo) · sombra material-design pesada
 
 ---
 
@@ -163,11 +167,11 @@ Reference: `/Users/rafaelmilagre/viver-de-ia-ds` (`bun dev` → :5173)
 
 ```css
 --via-navy: #0A1F3B;
---via-navy-deep: #082341;
+--via-navy-deep: #02162A;
 --via-text: #1A2B47;
 --via-text-soft: #5E6B82;
 --via-border: rgba(10, 31, 59, 0.18);
---via-border-soft: rgba(10, 31, 59, 0.08);
+--via-border-soft: rgba(10, 31, 59, 0.05);
 
 /* Acento = navy intensificado · NÃO existe gold nem 3ª cor */
 --via-accent: var(--via-navy);
@@ -181,9 +185,9 @@ Reference: `/Users/rafaelmilagre/viver-de-ia-ds` (`bun dev` → :5173)
 ```
 
 ### Borda de card/superfície — evita o card "sumindo no fundo claro"
-- Card / painel / menu flutuante em **fundo CLARO** → borda externa **`1px solid var(--via-border-soft)`** (hairline navy 0.08, visível). **NUNCA** use `var(--via-edge-hi)` como borda externa no claro: ela é branca (~`rgba(255,255,255,.95)`) e some no off-white — o card fica sem contorno, "flutuando no leite".
+- Card / painel / menu flutuante em **fundo CLARO** → borda externa **`1px solid var(--via-border-soft)`** (hairline navy 0.05, visível). **NUNCA** use `var(--via-edge-hi)` como borda externa no claro: ela é branca (~`rgba(255,255,255,.95)`) e some no off-white — o card fica sem contorno, "flutuando no leite".
 - `var(--via-edge-hi)` é só pro **brilho interno do topo** (`box-shadow: inset 0 1px 0 var(--via-edge-hi)` — o sheen do liquid glass) e pra **borda externa de card sobre fundo NAVY/escuro** (aí a borda clara é o contorno de vidro correto).
-- Receita do card de vidro claro: `background: var(--via-glass-card)` + `border: 1px solid var(--via-border-soft)` + `box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 12px 32px var(--via-navy-08), 0 2px 8px var(--via-navy-04)`.
+- Receita do card de vidro claro: `background: var(--via-glass-card)` + `border: 1px solid var(--via-border-soft)` + `box-shadow: var(--via-glass-shadow)` (hover/elevado: `var(--via-glass-shadow-lift)`) — nunca `--via-navy-XX` escrito à mão dentro de `box-shadow`.
 ### Cantos (border-radius) — escala generosa, SEMPRE token
 Nunca px cru. Cada degrau é perceptivelmente diferente do vizinho (nada de 14 vs 16 vs 18, que só tira o ritmo):
 ```css

@@ -6,6 +6,14 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### IA criando na marca (30/out · plugin 1.8.0)
+
+- **Logo oficial em vetor**: o lockup e o monograma foram extraídos do arquivo original do designer (BrandBook, dez/2025 — formas vetoriais da capa) e viram `lockup-navy.svg`, `lockup-white.svg`, `monogram-navy.svg`, `monogram-white.svg` (+ `lockup-*.png` 720px pra email, que não renderiza SVG). Ficam em `public/logos/` (servidos em `viver-de-ia-ds.vercel.app/logos/…`), na skill e no kit. Tinta oficial do logo = `#010F1D` (a do arquivo do designer).
+- **`BrandLogo` na library** (SVG inline, `variant` black/white/auto, `size`, `monoOnly`): a skill mandava usar `<BrandLogo>` mas ele não era exportado. Página `/api/brand-logo`.
+- **Logo do site na proporção do livro**: o cabeçalho montava monograma + wordmark em PNG com o wordmark grande demais (0,79 da altura do monograma; no livro é 0,43). Agora usa o lockup oficial; no mobile segue só o monograma.
+- **Leaders AI em fundo claro**: versão escura da marca (`leaders-ai-conference-logo-navy.png`) — antes só existia branca e as IAs criavam faixa navy só pra segurar o logo.
+- **Prova real com IAs** (Claude com o plugin × outra IA só com o kit, 5 peças: post, anúncio, email, landing, deck): as peças saíram claras, com lockup e "você", mas as IAs **inventaram termos de garantia e devolução** (a landing pedia as perguntas sem dar as respostas) e apontaram 14 contradições. Corrigido: "nunca invente" passa a cobrir garantia, devolução, contrato, pagamento, política, data e local (com placeholders); `/via-social` sem fundo navy nem wordmark solto e com 1080×1350; capa social com lockup; monograma do deck unificado (24px a 1920, opacidade .5); itálico e barra lateral que ainda eram ensinados em `/via`, `/via-landing`, `guidelines` e `/via-check`; sombra pelos tokens; eyebrow em `--via-ls-label` (0,18em, o que o site usa); botão preset da Meta × chamada do criativo; "30 vagas"/"R$ 1,8M" viram placeholder; email usa o lockup PNG; estrutura de deck de palestra; pill escalada em arte grande; tratamento "você" (interface no imperativo de você, email/social podem usar o coloquial). `em { font-style: normal }` agora vem no `tokens.css` (antes só no site).
+
 ### Corrigido (28/out · auditoria do DS · plugin 1.7.0)
 
 - **Camada única de sobreposição na lib** (`_shared/overlay.ts` + `Portal`): os 14 overlays/popups (Modal, Drawer, Sheet, Lightbox, Command, Select, MultiSelect, Combobox, DropdownMenu, ContextMenu, Popover, HoverCard, Tooltip, DatePicker/DateRangePicker) vão pra um portal no `body` — Select dentro de Card/Modal não corta mais; pilha de Esc (só o de cima fecha); trava de scroll com contagem que devolve o `overflow` anterior; foco volta pro gatilho; popup fecha ao perder o foco. z-index vira escala `--via-z-*` (196 → 203 tokens).

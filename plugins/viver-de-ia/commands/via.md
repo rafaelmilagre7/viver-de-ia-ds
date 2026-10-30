@@ -27,10 +27,11 @@ Se a categoria não bate em nenhuma, gere direto seguindo os princípios canôni
 1. **Paleta restrita** · branco · cinza · navy · preto · coral só destrutivo · success só presence
 2. **Sem gold, amarelo, amber, roxo, cyan, magenta, neon, gradient quente**
 3. **Pill canônica** · 11px · peso 500 · letter-spacing -0.004em · nowrap · sem dot · sem caps lock
-4. **Tipografia Geist** single family · italic em ênfase
+4. **Tipografia Geist** single family · zero itálico (`<em>` reto · ênfase = peso + cor)
 5. **Voz editorial** · operador-experiente · número ou citação · sem clichê IA · sem emoji decorativo
 6. **Sparkles banido** · usar Compass · Award · Crown · Layers · MessageCircle
-7. **Logo correta por contexto** · monogram pequeno, wordmark grande, app icon em profile, leaders AI mark em material de evento
+7. **Logo correta por contexto** · lockup (monograma + wordmark juntos) por padrão · monograma sozinho só em espaço mínimo · nunca wordmark solto · app icon em profile · Leaders AI mark em material de evento (arquivo branco no fundo escuro, navy no fundo claro)
+8. **Nunca invente** preço, vagas, garantia, prazo de devolução, termos de contrato, condição de pagamento, política, data ou local · placeholder (`R$ [valor]`, `[N] vagas`, `[condições da garantia]`, `[prazo de devolução]`, `[data]`, `[local]`) ou pergunte
 
 ## Reference site canônico
 

@@ -965,13 +965,13 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-glass-shadow",
     "css": "--via-glass-shadow",
-    "value": "inset 0 1px 0 var(--via-edge-hi),\n    0 12px 32px -14px var(--via-navy-14),\n    0 2px 8px -4px var(--via-navy-06)",
+    "value": "inset 0 1px 0 var(--via-edge-hi),\n    0 12px 32px -14px var(--via-shadow-ink-14),\n    0 2px 8px -4px var(--via-shadow-ink-06)",
     "category": "shadow"
   },
   {
     "name": "via-glass-shadow-lift",
     "css": "--via-glass-shadow-lift",
-    "value": "inset 0 1px 0 var(--via-edge-hi),\n    0 24px 56px -20px var(--via-navy-20),\n    0 4px 12px -6px var(--via-navy-08)",
+    "value": "inset 0 1px 0 var(--via-edge-hi),\n    0 24px 56px -20px var(--via-shadow-ink-20),\n    0 4px 12px -6px var(--via-shadow-ink-08)",
     "category": "shadow"
   },
   {
@@ -1002,6 +1002,12 @@ export const tokensList: readonly Token[] = [
     "name": "via-shadow-ink-06",
     "css": "--via-shadow-ink-06",
     "value": "rgba(10, 31, 59, 0.06)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-shadow-ink-08",
+    "css": "--via-shadow-ink-08",
+    "value": "rgba(10, 31, 59, 0.08)",
     "category": "shadow"
   },
   {
@@ -1412,6 +1418,7 @@ export type TokenName =
   | 'via-shadow-glass-light'
   | 'via-shadow-ink-03'
   | 'via-shadow-ink-06'
+  | 'via-shadow-ink-08'
   | 'via-shadow-ink-10'
   | 'via-shadow-ink-14'
   | 'via-shadow-ink-20'

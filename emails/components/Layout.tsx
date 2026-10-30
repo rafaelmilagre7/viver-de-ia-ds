@@ -34,19 +34,13 @@ export function Layout({ preview, hero, reason, children }: LayoutProps) {
         <Container style={s.container}>
           {/* marca · lockup monograma + wordmark (logo correta) */}
           <Section style={s.brandRow}>
+            {/* lockup oficial num PNG só (proporção do livro de marca · Gmail não renderiza SVG) */}
             <Img
-              src={asset('/logos/monogram-navy.png')}
-              width="33"
-              height="18"
+              src={asset('/logos/lockup-navy.png')}
+              width="190"
+              height="24"
               alt="Viver de IA"
-              style={{ ...s.brandMono, display: 'inline-block', verticalAlign: 'middle', marginRight: '10px' }}
-            />
-            <Img
-              src={asset('/logos/wordmark-navy.png')}
-              width="168"
-              height="14"
-              alt=""
-              style={{ ...s.brandWord, display: 'inline-block', verticalAlign: 'middle' }}
+              style={s.brandLockup}
             />
           </Section>
 

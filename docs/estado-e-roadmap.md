@@ -92,6 +92,33 @@ integrado na branch `rodada-ds-out28`. Detalhe item a item no CHANGELOG `[Não l
   DTCG pra Figma/Canva — precisa dos arquivos originais do designer), E (peças novas: Textarea, Field,
   FileUpload, AlertDialog, Charts, AppShell, DataTable com filtro), F (lib por componente / CSS por componente).
 
+## IA criando na marca (30/out) — logo em vetor + prova real com IAs
+
+Pedido do Rafael: o marketing não desenha à mão; o foco é a IA criar as peças já na marca.
+
+- **Logo oficial em vetor** extraído das formas da capa do BrandBook original (dez/2025, 144 MB, no Mac do
+  Rafael em `Documents/DESIGN - Viver de IA/`): `lockup-*.svg`, `monogram-*.svg`, `lockup-*.png` (email).
+  `BrandLogo` agora é exportado pela lib; site e emails usam o lockup na proporção do livro (antes o
+  wordmark saía ~80% da altura do monograma; no livro é ~43%). Leaders AI ganhou versão navy (fundo claro).
+  Leaders AI em vetor não existe em lugar nenhum acessível — Rafael não sabe se tem.
+- **Prova real**: 2 IAs (Claude com o plugin × IA só com o kit) fizeram post, anúncio, email, landing e deck.
+  Rodada 1: peças claras, lockup e "você" OK, mas **as duas inventaram garantia/devolução** e reportaram 14
+  contradições nas instruções. Corrigido (CHANGELOG 30/out). Rodada 2 (post, anúncio, email, landing):
+  garantia/devolução/data/local viram placeholder; anúncio do Leaders AI claro com a marca navy, sem faixa.
+  Arquivos e prints da prova: scratchpad da sessão (não versionados).
+- **Defeito do DS achado no caminho**: `--via-glass-shadow(-lift)` e o hover do `.via-pill-link` usavam
+  `--via-navy-XX` dentro de `box-shadow` → halo branco no escuro (a regra que a skill proíbe). Agora
+  `--via-shadow-ink-*` (+ novo `--via-shadow-ink-08`); no claro o valor é idêntico.
+
+**Perguntas de negócio em aberto (Rafael):**
+- "11.920" aparece como "conversas/mês rodando via Nina" (via-paid, via-landing, via-deck, via-brand, kit)
+  e como "Efizi: +11.920 conversas analisadas em 90 dias" (guidelines) — qual é o fato?
+- Política real de garantia e devolução (o `/via-deck` tinha "60 dias devolução" — virou placeholder).
+- Os fatos de produto usados nas peças (mentoria de 4 meses, 90 dias até o 1º agente, mentoria 1:1,
+  18 aulas) estão certos?
+- Templates de email de produção ainda têm "40 vagas · 12 abertas" e CTA "Garantir minha vaga"
+  (dado de exemplo) — não mexido, porque é o texto que sai pros alunos.
+
 ## Achados em aberto
 
 ### P0 · colocar no ar

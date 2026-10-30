@@ -239,6 +239,7 @@
      não produz sombra nenhuma, e token que inverte vira halo branco. */
   --via-shadow-ink-03: rgba(0, 0, 0, 0.18);
   --via-shadow-ink-06: rgba(0, 0, 0, 0.26);
+  --via-shadow-ink-08: rgba(0, 0, 0, 0.30);
   --via-shadow-ink-10: rgba(0, 0, 0, 0.34);
   --via-shadow-ink-14: rgba(0, 0, 0, 0.40);
   --via-shadow-ink-20: rgba(0, 0, 0, 0.46);
@@ -414,6 +415,7 @@
      luz no topo do vidro. Ali o branco é o efeito desejado. */
   --via-shadow-ink-03: rgba(10, 31, 59, 0.03);
   --via-shadow-ink-06: rgba(10, 31, 59, 0.06);
+  --via-shadow-ink-08: rgba(10, 31, 59, 0.08);
   --via-shadow-ink-10: rgba(10, 31, 59, 0.10);
   --via-shadow-ink-14: rgba(10, 31, 59, 0.14);
   --via-shadow-ink-20: rgba(10, 31, 59, 0.20);
@@ -458,12 +460,12 @@
   --via-glass-ring:      1px solid var(--via-border-soft);
   --via-glass-shadow:
     inset 0 1px 0 var(--via-edge-hi),
-    0 12px 32px -14px var(--via-navy-14),
-    0 2px 8px -4px var(--via-navy-06);
+    0 12px 32px -14px var(--via-shadow-ink-14),
+    0 2px 8px -4px var(--via-shadow-ink-06);
   --via-glass-shadow-lift:
     inset 0 1px 0 var(--via-edge-hi),
-    0 24px 56px -20px var(--via-navy-20),
-    0 4px 12px -6px var(--via-navy-08);
+    0 24px 56px -20px var(--via-shadow-ink-20),
+    0 4px 12px -6px var(--via-shadow-ink-08);
 
   /* ========== BORDERS ========================================= */
   --via-border-fine:   0.5px solid var(--via-border-hairline);
@@ -675,6 +677,7 @@ h4 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-siz
 
 
 p { margin: 0; }
+em { font-style: normal; } /* zero itálico · ênfase = peso + cor (Geist não tem itálico de verdade) */
 a { color: var(--via-navy); text-decoration: none; }
 a:hover { text-decoration: underline; }
 /* link em texto corrido = sublinhado (WCAG 1.4.1 · cor não pode ser o único sinal).

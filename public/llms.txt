@@ -87,7 +87,7 @@ CDN (web com internet):
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet" />
 ```
 
-Self-hosted (offline / sem CDN / PDF / e-mail): o kit traz os `.woff2` (variável 100–900, normal+italic) em `fonts/` + um `fonts/fonts.css` com os `@font-face` prontos. É só `@import './fonts/fonts.css'` ou copiar os 4 woff2 + o CSS. Mesmas famílias (`'Geist'` / `'Geist Mono'`).
+Self-hosted (offline / sem CDN / PDF / e-mail): o kit traz os `.woff2` (variável 100–900, só reto · itálico é banido na marca) em `fonts/` + um `fonts/fonts.css` com os `@font-face` prontos. É só `@import './fonts/fonts.css'` ou copiar os 2 woff2 (`Geist-Variable.woff2`, `GeistMono-Variable.woff2`) + o CSS. Mesmas famílias (`'Geist'` / `'Geist Mono'`).
 
 CSS:
 ```css
@@ -101,7 +101,7 @@ CSS:
 Letterspacing canônico:
 - Corpo: `-0.005em` a `-0.018em` (negativo editorial)
 - Headings: `-0.022em` a `-0.04em`
-- Mono eyebrows small caps: `0.04em` a `0.08em` POSITIVO (essa é a exceção)
+- Eyebrows (rótulo solto, sem pill): uppercase mono com `--via-ls-label` (0.18em) POSITIVO (essa é a exceção)
 
 Pesos canônicos:
 - Body 400-500 (nunca 700 em parágrafo)
@@ -133,6 +133,8 @@ PROIBIDO em pills:
 - Caps lock + letterspacing alto (cliché Bootstrap)
 - Bolinha decorativa (`•` ou span dot) ANTES do texto, exceto se for status real ao vivo (presence online, broadcast live)
 - Cor de semáforo verde/vermelho em pills genéricas tipo "Pago", "Verificado", "Ativa" — essas são NAVY
+
+Canvas grande: os 11px são pra tela. Em arte de 1080px (social/ads) e slide 1920×1080, escale ~2× (≈22px / 24px de texto, padding proporcional). Fundo da pill em token de superfície (`var(--via-glass-card)` / `var(--via-surface)`), não branco fixo, pra funcionar no dark.
 
 Live broadcast (única exceção pra dot + emphasized text):
 ```html
@@ -174,7 +176,7 @@ CTA primário · pílula 999 · navy gradient:
   letter-spacing: -0.004em;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.15),
-    0 8px 18px -6px rgba(10,31,59,0.4);
+    0 8px 18px -6px var(--via-shadow-ink-40);
   text-decoration: none;
   transition: transform 200ms cubic-bezier(.2,.7,.2,1);
 }
@@ -184,6 +186,7 @@ CTA primário · pílula 999 · navy gradient:
 ## 5. Voz editorial · operador-experiente
 
 Tom: operador que opera. PT-BR direto. "você" infinitivo. Produto e email transacional: sempre "você" (nunca tu/teu/tua/contigo).
+Tratamento: interface/microcopy fala "você" no imperativo (confira, tente) · email e social podem usar o imperativo coloquial (responde, marca, faz) · nunca tu/teu/tua/contigo.
 
 Microcopy de produto (erro, tela vazia, confirmação, sucesso, botão, ajuda de campo): use as frases canônicas de `/guidelines/microcopy` quando a situação bater.
 
@@ -200,6 +203,7 @@ NUNCA:
 - "Olá! Esperamos que esteja bem" · "Ficamos à disposição"
 - Exclamação · raríssimo, só em contextos pessoais social
 - Inventar preço ou número de alunos/operadores/vagas · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
+- Inventar termo comercial: garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data ou local de evento · só vale o que a pessoa informou · senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`
 
 Voz muda de registro por contexto (mas mantém esqueleto):
 
@@ -311,7 +315,7 @@ Com os tokens acima o dark se resolve sozinho. Sem acesso aos tokens (HTML solto
 
 **Borda de card = FINA e elegante.** `1px` (ou `0.5px`) solid `var(--via-border-soft)` (navy 0.08) + linha de luz interna (`inset 0 1px 0 rgba(255,255,255,.95)`). NUNCA `1.5–2px solid navy` num card ("caixa desenhada", pesado). Destaque/selecionado = fio fino + **halo navy** (`box-shadow: 0 0 0 3px rgba(10,31,59,0.08)`), não uma borda mais grossa. Borda `2px` só em: anel de avatar/foto (`2px solid #fff`), alça de slider, dot de status.
 
-**Sombra = tinta de sombra, sempre.** Toda sombra usa `var(--via-shadow-ink-03..60)` (navy no claro, preto mais denso no escuro). NUNCA ponha `--via-navy-XX`, `--via-white` ou `rgba(10,31,59,…)` literal dentro de `box-shadow` — no escuro vira halo branco ou some. Exceções que não são sombra: a linha de luz `inset 0 1px 0 var(--via-edge-hi)` e anéis `0 0 0 Npx` de foco.
+**Sombra = tinta de sombra, sempre.** Toda sombra que você escreve usa `var(--via-shadow-ink-03..60)` (navy no claro, preto mais denso no escuro) ou as pilhas prontas `var(--via-glass-shadow)` / `var(--via-glass-shadow-lift)` (receita do vidro, já resolvem os 2 temas). NUNCA ponha `--via-navy-XX`, `--via-white` ou `rgba(10,31,59,…)` literal num `box-shadow` composto à mão — no escuro vira halo branco ou some. Exceções que não são sombra: a linha de luz `inset 0 1px 0 var(--via-edge-hi)` e anéis `0 0 0 Npx` de foco.
 
 **Cantos — escala de raio (pai > filho):** `--via-radius-xs` 6 · `-sm` 10 · `-md` 14 · `-lg` 20 (**card padrão**) · `-xl` 28 · `-2xl` 40 · `-pill` 999. Filho um degrau abaixo do pai (card `lg` → chip interno `md`); encostado na borda, `calc(raio-do-pai - 1px)`. Email usa px cru (cliente de email não resolve `var()`).
 
@@ -384,7 +388,7 @@ Substituições por contexto:
 
 **REGRA INVIOLÁVEL — a logo é SEMPRE o lockup composto: monograma VIA + wordmark "VIVER DE IA" juntos.**
 ❌ **NUNCA** entregue só o wordmark "VIVER DE IA" solto (sem o monograma) — não é a logo da marca, é meio logo.
-❌ **NUNCA** desenhe/recrie o wordmark como texto estilizado. Use os arquivos oficiais (`logos/`, ou o componente `<BrandLogo>` que já renderiza o lockup completo — só varia a cor: `black` | `white` | `auto`).
+❌ **NUNCA** desenhe/recrie o wordmark como texto estilizado. Use os arquivos oficiais em vetor (`lockup-navy.svg` / `lockup-white.svg` / `monogram-navy.svg` / `monogram-white.svg` — em `logos/` do kit ou `https://viver-de-ia-ds.vercel.app/logos/…`), ou o componente `<BrandLogo>` da library (SVG inline nítido · só varia a cor: `black` | `white` | `auto` · `monoOnly` pro monograma). PNG só se a ferramenta não aceitar SVG — **e-mail é sempre PNG** (`lockup-navy.png` / `lockup-white.png`, 720px de largura · o Gmail não renderiza SVG).
 ✅ Monograma **sozinho** é permitido só nos casos de espaço mínimo listados abaixo (favicon, canto de slide, app/profile icon), onde o wordmark não caberia legível.
 
 | Contexto | Logo |
@@ -393,14 +397,14 @@ Substituições por contexto:
 | Shell footer | Lockup (monograma + wordmark) stacked |
 | Tab browser | Favicon 32×32 (monograma) |
 | OG image link preview | **Lockup** navy sobre off-white |
-| Email header | Lockup monograma + wordmark navy · pequeno (~18px alt · letterhead) |
+| Email header | `lockup-navy.png` (monograma + wordmark · PNG porque o Gmail não renderiza SVG) · pequeno (~18px alt · letterhead) |
 | WhatsApp profile pic | App icon (não monogram) |
-| Slide deck capa | **Lockup** white sobre mesh-navy |
-| Slide deck interior | Monogram white 16px canto inferior direito |
+| Slide deck capa | **Lockup** navy sobre fundo claro · lockup white sobre navy só a pedido ou no encerramento |
+| Slide deck interior | Monograma 24px em slide 1920×1080 (≈1,25% da largura) · opacidade 0.5 · canto inferior direito · navy no fundo claro, white no escuro |
 | Avatar mentor | Iniciais do mentor, NÃO monogram VIA |
 | Social profile pic | App icon (não monogram) |
-| Social post cover | Monogram white canto · não centralizado massivo |
-| Material Leaders AI Conference | Sub-brand `leaders-ai-conference-logo` no lugar do monogram VIA |
+| Social post cover | **Lockup** pequeno no canto/rodapé · navy sobre fundo claro (white só sobre navy) · não centralizado massivo |
+| Material Leaders AI Conference | Sub-brand Leaders AI no lugar do monogram VIA · `leaders-ai-conference-logo-navy.png` sobre fundo claro · `leaders-ai-conference-logo.png` (branco) sobre fundo escuro · sem faixa navy só pra segurar a logo |
 
 Clear space: monogram = X/2 · wordmark = 1X.
 Tamanho mínimo: monogram 16px · wordmark 96px.
@@ -415,7 +419,7 @@ Email ≠ web. Clientes (Gmail, Outlook, Apple Mail) descartam CSS moderno. Regr
 - **PROIBIDO** em email: flex, grid, `backdrop-filter` (vidro real), `position`, variáveis CSS, media query como dependência.
 - **CTA navy SÓLIDO** (`background-color: #0A1F3B`). Degradê puro de fundo **some no Outlook** → botão invisível.
 - **Liquid glass simulado é permitido** (hero navy, painéis frosted, CTA glossy) MAS **todo `background-image: linear/radial-gradient` precisa de um `background-color` sólido na MESMA regra** (fallback). Outlook mostra o sólido; Apple Mail/Gmail mostram o brilho.
-- **Logo = lockup pequeno** (monograma + wordmark · ~18px alt) em **URL absoluta hospedada** (não relativa). Trava em claro: `<meta name="color-scheme" content="light only">`. Sempre um **preheader** (texto de preview escondido).
+- **Logo = `lockup-navy.png`** (monograma + wordmark · ~18px alt · PNG, nunca SVG — o Gmail não renderiza SVG) em **URL absoluta hospedada** (não relativa): `https://viver-de-ia-ds.vercel.app/logos/lockup-navy.png`. Trava em claro: `<meta name="color-scheme" content="light only">`. Sempre um **preheader** (texto de preview escondido).
 - Cor de texto sobre navy = branco sólido. Coral só pra urgência real (atraso/erro).
 - Stack canônica: **react-email + Resend**. A IA escreve só o editorial (assunto, headline, corpo); o motor renderiza o HTML. 14 templates de produção vivos em `/patterns/email`.
 
@@ -459,7 +463,7 @@ Para qualquer artefato novo, identifique:
 3. ✓ Contraste AA nos 2 temas · sem claro-sobre-claro / navy-sobre-navy · link em texto sublinhado
 4. ✓ Pill canônica (11px · 500 · `-0.004em` · nowrap · sem dot · sem caps lock)
 5. ✓ Tipografia Geist · sem mistura de famílias · ZERO itálico (`<em>` reto · ênfase = peso + cor)
-6. ✓ Voz editorial · número ou citação · sem clichê IA · sem emoji decorativo
+6. ✓ Voz editorial · número ou citação · sem clichê IA · sem emoji decorativo · zero preço/vaga/garantia/devolução/contrato/pagamento/política/data/local inventado (placeholder)
 7. ✓ CTAs sentence-case · verbo no infinitivo · 2-4 palavras
 8. ✓ Surfaces glass + atmospheric quando aplicável · NUNCA glass em dashboard/tabela densa
 9. ✓ Hover signatures (lift + luz · nunca barra lateral) · `:active` no apertar

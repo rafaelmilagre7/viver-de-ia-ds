@@ -18,7 +18,7 @@ Starter: `create-viverdeia-app` (scaffold Vite + React 19 + TS com ThemeProvider
 - **NUNCA entregue peça de fundo escuro por padrão.** Escuro só se o usuário pedir ("versão dark") ou no respiro canônico: **1 seção full-bleed navy por página** (hero imersivo, CTA de fechamento, footer) — o resto claro.
 - Dark mode é **modo alternativo do usuário** (ele aperta o botão), não a estética de partida. Em dúvida: claro.
 - `<ThemeProvider>` já nasce **claro** por padrão. Só passe `defaultMode="system"` se o usuário quiser seguir o SO.
-- O `colors_and_type.css` cru (HTML sem React) também nasce **claro**, mesmo com o SO em escuro: escuro só com `data-theme="dark"` no `<html>`.
+- O `colors_and_type.css` cru (HTML sem React · no kit ZIP o mesmo arquivo é `tokens/tokens.css`) também nasce **claro**, mesmo com o SO em escuro: escuro só com `data-theme="dark"` no `<html>`.
 - Liquid glass **funciona lindamente sobre claro** — é a assinatura da casa. Não escureça a peça "pra o glass aparecer" (ver receita de glass card claro na seção 5).
 
 **Estado atual:** 100% WCAG AA de contraste nos 2 temas · 0 violação séria de a11y. Em código, use SEMPRE tokens semânticos que adaptam claro↔escuro (`var(--via-text-primary|body|muted|soft)`, `var(--via-surface)`, `var(--via-border-soft)`) — nunca hardcode navy/branco em texto/superfície. Link em texto corrido = sublinhado (o `colors_and_type.css` já sublinha `<a>` sem classe dentro de `<p>`). De-ênfase por cor (token mais suave), não opacity. E-mail trava tudo em claro.
@@ -98,6 +98,7 @@ Tokens semânticos reais de texto: `--via-text-primary`, `--via-text-body`, `--v
 - **PROIBIDO:** bolinha decorativa em pill que NÃO é status real
 - **PROIBIDO:** uppercase 0.10em+ em pills, chips, badges
 - **PROIBIDO:** `letter-spacing: 0.16em+ + uppercase + font-weight: 700` (trio bootstrap)
+- **Canvas grande:** os 11px são pra tela. Em arte de 1080px (social/ads) e slide 1920×1080, escale ~2× (≈22px / 24px de texto, padding proporcional). Fundo da pill em token de superfície (`var(--via-glass-card)` / `var(--via-surface)`), não branco fixo, pra funcionar no dark.
 
 ### Live broadcast pill
 
@@ -114,28 +115,30 @@ Live minúsculo "ao vivo" — nunca caps lock "AO VIVO". O `<em>` fica RETO (gua
 
 - **Geist** (variable 100-900) pra TUDO · **Geist Mono** pra código/tokens/timestamps/números
 - **ITÁLICO BANIDO** — Geist não tem itálico real; o navegador inclina à força ("Italic morto"). Ênfase editorial = **peso + cor** (`<em>` fica RETO via guarda global `em { font-style: normal }`; em heading, `em` ganha cor mais suave). Nunca escreva `font-style: italic`.
-- Letterspacing: corpo `-0.005 a -0.018em` · headings `-0.022 a -0.04em` · mono eyebrows em `0.04-0.08em` (não pill!)
+- Letterspacing: corpo `-0.005 a -0.018em` · headings `-0.022 a -0.04em` · eyebrows uppercase mono com `--via-ls-label` (0.18em) (não pill!)
 - Pesos: body 400-500 · subtítulo 500-600 · heading 500-600 · CTA 500 (NÃO 700)
 
 ### Eyebrow vs Pill (distinção crítica)
 
 | Elemento | Permitido | Proibido |
 |---|---|---|
-| **Eyebrow** (label sem padding/radius) | uppercase mono 0.04-0.08em · cor ink-3 | uppercase em pill com padding+radius999 |
+| **Eyebrow** (label sem padding/radius) | uppercase mono com `--via-ls-label` (0.18em) · cor ink-3 | uppercase em pill com padding+radius999 |
 | **Pill** (chip arredondado com padding) | lowercase 11px peso 500 · `-0.004em` | uppercase 0.10em+ peso 600/700 |
 
 ### Voz editorial (operador, não guru)
 
 - PT-BR direto · "você" infinitivo
+- **Tratamento:** interface/microcopy fala "você" no imperativo (confira, tente) · email e social podem usar o imperativo coloquial (responde, marca, faz) · nunca tu/teu/tua/contigo
 - Sempre número ou citação atribuída · sem "centenas" genérico
 - **Nunca invente preço nem número de alunos/operadores/vagas** · pergunte ou use o placeholder `R$ [valor]` / `[N] alunos`
+- **Nunca invente termo comercial:** garantia, prazo de devolução/reembolso, cláusula de contrato, condição de pagamento, política, data nem local de evento · só vale o que a pessoa informou · senão pergunte ou use `[condições da garantia]` / `[prazo de devolução]` / `[data]` / `[local]`
 - Sem clichê IA ("revolucione", "transforme", "o futuro chegou")
 - Sem emoji decorativo (✨🚀💪🔥) · sem urgência fabricada
 - Sentence-case em CTAs · não caps lock
 
 ### Sparkles banido
 
-Não use Sparkles, ✨, "AI sparkle". Substituir contextualmente: Compass · Award · Crown · Layers · MessageCircle · Rocket · Gauge.
+Não use Sparkles, ✨, "AI sparkle". Substituir contextualmente: Compass · Award · Crown · Layers · MessageCircle · Gauge (Rocket também não: clichê de "launch" → ArrowRight · Calendar · Target).
 
 ---
 
@@ -196,7 +199,7 @@ Cards e cards de componente sempre ganham `::before` com radial gradient sutil:
 
 ### 4. Sombras — SEMPRE tinta de sombra `--via-shadow-ink-*` (regra dura)
 
-**Toda sombra usa `--via-shadow-ink-03..60`** (navy no claro, PRETO mais denso no escuro — sombra navy sobre fundo navy não eleva nada). **NUNCA** use token de cor que inverte (`--via-navy-XX`, `--via-white`) dentro de `box-shadow` — no dark ele vira **halo branco** em volta do card (o defeito nº 1 que a auditoria matou em 453 camadas). Exceções que NÃO são sombra e ficam como estão: `inset 0 1px 0 var(--via-edge-hi)` (linha de luz do vidro) e anéis `0 0 0 Npx` (focus/pulse).
+**Toda sombra que você escreve usa `--via-shadow-ink-03..60`** (navy no claro, PRETO mais denso no escuro — sombra navy sobre fundo navy não eleva nada) **ou as pilhas prontas `--via-glass-shadow` / `--via-glass-shadow-lift`** (receita do vidro, já resolvem os 2 temas). **NUNCA** escreva token de cor que inverte (`--via-navy-XX`, `--via-white`) num `box-shadow` composto à mão — no dark ele vira **halo branco** em volta do card (o defeito nº 1 que a auditoria matou em 453 camadas). Exceções que NÃO são sombra e ficam como estão: `inset 0 1px 0 var(--via-edge-hi)` (linha de luz do vidro) e anéis `0 0 0 Npx` (focus/pulse).
 
 Stack canônico pra overlays (Modal/Drawer/Popover/Command):
 
@@ -297,7 +300,7 @@ Paleta de série própria (navy puro não sustenta 2+ séries — vira cinza): *
 
 ### 11. Camadas prontas pra HTML cru — `surfaces.css` + `data.css` (nesta skill)
 
-Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz duas folhas prontas — importe junto com `colors_and_type.css`:
+Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz duas folhas prontas — importe junto com `colors_and_type.css` (no kit ZIP: `tokens/surfaces.css` + `tokens/data.css` junto com `tokens/tokens.css`):
 
 - **`data.css`** (tabelas/números/finanças): `.via-table-wrap` + `.via-table` (variações `--sticky/--compact/--roomy`) · `.via-num` (tabular, alinhado à direita) · `.via-row-total` / `.via-row-group` · `.via-cell-sub` · `.via-delta--up/down/flat` · `.via-bar` · `.via-metric` (+`--atmos`) · `.via-metric-grid` · `.via-spark` (+`--down/--projected`). Regra: **tabela densa SEM vidro; vidro nos cards de métrica ao redor**.
 - **`surfaces.css`** (controles/acabamento): `.via-pill-link` (+`--solid/--on-dark`) · `.via-row-card` · `.via-tile` (+`--atmos/--lift`) · `.via-meta-chip` (+`--mono`) · `.via-bar-glass`. Todo controle tem `:hover/:active/:focus-visible` prontos.
@@ -422,7 +425,7 @@ Emails de verdade que **não quebram no inbox** (Gmail, Outlook, Apple Mail). Vi
 - **Tabela + estilo inline**, ~600px, `<102KB`. Zero flex/grid/`backdrop-filter` (clientes descartam).
 - **CTA navy SÓLIDO** (`background-color`) — degradê puro some no Outlook.
 - **Liquid glass simulado** OK (hero navy + painéis frosted + CTA glossy), mas **todo `background-image: gradient` precisa de `background-color` sólido de fallback** na mesma regra → Outlook mostra sólido, Apple Mail/Gmail mostram o brilho.
-- **Logo = lockup pequeno** (~18px) em URL absoluta. Trava modo claro (`color-scheme: light only`). Preheader sempre.
+- **Logo = `lockup-navy.png`** (~18px de altura · PNG porque o Gmail não renderiza SVG) em URL absoluta (`https://viver-de-ia-ds.vercel.app/logos/lockup-navy.png`). Trava modo claro (`color-scheme: light only`). Preheader sempre.
 - A IA escreve só o **editorial** (assunto, headline, corpo); o motor renderiza o HTML.
 
 ```ts
@@ -482,7 +485,7 @@ Gera: `index.html` com anti-FOUC inline · `package.json` (React 19 + Vite 6 + T
 - **Microcopy de produto** (`/guidelines/microcopy` · `microcopy.md` nesta skill) — 65 frases canônicas pra erro, tela vazia, confirmação, sucesso, carregamento, onboarding, botão e ajuda de campo. Produto e email transacional falam **"você"** (nunca tu/teu/tua/contigo). Situação coberta = use a frase canônica.
 - **Logo usage** (`/foundations/logo-usage`) — clear space, min size, variants (white/dark/reverse/single-color), do/don't. Sempre `BrandLogo` component com `variant` prop.
 
-**REGRA INVIOLÁVEL DA LOGO:** a logo é SEMPRE o **lockup composto = monograma VIA + wordmark "VIVER DE IA" juntos**. ❌ NUNCA entregue só o wordmark "VIVER DE IA" solto (sem monograma) — é meio logo, não a marca. ❌ NUNCA desenhe o wordmark como texto estilizado; use os arquivos oficiais de `assets/logos/` ou `<BrandLogo>` (que já renderiza o lockup completo — a prop `variant` muda só a COR: `black` | `white` | `auto`). ✅ Monograma sozinho só em espaço mínimo onde o wordmark não caberia legível: favicon, app/profile icon, canto de slide interior.
+**REGRA INVIOLÁVEL DA LOGO:** a logo é SEMPRE o **lockup composto = monograma VIA + wordmark "VIVER DE IA" juntos**. ❌ NUNCA entregue só o wordmark "VIVER DE IA" solto (sem monograma) — é meio logo, não a marca. ❌ NUNCA desenhe o wordmark como texto estilizado; use os arquivos oficiais **em vetor** (`lockup-navy.svg` / `lockup-white.svg`; monograma `monogram-navy.svg` / `monogram-white.svg` — em `assets/logos/` desta skill, em `logos/` do kit ou em `https://viver-de-ia-ds.vercel.app/logos/…`) ou `<BrandLogo>` da library (SVG inline nítido — `variant` muda só a COR: `black` | `white` | `auto`; `monoOnly` pro monograma). PNG só se a ferramenta não aceitar SVG — **e-mail é sempre PNG** (`lockup-navy.png` / `lockup-white.png`, 720px de largura · o Gmail não renderiza SVG). ✅ Monograma sozinho só em espaço mínimo onde o wordmark não caberia legível: favicon, app/profile icon, canto de slide interior. **Leaders AI** (material de evento): arquivo branco (`leaders-ai-conference-logo.png`) sobre fundo escuro, navy (`leaders-ai-conference-logo-navy.png`) sobre fundo claro — não crie faixa navy só pra segurar a logo.
 
 ---
 
@@ -538,17 +541,18 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 4. Hardcoded hexes só em exceções documentadas
 5. Sem semáforo verde/vermelho em pills genéricas · sem bolinha decorativa em chip que não é status real
 6. Buttons sentence-case (não `letter-spacing: 0.10em + uppercase`)
-7. Glass pelas receitas canônicas (`--via-glass-blur/-ring/-bar`) · sombras SÓ em `--via-shadow-ink-*` (zero token que inverte em box-shadow)
+7. Glass pelas receitas canônicas (`--via-glass-blur/-ring/-bar`) · sombras SÓ em `--via-shadow-ink-*` ou nas pilhas `--via-glass-shadow` / `-lift` (zero token que inverte em box-shadow escrito à mão)
 8. Spring physics via tokens (`--via-ease-out`, `--via-ease-spring`) · shine sweep em interativos
 9. Tabelas sortable → `<DataTable>` da library · tabela/finanças em HTML cru → classes do `data.css` (tabela densa SEM vidro)
-10. Eyebrows em mono small caps 0.04-0.08em · ZERO itálico (`<em>` reto · ênfase = peso + cor)
+10. Eyebrows uppercase mono com `--via-ls-label` (0.18em) · ZERO itálico (`<em>` reto · ênfase = peso + cor)
 11. Sparkles banido (Compass/Award/Crown/etc.) · **zero barra lateral colorida** (3 mecanismos) · zero anel colorido em avatar
 12. Contraste WCAG AA garantido em dark mode (tokens semânticos) · `prefers-reduced-motion` respeitado
 13. App React com `<ThemeProvider>` no root (+ anti-FOUC script no `index.html`)
 14. Sem dark pattern em fluxos críticos (cancellation, billing, errors)
-15. Email: tabela + inline + CTA navy sólido + fallback de background sólido + lockup ~18px
+15. Email: tabela + inline + CTA navy sólido + fallback de background sólido + `lockup-navy.png` ~18px (PNG, nunca SVG)
 16. Raio na escala (card 20 · filho um degrau abaixo) · dataviz na régua (séries `--via-data-*`, UM eixo, zero-anchored, projeção tracejada)
 17. Mockup interno pina as próprias cores (não herda tema) · testar a peça nos 2 temas ANTES de entregar (o dark é onde tudo quebra)
+18. Zero termo comercial inventado (preço, vagas, garantia, devolução, contrato, pagamento, política, data, local) · o que não veio da pessoa vira placeholder
 
 ---
 
@@ -557,7 +561,7 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 - **46 componentes de UI** em 9 categorias + `ThemeProvider` (47 símbolos exportados no barrel)
 - **46 API docs** Radix-style (um por componente)
 - **14 templates de email de produção** (react-email · enviáveis)
-- **203 tokens** `--via-*` únicos · navy alpha = **18 stops** (02→80) · tinta de sombra 03→60 · receitas glass · escala de raio · paleta dataviz
+- **204 tokens** `--via-*` únicos · navy alpha = **18 stops** (02→80) · tinta de sombra 03→60 · receitas glass · escala de raio · paleta dataviz
 - **18 templates social** · **6 canais** · cobertura paid/landing/commercial/editorial/event
 - Dark mode completo · 100% WCAG AA de contraste (claro + escuro) · 0 violação séria de a11y
 - **Auditoria visual 100% (28/Jul/2026):** todas as telas do reference site revisadas uma a uma, em claro E escuro, com medição de pixel — as regras deste manifesto saem dessa auditoria, não de teoria
@@ -573,7 +577,7 @@ Ganha os comandos `/via-*`, o sub-agente auditor e esta skill (carrega sozinha).
 - `data.css` — tabelas, números e métricas (via-table, via-num, via-metric, via-delta, via-spark)
 - `guidelines.md` — aprofundamento: voz, copy, do's & don'ts com cite de página canônica
 - `microcopy.md` — frases canônicas de produto (erro, vazio, confirmação, sucesso, botão…) · gerado de `src/content/microcopy.ts`
-- `assets/logos/` — VIA monogram + wordmark + Leaders AI mark
+- `assets/logos/` — logo oficial em vetor (`lockup-navy.svg`, `lockup-white.svg`, `monogram-navy.svg`, `monogram-white.svg`, extraídos do arquivo original do designer) + `lockup-navy.png` / `lockup-white.png` (720px · só pra e-mail) + PNGs legados + Leaders AI mark em PNG (`leaders-ai-conference-logo.png` branco pra fundo escuro · `leaders-ai-conference-logo-navy.png` pra fundo claro)
 
 ## Fontes & ícones (CDN)
 
