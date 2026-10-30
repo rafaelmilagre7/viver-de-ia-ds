@@ -27,7 +27,7 @@ export default function Social() {
                 <strong>viverdeia</strong>
                 <span>Patrocinado</span>
               </div>
-              <MoreHorizontal size={18} strokeWidth={2} className="ig-more" />
+              <MoreHorizontal size={16} strokeWidth={1.75} className="ig-more" />
             </header>
             <div className="vds-ig-post via-mesh-navy via-noise">
               <div className="ig-content">
@@ -44,10 +44,10 @@ export default function Social() {
             </div>
             <footer className="ig-f">
               <div className="ig-acts">
-                <button aria-label="Curtir"><Heart size={22} strokeWidth={2} /></button>
-                <button aria-label="Comentar"><MessageCircle size={22} strokeWidth={2} /></button>
-                <button aria-label="Repetir"><Repeat2 size={22} strokeWidth={2} /></button>
-                <button aria-label="Salvar" className="bk"><Bookmark size={22} strokeWidth={2} /></button>
+                <button aria-label="Curtir"><Heart size={20} strokeWidth={1.75} /></button>
+                <button aria-label="Comentar"><MessageCircle size={20} strokeWidth={1.75} /></button>
+                <button aria-label="Repetir"><Repeat2 size={20} strokeWidth={1.75} /></button>
+                <button aria-label="Salvar" className="bk"><Bookmark size={20} strokeWidth={1.75} /></button>
               </div>
               <p className="ig-caption">
                 <strong>1.840 curtidas</strong> · <strong>viverdeia</strong> Case completo no link da bio.<br />
@@ -64,7 +64,7 @@ export default function Social() {
                 <strong>viverdeia</strong>
                 <span>4h</span>
               </div>
-              <MoreHorizontal size={18} strokeWidth={2} className="ig-more" />
+              <MoreHorizontal size={16} strokeWidth={1.75} className="ig-more" />
             </header>
             <div className="vds-ig-post via-mesh-navy via-noise">
               <div className="ig-content quote-variant">
@@ -83,10 +83,10 @@ export default function Social() {
             </div>
             <footer className="ig-f">
               <div className="ig-acts">
-                <button aria-label="Curtir"><Heart size={22} strokeWidth={2} /></button>
-                <button aria-label="Comentar"><MessageCircle size={22} strokeWidth={2} /></button>
-                <button aria-label="Repetir"><Repeat2 size={22} strokeWidth={2} /></button>
-                <button aria-label="Salvar" className="bk"><Bookmark size={22} strokeWidth={2} /></button>
+                <button aria-label="Curtir"><Heart size={20} strokeWidth={1.75} /></button>
+                <button aria-label="Comentar"><MessageCircle size={20} strokeWidth={1.75} /></button>
+                <button aria-label="Repetir"><Repeat2 size={20} strokeWidth={1.75} /></button>
+                <button aria-label="Salvar" className="bk"><Bookmark size={20} strokeWidth={1.75} /></button>
               </div>
               <p className="ig-caption">
                 <strong>2.412 curtidas</strong> · <strong>viverdeia</strong> Operadores que estão fazendo IA virar receita.<br />
@@ -121,7 +121,7 @@ export default function Social() {
             </div>
             <footer className="story-f">
               <input placeholder="Envie uma mensagem…" />
-              <button aria-label="Curtir" className="story-like"><Heart size={22} strokeWidth={2} /></button>
+              <button aria-label="Curtir" className="story-like"><Heart size={20} strokeWidth={1.75} /></button>
             </footer>
           </div>
         </div>
@@ -158,9 +158,9 @@ export default function Social() {
                 <span>👍 248 reações · 32 comentários · 14 reposts</span>
               </div>
               <div className="li-acts">
-                <button><ThumbsUp size={16} strokeWidth={2} /> Curtir</button>
-                <button><MessageCircle size={16} strokeWidth={2} /> Comentar</button>
-                <button><Repeat2 size={16} strokeWidth={2} /> Repostar</button>
+                <button><ThumbsUp size={16} strokeWidth={1.75} /> Curtir</button>
+                <button><MessageCircle size={16} strokeWidth={1.75} /> Comentar</button>
+                <button><Repeat2 size={16} strokeWidth={1.75} /> Repostar</button>
               </div>
             </footer>
           </div>

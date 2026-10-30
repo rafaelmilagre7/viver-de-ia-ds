@@ -62,8 +62,8 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  line-height: 1.4;
-  letter-spacing: -0.022em;
+  line-height: var(--via-lh-normal);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0;
   position: relative;
@@ -96,7 +96,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   flex-shrink: 0;
   /* sem border branca dura — --via-white NÃO inverte no escuro e virava
      anel branco no avatar. Anel fino adaptativo no padrão do <Avatar> da lib. */
@@ -112,7 +111,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-testi .role {
@@ -137,10 +136,8 @@
 
 .vds-testi .outcome .k {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
 }
 
@@ -148,11 +145,11 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.028em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
   margin-top: var(--via-space-1);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
 }
 
 .vds-testi .outcome em {

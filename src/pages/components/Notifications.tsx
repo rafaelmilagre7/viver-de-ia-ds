@@ -33,7 +33,7 @@ function PanelSection() {
     <Section title="Notification panel · dropdown do sino" meta="header bell · 360px · até 6 items recentes">
       <div className="vds-notif-panel-stage">
         <div className="vds-notif-bell">
-          <Bell size={14} strokeWidth={2.2} />
+          <Bell size={16} strokeWidth={1.75} />
           <span className="vds-notif-dot">3</span>
         </div>
         <div className="vds-notif-panel">
@@ -45,7 +45,7 @@ function PanelSection() {
           <ul>
             <li className="unread">
               <span className="vds-notif-icon mention">
-                <MessageCircle size={13} strokeWidth={2.2} />
+                <MessageCircle size={16} strokeWidth={1.75} />
               </span>
               <div className="vds-notif-body">
                 <p>
@@ -58,7 +58,7 @@ function PanelSection() {
 
             <li className="unread">
               <span className="vds-notif-icon achievement">
-                <Award size={13} strokeWidth={2.2} />
+                <Award size={14} strokeWidth={1.75} />
               </span>
               <div className="vds-notif-body">
                 <p>
@@ -71,7 +71,7 @@ function PanelSection() {
 
             <li className="unread">
               <span className="vds-notif-icon live">
-                <Calendar size={13} strokeWidth={2.2} />
+                <Calendar size={14} strokeWidth={1.75} />
               </span>
               <div className="vds-notif-body">
                 <p>
@@ -84,7 +84,7 @@ function PanelSection() {
 
             <li>
               <span className="vds-notif-icon">
-                <Heart size={13} strokeWidth={2.2} />
+                <Heart size={14} strokeWidth={1.75} />
               </span>
               <div className="vds-notif-body">
                 <p>
@@ -96,7 +96,7 @@ function PanelSection() {
 
             <li>
               <span className="vds-notif-icon">
-                <MessageCircle size={13} strokeWidth={2.2} />
+                <MessageCircle size={16} strokeWidth={1.75} />
               </span>
               <div className="vds-notif-body">
                 <p>
@@ -110,7 +110,7 @@ function PanelSection() {
           <footer>
             <a href="#">
               Ver todas as notificações
-              <ChevronRight size={13} strokeWidth={2.4} />
+              <ChevronRight size={14} strokeWidth={1.75} />
             </a>
           </footer>
         </div>
@@ -126,12 +126,12 @@ function BannersSection() {
       <div className="vds-banners">
         <article className="vds-banner info">
           <span className="vds-banner-icon">
-            <Info size={15} strokeWidth={1.8} />
+            <Info size={16} strokeWidth={1.75} />
           </span>
           <div className="vds-banner-text">
             <p className="vds-banner-title">
               Live amanhã às 14h.
-              <span className="vds-banner-tag">convite</span>
+              <span className="vds-banner-tag">Convite</span>
             </p>
             <p className="vds-banner-body">
               Caio e Márisson revisam 3 prompts reais do grupo, ao vivo, com gravação publicada em 24h.
@@ -139,19 +139,19 @@ function BannersSection() {
           </div>
           <a href="#" className="vds-banner-cta">
             Reservar lugar
-            <ChevronRight size={12} strokeWidth={2.4} />
+            <ChevronRight size={14} strokeWidth={1.75} />
           </a>
-          <button className="vds-banner-x" aria-label="Fechar"><X size={12} strokeWidth={2.4} /></button>
+          <button className="vds-banner-x" aria-label="Fechar"><X size={14} strokeWidth={1.75} /></button>
         </article>
 
         <article className="vds-banner warn">
           <span className="vds-banner-icon">
-            <AlertTriangle size={15} strokeWidth={1.8} />
+            <AlertTriangle size={16} strokeWidth={1.75} />
           </span>
           <div className="vds-banner-text">
             <p className="vds-banner-title">
               Sua mentoria expira em 8 dias.
-              <span className="vds-banner-tag">atenção</span>
+              <span className="vds-banner-tag">Atenção</span>
             </p>
             <p className="vds-banner-body">
               Renove agora pra manter acesso sem interrupção — a sessão de 22 mai já está confirmada no calendário.
@@ -159,19 +159,19 @@ function BannersSection() {
           </div>
           <a href="#" className="vds-banner-cta">
             Renovar plano
-            <ChevronRight size={12} strokeWidth={2.4} />
+            <ChevronRight size={14} strokeWidth={1.75} />
           </a>
-          <button className="vds-banner-x" aria-label="Fechar"><X size={12} strokeWidth={2.4} /></button>
+          <button className="vds-banner-x" aria-label="Fechar"><X size={14} strokeWidth={1.75} /></button>
         </article>
 
         <article className="vds-banner danger">
           <span className="vds-banner-icon">
-            <AlertOctagon size={15} strokeWidth={1.8} />
+            <AlertOctagon size={16} strokeWidth={1.75} />
           </span>
           <div className="vds-banner-text">
             <p className="vds-banner-title">
               Pagamento recusado.
-              <span className="vds-banner-tag">ação obrigatória</span>
+              <span className="vds-banner-tag">Ação obrigatória</span>
             </p>
             <p className="vds-banner-body">
               Não conseguimos processar a renovação automática — seu plano cai pra Comunidade em <strong>3 dias</strong> se não atualizar o método.
@@ -179,25 +179,25 @@ function BannersSection() {
           </div>
           <a href="#" className="vds-banner-cta">
             Atualizar cartão
-            <ChevronRight size={12} strokeWidth={2.4} />
+            <ChevronRight size={14} strokeWidth={1.75} />
           </a>
-          <button className="vds-banner-x" aria-label="Fechar"><X size={12} strokeWidth={2.4} /></button>
+          <button className="vds-banner-x" aria-label="Fechar"><X size={14} strokeWidth={1.75} /></button>
         </article>
 
         <article className="vds-banner success">
           <span className="vds-banner-icon">
-            <Check size={15} strokeWidth={2.4} />
+            <Check size={16} strokeWidth={1.75} />
           </span>
           <div className="vds-banner-text">
             <p className="vds-banner-title">
               Renovação confirmada.
-              <span className="vds-banner-tag">tudo certo</span>
+              <span className="vds-banner-tag">Tudo certo</span>
             </p>
             <p className="vds-banner-body">
               Próxima cobrança em <strong>17 ago 2026</strong> · recibo enviado pro seu e-mail.
             </p>
           </div>
-          <button className="vds-banner-x" aria-label="Fechar"><X size={12} strokeWidth={2.4} /></button>
+          <button className="vds-banner-x" aria-label="Fechar"><X size={14} strokeWidth={1.75} /></button>
         </article>
       </div>
     </Section>
@@ -292,15 +292,15 @@ function InboxSection() {
           </div>
           <div className="vds-inbox-actions">
             <div className="vds-inbox-search">
-              <Search size={13} strokeWidth={2.2} />
+              <Search size={14} strokeWidth={1.75} />
               <input placeholder="Buscar notificações" />
             </div>
             <button className="vds-inbox-btn">
-              <Filter size={13} strokeWidth={2.2} />
+              <Filter size={14} strokeWidth={1.75} />
               Filtrar
             </button>
             <button className="vds-inbox-btn">
-              <Check size={13} strokeWidth={2.2} />
+              <Check size={14} strokeWidth={1.75} />
               Marcar todas
             </button>
           </div>
@@ -319,11 +319,11 @@ function InboxSection() {
           {items.map((it, i) => (
             <li key={i} className={`vds-inbox-item ${it.unread ? 'unread' : ''}`}>
               <span className="vds-inbox-icon">
-                {it.type === 'mention' && <MessageCircle size={14} strokeWidth={2} />}
-                {it.type === 'achievement' && <Award size={14} strokeWidth={2} />}
-                {it.type === 'live' && <Calendar size={14} strokeWidth={2} />}
-                {it.type === 'discussion' && <MessageCircle size={14} strokeWidth={2} />}
-                {it.type === 'payment' && <CreditCard size={14} strokeWidth={2} />}
+                {it.type === 'mention' && <MessageCircle size={16} strokeWidth={1.75} />}
+                {it.type === 'achievement' && <Award size={16} strokeWidth={1.75} />}
+                {it.type === 'live' && <Calendar size={16} strokeWidth={1.75} />}
+                {it.type === 'discussion' && <MessageCircle size={16} strokeWidth={1.75} />}
+                {it.type === 'payment' && <CreditCard size={16} strokeWidth={1.75} />}
               </span>
               <div className="vds-inbox-text">
                 <p>
@@ -336,9 +336,9 @@ function InboxSection() {
                 </span>
               </div>
               <div className="vds-inbox-rh">
-                {it.star && <Star size={13} strokeWidth={2} className="star on" />}
-                {!it.star && <Star size={13} strokeWidth={2} className="star" />}
-                <Archive size={13} strokeWidth={2} className="arch" />
+                {it.star && <Star size={16} strokeWidth={1.75} className="star on" />}
+                {!it.star && <Star size={16} strokeWidth={1.75} className="star" />}
+                <Archive size={14} strokeWidth={1.75} className="arch" />
               </div>
               <span className="vds-inbox-dot" />
             </li>

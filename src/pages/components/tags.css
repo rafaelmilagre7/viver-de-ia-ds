@@ -21,8 +21,8 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   background: var(--via-surface-onnavy);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-edge-hi);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -85,7 +85,8 @@
 
 .via-tag.add {
   background: rgba(255,255,255,0.30);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px dashed var(--via-navy-25);
   color: var(--via-text-muted);
   box-shadow: none;

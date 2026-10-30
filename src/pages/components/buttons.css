@@ -16,9 +16,8 @@
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   white-space: nowrap;
   overflow: hidden;
   /* contém o sheen (z-index negativo) dentro do próprio botão */

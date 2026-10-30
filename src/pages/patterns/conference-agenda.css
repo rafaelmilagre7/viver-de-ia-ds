@@ -52,7 +52,6 @@
   border: 1px solid var(--via-border-soft);
   cursor: pointer;
   font-family: var(--via-font);
-  letter-spacing: -0.006em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 2px 6px -3px var(--via-shadow-ink-10);
@@ -109,7 +108,7 @@
 }
 
 .vds-cf-day .dn {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-wide);
   color: var(--via-ink-3);
@@ -126,7 +125,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-cf-day.active .dt {
@@ -134,7 +133,7 @@
 }
 
 .vds-cf-day .dl {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 
@@ -155,11 +154,10 @@
   padding: 5px var(--via-space-3);
   border-radius: var(--via-radius-pill);
   border: 1px solid var(--via-border-soft);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-cf-track-pill.main {
@@ -223,13 +221,12 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-cf-time .d {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
 }
 
 .vds-cf-row.break .vds-cf-time {
@@ -272,15 +269,14 @@
 .vds-cf-break strong {
   color: var(--via-text-primary);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-cf-break em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
 }
 
 /* Session card */
@@ -334,13 +330,12 @@
 .vds-cf-track-tag {
   display: inline-flex;
   align-items: center;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   padding: 3px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-cf-track-tag.main {
@@ -365,15 +360,14 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   padding: 3px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   color: var(--via-ink-2);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-cf-session-kind.keynote {
@@ -389,14 +383,14 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
-  line-height: 1.22;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
 .vds-cf-row.featured .vds-cf-session h4 {
   font-size: 20px;
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
 }
 
 .vds-cf-session footer {
@@ -425,9 +419,8 @@
   justify-content: center;
   background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
   color: var(--via-white);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   box-shadow: 0 2px 6px var(--via-shadow-ink-20);
   flex-shrink: 0;
 }
@@ -450,15 +443,14 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-cf-speaker em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-cf-room {
@@ -466,9 +458,8 @@
   align-items: center;
   gap: 5px;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-cf-add {
@@ -486,9 +477,8 @@
     0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.006em;
   cursor: pointer;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -531,7 +521,7 @@
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   max-width: 720px;
 }
 
@@ -545,14 +535,13 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: 9px var(--via-space-3_5);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy);
   color: var(--via-white);
   text-decoration: none;
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.006em;
   border: 1px solid var(--via-navy);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
@@ -651,7 +640,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
     0 4px 10px -4px var(--via-shadow-ink-30);
@@ -673,10 +661,8 @@
 .vds-cf-spk-tag {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   margin-bottom: var(--via-space-0_5);
 }
@@ -690,7 +676,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   white-space: nowrap;
   overflow: hidden;
@@ -700,9 +686,8 @@
 .vds-cf-spk-body p {
   margin: 0;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

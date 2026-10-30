@@ -37,8 +37,8 @@ export default function ApiSplitter() {
     <ComponentDoc
       eyebrow="api · splitter"
       name="Splitter"
-      headline="divisor arrastável · horizontal/vertical · keyboard ARIA"
-      description="Splitter resize entre 2 painéis. Use pra: editor + preview, sidebar + main, code + console, lista + detail. Drag no handle redimensiona · keyboard arrow keys ajustam 1% por step. Min/max enforcement."
+      headline="dois painéis; a divisão é sua."
+      description="Divisor arrastável · horizontal/vertical · keyboard ARIA. Splitter resize entre 2 painéis. Use pra: editor + preview, sidebar + main, code + console, lista + detail. Drag no handle redimensiona · keyboard arrow keys ajustam 1% por step. Min/max enforcement."
       importLine={`import { Splitter, type SplitterProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-splitter', description: 'Container flex · horizontal ou column' },

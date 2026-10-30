@@ -295,6 +295,12 @@
   border-color: transparent;
 }
 .vds-stage.gray {
+  /* palco calmo no claro (era gray-200→300, cinza-aço) · mesma receita dos palcos das páginas */
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 10%, var(--via-navy-04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
+}
+[data-theme="dark"] .vds-stage.gray {
   background: linear-gradient(135deg, var(--via-stage-soft) 0%, var(--via-stage-1) 100%);
 }
 

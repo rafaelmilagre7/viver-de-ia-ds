@@ -69,7 +69,7 @@ export default function Login() {
             <div className="via-field">
               <label className="lbl">E-mail</label>
               <div className="val-with-icon">
-                <Mail size={14} strokeWidth={2} className="leading-ico" />
+                <Mail size={16} strokeWidth={1.75} className="leading-ico" />
                 <input className="val" type="email" placeholder="voce@viverdeia.ai" defaultValue="rafael@viverdeia.ai" />
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function Login() {
             <div className="via-field focused">
               <label className="lbl">Senha</label>
               <div className="val-with-icon">
-                <Lock size={14} strokeWidth={2} className="leading-ico" />
+                <Lock size={16} strokeWidth={1.75} className="leading-ico" />
                 <input className="val" type={showPwd ? 'text' : 'password'} placeholder="••••••••" defaultValue="senha-forte-aqui" />
                 <button
                   type="button"
@@ -85,7 +85,7 @@ export default function Login() {
                   onClick={() => setShowPwd(!showPwd)}
                   aria-label={showPwd ? 'Ocultar senha' : 'Mostrar senha'}
                 >
-                  {showPwd ? <EyeOff size={14} strokeWidth={2} /> : <Eye size={14} strokeWidth={2} />}
+                  {showPwd ? <EyeOff size={16} strokeWidth={1.75} /> : <Eye size={16} strokeWidth={1.75} />}
                 </button>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Login() {
               <label className="check">
                 {/* Check do Lucide, não o glyph "✓" — a própria página de
                     iconografia bane caractere de texto como ícone. */}
-                <span className="box checked"><Check size={11} strokeWidth={3} /></span>
+                <span className="box checked"><Check size={14} strokeWidth={1.75} /></span>
                 Lembrar de mim
               </label>
               <a className="link">Esqueci a senha</a>
@@ -102,7 +102,7 @@ export default function Login() {
 
             <button className="auth-submit" type="submit">
               Entrar no painel
-              <ArrowRight size={14} strokeWidth={2.5} />
+              <ArrowRight size={16} strokeWidth={1.75} />
             </button>
           </form>
 

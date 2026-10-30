@@ -7,8 +7,8 @@
   padding: var(--via-space-12) var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
-    radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.20) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-stage-1) 0%, var(--via-stage-2) 100%);
+    radial-gradient(ellipse 60% 70% at 15% 0%, var(--via-navy-06) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   border: 0.5px solid var(--via-navy-12);
   display: flex;
   justify-content: center;
@@ -70,7 +70,7 @@
 }
 .ig-h span {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(0,0,0,0.55);
 }
 .ig-more { color: rgba(0,0,0,0.55); }
@@ -91,9 +91,9 @@
 }
 .ig-content .eyebrow {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.24em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   margin: var(--via-space-4_5) 0 var(--via-space-3_5);
@@ -102,7 +102,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
-  line-height: 0.96;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.035em;
   color: var(--via-white);
   margin: 0;
@@ -120,7 +120,7 @@
 .ig-content .lede {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: rgba(255,255,255,0.78);
   margin: var(--via-space-4_5) 0 var(--via-space-5_5);
   max-width: 240px;
@@ -130,16 +130,16 @@
   align-items: center;
   padding: 7px var(--via-space-3_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04));
-  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid rgba(255,255,255,0.22);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: rgba(255,255,255,0.85);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 /* Quote variant */
@@ -151,7 +151,7 @@
   font-family: var(--via-font-display);
   font-size: 200px;
   color: rgba(255,255,255,0.06);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   pointer-events: none;
   z-index: 1;
 }
@@ -159,8 +159,8 @@
   font-family: var(--via-font-display);
   font-size: 28px;
   font-weight: var(--via-fw-medium);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: var(--via-lh-snug);
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-white);
   margin: 0 0 var(--via-space-8);
 }
@@ -201,7 +201,7 @@
 }
 .ig-attr span {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.55);
 }
 
@@ -220,7 +220,7 @@
   margin: var(--via-space-1_5) 0 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   color: rgba(0,0,0,0.90);
 }
 .ig-caption strong { font-weight: var(--via-fw-bold); }
@@ -279,7 +279,7 @@
 }
 .story-h span {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.78);
 }
 .story-content {
@@ -294,9 +294,9 @@
 .story-content > * { position: relative; z-index: 2; }
 .story-content .eyebrow {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.24em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   margin: 0 0 var(--via-space-3);
@@ -305,8 +305,8 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.03em;
-  line-height: 1.0;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: 0;
 }
@@ -318,7 +318,7 @@
 .story-content .lede {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: rgba(255,255,255,0.78);
   margin: var(--via-space-4) 0 var(--via-space-6);
 }
@@ -331,13 +331,12 @@
   border: none;
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0,0,0,0.30);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .story-f {
   position: absolute;
@@ -354,7 +353,8 @@
   padding: var(--via-space-2_5) var(--via-space-4);
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.30);
-  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
@@ -437,7 +437,7 @@
   padding: var(--via-space-1) var(--via-space-4) var(--via-space-3);
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: rgba(0,0,0,0.90);
   margin: 0;
 }
@@ -455,9 +455,9 @@
 .li-content { position: relative; z-index: 2; }
 .li-content .eyebrow {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   margin: var(--via-space-3_5) 0 var(--via-space-2);
@@ -466,8 +466,8 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  line-height: 1.0;
-  letter-spacing: -0.03em;
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0;
   font-variant-numeric: tabular-nums;
@@ -484,7 +484,7 @@
 .li-content .lede {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
   color: rgba(255,255,255,0.78);
   margin: var(--via-space-2_5) 0 0;
   max-width: 280px;
@@ -521,3 +521,11 @@
   border-radius: var(--via-radius-sm);
 }
 .li-acts button:hover { background: rgba(0,0,0,0.04); }
+
+/* mobile · palco vira moldura fina (recuo do palco + do card espremia o conteúdo) */
+@media (max-width: 560px) {
+  .vds-soc-stage {
+    padding: var(--via-space-3);
+    border-radius: var(--via-radius-lg);
+  }
+}

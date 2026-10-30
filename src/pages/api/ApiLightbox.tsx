@@ -25,8 +25,8 @@ export default function ApiLightbox() {
     <ComponentDoc
       eyebrow="api · lightbox"
       name="Lightbox"
-      headline="foto tela cheia · keyboard arrows · download opcional"
-      description="Lightbox pra fotos em tela cheia. Suporta múltiplas imagens · setas keyboard · arrastar pra baixo dispensa · ESC fecha · caption inferior · download opcional. Use pra: galerias de evento, portfolio, screenshots de produto. Scrim blur 16px."
+      headline="a foto em tela cheia."
+      description="Foto tela cheia · keyboard arrows · download opcional. Lightbox pra fotos em tela cheia. Suporta múltiplas imagens · setas keyboard · arrastar pra baixo dispensa · ESC fecha · caption inferior · download opcional. Use pra: galerias de evento, portfolio, screenshots de produto. Scrim blur 16px."
       importLine={`import { Lightbox, type LightboxProps, type LightboxImage } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-lightbox', description: 'Portal fixed · scrim radial + blur · z-index alto' },

@@ -2,150 +2,88 @@
    Page-level styles (Home, foundations, glass, components, etc.)
    ============================================================== */
 
-/* ---- HOME HERO — assinatura visual ---- */
+/* ---- HOME HERO — light-first ----
+   Papel claro (bg → bg-2) com atmosfera navy sutil e uma trama de pontos
+   que some pra borda. O navy é a TINTA (título, botão), não o fundo. No escuro
+   os mesmos tokens viram canvas #0B1220 + véu branco — desenhado, não invertido. */
 .vds-home-hero {
   position: relative;
-  padding: var(--via-space-24) var(--via-space-16) var(--via-space-20);
+  isolation: isolate;
+  padding: var(--via-space-24) var(--via-space-16) var(--via-space-14);
   border-radius: var(--via-radius-2xl);
   margin-bottom: var(--via-space-8);
   overflow: hidden;
-  color: var(--via-white);
+  background:
+    radial-gradient(ellipse 70% 90% at 0% 0%, var(--via-navy-06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 100% 100%, var(--via-navy-04) 0%, transparent 60%),
+    linear-gradient(180deg, var(--via-bg) 0%, var(--via-bg-2) 100%);
+  border: var(--via-border-fine);
+  box-shadow: 0 1px 2px var(--via-shadow-ink-03), 0 24px 64px -40px var(--via-shadow-ink-20);
+}
+.vds-home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(var(--via-navy-12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 55% 65% at 85% 20%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 55% 65% at 85% 20%, #000 0%, transparent 72%);
+  pointer-events: none;
 }
 .vds-home-hero-pill {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: var(--via-space-2) var(--via-space-3_5);
-  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.20);
-  border-radius: var(--via-radius-pill);
+  padding: var(--via-space-1_5) var(--via-space-3_5) var(--via-space-1_5) var(--via-space-3);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
-  color: rgba(255,255,255,0.85);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
   margin-bottom: var(--via-space-8);
-  position: relative;
-  z-index: 2;
   white-space: nowrap;
-  line-height: 1.4;
 }
+.vds-home-hero-pill svg { color: var(--via-text-primary); }
 .vds-home-hero-title {
-  position: relative;
-  z-index: 2;
   font-family: var(--via-font-display);
   font-size: clamp(48px, 6.5vw, 84px);
   font-weight: var(--via-fw-medium);
-  line-height: 1.0;
-  letter-spacing: -0.03em;
-  color: var(--via-white);
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
   margin: 0 0 var(--via-space-7);
   max-width: 880px;
 }
 .vds-home-hero-title em {
   font-style: normal;
   font-weight: var(--via-fw-regular);
-  color: rgba(255,255,255,0.62);
+  color: var(--via-text-soft);
 }
 .vds-home-hero-lede {
-  position: relative;
-  z-index: 2;
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
-  line-height: 1.55;
-  color: rgba(255,255,255,0.75);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
   max-width: 580px;
   margin: 0 0 var(--via-space-10);
 }
 .vds-home-hero-actions {
-  position: relative;
-  z-index: 2;
   display: flex;
   gap: var(--via-space-3);
   flex-wrap: wrap;
   margin-bottom: var(--via-space-16);
 }
-.vds-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--via-space-2_5);
-  padding: var(--via-space-3_5) var(--via-space-5_5);
-  border: none;
-  border-radius: var(--via-radius-pill);
-  font-family: var(--via-font);
-  font-size: var(--via-fs-xs);
-  font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
-  cursor: pointer;
-  text-decoration: none;
-  transition:
-    transform var(--via-dur) var(--via-ease-snap),
-    box-shadow var(--via-dur) var(--via-ease-snap),
-    border-color var(--via-dur) var(--via-ease-snap),
-    background var(--via-dur) var(--via-ease-snap);
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
-}
-.vds-btn.primary {
-  background: var(--via-surface-onnavy);
-  /* superfície SEMPRE branca · re-pina texto pra navy nos 2 temas */
-  --via-text-primary: var(--via-navy);
-  color: var(--via-text-primary);
-  box-shadow: 0 8px 24px var(--via-shadow-ink-40), inset 0 1px 0 var(--via-edge-hi);
-}
-.vds-btn.primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%);
-  transition: left 600ms var(--via-ease-out);
-}
-.vds-btn.primary:hover { transform: translateY(-1px); box-shadow: 0 12px 32px var(--via-shadow-ink-40), inset 0 1px 0 var(--via-edge-hi); }
-.vds-btn.primary:hover::before { left: 100%; }
-.vds-btn.primary:active { transform: translateY(0); }
-.vds-btn.primary:focus-visible {
-  outline: none;
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 0 0 3px rgba(255, 255, 255, 0.34);
-}
-.vds-btn.ghost-light {
-  background: rgba(255,255,255,0.10);
-  color: var(--via-white);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.20);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
-}
-.vds-btn.ghost-light:hover {
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.16);
-  border-color: rgba(255,255,255,0.34);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
-}
-.vds-btn.ghost-light:active { transform: translateY(0); }
-.vds-btn.ghost-light:focus-visible {
-  outline: none;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 0 0 3px rgba(255, 255, 255, 0.34);
-}
+.vds-home-hero-actions .via-btn { text-decoration: none; }
 
-/* Stats inline no hero */
+/* Números do sistema · linha hairline, rótulo em sentence-case quieto */
 .vds-home-hero-stats {
-  position: relative;
-  z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  padding-top: var(--via-space-10);
-  border-top: 1px solid rgba(255,255,255,0.12);
+  gap: var(--via-space-6);
+  margin: 0;
+  padding-top: var(--via-space-8);
+  border-top: var(--via-border-fine);
 }
 .vds-home-hero-stat {
   display: flex;
@@ -153,22 +91,20 @@
   gap: var(--via-space-1);
 }
 .vds-home-hero-stat .num {
+  order: -1;
+  margin: 0;
   font-family: var(--via-font-display);
-  font-size: 48px;
-  font-weight: var(--via-fw-regular);
-  letter-spacing: -0.04em;
-  color: var(--via-white);
-  line-height: 1;
+  font-size: var(--via-fs-h1);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+  line-height: var(--via-lh-tight);
   font-variant-numeric: tabular-nums;
 }
 .vds-home-hero-stat .lbl {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-top: var(--via-space-1_5);
+  font-size: var(--via-fs-sm);
+  color: var(--via-text-muted);
 }
 
 @media (max-width: 720px) {
@@ -185,27 +121,23 @@
     font-size: var(--via-fs-body);
     margin: 0 0 var(--via-space-7);
   }
-  .vds-home-hero-pill { margin-bottom: var(--via-space-5_5); }
+  .vds-home-hero-pill { margin-bottom: var(--via-space-6); }
   .vds-home-hero-actions {
     gap: var(--via-space-2);
     margin-bottom: var(--via-space-10);
     flex-direction: column;
     align-items: stretch;
   }
-  .vds-home-hero-actions .vds-btn {
-    justify-content: center;
-    padding: 13px var(--via-space-5_5);
-  }
   .vds-home-hero-stats {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--via-space-4_5);
+    gap: var(--via-space-5);
   }
-  .vds-home-hero-stat .num { font-size: var(--via-fs-h1); }
+  .vds-home-hero-stat .num { font-size: var(--via-fs-h2); }
 
-  /* Home grid em mobile: 1 coluna */
+  /* Home grid em mobile: 1 coluna, bandeja sem o recuo do desktop */
   .vds-home-grid {
     grid-template-columns: 1fr;
-    padding: var(--via-space-4);
+    padding: var(--via-space-2_5);
     gap: var(--via-space-2_5);
     border-radius: var(--via-radius-xl);
   }
@@ -213,7 +145,7 @@
     padding: var(--via-space-6) var(--via-space-5_5) var(--via-space-14);
     border-radius: var(--via-radius-lg);
   }
-  .vds-home-card-title { font-size: 20px; }
+  .vds-home-card-title { font-size: var(--via-fs-h4); }
 }
 
 /* ---- Home grid ---- */
@@ -226,10 +158,10 @@
   padding: var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
-    radial-gradient(ellipse 60% 80% at 10% 0%, var(--via-navy-08) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 60% at 100% 100%, var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 80% at 10% 0%, var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 100% 100%, var(--via-navy-04) 0%, transparent 55%),
     linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
-  border: 0.5px solid var(--via-navy-08);
+  border: var(--via-border-fine);
 }
 .vds-home-card {
   position: relative;
@@ -237,66 +169,46 @@
   flex-direction: column;
   gap: var(--via-space-3);
   padding: var(--via-space-7) var(--via-space-7) 72px;
-  background: var(--via-glass-card);
-  /* receita canônica de vidro (blur/ring) — valores à mão (28px/180%)
-     divergiam do token e desalinhavam o card do resto do sistema */
-  -webkit-backdrop-filter: var(--via-glass-blur);
-  backdrop-filter: var(--via-glass-blur);
-  border: var(--via-glass-ring);
+  /* bandeja já é a superfície atmosférica → cartão sólido (vidro sobre
+     degradê liso não tem o que borrar; só lavava o branco) */
+  background: var(--via-surface);
+  border: var(--via-border-fine);
   /* um degrau ABAIXO do painel .vds-home-grid (xl) · canto interno nunca
      pode igualar o do pai, senão o encaixe fica torto */
   border-radius: var(--via-radius-lg);
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    inset 0 -1px 0 var(--via-edge-lo),
-    0 12px 32px var(--via-shadow-ink-06),
-    0 2px 8px var(--via-shadow-ink-03);
+    0 1px 2px var(--via-shadow-ink-03),
+    0 12px 32px -16px var(--via-shadow-ink-10);
   text-decoration: none;
   color: inherit;
   transition: var(--via-t);
   overflow: hidden;
 }
-.vds-home-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: var(--via-glass-sheen);
-  border-top-left-radius: var(--via-radius-lg);
-  pointer-events: none;
-}
 .vds-home-card > * { position: relative; z-index: 1; }
 .vds-home-card:hover {
-  border-color: var(--via-edge-hi);
   box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    inset 0 -1px 0 var(--via-edge-lo),
-    0 24px 56px var(--via-shadow-ink-14),
-    0 4px 12px var(--via-shadow-ink-06);
+    0 1px 2px var(--via-shadow-ink-03),
+    0 24px 48px -20px var(--via-shadow-ink-20);
   transform: translateY(-2px);
 }
 .vds-home-card:active { transform: translateY(0); }
 .vds-home-card:focus-visible {
   outline: none;
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    var(--via-shadow-focus);
+  box-shadow: var(--via-shadow-focus);
 }
 .vds-home-card-title {
   font-family: var(--via-font-display);
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-h3);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: var(--via-lh-snug);
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin: var(--via-space-1) 0 0;
 }
 .vds-home-card-body {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   margin: 0;
 }
@@ -310,12 +222,9 @@
   width: 36px;
   height: 36px;
   border-radius: var(--via-radius-pill);
-  background: var(--via-surface-onnavy);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-bg-2);
+  border: var(--via-border-fine);
   color: var(--via-text-primary);
-  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 12px var(--via-shadow-ink-06);
   z-index: 2 !important;
   transition: var(--via-t);
 }
@@ -329,9 +238,12 @@
    brancas berrantes nos cantos dos cards) · seta clara · pop no hover */
 [data-theme="dark"] .vds-home-card-arrow {
   background: var(--via-navy-08);
-  color: var(--via-text-primary);
   border-color: var(--via-border);
-  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 12px rgba(0,0,0,0.25);
+}
+[data-theme="dark"] .vds-home-card:hover .vds-home-card-arrow {
+  background: var(--via-white);
+  border-color: var(--via-white);
+  color: var(--via-navy);
 }
 
 /* ---- Home stats ---- */
@@ -362,16 +274,14 @@
   font-family: var(--via-font-display);
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-display);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.04em;
   color: var(--via-white);
 }
 .vds-home-stat-lbl {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: rgba(255,255,255,0.55);
 }
 
@@ -388,9 +298,9 @@
   padding: var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
-    radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-14) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-stage-soft) 0%, var(--via-stage-1) 100%);
+    radial-gradient(ellipse 60% 70% at 15% 0%,  var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   border: 0.5px solid var(--via-navy-12);
   overflow: hidden;
 }
@@ -556,7 +466,7 @@
   background: #F7F8FA;
   padding: 0 var(--via-space-2);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: #667085;
 }
 
@@ -566,9 +476,9 @@
   padding: var(--via-space-6) var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
-    radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.12) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-10) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-stage-soft) 0%, var(--via-stage-1) 100%);
+    radial-gradient(ellipse 60% 70% at 15% 0%,  var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   border: 0.5px solid var(--via-navy-12);
   overflow: hidden;
 }
@@ -632,7 +542,7 @@
 .vds-spacing-half-note {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-muted);
   max-width: 640px;
   margin: 0 0 var(--via-space-3_5);
@@ -684,9 +594,9 @@
   padding: var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
-    radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-10) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-stage-soft) 0%, var(--via-stage-1) 100%);
+    radial-gradient(ellipse 60% 70% at 15% 0%,  var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   border: 0.5px solid var(--via-navy-12);
 }
 .vds-radii-tile {
@@ -718,10 +628,8 @@
 .vds-radii-tile:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 16px 36px var(--via-shadow-ink-20); }
 .vds-radii-label {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 .vds-radii-value {
@@ -739,9 +647,9 @@
   padding: var(--via-space-14) var(--via-space-10);
   border-radius: var(--via-radius-xl);
   background:
-    radial-gradient(ellipse 60% 70% at 15% 0%,  rgba(30,58,95,0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-10) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-gray-100) 0%, var(--via-stage-1) 100%);
+    radial-gradient(ellipse 60% 70% at 15% 0%,  var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   border: 0.5px solid var(--via-navy-12);
   overflow: hidden;
 }
@@ -767,7 +675,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: var(--via-ls-wide);
@@ -827,13 +735,13 @@
 }
 .vds-motion-curve {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin: var(--via-space-1_5) 0 0;
 }
 .vds-motion-use {
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   margin: 0;
 }
@@ -897,7 +805,7 @@
   margin: var(--via-space-4) 0 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-muted);
 }
 .vds-motion-note strong {
@@ -940,10 +848,8 @@
 
 .vds-type-label {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -953,7 +859,7 @@
   display: block;
   margin-top: 5px;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
   letter-spacing: 0;
   text-transform: none;
@@ -968,12 +874,12 @@
 .vds-type-sample {
   color: var(--via-text-primary);
   font-size: var(--vds-sample-size, var(--via-fs-body));
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-type-meta {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   text-align: right;
   letter-spacing: 0.04em;
@@ -1023,6 +929,16 @@
 }
 .vds-icon-cell span {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
+}
+
+/* mobile · palco vira moldura fina (recuo do palco + do card espremia o conteúdo) */
+@media (max-width: 560px) {
+  .vds-brand-grid,
+  .vds-radii-grid,
+  .vds-shadow-grid {
+    padding: var(--via-space-3);
+    border-radius: var(--via-radius-lg);
+  }
 }

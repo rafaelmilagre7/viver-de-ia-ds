@@ -8,7 +8,7 @@ function Anchor({ tip, pos, icon: Icon, label }: { tip: string; pos: 'top' | 'bo
     <div className="via-tt-item">
       <div className="via-tt-anchor">
         <span className={`via-tt ${pos}`}>{tip}</span>
-        <Icon size={14} strokeWidth={2} />
+        <Icon size={16} strokeWidth={1.75} />
       </div>
       <span className="via-tt-pos">{label}</span>
     </div>

@@ -1,1010 +1,298 @@
 /* ============================================
    Auth flow · magic link + 2FA + social login
-   ============================================ */
+   ============================================
+   Light-first: todo card é papel (--via-surface) com atmosfera navy sutil.
+   Campos, OTP, checkbox e botões são da library (Input, OTPInput, Checkbox,
+   Button) — o tema escuro se resolve pelos tokens, sem ilha pinada nem
+   override de contexto navy. */
 
-/* Row for paired cards */
-.vds-auth-row {
+.vds-af-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--via-space-4);
 }
 
 @media (max-width: 820px) {
-  .vds-auth-row {
-    grid-template-columns: 1fr;
-  }
+  .vds-af-row { grid-template-columns: 1fr; }
 }
 
-/* Base card */
-.vds-auth-card,
-.vds-auth-card-2fa {
+.vds-af-card {
   position: relative;
-  padding: var(--via-space-9) var(--via-space-8) var(--via-space-8);
-  border-radius: var(--via-radius-lg);
   isolation: isolate;
-  overflow: hidden;
-  border: 1px solid rgba(10, 31, 59, 0.09);
-  color: var(--via-white);
-  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
-}
-
-/* Ilha permanentemente CLARA · `--via-surface-onnavy` é branco fixo nos 2 temas
-   ("NÃO adapta · sempre clara porque texto sobre ela é navy"). O card já fixava
-   os tokens de TEXTO — mas o resto da subárvore continuava lendo os valores do
-   tema DARK, e com a página em escuro tudo dentro dele lavava:
-     · `p.navy`/termos herdavam ink-2/ink-3 dark (#B4BBC9/#AEB8C6) → cinza claro
-       sobre card branco, ~1.9:1;
-     · os 3 botões de provider usam `--via-glass-card` + `--via-glass-ring`, que
-       em dark viram branco 10% e branco 8% → botão branco no branco, sem aro;
-     · `.vds-auth-field.light` usa `--via-surface`, que em dark é #131C30 → campo
-       navy-escuro com texto navy dentro do card branco.
-   Fixar os valores light aqui deixa a ilha estável nos dois temas. */
-.vds-auth-card.light {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
-  --via-ink-2: #5E6B82;
-  --via-ink-3: #525C72;
-  --via-surface: var(--via-white);
-  --via-border: rgba(10, 31, 59, 0.16);
-  --via-border-soft: rgba(10, 31, 59, 0.05);
-  --via-edge-hi: rgba(255, 255, 255, 0.95);
-  --via-glass-card: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);
-  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
-  /* accent-warm vira TEXTO CLARO no dark e a rampa navy-XX inverte pra branco:
-     dentro de um card branco isso apaga a pill "último usado" e a atmosfera. */
-  --via-accent: var(--via-navy);
-  --via-accent-warm: var(--via-navy-deep);
-  --via-navy-04: rgba(10, 31, 59, 0.04);
-  --via-navy-05: rgba(10, 31, 59, 0.05);
-  --via-navy-08: rgba(10, 31, 59, 0.08);
-  --via-navy-10: rgba(10, 31, 59, 0.10);
-  --via-navy-18: rgba(10, 31, 59, 0.18);
-  --via-navy-20: rgba(10, 31, 59, 0.20);
-  --via-navy-22: rgba(10, 31, 59, 0.22);
-  --via-navy-30: rgba(10, 31, 59, 0.30);
-  background: var(--via-surface-onnavy);
-  border: 1px solid var(--via-border-soft);
-  color: var(--via-text-primary);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 18px 40px -22px var(--via-shadow-ink-20);
-}
-
-.vds-auth-card.light::before {
-  content: '';
-  position: absolute;
-  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3_5);
+  padding: var(--via-space-12) var(--via-space-8) var(--via-space-8);
+  border-radius: var(--via-radius-lg);
   background:
     radial-gradient(540px 280px at 0% 0%, var(--via-navy-04), transparent 60%),
-    radial-gradient(420px 220px at 100% 100%, var(--via-navy-05), transparent 60%);
-  pointer-events: none;
-  z-index: -1;
+    radial-gradient(420px 220px at 100% 100%, var(--via-navy-03), transparent 60%),
+    var(--via-surface);
+  border: var(--via-border-fine);
+  box-shadow:
+    0 1px 2px var(--via-shadow-ink-03),
+    0 24px 48px -28px var(--via-shadow-ink-20);
 }
 
-.vds-auth-card > *,
-.vds-auth-card-2fa > * {
-  position: relative;
-  z-index: 1;
+.vds-af-card--narrow {
+  max-width: 480px;
+  margin-inline: auto;
+  padding-top: var(--via-space-10);
 }
 
-.vds-auth-step {
-  position: absolute;
-  top: 18px;
-  left: 24px;
-  font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--via-accent);
-  padding: 3px 9px;
-  border-radius: var(--via-radius-pill);
-  background: rgba(10, 31, 59, 0.07);
-  border: 1px solid var(--via-navy-14);
-}
-
-.vds-auth-brand {
-  margin-top: var(--via-space-3);
-  margin-bottom: var(--via-space-8);
-  display: flex;
-}
-
-.vds-auth-card h3 {
-  margin: 0 0 var(--via-space-3);
-  font-family: var(--via-display);
+.vds-af-card h3 {
+  margin: 0;
+  font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.024em;
-  line-height: 1.16;
-  color: var(--via-white);
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
+  color: var(--via-text-primary);
   max-width: 380px;
 }
 
-.vds-auth-card h3.navy {
-  color: var(--via-text-primary);
+.vds-af-card h3 em {
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-soft);
 }
 
-.vds-auth-card h3 em {
-  font-style: normal;
-  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* TEXTO INVISÍVEL · o fix sistêmico de tokens.css força gradient BRANCO em
-   `.vds-auth-card :is(h1..h4) em` com !important, assumindo que todo auth card
-   é navy. O card `.light` tem fundo branco → "volta" saía branco no branco.
-   Specificity maior + !important devolve o gradient navy nesse card. */
-.vds-auth-card.light :is(h1, h2, h3, h4) em {
-  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: var(--via-navy);
-}
-
-.vds-auth-card p {
-  margin: 0 0 var(--via-space-5);
-  font-size: var(--via-fs-caption);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
+.vds-af-card p {
+  margin: 0 0 var(--via-space-1_5);
+  font-size: var(--via-fs-sm);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
   max-width: 400px;
 }
 
-.vds-auth-card p.navy {
-  color: var(--via-ink-2);
+.vds-af-card p strong {
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-medium);
 }
 
-.vds-auth-card p strong {
-  color: var(--via-white);
-  font-weight: var(--via-fw-medium);
-  font-family: var(--via-mono);
+/* Passo do fluxo · etiqueta quieta no canto, sentence-case */
+.vds-af-step {
+  position: absolute;
+  top: var(--via-space-4_5);
+  left: var(--via-space-6);
+  padding: var(--via-space-0_5) var(--via-space-2_5);
+  border-radius: var(--via-radius-pill);
+  background: var(--via-bg-2);
+  border: var(--via-border-fine);
   font-size: var(--via-fs-xs);
-  letter-spacing: 0.01em;
-}
-
-.vds-auth-card.light p strong {
-  color: var(--via-text-primary);
-}
-
-/* Field input */
-.vds-auth-field {
-  display: flex;
-  align-items: center;
-  gap: var(--via-space-2_5);
-  padding: var(--via-space-3) var(--via-space-3_5);
-  border-radius: var(--via-radius-md);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  margin-bottom: var(--via-space-3_5);
-  transition: border-color .22s ease, background .22s ease, box-shadow .22s ease;
-}
-
-.vds-auth-field.light {
-  background: var(--via-surface);
-  border-color: var(--via-border);
-}
-
-.vds-auth-field:focus-within {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--via-navy-25);
-  box-shadow: 0 0 0 3px var(--via-navy-06);
-}
-
-.vds-auth-field.light:focus-within {
-  background: var(--via-surface);
-  border-color: var(--via-navy-30);
-  box-shadow: 0 0 0 3px var(--via-navy-08);
-}
-
-.vds-auth-field svg {
-  color: rgba(255, 255, 255, 0.5);
-  flex-shrink: 0;
-}
-
-.vds-auth-field.light svg {
-  color: var(--via-ink-3);
-}
-
-.vds-auth-field input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--via-white);
-  font-family: var(--via-font);
-  font-size: var(--via-fs-sm);
-  letter-spacing: -0.008em;
-}
-
-.vds-auth-field.light input {
-  color: var(--via-text-primary);
-}
-
-.vds-auth-field input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.vds-auth-field.light input::placeholder {
-  color: var(--via-ink-3);
-}/* CTAs */
-.vds-auth-cta {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--via-space-2);
-  padding: 13px var(--via-space-4_5);
-  border-radius: var(--via-radius-md);
-  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-white);
-  border: none;
-  font-family: inherit;
-  font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.008em;
-  cursor: pointer;
-  box-shadow: 0 8px 18px -6px var(--via-shadow-ink-40);
-  transition:
-    filter var(--via-dur) var(--via-ease-snap),
-    transform var(--via-dur) var(--via-ease-snap),
-    box-shadow var(--via-dur) var(--via-ease-snap),
-    border-color var(--via-dur) var(--via-ease-snap);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
+}
+
+.vds-af-brand {
+  display: flex;
   margin-bottom: var(--via-space-4);
 }
 
-.vds-auth-cta:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
-  box-shadow: 0 12px 24px -8px var(--via-shadow-ink-30);
-}
-
-.vds-auth-cta:active {
-  transform: translateY(0);
-  filter: none;
-}
-
-/* halo de 2 camadas · legível tanto no card claro quanto no context navy */
-.vds-auth-cta:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 2px rgba(255, 255, 255, 0.90),
-    0 0 0 4px var(--via-navy-60);
-}
-
-.vds-auth-cta.ghost {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.86);
-  box-shadow: none;
-}
-
-.vds-auth-cta.ghost:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.22);
-  color: var(--via-white);
-  filter: none;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px -6px rgba(255, 255, 255, 0.18);
-}
-
-.vds-auth-cta.navy {
-  background: var(--via-navy);
-  color: var(--via-white);
-  box-shadow: 0 8px 18px -8px var(--via-shadow-ink-40);
-}
-
-.vds-auth-cta.navy:hover {
-  background: var(--via-navy-deep);
-  filter: none;
-  box-shadow: 0 12px 24px -10px var(--via-shadow-ink-60);
-}
-
-/* Foot link */
-.vds-auth-foot-link {
-  margin: 0;
-  font-size: var(--via-fs-xs);
-  color: rgba(255, 255, 255, 0.5);
-  text-align: center;
-}
-
-.vds-auth-foot-link.navy {
-  color: var(--via-ink-2);
-}
-
-.vds-auth-foot-link a {
-  color: var(--via-accent);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(10, 31, 59, 0.15);
-  padding-bottom: 1px;
-  transition: border-color .2s ease;
-}
-
-.vds-auth-foot-link.navy a {
-  color: var(--via-text-primary);
-  border-bottom-color: var(--via-navy-30);
-}
-
-.vds-auth-foot-link a:hover {
-  border-bottom-color: var(--via-accent);
-}
-
-.vds-auth-foot-link a:focus-visible,
-.vds-auth-terms a:focus-visible {
-  outline: none;
-  border-radius: 2px;
-  box-shadow: var(--via-shadow-focus);
-}
-
-.vds-auth-foot-link.navy a:hover {
-  border-bottom-color: var(--via-navy);
-}
-
-.vds-auth-terms {
-  font-size: var(--via-fs-label);
-  color: var(--via-ink-3);
-  text-align: center;
-  line-height: 1.5;
-}
-
-/* TEXTO INVISÍVEL · `.vds-auth-card p` (0,1,1) pintava esse <p> de branco 70%
-   e ganhava de `.vds-auth-terms` (0,1,0). No card claro só os links sublinhados
-   apareciam — a frase "Ao continuar, você concorda…" sumia no branco.
-   O mesmo seletor também sequestrava `margin` e `max-width: 400px`: num card de
-   952px a caixa ficava colada à esquerda e o texto "centralizado" saía fora do
-   eixo. Daí `margin-inline: auto` aqui, com specificity (0,2,0). */
-.vds-auth-card.light .vds-auth-terms {
-  color: var(--via-ink-3);
-}
-
-.vds-auth-card .vds-auth-terms {
-  margin: var(--via-space-3_5) auto 0;
-  /* medida um pouco maior que os 400px herdados: cabe numa linha só e o link
-     "Política de privacidade" para de quebrar no meio. */
-  max-width: 34rem;
-}
-
-.vds-auth-card .vds-auth-foot-link {
-  margin-inline: auto;
-}
-
-.vds-auth-terms a {
-  color: var(--via-ink-2);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* Guard global `[data-theme=dark] a:not([class])` (0,2,1) ganhava de
-   `.vds-auth-terms a` (0,1,1) e pintava Termos/Política de azul #8FB8F6
-   DENTRO da ilha branca fixa. (0,3,1) devolve o ink fixo da ilha. */
-.vds-auth-card.light .vds-auth-terms a {
-  color: var(--via-ink-2);
-}
-
-/* Magic link success */
-.vds-auth-card.success {
-  background: linear-gradient(180deg, var(--via-navy) 0%, var(--via-navy-darker) 100%);
-}
-
-.vds-auth-card.success::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(420px 240px at 50% 0%, var(--via-navy-08), transparent 60%);
-  pointer-events: none;
-}
-
-.vds-auth-success-ring {
+/* Envelope enviado · disco navy (no escuro, disco claro) */
+.vds-af-sent {
   position: relative;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-white);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--via-radius-pill);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--via-space-6);
-  box-shadow: 0 8px 24px var(--via-shadow-ink-20);
+  margin-bottom: var(--via-space-2);
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+  box-shadow: 0 8px 24px -8px var(--via-shadow-ink-30);
 }
 
-.vds-auth-success-ring-pulse {
+:root[data-theme='dark'] .vds-af-sent {
+  background: linear-gradient(180deg, var(--via-white), var(--via-gray-200));
+  color: var(--via-navy);
+}
+
+.vds-af-sent-pulse {
   position: absolute;
   inset: -6px;
-  border-radius: 50%;
-  border: 2px solid var(--via-navy-20);
-  animation: vds-auth-pulse 1.6s ease-out infinite;
+  border-radius: var(--via-radius-pill);
+  border: 1.5px solid var(--via-navy-20);
+  animation: vds-af-pulse 1.6s var(--via-ease-exit) infinite;
 }
 
-@keyframes vds-auth-pulse {
+@keyframes vds-af-pulse {
   0% { transform: scale(0.85); opacity: 0.7; }
   100% { transform: scale(1.4); opacity: 0; }
 }
 
-.vds-auth-meta {
-  display: flex;
-  gap: var(--via-space-2);
-  margin-bottom: var(--via-space-4);
+@media (prefers-reduced-motion: reduce) {
+  .vds-af-sent-pulse { animation: none; opacity: 0; }
 }
 
-.vds-auth-meta-pill {
+/* Meta (expira em / novo código em) · mono tabular, sem caixa */
+.vds-af-meta {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  padding: 5px 11px;
-  border-radius: var(--via-radius-pill);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.74);
-  font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  line-height: 1.4;
-}
-
-.vds-auth-meta-pill strong {
-  color: var(--via-accent);
-  font-weight: var(--via-fw-medium);
-}
-
-/* ============================================
-   2FA · split layout
-   ============================================ */
-.vds-auth-card-2fa {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: var(--via-space-9);
-  align-items: center;
-  padding: var(--via-space-9) var(--via-space-8);
-}
-
-@media (max-width: 820px) {
-  .vds-auth-card-2fa {
-    grid-template-columns: 1fr;
-    gap: var(--via-space-6);
-  }
-}.vds-auth-2fa-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--via-radius-sm);
-  background: linear-gradient(135deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--via-space-4);
-  box-shadow: 0 4px 10px -2px var(--via-shadow-ink-30);
-}
-
-.vds-auth-eyebrow {
-  display: inline-block;
-  font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--via-accent);
-  margin-bottom: var(--via-space-3);
-}
-
-.vds-auth-2fa-l h3 {
-  font-size: var(--via-fs-h3);
-  max-width: 360px;
-}
-
-.vds-auth-2fa-actions {
-  display: flex;
-  flex-direction: column;
-  gap: var(--via-space-1_5);
-  margin-top: var(--via-space-1_5);
-}
-
-.vds-auth-2fa-actions a {
-  font-family: var(--via-font);
+  width: fit-content;
   font-size: var(--via-fs-xs);
-  color: rgba(255, 255, 255, 0.62);
-  text-decoration: none;
-  letter-spacing: -0.006em;
-  transition: color .2s ease;
+  color: var(--via-text-muted);
+  line-height: var(--via-lh-normal);
 }
 
-.vds-auth-2fa-actions a:hover {
-  color: var(--via-accent);
-}
-
-.vds-auth-2fa-actions a:focus-visible {
-  outline: none;
-  border-radius: 2px;
-  box-shadow: var(--via-shadow-focus);
-}
-
-/* 2FA inputs */
-.vds-auth-2fa-inputs {
-  display: flex;
-  gap: var(--via-space-2_5);
-  margin-bottom: var(--via-space-4_5);
-}
-
-@media (max-width: 540px) {
-  .vds-auth-2fa-inputs { gap: var(--via-space-1_5); }
-}
-
-.vds-auth-2fa-inputs input {
-  width: 54px;
-  height: 64px;
-  border-radius: var(--via-radius-md);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: var(--via-white);
-  font-family: var(--via-display);
-  font-size: 28px;
+.vds-af-meta strong {
+  font-family: var(--via-font-mono);
   font-weight: var(--via-fw-medium);
-  text-align: center;
-  letter-spacing: -0.02em;
-  outline: none;
-  transition: background .22s ease, border-color .22s ease, box-shadow .22s ease;
+  color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 540px) {
-  .vds-auth-2fa-inputs input { width: 44px; height: 52px; font-size: var(--via-fs-h3); }
+.vds-af-card .vds-af-foot {
+  margin: var(--via-space-1) auto 0;
+  font-size: var(--via-fs-xs);
+  text-align: center;
 }
 
-.vds-auth-2fa-inputs input.filled {
-  background: var(--via-navy-05);
-  border-color: var(--via-navy-20);
-  color: var(--via-accent);
-  box-shadow: 0 0 0 1px var(--via-navy-10) inset;
+.vds-af-card .vds-af-foot a,
+.vds-af-card .vds-af-2fa-links a,
+.vds-af-card .vds-af-terms a {
+  color: var(--via-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--via-navy-30);
+  text-underline-offset: 0.2em;
 }
 
-.vds-auth-2fa-inputs input:focus {
-  background: var(--via-navy-06);
-  border-color: var(--via-navy-30);
-  box-shadow: 0 0 0 3px rgba(10, 31, 59, 0.07);
+.vds-af-card .vds-af-foot a:hover,
+.vds-af-card .vds-af-2fa-links a:hover,
+.vds-af-card .vds-af-terms a:hover {
+  text-decoration-color: currentColor;
 }
 
-.vds-auth-2fa-timer {
-  display: inline-flex;
+.vds-af-card .vds-af-terms {
+  margin: 0 auto;
+  font-size: var(--via-fs-xs);
+  text-align: center;
+  color: var(--via-text-soft);
+}
+
+/* ============================================
+   2FA · split
+   ============================================ */
+.vds-af-card--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--via-space-10);
   align-items: center;
-  gap: var(--via-space-1_5);
-  font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.01em;
-  margin-bottom: var(--via-space-4);
+  padding: var(--via-space-10) var(--via-space-10);
 }
 
-.vds-auth-2fa-timer strong {
-  color: var(--via-accent);
-  font-weight: var(--via-fw-medium);
+@media (max-width: 820px) {
+  .vds-af-card--split {
+    grid-template-columns: 1fr;
+    gap: var(--via-space-6);
+    padding: var(--via-space-8) var(--via-space-6);
+  }
 }
 
-.vds-auth-2fa-trust {
+.vds-af-2fa-l,
+.vds-af-2fa-r {
   display: flex;
-  align-items: center;
-  gap: var(--via-space-2_5);
-  cursor: pointer;
-  padding: var(--via-space-2) 0;
+  flex-direction: column;
+  gap: var(--via-space-3_5);
+  min-width: 0;
 }
 
-.vds-auth-2fa-trust input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.vds-auth-2fa-trust-check {
-  width: 18px;
-  height: 18px;
-  border-radius: var(--via-radius-xs);
-  border: 1.5px solid rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.04);
+.vds-af-2fa-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--via-radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  transition: background .2s ease, border-color .2s ease;
-  position: relative;
+  background: var(--via-bg-2);
+  border: var(--via-border-fine);
+  color: var(--via-text-primary);
 }
 
-.vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check {
-  background: linear-gradient(135deg, var(--via-accent), var(--via-accent-warm));
-  border-color: transparent;
-}
-
-/* checkbox é visualmente escondido · o foco vive no quadradinho */
-.vds-auth-2fa-trust input:focus-visible + .vds-auth-2fa-trust-check {
-  border-color: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
-}
-
-.vds-auth-2fa-trust:hover .vds-auth-2fa-trust-check {
-  border-color: rgba(255, 255, 255, 0.42);
-}
-
-.vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check::after {
-  content: '';
-  width: 8px;
-  height: 4px;
-  border-left: 2px solid var(--via-navy);
-  border-bottom: 2px solid var(--via-navy);
-  transform: rotate(-45deg) translate(1px, -1px);
-}
-
-.vds-auth-2fa-trust em {
-  font-style: normal;
+/* Status · rótulo sentence-case com ponto verde (status real) */
+.vds-af-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-2);
   font-size: var(--via-fs-xs);
-  color: rgba(255, 255, 255, 0.62);
-  letter-spacing: -0.004em;
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-muted);
 }
+
+.vds-af-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-success);
+}
+
+.vds-af-2fa-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2);
+  font-size: var(--via-fs-xs);
+}
+
+.vds-af-2fa-links a { width: fit-content; }
+
+.vds-af-2fa-r .via-otp__row { max-width: 100%; }
 
 /* ============================================
    Social login
    ============================================ */
-.vds-auth-social {
+.vds-af-social {
   display: flex;
   flex-direction: column;
   gap: var(--via-space-2);
-  margin-bottom: var(--via-space-4_5);
 }
 
-.vds-auth-social-btn {
-  display: grid;
-  grid-template-columns: 32px 1fr auto;
-  gap: var(--via-space-3);
-  align-items: center;
-  padding: var(--via-space-3) var(--via-space-4);
-  border-radius: var(--via-radius-md);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: var(--via-glass-blur);
-  backdrop-filter: var(--via-glass-blur);
-  border: var(--via-glass-ring);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-shadow-ink-10);
-  color: var(--via-text-primary);
-  font-family: inherit;
-  font-size: var(--via-fs-caption);
-  font-weight: var(--via-fw-medium);
-  letter-spacing: -0.006em;
-  cursor: pointer;
-  text-align: left;
-  transition:
-    transform var(--via-dur) var(--via-ease-snap),
-    box-shadow var(--via-dur) var(--via-ease-snap),
-    border-color var(--via-dur) var(--via-ease-snap);
-}
+/* Provider · pílula da lib com a marca à esquerda e o texto alinhado nela */
+.vds-af-provider { justify-content: flex-start; }
+.vds-af-provider .via-btn__label { flex: 1; }
 
-.vds-auth-social-btn:hover {
-  transform: translateY(-1px);
-  border-color: var(--via-navy-20);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-shadow-ink-20),
-    0 2px 6px -3px var(--via-shadow-ink-10);
-}
-
-.vds-auth-social-btn:active {
-  transform: translateY(0);
-}
-
-.vds-auth-social-btn:focus-visible {
-  outline: none;
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    var(--via-shadow-focus);
-}
-
-.vds-auth-social-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--via-radius-sm);
-  display: flex;
+.vds-af-provider-mark {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--via-radius-pill);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--via-display);
-  font-size: var(--via-fs-body);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.02em;
-  flex-shrink: 0;
+  color: var(--via-text-primary);
+  background: var(--via-bg-2);
+  border: var(--via-border-fine);
 }
 
-.vds-auth-social-icon.google {
-  background: var(--via-surface);
-  border: 1px solid var(--via-border);
-  color: #4285F4;
+.vds-af-provider-mark.google { color: #4285F4; }
+.vds-af-provider-mark.apple { background: var(--via-black); border-color: var(--via-black); color: var(--via-white); }
+
+.vds-af-recent {
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-muted);
 }
 
-.vds-auth-social-icon.ms {
-  background: var(--via-surface);
-  border: 1px solid var(--via-border);
-  color: var(--via-blue);
-}
-
-.vds-auth-social-icon.apple {
-  background: var(--via-black);
-  color: var(--via-white);
-}
-
-.vds-auth-social-recent {
-  font-size: var(--via-fs-micro);
-  color: var(--via-accent-warm);
-  padding: 3px 9px;
-  border-radius: var(--via-radius-pill);
-  background: var(--via-navy-05);
-  border: 1px solid rgba(10, 31, 59, 0.13);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-/* Separator */
-.vds-auth-sep {
+.vds-af-sep {
   display: flex;
   align-items: center;
   gap: var(--via-space-3);
-  margin: var(--via-space-3_5) 0 var(--via-space-3_5);
-  color: var(--via-ink-3);
-  font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-soft);
 }
 
-.vds-auth-sep::before,
-.vds-auth-sep::after {
+.vds-af-sep::before,
+.vds-af-sep::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--via-border-soft);
+  background: var(--via-border-hairline);
 }
 
-/* ============================================================
-   CONTEXT FIX · cards via-mesh-navy
-   ------------------------------------------------------------
-   Quando o card tem fundo navy mesh, qualquer CTA com gradient
-   navy → navy-deep some (navy-on-navy). Mesmo problema vale pra
-   OTP inputs com bg-white 4% e foot-links com ink-2 navy.
-   Overrides abaixo invertem pra surface clara em context navy.
-   ============================================================ */
-
-/* CTA primária em context navy → glass branco com texto navy */
-.via-mesh-navy .vds-auth-cta,
-.vds-auth-card.success .vds-auth-cta:not(.ghost) {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
-  background: var(--via-surface-onnavy);
-  color: var(--via-text-primary);
-  border: 1px solid var(--via-edge-hi);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 10px 24px -8px rgba(0,0,0,0.30),
-    0 4px 10px -3px rgba(0,0,0,0.20);
-}
-.via-mesh-navy .vds-auth-cta:hover,
-.vds-auth-card.success .vds-auth-cta:not(.ghost):hover {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
-  background: var(--via-surface-onnavy);
-  color: var(--via-text-primary);
-  filter: none;
-  transform: translateY(-1px);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 16px 32px -10px rgba(0,0,0,0.40),
-    0 6px 14px -4px rgba(0,0,0,0.24);
-}
-
-/* CTA ghost em context navy → glass leve translúcido com texto branco */
-.via-mesh-navy .vds-auth-cta.ghost,
-.vds-auth-card.success .vds-auth-cta.ghost {
-  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: rgba(255,255,255,0.95);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: inset 0 1px 0 var(--via-edge-hi);
-}
-.via-mesh-navy .vds-auth-cta.ghost:hover,
-.vds-auth-card.success .vds-auth-cta.ghost:hover {
-  background: linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.08) 100%);
-  border-color: rgba(255,255,255,0.36);
-  color: var(--via-white);
-  transform: translateY(-1px);
-}
-
-/* Foot-link em context navy → texto branco/light com link em accent claro */
-.via-mesh-navy .vds-auth-foot-link,
-.vds-auth-card.success .vds-auth-foot-link {
-  color: rgba(255,255,255,0.62);
-}
-.via-mesh-navy .vds-auth-foot-link a,
-.vds-auth-card.success .vds-auth-foot-link a {
-  color: rgba(255,255,255,0.95);
-  border-bottom-color: rgba(255,255,255,0.36);
-}
-.via-mesh-navy .vds-auth-foot-link a:hover,
-.vds-auth-card.success .vds-auth-foot-link a:hover {
-  border-bottom-color: var(--via-white);
-}
-
-/* Field input em context navy · contraste visível ----------- */
-.via-mesh-navy .vds-auth-field {
-  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
-  border: 1px solid rgba(255,255,255,0.18);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-.via-mesh-navy .vds-auth-field:focus-within {
-  background: linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.06) 100%);
-  border-color: rgba(255,255,255,0.40);
-  box-shadow: 0 0 0 4px rgba(255,255,255,0.08);
-}
-.via-mesh-navy .vds-auth-field input {
-  color: var(--via-white);
-}
-.via-mesh-navy .vds-auth-field input::placeholder {
-  color: rgba(255,255,255,0.45);
-}
-.via-mesh-navy .vds-auth-field svg {
-  color: rgba(255,255,255,0.6);
-}
-
-/* 2FA OTP inputs · forte contraste em fundo navy ------------ */
-.via-mesh-navy .vds-auth-2fa-inputs input {
-  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: var(--via-white);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    inset 0 -1px 0 rgba(0,0,0,0.10);
-}
-.via-mesh-navy .vds-auth-2fa-inputs input.filled {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
-  background: var(--via-surface-onnavy);
-  border-color: var(--via-edge-hi);
-  color: var(--via-text-primary);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -4px rgba(0,0,0,0.30);
-}
-.via-mesh-navy .vds-auth-2fa-inputs input:focus {
-  background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%);
-  border-color: rgba(255,255,255,0.5);
-  box-shadow: 0 0 0 4px rgba(255,255,255,0.10);
-  color: var(--via-white);
-}
-
-/* 2FA action links · contraste em context navy -------------- */
-.via-mesh-navy .vds-auth-2fa-actions a {
-  color: rgba(255,255,255,0.78);
-  border-bottom: 1px solid rgba(255,255,255,0.18);
-  padding-bottom: var(--via-space-0_5);
-  width: fit-content;
-  transition: all 200ms cubic-bezier(.16, 1, .3, 1);
-}
-.via-mesh-navy .vds-auth-2fa-actions a:hover {
-  color: var(--via-white);
-  border-bottom-color: rgba(255,255,255,0.6);
-}
-
-/* 2FA timer em context navy · sutil mas visível ------------- */
-.via-mesh-navy .vds-auth-2fa-timer {
-  color: rgba(255,255,255,0.6);
-}
-.via-mesh-navy .vds-auth-2fa-timer strong {
-  color: var(--via-white);
-}
-
-/* Trust checkbox em context navy --------------------------- */
-.via-mesh-navy .vds-auth-2fa-trust-check {
-  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
-  border-color: rgba(255,255,255,0.30);
-}
-/* Interior de mockup navy FIXA as próprias cores: `--via-glass-card` e
-   `--via-edge-hi` INVERTEM no dark (viram branco ~10%/8%) e o quadradinho
-   marcado sumia no navy — mesma receita fixa do OTP input.filled. */
-.via-mesh-navy .vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check {
-  background: var(--via-surface-onnavy);
-  border-color: rgba(255, 255, 255, 0.95);
-}
-.via-mesh-navy .vds-auth-2fa-trust input:checked + .vds-auth-2fa-trust-check::after {
-  border-color: var(--via-navy);
-}
-.via-mesh-navy .vds-auth-2fa-trust em {
-  color: rgba(255,255,255,0.72);
-}
-
-/* Step pill (passo 1 · enviar link) em context navy ---------
-   O card `.success` é navy sólido mas não tem `.via-mesh-navy`: a pill
-   "passo 2 · cheque seu email" ficava navy #0A1F3B sobre navy #0A1F3B —
-   texto, fundo e borda invisíveis (o passo 2 simplesmente não existia na tela). */
-.via-mesh-navy .vds-auth-step,
-.vds-auth-card.success .vds-auth-step {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.18);
-  color: rgba(255,255,255,0.78);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-}
-
-/* …e o envelope precisa descer pra não colidir com a pill que voltou a existir
-   (mesmo ritmo vertical do brand lockup do passo 1). */
-.vds-auth-card.success .vds-auth-success-ring {
-  margin-top: var(--via-space-3);
-}
-
-/* Meta pill (Link expira em 9:47) em context navy ----------- */
-.via-mesh-navy .vds-auth-meta-pill,
-.vds-auth-card.success .vds-auth-meta-pill {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.18);
-  color: rgba(255,255,255,0.86);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-}
-.via-mesh-navy .vds-auth-meta-pill strong,
-.vds-auth-card.success .vds-auth-meta-pill strong {
-  color: var(--via-white);
-}
-
-/* Title em context navy · garantir contraste ---------------- */
-.via-mesh-navy .vds-auth-card h3,
-.via-mesh-navy h3,
-.vds-auth-card.success h3 {
-  color: var(--via-white);
-}
-.via-mesh-navy .vds-auth-card h3 em,
-.via-mesh-navy h3 em,
-.vds-auth-card.success h3 em {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
-  background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.66) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Body p em context navy · cinza claro ---------------------- */
-.via-mesh-navy .vds-auth-card p,
-.via-mesh-navy p,
-.vds-auth-card.success p {
-  color: rgba(255,255,255,0.72);
-}
-.via-mesh-navy .vds-auth-card p strong,
-.via-mesh-navy p strong,
-.vds-auth-card.success p strong {
-  color: var(--via-white);
-}
-
-/* Eyebrow 2FA em context navy ------------------------------- */
-.via-mesh-navy .vds-auth-eyebrow {
-  color: rgba(255,255,255,0.78);
-}
-
-/* Ícone tile 2FA em context navy ---------------------------- */
-.via-mesh-navy .vds-auth-2fa-icon {
-  background: linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.06) 100%);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: var(--via-white);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 6px 14px -4px rgba(0,0,0,0.30);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-/* Success ring (envelope) em context navy ------------------- */
-.vds-auth-card.success .vds-auth-success-ring {
-  background: linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.06) 100%);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: var(--via-white);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 12px 24px -8px rgba(0,0,0,0.32);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-.vds-auth-card.success .vds-auth-success-ring-pulse {
-  border-color: rgba(255,255,255,0.30);
+@media (max-width: 480px) {
+  .vds-af-card { padding: var(--via-space-12) var(--via-space-5) var(--via-space-6); }
+  .vds-af-recent { display: none; }
 }

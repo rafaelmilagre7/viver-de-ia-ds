@@ -37,7 +37,7 @@
 
 .vds-course-eyebrow {
   display: inline-flex;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -49,7 +49,7 @@
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tighter);
-  line-height: 1.06;
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: 0 0 var(--via-space-5);
   max-width: 280px;
@@ -79,9 +79,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -105,8 +104,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 16px 40px -24px var(--via-shadow-ink-20);
@@ -129,14 +128,14 @@
 .vds-course-stats .n {
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-course-stats .l {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-weight: var(--via-fw-medium);
 }
@@ -149,10 +148,8 @@
 }
 
 .vds-course-progress .lbl {
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -203,10 +200,8 @@
 }
 
 .vds-course-upnext .lbl {
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
 }
 
@@ -233,10 +228,9 @@
 
 .vds-course-upnext .d {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: 0.02em;
 }
 
 .vds-course-upnext .t {
@@ -249,10 +243,9 @@
 
 .vds-course-upnext .h {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   text-align: right;
-  letter-spacing: 0.02em;
 }
 
 .vds-course-cta {
@@ -266,11 +259,10 @@
   background: var(--via-navy);
   color: var(--via-white);
   border: 1px solid var(--via-navy);
-  border-radius: var(--via-radius-md);
+  border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.005em;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 8px 18px -8px var(--via-shadow-ink-60);
@@ -309,8 +301,8 @@
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   overflow: hidden;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -379,7 +371,7 @@
   justify-content: center;
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
   font-feature-settings: 'tnum' 1;
   flex-shrink: 0;
 }
@@ -394,14 +386,14 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-1);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-module-lede {
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin: 0;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   max-width: 540px;
 }
 
@@ -412,13 +404,12 @@
 }
 
 .vds-module-pill {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   padding: 5px var(--via-space-2_5);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
   white-space: nowrap;
   font-feature-settings: 'tnum' 1;
 }
@@ -578,10 +569,9 @@
 
 .vds-lesson-num {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-soft);
-  letter-spacing: 0.02em;
 }
 
 .vds-lesson.done .vds-lesson-num {
@@ -597,7 +587,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -633,7 +622,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--via-space-1);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   padding: var(--via-space-1) var(--via-space-2);
@@ -641,9 +630,8 @@
   background: var(--via-navy-04);
   border: 1px solid var(--via-navy-06);
   text-align: center;
-  letter-spacing: -0.004em;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-lesson.playing .vds-lesson-type {
@@ -655,11 +643,10 @@
 
 .vds-lesson-dur {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   text-align: right;
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
 }
 
 .vds-lesson.playing .vds-lesson-dur {
@@ -734,8 +721,8 @@
   border-radius: var(--via-radius-md);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 8px 24px -16px var(--via-shadow-ink-10);
@@ -759,18 +746,17 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-1);
-  letter-spacing: -0.005em;
 }
 
 .vds-cert-lede {
   font-size: var(--via-fs-xs);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
   margin: 0;
 }
 
 .vds-cert-pill {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   padding: var(--via-space-1_5) var(--via-space-3);
   border-radius: var(--via-radius-pill);

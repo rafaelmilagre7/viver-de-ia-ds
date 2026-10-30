@@ -7,8 +7,8 @@ export default function ApiCard() {
     <ComponentDoc
       eyebrow="api · card"
       name="Card"
-      headline="papel por padrão · vidro regular em glass/atmospheric/featured · reflexo no hover"
-      description="Container principal pra grouping editorial. 5 variants visuais: default (superfície sólida, papel) · glass, atmospheric e featured (material regular do vidro líquido, com aro especular) · dark (mesh navy). `hoverable` adiciona lift -3px + reflexo que segue o ponteiro (só transform/opacity, só mouse)."
+      headline="papel por padrão, vidro quando precisa."
+      description="Papel por padrão · vidro regular em glass/atmospheric/featured · reflexo no hover. Container principal pra grouping editorial. 5 variants visuais: default (superfície sólida, papel) · glass, atmospheric e featured (material regular do vidro líquido, com aro especular) · dark (mesh navy). `hoverable` adiciona lift -3px + reflexo que segue o ponteiro (só transform/opacity, só mouse)."
       importLine={`import { Card, type CardProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-card', description: 'Container · border-radius lg · sólido no default · material regular (fill + blur + ring + sombra) nas variantes de vidro' },

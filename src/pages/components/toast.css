@@ -31,8 +31,8 @@
   gap: var(--via-space-3_5);
   padding: var(--via-space-4) var(--via-space-5);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(200%);
-  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -89,16 +89,15 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
   margin-top: 3px;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 .via-toast .action {
   position: relative;
   z-index: 1;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.004em;
   align-self: center;
   cursor: pointer;
   padding: 7px var(--via-space-3_5);

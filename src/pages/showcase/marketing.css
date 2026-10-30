@@ -35,10 +35,8 @@
 .mk-nav nav { display: flex; gap: var(--via-space-7); flex: 1; justify-content: center; }
 .mk-nav a {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   cursor: pointer;
   transition: color 180ms;
@@ -56,12 +54,11 @@
   border: 1px solid var(--via-navy);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 6px 14px -6px var(--via-shadow-ink-40);
@@ -119,13 +116,12 @@
   border: 1px solid var(--via-navy-10);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-primary);
   margin-bottom: var(--via-space-8);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .mk-hero .pill-dot {
   width: 6px; height: 6px; border-radius: 999px;
@@ -150,7 +146,7 @@
   font-family: var(--via-font);
   font-size: 20px;
   font-weight: var(--via-fw-regular);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   max-width: 540px;
   margin-top: var(--via-space-8);
@@ -165,7 +161,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
   white-space: nowrap;
@@ -228,8 +223,8 @@
 .glass-stack .g-card {
   padding: var(--via-space-5_5) 26px;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -240,17 +235,15 @@
 }
 .glass-stack .g-lbl {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-bold);
-  letter-spacing: var(--via-ls-mark);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 .glass-stack .g-num {
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.04em;
   color: var(--via-text-primary);
   font-variant-numeric: tabular-nums;
@@ -260,9 +253,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.10em;
   color: var(--via-gray-400);
-  text-transform: uppercase;
   margin-left: var(--via-space-2);
 }
 .glass-stack .g-sub {
@@ -283,7 +274,7 @@
   letter-spacing: -0.035em;
   color: var(--via-text-primary);
   margin: var(--via-space-3) 0 0;
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   max-width: 800px;
 }
 .mk-section-h h2 em { font-style: normal; color: var(--via-text-muted); font-weight: var(--via-fw-medium); }
@@ -304,8 +295,8 @@
   position: relative;
   padding: var(--via-space-8);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -346,7 +337,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-2);
 }
@@ -354,7 +345,7 @@
 .mk-feat p {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-body);
   margin: 0;
 }
@@ -368,8 +359,8 @@
   position: relative;
   padding: var(--via-space-8);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-xl);
   box-shadow:
@@ -408,27 +399,26 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 .mk-case .sector {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-muted);
   padding: var(--via-space-1) var(--via-space-2_5);
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .mk-case h3 {
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
   margin: 0;
 }
 .mk-case .stat {
@@ -449,8 +439,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
   color: var(--via-text-muted);
 }
 /* link de ação do case · pill de vidro (era texto chapado sem hover) */
@@ -472,7 +460,6 @@
   /* botão da marca = sentence case, sem tracking largo (caps+tracking em botão é banido) */
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-primary);
   text-decoration: none;
   white-space: nowrap;
@@ -523,13 +510,13 @@
   letter-spacing: -0.035em;
   color: var(--via-white);
   margin: var(--via-space-3) 0 var(--via-space-6);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
 }
 .mk-cta h2 em { font-style: normal; color: rgba(255,255,255,0.62); font-weight: var(--via-fw-medium); }
 .mk-cta p {
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: rgba(255,255,255,0.78);
   margin: 0 0 var(--via-space-10);
 }
@@ -546,10 +533,9 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   cursor: pointer;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
     0 10px 24px -10px rgba(0, 0, 0, 0.45);
@@ -585,7 +571,7 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-brand);
   color: var(--via-text-primary);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
 }
 .mk-footer .meta {
   font-family: var(--via-font);

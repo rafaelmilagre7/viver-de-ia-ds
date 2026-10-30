@@ -83,7 +83,7 @@ function InstagramSection() {
                 <strong>viverdeia.ai</strong>
                 <em>Promovido</em>
               </div>
-              <button aria-label="Mais opções"><MoreHorizontal size={14} strokeWidth={2} /></button>
+              <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
             </header>
             <div className="vds-sc-ig-canvas via-mesh-navy via-noise">
               <img src={monogramWhite} alt="" className="watermark" />
@@ -99,18 +99,18 @@ function InstagramSection() {
             </div>
             <div className="vds-sc-ig-actions">
               <div className="vds-sc-ig-actions-l">
-                <button aria-label="Curtir"><Heart size={20} strokeWidth={2} /></button>
-                <button aria-label="Comentar"><MessageCircle size={20} strokeWidth={2} /></button>
-                <button aria-label="Compartilhar"><Share2 size={18} strokeWidth={2} /></button>
+                <button aria-label="Curtir"><Heart size={20} strokeWidth={1.75} /></button>
+                <button aria-label="Comentar"><MessageCircle size={20} strokeWidth={1.75} /></button>
+                <button aria-label="Compartilhar"><Share2 size={16} strokeWidth={1.75} /></button>
               </div>
-              <button aria-label="Salvar"><Bookmark size={20} strokeWidth={2} /></button>
+              <button aria-label="Salvar"><Bookmark size={20} strokeWidth={1.75} /></button>
             </div>
             <div className="vds-sc-ig-body">
               <p>
                 <strong>viverdeia.ai</strong> sete meses observando a Nina rodar. anotei o que
                 não tá em curso nenhum. próxima turma abre 22/mai · 30 vagas. link no perfil.
               </p>
-              <span className="vds-sc-ig-time">há 4 horas · ver tradução</span>
+              <span className="vds-sc-ig-time">Há 4 horas · ver tradução</span>
             </div>
           </article>
 
@@ -247,9 +247,9 @@ function LinkedInSection() {
             <div>
               <strong>Caio Ribeiro</strong>
               <em>Fundador · Viver de IA · construindo Nina</em>
-              <span>2h · <Globe size={11} strokeWidth={2} /></span>
+              <span>2h · <Globe size={14} strokeWidth={1.75} /></span>
             </div>
-            <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={2} /></button>
+            <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
           </header>
 
           <div className="vds-sc-li-body">
@@ -280,15 +280,15 @@ function LinkedInSection() {
           <div className="vds-sc-li-actions">
             <div className="vds-sc-li-actions-stats">
               <span className="vds-sc-li-react">
-                <ThumbsUp size={11} strokeWidth={2.4} fill="currentColor" />
+                <ThumbsUp size={14} strokeWidth={1.75} fill="currentColor" />
               </span>
               <em>422 · 38 comentários · 12 compartilhamentos</em>
             </div>
             <div className="vds-sc-li-actions-btns">
-              <button><ThumbsUp size={14} strokeWidth={2} /> Curtir</button>
-              <button><MessageCircle size={14} strokeWidth={2} /> Comentar</button>
-              <button><Repeat2 size={14} strokeWidth={2} /> Republicar</button>
-              <button><Share2 size={14} strokeWidth={2} /> Enviar</button>
+              <button><ThumbsUp size={16} strokeWidth={1.75} /> Curtir</button>
+              <button><MessageCircle size={16} strokeWidth={1.75} /> Comentar</button>
+              <button><Repeat2 size={16} strokeWidth={1.75} /> Republicar</button>
+              <button><Share2 size={16} strokeWidth={1.75} /> Enviar</button>
             </div>
           </div>
         </article>
@@ -306,9 +306,9 @@ function LinkedInSection() {
             <div>
               <strong>Viver de IA</strong>
               <em>Formação técnico-operativa em IA · 2.847 seguidores</em>
-              <span>3h · <Globe size={11} strokeWidth={2} /></span>
+              <span>3h · <Globe size={14} strokeWidth={1.75} /></span>
             </div>
-            <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={2} /></button>
+            <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
           </header>
 
           <div className="vds-sc-li-body">
@@ -406,7 +406,7 @@ function LinkedInSection() {
       >
         <article className="vds-sc-li-banner via-mesh-navy via-noise">
           <img src={wordmarkWhite} alt="Viver de IA" className="word" />
-          <span className="tag">operadores formando operadores · 220 alunos em 24 meses</span>
+          <span className="tag">Operadores formando operadores · 220 alunos em 24 meses</span>
         </article>
       </Section>
     </>
@@ -527,10 +527,10 @@ function XSection() {
             ensina: agente em produção exige mais cicatriz que prompt bom.
           </p>
           <footer>
-            <span><MessageCircle size={14} strokeWidth={1.6} /> 42</span>
-            <span><Repeat2 size={14} strokeWidth={1.6} /> 187</span>
-            <span><Heart size={14} strokeWidth={1.6} /> 941</span>
-            <span><Bookmark size={14} strokeWidth={1.6} /> 122</span>
+            <span><MessageCircle size={16} strokeWidth={1.75} /> 42</span>
+            <span><Repeat2 size={16} strokeWidth={1.75} /> 187</span>
+            <span><Heart size={16} strokeWidth={1.75} /> 941</span>
+            <span><Bookmark size={16} strokeWidth={1.75} /> 122</span>
           </footer>
         </article>
       </Section>
@@ -560,10 +560,10 @@ function XSection() {
             <img src={monogramWhite} alt="" />
           </div>
           <footer>
-            <span><MessageCircle size={14} strokeWidth={1.6} /> 28</span>
-            <span><Repeat2 size={14} strokeWidth={1.6} /> 94</span>
-            <span><Heart size={14} strokeWidth={1.6} /> 412</span>
-            <span><Bookmark size={14} strokeWidth={1.6} /> 68</span>
+            <span><MessageCircle size={16} strokeWidth={1.75} /> 28</span>
+            <span><Repeat2 size={16} strokeWidth={1.75} /> 94</span>
+            <span><Heart size={16} strokeWidth={1.75} /> 412</span>
+            <span><Bookmark size={16} strokeWidth={1.75} /> 68</span>
           </footer>
         </article>
       </Section>
@@ -595,13 +595,13 @@ function TikTokSection() {
               <img src={appIcon} alt="" />
               <span className="plus">+</span>
             </div>
-            <button aria-label="Curtir"><Heart size={26} strokeWidth={2} /></button>
+            <button aria-label="Curtir"><Heart size={24} strokeWidth={1.75} /></button>
             <em className="mono">12.4k</em>
-            <button aria-label="Comentar"><MessageCircle size={26} strokeWidth={2} /></button>
+            <button aria-label="Comentar"><MessageCircle size={24} strokeWidth={1.75} /></button>
             <em className="mono">218</em>
-            <button aria-label="Salvar"><Bookmark size={26} strokeWidth={2} /></button>
+            <button aria-label="Salvar"><Bookmark size={24} strokeWidth={1.75} /></button>
             <em className="mono">1.8k</em>
-            <button aria-label="Compartilhar"><Share2 size={26} strokeWidth={2} /></button>
+            <button aria-label="Compartilhar"><Share2 size={24} strokeWidth={1.75} /></button>
             <em className="mono">442</em>
           </aside>
           <div className="vds-sc-tiktok-bottom">
@@ -681,7 +681,7 @@ function PodcastSection() {
       >
         <article className="vds-sc-podcast-ep via-mesh-navy via-noise">
           <span className="vds-sc-podcast-ep-eyebrow">
-            <Play size={11} strokeWidth={2.4} fill="currentColor" />
+            <Play size={16} strokeWidth={1.75} fill="currentColor" />
             episódio 18 · 42min
           </span>
           <h2>

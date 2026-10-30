@@ -14,7 +14,7 @@
   margin: 0 0 var(--via-space-6);
   max-width: 76ch;
   font-size: var(--via-fs-sm);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
 }
 
@@ -38,7 +38,7 @@
   background: var(--via-navy-02);
   border: 1px solid var(--via-border-soft);
   font-size: var(--via-fs-xs);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
 }
 
@@ -104,7 +104,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.04em;
   color: var(--via-navy-14);
   font-variant-numeric: tabular-nums;
@@ -115,15 +115,15 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
-  line-height: 1.25;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
 }
 
 .vds-data-tri-item p {
   margin: 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
 }
 
@@ -132,8 +132,7 @@
   padding-top: var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  letter-spacing: 0.02em;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 
@@ -154,10 +153,8 @@
 
 .vds-data-snippet-title {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
 }
 
@@ -174,8 +171,7 @@
   color: rgba(255, 255, 255, 0.9);
   font-family: var(--via-mono);
   font-size: var(--via-fs-xs);
-  line-height: 1.62;
-  letter-spacing: 0.01em;
+  line-height: var(--via-lh-loose);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   box-shadow:
@@ -195,10 +191,8 @@
   display: block;
   margin-bottom: var(--via-space-3_5);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 
@@ -223,15 +217,14 @@
 
 .vds-data-mods code {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
-  letter-spacing: 0.01em;
 }
 
 .vds-data-mods em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
-  line-height: 1.5;
+  font-size: var(--via-fs-xs);
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-3);
 }
 
@@ -268,15 +261,14 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
 .vds-data-dens-item header code {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: 0.02em;
 }
 
 .vds-data-dens-item > p {
@@ -284,7 +276,7 @@
   margin-top: auto;      /* as três legendas alinham na mesma linha de base */
   padding-top: var(--via-space-4);
   font-size: var(--via-fs-xs);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
 }
 
@@ -333,8 +325,7 @@
 
 .vds-data-anat > header code {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
-  letter-spacing: 0.01em;
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
 }
 
@@ -343,14 +334,14 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
 .vds-data-anat > p {
   margin: 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.62;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
 }
 
@@ -378,10 +369,8 @@
 
 .vds-data-compare-tag {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 
@@ -445,9 +434,9 @@
   display: inline-block;
   margin-bottom: var(--via-space-4);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
 }
@@ -467,7 +456,7 @@
   position: relative;
   padding-left: var(--via-space-5);
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-2);
 }
 
@@ -482,7 +471,7 @@
   content: '·';
   color: var(--via-text-primary);
   font-size: var(--via-fs-body);
-  line-height: 1.2;
+  line-height: var(--via-lh-snug);
 }
 
 .vds-data-rules-col--bad li {
@@ -493,13 +482,13 @@
   content: '×';
   color: var(--via-coral);
   font-size: var(--via-fs-body);
-  line-height: 1.35;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-data-closing {
   margin: var(--via-space-6) 0 0;
   max-width: 76ch;
   font-size: var(--via-fs-sm);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
 }

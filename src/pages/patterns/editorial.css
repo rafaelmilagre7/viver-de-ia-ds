@@ -48,7 +48,7 @@
 .vds-ed-newsletter > header img { width: 100px; height: auto; }
 .vds-ed-nl-edition {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
 }
@@ -73,8 +73,8 @@
   font-family: var(--via-font-display);
   font-size: clamp(22px, 3.5vw, 30px);
   font-weight: var(--via-fw-medium);
-  line-height: 1.15;
-  letter-spacing: -0.022em;
+  line-height: var(--via-lh-snug);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-3);
 }
@@ -99,7 +99,7 @@
 .vds-ed-nl-section-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -110,7 +110,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   margin: 0 0 var(--via-space-2_5);
 }
 .vds-ed-nl-body article p strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
@@ -129,7 +129,6 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
 }
 
 .vds-ed-nl-cta { padding-top: var(--via-space-1); }
@@ -203,10 +202,8 @@
 .vds-ed-blog-cat {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
   margin-bottom: var(--via-space-4_5);
 }
@@ -229,7 +226,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   margin: 0 0 var(--via-space-5_5);
   max-width: 600px;
 }
@@ -295,7 +292,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   color: var(--via-text);
-  line-height: 1.7;
+  line-height: var(--via-lh-loose);
 }
 .vds-ed-blog-body p {
   margin: 0 0 var(--via-space-4_5);
@@ -306,8 +303,8 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.022em;
-  line-height: 1.25;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   margin: var(--via-space-8) 0 var(--via-space-3_5);
 }
 .vds-ed-blog-body ol {
@@ -316,7 +313,7 @@
 }
 .vds-ed-blog-body li {
   margin-bottom: var(--via-space-2);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
 }
 .vds-ed-blog-body blockquote {
   margin: var(--via-space-6) 0;
@@ -331,8 +328,8 @@
   font-style: normal;
   font-size: var(--via-fs-h4);
   color: var(--via-text-primary);
-  line-height: 1.5;
-  letter-spacing: -0.018em;
+  line-height: var(--via-lh-normal);
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-ed-blog-body cite {
   display: block;
@@ -357,7 +354,7 @@
 .vds-ed-blog-toc-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -384,7 +381,7 @@
   left: 0;
   top: 1px;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-ed-blog-toc a {
@@ -482,7 +479,7 @@
 }
 .vds-ed-podcast-cover-eyebrow {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -493,8 +490,8 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  line-height: 1.05;
-  letter-spacing: -0.022em;
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0;
 }
@@ -516,10 +513,8 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
   margin-bottom: var(--via-space-2_5);
 }
@@ -527,8 +522,8 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  line-height: 1.2;
-  letter-spacing: -0.022em;
+  line-height: var(--via-lh-snug);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-3);
 }
@@ -536,7 +531,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   margin: 0 0 var(--via-space-4_5);
 }
 .vds-ed-podcast-where {
@@ -555,7 +550,7 @@
   border: var(--via-glass-ring);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   text-decoration: none;
   box-shadow:
@@ -587,10 +582,8 @@
 }
 .vds-ed-podcast h3 {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
   margin: 0 0 var(--via-space-3);
 }
@@ -642,7 +635,6 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin-bottom: 3px;
-  letter-spacing: -0.004em;
 }
 .vds-ed-podcast-timestamps em {
   font-style: normal;
@@ -681,7 +673,7 @@
 }
 .vds-ed-podcast-res-eyebrow {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -725,7 +717,7 @@
   font-family: var(--via-font-display);
   font-size: clamp(28px, 5vw, 56px);
   font-weight: var(--via-fw-medium);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-2);
@@ -756,7 +748,7 @@
   background: rgba(0, 0, 0, 0.7);
   border-radius: var(--via-radius-xs);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-white);
 }
 .vds-ed-youtube-play {
@@ -793,7 +785,7 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-2);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-ed-youtube-meta {
   display: flex;
@@ -849,7 +841,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   margin: 0 0 var(--via-space-3_5);
 }
 .vds-ed-youtube-desc p strong { color: var(--via-text-primary); font-weight: var(--via-fw-medium); }
@@ -862,7 +854,7 @@
   border-radius: var(--via-radius-sm);
   border: 0.5px solid var(--via-navy-08);
   white-space: pre-wrap;
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   margin: 0 0 var(--via-space-4_5);
   overflow-x: auto;
 }
@@ -878,7 +870,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   text-decoration: none;
-  letter-spacing: -0.004em;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -914,10 +905,8 @@
 .vds-ed-tutorial-cat {
   display: inline-block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
   margin-bottom: var(--via-space-4_5);
 }
@@ -939,7 +928,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   color: var(--via-text);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   margin: 0 0 var(--via-space-5);
 }
 .vds-ed-tutorial-meta {
@@ -961,10 +950,8 @@
 }
 .vds-ed-tutorial-meta .lbl {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
 }
 .vds-ed-tutorial-meta strong {
@@ -982,15 +969,15 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.022em;
-  line-height: 1.25;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   margin: 0 0 var(--via-space-3_5);
 }
 .vds-ed-tutorial p {
   font-family: var(--via-font);
   font-size: var(--via-fs-body);
   color: var(--via-text);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   margin: 0 0 var(--via-space-4);
 }
 .vds-ed-tutorial p strong { font-weight: var(--via-fw-medium); color: var(--via-text-primary); }
@@ -1045,7 +1032,7 @@
   border-radius: var(--via-radius-sm);
   border: 0.5px solid var(--via-navy-08);
   white-space: pre-wrap;
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   margin: var(--via-space-3) 0 var(--via-space-4_5);
   overflow-x: auto;
 }
@@ -1062,7 +1049,7 @@
 .vds-ed-tutorial-verify-eyebrow {
   display: block;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -1083,7 +1070,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
 }
 .vds-ed-tutorial-verify li::before {
   content: '';

@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import {
-  ChevronDown, ArrowRight, Check, X, Crown, Award,
-  Compass, Layers, Rocket,
-} from 'lucide-react';
+import { ChevronDown, ArrowRight, Check, X, Crown, Award, Compass, Layers, Target } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
@@ -76,7 +73,7 @@ function HeroVariantsSection() {
                 <em>conversas analisadas</em>
               </div>
             </div>
-            <a className="vds-hero-cta primary" href="#">Conhecer o plano <ArrowRight size={14} strokeWidth={2.4} /></a>
+            <a className="vds-hero-cta primary" href="#">Conhecer o plano <ArrowRight size={16} strokeWidth={1.75} /></a>
           </div>
           <div className="vds-hero-r">
             <div className="vds-hero-mock via-mesh-navy via-noise">
@@ -116,7 +113,7 @@ function HeroVariantsSection() {
               </p>
               <a className="vds-hero-cta dark" href="#">
                 Leia o manifesto completo
-                <ArrowRight size={13} strokeWidth={2.4} />
+                <ArrowRight size={14} strokeWidth={1.75} />
               </a>
             </div>
           </div>
@@ -152,7 +149,7 @@ function LogoWallSection() {
         <footer>
           <a href="#" className="vds-logowall-link">
             Ver casos de uso completos
-            <ArrowRight size={13} strokeWidth={2.4} />
+            <ArrowRight size={14} strokeWidth={1.75} />
           </a>
         </footer>
       </div>
@@ -201,7 +198,7 @@ function ProcessSection() {
   const steps = [
     { n: '01', title: 'Audita', body: 'Mapeamento de onde IA realmente entrega — ou trava — no seu negócio. 2 sessões.', icon: Compass },
     { n: '02', title: 'Estrutura', body: 'Decidir o que vai pra produção, o que vai pro arquivo, e qual a métrica de receita.', icon: Layers },
-    { n: '03', title: 'Constrói', body: 'Primeiro agente rodando em 30 dias. Não MVP — em produção, com observabilidade.', icon: Rocket },
+    { n: '03', title: 'Constrói', body: 'Primeiro agente rodando em 30 dias. Não MVP — em produção, com observabilidade.', icon: Target },
     { n: '04', title: 'Escala', body: 'Time treinado pra operar sem você. Métrica clara. Próximo capítulo aberto.', icon: Award },
   ];
 
@@ -213,12 +210,12 @@ function ProcessSection() {
           return (
             <article key={s.n} className="vds-process-step">
               <div className="vds-process-num">
-                <Icon size={20} strokeWidth={1.4} />
+                <Icon size={20} strokeWidth={1.75} />
                 <span className="n">{s.n}</span>
               </div>
               <h4>{s.title}</h4>
               <p>{s.body}</p>
-              {i < steps.length - 1 && <span className="vds-process-arrow"><ArrowRight size={16} strokeWidth={2} /></span>}
+              {i < steps.length - 1 && <span className="vds-process-arrow"><ArrowRight size={16} strokeWidth={1.75} /></span>}
             </article>
           );
         })}
@@ -289,7 +286,7 @@ function ComparisonSection() {
         {plans.map((p) => (
           <article key={p.name} className={`vds-comparison-col ${p.hero ? 'hero' : ''}`}>
             <header>
-              {p.hero && <span className="vds-comparison-badge"><Crown size={11} strokeWidth={2.2} /> Mais popular</span>}
+              {p.hero && <span className="vds-comparison-badge"><Crown size={14} strokeWidth={1.75} /> Mais popular</span>}
               <h4>{p.name}</h4>
               <p className="vds-comparison-price">
                 {p.price}
@@ -301,8 +298,8 @@ function ComparisonSection() {
             <ul className="vds-comparison-list">
               {p.features.map((f, i) => (
                 <li key={i} className={f.v === false ? 'off' : ''}>
-                  {f.v === true && <Check size={13} strokeWidth={2.5} className="ok" />}
-                  {f.v === false && <X size={13} strokeWidth={2.4} className="no" />}
+                  {f.v === true && <Check size={14} strokeWidth={1.75} className="ok" />}
+                  {f.v === false && <X size={14} strokeWidth={1.75} className="no" />}
                   {typeof f.v === 'string' && <span className="val">{f.v}</span>}
                   <span className="lbl">{f.l}</span>
                 </li>
@@ -311,7 +308,7 @@ function ComparisonSection() {
 
             <button className={`vds-comparison-cta ${p.hero ? 'hero' : ''}`}>
               {p.cta}
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
           </article>
         ))}
@@ -352,7 +349,7 @@ function FaqSection() {
           <article key={i} className={`vds-faq-item ${open === i ? 'open' : ''}`}>
             <button className="vds-faq-q" onClick={() => setOpen(open === i ? -1 : i)}>
               <span>{f.q}</span>
-              <ChevronDown size={16} strokeWidth={2.2} className={`vds-faq-chev ${open === i ? 'rot' : ''}`} />
+              <ChevronDown size={16} strokeWidth={1.75} className={`vds-faq-chev ${open === i ? 'rot' : ''}`} />
             </button>
             {open === i && <p className="vds-faq-a">{f.a}</p>}
           </article>

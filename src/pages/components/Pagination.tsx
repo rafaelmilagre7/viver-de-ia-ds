@@ -20,7 +20,7 @@ export default function Pagination() {
       <Section title="Padrão" meta="navy fill no atual">
         <div className="via-pag">
           <button className="arr" disabled={page === 1} onClick={() => setPage(page - 1)} aria-label="Página anterior">
-            <ChevronLeft size={14} strokeWidth={2.2} />
+            <ChevronLeft size={16} strokeWidth={1.75} />
           </button>
           {pages.map((p, i) =>
             p === '…' ? (
@@ -34,7 +34,7 @@ export default function Pagination() {
             ),
           )}
           <button className="arr" disabled={page === total} onClick={() => setPage(page + 1)} aria-label="Próxima página">
-            <ChevronRight size={14} strokeWidth={2.2} />
+            <ChevronRight size={16} strokeWidth={1.75} />
           </button>
         </div>
         <p style={{ marginTop: 24, fontFamily: 'var(--via-font)', fontSize: 12, color: 'var(--via-text-muted)' }}>

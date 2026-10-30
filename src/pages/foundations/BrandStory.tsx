@@ -35,7 +35,7 @@ function MissionSection() {
       <article className="vds-bs-statement via-mesh-navy via-noise">
         <span className="vds-bs-aura" />
         <div className="vds-bs-icon">
-          <Target size={18} strokeWidth={1.6} />
+          <Target size={16} strokeWidth={1.75} />
         </div>
         <span className="vds-bs-eyebrow">Missão</span>
         <h2>
@@ -94,7 +94,7 @@ function VisionSection() {
       <article className="vds-bs-statement">
         <span className="vds-bs-aura" />
         <div className="vds-bs-icon vds-bs-icon--light">
-          <Eye size={18} strokeWidth={1.6} />
+          <Eye size={16} strokeWidth={1.75} />
         </div>
         <span className="vds-bs-eyebrow alt">Visão · 2031</span>
         <h2>
@@ -124,7 +124,7 @@ function VisionSection() {
               <strong>Escala consciente</strong>
               <em>220 operadores ativos · 2 produtos próprios (Nina, Iris) · método codificado</em>
             </div>
-            <span className="vds-bs-pin">você está aqui</span>
+            <span className="vds-bs-pin">Você está aqui</span>
           </li>
           <li>
             <span className="vds-bs-year mono">2028</span>
@@ -223,7 +223,7 @@ function PositioningSection() {
       <article className="vds-bs-positioning">
         <div className="vds-bs-positioning-l">
           <span className="vds-bs-positioning-eyebrow">
-            <Compass size={11} strokeWidth={2.2} />
+            <Compass size={14} strokeWidth={1.75} />
             Declaração formal
           </span>
           <h3>
@@ -240,7 +240,7 @@ function PositioningSection() {
 
         <div className="vds-bs-positioning-r">
           <article>
-            <span className="vds-bs-positioning-tag is">somos</span>
+            <span className="vds-bs-positioning-tag is">Somos</span>
             <ul>
               <li>Técnico-operativo · stack real, código real, produção real</li>
               <li>Editorial · voz adulta, sem urgência fabricada</li>
@@ -250,7 +250,7 @@ function PositioningSection() {
             </ul>
           </article>
           <article>
-            <span className="vds-bs-positioning-tag not">não somos</span>
+            <span className="vds-bs-positioning-tag not">Não somos</span>
             <ul>
               <li>Curso de "prompt engineering" superficial</li>
               <li>Bootcamp acadêmico de ML / data science</li>
@@ -275,7 +275,7 @@ function PromiseSection() {
       <article className="vds-bs-promise">
         <span className="vds-bs-promise-aura" />
         <div className="vds-bs-promise-icon">
-          <Heart size={18} strokeWidth={1.6} />
+          <Heart size={16} strokeWidth={1.75} />
         </div>
         <span className="vds-bs-promise-eyebrow">Promessa</span>
         <h2>

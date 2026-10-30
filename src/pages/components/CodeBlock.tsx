@@ -51,13 +51,13 @@ function CodeLightSection() {
     <Section title="Code block · variante clara" meta="docs · embed em artigo · trecho citado">
       <div className="vds-code light">
         <header className="vds-code-head">
-          <span className="vds-code-icon"><FileCode size={13} strokeWidth={2} /></span>
+          <span className="vds-code-icon"><FileCode size={14} strokeWidth={1.75} /></span>
           <span className="vds-code-path">
             <em>meu-agente /</em> src / agents / classifier.ts
           </span>
           <span className="vds-code-lang">TypeScript</span>
           <button className="vds-code-copy" onClick={() => { setCopied(true); setTimeout(() => setCopied(false), 1400); }}>
-            {copied ? <><Check size={12} strokeWidth={2.6} /> Copiado</> : <><Copy size={12} strokeWidth={2} /> Copiar</>}
+            {copied ? <><Check size={14} strokeWidth={1.75} /> Copiado</> : <><Copy size={14} strokeWidth={1.75} /> Copiar</>}
           </button>
         </header>
 
@@ -80,13 +80,13 @@ function CodeDarkSection() {
     <Section title="Code block · variante escura" meta="apresentação · slide deck · aula gravada">
       <div className="vds-code dark via-mesh-navy via-noise">
         <header className="vds-code-head dark">
-          <span className="vds-code-icon"><FileCode size={13} strokeWidth={2} /></span>
+          <span className="vds-code-icon"><FileCode size={14} strokeWidth={1.75} /></span>
           <span className="vds-code-path">
             <em>meu-agente /</em> prompts / SOUL.md
           </span>
           <span className="vds-code-lang dark">Markdown</span>
           <button className="vds-code-copy dark">
-            <Copy size={12} strokeWidth={2} /> Copiar
+            <Copy size={14} strokeWidth={1.75} /> Copiar
           </button>
         </header>
 
@@ -117,11 +117,11 @@ function TerminalSection() {
             <span /><span /><span />
           </div>
           <span className="vds-terminal-title">
-            <TerminalIcon size={11} strokeWidth={2} />
+            <TerminalIcon size={14} strokeWidth={1.75} />
             zsh · ~/meu-agente
           </span>
           <button aria-label="Tela cheia" className="vds-terminal-max">
-            <Maximize2 size={12} strokeWidth={2} />
+            <Maximize2 size={14} strokeWidth={1.75} />
           </button>
         </header>
 
@@ -167,7 +167,7 @@ function DiffSection() {
     <Section title="Diff viewer · revisão lado a lado" meta="pull request · aula sobre refactor · code review">
       <div className="vds-diff">
         <header className="vds-diff-head">
-          <span className="vds-diff-icon"><GitBranch size={13} strokeWidth={2} /></span>
+          <span className="vds-diff-icon"><GitBranch size={14} strokeWidth={1.75} /></span>
           <span className="vds-diff-meta">
             <strong>prompts / classifier.ts</strong>
             <em>+8 / −5 · 2 minutos atrás · Caio Ribeiro</em>

@@ -34,8 +34,8 @@ export default function ApiCombobox() {
     <ComponentDoc
       eyebrow="api · combobox"
       name="Combobox"
-      headline="select + busca · filtro live · ARIA combobox/listbox"
-      description="Combobox = Select com input pra filtrar opções em tempo real. Quando lista tem 20+ itens, Combobox é obrigatório (UX > Select). Filtro case-insensitive sobre label. Editorial: input glass + listbox portal com spring."
+      headline="escolher uma opção digitando."
+      description="Select + busca · filtro live · ARIA combobox/listbox. Combobox = Select com input pra filtrar opções em tempo real. Quando lista tem 20+ itens, Combobox é obrigatório (UX > Select). Filtro case-insensitive sobre label. Editorial: input glass + listbox portal com spring."
       importLine={`import { Combobox, type ComboboxProps, type ComboboxOption } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-combobox', description: 'Container · label + input + listbox portal' },

@@ -25,7 +25,7 @@ export default function FeatureGrid() {
         <div className="vds-feat-grid">
           {feats.slice(0, 3).map((f) => (
             <div key={f.em} className="vds-feat">
-              <span className="ico"><f.I size={18} strokeWidth={2} /></span>
+              <span className="ico"><f.I size={16} strokeWidth={1.75} /></span>
               <h3>{f.title} <em>{f.em}</em></h3>
               <p>{f.desc}</p>
             </div>
@@ -37,7 +37,7 @@ export default function FeatureGrid() {
         <div className="vds-feat-grid">
           {feats.map((f) => (
             <div key={f.em} className="vds-feat">
-              <span className="ico"><f.I size={18} strokeWidth={2} /></span>
+              <span className="ico"><f.I size={16} strokeWidth={1.75} /></span>
               <h3>{f.title} <em>{f.em}</em></h3>
               <p>{f.desc}</p>
             </div>

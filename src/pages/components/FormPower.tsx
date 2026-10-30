@@ -76,7 +76,7 @@ function MultiSelectSection() {
                     aria-label={`Remover ${item.label}`}
                   >
                     {item.label}
-                    <X size={10} strokeWidth={2.4} />
+                    <X size={14} strokeWidth={1.75} />
                   </button>
                 );
               })
@@ -95,14 +95,14 @@ function MultiSelectSection() {
                 Limpar
               </button>
             )}
-            <ChevronDown size={14} strokeWidth={2} className={open ? 'is-open' : ''} />
+            <ChevronDown size={16} strokeWidth={1.75} className={open ? 'is-open' : ''} />
           </div>
         </div>
 
         {open && (
           <div className="vds-fp-mselect-pop">
             <div className="vds-fp-mselect-search">
-              <Search size={13} strokeWidth={2} />
+              <Search size={14} strokeWidth={1.75} />
               <input
                 autoFocus
                 placeholder="Buscar tópico…"
@@ -117,7 +117,7 @@ function MultiSelectSection() {
                   <li key={o.id} className={isOn ? 'on' : ''}>
                     <button type="button" onClick={() => toggle(o.id)}>
                       <span className="vds-fp-mselect-check">
-                        {isOn && <Check size={10} strokeWidth={3} />}
+                        {isOn && <Check size={14} strokeWidth={1.75} />}
                       </span>
                       <span className="vds-fp-mselect-lbl">{o.label}</span>
                       <span className="vds-fp-mselect-count mono">{o.count}</span>
@@ -152,7 +152,7 @@ function DragDropSection() {
       <article className="vds-fp-drop">
         <div className="vds-fp-drop-zone">
           <div className="vds-fp-drop-icon">
-            <UploadIcon size={20} strokeWidth={1.6} />
+            <UploadIcon size={20} strokeWidth={1.75} />
           </div>
           <h4>
             Arraste arquivos aqui ou <em>clique pra escolher</em>.
@@ -165,7 +165,7 @@ function DragDropSection() {
           {files.map((f) => (
             <li key={f.name} className="vds-fp-drop-item">
               <div className="vds-fp-drop-item-icon">
-                {f.type === 'image' ? <ImageIcon size={14} strokeWidth={1.8} /> : <FileText size={14} strokeWidth={1.8} />}
+                {f.type === 'image' ? <ImageIcon size={16} strokeWidth={1.75} /> : <FileText size={16} strokeWidth={1.75} />}
               </div>
               <div className="vds-fp-drop-item-body">
                 <strong>{f.name}</strong>
@@ -177,12 +177,12 @@ function DragDropSection() {
                 )}
               </div>
               {f.progress === 100 ? (
-                <span className="vds-fp-drop-done"><Check size={12} strokeWidth={3} /></span>
+                <span className="vds-fp-drop-done"><Check size={14} strokeWidth={1.75} /></span>
               ) : (
                 <span className="vds-fp-drop-pct mono">{f.progress}%</span>
               )}
               <button type="button" className="vds-fp-drop-cancel" aria-label={`Cancelar ${f.name}`}>
-                <X size={11} strokeWidth={2.4} />
+                <X size={14} strokeWidth={1.75} />
               </button>
             </li>
           ))}
@@ -224,7 +224,7 @@ function PhoneInputSection() {
           >
             <span className="vds-fp-phone-flag">{current.flag}</span>
             <span className="vds-fp-phone-dial mono">{current.dial}</span>
-            <ChevronDown size={11} strokeWidth={2.2} className={open ? 'is-open' : ''} />
+            <ChevronDown size={16} strokeWidth={1.75} className={open ? 'is-open' : ''} />
           </button>
           <input
             type="tel"
@@ -288,13 +288,13 @@ function ImageCropperSection() {
         <div className="vds-fp-crop-controls">
           <div className="vds-fp-crop-row">
             <label className="vds-fp-crop-row-lbl">
-              <ZoomIn size={11} strokeWidth={2.2} />
+              <ZoomIn size={14} strokeWidth={1.75} />
               Zoom
               <span className="mono">{zoom.toFixed(2)}x</span>
             </label>
             <div className="vds-fp-crop-slider">
               <button type="button" aria-label="Diminuir zoom" onClick={() => setZoom((z) => Math.max(1, z - 0.1))}>
-                <ZoomOut size={11} strokeWidth={2.4} />
+                <ZoomOut size={14} strokeWidth={1.75} />
               </button>
               <input
                 type="range"
@@ -307,14 +307,14 @@ function ImageCropperSection() {
                 style={{ '--fp-fill': `${(((zoom - 1) / 2) * 100).toFixed(1)}%` } as CSSProperties}
               />
               <button type="button" aria-label="Aumentar zoom" onClick={() => setZoom((z) => Math.min(3, z + 0.1))}>
-                <ZoomIn size={11} strokeWidth={2.4} />
+                <ZoomIn size={14} strokeWidth={1.75} />
               </button>
             </div>
           </div>
 
           <div className="vds-fp-crop-row">
             <label className="vds-fp-crop-row-lbl">
-              <RotateCw size={11} strokeWidth={2.2} />
+              <RotateCw size={14} strokeWidth={1.75} />
               Rotação
               <span className="mono">{rotation}°</span>
             </label>
@@ -369,23 +369,23 @@ Próximo passo · validar com [dados de produção](https://nina.viverdeia.ai/au
         <header className="vds-fp-md-toolbar">
           <div className="vds-fp-md-tools">
             <button type="button" aria-label="Negrito" title="Negrito (⌘B)">
-              <Bold size={12} strokeWidth={2.2} />
+              <Bold size={14} strokeWidth={1.75} />
             </button>
             <button type="button" aria-label="Itálico" title="Itálico (⌘I)">
-              <Italic size={12} strokeWidth={2.2} />
+              <Italic size={14} strokeWidth={1.75} />
             </button>
             <span className="vds-fp-md-sep" />
             <button type="button" aria-label="Heading" title="Título">
-              <Heading size={12} strokeWidth={2.2} />
+              <Heading size={14} strokeWidth={1.75} />
             </button>
             <button type="button" aria-label="Lista" title="Lista">
-              <List size={12} strokeWidth={2.2} />
+              <List size={14} strokeWidth={1.75} />
             </button>
             <button type="button" aria-label="Link" title="Link (⌘K)">
-              <Link2 size={12} strokeWidth={2.2} />
+              <Link2 size={14} strokeWidth={1.75} />
             </button>
             <button type="button" aria-label="Código" title="Código">
-              <CodeIcon size={12} strokeWidth={2.2} />
+              <CodeIcon size={14} strokeWidth={1.75} />
             </button>
           </div>
           <div className="vds-fp-md-tabs" role="tablist">

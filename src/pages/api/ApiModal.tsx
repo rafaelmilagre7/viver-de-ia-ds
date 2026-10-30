@@ -13,7 +13,7 @@ function ModalDemo() {
         open={open}
         onClose={() => setOpen(false)}
         title="Confirmar pausar conta"
-        description="Sua conta fica congelada por 90 dias. Sem cobrança, sem progresso perdido."
+        description="Dialog editorial · scrim radial · entra e sai animado. Sua conta fica congelada por 90 dias. Sem cobrança, sem progresso perdido."
         footer={
           <>
             <Button variant="ghost" onClick={() => setOpen(false)}>Voltar</Button>
@@ -35,7 +35,7 @@ export default function ApiModal() {
     <ComponentDoc
       eyebrow="api · modal"
       name="Modal"
-      headline="dialog editorial · scrim radial · entra e sai animado"
+      headline="uma decisão por vez, em primeiro plano."
       description="Dialog modal pra ações focadas (confirmar, formulário curto, escolha). Backdrop radial gradient + blur progressivo · painel materializa em 220ms (opacidade + escala .97 + 8px, sem overshoot) e sai em 160ms acelerando — reabrir no meio reverte do ponto atual · close rotaciona 90° no hover · atmosphere dupla via radials. 3 sizes."
       importLine={`import { Modal, type ModalProps } from '@viverdeia/design-system';`}
       anatomy={[

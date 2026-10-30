@@ -52,7 +52,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   margin: var(--via-space-2) 0 0;
 }
 
@@ -61,7 +61,6 @@
   font-size: var(--via-fs-caption);
   color: var(--via-text-soft);
   margin: 0;
-  letter-spacing: -0.005em;
 }
 
 .via-upload .cta {
@@ -76,7 +75,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   margin-top: var(--via-space-2_5);
   /* sombra em LITERAL: o botão é navy sólido nos DOIS temas, então não pode
@@ -181,16 +179,14 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .via-upload-list .size {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: var(--via-fw-semibold);
+  font-weight: var(--via-fw-medium);
 }
 
 .via-upload-list .bar {

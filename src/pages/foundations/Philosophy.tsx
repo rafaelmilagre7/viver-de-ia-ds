@@ -308,7 +308,7 @@ function RuleNoBolinhaSection() {
         <div className="vds-phil-dot-demo">
           <div className="vds-phil-dot-row">
             <span className="vds-phil-dot-lbl bad">
-              <X size={13} strokeWidth={2.2} aria-hidden="true" /> Banido
+              <X size={14} strokeWidth={1.75} aria-hidden="true" /> Banido
             </span>
             <span className="vds-phil-pill-bad">
               <span className="bolinha" />
@@ -325,7 +325,7 @@ function RuleNoBolinhaSection() {
           </div>
           <div className="vds-phil-dot-row">
             <span className="vds-phil-dot-lbl">
-              <Check size={13} strokeWidth={2.2} aria-hidden="true" /> Editorial
+              <Check size={14} strokeWidth={1.75} aria-hidden="true" /> Editorial
             </span>
             <Pill>Pago</Pill>
             <Pill>Production</Pill>
@@ -333,7 +333,7 @@ function RuleNoBolinhaSection() {
           </div>
           <div className="vds-phil-dot-row">
             <span className="vds-phil-dot-lbl">
-              <Check size={13} strokeWidth={2.2} aria-hidden="true" /> Live real
+              <Check size={14} strokeWidth={1.75} aria-hidden="true" /> Live real
             </span>
             <Pill variant="live">ao vivo agora</Pill>
           </div>

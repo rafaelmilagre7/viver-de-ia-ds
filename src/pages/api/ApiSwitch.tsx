@@ -10,7 +10,7 @@ function SwitchDemo() {
       checked={on}
       onChange={(e) => setOn(e.target.checked)}
       label="Notificações por e-mail"
-      description="Receber resumo semanal das atividades do time."
+      description="Toggle binário · spring overshoot · thumb radial gradient. Receber resumo semanal das atividades do time."
     />
   );
 }
@@ -20,7 +20,7 @@ export default function ApiSwitch() {
     <ComponentDoc
       eyebrow="api · switch"
       name="Switch"
-      headline="toggle binário · spring overshoot · thumb radial gradient"
+      headline="liga e desliga, na hora."
       description="Toggle on/off pra preferências persistentes. Track com gradient navy-14→20 + inset shadow profundo. Thumb com radial gradient (white realista) + 5-layer shadow. Thumb anda na mola --via-spring-bounce (overshoot reservado a controle). Checked: gradient navy + glow externo."
       importLine={`import { Switch, type SwitchProps } from '@viverdeia/design-system';`}
       anatomy={[

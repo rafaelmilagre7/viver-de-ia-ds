@@ -21,8 +21,8 @@ export default function ApiDatePicker() {
     <ComponentDoc
       eyebrow="api · date-picker"
       name="DatePicker"
-      headline="calendário editorial pt-BR · keyboard nav · min/max"
-      description="DatePicker pra escolha de data única. Trigger com value formatado + ícone Calendar. Popover com calendar pt-BR (dom-sáb ou seg-dom). Min/max validation. Editorial: glass intenso + spring + hover ring."
+      headline="uma data, sem largar o teclado."
+      description="Calendário editorial pt-BR · keyboard nav · min/max. DatePicker pra escolha de data única. Trigger com value formatado + ícone Calendar. Popover com calendar pt-BR (dom-sáb ou seg-dom). Min/max validation. Editorial: glass intenso + spring + hover ring."
       importLine={`import { DatePicker, type DatePickerProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-datepicker', description: 'Container · label + trigger + popover' },

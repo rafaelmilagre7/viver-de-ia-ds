@@ -13,7 +13,7 @@ function SheetDemo() {
         open={open}
         onClose={() => setOpen(false)}
         title="Filtrar mentorias"
-        description="Selecione período, status e mentor."
+        description="Bottom sheet mobile · handle grip · gesture-hint. Selecione período, status e mentor."
         footer={
           <>
             <Button variant="ghost" onClick={() => setOpen(false)}>Cancelar</Button>
@@ -34,7 +34,7 @@ export default function ApiSheet() {
     <ComponentDoc
       eyebrow="api · sheet"
       name="Sheet"
-      headline="bottom sheet mobile · handle grip · gesture-hint"
+      headline="o painel que sobe no celular."
       description="Sheet é semanticamente bottom sheet mobile (vs Drawer side='bottom' que é mais formal). Vem com grip handle no topo (gesture-hint visual de 'arrasta pra fechar'). Use pra filtros rápidos, contextual actions, configurações mobile."
       importLine={`import { Sheet, type SheetProps } from '@viverdeia/design-system';`}
       anatomy={[

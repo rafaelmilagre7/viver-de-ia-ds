@@ -38,7 +38,7 @@
   font-family: var(--via-font-mono, var(--via-font));
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-gray-300);
   margin-bottom: var(--via-space-4_5);
@@ -47,8 +47,8 @@
 .vds-rings-l h3 {
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.028em;
-  line-height: 1.08;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: 0 0 var(--via-space-4_5);
   max-width: 480px;
@@ -59,16 +59,16 @@
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
-  letter-spacing: -0.024em;
+  letter-spacing: var(--via-ls-tighter);
 }
 
 .vds-rings-l p {
   font-size: var(--via-fs-body);
-  line-height: 1.62;
+  line-height: var(--via-lh-loose);
   color: var(--via-gray-200);
   margin: 0 0 var(--via-space-7);
   max-width: 480px;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-rings-l p strong {
@@ -93,8 +93,8 @@
   padding: var(--via-space-3_5) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
   background: rgba(255, 255, 255, 0.06);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -110,16 +110,14 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
-  letter-spacing: -0.005em;
 }
 
 .vds-rings-legend em {
   font-style: normal;
   display: block;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-gray-300);
   margin-top: var(--via-space-0_5);
-  letter-spacing: -0.005em;
 }
 
 .vds-rings-legend .pct {
@@ -128,7 +126,6 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
   font-feature-settings: 'tnum' 1;
-  letter-spacing: 0.02em;
 }
 
 /* Rings canvas — nested SVGs */
@@ -168,10 +165,8 @@
 
 .vds-rings-week {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
 }
 
@@ -180,7 +175,7 @@
   font-weight: var(--via-fw-semibold);
   letter-spacing: -0.04em;
   color: var(--via-white);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -195,7 +190,7 @@
   border: 1px solid rgba(255, 255, 255, 0.20);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color: var(--via-gray-200);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.04em;
   font-feature-settings: 'tnum' 1;
@@ -251,7 +246,7 @@
   font-family: var(--via-font-mono, var(--via-font));
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-gray-300);
   margin-bottom: var(--via-space-3_5);
@@ -287,9 +282,9 @@
 .vds-streak-stage p {
   margin: 0 0 var(--via-space-7);
   font-size: var(--via-fs-sm);
-  line-height: 1.62;
+  line-height: var(--via-lh-loose);
   color: var(--via-gray-200);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-streak-stage p strong {
@@ -334,10 +329,8 @@
   max-width: 372px;
   justify-content: space-between;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
   margin-top: var(--via-space-1_5);
 }
@@ -358,8 +351,8 @@
   padding: var(--via-space-5_5) var(--via-space-5_5) var(--via-space-5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
 }
@@ -377,8 +370,8 @@
   font-size: 28px;
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.028em;
-  line-height: 1;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-tight);
   margin-top: var(--via-space-1_5);
   font-feature-settings: 'tnum' 1;
 }
@@ -386,10 +379,9 @@
 .vds-streak-milestone em {
   display: block;
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin-top: var(--via-space-2);
-  letter-spacing: -0.005em;
 }
 
 .vds-streak-progress {
@@ -494,9 +486,9 @@
 .vds-cert-brand-eyebrow {
   display: block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.20em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-gray-300);
   margin-bottom: 3px;
@@ -507,7 +499,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
-  letter-spacing: -0.010em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-cert-issued {
@@ -520,10 +512,8 @@
 .vds-cert-issued em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
 }
 
@@ -531,7 +521,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -558,8 +548,8 @@
   font-weight: var(--via-fw-regular);
   color: var(--via-gray-300);
   margin: 0 0 var(--via-space-4);
-  letter-spacing: -0.008em;
-  line-height: 1.4;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-normal);
   text-align: center;
 }
 
@@ -569,7 +559,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.038em;
   color: var(--via-white);
-  line-height: 1.02;
+  line-height: var(--via-lh-tight);
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.30);
   text-align: center;
 }
@@ -581,8 +571,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-regular);
   color: var(--via-gray-300);
-  letter-spacing: -0.006em;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   text-align: center;
 }
 
@@ -592,8 +581,8 @@
   color: var(--via-white);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.020em;
-  line-height: 1.25;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-snug);
   font-style: normal;
 }
 
@@ -603,8 +592,7 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-regular);
   color: var(--via-gray-300);
-  letter-spacing: -0.006em;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   text-align: center;
 }
 
@@ -624,12 +612,11 @@
   border-radius: var(--via-radius-pill);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-gray-200);
-  letter-spacing: -0.004em;
   font-feature-settings: 'tnum' 1;
   white-space: nowrap;
 }
@@ -672,7 +659,7 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
   letter-spacing: -0.034em;
-  line-height: 1.0;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
 }
 
@@ -682,7 +669,7 @@
   vertical-align: super;
   margin-left: var(--via-space-0_5);
   color: var(--via-gray-300);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   top: -0.1em;
   position: relative;
 }
@@ -692,10 +679,8 @@
   margin-top: var(--via-space-2_5);
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
 }
 
@@ -729,7 +714,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   font-family: var(--via-font);
   font-style: normal;
   margin-bottom: 3px;
@@ -739,10 +724,8 @@
   display: block;
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-gray-300);
 }
 
@@ -816,8 +799,8 @@
   padding: var(--via-space-3_5) var(--via-space-5_5);
   border-radius: var(--via-radius-md);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
@@ -829,7 +812,7 @@
   align-items: center;
   gap: var(--via-space-2_5);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
@@ -839,10 +822,8 @@
 .vds-cert-id em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
   padding: 3px var(--via-space-2);
   border-radius: var(--via-radius-sm);
@@ -867,7 +848,7 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   text-decoration: none;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   white-space: nowrap;
   cursor: pointer;
   transition:
@@ -921,8 +902,8 @@
   padding: var(--via-space-8);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   position: relative;
   overflow: hidden;
@@ -945,9 +926,9 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.2em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-soft);
 }
@@ -960,8 +941,8 @@
   margin: var(--via-space-3) 0 var(--via-space-3_5);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.024em;
-  line-height: 1.15;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
   max-width: 440px;
 }
@@ -975,7 +956,7 @@
 .vds-cohort-l > p {
   margin: 0 0 var(--via-space-8);
   font-size: var(--via-fs-caption);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
   max-width: 460px;
 }
@@ -986,10 +967,8 @@
   display: flex;
   margin-top: auto;
   justify-content: space-between;
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   margin-bottom: var(--via-space-2_5);
 }
@@ -1066,9 +1045,8 @@
 .vds-cohort-l > p.vds-cohort-hint {
   margin: 26px 0 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
-  letter-spacing: -0.005em;
   max-width: none;
 }
 
@@ -1127,9 +1105,9 @@
   margin: 0;
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-white);
-  line-height: 1.18;
+  line-height: var(--via-lh-snug);
 }
 
 .vds-cohort-when {
@@ -1146,7 +1124,6 @@
   color: var(--via-gray-200);
   font-family: var(--via-font);
   width: fit-content;
-  letter-spacing: -0.005em;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -1175,9 +1152,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   flex-shrink: 0;
 }
 
@@ -1192,16 +1168,14 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-white);
-  letter-spacing: -0.005em;
 }
 
 .vds-cohort-stack em {
   display: block;
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-gray-300);
   margin-top: var(--via-space-0_5);
-  letter-spacing: -0.005em;
 }
 
 .vds-cohort-cta {
@@ -1220,7 +1194,6 @@
   font-weight: var(--via-fw-medium);
   cursor: pointer;
   font-family: inherit;
-  letter-spacing: -0.005em;
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 6px 14px -4px var(--via-shadow-ink-20);

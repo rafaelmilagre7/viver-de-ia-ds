@@ -173,9 +173,9 @@ function HeatmapSection() {
           </div>
           <div className="vds-hm-pill">
             {delta30 >= 0 ? (
-              <TrendingUp size={12} strokeWidth={2.5} aria-hidden="true" />
+              <TrendingUp size={16} strokeWidth={1.75} aria-hidden="true" />
             ) : (
-              <TrendingDown size={12} strokeWidth={2.5} aria-hidden="true" />
+              <TrendingDown size={14} strokeWidth={1.75} aria-hidden="true" />
             )}
             {delta30 >= 0 ? '+' : '−'}
             {Math.abs(delta30)}% nos últimos 30 dias
@@ -252,7 +252,7 @@ function HeatmapSection() {
           </p>
 
           <div className="vds-hm-legend">
-            <span className="vds-hm-legend-cap">ações por dia</span>
+            <span className="vds-hm-legend-cap">Ações por dia</span>
             {legenda.map((l) => (
               <span className="vds-hm-key" key={l.step}>
                 <i className={`vds-hm-cell s${l.step}`} aria-hidden="true" />
@@ -453,9 +453,9 @@ function SparkCard({ kpi }: { kpi: Kpi }) {
           <p className="vds-sk-value">{kpi.fmt(kpi.data[kpi.projDe ?? kpi.data.length - 1])}</p>
           <p className={`vds-sk-delta ${kpi.bom ? 'bom' : 'ruim'}`}>
             {kpi.dir === 'up' ? (
-              <TrendingUp size={11} strokeWidth={2.5} aria-hidden="true" />
+              <TrendingUp size={16} strokeWidth={1.75} aria-hidden="true" />
             ) : (
-              <TrendingDown size={11} strokeWidth={2.5} aria-hidden="true" />
+              <TrendingDown size={14} strokeWidth={1.75} aria-hidden="true" />
             )}
             {kpi.delta}
           </p>
@@ -477,7 +477,7 @@ function SparkCard({ kpi }: { kpi: Kpi }) {
           <>
             <span className="vds-sk-read-when">{kpi.rotulos[ativo]}</span>
             <span className="vds-sk-read-val">{kpi.fmt(kpi.data[ativo])}</span>
-            {projetado && <span className="vds-sk-read-tag">projeção</span>}
+            {projetado && <span className="vds-sk-read-tag">Projeção</span>}
           </>
         ) : (
           <span className="vds-sk-read-when">

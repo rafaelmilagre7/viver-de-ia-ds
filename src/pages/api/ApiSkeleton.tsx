@@ -7,8 +7,8 @@ export default function ApiSkeleton() {
     <ComponentDoc
       eyebrow="api · skeleton"
       name="Skeleton"
-      headline="placeholder editorial · shimmer · 3 variants"
-      description="Skeleton imita a forma do conteúdo final enquanto carrega. 3 variants: text (1+ linhas), circle (avatar), rect (card/image). Shimmer gradient 1.6s linear infinite. Sempre melhor que spinner pra layouts complexos."
+      headline="o formato do conteúdo antes dele chegar."
+      description="Placeholder editorial · shimmer · 3 variants. Skeleton imita a forma do conteúdo final enquanto carrega. 3 variants: text (1+ linhas), circle (avatar), rect (card/image). Shimmer gradient 1.6s linear infinite. Sempre melhor que spinner pra layouts complexos."
       importLine={`import { Skeleton, type SkeletonProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-skeleton', description: 'Bloco · gradient navy-04 + shimmer ::before' },

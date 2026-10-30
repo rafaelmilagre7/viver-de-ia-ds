@@ -7,8 +7,8 @@ export default function ApiBrandLogo() {
     <ComponentDoc
       eyebrow="api · brand logo"
       name="BrandLogo"
-      headline="logo oficial em vetor · nítido em qualquer tamanho"
-      description="O logo da Viver de IA como SVG inline (sem arquivo pra importar): monograma VIA + wordmark VIVER DE IA nas proporções do arquivo original do designer. Herda a cor por currentColor; variant escolhe a tinta. Pra HTML sem React, use os arquivos lockup-navy.svg / lockup-white.svg / monogram-*.svg do kit ou de viver-de-ia-ds.vercel.app/logos/."
+      headline="a marca oficial, nítida em qualquer tamanho."
+      description="Logo oficial em vetor · nítido em qualquer tamanho. O logo da Viver de IA como SVG inline (sem arquivo pra importar): monograma VIA + wordmark VIVER DE IA nas proporções do arquivo original do designer. Herda a cor por currentColor; variant escolhe a tinta. Pra HTML sem React, use os arquivos lockup-navy.svg / lockup-white.svg / monogram-*.svg do kit ou de viver-de-ia-ds.vercel.app/logos/."
       importLine={`import { BrandLogo, type BrandLogoProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-brand-logo', description: 'SVG único · role=img · aria-label="Viver de IA" · fill=currentColor' },

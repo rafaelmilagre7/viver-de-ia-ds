@@ -60,9 +60,8 @@
   border: 1px solid rgba(255,255,255,0.20);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-white);
   white-space: nowrap;
 }
@@ -71,7 +70,7 @@
   flex: 1;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 .vds-ann-banner p strong { color: var(--via-white); font-weight: var(--via-fw-bold); }
 .vds-ann-banner p .muted { color: rgba(255,255,255,0.65); }
@@ -89,7 +88,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   white-space: nowrap;
   box-shadow:
@@ -229,8 +227,8 @@
   max-width: 380px;
   padding: var(--via-space-5_5);
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid rgba(255,255,255,0.20);
   border-radius: var(--via-radius-xl);
   color: var(--via-white);
@@ -256,9 +254,8 @@
 }
 .vds-notif header .all {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: rgba(255,255,255,0.65);
   background: rgba(255,255,255,0.10);
   border: 1px solid rgba(255,255,255,0.16);
@@ -275,7 +272,7 @@
     border-color var(--via-dur) var(--via-ease-snap),
     color var(--via-dur) var(--via-ease-snap);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .vds-notif header .all:hover {
   transform: translateY(-1px);
@@ -359,14 +356,14 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.62);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 .vds-notif li .time {
   margin-top: var(--via-space-1_5);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: rgba(255,255,255,0.45);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
 }
 
 /* ---- ACTIVITY FEED ---- */
@@ -426,16 +423,16 @@
 }
 .vds-feed-body .when {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
 }
 .vds-feed-body p {
   margin: 0;
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 .vds-feed-body p em {
   font-style: normal;
@@ -450,7 +447,7 @@
   border: 1px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
@@ -517,9 +514,9 @@
   border: 2px solid var(--via-surface);
   margin-left: -10px;
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
   color: var(--via-text-primary);
   box-shadow: 0 4px 12px var(--via-shadow-ink-10), inset 0 0 0 0.5px var(--via-navy-12);
 }
@@ -597,7 +594,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
   color: var(--via-text-primary);
   cursor: pointer;
   text-decoration: none;

@@ -50,9 +50,9 @@ export default function Settings() {
                 className={`vds-set-tab ${active === t.v ? 'active' : ''}`}
                 onClick={() => setActive(t.v)}
               >
-                <span className="ico"><t.I size={14} strokeWidth={2} /></span>
+                <span className="ico"><t.I size={16} strokeWidth={1.75} /></span>
                 <span>{t.l}</span>
-                <ChevronRight size={12} strokeWidth={2} className="chev" />
+                <ChevronRight size={14} strokeWidth={1.75} className="chev" />
               </button>
             ))}
           </aside>
@@ -66,7 +66,7 @@ export default function Settings() {
                     <h2>Como você aparece pra turma e nos cases.</h2>
                   </header>
                   <div className="vds-set-avatar-row">
-                    <span className="vds-set-avatar">RM<button aria-label="Tirar foto" className="cam"><Camera size={11} strokeWidth={2.2} /></button></span>
+                    <span className="vds-set-avatar">RM<button aria-label="Tirar foto" className="cam"><Camera size={14} strokeWidth={1.75} /></button></span>
                     <div>
                       <strong>Rafael Milagre</strong>
                       <span>Founder · Viver de IA</span>
@@ -154,7 +154,7 @@ export default function Settings() {
                       <strong>2FA</strong>
                       <span>App autenticador · backup codes válidos.</span>
                     </div>
-                    <span className="vds-set-badge ok"><Check size={11} strokeWidth={3} /> Ativo</span>
+                    <span className="vds-set-badge ok"><Check size={14} strokeWidth={1.75} /> Ativo</span>
                   </li>
                   <li>
                     <div>

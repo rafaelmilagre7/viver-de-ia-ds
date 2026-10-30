@@ -5,7 +5,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   color: var(--via-text-soft);
 }
 
@@ -48,7 +47,7 @@
 
 .via-bc .sep {
   color: var(--via-border);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   user-select: none;
 }
 

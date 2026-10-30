@@ -22,8 +22,8 @@ export default function ApiOTPInput() {
     <ComponentDoc
       eyebrow="api · otp-input"
       name="OTPInput"
-      headline="código de verificação · auto-focus next · paste detecta"
-      description="OTPInput pra 2FA, magic links, confirmação de identidade. Cada dígito em campo separado · auto-focus next ao digitar · backspace navega pra trás · paste detecta código completo. Editorial: glass + spring focus."
+      headline="o código de verificação, dígito a dígito."
+      description="Código de verificação · auto-focus next · paste detecta. OTPInput pra 2FA, magic links, confirmação de identidade. Cada dígito em campo separado · auto-focus next ao digitar · backspace navega pra trás · paste detecta código completo. Editorial: glass + spring focus."
       importLine={`import { OTPInput, type OTPInputProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-otp', description: 'Container · label + grid horizontal de campos + hint' },

@@ -51,7 +51,7 @@
   font-weight: var(--via-fw-medium);
   color: var(--via-navy-12);
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   font-variant-numeric: tabular-nums;
 }
 
@@ -60,8 +60,8 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.024em;
-  line-height: 1.18;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-primary);
   max-width: 720px;
 }
@@ -93,7 +93,7 @@
 .vds-phil-rule > header p {
   margin: 0;
   font-size: var(--via-fs-sm);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-ink-2);
   max-width: 720px;
 }
@@ -105,7 +105,7 @@
 
 .vds-phil-rule > header p code {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   background: var(--via-navy-05);
   color: var(--via-text-primary);
   padding: 1px 5px;
@@ -153,9 +153,9 @@
 .vds-phil-forbid-eyebrow {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
   margin-bottom: var(--via-space-4);
@@ -201,14 +201,14 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-phil-allow em {
   font-style: normal;
   font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-phil-forbid li {
@@ -216,7 +216,7 @@
   padding-left: var(--via-space-4_5);
   font-size: var(--via-fs-caption);
   color: var(--via-coral-dark);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-phil-forbid li::before {
@@ -253,14 +253,13 @@
 .vds-phil-pill-lbl {
   min-width: 140px;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-phil-pill-lbl em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
   margin-left: var(--via-space-1);
 }
@@ -276,8 +275,7 @@
   color: rgba(255, 255, 255, 0.9);
   font-family: var(--via-mono);
   font-size: var(--via-fs-xs);
-  line-height: 1.6;
-  letter-spacing: 0.01em;
+  line-height: var(--via-lh-loose);
   overflow-x: auto;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.08) inset,
@@ -335,25 +333,23 @@
 }
 
 .vds-phil-token strong {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: 0.01em;
 }
 
 .vds-phil-token-val {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
-  letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
 }
 
 .vds-phil-token em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 /* ============================================
@@ -502,20 +498,20 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.014em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
 .vds-phil-sig p {
   margin: 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-ink-2);
 }
 
 .vds-phil-sig code {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   background: var(--via-navy-05);
   color: var(--via-text-primary);
   padding: 1px 5px;
@@ -550,9 +546,8 @@
   gap: var(--via-space-1_5);
   min-width: 120px;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
-  letter-spacing: 0.01em;
 }
 
 .vds-phil-dot-lbl svg {
@@ -576,14 +571,13 @@
   gap: var(--via-space-1_5);
   padding: var(--via-space-1) 11px var(--via-space-1) 9px;
   border-radius: var(--via-radius-pill);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   background: rgba(184, 92, 92, 0.05);
   color: var(--via-coral-dark);
   border: 1px dashed rgba(184, 92, 92, 0.3);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-phil-pill-bad .bolinha {
@@ -633,10 +627,8 @@
 .vds-phil-voice-tag {
   display: inline-block;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   margin-bottom: var(--via-space-3);
 }
@@ -651,8 +643,8 @@
   font-style: normal;
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
-  line-height: 1.35;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-normal);
   color: var(--via-text-primary);
 }
 
@@ -662,7 +654,7 @@
 
 .vds-phil-voice em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }

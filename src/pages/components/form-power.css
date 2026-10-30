@@ -9,15 +9,13 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.006em;
   margin-bottom: var(--via-space-2);
 }
 
 .vds-fp-hint {
   margin: var(--via-space-2) 0 0;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: -0.004em;
 }
 
 /* ============================================
@@ -74,10 +72,9 @@
     0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   cursor: pointer;
   white-space: nowrap;
   transition:
@@ -115,7 +112,7 @@
   background: transparent;
   border: none;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
   cursor: pointer;
   padding: var(--via-space-0_5) var(--via-space-1_5);
@@ -153,8 +150,8 @@
   right: 0;
   z-index: 10;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   box-shadow:
@@ -180,7 +177,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
-  letter-spacing: -0.006em;
   flex: 1;
 }
 
@@ -238,13 +234,11 @@
 .vds-fp-mselect-lbl {
   font-size: var(--via-fs-caption);
   color: var(--via-text-primary);
-  letter-spacing: -0.006em;
 }
 
 .vds-fp-mselect-count {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.02em;
 }
 
 .vds-fp-mselect-foot {
@@ -254,7 +248,7 @@
   padding: var(--via-space-2_5) var(--via-space-3_5);
   border-top: 1px solid var(--via-border-soft);
   background: var(--via-navy-02);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-2);
 }
 
@@ -273,10 +267,9 @@
     0 4px 10px -4px var(--via-shadow-ink-40);
   padding: var(--via-space-1_5) var(--via-space-3_5);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.006em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
@@ -337,8 +330,8 @@
   height: 48px;
   border-radius: var(--via-radius-md);
   background: var(--via-surface-onnavy);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border-soft);
   color: var(--via-text-primary);
   display: flex;
@@ -354,7 +347,7 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
@@ -372,7 +365,7 @@
 .vds-fp-drop-cta {
   margin-top: var(--via-space-2);
   padding: var(--via-space-2) var(--via-space-4_5);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
   border: 1px solid var(--via-navy);
   box-shadow:
@@ -383,7 +376,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.006em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);
@@ -467,7 +459,7 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -475,9 +467,8 @@
 
 .vds-fp-drop-item-body em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-fp-drop-progress {
@@ -514,10 +505,9 @@
 }
 
 .vds-fp-drop-pct {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.01em;
 }
 
 .vds-fp-drop-cancel {
@@ -598,13 +588,12 @@
 
 .vds-fp-phone-flag {
   font-size: var(--via-fs-h4);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
 }
 
 .vds-fp-phone-dial {
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
-  letter-spacing: 0.01em;
 }
 
 .vds-fp-phone-country svg {
@@ -625,7 +614,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-fp-phone-field input::placeholder { color: var(--via-ink-3); }
@@ -637,8 +626,8 @@
   width: 320px;
   z-index: 10;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-md);
   box-shadow:
@@ -678,7 +667,6 @@
 .vds-fp-phone-name {
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
-  letter-spacing: -0.006em;
 }
 
 /* ============================================
@@ -779,8 +767,8 @@
   padding: var(--via-space-5) var(--via-space-5_5);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
 }
 
@@ -795,10 +783,8 @@
   align-items: center;
   gap: var(--via-space-1_5);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
 }
 
@@ -807,7 +793,6 @@
   color: var(--via-text-primary);
   text-transform: none;
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.01em;
 }
 
 .vds-fp-crop-slider {
@@ -932,7 +917,7 @@
     0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-ink-2);
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   cursor: pointer;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
@@ -977,7 +962,7 @@
 .vds-fp-crop-btn {
   flex: 1;
   padding: 9px var(--via-space-3_5);
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
   backdrop-filter: var(--via-glass-blur);
@@ -990,7 +975,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.006em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -1046,8 +1030,8 @@
 .vds-fp-md {
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   box-shadow:
@@ -1123,11 +1107,10 @@
   background: transparent;
   border: none;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-2);
   cursor: pointer;
-  letter-spacing: -0.006em;
   transition: all .2s ease;
 }
 
@@ -1161,9 +1144,8 @@
   padding: var(--via-space-5) var(--via-space-6);
   font-family: var(--via-mono);
   font-size: var(--via-fs-caption);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-primary);
-  letter-spacing: 0.005em;
   resize: vertical;
 }
 
@@ -1177,14 +1159,14 @@
   font-family: var(--via-display);
   font-size: 20px;
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
 }
 
 .vds-fp-md-preview p {
   margin: 0 0 var(--via-space-3_5);
   font-size: var(--via-fs-sm);
-  line-height: 1.65;
+  line-height: var(--via-lh-loose);
   color: var(--via-text);
 }
 
@@ -1197,7 +1179,7 @@
   margin: 0 0 var(--via-space-3_5);
   padding-left: var(--via-space-5_5);
   font-size: var(--via-fs-caption);
-  line-height: 1.7;
+  line-height: var(--via-lh-loose);
   color: var(--via-text);
 }
 
@@ -1214,15 +1196,14 @@
   font-family: var(--via-display);
   font-size: var(--via-fs-sm);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-fp-md-preview blockquote em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-fp-md-preview a {
@@ -1248,9 +1229,8 @@
 }
 
 .vds-fp-md-foot span {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
-  letter-spacing: 0.01em;
 }
 
 .vds-fp-md-send {
@@ -1266,7 +1246,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.006em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap);

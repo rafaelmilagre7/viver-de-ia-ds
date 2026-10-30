@@ -111,8 +111,8 @@ function OnePagerSection() {
         <header>
           <img src={wordmarkBlack} alt="Viver de IA" />
           <span className="vds-com-onepager-tag">
-            <FileText size={11} strokeWidth={2.2} />
-            one-pager · executivo
+            <FileText size={14} strokeWidth={1.75} />
+            One-pager · executivo
           </span>
         </header>
 
@@ -154,12 +154,12 @@ function OnePagerSection() {
           <article>
             <h3>O que recebe</h3>
             <ul>
-              <li><Check size={12} strokeWidth={2.4} /> 18 aulas estruturadas</li>
-              <li><Check size={12} strokeWidth={2.4} /> 4 lives ao vivo · auditoria de prompts</li>
-              <li><Check size={12} strokeWidth={2.4} /> Mentoria 1:1 mensal</li>
-              <li><Check size={12} strokeWidth={2.4} /> Comunidade fechada vitalícia</li>
-              <li><Check size={12} strokeWidth={2.4} /> 2 estudos de caso entregues</li>
-              <li><Check size={12} strokeWidth={2.4} /> Templates · prompts · código-base</li>
+              <li><Check size={14} strokeWidth={1.75} /> 18 aulas estruturadas</li>
+              <li><Check size={14} strokeWidth={1.75} /> 4 lives ao vivo · auditoria de prompts</li>
+              <li><Check size={14} strokeWidth={1.75} /> Mentoria 1:1 mensal</li>
+              <li><Check size={14} strokeWidth={1.75} /> Comunidade fechada vitalícia</li>
+              <li><Check size={14} strokeWidth={1.75} /> 2 estudos de caso entregues</li>
+              <li><Check size={14} strokeWidth={1.75} /> Templates · prompts · código-base</li>
             </ul>
           </article>
 
@@ -197,7 +197,7 @@ function CaseStudySection() {
       <article className="vds-com-case">
         <header>
           <div className="vds-com-case-mark">
-            <Layers size={11} strokeWidth={2.2} />
+            <Layers size={14} strokeWidth={1.75} />
             case study · turma 2025.3
           </div>
           <h2>
@@ -298,7 +298,7 @@ function ProposalSection() {
 
         <section>
           <h3>
-            <Compass size={13} strokeWidth={2.2} />
+            <Compass size={14} strokeWidth={1.75} />
             Para
           </h3>
           <div className="vds-com-proposal-for">
@@ -316,12 +316,12 @@ function ProposalSection() {
             jun/2026.
           </p>
           <ul className="vds-com-proposal-list">
-            <li><Check size={12} strokeWidth={2.4} /> 18 aulas estruturadas · stack real (Claude SDK / OpenAI)</li>
-            <li><Check size={12} strokeWidth={2.4} /> 4 lives ao vivo · auditoria de prompts (1×/mês)</li>
-            <li><Check size={12} strokeWidth={2.4} /> Mentoria 1:1 mensal · 60min cada (Caio · fundador)</li>
-            <li><Check size={12} strokeWidth={2.4} /> Comunidade fechada vitalícia (Discord curado)</li>
-            <li><Check size={12} strokeWidth={2.4} /> 2 estudos de caso entregues e auditados</li>
-            <li><Check size={12} strokeWidth={2.4} /> Garantia: 90 dias até agente em produção</li>
+            <li><Check size={14} strokeWidth={1.75} /> 18 aulas estruturadas · stack real (Claude SDK / OpenAI)</li>
+            <li><Check size={14} strokeWidth={1.75} /> 4 lives ao vivo · auditoria de prompts (1×/mês)</li>
+            <li><Check size={14} strokeWidth={1.75} /> Mentoria 1:1 mensal · 60min cada (Caio · fundador)</li>
+            <li><Check size={14} strokeWidth={1.75} /> Comunidade fechada vitalícia (Discord curado)</li>
+            <li><Check size={14} strokeWidth={1.75} /> 2 estudos de caso entregues e auditados</li>
+            <li><Check size={14} strokeWidth={1.75} /> Garantia: 90 dias até agente em produção</li>
           </ul>
         </section>
 

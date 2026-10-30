@@ -48,7 +48,7 @@ export default function Form() {
                   <label className="lbl">E-mail</label>
                   <input className="val" aria-label="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
-                <div className="via-field-err"><AlertCircle size={12} strokeWidth={2.4} /> Falta o domínio depois do @.</div>
+                <div className="via-field-err"><AlertCircle size={14} strokeWidth={1.75} /> Falta o domínio depois do @.</div>
               </div>
 
               <div className="via-field disabled">
@@ -68,7 +68,7 @@ export default function Form() {
               <div className="via-field">
                 <label className="lbl">Buscar caso</label>
                 <div className="val-with-icon">
-                  <Search size={14} strokeWidth={2} className="leading-ico" />
+                  <Search size={16} strokeWidth={1.75} className="leading-ico" />
                   <input className="val" aria-label="Buscar caso" placeholder="Pesquise por nome ou setor…" />
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function Form() {
                   <label className="lbl">Turma desejada</label>
                   <button className="val-select" type="button">
                     <span>{turma}</span>
-                    <ChevronDown size={14} strokeWidth={2} />
+                    <ChevronDown size={16} strokeWidth={1.75} />
                   </button>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function Form() {
                   onChange={(e) => setTermo(e.target.checked)}
                 />
                 <span className={`box ${termo ? 'checked' : ''}`} aria-hidden="true">
-                  {termo && <Check size={12} strokeWidth={3} />}
+                  {termo && <Check size={14} strokeWidth={1.75} />}
                 </span>
                 <div>
                   <strong>Aceito os termos</strong>
@@ -136,7 +136,7 @@ export default function Form() {
                   onChange={(e) => setNews(e.target.checked)}
                 />
                 <span className={`box ${news ? 'checked' : ''}`} aria-hidden="true">
-                  {news && <Check size={12} strokeWidth={3} />}
+                  {news && <Check size={14} strokeWidth={1.75} />}
                 </span>
                 <div>
                   <strong>Receber novidades</strong>

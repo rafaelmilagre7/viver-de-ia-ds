@@ -55,17 +55,17 @@ export default function Email() {
       <Section title="Como funciona" meta="react-email + Resend">
         <div className="vds-mail-how">
           <article className="vds-mail-how-card">
-            <span className="i"><Code2 size={17} strokeWidth={1.8} /></span>
+            <span className="i"><Code2 size={16} strokeWidth={1.75} /></span>
             <h3>Token-driven</h3>
             <p>A identidade destilada pro que email de verdade renderiza: navy, fios finos, tipografia editorial. Zero vidro, zero degradê de fundo.</p>
           </article>
           <article className="vds-mail-how-card">
-            <span className="i"><ShieldCheck size={17} strokeWidth={1.8} /></span>
+            <span className="i"><ShieldCheck size={16} strokeWidth={1.75} /></span>
             <h3>À prova de bala</h3>
             <p>Tabela + inline, abaixo de 102KB, botão navy sólido. Sem flex, sem grid, sem media query frágil — o que cada cliente honra.</p>
           </article>
           <article className="vds-mail-how-card">
-            <span className="i"><Inbox size={17} strokeWidth={1.8} /></span>
+            <span className="i"><Inbox size={16} strokeWidth={1.75} /></span>
             <h3>Pronto pra enviar</h3>
             <p>Cada template é um componente com props. <code>render()</code> vira HTML e o Resend dispara. A IA preenche só o editorial.</p>
           </article>
@@ -93,7 +93,7 @@ await resend.emails.send({
                 <span className="when">{m.when}</span>
               </div>
               <a className="vds-mail-open" href={`/emails/${m.id}.html`} target="_blank" rel="noreferrer">
-                Abrir HTML <ArrowUpRight size={14} strokeWidth={2} />
+                Abrir HTML <ArrowUpRight size={16} strokeWidth={1.75} />
               </a>
             </header>
             <div className="vds-mail-stage">

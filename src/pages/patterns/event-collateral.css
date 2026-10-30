@@ -113,7 +113,7 @@
 .vds-ev-mark-label em {
   font-style: normal;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -125,7 +125,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-white);
-  letter-spacing: -0.010em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 /* Separador editorial */
@@ -158,8 +158,8 @@
   padding: var(--via-space-9) var(--via-space-8);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   isolation: isolate;
@@ -185,9 +185,9 @@
 .vds-ev-relation-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-3);
@@ -198,8 +198,8 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.022em;
-  line-height: 1.20;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   margin: 0 0 var(--via-space-5_5);
 }
 
@@ -238,16 +238,15 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
-  line-height: 1.35;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-normal);
 }
 
 .vds-ev-relation-list span {
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
-  line-height: 1.5;
-  letter-spacing: -0.004em;
+  line-height: var(--via-lh-normal);
 }
 
 /* ============================================
@@ -265,8 +264,8 @@
   flex-direction: column;
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   isolation: isolate;
@@ -312,9 +311,9 @@
 
 .vds-ev-piece-num {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;
 }
@@ -342,17 +341,16 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.010em;
+  letter-spacing: var(--via-ls-tight);
   margin-bottom: var(--via-space-0_5);
-  line-height: 1.25;
+  line-height: var(--via-lh-snug);
 }
 
 .vds-ev-piece header em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 /* Body · briefing editorial */
@@ -363,9 +361,9 @@
 .vds-ev-piece-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-primary);
   margin-bottom: var(--via-space-2);
@@ -375,9 +373,8 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   margin: 0;
-  letter-spacing: -0.005em;
 }
 
 /* Footer · spec física */
@@ -391,9 +388,9 @@
 .vds-ev-piece-mock-eyebrow {
   display: inline-block;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-1_5);
@@ -401,11 +398,10 @@
 
 .vds-ev-piece-mock p {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   margin: 0;
-  letter-spacing: 0.005em;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -417,8 +413,8 @@
   padding: var(--via-space-9) var(--via-space-10);
   border-radius: var(--via-radius-lg);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   overflow: hidden;
   isolation: isolate;
@@ -452,9 +448,9 @@
 
 .vds-ev-rules-eyebrow {
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
 }
@@ -464,8 +460,8 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.022em;
-  line-height: 1.20;
+  letter-spacing: var(--via-ls-tighter);
+  line-height: var(--via-lh-snug);
   margin: 0;
 }
 
@@ -512,8 +508,8 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.010em;
-  line-height: 1.35;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-normal);
   margin-bottom: var(--via-space-1);
 }
 
@@ -521,9 +517,8 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: var(--via-text-body);
-  line-height: 1.58;
+  line-height: var(--via-lh-loose);
   margin: 0;
-  letter-spacing: -0.005em;
 }
 
 /* ============================================

@@ -1,7 +1,4 @@
-import {
-  ArrowUp, Wrench, Plus, ShieldCheck, ArrowUpRight, GitBranch,
-  Layers, MessageCircle, Rocket,
-} from 'lucide-react';
+import { ArrowUp, Wrench, Plus, ShieldCheck, ArrowUpRight, GitBranch, Layers, MessageCircle, Globe } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import './changelog.css';
@@ -39,7 +36,7 @@ function ChangelogFeaturedSection() {
           </div>
           <div className="vds-cl-version">
             <span className="vds-cl-version-num mono">v2.4</span>
-            <span className="vds-cl-version-tag">major</span>
+            <span className="vds-cl-version-tag">Major</span>
           </div>
         </header>
 
@@ -54,7 +51,7 @@ function ChangelogFeaturedSection() {
           <div className="vds-cl-highlights">
             <article className="vds-cl-hl primary via-mesh-navy via-noise">
               <div className="vds-cl-hl-icon">
-                <Rocket size={20} strokeWidth={1.6} />
+                <Globe size={20} strokeWidth={1.75} />
               </div>
               <h3>
                 Nina <em>en español</em> y <em>in English</em>
@@ -64,13 +61,13 @@ function ChangelogFeaturedSection() {
               </p>
               <a href="#" className="vds-cl-hl-link">
                 Ver demo da nova versão
-                <ArrowUpRight size={13} strokeWidth={2.4} />
+                <ArrowUpRight size={14} strokeWidth={1.75} />
               </a>
             </article>
 
             <article className="vds-cl-hl">
               <div className="vds-cl-hl-icon nv">
-                <Layers size={18} strokeWidth={1.6} />
+                <Layers size={16} strokeWidth={1.75} />
               </div>
               <h4>Shadow mode pra calibrar</h4>
               <p>Teste prompts em produção sem expor pro cliente · respostas aparecem só no admin.</p>
@@ -79,7 +76,7 @@ function ChangelogFeaturedSection() {
 
             <article className="vds-cl-hl">
               <div className="vds-cl-hl-icon gd">
-                <MessageCircle size={18} strokeWidth={1.6} />
+                <MessageCircle size={16} strokeWidth={1.75} />
               </div>
               <h4>Calendário redesenhado</h4>
               <p>Mentoria 1:1 agora com vista semanal · reagendamento em 2 clicks.</p>
@@ -196,7 +193,7 @@ function ChangelogTimelineSection() {
             ))}
             <li className="vds-cl-toc-more">
               <a href="#archive">
-                <GitBranch size={11} strokeWidth={2.2} />
+                <GitBranch size={14} strokeWidth={1.75} />
                 Ver arquivo · v1.x e anteriores
               </a>
             </li>
@@ -225,7 +222,7 @@ function ChangelogTimelineSection() {
                     return (
                       <li key={i} className={ch.type}>
                         <span className="vds-cl-change-icon">
-                          <Icon size={11} strokeWidth={2.4} />
+                          <Icon size={14} strokeWidth={1.75} />
                         </span>
                         <span className="vds-cl-change-tag mono">{typeLabels[ch.type]}</span>
                         <span className="vds-cl-change-text">{ch.text}</span>

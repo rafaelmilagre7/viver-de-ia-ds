@@ -141,7 +141,7 @@ function PrimaryMatchSection() {
                 <text x="110" y="120" textAnchor="middle" className="vds-mm-pct">
                   94<tspan className="pct-mark" dx="2">%</tspan>
                 </text>
-                <text x="110" y="146" textAnchor="middle" className="vds-mm-pct-lbl">compatibilidade</text>
+                <text x="110" y="146" textAnchor="middle" className="vds-mm-pct-lbl">Compatibilidade</text>
               </svg>
             </div>
 
@@ -202,11 +202,11 @@ function PrimaryMatchSection() {
 
             <div className="vds-mm-actions">
               <button className="vds-mm-cta">
-                <Calendar size={14} strokeWidth={2.2} />
+                <Calendar size={16} strokeWidth={1.75} />
                 Agendar 30min · esta semana
               </button>
               <button className="vds-mm-ghost">
-                <MessageCircle size={13} strokeWidth={2.2} />
+                <MessageCircle size={16} strokeWidth={1.75} />
                 Conversar antes
               </button>
             </div>
@@ -258,7 +258,7 @@ function AlternativesSection() {
               </div>
               <div className="vds-mm-alt-score">
                 <span className="num">{a.score}</span>
-                <span className="lbl">match</span>
+                <span className="lbl">Match</span>
               </div>
             </header>
 
@@ -272,7 +272,7 @@ function AlternativesSection() {
 
             <button className="vds-mm-alt-cta">
               Ver perfil completo
-              <ArrowRight size={12} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
           </article>
         ))}

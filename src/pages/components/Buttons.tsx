@@ -19,7 +19,7 @@ export default function Buttons() {
 
       <Section title="Primary" meta="default · navy">
         <div className="vds-buttons-row">
-          <button className="via-btn primary md">Entrar na turma <ArrowRight size={14} strokeWidth={2.5} /></button>
+          <button className="via-btn primary md">Entrar na turma <ArrowRight size={16} strokeWidth={1.75} /></button>
           <button className="via-btn primary md is-hover">Hover</button>
           <button className="via-btn primary md is-pressed">Pressed</button>
           <button className="via-btn primary md" disabled>Disabled</button>
@@ -38,7 +38,7 @@ export default function Buttons() {
         <div className="vds-buttons-row">
           <button className="via-btn ghost md">Voltar</button>
           <button className="via-btn ghost md is-hover">Hover</button>
-          <button className="via-btn ghost md">Ver cases <ArrowUpRight size={14} strokeWidth={2.5} /></button>
+          <button className="via-btn ghost md">Ver cases <ArrowUpRight size={16} strokeWidth={1.75} /></button>
         </div>
       </Section>
 
@@ -70,7 +70,7 @@ export default function Buttons() {
       <Section title="Código" meta="HTML + CSS">
         <CodeBlock>{`<button className="via-btn primary md">
   Entrar na turma
-  <ArrowRight size={14} strokeWidth={2.5} />
+  <ArrowRight size={16} strokeWidth={1.75} />
 </button>`}</CodeBlock>
       </Section>
     </>

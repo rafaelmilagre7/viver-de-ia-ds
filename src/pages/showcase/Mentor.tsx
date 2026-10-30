@@ -64,11 +64,11 @@ export default function ShowcaseMentor() {
             <p>Construiu a Nina · 11.920 conversas/mês em produção. Mentora operadores que estão colocando IA pra rodar de verdade — não experimentando.</p>
             <div className="mtr-hero-cta-row">
               <button className="mtr-cta-primary">
-                <Calendar size={15} strokeWidth={2.2} />
+                <Calendar size={16} strokeWidth={1.75} />
                 Agendar sessão
               </button>
               <button className="mtr-cta-ghost">
-                <MessageCircle size={14} strokeWidth={2.2} />
+                <MessageCircle size={16} strokeWidth={1.75} />
                 Mandar mensagem
               </button>
             </div>
@@ -129,7 +129,7 @@ export default function ShowcaseMentor() {
             <div className="mtr-depoimentos">
               {depoimentos.map((d) => (
                 <div key={d.nome} className="mtr-depoimento">
-                  <Quote size={22} strokeWidth={1.5} className="mtr-depoimento-mark" />
+                  <Quote size={20} strokeWidth={1.75} className="mtr-depoimento-mark" />
                   <blockquote>{d.q}</blockquote>
                   <footer>
                     <strong>{d.nome}</strong>
@@ -155,13 +155,13 @@ export default function ShowcaseMentor() {
 
           <button className="mtr-schedule-cta">
             Confirmar agendamento
-            <ArrowRight size={15} strokeWidth={2.4} />
+            <ArrowRight size={16} strokeWidth={1.75} />
           </button>
 
           <ul className="mtr-schedule-meta">
-            <li><Clock size={12} strokeWidth={2.2} /> Responde em até 14h</li>
-            <li><Check size={12} strokeWidth={2.4} /> 220 sessões realizadas</li>
-            <li><Star size={12} strokeWidth={2.2} /> 4.9 NPS médio</li>
+            <li><Clock size={14} strokeWidth={1.75} /> Responde em até 14h</li>
+            <li><Check size={14} strokeWidth={1.75} /> 220 sessões realizadas</li>
+            <li><Star size={16} strokeWidth={1.75} /> 4.9 NPS médio</li>
           </ul>
         </aside>
       </div>

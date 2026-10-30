@@ -42,16 +42,16 @@ function CancellationFlowSection() {
         {/* Steps indicator */}
         <header className="vds-cnx-head">
           <button className="vds-cnx-back">
-            <ArrowLeft size={13} strokeWidth={2.2} />
+            <ArrowLeft size={14} strokeWidth={1.75} />
             Voltar pra configurações
           </button>
           <ol className="vds-cnx-steps">
             <li className={step >= 1 ? 'done' : ''}>
-              <span className="num">{step > 1 ? <Check size={11} strokeWidth={3} /> : '1'}</span>
+              <span className="num">{step > 1 ? <Check size={14} strokeWidth={1.75} /> : '1'}</span>
               <span className="lbl">Motivo</span>
             </li>
             <li className={step >= 2 ? (step > 2 ? 'done' : 'current') : ''}>
-              <span className="num">{step > 2 ? <Check size={11} strokeWidth={3} /> : '2'}</span>
+              <span className="num">{step > 2 ? <Check size={14} strokeWidth={1.75} /> : '2'}</span>
               <span className="lbl">Alternativas</span>
             </li>
             <li className={step >= 3 ? 'current' : ''}>
@@ -91,7 +91,7 @@ function CancellationFlowSection() {
               <button className="vds-cnx-btn ghost">Cancelar de qualquer jeito</button>
               <button className="vds-cnx-btn primary" onClick={() => setStep(2)}>
                 Continuar
-                <ArrowRight size={13} strokeWidth={2.4} />
+                <ArrowRight size={14} strokeWidth={1.75} />
               </button>
             </div>
           </div>
@@ -111,7 +111,7 @@ function CancellationFlowSection() {
             <article className="vds-cnx-offer featured via-mesh-navy via-noise">
               <span className="vds-cnx-offer-tag">Sugerido pra você</span>
               <div className="vds-cnx-offer-icon">
-                <Pause size={20} strokeWidth={1.6} />
+                <Pause size={20} strokeWidth={1.75} />
               </div>
               <h3>
                 Pausa de <em>3 meses</em> · zero custo
@@ -120,13 +120,13 @@ function CancellationFlowSection() {
                 Sua conta fica congelada · você não paga, a gente guarda seu progresso, mentorias e o lugar na turma. Quando voltar, recupera tudo onde parou.
               </p>
               <ul className="vds-cnx-offer-meta">
-                <li><Check size={11} strokeWidth={3} /> Conta pausada por até 90 dias</li>
-                <li><Check size={11} strokeWidth={3} /> Histórico + notas preservados</li>
-                <li><Check size={11} strokeWidth={3} /> Pode voltar antes se mudar de ideia</li>
+                <li><Check size={14} strokeWidth={1.75} /> Conta pausada por até 90 dias</li>
+                <li><Check size={14} strokeWidth={1.75} /> Histórico + notas preservados</li>
+                <li><Check size={14} strokeWidth={1.75} /> Pode voltar antes se mudar de ideia</li>
               </ul>
               <button className="vds-cnx-offer-cta">
                 Pausar conta por 3 meses
-                <ArrowRight size={13} strokeWidth={2.4} />
+                <ArrowRight size={14} strokeWidth={1.75} />
               </button>
             </article>
 
@@ -134,7 +134,7 @@ function CancellationFlowSection() {
             <div className="vds-cnx-alts">
               <article className="vds-cnx-alt">
                 <div className="vds-cnx-alt-icon">
-                  <TrendingDown size={14} strokeWidth={1.8} />
+                  <TrendingDown size={16} strokeWidth={1.75} />
                 </div>
                 <div className="vds-cnx-alt-body">
                   <h4>Mudar pro plano Comunidade</h4>
@@ -142,13 +142,13 @@ function CancellationFlowSection() {
                 </div>
                 <button className="vds-cnx-alt-cta">
                   Mudar plano
-                  <ChevronRight size={11} strokeWidth={2.4} />
+                  <ChevronRight size={14} strokeWidth={1.75} />
                 </button>
               </article>
 
               <article className="vds-cnx-alt">
                 <div className="vds-cnx-alt-icon">
-                  <MessageCircle size={14} strokeWidth={1.8} />
+                  <MessageCircle size={16} strokeWidth={1.75} />
                 </div>
                 <div className="vds-cnx-alt-body">
                   <h4>Sessão 1:1 com Caio · gratuita</h4>
@@ -156,13 +156,13 @@ function CancellationFlowSection() {
                 </div>
                 <button className="vds-cnx-alt-cta">
                   Agendar sessão
-                  <ChevronRight size={11} strokeWidth={2.4} />
+                  <ChevronRight size={14} strokeWidth={1.75} />
                 </button>
               </article>
 
               <article className="vds-cnx-alt">
                 <div className="vds-cnx-alt-icon accent">
-                  <Gift size={14} strokeWidth={1.8} />
+                  <Gift size={16} strokeWidth={1.75} />
                 </div>
                 <div className="vds-cnx-alt-body">
                   <h4>Desconto Founders · −R$ 800/mês</h4>
@@ -170,7 +170,7 @@ function CancellationFlowSection() {
                 </div>
                 <button className="vds-cnx-alt-cta accent">
                   Aceitar desconto
-                  <ChevronRight size={11} strokeWidth={2.4} />
+                  <ChevronRight size={14} strokeWidth={1.75} />
                 </button>
               </article>
             </div>
@@ -180,7 +180,7 @@ function CancellationFlowSection() {
                 Não, quero mesmo cancelar
               </button>
               <button className="vds-cnx-btn primary" onClick={() => setStep(1)}>
-                <ArrowLeft size={13} strokeWidth={2.4} />
+                <ArrowLeft size={14} strokeWidth={1.75} />
                 Voltar
               </button>
             </div>
@@ -199,7 +199,7 @@ function CancellationFlowSection() {
 
             <div className="vds-cnx-final">
               <div className="vds-cnx-final-icon">
-                <Heart size={18} strokeWidth={1.6} />
+                <Heart size={16} strokeWidth={1.75} />
               </div>
               <div>
                 <h4>Antes de você ir, queremos te agradecer.</h4>

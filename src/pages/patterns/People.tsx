@@ -50,15 +50,15 @@ function MentorProfileSection() {
             </p>
 
             <ul className="vds-mentor-meta">
-              <li><MapPin size={12} strokeWidth={2} /> São Paulo · SP</li>
-              <li><Headphones size={12} strokeWidth={2} /> Caio fala português, inglês e espanhol</li>
-              <li><Calendar size={12} strokeWidth={2} /> Disponibilidade · ter+qui · 14h-18h BRT</li>
+              <li><MapPin size={14} strokeWidth={1.75} /> São Paulo · SP</li>
+              <li><Headphones size={14} strokeWidth={1.75} /> Caio fala português, inglês e espanhol</li>
+              <li><Calendar size={14} strokeWidth={1.75} /> Disponibilidade · ter+qui · 14h-18h BRT</li>
             </ul>
 
             <div className="vds-mentor-socials">
-              <a href="#" aria-label="LinkedIn"><Link2 size={14} strokeWidth={2.2} /></a>
-              <a href="#" aria-label="Twitter"><AtSign size={14} strokeWidth={2.2} /></a>
-              <a href="#" aria-label="Site"><Globe size={14} strokeWidth={2.2} /></a>
+              <a href="#" aria-label="LinkedIn"><Link2 size={16} strokeWidth={1.75} /></a>
+              <a href="#" aria-label="Twitter"><AtSign size={16} strokeWidth={1.75} /></a>
+              <a href="#" aria-label="Site"><Globe size={16} strokeWidth={1.75} /></a>
             </div>
           </div>
 
@@ -80,11 +80,11 @@ function MentorProfileSection() {
 
             <div className="vds-mentor-actions">
               <button className="vds-mentor-btn primary">
-                <Calendar size={14} strokeWidth={2.2} />
+                <Calendar size={16} strokeWidth={1.75} />
                 Agendar sessão · 1:1
               </button>
               <button className="vds-mentor-btn ghost">
-                <MessageCircle size={14} strokeWidth={2.2} />
+                <MessageCircle size={16} strokeWidth={1.75} />
                 Mandar mensagem
               </button>
             </div>
@@ -140,9 +140,9 @@ function TeamGridSection() {
             </div>
 
             <footer className="vds-team-actions">
-              <a href="#" aria-label="LinkedIn"><Link2 size={11} strokeWidth={2.2} /></a>
-              <a href="#" aria-label="Email"><Mail size={11} strokeWidth={2.2} /></a>
-              <a href="#" aria-label="Chat"><MessageCircle size={11} strokeWidth={2.2} /></a>
+              <a href="#" aria-label="LinkedIn"><Link2 size={14} strokeWidth={1.75} /></a>
+              <a href="#" aria-label="Email"><Mail size={14} strokeWidth={1.75} /></a>
+              <a href="#" aria-label="Chat"><MessageCircle size={16} strokeWidth={1.75} /></a>
               <span className="vds-team-actions-sep" />
               <a href="#" className="vds-team-profile">Ver perfil</a>
             </footer>
@@ -174,11 +174,11 @@ function MemberListSection() {
           </div>
           <div className="vds-member-actions">
             <div className="vds-member-search">
-              <Search size={13} strokeWidth={2.2} />
+              <Search size={14} strokeWidth={1.75} />
               <input placeholder="Buscar operador" />
             </div>
             <button className="vds-member-btn">
-              <Filter size={13} strokeWidth={2.2} />
+              <Filter size={14} strokeWidth={1.75} />
               Filtros
             </button>
           </div>
@@ -214,7 +214,7 @@ function MemberListSection() {
                   </td>
                   <td className="via-num">
                     <span className="vds-member-streak">
-                      <Award size={11} strokeWidth={2} />
+                      <Award size={14} strokeWidth={1.75} />
                       {m.streak} dias
                     </span>
                   </td>
@@ -247,18 +247,18 @@ function UserPopoverSection() {
           <div className="vds-userpop-stats">
             <span><strong>14</strong> aulas</span>
             <span>·</span>
-            <span><Award size={11} strokeWidth={2} /> <strong>14d</strong> streak</span>
+            <span><Award size={14} strokeWidth={1.75} /> <strong>14d</strong> streak</span>
             <span>·</span>
             <span>5,0 ★</span>
           </div>
           <div className="vds-userpop-actions">
             <button className="vds-userpop-btn primary">
-              <MessageCircle size={12} strokeWidth={2.2} />
+              <MessageCircle size={16} strokeWidth={1.75} />
               Mandar mensagem
             </button>
             <button className="vds-userpop-btn ghost">
               Ver perfil
-              <ChevronRight size={12} strokeWidth={2.4} />
+              <ChevronRight size={14} strokeWidth={1.75} />
             </button>
           </div>
         </div>
@@ -274,20 +274,20 @@ function UserPopoverSection() {
             220 mentorados ativos · responde em até 14h · mentoria 1:1 + lives.
           </p>
           <div className="vds-userpop-stats">
-            <span><Star size={11} strokeWidth={2} style={{ fill: 'var(--via-text-primary)', stroke: 'var(--via-text-primary)' }} /> <strong>4,9</strong></span>
+            <span><Star size={14} strokeWidth={1.75} style={{ fill: 'var(--via-text-primary)', stroke: 'var(--via-text-primary)' }} /> <strong>4,9</strong></span>
             <span>·</span>
-            <span><Users size={11} strokeWidth={2} /> <strong>220</strong></span>
+            <span><Users size={14} strokeWidth={1.75} /> <strong>220</strong></span>
             <span>·</span>
             <span>resp. 14h</span>
           </div>
           <div className="vds-userpop-actions">
             <button className="vds-userpop-btn primary">
-              <Calendar size={12} strokeWidth={2.2} />
+              <Calendar size={14} strokeWidth={1.75} />
               Agendar sessão
             </button>
             <button className="vds-userpop-btn ghost">
               Ver perfil
-              <ChevronRight size={12} strokeWidth={2.4} />
+              <ChevronRight size={14} strokeWidth={1.75} />
             </button>
           </div>
         </div>
@@ -303,14 +303,14 @@ function UserPopoverSection() {
             Admin do plano Corporate da Mantra · gerencia 12 lugares · onboarding ativo.
           </p>
           <div className="vds-userpop-stats">
-            <span><Users size={11} strokeWidth={2} /> <strong>12</strong> no time</span>
+            <span><Users size={14} strokeWidth={1.75} /> <strong>12</strong> no time</span>
             <span>·</span>
             <span><strong>3</strong> ativos hoje</span>
           </div>
           <div className="vds-userpop-actions">
             <button className="vds-userpop-btn ghost full">
               Ver dashboard do time
-              <ChevronRight size={12} strokeWidth={2.4} />
+              <ChevronRight size={14} strokeWidth={1.75} />
             </button>
           </div>
         </div>

@@ -58,7 +58,7 @@ export default function Manifesto() {
           <article key={p.n} className="vds-principle vds-reveal">
             <header>
               <span className="num">{p.n}</span>
-              <span className="ico"><p.I size={18} strokeWidth={1.8} /></span>
+              <span className="ico"><p.I size={16} strokeWidth={1.75} /></span>
             </header>
             <h3>{p.title}</h3>
             <p>{p.body}</p>

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Layers } from 'lucide-react';
+import '../lib/_shared/material.css';
+import '../lib/Button/Button.css';
 import './pages.css';
 
 const sections = [
@@ -44,10 +46,10 @@ const sections = [
 export default function Home() {
   return (
     <>
-      {/* HERO atmosférica navy com mesh + noise + glow */}
-      <section className="vds-home-hero via-mesh-navy via-noise">
-        <span className="vds-home-hero-pill">
-          <Layers size={12} strokeWidth={2} />
+      {/* HERO · light-first: papel claro + atmosfera navy sutil (o navy é a tinta, não o fundo) */}
+      <section className="vds-home-hero">
+        <span className="vds-home-hero-pill via-liquid">
+          <Layers size={16} strokeWidth={1.75} />
           Versão 0.6 · 166 páginas vivas
         </span>
         <h1 className="vds-home-hero-title">
@@ -60,16 +62,17 @@ export default function Home() {
           direto pro código.
         </p>
         <div className="vds-home-hero-actions">
-          <Link to="/foundations/brand" className="vds-btn primary">
-            Começar pelos fundamentos <ArrowRight size={14} strokeWidth={2.5} />
+          <Link to="/foundations/brand" className="via-btn via-btn--primary via-btn--lg">
+            <span className="via-btn__label">Começar pelos fundamentos</span>
+            <span className="via-btn__icon"><ArrowRight size={16} strokeWidth={1.75} /></span>
           </Link>
-          <Link to="/showcase/marketing" className="vds-btn ghost-light">
-            Ver páginas-modelo <ArrowUpRight size={14} strokeWidth={2.5} />
+          <Link to="/showcase/marketing" className="via-btn via-btn--secondary via-btn--lg">
+            <span className="via-btn__label">Ver páginas-modelo</span>
+            <span className="via-btn__icon"><ArrowUpRight size={16} strokeWidth={1.75} /></span>
           </Link>
         </div>
 
-        {/* Stats inline glass-dark */}
-        <div className="vds-home-hero-stats">
+        <dl className="vds-home-hero-stats">
           {[
             { n: '15', l: 'Fundamentos' },
             { n: '47', l: 'Componentes' },
@@ -77,11 +80,11 @@ export default function Home() {
             { n: '10', l: 'Páginas-modelo' },
           ].map((s) => (
             <div key={s.l} className="vds-home-hero-stat">
-              <span className="num">{s.n}</span>
-              <span className="lbl">{s.l}</span>
+              <dt className="lbl">{s.l}</dt>
+              <dd className="num">{s.n}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </section>
 
       {/* Sections grid em liquid glass */}
@@ -92,7 +95,7 @@ export default function Home() {
             <h2 className="vds-home-card-title">{s.title}</h2>
             <p className="vds-home-card-body">{s.body}</p>
             <span className="vds-home-card-arrow" aria-hidden="true">
-              <ArrowRight size={14} strokeWidth={2.4} />
+              <ArrowRight size={16} strokeWidth={1.75} />
             </span>
           </Link>
         ))}

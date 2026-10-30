@@ -34,7 +34,7 @@ function StickyEnrollSection() {
         {/* Conteúdo de página real · contexto */}
         <article className="vds-sticky-page">
           <span className="vds-sticky-page__eyebrow">
-            <Users size={11} strokeWidth={2} />
+            <Users size={14} strokeWidth={1.75} />
             Mentoria · cohort 2026.3
           </span>
           <h2 className="vds-sticky-page__title">
@@ -63,7 +63,7 @@ function StickyEnrollSection() {
 
           <div className="vds-sticky-page__feature">
             <span className="vds-sticky-page__feature-icon">
-              <MessageCircle size={16} strokeWidth={1.8} />
+              <MessageCircle size={16} strokeWidth={1.75} />
             </span>
             <div>
               <strong>Conversa de 20min com Caio antes de fechar</strong>
@@ -77,7 +77,7 @@ function StickyEnrollSection() {
           <div className="vds-sticky-bar-l">
             <div>
               <span className="vds-sticky-eyebrow">
-                <Calendar size={11} strokeWidth={2.2} />
+                <Calendar size={14} strokeWidth={1.75} />
                 Turma 2026.3 · matrículas abertas
               </span>
               <p>
@@ -109,10 +109,10 @@ function StickyEnrollSection() {
             <button className="vds-sticky-btn ghost on-dark">Saiba mais</button>
             <button className="vds-sticky-btn primary">
               Garantir vaga
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
             <button className="vds-sticky-close" aria-label="Fechar">
-              <X size={13} strokeWidth={2} />
+              <X size={14} strokeWidth={1.75} />
             </button>
           </div>
         </aside>
@@ -129,7 +129,7 @@ function StickyNotifySection() {
         {/* Conteúdo de página real · contexto */}
         <article className="vds-sticky-page">
           <span className="vds-sticky-page__eyebrow">
-            <BookOpen size={11} strokeWidth={2} />
+            <BookOpen size={14} strokeWidth={1.75} />
             Biblioteca · 47 cases publicados
           </span>
           <h2 className="vds-sticky-page__title">
@@ -143,7 +143,7 @@ function StickyNotifySection() {
 
           <div className="vds-sticky-page__feature">
             <span className="vds-sticky-page__feature-icon">
-              <BookOpen size={16} strokeWidth={1.8} />
+              <BookOpen size={16} strokeWidth={1.75} />
             </span>
             <div>
               <strong>Case publicado essa semana · "Auditoria de prompt em e-commerce"</strong>
@@ -156,14 +156,14 @@ function StickyNotifySection() {
         <aside className="vds-sticky-bar notify">
           <div className="vds-sticky-bar-l">
             <div className="vds-sticky-icon">
-              <Bell size={15} strokeWidth={1.8} />
+              <Bell size={16} strokeWidth={1.75} />
             </div>
             <div>
               <span className="vds-sticky-notify-title">
                 Caio está ao vivo agora · auditoria de prompt em produção
               </span>
               <em className="vds-sticky-notify-meta">
-                <Users size={10} strokeWidth={2} />
+                <Users size={14} strokeWidth={1.75} />
                 148 assistindo · começou há 14 min
               </em>
             </div>
@@ -171,10 +171,10 @@ function StickyNotifySection() {
           <div className="vds-sticky-bar-r">
             <button className="vds-sticky-btn primary sm">
               Entrar na live
-              <ArrowRight size={11} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
             <button className="vds-sticky-close" aria-label="Fechar">
-              <X size={13} strokeWidth={2} />
+              <X size={14} strokeWidth={1.75} />
             </button>
           </div>
         </aside>
@@ -191,7 +191,7 @@ function StickyExitSection() {
         {/* Conteúdo de página real · um pouco dimmed pra dar foco no exit bar */}
         <article className="vds-sticky-page dim">
           <span className="vds-sticky-page__eyebrow">
-            <Clock size={11} strokeWidth={2} />
+            <Clock size={14} strokeWidth={1.75} />
             Página de checkout · etapa final
           </span>
           <h2 className="vds-sticky-page__title">
@@ -223,7 +223,7 @@ function StickyExitSection() {
           <div className="vds-sticky-bar-l">
             <div>
               <span className="vds-sticky-eyebrow">
-                <Clock size={11} strokeWidth={2.2} />
+                <Clock size={14} strokeWidth={1.75} />
                 Last chance · só hoje
               </span>
               <p>
@@ -233,15 +233,15 @@ function StickyExitSection() {
           </div>
           <div className="vds-sticky-bar-r">
             <a href="#" className="vds-sticky-link">
-              <BookOpen size={12} strokeWidth={2} />
+              <BookOpen size={14} strokeWidth={1.75} />
               Ver os termos
             </a>
             <button className="vds-sticky-btn primary">
               Aproveitar agora
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </button>
             <button className="vds-sticky-close" aria-label="Fechar">
-              <X size={13} strokeWidth={2} />
+              <X size={14} strokeWidth={1.75} />
             </button>
           </div>
         </aside>

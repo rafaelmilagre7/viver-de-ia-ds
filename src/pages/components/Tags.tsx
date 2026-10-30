@@ -30,7 +30,7 @@ export default function Tags() {
                   className={`via-tag ${on ? 'selected' : ''}`}
                   onClick={() => toggle(setor, setSetor, t)}
                 >
-                  {t}{on && <X className="x" size={13} strokeWidth={2.5} />}
+                  {t}{on && <X className="x" size={14} strokeWidth={1.75} />}
                 </button>
               );
             })}
@@ -49,12 +49,12 @@ export default function Tags() {
                   className={`via-tag ${on ? 'selected' : ''}`}
                   onClick={() => toggle(tools, setTools, t)}
                 >
-                  {t}{on && <X className="x" size={13} strokeWidth={2.5} />}
+                  {t}{on && <X className="x" size={14} strokeWidth={1.75} />}
                 </button>
               );
             })}
             <button className="via-tag add">
-              <Plus size={12} strokeWidth={2} />
+              <Plus size={14} strokeWidth={1.75} />
               Adicionar
             </button>
           </div>

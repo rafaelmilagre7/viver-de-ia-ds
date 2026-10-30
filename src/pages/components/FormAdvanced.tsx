@@ -84,7 +84,7 @@ function DateRangeSection() {
             {/* Maio */}
             <div className="vds-dp-range-month">
               <header>
-                <button aria-label="Anterior" className="vds-dp-nav"><ChevronLeft size={14} strokeWidth={2.2} /></button>
+                <button aria-label="Anterior" className="vds-dp-nav"><ChevronLeft size={16} strokeWidth={1.75} /></button>
                 <div className="vds-dp-title">
                   <span className="vds-dp-month">Maio</span>
                   <span className="vds-dp-year">2026</span>
@@ -122,7 +122,7 @@ function DateRangeSection() {
                   <span className="vds-dp-month">Junho</span>
                   <span className="vds-dp-year">2026</span>
                 </div>
-                <button aria-label="Próximo" className="vds-dp-nav"><ChevronRight size={14} strokeWidth={2.2} /></button>
+                <button aria-label="Próximo" className="vds-dp-nav"><ChevronRight size={16} strokeWidth={1.75} /></button>
               </header>
               <div className="vds-dp-week">
                 {days.map((d, i) => <span key={i}>{d}</span>)}
@@ -206,7 +206,7 @@ function DatePickerSection() {
               value={`${selected.toString().padStart(2, '0')} de maio · 2026`}
               readOnly
             />
-            <Calendar size={14} strokeWidth={2.2} />
+            <Calendar size={16} strokeWidth={1.75} />
           </div>
           <p className="vds-form-hint">
             <em>Eventos do mês visíveis no calendário</em> — passa o mouse pra ver detalhes.
@@ -235,14 +235,14 @@ function DatePickerSection() {
 
           <header>
             <button className="vds-dp-nav" aria-label="Mês anterior">
-              <ChevronLeft size={14} strokeWidth={2.2} />
+              <ChevronLeft size={16} strokeWidth={1.75} />
             </button>
             <div className="vds-dp-title">
               <span className="vds-dp-month">Maio</span>
               <span className="vds-dp-year">2026</span>
             </div>
             <button className="vds-dp-nav" aria-label="Próximo mês">
-              <ChevronRight size={14} strokeWidth={2.2} />
+              <ChevronRight size={16} strokeWidth={1.75} />
             </button>
           </header>
 
@@ -319,7 +319,7 @@ function ComboboxSection() {
             reserva a altura do estado aberto (a demo nasce aberta) */}
         <div className="vds-combobox-anchor">
         <div className="vds-combobox-trigger" role="combobox" aria-haspopup="listbox" aria-expanded={open} aria-controls="vds-combobox-list">
-          <Search size={13} strokeWidth={2.2} className="ico" />
+          <Search size={14} strokeWidth={1.75} className="ico" />
           <input
             aria-label="Buscar cidade do evento"
             value={val}
@@ -334,7 +334,7 @@ function ComboboxSection() {
             onClick={() => setOpen(!open)}
             style={{ background: 'none', border: 'none', padding: 0, display: 'inline-flex', cursor: 'pointer' }}
           >
-            <ChevronDown size={13} strokeWidth={2.2} className={`chev ${open ? 'rot' : ''}`} />
+            <ChevronDown size={14} strokeWidth={1.75} className={`chev ${open ? 'rot' : ''}`} />
           </button>
         </div>
 
@@ -346,7 +346,7 @@ function ComboboxSection() {
             </li>
             {filtered.length === 0 && (
               <li className="vds-combobox-empty">
-                <Search size={14} strokeWidth={1.6} />
+                <Search size={16} strokeWidth={1.75} />
                 Nenhuma cidade com "{val}".
               </li>
             )}
@@ -359,7 +359,7 @@ function ComboboxSection() {
                   onClick={() => { setPicked(o.v); setVal(o.label); }}
                 >
                   <span className="vds-combobox-mark">
-                    <MapPin size={14} strokeWidth={2} />
+                    <MapPin size={16} strokeWidth={1.75} />
                   </span>
                   <div className="vds-combobox-text">
                     <p className="lbl">{o.label}</p>
@@ -367,7 +367,7 @@ function ComboboxSection() {
                   </div>
                   {isPicked && (
                     <span className="vds-combobox-check">
-                      <Check size={13} strokeWidth={2.4} />
+                      <Check size={14} strokeWidth={1.75} />
                     </span>
                   )}
                 </li>
@@ -404,7 +404,7 @@ function TagInputSection() {
             <span key={t} className="vds-tag">
               {t}
               <button onClick={() => setTags(tags.filter((x) => x !== t))} aria-label={`Remover ${t}`}>
-                <X size={10} strokeWidth={2.4} />
+                <X size={14} strokeWidth={1.75} />
               </button>
             </span>
           ))}
@@ -417,7 +417,7 @@ function TagInputSection() {
           />
           {input && (
             <button className="vds-taginput-add" onClick={() => add()}>
-              <Plus size={11} strokeWidth={2.5} />
+              <Plus size={14} strokeWidth={1.75} />
               <span>Adicionar "{input}"</span>
             </button>
           )}
@@ -428,7 +428,7 @@ function TagInputSection() {
           <div className="vds-taginput-sugg-row">
             {suggestions.filter((s) => !tags.includes(s)).map((s) => (
               <button key={s} className="vds-taginput-sugg" onClick={() => add(s)}>
-                <Plus size={10} strokeWidth={2.5} />
+                <Plus size={14} strokeWidth={1.75} />
                 {s}
               </button>
             ))}
@@ -544,7 +544,7 @@ function RatingSection() {
                 onClick={() => setRating(n)}
                 aria-label={`${n} de 5`}
               >
-                <Star size={24} strokeWidth={1.6} fill={shown >= n ? 'currentColor' : 'none'} />
+                <Star size={24} strokeWidth={1.75} fill={shown >= n ? 'currentColor' : 'none'} />
               </button>
             ))}
           </div>
@@ -609,7 +609,7 @@ function ColorPickerSection() {
               color: isLightColor(picked.hex) ? 'rgba(10, 31, 59, 0.55)' : 'rgba(255, 255, 255, 0.72)',
             }}
           >
-            <Pipette size={14} strokeWidth={2} />
+            <Pipette size={16} strokeWidth={1.75} />
           </div>
           <div className="vds-color-info">
             <p className="vds-color-name">{picked.name}</p>

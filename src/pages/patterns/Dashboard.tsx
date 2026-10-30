@@ -1,4 +1,4 @@
-import { Activity, MessageCircle, Users, Rocket, MoreHorizontal, ChevronUp } from 'lucide-react';
+import { Activity, MessageCircle, Users, MoreHorizontal, ChevronUp, Target } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import './dashboard.css';
@@ -15,7 +15,7 @@ import './dashboard.css';
 const kpis = [
   { lbl: 'Alunos ativos', num: '312', d: '+24', ref: 'vs. 30 dias', I: Users },
   { lbl: 'Conversas', num: '11.920', d: '+18%', ref: 'vs. 30 dias', I: MessageCircle },
-  { lbl: 'Implementações', num: '48', d: '+12', ref: 'em produção', I: Rocket },
+  { lbl: 'Implementações', num: '48', d: '+12', ref: 'em produção', I: Target },
   { lbl: 'NPS', num: '84', d: '+6', ref: '212 respostas', I: Activity },
 ];
 
@@ -61,13 +61,13 @@ export default function Dashboard() {
             {kpis.map((k) => (
               <article key={k.lbl} className="via-metric via-metric--atmos dash-metric">
                 <span className="via-metric__label">
-                  <span className="ico" aria-hidden="true"><k.I size={13} strokeWidth={2} /></span>
+                  <span className="ico" aria-hidden="true"><k.I size={14} strokeWidth={1.75} /></span>
                   {k.lbl}
                 </span>
                 <span className="via-metric__value">{k.num}</span>
                 <span className="via-metric__foot">
                   <span className="via-delta via-delta--up">
-                    <ChevronUp size={10} strokeWidth={2.5} aria-hidden="true" />
+                    <ChevronUp size={14} strokeWidth={1.75} aria-hidden="true" />
                     {k.d}
                   </span>
                   <span className="dash-metric-ref">{k.ref}</span>
@@ -80,7 +80,7 @@ export default function Dashboard() {
             <section className="main">
               <header>
                 <span className="vds-eyebrow">Progresso · turma 2026.2</span>
-                <button aria-label="Mais opções" className="more"><MoreHorizontal size={14} strokeWidth={2} /></button>
+                <button aria-label="Mais opções" className="more"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
               </header>
 
               <div className="via-table-wrap" tabIndex={0} role="region" aria-label="Progresso da turma por etapa, rolável">

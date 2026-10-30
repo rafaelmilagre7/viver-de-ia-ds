@@ -56,7 +56,7 @@ function TrustStripSection() {
         <footer>
           <a href="#" className="vds-trust-strip-cta">
             Ver os 218 cases
-            <ArrowUpRight size={13} strokeWidth={2.4} />
+            <ArrowUpRight size={14} strokeWidth={1.75} />
           </a>
         </footer>
       </article>
@@ -79,7 +79,7 @@ function TrustStatsSection() {
         {stats.map((s) => (
           <article key={s.v} className="vds-trust-stat">
             <div className="vds-trust-stat-corner">
-              <TrendingUp size={11} strokeWidth={2.2} />
+              <TrendingUp size={16} strokeWidth={1.75} />
             </div>
             <p className="vds-trust-stat-v">{s.v}</p>
             <p className="vds-trust-stat-l">{s.l}</p>
@@ -130,7 +130,7 @@ function TrustReviewsSection() {
           </div>
           <div className="vds-trust-rating-stars">
             {[1, 2, 3, 4, 5].map((i) => (
-              <Star key={i} size={16} strokeWidth={1.8} />
+              <Star key={i} size={16} strokeWidth={1.75} />
             ))}
           </div>
           <p className="vds-trust-rating-meta">
@@ -159,10 +159,10 @@ function TrustReviewsSection() {
         <div className="vds-trust-reviews-list">
           {reviews.map((r, i) => (
             <article key={i} className="vds-trust-review">
-              <Quote size={16} strokeWidth={1.8} className="vds-trust-review-mark" />
+              <Quote size={16} strokeWidth={1.75} className="vds-trust-review-mark" />
               <div className="vds-trust-review-stars">
                 {[...Array(r.stars)].map((_, j) => (
-                  <Star key={j} size={11} strokeWidth={1.8} />
+                  <Star key={j} size={16} strokeWidth={1.75} />
                 ))}
               </div>
               <h4>{r.title}</h4>
@@ -199,7 +199,7 @@ function TrustAwardsSection() {
           return (
             <article key={i} className="vds-trust-award">
               <div className="vds-trust-award-icon">
-                <Icon size={18} strokeWidth={1.6} />
+                <Icon size={16} strokeWidth={1.75} />
               </div>
               <h4>{a.name}</h4>
               <p>{a.org}</p>

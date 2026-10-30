@@ -107,14 +107,14 @@ function SearchResultsSection() {
         {/* Sticky header — search bar + meta */}
         <header className="vds-sr-head">
           <div className="vds-sr-search">
-            <Search size={14} strokeWidth={2} />
+            <Search size={16} strokeWidth={1.75} />
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar aulas, conversas, pessoas, materiais…"
             />
             <button className="vds-sr-search-clear" aria-label="Limpar">
-              <X size={12} strokeWidth={2.2} />
+              <X size={14} strokeWidth={1.75} />
             </button>
             <span className="vds-sr-search-shortcut mono">⌘ K</span>
           </div>
@@ -134,7 +134,7 @@ function SearchResultsSection() {
                   <li key={f.id} className={f.active ? 'on' : ''}>
                     <button>
                       <span className="vds-sr-facet-icon">
-                        <Icon size={12} strokeWidth={1.8} />
+                        <Icon size={14} strokeWidth={1.75} />
                       </span>
                       <span className="vds-sr-facet-label">{f.label}</span>
                       <span className="vds-sr-facet-count mono">{f.count}</span>
@@ -165,19 +165,19 @@ function SearchResultsSection() {
             {/* Active filters + sort */}
             <div className="vds-sr-toolbar">
               <div className="vds-sr-active-filters">
-                <Filter size={12} strokeWidth={2} className="vds-sr-toolbar-icon" />
+                <Filter size={14} strokeWidth={1.75} className="vds-sr-toolbar-icon" />
                 <span className="vds-sr-toolbar-lbl">Filtros ativos:</span>
                 {activeFilters.map((f, i) => (
                   <button key={i} className="vds-sr-active-chip">
                     {f}
-                    <X size={10} strokeWidth={2.4} />
+                    <X size={14} strokeWidth={1.75} />
                   </button>
                 ))}
                 <button className="vds-sr-clear-all">Limpar todos</button>
               </div>
               <button className="vds-sr-sort">
                 Relevância
-                <ChevronDown size={12} strokeWidth={2.2} />
+                <ChevronDown size={16} strokeWidth={1.75} />
               </button>
             </div>
 
@@ -188,12 +188,12 @@ function SearchResultsSection() {
                   <div className="vds-sr-result-head">
                     <span className={`vds-sr-result-type ${r.typeColor}`}>{r.type}</span>
                     <span className="vds-sr-result-time mono">
-                      <Clock size={10} strokeWidth={2} />
+                      <Clock size={14} strokeWidth={1.75} />
                       {r.time}
                     </span>
                     <span className="vds-sr-result-score mono">
                       {/* fill navy fixo virava estrela oca no dark · currentColor segue o score */}
-                      <Star size={9} strokeWidth={2} style={{ fill: "currentColor" }} />
+                      <Star size={14} strokeWidth={1.75} style={{ fill: "currentColor" }} />
                       {r.score}%
                     </span>
                   </div>
@@ -229,7 +229,7 @@ function SearchResultsSection() {
               </div>
               <a href="#" className="vds-sr-load-more">
                 Carregar mais 20 resultados
-                <ArrowRight size={12} strokeWidth={2.4} />
+                <ArrowRight size={14} strokeWidth={1.75} />
               </a>
             </footer>
           </main>

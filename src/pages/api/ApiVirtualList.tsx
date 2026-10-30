@@ -58,8 +58,8 @@ export default function ApiVirtualList() {
     <ComponentDoc
       eyebrow="api · virtual-list"
       name="VirtualList"
-      headline="performance para 10000+ rows · overscan + position absolute"
-      description="VirtualList renderiza só items visíveis + buffer (overscan). Use pra: notificações, logs, mensagens, audit trails, busca em massa. Sem isso, 5000+ rows trava o browser. Altura fixa por item (itemHeight obrigatório)."
+      headline="dez mil linhas sem travar."
+      description="Performance para 10000+ rows · overscan + position absolute. VirtualList renderiza só items visíveis + buffer (overscan). Use pra: notificações, logs, mensagens, audit trails, busca em massa. Sem isso, 5000+ rows trava o browser. Altura fixa por item (itemHeight obrigatório)."
       importLine={`import { VirtualList, type VirtualListProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-vlist', description: 'Container · overflow auto · height fixo' },

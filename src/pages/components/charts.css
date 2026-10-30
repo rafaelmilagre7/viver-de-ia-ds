@@ -59,7 +59,7 @@
   border-radius: var(--via-radius-xs);
   background: var(--via-navy-06);
   color: var(--via-text-muted);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-wide);
   font-feature-settings: 'tnum' 1;
@@ -111,14 +111,14 @@
   margin: 0 0 var(--via-space-1_5);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
 .vds-rule-card p {
   margin: 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
 }
 
@@ -181,9 +181,9 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: var(--via-text-muted);
   margin: 0 0 var(--via-space-2);
@@ -193,7 +193,7 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-tighter);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   color: var(--via-text-primary);
   margin: 0 0 var(--via-space-1_5);
   font-feature-settings: 'tnum' 1;
@@ -204,12 +204,12 @@
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);
   margin-left: var(--via-space-1);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-chart-head .lede {
   font-size: var(--via-fs-sm);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
   margin: 0;
   max-width: 520px;
@@ -231,7 +231,7 @@
   border: 1px solid var(--via-navy-06);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   white-space: nowrap;
   font-feature-settings: 'tnum' 1;
@@ -250,7 +250,7 @@
   margin-top: var(--via-space-6);
   padding-top: var(--via-space-5);
   border-top: 1px solid var(--via-border-soft);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--dv-ink);
   font-weight: var(--via-fw-medium);
   font-feature-settings: 'tnum' 1;
@@ -264,7 +264,7 @@
 .vds-note {
   margin: var(--via-space-4) var(--via-space-0_5) 0;
   font-size: var(--via-fs-xs);
-  line-height: 1.6;
+  line-height: var(--via-lh-loose);
   color: var(--via-text-soft);
   max-width: 720px;
 }
@@ -311,7 +311,6 @@
   gap: var(--via-space-2);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   color: var(--dv-ink); /* texto NUNCA na cor da série */
 }
 
@@ -415,7 +414,7 @@
 
 .vds-plot .axis-label,
 .vds-sm-plot .axis-label {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   fill: var(--dv-ink);
   font-feature-settings: 'tnum' 1;
@@ -426,7 +425,7 @@
 }
 
 .vds-sm-plot .axis-label.micro {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
 }
 
 /* marcas de dado · finas e consistentes */
@@ -489,10 +488,8 @@
 }
 
 .vds-plot .ref-label {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   fill: var(--via-text-soft);
 }
 
@@ -509,10 +506,8 @@
 }
 
 .vds-plot .zone-label {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   fill: var(--via-text-soft);
 }
 
@@ -538,7 +533,7 @@
 .vds-plot .dl-line.dashed { stroke-dasharray: 5 4; }
 
 .vds-plot .dl-name {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   fill: var(--dv-ink);
 }
@@ -546,7 +541,7 @@
 .vds-plot .dl-value {
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   fill: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
 }
@@ -564,10 +559,8 @@
 }
 
 .vds-tt .tt-title {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   fill: rgba(255, 255, 255, 0.62);
 }
 
@@ -576,7 +569,7 @@
 }
 
 .vds-tt .tt-label {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   fill: rgba(255, 255, 255, 0.82);
 }
@@ -588,7 +581,7 @@
 .vds-tt .tt-value {
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   fill: var(--via-white);
   font-feature-settings: 'tnum' 1;
 }
@@ -642,10 +635,8 @@
 }
 
 .vds-kpi-label {
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 
@@ -653,9 +644,9 @@
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   padding: 3px var(--via-space-2);
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
@@ -667,7 +658,7 @@
   margin: var(--via-space-3_5) 0 var(--via-space-3_5);
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.03em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
 }
@@ -710,10 +701,8 @@
   display: flex;
   justify-content: space-between;
   margin: var(--via-space-2) 0 0;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--via-text-soft);
 }
 
@@ -754,15 +743,12 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
 }
 
 /* anotação — nunca uma cor diferente pro líder */
 .vds-bar-tag {
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   padding: var(--via-space-0_5) var(--via-space-1_5);
   border-radius: var(--via-radius-xs);
   background: var(--via-navy-06);
@@ -811,7 +797,7 @@
   border-radius: var(--via-radius-xs);
   background: var(--via-navy);
   color: var(--via-white);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   white-space: nowrap;
   font-feature-settings: 'tnum' 1;
@@ -834,12 +820,12 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-bar-value em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--dv-ink);
   padding: 3px 7px;
@@ -865,7 +851,7 @@
   position: absolute;
   top: 5px;
   transform: translateX(-50%);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--dv-ink);
   font-feature-settings: 'tnum' 1;
@@ -903,7 +889,6 @@
   margin: 0;
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
   color: var(--via-text-primary);
 }
 
@@ -913,14 +898,14 @@
   gap: var(--via-space-2);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-sm-value em {
   font-style: normal;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--dv-ink);
   letter-spacing: 0;
@@ -943,7 +928,7 @@
 }
 
 .vds-sm-plot .sm-callout {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   fill: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
@@ -1010,15 +995,13 @@
 }
 
 .vds-donut-svg .donut-sub {
-  font-size: var(--via-fs-label);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   fill: var(--via-text-soft);
 }
 
 .vds-donut-svg .donut-money {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   fill: var(--dv-ink);
   font-feature-settings: 'tnum' 1;
@@ -1029,13 +1012,12 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
 }
 
 .vds-side-lede {
   margin: 0 0 var(--via-space-4);
   font-size: var(--via-fs-xs);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-soft);
   max-width: 460px;
 }
@@ -1055,10 +1037,8 @@
 
 .vds-tail-label {
   margin: 0 0 var(--via-space-1_5);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 
@@ -1069,14 +1049,14 @@
   margin: 0 0 var(--via-space-2_5);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.03em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-tail-value em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0;
   color: var(--dv-ink);
@@ -1108,10 +1088,8 @@
   gap: var(--via-space-6);
   padding: 0 var(--via-space-2) var(--via-space-2_5);
   border-bottom: 1px solid var(--via-border-soft);
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 
@@ -1152,12 +1130,11 @@
   gap: var(--via-space-2_5);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
   color: var(--via-text-primary);
 }
 
 .vds-funnel-stage .num {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: var(--via-ls-wide);
   padding: 3px var(--via-space-1_5);
@@ -1206,7 +1183,7 @@
   text-align: right;
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
   font-feature-settings: 'tnum' 1;
 }
@@ -1215,10 +1192,8 @@
 .vds-funnel-cap {
   display: none;
   flex: 0 0 78px;
-  font-size: var(--via-fs-micro);
-  font-weight: var(--via-fw-semibold);
-  letter-spacing: var(--via-ls-wide);
-  text-transform: uppercase;
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
 }
 

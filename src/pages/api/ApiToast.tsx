@@ -32,8 +32,8 @@ export default function ApiToast() {
     <ComponentDoc
       eyebrow="api · toast"
       name="Toast"
-      headline="notificação editorial · spring 3-step · destructive breathing"
-      description="Toast com atmosphere radial top-left · shadow 4-stack · entra pela borda da pilha (opacidade + 8px + escala .97, sem overshoot), sai pela mesma mola do swipe e os vizinhos deslizam. 4 variants (default · success · warning · destructive). Destructive tem pulse breathing 3.2s pra chamar atenção. Use hook useToasts() pra controlar."
+      headline="a confirmação rápida que some sozinha."
+      description="Notificação editorial · spring 3-step · destructive breathing. Toast com atmosphere radial top-left · shadow 4-stack · entra pela borda da pilha (opacidade + 8px + escala .97, sem overshoot), sai pela mesma mola do swipe e os vizinhos deslizam. 4 variants (default · success · warning · destructive). Destructive tem pulse breathing 3.2s pra chamar atenção. Use hook useToasts() pra controlar."
       importLine={`import { ToastStack, useToasts, type ToastItem } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'ToastStack', description: 'Container fixed · 4 posições · z-index 9999' },

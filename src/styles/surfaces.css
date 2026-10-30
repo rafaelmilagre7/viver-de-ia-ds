@@ -36,9 +36,8 @@
   border: var(--via-material-control-ring);
   box-shadow: var(--via-material-control-shadow);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-primary);
   text-decoration: none;
   white-space: nowrap;
@@ -186,7 +185,7 @@ button.via-row-card {
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-border-soft);
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   letter-spacing: 0.04em;
   color: var(--via-text-body);

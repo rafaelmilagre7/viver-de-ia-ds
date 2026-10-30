@@ -90,7 +90,7 @@ function LibPopoverSection() {
             align="end"
             label="Filtros"
             trigger={
-              <Button variant="secondary" iconLeft={<Filter size={13} strokeWidth={2.2} />} onClick={() => setOpen((o) => !o)}>
+              <Button variant="secondary" iconLeft={<Filter size={14} strokeWidth={1.75} />} onClick={() => setOpen((o) => !o)}>
                 Filtros
               </Button>
             }
@@ -133,16 +133,16 @@ function LibCommandSection() {
             {
               heading: 'Navegação',
               items: [
-                { id: '/aluno', label: 'Aluno · jornada', hint: 'progressão pessoal', icon: <Compass size={14} /> },
-                { id: '/turma', label: 'Turma 2026.2', hint: '24 operadores ativos', icon: <Users size={14} /> },
-                { id: '/calendario', label: 'Calendário · lives', icon: <Calendar size={14} /> },
+                { id: '/aluno', label: 'Aluno · jornada', hint: 'progressão pessoal', icon: <Compass size={16} /> },
+                { id: '/turma', label: 'Turma 2026.2', hint: '24 operadores ativos', icon: <Users size={16} /> },
+                { id: '/calendario', label: 'Calendário · lives', icon: <Calendar size={16} /> },
               ],
             },
             {
               heading: 'Ações',
               items: [
-                { id: 'new-note', label: 'Nova nota', shortcut: 'N', icon: <FileText size={14} /> },
-                { id: 'settings', label: 'Configurações', shortcut: 'G S', icon: <Settings size={14} /> },
+                { id: 'new-note', label: 'Nova nota', shortcut: 'N', icon: <FileText size={16} /> },
+                { id: 'settings', label: 'Configurações', shortcut: 'G S', icon: <Settings size={16} /> },
               ],
             },
           ]}
@@ -332,13 +332,13 @@ function LibButtonSection() {
         </div>
 
         <div className="vds-lib-row">
-          <Button size="sm" variant="primary" iconRight={<ArrowRight size={12} />}>
+          <Button size="sm" variant="primary" iconRight={<ArrowRight size={14} />}>
             Sm com ícone
           </Button>
-          <Button size="md" variant="primary" iconRight={<ArrowRight size={13} />}>
+          <Button size="md" variant="primary" iconRight={<ArrowRight size={14} />}>
             Md padrão
           </Button>
-          <Button size="lg" variant="primary" iconRight={<ArrowRight size={14} />}>
+          <Button size="lg" variant="primary" iconRight={<ArrowRight size={16} />}>
             Lg grande
           </Button>
         </div>
@@ -346,7 +346,7 @@ function LibButtonSection() {
         <div className="vds-lib-row">
           <Button loading>Carregando…</Button>
           <Button disabled>Desabilitado</Button>
-          <Button variant="primary" iconLeft={<Mail size={13} />}>
+          <Button variant="primary" iconLeft={<Mail size={14} />}>
             Email-first
           </Button>
         </div>
@@ -440,13 +440,13 @@ function LibInputSection() {
         <Input
           label="Email"
           placeholder="seu@email.com.br"
-          iconLeft={<Mail size={14} />}
+          iconLeft={<Mail size={16} />}
         />
 
         <Input
           label="Buscar"
           placeholder="aula, conversa, pessoa…"
-          iconLeft={<Search size={14} />}
+          iconLeft={<Search size={16} />}
           hint="Atalho ⌘K abre busca rápida"
         />
 
@@ -638,7 +638,7 @@ function LibTooltipSection() {
             <Button variant="secondary" size="sm">Bottom</Button>
           </Tooltip>
           <Tooltip content="Adicionar ao calendário">
-            <Button variant="ghost" iconLeft={<Calendar size={13} />} aria-label="Adicionar ao calendário" />
+            <Button variant="ghost" iconLeft={<Calendar size={14} />} aria-label="Adicionar ao calendário" />
           </Tooltip>
         </div>
 
@@ -1291,7 +1291,7 @@ function LibEmptyStateSection() {
       <div className="vds-lib-grid">
         <EmptyState
           variant="soft"
-          icon={<Inbox size={20} strokeWidth={1.8} />}
+          icon={<Inbox size={20} strokeWidth={1.75} />}
           title="Nenhuma mentoria agendada"
           description="Sua próxima sessão aparece aqui assim que o mentor confirmar."
           action={<Button variant="primary">Agendar agora</Button>}
@@ -1363,20 +1363,20 @@ function LibDropdownMenuSection() {
             trigger={
               <Button
                 variant="ghost"
-                iconLeft={<MoreHorizontal size={14} />}
+                iconLeft={<MoreHorizontal size={16} />}
                 aria-label="Mais opções"
               />
             }
             items={[
-              { id: 'edit', label: 'Editar perfil', icon: <Edit size={13} strokeWidth={2} />, shortcut: '⌘E' },
-              { id: 'share', label: 'Compartilhar', icon: <Share2 size={13} strokeWidth={2} /> },
-              { id: 'delete', label: 'Excluir', icon: <Trash2 size={13} strokeWidth={2} />, destructive: true },
+              { id: 'edit', label: 'Editar perfil', icon: <Edit size={14} strokeWidth={1.75} />, shortcut: '⌘E' },
+              { id: 'share', label: 'Compartilhar', icon: <Share2 size={14} strokeWidth={1.75} /> },
+              { id: 'delete', label: 'Excluir', icon: <Trash2 size={14} strokeWidth={1.75} />, destructive: true },
             ]}
           />
 
           <DropdownMenu
             trigger={
-              <Button variant="secondary" iconLeft={<MoreHorizontal size={14} />}>
+              <Button variant="secondary" iconLeft={<MoreHorizontal size={16} />}>
                 Ações
               </Button>
             }
@@ -1385,14 +1385,14 @@ function LibDropdownMenuSection() {
                 id: 'edit',
                 label: 'Editar',
                 items: [
-                  { id: 'edit', label: 'Editar perfil', icon: <Edit size={13} strokeWidth={2} /> },
-                  { id: 'share', label: 'Compartilhar link', icon: <Share2 size={13} strokeWidth={2} /> },
+                  { id: 'edit', label: 'Editar perfil', icon: <Edit size={14} strokeWidth={1.75} /> },
+                  { id: 'share', label: 'Compartilhar link', icon: <Share2 size={14} strokeWidth={1.75} /> },
                 ],
               },
               {
                 id: 'danger',
                 items: [
-                  { id: 'delete', label: 'Excluir conta', icon: <Trash2 size={13} strokeWidth={2} />, destructive: true },
+                  { id: 'delete', label: 'Excluir conta', icon: <Trash2 size={14} strokeWidth={1.75} />, destructive: true },
                 ],
               },
             ]}

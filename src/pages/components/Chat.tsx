@@ -101,15 +101,15 @@ export default function Chat() {
           </div>
 
           <footer className="vds-chat-input">
-            <button className="ico" aria-label="Anexar"><Paperclip size={16} strokeWidth={2} /></button>
+            <button className="ico" aria-label="Anexar"><Paperclip size={16} strokeWidth={1.75} /></button>
             <input
               placeholder="Escreva sua mensagem…"
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
             />
-            <button className="ico" aria-label="Emoji"><Smile size={16} strokeWidth={2} /></button>
+            <button className="ico" aria-label="Emoji"><Smile size={16} strokeWidth={1.75} /></button>
             <button className="send" aria-label="Enviar">
-              <Send size={14} strokeWidth={2.4} />
+              <Send size={16} strokeWidth={1.75} />
             </button>
           </footer>
         </div>

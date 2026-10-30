@@ -35,7 +35,7 @@ export default function Dropdown() {
           >
             <span className="lbl">Ordenar</span>
             <span className="val">{sel.l}</span>
-            <ChevronDown size={14} strokeWidth={2.2} className={`chev ${open ? 'rot' : ''}`} />
+            <ChevronDown size={16} strokeWidth={1.75} className={`chev ${open ? 'rot' : ''}`} />
           </button>
           {open && (
             <ul className="via-dd-menu" role="listbox" aria-label="Ordenar">
@@ -56,7 +56,7 @@ export default function Dropdown() {
                   }}
                 >
                   {o.l}
-                  {val === o.v && <Check size={14} strokeWidth={2.5} />}
+                  {val === o.v && <Check size={16} strokeWidth={1.75} />}
                 </li>
               ))}
             </ul>

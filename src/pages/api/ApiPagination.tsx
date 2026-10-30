@@ -20,8 +20,8 @@ export default function ApiPagination() {
     <ComponentDoc
       eyebrow="api · pagination"
       name="Pagination"
-      headline="paginação editorial · numerada · prev/next + elipses"
-      description="Pagination numerada com prev/next + elipses inteligentes (mostra primeiras, current ± 1, últimas). Spring hover + selected glass. ARIA nav + aria-current=page. Some quando totalPages <= 1."
+      headline="páginas numeradas, sem se perder."
+      description="Paginação editorial · numerada · prev/next + elipses. Pagination numerada com prev/next + elipses inteligentes (mostra primeiras, current ± 1, últimas). Spring hover + selected glass. ARIA nav + aria-current=page. Some quando totalPages <= 1."
       importLine={`import { Pagination, type PaginationProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-pagination', description: 'Nav · flex horizontal · gap 4' },

@@ -13,28 +13,28 @@ const ERROR_DEFS: Record<Code, { headline: string; lede: string; tone: Tone; ico
     headline: 'Esta página saiu de cena',
     lede: 'Pode ter sido movida, renomeada, ou nunca existiu por aqui. A gente sente — mas tem caminhos abertos.',
     tone: 'default',
-    icon: <Compass size={36} strokeWidth={1.6} />,
+    icon: <Compass size={32} strokeWidth={1.75} />,
     label: 'erro · 404',
   },
   '403': {
     headline: 'Sem acesso por enquanto',
     lede: 'Essa parte exige permissão específica · pode ser plano, função ou convite pendente.',
     tone: 'attn',
-    icon: <Lock size={34} strokeWidth={1.8} />,
+    icon: <Lock size={32} strokeWidth={1.75} />,
     label: 'erro · 403',
   },
   '500': {
     headline: 'Algo travou do nosso lado',
     lede: 'Não foi você. Já fomos notificados · estamos olhando. Tente em alguns instantes.',
     tone: 'danger',
-    icon: <AlertOctagon size={34} strokeWidth={1.8} />,
+    icon: <AlertOctagon size={32} strokeWidth={1.75} />,
     label: 'erro · 500',
   },
   maintenance: {
     headline: 'Janela de manutenção · 04h‒05h BRT',
     lede: 'Atualização programada do core. Não há perda de dados · acesso volta em breve.',
     tone: 'attn',
-    icon: <Construction size={34} strokeWidth={1.7} />,
+    icon: <Construction size={32} strokeWidth={1.75} />,
     label: 'manutenção',
   },
 };
@@ -90,15 +90,15 @@ export default function ErrorPages() {
               <p className="vds-err-lede">{def.lede}</p>
 
               <div className="vds-err-actions">
-                <Button iconLeft={<Home size={14} />}>Voltar pro início</Button>
+                <Button iconLeft={<Home size={16} />}>Voltar pro início</Button>
                 {code === '500' ? (
-                  <Button variant="ghost" iconLeft={<Mail size={14} />}>Avisar suporte</Button>
+                  <Button variant="ghost" iconLeft={<Mail size={16} />}>Avisar suporte</Button>
                 ) : code === '403' ? (
                   <Button variant="ghost">Solicitar acesso</Button>
                 ) : code === 'maintenance' ? (
                   <Button variant="ghost">Ver status em tempo real</Button>
                 ) : (
-                  <Button variant="ghost" iconLeft={<ArrowLeft size={14} />}>Voltar pra página anterior</Button>
+                  <Button variant="ghost" iconLeft={<ArrowLeft size={16} />}>Voltar pra página anterior</Button>
                 )}
               </div>
 
@@ -119,11 +119,11 @@ export default function ErrorPages() {
               <h3>{g.title}</h3>
               <div className="vds-err-guide__lines">
                 <div className="vds-err-guide__line is-yes">
-                  <span className="vds-err-guide__lbl">sim</span>
+                  <span className="vds-err-guide__lbl">Sim</span>
                   <span className="vds-err-guide__txt">{g.yes}</span>
                 </div>
                 <div className="vds-err-guide__line is-no">
-                  <span className="vds-err-guide__lbl">evite</span>
+                  <span className="vds-err-guide__lbl">Evite</span>
                   <span className="vds-err-guide__txt">{g.no}</span>
                 </div>
               </div>

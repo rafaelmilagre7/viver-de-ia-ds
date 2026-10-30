@@ -46,8 +46,8 @@ export default function ShowcaseMarketing() {
               autonomia. Não em demo bonita.
             </p>
             <div className="actions">
-              <button className="btn primary">Entrar na turma <ArrowRight size={14} strokeWidth={2.5} /></button>
-              <button className="btn ghost">Ver cases · 206 publicados <ArrowUpRight size={14} strokeWidth={2.5} /></button>
+              <button className="btn primary">Entrar na turma <ArrowRight size={16} strokeWidth={1.75} /></button>
+              <button className="btn ghost">Ver cases · 206 publicados <ArrowUpRight size={16} strokeWidth={1.75} /></button>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ export default function ShowcaseMarketing() {
             </div>
             <div className="g-card" style={{ transform: 'translateX(-8px)', animation: 'mkFloat 9s ease-in-out infinite 2s' }}>
               <span className="g-lbl">Operação financeira</span>
-              <div className="g-num">100%<span className="g-suffix">automatizada</span></div>
+              <div className="g-num">100%<span className="g-suffix">Automatizada</span></div>
               <p className="g-sub"><em>Conferir Engenharia</em> · zero manual</p>
             </div>
           </aside>
@@ -79,7 +79,7 @@ export default function ShowcaseMarketing() {
         <div className="mk-feat-grid">
           {feats.map((f) => (
             <article key={f.em} className="mk-feat">
-              <span className="ico"><f.I size={18} strokeWidth={2} /></span>
+              <span className="ico"><f.I size={16} strokeWidth={1.75} /></span>
               <h3>{f.t} <em>{f.em}</em></h3>
               <p>{f.d}</p>
             </article>
@@ -104,7 +104,7 @@ export default function ShowcaseMarketing() {
                 <span className="v">{c.m}</span>
                 <span className="l">{c.l}</span>
               </div>
-              <a className="link" href="#case">Ler case <ArrowUpRight size={14} strokeWidth={2.5} /></a>
+              <a className="link" href="#case">Ler case <ArrowUpRight size={16} strokeWidth={1.75} /></a>
             </article>
           ))}
         </div>
@@ -116,7 +116,7 @@ export default function ShowcaseMarketing() {
           <span className="vds-eyebrow" style={{ color: 'rgba(255,255,255,0.55)' }}>Mentoria · turma 2026.2</span>
           <h2>16 semanas com Caio. <em>Saída com agente vivo.</em></h2>
           <p>Sessões ao vivo + acompanhamento individual de implementação. Você sai com pelo menos um Superagente em produção, medido em receita ou economia.</p>
-          <button className="btn light">Entrar na turma <ArrowRight size={14} strokeWidth={2.5} /></button>
+          <button className="btn light">Entrar na turma <ArrowRight size={16} strokeWidth={1.75} /></button>
         </div>
       </section>
 

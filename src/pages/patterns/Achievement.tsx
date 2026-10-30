@@ -108,7 +108,7 @@ function ActivityRingsSection() {
               <span className="vds-rings-week">Semana</span>
               <strong className="vds-rings-day">5/7</strong>
               <span className="vds-rings-streak">
-                <Flame size={11} strokeWidth={2.4} />
+                <Flame size={14} strokeWidth={1.75} />
                 14 dias
               </span>
             </div>
@@ -134,7 +134,7 @@ function StreakSection() {
 
           <header>
             <span className="vds-streak-eyebrow">
-              <Flame size={11} strokeWidth={2.4} />
+              <Flame size={14} strokeWidth={1.75} />
               Streak corrente
             </span>
             <h3>
@@ -249,7 +249,7 @@ function CertificateSection() {
             </div>
             <div className="vds-cert-seal" role="img" aria-label="Selo VIA 2026">
               <div className="vds-cert-seal-medal">
-                <Crown size={22} strokeWidth={1.5} />
+                <Crown size={20} strokeWidth={1.75} />
                 <svg className="vds-cert-seal-ring" viewBox="0 0 100 100" aria-hidden="true">
                   <defs>
                     <path id="cert-seal-circle" d="M 50 50 m -38 0 a 38 38 0 1 1 76 0 a 38 38 0 1 1 -76 0" />
@@ -272,7 +272,7 @@ function CertificateSection() {
           </span>
           <a href="#" className="vds-cert-verify">
             Validar certificado
-            <ArrowRight size={13} strokeWidth={2.4} />
+            <ArrowRight size={14} strokeWidth={1.75} />
           </a>
         </div>
       </article>
@@ -287,7 +287,7 @@ function CohortSection() {
       <article className="vds-cohort">
         <div className="vds-cohort-l">
           <span className="vds-cohort-eyebrow">
-            <Layers size={11} strokeWidth={2.4} />
+            <Layers size={14} strokeWidth={1.75} />
             Turma 2026.2 · ativa
           </span>
           <h3>
@@ -319,7 +319,7 @@ function CohortSection() {
           <span className="vds-cohort-eyebrow alt">Próximo encontro</span>
           <h4>Live · auditoria de 3 prompts</h4>
           <p className="vds-cohort-when">
-            <Calendar size={13} strokeWidth={2.2} />
+            <Calendar size={14} strokeWidth={1.75} />
             sex · 22 mai · 14h00 BRT
           </p>
           <ul className="vds-cohort-stack">
@@ -338,7 +338,7 @@ function CohortSection() {
           </ul>
           <button className="vds-cohort-cta">
             Confirmar presença
-            <ArrowRight size={13} strokeWidth={2.4} />
+            <ArrowRight size={14} strokeWidth={1.75} />
           </button>
         </div>
       </article>

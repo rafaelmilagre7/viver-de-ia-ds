@@ -56,11 +56,11 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-tbl-toolbar.compact span {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin-top: var(--via-space-0_5);
 }
@@ -109,7 +109,6 @@
   font-size: var(--via-fs-xs);
   font-family: inherit;
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
 }
 
 .vds-tbl-search input::placeholder {
@@ -140,7 +139,6 @@
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.005em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -167,7 +165,7 @@
 
 .vds-tbl-tool.sm {
   padding: var(--via-space-1_5) var(--via-space-2_5);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
 }
 
 .vds-tbl-tool-count {
@@ -178,9 +176,8 @@
   border-radius: var(--via-radius-pill);
   background: var(--via-navy);
   color: var(--via-white);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
   margin-left: var(--via-space-0_5);
 }
@@ -203,7 +200,7 @@
   color: var(--via-text-soft);
   cursor: pointer;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   letter-spacing: 0.04em;
   transition:
@@ -264,15 +261,14 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-bold);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
   font-feature-settings: 'tnum' 1;
 }
 
 .vds-tbl-batch-count em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
-  letter-spacing: -0.005em;
 }
 
 .vds-tbl-batch-sep {
@@ -293,10 +289,9 @@
     0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.005em;
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -331,10 +326,9 @@
   border: 1px solid var(--via-border);
   color: var(--via-text-soft);
   font-family: inherit;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   cursor: pointer;
-  letter-spacing: -0.005em;
   transition:
     background var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -475,7 +469,6 @@
 }
 
 .vds-tbl tbody td {
-  letter-spacing: -0.005em;
 }
 
 .vds-tbl tbody td:first-child {
@@ -559,9 +552,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   /* recorte, não anel: em --via-surface o contorno some no papel dos dois
      temas. Era --via-white — invisível no claro, mas no escuro virava um
      anel branco aceso em volta de cada avatar da grade. */
@@ -577,7 +569,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -586,7 +578,7 @@
 .vds-tbl td.user em {
   display: block;
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin-top: var(--via-space-0_5);
   white-space: nowrap;
@@ -596,10 +588,9 @@
 
 /* Cell · mono (ID) — família vem de .via-mono */
 .vds-tbl td.mono {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
-  letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
@@ -607,16 +598,15 @@
 .vds-tbl-plan {
   display: inline-flex;
   align-items: center;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   padding: var(--via-space-1) 11px;
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
   color: var(--via-text-primary);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-tbl-plan.mentoria {
@@ -642,11 +632,10 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.005em;
 }
 
 .vds-tbl td.currency .cur {
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-soft);
   margin-right: var(--via-space-1);
@@ -681,12 +670,11 @@
 
 .vds-tbl-progress .pct {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   min-width: 32px;
   text-align: right;
-  letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -699,11 +687,10 @@
   padding: var(--via-space-1) var(--via-space-2_5) var(--via-space-1) var(--via-space-2);
   border-radius: var(--via-radius-pill);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
   border: 1px solid;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-tbl-delta.up {
@@ -726,12 +713,11 @@
   align-items: center;
   padding: var(--via-space-1) 11px;
   border-radius: var(--via-radius-pill);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   border: 1px solid;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-tbl-status.ok {
@@ -755,10 +741,9 @@
 
 /* Cell · activity (relative time) */
 .vds-tbl td.activity {
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-feature-settings: 'tnum' 1;
-  letter-spacing: -0.005em;
   white-space: nowrap;
 }
 
@@ -773,7 +758,7 @@
 .vds-tbl-action-btn {
   width: 30px;
   height: 30px;
-  border-radius: var(--via-radius-sm);
+  border-radius: var(--via-radius-pill);
   background: var(--via-navy-04);
   border: 1px solid var(--via-border-soft);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);
@@ -834,7 +819,6 @@
 .vds-tbl-foot-info {
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
-  letter-spacing: -0.005em;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -914,7 +898,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
 }
 
@@ -933,7 +917,7 @@
     0 2px 6px -3px var(--via-shadow-ink-10);
   color: var(--via-text-primary);
   font-family: inherit;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   cursor: pointer;
   font-feature-settings: 'tnum' 1;
@@ -972,14 +956,13 @@
 .vds-tbl-prio {
   display: inline-flex;
   align-items: center;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   padding: 3px 9px;
   border-radius: var(--via-radius-pill);
   border: 1px solid;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-tbl-prio.alta {

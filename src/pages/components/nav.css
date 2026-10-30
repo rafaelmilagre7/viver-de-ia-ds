@@ -10,8 +10,8 @@
   /* MOCKUP FIXO · demo da variante clara não herda o tema do site:
      pina os tokens no valor do CLARO (senão, no dark, o palco escurece
      e o wordmark preto + CTA navy somem sobre navy). */
+  --via-gray-50: #F7F8FA;
   --via-gray-100: #F0F2F5;
-  --via-stage-soft: #E4E7EC;
   --via-navy-04: rgba(10, 31, 59, 0.04);
   --via-border-soft: rgba(10, 31, 59, 0.05);
   --via-glass-card: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);
@@ -24,7 +24,7 @@
   --via-shadow-focus: 0 0 0 3px rgba(10, 31, 59, 0.15);
   background:
     radial-gradient(540px 220px at 15% 0%, var(--via-navy-04), transparent 60%),
-    linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
+    linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
   border: 1px solid var(--via-border-soft);
 }
 
@@ -70,8 +70,8 @@
 
 .via-nav-l {
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-chrome-blur);
+  backdrop-filter: var(--via-material-chrome-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -80,8 +80,8 @@
 
 .via-nav-d {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-chrome-blur);
+  backdrop-filter: var(--via-material-chrome-blur);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.1) inset,
@@ -107,7 +107,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   text-decoration: none;
   cursor: pointer;
   transition: color 200ms ease;
@@ -174,7 +173,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   border: 1px solid transparent;
   transition:

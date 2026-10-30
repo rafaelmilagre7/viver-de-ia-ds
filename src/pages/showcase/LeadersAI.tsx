@@ -122,7 +122,7 @@ export default function ShowcaseLeadersAI() {
               <p>{t.d}</p>
               <ul>
                 {t.items.map((i) => (
-                  <li key={i}><Check size={12} strokeWidth={3} className="ck" />{i}</li>
+                  <li key={i}><Check size={14} strokeWidth={1.75} className="ck" />{i}</li>
                 ))}
               </ul>
               <button className={t.feat ? 'btn light' : 'btn'}>Comprar {t.n}</button>

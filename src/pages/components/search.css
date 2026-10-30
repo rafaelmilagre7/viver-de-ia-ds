@@ -1,22 +1,15 @@
 .via-search-stage {
-  /* canto inferior-direito: navy fixo no claro — --via-navy-22 inverte pra
-     white-alpha no dark e virava mancha leitosa sobre o palco escuro */
-  --stage-glow: rgba(10, 31, 59, 0.22);
   padding: var(--via-space-14) var(--via-space-12);
   background:
-    radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30, 58, 95, 0.28) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, var(--stage-glow) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-stage-1) 0%, var(--via-stage-2) 100%);
+    radial-gradient(ellipse 60% 70% at 15% 0%, var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   border-radius: var(--via-radius-lg);
   display: flex;
   justify-content: center;
   isolation: isolate;
   overflow: hidden;
   position: relative;
-}
-
-[data-theme="dark"] .via-search-stage {
-  --stage-glow: rgba(30, 58, 95, 0.35); /* eco azul do canto superior, família navy */
 }
 
 .via-search-stage::before {
@@ -34,8 +27,8 @@
   width: 100%;
   max-width: 580px;
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
   border: 1px solid var(--via-edge-hi);
   border-radius: var(--via-radius-lg);
   box-shadow:
@@ -76,7 +69,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .via-search input::placeholder {
@@ -168,7 +161,7 @@
 
 .via-search li .kbd {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-bold);
   letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
@@ -187,7 +180,7 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .via-search li .arr {
@@ -210,9 +203,8 @@
 
 .via-search .hint {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
-  letter-spacing: -0.005em;
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1_5);
@@ -221,7 +213,7 @@
 .via-search kbd {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
   background: var(--via-surface-onnavy);
   border: 1px solid var(--via-border-soft);
@@ -230,4 +222,12 @@
   color: var(--via-text-primary);
   letter-spacing: 0.04em;
   box-shadow: 0 1px 0 var(--via-edge-hi) inset;
+}
+
+/* mobile · palco vira moldura fina (recuo do palco + do card espremia o conteúdo) */
+@media (max-width: 560px) {
+  .via-search-stage {
+    padding: var(--via-space-3);
+    border-radius: var(--via-radius-lg);
+  }
 }

@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import {
-  Mail, ShieldCheck, ArrowRight,
-  KeyRound, Clock,
-} from 'lucide-react';
+import { Mail, ShieldCheck, ArrowRight, KeyRound, Clock } from 'lucide-react';
+import { Button } from '../../lib/Button/Button';
+import { Input } from '../../lib/Input/Input';
+import { OTPInput } from '../../lib/OTPInput/OTPInput';
+import { Checkbox } from '../../lib/Checkbox/Checkbox';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import BrandLogo from '../../components/BrandLogo';
@@ -18,7 +19,7 @@ export default function AuthFlow() {
             Login, sem fricção desnecessária — <em>e com segurança visível</em>.
           </>
         }
-        lede="3 fluxos de autenticação tratados como peça de marca — magic link (sem senha), 2FA com código de 6 dígitos, social login com providers. Cada um com atmosfera editorial, microcopy honesto e estado de transição cuidadoso."
+        lede="3 fluxos de autenticação tratados como peça de marca — magic link (sem senha), 2FA com código de 6 dígitos, social login com providers. Papel claro, um botão por decisão, microcopy honesto e estado de transição cuidadoso."
       />
 
       <AuthMagicLinkSection />
@@ -32,12 +33,12 @@ export default function AuthFlow() {
 function AuthMagicLinkSection() {
   return (
     <Section title="Magic link · sem senha" meta="email + 1 botão · link expira em 10min · re-enviar disponível">
-      <div className="vds-auth-row">
-        {/* Step 1 · enter email */}
-        <article className="vds-auth-card via-mesh-navy via-noise">
-          <div className="vds-auth-step">passo 1 · enviar link</div>
-          <div className="vds-auth-brand">
-            <BrandLogo variant="white" size="md" />
+      <div className="vds-af-row">
+        {/* Passo 1 · enviar link */}
+        <article className="vds-af-card">
+          <span className="vds-af-step">Passo 1 · enviar link</span>
+          <div className="vds-af-brand">
+            <BrandLogo variant="auto" size="md" />
           </div>
           <h3>
             Entre com o <em>email</em> da conta.
@@ -45,25 +46,26 @@ function AuthMagicLinkSection() {
           <p>
             A gente manda um link único pra você clicar — sem senha pra lembrar, sem reset esquecido.
           </p>
-          <div className="vds-auth-field">
-            <Mail size={13} strokeWidth={1.8} />
-            <input type="email" aria-label="Email da conta" defaultValue="marisson@efizi.com.br" />
-          </div>
-          <button className="vds-auth-cta">
+          <Input
+            aria-label="Email da conta"
+            type="email"
+            defaultValue="marisson@efizi.com.br"
+            iconLeft={<Mail size={16} strokeWidth={1.75} />}
+          />
+          <Button size="lg" fullWidth iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>
             Enviar link para meu email
-            <ArrowRight size={13} strokeWidth={2.4} />
-          </button>
-          <p className="vds-auth-foot-link">
+          </Button>
+          <p className="vds-af-foot">
             Prefere com senha? <a href="#">Entrar do jeito antigo</a>
           </p>
         </article>
 
-        {/* Step 2 · check email */}
-        <article className="vds-auth-card success">
-          <div className="vds-auth-step">passo 2 · cheque seu email</div>
-          <div className="vds-auth-success-ring">
-            <Mail size={22} strokeWidth={1.6} />
-            <span className="vds-auth-success-ring-pulse" />
+        {/* Passo 2 · conferir caixa de entrada */}
+        <article className="vds-af-card">
+          <span className="vds-af-step">Passo 2 · cheque seu email</span>
+          <div className="vds-af-sent" aria-hidden="true">
+            <Mail size={24} strokeWidth={1.75} />
+            <span className="vds-af-sent-pulse" />
           </div>
           <h3>
             Confira sua caixa de <em>entrada</em>.
@@ -71,16 +73,14 @@ function AuthMagicLinkSection() {
           <p>
             Um link de acesso foi enviado para <strong>marisson@efizi.com.br</strong>. Geralmente chega em até 30 segundos — verifique também o spam.
           </p>
-          <div className="vds-auth-meta">
-            <span className="vds-auth-meta-pill">
-              <Clock size={11} strokeWidth={2} />
-              Link expira em <strong>9:47</strong>
-            </span>
-          </div>
-          <button className="vds-auth-cta ghost">
-            Não chegou? Re-enviar link
-          </button>
-          <p className="vds-auth-foot-link">
+          <span className="vds-af-meta">
+            <Clock size={16} strokeWidth={1.75} />
+            Link expira em <strong>9:47</strong>
+          </span>
+          <Button variant="secondary" size="lg" fullWidth>
+            Não chegou? Reenviar link
+          </Button>
+          <p className="vds-af-foot">
             <a href="#">Usar outro email</a>
           </p>
         </article>
@@ -91,64 +91,38 @@ function AuthMagicLinkSection() {
 
 /* ---------- 2FA · 6 digit code ---------- */
 function Auth2FASection() {
-  const [code, setCode] = useState(['4', '2', '8', '3', '', '']);
+  const [code, setCode] = useState('4283');
 
   return (
-    <Section title="2FA · código de 6 dígitos" meta="atmospheric navy + 6 inputs editoriais + recovery options">
-      <article className="vds-auth-card-2fa via-mesh-navy via-noise">
-        <div className="vds-auth-2fa-l">
-          <div className="vds-auth-2fa-icon">
-            <ShieldCheck size={22} strokeWidth={1.6} />
+    <Section title="2FA · código de 6 dígitos" meta="papel claro · 6 células · saídas de recuperação à vista">
+      <article className="vds-af-card vds-af-card--split">
+        <div className="vds-af-2fa-l">
+          <div className="vds-af-2fa-icon" aria-hidden="true">
+            <ShieldCheck size={24} strokeWidth={1.75} />
           </div>
-          <span className="vds-auth-eyebrow">Verificação em 2 passos · ativa</span>
+          <span className="vds-af-status">Verificação em 2 passos ativa</span>
           <h3>
             Insira o código de <em>6 dígitos</em> do app.
           </h3>
           <p>
-            Você ativou 2FA pra essa conta — quase lá. Pega o código atual no Google Authenticator (ou similar) e digita abaixo.
+            Você ativou 2FA pra essa conta — quase lá. Pega o código atual no Google Authenticator (ou similar) e digita ao lado.
           </p>
-
-          <div className="vds-auth-2fa-actions">
+          <div className="vds-af-2fa-links">
             <a href="#">Perdi acesso ao app · usar código de backup</a>
             <a href="#">Reenviar SMS · +55 ••••• 1820</a>
           </div>
         </div>
 
-        <div className="vds-auth-2fa-r">
-          <div className="vds-auth-2fa-inputs">
-            {code.map((c, i) => (
-              <input
-                key={i}
-                type="text"
-                aria-label={`Dígito ${i + 1} do código de verificação`}
-                inputMode="numeric"
-                maxLength={1}
-                value={c}
-                onChange={(e) => {
-                  const next = [...code];
-                  next[i] = e.target.value.replace(/[^0-9]/g, '');
-                  setCode(next);
-                }}
-                className={c ? 'filled' : ''}
-              />
-            ))}
-          </div>
-
-          <div className="vds-auth-2fa-timer">
-            <Clock size={11} strokeWidth={2} />
-            Novo código em <strong className="mono">00:24</strong>
-          </div>
-
-          <button className="vds-auth-cta">
+        <div className="vds-af-2fa-r">
+          <OTPInput length={6} value={code} onChange={setCode} inputType="numeric" label="Código de verificação" />
+          <span className="vds-af-meta">
+            <Clock size={16} strokeWidth={1.75} />
+            Novo código em <strong>00:24</strong>
+          </span>
+          <Button size="lg" fullWidth iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>
             Continuar pra sua área
-            <ArrowRight size={13} strokeWidth={2.4} />
-          </button>
-
-          <label className="vds-auth-2fa-trust">
-            <input type="checkbox" aria-label="Confiar neste dispositivo por 30 dias" defaultChecked />
-            <span className="vds-auth-2fa-trust-check" />
-            <em>Confiar neste dispositivo por 30 dias</em>
-          </label>
+          </Button>
+          <Checkbox label="Confiar neste dispositivo por 30 dias" defaultChecked />
         </div>
       </article>
     </Section>
@@ -159,51 +133,66 @@ function Auth2FASection() {
 function AuthSocialSection() {
   return (
     <Section title="Social login · 3 providers + email" meta="Google + Microsoft + Apple + separador + email tradicional">
-      <article className="vds-auth-card light">
-        <div className="vds-auth-brand">
-          <BrandLogo variant="black" size="md" />
+      <article className="vds-af-card vds-af-card--narrow">
+        <div className="vds-af-brand">
+          <BrandLogo variant="auto" size="md" />
         </div>
-        <h3 className="navy">
+        <h3>
           Bem-vindo de <em>volta</em>.
         </h3>
-        <p className="navy">
+        <p>
           Continue com o método que você usou antes — a gente conecta automático.
         </p>
 
-        <div className="vds-auth-social">
-          <button className="vds-auth-social-btn">
-            <span className="vds-auth-social-icon google">G</span>
-            <span>Continuar com Google</span>
-            <span className="vds-auth-social-recent mono">último usado</span>
-          </button>
-          <button className="vds-auth-social-btn">
-            <span className="vds-auth-social-icon ms">⊞</span>
-            <span>Continuar com Microsoft</span>
-          </button>
-          <button className="vds-auth-social-btn">
-            <span className="vds-auth-social-icon apple"></span>
-            <span>Continuar com Apple</span>
-          </button>
+        <div className="vds-af-social">
+          <Button
+            variant="secondary"
+            size="lg"
+            fullWidth
+            className="vds-af-provider"
+            iconLeft={<span className="vds-af-provider-mark google" aria-hidden="true">G</span>}
+            iconRight={<span className="vds-af-recent">último usado</span>}
+          >
+            Continuar com Google
+          </Button>
+          <Button
+            variant="secondary"
+            size="lg"
+            fullWidth
+            className="vds-af-provider"
+            iconLeft={<span className="vds-af-provider-mark" aria-hidden="true">⊞</span>}
+          >
+            Continuar com Microsoft
+          </Button>
+          <Button
+            variant="secondary"
+            size="lg"
+            fullWidth
+            className="vds-af-provider"
+            iconLeft={<span className="vds-af-provider-mark apple" aria-hidden="true"></span>}
+          >
+            Continuar com Apple
+          </Button>
         </div>
 
-        <div className="vds-auth-sep">
+        <div className="vds-af-sep" role="separator">
           <span>ou</span>
         </div>
 
-        <div className="vds-auth-field light">
-          <Mail size={13} strokeWidth={1.8} />
-          <input type="email" aria-label="Email para magic link" placeholder="seu@email.com.br" />
-        </div>
-
-        <button className="vds-auth-cta navy">
-          <KeyRound size={13} strokeWidth={2} />
+        <Input
+          aria-label="Email para magic link"
+          type="email"
+          placeholder="seu@email.com.br"
+          iconLeft={<Mail size={16} strokeWidth={1.75} />}
+        />
+        <Button size="lg" fullWidth iconLeft={<KeyRound size={16} strokeWidth={1.75} />}>
           Receber magic link
-        </button>
+        </Button>
 
-        <p className="vds-auth-foot-link navy">
+        <p className="vds-af-foot">
           Novo por aqui? <a href="#">Criar conta gratuita</a>
         </p>
-        <p className="vds-auth-terms">
+        <p className="vds-af-terms">
           Ao continuar, você concorda com nossos <a href="#">Termos</a> e <a href="#">Política de privacidade</a>.
         </p>
       </article>

@@ -40,7 +40,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.02em;
   flex-shrink: 0;
   z-index: 1;
   font-feature-settings: 'tnum' 1;
@@ -62,9 +61,8 @@
 
 .via-stepper .label {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   color: var(--via-text-soft);
   text-align: center;
   transition: color 240ms ease;

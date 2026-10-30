@@ -214,17 +214,17 @@ function ReceiptSection() {
               <p className="vds-receipt-pay-key">
                 d8a4c0e2-9f7b-4e83-b521-6c1f7a09b482
                 <button className="vds-receipt-copy" aria-label="Copiar chave">
-                  <Copy size={11} strokeWidth={2.2} />
+                  <Copy size={14} strokeWidth={1.75} />
                 </button>
               </p>
               <ul className="vds-receipt-pay-meta">
-                <li><Check size={11} strokeWidth={2.5} /> Pago integralmente em 17 mai 2026</li>
-                <li><Check size={11} strokeWidth={2.5} /> Confirmação Bradesco ID 4823·9128·22</li>
+                <li><Check size={14} strokeWidth={1.75} /> Pago integralmente em 17 mai 2026</li>
+                <li><Check size={14} strokeWidth={1.75} /> Confirmação Bradesco ID 4823·9128·22</li>
               </ul>
             </div>
             <div className="vds-receipt-payment-r">
               <div className="vds-receipt-qr">
-                <QrCode size={42} strokeWidth={1.4} />
+                <QrCode size={42} strokeWidth={1.75} />
                 <span>QR PIX</span>
               </div>
             </div>
@@ -238,11 +238,11 @@ function ReceiptSection() {
             </p>
             <div className="vds-receipt-foot-actions">
               <button className="vds-btn-ghost">
-                <Printer size={13} strokeWidth={2.2} />
+                <Printer size={14} strokeWidth={1.75} />
                 Imprimir
               </button>
               <button className="vds-btn-primary">
-                <Download size={13} strokeWidth={2.2} />
+                <Download size={14} strokeWidth={1.75} />
                 Baixar PDF
               </button>
             </div>
@@ -263,7 +263,7 @@ function CompactReceiptSection() {
                 lockup precisa virar branco junto, senão some navy-sobre-navy */}
             <BrandLogo variant="auto" size="sm" />
             <span className="vds-receipt-mini-pill">
-              <Check size={11} strokeWidth={2.5} /> Pagamento confirmado
+              <Check size={14} strokeWidth={1.75} /> Pagamento confirmado
             </span>
           </header>
 

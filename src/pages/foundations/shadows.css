@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
   letter-spacing: var(--via-ls-wide);
@@ -75,7 +75,7 @@
   gap: var(--via-space-0_5);
   font-family: var(--via-font-mono);
   font-size: 10.5px;
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
   overflow-wrap: anywhere;
 }
@@ -97,13 +97,13 @@
 
 .vds-sh-ink-name {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   margin: var(--via-space-3) 0 var(--via-space-0_5);
 }
 .vds-sh-ink-val {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin: 0;
 }
@@ -176,7 +176,7 @@
 
 .vds-sh-glass-label {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   letter-spacing: var(--via-ls-wide);
   color: var(--via-text-muted);
 }

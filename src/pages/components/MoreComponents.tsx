@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import {
-  ArrowRight, ArrowUpRight, X, Check, MessageCircle,
-  TrendingUp, Award, Rocket, Calendar,
-} from 'lucide-react';
+import { ArrowRight, ArrowUpRight, X, Check, MessageCircle, TrendingUp, Award, Calendar } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import './more-components.css';
@@ -37,15 +34,15 @@ function BannerSection() {
     <Section title="Banner · announcement bar" meta="topo de página · ação clara">
       {!closed && (
         <div className="vds-ann-banner">
-          <span className="vds-ann-pill"><Award size={12} strokeWidth={2.2} /> Novo</span>
+          <span className="vds-ann-pill"><Award size={14} strokeWidth={1.75} /> Novo</span>
           <p>
             <strong>Turma 2026.2 com 8 vagas restantes.</strong>
             <span className="muted"> Encerra em 12 dias — inscrição direta no painel.</span>
           </p>
           <div className="vds-ann-actions">
-            <a className="vds-ann-cta">Garantir vaga <ArrowRight size={12} strokeWidth={2.5} /></a>
+            <a className="vds-ann-cta">Garantir vaga <ArrowRight size={14} strokeWidth={1.75} /></a>
             <button className="vds-ann-close" onClick={() => setClosed(true)} aria-label="Fechar">
-              <X size={12} strokeWidth={2.5} />
+              <X size={14} strokeWidth={1.75} />
             </button>
           </div>
         </div>
@@ -106,7 +103,7 @@ function NotificationSection() {
           </header>
           <ul>
             <li className="unread">
-              <span className="ico ok"><Check size={14} strokeWidth={2.5} /></span>
+              <span className="ico ok"><Check size={16} strokeWidth={1.75} /></span>
               <div>
                 <strong>Caio aprovou seu case</strong>
                 <span>"Efizi: +11.920 conversas" foi publicado.</span>
@@ -114,7 +111,7 @@ function NotificationSection() {
               </div>
             </li>
             <li className="unread">
-              <span className="ico info"><MessageCircle size={14} strokeWidth={2} /></span>
+              <span className="ico info"><MessageCircle size={16} strokeWidth={1.75} /></span>
               <div>
                 <strong>Nova mensagem · Larissa</strong>
                 <span>Pode revisar o rascunho de stack que mandei?</span>
@@ -122,7 +119,7 @@ function NotificationSection() {
               </div>
             </li>
             <li>
-              <span className="ico stat"><TrendingUp size={14} strokeWidth={2} /></span>
+              <span className="ico stat"><TrendingUp size={16} strokeWidth={1.75} /></span>
               <div>
                 <strong>Métrica publicada</strong>
                 <span>Receita influenciada cruzou R$ 248k em 2026.</span>
@@ -130,7 +127,7 @@ function NotificationSection() {
               </div>
             </li>
             <li>
-              <span className="ico warn"><Calendar size={14} strokeWidth={2} /></span>
+              <span className="ico warn"><Calendar size={16} strokeWidth={1.75} /></span>
               <div>
                 <strong>Sessão na quarta · 19:30</strong>
                 <span>Modelagem do seu primeiro agente — preparação anexa.</span>
@@ -155,10 +152,10 @@ function ActivitySection() {
   ];
 
   const icoFor = (k: string) => {
-    if (k === 'success') return <Check size={12} strokeWidth={3} />;
-    if (k === 'info') return <MessageCircle size={12} strokeWidth={2.2} />;
-    if (k === 'pub') return <TrendingUp size={12} strokeWidth={2.2} />;
-    if (k === 'deploy') return <Rocket size={12} strokeWidth={2.2} />;
+    if (k === 'success') return <Check size={14} strokeWidth={1.75} />;
+    if (k === 'info') return <MessageCircle size={16} strokeWidth={1.75} />;
+    if (k === 'pub') return <TrendingUp size={16} strokeWidth={1.75} />;
+    if (k === 'deploy') return <ArrowRight size={14} strokeWidth={1.75} />;
     return null;
   };
 
@@ -225,7 +222,7 @@ function AvatarGroupSection() {
               <strong>{p.ini === 'CR' ? 'Caio Ribeiro' : p.ini === 'GD' ? 'Guilherme Delorenzo' : p.ini === 'ML' ? 'Márisson Lage' : 'Larissa Tavares'}</strong>
               <span>{p.status === 'live' ? 'Ao vivo' : p.status === 'idle' ? 'Ocioso há 12 min' : 'Offline · saiu às 18:42'}</span>
             </div>
-            <a className="link">Mensagem <ArrowUpRight size={12} strokeWidth={2.4} /></a>
+            <a className="link">Mensagem <ArrowUpRight size={14} strokeWidth={1.75} /></a>
           </div>
         ))}
       </div>

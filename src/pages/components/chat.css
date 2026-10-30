@@ -6,9 +6,9 @@
   position: relative;
   border-radius: var(--via-radius-xl);
   background:
-    radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.20) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-16) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-stage-1) 0%, var(--via-stage-2) 100%);
+    radial-gradient(ellipse 60% 70% at 15% 0%, var(--via-navy-06) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 75% at 100% 100%, var(--via-navy-04) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   border: 0.5px solid var(--via-navy-20);
   overflow: hidden;
   box-shadow:
@@ -35,8 +35,8 @@
   justify-content: space-between;
   padding: var(--via-space-5) var(--via-space-6);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border-bottom: 0.5px solid var(--via-navy-10);
 }
 .vds-chat-h-l { display: flex; align-items: center; gap: var(--via-space-3_5); }
@@ -46,14 +46,14 @@
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-chat-h-l span {
   display: flex;
   align-items: center;
   gap: 7px;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-muted);
   margin-top: var(--via-space-0_5);
 }
@@ -70,16 +70,15 @@
 }
 .vds-chat-tag {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-muted);
   padding: var(--via-space-1) 11px;
   background: var(--via-navy-06);
   border-radius: var(--via-radius-pill);
   border: 0.5px solid var(--via-navy-10);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 /* ---- Avatar Nina · monograma VIA bem visível ---- */
@@ -134,7 +133,7 @@
 .vds-bubble-system {
   align-self: center;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-muted);
   background: var(--via-navy-06);
@@ -183,8 +182,8 @@
   background:
     var(--via-glass-sheen) 0 0 / 100% 50% no-repeat,
     var(--via-surface-onnavy);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   /* Hairline navy LITERAL (não token): a superfície do bubble é
      --via-surface-onnavy, que é branca nos DOIS temas — qualquer token de
      borda que adapta (navy-10 / border-soft) viraria branco no branco.
@@ -198,11 +197,10 @@
     0 2px 6px var(--via-shadow-ink-06);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-primary);
   font-weight: 450;
   overflow: hidden;
-  letter-spacing: -0.005em;
 }
 
 /* ---- Bubble — navy (user) ---- */
@@ -217,9 +215,8 @@
   border-radius: var(--via-radius-lg) var(--via-radius-lg) var(--via-radius-xs) var(--via-radius-lg);
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     inset 0 -1px 0 rgba(0,0,0,0.20),
@@ -232,11 +229,11 @@
   margin-top: var(--via-space-1_5);
   padding: 0 var(--via-space-1_5);
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   /* line-height FIXA: o desconto do avatar (abaixo) depende dela */
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--via-ls-wide);
 }
 
 /* ---- Typing indicator ---- */
@@ -268,8 +265,8 @@
   gap: var(--via-space-2);
   padding: var(--via-space-3_5) var(--via-space-4_5);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border-top: 0.5px solid var(--via-navy-10);
 }
 .vds-chat-input input {
@@ -386,4 +383,12 @@
 @media (max-width: 720px) {
   .vds-chat-anatomy { grid-template-columns: 1fr; }
   .vds-bubble-row { max-width: 92%; }
+}
+
+/* mobile · palco vira moldura fina (recuo do palco + do card espremia o conteúdo) */
+@media (max-width: 560px) {
+  .vds-chat-stage {
+    padding: var(--via-space-3);
+    border-radius: var(--via-radius-lg);
+  }
 }

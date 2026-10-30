@@ -70,7 +70,7 @@ function MetaSingleSection() {
                 <em>Patrocinado <span className="dot">·</span> <Globe /></em>
               </div>
             </div>
-            <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={2} /></button>
+            <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
           </header>
 
           <div className="vds-pa-meta-text">
@@ -98,9 +98,9 @@ function MetaSingleSection() {
           </footer>
 
           <div className="vds-pa-meta-actions">
-            <span><ThumbsUp size={14} strokeWidth={2} /> Curtir</span>
-            <span><MessageCircle size={14} strokeWidth={2} /> Comentar</span>
-            <span><Share2 size={14} strokeWidth={2} /> Compartilhar</span>
+            <span><ThumbsUp size={16} strokeWidth={1.75} /> Curtir</span>
+            <span><MessageCircle size={16} strokeWidth={1.75} /> Comentar</span>
+            <span><Share2 size={16} strokeWidth={1.75} /> Compartilhar</span>
           </div>
         </article>
 
@@ -189,7 +189,7 @@ function MetaStorySection() {
             </h2>
             <a href="#" className="vds-pa-story-cta">
               <span>Saiba mais</span>
-              <ArrowRight size={13} strokeWidth={2.4} />
+              <ArrowRight size={14} strokeWidth={1.75} />
             </a>
             <img src={monogramNavy} alt="" className="vds-pa-story-mono" />
           </div>
@@ -228,7 +228,7 @@ function MetaReelSection() {
             </h2>
             <p>todos custaram caro · vídeo de 90s</p>
             <img src={monogramNavy} alt="" className="vds-pa-reel-mono" />
-            <span className="vds-pa-reel-play"><Play size={22} strokeWidth={0} style={{ fill: 'currentColor' }} /></span>
+            <span className="vds-pa-reel-play"><Play size={20} strokeWidth={0} style={{ fill: 'currentColor' }} /></span>
           </div>
           <aside>
             <strong>viverdeia.ai</strong>
@@ -264,7 +264,7 @@ function LinkedInSingleSection() {
                 <span className="vds-pa-li-promoted">Promoted</span>
               </div>
             </div>
-            <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={2} /></button>
+            <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
           </header>
 
           <div className="vds-pa-li-text">
@@ -297,9 +297,9 @@ function LinkedInSingleSection() {
           </footer>
 
           <div className="vds-pa-li-actions">
-            <span><ThumbsUp size={14} strokeWidth={2} /> Recomendar</span>
-            <span><MessageCircle size={14} strokeWidth={2} /> Comentar</span>
-            <span><Share2 size={14} strokeWidth={2} /> Republicar</span>
+            <span><ThumbsUp size={16} strokeWidth={1.75} /> Recomendar</span>
+            <span><MessageCircle size={16} strokeWidth={1.75} /> Comentar</span>
+            <span><Share2 size={16} strokeWidth={1.75} /> Republicar</span>
           </div>
         </article>
 
@@ -370,7 +370,7 @@ function GoogleSearchSection() {
       <div className="vds-pa-stage">
         <article className="vds-pa-gs-ad">
           <div className="vds-pa-gs-search">
-            <Search size={14} strokeWidth={2} />
+            <Search size={16} strokeWidth={1.75} />
             <span>curso ia agentes em produção</span>
           </div>
 
@@ -613,7 +613,7 @@ function AudienceMatrixSection() {
             return (
               <article key={p.name} className="vds-pa-audience-card">
                 <header>
-                  <span className="vds-pa-audience-icon"><Icon size={18} strokeWidth={1.6} /></span>
+                  <span className="vds-pa-audience-icon"><Icon size={16} strokeWidth={1.75} /></span>
                   <div>
                     <strong>{p.name}</strong>
                     <em>{p.pain}</em>
@@ -626,12 +626,12 @@ function AudienceMatrixSection() {
                 </div>
 
                 <div className="vds-pa-audience-block">
-                  <span className="vds-pa-audience-block-lbl">hook</span>
+                  <span className="vds-pa-audience-block-lbl">Hook</span>
                   <p>"{p.hook}"</p>
                 </div>
 
                 <div className="vds-pa-audience-block">
-                  <span className="vds-pa-audience-block-lbl">body</span>
+                  <span className="vds-pa-audience-block-lbl">Body</span>
                   <p>"{p.body}"</p>
                 </div>
 
@@ -698,7 +698,7 @@ function ABVariantSection() {
               </div>
 
               <footer>
-                <span className="vds-pa-ab-hyp-lbl">hipótese</span>
+                <span className="vds-pa-ab-hyp-lbl">Hipótese</span>
                 <p>{v.hyp}</p>
               </footer>
             </article>
@@ -781,7 +781,7 @@ function PreflightSection() {
           </div>
 
           <footer className="vds-pa-preflight-rule">
-            <Target size={14} strokeWidth={2} />
+            <Target size={16} strokeWidth={1.75} />
             <strong>Kill-switch:</strong> se KPI primário não bate threshold em 72h, pausa.
             Não reaquece com mais budget esperando "começar a render".
           </footer>
@@ -928,14 +928,14 @@ function CTALibrarySection() {
               </header>
 
               <div className="vds-pa-cta-good">
-                <span className="lbl"><Check size={11} strokeWidth={2.6} /> tom certo</span>
+                <span className="lbl"><Check size={14} strokeWidth={1.75} /> Tom certo</span>
                 <ul>
                   {g.good.map((v) => <li key={v}>{v}</li>)}
                 </ul>
               </div>
 
               <div className="vds-pa-cta-bad">
-                <span className="lbl"><X size={11} strokeWidth={2.6} /> banidos</span>
+                <span className="lbl"><X size={14} strokeWidth={1.75} /> Banidos</span>
                 <ul>
                   {g.bad.map((v) => <li key={v}>{v}</li>)}
                 </ul>
@@ -975,11 +975,11 @@ function CompareLibrary({ items }: { items: { cat: string; good: string[]; bad: 
           <h4 aria-level={3}>{c.cat}</h4>
           <div className="vds-pa-headlines-pair">
             <div className="good">
-              <span className="lbl"><Check size={11} strokeWidth={2.6} /> tom certo</span>
+              <span className="lbl"><Check size={14} strokeWidth={1.75} /> Tom certo</span>
               {c.good.map((h, i) => <p key={i}>“{h}”</p>)}
             </div>
             <div className="bad">
-              <span className="lbl"><X size={11} strokeWidth={2.6} /> tom errado</span>
+              <span className="lbl"><X size={14} strokeWidth={1.75} /> Tom errado</span>
               {c.bad.map((h, i) => <p key={i}>“{h}”</p>)}
             </div>
           </div>

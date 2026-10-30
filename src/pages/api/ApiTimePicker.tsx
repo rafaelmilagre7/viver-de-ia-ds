@@ -23,8 +23,8 @@ export default function ApiTimePicker() {
     <ComponentDoc
       eyebrow="api · time-picker"
       name="TimePicker"
-      headline="HH:MM 24h editorial · step + range validation"
-      description="TimePicker com 2 campos (hora · minuto) navegáveis. 24h format. Step configurável (5/10/15/30/60 min). Min/max em formato HH:MM. Editorial: glass + spring focus + arrow keys."
+      headline="um horário de 24h, já validado."
+      description="HH:MM 24h editorial · step + range validation. TimePicker com 2 campos (hora · minuto) navegáveis. 24h format. Step configurável (5/10/15/30/60 min). Min/max em formato HH:MM. Editorial: glass + spring focus + arrow keys."
       importLine={`import { TimePicker, type TimePickerProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-time', description: 'Container · label + 2 inputs + ":" + hint' },

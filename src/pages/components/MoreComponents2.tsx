@@ -37,7 +37,7 @@ function CookieBannerSection() {
       <div className="vds-cookie-stage">
         {!closed && (
           <div className="vds-cookie">
-            <div className="vds-cookie-ico"><Cookie size={20} strokeWidth={2} /></div>
+            <div className="vds-cookie-ico"><Cookie size={20} strokeWidth={1.75} /></div>
             <div className="vds-cookie-body">
               <strong>Cookies da Viver de IA</strong>
               <p>
@@ -80,7 +80,7 @@ function NewsletterSection() {
             <input type="email" placeholder="seu@email.com" defaultValue="rafael@viverdeia.ai" />
             <button type="submit">
               Assinar
-              <ArrowRight size={14} strokeWidth={2.5} />
+              <ArrowRight size={16} strokeWidth={1.75} />
             </button>
           </div>
           <p className="vds-news-foot">+1.840 operadores recebem · sai toda sexta · sem spam</p>
@@ -128,10 +128,10 @@ function CommentThreadSection() {
                 </header>
                 <p>{c.text}</p>
                 <footer>
-                  <button className="act"><Heart size={12} strokeWidth={2} /> {c.likes}</button>
-                  {c.replies && <button className="act"><MessageCircle size={12} strokeWidth={2} /> {c.replies}</button>}
+                  <button className="act"><Heart size={14} strokeWidth={1.75} /> {c.likes}</button>
+                  {c.replies && <button className="act"><MessageCircle size={16} strokeWidth={1.75} /> {c.replies}</button>}
                   <button className="act ghost">Responder</button>
-                  <button aria-label="Mais opções" className="act ico"><MoreHorizontal size={12} strokeWidth={2} /></button>
+                  <button aria-label="Mais opções" className="act ico"><MoreHorizontal size={14} strokeWidth={1.75} /></button>
                 </footer>
               </div>
             </li>
@@ -159,12 +159,12 @@ function FileCardSection() {
       <div className="vds-files">
         {files.map((f, i) => (
           <article key={i} className="vds-file">
-            <span className={`vds-file-ext ${f.ext.toLowerCase()}`}><FileText size={16} strokeWidth={1.8} /><em>{f.ext}</em></span>
+            <span className={`vds-file-ext ${f.ext.toLowerCase()}`}><FileText size={16} strokeWidth={1.75} /><em>{f.ext}</em></span>
             <div className="vds-file-meta">
               <strong>{f.name}</strong>
               <span>{f.size} · {f.who} · {f.when}</span>
             </div>
-            <button className="vds-file-action" aria-label="Baixar"><Download size={14} strokeWidth={2.2} /></button>
+            <button className="vds-file-action" aria-label="Baixar"><Download size={16} strokeWidth={1.75} /></button>
           </article>
         ))}
       </div>
@@ -190,9 +190,9 @@ function CalendarSection() {
       <div className="vds-cal-stage">
         <div className="vds-cal">
           <header>
-            <button className="nav" onClick={() => setMonth('Abril 2026')} aria-label="Mês anterior"><ChevronLeft size={14} strokeWidth={2.2} /></button>
+            <button className="nav" onClick={() => setMonth('Abril 2026')} aria-label="Mês anterior"><ChevronLeft size={16} strokeWidth={1.75} /></button>
             <strong>{month}</strong>
-            <button className="nav" onClick={() => setMonth('Junho 2026')} aria-label="Próximo mês"><ChevronRight size={14} strokeWidth={2.2} /></button>
+            <button className="nav" onClick={() => setMonth('Junho 2026')} aria-label="Próximo mês"><ChevronRight size={16} strokeWidth={1.75} /></button>
           </header>
           <div className="vds-cal-days">
             {days.map((d, i) => <span key={i} className="dow">{d}</span>)}
@@ -212,7 +212,7 @@ function CalendarSection() {
           </div>
           <footer>
             <span>Selecionado · 18 mai · quarta</span>
-            <button className="cta">Agendar sessão <ArrowRight size={12} strokeWidth={2.5} /></button>
+            <button className="cta">Agendar sessão <ArrowRight size={14} strokeWidth={1.75} /></button>
           </footer>
         </div>
       </div>

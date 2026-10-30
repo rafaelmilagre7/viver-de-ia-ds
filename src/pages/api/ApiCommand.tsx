@@ -47,8 +47,8 @@ export default function ApiCommand() {
     <ComponentDoc
       eyebrow="api · command"
       name="Command"
-      headline="cmd+k palette · keyboard-first · fuzzy filter live"
-      description="Command palette estilo Cmd+K (Notion, Linear, VS Code). Input filtra items live por label + keywords. ↑↓ navega, Enter ativa, ESC fecha. Glass + atmosphere intenso · backdrop com blur 10px. Suporta groups com heading."
+      headline="o sistema inteiro a um ⌘K."
+      description="Cmd+k palette · keyboard-first · fuzzy filter live. Command palette estilo Cmd+K (Notion, Linear, VS Code). Input filtra items live por label + keywords. ↑↓ navega, Enter ativa, ESC fecha. Glass + atmosphere intenso · backdrop com blur 10px. Suporta groups com heading."
       importLine={`import { Command, type CommandProps, type CommandItem } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-command-root', description: 'Portal fixed · scrim radial + blur backdrop' },

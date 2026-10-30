@@ -5,8 +5,8 @@
   padding: var(--via-space-1);
   border-radius: var(--via-radius-pill);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
@@ -25,7 +25,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -92,6 +91,6 @@
   font-family: var(--via-font);
   color: var(--via-text-soft);
   padding: 0 var(--via-space-1);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--via-ls-wide);
   user-select: none;
 }

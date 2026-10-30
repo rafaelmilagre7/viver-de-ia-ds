@@ -33,8 +33,8 @@ export default function ApiCarousel() {
     <ComponentDoc
       eyebrow="api · carousel"
       name="Carousel"
-      headline="gallery slider · arrasto na mola · auto-play · dots animados"
-      description="Carousel pra galerias, depoimentos, onboarding slides, casos de uso. Arrasto 1:1 (toque e mouse) com projeção de embalo e mola · keyboard arrow keys · auto-play opcional com pause em hover. Dots animados glass + setas opcionais. Loop infinito por default."
+      headline="uma galeria que desliza na mola."
+      description="Gallery slider · arrasto na mola · auto-play · dots animados. Carousel pra galerias, depoimentos, onboarding slides, casos de uso. Arrasto 1:1 (toque e mouse) com projeção de embalo e mola · keyboard arrow keys · auto-play opcional com pause em hover. Dots animados glass + setas opcionais. Loop infinito por default."
       importLine={`import { Carousel, type CarouselProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-carousel', description: 'Container · overflow hidden · region role' },

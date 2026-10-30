@@ -143,7 +143,7 @@ function AgendaSection() {
 
               {s.kind === 'break' ? (
                 <div className="vds-cf-break">
-                  <Coffee size={13} strokeWidth={1.8} className="vds-cf-break-icon" />
+                  <Coffee size={14} strokeWidth={1.75} className="vds-cf-break-icon" />
                   <p>
                     <strong>{s.title}</strong>
                     <em>{s.room}</em>
@@ -157,19 +157,19 @@ function AgendaSection() {
                     </span>
                     {s.kind === 'keynote' && (
                       <span className="vds-cf-session-kind keynote">
-                        <Mic size={9} strokeWidth={2.4} />
+                        <Mic size={14} strokeWidth={1.75} />
                         Keynote
                       </span>
                     )}
                     {s.kind === 'panel' && (
                       <span className="vds-cf-session-kind">
-                        <Users size={9} strokeWidth={2.4} />
+                        <Users size={14} strokeWidth={1.75} />
                         Painel
                       </span>
                     )}
                     {s.kind === 'workshop' && (
                       <span className="vds-cf-session-kind">
-                        <BookOpen size={9} strokeWidth={2.4} />
+                        <BookOpen size={14} strokeWidth={1.75} />
                         Workshop · prático
                       </span>
                     )}
@@ -186,11 +186,11 @@ function AgendaSection() {
                       </div>
                     </div>
                     <div className="vds-cf-room">
-                      <MapPin size={11} strokeWidth={2} />
+                      <MapPin size={14} strokeWidth={1.75} />
                       {s.room}
                     </div>
                     <button className="vds-cf-add">
-                      <Calendar size={11} strokeWidth={2.2} />
+                      <Calendar size={14} strokeWidth={1.75} />
                       Reservar
                     </button>
                   </footer>
@@ -208,7 +208,7 @@ function AgendaSection() {
           </div>
           <a href="#" className="vds-cf-foot-cta">
             Baixar agenda completa (PDF · 4 páginas)
-            <ArrowUpRight size={12} strokeWidth={2.4} />
+            <ArrowUpRight size={14} strokeWidth={1.75} />
           </a>
         </footer>
       </article>
@@ -240,7 +240,7 @@ function AgendaSpeakerStripSection() {
               <h4>{s.name}</h4>
               <p>{s.role}</p>
             </div>
-            <ChevronRight size={13} strokeWidth={2} className="vds-cf-spk-arrow" />
+            <ChevronRight size={14} strokeWidth={1.75} className="vds-cf-spk-arrow" />
           </article>
         ))}
       </div>

@@ -39,8 +39,8 @@ export default function Podcast() {
               </span>
               <button className="play" aria-label={e.playing ? `Pausar ${e.title}` : `Tocar ${e.title}`}>
                 {e.playing
-                  ? <Pause size={14} strokeWidth={0} style={{ fill: "currentColor" }} />
-                  : <Play size={14} strokeWidth={0} style={{ fill: "currentColor" }} />}
+                  ? <Pause size={16} strokeWidth={0} style={{ fill: "currentColor" }} />
+                  : <Play size={16} strokeWidth={0} style={{ fill: "currentColor" }} />}
               </button>
             </div>
           ))}

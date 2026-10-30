@@ -7,8 +7,8 @@ export default function ApiAvatar() {
     <ComponentDoc
       eyebrow="api · avatar"
       name="Avatar"
-      headline="iniciais editorial · ring branco · status com pulse"
-      description="Avatar circular com iniciais Geist (foto opcional) sobre fundo navy gradient com inset highlight + drop shadow. Status dot com gradient + pulse breathing em online. 5 sizes proporcionais ao texto."
+      headline="a pessoa, em iniciais e presença."
+      description="Iniciais editorial · ring branco · status com pulse. Avatar circular com iniciais Geist (foto opcional) sobre fundo navy gradient com inset highlight + drop shadow. Status dot com gradient + pulse breathing em online. 5 sizes proporcionais ao texto."
       importLine={`import { Avatar, type AvatarProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-avatar', description: 'Container circular · gradient navy + inset highlight + drop shadow' },

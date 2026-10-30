@@ -43,11 +43,10 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
-  letter-spacing: -0.004em;
 }
 .vds-sc-nav-btn em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-ink-3);
 }
 .vds-sc-nav-btn:hover {
@@ -81,7 +80,7 @@
 .vds-sc-nav-btn.is-active strong { color: var(--via-text-primary); }
 .vds-sc-nav-btn .mono {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   background: var(--via-navy-04);
   padding: 3px var(--via-space-2);
@@ -102,10 +101,8 @@
 }
 .vds-sc-spec h4 {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-ink-3);
   margin: 0 0 var(--via-space-3_5);
 }
@@ -128,7 +125,7 @@
 }
 .vds-sc-spec dt {
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
   color: var(--via-ink-3);
   letter-spacing: 0.04em;
@@ -136,9 +133,9 @@
 .vds-sc-spec dd {
   margin: 0;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 
 /* ============================================
@@ -192,7 +189,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: var(--via-lh-snug);
 }
 .vds-sc-ig-meta strong {
   font-family: var(--via-font);
@@ -202,7 +199,7 @@
 }
 .vds-sc-ig-meta em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(0, 0, 0, 0.55);
 }
 .vds-sc-ig-hdr button {
@@ -244,7 +241,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-3);
@@ -260,7 +257,7 @@
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
   max-width: 320px;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-sc-ig-actions {
@@ -286,18 +283,16 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   color: rgba(0, 0, 0, 0.80);
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 /* mockup fixa a própria cor: o `p` do docs pegava --via-text-body e sumia no branco do post no escuro */
 .vds-sc-ig-body p { color: inherit; }
 .vds-sc-ig-body strong { color: rgba(0, 0, 0, 0.92); font-weight: var(--via-fw-medium); }
 .vds-sc-ig-time {
   display: block;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(0, 0, 0, 0.45);
   margin-top: var(--via-space-2);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 /* ---------- IG story ---------- */
@@ -344,7 +339,7 @@
 }
 .vds-sc-story-hdr em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   opacity: 0.7;
 }
 
@@ -395,7 +390,8 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
   color: var(--via-white);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
 }
 .vds-sc-story-mono {
   position: absolute;
@@ -459,7 +455,7 @@
   padding: var(--via-space-1) var(--via-space-2);
   background: rgba(0, 0, 0, 0.5);
   border-radius: var(--via-radius-xs);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-white);
 }
 .vds-sc-reel-mono {
@@ -556,7 +552,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  line-height: 1.3;
+  line-height: var(--via-lh-snug);
 }
 .vds-sc-li-hdr strong {
   font-family: var(--via-font);
@@ -568,13 +564,13 @@
   font-style: normal;
   font-size: var(--via-fs-xs);
   color: rgba(0, 0, 0, 0.60);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .vds-sc-li-hdr span {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(0, 0, 0, 0.60);
   margin-top: var(--via-space-0_5);
 }
@@ -590,7 +586,7 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   color: rgba(0, 0, 0, 0.85);
-  line-height: 1.55;
+  line-height: var(--via-lh-normal);
 }
 .vds-sc-li-body p { margin: 0 0 var(--via-space-2_5); }
 .vds-sc-li-body strong { font-weight: var(--via-fw-medium); color: rgba(0, 0, 0, 0.92); }
@@ -629,7 +625,7 @@
   font-family: var(--via-font-display);
   font-size: 64px;
   font-weight: var(--via-fw-medium);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-2_5);
@@ -675,11 +671,11 @@
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
   color: var(--via-navy);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--via-ls-tight);
 }
 .vds-sc-li-stats-grid em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: #525c72;
 }
 
@@ -766,8 +762,7 @@
 }
 .vds-sc-carousel-num {
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
-  letter-spacing: -0.005em;
+  font-size: var(--via-fs-xs);
 }
 .vds-sc-carousel-card.context .vds-sc-carousel-num,
 .vds-sc-carousel-card.fix .vds-sc-carousel-num,
@@ -781,7 +776,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   margin: 0 0 var(--via-space-2_5);
   /* explícito: o global :where(h3){color:text-primary} vence herança do card */
@@ -815,7 +810,7 @@
 .vds-sc-carousel-body p {
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
   margin: 0;
 }
 .vds-sc-carousel-card:not(.context):not(.fix):not(.learn) .vds-sc-carousel-body p {
@@ -830,7 +825,7 @@
   display: block;
   font-style: normal;
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   margin-top: var(--via-space-2);
   color: rgba(255, 255, 255, 0.5);
 }
@@ -899,8 +894,8 @@
   font-family: var(--via-font-display);
   font-size: clamp(40px, 6vw, 78px);
   font-weight: var(--via-fw-medium);
-  line-height: 1;
-  letter-spacing: -0.028em;
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-3_5);
 }
@@ -960,7 +955,7 @@
   font-family: var(--via-font-display);
   font-size: clamp(28px, 3.6vw, 52px);
   font-weight: var(--via-fw-medium);
-  line-height: 1.05;
+  line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-3_5);
@@ -970,7 +965,7 @@
   font-size: var(--via-fs-body);
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
-  line-height: 1.5;
+  line-height: var(--via-lh-normal);
 }
 .vds-sc-yt-banner-tv-line,
 .vds-sc-yt-banner-mobile-line {
@@ -981,7 +976,7 @@
   border: 1px dashed rgba(255, 255, 255, 0.18);
   pointer-events: none;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.3);
   padding: var(--via-space-0_5) var(--via-space-1_5);
   display: flex;
@@ -1059,7 +1054,7 @@
 }
 .vds-sc-yt-end-grid em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -1136,7 +1131,7 @@
   font-size: var(--via-fs-sm);
   color: rgba(0, 0, 0, 0.92);
   margin: var(--via-space-2) 0 var(--via-space-3);
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 .vds-sc-x-post > p strong { font-weight: var(--via-fw-medium); }
 .vds-sc-x-post > p em { font-style: normal; color: rgba(0, 0, 0, 0.55); font-family: var(--via-font-display); }
@@ -1165,7 +1160,7 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
-  line-height: 1;
+  line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: 0 0 var(--via-space-2_5);
@@ -1312,7 +1307,7 @@
 .vds-sc-tiktok-side em {
   font-style: normal;
   font-family: var(--via-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-white);
 }
 
@@ -1332,11 +1327,11 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   margin: var(--via-space-1) 0 var(--via-space-1_5);
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .vds-sc-tiktok-bottom em {
   font-style: normal;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -1358,13 +1353,14 @@
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-medium);
-  line-height: 1.15;
+  line-height: var(--via-lh-snug);
   color: var(--via-white);
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   background: rgba(0, 0, 0, 0.32);
   padding: var(--via-space-2) var(--via-space-3_5);
   border-radius: var(--via-radius-sm);
-  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
 }
 .vds-sc-tiktok-overlay-demo .top-left { top: 60px; left: 16px; right: 16px; }
 .vds-sc-tiktok-overlay-demo .center {
@@ -1460,7 +1456,7 @@
   font-size: var(--via-fs-h2);
   font-weight: var(--via-fw-medium);
   line-height: 1.1;
-  letter-spacing: -0.022em;
+  letter-spacing: var(--via-ls-tighter);
   color: var(--via-white);
   margin: var(--via-space-4_5) 0 0;
 }

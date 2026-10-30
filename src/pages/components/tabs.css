@@ -3,8 +3,8 @@
   display: inline-flex;
   padding: var(--via-space-1);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   border: 1px solid var(--via-border-soft);
   border-radius: var(--via-radius-pill);
   /* sombra FIXA em navy · --via-navy-08/04 invertem pra branco no dark e
@@ -27,9 +27,8 @@
 .via-seg-item {
   padding: 9px var(--via-space-4_5);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.005em;
   border-radius: var(--via-radius-pill);
   border: 1px solid transparent;
   background: transparent;
@@ -116,7 +115,6 @@
   font-family: var(--via-font);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   color: var(--via-text-soft);
   border: none;
   background: transparent;
@@ -182,9 +180,8 @@
   border: 1px solid var(--via-navy-08);
   color: var(--via-text-soft);
   border-radius: var(--via-radius-pill);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-bold);
-  letter-spacing: 0.02em;
   font-feature-settings: 'tnum' 1;
   min-width: 18px;
   transition:

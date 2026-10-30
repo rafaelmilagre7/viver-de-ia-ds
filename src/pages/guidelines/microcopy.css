@@ -121,11 +121,10 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-muted);
-  letter-spacing: -0.004em;
 }
 .vds-mc-id {
   font-family: var(--via-font-mono);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
 }
 
@@ -146,7 +145,7 @@
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
   line-height: var(--via-lh-normal);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-text-primary);
 }
 
@@ -189,10 +188,8 @@
 }
 .vds-mc-meta dt {
   font-family: var(--via-font);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: var(--via-ls-label);
-  text-transform: uppercase;
   color: var(--via-text-muted);
   margin-bottom: var(--via-space-1);
 }

@@ -27,8 +27,8 @@
   border-radius: var(--via-radius-lg);
   border: 1px solid var(--via-border-soft);
   background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
-  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
   overflow: hidden;
   isolation: isolate;
   display: flex;
@@ -119,9 +119,9 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.72);
 }
@@ -146,7 +146,7 @@
   font-size: var(--via-fs-display);
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.034em;
-  line-height: 1.02;
+  line-height: var(--via-lh-tight);
   color: var(--via-white);
   margin: 0;
 }
@@ -156,7 +156,7 @@
   color: var(--via-white);
   font-weight: var(--via-fw-regular);
   opacity: 0.78;
-  letter-spacing: -0.030em;
+  letter-spacing: var(--via-ls-tighter);
 }
 
 /* escopado ao card hero (navy fixo nos 2 temas) — senão o `.vds-bento p`
@@ -165,10 +165,10 @@
 .vds-bento-card.hero .vds-bento-lede {
   margin: 0;
   font-size: var(--via-fs-sm);
-  line-height: 1.62;
+  line-height: var(--via-lh-loose);
   color: rgba(255, 255, 255, 0.86);
   max-width: 440px;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-bento-cta-row {
@@ -185,7 +185,6 @@
   border-radius: var(--via-radius-pill);
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.005em;
   text-decoration: none;
   border: 1px solid;
   cursor: pointer;
@@ -259,7 +258,7 @@
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
   letter-spacing: -0.034em;
-  line-height: 1.0;
+  line-height: var(--via-lh-tight);
   font-feature-settings: 'tnum' 1;
   display: flex;
   align-items: baseline;
@@ -269,7 +268,7 @@
 
 .vds-bento-num.small {
   font-size: var(--via-fs-h2);
-  letter-spacing: -0.028em;
+  letter-spacing: var(--via-ls-tighter);
 }
 
 .vds-bento-num.accent {
@@ -282,7 +281,6 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
-  letter-spacing: -0.006em;
 }
 
 .vds-bento-delta {
@@ -293,9 +291,8 @@
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
-  letter-spacing: -0.005em;
   width: fit-content;
   font-feature-settings: 'tnum' 1;
 }
@@ -334,12 +331,11 @@
   border-radius: var(--via-radius-pill);
   background: var(--via-navy-06);
   border: 1px solid var(--via-navy-12);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
   color: var(--via-text-primary);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-bento-dot {
@@ -395,9 +391,8 @@
 .vds-bento-quote-mark {
   --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   display: inline-flex;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.006em;
   color: var(--via-text-primary);
   padding: 5px var(--via-space-3);
   border-radius: var(--via-radius-pill);
@@ -405,7 +400,7 @@
   border: 1px solid var(--via-border-soft);
   width: fit-content;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 1px 2px var(--via-shadow-ink-03);
@@ -415,7 +410,7 @@
   margin: 0;
   font-size: var(--via-fs-h3);
   font-weight: var(--via-fw-regular);
-  letter-spacing: -0.024em;
+  letter-spacing: var(--via-ls-tighter);
   line-height: 1.34;
   color: var(--via-text-body);
 }
@@ -424,7 +419,7 @@
   font-style: normal;
   color: var(--via-text-primary);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: -0.026em;
+  letter-spacing: var(--via-ls-tighter);
 }
 
 .vds-bento-card.quote footer {
@@ -446,7 +441,6 @@
   justify-content: center;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   /* anel adaptativo · --via-white não inverte e virava halo branco no dark */
   border: 2px solid var(--via-surface);
   box-shadow:
@@ -459,13 +453,13 @@
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-bento-card.quote footer em {
   font-style: normal;
   display: block;
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   margin-top: var(--via-space-0_5);
 }
@@ -499,10 +493,10 @@
   border: 1px solid rgba(184, 92, 92, 0.4);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-white);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-bento-live-pill em {
@@ -510,7 +504,7 @@
   font-style: normal;
   font-weight: var(--via-fw-medium);
   font-size: var(--via-fs-caption);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--via-ls-tight);
 }
 
 .vds-bento-live-dot {
@@ -540,7 +534,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.65);
   font-feature-settings: 'tnum' 1;
 }
@@ -551,9 +545,9 @@
   gap: var(--via-space-1_5);
   margin: 0;
   font-family: var(--via-font-mono, var(--via-font));
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-label);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.12em;
+  letter-spacing: var(--via-ls-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.74);
 }
@@ -562,17 +556,16 @@
   margin: var(--via-space-1_5) 0 var(--via-space-2);
   font-size: var(--via-fs-h4);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.018em;
+  letter-spacing: var(--via-ls-tight);
   color: var(--via-white);
-  line-height: 1.25;
+  line-height: var(--via-lh-snug);
 }
 
 .vds-bento-live-meta {
   margin: 0;
   font-size: var(--via-fs-xs);
   color: rgba(255, 255, 255, 0.78);
-  letter-spacing: -0.006em;
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
 
 .vds-bento-live-cta {
@@ -590,7 +583,7 @@
   font-weight: var(--via-fw-semibold);
   text-decoration: none;
   width: fit-content;
-  letter-spacing: -0.008em;
+  letter-spacing: var(--via-ls-tight);
   box-shadow:
     inset 0 1px 0 var(--via-edge-hi),
     0 6px 16px -6px rgba(0, 0, 0, 0.40),
@@ -644,8 +637,8 @@
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-medium);
   color: var(--via-text-body);
-  letter-spacing: -0.012em;
-  line-height: 1.42;
+  letter-spacing: var(--via-ls-tight);
+  line-height: var(--via-lh-normal);
 }
 
 .vds-bento-confirmed {
@@ -670,9 +663,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
-  letter-spacing: 0.02em;
   /* anel adaptativo · --via-white não inverte e virava halo branco no dark */
   border: 2px solid var(--via-surface);
   margin-left: -8px;
@@ -688,14 +680,13 @@
   background: var(--via-surface-onnavy);
   color: var(--via-text-primary);
   border: 1.5px solid var(--via-border-soft);
-  font-size: var(--via-fs-micro);
+  font-size: var(--via-fs-xs);
 }
 
 .vds-bento-confirmed em {
   font-style: normal;
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
-  letter-spacing: -0.006em;
 }
 
 /* ---------- ACHIEVEMENT TILE ---------- */
@@ -728,6 +719,5 @@
   margin: 0;
   font-size: var(--via-fs-xs);
   color: var(--via-text-body);
-  letter-spacing: -0.006em;
-  line-height: 1.45;
+  line-height: var(--via-lh-normal);
 }
