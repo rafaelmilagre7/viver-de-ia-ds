@@ -7,7 +7,7 @@
   border-radius: var(--via-radius-xl);
   background:
     radial-gradient(900px 380px at 50% 0%, var(--via-navy-05), transparent 70%),
-    linear-gradient(180deg, var(--via-gray-100), var(--via-stage-soft));
+    linear-gradient(180deg, var(--via-gray-50), var(--via-gray-100));
   border: 1px solid var(--via-border-soft);
   display: flex;
   justify-content: center;

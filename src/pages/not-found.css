@@ -7,8 +7,13 @@
   border-radius: var(--via-radius-2xl);
   padding: 120px var(--via-space-16);
   overflow: hidden;
-  color: var(--via-white);
+  isolation: isolate;
   min-height: 540px;
+  background:
+    radial-gradient(ellipse 70% 90% at 0% 0%, var(--via-navy-06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 100% 100%, var(--via-navy-04) 0%, transparent 60%),
+    linear-gradient(180deg, var(--via-bg) 0%, var(--via-bg-2) 100%);
+  border: var(--via-border-fine);
   display: flex;
   align-items: center;
 }
@@ -21,40 +26,34 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
-  padding: var(--via-space-2) var(--via-space-3_5);
-  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.20);
-  border-radius: var(--via-radius-pill);
+  padding: var(--via-space-1_5) var(--via-space-3_5) var(--via-space-1_5) var(--via-space-3);
   font-family: var(--via-font);
-  font-size: var(--via-fs-label);
+  font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  letter-spacing: -0.004em;
-  color: rgba(255,255,255,0.85);
+  color: var(--via-text-muted);
   margin-bottom: var(--via-space-7);
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: var(--via-lh-normal);
 }
 .vds-404 h1 {
   font-family: var(--via-font-display);
   font-size: clamp(48px, 6vw, 80px);
   font-weight: var(--via-fw-medium);
-  line-height: 1.0;
+  line-height: var(--via-lh-tight);
   letter-spacing: -0.03em;
-  color: var(--via-white);
+  color: var(--via-text-primary);
   margin: 0 0 var(--via-space-6);
 }
 .vds-404 h1 em {
   font-style: normal;
   font-weight: var(--via-fw-regular);
-  color: rgba(255,255,255,0.62);
+  color: var(--via-text-soft);
 }
 .vds-404 p {
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
-  line-height: 1.55;
-  color: rgba(255,255,255,0.72);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
   margin: 0 0 var(--via-space-10);
 }
 
@@ -68,7 +67,7 @@
   font-weight: var(--via-fw-bold);
   line-height: 1;
   letter-spacing: -0.06em;
-  color: rgba(255,255,255,0.04);
+  color: var(--via-navy-04);
   pointer-events: none;
   user-select: none;
   z-index: 1;

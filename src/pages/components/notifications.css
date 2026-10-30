@@ -7,7 +7,7 @@
   position: relative;
   padding: 60px var(--via-space-8) var(--via-space-10);
   border-radius: var(--via-radius-lg);
-  background: linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
+  background: linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
   border: 1px solid var(--via-border-soft);
   display: flex;
   justify-content: flex-end;
@@ -1152,4 +1152,12 @@
 
 .vds-inbox-rh svg:hover {
   color: var(--via-text-primary);
+}
+
+/* mobile · palco vira moldura fina (recuo do palco + do card espremia o conteúdo) */
+@media (max-width: 560px) {
+  .vds-notif-panel-stage {
+    padding: var(--via-space-3);
+    border-radius: var(--via-radius-lg);
+  }
 }

@@ -15,7 +15,7 @@
 .vds-2fa::before {
   content: '';
   position: absolute;
-  inset: -100px -40px;
+  inset: -100px 0; /* sem sangria lateral · a -40px vazava 20px de rolagem em 375 */
   z-index: -1;
   pointer-events: none;
   background:

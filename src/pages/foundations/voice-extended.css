@@ -29,7 +29,7 @@
   border-radius: var(--via-radius-sm);
   background:
     radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45)),
-    linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
+    linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
   border: 0.5px solid var(--via-navy-12);
   color: var(--via-text-primary);
   box-shadow:
@@ -42,7 +42,7 @@
 [data-theme='dark'] .vds-ve-icon {
   background:
     radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)),
-    linear-gradient(135deg, var(--via-gray-100), var(--via-stage-soft));
+    linear-gradient(135deg, var(--via-gray-50), var(--via-gray-100));
 }
 .vds-ve-eyebrow {
   display: block;

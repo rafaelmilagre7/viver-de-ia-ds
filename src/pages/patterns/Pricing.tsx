@@ -1,4 +1,5 @@
 import { Check, Minus, ArrowRight, MessageCircle } from 'lucide-react';
+import { Button } from '../../lib/Button/Button';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import './pricing.css';
@@ -35,7 +36,7 @@ export default function Pricing() {
       <DocsHeader
         eyebrow="Padrões · pricing"
         title={<>Três tiers, <em>um destaque</em>.</>}
-        lede="Pricing canônico — 3 tiers, o do meio em navy sólido marcado 'Mais escolhido'. R$ menor em Geist, número grande tabular, lista com check Lucide stroke. Botão pílula navy nos laterais; branco no destaque."
+        lede="Pricing canônico — 3 tiers, o do meio em navy sólido marcado 'Mais escolhido'. R$ menor em Geist, número grande tabular, lista com check Lucide stroke. Botão é o da library: pílula navy nos laterais; branca no destaque."
       />
 
       <Section title="Conferência · 3 tiers" meta="featured no meio">
@@ -52,12 +53,14 @@ export default function Pricing() {
               <ul>
                 {t.items.map((i) => (
                   <li key={i}>
-                    <Check size={12} strokeWidth={3} className="ck" />
+                    <Check size={14} strokeWidth={1.75} className="ck" />
                     {i}
                   </li>
                 ))}
               </ul>
-              <button className={t.feat ? 'btn light' : 'btn'}>{t.cta}</button>
+              <Button size="lg" fullWidth variant={t.feat ? 'secondary' : 'primary'} className="vds-tier-cta">
+                {t.cta}
+              </Button>
             </div>
           ))}
         </div>
@@ -139,19 +142,15 @@ function ComparisonTableSection() {
                 )}
               </div>
               <p className="vds-cmp-plan-desc">{p.desc}</p>
-              <button className={`vds-cmp-plan-cta ${p.highlight ? 'primary' : ''}`}>
-                {p.price === 'sob medida' ? (
-                  <>
-                    <MessageCircle size={12} strokeWidth={2.4} />
-                    Falar com o time
-                  </>
-                ) : (
-                  <>
-                    Começar
-                    <ArrowRight size={12} strokeWidth={2.4} />
-                  </>
-                )}
-              </button>
+              {p.price === 'sob medida' ? (
+                <Button size="sm" variant="secondary" iconLeft={<MessageCircle size={14} strokeWidth={1.75} />}>
+                  Falar com o time
+                </Button>
+              ) : (
+                <Button size="sm" variant={p.highlight ? 'primary' : 'secondary'} iconRight={<ArrowRight size={14} strokeWidth={1.75} />}>
+                  Começar
+                </Button>
+              )}
             </div>
           ))}
         </header>
@@ -171,11 +170,11 @@ function ComparisonTableSection() {
                     >
                       {v === true ? (
                         <span className="vds-cmp-mark">
-                          <Check size={12} strokeWidth={3} />
+                          <Check size={14} strokeWidth={1.75} />
                         </span>
                       ) : v === false ? (
                         <span className="vds-cmp-no">
-                          <Minus size={11} strokeWidth={2.4} />
+                          <Minus size={14} strokeWidth={1.75} />
                         </span>
                       ) : (
                         <span className="vds-cmp-text mono">{v}</span>

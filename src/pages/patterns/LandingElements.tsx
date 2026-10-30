@@ -1,7 +1,10 @@
-import { ArrowRight, Calendar, Check, ChevronDown, Mail, Zap } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { ArrowRight, Calendar, Check, ChevronDown, Download, Mail } from 'lucide-react';
+import { Button } from '../../lib/Button/Button';
+import { Input } from '../../lib/Input/Input';
+import { BrandLogo } from '../../lib/BrandLogo/BrandLogo';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
-import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
 import './landing-elements.css';
 
 /* ============================================================
@@ -18,7 +21,7 @@ export default function LandingElements() {
             Elementos pra landings <em>sem reinventar a roda</em>.
           </>
         }
-        lede="Hero variants (5), CTAs por contexto, trust signals avançados, FAQ editorial expandido, lead magnet inline, countdown editorial, comparativo concorrente. Cada elemento independente — combina o que precisa pra cada landing nova."
+        lede="Hero variants (5), CTAs por contexto, trust signals avançados, FAQ editorial expandido, lead magnet inline, countdown editorial, comparativo concorrente. Papel claro por padrão; o navy fica pro momento de fechamento. Cada elemento independente — combina o que precisa pra cada landing nova."
       />
 
       <HeroVariantsSection />
@@ -32,7 +35,25 @@ export default function LandingElements() {
   );
 }
 
-/* ---------- Hero variants · 5 contextos ---------- */
+/* ---------- Hero variants · 5 contextos ----------
+   Cinco composições de verdade (não cinco cores do mesmo painel):
+   split com cartão da turma · manifesto centrado com prova · cartaz de evento ·
+   captura inline com capa do material · confirmação com os próximos atos.
+   Todas em papel claro — o navy é a tinta. */
+const ARROW = <ArrowRight size={16} strokeWidth={1.75} />;
+
+function HeroFrame({ name, context, children }: { name: string; context: string; children: ReactNode }) {
+  return (
+    <article className="vds-le-hero-card">
+      <header>
+        <span className="vds-le-hero-name">{name}</span>
+        <span className="vds-le-hero-context">{context}</span>
+      </header>
+      {children}
+    </article>
+  );
+}
+
 function HeroVariantsSection() {
   return (
     <Section
@@ -40,88 +61,116 @@ function HeroVariantsSection() {
       meta="cada landing escolhe o hero certo pelo contexto"
     >
       <div className="vds-le-heros">
-        <article className="vds-le-hero-card">
-          <header>
-            <span className="vds-le-hero-name">Lançamento</span>
-            <em>D-X até D+0 · turma abre amanhã / hoje</em>
-          </header>
-          <div className="vds-le-hero-canvas via-mesh-navy via-noise">
-            <span className="vds-le-hero-eyebrow">turma 2026.3 · abre 22 mai 9h</span>
-            <h2>Operador que opera IA · <em>90 dias</em></h2>
-            <p>em 4 meses sai daqui com 1 agente em produção · ou seu dinheiro de volta</p>
-            <div className="vds-le-hero-actions">
-              <a href="#" className="vds-le-hero-cta">Ver programa<ArrowRight size={13} strokeWidth={2.4} /></a>
-              <a href="#" className="vds-le-hero-ghost">Ver programa completo</a>
+        <HeroFrame name="Lançamento" context="D-X até D+0 · turma abre amanhã / hoje">
+          <div className="vds-le-hero vds-le-hero--launch">
+            <div className="vds-le-hero-copy">
+              <span className="vds-le-kicker"><span className="vds-le-live" aria-hidden="true" />Inscrições abrem 22 mai · 9h</span>
+              <h2>Operador que opera IA, <em>em 90 dias</em>.</h2>
+              <p>Em 4 meses você sai daqui com 1 agente em produção — ou seu dinheiro de volta.</p>
+              <div className="vds-le-hero-actions">
+                <Button size="lg" iconRight={ARROW}>Ver programa</Button>
+                <Button size="lg" variant="ghost">Baixar a ementa</Button>
+              </div>
             </div>
-            <img src={monogramWhite} alt="" className="vds-le-hero-mono" />
+            <aside className="vds-le-launch-card" aria-label="Turma 2026.3">
+              <span className="vds-le-launch-title">Turma 2026.3</span>
+              <dl>
+                <div><dt>Início</dt><dd>22 mai</dd></div>
+                <div><dt>Duração</dt><dd>16 semanas</dd></div>
+                <div><dt>Formato</dt><dd>Ao vivo + gravado</dd></div>
+                <div><dt>Turma</dt><dd>25 operadores</dd></div>
+              </dl>
+              <div className="vds-le-launch-meter">
+                <span><strong>18</strong> de 25 vagas preenchidas</span>
+                <span className="vds-le-launch-bar" aria-hidden="true"><span style={{ width: '72%' }} /></span>
+              </div>
+            </aside>
           </div>
-        </article>
+        </HeroFrame>
 
-        <article className="vds-le-hero-card">
-          <header>
-            <span className="vds-le-hero-name">Evergreen sales</span>
-            <em>landing principal · sempre no ar</em>
-          </header>
-          <div className="vds-le-hero-canvas via-mesh-navy via-noise">
-            <span className="vds-le-hero-eyebrow">formação técnico-operativa em IA</span>
+        <HeroFrame name="Evergreen sales" context="landing principal · sempre no ar">
+          <div className="vds-le-hero vds-le-hero--evergreen">
+            <span className="vds-le-kicker">Formação técnico-operativa em IA</span>
             <h2>Viver de IA, <em>não de prompt</em>.</h2>
-            <p>220 operadores formados · R$ 1,8M destravado em 12 meses · método codificado em 18 aulas</p>
+            <p>O método codificado que leva operador de negócio a colocar agente pra rodar — com mentoria, comunidade e código-base.</p>
             <div className="vds-le-hero-actions">
-              <a href="#" className="vds-le-hero-cta">Conhecer o método<ArrowRight size={13} strokeWidth={2.4} /></a>
-              <a href="#" className="vds-le-hero-ghost">Falar com mentor</a>
+              <Button size="lg" iconRight={ARROW}>Conhecer o método</Button>
+              <Button size="lg" variant="secondary">Falar com mentor</Button>
             </div>
-            <img src={monogramWhite} alt="" className="vds-le-hero-mono" />
+            <dl className="vds-le-proof">
+              <div><dt>operadores formados</dt><dd>220</dd></div>
+              <div><dt>destravado em 12 meses</dt><dd>R$ 1,8M</dd></div>
+              <div><dt>aulas no método</dt><dd>18</dd></div>
+            </dl>
           </div>
-        </article>
+        </HeroFrame>
 
-        <article className="vds-le-hero-card">
-          <header>
-            <span className="vds-le-hero-name">Evento</span>
-            <em>Leaders AI Conference · live · mentoria coletiva</em>
-          </header>
-          <div className="vds-le-hero-canvas via-mesh-navy via-noise">
-            <span className="vds-le-hero-eyebrow">leaders AI conference · 18-20 jun · SP</span>
-            <h2>3 dias. 47 cases reais. <em>0 teoria.</em></h2>
-            <p>operadores que já têm agente em produção contam o que mudou · sem palestrante de palco que nunca rodou nada</p>
-            <div className="vds-le-hero-actions">
-              <a href="#" className="vds-le-hero-cta">Garantir ingresso<ArrowRight size={13} strokeWidth={2.4} /></a>
-              <a href="#" className="vds-le-hero-ghost">Ver speakers</a>
+        <HeroFrame name="Evento" context="Leaders AI Conference · live · mentoria coletiva">
+          <div className="vds-le-hero vds-le-hero--event">
+            <div className="vds-le-event-date" aria-label="18 a 20 de junho, São Paulo">
+              <strong>18–20</strong>
+              <span>junho 2026</span>
+              <span>São Paulo</span>
             </div>
-            <img src={monogramWhite} alt="" className="vds-le-hero-mono" />
+            <div className="vds-le-hero-copy">
+              <span className="vds-le-kicker">Leaders AI Conference</span>
+              <h2>3 dias. 47 cases reais. <em>0 teoria.</em></h2>
+              <p>Operadores que já têm agente em produção contam o que mudou — sem palestrante de palco que nunca rodou nada.</p>
+              <div className="vds-le-hero-actions">
+                <Button size="lg" iconRight={ARROW}>Garantir ingresso</Button>
+                <Button size="lg" variant="ghost">Ver programação</Button>
+              </div>
+            </div>
+            <ol className="vds-le-event-days">
+              <li><span>Dia 1</span>Operação · do processo ao agente</li>
+              <li><span>Dia 2</span>Produto · agente que o cliente usa</li>
+              <li><span>Dia 3</span>Escala · custo, time e governança</li>
+            </ol>
           </div>
-        </article>
+        </HeroFrame>
 
-        <article className="vds-le-hero-card">
-          <header>
-            <span className="vds-le-hero-name">Opt-in · lead magnet</span>
-            <em>baixar ebook / webinar · captura email</em>
-          </header>
-          <div className="vds-le-hero-canvas via-mesh-navy via-noise">
-            <span className="vds-le-hero-eyebrow">guia gratuito · 42 páginas</span>
-            <h2>7 erros que cometi construindo agente em <em>produção</em></h2>
-            <p>PDF editorial · cases reais · o que mudaria se começasse hoje · envio direto no email</p>
-            <div className="vds-le-hero-actions">
-              <a href="#" className="vds-le-hero-cta">Baixar grátis<ArrowRight size={13} strokeWidth={2.4} /></a>
+        <HeroFrame name="Opt-in · lead magnet" context="baixar ebook / webinar · captura email">
+          <div className="vds-le-hero vds-le-hero--optin">
+            <div className="vds-le-hero-copy">
+              <span className="vds-le-kicker">Guia gratuito · 42 páginas</span>
+              <h2>7 erros que cometi construindo agente em <em>produção</em>.</h2>
+              <p>PDF editorial com cases reais e o que eu mudaria se começasse hoje. Chega no seu email em 60 segundos.</p>
+              <form className="vds-le-optin-form" onSubmit={(e) => e.preventDefault()}>
+                <Input
+                  type="email"
+                  aria-label="Seu email"
+                  placeholder="seu@email.com.br"
+                  iconLeft={<Mail size={16} strokeWidth={1.75} />}
+                />
+                <Button type="submit" size="lg" iconRight={<Download size={16} strokeWidth={1.75} />}>Baixar grátis</Button>
+              </form>
+              <span className="vds-le-fine">Sem spam · descadastro com 1 clique</span>
             </div>
-            <img src={monogramWhite} alt="" className="vds-le-hero-mono" />
+            <div className="vds-le-cover" aria-hidden="true">
+              <div className="vds-le-cover-sheet">
+                <BrandLogo variant="black" size="sm" monoOnly />
+                <span className="vds-le-cover-kicker">Guia · 42 páginas</span>
+                <strong>7 erros construindo agente em produção</strong>
+                <span className="vds-le-cover-lines"><i /><i /><i /><i /></span>
+                <span className="vds-le-cover-foot">Viver de IA · 2026</span>
+              </div>
+            </div>
           </div>
-        </article>
+        </HeroFrame>
 
-        <article className="vds-le-hero-card">
-          <header>
-            <span className="vds-le-hero-name">Thank-you · pós-conversão</span>
-            <em>depois que pagou / inscreveu · sem pressão</em>
-          </header>
-          <div className="vds-le-hero-canvas via-mesh-navy via-noise">
-            <span className="vds-le-hero-eyebrow">tua vaga tá garantida</span>
-            <h2>Confirmado. <em>Próximo passo</em> em 3 atos.</h2>
-            <p>turma 2026.3 começa em 14 dias · enquanto isso, 3 coisas pra entrar no ritmo</p>
-            <div className="vds-le-hero-actions">
-              <a href="#" className="vds-le-hero-cta">Acessar plataforma<ArrowRight size={13} strokeWidth={2.4} /></a>
-            </div>
-            <img src={monogramWhite} alt="" className="vds-le-hero-mono" />
+        <HeroFrame name="Thank-you · pós-conversão" context="depois que pagou / inscreveu · sem pressão">
+          <div className="vds-le-hero vds-le-hero--thanks">
+            <span className="vds-le-thanks-check" aria-hidden="true"><Check size={24} strokeWidth={1.75} /></span>
+            <h2>Confirmado. <em>Próximo passo em 3 atos.</em></h2>
+            <p>A turma 2026.3 começa em 14 dias. Enquanto isso, três coisas pra entrar no ritmo:</p>
+            <ol className="vds-le-acts">
+              <li><span>1</span><strong>Acessar a plataforma</strong>Aula zero e o mapa das 16 semanas.</li>
+              <li><span>2</span><strong>Entrar na comunidade</strong>Sua turma já está se apresentando.</li>
+              <li><span>3</span><strong>Agendar o diagnóstico</strong>30 min com mentor pra escolher o primeiro agente.</li>
+            </ol>
+            <Button size="lg" iconRight={ARROW}>Acessar plataforma</Button>
           </div>
-        </article>
+        </HeroFrame>
       </div>
     </Section>
   );
@@ -135,10 +184,10 @@ function CTAVariantsSection() {
     { label: 'Falar com mentor', context: 'consultoria · alto ticket', kind: 'primary' },
     { label: 'Baixar guia gratuito', context: 'lead magnet · email capture', kind: 'primary' },
     { label: 'Confirmar presença', context: 'evento · live', kind: 'primary' },
-    { label: 'Conversar antes', context: 'objection handling · ghost CTA', kind: 'ghost' },
+    { label: 'Conversar antes', context: 'objection handling · secundário', kind: 'secondary' },
     { label: 'Ver gravação', context: 'pós-evento · recap', kind: 'ghost' },
     { label: 'Recusar oferta', context: 'cancellation · destrutivo', kind: 'destructive' },
-  ];
+  ] as const;
 
   return (
     <Section
@@ -148,13 +197,13 @@ function CTAVariantsSection() {
       <div className="vds-le-ctas">
         {ctas.map((c) => (
           <article key={c.label} className="vds-le-cta-card">
-            <button className={`vds-le-cta ${c.kind}`}>
+            <Button
+              variant={c.kind}
+              iconRight={c.kind === 'primary' || c.kind === 'accent' ? <ArrowRight size={14} strokeWidth={1.75} /> : undefined}
+            >
               {c.label}
-              {c.kind !== 'ghost' && c.kind !== 'destructive' && (
-                <ArrowRight size={13} strokeWidth={2.4} />
-              )}
-            </button>
-            <em>{c.context}</em>
+            </Button>
+            <span className="vds-le-cta-context">{c.context}</span>
           </article>
         ))}
       </div>
@@ -167,7 +216,7 @@ function CTAVariantsSection() {
           <li><strong>Sentence-case</strong> · não caps lock alérgico</li>
           <li><strong>Sem urgência fabricada</strong> · não "CLIQUE AQUI AGORA!!!"</li>
           <li><strong>Ação concreta</strong> · "Confirmar presença" diz o que vai acontecer</li>
-          <li><strong>Variant accent só pra THE CTA</strong> · 1 por hero, não 5</li>
+          <li><strong>Variant accent só pra CTA principal</strong> · 1 por hero, não 5</li>
         </ul>
       </article>
     </Section>
@@ -242,7 +291,7 @@ function FAQAdvancedSection() {
                 <span className="vds-le-faq-cat">{f.cat}</span>
                 <strong>{f.q}</strong>
               </div>
-              <ChevronDown size={14} strokeWidth={2.2} />
+              <ChevronDown size={16} strokeWidth={1.75} />
             </summary>
             <p>{f.a}</p>
           </details>
@@ -259,33 +308,31 @@ function LeadMagnetSection() {
       title="Lead magnet inline · captura de email"
       meta="oferta direta · sem 'cadastre-se na newsletter pra ficar por dentro'"
     >
-      <article className="vds-le-lead-magnet via-mesh-navy via-noise">
+      <article className="vds-le-lead-magnet">
         <div className="vds-le-lead-magnet-l">
-          <span className="vds-le-lead-magnet-eyebrow">
-            <Zap size={11} strokeWidth={2.4} />
-            guia gratuito · 42 páginas
-          </span>
+          <span className="vds-le-kicker">Guia gratuito · 42 páginas</span>
           <h3>7 erros que cometi construindo agente em <em>produção</em>.</h3>
           <p>PDF editorial · cases reais · o que mudaria se começasse hoje · envio direto no email em 60 segundos.</p>
           <ul>
-            <li><Check size={13} strokeWidth={2.4} /> Cicatrizes reais documentadas</li>
-            <li><Check size={13} strokeWidth={2.4} /> Código-base junto · pra copiar</li>
-            <li><Check size={13} strokeWidth={2.4} /> Sem upsell · sem call de venda</li>
+            <li><Check size={14} strokeWidth={1.75} /> Cicatrizes reais documentadas</li>
+            <li><Check size={14} strokeWidth={1.75} /> Código-base junto · pra copiar</li>
+            <li><Check size={14} strokeWidth={1.75} /> Sem upsell · sem call de venda</li>
           </ul>
         </div>
         <form className="vds-le-lead-magnet-form" onSubmit={(e) => e.preventDefault()}>
-          <label htmlFor="lm-email">Seu email</label>
-          <div className="vds-le-lead-magnet-input">
-            <Mail size={14} strokeWidth={1.8} />
-            <input id="lm-email" type="email" placeholder="rafael@viverdeia.ai" />
-          </div>
-          <button type="submit" className="vds-le-lead-magnet-cta">
+          <Input
+            id="lm-email"
+            type="email"
+            label="Seu email"
+            placeholder="rafael@viverdeia.ai"
+            iconLeft={<Mail size={16} strokeWidth={1.75} />}
+          />
+          <Button type="submit" size="lg" fullWidth iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>
             Baixar grátis
-            <ArrowRight size={13} strokeWidth={2.4} />
-          </button>
-          <em className="vds-le-lead-magnet-fine">
-            envio direto no email · sem spam · pode descadastrar com 1 clique
-          </em>
+          </Button>
+          <span className="vds-le-fine">
+            Envio direto no email · sem spam · descadastro com 1 clique
+          </span>
         </form>
       </article>
     </Section>
@@ -301,8 +348,8 @@ function CountdownSection() {
     >
       <article className="vds-le-countdown via-mesh-navy via-noise">
         <span className="vds-le-countdown-eyebrow">
-          <Calendar size={11} strokeWidth={2.4} />
-          turma 2026.3 fecha em
+          <Calendar size={14} strokeWidth={1.75} />
+          Turma 2026.3 fecha em
         </span>
         <div className="vds-le-countdown-grid">
           <div><strong className="mono">09</strong><em>dias</em></div>
@@ -311,11 +358,10 @@ function CountdownSection() {
           <span className="vds-le-countdown-sep">:</span>
           <div><strong className="mono">22</strong><em>min</em></div>
         </div>
-        <p>depois disso, próxima turma só em <strong>outubro 2026</strong>. sem turma intermediária.</p>
-        <a href="#" className="vds-le-countdown-cta">
+        <p>Depois disso, próxima turma só em <strong>outubro 2026</strong>. Sem turma intermediária.</p>
+        <Button variant="secondary" size="lg" iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>
           Ver programa
-          <ArrowRight size={13} strokeWidth={2.4} />
-        </a>
+        </Button>
       </article>
 
       <p className="vds-le-countdown-rule">
@@ -360,7 +406,7 @@ function CompetitorComparisonSection() {
           <div key={r.feature} className="vds-le-compare-row">
             <div className="cell feature">{r.feature}</div>
             <div className="cell us">
-              <Check size={13} strokeWidth={2.4} />
+              <Check size={14} strokeWidth={1.75} />
               {r.us}
             </div>
             <div className="cell them">{r.them}</div>

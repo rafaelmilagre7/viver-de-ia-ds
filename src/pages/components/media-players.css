@@ -7,8 +7,8 @@
   padding: var(--via-space-12) var(--via-space-8);
   border-radius: var(--via-radius-xl);
   background:
-    radial-gradient(ellipse 60% 70% at 15% 0%, rgba(30,58,95,0.20) 0%, transparent 55%),
-    linear-gradient(135deg, var(--via-stage-1) 0%, var(--via-stage-2) 100%);
+    radial-gradient(ellipse 60% 70% at 15% 0%, var(--via-navy-06) 0%, transparent 55%),
+    linear-gradient(135deg, var(--via-gray-50) 0%, var(--via-gray-100) 100%);
   border: 0.5px solid var(--via-navy-12);
   display: flex;
   justify-content: center;
@@ -765,4 +765,12 @@
   letter-spacing: var(--via-ls-mark);
   text-transform: uppercase;
   color: rgba(255,255,255,0.85);
+}
+
+/* mobile · palco vira moldura fina (recuo do palco + do card espremia o conteúdo) */
+@media (max-width: 560px) {
+  .vds-media-stage {
+    padding: var(--via-space-3);
+    border-radius: var(--via-radius-lg);
+  }
 }
