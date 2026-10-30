@@ -1,113 +1,69 @@
 /* ============================================
    <Card> · Viver de IA · superfície editorial premium
-   ============================================ */
+   ============================================
+   default      superfície SÓLIDA (papel) — não é vidro
+   glass        material regular · aro especular + profundidade
+   atmospheric  regular + atmosfera navy nos cantos (visível no branco)
+   featured     regular elevado + filete navy no topo · 1 por seção
+   dark         mesh navy · hero / CTA
+   O aro especular (::after) e o reflexo que segue o ponteiro (::before,
+   só hoverable) vêm de _shared/material.css. */
 .via-card {
   position: relative;
   border-radius: var(--via-radius-lg);
-  background: var(--via-glass-card);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-surface);
+  border: 1px solid var(--via-border-hairline);
   isolation: isolate;
   overflow: hidden;
   padding: var(--via-space-5_5) var(--via-space-6);
+  --via-spec-size: 360px;
   transition:
     transform .26s var(--via-ease-snap),
     box-shadow .26s ease,
     border-color .26s ease;
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 10px 24px -16px var(--via-shadow-ink-14);
-}
-
-/* Atmosphere radial sutil top-left · signature DS aplicada por default */
-.via-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.6;
-  transition: opacity .26s ease;
-}
-.via-card:hover::before {
-  opacity: 1;
-}
-
-/* Shine sweep · líquido editorial · revela no hover dos hoverable */
-.via-card--hoverable::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    100deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.18) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-  transition: left .8s var(--via-ease-snap);
-  z-index: 1;
-}
-.via-card--hoverable:hover::after {
-  left: 130%;
+  /* papel: só o assento de 1-2px · quem flutua é o vidro */
+  box-shadow: 0 1px 2px var(--via-shadow-ink-06);
 }
 
 .via-card--no-padding {
   padding: 0;
 }
 
-/* ===== Variants ===== */
+/* ===== Variants de vidro · material regular ===== */
 
-.via-card--glass {
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
-}
-
-.via-card--atmospheric {
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
-}
-
-.via-card--atmospheric::before {
-  background:
-    radial-gradient(540px 240px at 0% 0%, var(--via-navy-05), transparent 60%),
-    radial-gradient(420px 220px at 100% 100%, var(--via-navy-04), transparent 60%);
-  opacity: 1;
-}
-
+.via-card--glass,
+.via-card--atmospheric,
 .via-card--featured {
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-08),
-    0 24px 56px -22px var(--via-shadow-ink-20);
+  --via-rim: var(--via-material-regular-rim);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
 }
 
-.via-card--featured > * {
-  position: relative;
-  z-index: 1;
+/* Atmosfera navy nos dois cantos, pintada como camada do próprio fundo
+   (o ::before agora é o reflexo) · no escuro os navy-* viram luz branca */
+.via-card--atmospheric {
+  background:
+    radial-gradient(560px 260px at 0% 0%, var(--via-navy-06), transparent 62%),
+    radial-gradient(440px 240px at 100% 100%, var(--via-navy-05), transparent 62%),
+    var(--via-material-regular-fill);
 }
 
-.via-card--featured::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--via-chart-ink-2), var(--via-chart-ink), transparent);
-  pointer-events: none;
-  transition: none;
-  z-index: 2;
+/* Destaque: filete navy no topo (camada de fundo, não pseudo) + elevação */
+.via-card--featured {
+  background:
+    linear-gradient(90deg, transparent, var(--via-chart-ink-2), var(--via-chart-ink), transparent) top / 100% 2px no-repeat,
+    radial-gradient(560px 260px at 0% 0%, var(--via-navy-04), transparent 62%),
+    var(--via-material-regular-fill);
+  box-shadow: var(--via-material-regular-lift);
 }
 
 .via-card--dark {
   color: var(--via-white);
   background:
+    radial-gradient(540px 240px at 0% 0%, rgba(255, 255, 255, 0.06), transparent 60%),
     radial-gradient(ellipse 60% 70% at 12% 0%, rgba(46,76,118,0.55) 0%, transparent 60%),
     radial-gradient(ellipse 50% 60% at 95% 8%, rgba(30,58,95,0.50) 0%, transparent 60%),
     linear-gradient(135deg, var(--via-navy) 0%, var(--via-navy-deep) 100%);
@@ -115,21 +71,6 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.10) inset,
     0 24px 56px -22px var(--via-shadow-ink-40);
-}
-
-.via-card--dark::before {
-  background: radial-gradient(540px 240px at 0% 0%, rgba(255, 255, 255, 0.06), transparent 60%);
-  opacity: 1;
-}
-
-/* Shine sweep dark variant · branco sutil */
-.via-card--hoverable.via-card--dark::after {
-  background: linear-gradient(
-    100deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.10) 50%,
-    transparent 100%
-  );
 }
 
 /* ===== Hoverable ===== */
@@ -141,9 +82,12 @@
   transform: translateY(-3px);
   border-color: var(--via-navy-16);
   box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
+    0 2px 4px var(--via-shadow-ink-06),
     0 22px 42px -16px var(--via-shadow-ink-20);
+}
+
+.via-card--hoverable:is(.via-card--glass, .via-card--atmospheric, .via-card--featured):hover {
+  box-shadow: var(--via-material-regular-lift);
 }
 
 .via-card--hoverable:active {
@@ -158,7 +102,11 @@
     0 32px 64px -22px var(--via-shadow-ink-60);
 }
 
+/* Reflexo do card navy · mais forte (o branco do --via-specular claro some no navy) */
+.via-card--hoverable.via-card--dark {
+  --via-specular: radial-gradient(closest-side, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .via-card--hoverable::after { display: none; }
   .via-card { transition: none !important; }
 }

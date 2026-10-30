@@ -257,24 +257,121 @@
    um escuro PARCIAL (só fundo/texto principal) em quem usava o CSS sem React. */
 
 /* =================================================
-   GLASS SURFACES · tokens semânticos (resolvem dark sozinhos)
+   VIDRO LÍQUIDO · 4 MATERIAIS POR ELEVAÇÃO (rodada 2 · 30/out)
    =================================================
-   --via-glass-card  · superfície de card glass forte
-   --via-glass-card-2· superfície de card glass média (alt)
-   Componentes usam var(--via-glass-card) em vez de gradient
-   branco hardcoded → adapta light/dark automaticamente.
-   Substituição em massa feita via scripts/migrate-glass.mjs
+   Um material = fill + blur(+saturate) + ring + rim + sombra (+ lift).
+   Use o material da ELEVAÇÃO da peça — nunca blur/opacidade à mão:
+
+     chrome   barra/sidebar/tab bar · translúcido de verdade (o conteúdo
+              passa desfocado por baixo)
+     regular  card/painel no conteúdo · piso de legibilidade pra texto
+     thick    tudo que flutua por cima: Modal, Sheet, Drawer, Popover,
+              menus, listbox, Command, Toast, Tooltip, HoverCard ·
+              piso ≥ .88 branco + tinta navy-02 + grão (nada de cinza-lama)
+     control  pill, botão secundário, input/segmented sobre vidro
+
+   Partes de cada material (--via-material-<nome>-<parte>):
+     -fill    background (gradiente · pode ter várias camadas)
+     -blur    valor de backdrop-filter (-webkit- SEMPRE primeiro)
+     -ring    borda hairline (shorthand de border)
+     -rim     gradiente do ARO especular · pinta num pseudo-elemento
+              mascarado (ver --via-rim-mask): luz forte no canto de cima
+              à esquerda, some no meio da lateral, volta fraca embaixo
+     -shadow  brilho interno no topo + linha de tinta na base + drop
+     -lift    sombra de hover (regular e control)
+
+   ESCURO não inverte o claro: vidro escuro é camada que ESCURECE o fundo
+   (fill navy-tinta .78-.92 + brightness < 1 no blur). É o que dá piso de
+   leitura sobre conteúdo movimentado (antes: branco 2-10% → 1,7:1).
+
+   Os nomes antigos (--via-glass-card, -blur, -bar, -ring, -shadow…) seguem
+   valendo como apelido do material certo — quem copiou este CSS não quebra.
    ================================================= */
 :root {
-  --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%);  /* sheen de topo embutido · luz no vidro */
-  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62));
-  /* Vidro de BARRA/chrome (nav sticky, toolbar, painel flutuante) · translúcido
-     DE VERDADE pra o conteúdo passar DESFOCADO por baixo (frosted estilo Apple).
-     Só usar com backdrop-filter blur. NÃO usar em card de conteúdo (texto
-     precisa de fundo mais sólido). */
-  --via-glass-bar:    rgba(255, 255, 255, 0.6);
-  /* Superfície branca FIXA · pra botões/cards SOBRE hero navy (navy nos
-     2 temas) · NÃO adapta · sempre clara porque texto sobre ela é navy */
+  /* ---- CHROME · header, sidebar, tab bar ---- */
+  --via-material-chrome-fill:   linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.72));
+  --via-material-chrome-blur:   blur(24px) saturate(180%);
+  --via-material-chrome-ring:   0.5px solid rgba(10, 31, 59, 0.10);
+  --via-material-chrome-rim:    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 60%);
+  --via-material-chrome-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 24px -18px var(--via-shadow-ink-20);
+
+  /* ---- REGULAR · card/painel de conteúdo ---- */
+  --via-material-regular-fill:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.90) 0%, rgba(240, 244, 250, 0.80) 100%),
+    linear-gradient(rgba(10, 31, 59, 0.02), rgba(10, 31, 59, 0.02));
+  --via-material-regular-blur: blur(24px) saturate(170%);
+  --via-material-regular-ring: 1px solid rgba(10, 31, 59, 0.09);
+  --via-material-regular-rim:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 16%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, 0.3) 100%);
+  --via-material-regular-shadow:
+    inset 0 20px 28px -26px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 var(--via-shadow-ink-06),
+    0 1px 2px var(--via-shadow-ink-06),
+    0 14px 32px -16px var(--via-shadow-ink-20);
+  --via-material-regular-lift:
+    inset 0 20px 28px -26px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 var(--via-shadow-ink-06),
+    0 2px 4px var(--via-shadow-ink-06),
+    0 24px 48px -20px var(--via-shadow-ink-30);
+
+  /* ---- THICK · overlays (piso ≥ .88 + navy-02 + grão) ---- */
+  --via-material-thick-fill:
+    var(--via-grain),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.90) 100%),
+    linear-gradient(rgba(10, 31, 59, 0.02), rgba(10, 31, 59, 0.02));
+  --via-material-thick-blur: blur(32px) saturate(160%);
+  --via-material-thick-ring: 1px solid rgba(10, 31, 59, 0.10);
+  --via-material-thick-rim:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.45) 16%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, 0.35) 100%);
+  --via-material-thick-shadow:
+    inset 0 24px 32px -28px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 var(--via-shadow-ink-06),
+    0 32px 64px -24px var(--via-shadow-ink-30),
+    0 12px 28px -14px var(--via-shadow-ink-14);
+  /* cor sólida equivalente ao thick · peças pequenas demais pra blur
+     (setinha de tooltip/popover) */
+  --via-material-thick-solid: rgba(255, 255, 255, 0.94);
+
+  /* ---- CONTROL · pill, botão secundário, input sobre vidro ---- */
+  --via-material-control-fill: linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.72));
+  --via-material-control-blur: blur(12px) saturate(170%);
+  --via-material-control-ring: 1px solid rgba(10, 31, 59, 0.12);
+  --via-material-control-rim:  linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.25));
+  --via-material-control-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 var(--via-shadow-ink-06),
+    0 1px 2px var(--via-shadow-ink-06),
+    0 4px 10px -4px var(--via-shadow-ink-10);
+  --via-material-control-lift:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 var(--via-shadow-ink-06),
+    0 2px 4px var(--via-shadow-ink-06),
+    0 10px 22px -8px var(--via-shadow-ink-20);
+
+  /* ---- PEÇAS COMPARTILHADAS ---- */
+  /* Scrim de overlay · mais leve e mais desfocado (antes .42-.58 navy chapado) */
+  --via-scrim:      radial-gradient(circle at 50% 35%, rgba(10, 31, 59, 0.26), rgba(10, 31, 59, 0.36));
+  --via-scrim-blur: blur(16px) saturate(120%);
+  /* Máscara do aro: pinta só o anel de 1px (padding) do pseudo-elemento.
+     Uso: -webkit-mask: var(--via-rim-mask); -webkit-mask-composite: xor; mask-composite: exclude; */
+  --via-rim-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  /* Reflexo que segue o ponteiro (Button/Card) · só opacity + transform */
+  --via-specular: radial-gradient(closest-side, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  /* Blur da peça com LENTE (.via-glass--lens) · mais fino que o do material
+     pra refração da borda aparecer; a leitura continua garantida pelo fill */
+  --via-lens-blur: blur(10px) saturate(170%);
+  /* Grão 2-3% · SÓ no material thick (já embutido em -thick-fill) */
+  --via-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .04 0 0 0 0 .12 0 0 0 0 .23 .13 0 0 0 -.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+
+  /* ---- APELIDOS (nomes antigos → material certo) ---- */
+  --via-glass-card:   var(--via-material-regular-fill);
+  --via-glass-card-2: var(--via-material-chrome-fill);
+  --via-glass-bar:    var(--via-material-chrome-fill);
+
+  /* Superfície branca FIXA · pra peças SOBRE hero navy (navy nos 2 temas)
+     · NÃO adapta · sempre clara porque texto sobre ela é navy.
+     Botão secundário/pill NÃO usam mais isto (viravam laje branca no
+     escuro) — usam --via-material-control-*. */
   --via-surface-onnavy: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
   /* Edge highlight (a "linha de luz" no topo dos cards glass) · forte em
      light, sutil em dark · senão vira moldura branca berrante no escuro */
@@ -288,9 +385,65 @@
 }
 
 :root[data-theme="dark"] {
-  --via-glass-card:   linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0.022) 100%);  /* sheen de topo · luz no vidro escuro */
-  --via-glass-card-2: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018));
-  --via-glass-bar:    rgba(11, 18, 32, 0.55);
+  /* Vidro escuro = camada que ESCURECE · navy-tinta densa + brightness < 1 */
+  --via-material-chrome-fill:   linear-gradient(180deg, rgba(17, 26, 42, 0.84), rgba(11, 18, 32, 0.76));
+  --via-material-chrome-blur:   blur(24px) saturate(140%) brightness(0.8);
+  --via-material-chrome-ring:   0.5px solid rgba(255, 255, 255, 0.08);
+  --via-material-chrome-rim:    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 60%);
+  --via-material-chrome-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 24px -18px var(--via-shadow-ink-40);
+
+  --via-material-regular-fill: linear-gradient(180deg, rgba(24, 36, 56, 0.80) 0%, rgba(11, 18, 32, 0.86) 100%);
+  --via-material-regular-blur: blur(28px) saturate(130%) brightness(0.75);
+  --via-material-regular-ring: 1px solid rgba(255, 255, 255, 0.08);
+  --via-material-regular-rim:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.12) 16%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, 0.10) 100%);
+  --via-material-regular-shadow:
+    inset 0 20px 28px -26px rgba(255, 255, 255, 0.10),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.30),
+    0 1px 2px var(--via-shadow-ink-10),
+    0 16px 36px -16px var(--via-shadow-ink-40);
+  --via-material-regular-lift:
+    inset 0 20px 28px -26px rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.30),
+    0 2px 4px var(--via-shadow-ink-14),
+    0 28px 56px -20px var(--via-shadow-ink-60);
+
+  --via-material-thick-fill:
+    var(--via-grain),
+    linear-gradient(180deg, rgba(28, 40, 62, 0.88) 0%, rgba(14, 21, 37, 0.92) 100%);
+  --via-material-thick-blur: blur(32px) saturate(130%) brightness(0.7);
+  --via-material-thick-ring: 1px solid rgba(255, 255, 255, 0.10);
+  --via-material-thick-rim:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0.14) 16%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, 0.12) 100%);
+  --via-material-thick-shadow:
+    inset 0 24px 32px -28px rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.30),
+    0 32px 64px -24px var(--via-shadow-ink-60),
+    0 12px 28px -14px var(--via-shadow-ink-30);
+  --via-material-thick-solid: rgba(17, 25, 42, 0.95);
+
+  /* Controle escuro de verdade (antes: laje branca fixa no tema escuro) */
+  --via-material-control-fill: linear-gradient(180deg, rgba(46, 60, 86, 0.82), rgba(31, 43, 66, 0.82));
+  --via-material-control-blur: blur(12px) saturate(130%) brightness(0.85);
+  --via-material-control-ring: 1px solid rgba(255, 255, 255, 0.14);
+  --via-material-control-rim:  linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.06));
+  --via-material-control-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    0 1px 2px var(--via-shadow-ink-20),
+    0 4px 12px -4px var(--via-shadow-ink-30);
+  --via-material-control-lift:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    0 2px 4px var(--via-shadow-ink-20),
+    0 10px 22px -8px var(--via-shadow-ink-40);
+
+  /* Scrim no escuro é tinta PRETA (navy sobre navy não separa nada) */
+  --via-scrim: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.56));
+  --via-specular: radial-gradient(closest-side, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0));
+  --via-lens-blur: blur(12px) saturate(130%) brightness(0.75);
+  --via-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .12 0 0 0 -.045'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+
   /* onnavy NÃO muda · permanece branco mesmo em dark */
   --via-edge-hi: rgba(255, 255, 255, 0.08);
   --via-edge-lo: rgba(255, 255, 255, 0.05);
@@ -448,24 +601,17 @@
   --via-data-axis:   var(--via-navy-20);   /* linha de base/eixo */
   --via-data-ink:    var(--via-text-muted);/* rótulo de eixo — texto usa token de TEXTO, nunca a cor da série */
 
-  /* ========== LIQUID GLASS · receitas prontas ==================
-     Assinatura da marca. Use a receita inteira (superfície + borda fina +
-     linha de luz no topo + sombra navy), não só o fundo.
-       via-glass-card  card/painel de conteúdo (mais sólido, texto legível)
-       via-glass-bar   nav sticky/toolbar/overlay (translúcido de verdade)
+  /* ========== LIQUID GLASS · apelidos das receitas antigas ======
+     Os nomes de antes continuam funcionando, agora apontando pro material
+     certo (ver "4 MATERIAIS POR ELEVAÇÃO" acima). Peça nova: use direto
+     --via-material-<chrome|regular|thick|control>-*.
      Vidro só "aparece" com algo atrás pra desfocar — sobre fundo
      atmosférico/escuro/conteúdo rolando. Sobre branco liso ele some. */
-  --via-glass-blur:      blur(24px) saturate(175%);
-  --via-glass-blur-bar:  blur(26px) saturate(185%);
-  --via-glass-ring:      1px solid var(--via-border-soft);
-  --via-glass-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 12px 32px -14px var(--via-shadow-ink-14),
-    0 2px 8px -4px var(--via-shadow-ink-06);
-  --via-glass-shadow-lift:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 24px 56px -20px var(--via-shadow-ink-20),
-    0 4px 12px -6px var(--via-shadow-ink-08);
+  --via-glass-blur:        var(--via-material-regular-blur);
+  --via-glass-blur-bar:    var(--via-material-chrome-blur);
+  --via-glass-ring:        var(--via-material-regular-ring);
+  --via-glass-shadow:      var(--via-material-regular-shadow);
+  --via-glass-shadow-lift: var(--via-material-regular-lift);
 
   /* ========== BORDERS ========================================= */
   --via-border-fine:   0.5px solid var(--via-border-hairline);
@@ -702,60 +848,82 @@ a:hover { text-decoration: underline; }
    GLASS — light-first
    ============================================================= */
 
-/* Light glass: white-tinted, used on gray-50 / gray-100 surfaces */
+/* Utilitários de vidro pra HTML cru · cada um é UM dos 4 materiais (antes:
+   receita própria 16px/160% + borda branca 80%, paralela aos tokens).
+     .via-glass         regular · card/painel
+     .via-glass-strong  thick   · overlay, hero sobre fotografia
+     .via-glass-dark    vidro escuro FIXO (momento navy full-bleed, 2 temas)
+     .via-liquid        control · pílula de status/announcement */
 .via-glass {
-  background: linear-gradient(180deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.42) 100%);
-  -webkit-backdrop-filter: var(--via-blur-md);
-  backdrop-filter: var(--via-blur-md);
-  border: 1px solid rgba(255,255,255,0.80);
+  --via-rim: var(--via-material-regular-rim);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
   border-radius: var(--via-radius-lg);
-  box-shadow: var(--via-shadow-glass-light);
+  box-shadow: var(--via-material-regular-shadow);
 }
 
 .via-glass-strong {
-  background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.58) 100%);
-  -webkit-backdrop-filter: var(--via-blur-lg);
-  backdrop-filter: var(--via-blur-lg);
-  border: 1px solid rgba(255,255,255,0.95);
+  --via-rim: var(--via-material-thick-rim);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-lg);
-  box-shadow: var(--via-shadow-glass-light);
+  box-shadow: var(--via-material-thick-shadow);
 }
 
-/* Dark glass: used in the rare full-bleed navy moments (footer, CTA) */
+/* Momento navy (footer, CTA full-bleed) · escuro nos 2 temas, então pina o
+   próprio material escuro (camada que escurece + brightness) em vez de herdar */
 .via-glass-dark {
-  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 100%);
-  -webkit-backdrop-filter: var(--via-blur-md);
-  backdrop-filter: var(--via-blur-md);
-  border: 1px solid rgba(255,255,255,0.18);
+  --via-rim: linear-gradient(155deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.12) 16%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, 0.10) 100%);
+  background: linear-gradient(180deg, rgba(24, 36, 56, 0.62) 0%, rgba(11, 18, 32, 0.72) 100%);
+  -webkit-backdrop-filter: blur(28px) saturate(130%) brightness(0.8);
+  backdrop-filter: blur(28px) saturate(130%) brightness(0.8);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: var(--via-radius-lg);
   box-shadow: var(--via-shadow-glass-dark);
   color: var(--via-white);
 }
 
-/* Liquid pill — for status / announcement labels */
 .via-liquid {
-  background: linear-gradient(180deg, rgba(255,255,255,0.80), rgba(255,255,255,0.55));
-  -webkit-backdrop-filter: var(--via-blur-md);
-  backdrop-filter: var(--via-blur-md);
-  border: 1px solid rgba(255,255,255,0.95);
+  --via-rim: var(--via-material-control-rim);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
   border-radius: var(--via-radius-pill);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(10,31,59,0.08);
+  box-shadow: var(--via-material-control-shadow);
 }
 
-/* Dark: vidro branco hardcoded vira vidro escuro translúcido (senão estes
-   utilitários viram blocos brancos berrantes no tema escuro) */
-[data-theme="dark"] .via-glass {
-  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
-  border-color: rgba(255,255,255,0.10);
+/* ARO ESPECULAR · gradiente num pseudo-elemento mascarado no anel de 1px
+   (luz forte no canto de cima à esquerda → some no meio → volta fraca na base).
+   :where() = especificidade zero: position de quem usa (sticky, fixed) vence. */
+:where(.via-glass, .via-glass-strong, .via-glass-dark, .via-liquid) { position: relative; }
+:is(.via-glass, .via-glass-strong, .via-glass-dark, .via-liquid)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--via-rim);
+  -webkit-mask: var(--via-rim-mask);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
-[data-theme="dark"] .via-glass-strong {
-  background: linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.05) 100%);
-  border-color: rgba(255,255,255,0.14);
-}
-[data-theme="dark"] .via-liquid {
-  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
-  border-color: rgba(255,255,255,0.14);
-  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 4px 16px rgba(0,0,0,0.3);
+
+/* LENTE (opt-in · só Chromium) · refração SVG na borda do vidro.
+   enableGlassLens() (lib) testa o suporte, injeta o filtro #via-lens e liga
+   .via-lens-on no <html>. Sem isso — Safari, Firefox, menos transparência —
+   fica o blur normal do material. Com lente o blur afina (--via-lens-blur)
+   pra a refração da borda aparecer; o fill do material segura a leitura.
+   Barra: --via-lens: url(#via-lens-bar) (só dobra em y) e, se quiser o blur
+   cheio, --via-lens-base: var(--via-material-chrome-blur).
+   Só 1-2 peças-assinatura por tela: é caro e chama atenção. */
+.via-lens-on .via-glass--lens {
+  backdrop-filter: var(--via-lens, url(#via-lens)) var(--via-lens-base, var(--via-lens-blur));
 }
 
 /* .vds-onlight · superfície SEMPRE clara (demos de vidro claro, peças que
@@ -854,28 +1022,55 @@ a:hover { text-decoration: underline; }
    a curva fecha aqui — nenhum componente precisa saber disso.
    ============================================================= */
 @media (prefers-reduced-transparency: reduce) {
+  /* os 4 materiais viram superfície sólida, sem blur e sem grão · os
+     apelidos antigos (--via-glass-*) seguem junto porque apontam pra eles */
   :root,
   :root[data-theme='dark'] {
-    --via-glass-blur: none;
-    --via-glass-blur-bar: none;
-    --via-glass-card: var(--via-surface);
-    --via-glass-card-2: var(--via-surface);
-    --via-glass-bar: var(--via-surface);
+    --via-material-chrome-fill: var(--via-surface);
+    --via-material-regular-fill: var(--via-surface);
+    --via-material-thick-fill: var(--via-surface-elev);
+    --via-material-thick-solid: var(--via-surface-elev);
+    --via-material-control-fill: var(--via-surface);
+    --via-material-chrome-blur: none;
+    --via-material-regular-blur: none;
+    --via-material-thick-blur: none;
+    --via-material-control-blur: none;
+    --via-scrim: rgba(10, 31, 59, 0.5);
+    --via-scrim-blur: none;
+    --via-lens-blur: none;
+  }
+  :root[data-theme='dark'] {
+    --via-scrim: rgba(0, 0, 0, 0.62);
+  }
+  /* único vidro com valor próprio (momento navy fixo) */
+  .via-glass-dark {
+    background: var(--via-navy-deep);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 }
 @media (prefers-contrast: more) {
   :root {
     --via-border-soft: rgba(10, 31, 59, 0.4);
+    --via-material-chrome-ring: 1px solid rgba(10, 31, 59, 0.4);
+    --via-material-regular-ring: 1px solid rgba(10, 31, 59, 0.4);
+    --via-material-thick-ring: 1px solid rgba(10, 31, 59, 0.4);
+    --via-material-control-ring: 1px solid rgba(10, 31, 59, 0.4);
   }
   :root[data-theme='dark'] {
     --via-border-soft: rgba(255, 255, 255, 0.45);
+    --via-material-chrome-ring: 1px solid rgba(255, 255, 255, 0.45);
+    --via-material-regular-ring: 1px solid rgba(255, 255, 255, 0.45);
+    --via-material-thick-ring: 1px solid rgba(255, 255, 255, 0.45);
+    --via-material-control-ring: 1px solid rgba(255, 255, 255, 0.45);
   }
-  /* superfície quase-sólida + borda definida (via glass-ring, que deriva
-     de border-soft) — vidro decorativo não pode custar legibilidade */
+  /* superfície sólida + borda definida — vidro decorativo não pode custar
+     legibilidade */
   :root,
   :root[data-theme='dark'] {
-    --via-glass-card: var(--via-surface);
-    --via-glass-card-2: var(--via-surface);
-    --via-glass-bar: var(--via-surface);
+    --via-material-chrome-fill: var(--via-surface);
+    --via-material-regular-fill: var(--via-surface);
+    --via-material-thick-fill: var(--via-surface-elev);
+    --via-material-control-fill: var(--via-surface);
   }
 }

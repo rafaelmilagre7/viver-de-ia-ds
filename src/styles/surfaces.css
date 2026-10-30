@@ -13,7 +13,8 @@
 
    REGRAS DA CASA aplicadas aqui:
    · borda fina UNIFORME nos 4 lados (nunca barra lateral colorida)
-   · liquid glass = superfície + blur + linha de luz no topo + sombra navy
+   · liquid glass = um dos 4 MATERIAIS de tokens.css (chrome · regular ·
+     thick · control): fill + blur + ring + aro especular + sombra
    · cantos pela escala de token (hierarquia pai > filho)
    · todo controle responde: hover, active e focus-visible
    · motion pelos tokens (--via-dur / --via-ease-*)
@@ -21,7 +22,7 @@
 
 /* ---------------------------------------------------------------
    1. via-pill-link · link/ação em pill (Spotify, "ver case", tags
-      clicáveis). Substitui o pill chapado feito à mão.
+      clicáveis). Substitui o pill chapado feito à mão. Material CONTROL.
    --------------------------------------------------------------- */
 .via-pill-link {
   display: inline-flex;
@@ -29,13 +30,11 @@
   gap: var(--via-space-1_5);
   padding: 7px var(--via-space-3_5);
   border-radius: var(--via-radius-pill);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: var(--via-glass-blur);
-  backdrop-filter: var(--via-glass-blur);
-  border: var(--via-glass-ring);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 2px 6px -3px var(--via-shadow-ink-10);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
+  box-shadow: var(--via-material-control-shadow);
   font-family: var(--via-font);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -52,17 +51,12 @@
 .via-pill-link:hover {
   transform: translateY(-1px);
   border-color: var(--via-navy-20);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    0 8px 20px -10px var(--via-shadow-ink-20),
-    0 2px 6px -3px var(--via-shadow-ink-10);
+  box-shadow: var(--via-material-control-lift);
 }
 .via-pill-link:active { transform: translateY(0); }
 .via-pill-link:focus-visible {
   outline: none;
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    var(--via-shadow-focus);
+  box-shadow: var(--via-material-control-shadow), var(--via-shadow-focus);
 }
 /* Variante sólida · quando o pill É a ação principal */
 .via-pill-link--solid {
@@ -79,7 +73,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 12px 26px -10px var(--via-shadow-ink-60);
 }
-/* Sobre fundo navy/escuro · vidro claro translúcido */
+/* Sobre fundo navy/escuro FIXO (momento navy nos 2 temas) · vidro claro translúcido */
 .via-pill-link--on-dark {
   background: rgba(255, 255, 255, 0.10);
   border-color: rgba(255, 255, 255, 0.20);
@@ -95,16 +89,17 @@
 /* ---------------------------------------------------------------
    2. via-row-card · linha de lista com corpo (timestamps, itens de
       agenda, recursos citados). Era o retângulo cinza chapado.
+      Material REGULAR.
    --------------------------------------------------------------- */
 .via-row-card {
   position: relative;
   padding: var(--via-space-4) var(--via-space-4_5);
   border-radius: var(--via-radius-md);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: var(--via-glass-blur);
-  backdrop-filter: var(--via-glass-blur);
-  border: var(--via-glass-ring);
-  box-shadow: var(--via-glass-shadow);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
   transition:
     transform var(--via-dur) var(--via-ease-snap),
     box-shadow var(--via-dur) var(--via-ease-snap),
@@ -113,7 +108,7 @@
 .via-row-card:hover {
   transform: translateY(-1px);
   border-color: var(--via-navy-20);
-  box-shadow: var(--via-glass-shadow-lift);
+  box-shadow: var(--via-material-regular-lift);
 }
 /* Quando a linha é clicável inteira */
 a.via-row-card,
@@ -127,23 +122,36 @@ button.via-row-card {
 }
 .via-row-card:focus-visible {
   outline: none;
-  box-shadow: var(--via-glass-shadow), var(--via-shadow-focus);
+  box-shadow: var(--via-material-regular-shadow), var(--via-shadow-focus);
 }
 
 /* ---------------------------------------------------------------
    3. via-tile · card/painel de conteúdo em vidro (destaque, stat,
-      bloco editorial). A receita completa, sem decorar.
+      bloco editorial). Material REGULAR completo, com aro especular.
    --------------------------------------------------------------- */
 .via-tile {
   position: relative;
   padding: var(--via-space-6) 26px;
   border-radius: var(--via-radius-lg);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: var(--via-glass-blur);
-  backdrop-filter: var(--via-glass-blur);
-  border: var(--via-glass-ring);
-  box-shadow: var(--via-glass-shadow);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
   isolation: isolate;
+}
+/* aro especular (gradiente mascarado no anel de 1px · ver tokens.css) */
+.via-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--via-material-regular-rim);
+  -webkit-mask: var(--via-rim-mask);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 /* Atmosfera radial navy — a assinatura da marca, sutil */
 .via-tile--atmos::before {
@@ -162,7 +170,7 @@ button.via-row-card {
 }
 .via-tile--lift:hover {
   transform: translateY(-2px);
-  box-shadow: var(--via-glass-shadow-lift);
+  box-shadow: var(--via-material-regular-lift);
 }
 
 /* ---------------------------------------------------------------
@@ -192,13 +200,16 @@ button.via-row-card {
 
 /* ---------------------------------------------------------------
    5. via-bar-glass · barra/chrome flutuante (nav sticky, toolbar).
-      Translúcido DE VERDADE — o conteúdo desfoca por baixo.
+      Material CHROME — translúcido de verdade, o conteúdo desfoca
+      por baixo. Lente opcional: + .via-glass--lens e
+      --via-lens: url(#via-lens-bar) (ver tokens.css).
    --------------------------------------------------------------- */
 .via-bar-glass {
-  background: var(--via-glass-bar);
-  -webkit-backdrop-filter: var(--via-glass-blur-bar);
-  backdrop-filter: var(--via-glass-blur-bar);
-  border-bottom: 0.5px solid var(--via-navy-12);
+  background: var(--via-material-chrome-fill);
+  -webkit-backdrop-filter: var(--via-material-chrome-blur);
+  backdrop-filter: var(--via-material-chrome-blur);
+  border-bottom: var(--via-material-chrome-ring);
+  box-shadow: var(--via-material-chrome-shadow);
 }
 
 /* Respeita quem pediu menos movimento */

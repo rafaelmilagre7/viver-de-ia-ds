@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
 import { Anchored } from '../_shared/Portal';
+import '../_shared/material.css';
 import './Select.css';
 
 export interface SelectOption {

@@ -15,24 +15,18 @@
 
 /* Separated variant: cards independentes liquid glass */
 .via-accordion--separated .via-accordion__item {
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
   border-radius: var(--via-radius-md);
   margin-bottom: var(--via-space-2);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-06),
-    0 4px 12px -8px var(--via-shadow-ink-06);
+  box-shadow: var(--via-material-regular-shadow);
   transition: box-shadow .26s ease, transform .26s ease;
 }
 
 .via-accordion--separated .via-accordion__item.is-open {
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-12),
-    0 8px 22px -10px var(--via-shadow-ink-14);
+  box-shadow: 0 0 0 0.5px var(--via-navy-12), var(--via-material-regular-shadow);
 }
 
 .via-accordion--separated .via-accordion__item:first-child {

@@ -1,0 +1,78 @@
+/* ============================================
+   Vidro líquido · ARO ESPECULAR · receita única da lib
+   ============================================
+   O aro é o gradiente do material (--via-rim) pintado num ::after mascarado
+   só no anel de 1px: luz forte no canto de cima à esquerda, some no meio da
+   lateral, volta fraca na base. Fica DENTRO do ring hairline do host — o ring
+   define a borda sobre branco, o aro acende sobre fundo movimentado.
+
+   O host precisa de position (relative/absolute/fixed) e escolhe o aro do
+   próprio material: --via-rim: var(--via-material-<thick|regular|control>-rim).
+   Lista fechada: peça de vidro nova entra aqui (e importa este arquivo). */
+:is(
+  .via-card--glass,
+  .via-card--atmospheric,
+  .via-card--featured,
+  .via-modal,
+  .via-sheet,
+  .via-drawer,
+  .via-cmd,
+  .via-toast,
+  .via-popover,
+  .via-hovercard,
+  .via-dropdown__menu,
+  .via-cm,
+  .via-select__list,
+  .via-ms__list,
+  .via-combobox__list,
+  .via-dp__pop,
+  .via-drp,
+  .via-cal,
+  .via-cp,
+  .via-btn--secondary
+)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--via-rim, var(--via-material-regular-rim));
+  -webkit-mask: var(--via-rim-mask);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ============================================
+   REFLEXO que segue o ponteiro (Button, Card hoverable)
+   ============================================
+   useSpecular() escreve --via-mx/--via-my (px, relativos ao host) só com
+   mouse, fora de reduced-motion. A camada anda por TRANSFORM e acende por
+   OPACITY — nada de animar left/background (o brilho antigo varria `left`
+   em 650-800ms a cada hover e repintava o vidro inteiro).
+   O host define o tamanho em --via-spec-size; a camada é o ::before. */
+:is(.via-btn, .via-card--hoverable)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--via-spec-size, 240px);
+  height: var(--via-spec-size, 240px);
+  border-radius: var(--via-radius-pill);
+  background: var(--via-specular);
+  transform: translate(
+    calc(var(--via-mx, -9999px) - var(--via-spec-size, 240px) / 2),
+    calc(var(--via-my, -9999px) - var(--via-spec-size, 240px) / 2)
+  );
+  opacity: 0;
+  transition: opacity var(--via-dur) var(--via-ease-out);
+  pointer-events: none;
+  z-index: -1; /* acima do fill do host (isolation: isolate), abaixo do conteúdo */
+}
+:is(.via-btn, .via-card--hoverable):hover::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.via-btn, .via-card--hoverable)::before { display: none; }
+}

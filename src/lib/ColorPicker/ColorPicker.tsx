@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { Pipette, Check } from 'lucide-react';
+import '../_shared/material.css';
 import './ColorPicker.css';
 
 export interface ColorSwatch {

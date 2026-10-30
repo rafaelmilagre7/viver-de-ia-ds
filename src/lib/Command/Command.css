@@ -16,33 +16,29 @@
 .via-cmd-scrim {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 50% 30%, rgba(10, 31, 59, 0.32), rgba(10, 31, 59, 0.46));
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
+  background: var(--via-scrim);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
   animation: via-cmd-scrim-in .26s var(--via-ease-snap) both;
 }
 
 .via-cmd {
+  --via-rim: var(--via-material-thick-rim);
   position: relative;
   width: 100%;
   max-width: 580px;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
-  backdrop-filter: blur(24px) saturate(150%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-lg);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 40px 80px -16px var(--via-shadow-ink-30),
-    0 16px 32px -12px var(--via-shadow-ink-20);
+  box-shadow: var(--via-material-thick-shadow);
   overflow: hidden;
   transform-origin: top center;
   animation: via-cmd-in var(--via-dur) var(--via-ease-out) both;
-  /* Materialização (WWDC): blur anima SÓ na entrada, curto —
-     sem will-change permanente — camada fixa muda a rasterização do blur
-     em GPU de software (flagrado no robô de CI) */
+  /* Materialização (WWDC): o material chega por escala + opacidade; o blur
+     não anima (caro) e não há will-change permanente — camada fixa muda a
+     rasterização do blur em GPU de software (flagrado no robô de CI) */
   display: flex;
   flex-direction: column;
   max-height: min(72vh, 640px);
@@ -81,6 +77,10 @@
   padding: var(--via-space-0_5) 0;
 }
 .via-cmd__head input::placeholder { color: var(--via-ink-3, #6B7891); }
+/* Foco: em vez de um anel QUADRADO no texto (brigava com o raio de 20px do
+   painel), a linha da cabeça acende · o cursor piscando completa o sinal */
+.via-cmd__head input:focus-visible { box-shadow: none; }
+.via-cmd__head:focus-within { box-shadow: inset 0 -1px 0 var(--via-navy-40); }
 
 .via-cmd__close {
   background: transparent;
@@ -136,7 +136,7 @@
   align-items: center;
   gap: var(--via-space-3);
   padding: 9px var(--via-space-2_5);
-  border-radius: var(--via-radius-sm);
+  border-radius: calc(var(--via-radius-lg) - var(--via-space-2)); /* concêntrico: painel 20 − lista 8 */
   cursor: pointer;
   transition: background 120ms ease;
 }
@@ -192,7 +192,8 @@
   gap: var(--via-space-3_5);
   padding: 9px var(--via-space-3_5);
   border-top: 0.5px solid var(--via-navy-08, rgba(10,31,59,0.08));
-  background: var(--via-gray-50, #F7F8FA);
+  /* tinta rasa do mesmo vidro (era cinza opaco: dois materiais num painel só) */
+  background: var(--via-navy-02);
   font-size: var(--via-fs-label);
   color: var(--via-ink-3, #6B7891);
   flex-shrink: 0;
@@ -212,12 +213,8 @@
 }
 
 @keyframes via-cmd-in {
-  from { opacity: 0; transform: translateY(-8px) scale(0.98);
-         -webkit-backdrop-filter: blur(0px) saturate(100%);
-         backdrop-filter: blur(0px) saturate(100%); }
-  to   { opacity: 1; transform: translateY(0) scale(1);
-         -webkit-backdrop-filter: blur(24px) saturate(150%);
-         backdrop-filter: blur(24px) saturate(150%); }
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 @keyframes via-cmd-scrim-in {
   from { opacity: 0; }

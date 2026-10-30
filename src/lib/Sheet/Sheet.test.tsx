@@ -299,7 +299,10 @@ describe('<Sheet /> · saída animada', () => {
     const step = () => {
       const cb = frames.shift();
       if (!cb) return false;
-      now += 16;
+      // quadro sempre 16ms DEPOIS do relógio real: com a suíte inteira rodando, o
+      // render do Sheet pode passar de 16ms e a mola (dt travado em ≥ 0) ganharia
+      // um 1º quadro "no passado" → dt 0 → transform parado (flaky sob carga)
+      now = Math.max(now, performance.now()) + 16;
       cb(now);
       return true;
     };

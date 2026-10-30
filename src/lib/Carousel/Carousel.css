@@ -44,16 +44,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
   color: var(--via-text-primary);
   cursor: pointer;
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 6px 14px -4px var(--via-shadow-ink-20);
+  box-shadow: var(--via-material-control-shadow);
   transition: transform var(--via-dur) var(--via-ease-spring), background var(--via-dur) ease, box-shadow var(--via-dur) ease;
 }
 
@@ -61,12 +58,8 @@
 .via-carousel__arrow--next { right: 14px; }
 
 .via-carousel__arrow:hover:not(:disabled) {
-  background: var(--via-glass-card);
   transform: translateY(-50%) scale(1.06);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 1) inset,
-    0 0 0 0.5px var(--via-navy-18),
-    0 10px 22px -6px var(--via-shadow-ink-30);
+  box-shadow: var(--via-material-control-lift);
 }
 
 .via-carousel__arrow:active:not(:disabled) {
@@ -91,16 +84,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
   color: var(--via-text-primary);
   cursor: pointer;
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 6px 14px -4px var(--via-shadow-ink-20);
+  box-shadow: var(--via-material-control-shadow);
   transition: transform var(--via-dur) var(--via-ease-spring), box-shadow var(--via-dur) ease;
 }
 

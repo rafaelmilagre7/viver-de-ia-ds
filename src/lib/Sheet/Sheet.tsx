@@ -4,6 +4,7 @@ import { useDialogFocus } from '../_shared/useDialogFocus';
 import { useDragDismiss } from '../_shared/useDragDismiss';
 import { useEscapeLayer, useScrollLock } from '../_shared/overlay';
 import { Portal } from '../_shared/Portal';
+import '../_shared/material.css';
 import './Sheet.css';
 
 export interface SheetProps {

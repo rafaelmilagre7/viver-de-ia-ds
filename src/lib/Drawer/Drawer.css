@@ -11,30 +11,27 @@
 .via-drawer-scrim {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 60% 40%, rgba(10, 31, 59, 0.42), rgba(10, 31, 59, 0.58));
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
+  background: var(--via-scrim);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
   animation: via-drawer-scrim-in .3s var(--via-ease-snap);
   pointer-events: auto;
 }
 
+/* Só opacity: animar backdrop-filter repinta o blur da tela inteira a cada quadro */
 @keyframes via-drawer-scrim-in {
-  from { opacity: 0; backdrop-filter: blur(0px); }
-  to   { opacity: 1; backdrop-filter: blur(10px) saturate(120%); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .via-drawer {
+  --via-rim: var(--via-material-thick-rim);
   position: absolute;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(140%);
-  backdrop-filter: blur(28px) saturate(140%);
-  border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-08),
-    0 32px 72px -16px var(--via-shadow-ink-40),
-    0 16px 32px -12px var(--via-shadow-ink-20);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
+  box-shadow: var(--via-material-thick-shadow);
   display: flex;
   flex-direction: column;
   pointer-events: auto;

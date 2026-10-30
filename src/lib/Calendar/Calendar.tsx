@@ -1,5 +1,6 @@
 import { useState, useMemo, useRef, useEffect, useId } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import '../_shared/material.css';
 import './Calendar.css';
 
 export interface CalendarProps {

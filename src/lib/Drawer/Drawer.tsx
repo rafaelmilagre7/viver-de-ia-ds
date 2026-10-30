@@ -4,6 +4,7 @@ import { useDragDismiss } from '../_shared/useDragDismiss';
 import { trapTab } from '../_shared/useDialogFocus';
 import { FOCUSABLE, useEscapeLayer, useScrollLock } from '../_shared/overlay';
 import { Portal } from '../_shared/Portal';
+import '../_shared/material.css';
 import './Drawer.css';
 
 type Side = 'right' | 'left' | 'bottom';

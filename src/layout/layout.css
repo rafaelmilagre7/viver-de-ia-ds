@@ -106,7 +106,8 @@
   background: var(--via-navy-04);
   border: 0.5px solid var(--via-navy-12);
   border-radius: var(--via-radius-pill);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   cursor: pointer;
   transition: var(--via-t);
 }
@@ -346,9 +347,9 @@
   position: fixed;
   inset: 64px 0 0;
   z-index: 40;
-  background: rgba(2, 22, 42, 0.55);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  background: var(--via-scrim);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
   animation: vds-cmdk-scrim-in 200ms var(--via-ease-out);
 }
 
@@ -361,9 +362,10 @@
     left: 0;
     bottom: 0;
     width: 300px;
-    background: var(--via-glass-card);
-    -webkit-backdrop-filter: var(--via-glass-blur);
-    backdrop-filter: var(--via-glass-blur);
+    /* gaveta flutuante = overlay → material thick */
+    background: var(--via-material-thick-fill);
+    -webkit-backdrop-filter: var(--via-material-thick-blur);
+    backdrop-filter: var(--via-material-thick-blur);
     border-right: 0.5px solid var(--via-navy-12);
     transform: translateX(-100%);
     transition: transform 320ms var(--via-ease-out);

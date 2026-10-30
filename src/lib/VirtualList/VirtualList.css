@@ -6,11 +6,11 @@
   overflow-y: auto;
   width: 100%;
   border-radius: var(--via-radius-md);
-  border: var(--via-glass-ring);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: var(--via-glass-blur);
-  backdrop-filter: var(--via-glass-blur);
-  box-shadow: var(--via-glass-shadow);
+  border: var(--via-material-regular-ring);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  box-shadow: var(--via-material-regular-shadow);
   scrollbar-width: thin;
   scrollbar-color: var(--via-navy-18) transparent;
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);

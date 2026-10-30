@@ -7,13 +7,13 @@ export default function ApiCard() {
     <ComponentDoc
       eyebrow="api · card"
       name="Card"
-      headline="superfície editorial · atmosphere by default · shine on hover"
-      description="Container principal pra grouping editorial. 5 variants visuais (default · glass · atmospheric · featured · dark). Variant `hoverable` adiciona shine sweep + lift -3px. Atmosphere radial top-left sutil por default. Shadow stack 3-camadas."
+      headline="papel por padrão · vidro regular em glass/atmospheric/featured · reflexo no hover"
+      description="Container principal pra grouping editorial. 5 variants visuais: default (superfície sólida, papel) · glass, atmospheric e featured (material regular do vidro líquido, com aro especular) · dark (mesh navy). `hoverable` adiciona lift -3px + reflexo que segue o ponteiro (só transform/opacity, só mouse)."
       importLine={`import { Card, type CardProps } from '@viverdeia/design-system';`}
       anatomy={[
-        { part: 'via-card', description: 'Container · border-radius lg · backdrop-blur · atmosphere radial via ::before' },
-        { part: '::before (atmosphere)', description: 'Radial gradient navy-04 top-left · opacity 0.6 default → 1 no hover' },
-        { part: '::after (shine sweep)', description: 'Só em via-card--hoverable · gradient branco diagonal' },
+        { part: 'via-card', description: 'Container · border-radius lg · sólido no default · material regular (fill + blur + ring + sombra) nas variantes de vidro' },
+        { part: '::before (reflexo)', description: 'Só em via-card--hoverable · mancha de luz que segue o ponteiro por transform · acende por opacity' },
+        { part: '::after (aro especular)', description: 'Variantes de vidro · gradiente mascarado no anel de 1px (forte no canto de cima à esquerda)' },
         { part: 'children', description: 'Conteúdo livre · padding default 22px×24px (use noPadding pra controle total)' },
       ]}
       meta={meta}
@@ -23,7 +23,7 @@ export default function ApiCard() {
       }}
       descriptions={{
         variant: 'Estilo visual. default=branco, dark=navy escuro com mesh',
-        hoverable: 'Ativa hover lift + shine sweep diagonal',
+        hoverable: 'Ativa hover lift + reflexo que segue o ponteiro',
         noPadding: 'Remove padding interno (use pra imagens fullbleed)',
         children: 'Conteúdo do card',
         as: 'Tag HTML renderizada · article, div ou section',
@@ -52,7 +52,7 @@ export default function ApiCard() {
         },
         {
           title: 'Card hoverable · clicável',
-          description: 'Adiciona shine sweep + lift no hover. Combine com `as="a"` pra card-link inteiro.',
+          description: 'Adiciona lift + reflexo que segue o ponteiro no hover. Combine com `as="a"` pra card-link inteiro.',
           preview: (
             <Card hoverable>
               <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-text-primary)' }}>Caso · Efizi</h3>

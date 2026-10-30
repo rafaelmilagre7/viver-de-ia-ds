@@ -6,21 +6,18 @@
 }
 
 .via-cm {
+  --via-rim: var(--via-material-thick-rim);
   position: fixed;
   z-index: var(--via-z-dropdown, 1100);
   min-width: 200px;
   max-width: 280px;
   padding: 5px;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-sm);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 22px 44px -16px var(--via-shadow-ink-20),
-    0 8px 18px -10px var(--via-shadow-ink-14);
+  box-shadow: var(--via-material-thick-shadow);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   /* Origem espacial (WWDC): o menu nasce do ponto do clique — o canto
      superior esquerdo ancora no cursor */
@@ -58,7 +55,7 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.006em;
   color: var(--via-text-primary);
-  border-radius: var(--via-radius-xs);
+  border-radius: calc(var(--via-radius-sm) - 5px); /* concêntrico: menu 10 − padding 5 */
   text-align: left;
   transition: background .15s ease, color .15s ease;
 }

@@ -3,6 +3,7 @@ import { Search, X, CornerDownLeft } from 'lucide-react';
 import { useDialogFocus } from '../_shared/useDialogFocus';
 import { useEscapeLayer, useScrollLock } from '../_shared/overlay';
 import { Portal } from '../_shared/Portal';
+import '../_shared/material.css';
 import './Command.css';
 
 export interface CommandItem {

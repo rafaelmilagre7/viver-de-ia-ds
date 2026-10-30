@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import { bridgeTab, useEscapeLayer } from '../_shared/overlay';
 import { Anchored, Portal } from '../_shared/Portal';
+import '../_shared/material.css';
 import './HoverCard.css';
 
 export interface HoverCardProps {

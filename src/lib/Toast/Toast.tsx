@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Check, AlertCircle, X, Info } from 'lucide-react';
 import { useDragDismiss } from '../_shared/useDragDismiss';
 import '../_shared/sr-only.css';
+import '../_shared/material.css';
 import './Toast.css';
 
 type Variant = 'default' | 'success' | 'warning' | 'destructive';

@@ -12,7 +12,12 @@
  * (aconteceu no style.css da lib · 54 de 61 regras de vidro sem blur no Chrome).
  * Na ordem prefixo → padrão o minificador mantém os dois.
  *
- * Regra: em todo bloco com os dois, o `-webkit-backdrop-filter` vem ANTES.
+ * Regra 1: em todo bloco com os dois, o `-webkit-backdrop-filter` vem ANTES.
+ *
+ * Regra 2 (rodada 2 · vidro líquido): nenhum `blur(` cru no CSS da lib
+ * (src/lib). Todo vidro da lib usa um dos 4 materiais —
+ * var(--via-material-<chrome|regular|thick|control>-blur) ou --via-scrim-blur.
+ * Receita à mão foi o que espalhou 15 blur/saturate diferentes por 53 peças.
  *
  * Uso:   node scripts/glass-order.mjs
  * CI:    sai com código 1 se achar a ordem invertida.
@@ -41,10 +46,16 @@ const STD = /(?<![-\w])backdrop-filter\s*:/g;
 const PREFIXED = /-webkit-backdrop-filter\s*:/g;
 
 const findings = [];
+const rawBlur = [];
 for (const file of DIRS.flatMap((d) => walk(path.join(ROOT, d)))) {
   const rel = path.relative(ROOT, file);
   // comentários viram espaço (preserva offsets pra calcular a linha)
   const css = fs.readFileSync(file, 'utf8').replace(/\/\*[\s\S]*?\*\//g, (c) => c.replace(/[^\n]/g, ' '));
+  if (rel.startsWith(path.join('src', 'lib') + path.sep)) {
+    for (const m of css.matchAll(/\bblur\(/g)) {
+      rawBlur.push(`${rel}:${css.slice(0, m.index).split('\n').length}`);
+    }
+  }
   for (const block of css.matchAll(/\{([^{}]*)\}/g)) {
     const body = block[1];
     const std = [...body.matchAll(STD)].map((m) => m.index);
@@ -56,12 +67,21 @@ for (const file of DIRS.flatMap((d) => walk(path.join(ROOT, d)))) {
   }
 }
 
-if (findings.length === 0) {
+if (findings.length === 0 && rawBlur.length === 0) {
   console.log('✓ glass-order: todo -webkit-backdrop-filter vem antes do backdrop-filter.');
+  console.log('✓ glass-material: nenhum blur( cru na lib — todo vidro usa um dos 4 materiais.');
   process.exit(0);
 }
 
-console.error(`✗ glass-order: ${findings.length} bloco(s) com backdrop-filter ANTES do -webkit-:\n`);
-for (const f of findings) console.error(`  ${f}`);
-console.error('\nInverta: -webkit-backdrop-filter primeiro, backdrop-filter por último (senão o minify apaga o vidro).');
+if (findings.length) {
+  console.error(`✗ glass-order: ${findings.length} bloco(s) com backdrop-filter ANTES do -webkit-:\n`);
+  for (const f of findings) console.error(`  ${f}`);
+  console.error('\nInverta: -webkit-backdrop-filter primeiro, backdrop-filter por último (senão o minify apaga o vidro).\n');
+}
+if (rawBlur.length) {
+  console.error(`✗ glass-material: ${rawBlur.length} blur( cru no CSS da lib:\n`);
+  for (const f of rawBlur) console.error(`  ${f}`);
+  console.error('\nUse o material da elevação: var(--via-material-<chrome|regular|thick|control>-blur)');
+  console.error('ou var(--via-scrim-blur) — definidos em src/styles/tokens.css.');
+}
 process.exit(1);

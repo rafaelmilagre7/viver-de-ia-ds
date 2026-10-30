@@ -24,9 +24,9 @@
   gap: var(--via-space-2_5);
   width: 100%;
   padding: var(--via-space-1_5) var(--via-space-2_5) var(--via-space-1_5) var(--via-space-3);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: var(--via-radius-sm);
   color: var(--via-text-primary);
@@ -63,9 +63,8 @@
 }
 
 .via-ms__trigger.is-open {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   border-color: var(--via-navy);
-  background: var(--via-surface-onnavy);
+  background: var(--via-material-control-fill);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 3px var(--via-navy-10),
@@ -153,6 +152,7 @@
 }
 
 .via-ms__list {
+  --via-rim: var(--via-material-thick-rim);
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -161,15 +161,12 @@
   margin: 0;
   padding: var(--via-space-1);
   list-style: none;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-sm);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 22px 44px -16px var(--via-shadow-ink-20);
+  box-shadow: var(--via-material-thick-shadow);
   max-height: 280px;
   overflow-y: auto;
   animation: via-ms-in var(--via-dur) var(--via-ease-out);

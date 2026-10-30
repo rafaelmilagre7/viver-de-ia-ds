@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Calendar } from '../Calendar/Calendar';
+import '../_shared/material.css';
 import './DateRangePicker.css';
 
 export interface DateRange {

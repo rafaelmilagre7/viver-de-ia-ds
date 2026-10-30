@@ -3,6 +3,7 @@ import { Calendar as CalIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import { trapTab } from '../_shared/useDialogFocus';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
 import { Anchored } from '../_shared/Portal';
+import '../_shared/material.css';
 import './DatePicker.css';
 
 export interface DatePickerProps {

@@ -221,7 +221,37 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-glass-bar",
     "css": "--via-glass-bar",
-    "value": "rgba(255, 255, 255, 0.6)",
+    "value": "var(--via-material-chrome-fill)",
+    "category": "color"
+  },
+  {
+    "name": "via-glass-blur",
+    "css": "--via-glass-blur",
+    "value": "var(--via-material-regular-blur)",
+    "category": "color"
+  },
+  {
+    "name": "via-glass-blur-bar",
+    "css": "--via-glass-blur-bar",
+    "value": "var(--via-material-chrome-blur)",
+    "category": "color"
+  },
+  {
+    "name": "via-glass-card",
+    "css": "--via-glass-card",
+    "value": "var(--via-material-regular-fill)",
+    "category": "color"
+  },
+  {
+    "name": "via-glass-card-2",
+    "css": "--via-glass-card-2",
+    "value": "var(--via-material-chrome-fill)",
+    "category": "color"
+  },
+  {
+    "name": "via-glass-ring",
+    "css": "--via-glass-ring",
+    "value": "var(--via-material-regular-ring)",
     "category": "color"
   },
   {
@@ -294,6 +324,18 @@ export const tokensList: readonly Token[] = [
     "name": "via-ink-3",
     "css": "--via-ink-3",
     "value": "#525C72",
+    "category": "color"
+  },
+  {
+    "name": "via-material-thick-fill",
+    "css": "--via-material-thick-fill",
+    "value": "var(--via-grain),\n    linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.90) 100%),\n    linear-gradient(rgba(10, 31, 59, 0.02), rgba(10, 31, 59, 0.02))",
+    "category": "color"
+  },
+  {
+    "name": "via-material-thick-solid",
+    "css": "--via-material-thick-solid",
+    "value": "rgba(255, 255, 255, 0.94)",
     "category": "color"
   },
   {
@@ -747,36 +789,6 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
-    "name": "via-glass-blur",
-    "css": "--via-glass-blur",
-    "value": "blur(24px) saturate(175%)",
-    "category": "other"
-  },
-  {
-    "name": "via-glass-blur-bar",
-    "css": "--via-glass-blur-bar",
-    "value": "blur(26px) saturate(185%)",
-    "category": "other"
-  },
-  {
-    "name": "via-glass-card",
-    "css": "--via-glass-card",
-    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 10%, rgba(247, 248, 250, 0.58) 100%)",
-    "category": "other"
-  },
-  {
-    "name": "via-glass-card-2",
-    "css": "--via-glass-card-2",
-    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 250, 0.62))",
-    "category": "other"
-  },
-  {
-    "name": "via-glass-ring",
-    "css": "--via-glass-ring",
-    "value": "1px solid var(--via-border-soft)",
-    "category": "other"
-  },
-  {
     "name": "via-glass-sheen",
     "css": "--via-glass-sheen",
     "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent)",
@@ -792,6 +804,18 @@ export const tokensList: readonly Token[] = [
     "name": "via-glow-navy-strong",
     "css": "--via-glow-navy-strong",
     "value": "0 0 0 1px rgba(10,31,59,0.10),\n    0 16px 48px rgba(10,31,59,0.30),\n    0 32px 80px rgba(10,31,59,0.20)",
+    "category": "other"
+  },
+  {
+    "name": "via-grain",
+    "css": "--via-grain",
+    "value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .04 0 0 0 0 .12 0 0 0 0 .23 .13 0 0 0 -.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E\")",
+    "category": "other"
+  },
+  {
+    "name": "via-lens-blur",
+    "css": "--via-lens-blur",
+    "value": "blur(10px) saturate(170%)",
     "category": "other"
   },
   {
@@ -855,9 +879,135 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-material-chrome-blur",
+    "css": "--via-material-chrome-blur",
+    "value": "blur(24px) saturate(180%)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-chrome-fill",
+    "css": "--via-material-chrome-fill",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.72))",
+    "category": "other"
+  },
+  {
+    "name": "via-material-chrome-rim",
+    "css": "--via-material-chrome-rim",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 60%)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-chrome-ring",
+    "css": "--via-material-chrome-ring",
+    "value": "0.5px solid rgba(10, 31, 59, 0.10)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-control-blur",
+    "css": "--via-material-control-blur",
+    "value": "blur(12px) saturate(170%)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-control-fill",
+    "css": "--via-material-control-fill",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.72))",
+    "category": "other"
+  },
+  {
+    "name": "via-material-control-lift",
+    "css": "--via-material-control-lift",
+    "value": "inset 0 1px 0 rgba(255, 255, 255, 1),\n    inset 0 -1px 0 var(--via-shadow-ink-06),\n    0 2px 4px var(--via-shadow-ink-06),\n    0 10px 22px -8px var(--via-shadow-ink-20)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-control-rim",
+    "css": "--via-material-control-rim",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.25))",
+    "category": "other"
+  },
+  {
+    "name": "via-material-control-ring",
+    "css": "--via-material-control-ring",
+    "value": "1px solid rgba(10, 31, 59, 0.12)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-regular-blur",
+    "css": "--via-material-regular-blur",
+    "value": "blur(24px) saturate(170%)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-regular-fill",
+    "css": "--via-material-regular-fill",
+    "value": "linear-gradient(180deg, rgba(255, 255, 255, 0.90) 0%, rgba(240, 244, 250, 0.80) 100%),\n    linear-gradient(rgba(10, 31, 59, 0.02), rgba(10, 31, 59, 0.02))",
+    "category": "other"
+  },
+  {
+    "name": "via-material-regular-lift",
+    "css": "--via-material-regular-lift",
+    "value": "inset 0 20px 28px -26px rgba(255, 255, 255, 0.9),\n    inset 0 -1px 0 var(--via-shadow-ink-06),\n    0 2px 4px var(--via-shadow-ink-06),\n    0 24px 48px -20px var(--via-shadow-ink-30)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-regular-rim",
+    "css": "--via-material-regular-rim",
+    "value": "linear-gradient(155deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 16%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, 0.3) 100%)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-regular-ring",
+    "css": "--via-material-regular-ring",
+    "value": "1px solid rgba(10, 31, 59, 0.09)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-thick-blur",
+    "css": "--via-material-thick-blur",
+    "value": "blur(32px) saturate(160%)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-thick-rim",
+    "css": "--via-material-thick-rim",
+    "value": "linear-gradient(155deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.45) 16%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, 0.35) 100%)",
+    "category": "other"
+  },
+  {
+    "name": "via-material-thick-ring",
+    "css": "--via-material-thick-ring",
+    "value": "1px solid rgba(10, 31, 59, 0.10)",
+    "category": "other"
+  },
+  {
     "name": "via-narrow",
     "css": "--via-narrow",
     "value": "560px",
+    "category": "other"
+  },
+  {
+    "name": "via-rim-mask",
+    "css": "--via-rim-mask",
+    "value": "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+    "category": "other"
+  },
+  {
+    "name": "via-scrim",
+    "css": "--via-scrim",
+    "value": "radial-gradient(circle at 50% 35%, rgba(10, 31, 59, 0.26), rgba(10, 31, 59, 0.36))",
+    "category": "other"
+  },
+  {
+    "name": "via-scrim-blur",
+    "css": "--via-scrim-blur",
+    "value": "blur(16px) saturate(120%)",
+    "category": "other"
+  },
+  {
+    "name": "via-specular",
+    "css": "--via-specular",
+    "value": "radial-gradient(closest-side, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0))",
     "category": "other"
   },
   {
@@ -965,13 +1115,37 @@ export const tokensList: readonly Token[] = [
   {
     "name": "via-glass-shadow",
     "css": "--via-glass-shadow",
-    "value": "inset 0 1px 0 var(--via-edge-hi),\n    0 12px 32px -14px var(--via-shadow-ink-14),\n    0 2px 8px -4px var(--via-shadow-ink-06)",
+    "value": "var(--via-material-regular-shadow)",
     "category": "shadow"
   },
   {
     "name": "via-glass-shadow-lift",
     "css": "--via-glass-shadow-lift",
-    "value": "inset 0 1px 0 var(--via-edge-hi),\n    0 24px 56px -20px var(--via-shadow-ink-20),\n    0 4px 12px -6px var(--via-shadow-ink-08)",
+    "value": "var(--via-material-regular-lift)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-material-chrome-shadow",
+    "css": "--via-material-chrome-shadow",
+    "value": "inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 24px -18px var(--via-shadow-ink-20)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-material-control-shadow",
+    "css": "--via-material-control-shadow",
+    "value": "inset 0 1px 0 rgba(255, 255, 255, 0.9),\n    inset 0 -1px 0 var(--via-shadow-ink-06),\n    0 1px 2px var(--via-shadow-ink-06),\n    0 4px 10px -4px var(--via-shadow-ink-10)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-material-regular-shadow",
+    "css": "--via-material-regular-shadow",
+    "value": "inset 0 20px 28px -26px rgba(255, 255, 255, 0.9),\n    inset 0 -1px 0 var(--via-shadow-ink-06),\n    0 1px 2px var(--via-shadow-ink-06),\n    0 14px 32px -16px var(--via-shadow-ink-20)",
+    "category": "shadow"
+  },
+  {
+    "name": "via-material-thick-shadow",
+    "css": "--via-material-thick-shadow",
+    "value": "inset 0 24px 32px -28px rgba(255, 255, 255, 0.95),\n    inset 0 -1px 0 var(--via-shadow-ink-06),\n    0 32px 64px -24px var(--via-shadow-ink-30),\n    0 12px 28px -14px var(--via-shadow-ink-14)",
     "category": "shadow"
   },
   {
@@ -1288,6 +1462,11 @@ export type TokenName =
   | 'via-edge-hi'
   | 'via-edge-lo'
   | 'via-glass-bar'
+  | 'via-glass-blur'
+  | 'via-glass-blur-bar'
+  | 'via-glass-card'
+  | 'via-glass-card-2'
+  | 'via-glass-ring'
   | 'via-gray-100'
   | 'via-gray-200'
   | 'via-gray-300'
@@ -1300,6 +1479,8 @@ export type TokenName =
   | 'via-gray-900'
   | 'via-ink-2'
   | 'via-ink-3'
+  | 'via-material-thick-fill'
+  | 'via-material-thick-solid'
   | 'via-navy'
   | 'via-navy-02'
   | 'via-navy-03'
@@ -1375,14 +1556,11 @@ export type TokenName =
   | 'via-fw-medium'
   | 'via-fw-regular'
   | 'via-fw-semibold'
-  | 'via-glass-blur'
-  | 'via-glass-blur-bar'
-  | 'via-glass-card'
-  | 'via-glass-card-2'
-  | 'via-glass-ring'
   | 'via-glass-sheen'
   | 'via-glow-navy'
   | 'via-glow-navy-strong'
+  | 'via-grain'
+  | 'via-lens-blur'
   | 'via-lh-loose'
   | 'via-lh-normal'
   | 'via-lh-snug'
@@ -1393,7 +1571,28 @@ export type TokenName =
   | 'via-ls-tight'
   | 'via-ls-tighter'
   | 'via-ls-wide'
+  | 'via-material-chrome-blur'
+  | 'via-material-chrome-fill'
+  | 'via-material-chrome-rim'
+  | 'via-material-chrome-ring'
+  | 'via-material-control-blur'
+  | 'via-material-control-fill'
+  | 'via-material-control-lift'
+  | 'via-material-control-rim'
+  | 'via-material-control-ring'
+  | 'via-material-regular-blur'
+  | 'via-material-regular-fill'
+  | 'via-material-regular-lift'
+  | 'via-material-regular-rim'
+  | 'via-material-regular-ring'
+  | 'via-material-thick-blur'
+  | 'via-material-thick-rim'
+  | 'via-material-thick-ring'
   | 'via-narrow'
+  | 'via-rim-mask'
+  | 'via-scrim'
+  | 'via-scrim-blur'
+  | 'via-specular'
   | 'via-surface-onnavy'
   | 'via-t-fast'
   | 'via-t-slow'
@@ -1413,6 +1612,10 @@ export type TokenName =
   | 'via-radius-xs'
   | 'via-glass-shadow'
   | 'via-glass-shadow-lift'
+  | 'via-material-chrome-shadow'
+  | 'via-material-control-shadow'
+  | 'via-material-regular-shadow'
+  | 'via-material-thick-shadow'
   | 'via-shadow-focus'
   | 'via-shadow-glass-dark'
   | 'via-shadow-glass-light'

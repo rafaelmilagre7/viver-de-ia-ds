@@ -22,9 +22,9 @@
   align-items: center;
   gap: var(--via-space-2);
   width: 100%;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: var(--via-radius-sm);
   color: var(--via-text-primary);
@@ -96,6 +96,7 @@
 
 /* ===== List ===== */
 .via-combobox__list {
+  --via-rim: var(--via-material-thick-rim);
   position: absolute;
   top: 100%;
   left: 0;
@@ -104,14 +105,12 @@
   margin: var(--via-space-1) 0 0;
   padding: var(--via-space-1);
   list-style: none;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-sm);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 16px 40px -12px var(--via-shadow-ink-20);
+  box-shadow: var(--via-material-thick-shadow);
   max-height: 280px;
   overflow-y: auto;
   animation: via-combobox-in 0.18s var(--via-ease-snap);

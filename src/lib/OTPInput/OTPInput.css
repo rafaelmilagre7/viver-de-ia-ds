@@ -21,7 +21,6 @@
 }
 
 .via-otp__cell {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   width: 44px;
   height: 52px;
   text-align: center;
@@ -30,9 +29,9 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: -0.022em;
   color: var(--via-text-primary);
-  background: var(--via-surface-onnavy);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: var(--via-radius-sm);
   outline: none;
@@ -44,7 +43,7 @@
   box-shadow:
     0 1px 0 var(--via-edge-hi) inset,
     0 1px 2px var(--via-shadow-ink-03);
-  caret-color: var(--via-navy);
+  caret-color: var(--via-text-primary);
 }
 
 .via-otp__cell:hover:not(:disabled) {
@@ -55,9 +54,8 @@
 }
 
 .via-otp__cell:focus {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
   border-color: var(--via-navy);
-  background: var(--via-surface-onnavy);
+  background: var(--via-material-control-fill);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 3px var(--via-navy-10),
@@ -82,7 +80,7 @@
 }
 
 .via-otp.is-disabled .via-otp__cell {
-  background: var(--via-surface-onnavy);
+  background: var(--via-material-control-fill);
   cursor: not-allowed;
   opacity: 0.6;
 }

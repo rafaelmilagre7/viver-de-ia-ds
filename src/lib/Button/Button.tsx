@@ -1,4 +1,6 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { useSpecular } from '../_shared/useSpecular';
+import '../_shared/material.css';
 import './Button.css';
 
 type Variant = 'primary' | 'secondary' | 'ghost' | 'destructive' | 'accent';
@@ -42,6 +44,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
+    const specRef = useSpecular<HTMLButtonElement>(ref);
     const cls = [
       'via-btn',
       `via-btn--${variant}`,
@@ -55,7 +58,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <button
-        ref={ref}
+        ref={specRef}
         type="button"
         className={cls}
         disabled={disabled}

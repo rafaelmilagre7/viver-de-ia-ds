@@ -20,9 +20,9 @@
   display: flex;
   align-items: center;
   gap: var(--via-space-2_5);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border);
   border-radius: var(--via-radius-md);
   isolation: isolate;
@@ -55,12 +55,12 @@
 }
 
 .via-input:hover {
-  background: var(--via-glass-card);
+  background: var(--via-material-control-fill);
   border-color: var(--via-navy-22);
 }
 
 .via-input:focus-within {
-  background: var(--via-glass-card);
+  background: var(--via-material-control-fill);
   border-color: var(--via-navy-40);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,

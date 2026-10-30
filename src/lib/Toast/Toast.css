@@ -19,6 +19,7 @@
 .via-toast-stack--bottom-center { bottom: 24px; left: 50%; transform: translateX(-50%); }
 
 .via-toast {
+  --via-rim: var(--via-material-thick-rim);
   position: relative;
   display: grid;
   grid-template-columns: 28px 1fr auto auto;
@@ -26,15 +27,11 @@
   align-items: start;
   padding: var(--via-space-3_5) var(--via-space-3) var(--via-space-3_5) var(--via-space-4);
   border-radius: var(--via-radius-md);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid var(--via-border-soft);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-08),
-    0 22px 44px -16px var(--via-shadow-ink-20),
-    0 8px 18px -10px var(--via-shadow-ink-14);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
+  box-shadow: var(--via-material-thick-shadow);
   animation: via-toast-in .32s var(--via-ease-out);
   isolation: isolate;
   overflow: hidden;
@@ -98,9 +95,8 @@
 }
 
 .via-toast--default .via-toast__icon {
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.86), rgba(247, 248, 250, 0.62)),
-    var(--via-navy-06);
+  /* conta de vidro = material control (no escuro deixa de ser pastilha branca) */
+  background: var(--via-material-control-fill);
   border: 0.5px solid var(--via-navy-12);
   color: var(--via-text-primary);
   box-shadow: inset 0 1px 0 var(--via-edge-hi);

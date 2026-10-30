@@ -63,6 +63,9 @@ export { VirtualList, type VirtualListProps } from './VirtualList/VirtualList';
 export { Lightbox, type LightboxProps, type LightboxImage } from './Lightbox/Lightbox';
 export { ColorPicker, type ColorPickerProps, type ColorSwatch } from './ColorPicker/ColorPicker';
 
+/* Vidro líquido · lente opt-in (só Chromium; fora dele, blur normal) */
+export { enableGlassLens, disableGlassLens, supportsGlassLens } from './_shared/lens';
+
 /* Tokens · runtime + types · auto-generated from tokens.css */
 export { tokens, tokensList, cssVar, type Token, type TokenName } from './tokens';
 

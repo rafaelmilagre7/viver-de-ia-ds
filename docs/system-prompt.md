@@ -134,7 +134,7 @@ PROIBIDO em pills:
 - Bolinha decorativa (`•` ou span dot) ANTES do texto, exceto se for status real ao vivo (presence online, broadcast live)
 - Cor de semáforo verde/vermelho em pills genéricas tipo "Pago", "Verificado", "Ativa" — essas são NAVY
 
-Canvas grande: os 11px são pra tela. Em arte de 1080px (social/ads) e slide 1920×1080, escale ~2× (≈22px / 24px de texto, padding proporcional). Fundo da pill em token de superfície (`var(--via-glass-card)` / `var(--via-surface)`), não branco fixo, pra funcionar no dark.
+Canvas grande: os 11px são pra tela. Em arte de 1080px (social/ads) e slide 1920×1080, escale ~2× (≈22px / 24px de texto, padding proporcional). Fundo da pill em token de material (`var(--via-material-control-fill)`) ou superfície (`var(--via-surface)`), não branco fixo, pra funcionar no dark.
 
 Live broadcast (única exceção pra dot + emphasized text):
 ```html
@@ -222,16 +222,33 @@ Voz muda de registro por contexto (mas mantém esqueleto):
 
 ## 6. Surfaces · glass + atmospheric
 
-Glass uniforme — **receitas por token, nunca `blur(Npx) saturate(N%)` com número solto**:
+Vidro = **um dos 4 MATERIAIS por elevação**, nunca `blur(Npx) saturate(N%)` com número solto. Cada material junta fill + blur + ring + aro especular + sombra (`--via-material-<nome>-fill/-blur/-ring/-rim/-shadow`, `-lift` no hover):
+
+| Material | Onde | Claro | Escuro |
+|---|---|---|---|
+| `chrome` | header, sidebar, tab bar | branco .82→.72 · blur 24 · sat 180% | navy .84→.76 + brightness .8 |
+| `regular` | card/painel no conteúdo | branco .90→.80 + navy-02 · blur 24 · sat 170% | navy .80→.86 · blur 28 · sat 130% · brightness .75 |
+| `thick` | Modal, Sheet, Drawer, Popover, menus, Select, Command, Toast, Tooltip | piso ≥ .90 + navy-02 + grão 2-3% · blur 32 | navy .88→.92 · brightness .7 |
+| `control` | pill, botão secundário, input | branco .90→.72 · blur 12 | controle escuro (nunca laje branca) |
+
 ```css
-.glass {
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: var(--via-glass-blur);   /* blur(24px) saturate(175%) */
-  backdrop-filter: var(--via-glass-blur);           /* SEMPRE depois do -webkit- (ver abaixo) */
-  border: var(--via-glass-ring);
-  box-shadow: var(--via-glass-shadow);
+.glass {                                         /* troque regular pelo material da peça */
+  position: relative;
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);   /* SEMPRE antes (ver abaixo) */
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
+}
+.glass::after {                                  /* aro especular · vidro, não plástico */
+  content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit;
+  background: var(--via-material-regular-rim);
+  -webkit-mask: var(--via-rim-mask); -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none;
 }
 ```
+
+**Escuro = camada que ESCURECE** (navy denso + `brightness < 1`), não branco 2-10% — é o que dá leitura sobre foto e conteúdo movimentado. Overlay: `background: var(--via-scrim)` + `var(--via-scrim-blur)` (leve no claro, tinta preta no escuro). Os nomes antigos `--via-glass-card/-blur/-ring/-shadow` (= regular) e `--via-glass-bar/-blur-bar` (= chrome) continuam valendo. HTML cru: `.via-glass` (regular) · `.via-glass-strong` (thick) · `.via-liquid` (control) · `.via-bar-glass` (chrome).
 
 **Ordem do vidro (bug real):** em todo bloco, `-webkit-backdrop-filter` vem ANTES e `backdrop-filter` por último. Na ordem inversa, o minificador do Vite 8 / Next.js apaga o padrão e o vidro some no Chrome e no Firefox.
 
@@ -255,22 +272,15 @@ Mesh navy (hero scuros, immersive sections):
 }
 ```
 
-**Card de conteúdo NASCE glass** (o `<Card>` do DS já usa vidro sutil por padrão) — não entregue retângulo branco chapado. A régua é a INTENSIDADE, não "se pode ou não":
+**A régua é o NÍVEL da peça, não "se pode ou não":** stat card, card de destaque e painel sobre atmosfera/foto = regular · nav sticky/toolbar = chrome · modal/drawer/popover/menu/command/toast = thick · pill/chip/input/botão secundário = control · **tabela densa, linha de listagem, célula = plano** (o `<DataTable>` é sólido; vidro em linha densa vira ruído). No React, `<Card>` padrão é PAPEL (sólido); vidro é `variant="glass" | "atmospheric" | "featured"`.
 
-| Onde | Glass |
-|---|---|
-| Card de conteúdo, seção, painel, stat card | **Sutil, sempre** (a receita ⭐ abaixo · é o default da casa) |
-| Nav sticky, toolbar, modal, drawer, popover, command | **Forte** (frosted de verdade · blur 20-28px) |
-| Pill / chip / input | **Leve** (blur 8-12px) |
-| Tabela de dados densa, linha de listagem, célula | **Plano** — legibilidade manda; vidro em linha densa vira ruído |
-
-**Vidro de CHROME (barra/nav sticky, toolbar) = frosted DE VERDADE.** A `.glass` acima (~0.9 opaca) é pra CARD de conteúdo. Pra BARRA, use fundo translúcido pra o conteúdo passar DESFOCADO por baixo (efeito Apple):
+**Vidro de CHROME (barra/nav sticky, toolbar) = frosted DE VERDADE:** o conteúdo passa DESFOCADO por baixo (efeito Apple):
 ```css
-.glass-bar {                           /* nav sticky, toolbar, painel flutuante */
-  background: var(--via-glass-bar);              /* branco .6 no claro · navy .55 no escuro */
-  -webkit-backdrop-filter: var(--via-glass-blur-bar);   /* blur(26px) saturate(185%) */
-  backdrop-filter: var(--via-glass-blur-bar);
-  border-bottom: 0.5px solid var(--via-border);
+.glass-bar {                           /* nav sticky, toolbar */
+  background: var(--via-material-chrome-fill);
+  -webkit-backdrop-filter: var(--via-material-chrome-blur);
+  backdrop-filter: var(--via-material-chrome-blur);
+  border-bottom: var(--via-material-chrome-ring);
 }
 ```
 Vidro de CHROME só "aparece" quando há algo atrás pra desfocar — barra sticky sobre conteúdo rolando, painel flutuante sobre hero. Numa barra parada sobre branco liso o blur não tem o que borrar.
@@ -286,37 +296,38 @@ Glass **não precisa de fundo escuro**. O card de vidro sobre claro é a assinat
   radial-gradient(ellipse 60% 50% at 100% 100%, var(--via-navy-03), transparent 65%),
   var(--via-bg); }
 
-/* 2-4. O CARD: gradiente 3-stop + hairline quase invisível + luz no topo + tinta de sombra */
+/* 2-4. O CARD = material regular inteiro (fill com piso + blur + ring + sombra) */
 .glass-card {
   position: relative; isolation: isolate;
   border-radius: var(--via-radius-lg);             /* 20px · card padrão */
   padding: 24px;
-  background: var(--via-glass-card);               /* gradiente 96→84→58% */
-  -webkit-backdrop-filter: var(--via-glass-blur);  /* receita canônica 24px/175% · -webkit- primeiro */
-  backdrop-filter: var(--via-glass-blur);
-  border: var(--via-glass-ring);                   /* hairline de vidro · o card se define pela LUZ */
-  box-shadow: 0 1px 0 var(--via-edge-hi) inset,    /* linha de luz no topo */
-              0 10px 24px -16px var(--via-shadow-ink-14); /* tinta de sombra, nunca token que inverte */
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);  /* -webkit- primeiro */
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);        /* hairline · desenha a borda sobre branco */
+  box-shadow: var(--via-material-regular-shadow);  /* brilho interno + linha de base + drop */
   transition: transform .26s var(--via-ease-snap), box-shadow .26s ease;
 }
-
-/* 5. atmosfera PRÓPRIA do card (top-left) — é isso que dá profundidade */
+/* 5. aro especular (receita .glass::after acima) + atmosfera própria no ::before */
 .glass-card::before {
   content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
   background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
-  opacity: .6; transition: opacity .26s ease; pointer-events: none;
+  pointer-events: none;
 }
-.glass-card:hover { transform: translateY(-2px); }
-.glass-card:hover::before { opacity: 1; }
+.glass-card:hover { transform: translateY(-2px); box-shadow: var(--via-material-regular-lift); }
 ```
 
 Com os tokens acima o dark se resolve sozinho. Sem acesso aos tokens (HTML solto), importe o `tokens.css` do kit — não troque por literais.
 
-**Erros que matam o efeito** (os mais comuns): fundo da página branco chapado sem atmosfera · card `background: #fff` sólido sem gradiente · borda grossa/escura em vez de hairline · sombra preta genérica (`rgba(0,0,0,.1)`) em vez de navy-tinted · esquecer o `inset` de luz no topo · esquecer o `::before` radial. Card premium = **luz + profundidade**, não borda.
+**Erros que matam o efeito** (os mais comuns): fundo da página branco chapado sem atmosfera · blur/opacidade à mão · borda grossa/escura em vez de hairline · sombra preta genérica (`rgba(0,0,0,.1)`) em vez de navy-tinted · esquecer o aro especular · vidro escuro feito de branco 2-10% (some a leitura). Card premium = **luz + profundidade**, não borda.
 
-**Borda de card = FINA e elegante.** `1px` (ou `0.5px`) solid `var(--via-border-soft)` (navy 0.08) + linha de luz interna (`inset 0 1px 0 rgba(255,255,255,.95)`). NUNCA `1.5–2px solid navy` num card ("caixa desenhada", pesado). Destaque/selecionado = fio fino + **halo navy** (`box-shadow: 0 0 0 3px rgba(10,31,59,0.08)`), não uma borda mais grossa. Borda `2px` só em: anel de avatar/foto (`2px solid #fff`), alça de slider, dot de status.
+**Raio concêntrico:** filho encostado na borda = raio do pai − padding do pai (ex.: painel 20 com lista de padding 8 → item 12). Anel de foco dentro de painel arredondado acompanha o raio.
 
-**Sombra = tinta de sombra, sempre.** Toda sombra que você escreve usa `var(--via-shadow-ink-03..60)` (navy no claro, preto mais denso no escuro) ou as pilhas prontas `var(--via-glass-shadow)` / `var(--via-glass-shadow-lift)` (receita do vidro, já resolvem os 2 temas). NUNCA ponha `--via-navy-XX`, `--via-white` ou `rgba(10,31,59,…)` literal num `box-shadow` composto à mão — no escuro vira halo branco ou some. Exceções que não são sombra: a linha de luz `inset 0 1px 0 var(--via-edge-hi)` e anéis `0 0 0 Npx` de foco.
+**Lente (opt-in, só Chromium):** `enableGlassLens()` da lib + classe `.via-glass--lens` em no máximo 1-2 peças-assinatura (nunca em barra que rola). Refração só na borda; Safari/Firefox ficam com o blur normal.
+
+**Borda de card = FINA e elegante.** `1px` (ou `0.5px`) — o ring do material (`var(--via-material-regular-ring)`, navy .09) + linha de luz interna (`inset 0 1px 0 rgba(255,255,255,.95)`). NUNCA `1.5–2px solid navy` num card ("caixa desenhada", pesado). Destaque/selecionado = fio fino + **halo navy** (`box-shadow: 0 0 0 3px rgba(10,31,59,0.08)`), não uma borda mais grossa. Borda `2px` só em: anel de avatar/foto (`2px solid #fff`), alça de slider, dot de status.
+
+**Sombra = tinta de sombra, sempre.** Toda sombra que você escreve usa `var(--via-shadow-ink-03..60)` (navy no claro, preto mais denso no escuro) ou a pilha pronta do material (`var(--via-material-<nome>-shadow)` / `-lift`, já resolvem os 2 temas). NUNCA ponha `--via-navy-XX`, `--via-white` ou `rgba(10,31,59,…)` literal num `box-shadow` composto à mão — no escuro vira halo branco ou some. Exceções que não são sombra: a linha de luz `inset 0 1px 0 var(--via-edge-hi)` e anéis `0 0 0 Npx` de foco.
 
 **Cantos — escala de raio (pai > filho):** `--via-radius-xs` 6 · `-sm` 10 · `-md` 14 · `-lg` 20 (**card padrão**) · `-xl` 28 · `-2xl` 40 · `-pill` 999. Filho um degrau abaixo do pai (card `lg` → chip interno `md`); encostado na borda, `calc(raio-do-pai - 1px)`. Email usa px cru (cliente de email não resolve `var()`).
 
@@ -346,7 +357,7 @@ PROIBIDO: 3D/gloss/sombra em barra · gradiente numa serie unica (cor que varia 
 REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos cards de metrica ao redor. Hierarquia por indentacao+peso, nunca por cor de fundo. Sem zebra pesada, sem barra lateral.
 
 **Todo controle precisa dos 3 estados**: `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (`var(--via-shadow-focus)` + `outline:none`). Controle sem hover é design morto. Elemento decorativo (rótulo/badge não-clicável) NÃO leva hover.
-**Controle sobre navy/escuro:** não use vidro branco nem `var(--via-surface)` (no dark ele escurece e o botão some) — use `rgba(255,255,255,0.10)` + borda `0.20` (hover `.16`/`.34`), ou `var(--via-surface-onnavy)` com texto navy fixo.
+**Controle sobre foto ou vidro:** material control (botão secundário, `.via-pill-link`, `.via-liquid`) — branco no claro, controle escuro no escuro, nunca laje branca fixa. **Momento navy fixo** (escuro nos 2 temas): `rgba(255,255,255,0.10)` + borda `0.20` (hover `.16`/`.34`) ou `.via-pill-link--on-dark`.
 
 **PROIBIDO — barra/canto de cor em card** (`border-left: 2–4px solid navy/coral` em callout, do/don't, "comportamento vs evita"): estilo bootstrap/alert, tem CARA DE IA. Do/don't = card glass limpo igual aos outros, diferenciado por tipografia/ênfase (label, peso), NUNCA por uma barra colorida no canto.
 
@@ -354,8 +365,9 @@ REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos c
 - Feedback no APERTAR, não no soltar — todo interativo tem `:active` instantâneo (`scale(0.97)` ou tom mais fundo).
 - Vidro claro NUNCA empilha sobre vidro claro (legibilidade colapsa) — card interno vira superfície sólida.
 - Texto sobre vidro pede um passo a mais de contraste/peso do que sobre superfície sólida; cor de destaque mora em camada sólida, nunca solta no vidro.
-- Vidro que entra em cena (modal/popover) anima blur + scale juntos — "materializa", não é fade seco.
-- Acessibilidade de material já é automática nos tokens: `prefers-reduced-transparency` solidifica o vidro e `prefers-contrast: more` engrossa bordas. Não desfaça com `backdrop-filter` literal fora dos tokens.
+- Vidro que entra em cena (modal/popover) chega por escala + opacidade — "materializa", não é fade seco. NUNCA anime `backdrop-filter` (repinta o blur da tela inteira) nem `left`/`top`.
+- Reflexo de luz em botão/card segue o ponteiro por `transform`/`opacity` (só mouse, desliga em reduced-motion) — nada de varredura animando `left`.
+- Acessibilidade de material já é automática nos tokens: `prefers-reduced-transparency` deixa os 4 materiais sólidos (sem blur, sem grão, scrim chapado) e `prefers-contrast: more` solidifica e engrossa o ring. Não desfaça com `backdrop-filter` literal fora dos tokens.
 - Física de gesto (React/Motion): mola com `bounce: 0` por padrão; `bounce: 0.2` SÓ depois de flick/arremesso. Gesto arrastável segue o dedo 1:1 e decide fechar×voltar pelo EMBALO (projeção), não pela posição. Nunca anime gesto com transition de duração fixa (não dá pra agarrar no meio). Anime só `transform`/`opacity`. Menu/balão escala DA ORIGEM (transform-origin no gatilho), nunca do centro.
 
 ## 7. Hover signatures (assinatura comportamental)

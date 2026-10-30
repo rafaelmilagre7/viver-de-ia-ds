@@ -12,9 +12,9 @@
 .via-sheet-scrim {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 40%, rgba(10, 31, 59, 0.40), rgba(10, 31, 59, 0.56));
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
+  background: var(--via-scrim);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
   animation: via-sheet-scrim-in .26s var(--via-ease-snap);
   pointer-events: auto;
 }
@@ -31,14 +31,15 @@
   bottom: 0;
   display: flex;
   flex-direction: column;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(28px) saturate(140%);
-  backdrop-filter: blur(28px) saturate(140%);
-  border-top: 1px solid var(--via-border-soft, rgba(10, 31, 59, 0.08));
+  --via-rim: var(--via-material-thick-rim);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border-top: var(--via-material-thick-ring);
   border-radius: var(--via-radius-lg) var(--via-radius-lg) 0 0;
+  /* thick com a sombra virada pra cima (a folha sobe da base) */
   box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
+    inset 0 24px 32px -28px var(--via-edge-hi),
     0 -24px 64px -16px var(--via-shadow-ink-30),
     0 -10px 24px -10px var(--via-shadow-ink-20);
   pointer-events: auto;

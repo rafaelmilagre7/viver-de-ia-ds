@@ -23,9 +23,9 @@
   justify-content: space-between;
   gap: var(--via-space-2_5);
   width: 100%;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: var(--via-radius-sm);
   color: var(--via-text-primary);
@@ -70,7 +70,7 @@
 
 .via-select__trigger.is-open {
   border-color: var(--via-navy, #0A1F3B);
-  background: var(--via-glass-card);
+  background: var(--via-material-control-fill);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 3px var(--via-navy-10),
@@ -121,6 +121,7 @@
 
 /* ===== Dropdown list ===== */
 .via-select__list {
+  --via-rim: var(--via-material-thick-rim);
   position: absolute;
   top: 100%;
   left: 0;
@@ -129,16 +130,12 @@
   margin: var(--via-space-1) 0 0;
   padding: var(--via-space-1);
   list-style: none;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-sm);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 22px 44px -16px var(--via-shadow-ink-20),
-    0 8px 18px -10px var(--via-shadow-ink-14);
+  box-shadow: var(--via-material-thick-shadow);
   max-height: 280px;
   overflow-y: auto;
   animation: via-select-in var(--via-dur) var(--via-ease-out);

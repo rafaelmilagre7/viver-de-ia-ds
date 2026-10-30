@@ -1,7 +1,24 @@
+import { useEffect, useRef } from 'react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import CodeBlock from '../../components/docs/CodeBlock';
+import { Card } from '../../lib/Card/Card';
+import { Button } from '../../lib/Button/Button';
+import palco from '../../assets/glass/palco-conferencia.webp';
+import './glass.css';
+
+/* Onde o vidro vive · composições de produto com o material certo em cada
+   nível, em cima de conteúdo real. Nada de receita inline: cada peça é a
+   classe ou o componente da lib. A foto é escura nos 2 temas (é uma foto);
+   o vidro por cima segue o tema — no escuro ele escurece o palco. */
+const photo = { backgroundImage: `url(${palco})` };
 
 export default function GlassInContext() {
+  const pageRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (pageRef.current) pageRef.current.scrollTop = 96;
+  }, []);
+
   return (
     <>
       <DocsHeader
@@ -11,119 +28,98 @@ export default function GlassInContext() {
             Onde o vidro <em>vive</em>.
           </>
         }
-        lede="Glass é o material padrão das superfícies da marca — card de conteúdo já nasce com vidro sutil. O que muda é a intensidade: forte em nav sticky, modal e overlay; sutil em card e seção; leve em pill e input. Plano só onde a legibilidade manda: tabela densa e linha de listagem."
+        lede="Cada nível da interface tem o seu material: chrome na barra que fica, regular no card do conteúdo, thick no que flutua por cima, control na peça que se toca. Plano só onde a leitura manda: tabela densa e linha de listagem."
       />
 
-      <Section title="Nav sticky" meta="topo de página">
-        <div
-          style={{
-            position: 'relative',
-            height: 280,
-            borderRadius: 'var(--via-radius-lg)',
-            overflow: 'hidden',
-            /* Mockup: interior fixa as próprias cores (não segue o tema) */
-            background:
-              'linear-gradient(135deg, #E4E7EC, #D0D5DD), radial-gradient(ellipse at 80% 0%, rgba(10,31,59,0.08), transparent)',
-            border: '0.5px solid rgba(10,31,59,0.12)',
-          }}
-        >
-          <header
-            style={{
-              position: 'absolute', top: 0, left: 0, right: 0, height: 64, zIndex: 2,
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              padding: '0 28px',
-              background: 'linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.66))',
-              backdropFilter: 'blur(18px) saturate(160%)',
-              WebkitBackdropFilter: 'blur(18px) saturate(160%)',
-              borderBottom: '0.5px solid rgba(10,31,59,0.10)',
-            }}
-          >
-            <span style={{ fontFamily: 'var(--via-font)', fontSize: 11, fontWeight: 700, letterSpacing: '0.32em', textTransform: 'uppercase', color: '#0A1F3B' }}>VIVER DE IA</span>
-            <span style={{ fontFamily: 'var(--via-font)', fontSize: 12, fontWeight: 600, color: '#4F596B' }}>Mentoria · Cases · Manifesto</span>
-          </header>
-          <div
-            style={{
-              position: 'absolute', bottom: 24, left: 28,
-              fontFamily: 'var(--via-font-display)', fontSize: 36, fontWeight: 500,
-              color: '#0A1F3B', letterSpacing: '-0.02em', lineHeight: 1,
-            }}
-          >
-            Conteúdo rolando<br /><em style={{ color: '#4F596B' }}>por baixo</em>…
+      <Section title="Página com barra fixa" meta="chrome + regular">
+        <div className="gl-scroll" ref={pageRef} style={{ height: 420 }} tabIndex={0} aria-label="Demo: página rolando por baixo da barra">
+          <div className="via-bar-glass">
+            <span className="gl-scroll__brand">Leaders AI</span>
+            <span className="gl-scroll__nav">Programação · Palestrantes · Ingressos</span>
+          </div>
+          <div className="gl-photo" style={{ ...photo, borderRadius: 0, minHeight: 300 }}>
+            <p className="gl-photo__label">Conferência · edição [ano]</p>
+            <p className="gl-photo__title">IA aplicada ao negócio, no palco.</p>
+            <div className="gl-row">
+              <Button variant="secondary">Ver programação</Button>
+            </div>
+          </div>
+          <div className="gl-scroll__body">
+            <h3>Programação</h3>
+            <div className="gl-grid">
+              {['Abertura', 'Operação com IA', 'Painel de líderes'].map((x) => (
+                <Card key={x} variant="default">
+                  <p className="vds-eyebrow">{x}</p>
+                  <p style={{ margin: '8px 0 0', fontSize: 13, color: 'var(--via-text-body)' }}>[horário] · [palestrante]</p>
+                </Card>
+              ))}
+            </div>
+            <p>Role pra cima e pra baixo: a foto e os cards passam desfocados por baixo da barra.</p>
           </div>
         </div>
       </Section>
 
-      <Section title="Hero stat card" meta="sobre navy ou foto">
-        <div
-          style={{
-            padding: 56,
-            background: 'radial-gradient(ellipse at top, var(--via-blue-soft) 0%, var(--via-navy) 60%, var(--via-navy-deep) 100%)',
-            borderRadius: 'var(--via-radius-lg)',
-            display: 'flex',
-            justifyContent: 'center',
-            gap: 16,
-            flexWrap: 'wrap',
-          }}
-        >
-          {[
-            { lbl: 'Conversas analisadas', num: '+11.920', sub: 'Efizi · 90 dias' },
-            { lbl: 'Economia recorrente', num: 'R$ 4.600', sub: 'Balzani & Zimbel' },
-            { lbl: 'Operação financeira', num: '100%', sub: 'Conferir Engenharia' },
-          ].map((c) => (
-            <div
-              key={c.lbl}
-              style={{
-                flex: '1 1 240px',
-                padding: 24,
-                background: 'linear-gradient(160deg, rgba(255,255,255,0.85), rgba(255,255,255,0.55))',
-                backdropFilter: 'blur(28px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(28px) saturate(180%)',
-                border: '1px solid rgba(255,255,255,0.95)',
-                borderRadius: 20,
-                boxShadow: 'var(--via-shadow-glass-light)',
-              }}
-            >
-              {/* Tile de vidro claro fixo → texto também fixo (não segue o tema) */}
-              <p className="vds-eyebrow" style={{ color: '#4F596B' }}>{c.lbl}</p>
-              <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 40, fontWeight: 500, letterSpacing: '-0.04em', color: '#0A1F3B', marginTop: 6 }}>{c.num}</div>
-              <p style={{ fontFamily: 'var(--via-font)', fontSize: 12, color: '#344054', marginTop: 8 }}>{c.sub}</p>
-            </div>
-          ))}
+      <Section title="Stat cards sobre fotografia" meta="regular · Card glass">
+        <div className="gl-photo" style={photo}>
+          <p className="gl-photo__label">Palco · luz fria e movimento</p>
+          <div className="gl-grid">
+            {[
+              { lbl: 'Componentes', num: '46', sub: 'library React' },
+              { lbl: 'Materiais', num: '4', sub: 'por elevação' },
+              { lbl: 'Temas', num: '2', sub: 'claro e escuro' },
+            ].map((c) => (
+              <Card key={c.lbl} variant="glass" hoverable className="gl-stat">
+                <p className="vds-eyebrow">{c.lbl}</p>
+                <strong>{c.num}</strong>
+                <span>{c.sub}</span>
+              </Card>
+            ))}
+          </div>
         </div>
       </Section>
 
-      <Section title="Modal frame" meta="sobre scrim navy">
-        <div
-          style={{
-            position: 'relative',
-            height: 340,
-            borderRadius: 'var(--via-radius-lg)',
-            overflow: 'hidden',
-            background: 'linear-gradient(135deg, rgba(10,31,59,0.85), rgba(2,22,42,0.95))',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}
-        >
-          <div
-            style={{
-              width: 440, padding: 32,
-              background: 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.84))',
-              backdropFilter: 'blur(24px) saturate(180%)',
-              WebkitBackdropFilter: 'blur(24px) saturate(180%)',
-              border: '1px solid rgba(255,255,255,1)',
-              borderRadius: 24,
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,1), 0 32px 80px rgba(0,0,0,0.40)',
-            }}
-          >
-            {/* Modal claro fixo → tinta fixa; botões seguem o Button real (sentence case, tracking apertado) */}
-            <h3 style={{ fontFamily: 'var(--via-font-display)', fontSize: 24, fontWeight: 500, color: '#0A1F3B', letterSpacing: '-0.015em', margin: 0 }}>Confirmar inscrição?</h3>
-            <p style={{ fontFamily: 'var(--via-font)', fontSize: 14, color: '#344054', lineHeight: 1.55, marginTop: 12 }}>
-              Sua inscrição na turma 2026.2 será confirmada. O pagamento será cobrado no método cadastrado.
+      <Section title="Overlay" meta="thick + scrim">
+        <div className="gl-overlay" style={{ minHeight: 380 }}>
+          <div className="gl-overlay__page" aria-hidden="true">
+            <b>Ingressos</b>
+            <i /><i /><i />
+          </div>
+          <div className="gl-overlay__scrim" />
+          <div className="via-glass-strong" role="group" aria-label="Demo de modal">
+            <h3>Confirmar inscrição?</h3>
+            <p>Sua inscrição será confirmada e o pagamento cobrado no método cadastrado.</p>
+            <div className="gl-actions">
+              <Button variant="ghost">Cancelar</Button>
+              <Button variant="primary">Confirmar</Button>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Lente" meta="opt-in · só Chromium">
+        <div className="vds-callout ga-layers-item">
+          <div className="vds-callout-info">
+            <h4>Refração na borda, centro neutro</h4>
+            <p>
+              A lente dobra o que passa por baixo só na faixa da borda (os 8-24% de cada lado); o meio do
+              vidro fica neutro, então o texto em cima não perde leitura. Liga em no máximo 1-2 peças-assinatura
+              por tela — aqui, o card arrastável da anatomia.
             </p>
-            <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 24 }}>
-              <button style={{ padding: '10px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 14, fontWeight: 500, letterSpacing: '-0.008em', background: 'transparent', color: '#4F596B', border: 'none' }}>Cancelar</button>
-              <button style={{ padding: '10px 20px', borderRadius: 999, fontFamily: 'var(--via-font)', fontSize: 14, fontWeight: 500, letterSpacing: '-0.008em', background: '#0A1F3B', color: '#FFFFFF', border: 'none' }}>Confirmar</button>
-            </div>
+            <p>
+              Só o Chromium desenha <code className="vds-code-inline">backdrop-filter: url()</code>.
+              Safari, Firefox, menos transparência e mais contraste ficam com o blur normal do material —
+              o portão é em JS, nada quebra.
+            </p>
           </div>
+          <CodeBlock>{`import { enableGlassLens } from '@viverdeia/design-system';
+enableGlassLens();               // uma vez, no boot
+
+<Card variant="glass" className="via-glass--lens">…</Card>
+
+/* barra: só dobra no eixo y */
+.minha-barra {
+  --via-lens: url(#via-lens-bar);
+}`}</CodeBlock>
         </div>
       </Section>
     </>

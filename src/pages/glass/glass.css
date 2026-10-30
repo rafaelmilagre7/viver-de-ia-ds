@@ -1,0 +1,298 @@
+/* ==============================================================
+   /glass · palcos REAIS pros demos de vidro (rodada 2 · 30/out)
+   Vidro só existe com algo atrás: aqui tem conteúdo de verdade,
+   fotografia e rolagem — nunca vidro sobre gradiente liso.
+   Os demos usam as classes/tokens de produto (materiais), nunca
+   cópia da receita.
+   ============================================================== */
+
+/* ---------- Hero light-first: conteúdo real + vidro arrastável ---------- */
+.gl-hero {
+  position: relative;
+  height: clamp(440px, 52vw, 540px);
+  border-radius: var(--via-radius-xl);
+  border: 0.5px solid var(--via-navy-12);
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 70% 60% at 12% 0%, var(--via-navy-06), transparent 60%),
+    radial-gradient(ellipse 60% 70% at 100% 100%, var(--via-navy-05), transparent 62%),
+    var(--via-bg);
+}
+/* "página" atrás do vidro · segue o tema (claro no claro, escuro no escuro) */
+.gl-hero__page {
+  position: absolute;
+  inset: 0;
+  padding: var(--via-space-8) var(--via-space-10);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--via-space-8);
+  pointer-events: none;
+  user-select: none;
+}
+.gl-hero__title {
+  font-family: var(--via-font-display);
+  font-weight: var(--via-fw-medium);
+  font-size: clamp(36px, 4.6vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: var(--via-text-primary);
+  margin: 0;
+}
+.gl-hero__lede {
+  margin-top: var(--via-space-5);
+  font-size: var(--via-fs-sm);
+  line-height: 1.6;
+  color: var(--via-text-body);
+  max-width: 44ch;
+}
+.gl-hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--via-space-4);
+  margin-top: var(--via-space-6);
+}
+.gl-hero__metrics strong {
+  display: block;
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h2);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.03em;
+  color: var(--via-text-primary);
+}
+.gl-hero__metrics span { font-size: var(--via-fs-xs); color: var(--via-text-muted); }
+/* gráfico de barras · dá contraste duro pro vidro desfocar */
+.gl-hero__chart {
+  align-self: end;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--via-space-2_5);
+  height: 72%;
+  padding-bottom: var(--via-space-2);
+  border-bottom: 1px solid var(--via-navy-20);
+}
+.gl-hero__chart i {
+  flex: 1;
+  border-radius: var(--via-radius-xs) var(--via-radius-xs) 0 0;
+  background: linear-gradient(180deg, var(--via-chart-ink), var(--via-chart-ink-2));
+}
+.gl-hero__chart i:nth-child(3n) { background: var(--via-chart-4); }
+
+/* ---------- Vidro arrastável ---------- */
+.gl-drag {
+  position: absolute;
+  left: var(--gl-x);
+  top: var(--gl-y);
+  width: min(340px, calc(100% - 32px));
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  z-index: 2;
+  border-radius: var(--via-radius-lg);
+}
+.gl-drag.is-grabbing { cursor: grabbing; }
+.gl-drag:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--via-navy-40); }
+.gl-drag .via-card { margin: 0; cursor: inherit; }
+.gl-drag h3 {
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h3);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.02em;
+  margin: var(--via-space-2) 0 0;
+}
+.gl-drag p { margin: var(--via-space-2) 0 0; font-size: var(--via-fs-caption); color: var(--via-text-body); line-height: 1.55; }
+.gl-hint {
+  margin-top: var(--via-space-3);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-muted);
+}
+
+/* ---------- Palco de fotografia (escuro nos 2 temas: é uma foto) ---------- */
+.gl-photo {
+  position: relative;
+  border-radius: var(--via-radius-xl);
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--via-navy-deep);
+  background-size: cover;
+  background-position: center 30%;
+  padding: clamp(24px, 5vw, 56px);
+}
+.gl-photo__label {
+  position: relative;
+  margin: 0 0 var(--via-space-5);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-bold);
+  letter-spacing: var(--via-ls-mark);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78); /* fixo: a foto é escura nos 2 temas */
+}
+.gl-photo__title {
+  position: relative;
+  font-family: var(--via-font-display);
+  font-weight: var(--via-fw-medium);
+  font-size: clamp(32px, 4.4vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--via-white);
+  margin: 0 0 var(--via-space-6);
+  max-width: 16ch;
+}
+.gl-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--via-space-4);
+}
+.gl-stat .vds-eyebrow { color: var(--via-text-muted); }
+.gl-stat strong {
+  display: block;
+  margin-top: var(--via-space-1_5);
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h1);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.04em;
+  color: var(--via-text-primary);
+  line-height: 1.05;
+}
+.gl-stat span { display: block; margin-top: var(--via-space-1_5); font-size: var(--via-fs-xs); color: var(--via-text-body); }
+.gl-row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--via-space-3);
+}
+
+/* ---------- Chrome: barra sobre conteúdo que ROLA de verdade ---------- */
+.gl-scroll {
+  position: relative;
+  height: 340px;
+  overflow-y: auto;
+  border-radius: var(--via-radius-lg);
+  border: 0.5px solid var(--via-navy-12);
+  background: var(--via-bg);
+  overscroll-behavior: contain;
+}
+.gl-scroll .via-bar-glass {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 var(--via-space-6);
+}
+.gl-scroll__brand {
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-bold);
+  letter-spacing: var(--via-ls-brand);
+  text-transform: uppercase;
+  color: var(--via-text-primary);
+}
+.gl-scroll__nav { font-size: var(--via-fs-xs); font-weight: var(--via-fw-semibold); color: var(--via-text-muted); }
+.gl-scroll__body {
+  padding: var(--via-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-5);
+}
+.gl-scroll__body h3 {
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h2);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.gl-scroll__body p { margin: 0; font-size: var(--via-fs-sm); line-height: 1.6; color: var(--via-text-body); max-width: 62ch; }
+.gl-scroll__strip {
+  height: 140px;
+  border-radius: var(--via-radius-md);
+  background-color: var(--via-navy-deep);
+  background-size: cover;
+  background-position: center 35%;
+}
+
+/* ---------- Thick: overlay sobre página clara ---------- */
+.gl-overlay {
+  position: relative;
+  min-height: 360px;
+  border-radius: var(--via-radius-lg);
+  border: 0.5px solid var(--via-navy-12);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--via-space-6);
+  background: var(--via-bg);
+}
+.gl-overlay__page {
+  position: absolute;
+  inset: 0;
+  padding: var(--via-space-7);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--via-space-4);
+  align-content: start;
+  pointer-events: none;
+}
+.gl-overlay__page b {
+  grid-column: 1 / -1;
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-display);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--via-text-primary);
+}
+.gl-overlay__page i {
+  height: 96px;
+  border-radius: var(--via-radius-md);
+  background: linear-gradient(135deg, var(--via-chart-ink), var(--via-chart-ink-2));
+}
+.gl-overlay__page i:nth-of-type(2) { background: var(--via-chart-4); }
+.gl-overlay__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--via-scrim);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
+}
+.gl-overlay .via-glass-strong {
+  position: relative;
+  width: min(440px, 100%);
+  padding: var(--via-space-7);
+}
+.gl-overlay h3 {
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h3);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.gl-overlay p { margin: var(--via-space-3) 0 0; font-size: var(--via-fs-sm); line-height: 1.55; color: var(--via-text-body); }
+.gl-actions { display: flex; gap: var(--via-space-2_5); justify-content: flex-end; margin-top: var(--via-space-6); }
+
+/* bloco de código longo rola dentro da própria coluna em vez de esmagar o
+   texto (ou estourar a página no celular) */
+.ga-layers .vds-callout > *,
+.ga-layers-item > * { min-width: 0; }
+
+/* ---------- Tabela de especificação (valor vivo do tema atual) ---------- */
+.gl-spec td.val { white-space: normal; width: auto; word-break: break-word; }
+
+/* .vds-callout (docs.css) é grid 1fr 1fr sem breakpoint — em tela estreita o
+   código sobra ~110px e vira scroll horizontal. Aqui a lista empilha antes. */
+@media (max-width: 860px) {
+  .ga-layers .vds-callout,
+  .ga-layers-item {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: var(--via-space-5);
+  }
+  .gl-hero__page { grid-template-columns: 1fr; padding: var(--via-space-6); }
+  .gl-drag { left: var(--via-space-4); top: auto; bottom: var(--via-space-4); }
+  .gl-hero__chart { display: none; }
+  .gl-overlay__page { grid-template-columns: 1fr 1fr; }
+}

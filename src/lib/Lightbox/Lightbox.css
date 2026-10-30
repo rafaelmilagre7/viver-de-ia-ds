@@ -18,14 +18,14 @@
   z-index: -1;
   background:
     radial-gradient(circle at 50% 40%, rgba(10, 31, 59, 0.86), rgba(2, 22, 42, 0.96));
-  -webkit-backdrop-filter: blur(16px) saturate(130%);
-  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: var(--via-scrim-blur);
+  backdrop-filter: var(--via-scrim-blur);
   animation: via-lightbox-in .26s var(--via-ease-out);
 }
 
 @keyframes via-lightbox-in {
-  from { opacity: 0; backdrop-filter: blur(0); }
-  to   { opacity: 1; backdrop-filter: blur(16px) saturate(130%); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .via-lightbox__content {
@@ -62,8 +62,8 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--via-white, #FFFFFF);
   cursor: pointer;

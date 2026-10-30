@@ -1,11 +1,13 @@
 import { forwardRef, type HTMLAttributes, type ReactNode } from 'react';
+import { useSpecular } from '../_shared/useSpecular';
+import '../_shared/material.css';
 import './Card.css';
 
 type Variant =
-  | 'default'      // glass branco padrão
-  | 'glass'        // glass white com backdrop-filter
-  | 'featured'     // accent strip accent no topo · 1 por section
-  | 'atmospheric'  // glass + radial atmosphere
+  | 'default'      // superfície sólida (papel) · não é vidro
+  | 'glass'        // vidro · material regular com aro especular
+  | 'featured'     // vidro elevado + filete navy no topo · 1 por section
+  | 'atmospheric'  // vidro + atmosfera navy nos cantos
   | 'dark';        // navy mesh dark · hero / CTA
 
 export interface CardProps extends HTMLAttributes<HTMLElement> {
@@ -17,7 +19,9 @@ export interface CardProps extends HTMLAttributes<HTMLElement> {
 }
 
 /**
- * Card · superfície editorial com glass + atmosphere
+ * Card · superfície editorial · `default` sólido, `glass`/`atmospheric`/
+ * `featured` no material regular do vidro líquido. `hoverable` ganha o
+ * reflexo que segue o ponteiro (só mouse, fora de reduced-motion).
  *
  * @example
  * <Card variant="glass">Conteúdo</Card>
@@ -36,6 +40,7 @@ export const Card = forwardRef<HTMLElement, CardProps>(
     },
     ref
   ) => {
+    const specRef = useSpecular<HTMLElement>(ref, hoverable);
     const Component = as as 'article';
     const cls = [
       'via-card',
@@ -48,7 +53,7 @@ export const Card = forwardRef<HTMLElement, CardProps>(
       .join(' ');
 
     return (
-      <Component ref={ref as never} className={cls} {...rest}>
+      <Component ref={specRef as never} className={cls} {...rest}>
         {children}
       </Component>
     );

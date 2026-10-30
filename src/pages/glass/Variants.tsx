@@ -1,272 +1,189 @@
+import { useEffect, useRef } from 'react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import CodeBlock from '../../components/docs/CodeBlock';
+import { Card } from '../../lib/Card/Card';
+import { Button } from '../../lib/Button/Button';
+import { Pill } from '../../lib/Pill/Pill';
+import { Input } from '../../lib/Input/Input';
+import palco from '../../assets/glass/palco-conferencia.webp';
+import { useLiveTokens } from './useLiveTokens';
+import './glass.css';
 
 /* ══════════════════════════════════════════════════════════════════════
-   A PÁGINA RENDERIZA A CLASSE REAL — NÃO UMA CÓPIA
-   Cada demo abaixo usa literalmente `.via-glass`, `.via-glass-strong`,
-   `.via-glass-dark` e `.via-liquid` de src/styles/tokens.css (l.702-755),
-   as mesmas classes que os blocos de código ensinam. Antes desta versão os
-   demos eram cópias inline da receita: copiavam o vidro CLARO e ignoravam
-   os overrides `[data-theme="dark"]`, então no tema escuro a página exibia
-   um vidro branco enquanto a classe ensinada renderizava vidro escuro —
-   a doc mostrava o oposto do que o código produz. Nunca reimplemente a
-   receita aqui: use a classe.
-
-   A ficha técnica de cada variante lê do objeto SPEC, conferido linha a
-   linha contra tokens.css:
-     .via-glass         l.702-709  · dark l.743-746
-     .via-glass-strong  l.711-718  · dark l.747-750
-     .via-glass-dark    l.721-729  · sem override (ver nota na seção)
-     .via-liquid        l.732-739  · dark l.751-755
-     --via-blur-md/lg   l.527-528  · --via-radius-lg/pill l.425/428
+   OS 4 MATERIAIS EM CONTEXTO REAL
+   Cada demo é a classe/componente de produto em cima de algo que existe:
+   conteúdo rolando (chrome), fotografia (regular, control) e página com
+   scrim (thick). A ficha lê o valor VIVO do tema atual (useLiveTokens):
+   troque o tema no topo e a tabela muda junto — o que está escrito é o
+   que o CSS resolve.
    ══════════════════════════════════════════════════════════════════════ */
-type SpecRow = { camada: string; claro: string; escuro?: string };
+type Mat = 'chrome' | 'regular' | 'thick' | 'control';
+const PARTS = ['fill', 'blur', 'ring'] as const;
+const names = (m: Mat) => PARTS.map((p) => `--via-material-${m}-${p}`);
+const tidy = (v: string) => v.replace(/url\("data:[^"]+"\)/, 'var(--via-grain)');
 
-const SPEC: Record<'glass' | 'strong' | 'dark' | 'liquid', SpecRow[]> = {
-  glass: [
-    { camada: 'fundo', claro: 'branco 70% → 42%', escuro: 'branco 6% → 3%' },
-    { camada: 'blur', claro: '--via-blur-md · blur(16px) saturate(160%)' },
-    { camada: 'borda', claro: '1px branco 80%', escuro: '1px branco 10%' },
-    { camada: 'raio', claro: '--via-radius-lg · 20px' },
-    { camada: 'sombra', claro: '--via-shadow-glass-light' },
-  ],
-  strong: [
-    { camada: 'fundo', claro: 'branco 85% → 58%', escuro: 'branco 9% → 5%' },
-    { camada: 'blur', claro: '--via-blur-lg · blur(28px) saturate(180%)' },
-    { camada: 'borda', claro: '1px branco 95%', escuro: '1px branco 14%' },
-    { camada: 'raio', claro: '--via-radius-lg · 20px' },
-    { camada: 'sombra', claro: '--via-shadow-glass-light' },
-  ],
-  dark: [
-    { camada: 'fundo', claro: 'branco 10% → 3%' },
-    { camada: 'blur', claro: '--via-blur-md · blur(16px) saturate(160%)' },
-    { camada: 'borda', claro: '1px branco 18%' },
-    { camada: 'raio', claro: '--via-radius-lg · 20px' },
-    { camada: 'sombra', claro: '--via-shadow-glass-dark' },
-    { camada: 'texto', claro: '--via-white · fixo nos 2 temas' },
-  ],
-  liquid: [
-    { camada: 'fundo', claro: 'branco 80% → 55%', escuro: 'branco 10% → 5%' },
-    { camada: 'blur', claro: '--via-blur-md · blur(16px) saturate(160%)' },
-    { camada: 'borda', claro: '1px branco 95%', escuro: '1px branco 14%' },
-    { camada: 'raio', claro: '--via-radius-pill · 999px' },
-    {
-      camada: 'sombra',
-      claro: 'inset 1px de luz + 0 4px 16px navy 8%',
-      escuro: 'inset --via-edge-hi + 0 4px 16px preto 30%',
-    },
-  ],
-};
-
-function Spec({ rows }: { rows: SpecRow[] }) {
+function Spec({ m, utility }: { m: Mat; utility: string }) {
+  const live = useLiveTokens(names(m));
   return (
     <div style={{ overflowX: 'auto', marginTop: 20 }}>
-      <table className="vds-token-table">
+      <table className="vds-token-table gl-spec">
         <thead>
           <tr>
-            <th style={{ width: '18%' }}>Camada</th>
-            <th>Valor</th>
+            <th style={{ width: '34%' }}>Token</th>
+            <th>Valor no tema atual</th>
           </tr>
         </thead>
         <tbody>
-          {rows.map((r) => (
-            <tr key={r.camada}>
-              <td className="use" style={{ width: '18%' }}>{r.camada}</td>
-              <td className="val" style={{ width: 'auto', whiteSpace: 'normal' }}>
-                {r.claro}
-                {r.escuro && (
-                  <span style={{ color: 'var(--via-text-muted)' }}>
-                    {'  ·  escuro: '}{r.escuro}
-                  </span>
-                )}
-              </td>
+          {names(m).map((n) => (
+            <tr key={n}>
+              <td className="tok">{n}</td>
+              <td className="val">{tidy(live[n]) || '—'}</td>
             </tr>
           ))}
+          <tr>
+            <td className="tok">{`--via-material-${m}-rim / -shadow`}</td>
+            <td className="val">aro especular + brilho interno, linha de base e drop</td>
+          </tr>
+          <tr>
+            <td className="tok">HTML cru</td>
+            <td className="val">{utility}</td>
+          </tr>
         </tbody>
       </table>
     </div>
   );
 }
 
-/* Palco do demo.
-   tone="gray"  → .vds-stage.gray, que usa --via-stage-soft/-1 (docs.css l.273).
-                  Backdrop de palco NUNCA usa gray-200/300 direto: esses dois
-                  não adaptam (tokens.css l.163-170) e o palco ficaria uma laje
-                  clara no tema escuro, com o vidro escuro sumindo em cima dela.
-   tone="dark"  → palco fixo escuro nos DOIS temas, de propósito: foto de hero e
-                  momento navy full-bleed são escuros em qualquer tema. Por ser
-                  fixo, o rótulo aqui pina a própria cor (branco), não herda
-                  token de texto. */
-function Stage({
-  label,
-  tone,
-  background,
-  children,
-}: {
-  label: string;
-  tone: 'gray' | 'dark';
-  background?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div
-      className={tone === 'gray' ? 'vds-stage gray' : 'vds-stage dark'}
-      style={{
-        position: 'relative',
-        minHeight: 220,
-        paddingTop: 60,
-        ...(background ? { background, borderColor: 'transparent' } : null),
-      }}
-    >
-      <span
-        style={{
-          position: 'absolute',
-          top: 18,
-          left: 24,
-          fontFamily: 'var(--via-font)',
-          fontSize: 10,
-          fontWeight: 700,
-          letterSpacing: '0.22em',
-          textTransform: 'uppercase',
-          color: tone === 'dark' ? 'rgba(255,255,255,0.72)' : 'var(--via-text-muted)',
-        }}
-      >
-        {label}
-      </span>
-      {children}
-    </div>
-  );
-}
-
-/* Fotografia simulada · fixa nos 2 temas (ver comentário do Stage). */
-const PHOTO_BG =
-  'radial-gradient(ellipse at top, var(--via-blue-soft) 0%, var(--via-navy) 60%, var(--via-navy-deep) 100%)';
+const photo = { backgroundImage: `url(${palco})` };
 
 export default function GlassVariants() {
+  /* a barra nasce com conteúdo JÁ passando por baixo (em repouso, sem
+     depender de alguém rolar pra ver o material trabalhar) */
+  const scrollRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 120;
+  }, []);
+
   return (
     <>
       <DocsHeader
-        eyebrow="Liquid Glass · variantes"
+        eyebrow="Liquid Glass · materiais"
         title={
           <>
-            Light, strong, dark, <em>liquid</em>.
+            Chrome, regular, thick, <em>control</em>.
           </>
         }
-        lede="Quatro variantes do mesmo material. Light é o default discreto. Strong tem opacidade maior para flutuar sobre fotografia. Dark vive nos momentos navy. Liquid é a pílula — específica para status e announcement. No tema escuro as três variantes claras viram vidro escuro translúcido sozinhas; só a dark atravessa igual, porque o momento navy já é escuro nos dois temas."
+        lede="Quatro materiais por elevação. Chrome é a barra que deixa o conteúdo passar; regular é o card no conteúdo; thick é tudo que flutua por cima; control é a peça pequena e tocável. No tema escuro cada um vira uma camada que escurece o fundo — troque o tema no topo e veja os mesmos demos."
       />
 
-      <Section title=".via-glass · light" meta="default subtle">
-        <Stage label="light · sobre palco cinza" tone="gray">
-          <div
-            className="via-glass"
-            style={{
-              padding: '20px 32px',
-              fontFamily: 'var(--via-font-display)',
-              fontSize: 22,
-              fontWeight: 500,
-              color: 'var(--via-text-primary)',
-              letterSpacing: '-0.015em',
-            }}
-          >
-            Discreto, com presença
+      <Section title="Chrome" meta="header · sidebar · tab bar">
+        <div className="gl-scroll" ref={scrollRef} tabIndex={0} aria-label="Demo: conteúdo rolando por baixo da barra">
+          <div className="via-bar-glass">
+            <span className="gl-scroll__brand">Viver de IA</span>
+            <span className="gl-scroll__nav">Mentoria · Cases · Conferência</span>
           </div>
-        </Stage>
-        <CodeBlock>{`<div className="via-glass">…</div>`}</CodeBlock>
-        <Spec rows={SPEC.glass} />
+          <div className="gl-scroll__body">
+            <h3>Role aqui dentro.</h3>
+            <p>
+              A barra é translúcida de verdade: o título, a foto e os cards passam desfocados por baixo e
+              a navegação continua legível. Em repouso ela não tem régua dura — a borda de rolagem aparece
+              só quando há conteúdo por trás.
+            </p>
+            <div className="gl-scroll__strip" style={photo} />
+            <p>
+              Chrome não carrega texto longo: só marca, navegação e ações. Texto corrido mora no
+              conteúdo, sobre superfície sólida ou material regular.
+            </p>
+            <div className="gl-grid">
+              {['Operação', 'Comunidade', 'Conferência'].map((x) => (
+                <Card key={x} variant="default">
+                  <p className="vds-eyebrow">{x}</p>
+                  <p style={{ margin: '8px 0 0', fontSize: 13, color: 'var(--via-text-body)' }}>Conteúdo da página, rolando.</p>
+                </Card>
+              ))}
+            </div>
+            <p>Fim do conteúdo de exemplo.</p>
+          </div>
+        </div>
+        <Spec m="chrome" utility=".via-bar-glass" />
       </Section>
 
-      <Section title=".via-glass-strong" meta="hero foreground">
-        <Stage label="strong · sobre fotografia" tone="dark" background={PHOTO_BG}>
-          <div
-            className="via-glass-strong"
-            style={{
-              padding: '24px 36px',
-              fontFamily: 'var(--via-font-display)',
-              fontSize: 24,
-              fontWeight: 500,
-              color: 'var(--via-text-primary)',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            {/* --via-text-body, não muted: o vidro strong é translúcido sobre navy, então
-                a superfície real medida é cinza-azulada (não branca) e o muted caía pra
-                3,38:1 no tema claro — só passava pela exceção de "texto grande". */}
-            Vidro que <em style={{ color: 'var(--via-text-body)' }}>respira</em>
+      <Section title="Regular" meta="card e painel no conteúdo">
+        <div className="gl-photo" style={photo}>
+          <p className="gl-photo__label">Sobre fotografia · palco da conferência</p>
+          <div className="gl-grid">
+            {[
+              { lbl: 'Componentes', num: '46', sub: 'na library React' },
+              { lbl: 'Materiais de vidro', num: '4', sub: 'chrome · regular · thick · control' },
+              { lbl: 'Temas', num: '2', sub: 'claro primeiro · escuro desenhado' },
+            ].map((c) => (
+              <Card key={c.lbl} variant="glass" className="gl-stat">
+                <p className="vds-eyebrow">{c.lbl}</p>
+                <strong>{c.num}</strong>
+                <span>{c.sub}</span>
+              </Card>
+            ))}
           </div>
-        </Stage>
-        <CodeBlock>{`<div className="via-glass-strong">…</div>`}</CodeBlock>
-        <Spec rows={SPEC.strong} />
+        </div>
+        <CodeBlock>{`<Card variant="glass">…</Card>      // React
+<div className="via-glass">…</div>  // HTML cru · mesmo material`}</CodeBlock>
+        <Spec m="regular" utility=".via-glass · .via-tile · .via-row-card" />
       </Section>
 
-      <Section title=".via-glass-dark" meta="navy moments">
-        <Stage label="dark · sobre navy full-bleed" tone="dark">
-          <div
-            className="via-glass-dark"
-            style={{
-              padding: '24px 36px',
-              fontFamily: 'var(--via-font-display)',
-              fontSize: 22,
-              fontWeight: 500,
-              letterSpacing: '-0.015em',
-            }}
-          >
-            Em momentos <em style={{ color: 'rgba(255,255,255,0.72)' }}>escuros</em>
+      <Section title="Thick" meta="tudo que flutua por cima">
+        <div className="gl-overlay">
+          <div className="gl-overlay__page" aria-hidden="true">
+            <b>Relatório da turma</b>
+            <i /><i /><i />
           </div>
-        </Stage>
-        <CodeBlock>{`<div className="via-glass-dark">…</div>`}</CodeBlock>
-        <Spec rows={SPEC.dark} />
-        <p
-          style={{
-            fontFamily: 'var(--via-font)',
-            fontSize: 'var(--via-fs-caption)',
-            color: 'var(--via-text-muted)',
-            lineHeight: 1.6,
-            margin: '14px 0 0',
-          }}
-        >
-          É a única variante sem override no tema escuro — ela já nasce escura, e o palco
-          onde ela vive (navy full-bleed) é escuro nos dois temas. Por isso o texto pina{' '}
-          <code className="vds-code-inline">--via-white</code> em vez de herdar o token de
-          texto da página.
+          <div className="gl-overlay__scrim" />
+          <div className="via-glass-strong" role="group" aria-label="Demo de overlay">
+            <h3>Confirmar inscrição?</h3>
+            <p>
+              Overlay usa o material mais denso: piso de 90% de branco com tinta navy e grão — o rodapé não
+              acinzenta e o texto lê sobre qualquer fundo. O scrim ficou mais leve e mais desfocado.
+            </p>
+            <div className="gl-actions">
+              <Button variant="ghost">Cancelar</Button>
+              <Button variant="primary">Confirmar</Button>
+            </div>
+          </div>
+        </div>
+        <CodeBlock>{`/* Modal, Sheet, Drawer, Popover, menus, Select, Command, Toast,
+   Tooltip e HoverCard já usam — em HTML cru: */
+<div className="via-glass-strong">…</div>`}</CodeBlock>
+        <Spec m="thick" utility=".via-glass-strong" />
+      </Section>
+
+      <Section title="Control" meta="pill · botão secundário · input">
+        <div className="gl-photo" style={{ ...photo, backgroundPosition: 'center 70%' }}>
+          <p className="gl-photo__label">Controles sobre fotografia</p>
+          <div className="gl-row">
+            <Button variant="secondary">Ver programação</Button>
+            <Pill>inscrições abertas</Pill>
+            <span className="via-liquid" style={{ padding: '7px 14px', fontSize: 'var(--via-fs-label)', fontWeight: 500, color: 'var(--via-text-primary)' }}>
+              .via-liquid
+            </span>
+            <a className="via-pill-link" href="#control" onClick={(e) => e.preventDefault()}>.via-pill-link</a>
+            <div style={{ width: 240 }}>
+              <Input placeholder="Seu email" aria-label="Seu email (demo)" />
+            </div>
+          </div>
+        </div>
+        <p className="gl-hint">
+          No escuro o botão secundário deixa de ser laje branca: vira controle escuro com aro e texto
+          claro.
         </p>
+        <Spec m="control" utility=".via-liquid · .via-pill-link" />
       </Section>
 
-      <Section title=".via-liquid · pill" meta="status & announcement">
-        <Stage label="liquid pill · sobre palco cinza" tone="gray">
-          <span
-            className="via-liquid"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-              padding: '10px 18px',
-              fontFamily: 'var(--via-font)',
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: '0.20em',
-              textTransform: 'uppercase',
-              color: 'var(--via-text-primary)',
-            }}
-          >
-            {/* currentColor, nunca --via-navy: navy não adapta e a bolinha
-                sumiria dentro da pílula escura no tema escuro. */}
-            <span
-              aria-hidden="true"
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: 'var(--via-radius-pill)',
-                background: 'currentColor',
-                animation: 'viaPulseDot 2.4s ease-in-out infinite',
-              }}
-            />
-            Turma 2026.2 · inscrições abertas
-          </span>
-          <style>{`@keyframes viaPulseDot { 0%,100%{opacity:1; transform:scale(1)} 50%{opacity:0.4; transform:scale(0.7)} }`}</style>
-        </Stage>
-        <CodeBlock>{`<span className="via-liquid">…</span>`}</CodeBlock>
-        <Spec rows={SPEC.liquid} />
+      <Section title="Acessibilidade de material" meta="automática nos tokens">
+        <ul style={{ margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14, color: 'var(--via-text-body)', lineHeight: 1.6 }}>
+          <li><strong>Menos transparência</strong> (sistema): os 4 materiais viram superfície sólida, sem blur, sem grão; scrim vira cor chapada; a lente desliga.</li>
+          <li><strong>Mais contraste</strong>: superfície sólida e ring de 40% (claro) / 45% (escuro).</li>
+          <li><strong>Menos movimento</strong>: o reflexo que segue o ponteiro não liga; entradas viram fade.</li>
+        </ul>
       </Section>
     </>
   );

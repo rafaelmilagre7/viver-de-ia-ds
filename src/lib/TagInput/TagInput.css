@@ -21,9 +21,9 @@
   align-items: center;
   gap: var(--via-space-1_5);
   padding: var(--via-space-1_5) var(--via-space-2);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 1px solid var(--via-border, #D0D5DD);
   border-radius: var(--via-radius-sm);
   cursor: text;
@@ -48,7 +48,7 @@
 
 .via-taginput__field.is-focused {
   border-color: var(--via-navy-40);
-  background: var(--via-glass-card);
+  background: var(--via-material-control-fill);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
     0 0 0 3px var(--via-navy-10),

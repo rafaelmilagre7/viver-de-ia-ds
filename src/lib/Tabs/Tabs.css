@@ -90,8 +90,8 @@
 .via-tabs--pills .via-tabs__list {
   padding: var(--via-space-1);
   background: linear-gradient(180deg, var(--via-navy-04), var(--via-navy-02));
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 0.5px solid var(--via-navy-08);
   border-radius: var(--via-radius-sm);
   align-self: flex-start;
@@ -113,14 +113,11 @@
 }
 
 .via-tabs--pills .via-tabs__tab.is-active {
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   color: var(--via-text-primary);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 1) inset,
-    0 0 0 0.5px var(--via-navy-12),
-    0 2px 6px -2px var(--via-shadow-ink-14);
+  box-shadow: 0 0 0 0.5px var(--via-navy-12), var(--via-material-control-shadow);
 }
 
 /* ===== Panel ===== */

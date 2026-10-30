@@ -25,9 +25,9 @@
   gap: var(--via-space-2);
   width: 100%;
   padding: 9px var(--via-space-3);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: var(--via-glass-blur);
-  backdrop-filter: var(--via-glass-blur);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   border: 0.5px solid var(--via-navy-12, rgba(10,31,59,0.12));
   border-radius: var(--via-radius-sm);
   font-family: var(--via-font, inherit);
@@ -52,22 +52,19 @@
 .via-dp__input > svg { color: var(--via-ink-3, #6B7891); flex-shrink: 0; }
 
 .via-dp__pop {
+  --via-rim: var(--via-material-thick-rim);
   position: absolute;
   z-index: var(--via-z-dropdown, 1100);
   top: calc(100% + 8px);
   left: 0;
   width: 304px;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
   border-radius: var(--via-radius-md);
   padding: var(--via-space-3);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 24px 56px -16px var(--via-shadow-ink-20),
-    0 8px 18px -10px var(--via-shadow-ink-14);
+  box-shadow: var(--via-material-thick-shadow);
   animation: via-dp-in .26s var(--via-ease-out) both;
   isolation: isolate;
 }

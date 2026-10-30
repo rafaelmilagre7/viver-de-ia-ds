@@ -1,6 +1,7 @@
 import { useEffect, useRef, useId, type ReactNode } from 'react';
 import { bridgeTab, useDismiss, useEscapeLayer } from '../_shared/overlay';
 import { Anchored } from '../_shared/Portal';
+import '../_shared/material.css';
 import './Popover.css';
 
 type Side = 'top' | 'bottom' | 'left' | 'right';

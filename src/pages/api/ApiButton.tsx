@@ -8,15 +8,16 @@ export default function ApiButton() {
     <ComponentDoc
       eyebrow="api · button"
       name="Button"
-      headline="pill 999 · sentence-case · shine líquido no hover"
-      description="CTA primário do sistema. Pill com gradient navy primary, glass secondary, fantasma ghost, coral destrutivo e accent editorial singular. Loading state com spinner currentColor · ícones iconLeft/iconRight com spacing automático · shine sweep diagonal no hover · press scale 0.985."
+      headline="pill 999 · sentence-case · reflexo que segue o ponteiro"
+      description="CTA primário do sistema. Pill com gradient navy primary, secondary no material control do vidro (claro no claro, controle escuro no escuro), fantasma ghost, coral destrutivo e accent editorial singular. Loading state com spinner currentColor · ícones iconLeft/iconRight com spacing automático · reflexo que segue o ponteiro no hover (só transform/opacity) · press scale 0.985."
       importLine={`import { Button, type ButtonProps } from '@viverdeia/design-system';`}
       anatomy={[
-        { part: 'via-btn', description: 'Container base · pill 999 · padding por size · overflow:hidden pra confinar shine' },
-        { part: 'via-btn__icon', description: 'Slot opcional pra <icon> à esquerda ou direita (z-index acima do shine)' },
+        { part: 'via-btn', description: 'Container base · pill 999 · padding por size · overflow:hidden pra confinar o reflexo' },
+        { part: 'via-btn__icon', description: 'Slot opcional pra <icon> à esquerda ou direita (z-index acima do reflexo)' },
         { part: 'via-btn__label', description: 'Texto principal · sentence-case · peso 500' },
         { part: 'via-btn__spinner', description: 'Spinner currentColor exibido quando `loading={true}` (substitui ícone)' },
-        { part: '::after (shine sweep)', description: 'Pseudo-element com gradient branco diagonal · transla -120% → 120% em hover' },
+        { part: '::before (reflexo)', description: 'Mancha de luz que segue o ponteiro (--via-mx/--via-my) por transform · acende por opacity · só mouse' },
+        { part: '::after (aro · secondary)', description: 'Aro especular do material control · gradiente mascarado no anel de 1px' },
       ]}
       meta={meta}
       playground={{

@@ -87,7 +87,7 @@ Checklist obrigatório antes de marcar tela como pronta.
 ❌ **ANEL COLORIDO em avatar/ícone** (`box-shadow: 0 0 0 2px verde/coral` em volta do avatar pra indicar status) — é semáforo, grita, e ainda DUPLICA o que a bolinha de presença já diz. Avatar = **vidro limpo** (superfície de vidro + borda branca + sombra macia); o status vive **só na bolinha**, discreta: **online = verde sóbrio, todos os outros = navy**; offline recua por **opacidade**, não por anel cinza. Halo colorido só é legítimo em **foco de botão destrutivo** e **aviso de segurança**.
 
 ❌ **LINHA LATERAL em QUALQUER card/box** (`border-left`/`border-inline-start` de 2–4px colorido) — em callout, alert, pull-quote, blockquote, destaque, do/don't, item de lista, linha de tabela, faixa "recomendado". Estilo bootstrap/alert, tem **cara de IA**; o Rafael chamou de "horrível" e pediu varredura total. **REGRA: card/box NUNCA tem barra colorida num lado só.**
-   ✅ No lugar: **liquid glass sem linha** — `var(--via-glass-card)` + `var(--via-glass-blur)` + `var(--via-glass-ring)` (hairline **uniforme nos 4 lados**) + `var(--via-glass-shadow)`. O destaque vem de **vidro + elevação + tipografia** (label, peso), nunca de cor num canto.
+   ✅ No lugar: **liquid glass sem linha** — o material regular inteiro: `var(--via-material-regular-fill)` + `-blur` + `-ring` (hairline **uniforme nos 4 lados**) + `-shadow` + aro especular. O destaque vem de **vidro + elevação + tipografia** (label, peso), nunca de cor num canto.
    ⚠️ Em **e-mail** (sem suporte a glass): tire a barra do mesmo jeito e use **borda fina uniforme nos 4 lados + fundo sutil**, em px/hex cru.
    Exceções que NÃO são "linha lateral de card" (mantêm): o `::after` rotacionado que **desenha o ✓** (checkmark), marcador de linha em **código/diff**, e `border-bottom` de divisor.
 
@@ -105,8 +105,9 @@ Checklist obrigatório antes de marcar tela como pronta.
 
 ### Surfaces — glass + atmospheric
 
-✅ Glass base: `linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.7))` + `-webkit-backdrop-filter` e `backdrop-filter` pela receita `var(--via-glass-blur)` (nunca blur à mão · -webkit- primeiro) + border + inset highlight · atmospheric: `radial-gradient at 0% 0%, rgba(10,31,59,0.04), transparent 60%` (signature) · liquid glass aparece em nav sticky, hero stat, modal, overlays
-❌ Bg branco flat sem hierarquia · glass em dashboard denso ou tabela de dados · sombras pretas puras (devem ser navy-tinted)
+✅ Vidro = **um dos 4 materiais por elevação** (`--via-material-<nome>-fill/-blur/-ring/-rim/-shadow`): **chrome** (header/sidebar/tab bar · translúcido de verdade), **regular** (card/painel), **thick** (Modal, Sheet, Drawer, Popover, menus, Select, Command, Toast, Tooltip · piso ≥ .90 + grão), **control** (pill, botão secundário, input). Nunca blur à mão · `-webkit-` primeiro · aro especular no `::after` mascarado · atmospheric: `radial-gradient at 0% 0%, var(--via-navy-04), transparent 60%` (signature)
+✅ **Escuro = camada que escurece** (navy denso + `brightness < 1`), não branco 2-10% — é o que mantém leitura sobre foto/conteúdo movimentado
+❌ Bg branco flat sem hierarquia · glass em dashboard denso ou tabela de dados (DataTable é sólido) · `<Card>` padrão sobre foto esperando vidro (o padrão é papel; vidro é `variant="glass"`) · sombras pretas puras (devem ser navy-tinted)
 
 ### Status indicators — quando dot é legítimo
 
@@ -120,7 +121,7 @@ Checklist obrigatório antes de marcar tela como pronta.
 
 ### Hover signatures (assinatura comportamental do DS)
 
-✅ **O elemento sobe e a luz aumenta** em hover (rows, cards, lessons, articles, audit log, billing, member list): lift `translateY(-1px/-2px/-3px)` + sombra/luz mais presente (`var(--via-glass-shadow-lift)`, atmosfera `::before` de 0.6 → 1) · `:active` com `scale(0.97)` no apertar · gap animation em text links com chevron · underline animation 50%→0% em tabs (abre do meio)
+✅ **O elemento sobe e a luz aumenta** em hover (rows, cards, lessons, articles, audit log, billing, member list): lift `translateY(-1px/-2px/-3px)` + sombra/luz mais presente (`var(--via-material-regular-lift)`, reflexo que segue o ponteiro só por transform/opacity — nunca varredura animando `left`) · `:active` com `scale(0.97)` no apertar · gap animation em text links com chevron · underline animation 50%→0% em tabs (abre do meio)
 ❌ **Barra lateral em hover** (banida nos 3 mecanismos: `border-left` colorido, `::before` fino à esquerda, `box-shadow inset` horizontal) · spring bouncy · parallax · partículas · ripple · autoplay infinito · zoom-em-hover gritante
 
 ### Fotografia
@@ -135,7 +136,7 @@ Checklist obrigatório antes de marcar tela como pronta.
 
 ### Sombras
 
-✅ Tinta de sombra sempre: `var(--via-shadow-ink-03..60)` (navy no claro, preto no escuro) ou as pilhas prontas `var(--via-glass-shadow)` / `var(--via-glass-shadow-lift)` · inner highlight `0 1px 0 var(--via-edge-hi) inset` + outer drop
+✅ Tinta de sombra sempre: `var(--via-shadow-ink-03..60)` (navy no claro, preto no escuro) ou a pilha pronta do material (`var(--via-material-<nome>-shadow)` / `-lift`) · inner highlight `0 1px 0 var(--via-edge-hi) inset` + outer drop
 ❌ Preto puro ou `rgba(10,31,59,…)` / `--via-navy-XX` escritos à mão em `box-shadow` (no dark viram halo) · sombra material-design pesada
 
 ---
@@ -186,9 +187,9 @@ Reference: `/Users/rafaelmilagre/viver-de-ia-ds` (`bun dev` → :5173)
 ```
 
 ### Borda de card/superfície — evita o card "sumindo no fundo claro"
-- Card / painel / menu flutuante em **fundo CLARO** → borda externa **`1px solid var(--via-border-soft)`** (hairline navy 0.05, visível). **NUNCA** use `var(--via-edge-hi)` como borda externa no claro: ela é branca (~`rgba(255,255,255,.95)`) e some no off-white — o card fica sem contorno, "flutuando no leite".
+- Card / painel / menu flutuante em **fundo CLARO** → borda externa = o ring do material (**`var(--via-material-regular-ring)`**, hairline navy .09; overlays `--via-material-thick-ring`). **NUNCA** use `var(--via-edge-hi)` como borda externa no claro: ela é branca (~`rgba(255,255,255,.95)`) e some no off-white — o card fica sem contorno, "flutuando no leite".
 - `var(--via-edge-hi)` é só pro **brilho interno do topo** (`box-shadow: inset 0 1px 0 var(--via-edge-hi)` — o sheen do liquid glass) e pra **borda externa de card sobre fundo NAVY/escuro** (aí a borda clara é o contorno de vidro correto).
-- Receita do card de vidro claro: `background: var(--via-glass-card)` + `border: 1px solid var(--via-border-soft)` + `box-shadow: var(--via-glass-shadow)` (hover/elevado: `var(--via-glass-shadow-lift)`) — nunca `--via-navy-XX` escrito à mão dentro de `box-shadow`.
+- Receita do card de vidro claro: `background: var(--via-material-regular-fill)` + `border: var(--via-material-regular-ring)` + `box-shadow: var(--via-material-regular-shadow)` (hover/elevado: `-lift`) + aro especular — nunca `--via-navy-XX` escrito à mão dentro de `box-shadow`. (Os nomes antigos `--via-glass-card/-ring/-shadow` seguem valendo como apelido do regular.)
 ### Cantos (border-radius) — escala generosa, SEMPRE token
 Nunca px cru. Cada degrau é perceptivelmente diferente do vizinho (nada de 14 vs 16 vs 18, que só tira o ritmo):
 ```css
@@ -250,27 +251,38 @@ Referência viva: **`/components/charts`** e **`/patterns/fpa`**.
 Existem classes utilitárias globais (`src/styles/surfaces.css`, importado no `index.css`). **Use-as em vez de estilizar controle/superfície na mão** — trazem vidro, cantos e os 3 estados prontos. Servem também pro que IA gera (Lovable/v0/Cursor), que é HTML/CSS, não React:
 | classe | pra quê |
 |---|---|
-| `.via-pill-link` | link/ação em pill (+ `--solid` pra ação principal, `--on-dark` sobre navy) |
-| `.via-row-card` | linha de lista com corpo (timestamp, item de agenda, recurso) |
-| `.via-tile` | card/painel de conteúdo em vidro (+ `--atmos` radial navy, `--lift` hover) |
+| `.via-pill-link` | link/ação em pill · material control (+ `--solid` pra ação principal, `--on-dark` sobre navy fixo) |
+| `.via-row-card` | linha de lista com corpo (timestamp, item de agenda, recurso) · material regular |
+| `.via-tile` | card/painel de conteúdo em vidro · material regular com aro (+ `--atmos` radial navy, `--lift` hover) |
 | `.via-meta-chip` | rótulo/meta NÃO-clicável (+ `--mono` pra número) |
-| `.via-bar-glass` | barra/chrome flutuante (nav sticky, toolbar) |
+| `.via-bar-glass` | barra/chrome flutuante (nav sticky, toolbar) · material chrome |
+| `.via-glass` · `.via-glass-strong` · `.via-liquid` | (no `tokens.css`) regular · thick · control, já com aro especular |
 
 **Todo controle precisa dos 3 estados** — `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (`var(--via-shadow-focus)`, com `outline:none`). Controle sem hover é design morto. **Elemento decorativo (rótulo, badge não-clicável) NÃO leva hover** — não invente interação onde não há ação.
-**Controle sobre fundo navy/escuro:** não use vidro branco (some) nem `var(--via-surface)` (no dark ele fica escuro e o botão desaparece) — use `rgba(255,255,255,0.10)` + borda `0.20` (hover `.16`/`.34`), ou `var(--via-surface-onnavy)` com texto navy fixo.
+**Controle sobre foto ou vidro:** material control (`<Button variant="secondary">`, `.via-pill-link`, `.via-liquid`) — branco no claro, controle escuro no escuro (nunca laje branca fixa). **Momento navy fixo** (escuro nos 2 temas): `.via-pill-link--on-dark` ou `rgba(255,255,255,0.10)` + borda `0.20` (hover `.16`/`.34`).
 
-### Liquid glass — receitas prontas (use a receita INTEIRA, não só o fundo)
+### Liquid glass — 4 materiais (use o material INTEIRO, não só o fundo)
 ```css
-/* CARD/painel de conteúdo — mais sólido, texto legível */
-background: var(--via-glass-card);
--webkit-backdrop-filter: var(--via-glass-blur); backdrop-filter: var(--via-glass-blur);  /* -webkit- SEMPRE primeiro */
-border: var(--via-glass-ring);
-box-shadow: var(--via-glass-shadow);        /* hover/elevado: --via-glass-shadow-lift */
+/* troque <m> por chrome | regular | thick | control conforme a elevação */
+background: var(--via-material-<m>-fill);
+-webkit-backdrop-filter: var(--via-material-<m>-blur);   /* -webkit- SEMPRE primeiro */
+backdrop-filter: var(--via-material-<m>-blur);
+border: var(--via-material-<m>-ring);
+box-shadow: var(--via-material-<m>-shadow);           /* hover: -lift (regular, control) */
 
-/* BARRA/chrome (nav sticky, toolbar, menu flutuante) — translúcido DE VERDADE */
-background: var(--via-glass-bar);
--webkit-backdrop-filter: var(--via-glass-blur-bar); backdrop-filter: var(--via-glass-blur-bar);
+/* aro especular · o que faz parecer vidro e não plástico */
+.peca { position: relative; }
+.peca::after { content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit;
+  background: var(--via-material-<m>-rim);
+  -webkit-mask: var(--via-rim-mask); -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none; }
+
+/* overlay: scrim leve e desfocado (no escuro vira tinta preta sozinho) */
+background: var(--via-scrim); -webkit-backdrop-filter: var(--via-scrim-blur); backdrop-filter: var(--via-scrim-blur);
 ```
+- **Lente (opt-in, só Chromium):** `enableGlassLens()` + `.via-glass--lens` em no máximo 1-2 peças-assinatura. Fora do Chromium fica o blur normal. Não em barra que rola.
+- **Raio concêntrico:** filho encostado na borda = raio do pai − padding do pai (`calc(var(--via-radius-lg) - var(--via-space-2))`).
+- **Movimento:** nunca anime `backdrop-filter`, `left` ou `top` — só `transform` e `opacity`.
 - Vidro só "aparece" com algo atrás pra desfocar (fundo atmosférico/escuro/conteúdo rolando). Sobre branco liso ele **some** — ali use card sólido + hairline.
 - **NUNCA** glass em: tabela/dashboard denso (mata a leitura), card DENTRO de card (vira sopa de vidro), fundo de e-mail (sem suporte), e nunca ao custo do contraste AA.
 

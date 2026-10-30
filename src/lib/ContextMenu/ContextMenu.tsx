@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode, type MouseEvent } from 'react';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
 import { Portal } from '../_shared/Portal';
+import '../_shared/material.css';
 import './ContextMenu.css';
 
 export interface ContextMenuOption {

@@ -25,26 +25,11 @@
     filter .2s ease;
 }
 
-/* Shine sweep · líquido editorial · revela no hover */
-.via-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 65%;
-  height: 100%;
-  background: linear-gradient(
-    100deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.22) 45%,
-    rgba(255, 255, 255, 0.06) 60%,
-    transparent 100%
-  );
-  pointer-events: none;
-  transition: left .65s var(--via-ease-snap);
-}
-.via-btn:hover:not(:disabled)::after {
-  left: 120%;
+/* Reflexo que segue o ponteiro (substitui a varredura de brilho que animava
+   `left` a cada hover) · ::before vem de _shared/material.css, só
+   transform + opacity. Aqui só o tamanho da mancha de luz. */
+.via-btn {
+  --via-spec-size: 140px;
 }
 
 .via-btn:disabled,
@@ -127,33 +112,27 @@
     0 8px 18px -6px var(--via-shadow-ink-40);
 }
 
-/* Secondary · liquid glass white */
+/* Secondary · material CONTROL do vidro líquido · adapta no escuro (antes:
+   laje branca fixa no tema escuro) · aro especular no ::after (material.css) */
 .via-btn--secondary {
-  --via-text-primary: var(--via-navy); --via-text-body: var(--via-gray-700); --via-text-muted: var(--via-gray-500); --via-text-faint: var(--via-gray-400);
-  background: var(--via-surface-onnavy);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
-  border-color: var(--via-edge-hi);
+  --via-rim: var(--via-material-control-rim);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
   color: var(--via-text-primary);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 4px 10px -4px var(--via-shadow-ink-14);
+  box-shadow: var(--via-material-control-shadow);
 }
 
 .via-btn--secondary:hover:not(:disabled) {
-  background: var(--via-glass-card);
   transform: translateY(-1px);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 1) inset,
-    0 0 0 0.5px var(--via-navy-18),
-    0 12px 24px -8px var(--via-shadow-ink-20);
+  box-shadow: var(--via-material-control-lift);
 }
 
 .via-btn--secondary:active:not(:disabled) {
   box-shadow:
     0 1px 3px var(--via-shadow-ink-14) inset,
-    0 0 0 0.5px var(--via-navy-14);
+    0 0 0 0.5px var(--via-shadow-ink-14);
 }
 
 /* Ghost · transparente · ganha glass sutil no hover */
@@ -165,8 +144,8 @@
 
 .via-btn--ghost:hover:not(:disabled) {
   background: linear-gradient(180deg, var(--via-navy-06), var(--via-navy-03));
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   color: var(--via-text-primary);
 }
 
@@ -260,7 +239,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .via-btn::after { display: none; }
   .via-btn { transition: none !important; }
 }
 

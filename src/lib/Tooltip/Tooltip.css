@@ -11,8 +11,12 @@
   z-index: var(--via-z-tooltip, 1300);
   padding: var(--via-space-1_5) 11px;
   border-radius: var(--via-radius-sm);
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-white);
+  /* material thick (antes: chip navy sólido · sumia sobre o palco escuro) */
+  background: var(--via-material-thick-fill);
+  -webkit-backdrop-filter: var(--via-material-thick-blur);
+  backdrop-filter: var(--via-material-thick-blur);
+  border: var(--via-material-thick-ring);
+  color: var(--via-text-primary);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   font-size: var(--via-fs-label);
   font-weight: var(--via-fw-medium);
@@ -21,10 +25,10 @@
   white-space: nowrap;
   pointer-events: none;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.14) inset,
-    0 -1px 0 rgba(0, 0, 0, 0.10) inset,
-    0 0 0 0.5px var(--via-navy-08),
-    0 8px 18px -6px var(--via-shadow-ink-40);
+    inset 0 1px 0 var(--via-edge-hi),
+    inset 0 -1px 0 var(--via-shadow-ink-06),
+    0 8px 18px -6px var(--via-shadow-ink-30),
+    0 2px 6px -2px var(--via-shadow-ink-14);
   animation: via-tip-in var(--via-dur) var(--via-ease-out);
 }
 
@@ -58,7 +62,7 @@
   left: 50%;
   transform: translateX(-50%);
   border-width: 5px 5px 0 5px;
-  border-color: var(--via-navy, #0A1F3B) transparent transparent transparent;
+  border-color: var(--via-material-thick-solid) transparent transparent transparent;
 }
 
 /* Bottom */
@@ -76,7 +80,7 @@
   left: 50%;
   transform: translateX(-50%);
   border-width: 0 5px 5px 5px;
-  border-color: transparent transparent var(--via-navy, #0A1F3B) transparent;
+  border-color: transparent transparent var(--via-material-thick-solid) transparent;
 }
 
 /* Left */
@@ -94,7 +98,7 @@
   top: 50%;
   transform: translateY(-50%);
   border-width: 5px 0 5px 5px;
-  border-color: transparent transparent transparent var(--via-navy, #0A1F3B);
+  border-color: transparent transparent transparent var(--via-material-thick-solid);
 }
 
 /* Right */
@@ -112,7 +116,7 @@
   top: 50%;
   transform: translateY(-50%);
   border-width: 5px 5px 5px 0;
-  border-color: transparent var(--via-navy, #0A1F3B) transparent transparent;
+  border-color: transparent var(--via-material-thick-solid) transparent transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -88,9 +88,9 @@ button.via-stepper__node:focus-visible {
   font-weight: var(--via-fw-medium);
   flex-shrink: 0;
   border: 1px solid var(--via-border, #D0D5DD);
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: var(--via-glass-blur);
-  backdrop-filter: var(--via-glass-blur);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
   color: var(--via-ink-3, #6B7891);
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform var(--via-dur) var(--via-ease-snap);
   position: relative;

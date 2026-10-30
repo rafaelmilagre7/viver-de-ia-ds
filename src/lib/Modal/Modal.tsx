@@ -3,6 +3,7 @@ import { X } from 'lucide-react';
 import { useDialogFocus } from '../_shared/useDialogFocus';
 import { useEscapeLayer, useScrollLock } from '../_shared/overlay';
 import { Portal } from '../_shared/Portal';
+import '../_shared/material.css';
 import './Modal.css';
 
 type Size = 'sm' | 'md' | 'lg';

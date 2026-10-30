@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useId, type ReactNode } from 'react';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
 import { Anchored } from '../_shared/Portal';
+import '../_shared/material.css';
 import './DropdownMenu.css';
 
 export interface DropdownMenuItem {

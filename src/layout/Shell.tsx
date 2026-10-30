@@ -4,6 +4,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import CommandPalette from '../components/CommandPalette';
+import { enableGlassLens } from '../lib/_shared/lens';
 import ScrollProgress from '../components/ScrollProgress';
 import './layout.css';
 
@@ -19,6 +20,11 @@ export default function Shell() {
   const { pathname } = useLocation();
   const [cmdkOpen, setCmdkOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Lente do vidro (opt-in · só Chromium; fora dele nada muda)
+  useEffect(() => {
+    enableGlassLens();
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

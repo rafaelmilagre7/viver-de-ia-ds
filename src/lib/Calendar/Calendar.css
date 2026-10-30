@@ -2,20 +2,19 @@
    <Calendar> · standalone editorial · pt-BR
    ============================================ */
 .via-cal {
+  --via-rim: var(--via-material-regular-rim);
+  position: relative;
   display: inline-flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
   padding: var(--via-space-4_5) var(--via-space-5);
   width: 320px;
-  background: var(--via-glass-card);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid var(--via-border-soft);
+  background: var(--via-material-regular-fill);
+  -webkit-backdrop-filter: var(--via-material-regular-blur);
+  backdrop-filter: var(--via-material-regular-blur);
+  border: var(--via-material-regular-ring);
   border-radius: var(--via-radius-md);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 0.5px var(--via-navy-10),
-    0 12px 28px -12px var(--via-shadow-ink-14);
+  box-shadow: var(--via-material-regular-shadow);
   font-family: var(--via-font, 'Geist', system-ui, sans-serif);
   isolation: isolate;
 }

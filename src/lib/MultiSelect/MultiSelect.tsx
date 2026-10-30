@@ -3,6 +3,7 @@ import { ChevronDown, Check, X } from 'lucide-react';
 import { useDismiss, useEscapeLayer } from '../_shared/overlay';
 import { Anchored } from '../_shared/Portal';
 import '../_shared/sr-only.css';
+import '../_shared/material.css';
 import './MultiSelect.css';
 
 export interface MultiSelectOption {
