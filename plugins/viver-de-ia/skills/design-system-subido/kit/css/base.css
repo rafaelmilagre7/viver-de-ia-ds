@@ -1,0 +1,263 @@
+/* ==============================================================
+   DS SUBIDO · base para Tailwind v4 + shadcn/ui
+   --------------------------------------------------------------
+   Importe DEPOIS do tailwind e dos tokens:
+     @import "tailwindcss";
+     @import "./ds/tokens.css" layer(base);
+     @import "./ds/base.css";
+     @import "./ds/revenue.css";
+     @import "./ds/subido.css";
+   Mapeia os tokens do shadcn (--background, --primary…) para os --via-*,
+   define o tema escuro por data-theme no <html> e as superfícies padrão.
+   Extraído do My Dashboard (Flat SUBIDO · Revenue++), 28/10/2026.
+   ============================================================== */
+/* O DS troca o tema por data-theme no <html>, não pela classe .dark do shadcn. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --font-sans: var(--via-font);
+  --font-mono: var(--via-font-mono);
+
+  --radius-sm: var(--via-radius-sm);
+  --radius-md: var(--via-radius-md);
+  --radius-lg: var(--via-radius-lg);
+  --radius-xl: var(--via-radius-xl);
+  --radius-2xl: var(--via-radius-2xl);
+  --radius-3xl: var(--via-radius-2xl);
+  --radius-4xl: var(--via-radius-2xl);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Rampa monocromática navy → azul-claro. Nunca arco-íris. */
+  --color-chart-1: var(--via-chart-1);
+  --color-chart-2: var(--via-chart-2);
+  --color-chart-3: var(--via-chart-3);
+  --color-chart-4: var(--via-chart-4);
+  --color-chart-5: var(--via-chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-icon: var(--sidebar-icon);
+  --color-sidebar-eyebrow: var(--sidebar-eyebrow);
+  --color-sidebar-meta: var(--sidebar-meta);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Aliases que as telas já usam (text-text, bg-surface, border-border-strong…).
+     Mantidos para não reescrever 40 componentes — todos apontam para --via-*. */
+  --color-surface: var(--via-surface);
+  --color-surface-elevated: var(--via-bg-2);
+  --color-surface-raised: var(--via-surface-elev);
+  --color-surface-overlay: var(--via-surface);
+  --color-text: var(--via-text-primary);
+  --color-text-secondary: var(--via-text-body);
+  --color-text-muted: var(--via-text-muted);
+  --color-border-strong: var(--via-border-strong);
+  --color-primary-dim: var(--via-blue);
+  --color-primary-light: var(--via-gray-100);
+  --color-primary-glow: var(--via-navy);
+  --color-success: var(--via-success);
+  --color-success-light: var(--via-gray-100);
+  --color-warning: var(--via-warning);
+  --color-danger: var(--via-coral);
+  --color-error: var(--via-coral);
+}
+
+/* Tokens semânticos do shadcn apontando para a marca.
+   Editar cor aqui é editar marca — prefira mexer em styles/via-tokens.css. */
+:root {
+  --radius: var(--via-radius-lg);
+  --background: var(--via-bg-2);
+  --foreground: var(--via-text-body);
+  --card: var(--via-surface);
+  --card-foreground: var(--via-text-primary);
+  --popover: var(--via-surface);
+  --popover-foreground: var(--via-text-primary);
+  --primary: var(--via-navy);
+  --primary-foreground: var(--via-white);
+  --secondary: var(--via-gray-50);
+  --secondary-foreground: var(--via-navy);
+  --muted: var(--via-gray-100);
+  --muted-foreground: var(--via-text-muted);
+  --accent: var(--via-blue);
+  --accent-foreground: var(--via-white);
+  --destructive: var(--via-coral);
+  --destructive-foreground: var(--via-white);
+  --border: var(--via-border);
+  --input: var(--via-border);
+  --ring: var(--via-navy);
+
+  /* Sidebar clara, como na plataforma da VIA: branco domina o canvas e quem
+     fica navy é o ITEM ATIVO, não a moldura. */
+  --sidebar: var(--via-surface);
+  --sidebar-foreground: var(--via-text-primary); /* rótulo do item */
+  --sidebar-icon: var(--via-text-soft); /* ícone é um passo mais quieto que o rótulo */
+  --sidebar-eyebrow: var(--via-text-soft); /* rótulo do grupo */
+  --sidebar-meta: var(--via-text-muted); /* e-mail no rodapé */
+
+  /* Pílula navy do item ativo. O texto sobre ela usa o passo mais claro da
+     escada do DS (--via-text-primary do tema escuro), não branco puro: é o
+     mesmo tom que o DS usa para título em superfície navy. */
+  --sidebar-primary: var(--via-navy);
+  --sidebar-primary-foreground: #f4f6fa;
+
+  --sidebar-accent: var(--via-navy-06); /* row wash do hover */
+  --sidebar-accent-foreground: var(--via-text-primary);
+  --sidebar-border: var(--via-border-soft);
+  --sidebar-ring: var(--via-navy-20);
+}
+
+:root[data-theme="dark"] {
+  --background: var(--via-bg);
+  --foreground: var(--via-text-body);
+  --card: var(--via-surface);
+  --card-foreground: var(--via-text-primary);
+  --popover: var(--via-bg-2);
+  --popover-foreground: var(--via-text-primary);
+  --primary: var(--via-white);
+  --primary-foreground: var(--via-navy);
+  --secondary: var(--via-bg-2);
+  --secondary-foreground: var(--via-text-primary);
+  --muted: var(--via-bg-3);
+  --muted-foreground: var(--via-text-muted);
+  --accent: var(--via-bg-2);
+  --accent-foreground: var(--via-text-primary);
+  --destructive: var(--via-coral);
+  --destructive-foreground: var(--via-navy);
+  --border: var(--via-border);
+  --input: var(--via-border);
+  --ring: var(--via-border-strong);
+
+  /* No escuro a navy some contra a superfície escura, então o ativo inverte:
+     pílula clara com texto navy. Sem isso o item selecionado desaparecia. */
+  --sidebar: var(--via-bg-2);
+  --sidebar-icon: var(--via-text-muted);
+  --sidebar-eyebrow: var(--via-text-muted);
+  --sidebar-meta: var(--via-text-muted);
+  --sidebar-primary: #f4f6fa;
+  --sidebar-primary-foreground: var(--via-navy);
+  --sidebar-accent: rgba(255, 255, 255, 0.06);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Geist é família única: hierarquia por peso e cor, nunca por outra fonte.
+     O DS pede weight 500 nos títulos — o 900 anterior era do esquema Avenir. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--via-font-display);
+    font-weight: var(--via-fw-medium);
+    color: var(--via-text-primary);
+    letter-spacing: var(--via-ls-tighter);
+  }
+
+  /* Superfície navy: o heading volta a herdar a cor do container, senão a
+     regra acima pinta navy sobre navy. É o opt-in que o DS já prevê. */
+  [data-on-dark] :is(h1, h2, h3, h4, h5, h6) {
+    color: inherit;
+  }
+}
+
+/* ============================================================
+   Superfícies herdadas das telas — reapontadas para os tokens.
+   ============================================================ */
+
+/* Card padrão do DS: raio 20, hairline soft, dupla sombra e a atmosfera
+   radial no canto superior esquerdo.
+   ENTRA EM `components` de propósito: fora de layer, o `position: relative`
+   daqui vencia o `fixed` do DialogContent (utility em layer) e o modal de
+   alerta ia parar no fim do documento, fora da tela. Em `components`, as
+   utilities do Tailwind voltam a ganhar quando combinadas com a classe. */
+@layer components {
+  .glass-card {
+    position: relative;
+    background: var(--via-glass-card);
+    border: 1px solid var(--via-border-soft);
+    border-radius: var(--via-radius-lg);
+    box-shadow:
+      0 1px 0 var(--via-edge-hi) inset,
+      0 10px 24px -16px var(--via-shadow-ink-14);
+  }
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(540px 240px at 0% 0%, var(--via-navy-04), transparent 60%);
+  }
+}
+
+.signature-gradient {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  color: var(--via-white);
+}
+
+.signature-gradient-text {
+  color: var(--via-navy);
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--via-gray-100) 25%,
+    var(--via-gray-50) 50%,
+    var(--via-gray-100) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* O hero é um dos quatro lugares onde o glass é permitido. */
+.hero-chat-glow {
+  position: relative;
+  box-shadow:
+    0 1px 0 var(--via-edge-hi) inset,
+    0 24px 60px -32px var(--via-shadow-ink-20);
+}
+

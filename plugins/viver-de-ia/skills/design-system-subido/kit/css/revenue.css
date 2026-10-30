@@ -1,0 +1,258 @@
+/* ==============================================================
+   DS SUBIDO · camada Revenue-Centric Design (Revenue++)
+   --------------------------------------------------------------
+   As regras visuais da skill revenue-centric-design aplicadas ao produto:
+   menos tinta (superfícies planas, hairline), uma ação dominante, padrão F
+   nos KPIs, estado vazio como próximo passo, texto mínimo de 13px.
+   Age sobre as classes-gancho dos componentes do kit (ds-btn, ds-card,
+   ds-metric, ds-next-step, ds-setup-banner…). Sem layer de propósito:
+   precisa vencer as utilities do Tailwind.
+   ============================================================== */
+
+/* ---------------------------------------------------------------
+   2. Menos tinta · superfícies planas, hairline, sem sombra
+   --------------------------------------------------------------- */
+:root
+  body,
+:root
+  .ds-shell {
+  background: var(--via-bg-2);
+}
+:root
+  :is(.ds-card, .glass-card, .hero-chat-glow, .ds-metric),
+:root
+  :is(div, section, article, aside, li, a):is(
+    [class*="rounded-lg"],
+    [class*="rounded-xl"],
+    [class*="rounded-2xl"],
+    [class*="rounded-[var(--via-radius-md)]"],
+    [class*="rounded-[var(--via-radius-lg)]"]
+  )[class~="border"]:is(
+    [class~="bg-card"],
+    [class~="bg-surface"],
+    [class*="bg-[var(--via-surface)]"]
+  ):not([class*="sticky"], [class*="border-dashed"], .ds-float) {
+  background: var(--via-surface) !important;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: 1px solid var(--via-border-soft);
+  box-shadow: none !important;
+}
+:root
+  :is(.ds-card, .glass-card, .hero-chat-glow)::before {
+  display: none;
+}
+/* ícone decorativo do KPI: não comunica nada que o rótulo já não diga */
+:root
+  .ds-metric-ico {
+  display: none;
+}
+
+/* ---------------------------------------------------------------
+   3. Hierarquia · padrão F: o 1º KPI é o "North Star" da tela
+      Home: StatCards são irmãos no grid. Painel: cada KPI mora numa
+      célula própria (col-span › wrapper › card), então "primeiro filho"
+      pegava TODOS — o 1º é o da primeira célula do grid.
+   --------------------------------------------------------------- */
+:root
+  .ds-metric-value {
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--via-text-muted);
+}
+:root
+  :is(.ds-metric:first-child:not(:only-child), [class*="col-span"]:first-child > * > .ds-metric) {
+  border-color: var(--via-navy-20);
+}
+:root
+  :is(.ds-metric:first-child:not(:only-child), [class*="col-span"]:first-child > * > .ds-metric)
+  .ds-metric-value {
+  /* acompanha a largura do card (o KPI tem @container): no modo TV, 4
+     por linha, 44px fixos viravam "R$ 312 …" */
+  font-size: clamp(1.5rem, 14cqi, 2.75rem);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: -0.035em;
+  color: var(--via-text-primary);
+}
+
+/* ---------------------------------------------------------------
+   1. Uma ação dominante · secundárias viram texto (Von Restorff)
+   --------------------------------------------------------------- */
+:root
+  :is(.ds-btn--outline, .ds-btn--secondary) {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--via-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--via-navy-25);
+  text-underline-offset: 4px;
+}
+:root
+  :is(.ds-btn--outline, .ds-btn--secondary):hover:not(:disabled) {
+  background: var(--via-navy-04);
+  text-decoration-color: currentColor;
+}
+:root
+  .ds-btn--primary {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 10px 22px -10px var(--via-shadow-ink-60);
+}
+/* chips de sugestão: opções, não ações — peso mínimo */
+:root
+  button[class~="rounded-full"][class~="border"]:not(.ds-btn, [role="radio"]) {
+  background: transparent;
+  border-color: var(--via-border-soft);
+  color: var(--via-text-muted);
+}
+:root
+  button[class~="rounded-full"][class~="border"]:not(.ds-btn, [role="radio"]):hover {
+  border-color: var(--via-navy-30);
+  color: var(--via-text-primary);
+}
+
+/* ---------------------------------------------------------------
+   4. Dashboard vazio · a próxima ação é o bloco mais forte da tela
+   --------------------------------------------------------------- */
+:root
+  .ds-next-step {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  border-color: var(--via-navy);
+  color: var(--via-white);
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+  box-shadow: 0 16px 32px -18px var(--via-shadow-ink-60);
+}
+:root
+  .ds-next-step
+  > span:first-child {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--via-white);
+}
+:root
+  .ds-next-step
+  > span:nth-child(2)
+  > span:first-child {
+  color: var(--via-white);
+  font-size: 1rem;
+}
+:root
+  .ds-next-step
+  > span:nth-child(2)
+  > span:last-child {
+  color: rgba(255, 255, 255, 0.72);
+}
+:root
+  .ds-next-step
+  > button {
+  background: var(--via-white);
+  color: var(--via-navy);
+  font-size: 0.875rem;
+  font-weight: var(--via-fw-semibold);
+  padding: 0.625rem 1.125rem;
+}
+:root[data-theme="dark"]
+  .ds-next-step {
+  background: linear-gradient(180deg, #1e3a5f, #13294a);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* o banner de configuração leva ao mesmo lugar: fica quieto para não
+   competir com a próxima ação ("se tudo chama atenção, nada chama") */
+:root
+  .ds-setup-banner {
+  background: transparent !important;
+  border: 1px dashed var(--via-border);
+  box-shadow: none !important;
+}
+:root
+  .ds-setup-banner
+  .ds-btn--primary,
+:root
+  .ds-setup-banner
+  button:not([aria-label]) {
+  background: transparent;
+  color: var(--via-text-primary);
+  border-color: var(--via-border);
+  box-shadow: none;
+}
+
+:root
+  main
+  :is(.text-xs, [class*="text-[0.6875rem]"], [class*="text-[11px]"], [class*="text-[10px]"]):not(
+    [class*="uppercase"]
+  ) {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+/* selo "Comece por aqui" e chips: rótulo, não conteúdo — fica em 11px */
+:root
+  main
+  :is(
+    [data-recommended] > span:first-child,
+    button[class~="rounded-full"][class~="border"]:not(.ds-btn)
+  ) {
+  font-size: 0.6875rem;
+}
+
+/* fonte recomendada · destaque pelo contorno navy (Von Restorff) */
+:root main button[data-recommended] {
+  border-color: var(--via-navy) !important;
+  box-shadow: 0 0 0 1px var(--via-navy) inset !important;
+}
+
+/* Ação destrutiva FORA de diálogo de confirmação (ex.: "Excluir Conta" em
+   Configurações) · contorno coral, não preenchimento. Com os secundários
+   virando texto, o coral cheio era a coisa mais saliente da tela — o
+   contrário de "guide the eye": quem tem que se destacar é o que gera
+   valor, não o que destrói. Dentro do diálogo de confirmação (portal fora
+   do <main>) o botão continua cheio, porque ali ele É a ação. */
+:root main .ds-btn--destructive {
+  background: transparent;
+  color: var(--via-coral-dark);
+  border: 1px solid rgba(184, 92, 92, 0.4);
+  box-shadow: none;
+}
+:root main .ds-btn--destructive:hover:not(:disabled) {
+  background: rgba(184, 92, 92, 0.08);
+}
+
+/* Banner de configuração · a frase quebra linha em vez de ser cortada */
+:root .ds-setup-banner p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* ---------------------------------------------------------------
+   Ajuda · corpo das seções no ritmo do DS: texto 14px com respiro,
+   listas com recuo de verdade (list-inside colava o marcador no
+   texto quebrado) e perguntas do FAQ como subtítulos, não negrito
+   --------------------------------------------------------------- */
+:root .ds-help-body {
+  color: var(--via-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+:root .ds-help-body :is(ol, ul) {
+  list-style-position: outside;
+  padding-left: 1.25rem;
+}
+:root .ds-help-body li + li {
+  margin-top: 0.375rem;
+}
+:root .ds-help-body li::marker {
+  color: var(--via-text-soft);
+}
+:root .ds-help-body strong,
+:root .ds-help-body .font-semibold {
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
+}
+:root .ds-help-body a {
+  color: var(--via-navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

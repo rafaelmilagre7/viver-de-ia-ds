@@ -25,10 +25,13 @@ Pronto — `/via` e os outros comandos aparecem no autocomplete, e a skill `vive
 | `/via-deck` | Pitch deck + one-pager + case study + proposta + contract |
 | `/via-paid` | Meta Ads + Google Display · 12 creatives canônicos |
 | `/via-check` | Auditoria editorial · 12 pontos · verde/amarelo/vermelho |
+| `/via-subido` | UI de produto · aplica o Design System SUBIDO numa solução (varre, relata, aplica, mede de novo) |
 
 ## Skill incluída
 
 `viver-de-ia-design` · skill base com paleta + tipografia + regras invioláveis + quase 100 páginas do reference site. Carregada automaticamente por todos os comandos.
+
+`design-system-subido` · camada de **produto** sobre os mesmos tokens: a UI do My Dashboard (Flat SUBIDO · Revenue++) virou moldura, componentes e telas padrão das soluções VIA / SUBIDO AI (React + Tailwind + shadcn). Traz `kit/` (CSS, shadcn no DS, AppShell, padrões de tela, auth), `references/` 01–08, `scripts/auditar-ds.js` e capturas de referência. Usada pelo `/via-subido`.
 
 ## Sub-agent incluído
 
