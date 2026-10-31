@@ -353,7 +353,10 @@ NAO-NEGOCIAVEIS: **UM eixo — NUNCA eixo duplo** (o erro #1: faz escalas difere
 
 PROIBIDO: 3D/gloss/sombra em barra · gradiente numa serie unica (cor que varia sem significar nada) · legenda com dois itens da mesma cor · pizza com muitas fatias · eixo y que nao comeca em zero em barra.
 
-**CAMADA DE DADOS — `tokens/data.css`** (importe junto). Faz qualquer `<table>` CRU nascer no padrao: `.via-table-wrap` (moldura+scroll) · `.via-table` (+`--sticky`/`--compact`/`--roomy`) · `.via-num` (numero tabular a DIREITA — a regra principal) · `.via-mono` · `.via-row-total` (peso+regua superior) · `.via-row-group` · `.via-cell-sub` (hierarquia por INDENTACAO) · `.via-delta--up/--down` (cor so semantica) · `.via-bar` · `.via-metric`/`.via-metric-grid` (**card de metrica — aqui o vidro entra**) · `.via-spark` · `.via-projected`.
+**CAMADA DE DADOS — `tokens/data.css`** (importe junto). Faz qualquer `<table>` CRU nascer no padrao: `.via-table-wrap` (moldura+scroll) · `.via-table` (+`--sticky`/`--compact`/`--roomy`) · `.via-num` (numero tabular a DIREITA — a regra principal) · `.via-mono` · `.via-row-total` (peso+regua superior) · `.via-row-group` · `.via-cell-sub` (hierarquia por INDENTACAO) · `.via-delta--neutral` (PADRAO de KPI: chip navy + seta + sinal) · `.via-delta--up/--down` (cor so semantica, so contra meta/orcado) · `.via-bar` · `.via-metric`/`.via-metric-grid` (**card de metrica — aqui o vidro entra**) · `.via-spark` · `.via-projected`.
+
+**Números em pt-BR:** `R$ 3.780` com espaço inseparável (o R$ nunca quebra longe do valor) · compacto em mil/mi/bi (`R$ 1,33 mi`, `184 mil` — nunca K/M/k) · decimal com vírgula (`99,8%`) · variação sempre com sinal e menos tipográfico (`+3,5%` · `−6,4%`). Na library: `formatCurrency`, `formatCompact`, `formatPercent`, `formatDelta`.
+
 REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos cards de metrica ao redor. Hierarquia por indentacao+peso, nunca por cor de fundo. Sem zebra pesada, sem barra lateral.
 
 **Todo controle precisa dos 3 estados**: `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (`var(--via-shadow-focus)` + `outline:none`). Controle sem hover é design morto. Elemento decorativo (rótulo/badge não-clicável) NÃO leva hover.

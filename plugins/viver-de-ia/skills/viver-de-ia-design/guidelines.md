@@ -226,7 +226,8 @@ Toda superfície de trabalho nasce **CLARA** (branco/off-white). Escuro é **exc
 | `.via-row-total` | linha de total: peso + régua superior (convenção contábil) |
 | `.via-row-group` | cabeçalho de grupo dentro do corpo |
 | `.via-cell-sub` / `--sub-2` | hierarquia por **indentação** |
-| `.via-delta--up/--down/--flat` | variação com cor semântica |
+| `.via-delta--neutral` | variação padrão de KPI · chip navy + seta + sinal |
+| `.via-delta--up/--down/--flat` | variação com cor semântica · só contra meta/orçado |
 | `.via-bar` + `.via-bar__fill` | micro-barra de proporção |
 | `.via-metric` (+`--atmos`) · `.via-metric-grid` | **card de métrica — aqui o vidro é bem-vindo** |
 | `.via-spark` (+`--down`, `--projected`) | sparkline |

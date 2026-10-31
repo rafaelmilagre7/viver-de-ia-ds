@@ -153,6 +153,20 @@
 .via-delta--up   { color: var(--via-success-text); }   /* favorável / meta batida */
 .via-delta--down { color: var(--via-coral-dark); }/* desfavorável */
 .via-delta--flat { color: var(--via-text-muted); }
+/* PADRÃO de KPI: variação NEUTRA · chip navy + seta + sinal (formatDelta da lib).
+   Subir não é "bom" por si: --up/--down só contra meta/orçado, quando o
+   bom/ruim é real (custo acima do orçado é --down mesmo subindo). */
+.via-delta--neutral {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-1);
+  padding: 3px var(--via-space-2) 3px var(--via-space-1_5);
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-04);
+  border: 0.5px solid var(--via-border-soft);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-primary);
+}
 
 /* Micro-barra de proporção · comunica peso sem virar gráfico */
 .via-bar {

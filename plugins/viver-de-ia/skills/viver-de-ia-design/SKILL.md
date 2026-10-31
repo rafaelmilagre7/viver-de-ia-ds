@@ -313,14 +313,15 @@ Paleta de série própria (navy puro não sustenta 2+ séries — vira cinza): *
 - **2 séries** = cor + **segundo canal obrigatório** (tracejado/hachura/marcador) + rótulo direto na linha — nunca só cor.
 - **3+ séries** = small multiples (painéis pareados), não espaguete.
 - **UM eixo só** — eixo duplo é banido (inclusive escala dupla escondida entre direções).
-- Barra **ancorada no zero** · projeção **tracejada** · texto SEMPRE em token de texto (nunca na cor da série) · verde/vermelho reservado pra status real, não pra "subiu/desceu" decorativo (delta usa `.via-delta--up/down/flat` do data.css).
+- Barra **ancorada no zero** · projeção **tracejada** · texto SEMPRE em token de texto (nunca na cor da série) · verde/vermelho reservado pra status real, não pra "subiu/desceu" decorativo: **variação de KPI é neutra por padrão** (`.via-delta--neutral` · chip navy + seta + sinal); `.via-delta--up/--down` só contra meta/orçado, quando o bom/ruim é real.
+- **Números em pt-BR** (use `formatCurrency`/`formatCompact`/`formatPercent`/`formatDelta` da library): `R$ 3.780` com espaço inseparável (o R$ nunca quebra longe do valor) · compacto em **mil/mi/bi** (`R$ 1,33 mi`, `184 mil` — nunca K/M/k) · decimal com vírgula (`99,8%`) · variação sempre com sinal e menos tipográfico (`+3,5%` · `−6,4%`).
 - Fill de progresso no DARK: rampa clara `--via-data-2-dark → --via-data-1-dark` (navy fixo lê INVERTIDO — feito parece faltante).
 
 ### 11. Camadas prontas pra HTML cru — `surfaces.css` + `data.css` (nesta skill)
 
 Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz duas folhas prontas — importe junto com `colors_and_type.css` (no kit ZIP: `tokens/surfaces.css` + `tokens/data.css` junto com `tokens/tokens.css`):
 
-- **`data.css`** (tabelas/números/finanças): `.via-table-wrap` + `.via-table` (variações `--sticky/--compact/--roomy`) · `.via-num` (tabular, alinhado à direita) · `.via-row-total` / `.via-row-group` · `.via-cell-sub` · `.via-delta--up/down/flat` · `.via-bar` · `.via-metric` (+`--atmos`) · `.via-metric-grid` · `.via-spark` (+`--down/--projected`). Regra: **tabela densa SEM vidro; vidro nos cards de métrica ao redor**.
+- **`data.css`** (tabelas/números/finanças): `.via-table-wrap` + `.via-table` (variações `--sticky/--compact/--roomy`) · `.via-num` (tabular, alinhado à direita) · `.via-row-total` / `.via-row-group` · `.via-cell-sub` · `.via-delta--neutral` (padrão) · `.via-delta--up/down/flat` (só contra meta) · `.via-bar` · `.via-metric` (+`--atmos`) · `.via-metric-grid` · `.via-spark` (+`--down/--projected`). Regra: **tabela densa SEM vidro; vidro nos cards de métrica ao redor**.
 - **`surfaces.css`** (controles/acabamento): `.via-pill-link` (+`--solid/--on-dark`) · `.via-row-card` · `.via-tile` (+`--atmos/--lift`) · `.via-meta-chip` (+`--mono`) · `.via-bar-glass`. Todo controle tem `:hover/:active/:focus-visible` prontos.
 
 ### 12. Fluidez e material (doutrina Apple/WWDC adotada 29/Jul)
