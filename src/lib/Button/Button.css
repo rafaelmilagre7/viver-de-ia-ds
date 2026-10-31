@@ -27,9 +27,16 @@
 
 /* Reflexo que segue o ponteiro (substitui a varredura de brilho que animava
    `left` a cada hover) · ::before vem de _shared/material.css, só
-   transform + opacity. Aqui só o tamanho da mancha de luz. */
+   transform + opacity. Aqui o tamanho da mancha e, nos preenchimentos
+   escuros com rótulo branco, a luz contida (--via-specular-on-fill): a
+   de vidro (0.55) acinzentava o fundo e o rótulo caía pra 2,6:1. */
 .via-btn {
   --via-spec-size: 140px;
+}
+.via-btn--primary,
+.via-btn--accent,
+.via-btn--destructive {
+  --via-spec-light: var(--via-specular-on-fill);
 }
 
 .via-btn:disabled,
@@ -101,8 +108,11 @@
     0 4px 10px -6px var(--via-shadow-ink-40);
 }
 
-/* Primary no escuro · invertido (branco com texto navy) — navy sobre o palco escuro sumia (1,03:1) */
+/* Primary no escuro · invertido (branco com texto navy) — navy sobre o palco escuro sumia (1,03:1).
+   Fundo claro e rótulo navy: a luz pode ser branca cheia — acende a metade
+   de baixo do gradiente sem tocar no contraste (o contido sumia no branco). */
 [data-theme="dark"] .via-btn--primary {
+  --via-spec-light: radial-gradient(closest-side, var(--via-white), transparent);
   background: linear-gradient(180deg, var(--via-white), #E6ECF4);
   border-color: rgba(255, 255, 255, 0.9);
   color: var(--via-navy);
@@ -157,7 +167,9 @@
 }
 
 .via-btn--destructive:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--via-coral), var(--via-coral-deep));
+  /* coral-deep chapado (5,9:1 com o branco) · o gradiente partia do coral
+     (4,4:1) e não sobrava folga nenhuma pro reflexo embaixo do rótulo */
+  background: var(--via-coral-deep);
   border-color: transparent;
   color: var(--via-white);
   transform: translateY(-1px);
@@ -206,7 +218,7 @@
 /* Press state · sutil afundar · resposta instantânea (retorno segue a base).
    Depois dos variants: o transform do press vence o translateY(-1px) do hover */
 .via-btn:active:not(:disabled) {
-  transform: translateY(0) scale(0.985);
+  transform: translateY(0) scale(var(--via-press-scale));
   transition-duration: var(--via-dur-press);
 }
 
@@ -230,13 +242,8 @@
   opacity: 0.7;
 }
 
-/* Focus-visible · ring editorial */
-.via-btn:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 2px var(--via-surface),
-    0 0 0 4px var(--via-navy-60);
-}
+/* Foco · o anel global de tokens.css (outline segue a pílula e não apaga a
+   sombra do botão, como fazia o anel de box-shadow) */
 
 @media (prefers-reduced-motion: reduce) {
   .via-btn { transition: none !important; }

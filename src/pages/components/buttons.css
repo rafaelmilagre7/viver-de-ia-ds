@@ -1,202 +1,29 @@
-.vds-buttons-row {
+/* Página de botões · só a vitrine. O botão é o <Button> da lib, com o CSS
+   dela — nada de .via-btn aqui (a cópia antiga vazava pras outras rotas). */
+.vds-btn-states {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--via-space-2_5);
+  gap: var(--via-space-5) var(--via-space-6);
   align-items: center;
   margin: var(--via-space-4) 0 var(--via-space-2);
 }
 
-.via-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--via-space-2);
-  border: 1px solid transparent;
-  border-radius: var(--via-radius-pill);
-  font-family: var(--via-font);
-  font-weight: var(--via-fw-medium);
-  cursor: pointer;
-  line-height: var(--via-lh-tight);
-  white-space: nowrap;
-  overflow: hidden;
-  /* contém o sheen (z-index negativo) dentro do próprio botão */
-  isolation: isolate;
-  transition: all 200ms var(--via-ease);
-  font-feature-settings: 'tnum' 1;
-
-  /* LIFT · sombra de TINTA, nunca de token navy-*.
-     Os tokens --via-navy-* invertem pra rgba(branco) no tema escuro —
-     usá-los em box-shadow transformava a sombra num HALO branco em volta
-     do botão. Aqui a sombra é declarada por tema: tinta no claro, preto
-     no escuro. */
-  --vds-btn-lift:        0 8px 18px -6px rgba(10, 31, 59, 0.18);
-  --vds-btn-lift-hover:  0 12px 24px -8px rgba(10, 31, 59, 0.26);
-  --vds-btn-lift-press:  0 4px 10px -4px rgba(10, 31, 59, 0.16);
-  --vds-btn-lift-soft:   0 4px 10px -4px rgba(10, 31, 59, 0.10);
-  --vds-btn-lift-soft-h: 0 6px 14px -4px rgba(10, 31, 59, 0.14);
-  --vds-btn-inset:       inset 0 2px 4px -2px rgba(10, 31, 59, 0.16);
+.vds-btn-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--via-space-2_5);
+  margin: 0;
 }
 
-[data-theme='dark'] .via-btn {
-  --vds-btn-lift:        0 8px 18px -6px rgba(0, 0, 0, 0.55);
-  --vds-btn-lift-hover:  0 12px 24px -8px rgba(0, 0, 0, 0.62);
-  --vds-btn-lift-press:  0 4px 10px -4px rgba(0, 0, 0, 0.50);
-  --vds-btn-lift-soft:   0 4px 10px -4px rgba(0, 0, 0, 0.45);
-  --vds-btn-lift-soft-h: 0 6px 14px -4px rgba(0, 0, 0, 0.52);
-  --vds-btn-inset:       inset 0 2px 4px -2px rgba(0, 0, 0, 0.50);
+.vds-btn-state figcaption {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-muted);
 }
 
-.via-btn.primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  /* fica ACIMA do fundo e ABAIXO do rótulo · o rótulo é text node solto,
-     então `.via-btn > *` sozinho não protegia — o sheen lavava o texto */
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.22) 50%, transparent 70%);
-  transition: left 700ms var(--via-ease-out);
-  pointer-events: none;
-}
-
-.via-btn.primary:hover::before {
-  left: 100%;
-}
-
-.via-btn > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Sizes — editorial scale */
-.via-btn.sm {
-  font-size: var(--via-fs-xs);
-  padding: 9px var(--via-space-4);
-}
-
-.via-btn.md {
-  font-size: var(--via-fs-caption);
-  padding: var(--via-space-3) var(--via-space-5_5);
-}
-
-.via-btn.lg {
-  font-size: var(--via-fs-sm);
-  padding: 15px var(--via-space-7);
-}
-
-/* PRIMARY — navy gradient com inner highlight */
-.via-btn.primary {
-  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
-  color: var(--via-white);
-  border-color: var(--via-navy);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    var(--vds-btn-lift);
-}
-
-.via-btn.primary:hover,
-.via-btn.primary.is-hover {
-  background: linear-gradient(180deg, var(--via-navy-deep), var(--via-navy-deep));
-  transform: translateY(-1px);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    var(--vds-btn-lift-hover);
-}
-
-.via-btn.primary:active,
-.via-btn.primary.is-pressed {
-  transform: translateY(0) scale(0.98);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    var(--vds-btn-lift-press);
-}
-
-.via-btn.primary:disabled {
-  background: var(--via-navy-08);
-  /* era rgba(10,31,59,0.35) fixo · no tema escuro dava 1.04:1 contra o
-     próprio fundo — o rótulo "Disabled" sumia. Token adapta. */
-  color: var(--via-text-faint);
-  border-color: transparent;
-  box-shadow: none;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* SECONDARY — glass white */
-.via-btn.secondary {
-  /* botão secundário ADAPTA (vidro) · texto/fundo seguem o tema · estados
-     hover/pressed continuam legíveis (antes era branco fixo + texto navy,
-     que quebrava no hover escuro) */
-  background: var(--via-glass-card);
-  color: var(--via-text-primary);
-  border-color: var(--via-border-soft);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    var(--vds-btn-lift-soft);
-}
-
-.via-btn.secondary:hover,
-.via-btn.secondary.is-hover {
-  border-color: var(--via-navy-22);
-  background: var(--via-glass-card-2);
-  transform: translateY(-1px);
-  box-shadow:
-    inset 0 1px 0 var(--via-edge-hi),
-    var(--vds-btn-lift-soft-h);
-}
-
-.via-btn.secondary:active,
-.via-btn.secondary.is-pressed {
-  /* pressed MANTÉM o vidro (antes virava fill chapado var(--via-navy-04),
-     que no escuro ficava mais CLARO que o default e invertia o gesto).
-     Afundar = perder a elevação + ganhar sombra interna. */
-  background: var(--via-glass-card-2);
-  transform: translateY(0) scale(0.98);
-  box-shadow: var(--vds-btn-inset);
-}
-
-/* GHOST — transparent */
-.via-btn.ghost {
-  background: transparent;
-  color: var(--via-text-primary);
-  padding: var(--via-space-3) var(--via-space-4);
-  font-weight: var(--via-fw-medium);
-}
-
-.via-btn.ghost.sm {
-  padding: 9px var(--via-space-3);
-}
-
-.via-btn.ghost.lg {
-  padding: 15px var(--via-space-5);
-}
-
-.via-btn.ghost:hover,
-.via-btn.ghost.is-hover {
-  background: var(--via-navy-06);
-}
-
-.via-btn.ghost:active {
-  background: var(--via-navy-10);
-  transform: scale(0.98);
-}
-
-/* Focus state — editorial ring · o anel usa token (adapta no escuro).
-   Antes era rgba(10,31,59,0.15) fixo: sumia sobre fundo escuro. */
-.via-btn:focus-visible {
-  outline: none;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 0 0 3px var(--via-navy-22),
-    var(--vds-btn-lift);
-}
-
-.via-btn.secondary:focus-visible,
-.via-btn.ghost:focus-visible {
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 0 0 3px var(--via-navy-22);
+/* a tabela de tokens da docs não tem respiro entre colunas: no celular o
+   nome longo do token encostava no valor */
+.vds-btn-tokens :is(th, td):not(:last-child) {
+  padding-right: var(--via-space-3);
 }

@@ -142,7 +142,7 @@
 }
 
 .via-cal__cell:active:not(.is-disabled) {
-  transform: scale(0.94);
+  transform: scale(var(--via-press-scale-sm));
   transition-duration: var(--via-dur-press);
 }
 

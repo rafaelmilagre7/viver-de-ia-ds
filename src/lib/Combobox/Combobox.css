@@ -53,8 +53,8 @@
 }
 
 .via-combobox__trigger:focus-within {
-  outline: 2px solid var(--via-navy-60);
-  outline-offset: 2px;
+  outline: var(--via-focus-width) solid var(--via-focus-color);
+  outline-offset: var(--via-focus-offset);
 }
 
 .via-combobox__icon {

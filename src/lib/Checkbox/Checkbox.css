@@ -65,7 +65,7 @@
 }
 
 .via-checkbox:active:not(.is-disabled) .via-checkbox__box {
-  transform: scale(0.9);
+  transform: scale(var(--via-press-scale-sm));
   transition-duration: var(--via-dur-press);
 }
 
@@ -95,8 +95,8 @@
 }
 
 .via-checkbox__input:focus-visible + .via-checkbox__box {
-  outline: 2px solid var(--via-navy-60);
-  outline-offset: 2px;
+  outline: var(--via-focus-width) solid var(--via-focus-color);
+  outline-offset: var(--via-focus-offset);
 }
 
 .via-checkbox__copy {

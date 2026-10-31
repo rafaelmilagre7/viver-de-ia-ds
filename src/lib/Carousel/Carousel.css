@@ -70,7 +70,7 @@
 }
 
 .via-carousel__arrow:active:not(:disabled) {
-  transform: translateY(-50%) scale(0.98);
+  transform: translateY(-50%) scale(var(--via-press-scale-sm));
   transition-duration: var(--via-dur-press);
 }
 
@@ -106,13 +106,13 @@
 }
 
 .via-carousel__toggle:active {
-  transform: scale(0.98);
+  transform: scale(var(--via-press-scale-sm));
   transition-duration: var(--via-dur-press);
 }
 
 .via-carousel__toggle:focus-visible {
-  outline: 2px solid var(--via-navy-60);
-  outline-offset: 2px;
+  outline: var(--via-focus-width) solid var(--via-focus-color);
+  outline-offset: var(--via-focus-offset);
 }
 
 /* Dots */

@@ -357,6 +357,12 @@
   --via-rim-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   /* Reflexo que segue o ponteiro (Button/Card) · só opacity + transform */
   --via-specular: radial-gradient(closest-side, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  /* Reflexo sobre PREENCHIMENTO ESCURO com rótulo branco (primary navy,
+     accent, destructive coral). O 0.55 acima virava cinza-ardósia embaixo
+     do texto (rótulo branco a 2,6:1). 0.12 é o teto do coral: o rótulo fica
+     em 4,6:1 no ponto mais claro do reflexo. Vale nos dois temas — navy e
+     coral não mudam com o tema. */
+  --via-specular-on-fill: radial-gradient(closest-side, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
   /* Blur da peça com LENTE (.via-glass--lens) · mais fino que o do material
      pra refração da borda aparecer; a leitura continua garantida pelo fill */
   --via-lens-blur: blur(10px) saturate(170%);
@@ -640,6 +646,21 @@
 
   --via-shadow-focus: 0 0 0 3px rgba(10,31,59,0.15);
 
+  /* ========== FOCO =============================================
+     Anel de teclado (:focus-visible) · regra única no fim deste arquivo.
+     É OUTLINE: segue o raio da peça, não briga com a sombra dela e
+     sobrevive ao alto contraste. A cor adapta sozinha (navy-60 vira
+     branco 55% no escuro): 4,4:1 sobre o branco, 6:1 sobre o fundo escuro.
+     Sobre superfície navy fixa (.via-mesh-navy, .via-glass-dark,
+     [data-on-dark]) troca pra --via-focus-color-on-dark. Anel que
+     precisa ficar DENTRO da peça
+     (item de menu, linha de tabela) usa offset negativo:
+     calc(-1 * var(--via-focus-width)). */
+  --via-focus-color:         var(--via-navy-60);
+  --via-focus-color-on-dark: var(--via-white);
+  --via-focus-width:         2px;
+  --via-focus-offset:        2px;
+
   /* ========== BLUR =========================================== */
   --via-blur-sm: blur(8px)  saturate(140%);
   --via-blur-md: blur(16px) saturate(160%);
@@ -676,6 +697,15 @@
      reduced-motion viram neutras: sobra só o crossfade de opacidade. */
   --via-enter-scale: 0.97;
   --via-enter-shift: 8px;
+
+  /* Apertar (:active) · quanto a peça afunda, em --via-dur-press.
+     O que se sente é o deslocamento em px, não a fração: 0.98 move 2–8px
+     num botão ou card, mas some numa caixa de 18px. Por isso o degrau
+     -sm, só pra controle compacto (até ~40px): marca de checkbox, radio
+     e switch, célula de calendário, página da paginação, nó do stepper,
+     seta redonda de carrossel. */
+  --via-press-scale:    0.98;
+  --via-press-scale-sm: 0.94;
 
   /* Apelidos históricos · apontam pra escala nova (não use em código novo) */
   --via-ease:        var(--via-ease-snap);
@@ -786,6 +816,11 @@ body {
    sobrescreve sem precisar de override por classe — o color herda da cadeia. */
 :where(h1, h2, h3, h4) { color: var(--via-text-primary); }
 h1, h2, h3, h4 { margin: 0; }
+/* Quebra de linha · título equilibra as linhas (nada de palavra sozinha na
+   última), texto corrido evita a órfã. Só o ESTILO da quebra (longhand):
+   o shorthand text-wrap também liga a quebra e desfaria um nowrap herdado. */
+h1, h2, h3, h4, .via-hero, .via-display { text-wrap-style: balance; }
+p, li, blockquote, figcaption { text-wrap-style: pretty; }
 h1 { font-family: var(--via-font-display); font-weight: var(--via-fw-medium); font-size: var(--via-fs-h1); line-height: var(--via-lh-tight); letter-spacing: var(--via-ls-tighter); }
 h2 { font-family: var(--via-font-display); font-weight: var(--via-fw-medium); font-size: var(--via-fs-h2); line-height: var(--via-lh-snug);  letter-spacing: var(--via-ls-tighter); }
 h3 { font-family: var(--via-font); font-weight: var(--via-fw-semibold); font-size: var(--via-fs-h3); line-height: var(--via-lh-snug); letter-spacing: var(--via-ls-tight); }
@@ -871,6 +906,26 @@ a:hover { text-decoration: underline; }
 }
 /* links crus (sem classe) · navy some no dark → azul claro legível */
 [data-theme="dark"] a:not([class]) { color: #8FB8F6; }
+
+/* ANEL DE FOCO · só teclado · tokens --via-focus-* (bloco FOCO acima).
+   Vale pra tudo que recebe foco (lib, site, HTML cru); peça que precisa de
+   anel próprio (marca de checkbox, item de menu) escreve o seu com os
+   mesmos tokens e ganha na especificidade. */
+:focus-visible {
+  outline: var(--via-focus-width) solid var(--via-focus-color);
+  outline-offset: var(--via-focus-offset);
+}
+/* Sobre superfície navy fixa (nos 2 temas) o anel acende em branco */
+.via-mesh-navy, .via-glass-dark, .via-on-dark, [data-on-dark] {
+  --via-focus-color: var(--via-focus-color-on-dark);
+}
+/* Alto contraste do sistema: o anel usa a cor de texto do sistema */
+@media (forced-colors: active) {
+  :root, .via-mesh-navy, .via-glass-dark, .via-on-dark, [data-on-dark] {
+    --via-focus-color: CanvasText;
+  }
+  :focus-visible { outline-color: CanvasText; }
+}
 
 /* =============================================================
    GLASS — light-first
@@ -1043,6 +1098,8 @@ a:hover { text-decoration: underline; }
   :root {
     --via-enter-scale: 1;
     --via-enter-shift: 0px;
+    --via-press-scale: 1;
+    --via-press-scale-sm: 1;
   }
   /* :where() zera a especificidade: o !important de um componente
      (ex.: Progress que mantém um deslize curto) continua vencendo */

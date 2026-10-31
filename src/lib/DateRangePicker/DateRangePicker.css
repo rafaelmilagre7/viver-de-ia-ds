@@ -109,7 +109,7 @@
 }
 
 .via-drp__presets button:active {
-  transform: translateY(0) scale(0.97);
+  transform: translateY(0) scale(var(--via-press-scale));
   transition-duration: var(--via-dur-press);
 }
 

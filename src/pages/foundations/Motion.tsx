@@ -3,6 +3,7 @@ import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import CodeBlock from '../../components/docs/CodeBlock';
 import { Button } from '../../lib/Button/Button';
+import { Checkbox } from '../../lib/Checkbox/Checkbox';
 import { tokens, type TokenName } from '../../lib/tokens';
 import { DUR, EASE, prefersReducedMotion, usePresence } from '../../lib/_shared/motion';
 import {
@@ -388,10 +389,50 @@ export default function Motion() {
 }`}</CodeBlock>
       </Section>
 
+      <Section title="Apertar" meta="2 degraus · --via-press-scale">
+        <p className="vds-mo-lede">
+          Toda peça que se aperta afunda do mesmo jeito: escala por{' '}
+          <code className="vds-code-inline">--via-press-scale</code> em{' '}
+          <code className="vds-code-inline">--via-dur-press</code>. O que a mão sente é o deslocamento em pixels, não a fração — por isso há um segundo degrau, só
+          pra controle compacto, onde a escala normal não chegaria a mover um pixel.
+        </p>
+        <div className="vds-mo-stage">
+          <div className="vds-mo-stage__bar">
+            <Button variant="secondary">Aperte e segure</Button>
+            <Checkbox label="Aperte a caixa" />
+          </div>
+        </div>
+        <table className="vds-token-table vds-mo-press-table">
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Valor</th>
+              <th>Onde</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="tok">--via-press-scale</td>
+              <td className="val">{tokens['via-press-scale']}</td>
+              <td className="use">Botão, aba, gatilho de select, preset de data, card clicável</td>
+            </tr>
+            <tr>
+              <td className="tok">--via-press-scale-sm</td>
+              <td className="val">{tokens['via-press-scale-sm']}</td>
+              <td className="use">
+                Controle de até ~40px: marca de checkbox, radio e switch, célula de calendário,
+                página da paginação, nó do stepper, seta de carrossel
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </Section>
+
       <Section title="Menos movimento" meta="prefers-reduced-motion">
         <p className="vds-mo-lede">
           Reduzir movimento não é congelar a tela. Com a preferência ligada, deslocamento e escala
-          somem (<code className="vds-code-inline">--via-enter-scale</code> vira 1,{' '}
+          somem (<code className="vds-code-inline">--via-enter-scale</code> e{' '}
+          <code className="vds-code-inline">--via-press-scale</code> viram 1,{' '}
           <code className="vds-code-inline">--via-enter-shift</code> vira 0) e fica o crossfade curto
           — sem ele a camada “pisca” e o olho perde de onde veio a mudança. Molas de gesto viram fade;
           troca de página e de tema viram troca seca. Todo o resto cai na rede de segurança global
@@ -450,12 +491,12 @@ transition:
   transform    var(--via-dur-base)  var(--via-ease-snap);
 
 /* Press · é o que o <Button> da library faz */
-transform: translateY(0) scale(0.985);
+transform: translateY(0) scale(var(--via-press-scale));
 transition-duration: var(--via-dur-press);
 
-/* Foco */
-outline: none;
-box-shadow: var(--via-shadow-focus);`}</CodeBlock>
+/* Foco · já vem de tokens.css pra tudo; peça com anel próprio usa os tokens */
+outline: var(--via-focus-width) solid var(--via-focus-color);
+outline-offset: var(--via-focus-offset);`}</CodeBlock>
         <p className="vds-motion-note">
           Anime só <code className="vds-code-inline">transform</code>/
           <code className="vds-code-inline">translate</code>/<code className="vds-code-inline">scale</code>{' '}

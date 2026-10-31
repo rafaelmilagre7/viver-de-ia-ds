@@ -12,6 +12,7 @@
  *   - duração literal (120ms, .2s…)            → var(--via-dur-*)
  *   - ease / ease-in / ease-out / ease-in-out  → var(--via-ease-*)
  *   - cubic-bezier(…) / linear(…) solto         → var(--via-ease-*) / var(--via-spring-*)
+ *   - scale(0.x) solto numa regra :active       → var(--via-press-scale[-sm])
  *
  * Exceções legítimas:
  *   - loop ambiente (`infinite`): spinner, shimmer, pulso — não é gesto,
@@ -44,6 +45,8 @@ const DECL = /(?<=[\s{;])(transition(?:-duration|-timing-function)?|animation(?:
 const DURATION = /(?<![\w.-])(\d*\.?\d+)(ms|s)\b/g;
 const KEYWORD = /(?<![\w-])(ease-in-out|ease-in|ease-out|ease)(?![\w-])/g;
 const FUNC = /(?<![\w-])(cubic-bezier|linear)\(/g;
+const RULE = /([^{}]+)\{([^{}]*)\}/g;
+const PRESS = /scale\(\s*(0?\.\d+)\s*\)/g;
 
 const findings = [];
 for (const file of walk(LIB)) {
@@ -66,19 +69,28 @@ for (const file of walk(LIB)) {
       findings.push({ rel, line, prop, what: `${f[1]}(…)`, hint: 'var(--via-ease-*) ou var(--via-spring-*)' });
     }
   }
+  // apertar: uma escala só (2 degraus) — antes eram 7 valores entre 0.90 e 0.99
+  for (const r of css.matchAll(RULE)) {
+    if (!/:active\b/.test(r[1])) continue;
+    const bodyAt = r.index + r[1].length + 1;
+    for (const p of r[2].matchAll(PRESS)) {
+      const line = css.slice(0, bodyAt + p.index).split('\n').length;
+      findings.push({ rel, line, prop: 'transform', what: `scale(${p[1]})`, hint: 'scale(var(--via-press-scale)) ou -sm' });
+    }
+  }
 }
 
 if (findings.length === 0) {
-  console.log('✓ motion-drift: 0 duração/curva solta em src/lib. Escala única.');
+  console.log('✓ motion-drift: 0 duração, curva ou escala de apertar solta em src/lib. Escala única.');
   process.exit(0);
 }
 
-console.error(`✗ motion-drift: ${findings.length} duração/curva escrita à mão em src/lib:\n`);
+console.error(`✗ motion-drift: ${findings.length} duração/curva/escala escrita à mão em src/lib:\n`);
 for (const f of findings) {
   console.error(`  ${f.rel}:${f.line}  ${f.prop}: … ${f.what} …  ->  ${f.hint}`);
 }
 console.error(
   '\nUse a escala de tokens.css (press 100 · quick 160 · base 220 · panel 320 · page 400;' +
-    ' enter / exit / snap). Loop `infinite` e `linear` ficam de fora.',
+    ' enter / exit / snap; apertar --via-press-scale / -sm). Loop `infinite` e `linear` ficam de fora.',
 );
 process.exit(1);

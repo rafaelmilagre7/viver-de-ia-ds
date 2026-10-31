@@ -254,3 +254,8 @@
   color: var(--via-text-primary);
 }
 .vds-mo-pop__item:first-child { background: var(--via-navy-06); }
+
+/* tabela de apertar · respiro entre colunas (no celular o token encostava no valor) */
+.vds-mo-press-table :is(th, td):not(:last-child) {
+  padding-right: var(--via-space-3);
+}
