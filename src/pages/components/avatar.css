@@ -1,118 +1,139 @@
-.via-avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--via-radius-pill);
-  background: linear-gradient(135deg, var(--via-navy), var(--via-blue));
-  color: var(--via-white);
-  font-family: var(--via-font);
-  font-weight: var(--via-fw-semibold);
-  user-select: none;
-  /* anel = cor do canvas (recorte), não branco fixo — senão vira halo no dark */
-  border: 2px solid var(--via-bg);
-  box-shadow:
-    0 0 0 1px var(--via-shadow-ink-06),
-    0 4px 10px -4px var(--via-shadow-ink-20);
-  position: relative;
+/* ==============================================================
+   /components/avatar · só o layout das demonstrações.
+   O avatar em si é o <Avatar> da lib (src/lib/Avatar) — esta folha
+   NÃO redefine .via-avatar (antes redefinia, e o estilo vazava pros
+   avatares da lib no resto do site depois de visitar esta página).
+   ============================================================== */
+
+/* Palco = superfície onde o avatar vive (card, lista). O recorte do
+   avatar usa a cor da superfície, então aqui ele some como deve. */
+.vds-av-stage {
+  margin: 0;
+  padding: var(--via-space-7) var(--via-space-8);
+  border-radius: var(--via-radius-lg);
+  background: var(--via-surface);
+  border: 1px solid var(--via-border-hairline);
 }
 
-.via-avatar.sm {
-  width: 28px;
-  height: 28px;
-  font-size: var(--via-fs-xs);
-  border-width: 1.5px;
-}
-
-.via-avatar.md {
-  width: 40px;
-  height: 40px;
-  font-size: var(--via-fs-caption);
-}
-
-.via-avatar.lg {
-  width: 56px;
-  height: 56px;
-  font-size: var(--via-fs-h4);
-  border-width: 2.5px;
-  box-shadow:
-    0 0 0 1px var(--via-shadow-ink-06),
-    0 8px 18px -4px var(--via-shadow-ink-30);
-}
-
-.via-avatar.gray {
-  background: linear-gradient(135deg, var(--via-navy-10), var(--via-navy-06));
-  color: var(--via-text-primary);
-}
-
-.via-avatar.more {
-  background: var(--via-surface-onnavy);
-  color: var(--via-navy);
-  border: 1.5px solid var(--via-border-soft);
-  box-shadow:
-    0 1px 0 var(--via-edge-hi) inset,
-    0 2px 6px var(--via-shadow-ink-06);
-  font-family: var(--via-font);
-  font-weight: var(--via-fw-bold);
-  font-size: var(--via-fs-xs);
-  letter-spacing: 0;
-}
-
-/* Dark · surface-onnavy é branca FIXA (feita pra viver sobre hero navy) —
-   aqui o chip vive sobre o canvas: virava bolacha branca berrante.
-   Superfície elevada + texto claro. */
-[data-theme='dark'] .via-avatar.more {
-  background: var(--via-surface-elev);
-  color: var(--via-text-primary);
-  border-color: var(--via-border);
-}
-
-.via-avatar-row {
+/* ---- Tamanhos ---- */
+.vds-av-sizes {
   display: flex;
-  gap: var(--via-space-4);
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--via-space-8);
 }
-
-.via-avatar-stack {
-  display: inline-flex;
-}
-
-.via-avatar-stack .via-avatar {
-  border-color: var(--via-bg);
-  margin-left: -10px;
-  transition: all 200ms ease;
-}
-
-.via-avatar-stack .via-avatar:first-child {
-  margin-left: 0;
-}
-
-.via-avatar-stack .via-avatar:hover {
-  transform: translateY(-2px);
-  z-index: 10;
-}
-
-.via-avatar-list {
+.vds-av-size {
   display: flex;
   flex-direction: column;
-  gap: var(--via-space-3_5);
-}
-
-.via-avatar-list .row {
-  display: flex;
   align-items: center;
   gap: var(--via-space-3);
+  margin: 0;
 }
+.vds-av-size figcaption,
+.vds-av-case figcaption span {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-muted);
+}
+.vds-av-size figcaption span { color: var(--via-text-soft); }
 
-.via-avatar-list .name {
+/* ---- Fallback ---- */
+.vds-av-cases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--via-space-4);
+  margin-top: var(--via-space-6);
+}
+.vds-av-case {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--via-space-4);
+  text-align: center;
+}
+.vds-av-case figcaption { display: flex; flex-direction: column; gap: var(--via-space-1); }
+.vds-av-case strong {
   font-family: var(--via-font);
   font-size: var(--via-fs-sm);
   font-weight: var(--via-fw-semibold);
   color: var(--via-text-primary);
-  letter-spacing: var(--via-ls-tight);
 }
 
-.via-avatar-list .role {
+/* ---- Grupo ---- */
+.vds-av-group-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--via-space-4);
+}
+.vds-av-stack { display: flex; align-items: center; }
+.vds-av-stack > * + * { margin-left: calc(var(--via-space-2) * -1); }
+/* "+N" · mesmo diâmetro do md, superfície do tema, recorte igual ao do avatar */
+.vds-av-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--via-bg-2);
+  box-shadow:
+    inset 0 0 0 1px var(--via-border),
+    0 0 0 1.5px var(--via-surface);
   font-family: var(--via-font);
   font-size: var(--via-fs-xs);
-  color: var(--via-text-soft);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  font-feature-settings: 'tnum' 1;
+}
+:where(.vds-section-body) .vds-av-group-text {
+  margin: 0;
+  font-size: var(--via-fs-sm);
+  color: var(--via-text-muted);
+}
+.vds-av-group-text strong { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
+:where(.vds-section-body) .vds-av-note {
+  margin-top: var(--via-space-4);
+  font-size: var(--via-fs-sm);
+  color: var(--via-text-muted);
+}
+
+/* ---- Lista ---- */
+.vds-av-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-4);
+  max-width: 420px;
+  padding: var(--via-space-5) var(--via-space-6);
+}
+.vds-av-list li { display: flex; align-items: center; gap: var(--via-space-3); }
+.vds-av-list div { display: flex; flex-direction: column; gap: var(--via-space-0_5); font-family: var(--via-font); }
+.vds-av-list div > strong {
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-tight);
+  color: var(--via-text-primary);
+}
+.vds-av-list div > span { font-size: var(--via-fs-xs); color: var(--via-text-muted); }
+
+/* ---- Faça e evite ---- */
+.vds-av-rules ul {
+  margin: 0;
+  padding-left: var(--via-space-4_5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-body);
+}
+
+@media (max-width: 720px) {
+  .vds-av-stage { padding: var(--via-space-5); }
+  .vds-av-sizes { gap: var(--via-space-5); }
+  .vds-av-cases { grid-template-columns: minmax(0, 1fr); }
+  .vds-do-dont.vds-av-rules { grid-template-columns: minmax(0, 1fr); }
 }

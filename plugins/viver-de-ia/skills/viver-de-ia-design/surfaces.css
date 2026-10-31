@@ -225,6 +225,7 @@ button.via-row-card {
       · enquadramento: --via-photo-focus (object-position · 50% 30%)
       · --duotone  cinza + multiplicação navy (tratamento da marca)
       · --scrim    escurece a base pra texto/vidro por cima
+      · --monogram sem foto ainda: iniciais na MESMA moldura
       Sem anel/halo: a moldura é um fio de 1px por DENTRO da foto.
    --------------------------------------------------------------- */
 .via-photo {
@@ -300,6 +301,38 @@ button.via-row-card {
   letter-spacing: var(--via-ls-tight);
 }
 .via-photo__caption span { color: var(--via-gray-200); }
+
+/* Sem foto ainda · monograma na mesma moldura (proporção, raio, fio):
+   a grade não quebra e ninguém vira laje navy vazia. Superfície clara
+   que acompanha o tema (é interface, não foto); o nome vai na legenda
+   ou no texto ao lado, então as iniciais são decorativas.
+     <figure class="via-photo via-photo--monogram">
+       <span class="via-photo__initials" aria-hidden="true">YM</span>
+       <figcaption class="via-photo__caption">…</figcaption>
+     </figure> */
+.via-photo--monogram {
+  container-type: inline-size;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(120% 80% at 28% 12%, var(--via-surface) 0%, transparent 62%),
+    linear-gradient(165deg, var(--via-bg-2) 0%, color-mix(in srgb, var(--via-blue) 8%, var(--via-gray-100)) 100%);
+}
+.via-photo__initials {
+  font-family: var(--via-font-display);
+  font-size: clamp(var(--via-fs-h3), 30cqi, 160px);
+  font-weight: var(--via-fw-light);
+  line-height: 1;
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-muted);
+  user-select: none;
+}
+/* com legenda, as iniciais sobem pra não disputar com o nome */
+.via-photo--monogram:has(.via-photo__caption) .via-photo__initials {
+  transform: translateY(-12%);
+}
+.via-photo--monogram .via-photo__caption { color: var(--via-text-primary); }
+.via-photo--monogram .via-photo__caption span { color: var(--via-text-muted); }
 
 /* Respeita quem pediu menos movimento */
 @media (prefers-reduced-motion: reduce) {
