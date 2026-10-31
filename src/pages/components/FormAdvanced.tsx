@@ -488,7 +488,7 @@ function RangeDoubleSection() {
               {ticks.map((t) => (
                 <span key={t}>
                   <span className="tick" />
-                  <em>R$&nbsp;{t >= 1000 ? `${t / 1000}K` : t}</em>
+                  <em>R$&nbsp;{t.toLocaleString('pt-BR')}</em>
                 </span>
               ))}
             </div>

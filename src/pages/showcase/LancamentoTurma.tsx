@@ -145,7 +145,7 @@ export default function ShowcaseLancamentoTurma() {
             </div>
             <p className="lt-price">
               <span className="lt-price-cur">R$</span>
-              <span className="lt-price-val">{CONFIG.preco.replace('R$ ', '')}</span>
+              <span className="lt-price-val">{CONFIG.preco.replace(/^R\$\s/, '')}</span>
               <span className="lt-price-per">/mês</span>
             </p>
             <p className="lt-spec-sub">Inclui {CONFIG.mentoria}.</p>
@@ -375,7 +375,7 @@ export default function ShowcaseLancamentoTurma() {
                 </div>
                 <p className="lt-price lt-price--md">
                   <span className="lt-price-cur">R$</span>
-                  <span className="lt-price-val">{p.preco.replace('R$ ', '')}</span>
+                  <span className="lt-price-val">{p.preco.replace(/^R\$\s/, '')}</span>
                   <span className="lt-price-per">/mês</span>
                 </p>
                 <p className="lt-plan-sub">em contratação anual</p>
