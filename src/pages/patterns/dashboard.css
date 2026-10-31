@@ -159,10 +159,13 @@
   justify-content: center;
   flex-shrink: 0;
 }
-.dash-metric .via-delta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--via-space-0_5);
+/* variação neutra · chip navy + seta + sinal (sem meta, subir não é "bom") */
+.dash-metric .via-delta.via-meta-chip {
+  gap: var(--via-space-1);
+  padding: 3px var(--via-space-2) 3px var(--via-space-1_5);
+  color: var(--via-text-primary);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
 }
 .dash-metric-ref {
   font-size: var(--via-fs-xs);

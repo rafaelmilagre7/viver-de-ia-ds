@@ -166,15 +166,6 @@
     0 4px 10px -3px var(--via-shadow-ink-06);
 }
 
-/* Atenção · sem barra lateral · só a atmosfera coral do próprio card.
-   A leitura do "por quê" fica no delta e na sparkline, que já são coral. */
-.vds-ins-kpi.down.via-metric--atmos::before,
-.vds-ins-tile.down.via-metric--atmos::before {
-  background:
-    radial-gradient(320px 160px at 0% 0%, rgba(184,92,92,0.09), transparent 62%),
-    radial-gradient(240px 120px at 100% 100%, rgba(184,92,92,0.05), transparent 62%);
-}
-
 .vds-ins-kpi .via-metric__label {
   display: flex;
   align-items: center;
@@ -199,15 +190,17 @@
   gap: var(--via-space-2);
   font-size: var(--via-fs-xs);
 }
-.vds-ins-kpi .via-delta {
-  display: inline-flex;
-  align-items: center;
+/* Variação neutra · chip navy + seta + sinal (sem meta, sem verde/coral) */
+.vds-ins-kpi .via-delta.via-meta-chip,
+.vds-ins-tile .via-delta.via-meta-chip {
   gap: var(--via-space-1);
-  font-size: var(--via-fs-xs);
+  padding: 3px var(--via-space-2) 3px var(--via-space-1_5);
+  color: var(--via-text-primary);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
 }
 /* Sparkline · marca fina de verdade (2px reais, não 2px escalados)
-   + ponto do valor corrente ≥8px. Coral aqui é STATUS (movimento
-   desfavorável), nunca uma segunda série. */
+   + ponto do valor corrente ≥8px. Uma série, uma tinta. */
 .vds-ins-kpi .via-spark {
   width: 72px;
   height: 30px;
@@ -231,13 +224,6 @@
   stroke: var(--ins-1);
   stroke-width: 2;
   vector-effect: non-scaling-stroke;
-}
-.vds-ins-kpi .via-spark--down path,
-.vds-ins-kpi .via-spark--down .spark-end { stroke: var(--via-coral-dark); }
-.vds-ins-kpi .via-spark--down .via-spark__area {
-  fill: var(--via-coral-dark);
-  opacity: 0.10;
-  stroke: none;
 }
 
 /* ============================================
@@ -729,11 +715,6 @@
 }
 
 .vds-ins-tile .via-metric__foot { gap: var(--via-space-2); }
-.vds-ins-tile .via-delta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--via-space-1);
-}
 .vds-ins-tile .metric-foot-note {
   font-size: var(--via-fs-xs);
   min-width: 0;
@@ -752,7 +733,6 @@
   pointer-events: none;
   z-index: -1;
 }
-.vds-ins-tile.down .vds-ins-tile-ghost { color: var(--via-coral-dark); }
 
 @media (max-width: 720px) {
   .vds-ins-head { padding: var(--via-space-7) var(--via-space-6) var(--via-space-5_5); }

@@ -206,6 +206,93 @@
   text-decoration-color: var(--via-text-faint);
 }
 
+/* ---------- Números ---------- */
+.vds-mc-group-rule code {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-primary);
+}
+.vds-mc-nums {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--via-border-soft);
+  border-radius: var(--via-radius-lg);
+  background: var(--via-surface);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 2px 8px var(--via-shadow-ink-03);
+}
+.vds-mc-num {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-areas:
+    'head rule ex'
+    'head rule dont';
+  gap: var(--via-space-1_5) var(--via-space-6);
+  padding: var(--via-space-4_5) var(--via-space-6);
+  border-bottom: 1px solid var(--via-border-hairline);
+}
+.vds-mc-num:last-child { border-bottom: 0; }
+.vds-mc-num-head {
+  grid-area: head;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-1);
+  min-width: 0;
+}
+.vds-mc-num-head h3 {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+}
+.vds-mc-num-head .vds-mc-id { overflow-wrap: anywhere; }
+.vds-mc-num-rule {
+  grid-area: rule;
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-body);
+}
+.vds-mc-num-ex {
+  grid-area: ex;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--via-space-1_5);
+}
+.vds-mc-num-chip {
+  padding: var(--via-space-0_5) var(--via-space-2);
+  border-radius: var(--via-radius-xs);
+  background: var(--via-navy-05);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  font-variant-numeric: tabular-nums;
+  color: var(--via-text-primary);
+  white-space: nowrap;
+}
+.vds-mc-num-dont {
+  grid-area: dont;
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-muted);
+}
+.vds-mc-num-dont span { font-weight: var(--via-fw-medium); }
+.vds-mc-num-dont s { text-decoration-color: var(--via-text-faint); }
+
+@media (max-width: 860px) {
+  .vds-mc-num {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'head' 'rule' 'ex' 'dont';
+    gap: var(--via-space-2);
+    padding: var(--via-space-4);
+  }
+}
+
 @media (max-width: 560px) {
   .vds-mc-item { padding: var(--via-space-4); }
   .vds-mc-text-row { flex-direction: column; }

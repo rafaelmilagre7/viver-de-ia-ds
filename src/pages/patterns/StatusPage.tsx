@@ -4,6 +4,7 @@ import {
 } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import { formatPercent } from '../../lib/format';
 import './status-page.css';
 
 export default function StatusPage() {
@@ -29,7 +30,7 @@ export default function StatusPage() {
 /* ---------- Overview · estado geral ---------- */
 function StatusOverviewSection() {
   return (
-    <Section title="Header status · estado geral em prosa" meta="quando ok · navy calmo · quando incidente · atmosfera tingida no vidro + pill">
+    <Section title="Cabeçalho de status · estado geral em prosa" meta="quando ok · navy calmo · quando incidente · atmosfera tingida no vidro + pill">
       <article className="vds-st-overview ok">
         <div className="vds-st-overview-body">
           <span className="vds-st-eyebrow">
@@ -39,13 +40,13 @@ function StatusOverviewSection() {
             Tudo no ar, <em>todos os serviços operando normalmente</em>.
           </h2>
           <p className="vds-st-overview-lede">
-            Última semana com <strong>99.96% de disponibilidade</strong> · sem incidentes nos últimos 22 dias. Próxima janela de manutenção programada pra <strong>dom 23 mai · 04h-06h BRT</strong>.
+            Última semana com <strong>{formatPercent(99.96, { decimals: 2 })} de disponibilidade</strong> · sem incidentes nos últimos 22 dias. Próxima janela de manutenção programada pra <strong>dom 23 mai · 04h-06h BRT</strong>.
           </p>
         </div>
 
         <aside className="vds-st-overview-stats">
           <div>
-            <strong className="via-num">99.96%</strong>
+            <strong className="via-num">{formatPercent(99.96, { decimals: 2 })}</strong>
             <em>uptime · 30 dias</em>
           </div>
           <span className="vds-st-overview-sep" />
@@ -93,7 +94,7 @@ function StatusServicesSection() {
   ];
 
   return (
-    <Section title="Serviços · uptime 90 dias · agrupados editorial" meta="cada bar = 1 dia · tinta do tema = ok · cinza claro = degradado · coral = down">
+    <Section title="Serviços · disponibilidade em 90 dias, por grupo" meta="cada barra = 1 dia · tinta do tema = ok · cinza claro = degradado · coral = fora do ar">
       <article className="vds-st-services">
         {services.map((g) => (
           <div key={g.group} className="vds-st-group">
@@ -117,7 +118,7 @@ function StatusServicesSection() {
                           <span className={`vds-st-pill ${s.status}`}>
                             {s.status === 'ok' ? 'operacional' : s.status === 'degraded' ? 'degradado' : 'fora do ar'}
                           </span>
-                          <span className="via-num">{s.uptime.toFixed(2)}%</span>
+                          <span className="via-num">{formatPercent(s.uptime, { decimals: 2 })}</span>
                           <em>uptime · 90 dias</em>
                         </p>
                       </div>
@@ -182,7 +183,7 @@ function StatusIncidentsSection() {
   ];
 
   return (
-    <Section title="Incidentes recentes · timeline com update editorial" meta="últimos 90 dias · cada incidente com histórico de mensagens">
+    <Section title="Incidentes recentes · linha do tempo com atualizações" meta="últimos 90 dias · cada incidente com histórico de mensagens">
       <article className="vds-st-incidents">
         <header>
           <div>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowDownRight, ArrowRight, Info, Landmark, TrendingUp, Wallet } from 'lucide-react';
+import { MINUS, formatCurrency, formatDelta, formatNumber, formatPercent } from '../../../lib/format';
 import './CashFlow.css';
 
 /* ==============================================================
@@ -102,25 +103,14 @@ const NEGATIVOS = LINHAS.filter((l) => l.fluxo < 0);
 
 /* ---------------- formatação BR ---------------- */
 
-const NF0 = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
-const NF1 = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+/* formatador único da lib · R$ com espaço fixo, menos tipográfico */
+const MENOS = MINUS;
 
-const MENOS = '−'; // minus sign tipográfico
-
-function brl(v: number): string {
-  const n = NF0.format(Math.abs(Math.round(v)));
-  return v < 0 ? `${MENOS}R$ ${n}` : `R$ ${n}`;
-}
-function brlSinal(v: number): string {
-  const n = NF0.format(Math.abs(Math.round(v)));
-  return `${v < 0 ? MENOS : '+'}R$ ${n}`;
-}
-function pct(v: number): string {
-  return `${v < 0 ? MENOS : ''}${NF1.format(Math.abs(v))}%`;
-}
-function milhoes(v: number): string {
-  return v === 0 ? '0' : `${NF1.format(v / 1_000_000)} mi`;
-}
+const brl = (v: number): string => formatCurrency(Math.round(v));
+const brlSinal = (v: number): string => formatDelta(Math.round(v), { unit: 'currency' });
+const pct = (v: number): string => formatPercent(v, { decimals: 1 });
+/** rótulo de eixo · uma casa fixa pra a escala ler alinhada (0,5 mi · 1,0 mi · 1,5 mi) */
+const milhoes = (v: number): string => (v === 0 ? '0' : `${formatNumber(v / 1_000_000, { decimals: 1 })} mi`);
 
 /* ==============================================================
    GEOMETRIA · dois gráficos empilhados, UM eixo x compartilhado

@@ -1,0 +1,159 @@
+/* ============================================================
+   Estados de gráfico · carregando · sem dados · erro
+   Mesma área do plot, eixo fantasma atrás, texto da biblioteca.
+   ============================================================ */
+
+.vds-cstate {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 200px;
+  isolation: isolate;
+}
+.vds-cstate.is-spark {
+  min-height: 40px;
+  place-items: center start;
+}
+
+/* ---- eixo fantasma: grade + base, tudo recessivo ----
+   O gutter dos rótulos de y é fixo em px (não escala com o viewBox). */
+.vds-cstate { --cstate-gutter: 44px; }
+.vds-cstate.is-spark { --cstate-gutter: 0px; }
+.vds-cstate-ghost {
+  position: absolute;
+  top: 0;
+  left: var(--cstate-gutter);
+  z-index: -1;
+  /* svg é elemento substituído: left + right não esticam, a largura vai explícita */
+  width: calc(100% - var(--cstate-gutter));
+  height: 100%;
+  overflow: visible;
+}
+.vds-cstate-ghost .grid {
+  stroke: var(--via-data-grid);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.vds-cstate-ghost .axis {
+  stroke: var(--via-data-axis);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+/* sem dado e com erro, o eixo recua ainda mais · o texto é o protagonista */
+.vds-cstate.is-empty .vds-cstate-ghost,
+.vds-cstate.is-error .vds-cstate-ghost { opacity: 0.6; }
+.vds-cstate.is-spark.is-empty .vds-cstate-ghost .axis,
+.vds-cstate.is-spark.is-error .vds-cstate-ghost .axis { stroke-dasharray: 3 4; }
+
+/* linha-base em esqueleto · forma de série, sem dado */
+.vds-cstate-ghost .wave {
+  fill: none;
+  stroke: var(--via-navy-10);
+  stroke-width: 3;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  animation: vds-cstate-pulse 1.6s var(--via-ease-snap) infinite alternate;
+}
+.vds-cstate.is-spark .vds-cstate-ghost .wave { stroke-width: 2; }
+
+@keyframes vds-cstate-pulse {
+  from { opacity: 0.45; }
+  to   { opacity: 1; }
+}
+
+/* rótulos de eixo em esqueleto (Skeleton da lib) */
+.vds-cstate-ticks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.vds-cstate .vds-cstate-tick.is-y {
+  position: absolute;
+  right: calc(100% - var(--cstate-gutter) + var(--via-space-2_5));
+  transform: translateY(-50%);
+}
+.vds-cstate-ticks .x {
+  position: absolute;
+  left: var(--cstate-gutter);
+  right: 0;
+  top: 87%;
+  display: flex;
+  justify-content: space-between;
+}
+.vds-cstate .vds-cstate-tick {
+  height: 8px;
+  margin: 0;
+  border-radius: var(--via-radius-pill);
+}
+
+/* ---- mensagem (sem dados · erro) ---- */
+.vds-cstate-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--via-space-3);
+  max-width: 340px;
+  padding: var(--via-space-4) var(--via-space-5);
+  border-radius: var(--via-radius-md);
+  /* placa da superfície por trás do texto · a grade não atravessa a leitura */
+  background: var(--via-surface);
+  box-shadow: 0 0 0 1px var(--via-border-soft), 0 8px 24px -16px var(--via-shadow-ink-20);
+  text-align: center;
+}
+.vds-cstate.is-spark .vds-cstate-msg {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--via-space-2) var(--via-space-3);
+  max-width: none;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  text-align: left;
+}
+
+.vds-cstate-ico {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-05);
+  color: var(--via-text-muted);
+}
+/* erro é o único caso com cor: coral, porque é erro de verdade */
+.vds-cstate.is-error .vds-cstate-ico { color: var(--via-coral-dark); }
+
+.vds-cstate-text {
+  margin: 0;
+  font-size: var(--via-fs-caption);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
+  text-wrap: pretty;
+}
+.vds-cstate-text strong {
+  display: block;
+  margin-bottom: var(--via-space-0_5);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+}
+.vds-cstate.is-spark .vds-cstate-text { font-size: var(--via-fs-xs); }
+.vds-cstate.is-spark .vds-cstate-text strong {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+}
+
+.vds-cstate-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vds-cstate-ghost .wave { animation: none; opacity: 0.7; }
+}

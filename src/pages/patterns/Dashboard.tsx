@@ -1,6 +1,7 @@
-import { Activity, MessageCircle, Users, MoreHorizontal, ChevronUp, Target } from 'lucide-react';
+import { Activity, MessageCircle, Users, MoreHorizontal, ArrowUpRight, Target } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import { formatCurrency, formatDelta, formatNumber, formatPercent } from '../../lib/format';
 import './dashboard.css';
 
 /**
@@ -10,13 +11,15 @@ import './dashboard.css';
  * · .via-metric-grid + .via-metric   KPI em vidro — o vidro fica AQUI
  * · .via-table-wrap + .via-table     progresso dos membros em tabela, sem vidro
  * · .via-num / .via-bar              número tabular à direita + micro-barra
+ * · .via-meta-chip + .via-delta      variação NEUTRA (chip navy + seta + sinal):
+ *                                    sem meta, subir não é "bom" — nada de verde
  */
 
 const kpis = [
-  { lbl: 'Membros ativos', num: '312', d: '+24', ref: 'vs. 30 dias', I: Users },
-  { lbl: 'Consultas IA', num: '4.380', d: '+18%', ref: 'vs. 30 dias', I: MessageCircle },
-  { lbl: 'Implementações', num: '48', d: '+12', ref: 'em produção', I: Target },
-  { lbl: 'NPS', num: '84', d: '+6', ref: '212 respostas', I: Activity },
+  { lbl: 'Membros ativos', num: formatNumber(312), d: formatDelta(24), ref: 'vs. 30 dias', I: Users },
+  { lbl: 'Consultas IA', num: formatNumber(4_380), d: formatDelta(18, { unit: 'percent' }), ref: 'vs. 30 dias', I: MessageCircle },
+  { lbl: 'Implementações', num: formatNumber(48), d: formatDelta(12), ref: 'em produção', I: Target },
+  { lbl: 'NPS', num: formatNumber(84), d: formatDelta(6), ref: '212 respostas', I: Activity },
 ];
 
 const etapas = [
@@ -30,7 +33,7 @@ const etapas = [
 const activity = [
   { t: 'Caio Ribeiro', a: 'aprovou case', what: 'E-commerce · atendimento', when: '4 min' },
   { t: 'Larissa Tavares', a: 'agendou sessão', what: 'Check-in de mentoria em grupo', when: '38 min' },
-  { t: 'Sistema', a: 'publicou métrica', what: 'Receita influenciada bate R$ 248k', when: '2h' },
+  { t: 'Sistema', a: 'publicou métrica', what: `Receita influenciada bate ${formatCurrency(248_000, { compact: true })}`, when: '2h' },
   { t: 'Gustavo Dantas', a: 'enviou depoimento', what: 'Solução de vendas · em revisão', when: '4h' },
 ];
 
@@ -43,11 +46,12 @@ export default function Dashboard() {
         lede="Layout de dashboard de operação sobre a camada de dados canônica. KPI em vidro (.via-metric), progresso dos membros em tabela sem vidro (.via-table + .via-bar) e atividade em hairline ao lado. O vidro fica no card de métrica; a tabela fica na superfície limpa."
       />
 
-      <Section title="Layout completo" meta="header + KPI row + tabela + side">
+      <Section title="Layout completo" meta="cabeçalho · fila de KPIs · tabela · atividade">
         <div className="vds-dash">
           <header className="dash-h">
             <div>
-              <span className="vds-eyebrow">Operação · maio 2026</span>
+              {/* rótulo sem data fixa · mês escrito à mão envelhece e passa a mentir */}
+              <span className="vds-eyebrow">Operação · visão geral</span>
               <h2>Painel da plataforma</h2>
             </div>
             <div className="filters">
@@ -66,8 +70,8 @@ export default function Dashboard() {
                 </span>
                 <span className="via-metric__value">{k.num}</span>
                 <span className="via-metric__foot">
-                  <span className="via-delta via-delta--up">
-                    <ChevronUp size={14} strokeWidth={1.75} aria-hidden="true" />
+                  <span className="via-meta-chip via-delta">
+                    <ArrowUpRight size={14} strokeWidth={1.75} aria-hidden="true" />
                     {k.d}
                   </span>
                   <span className="dash-metric-ref">{k.ref}</span>
@@ -104,7 +108,7 @@ export default function Dashboard() {
                             <span className="via-bar__fill" style={{ width: `${b.v}%` }} />
                           </span>
                         </td>
-                        <td className="via-num">{b.v}%</td>
+                        <td className="via-num">{formatPercent(b.v)}</td>
                       </tr>
                     ))}
                   </tbody>
