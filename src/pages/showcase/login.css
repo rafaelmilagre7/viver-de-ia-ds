@@ -389,10 +389,18 @@
 }
 .auth-foot .auth-foot-link:hover { text-decoration: underline; }
 
+/* Uma coluna: marca → FORMULÁRIO → slogan. Quem abre o login no celular
+   veio entrar; antes o card só aparecia depois de uma tela inteira de
+   manifesto. O aside vira `display: contents` pra marca e slogan entrarem
+   na ordem do grid sem mexer no DOM do desktop. */
 @media (max-width: 960px) {
-  .vds-showcase.auth { grid-template-columns: minmax(0, 1fr); }
-  .auth-aside { padding: var(--via-space-10) var(--via-space-8) 0; }
-  .auth-card-wrap { padding: var(--via-space-8); }
+  .vds-showcase.auth { grid-template-columns: minmax(0, 1fr); align-content: start; }
+  .auth-aside { display: contents; }
+  .auth-brand { order: 0; position: relative; z-index: 1; padding: var(--via-space-8) var(--via-space-8) 0; }
+  .auth-card-wrap { order: 1; padding: var(--via-space-6) var(--via-space-8) var(--via-space-8); }
+  .auth-pull { order: 2; position: relative; z-index: 1; max-width: none; padding: var(--via-space-2) var(--via-space-8) var(--via-space-12); }
+  .auth-pull h2 { font-size: var(--via-fs-h2); margin-bottom: var(--via-space-4); }
+  .auth-pull .lede { font-size: var(--via-fs-body); }
   .auth-card { padding: var(--via-space-7); }
 }
 
@@ -401,4 +409,8 @@
   .auth-brand-full { display: none; }
   .auth-brand-compact { display: block; }
   .auth-providers { gap: var(--via-space-2); }
+  .auth-brand { padding: var(--via-space-6) var(--via-space-5) 0; }
+  .auth-card-wrap { padding: var(--via-space-5) var(--via-space-4) var(--via-space-6); }
+  .auth-card { padding: var(--via-space-6) var(--via-space-5); }
+  .auth-pull { padding: var(--via-space-2) var(--via-space-5) var(--via-space-10); }
 }

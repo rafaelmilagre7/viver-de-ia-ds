@@ -174,7 +174,7 @@ export default function Shadows() {
 
       <Section title="Sombra do vidro" meta="duas receitas · quatro camadas">
         <p>
-          O efeito "lifted from the glass" não é uma sombra só: são{' '}
+          O efeito “lifted from the glass” não é uma sombra só: são{' '}
           <em>quatro camadas</em> — luz interna no topo, eco interno embaixo e duas
           quedas externas. Sem as internas, o vidro vira um retângulo translúcido
           chapado. São duas receitas fechadas, uma por fundo:{' '}

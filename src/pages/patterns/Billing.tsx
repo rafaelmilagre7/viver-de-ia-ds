@@ -19,16 +19,16 @@ const STEPS = [
 
 const PRINCIPLES = [
   { code: 'i', title: 'Resumo lateral sempre visível', body: 'Total + plano + ciclo persistem em todos os steps · user nunca perde o contexto da decisão.' },
-  { code: 'ii', title: 'Sem countdown manipulativo', body: 'Não use "oferta expira em 3 min" · gera ansiedade e quebra confiança. Promoção tem prazo claro em data.' },
+  { code: 'ii', title: 'Sem countdown manipulativo', body: 'Não use “oferta expira em 3 min” · gera ansiedade e quebra confiança. Promoção tem prazo claro em data.' },
   { code: 'iii', title: 'Voltar não perde dados', body: 'Estado controlado preserva escolhas · user revisa sem refazer. Step posterior só ativa quando anterior é válido.' },
-  { code: 'iv', title: 'Confirmação textual antes do submit', body: 'Step final lista tudo que vai acontecer · "Será cobrado R$ X · próxima cobrança em DD/MM". Sem surpresa.' },
+  { code: 'iv', title: 'Confirmação textual antes do submit', body: 'Step final lista tudo que vai acontecer · “Será cobrado R$ X · próxima cobrança em DD/MM”. Sem surpresa.' },
 ];
 
 export default function Billing() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · billing multi-step"
+        eyebrow="Padrões · cobrança em etapas"
         title={<>Cobrar é claro — <em>cada passo mostra exatamente o que vai acontecer.</em></>}
         lede="Fluxo de cobrança em 4 passos editoriais (plano · ciclo · pagamento · revisão). Cada step mostra resumo lateral persistente · usuário sempre sabe o total. Sem dark pattern · sem 'oferta expira em 3 min'. Vale pra qualquer SaaS de assinatura."
       />

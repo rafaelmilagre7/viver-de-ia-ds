@@ -10,7 +10,7 @@ export default function Roadmap() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · public roadmap"
+        eyebrow="Padrões · roadmap público"
         title={
           <>
             O que estamos <em>construindo, junto</em>.
@@ -106,7 +106,7 @@ function RoadmapKanbanSection() {
         },
         {
           tag: 'IA',
-          title: 'Modo "shadow" pra calibrar prompts em produção',
+          title: 'Modo “shadow” pra calibrar prompts em produção',
           desc: 'Mentor testa respostas do Consultor IA em paralelo sem expor pro cliente — admin vê side-by-side.',
           progress: 32,
           owner: 'Mateus + Diego',

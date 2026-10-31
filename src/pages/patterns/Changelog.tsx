@@ -7,7 +7,7 @@ export default function Changelog() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · changelog / release notes"
+        eyebrow="Padrões · changelog · notas de versão"
         title={
           <>
             Cada versão como <em>uma página da história</em>.
@@ -45,7 +45,7 @@ function ChangelogFeaturedSection() {
             Consultor IA virou <em>multilíngue</em>.
           </h2>
           <p className="vds-cl-lede">
-            Maior versão do trimestre — o Consultor IA agora atende em inglês e espanhol mantendo o tom da marca, novo modo "shadow" pra testar respostas sem publicar e o calendário de mentoria recebeu um redesenho completo. Tudo abaixo.
+            Maior versão do trimestre — o Consultor IA agora atende em inglês e espanhol mantendo o tom da marca, novo modo “shadow” pra testar respostas sem publicar e o calendário de mentoria recebeu um redesenho completo. Tudo abaixo.
           </p>
 
           <div className="vds-cl-highlights">

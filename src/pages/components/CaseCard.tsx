@@ -9,7 +9,7 @@ const cases = [
     sector: 'Saúde',
     headline: 'De 6h para cliques: Viva Nexo economiza R$ 162.000 com IA',
     stat: { v: 'R$ 162.000', l: 'economia' },
-    quote: '"[Trecho do depoimento, nas palavras do cliente]"',
+    quote: '“[Trecho do depoimento, nas palavras do cliente]”',
     author: '[Nome] · [cargo]',
   },
   {
@@ -17,7 +17,7 @@ const cases = [
     sector: 'Agência',
     headline: 'De processos manuais a R$ 120.000 de economia anual',
     stat: { v: 'R$ 120.000', l: '/ano' },
-    quote: '"[Frase curta do cliente sobre o resultado]"',
+    quote: '“[Frase curta do cliente sobre o resultado]”',
     author: '[Nome] · [cargo]',
   },
 ];

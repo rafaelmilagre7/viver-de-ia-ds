@@ -8,7 +8,7 @@ export default function LiveClass() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · live · aula ao vivo"
+        eyebrow="Padrões · aula ao vivo"
         title={
           <>
             AGORA AO VIVO, <em>sem ruído</em>.

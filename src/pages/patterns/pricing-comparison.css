@@ -151,6 +151,9 @@
   margin-top: var(--via-space-1);
 }
 .vds-pricing-tier__amount {
+  /* "R$ 2.580" quebrava em duas linhas no card estreito (o "/mês" ao lado
+     espremia o valor) */
+  white-space: nowrap;
   font-family: var(--via-font-display);
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-medium);
@@ -176,7 +179,8 @@
 .vds-pricing-tier__cta button { width: 100%; }
 
 /* ===== FEATURE ROWS ===================================== */
-.vds-pricing-row {
+.vds-pricing-row,
+.vds-pricing-head {
   display: contents;
 }
 
@@ -414,10 +418,26 @@
   .vds-pricing-group__title,
   .vds-pricing-feature,
   .vds-pricing-cell { padding: var(--via-space-3_5) var(--via-space-5); }
-  .vds-pricing-cell.is-recommended {
-    border-left: 0;
-    border-right: 0;
-    border-top: 1px solid var(--via-navy);
-    border-bottom: 1px solid var(--via-navy);
+  /* Celular: cards dos planos empilhados; cada recurso vira uma linha com o
+     nome em cima e os 3 planos lado a lado, ROTULADOS (antes os checks
+     vinham empilhados sem dizer de qual plano eram). */
+  .vds-pricing-table { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .vds-pricing-tier { grid-column: 1 / -1; }
+  .vds-pricing-tier-spacer { display: none; }
+  .vds-pricing-feature { grid-column: 1 / -1; padding-bottom: var(--via-space-1); border-bottom: 0; }
+  .vds-pricing-cell {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--via-space-1_5);
+    padding: var(--via-space-1) var(--via-space-5) var(--via-space-4);
   }
+  .vds-pricing-cell::before {
+    content: attr(data-plan);
+    font-size: var(--via-fs-micro);
+    font-weight: var(--via-fw-medium);
+    color: var(--via-text-muted);
+  }
+  .vds-pricing-cell.is-recommended { border: 0; }
+  .vds-pricing-row:last-of-type .vds-pricing-feature { border-bottom-left-radius: 0; }
+  .vds-pricing-row:last-of-type .vds-pricing-cell:nth-child(2) { border-bottom-left-radius: var(--via-radius-xl); }
 }

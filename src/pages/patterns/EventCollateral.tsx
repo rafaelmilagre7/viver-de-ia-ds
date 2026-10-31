@@ -95,7 +95,7 @@ function PiecesSection() {
       icon: Calendar,
       name: 'Save-the-date',
       use: '120 dias antes · email + social + landing pré',
-      brief: 'Anuncia data + cidade + tema. 1 linha de copy editorial · CTA "Reserve a data". Não vende ingresso ainda. Cria expectativa.',
+      brief: 'Anuncia data + cidade + tema. 1 linha de copy editorial · CTA “Reserve a data”. Não vende ingresso ainda. Cria expectativa.',
       mock: 'navy mesh · Leaders AI mark centralizado · data em mono grande · cidade pequena · sem CTA forte',
     },
     {
@@ -130,7 +130,7 @@ function PiecesSection() {
       icon: FileText,
       name: 'After-event recap',
       use: 'D+1 a D+7 · email + social + blog + YouTube',
-      brief: 'Editorial · não promocional. "3 momentos que ficaram" · 1 número marcante por dia · quote atribuído de speaker · próximo evento. Sem "obrigado por participar!", com peso real.',
+      brief: 'Editorial · não promocional. “3 momentos que ficaram” · 1 número marcante por dia · quote atribuído de speaker · próximo evento. Sem “obrigado por participar!”, com peso real.',
       mock: 'email coverage padrão · blog post editorial · reel 60s · LinkedIn carousel 10 cards',
     },
   ];
@@ -182,15 +182,15 @@ function RulesSection() {
     },
     {
       title: 'Paleta restrita continua valendo',
-      desc: 'Navy + cinza + branco. Evento não introduz cor de marca nova. Quem fizer signage colorida pra "destacar o palco" tá quebrando o sistema.',
+      desc: 'Navy + cinza + branco. Evento não introduz cor de marca nova. Quem fizer signage colorida pra “destacar o palco” tá quebrando o sistema.',
     },
     {
       title: 'Tipografia · Geist Display + Geist Mono',
-      desc: 'Iguais ao DS principal. Nada de "font do evento". Quem comprar template pronto na Canva e usar Inter no badge tá fora.',
+      desc: 'Iguais ao DS principal. Nada de “font do evento”. Quem comprar template pronto na Canva e usar Inter no badge tá fora.',
     },
     {
       title: 'Voz editorial mantém',
-      desc: '"Operador-experiente, sem guru-bro". Speaker kit não vira folder corporativo. Recap não vira "obrigado por participar!". Vibe de revista editorial densa, não de evento de coaching motivacional.',
+      desc: '“Operador-experiente, sem guru-bro”. Speaker kit não vira folder corporativo. Recap não vira “obrigado por participar!”. Vibe de revista editorial densa, não de evento de coaching motivacional.',
     },
     {
       title: 'Speaker kit + program book = peças premium',

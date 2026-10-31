@@ -11,10 +11,10 @@ type Step = 'choose' | 'verify' | 'backup' | 'done';
 type Method = 'app' | 'sms';
 
 const STEP_ANATOMY = [
-  { title: 'Escolher método', purpose: 'App, SMS ou códigos de backup.', copyHint: '"App de autenticação é mais seguro — funciona offline."' },
-  { title: 'Configurar', purpose: 'Mostra QR code ou número.', copyHint: '"Escaneie o QR no Google Authenticator ou Authy."' },
-  { title: 'Verificar', purpose: 'Confirma com código de 6 dígitos.', copyHint: '"Digite o código atual gerado pelo app."' },
-  { title: 'Backup', purpose: 'Códigos pra recuperar acesso.', copyHint: '"Salve no gerenciador de senhas — você só vê uma vez."' },
+  { title: 'Escolher método', purpose: 'App, SMS ou códigos de backup.', copyHint: '“App de autenticação é mais seguro — funciona offline.”' },
+  { title: 'Configurar', purpose: 'Mostra QR code ou número.', copyHint: '“Escaneie o QR no Google Authenticator ou Authy.”' },
+  { title: 'Verificar', purpose: 'Confirma com código de 6 dígitos.', copyHint: '“Digite o código atual gerado pelo app.”' },
+  { title: 'Backup', purpose: 'Códigos pra recuperar acesso.', copyHint: '“Salve no gerenciador de senhas — você só vê uma vez.”' },
 ];
 
 const BACKUP_CODES = ['8K3M-7F1Q', '4B9C-N3X2', 'P0R5-T8Y1', 'M2J4-K6L0', 'V9W3-X7Z2', 'Q1S4-R8U6'];

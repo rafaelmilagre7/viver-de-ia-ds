@@ -116,9 +116,9 @@ function RulePaletteRestritaSection() {
               <li>Accent, dourado, amber — toda a família banida em todo nível</li>
               <li>Amarelo, mostarda, ocre — toda a família quente proibida</li>
               <li>Marrom, terracota, bege saturado, cream amarelado</li>
-              <li>Gradients "premium" com qualquer stop quente</li>
-              <li>Roxo "IA", cyan, magenta, neon — tons saturados banidos</li>
-              <li>Verde vibrante de "sucesso" (use navy + ícone check)</li>
+              <li>Gradients “premium” com qualquer stop quente</li>
+              <li>Roxo “IA”, cyan, magenta, neon — tons saturados banidos</li>
+              <li>Verde vibrante de “sucesso” (use navy + ícone check)</li>
               <li>Vermelho saturado — coral suave só pra destrutivo real</li>
             </ul>
           </article>
@@ -138,7 +138,7 @@ function RulePillSection() {
           <div>
             <h3>Toda pill segue <em>a mesma forma</em>.</h3>
             <p>
-              Não tem versão "small caps" para alguns lugares e "lowercase" para outros — caps lock + letter-spacing alto é cliché de bootstrap. O padrão editorial é discreto: lowercase, peso modesto, sem decoração antes do texto. As pills abaixo são o componente <code>&lt;Pill&gt;</code> da library, não uma cópia: o que você vê é literalmente o que o produto renderiza.
+              Não tem versão “small caps” para alguns lugares e “lowercase” para outros — caps lock + letter-spacing alto é cliché de bootstrap. O padrão editorial é discreto: lowercase, peso modesto, sem decoração antes do texto. As pills abaixo são o componente <code>&lt;Pill&gt;</code> da library, não uma cópia: o que você vê é literalmente o que o produto renderiza.
             </p>
           </div>
         </header>
@@ -214,7 +214,7 @@ function RuleTokensSection() {
           <div>
             <h3>12 tokens de cor — <em>navy domina 80% do canvas</em>.</h3>
             <p>
-              Este é o roster de cor da marca: os 12 tokens abaixo mais a rampa de cinza (gray-50 → gray-900), que é estrutura, não cor. Fora disso, nada. Cores de terceiros (logos parceiros, syntax highlighting em code block) aparecem só nos contextos próprios deles, nunca como acento decorativo. Sem cyan, sem magenta, sem neon, sem roxo "IA", sem dourado, sem amarelo.
+              Este é o roster de cor da marca: os 12 tokens abaixo mais a rampa de cinza (gray-50 → gray-900), que é estrutura, não cor. Fora disso, nada. Cores de terceiros (logos parceiros, syntax highlighting em code block) aparecem só nos contextos próprios deles, nunca como acento decorativo. Sem cyan, sem magenta, sem neon, sem roxo “IA”, sem dourado, sem amarelo.
             </p>
             <p className="vds-phil-note">
               Os valores abaixo são lidos do CSS em tempo de execução, no tema <strong>{theme === 'dark' ? 'escuro' : 'claro'}</strong> — não são texto digitado. Quatro deles trocam de valor entre os temas: ink-2, ink-3, gray-50 e gray-100.
@@ -253,7 +253,7 @@ function RuleSignaturesSection() {
           <div>
             <h3>O design system tem <em>uma assinatura sutil</em> no comportamento.</h3>
             <p>
-              Cada elemento interativo respira do mesmo jeito. Row de lista lava de navy no hover. Cards sobem 3px e a atmosphere radial do canto superior esquerdo acende junto. Sombra sempre pela tinta <code>--via-shadow-ink-*</code> — navy no tema claro, preta no escuro — nunca <code>--via-navy-*</code> cru em <code>box-shadow</code>, que inverte pra branco no dark e vira halo. Você reconhece "isso é Viver de IA" sem precisar ver o logo.
+              Cada elemento interativo respira do mesmo jeito. Row de lista lava de navy no hover. Cards sobem 3px e a atmosphere radial do canto superior esquerdo acende junto. Sombra sempre pela tinta <code>--via-shadow-ink-*</code> — navy no tema claro, preta no escuro — nunca <code>--via-navy-*</code> cru em <code>box-shadow</code>, que inverte pra branco no dark e vira halo. Você reconhece “isso é Viver de IA” sem precisar ver o logo.
             </p>
           </div>
         </header>
@@ -300,7 +300,7 @@ function RuleNoBolinhaSection() {
           <div>
             <h3>Bolinha em pill que <em>não é status real</em> está banida.</h3>
             <p>
-              Aquela bolinha cinzinha antes do texto em todo chip "Verificado · Pago · Production" é cliché bootstrap. O peso da tipografia comunica o mesmo. Bolinha só vive quando é estado <strong>realmente live</strong> — presence online, broadcast ao vivo, recording em andamento.
+              Aquela bolinha cinzinha antes do texto em todo chip “Verificado · Pago · Production” é cliché bootstrap. O peso da tipografia comunica o mesmo. Bolinha só vive quando é estado <strong>realmente live</strong> — presence online, broadcast ao vivo, recording em andamento.
             </p>
           </div>
         </header>
@@ -353,7 +353,7 @@ function RuleVoiceSection() {
           <div>
             <h3>Voz de operador, <em>não de vendedor de curso</em>.</h3>
             <p>
-              Confiante, calmo, com números. Não "guru-bro", não "revolucionário", não exclamação. Cada afirmação carrega métrica ou citação atribuída. PT-BR direto.
+              Confiante, calmo, com números. Não “guru-bro”, não “revolucionário”, não exclamação. Cada afirmação carrega métrica ou citação atribuída. PT-BR direto.
             </p>
           </div>
         </header>
@@ -361,22 +361,22 @@ function RuleVoiceSection() {
         <div className="vds-phil-voice-grid">
           <article className="vds-phil-voice good">
             <span className="vds-phil-voice-tag">Editorial</span>
-            <p className="quote">"Viver de IA, não de prompt."</p>
+            <p className="quote">“Viver de IA, não de prompt.”</p>
             <em>Hero · headline curta · sem exclamação</em>
           </article>
           <article className="vds-phil-voice good">
             <span className="vds-phil-voice-tag">Métrica seca</span>
-            <p className="quote">"521 cases reais de implementação de IA"</p>
+            <p className="quote">“521 cases reais de implementação de IA”</p>
             <em>Stat card · número + substantivo + fonte</em>
           </article>
           <article className="vds-phil-voice good">
             <span className="vds-phil-voice-tag">Atribuída</span>
-            <p className="quote">"[Frase do cliente, em primeira pessoa.]" — [Nome] · [empresa]</p>
+            <p className="quote">“[Frase do cliente, em primeira pessoa.]” — [Nome] · [empresa]</p>
             <em>Depoimento · primeira pessoa · nome</em>
           </article>
           <article className="vds-phil-voice bad">
             <span className="vds-phil-voice-tag">Banido</span>
-            <p className="quote">"Revolucione seu negócio com IA! O futuro chegou ✨"</p>
+            <p className="quote">“Revolucione seu negócio com IA! O futuro chegou ✨”</p>
             <em>Clichê · vago · sem número · emoji</em>
           </article>
         </div>

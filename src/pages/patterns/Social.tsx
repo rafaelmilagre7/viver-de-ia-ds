@@ -9,7 +9,7 @@ export default function Social() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · social media"
+        eyebrow="Padrões · posts sociais"
         title={
           <>
             Posts editoriais <em>na assinatura da marca</em>.

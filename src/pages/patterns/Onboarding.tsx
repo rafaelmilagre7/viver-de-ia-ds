@@ -16,13 +16,13 @@ export default function Onboarding() {
     <>
       <DocsHeader
         eyebrow="Padrões · onboarding"
-        title={<>Stepper em cima, <em>uma pergunta por vez</em>.</>}
-        lede="Onboarding longo. Stepper horizontal no topo, headline grande, uma pergunta editorial por step. Dois botões — Voltar (ghost), Continuar (primary). Sem sidebar, sem distração. Aviso de skip discreto no final."
+        title={<>Passos em cima, <em>uma pergunta por vez</em>.</>}
+        lede="Onboarding longo. Indicador de passos no topo, título grande, uma pergunta editorial por passo. Dois botões — Voltar (discreto) e Continuar (principal). Sem barra lateral, sem distração. Opção discreta de pular no final."
       />
 
       <WizardPremiumSection />
 
-      <Section title="Step 3 · objetivos · variante stepper horizontal" meta="formato canônico para flows curtos">
+      <Section title="Passo 3 · objetivos · passos na horizontal" meta="formato padrão pra fluxos curtos">
         <div className="vds-ob">
           <div className="ob-stepper">
             {steps.map((s, i) => (
@@ -71,17 +71,17 @@ export default function Onboarding() {
   );
 }
 
-/* ---------- Wizard premium · side panel narrativo + steps verticais ---------- */
+/* ---------- Assistente com painel narrativo + passos na vertical ---------- */
 function WizardPremiumSection() {
   const wizSteps = [
     { n: 1, t: 'Sobre você', s: 'done', sub: 'nome, papel, empresa' },
     { n: 2, t: 'Cenário atual', s: 'done', sub: 'tamanho do time, ferramentas' },
     { n: 3, t: 'Onde quer chegar', s: 'current', sub: 'objetivos · 90 dias' },
-    { n: 4, t: 'Plano e pagamento', s: 'todo', sub: 'comunidade · mentoria · corporate' },
+    { n: 4, t: 'Plano e pagamento', s: 'todo', sub: 'comunidade · mentoria · empresa' },
   ];
 
   return (
-    <Section title="Wizard premium · side panel narrativo + steps verticais" meta="enterprise onboarding · navy panel cinematográfico · uma pergunta por vez">
+    <Section title="Assistente com painel lateral · passos na vertical" meta="onboarding do Enterprise · painel navy narrativo · uma pergunta por vez">
       <div className="vds-wiz">
         {/* LEFT — atmospheric narrative panel */}
         <aside className="vds-wiz-aside via-mesh-navy via-noise">
@@ -186,7 +186,7 @@ function WizardPremiumSection() {
                 <Building2 size={16} strokeWidth={1.75} />
               </div>
               <div className="vds-wiz-opt-body">
-                <strong>Montar squad IA na empresa</strong>
+                <strong>Montar um time de IA na empresa</strong>
                 <em>Estrutura, ritos, papéis · começando do zero</em>
               </div>
               <span className="vds-wiz-opt-bar" />
@@ -210,8 +210,8 @@ function WizardPremiumSection() {
                 <Briefcase size={16} strokeWidth={1.75} />
               </div>
               <div className="vds-wiz-opt-body">
-                <strong>Lançar produto IA-first</strong>
-                <em>Validação, MVP, go-to-market · com IA no core</em>
+                <strong>Lançar produto com IA no centro</strong>
+                <em>Validação, MVP e chegada ao mercado</em>
               </div>
               <span className="vds-wiz-opt-bar" />
             </label>

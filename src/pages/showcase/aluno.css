@@ -438,8 +438,15 @@
 
 @media (max-width: 960px) {
   .al-nav { padding: var(--via-space-3_5) var(--via-space-6); }
+  .al-nav { gap: var(--via-space-3); }
   .al-nav nav { display: none; }
+  .al-nav .vds-scm-trigger { display: inline-flex; }
   .al-container { padding: var(--via-space-8) var(--via-space-6); }
   .al-hero { grid-template-columns: 1fr; gap: var(--via-space-8); }
   .al-row { grid-template-columns: 1fr; }
+}
+
+/* celular estreito: some o "Rafael · Fundador" pra caber o menu (o avatar fica) */
+@media (max-width: 560px) {
+  .al-nav .hi { display: none; }
 }

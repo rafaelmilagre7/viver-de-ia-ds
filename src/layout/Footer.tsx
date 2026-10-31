@@ -52,9 +52,7 @@ export default function Footer() {
         <span>166 páginas vivas</span>
         <span className="vds-footer-bottom-dot">·</span>
         <span>Geist (Vercel) + Liquid Glass</span>
-        <span className="vds-footer-bottom-meta">
-          São Paulo · Estabelecida 2023
-        </span>
+        <span className="vds-footer-bottom-meta">São Paulo</span>
       </div>
     </footer>
   );

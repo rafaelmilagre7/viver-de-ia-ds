@@ -25,7 +25,7 @@ export default function SearchResults() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · search results"
+        eyebrow="Padrões · resultados de busca"
         title={
           <>
             A busca <em>devolve respostas</em> — não 47 abas.
@@ -75,7 +75,7 @@ function SearchResultsSection() {
     {
       type: 'Consultor IA',
       typeColor: 'accent',
-      title: '"Qual a diferença entre few-shot tuning e fine-tuning real?"',
+      title: '“Qual a diferença entre few-shot tuning e fine-tuning real?”',
       snippet: 'O Consultor IA explicou pro Thiago Reis: few-shot tuning não muda o modelo, só adiciona exemplos no prompt. Fine-tuning real requer dataset e treino · custo 100x maior.',
       meta: ['Thiago Reis', 'Consultor IA', '14 trocas'],
       time: 'há 3 dias',

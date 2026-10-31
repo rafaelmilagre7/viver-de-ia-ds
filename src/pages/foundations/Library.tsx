@@ -159,7 +159,7 @@ function LibDatePickerSection() {
   const [d, setD] = useState<Date | null>(null);
   return (
     <Section
-      title="<DatePicker /> · single date · month grid editorial"
+      title="<DatePicker /> · data única · grade do mês editorial"
       meta="weekStartsOn · min/max · pt-BR · footer com Limpar/Hoje · ARIA dialog"
     >
       <div className="vds-lib-grid">
@@ -279,7 +279,7 @@ function LibDataTableSection() {
           { key: 'name', label: 'Mentorado' },
           {
             key: 'streak',
-            label: 'Streak',
+            label: 'Sequência',
             align: 'right',
             accessor: (r) => r.streak,
             render: (r) => <span className="mono">{r.streak}d</span>,
@@ -319,7 +319,7 @@ function LibDataTableSection() {
 function LibButtonSection() {
   return (
     <Section
-      title="<Button /> · 5 variants × 3 sizes"
+      title="<Button /> · 5 variantes × 3 tamanhos"
       meta="primary | secondary | ghost | destructive | accent"
     >
       <div className="vds-lib-grid">
@@ -715,7 +715,7 @@ function LibModalSection() {
 function LibTabsSection() {
   return (
     <Section
-      title="<Tabs /> · 2 variants · keyboard arrow nav · ARIA tablist"
+      title="<Tabs /> · 2 variantes · navegação pelas setas · tablist ARIA"
       meta="underline (editorial) | pills (compact) · controlled ou uncontrolled"
     >
       <div className="vds-lib-grid">
@@ -956,7 +956,7 @@ function LibProgressSection() {
       <div className="vds-lib-grid">
         <div className="vds-lib-row" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '20px' }}>
           <Progress value={72} label="Onboarding · módulo 03" showValue />
-          <Progress value={40} label="Streak estendido" tone="accent" showValue size="lg" />
+          <Progress value={40} label="Sequência estendida" tone="accent" showValue size="lg" />
           <Progress value={88} label="Espaço usado · 8.8 GB de 10 GB" showValue size="sm" />
           <Progress value={95} label="Alerta · 95% de uso" tone="coral" showValue />
         </div>
@@ -1243,7 +1243,7 @@ function LibStepperSection() {
 
   return (
     <Section
-      title="<Stepper /> · wizard editorial · horizontal | vertical"
+      title="<Stepper /> · passos editoriais · horizontal | vertical"
       meta="ARIA-current step · onStepClick volta · indicador de 3 estados"
     >
       <div className="vds-lib-grid">
@@ -1285,7 +1285,7 @@ function LibStepperSection() {
 function LibEmptyStateSection() {
   return (
     <Section
-      title="<EmptyState /> · placeholder editorial · 3 variants"
+      title="<EmptyState /> · lacuna editorial · 3 variantes"
       meta="default | soft | navy · icon + title + description + actions"
     >
       <div className="vds-lib-grid">
@@ -1355,7 +1355,7 @@ function LibDropdownMenuSection() {
   return (
     <Section
       title="<DropdownMenu /> · context/overflow menu · groups + separator"
-      meta="ARIA menu · ESC fecha · destructive variant · shortcut hint"
+      meta="menu ARIA · ESC fecha · variante destrutiva · atalho de teclado"
     >
       <div className="vds-lib-grid">
         <div className="vds-lib-row" style={{ gap: 24 }}>

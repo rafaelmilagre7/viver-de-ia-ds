@@ -51,7 +51,7 @@ const decisoes = [
     n: '02',
     titulo: 'Hierarquia por indentação e peso',
     corpo:
-      'Sub-conta entra 42px. Total ganha peso 600 e uma régua em cima — convenção contábil de cem anos, não invenção nossa. O que nunca acontece: fundo colorido para dizer "esta linha é diferente". Cor de fundo em linha de dado queima o único recurso que deveria significar alguma coisa.',
+      'Sub-conta entra 42px. Total ganha peso 600 e uma régua em cima — convenção contábil de cem anos, não invenção nossa. O que nunca acontece: fundo colorido para dizer “esta linha é diferente”. Cor de fundo em linha de dado queima o único recurso que deveria significar alguma coisa.',
     classe: '.via-cell-sub · .via-row-total',
   },
   {
@@ -479,7 +479,7 @@ function EspecimeMetricasSection() {
         <strong>Anatomia do card.</strong> <code>--atmos</code> acende o radial navy no canto
         superior esquerdo — use em <em>um</em> card por tela, o principal; nos quatro vira papel de
         parede. O <code>&lt;small&gt;</code> dentro de <code>.via-metric__value</code> reduz o
-        "R$" a 52% do tamanho: quem é protagonista é o número, não a moeda. E o valor herda{' '}
+        “R$” a 52% do tamanho: quem é protagonista é o número, não a moeda. E o valor herda{' '}
         <code>tabular-nums</code>, então dois cards lado a lado com valores diferentes mantêm o
         mesmo ritmo de dígito.
       </p>

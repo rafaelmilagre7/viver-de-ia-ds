@@ -7,7 +7,7 @@ export default function MentorMatching() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · mentor matching"
+        eyebrow="Padrões · match de mentor"
         title={
           <>
             Match score como peça <em>editorial</em>.

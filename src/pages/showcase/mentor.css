@@ -76,13 +76,15 @@
 
 @media (max-width: 860px) {
   .mtr-nav { padding: var(--via-space-3) var(--via-space-5); }
+  .mtr-nav { gap: var(--via-space-3); }
   .mtr-nav nav { display: none; }
+  .mtr-nav .vds-scm-trigger { display: inline-flex; }
 }
 
 /* HERO */
 .mtr-hero {
   position: relative;
-  padding: var(--via-space-14) var(--via-space-12) 0;
+  padding: var(--via-space-14) var(--via-space-12) var(--via-space-10);
   background-color: var(--via-navy);
   color: var(--via-white);
   overflow: hidden;
@@ -136,23 +138,11 @@
   font-size: var(--via-fs-h1);
   font-weight: var(--via-fw-semibold);
   flex-shrink: 0;
+  /* sem anel/halo em volta (proibido em avatar) · só a linha de luz e a
+     sombra de elevação */
   box-shadow:
     inset 0 2px 0 rgba(255, 255, 255, 0.18),
-    0 12px 32px -8px rgba(0, 0, 0, 0.50);
-}
-
-.mtr-hero-ring {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(255, 255, 255, 0.22);
-  animation: mtr-ring 24s linear infinite;
-}
-
-@keyframes mtr-ring { to { transform: rotate(360deg); } }
-
-@media (prefers-reduced-motion: reduce) {
-  .mtr-hero-ring { animation: none; }
+    0 12px 32px -8px var(--via-shadow-ink-60);
 }
 
 .mtr-hero-eyebrow {
@@ -271,23 +261,25 @@
     0 0 0 3px rgba(255, 255, 255, 0.34);
 }
 
-/* Hero stats */
+/* Hero stats · faixa fechada DENTRO do hero (antes era uma aba colada na
+   borda de baixo, sem respiro — no celular os números pareciam vazar do hero) */
 .mtr-hero-stats {
   position: relative;
   z-index: 2;
   max-width: 1000px;
   margin: var(--via-space-10) auto 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   background: rgba(255, 255, 255, 0.10);
-  border-radius: var(--via-radius-md) var(--via-radius-md) 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--via-radius-md);
   overflow: hidden;
 }
 
 .mtr-hero-stats > div {
-  background: var(--via-navy);
-  padding: var(--via-space-5_5) var(--via-space-5);
+  background: rgba(2, 22, 42, 0.55);
+  padding: var(--via-space-5) var(--via-space-4);
   text-align: center;
 }
 
@@ -309,12 +301,31 @@
   margin-top: var(--via-space-1_5);
 }
 
+/* Celular: hero compacto e alinhado à esquerda (avatar ao lado do nome),
+   botões em largura cheia — o agendamento logo abaixo sobe ~200px */
 @media (max-width: 860px) {
-  .mtr-hero { padding: var(--via-space-10) var(--via-space-6) 0; }
-  .mtr-hero-inner { flex-direction: column; text-align: center; gap: var(--via-space-5); }
-  .mtr-hero-info h1 { font-size: var(--via-fs-h2); }
-  .mtr-hero-cta-row { justify-content: center; }
-  .mtr-hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .mtr-hero { padding: var(--via-space-7) var(--via-space-5) var(--via-space-6); }
+  .mtr-hero-mono { display: none; }
+  .mtr-hero-inner {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-areas:
+      "av eyebrow"
+      "av name"
+      "bio bio"
+      "cta cta";
+    gap: 0 var(--via-space-4);
+    align-items: center;
+  }
+  .mtr-hero-info { display: contents; }
+  .mtr-hero-av { grid-area: av; width: 64px; height: 64px; font-size: var(--via-fs-h3); }
+  .mtr-hero-eyebrow { grid-area: eyebrow; align-self: end; margin-bottom: var(--via-space-1); }
+  .mtr-hero-info h1 { grid-area: name; align-self: start; font-size: var(--via-fs-h2); margin: 0; }
+  .mtr-hero-info p { grid-area: bio; margin: var(--via-space-5) 0 var(--via-space-5); }
+  .mtr-hero-cta-row { grid-area: cta; flex-direction: column; }
+  .mtr-hero-cta-row button { justify-content: center; }
+  .mtr-hero-stats { margin-top: var(--via-space-6); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mtr-hero-stats > div { padding: var(--via-space-4) var(--via-space-3); }
 }
 
 /* BODY */
@@ -328,8 +339,15 @@
   align-items: start;
 }
 
+/* agendamento vem antes no DOM (celular: logo abaixo do hero); no desktop
+   vai pra coluna da direita */
+.mtr-main { grid-column: 1; grid-row: 1; min-width: 0; }
+.mtr-schedule { grid-column: 2; grid-row: 1; }
+
 @media (max-width: 920px) {
-  .mtr-body { grid-template-columns: 1fr; padding: var(--via-space-8) var(--via-space-6); }
+  .mtr-body { grid-template-columns: minmax(0, 1fr); padding: var(--via-space-6) var(--via-space-5) var(--via-space-10); }
+  .mtr-main, .mtr-schedule { grid-column: auto; grid-row: auto; }
+  .mtr-schedule { position: static; }
 }
 
 .mtr-main {
@@ -646,11 +664,12 @@
 
 .mtr-schedule-meta li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--via-space-2);
   font-size: var(--via-fs-xs);
+  line-height: var(--via-lh-snug);
   color: var(--via-text-muted);
   font-feature-settings: 'tnum' 1;
 }
 
-.mtr-schedule-meta svg { color: var(--via-text-primary); }
+.mtr-schedule-meta svg { color: var(--via-text-primary); flex-shrink: 0; margin-top: 1px; }

@@ -138,7 +138,7 @@ function AuthSocialSection() {
           <BrandLogo variant="auto" size="md" />
         </div>
         <h3>
-          Bem-vindo de <em>volta</em>.
+          Boas-vindas de <em>volta</em>.
         </h3>
         <p>
           Continue com o método que você usou antes — a gente conecta automático.

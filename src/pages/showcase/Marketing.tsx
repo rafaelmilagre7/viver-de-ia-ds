@@ -1,7 +1,15 @@
 import { ArrowRight, ArrowUpRight, Clock, Zap, Users } from 'lucide-react';
 import BrandLogo from '../../components/BrandLogo';
 import { useScrollEdge } from '../../layout/useScrollEdge';
+import ShowcaseMenu from './ShowcaseMenu';
 import './marketing.css';
+
+const navItems = [
+  { label: 'Plataforma', href: '#mentoria', active: true },
+  { label: 'Cases', href: '#cases' },
+  { label: 'Manifesto', href: '#manifesto' },
+  { label: 'Imprensa', href: '#imprensa' },
+];
 
 const cases = [
   { c: 'Place Dreams', s: 'Tecnologia', h: 'Economiza R$ 42.000 por ano em 30 dias', m: 'R$ 42.000', l: '/ano' },
@@ -23,12 +31,12 @@ export default function ShowcaseMarketing() {
       <header ref={navEdgeRef} className="mk-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
-          <a className="active" href="#mentoria">Plataforma</a>
-          <a href="#cases">Cases</a>
-          <a href="#manifesto">Manifesto</a>
-          <a href="#imprensa">Imprensa</a>
+          {navItems.map((n) => (
+            <a key={n.label} href={n.href} className={n.active ? 'is-link active' : 'is-link'}>{n.label}</a>
+          ))}
         </nav>
-        <button>Ver os planos</button>
+        <ShowcaseMenu items={navItems} />
+        <button className="mk-nav-cta">Ver os planos</button>
       </header>
 
       <section className="mk-hero">
@@ -115,13 +123,13 @@ export default function ShowcaseMarketing() {
         <div className="mk-cta-inner">
           <span className="vds-eyebrow" style={{ color: 'rgba(255,255,255,0.55)' }}>Plano Pro · R$ 3.780/mês</span>
           <h2>Mentoria em grupo ao vivo. <em>Solução rodando na operação.</em></h2>
-          <p>10 check-ins por mês de mentoria em grupo, soluções Plug-and-Play e Consultor IA. Garantia de 90 dias: aumento de receita ou redução de custos, cláusula 7.</p>
+          <p>10 check-ins por mês de mentoria em grupo, soluções Plug-and-Play e Consultor IA. Garantia de 90 dias com requisitos, nas condições da cláusula 7.</p>
           <button className="btn light">Ver os planos <ArrowRight size={16} strokeWidth={1.75} /></button>
         </div>
       </section>
 
       <footer className="mk-footer">
-        <span className="wm">VIVER DE IA</span>
+        <BrandLogo variant="auto" size="sm" />
         <span className="meta">Plataforma B2B · viverdeia.ai</span>
       </footer>
     </div>

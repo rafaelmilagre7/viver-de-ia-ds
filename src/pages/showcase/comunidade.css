@@ -65,7 +65,9 @@
 
 @media (max-width: 860px) {
   .cmu-nav { padding: var(--via-space-3) var(--via-space-5); }
+  .cmu-nav { gap: var(--via-space-3); }
   .cmu-nav nav { display: none; }
+  .cmu-nav .vds-scm-trigger { display: inline-flex; }
 }
 
 /* BODY · 3 colunas */

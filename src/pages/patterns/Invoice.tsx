@@ -8,7 +8,7 @@ export default function Invoice() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · invoice / recibo"
+        eyebrow="Padrões · fatura e recibo"
         title={
           <>
             Recibo editorial, <em>marca completa</em>.

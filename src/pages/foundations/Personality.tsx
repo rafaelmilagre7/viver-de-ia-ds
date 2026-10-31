@@ -67,9 +67,9 @@ const traits: Trait[] = [
       </>
     ),
     summary:
-      'Não usa "revolucione", "transforme", "mude sua vida". O peso vem do número, não do adjetivo.',
+      'Não usa “revolucione”, “transforme”, “mude sua vida”. O peso vem do número, não do adjetivo.',
     behavior: 'Ponto final, raramente exclamação. Promessa específica e mensurável.',
-    avoid: '"Revolucione". "Transforme". "Mude sua vida". "O futuro chegou".',
+    avoid: '“Revolucione”. “Transforme”. “Mude sua vida”. “O futuro chegou”.',
   },
   {
     n: '05',
@@ -97,7 +97,7 @@ const traits: Trait[] = [
     summary:
       'Cor é usada homeopaticamente. Tom premium vem de tipografia, peso e contraste — não de saturação.',
     behavior: 'Surfaces escuras em momentos de peso. Branco/off-white em respiro. Cinza estruturando.',
-    avoid: 'Gold, amber, amarelo. Cyan/magenta/neon. Roxo "IA". Gradient quente.',
+    avoid: 'Gold, amber, amarelo. Cyan/magenta/neon. Roxo “IA”. Gradient quente.',
   },
   {
     n: '07',
@@ -109,9 +109,9 @@ const traits: Trait[] = [
       </>
     ),
     summary:
-      '"521 cases reais de implementação" vence "muita gente já fez". O específico convence; o genérico esfria.',
-    behavior: '"521 cases reais", "157 soluções prontas", "R$ 120.000 de economia anual · Trivia Studio".',
-    avoid: '"Centenas de alunos", "muita gente já fez", "resultados impressionantes".',
+      '“521 cases reais de implementação” vence “muita gente já fez”. O específico convence; o genérico esfria.',
+    behavior: '“521 cases reais”, “157 soluções prontas”, “R$ 120.000 de economia anual · Trivia Studio”.',
+    avoid: '“Centenas de alunos”, “muita gente já fez”, “resultados impressionantes”.',
   },
 ];
 
@@ -126,20 +126,20 @@ const axes = [
 
 const quiz: Array<{ a: string; b: string; right: 'a' | 'b'; why: string }> = [
   {
-    a: '"Aprenda IA do zero e transforme sua carreira em 30 dias!"',
-    b: '"Aumento de receita ou redução de custos em 90 dias. Ou 100% do investimento de volta."',
+    a: '“Aprenda IA do zero e transforme sua carreira em 30 dias!”',
+    b: '“Aumento de receita ou redução de custos em 90 dias. Ou 100% do investimento de volta.”',
     right: 'b',
-    why: 'Promessa específica + condição realista. Sem exclamação. Sem "transformação".',
+    why: 'Promessa específica + condição realista. Sem exclamação. Sem “transformação”.',
   },
   {
-    a: '"Junte-se a centenas de profissionais que já estão usando IA pra revolucionar o trabalho."',
-    b: '"521 cases reais de implementação de IA. 157 soluções prontas. 29 setores."',
+    a: '“Junte-se a centenas de profissionais que já estão usando IA pra revolucionar o trabalho.”',
+    b: '“521 cases reais de implementação de IA. 157 soluções prontas. 29 setores.”',
     right: 'b',
-    why: 'Número específico + fonte checável + escopo claro. Não "centenas" genérico.',
+    why: 'Número específico + fonte checável + escopo claro. Não “centenas” genérico.',
   },
   {
-    a: '"✨ A revolução da IA chegou! Não fique pra trás."',
-    b: '"Em 2025 o operador que não sabe IA não sabe operar. Aqui você aprende com quem opera."',
+    a: '“✨ A revolução da IA chegou! Não fique pra trás.”',
+    b: '“Em 2025 o operador que não sabe IA não sabe operar. Aqui você aprende com quem opera.”',
     right: 'b',
     why: 'Sem sparkle. Sem urgência fabricada. Afirmação factual + posicionamento.',
   },

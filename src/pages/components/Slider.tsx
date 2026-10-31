@@ -14,7 +14,7 @@ export default function Slider() {
         lede="Slider para faixa numérica contínua — orçamento, prioridade, intensidade. Trilha 6px navy@8 → preenchida em navy até o thumb. Alça 22px com borda navy e sombra navy 30%."
       />
 
-      <Section title="Padrão" meta="track 6px · thumb 22">
+      <Section title="Padrão" meta="trilho 6px · alça 22">
         <div className="via-slider-card">
           <div className="hdr">
             <span className="lbl">Orçamento mensal</span>

@@ -98,8 +98,8 @@ export default function Spacing() {
       <Section title="Ritmo entre sections" meta="o ar é a estética">
         <p>
           Seções verticais respiram com saltos de <em>64–96–128</em>. Subseções com 32–48.
-          Elementos dentro de uma section: 16–24. Não comprime espaçamento pra "caber mais
-          coisa". Se algo não cabe, remova, não amasse.
+          Elementos dentro de uma section: 16–24. Não comprime espaçamento pra “caber mais
+          coisa”. Se algo não cabe, remova, não amasse.
         </p>
       </Section>
     </>

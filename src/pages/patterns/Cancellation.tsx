@@ -11,7 +11,7 @@ export default function Cancellation() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · cancellation flow"
+        eyebrow="Padrões · cancelamento"
         title={
           <>
             Cancelar é fácil — <em>mas a gente tenta entender antes</em>.

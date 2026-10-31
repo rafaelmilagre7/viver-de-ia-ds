@@ -68,7 +68,7 @@ function MissionSection() {
         <h4>Por que essa missão e não outra</h4>
         <p>
           O mercado de IA em 2025-2026 está partido em dois extremos. De um lado, conteúdo
-          superficial — gurus vendendo "transformação digital" sem nenhum operador entregando
+          superficial — gurus vendendo “transformação digital” sem nenhum operador entregando
           resultado. Do outro, complexidade técnica inacessível — squads de ML, papers, jargão.
           Falta o meio: o operador que precisa fazer IA <em>funcionar dentro do negócio dele
           essa semana</em>, com responsabilidade pelo resultado.
@@ -177,7 +177,7 @@ function ValuesSection() {
       n: '05',
       title: 'Padrão alto, sem performar excelência',
       body:
-        'Material editorial denso, voz pensada, design coerente — mas sem teatro de qualidade. Não vendemos "premium" como marketing. Entregamos o detalhe porque é o jeito certo, e quem repara repara em silêncio.',
+        'Material editorial denso, voz pensada, design coerente — mas sem teatro de qualidade. Não vendemos “premium” como marketing. Entregamos o detalhe porque é o jeito certo, e quem repara repara em silêncio.',
     },
     {
       n: '06',
@@ -252,11 +252,11 @@ function PositioningSection() {
           <article>
             <span className="vds-bs-positioning-tag not">Não somos</span>
             <ul>
-              <li>Curso de "prompt engineering" superficial</li>
+              <li>Curso de “prompt engineering” superficial</li>
               <li>Bootcamp acadêmico de ML / data science</li>
               <li>Consultoria tradicional · relatório que fica na gaveta</li>
               <li>Marketplace de freelancer de IA</li>
-              <li>Conteúdo de YouTube com promessa de "viralizar"</li>
+              <li>Conteúdo de YouTube com promessa de “viralizar”</li>
             </ul>
           </article>
         </div>
@@ -305,7 +305,7 @@ function PromiseSection() {
               <li>Solução sob medida · só no Enterprise, com AI Builder</li>
               <li>Garantia sem aplicação · exige os 3 requisitos</li>
               <li>Promessa de R$ X mil em receita · cada caso é caso</li>
-              <li>Atalho pra "aprender em 7 dias"</li>
+              <li>Atalho pra “aprender em 7 dias”</li>
             </ul>
           </div>
         </div>

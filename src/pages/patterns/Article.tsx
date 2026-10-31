@@ -3,7 +3,7 @@ import Section from '../../components/docs/Section';
 import './article.css';
 
 const items = [
-  { tag: 'Manifesto', time: '8 min', title: 'O fim da era do prompt', em: 'prompt', desc: 'Por que times de IA pararam de "prompt-engineer" e começaram a operar.', author: 'Rafael Milagre', initials: 'RM', date: '15 mai', cover: 'navy' },
+  { tag: 'Manifesto', time: '8 min', title: 'O fim da era do prompt', em: 'prompt', desc: 'Por que times de IA pararam de “prompt-engineer” e começaram a operar.', author: 'Rafael Milagre', initials: 'RM', date: '15 mai', cover: 'navy' },
   { tag: 'Tutorial', time: '12 min', title: 'Como medir um Superagente em produção', em: 'produção', desc: '3 métricas para saber se sua IA está vendendo, não só conversando.', author: 'Equipe VIA', initials: 'EQ', date: '10 mai', cover: 'light' },
   { tag: 'Análise', time: '6 min', title: 'De 6h para cliques na Viva Nexo', em: 'cliques', desc: 'Case real · economia de R$ 162.000 com IA na operação de saúde.', author: 'Equipe VIA', initials: 'EQ', date: '02 mai', cover: 'navy' },
   { tag: 'Bastidores', time: '14 min', title: 'A semana que reescrevemos a mentoria', em: 'mentoria', desc: 'Como os check-ins do plano Pro forçaram três decisões editoriais.', author: 'Equipe VIA', initials: 'EQ', date: '24 abr', cover: 'light' },

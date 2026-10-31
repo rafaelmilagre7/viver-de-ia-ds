@@ -3,7 +3,15 @@ import {
   Image as ImageIcon, Code2,
 } from 'lucide-react';
 import BrandLogo from '../../components/BrandLogo';
+import ShowcaseMenu from './ShowcaseMenu';
 import './comunidade.css';
+
+const navItems = [
+  { label: 'Painel' },
+  { label: 'Formações' },
+  { label: 'Mentoria' },
+  { label: 'Comunidade', active: true },
+];
 
 /* ============================================================
    Comunidade · página-modelo
@@ -60,11 +68,11 @@ export default function ShowcaseComunidade() {
       <header className="cmu-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
-          <a>Painel</a>
-          <a>Formações</a>
-          <a>Mentoria</a>
-          <a className="active">Comunidade</a>
+          {navItems.map((n) => (
+            <a key={n.label} className={n.active ? 'is-link active' : 'is-link'}>{n.label}</a>
+          ))}
         </nav>
+        <ShowcaseMenu items={navItems} />
         <span className="cmu-av">RM</span>
       </header>
 

@@ -459,7 +459,7 @@ function DialogSection() {
             <span className="vds-dialog-eyebrow">Confirmar ação</span>
             <h3>Marcar todas as 8 notificações como lidas?</h3>
             <p>
-              Ação reversível — você pode ver tudo de novo na aba <em>"Histórico"</em> da caixa de entrada.
+              Ação reversível — você pode ver tudo de novo na aba <em>“Histórico”</em> da caixa de entrada.
             </p>
             <div className="vds-dialog-actions">
               <button className="vds-dialog-btn ghost">Voltar</button>
@@ -489,7 +489,7 @@ function LightboxSection() {
 
           <div className="vds-lightbox-meta">
             <p className="vds-lightbox-caption">
-              Slide 14 de 22 — diagrama de fallback do agente quando a tool externa falha. Padrão "circuit breaker" aplicado em IA.
+              Slide 14 de 22 — diagrama de fallback do agente quando a tool externa falha. Padrão “circuit breaker” aplicado em IA.
             </p>
             <div className="vds-lightbox-actions">
               <button className="vds-lightbox-btn">

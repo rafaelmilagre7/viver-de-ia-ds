@@ -189,7 +189,7 @@ function ClearSpaceSection() {
             <img src={monogramNavy} alt="Monogram com clear space" />
           </div>
           <p className="vds-lu-clear-cap mono">
-            Monogram · "X" = altura do símbolo · espaçamento mínimo = X/2
+            Monogram · “X” = altura do símbolo · espaçamento mínimo = X/2
           </p>
         </div>
 
@@ -202,15 +202,15 @@ function ClearSpaceSection() {
             <img src={wordmarkNavy} alt="Wordmark com clear space" />
           </div>
           <p className="vds-lu-clear-cap mono">
-            Wordmark · "X" = altura do "V" · espaçamento mínimo = 1X em todos os lados
+            Wordmark · “X” = altura do “V” · espaçamento mínimo = 1X em todos os lados
           </p>
         </div>
 
         <p className="vds-lu-clear-note">
-          <strong>Por quê.</strong> Clear space evita que outros elementos visuais "encostem" no
+          <strong>Por quê.</strong> Clear space evita que outros elementos visuais “encostem” no
           logo e quebrem a legibilidade. Em peças com muita densidade (cartão de visita, OG image,
           rodapé editorial), o clear space é frequentemente esquecido e o logo perde peso —
-          parece "espremido" mesmo quando tecnicamente cabe.
+          parece “espremido” mesmo quando tecnicamente cabe.
         </p>
       </article>
     </Section>
@@ -256,8 +256,8 @@ function SizingSection() {
           Monogram nunca abaixo de <em>16px</em> · wordmark nunca abaixo de <em>96px</em> de largura
         </h4>
         <p>
-          Abaixo desses pisos, o miolo do "V" e "A" colapsa visualmente. Quando precisar de algo
-          menor (badge, watermark muito pequeno), prefira só o miolo "VIA" ou use o icon
+          Abaixo desses pisos, o miolo do “V” e “A” colapsa visualmente. Quando precisar de algo
+          menor (badge, watermark muito pequeno), prefira só o miolo “VIA” ou use o icon
           single-color (`icon_black.png`) que é otimizado pra escala pequena.
         </p>
       </article>
@@ -375,7 +375,7 @@ function DontsSection() {
   const donts = [
     'Não inverte cor via CSS filter:invert() · sempre o arquivo dedicado',
     'Não tilta, rota, distorce ou aplica perspective no logo',
-    'Não troca o "I" de "IA" por ícone · marca não tem variação literária',
+    'Não troca o “I” de “IA” por ícone · marca não tem variação literária',
     'Não coloca sombra forte ou glow no logo · ele é flat por design',
     'Não escala monogram abaixo de 16px ou wordmark abaixo de 96px',
     'Não usa logo navy sobre fundo escuro · contraste insuficiente',
@@ -387,7 +387,7 @@ function DontsSection() {
 
   return (
     <Section
-      title="Do's & Don'ts · regras visuais"
+      title="Faça e evite · regras visuais"
       meta="5 dos + 10 don'ts · cada um com razão"
     >
       <div className="vds-lu-dosdonts">

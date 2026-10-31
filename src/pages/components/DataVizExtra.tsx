@@ -786,7 +786,7 @@ function GaugesSection() {
       <p className="vds-gz-rule">
         O arco carrega a cor de série; o veredito (dentro do alvo, atenção, crítico) carrega a cor de
         status e vem sempre com a palavra escrita ao lado. São canais separados de propósito — o gauge
-        continua legível impresso em preto e branco, e ninguém confunde "azul" com "bom".
+        continua legível impresso em preto e branco, e ninguém confunde “azul” com “bom”.
       </p>
     </Section>
   );

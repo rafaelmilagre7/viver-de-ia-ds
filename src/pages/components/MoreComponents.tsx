@@ -106,7 +106,7 @@ function NotificationSection() {
               <span className="ico ok"><Check size={16} strokeWidth={1.75} /></span>
               <div>
                 <strong>Caio aprovou seu case</strong>
-                <span>"Triagem de leads com IA" foi publicado.</span>
+                <span>“Triagem de leads com IA” foi publicado.</span>
                 <span className="time">4 min</span>
               </div>
             </li>

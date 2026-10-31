@@ -9,7 +9,7 @@ export default function EditorialBlocks() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · editorial blocks"
+        eyebrow="Padrões · blocos editoriais"
         title={
           <>
             Os blocos que <em>repetem em todo lugar</em>.
@@ -31,7 +31,7 @@ export default function EditorialBlocks() {
 /* ---------- Hero variants ---------- */
 function HeroVariantsSection() {
   return (
-    <Section title="Hero variants · 3 arquétipos" meta="manchete · split com mockup · split editorial">
+    <Section title="Variações de hero · 3 arquétipos" meta="manchete · split com mockup · split editorial">
       <div className="vds-heros">
         {/* Hero 1 — manchete navy mesh */}
         <article className="vds-hero-card navy via-mesh-navy via-noise">
@@ -127,7 +127,7 @@ function HeroVariantsSection() {
 function LogoWallSection() {
   const clients = ['Place Dreams', 'Trivia Studio', 'Assessoria MAP', 'Viva Nexo', 'Pasetti Viagens', 'Jt Telecom', 'H10 Esportes', 'TaxTek', 'Prevensul', 'BSSP', 'Orbit', 'Lognos'];
   return (
-    <Section title="Logo wall · clientes que confiam na marca" meta="social proof bar · grid editorial">
+    <Section title="Parede de logos · clientes que confiam na marca" meta="faixa de prova social · grade editorial">
       <div className="vds-logowall-card">
         <header>
           <p className="eyebrow">Empresas com case publicado</p>
@@ -327,7 +327,7 @@ function FaqSection() {
     },
     {
       q: 'Funciona pra quem não programa?',
-      a: 'Funciona. As soluções são plug and play, sem necessidade de programação, e a trilha personalizada com IA adapta o conteúdo ao nível de cada colaborador, do CEO ao analista. O que não funciona é quem quer aprender IA "por curiosidade" sem uma operação pra aplicar.',
+      a: 'Funciona. As soluções são plug and play, sem necessidade de programação, e a trilha personalizada com IA adapta o conteúdo ao nível de cada colaborador, do CEO ao analista. O que não funciona é quem quer aprender IA “por curiosidade” sem uma operação pra aplicar.',
     },
     {
       q: 'Como funciona a contratação?',

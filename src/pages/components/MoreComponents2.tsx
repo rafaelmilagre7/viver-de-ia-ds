@@ -71,8 +71,8 @@ function NewsletterSection() {
           <p className="vds-eyebrow">Curatorial quinzenal</p>
           <h3>3 cases novos<br />a cada 15 dias.</h3>
           <p className="lede">
-            Quem entrega resultado em produção, com número atrelado. Nada de "5 dicas
-            pra IA". Sextas pela manhã.
+            Quem entrega resultado em produção, com número atrelado. Nada de “5 dicas
+            pra IA”. Sextas pela manhã.
           </p>
         </div>
         <form className="vds-news-form" onSubmit={(e) => e.preventDefault()}>

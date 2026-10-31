@@ -1,6 +1,14 @@
 import { Play, Check, Lock, MessageCircle, BookOpen, ArrowRight, Calendar } from 'lucide-react';
 import BrandLogo from '../../components/BrandLogo';
+import ShowcaseMenu from './ShowcaseMenu';
 import './aluno.css';
+
+const navItems = [
+  { label: 'Painel', active: true },
+  { label: 'Mentoria' },
+  { label: 'Comunidade' },
+  { label: 'Cases' },
+];
 
 const modules = [
   { n: '01', title: 'O cenário', state: 'done', count: 4, dur: '1h 12min' },
@@ -28,13 +36,13 @@ export default function ShowcaseAluno() {
       <header className="al-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
-          <a className="active">Painel</a>
-          <a>Mentoria</a>
-          <a>Comunidade</a>
-          <a>Cases</a>
+          {navItems.map((n) => (
+            <a key={n.label} className={n.active ? 'is-link active' : 'is-link'}>{n.label}</a>
+          ))}
         </nav>
+        <ShowcaseMenu items={navItems} />
         <div className="user">
-          <span className="hi"><strong>Rafael</strong> · Founder</span>
+          <span className="hi"><strong>Rafael</strong> · Fundador</span>
           <span className="av">RM</span>
         </div>
       </header>

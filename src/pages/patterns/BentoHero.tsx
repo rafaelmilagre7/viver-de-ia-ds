@@ -8,7 +8,7 @@ export default function BentoHero() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · bento grid hero"
+        eyebrow="Padrões · hero bento"
         title={
           <>
             Hero em grade modular, <em>cada peça respira</em>.
@@ -24,7 +24,7 @@ export default function BentoHero() {
 
 function BentoSection() {
   return (
-    <Section title="Bento hero · 6 tiles + 1 manchete dominante" meta="grade 4 colunas · 3 linhas · respiração entre peças">
+    <Section title="Hero bento · 6 blocos + 1 manchete dominante" meta="grade 4 colunas · 3 linhas · respiração entre peças">
       <div className="vds-bento">
         {/* Tile 1 — Manchete dominante (2x2) */}
         <article className="vds-bento-card hero">
@@ -160,7 +160,7 @@ function BentoSection() {
           </span>
           <p className="vds-bento-num accent">
             14 dias
-            <em>de streak corrente</em>
+            <em>seguidos de estudo</em>
           </p>
           <p className="vds-bento-meta">
             Mais que 87% dos operadores do mês

@@ -69,7 +69,7 @@ function FAQPremiumSection() {
   ];
 
   return (
-    <Section title="FAQ premium · busca + categorias + acordeão" meta="layout 2 colunas · busca instantânea no topo · 5 questões inline">
+    <Section title="FAQ completo · busca + categorias + acordeão" meta="2 colunas · busca instantânea no topo · 5 perguntas abertas na página">
       <article className="vds-faq">
         <header className="vds-faq-head">
           <div className="vds-faq-search">
