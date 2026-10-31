@@ -8,7 +8,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--via-space-3_5);
-  animation: vds-loader-fade-in .18s ease-out;
+  /* entra com atraso curto: rota que chega rápido não pisca skeleton */
+  animation: vds-loader-fade-in var(--via-dur-base) var(--via-ease-enter) 120ms both;
 }
 
 @keyframes vds-loader-fade-in {
@@ -33,6 +34,7 @@
 .vds-route-loader__lede,
 .vds-route-loader__block {
   border-radius: 8px;
+  /* navy-04/08 viram luz branca no escuro · o skeleton se resolve pelos tokens */
   background: linear-gradient(
     90deg,
     var(--via-navy-04) 0%,
@@ -41,19 +43,6 @@
   );
   background-size: 200% 100%;
   animation: vds-shimmer 1.6s linear infinite;
-}
-
-[data-theme="dark"] .vds-route-loader__eyebrow,
-[data-theme="dark"] .vds-route-loader__title,
-[data-theme="dark"] .vds-route-loader__lede,
-[data-theme="dark"] .vds-route-loader__block {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0.09) 50%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
-  background-size: 200% 100%;
 }
 
 .vds-route-loader__eyebrow {
@@ -100,4 +89,12 @@
 @keyframes vds-shimmer {
   from { background-position: 200% 0; }
   to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vds-route-loader { animation-duration: 1ms; }
+  .vds-route-loader__eyebrow,
+  .vds-route-loader__title,
+  .vds-route-loader__lede,
+  .vds-route-loader__block { animation: none; }
 }

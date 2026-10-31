@@ -110,6 +110,12 @@
     0 12px 32px var(--via-shadow-ink-30);
 }
 .vds-empty .cta:hover::before { left: 100%; }
+/* no escuro a ação inverte (branco com texto navy), igual ao <Button> primário
+   da lib · navy sobre o painel escuro perdia a liderança */
+[data-theme='dark'] .vds-empty .cta {
+  background: linear-gradient(180deg, var(--via-white), #E6ECF4);
+  color: var(--via-navy);
+}
 .vds-empty .cta:active {
   transform: translateY(0);
   box-shadow:

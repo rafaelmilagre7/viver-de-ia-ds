@@ -37,24 +37,52 @@
 }
 .vds-404 h1 {
   font-family: var(--via-font-display);
-  font-size: clamp(48px, 6vw, 80px);
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: var(--via-fw-medium);
   line-height: var(--via-lh-tight);
   letter-spacing: var(--via-ls-tighter);
   color: var(--via-text-primary);
-  margin: 0 0 var(--via-space-6);
+  margin: 0 0 var(--via-space-5);
+  text-wrap: balance;
 }
-.vds-404 h1 em {
-  font-style: normal;
-  font-weight: var(--via-fw-regular);
-  color: var(--via-text-soft);
-}
-.vds-404 p {
+.vds-404-lede {
   font-family: var(--via-font);
   font-size: var(--via-fs-h4);
   line-height: var(--via-lh-normal);
   color: var(--via-text-muted);
+  margin: 0 0 var(--via-space-6);
+}
+
+/* Endereço pedido · o dado que o suporte pergunta primeiro */
+.vds-404-path {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  max-width: 100%;
   margin: 0 0 var(--via-space-10);
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-muted);
+}
+.vds-404-path span {
+  flex-shrink: 0;
+  padding: var(--via-space-0_5) 7px;
+  border-radius: var(--via-radius-xs);
+  background: var(--via-navy-05);
+  color: var(--via-text-soft);
+}
+.vds-404-path code {
+  font: inherit;
+  color: var(--via-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vds-404-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--via-space-3);
 }
 
 /* "404" gigante decorativo no fundo */
