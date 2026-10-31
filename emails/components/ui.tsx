@@ -21,7 +21,7 @@ export const Divider = ({ space }: { space?: number }) => (
 /** CTA primária · navy SÓLIDO (sobrevive ao Outlook) · branco. */
 export const CTA = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <Section style={{ padding: '4px 0 6px' }}>
-    <Button href={href} style={s.btn}>
+    <Button href={href} style={s.btn} className="via-btn">
       {children}
     </Button>
   </Section>
@@ -36,27 +36,16 @@ export const SubLink = ({ href, children }: { href: string; children: React.Reac
   </Text>
 );
 
-/** Bloco de destaque (detalhes, resumo). tone 'coral' pra urgência real. */
-export const Callout = ({
-  children,
-  tone = 'default',
-}: {
-  children: React.ReactNode;
-  tone?: 'default' | 'coral';
-}) => (
-  <Section
-    style={{
-      ...s.callout,
-      ...(tone === 'coral'
-        ? { backgroundColor: color.coralBg, border: `1px solid ${color.coralLine}` }
-        : {}),
-    }}
-  >
+/** Bloco de destaque (detalhes, resumo). Sempre neutro: urgência vai no eyebrow
+ *  (Layout hero.tone 'alert'), não na cor de fundo. */
+export const Callout = ({ children }: { children: React.ReactNode }) => (
+  <Section style={s.callout} className="via-callout">
     {children}
   </Section>
 );
 
-/** Linha rótulo↔valor (faturas, detalhes). */
+/** Linha rótulo↔valor (faturas, detalhes). strong = destaque por peso, mesmo
+ *  tamanho das outras linhas. No celular empilha (rótulo em cima, valor embaixo). */
 export const InfoRow = ({
   label,
   value,
@@ -69,28 +58,28 @@ export const InfoRow = ({
   last?: boolean;
 }) => (
   <Row style={{ borderBottom: last ? 'none' : `1px solid ${color.lineSoft}` }}>
-    <Column style={{ padding: '11px 0' }}>
+    <Column style={{ padding: '11px 16px 11px 0', verticalAlign: 'top' }} className="via-kv-label">
       <Text
         style={{
           margin: 0,
           fontFamily: fontStack,
           fontSize: '14px',
           color: color.muted,
-          lineHeight: '1.4',
+          lineHeight: '1.45',
         }}
       >
         {label}
       </Text>
     </Column>
-    <Column style={{ padding: '11px 0', textAlign: 'right' }}>
+    <Column style={{ padding: '11px 0', textAlign: 'right', verticalAlign: 'top' }} className="via-kv-value">
       <Text
         style={{
           margin: 0,
           fontFamily: fontStack,
-          fontSize: strong ? '16px' : '14px',
+          fontSize: '14px',
           fontWeight: strong ? 600 : 500,
           color: color.ink,
-          lineHeight: '1.4',
+          lineHeight: '1.45',
         }}
       >
         {value}

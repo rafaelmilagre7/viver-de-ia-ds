@@ -7,7 +7,7 @@ export const meta = {
   id: 'billing',
   name: 'Cobrança / fatura',
   subject: 'sua fatura da Viver de IA · junho',
-  when: 'Aviso de fatura. Vira coral quando está em atraso (uso semântico).',
+  when: 'Aviso de fatura. Em atraso, o eyebrow vira alerta coral (uso semântico); o resto fica neutro.',
 };
 
 export interface BillingEmailProps {
@@ -42,6 +42,7 @@ export default function BillingEmail({
       hero={{
         eyebrow: overdue ? 'Pagamento em atraso' : 'Fatura',
         title: overdue ? `Faltou o pagamento, ${firstName}.` : `Sua fatura, ${firstName}.`,
+        tone: overdue ? 'alert' : undefined,
       }}
     >
       <Lede>
@@ -58,7 +59,7 @@ export default function BillingEmail({
         )}
       </Lede>
 
-      <Callout tone={overdue ? 'coral' : 'default'}>
+      <Callout>
         <InfoRow label="Plano" value={plan} />
         <InfoRow label="Fatura" value={invoiceNumber} />
         <InfoRow label={overdue ? 'Venceu em' : 'Vencimento'} value={dueDate} />

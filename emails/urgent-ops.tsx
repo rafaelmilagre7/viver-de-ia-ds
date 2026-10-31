@@ -25,18 +25,18 @@ export default function UrgentOpsEmail({ firstName, incident, since, impact, com
     <Layout
       preview={`${incident} desde ${since}. Um passo resolve.`}
       reason="Você recebeu este alerta porque é responsável técnico nesta conta."
-      hero={{ eyebrow: 'Ação necessária', title: <>{incident}.</> }}
+      hero={{ eyebrow: 'Ação necessária', title: <>{incident}.</>, tone: 'alert' }}
     >
       <Lede>
         {firstName}, detectamos isso agora e o impacto é real — sem alarme falso. O resumo do que
         está acontecendo:
       </Lede>
 
-      <Callout tone="coral">
+      <Callout>
+        <InfoRow label="Impacto" value={impact} strong />
         <InfoRow label="Evento" value={incident} />
         <InfoRow label="Desde" value={since} />
-        <InfoRow label="Componente" value={component} />
-        <InfoRow label="Impacto" value={impact} strong last />
+        <InfoRow label="Componente" value={component} last />
       </Callout>
 
       <Para>

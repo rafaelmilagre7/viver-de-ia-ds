@@ -5,6 +5,10 @@ WEBHOOK TIMEOUT · HTTP 504.
 
 Rafael, detectamos isso agora e o impacto é real — sem alarme falso. O resumo do que está acontecendo:
 
+Impacto
+
+Mensagens da Nina em fila (não perdidas)
+
 Evento
 
 Webhook timeout · HTTP 504
@@ -16,10 +20,6 @@ hoje 14:08
 Componente
 
 provider de embeddings
-
-Impacto
-
-Mensagens da Nina em fila (não perdidas)
 
 Não precisa investigar do zero — já isolamos a causa provável. O botão abaixo abre direto no ponto certo pra você confirmar e religar.
 

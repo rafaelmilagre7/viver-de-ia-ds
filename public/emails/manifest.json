@@ -4,97 +4,97 @@
     "name": "Boas-vindas",
     "subject": "sua vaga tá confirmada · bora começar?",
     "when": "Disparado quando um aluno confirma a matrícula numa turma.",
-    "bytes": 28365
+    "bytes": 32329
   },
   {
     "id": "welcome-plataforma",
     "name": "Boas-vindas à plataforma",
     "subject": "seu acesso à plataforma tá liberado",
     "when": "Disparado quando o acesso do aluno à plataforma é liberado (primeiro login). Se coincidir com a confirmação de matrícula, o welcome de turma vence — nunca os dois na mesma janela.",
-    "bytes": 27363
+    "bytes": 31327
   },
   {
     "id": "enrollment",
     "name": "Confirmação de turma",
     "subject": "confirmado · sua turma começa 12 de junho",
     "when": "Recibo de matrícula com os detalhes concretos da turma.",
-    "bytes": 28433
+    "bytes": 33338
   },
   {
     "id": "billing",
     "name": "Cobrança / fatura",
     "subject": "sua fatura da Viver de IA · junho",
-    "when": "Aviso de fatura. Vira coral quando está em atraso (uso semântico).",
-    "bytes": 25799
+    "when": "Aviso de fatura. Em atraso, o eyebrow vira alerta coral (uso semântico); o resto fica neutro.",
+    "bytes": 30508
   },
   {
     "id": "nps",
     "name": "NPS / feedback",
     "subject": "como tá indo? 1 pergunta, 30 segundos",
     "when": "Pulso de satisfação. Uma pergunta só, pessoal, sem formulário gigante.",
-    "bytes": 16967
+    "bytes": 20931
   },
   {
     "id": "digest",
     "name": "Digest semanal",
     "subject": "sua semana na Viver de IA · 2–8 jun",
     "when": "Resumo recorrente do que aconteceu na turma e na comunidade.",
-    "bytes": 24418
+    "bytes": 28382
   },
   {
     "id": "event-invite",
     "name": "Convite de evento",
     "subject": "sex 14h · auditoria de 3 agentes ao vivo",
     "when": "Convite pra live / Leaders AI Conference. Factual, sem hype, com o valor concreto.",
-    "bytes": 24352
+    "bytes": 27738
   },
   {
     "id": "recap",
     "name": "Recap pós-evento",
     "subject": "o que rolou na live (+ o replay)",
     "when": "Resumo após live/conference. 3 destaques + acesso ao replay e material.",
-    "bytes": 23258
+    "bytes": 27222
   },
   {
     "id": "drip",
     "name": "Drip / nurture",
     "subject": "o agente que paga a mentoria",
     "when": "Sequência de nutrição (lead que baixou material). Cada email é editorial stand-alone.",
-    "bytes": 17906
+    "bytes": 21870
   },
   {
     "id": "lancamento",
     "name": "Lançamento de turma",
     "subject": "turma 2026.3 abre amanhã 9h · 30 vagas",
     "when": "Abertura de inscrições. Fato + condição real (sem countdown manipulativo).",
-    "bytes": 26793
+    "bytes": 30375
   },
   {
     "id": "oferta",
     "name": "Oferta sutil",
     "subject": "pelo que vi, faria sentido a gente conversar",
     "when": "Convite comercial observacional — parte de algo concreto que a pessoa fez, sem pressão.",
-    "bytes": 17776
+    "bytes": 22720
   },
   {
     "id": "churn",
     "name": "Churn alert (sumiço)",
     "subject": "tô curioso — o que rolou?",
     "when": "Aluno ativo que ficou quieto. Curioso e humano, antes de virar win-back.",
-    "bytes": 17955
+    "bytes": 21919
   },
   {
     "id": "winback",
     "name": "Recuperação (win-back)",
     "subject": "sua vaga continua aqui",
     "when": "Reengajamento de quem deu uma pausa. Caloroso, sem dark pattern.",
-    "bytes": 18936
+    "bytes": 22861
   },
   {
     "id": "urgent-ops",
     "name": "Alerta operacional",
     "subject": "ação necessária · webhook 504 desde 14:08",
     "when": "Alerta de sistema/concierge (Nina/Iris/plataforma). Fato, timeline, próximo passo.",
-    "bytes": 25925
+    "bytes": 30862
   }
 ]
