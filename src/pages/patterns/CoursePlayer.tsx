@@ -80,13 +80,13 @@ function PlayerSection() {
         {/* Sidebar — playlist */}
         <aside className="vds-cp-aside">
           <header className="vds-cp-aside-head">
-            <span className="vds-cp-aside-eyebrow">Curso</span>
-            <h3>Construindo agentes IA na prática</h3>
+            <span className="vds-cp-aside-eyebrow">Formação</span>
+            <h3>Agentes de IA na operação real</h3>
             <div className="vds-cp-progress">
               <div className="track">
                 <span style={{ width: '32%' }} />
               </div>
-              <span className="pct">6 de 18 · 32%</span>
+              <span className="pct">6 de 19 · 32%</span>
             </div>
           </header>
 
@@ -140,7 +140,7 @@ function PlayerSection() {
           {/* Breadcrumb */}
           <nav className="vds-cp-breadcrumb">
             <Layers size={14} strokeWidth={1.75} />
-            <span>Construindo agentes IA</span>
+            <span>Formação · Agentes de IA</span>
             <span className="sep">/</span>
             <span>Módulo 02</span>
             <span className="sep">/</span>
@@ -162,7 +162,7 @@ function PlayerSection() {
                 <h2>
                   Few-shot · <em>quando incluir exemplos é decisivo</em>.
                 </h2>
-                <p>Caio Ribeiro · transcript com timestamps na lateral · 12 notas suas</p>
+                <p>Caio Ribeiro · mentor · transcript com timestamps na lateral · 12 notas suas</p>
 
                 <button className="vid-play-big" onClick={() => setPlaying(true)} aria-label="Tocar vídeo">
                   <Play size={24} strokeWidth={0} style={{ fill: 'currentColor' }} />
@@ -263,15 +263,15 @@ const CHAT_MSGS: ChatMsg[] = [
   },
   {
     id: 'm3',
-    av: 'CM',
-    name: 'Camila Moraes',
+    av: 'BC',
+    name: 'Bruna Costa',
     text: 'Auditar prompt em produção sem quebrar fluxo do cliente: usa shadow ou só dev?',
     time: '21:16',
   },
   {
     id: 'm4',
-    av: 'DP',
-    name: 'Daniel Pinheiro',
+    av: 'TR',
+    name: 'Thiago Reis',
     text: 'Vou tentar few-shot na Iris semana que vem. Aposto que cai 40% no token de saída.',
     time: '21:17',
   },
@@ -450,7 +450,7 @@ function NotesAndProgressSection() {
             <li>
               <button className="vds-cp-note-ts">01:18</button>
               <div>
-                <p>Testar few-shot vs zero-shot na Nina amanhã. Hipótese: similar performance em qualificação simples, diferença grande em casos ambíguos.</p>
+                <p>Testar few-shot vs zero-shot no nosso SDR amanhã. Hipótese: similar performance em qualificação simples, diferença grande em casos ambíguos.</p>
                 <span className="vds-cp-note-meta">há 11 min</span>
               </div>
             </li>
@@ -491,7 +491,7 @@ function NotesAndProgressSection() {
               <li><strong>00:00</strong> Decidir quando usar few-shot</li>
               <li><strong>03:18</strong> Anatomia de 3 exemplos canônicos</li>
               <li className="on"><strong>05:51</strong> Quando 12 exemplos viram ruído</li>
-              <li><strong>09:42</strong> Teste real · Nina classifier</li>
+              <li><strong>09:42</strong> Teste real · classificador de SDR</li>
               <li><strong>11:28</strong> Síntese · regra de bolso</li>
             </ul>
           </div>

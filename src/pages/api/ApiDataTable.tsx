@@ -5,16 +5,16 @@ import { DataTable as meta } from './props.generated.json';
 type Operator = {
   id: string;
   name: string;
-  cohort: string;
+  plan: string;
   streak: number;
   revenue: number;
   [key: string]: unknown;
 };
 
 const data: Operator[] = [
-  { id: '1', name: 'Caio Ribeiro', cohort: '2026.2', streak: 14, revenue: 1800000 },
-  { id: '2', name: 'Márisson Lage', cohort: '2026.2', streak: 22, revenue: 920000 },
-  { id: '3', name: 'Diego Martins', cohort: '2026.1', streak: 9, revenue: 540000 },
+  { id: '1', name: 'Caio Ribeiro', plan: 'Pro', streak: 14, revenue: 1240000 },
+  { id: '2', name: 'Mariana Leal', plan: 'Pro', streak: 22, revenue: 920000 },
+  { id: '3', name: 'Diego Martins', plan: 'Starter', streak: 9, revenue: 540000 },
 ];
 
 function DataTableDemo() {
@@ -24,7 +24,7 @@ function DataTableDemo() {
       initialSort={{ key: 'streak', dir: 'desc' as SortDir }}
       columns={[
         { key: 'name', label: 'Operador' },
-        { key: 'cohort', label: 'Turma' },
+        { key: 'plan', label: 'Plano' },
         { key: 'streak', label: 'Streak (d)', align: 'right' },
         {
           key: 'revenue',
@@ -77,7 +77,7 @@ export default function ApiDataTable() {
   initialSort={{ key: 'streak', dir: 'desc' }}
   columns={[
     { key: 'name',    label: 'Operador' },
-    { key: 'cohort',  label: 'Turma' },
+    { key: 'plan',    label: 'Plano' },
     { key: 'streak',  label: 'Streak', align: 'right' },
     { key: 'revenue', label: 'Receita', align: 'right',
       render: (r) => \`R$ \${(r.revenue/1000).toLocaleString('pt-BR')}K\` },

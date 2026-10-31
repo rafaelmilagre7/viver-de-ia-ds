@@ -21,29 +21,29 @@ interface FeatureRow {
 }
 
 const TIERS: Tier[] = [
-  { id: 'free', name: 'Free', amount: 'R$ 0', per: '/sempre', description: 'Pra começar a entender', cta: 'Começar agora' },
-  { id: 'pro', name: 'Pro', amount: 'R$ 290', per: '/mês', description: 'Pra praticar com depth', recommended: true, cta: 'Assinar Pro' },
-  { id: 'team', name: 'Team', amount: 'R$ 890', per: '/mês', description: 'Pra mentorar quem aprende', cta: 'Falar com vendas' },
+  { id: 'starter', name: 'Starter', amount: 'R$ 2.580', per: '/mês', description: 'Plataforma, soluções e comunidade', cta: 'Assinar Starter' },
+  { id: 'pro', name: 'Pro', amount: 'R$ 3.780', per: '/mês', description: 'Com mentoria em grupo semanal', recommended: true, cta: 'Assinar Pro' },
+  { id: 'enterprise', name: 'Enterprise', amount: 'R$ 6.180', per: '/mês', description: 'Implementação assistida e AI Builder', cta: 'Falar com vendas' },
 ];
 
 const ROWS: FeatureRow[] = [
-  { group: 'Comunidade', feature: 'Acesso ao Discord editorial', values: [true, true, true] },
-  { group: 'Comunidade', feature: 'Encontros mensais ao vivo', values: ['1 por mês', '4 por mês', 'ilimitado'] },
-  { group: 'Comunidade', feature: 'Convites pra eventos presenciais', values: [false, true, true] },
-  { group: 'Mentoria', feature: 'Sessões 1:1 com mentor sênior', values: [false, '4 por mês', '8 por mês'] },
-  { group: 'Mentoria', feature: 'Mentor dedicado fixo', values: [false, false, true] },
-  { group: 'Mentoria', feature: 'Replay + notas das sessões', values: [false, true, true] },
-  { group: 'Conteúdo', feature: 'Biblioteca de cursos completos', values: ['preview', true, true] },
-  { group: 'Conteúdo', feature: 'Cases de implementação reais', values: [false, true, true] },
-  { group: 'Conteúdo', feature: 'Workshops práticos hands-on', values: [false, '2 por mês', '6 por mês'] },
-  { group: 'Suporte', feature: 'Suporte por email · 48h', values: [true, true, true] },
-  { group: 'Suporte', feature: 'Suporte prioritário · 4h', values: [false, true, true] },
-  { group: 'Suporte', feature: 'Concierge 1:1 no WhatsApp', values: [false, false, true] },
+  { group: 'Comunidade', feature: 'Comunidade de empresários e líderes', values: [true, true, true] },
+  { group: 'Comunidade', feature: 'Imersão presencial de implementação', values: [true, true, true] },
+  { group: 'Mentoria', feature: 'Mentoria em grupo ao vivo', values: [false, '10 por mês', true] },
+  { group: 'Mentoria', feature: 'Mentoria individual', values: [false, false, '1h por mês'] },
+  { group: 'Mentoria', feature: 'Arquiteto de soluções AI Builder', values: [false, false, true] },
+  { group: 'Mentoria', feature: 'Implementação assistida', values: [false, false, true] },
+  { group: 'Conteúdo', feature: 'Soluções Plug-and-Play', values: [true, true, true] },
+  { group: 'Conteúdo', feature: 'Formações práticas', values: [true, true, true] },
+  { group: 'Conteúdo', feature: 'Soluções premium', values: [false, true, true] },
+  { group: 'Suporte', feature: 'Consultor IA na plataforma · 24/7', values: [true, true, true] },
+  { group: 'Suporte', feature: 'Suporte prioritário', values: [false, true, true] },
+  { group: 'Suporte', feature: 'SLA dedicado', values: [false, false, true] },
 ];
 
 const PRINCIPLES = [
-  { code: 'i', title: 'Diga quem é o tier', body: 'Cada plano tem 1 frase de descrição clara · "pra praticar com depth" > "tier intermediário".' },
-  { code: 'ii', title: 'Valores absolutos antes de check', body: 'Quando faz diferença, mostre "4 por mês" em vez de só check · usuário compara melhor.' },
+  { code: 'i', title: 'Diga quem é o tier', body: 'Cada plano tem 1 frase de descrição clara · "com mentoria em grupo semanal" > "tier intermediário".' },
+  { code: 'ii', title: 'Valores absolutos antes de check', body: 'Quando faz diferença, mostre "10 por mês" em vez de só check · usuário compara melhor.' },
   { code: 'iii', title: 'Recommended sem grito', body: 'Card eleva e atmosphere navy intensifica · nunca cor gritante (amarelo, neon).' },
   { code: 'iv', title: 'CTA por coluna · não no fim', body: 'User decide na linha do tier · não precisa rolar pra baixo pra encontrar botão.' },
 ];
@@ -54,12 +54,12 @@ export default function PricingComparison() {
       <DocsHeader
         eyebrow="Padrões · pricing comparison table"
         title={<>Comparar é confiável — <em>quando o lado a lado conta a verdade.</em></>}
-        lede="Tabela de comparação de planos com 12+ features agrupadas. Mostra check/X explícito · valores numéricos quando relevante (4 por mês). Tier recomendado eleva o card e intensifica atmosphere navy — sem cor gritante. CTA por coluna."
+        lede="Tabela de comparação de planos com 12+ features agrupadas. Mostra check/X explícito · valores numéricos quando relevante (10 por mês). Tier recomendado eleva o card e intensifica atmosphere navy — sem cor gritante. CTA por coluna."
       />
 
       <Section meta="comparação completa" title="3 tiers · 12 features agrupadas">
         <p style={{ margin: '0 0 32px', fontSize: 13.5, color: 'var(--via-text-muted)', lineHeight: 1.65 }}>
-          Free · Pro · Team. Cada feature é binária (check/X) ou tem valor (4 por mês, 8 horas). Grupos visuais separam Comunidade · Mentoria · Conteúdo · Suporte.
+          Starter · Pro · Enterprise, em contratação anual. Cada feature é binária (check/X) ou tem valor (10 por mês, 1h por mês). Grupos visuais separam Comunidade · Mentoria · Conteúdo · Suporte.
         </p>
 
         <div className="vds-pricing">

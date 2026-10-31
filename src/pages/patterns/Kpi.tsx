@@ -56,18 +56,18 @@ export default function Kpi() {
 
       <Section title="2 tiles" meta="formato canônico · .via-metric">
         <div className="via-metric-grid vds-kpi-grid">
-          <Tile lbl="Cases publicados" num="206" delta="+18%"
+          <Tile lbl="Soluções em uso" num="18" delta="+18%"
             path="M 0 32 L 25 28 L 50 30 L 75 22 L 100 24 L 125 18 L 150 15 L 175 12 L 200 6"
             meta="90 dias · vs período anterior" />
           <Tile lbl="Receita influenciada" cur="R$" num="248k" delta="+42%"
             path="M 0 30 L 25 26 L 50 28 L 75 18 L 100 22 L 125 14 L 150 18 L 175 8 L 200 4"
-            meta="2026 · todos os cases" />
+            meta="2026 · todas as soluções" />
         </div>
       </Section>
 
       <Section title="4 tiles em fila" meta="dashboard · .via-metric-grid">
         <div className="via-metric-grid vds-kpi-row">
-          <Tile lbl="Alunos ativos" num="312" delta="+24%"
+          <Tile lbl="Membros ativos" num="312" delta="+24%"
             path="M 0 34 L 25 30 L 50 28 L 75 24 L 100 20 L 125 22 L 150 16 L 175 12 L 200 8"
             meta="trimestre" />
           <Tile lbl="NPS" num="84" delta="+6"
@@ -76,7 +76,7 @@ export default function Kpi() {
           <Tile lbl="Implementações" num="48" delta="+12"
             path="M 0 24 L 25 22 L 50 18 L 75 20 L 100 16 L 125 14 L 150 18 L 175 12 L 200 10"
             meta="ano · em produção" />
-          <Tile lbl="Cases novos" num="11" delta="+3"
+          <Tile lbl="Formações concluídas" num="11" delta="+3"
             path="M 0 28 L 25 26 L 50 22 L 75 24 L 100 18 L 125 16 L 150 20 L 175 14 L 200 12"
             meta="mês corrente" />
         </div>

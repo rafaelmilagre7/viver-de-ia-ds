@@ -4,8 +4,8 @@ import './avatar.css';
 
 const people = [
   { name: 'Caio Fontana', initials: 'BF', tone: 'navy' },
-  { name: 'Márisson Lage', initials: 'ML', tone: 'gray' },
-  { name: 'Guilherme Delorenzo', initials: 'GD', tone: 'navy' },
+  { name: 'Mariana Leal', initials: 'ML', tone: 'gray' },
+  { name: 'Gustavo Dantas', initials: 'GD', tone: 'navy' },
   { name: 'Larissa Tavares', initials: 'LT', tone: 'gray' },
   { name: 'Rafael Milagre', initials: 'RM', tone: 'navy' },
 ];
@@ -43,7 +43,7 @@ export default function Avatar() {
               <span className={`via-avatar sm ${p.tone}`}>{p.initials}</span>
               <div>
                 <div className="name">{p.name}</div>
-                <div className="role">Mentoria · turma 2026.2</div>
+                <div className="role">Plano Pro · mentoria em grupo</div>
               </div>
             </div>
           ))}

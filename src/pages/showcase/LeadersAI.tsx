@@ -4,9 +4,9 @@ import './leaders-ai.css';
 
 const days = [
   {
-    day: '14 outubro · quarta',
+    day: '[data] · dia 1',
     items: [
-      { t: '09:00', n: 'Abertura · Caio Ribeiro' },
+      { t: '09:00', n: 'Abertura · Rafael Milagre' },
       { t: '10:00', n: 'Operadores de IA — o que mudou em 12 meses' },
       { t: '11:30', n: 'Painel · Casos reais com receita atrelada' },
       { t: '14:00', n: 'Workshop · Levantando seu primeiro Superagente' },
@@ -14,7 +14,7 @@ const days = [
     ],
   },
   {
-    day: '15 outubro · quinta',
+    day: '[data] · dia 2',
     items: [
       { t: '09:00', n: 'Keynote · O fim da era do prompt' },
       { t: '10:30', n: 'Da hipótese ao deploy — em produção em 14 dias' },
@@ -25,18 +25,18 @@ const days = [
 ];
 
 const speakers = [
-  { initials: 'CR', name: 'Caio Ribeiro', role: 'Fundador · Viver de IA' },
-  { initials: 'GD', name: 'Guilherme Delorenzo', role: 'Founder · Efizi' },
-  { initials: 'ML', name: 'Márisson Lage', role: 'CEO · Balzani & Zimbel' },
-  { initials: 'LT', name: 'Larissa Tavares', role: 'Comparar Seguro' },
-  { initials: 'RC', name: 'Rafael Cordeiro', role: 'CTO · Lago Saúde' },
-  { initials: 'AM', name: 'Ana Moreira', role: 'Head IA · Conferir' },
+  { initials: 'RM', name: 'Rafael Milagre', role: 'Fundador · Viver de IA' },
+  { initials: 'P2', name: '[Palestrante 2]', role: '[cargo] · [empresa]' },
+  { initials: 'P3', name: '[Palestrante 3]', role: '[cargo] · [empresa]' },
+  { initials: 'P4', name: '[Palestrante 4]', role: '[cargo] · [empresa]' },
+  { initials: 'P5', name: '[Palestrante 5]', role: '[cargo] · [empresa]' },
+  { initials: 'P6', name: '[Palestrante 6]', role: '[cargo] · [empresa]' },
 ];
 
 const tiers = [
-  { n: 'Standard', p: '1.490', d: 'Acesso aos 2 dias.', items: ['Coffee & almoço', 'Materiais digitais'] },
-  { n: 'Pro', p: '2.890', d: 'Standard + workshops + jantar.', items: ['3 workshops práticos', 'Jantar de networking', 'Gravações'], feat: true, badge: 'Mais escolhido' },
-  { n: 'VIP', p: '5.490', d: 'Pro + mesa redonda fechada.', items: ['Mesa VIP com Caio', 'Mentoria 1-a-1', 'After-party'] },
+  { n: 'Standard', p: '[valor]', d: 'Acesso a todos os dias.', items: ['Coffee & almoço', 'Materiais digitais'] },
+  { n: 'Pro', p: '[valor]', d: 'Standard + workshops + jantar.', items: ['Workshops práticos', 'Jantar de networking', 'Gravações'], feat: true, badge: 'Recomendado' },
+  { n: 'VIP', p: '[valor]', d: 'Pro + mesa redonda fechada.', items: ['Mesa redonda fechada', 'Encontro com palestrantes', 'After-party'] },
 ];
 
 export default function ShowcaseLeadersAI() {
@@ -54,21 +54,21 @@ export default function ShowcaseLeadersAI() {
       </header>
 
       <section className="la-hero">
-        <span className="la-eyebrow">Leaders AI Conference · 2026</span>
-        <h1>Dois dias com quem<br /><em>opera em produção</em>.</h1>
+        <span className="la-eyebrow">Leaders AI Conference · [ano]</span>
+        <h1>Um encontro de quem<br /><em>opera em produção</em>.</h1>
         <p className="lede">
           Conferência editorial para operadores de IA — sem hype, sem demo bonita. Receita
           atrelada, governança séria, decisões reais.
         </p>
         <div className="la-pill">
-          14 e 15 de outubro · São Paulo · Auditório Pinheiros
+          [data] · [cidade] · [local]
         </div>
       </section>
 
       <section className="la-section">
         <header className="la-section-h">
           <span className="la-eyebrow">Agenda</span>
-          <h2>Dois dias, <em>quatro tracks</em>.</h2>
+          <h2>Agenda por dia, <em>[N] tracks</em>.</h2>
         </header>
         <div className="la-agenda">
           {days.map((d) => (
@@ -133,7 +133,7 @@ export default function ShowcaseLeadersAI() {
 
       <footer className="la-footer">
         <img src={leadersLogo} alt="Leaders AI" />
-        <span>14 e 15 outubro 2026 · São Paulo · Uma realização Viver de IA</span>
+        <span>[data] · [cidade] · [local] · Uma realização Viver de IA</span>
       </footer>
     </div>
   );

@@ -13,25 +13,25 @@ function AccordionDemo() {
             title: 'Como funciona a mentoria?',
             content: (
               <p style={{ margin: 0, color: 'var(--via-text-body)', fontSize: 13.5, lineHeight: 1.65 }}>
-                Sessão 1:1 de 45 min toda semana com mentor sênior · gravação fica disponível por 90 dias · acesso ao replay e às anotações em texto.
+                No plano Pro · 10 check-ins por mês de mentoria em grupo, ao vivo · no Enterprise, entra também 1 hora por mês de mentoria individual.
               </p>
             ),
           },
           {
             id: 'q2',
-            title: 'Posso cancelar quando quiser?',
+            title: 'Como funciona a contratação?',
             content: (
               <p style={{ margin: 0, color: 'var(--via-text-body)', fontSize: 13.5, lineHeight: 1.65 }}>
-                Sim · cancelamento em 1 clique · vale a partir do próximo ciclo · sem multa ou pegadinha.
+                Valor mensal em contratação anual · Starter R$ 2.580 · Pro R$ 3.780 · Enterprise R$ 6.180.
               </p>
             ),
           },
           {
             id: 'q3',
-            title: 'O mentor é fixo ou rotativo?',
+            title: 'Tem garantia?',
             content: (
               <p style={{ margin: 0, color: 'var(--via-text-body)', fontSize: 13.5, lineHeight: 1.65 }}>
-                Fixo · você escolhe na 1ª semana (3 conversas-piloto) · troca de mentor permitida a qualquer momento.
+                100% do investimento de volta se, em 90 dias, não houver aumento de receita nem redução de custos · exige 3 requisitos · cláusula 7 dos termos de uso.
               </p>
             ),
           },
@@ -72,8 +72,8 @@ export default function ApiAccordion() {
   defaultOpen="q1"
   items={[
     { id: 'q1', title: 'Como funciona?', content: <p>...</p> },
-    { id: 'q2', title: 'Posso cancelar?', content: <p>...</p> },
-    { id: 'q3', title: 'Mentor é fixo?', content: <p>...</p> },
+    { id: 'q2', title: 'Contratação?', content: <p>...</p> },
+    { id: 'q3', title: 'Tem garantia?', content: <p>...</p> },
   ]}
 />`,
         },

@@ -102,12 +102,12 @@ function PrintGuideSection() {
 
 function ReceiptSection() {
   const items = [
-    { desc: 'Mentoria Viver de IA · 1:1 trimestral', qty: 1, unit: 18000, sub: 'Sessões semanais de 60min · acesso ao Discord interno' },
-    { desc: 'Análise de squad (até 6 pessoas)', qty: 1, unit: 4800, sub: 'Auditoria do uso de IA por área · plano 90 dias' },
-    { desc: 'Curso Viver de IA — assinatura anual', qty: 1, unit: 2400, sub: 'Acesso completo + comunidade + atualizações' },
+    { desc: 'Plano Enterprise · mensalidade (contratação anual)', qty: 1, unit: 6180, sub: 'Soluções Plug-and-Play · formações práticas · Consultor IA · comunidade' },
+    { desc: 'Arquiteto de soluções AI Builder', qty: 1, unit: 0, sub: 'Incluído no plano Enterprise' },
+    { desc: 'Mentoria individual · 1 hora por mês', qty: 1, unit: 0, sub: 'Incluída no plano Enterprise' },
   ];
   const subtotal = items.reduce((s, i) => s + i.qty * i.unit, 0);
-  const discount = 2400;
+  const discount = 0;
   const total = subtotal - discount;
 
   return (
@@ -122,8 +122,8 @@ function ReceiptSection() {
             <div className="vds-receipt-brand">
               <BrandLogo variant="black" size="md" />
               <p className="vds-receipt-cnpj">
-                Viver de IA Ltda · CNPJ 56.812.394/0001-22<br />
-                Av. Paulista, 1842 · cj. 1602 · São Paulo · SP
+                Viver de IA · CNPJ [00.000.000/0000-00]<br />
+                [endereço da sede]
               </p>
             </div>
 
@@ -140,18 +140,18 @@ function ReceiptSection() {
           <section className="vds-receipt-parties">
             <div className="vds-receipt-party">
               <p className="vds-receipt-eyebrow">De</p>
-              <p className="vds-receipt-name">Viver de IA Ltda</p>
+              <p className="vds-receipt-name">Viver de IA</p>
               <p className="vds-receipt-info">
-                financeiro@viverdeia.ai<br />
-                +55 11 4040-1820
+                [email do financeiro]<br />
+                [telefone]
               </p>
             </div>
             <div className="vds-receipt-party">
               <p className="vds-receipt-eyebrow">Para</p>
-              <p className="vds-receipt-name">Efizi Soluções S.A.</p>
+              <p className="vds-receipt-name">Lumin Saúde Ltda</p>
               <p className="vds-receipt-info">
-                CNPJ 17.482.910/0001-49<br />
-                Márisson Lage · marisson@efizi.com.br<br />
+                CNPJ 12.345.678/0001-90<br />
+                Bruna Carvalho · bruna@lumin.example<br />
                 Rua das Hortênsias, 480 · Joinville · SC
               </p>
             </div>
@@ -187,7 +187,7 @@ function ReceiptSection() {
             <div className="vds-receipt-note">
               <p className="vds-receipt-eyebrow">Observação</p>
               <p>
-                Trimestre iniciado em 1º jun 2026. <em>Desconto Founders</em> aplicado nas 3 primeiras parcelas anuais (-R$ 800/mês).
+                Contratação anual iniciada em 17 mai 2026. <em>Garantia de 90 dias</em> nas condições da cláusula 7 dos termos de uso.
               </p>
             </div>
             <div className="vds-receipt-totals-card">
@@ -196,7 +196,7 @@ function ReceiptSection() {
                 <span className="via-num">R$ {subtotal.toLocaleString('pt-BR')},00</span>
               </div>
               <div className="row">
-                <span>Desconto Founders</span>
+                <span>Desconto</span>
                 <span className="discount via-num">− R$ {discount.toLocaleString('pt-BR')},00</span>
               </div>
               <div className="row total">
@@ -268,14 +268,14 @@ function CompactReceiptSection() {
           </header>
 
           <h3 className="vds-receipt-mini-amount">
-            R$ 1.840,00
+            R$ 3.780,00
             <span>· recebido em 17 mai</span>
           </h3>
 
           <ul className="vds-receipt-mini-meta">
             <li>
               <span>Assinatura</span>
-              <strong>Viver de IA · plano anual</strong>
+              <strong>Viver de IA · Plano Pro</strong>
             </li>
             <li>
               <span>Próxima cobrança</span>

@@ -52,8 +52,8 @@ export default function ApiModal() {
         initial: {
           open: false,
           title: 'Renovar plano',
-          description: 'Suas próximas 3 cobranças serão de R$ 6.000.',
-          children: 'Você pode cancelar a qualquer momento antes da renovação.',
+          description: 'Suas próximas cobranças serão de R$ 3.780/mês.',
+          children: 'A renovação mantém a contratação anual do plano Pro.',
         },
         exclude: ['open'],
         render: (v, set) => {

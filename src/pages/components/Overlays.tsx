@@ -71,7 +71,7 @@ function DrawerSection() {
                   <span className="vds-drawer-chip">sex 22</span>
                 </a>
               </li>
-              <li><a><span className="vds-drawer-mark" /> Diretório de alunos</a></li>
+              <li><a><span className="vds-drawer-mark" /> Diretório de membros</a></li>
             </ul>
 
             <p className="vds-drawer-eyebrow">Conta</p>
@@ -87,7 +87,7 @@ function DrawerSection() {
               <span className="av">RM</span>
               <div>
                 <p>Rafael Milagre</p>
-                <span>Plano Mentoria</span>
+                <span>Plano Pro</span>
               </div>
             </div>
           </footer>
@@ -106,9 +106,9 @@ function SheetSection() {
         <aside className="vds-sheet">
           <header>
             <div>
-              <span className="vds-sheet-eyebrow">Aluno · perfil completo</span>
-              <h3>Márisson Lage</h3>
-              <p>Efizi Soluções · plano Mentoria · ingressou em out 2024</p>
+              <span className="vds-sheet-eyebrow">Membro · perfil completo</span>
+              <h3>Mariana Leal</h3>
+              <p>Norte Varejo · plano Pro · ingressou em out 2024</p>
             </div>
             <button className="vds-sheet-close" aria-label="Fechar sheet"><X size={16} strokeWidth={1.75} /></button>
           </header>
@@ -134,7 +134,7 @@ function SheetSection() {
               <ul>
                 <li>
                   <span className="d">17 mai</span>
-                  <span>Comentou na aula <strong>02.02</strong> — sobre few-shot na Nina</span>
+                  <span>Comentou na aula <strong>02.02</strong> — sobre few-shot em agentes</span>
                 </li>
                 <li>
                   <span className="d">14 mai</span>
@@ -146,7 +146,7 @@ function SheetSection() {
                 </li>
                 <li>
                   <span className="d">07 mai</span>
-                  <span>Renovou plano Mentoria · trimestre</span>
+                  <span>Aderiu ao plano Pro · contrato anual</span>
                 </li>
               </ul>
             </div>
@@ -155,7 +155,7 @@ function SheetSection() {
               <p className="vds-sheet-section-title">Notas internas do mentor</p>
               <div className="vds-sheet-note">
                 <p>
-                  Mârisson está num momento de implementar agentes em produção. Discutimos few-shot vs zero-shot na última sessão. Próxima sessão: revisar arquitetura do classifier.
+                  Mariana está num momento de implementar agentes em produção. Discutimos few-shot vs zero-shot na última sessão. Próxima sessão: revisar arquitetura do classifier.
                 </p>
                 <span>Caio Ribeiro · 14 mai</span>
               </div>
@@ -196,7 +196,7 @@ function BottomSheetSection() {
               </span>
             </div>
             <div className="vds-bs-faded-content">
-              <h4>Construindo agentes IA</h4>
+              <h4>Formação: Agentes de IA</h4>
               <p>Módulo 02 · Prompt como engenharia</p>
               <div className="vds-bs-faded-lessons">
                 <span /><span /><span /><span /><span />
@@ -255,7 +255,7 @@ function BottomSheetSection() {
                   </span>
                   <div>
                     <strong>Marcar pra assistir depois</strong>
-                    <em>Gravação fica no arquivo da turma</em>
+                    <em>Gravação fica no arquivo da formação</em>
                   </div>
                 </li>
                 <li>
@@ -291,8 +291,8 @@ function BottomSheetSection() {
               </span>
             </div>
             <div className="vds-bs-faded-content">
-              <h4>Operadores · turma 2026.2</h4>
-              <p>24 alunos · ordenado por atividade</p>
+              <h4>Membros · plano Pro</h4>
+              <p>24 membros · ordenado por atividade</p>
               <div className="vds-bs-faded-lessons">
                 <span /><span /><span /><span /><span />
               </div>
@@ -339,7 +339,7 @@ function BottomSheetSection() {
                   <span className="vds-bs-radio">
                     <span />
                   </span>
-                  <span>Data de entrada na turma</span>
+                  <span>Data de adesão ao plano</span>
                 </li>
               </ul>
             </div>
@@ -435,9 +435,9 @@ function DialogSection() {
               <AlertTriangle size={20} strokeWidth={1.75} />
             </div>
             <span className="vds-dialog-eyebrow danger">Ação irreversível</span>
-            <h3>Cancelar plano Mentoria?</h3>
+            <h3>Cancelar plano Pro?</h3>
             <p>
-              Você perde acesso à comunidade, ao playbook e à próxima sessão (agendada pra <strong>22 mai · 14h</strong>). A renovação automática também desliga.
+              Você perde acesso à comunidade, às formações e ao próximo check-in (agendada pra <strong>22 mai · 14h</strong>). A renovação automática também desliga.
             </p>
             <div className="vds-dialog-warn">
               Não pode ser desfeita pelo app — só pelo time financeiro.

@@ -7,14 +7,14 @@ import './pricing.css';
 const tiers = [
   {
     name: 'Standard',
-    price: '1.490',
-    desc: 'Acesso aos 2 dias da conferência.',
+    price: '[valor]',
+    desc: 'Acesso aos [N] dias da conferência.',
     items: ['Coffee & almoço', 'Materiais digitais', 'Networking aberto'],
     cta: 'Comprar',
   },
   {
     name: 'Pro',
-    price: '2.890',
+    price: '[valor]',
     desc: 'Standard + workshops + jantar.',
     items: ['3 workshops práticos', 'Jantar de networking', 'Gravações pós-evento', 'Material impresso'],
     cta: 'Comprar Pro',
@@ -23,9 +23,9 @@ const tiers = [
   },
   {
     name: 'VIP',
-    price: '5.490',
+    price: '[valor]',
     desc: 'Pro + mesa redonda fechada.',
-    items: ['Mesa VIP com Caio', 'Mentoria 1-a-1', 'After-party', 'Lounge exclusivo'],
+    items: ['Mesa VIP com palestrantes', 'Encontro com mentores', 'After-party', 'Lounge exclusivo'],
     cta: 'Comprar VIP',
   },
 ];
@@ -39,7 +39,7 @@ export default function Pricing() {
         lede="Pricing canônico — 3 tiers, o do meio em navy sólido marcado 'Mais escolhido'. R$ menor em Geist, número grande tabular, lista com check Lucide stroke. Botão é o da library: pílula navy nos laterais; branca no destaque."
       />
 
-      <Section title="Conferência · 3 tiers" meta="featured no meio">
+      <Section title="Conferência · 3 tiers" meta="featured no meio · preço de ingresso só com dado do evento">
         <div className="vds-price-grid">
           {tiers.map((t) => (
             <div key={t.name} className={`vds-tier ${t.feat ? 'feat' : ''}`}>
@@ -74,45 +74,44 @@ export default function Pricing() {
 /* ---------- Pricing comparison · side-by-side feature matrix ---------- */
 function ComparisonTableSection() {
   const plans = [
-    { name: 'Comunidade', price: '197', period: '/mês', desc: 'Acesso ao conteúdo + comunidade aberta' },
-    { name: 'Mentoria', price: '6K', period: '/tri', desc: 'Mentoria 1:1 + acesso completo', highlight: true },
-    { name: 'Corporate', price: 'sob medida', period: '', desc: 'Plano da empresa · time + Nina dedicada' },
+    { name: 'Starter', price: '2.580', period: '/mês', desc: 'Plataforma, soluções, formações e comunidade' },
+    { name: 'Pro', price: '3.780', period: '/mês', desc: 'Starter + mentoria em grupo ao vivo', highlight: true },
+    { name: 'Enterprise', price: '6.180', period: '/mês', desc: 'Pro + mentoria individual + AI Builder' },
   ];
 
   const groups = [
     {
-      title: 'Conteúdo & comunidade',
+      title: 'Plataforma & formações',
       rows: [
-        { feat: 'Acesso a todas as aulas gravadas', vals: [true, true, true] },
-        { feat: 'Discord da comunidade aberta', vals: [true, true, true] },
-        { feat: 'Atualizações mensais do programa', vals: [true, true, true] },
-        { feat: 'Discord privado dos alunos Mentoria', vals: [false, true, true] },
+        { feat: 'Todas as soluções Plug-and-Play', vals: [true, true, true] },
+        { feat: 'Formações práticas', vals: [true, true, true] },
+        { feat: 'Consultor IA dentro da plataforma', vals: [true, true, true] },
+        { feat: 'Trilha personalizada com IA', vals: [true, true, true] },
       ],
     },
     {
-      title: 'Mentoria & 1:1',
+      title: 'Mentoria & implementação',
       rows: [
-        { feat: 'Sessões 1:1 com mentor', vals: [false, '12 / tri', 'ilimitado'] },
-        { feat: 'Análise do seu cenário', vals: [false, true, true] },
-        { feat: 'Plano de 90 dias customizado', vals: [false, true, true] },
-        { feat: 'Acompanhamento do squad', vals: [false, false, true] },
+        { feat: 'Mentoria em grupo ao vivo', vals: [false, '10 / mês', true] },
+        { feat: 'Mentoria individual', vals: [false, false, '1h / mês'] },
+        { feat: 'Arquiteto de soluções AI Builder', vals: [false, false, true] },
+        { feat: 'Implementação assistida', vals: [false, false, true] },
       ],
     },
     {
-      title: 'Nina · seu agente',
+      title: 'Comunidade & garantia',
       rows: [
-        { feat: 'Nina compartilhada (Viver de IA)', vals: [true, true, true] },
-        { feat: 'Nina configurada pro seu canal', vals: [false, true, true] },
-        { feat: 'Nina white-label · domínio próprio', vals: [false, false, true] },
-        { feat: 'Integração com seu CRM', vals: [false, false, true] },
+        { feat: 'Comunidade de empresários e líderes', vals: [true, true, true] },
+        { feat: 'Imersão presencial na sede', vals: [true, true, true] },
+        { feat: 'Garantia de 90 dias · 3 requisitos', vals: [true, true, true] },
       ],
     },
     {
       title: 'Suporte',
       rows: [
-        { feat: 'Resposta no Discord da turma', vals: ['72h', '24h', '4h'] },
-        { feat: 'Slack interno com Caio', vals: [false, false, true] },
-        { feat: 'SLA contratual com penalidade', vals: [false, false, true] },
+        { feat: 'Soluções premium', vals: [false, true, true] },
+        { feat: 'Suporte prioritário', vals: [false, true, true] },
+        { feat: 'SLA dedicado', vals: [false, false, true] },
       ],
     },
   ];
@@ -190,7 +189,7 @@ function ComparisonTableSection() {
         {/* Footer note */}
         <footer className="vds-cmp-foot">
           <p>
-            Trocar de plano não tem multa · faturamento pro-rata. Plano Corporate inclui contrato com SLA — falar com nosso time pra desenhar a operação.
+            Todos os planos em contratação anual · upgrade a qualquer momento, mediante a diferença de valor. Enterprise inclui SLA dedicado e implementação assistida.
           </p>
         </footer>
       </div>

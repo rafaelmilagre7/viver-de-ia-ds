@@ -205,11 +205,11 @@ function CertificateSection() {
           {/* Body */}
           <div className="vds-cert-body">
             <p className="vds-cert-pre">Certificamos que</p>
-            <h2 className="vds-cert-name">Rafael Milagre</h2>
+            <h2 className="vds-cert-name">Marina Duarte</h2>
 
             <p className="vds-cert-program">
-              concluiu o programa
-              <strong>Construindo agentes IA na prática</strong>
+              concluiu a formação
+              <strong>Agentes de IA na operação real</strong>
             </p>
 
             <p className="vds-cert-period">
@@ -217,7 +217,7 @@ function CertificateSection() {
             </p>
 
             <p className="vds-cert-tally">
-              18 aulas <span className="vds-cert-dot">·</span> 4 lives <span className="vds-cert-dot">·</span> 2 estudos de caso entregues
+              12 aulas <span className="vds-cert-dot">·</span> 4 check-ins <span className="vds-cert-dot">·</span> 3 soluções implementadas
             </p>
 
             <div className="vds-cert-stats">
@@ -244,7 +244,7 @@ function CertificateSection() {
           <div className="vds-cert-foot">
             <div className="vds-cert-sign">
               <span className="vds-cert-line" />
-              <strong>Caio Ribeiro</strong>
+              <strong>Rafael Milagre</strong>
               <em>Fundador · Viver de IA</em>
             </div>
             <div className="vds-cert-seal" role="img" aria-label="Selo VIA 2026">
@@ -256,7 +256,7 @@ function CertificateSection() {
                   </defs>
                   <text>
                     <textPath href="#cert-seal-circle" startOffset="0%">
-                      VIVER DE IA · SELO 2026 · PROGRAMA OFICIAL ·
+                      VIVER DE IA · SELO 2026 · FORMAÇÃO OFICIAL ·
                     </textPath>
                   </text>
                 </svg>
@@ -280,21 +280,21 @@ function CertificateSection() {
   );
 }
 
-/* ---------- Cohort/turma card ---------- */
+/* ---------- Grupo · trilha de onboarding ---------- */
 function CohortSection() {
   return (
-    <Section title="Cohort · turma 2026.2 em movimento" meta="presence em tempo real · 24 operadores">
+    <Section title="Grupo · trilha de onboarding em movimento" meta="presence em tempo real · 24 membros">
       <article className="vds-cohort">
         <div className="vds-cohort-l">
           <span className="vds-cohort-eyebrow">
             <Layers size={14} strokeWidth={1.75} />
-            Turma 2026.2 · ativa
+            Plano Pro · trilha ativa
           </span>
           <h3>
-            24 operadores construindo <em>juntos</em>.
+            24 membros implementando <em>juntos</em>.
           </h3>
           <p>
-            Começou em 17 fev · termina em 18 mai. Mesma jornada, ritmos diferentes — abaixo o mapa de quem está em que fase.
+            Adesões de fev a mai · mesma trilha de onboarding, ritmos diferentes — abaixo o mapa de quem está em que fase.
           </p>
 
           <div className="vds-cohort-axis">
@@ -304,11 +304,11 @@ function CohortSection() {
             <span>Fim</span>
           </div>
           <div className="vds-cohort-track">
-            <span className="vds-cohort-marker" style={{ left: '12%' }} title="3 alunos · Fundamentos" />
-            <span className="vds-cohort-marker" style={{ left: '28%' }} title="6 alunos · Prompt eng" />
-            <span className="vds-cohort-marker big" style={{ left: '48%' }} title="9 alunos · Agentes" />
-            <span className="vds-cohort-marker" style={{ left: '64%' }} title="4 alunos · Produção" />
-            <span className="vds-cohort-marker accent" style={{ left: '82%' }} title="2 alunos · Concluindo" />
+            <span className="vds-cohort-marker" style={{ left: '12%' }} title="3 membros · Onboarding" />
+            <span className="vds-cohort-marker" style={{ left: '28%' }} title="6 membros · Formações" />
+            <span className="vds-cohort-marker big" style={{ left: '48%' }} title="9 membros · Soluções" />
+            <span className="vds-cohort-marker" style={{ left: '64%' }} title="4 membros · Em produção" />
+            <span className="vds-cohort-marker accent" style={{ left: '82%' }} title="2 membros · Concluindo" />
           </div>
           <p className="vds-cohort-hint">
             Você está em <strong>2/3 da trilha</strong> · 9 colegas no mesmo módulo. <a href="#">Ver carteira completa</a>
@@ -317,7 +317,7 @@ function CohortSection() {
 
         <div className="vds-cohort-r">
           <span className="vds-cohort-eyebrow alt">Próximo encontro</span>
-          <h4>Live · auditoria de 3 prompts</h4>
+          <h4>Check-in · mentoria em grupo</h4>
           <p className="vds-cohort-when">
             <Calendar size={14} strokeWidth={1.75} />
             sex · 22 mai · 14h00 BRT
@@ -325,15 +325,15 @@ function CohortSection() {
           <ul className="vds-cohort-stack">
             <li>
               <span className="av nav">CR</span>
-              <div><strong>Caio Ribeiro</strong><em>conduz a sessão</em></div>
+              <div><strong>Caio Ribeiro</strong><em>mentor · conduz a sessão</em></div>
             </li>
             <li>
-              <span className="av">ML</span>
-              <div><strong>Márisson Lage</strong><em>traz caso da Efizi</em></div>
+              <span className="av">LT</span>
+              <div><strong>Larissa Tavares</strong><em>traz caso da operação</em></div>
             </li>
             <li>
               <span className="av">+22</span>
-              <div><strong>Turma 2026.2</strong><em>já confirmados</em></div>
+              <div><strong>Membros Pro</strong><em>já confirmados</em></div>
             </li>
           </ul>
           <button className="vds-cohort-cta">

@@ -29,35 +29,35 @@ export default function StickyCTA() {
 /* ---------- Enrollment · com countdown ---------- */
 function StickyEnrollSection() {
   return (
-    <Section title="Variante enrollment · countdown editorial" meta="navy mesh · próxima turma · 3 ações">
+    <Section title="Variante enrollment · countdown editorial" meta="navy mesh · imersão presencial · 3 ações">
       <div className="vds-sticky-stage">
         {/* Conteúdo de página real · contexto */}
         <article className="vds-sticky-page">
           <span className="vds-sticky-page__eyebrow">
             <Users size={14} strokeWidth={1.75} />
-            Mentoria · cohort 2026.3
+            Plano Pro · mentoria em grupo
           </span>
           <h2 className="vds-sticky-page__title">
-            12 semanas operando com IA — <em>e um mentor que já fez isso 18 vezes</em>.
+            IA na operação da sua empresa — <em>com mentoria ao vivo toda semana</em>.
           </h2>
           <p className="vds-sticky-page__lede">
-            Primeira semana com <strong>auditoria 1:1 do seu stack atual</strong>. Da segunda em diante,
-            mentoria coletiva quinzenal + acesso ao Discord editorial + biblioteca de cases reais.
-            Quem termina sai com <strong>3 fluxos próprios em produção</strong>.
+            Começa pela <strong>trilha de onboarding</strong>. Depois, 10 check-ins por mês de mentoria
+            em grupo + comunidade de empresários e líderes + 157 soluções prontas. Garantia de
+            <strong>100% de volta em 90 dias</strong>, cumpridos os 3 requisitos.
           </p>
 
           <div className="vds-sticky-page__stats">
             <div className="vds-sticky-page__stat">
-              <strong>148</strong>
-              <span>operadores formados</span>
+              <strong>521</strong>
+              <span>cases reais</span>
             </div>
             <div className="vds-sticky-page__stat">
-              <strong>12 sem</strong>
-              <span>duração total</span>
+              <strong>10/mês</strong>
+              <span>check-ins de mentoria</span>
             </div>
             <div className="vds-sticky-page__stat">
-              <strong>R$ 2.9K</strong>
-              <span>investimento mensal</span>
+              <strong>R$ 3.780</strong>
+              <span>por mês · anual</span>
             </div>
           </div>
 
@@ -66,7 +66,7 @@ function StickyEnrollSection() {
               <MessageCircle size={16} strokeWidth={1.75} />
             </span>
             <div>
-              <strong>Conversa de 20min com Caio antes de fechar</strong>
+              <strong>Conversa com um especialista antes de fechar</strong>
               <span>Pra entender o seu contexto e responder se faz sentido — sem pitch, sem pressão.</span>
             </div>
           </div>
@@ -78,10 +78,10 @@ function StickyEnrollSection() {
             <div>
               <span className="vds-sticky-eyebrow">
                 <Calendar size={14} strokeWidth={1.75} />
-                Turma 2026.3 · matrículas abertas
+                Imersão presencial · inscrições abertas
               </span>
               <p>
-                <strong>14 vagas</strong> · começa em <em>02 jun 2026</em>
+                <strong>[N] vagas</strong> · na sede em <em>[data]</em>
               </p>
             </div>
           </div>
@@ -130,15 +130,15 @@ function StickyNotifySection() {
         <article className="vds-sticky-page">
           <span className="vds-sticky-page__eyebrow">
             <BookOpen size={14} strokeWidth={1.75} />
-            Biblioteca · 47 cases publicados
+            Biblioteca · 521 cases reais
           </span>
           <h2 className="vds-sticky-page__title">
-            Cases reais de implementação — <em>com prompts, números e o que deu errado</em>.
+            Cases reais de implementação — <em>com desafio, solução e resultado</em>.
           </h2>
           <p className="vds-sticky-page__lede">
-            Cada case foi rodado de verdade na operação do autor. Você vê o prompt usado, o output produzido,
-            o ajuste fino, o resultado em conversão ou tempo poupado. <strong>Sem demo perfeito</strong> —
-            tem a versão que falhou também.
+            Empresas brasileiras que implementaram IA com a Viver de IA, com desafios, soluções e
+            <strong>resultados comprovados</strong>. Dá pra filtrar por setor — saúde, tecnologia,
+            indústria, agência, turismo e outros.
           </p>
 
           <div className="vds-sticky-page__feature">
@@ -146,8 +146,8 @@ function StickyNotifySection() {
               <BookOpen size={16} strokeWidth={1.75} />
             </span>
             <div>
-              <strong>Case publicado essa semana · "Auditoria de prompt em e-commerce"</strong>
-              <span>Como o Marisson cortou 38% do tempo de SAC sem trocar de plataforma · 12min de leitura.</span>
+              <strong>Case em destaque · "De 6h para cliques"</strong>
+              <span>Como a Viva Nexo economiza R$ 162.000 com IA na operação · setor Saúde.</span>
             </div>
           </div>
         </article>
@@ -160,7 +160,7 @@ function StickyNotifySection() {
             </div>
             <div>
               <span className="vds-sticky-notify-title">
-                Caio está ao vivo agora · auditoria de prompt em produção
+                Mentoria em grupo ao vivo agora · check-in do plano Pro
               </span>
               <em className="vds-sticky-notify-meta">
                 <Users size={14} strokeWidth={1.75} />
@@ -170,7 +170,7 @@ function StickyNotifySection() {
           </div>
           <div className="vds-sticky-bar-r">
             <button className="vds-sticky-btn primary sm">
-              Entrar na live
+              Entrar agora
               <ArrowRight size={14} strokeWidth={1.75} />
             </button>
             <button className="vds-sticky-close" aria-label="Fechar">
@@ -195,25 +195,25 @@ function StickyExitSection() {
             Página de checkout · etapa final
           </span>
           <h2 className="vds-sticky-page__title">
-            Revisar antes de confirmar a inscrição.
+            Revisar antes de confirmar a adesão.
           </h2>
           <p className="vds-sticky-page__lede">
-            Você vai pagar <strong>R$ 2.900 hoje</strong>, com renovação anual em 12 meses ·
-            cancele sem multa, sem fricção · garantia editorial de 14 dias se não fizer sentido.
+            Plano Pro: <strong>R$ 3.780 por mês</strong>, em contratação anual · garantia de 90 dias
+            com 3 requisitos · condições completas na cláusula 7 dos termos de uso.
           </p>
 
           <div className="vds-sticky-page__stats">
             <div className="vds-sticky-page__stat">
-              <strong>R$ 2.900</strong>
-              <span>cobrança hoje</span>
+              <strong>R$ 3.780</strong>
+              <span>por mês · anual</span>
             </div>
             <div className="vds-sticky-page__stat">
-              <strong>14 dias</strong>
-              <span>garantia editorial</span>
+              <strong>90 dias</strong>
+              <span>garantia com requisitos</span>
             </div>
             <div className="vds-sticky-page__stat">
-              <strong>2 meses</strong>
-              <span>grátis no anual</span>
+              <strong>10/mês</strong>
+              <span>check-ins de mentoria</span>
             </div>
           </div>
         </article>
@@ -224,10 +224,10 @@ function StickyExitSection() {
             <div>
               <span className="vds-sticky-eyebrow">
                 <Clock size={14} strokeWidth={1.75} />
-                Last chance · só hoje
+                Antes de sair
               </span>
               <p>
-                <strong>−R$ 800 nas primeiras 3 parcelas</strong> · inscrições <em>até 23h59 de hoje</em>
+                <strong>[condição comercial real, se houver]</strong> · válida <em>até [data]</em>
               </p>
             </div>
           </div>
@@ -237,7 +237,7 @@ function StickyExitSection() {
               Ver os termos
             </a>
             <button className="vds-sticky-btn primary">
-              Aproveitar agora
+              Continuar adesão
               <ArrowRight size={14} strokeWidth={1.75} />
             </button>
             <button className="vds-sticky-close" aria-label="Fechar">

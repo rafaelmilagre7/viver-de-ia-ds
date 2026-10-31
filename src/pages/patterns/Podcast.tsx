@@ -4,7 +4,7 @@ import Section from '../../components/docs/Section';
 import './podcast.css';
 
 const episodes = [
-  { n: '042', date: '17 mai 2026', dur: '42min', title: 'Quando a IA vira receita: lições da Efizi', em: 'vira receita', playing: true },
+  { n: '042', date: '17 mai 2026', dur: '42min', title: 'Quando a IA vira receita: lições de cases reais', em: 'vira receita', playing: true },
   { n: '041', date: '10 mai 2026', dur: '38min', title: 'O Superagente que aprendeu a vender', em: '' },
   { n: '040', date: '03 mai 2026', dur: '51min', title: 'Por que governança separa Superagente de brinquedo', em: 'governança' },
   { n: '039', date: '26 abr 2026', dur: '46min', title: 'A semana que reescrevemos a mentoria', em: 'semana' },

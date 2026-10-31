@@ -5,7 +5,7 @@ import './CashFlow.css';
 /* ==============================================================
    FP&A · Fluxo de caixa + projeção
    --------------------------------------------------------------
-   Operação de mentoria/comunidade em IA · exercício 2026 · R$.
+   Operação de plataforma/comunidade em IA · exercício 2026 · R$.
    Regime de CAIXA (recebido/pago no mês), não competência.
 
    Regra de fechamento — tudo aqui é DERIVADO, nunca digitado:

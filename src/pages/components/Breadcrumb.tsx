@@ -17,13 +17,13 @@ export default function Breadcrumb() {
           {/* className="crumb" exige classe no <a>: o guard global de dark
               ([data-theme="dark"] a:not([class]) → azul link) vence .via-bc a
               por especificidade e pintava o caminho de azul — breadcrumb é cinza. */}
-          <a className="crumb">Mentoria</a>
+          <a className="crumb">Plataforma</a>
           <ChevronRight size={14} strokeWidth={1.75} className="sep" />
           <a className="crumb">Cases</a>
           <ChevronRight size={14} strokeWidth={1.75} className="sep" />
-          <a className="crumb">E-commerce</a>
+          <a className="crumb">Saúde</a>
           <ChevronRight size={14} strokeWidth={1.75} className="sep" />
-          <span className="current">Efizi · +11.920 conversas</span>
+          <span className="current">Viva Nexo · de 6h para cliques</span>
         </nav>
       </Section>
 
@@ -32,10 +32,10 @@ export default function Breadcrumb() {
           <nav className="via-bc">
             <a className="crumb">Cases</a>
             <ChevronRight size={14} strokeWidth={1.75} className="sep" />
-            <span className="current">Balzani &amp; Zimbel</span>
+            <span className="current">Place Dreams</span>
           </nav>
           <h2 style={{ marginTop: 16, fontFamily: 'var(--via-font-display)', fontWeight: 500, fontSize: 36, letterSpacing: '-0.025em', color: 'var(--via-text-primary)' }}>
-            Balzani & Zimbel: <em style={{ color: 'var(--via-text-muted)' }}>R$ 4.600/mês</em> em economia
+            Place Dreams: <em style={{ color: 'var(--via-text-muted)' }}>R$ 42.000/ano</em> em economia
           </h2>
         </div>
       </Section>

@@ -14,7 +14,7 @@ const messages: Msg[] = [
   {
     kind: 'them',
     time: '15:42',
-    text: 'Oi, Rafael — sou a Nina, da Viver de IA. Vi que você baixou o e-book de cases ontem. Posso te mandar os 3 cases que combinam com o seu cenário?',
+    text: 'Oi, Marcos — sou a Nina, da Viver de IA. Vi que você baixou o e-book de cases ontem. Posso te mandar os 3 cases que combinam com o seu cenário?',
   },
   {
     kind: 'me',
@@ -25,12 +25,12 @@ const messages: Msg[] = [
   {
     kind: 'them',
     time: '15:44',
-    text: 'Perfeito. Tenho 14 cases de ecommerce que reduziram tempo de resposta em 60% mantendo conversion. Começo pelo da Efizi — +11.920 conversas analisadas em 90 dias.',
+    text: 'Perfeito. Separei cases reais de atendimento com IA. Começo pelo da Pasetti Viagens — atendimento 24h com IA, publicado em viverdeia.ai/cases.',
   },
   {
     kind: 'them',
     time: '15:45',
-    text: 'Faz sentido eu mandar agora ou prefere agendar 15min com o Caio pra ele te apresentar pessoalmente?',
+    text: 'Faz sentido eu mandar agora ou prefere agendar 15min com um especialista do time pra te apresentar a plataforma?',
   },
 ];
 

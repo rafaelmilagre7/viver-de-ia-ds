@@ -87,14 +87,14 @@ function InstagramSection() {
             </header>
             <div className="vds-sc-ig-canvas via-mesh-navy via-noise">
               <img src={monogramWhite} alt="" className="watermark" />
-              <span className="vds-sc-ig-eyebrow">turma 2026.2 · 45 dias dentro</span>
+              <span className="vds-sc-ig-eyebrow">cases reais · viverdeia.ai/cases</span>
               <h2>
-                +<em>11.920</em>
+                <em>521</em>
                 <br />
-                conversas/mês.
+                cases reais.
               </h2>
               <p className="vds-sc-ig-caption">
-                operação real · auditada · método codificado em 18 aulas
+                de implementação de IA · em empresas brasileiras · 29 setores
               </p>
             </div>
             <div className="vds-sc-ig-actions">
@@ -107,8 +107,8 @@ function InstagramSection() {
             </div>
             <div className="vds-sc-ig-body">
               <p>
-                <strong>viverdeia.ai</strong> sete meses observando a Nina rodar. anotei o que
-                não tá em curso nenhum. próxima turma abre 22/mai · 30 vagas. link no perfil.
+                <strong>viverdeia.ai</strong> 521 cases reais de IA em empresas brasileiras,
+                separados por setor. procura o do seu setor · link no perfil.
               </p>
               <span className="vds-sc-ig-time">Há 4 horas · ver tradução</span>
             </div>
@@ -145,11 +145,11 @@ function InstagramSection() {
               <em>há 2h</em>
             </header>
             <div className="vds-sc-story-canvas via-mesh-navy via-noise">
-              <span className="vds-sc-story-eyebrow">turma 2026.2</span>
+              <span className="vds-sc-story-eyebrow">plano pro</span>
               <h2>
                 90 dias.<br />
-                1 agente em <em>produção</em>.<br />
-                ou seu dinheiro <em>de volta</em>.
+                Receita sobe ou <em>custo cai</em>.<br />
+                ou 100% <em>de volta</em>.
               </h2>
               <div className="vds-sc-story-cta">
                 <span>arrasta pra cima</span>
@@ -179,13 +179,13 @@ function InstagramSection() {
         <div className="vds-sc-ig-grid">
           <article className="vds-sc-reel-chrome">
             <div className="vds-sc-reel-canvas via-mesh-navy via-noise">
-              <span className="vds-sc-reel-eyebrow">3 cicatrizes</span>
+              <span className="vds-sc-reel-eyebrow">3 erros comuns</span>
               <h2>
-                Construindo a Nina,
+                Implantando IA,
                 <br />
-                <em>cometi 3 erros</em>.
+                <em>3 erros se repetem</em>.
                 <br />
-                Todos custaram.
+                Todos custam.
               </h2>
               <p className="vds-sc-reel-sub">
                 vídeo de 90s · play pra ver os 3
@@ -218,7 +218,7 @@ function InstagramSection() {
             { label: 'método', n: '01' },
             { label: 'cases', n: '02' },
             { label: 'lives', n: '03' },
-            { label: 'turma', n: '04' },
+            { label: 'planos', n: '04' },
           ].map((h) => (
             <article key={h.label} className="vds-sc-highlight">
               <div className="vds-sc-highlight-circle via-mesh-navy via-noise">
@@ -238,15 +238,15 @@ function LinkedInSection() {
   return (
     <>
       <Section
-        title="LinkedIn pessoal · Caio Ribeiro"
+        title="LinkedIn pessoal · Rafael Milagre"
         meta="post 1ª pessoa · gancho número grande · sem 5-dicas-infalíveis"
       >
         <article className="vds-sc-li-post">
           <header className="vds-sc-li-hdr">
-            <div className="vds-sc-li-avatar">CR</div>
+            <div className="vds-sc-li-avatar">RM</div>
             <div>
-              <strong>Caio Ribeiro</strong>
-              <em>Fundador · Viver de IA · construindo Nina</em>
+              <strong>Rafael Milagre</strong>
+              <em>Fundador · Viver de IA</em>
               <span>2h · <Globe size={14} strokeWidth={1.75} /></span>
             </div>
             <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
@@ -254,26 +254,26 @@ function LinkedInSection() {
 
           <div className="vds-sc-li-body">
             <p>
-              7 meses atrás a Nina perdia 40% das conversas no primeiro turno.
+              a Viva Nexo levava 6 horas pra fechar um relatório.
             </p>
             <p>
-              essa semana ela passou de 96%.
+              hoje são alguns cliques.
             </p>
             <p>
-              o segredo não foi prompt. foi observar o que cada falha tinha em comum durante 3
-              dias. anotei aqui o que mudei — vou postar no link nos comentários.
+              o case completo (desafio, solução e resultado) tá publicado. vale ler antes de
+              abrir mais um projeto de IA do zero — link nos comentários.
             </p>
             <p>
-              <em>2 mudanças. 18% de conversão a mais.</em>
+              <em>6h → cliques. R$ 162.000 de economia.</em>
             </p>
           </div>
 
           <div className="vds-sc-li-canvas via-mesh-navy via-noise">
-            <span className="vds-sc-li-eyebrow">case · Nina · semana 18</span>
+            <span className="vds-sc-li-eyebrow">case real · Viva Nexo · saúde</span>
             <h2>
-              28s → <em>4s</em>
+              6h → <em>cliques</em>
             </h2>
-            <p>latência do primeiro turno · medido contra mesma cohort</p>
+            <p>tempo de relatório · case real em viverdeia.ai/cases</p>
             <img src={monogramWhite} alt="" />
           </div>
 
@@ -305,7 +305,7 @@ function LinkedInSection() {
             </div>
             <div>
               <strong>Viver de IA</strong>
-              <em>Formação técnico-operativa em IA · 2.847 seguidores</em>
+              <em>Plataforma B2B de IA para empresas · [N] seguidores</em>
               <span>3h · <Globe size={14} strokeWidth={1.75} /></span>
             </div>
             <button aria-label="Mais opções"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
@@ -313,15 +313,15 @@ function LinkedInSection() {
 
           <div className="vds-sc-li-body">
             <p>
-              <strong>220 operadores formados em 2 anos.</strong>
+              <strong>521 cases reais de implementação de IA.</strong>
             </p>
             <p>
-              em vez de ensinar &ldquo;prompt engineering&rdquo;, a gente forma operadores que constroem,
-              mantém e medem agentes em produção. cada turma tem 25 pessoas, 4 meses, mentoria
-              1:1 mensal.
+              em vez de ensinar &ldquo;prompt engineering&rdquo;, a plataforma coloca IA pra trabalhar
+              na operação: soluções prontas, formações práticas, Consultor IA e mentoria em
+              grupo ao vivo.
             </p>
             <p>
-              próxima turma abre em maio · veja como funciona o método.
+              157 soluções prontas · veja os cases do seu setor.
             </p>
           </div>
 
@@ -329,16 +329,16 @@ function LinkedInSection() {
             <img src={wordmarkBlack} alt="Viver de IA" className="word" />
             <div className="vds-sc-li-stats-grid">
               <div>
-                <strong className="mono">220</strong>
-                <em>operadores formados</em>
+                <strong className="mono">521</strong>
+                <em>cases reais de IA</em>
               </div>
               <div>
-                <strong className="mono">R$ 1,8M</strong>
-                <em>destravado em 12 meses</em>
+                <strong className="mono">157</strong>
+                <em>soluções prontas</em>
               </div>
               <div>
-                <strong className="mono">90 dias</strong>
-                <em>até agente em produção</em>
+                <strong className="mono">29</strong>
+                <em>setores com IA</em>
               </div>
             </div>
           </div>
@@ -354,23 +354,23 @@ function LinkedInSection() {
             {
               n: 1,
               type: 'hook',
-              h: '+18%',
-              sub: 'conversão',
-              meta: 'em 7 dias mudando 2 coisas',
+              h: '6h → cliques',
+              sub: 'tempo de relatório',
+              meta: 'case real · Viva Nexo',
             },
-            { n: 2, type: 'context', h: 'O problema', sub: '40% das conversas perdidas no 1º turno' },
-            { n: 3, type: 'context', h: 'A hipótese errada', sub: 'eu achava que era prompt' },
-            { n: 4, type: 'reveal', h: 'O que era de verdade', sub: 'latência + tom consultivo demais' },
-            { n: 5, type: 'fix', h: 'Mudança 1', sub: 'cache de contexto · 28s → 4s' },
-            { n: 6, type: 'fix', h: 'Mudança 2', sub: 'turno 1 vira "leitor de intent"' },
-            { n: 7, type: 'result', h: '11k → 13k', sub: '2k conversas a mais em 7 dias' },
-            { n: 8, type: 'learn', h: 'O que vale anotar', sub: 'meça a latência percebida do 1º turno' },
-            { n: 9, type: 'learn', h: 'Segunda lição', sub: 'agente consultivo perde lead com intent claro' },
+            { n: 2, type: 'context', h: 'O problema', sub: '6 horas pra fechar um relatório' },
+            { n: 3, type: 'context', h: 'A hipótese errada', sub: 'achar que IA começa pelo prompt' },
+            { n: 4, type: 'reveal', h: 'O que pesa de verdade', sub: 'escolher a tarefa certa pra começar' },
+            { n: 5, type: 'fix', h: 'Passo 1', sub: 'listar o que se repete e tem formato fixo' },
+            { n: 6, type: 'fix', h: 'Passo 2', sub: 'procurar solução pronta antes de construir' },
+            { n: 7, type: 'result', h: 'R$ 162 mil', sub: 'de economia · case Viva Nexo' },
+            { n: 8, type: 'learn', h: 'O que vale anotar', sub: 'comece pela tarefa mais repetitiva' },
+            { n: 9, type: 'learn', h: 'Segunda lição', sub: 'meça antes e depois, em horas e reais' },
             {
               n: 10,
               type: 'cta',
-              h: 'Vou ensinar isso',
-              sub: 'turma 2026.3 abre 22/mai',
+              h: 'Veja os 521 cases',
+              sub: 'separados por setor',
               meta: 'link no perfil',
             },
           ].map((card) => (
@@ -406,7 +406,7 @@ function LinkedInSection() {
       >
         <article className="vds-sc-li-banner via-mesh-navy via-noise">
           <img src={wordmarkWhite} alt="Viver de IA" className="word" />
-          <span className="tag">Operadores formando operadores · 220 alunos em 24 meses</span>
+          <span className="tag">IA do discurso pra operação · 521 cases reais de implementação</span>
         </article>
       </Section>
     </>
@@ -429,7 +429,7 @@ function YouTubeSection() {
               <br />
               <em>ao vivo</em>.
             </h2>
-            <p>turma 2026.2 · cases reais</p>
+            <p>mentoria ao vivo · cases reais</p>
             <img src={monogramWhite} alt="" />
             <span className="vds-sc-yt-duration mono">1h 24m</span>
           </article>
@@ -455,8 +455,8 @@ function YouTubeSection() {
         <article className="vds-sc-yt-banner via-mesh-navy via-noise">
           <div className="vds-sc-yt-banner-safe">
             <img src={wordmarkWhite} alt="Viver de IA" />
-            <h3>Operadores formando operadores.</h3>
-            <p>220 alunos · 90 dias até agente em produção · método codificado em vídeo</p>
+            <h3>IA do discurso pra operação.</h3>
+            <p>521 cases reais · 157 soluções prontas · 29 setores · formações práticas</p>
           </div>
           <div className="vds-sc-yt-banner-tv-line">Área desktop (2560×423)</div>
           <div className="vds-sc-yt-banner-mobile-line">Safe area mobile (1546×423)</div>
@@ -475,13 +475,13 @@ function YouTubeSection() {
           <div className="vds-sc-yt-end-grid">
             <article>
               <div className="thumb"></div>
-              <strong>Como construí a Nina em 7 meses</strong>
-              <em>Caio Ribeiro · 18min</em>
+              <strong>Viva Nexo: de 6h pra cliques</strong>
+              <em>case real · 18min</em>
             </article>
             <article>
               <div className="thumb"></div>
-              <strong>3 cicatrizes em produção</strong>
-              <em>Caio Ribeiro · 22min</em>
+              <strong>3 erros ao implantar IA</strong>
+              <em>mentoria ao vivo · 22min</em>
             </article>
             <article className="cta">
               <strong>Inscreva-se</strong>
@@ -504,7 +504,7 @@ function XSection() {
       >
         <article className="vds-sc-x-header via-mesh-navy via-noise">
           <img src={wordmarkWhite} alt="" />
-          <span>operadores formando operadores · viverdeia.ai</span>
+          <span>IA do discurso pra operação · viverdeia.ai</span>
         </article>
       </Section>
 
@@ -523,8 +523,8 @@ function XSection() {
             </div>
           </header>
           <p>
-            7 meses observando a Nina rodar. 11.920 conversas/mês ensinam algo que nenhuma aula
-            ensina: agente em produção exige mais cicatriz que prompt bom.
+            521 cases reais de implementação ensinam algo que nenhuma aula ensina: IA em
+            produção exige mais cicatriz que prompt bom.
           </p>
           <footer>
             <span><MessageCircle size={16} strokeWidth={1.75} /> 42</span>
@@ -541,22 +541,22 @@ function XSection() {
       >
         <article className="vds-sc-x-post">
           <header>
-            <div className="vds-sc-x-avatar">CR</div>
+            <div className="vds-sc-x-avatar">NM</div>
             <div>
-              <strong>Caio Ribeiro</strong>
-              <em>@caioribeiro · 2h</em>
+              <strong>[Nome]</strong>
+              <em>@[usuario] · 2h</em>
             </div>
           </header>
           <p>
-            depois desses 7 meses, anotei o que de fato move o ponteiro em agente em produção.
+            li os cases de quem colocou IA na operação e anotei o que de fato move o ponteiro.
             <strong> spoiler: não é o prompt.</strong>
           </p>
           <div className="vds-sc-x-card via-mesh-navy via-noise">
-            <span className="vds-sc-x-card-eyebrow">case · Nina</span>
+            <span className="vds-sc-x-card-eyebrow">case · Place Dreams</span>
             <h3>
-              <em>+18%</em> conversão · 2 mudanças
+              <em>R$ 42 mil</em> por ano · em 30 dias
             </h3>
-            <p>latência + tom no turno 1 · 28s → 4s · consultivo → leitor de intent</p>
+            <p>gestão manual virou eficiência digital · case real em viverdeia.ai/cases</p>
             <img src={monogramWhite} alt="" />
           </div>
           <footer>
@@ -581,7 +581,7 @@ function TikTokSection() {
       >
         <article className="vds-sc-tiktok-chrome">
           <div className="vds-sc-tiktok-canvas via-mesh-navy via-noise">
-            <span className="vds-sc-tiktok-eyebrow">7 meses construindo agente</span>
+            <span className="vds-sc-tiktok-eyebrow">o que os cases ensinam</span>
             <h2>
               o que ninguém te conta
               <br />
@@ -606,7 +606,7 @@ function TikTokSection() {
           </aside>
           <div className="vds-sc-tiktok-bottom">
             <strong>@viverdeia.ai</strong>
-            <p>3 erros que cometi com agente em produção · pt 1</p>
+            <p>3 erros comuns com agente em produção · pt 1</p>
             <em>♪ som original · 1.2k usando</em>
           </div>
         </article>
@@ -625,7 +625,7 @@ function TikTokSection() {
           <article className="vds-sc-tiktok-overlay-demo via-mesh-navy via-noise">
             <span className="overlay-pos center">
               90 dias.<br />
-              1 agente em produção.
+              Receita sobe ou custo cai.
             </span>
           </article>
           <article className="vds-sc-tiktok-overlay-demo via-mesh-navy via-noise">
@@ -685,13 +685,13 @@ function PodcastSection() {
             episódio 18 · 42min
           </span>
           <h2>
-            Construindo Nina:<br />
+            Implantando IA:<br />
             <em>3 erros e o que mudou</em>
           </h2>
           <div className="vds-sc-podcast-ep-guest">
-            <div className="av">CR</div>
+            <div className="av">RM</div>
             <div>
-              <strong>Caio Ribeiro</strong>
+              <strong>Rafael Milagre</strong>
               <em>fundador · Viver de IA</em>
             </div>
           </div>

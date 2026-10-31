@@ -134,7 +134,7 @@ function LibCommandSection() {
               heading: 'Navegação',
               items: [
                 { id: '/aluno', label: 'Aluno · jornada', hint: 'progressão pessoal', icon: <Compass size={16} /> },
-                { id: '/turma', label: 'Turma 2026.2', hint: '24 operadores ativos', icon: <Users size={16} /> },
+                { id: '/trilha', label: 'Trilha de onboarding', hint: '3 formações · 3 soluções', icon: <Users size={16} /> },
                 { id: '/calendario', label: 'Calendário · lives', icon: <Calendar size={16} /> },
               ],
             },
@@ -238,7 +238,7 @@ function LibAlertSection() {
             Pausa programada de até 8 minutos · sem perda de dados.
           </Alert>
           <Alert tone="attn" title="Cobrança próxima · 18 mai" action={<a href="#">Ver detalhes</a>}>
-            Sua próxima fatura será de <strong>R$ 6.000</strong>. Reduza pra plano lite em 1 clique.
+            Sua próxima fatura será de <strong>R$ 3.780</strong>. Confira o detalhe em 1 clique.
           </Alert>
           {open && (
             <Alert tone="danger" title="Falha de sincronização · 4 mensagens" onDismiss={() => setOpen(false)}>
@@ -263,9 +263,9 @@ function LibDataTableSection() {
   type Row = { name: string; streak: number; status: 'ativo' | 'em risco' | 'pausado'; last: string };
   const rows: Row[] = [
     { name: 'Caio Ribeiro',    streak: 21, status: 'ativo',    last: '2026-05-19' },
-    { name: 'Camila Moraes',   streak: 14, status: 'ativo',    last: '2026-05-18' },
-    { name: 'Daniel Pinheiro', streak: 4,  status: 'em risco', last: '2026-05-09' },
-    { name: 'Márisson Lage',   streak: 11, status: 'ativo',    last: '2026-05-20' },
+    { name: 'Júlia Andrade',   streak: 14, status: 'ativo',    last: '2026-05-18' },
+    { name: 'Rodrigo Pires',   streak: 4,  status: 'em risco', last: '2026-05-09' },
+    { name: 'Larissa Tavares', streak: 11, status: 'ativo',    last: '2026-05-20' },
     { name: 'Diego Martins',    streak: 0,  status: 'pausado',  last: '2026-04-22' },
   ];
   return (
@@ -274,7 +274,7 @@ function LibDataTableSection() {
       meta="accessor pra sort derivado · render pra cells ReactNode · ARIA sort"
     >
       <DataTable<Row>
-        caption="Mentorados · turma 2026.2"
+        caption="Mentorados · Plano Pro"
         columns={[
           { key: 'name', label: 'Mentorado' },
           {
@@ -482,9 +482,9 @@ function LibAvatarSection() {
 
         <div className="vds-lib-row">
           <Avatar size="lg" initials="BR" status="online" alt="Caio · online" />
-          <Avatar size="lg" initials="ML" status="away" alt="Márisson · away" />
-          <Avatar size="lg" initials="CR" status="busy" alt="Camila · busy" />
-          <Avatar size="lg" initials="DP" status="offline" alt="Daniel · offline" />
+          <Avatar size="lg" initials="LT" status="away" alt="Larissa · away" />
+          <Avatar size="lg" initials="JA" status="busy" alt="Júlia · busy" />
+          <Avatar size="lg" initials="RP" status="offline" alt="Rodrigo · offline" />
         </div>
 
         <pre className="vds-lib-code">{`<Avatar size="lg" initials="BR" status="online" alt="Caio · online" />`}</pre>
@@ -669,8 +669,8 @@ function LibModalSection() {
         <pre className="vds-lib-code">{`<Modal
   open={open}
   onClose={() => setOpen(false)}
-  title="Renovar plano Mentoria"
-  description="Próximas 3 cobranças de R$ 6.000"
+  title="Renovar Plano Pro"
+  description="Contratação anual · R$ 3.780 por mês"
   footer={
     <>
       <Button variant="ghost" onClick={() => setOpen(false)}>Cancelar</Button>
@@ -685,8 +685,8 @@ function LibModalSection() {
           open={open}
           onClose={() => setOpen(false)}
           size="md"
-          title="Renovar plano Mentoria"
-          description="Sua próxima cobrança seria 17 jun · R$ 6.000"
+          title="Renovar Plano Pro"
+          description="Sua próxima cobrança seria 17 jun · R$ 3.780"
           footer={
             <>
               <Button variant="ghost" onClick={() => setOpen(false)}>
@@ -699,11 +699,11 @@ function LibModalSection() {
           }
         >
           <p>
-            Você está prestes a renovar o plano <strong>Mentoria · 1 trimestre</strong>.
-            As próximas 3 cobranças serão de <strong>R$ 6.000</strong>, na mesma forma de pagamento que está hoje (cartão final 6411).
+            Você está prestes a renovar o <strong>Plano Pro · contratação anual</strong>.
+            O valor segue <strong>R$ 3.780 por mês</strong>, na mesma forma de pagamento que está hoje (cartão final 6411).
           </p>
           <p>
-            Pode cancelar a qualquer momento · faturamento pro-rata.
+            Condições completas nos termos de uso.
           </p>
         </Modal>
       </div>
@@ -826,8 +826,8 @@ function LibCheckboxSection() {
       <div className="vds-lib-grid">
         <div className="vds-lib-row" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
           <Checkbox
-            label="Aceito os termos da Mentoria"
-            description="Trimestre de 12 sessões, cancelamento livre."
+            label="Aceito os termos de uso"
+            description="Contratação anual · garantia na cláusula 7."
             checked={terms}
             onChange={(e) => setTerms(e.target.checked)}
           />
@@ -855,7 +855,7 @@ function LibCheckboxSection() {
 
 /* ---------- RadioGroup ---------- */
 function LibRadioSection() {
-  const [plan, setPlan] = useState('anual');
+  const [plan, setPlan] = useState('pro');
 
   return (
     <Section
@@ -869,9 +869,9 @@ function LibRadioSection() {
             value={plan}
             onValueChange={setPlan}
             options={[
-              { value: 'mensal', label: 'Mensal', description: 'R$ 290/mês · cancele quando quiser.' },
-              { value: 'anual', label: 'Anual · 2 meses grátis', description: 'R$ 2.900/ano · dedicado por trimestre.' },
-              { value: 'corporate', label: 'Corporate · sob consulta', description: 'White-label + multi-tenant.' },
+              { value: 'starter', label: 'Starter', description: 'R$ 2.580/mês · contratação anual.' },
+              { value: 'pro', label: 'Pro · mentoria em grupo', description: 'R$ 3.780/mês · 10 check-ins/mês.' },
+              { value: 'enterprise', label: 'Enterprise', description: 'R$ 6.180/mês · AI Builder + 1h individual.' },
             ]}
           />
         </div>
@@ -881,8 +881,8 @@ function LibRadioSection() {
   value={plan}
   onValueChange={setPlan}
   options={[
-    { value: 'mensal', label: 'Mensal', description: 'R$ 290/mês' },
-    { value: 'anual',  label: 'Anual', description: 'R$ 2.900/ano' },
+    { value: 'starter', label: 'Starter', description: 'R$ 2.580/mês' },
+    { value: 'pro',     label: 'Pro', description: 'R$ 3.780/mês' },
   ]}
 />`}</pre>
       </div>
@@ -1198,20 +1198,20 @@ function LibAccordionSection() {
               title: 'Como funciona a mentoria?',
               content: (
                 <p>
-                  Você marca sessões individuais com o mentor primário, recebe transcrição automática
-                  depois e tem 1 follow-up assíncrono por semana via Discord.
+                  No Pro, são 10 check-ins por mês de mentoria em grupo, ao vivo. No Enterprise,
+                  entra também 1 hora por mês de mentoria individual.
                 </p>
               ),
             },
             {
               id: 'q2',
               title: 'Posso cancelar quando quiser?',
-              content: <p>Sim · cancelamento livre, faturamento pro-rata. Sem fidelidade, sem multa.</p>,
+              content: <p>A contratação é anual · a garantia de 90 dias segue a cláusula 7 dos termos.</p>,
             },
             {
               id: 'q3',
-              title: 'A turma é fechada ou aberta?',
-              content: <p>Turmas trimestrais fechadas · novas matrículas a cada 90 dias.</p>,
+              title: 'Tem encontro presencial?',
+              content: <p>Sim · todos os planos incluem a imersão presencial na sede.</p>,
             },
           ]}
           defaultOpen="q1"

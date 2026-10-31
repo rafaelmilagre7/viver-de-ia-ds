@@ -6,12 +6,12 @@ import './accordion.css';
 
 const faqs = [
   {
-    q: 'Quanto tempo dura a mentoria?',
-    a: '16 semanas, formato remoto. Sessões ao vivo semanais com Caio + acompanhamento individual de implementação. Você sai com pelo menos um Superagente em produção, medido em receita ou economia.',
+    q: 'Como funciona a mentoria?',
+    a: 'No plano Pro, são 10 check-ins por mês de mentoria em grupo, ao vivo. No Enterprise, entra também 1 hora por mês de mentoria individual e o arquiteto de soluções AI Builder.',
   },
   {
     q: 'Preciso saber programar?',
-    a: 'Não. A turma é mista — operadores que codam pouco, gestores que não codam, e engenheiros que precisam acelerar. A mentoria foca em arquitetar a solução; a implementação é guiada com ferramentas no-code (Base44, Lovable) e low-code.',
+    a: 'Não. As soluções são plug and play, sem programação. A trilha personalizada com IA adapta o conteúdo ao nível de cada pessoa do time, do CEO ao analista. Alfabetizamos antes de automatizar.',
   },
   {
     q: 'Quais ferramentas vamos usar?',
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Como funciona o pagamento?',
-    a: 'À vista com desconto, ou parcelado em até 12x. PIX, boleto, cartão. Aceitamos PJ.',
+    a: 'Valor mensal em reais, em contratação anual: Starter R$ 2.580, Pro R$ 3.780 e Enterprise R$ 6.180 por mês.',
   },
 ];
 

@@ -83,7 +83,7 @@ function NewsletterSection() {
               <ArrowRight size={16} strokeWidth={1.75} />
             </button>
           </div>
-          <p className="vds-news-foot">+1.840 operadores recebem · sai toda sexta · sem spam</p>
+          <p className="vds-news-foot">cases reais com número atrelado · toda sexta · sem spam</p>
         </form>
       </div>
     </Section>
@@ -95,18 +95,18 @@ function CommentThreadSection() {
   const comments = [
     {
       who: 'Caio Ribeiro', avatar: 'CR', when: '2h',
-      text: 'Esse case da Efizi é um dos mais redondos que publicamos. O salto pra +11.920 conversas analisadas em 90 dias deu uma régua nova pra todo mundo do ecom.',
+      text: 'Esse case da Place Dreams é dos mais diretos que publicamos: gestão manual virando digital e R$ 42.000 por ano de economia em 30 dias.',
       likes: 24, replies: 3,
     },
     {
       who: 'Larissa Tavares', avatar: 'LT', when: '1h',
-      text: 'Concordo. A parte de leitura semanal das conversas + ajuste do prompt no domingo é o que faltava no meu pipeline. Vou aplicar na nossa operação hoje.',
+      text: 'Concordo. Tirar a gestão do manual é exatamente o que falta na nossa operação. Vou separar o que dá pra aplicar ainda esta semana.',
       likes: 8,
       indent: true,
     },
     {
-      who: 'Guilherme Delorenzo', avatar: 'GD', when: '12 min',
-      text: 'Detalhe importante: o ganho de tempo na decisão comercial veio antes do ganho de receita. Levou ~4 semanas pra virar dinheiro de verdade.',
+      who: 'Gustavo Dantas', avatar: 'GD', when: '12 min',
+      text: 'Bom ver o prazo no título: 30 dias. Ajuda a defender o projeto aqui dentro antes de pedir orçamento maior pra diretoria.',
       likes: 12, replies: 1,
     },
   ];
@@ -114,7 +114,7 @@ function CommentThreadSection() {
     <Section title="Comment thread · discussão" meta="case publicado">
       <div className="vds-comments">
         <header>
-          <p className="vds-eyebrow">Discussão · case Efizi</p>
+          <p className="vds-eyebrow">Discussão · case Place Dreams</p>
           <h3>3 comentários</h3>
         </header>
         <ul>
@@ -150,7 +150,7 @@ function CommentThreadSection() {
 /* ---- File card ---- */
 function FileCardSection() {
   const files = [
-    { ext: 'PDF', name: 'Case Efizi · +11.920 conversas (Q4 2026)', size: '2.4 MB', who: 'Caio Ribeiro', when: 'há 4 dias' },
+    { ext: 'PDF', name: 'Case Place Dreams · R$ 42.000 por ano', size: '2.4 MB', who: 'Caio Ribeiro', when: 'há 4 dias' },
     { ext: 'PDF', name: 'Manifesto Viver de IA · v3', size: '0.9 MB', who: 'Equipe VIA', when: 'há 12 dias' },
     { ext: 'ZIP', name: 'Templates de Email · light + dark', size: '14 MB', who: 'Design System', when: 'hoje' },
   ];

@@ -46,25 +46,25 @@ function NewsletterSection() {
         </header>
 
         <div className="vds-ed-nl-hero via-mesh-navy via-noise">
-          <span className="vds-ed-nl-eyebrow">Semana 18 · operação Nina</span>
+          <span className="vds-ed-nl-eyebrow">Semana 18 · SDR de IA no WhatsApp</span>
           <h2>
-            A Nina passou de 11k pra 13k<br />
-            conversas. <em>2 detalhes mudaram tudo.</em>
+            O SDR de IA parou de perder<br />
+            lead. <em>2 detalhes mudaram tudo.</em>
           </h2>
-          <p>operação Viver de IA · 7 dias · medido contra a mesma cohort</p>
+          <p>operação de um membro · 7 dias · [números do case, com autorização]</p>
         </div>
 
         <div className="vds-ed-nl-body">
           <article>
             <span className="vds-ed-nl-section-eyebrow">o que aconteceu</span>
             <p>
-              tava acontecendo de a Nina perder ~40% das conversas no primeiro turno. lead
-              entrava, ela respondia, e o lead simplesmente não voltava. eu ficava olhando o
-              gráfico pensando "deve ser prompt".
+              tava acontecendo de o agente perder [N]% das conversas no primeiro turno. lead
+              entrava, ele respondia, e o lead simplesmente não voltava. o time ficava olhando
+              o gráfico pensando "deve ser prompt".
             </p>
             <p>
-              <strong>Não era prompt.</strong> Era 2 coisas: latência da resposta — a Nina
-              tava demorando 28s no primeiro turno · e o tom dela tava consultivo demais
+              <strong>Não era prompt.</strong> Era 2 coisas: latência da resposta — o agente
+              tava demorando [N]s no primeiro turno · e o tom dele tava consultivo demais
               quando o lead só queria saber preço.
             </p>
           </article>
@@ -72,12 +72,12 @@ function NewsletterSection() {
           <article>
             <span className="vds-ed-nl-section-eyebrow">o que mudei</span>
             <p>
-              cache do contexto inicial pra dropar latência pra 4s · e o prompt do primeiro
-              turno virou "leitor de intent" antes de "vendedor". <strong>2k conversas
+              cache do contexto inicial pra derrubar a latência · e o prompt do primeiro
+              turno virou "leitor de intent" antes de "vendedor". <strong>[N] conversas
               adicionais em 7 dias.</strong>
             </p>
             <div className="vds-ed-nl-pull">
-              <strong className="mono">+18% conversão · 4s vs 28s latência</strong>
+              <strong className="mono">+[N]% conversão · [N]s vs [N]s latência</strong>
             </div>
           </article>
 
@@ -102,14 +102,14 @@ function NewsletterSection() {
 
           <p className="vds-ed-nl-sign">
             até domingo,<br />
-            <strong>Caio</strong>
+            <strong>[Nome]</strong>
           </p>
         </div>
 
         <footer>
           <img src={monogram} alt="" />
           <p>
-            <strong>Viver de IA</strong> · operadores formando operadores · São Paulo, BR
+            <strong>Viver de IA</strong> · IA fora do discurso, dentro da operação · [cidade, UF]
           </p>
           <p className="vds-ed-nl-foot-links">
             <a href="#">Atualizar preferências</a>
@@ -131,20 +131,20 @@ function BlogPostSection() {
     >
       <article className="vds-ed-blog">
         <header>
-          <span className="vds-ed-blog-cat">Cases · operação Nina</span>
+          <span className="vds-ed-blog-cat">Cases · Agência</span>
           <h1>
-            Como reduzi <em>73% do token</em> de um agente de proposta sem trocar de modelo.
+            Trivia Studio: de processos manuais a <em>R$ 120.000</em> de economia anual.
           </h1>
           <p className="vds-ed-blog-lede">
-            Auditoria de prompt, schema validation, contexto dinâmico. 3 mudanças que pagaram
-            o programa em 2 meses pra Camila Moraes da Mantra Tech.
+            Case real publicado em viverdeia.ai/cases. Abaixo, a estrutura do post ·
+            [contexto], [solução] e [resultado] vêm da ficha do case, sem dado inventado.
           </p>
           <div className="vds-ed-blog-meta">
             <div className="vds-ed-blog-author">
-              <div className="av">CR</div>
+              <div className="av">VI</div>
               <div>
-                <strong>Caio Ribeiro</strong>
-                <em>fundador · Viver de IA</em>
+                <strong>Time Viver de IA</strong>
+                <em>editorial · cases</em>
               </div>
             </div>
             <div className="vds-ed-blog-meta-r">
@@ -157,47 +157,47 @@ function BlogPostSection() {
         <div className="vds-ed-blog-grid">
           <div className="vds-ed-blog-body">
             <p>
-              A Camila Moraes (CTO da Mantra Tech, fintech B2B, 12 pessoas no time) construiu
-              primeiro agente em fev 2026 dentro da turma 2025.3. Caso de uso: gerar proposta
-              comercial customizada por lead.
+              A Trivia Studio é uma agência que escalou a produção de conteúdo com IA.
+              [Contexto do case: tamanho do time, como a produção funcionava antes, quem
+              operava o processo.]
             </p>
             <p>
-              Funcionou bem · mas custou <strong>8.400 tokens por proposta</strong>. Com 800
-              propostas/mês, isso era ~R$ 960/mês só de API. Margem do agente ficou marginal,
-              ela tava pensando em matar.
+              Antes da implementação, <strong>[o processo manual]</strong> consumia [N] horas
+              por semana do time. [Dado do case: custo de partida e o que estava em jogo se
+              nada mudasse.]
             </p>
 
-            <h2>O que ela trouxe pra mentoria</h2>
+            <h2>O ponto de partida</h2>
             <p>
-              Na sessão 1:1 ela trouxe esperando ouvir "muda o modelo pra um mais barato".
-              Eu mostrei que o problema não era o modelo. Era o contexto carregando coisa que
-              cada proposta não precisava.
+              [O que o time trouxe pra mentoria em grupo · a dúvida real, como aparece no
+              case.] O que não está no case fica de fora · post de case não preenche lacuna
+              com suposição.
             </p>
 
             <h2>3 mudanças aplicadas</h2>
             <p>Cada uma testada isoladamente pra medir impacto real:</p>
             <ol>
-              <li><strong>Auditoria do system prompt</strong> · cortou 40% do contexto repetido</li>
-              <li><strong>Schema validation pra saída JSON</strong> · removeu retry loop</li>
-              <li><strong>Contexto dinâmico por tipo de lead</strong> · só carrega o necessário</li>
+              <li><strong>[Solução 1]</strong> · o que foi implementado e onde entrou</li>
+              <li><strong>[Solução 2]</strong> · o que mudou no processo do time</li>
+              <li><strong>[Medição]</strong> · como o resultado foi medido</li>
             </ol>
 
-            <h2>Resultado mensurado contra mesma cohort</h2>
+            <h2>Resultado publicado</h2>
             <p>
-              8.400 → 2.260 tokens/proposta. <strong>73% menos.</strong> Custo mensal API
-              caiu de R$ 960 pra R$ 261. ROI do programa Viver de IA fechou em 2 meses.
+              De processos manuais a <strong>R$ 120.000 de economia anual</strong>, segundo o
+              case publicado em viverdeia.ai/cases. [Prazo e métrica de apoio, se houver.]
             </p>
 
             <blockquote>
-              "Sem essa mentoria eu teria matado o agente. Hoje ele paga o programa."<br />
-              <cite>— Camila Moraes</cite>
+              [Depoimento do cliente · só com autorização e fonte registrada.]<br />
+              <cite>— [Nome] · [cargo]</cite>
             </blockquote>
           </div>
 
           <aside className="vds-ed-blog-toc">
             <span className="vds-ed-blog-toc-eyebrow">nesta página</span>
             <ol>
-              <li><a href="#trouxe">O que ela trouxe</a></li>
+              <li><a href="#trouxe">O ponto de partida</a></li>
               <li><a href="#mudancas">3 mudanças aplicadas</a></li>
               <li><a href="#resultado">Resultado mensurado</a></li>
             </ol>
@@ -225,7 +225,7 @@ function PodcastNotesSection() {
           <div className="vds-ed-podcast-cover via-mesh-navy via-noise">
             <span className="vds-ed-podcast-cover-eyebrow">ep 18 · 42min</span>
             <h3>
-              Construindo Nina:<br />
+              SDR de IA:<br />
               <em>3 erros e o que mudou</em>
             </h3>
             <img src={monogramWhite} alt="" />
@@ -236,11 +236,11 @@ function PodcastNotesSection() {
               Episódio 18
             </span>
             <h2>
-              Construindo Nina · 3 erros e o que mudou
+              SDR de IA no WhatsApp · 3 erros e o que mudou
             </h2>
             <p>
-              7 meses construindo agente em produção. 3 cicatrizes que valem ouro. Conversa
-              com Caio Ribeiro sobre o que ele mudaria se começasse hoje · sem teoria de
+              [N] meses construindo agente em produção. 3 cicatrizes que valem ouro. Conversa
+              com [convidado] sobre o que mudaria se começasse hoje · sem teoria de
               palestra.
             </p>
             <div className="vds-ed-podcast-where">
@@ -259,7 +259,7 @@ function PodcastNotesSection() {
               <span className="t mono">00:00</span>
               <div>
                 <strong>Intro</strong>
-                <em>contexto · 7 meses construindo a Nina · 11.920 conversas/mês</em>
+                <em>contexto · [N] meses construindo o SDR de IA da operação</em>
               </div>
             </li>
             <li>
@@ -280,7 +280,7 @@ function PodcastNotesSection() {
               <span className="t mono">28:08</span>
               <div>
                 <strong>Erro 3 · sem instrumentação até a virada</strong>
-                <em>construí 4 meses cego · primeira métrica veio quando já tava degradando</em>
+                <em>meses construindo no escuro · primeira métrica veio quando já tava degradando</em>
               </div>
             </li>
             <li>
@@ -298,15 +298,15 @@ function PodcastNotesSection() {
           <ul className="vds-ed-podcast-resources">
             <li>
               <span className="vds-ed-podcast-res-eyebrow">case</span>
-              <a href="#">Camila Moraes · token -73% sem trocar modelo</a>
+              <a href="#">Viva Nexo · de 6h para cliques · R$ 162.000</a>
             </li>
             <li>
               <span className="vds-ed-podcast-res-eyebrow">código</span>
               <a href="#">Snippet de circuit breaker pra retry exponencial</a>
             </li>
             <li>
-              <span className="vds-ed-podcast-res-eyebrow">programa</span>
-              <a href="#">Turma 2026.3 · abre 22 mai · 30 vagas</a>
+              <span className="vds-ed-podcast-res-eyebrow">plano</span>
+              <a href="#">Plano Pro · 10 check-ins de mentoria em grupo/mês</a>
             </li>
           </ul>
         </section>
@@ -325,7 +325,7 @@ function YoutubeDescriptionSection() {
       <article className="vds-ed-youtube">
         <div className="vds-ed-youtube-thumb via-mesh-navy via-noise">
           <h3>Auditando <em>3 prompts</em> ao vivo.</h3>
-          <p>turma 2026.2 · cases reais</p>
+          <p>mentoria em grupo · Plano Pro</p>
           <img src={monogramWhite} alt="" />
           <span className="vds-ed-youtube-duration mono">1:24:18</span>
           <button className="vds-ed-youtube-play" aria-label="Reproduzir">
@@ -334,7 +334,7 @@ function YoutubeDescriptionSection() {
         </div>
 
         <div className="vds-ed-youtube-info">
-          <h2>Auditando 3 prompts ao vivo · live ep 18 · turma 2026.2</h2>
+          <h2>Auditando 3 prompts ao vivo · check-in ep 18 · Plano Pro</h2>
           <div className="vds-ed-youtube-meta">
             <span>1.247 visualizações · 19 mai 2026</span>
             <button><ThumbsUp size={14} strokeWidth={1.75} /> 184</button>
@@ -343,7 +343,7 @@ function YoutubeDescriptionSection() {
 
           <div className="vds-ed-youtube-desc">
             <p>
-              <strong>3 alunos postaram prompts antes da live · audito ao vivo expondo o que
+              <strong>3 membros postaram prompts antes do check-in · audito ao vivo expondo o que
               mudaria + por quê.</strong> Cada caso ~25min · sala faz pergunta no fim de cada.
               Quem assistir leva o método de auditoria pra rodar nos próprios prompts.
             </p>
@@ -351,18 +351,18 @@ function YoutubeDescriptionSection() {
             <pre className="vds-ed-youtube-pre">{`📍 Timestamps
 00:00 — Intro · contexto da live
 12:08 — Caso 1 · prompt João · SDR fintech
-34:51 — Caso 2 · prompt Camila · auto-proposta
-58:22 — Caso 3 · prompt Daniel · onboarding cliente
+34:51 — Caso 2 · prompt Ana · auto-proposta
+58:22 — Caso 3 · prompt Bruno · onboarding cliente
 01:18:42 — Q&A final + próxima live
 
 🔗 Links citados
-• Turma 2026.3 — viverdeia.ai/turma
+• Planos — viverdeia.ai/planos
 • Newsletter semanal — viverdeia.ai/newsletter
 • Casos completos — viverdeia.ai/cases
 
 💬 Próxima live
 sex 23 mai · 14h · review de "build do mês"
-Posta no Discord até quarta pra ser auditado.
+Posta na comunidade até quarta pra ser auditado.
 
 #viverdeia #operadoresdeia #agentes`}</pre>
 

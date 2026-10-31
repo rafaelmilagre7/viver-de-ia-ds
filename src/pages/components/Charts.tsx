@@ -356,7 +356,7 @@ function AreaSection() {
         <header className="vds-chart-head">
           <div>
             <p className="eyebrow">
-              <TrendingUp size={16} strokeWidth={1.75} /> Receita Viver de IA
+              <TrendingUp size={16} strokeWidth={1.75} /> Receita · dados ilustrativos
             </p>
             <h3>
               R$ 5,09M<span className="unit"> realizado</span>
@@ -917,14 +917,14 @@ function MiniColumns({
 function SmallMultiplesSection() {
   const labels = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A'];
   const series = [
-    { name: 'Mentoria', data: [180, 196, 204, 222, 241, 258, 270, 296] },
-    { name: 'Comunidade', data: [96, 104, 112, 118, 131, 142, 151, 163] },
-    { name: 'Eventos', data: [42, 58, 50, 74, 63, 88, 79, 104] },
+    { name: 'Pro', data: [180, 196, 204, 222, 241, 258, 270, 296] },
+    { name: 'Starter', data: [96, 104, 112, 118, 131, 142, 151, 163] },
+    { name: 'Enterprise', data: [42, 58, 50, 74, 63, 88, 79, 104] },
   ];
   const MAX = 320;
 
   return (
-    <Section title="Small multiples · três linhas de produto" meta="MRR por produto · escala compartilhada 0 – 320K">
+    <Section title="Small multiples · três planos" meta="MRR por plano · dados ilustrativos · escala 0 – 320K">
       <div className="vds-chart-card">
         <header className="vds-chart-head">
           <div>

@@ -81,7 +81,7 @@ export default function GlassVariants() {
         <div className="gl-scroll" ref={scrollRef} tabIndex={0} aria-label="Demo: conteúdo rolando por baixo da barra">
           <div className="via-bar-glass">
             <span className="gl-scroll__brand">Viver de IA</span>
-            <span className="gl-scroll__nav">Mentoria · Cases · Conferência</span>
+            <span className="gl-scroll__nav">Soluções · Cases · Planos</span>
           </div>
           <div className="gl-scroll__body">
             <h3>Role aqui dentro.</h3>
@@ -134,7 +134,7 @@ export default function GlassVariants() {
       <Section title="Thick" meta="tudo que flutua por cima">
         <div className="gl-overlay">
           <div className="gl-overlay__page" aria-hidden="true">
-            <b>Relatório da turma</b>
+            <b>Relatório do time</b>
             <i /><i /><i />
           </div>
           <div className="gl-overlay__scrim" />

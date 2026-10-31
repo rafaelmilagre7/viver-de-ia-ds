@@ -171,7 +171,7 @@ export const navigation: NavGroup[] = [
     icon: Monitor,
     items: [
       { label: 'Site de marketing', to: '/showcase/marketing' },
-      { label: 'Lançamento de turma', to: '/showcase/lancamento' },
+      { label: 'Lançamento de plano', to: '/showcase/lancamento' },
       { label: 'Dashboard do aluno', to: '/showcase/dashboard-aluno' },
       { label: 'Comunidade', to: '/showcase/comunidade' },
       { label: 'Perfil do mentor', to: '/showcase/mentor' },

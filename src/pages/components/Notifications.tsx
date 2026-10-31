@@ -88,7 +88,7 @@ function PanelSection() {
               </span>
               <div className="vds-notif-body">
                 <p>
-                  <strong>Márisson Lage</strong> curtiu sua nota da aula 02.01
+                  <strong>Mariana Leal</strong> curtiu sua nota da aula 02.01
                 </p>
                 <span className="vds-notif-meta">há 8 horas</span>
               </div>
@@ -134,7 +134,7 @@ function BannersSection() {
               <span className="vds-banner-tag">Convite</span>
             </p>
             <p className="vds-banner-body">
-              Caio e Márisson revisam 3 prompts reais do grupo, ao vivo, com gravação publicada em 24h.
+              Caio e Mariana revisam 3 prompts reais do grupo, ao vivo, com gravação publicada em 24h.
             </p>
           </div>
           <a href="#" className="vds-banner-cta">
@@ -150,11 +150,11 @@ function BannersSection() {
           </span>
           <div className="vds-banner-text">
             <p className="vds-banner-title">
-              Sua mentoria expira em 8 dias.
+              Seu plano Pro vence em 8 dias.
               <span className="vds-banner-tag">Atenção</span>
             </p>
             <p className="vds-banner-body">
-              Renove agora pra manter acesso sem interrupção — a sessão de 22 mai já está confirmada no calendário.
+              Renove agora pra manter acesso sem interrupção — o check-in de 22 mai já está confirmado no calendário.
             </p>
           </div>
           <a href="#" className="vds-banner-cta">
@@ -174,7 +174,7 @@ function BannersSection() {
               <span className="vds-banner-tag">Ação obrigatória</span>
             </p>
             <p className="vds-banner-body">
-              Não conseguimos processar a renovação automática — seu plano cai pra Comunidade em <strong>3 dias</strong> se não atualizar o método.
+              Não conseguimos processar a renovação automática — seu acesso à plataforma é suspenso em <strong>3 dias</strong> se não atualizar o método.
             </p>
           </div>
           <a href="#" className="vds-banner-cta">
@@ -276,9 +276,9 @@ function InboxSection() {
     { type: 'mention', who: 'Caio Ribeiro', what: 'respondeu sua pergunta sobre few-shot', where: 'Aula 02.02', when: 'há 4 min', unread: true, star: false },
     { type: 'achievement', who: 'Sistema Viver de IA', what: 'streak de 14 dias atingida — mais que 87% dos alunos', where: 'Métricas', when: 'hoje · auto', unread: true, star: true },
     { type: 'live', who: 'Calendário', what: 'live agendada · sex 22 mai · 14h · auditoria de prompts', where: 'Comunidade', when: 'há 2h', unread: true, star: false },
-    { type: 'mention', who: 'Márisson Lage', what: 'curtiu sua nota da aula 02.01 sobre estrutura de prompts', where: 'Aula 02.01', when: 'há 8h', unread: false, star: false },
+    { type: 'mention', who: 'Mariana Leal', what: 'curtiu sua nota da aula 02.01 sobre estrutura de prompts', where: 'Aula 02.01', when: 'há 8h', unread: false, star: false },
     { type: 'discussion', who: 'Discord interno', what: 'nova discussão em "Roteamento entre modelos"', where: 'Módulo 03', when: 'ontem · 18:42', unread: false, star: false },
-    { type: 'payment', who: 'Financeiro', what: 'renovação trimestre confirmada · próxima cobrança 17 ago', where: 'Pagamentos', when: '14 mai', unread: false, star: false },
+    { type: 'payment', who: 'Financeiro', what: 'mensalidade do plano Pro confirmada · próxima 17 ago', where: 'Pagamentos', when: '14 mai', unread: false, star: false },
     { type: 'mention', who: 'Caio Ribeiro', what: 'mencionou você no canal #estudos-de-caso', where: 'Discord', when: '12 mai', unread: false, star: false },
   ];
 

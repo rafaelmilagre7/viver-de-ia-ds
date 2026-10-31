@@ -13,7 +13,7 @@ export default function ConferenceAgenda() {
         eyebrow="Padrões · agenda da conferência"
         title={
           <>
-            Dois dias, três trilhas — <em>uma narrativa só</em>.
+            Dias de evento, três trilhas — <em>uma narrativa só</em>.
           </>
         }
         lede="Agenda do Leaders AI Conference tratada como roteiro editorial. Day selector no topo, grid de horários × trilhas, sessões com track-color, speaker, sala. Keynotes em destaque atmosférico, breaks com peso editorial discreto e CTA pra adicionar ao calendário."
@@ -40,7 +40,7 @@ function AgendaSection() {
     {
       time: '09h00', track: 'main', kind: 'keynote', featured: true,
       title: 'Estado da arte da IA aplicada · 2026',
-      speaker: 'Caio Ribeiro', role: 'fundador · Viver de IA', room: 'Auditório principal',
+      speaker: 'Rafael Milagre', role: 'fundador · Viver de IA', room: 'Auditório principal',
       duration: '50min',
     },
 
@@ -48,19 +48,19 @@ function AgendaSection() {
     {
       time: '10h00', track: 'main', kind: 'talk',
       title: 'O que muda no atendimento quando IA vira norma',
-      speaker: 'Camila Moraes', role: 'Head IA · Mantra', room: 'Auditório principal',
+      speaker: 'Luiza Prado', role: 'Head IA · Mantra', room: 'Auditório principal',
       duration: '40min',
     },
     {
       time: '10h00', track: 'tech', kind: 'talk',
       title: 'Multi-agent systems · arquitetura na prática',
-      speaker: 'Diego Martins', role: 'CTO · Viver de IA', room: 'Sala B',
+      speaker: 'Diego Martins', role: 'mentor · Viver de IA', room: 'Sala B',
       duration: '40min',
     },
     {
       time: '10h00', track: 'biz', kind: 'talk',
       title: 'IA no board · como apresentar pra C-level',
-      speaker: 'Daniel Pinheiro', role: 'Founder · Pivot', room: 'Sala C',
+      speaker: 'Rodrigo Siqueira', role: 'Founder · Pivot', room: 'Sala C',
       duration: '40min',
     },
 
@@ -71,13 +71,13 @@ function AgendaSection() {
     {
       time: '11h20', track: 'main', kind: 'panel',
       title: 'Painel · IA no setor financeiro brasileiro',
-      speaker: 'Felipe Andrade + 3 convidados', role: 'mediação Caio Ribeiro', room: 'Auditório principal',
+      speaker: 'Felipe Andrade + 3 convidados', role: 'mediação Diego Martins', room: 'Auditório principal',
       duration: '50min',
     },
     {
       time: '11h20', track: 'tech', kind: 'workshop',
       title: 'Hands-on · construindo seu primeiro agente em produção',
-      speaker: 'Mateus Costa', role: 'Senior IA · Viver de IA', room: 'Sala B',
+      speaker: 'Mateus Costa', role: 'arquiteto de soluções · Viver de IA', room: 'Sala B',
       duration: '90min',
     },
     {
@@ -88,36 +88,36 @@ function AgendaSection() {
     },
 
     // 12h30 - Lunch
-    { time: '12h30', track: 'all', kind: 'break', title: 'Almoço · 3 restaurantes parceiros no piso térreo', room: 'Foyer + ext.' },
+    { time: '12h30', track: 'all', kind: 'break', title: 'Almoço · restaurantes parceiros em [local]', room: 'Foyer + ext.' },
 
     // 14h00 - Closing keynote
     {
       time: '14h00', track: 'main', kind: 'keynote', featured: true,
       title: 'O que ninguém te conta sobre adoção real de IA',
-      speaker: 'Marisson Lage', role: 'CEO · Efizi', room: 'Auditório principal',
+      speaker: 'Helena Duarte', role: 'CEO · Norte Varejo', room: 'Auditório principal',
       duration: '60min',
     },
   ];
 
   return (
-    <Section title="Agenda · dia 1 · 18 jun 2026" meta="3 trilhas paralelas · 18 sessões · 6 keynotes · day selector + grid">
+    <Section title="Agenda · dia 1 · [data]" meta="3 trilhas paralelas · [N] sessões · [N] keynotes · day selector + grid">
       <article className="vds-cf">
         {/* Day selector */}
         <header className="vds-cf-head">
           <div className="vds-cf-days">
             <button className="vds-cf-day active">
-              <span className="dn">QUI</span>
-              <span className="dt">18 jun</span>
+              <span className="dn">DIA 1</span>
+              <span className="dt">[data]</span>
               <span className="dl">9 sessões · 3 trilhas</span>
             </button>
             <button className="vds-cf-day">
-              <span className="dn">SEX</span>
-              <span className="dt">19 jun</span>
+              <span className="dn">DIA 2</span>
+              <span className="dt">[data]</span>
               <span className="dl">9 sessões · workshops</span>
             </button>
             <button className="vds-cf-day">
-              <span className="dn">SÁB</span>
-              <span className="dt">20 jun</span>
+              <span className="dn">DIA 3</span>
+              <span className="dt">[data]</span>
               <span className="dl">Mentoria · privado</span>
             </button>
           </div>
@@ -219,14 +219,14 @@ function AgendaSection() {
 /* ---------- Speaker strip ---------- */
 function AgendaSpeakerStripSection() {
   const speakers = [
-    { name: 'Caio Ribeiro', role: 'Fundador · Viver de IA', tag: 'Keynote' },
-    { name: 'Marisson Lage', role: 'CEO · Efizi', tag: 'Keynote' },
-    { name: 'Camila Moraes', role: 'Head IA · Mantra', tag: 'Talk' },
-    { name: 'Diego Martins', role: 'CTO · Viver de IA', tag: 'Talk' },
-    { name: 'Daniel Pinheiro', role: 'Founder · Pivot', tag: 'Talk' },
+    { name: 'Rafael Milagre', role: 'Fundador · Viver de IA', tag: 'Keynote' },
+    { name: 'Helena Duarte', role: 'CEO · Norte Varejo', tag: 'Keynote' },
+    { name: 'Luiza Prado', role: 'Head IA · Mantra', tag: 'Talk' },
+    { name: 'Diego Martins', role: 'Mentor · Viver de IA', tag: 'Talk' },
+    { name: 'Rodrigo Siqueira', role: 'Founder · Pivot', tag: 'Talk' },
     { name: 'Bruna Carvalho', role: 'Product · Lumin', tag: 'Talk' },
     { name: 'Felipe Andrade', role: 'CTO · Olara Bank', tag: 'Painel' },
-    { name: 'Mateus Costa', role: 'Senior IA · Viver de IA', tag: 'Workshop' },
+    { name: 'Mateus Costa', role: 'Arquiteto de soluções · Viver de IA', tag: 'Workshop' },
   ];
 
   return (

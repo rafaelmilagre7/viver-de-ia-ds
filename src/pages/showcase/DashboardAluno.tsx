@@ -18,7 +18,7 @@ const modulos = [
 ];
 
 const agenda = [
-  { d: 'qua', dia: '22', h: '19:30', t: 'Sessão ao vivo · Modelagem do seu agente', tag: 'ao vivo' },
+  { d: 'qua', dia: '22', h: '19:30', t: 'Check-in · mentoria em grupo', tag: 'ao vivo' },
   { d: 'sex', dia: '24', h: '14:00', t: 'Office hours com Caio', tag: 'mentoria' },
   { d: 'sáb', dia: '25', h: '10:00', t: 'Workshop · publicando seu primeiro deploy', tag: 'workshop' },
 ];
@@ -37,7 +37,7 @@ export default function ShowcaseDashboardAluno() {
         <BrandLogo variant="auto" size="md" />
         <nav>
           <a className="active">Painel</a>
-          <a>Curso</a>
+          <a>Formações</a>
           <a>Mentoria</a>
           <a>Comunidade</a>
         </nav>
@@ -51,9 +51,9 @@ export default function ShowcaseDashboardAluno() {
         {/* Greeting */}
         <div className="dba-greeting">
           <div>
-            <span className="dba-eyebrow">turma 2026.3 · semana 03</span>
+            <span className="dba-eyebrow">Plano Pro · trilha de onboarding</span>
             <h1>Bom te ver, <em>Rafael</em>.</h1>
-            <p>Você está em <strong>2/3 da trilha</strong> · 9 colegas no mesmo módulo agora.</p>
+            <p>Você está em <strong>2/3 da trilha</strong> · 9 membros no mesmo módulo agora.</p>
           </div>
           <div className="dba-progress-ring">
             <svg viewBox="0 0 120 120" aria-label="Progresso geral 42 por cento">
@@ -120,7 +120,7 @@ export default function ShowcaseDashboardAluno() {
           <article className="dba-card dba-modulos">
             <header className="dba-card-head">
               <span className="dba-card-eyebrow"><TrendingUp size={16} strokeWidth={1.75} /> Seu progresso</span>
-              <span className="dba-card-meta">6 de 18 aulas</span>
+              <span className="dba-card-meta">6 de 15 aulas</span>
             </header>
             <ul className="dba-modulos-list">
               {modulos.map((m) => (
@@ -162,7 +162,7 @@ export default function ShowcaseDashboardAluno() {
             <span className="dba-achievement-medal"><Award size={20} strokeWidth={1.75} /></span>
             <div>
               <strong>14 dias de streak</strong>
-              <p>Maior sequência da turma · mais que 87% dos operadores do mês.</p>
+              <p>Maior sequência do seu time · mais que 87% dos membros do mês.</p>
             </div>
           </article>
 

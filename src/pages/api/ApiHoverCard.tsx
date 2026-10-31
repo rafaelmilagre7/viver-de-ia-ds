@@ -41,8 +41,8 @@ export default function ApiHoverCard() {
                   <Avatar initials="CR" alt="Caio Ribeiro" size="md" />
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                     <strong style={{ fontSize: 14 }}>Caio Ribeiro</strong>
-                    <em style={{ fontSize: 12, color: 'var(--via-text-muted)' }}>Fundador · Viver de IA</em>
-                    <p style={{ margin: '4px 0 0', fontSize: 12, color: 'var(--via-text-body)' }}>220 mentorados desde 2024</p>
+                    <em style={{ fontSize: 12, color: 'var(--via-text-muted)' }}>Mentor · Viver de IA</em>
+                    <p style={{ margin: '4px 0 0', fontSize: 12, color: 'var(--via-text-body)' }}>Mentorias em grupo · plano Pro</p>
                   </div>
                 </div>
               </HoverCard>{' '}
@@ -55,8 +55,8 @@ export default function ApiHoverCard() {
 >
   <Avatar name="Caio Ribeiro" />
   <strong>Caio Ribeiro</strong>
-  <em>Fundador · Viver de IA</em>
-  <p>220 mentorados desde 2024</p>
+  <em>Mentor · Viver de IA</em>
+  <p>Mentorias em grupo · plano Pro</p>
 </HoverCard>`,
         },
       ]}

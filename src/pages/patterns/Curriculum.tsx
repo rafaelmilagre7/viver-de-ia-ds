@@ -74,10 +74,10 @@ export default function Curriculum() {
         eyebrow="Padrões · curriculum"
         title={
           <>
-            A grade do curso, <em>editorial</em>.
+            A grade da formação, <em>editorial</em>.
           </>
         }
-        lede="Estrutura completa de um curso Viver de IA — módulos como capítulos, aulas como peças tipográficas, progresso visualmente honesto, estados (concluído, tocando, disponível, travado) sem semáforo bobo. Pronta pra montar qualquer trilha ou playbook."
+        lede="Estrutura completa de uma formação Viver de IA — módulos como capítulos, aulas como peças tipográficas, progresso visualmente honesto, estados (concluído, tocando, disponível, travado) sem semáforo bobo. Pronta pra montar qualquer trilha ou playbook."
       />
 
       <CourseHero />
@@ -91,13 +91,13 @@ function CourseHero() {
     <Section title="Course hero · capa editorial" meta="primeira coisa que o aluno vê ao entrar">
       <div className="vds-course-hero">
         <div className="vds-course-cover via-mesh-navy via-noise">
-          <span className="vds-course-eyebrow">Curso · 2026</span>
+          <span className="vds-course-eyebrow">Formação · 2026</span>
           <h2>
-            Construindo agentes IA <em>na prática</em>.
+            Agentes de IA <em>na operação real</em>.
           </h2>
           <p className="vds-course-author">
             <span className="av">CR</span>
-            Caio Ribeiro · Viver de IA
+            Caio Ribeiro · mentor
           </p>
           <img src={monogramWhite} alt="" className="vds-course-watermark" />
         </div>

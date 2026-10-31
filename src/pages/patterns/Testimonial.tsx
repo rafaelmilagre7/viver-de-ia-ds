@@ -4,20 +4,20 @@ import './testimonial.css';
 
 const testis = [
   {
-    quote: 'Aqui eu consigo ver rapidamente onde estou perdendo venda, onde posso subir margem e onde preciso agir primeiro.',
-    em: 'ver rapidamente',
-    who: 'Guilherme Delorenzo',
-    role: 'Founder · Efizi · E-commerce',
-    initials: 'GD',
-    outcome: { k: 'Decisão', v: '5×', em: 'mais rápida' },
+    quote: '[Depoimento em primeira pessoa · frase real do cliente, com autorização por escrito e uma expressão em destaque.]',
+    em: 'frase real do cliente',
+    who: '[Nome]',
+    role: '[cargo] · Place Dreams · Tecnologia',
+    initials: 'N',
+    outcome: { k: 'Economia', v: 'R$ 42.000', em: '/ano' },
   },
   {
-    quote: 'Ela fez isso com pouquíssimas horas. Sem saber nada de código.',
-    em: 'pouquíssimas horas',
-    who: 'Márisson Lage Gonçalves',
-    role: 'CEO · Balzani & Zimbel · Construção',
-    initials: 'ML',
-    outcome: { k: 'Economia', v: 'R$ 4.600', em: '/mês' },
+    quote: '[Frase curta dita pelo cliente, sem retoque.]',
+    em: 'sem retoque',
+    who: '[Nome do cliente]',
+    role: '[cargo] · Trivia Studio · Agência',
+    initials: 'N',
+    outcome: { k: 'Economia', v: 'R$ 120.000', em: '/ano' },
   },
 ];
 

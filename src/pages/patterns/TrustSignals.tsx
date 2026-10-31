@@ -30,17 +30,17 @@ export default function TrustSignals() {
 /* ---------- Logo wall premium ---------- */
 function TrustStripSection() {
   const clients = [
-    'Efizi', 'Mantra', 'Pivot', 'Lumin', 'Olara Bank', 'Hashi', 'Quanta', 'Orbital', 'Vertice',
+    'Place Dreams', 'Trivia Studio', 'Assessoria MAP', 'Viva Nexo', 'Pasetti Viagens', 'Jt Telecom', 'H10 Esportes', 'TaxTek', 'Prevensul',
   ];
 
   return (
     <Section title="Strip de clientes · logo wall editorial" meta="lista mono com separadores · sem grid de logos cinzas">
       <article className="vds-trust-strip">
         <header>
-          <span className="vds-trust-eyebrow">Já operando com IA pela Viver de IA</span>
+          <span className="vds-trust-eyebrow">Empresas com case publicado</span>
           <h3>
-            <span className="vds-trust-num mono">218</span>
-            <span>empresas em produção</span>
+            <span className="vds-trust-num mono">521</span>
+            <span>cases reais de implementação</span>
           </h3>
         </header>
 
@@ -55,7 +55,7 @@ function TrustStripSection() {
 
         <footer>
           <a href="#" className="vds-trust-strip-cta">
-            Ver os 218 cases
+            Ver os 521 cases
             <ArrowUpRight size={14} strokeWidth={1.75} />
           </a>
         </footer>
@@ -67,10 +67,10 @@ function TrustStripSection() {
 /* ---------- Stats grid premium ---------- */
 function TrustStatsSection() {
   const stats = [
-    { v: '218', l: 'empresas em produção', s: '+38 nos últimos 90d' },
-    { v: '14.2K', l: 'horas de mentoria', s: 'média de 28min/sessão' },
-    { v: '94%', l: 'taxa de comparecimento', s: 'maior do mercado de mentoria 1:1' },
-    { v: 'R$ 47M', l: 'em economia operacional', s: 'agregado dos alunos · auto-reportado' },
+    { v: '521', l: 'cases reais de implementação', s: 'empresas brasileiras · viverdeia.ai/cases' },
+    { v: '157', l: 'soluções de IA prontas', s: 'Plug-and-Play · em todos os planos' },
+    { v: '29', l: 'setores com implementação', s: 'de saúde a turismo' },
+    { v: 'R$ 1 bi', l: 'meta em receita e economia', s: 'meta pública · não é resultado' },
   ];
 
   return (
@@ -96,27 +96,27 @@ function TrustReviewsSection() {
   const reviews = [
     {
       stars: 5,
-      title: 'Achei que conhecia o que existia sobre IA. Não conhecia nada.',
-      body: 'A mentoria me forçou a reorganizar o squad inteiro em 60 dias. Não foi confortável, mas a economia operacional virou 4 horas/dia por pessoa.',
-      author: 'Camila Moraes',
-      role: 'Head IA · Mantra',
-      date: '12 mai 2026',
+      title: '[Título da avaliação · frase do cliente]',
+      body: '[Texto da avaliação como foi publicado na plataforma de origem · sem edição, com data e link pra conferir.]',
+      author: '[Nome]',
+      role: '[cargo] · [empresa]',
+      date: '[data]',
     },
     {
       stars: 5,
-      title: 'O Caio desenhou o squad que eu precisava no quadro.',
-      body: 'Saí da sessão com um plano de 90 dias, 3 ferramentas pra cortar e 1 contratação que eu vinha empurrando há 6 meses.',
-      author: 'Daniel Pinheiro',
-      role: 'Founder · Pivot',
-      date: '08 mai 2026',
+      title: '[Frase que resume o resultado]',
+      body: '[O que mudou na operação, nas palavras do cliente · número só se ele citou e autorizou.]',
+      author: '[Nome]',
+      role: '[cargo] · [empresa]',
+      date: '[data]',
     },
     {
       stars: 5,
-      title: 'Vocês entregam mais do que prometem.',
-      body: 'A Nina cobre 38% das nossas conversas de vendas hoje. Era pra ser experimental, virou crítico em 4 meses.',
-      author: 'Felipe Andrade',
-      role: 'CTO · Olara Bank',
-      date: '02 mai 2026',
+      title: '[Ponto de atenção levantado pelo cliente]',
+      body: '[Avaliação com crítica também entra · é o que mostra que a nota é real.]',
+      author: '[Nome]',
+      role: '[cargo] · [empresa]',
+      date: '[data]',
     },
   ];
 
@@ -125,7 +125,7 @@ function TrustReviewsSection() {
       <div className="vds-trust-reviews">
         <aside className="vds-trust-reviews-rating">
           <div className="vds-trust-rating-num">
-            <span className="num">4.94</span>
+            <span className="num">[N,N]</span>
             <span className="of">/ 5</span>
           </div>
           <div className="vds-trust-rating-stars">
@@ -134,7 +134,7 @@ function TrustReviewsSection() {
             ))}
           </div>
           <p className="vds-trust-rating-meta">
-            Média de <strong>184 reviews</strong> · plataforma G2
+            Média de <strong>[N] avaliações</strong> · [plataforma]
           </p>
           <span className="vds-trust-rating-divider" />
           <ul className="vds-trust-rating-breakdown">
@@ -185,10 +185,10 @@ function TrustReviewsSection() {
 /* ---------- Awards / Recognitions ---------- */
 function TrustAwardsSection() {
   const awards = [
-    { ico: Award, name: 'Top 50 startups IA · 2025', org: 'Endeavor Brasil', year: '2025' },
-    { ico: ShieldCheck, name: 'Certificação LGPD · enterprise', org: 'Auditoria PwC', year: '2026' },
-    { ico: Users, name: '218 squads operando', org: 'comunidade Viver de IA', year: 'ao vivo' },
-    { ico: Building2, name: 'Membro · IA Brasil', org: 'instituto IA Brasil', year: 'desde 2024' },
+    { ico: Award, name: '[Prêmio ou ranking]', org: '[organização que concedeu]', year: '[ano]' },
+    { ico: ShieldCheck, name: '[Certificação]', org: '[auditoria responsável]', year: '[ano]' },
+    { ico: Users, name: '521 cases reais', org: 'implementação de IA · viverdeia.ai/cases', year: 'ao vivo' },
+    { ico: Building2, name: '[Associação ou parceria]', org: '[instituição]', year: '[desde ano]' },
   ];
 
   return (

@@ -4,12 +4,12 @@ import Section from '../../components/docs/Section';
 import './feature-grid.css';
 
 const feats = [
-  { I: Clock, title: 'Operação', em: '24/7', desc: 'Superagentes em produção que respondem dia e noite sem dependência humana.' },
+  { I: Clock, title: 'Consultor IA', em: '24/7', desc: 'Descreva seu cenário na plataforma e receba o caminho específico pro seu caso.' },
   { I: Zap, title: 'Resultado', em: 'mensurável', desc: 'Cada implementação tem KPI próprio. Sem demo bonita, sem relatório vago.' },
-  { I: Users, title: 'Pequenos', em: 'grupos', desc: 'Turmas de até 24 pessoas com acompanhamento individual de implementação.' },
+  { I: Users, title: 'Mentoria', em: 'em grupo', desc: 'Check-ins ao vivo pra adaptar as soluções ao seu contexto · 10 por mês no Pro.' },
   { I: Compass, title: 'Orientação', em: 'estratégica', desc: 'Decisão de stack, modelagem de processo, definição de métrica.' },
   { I: ShieldCheck, title: 'Governança', em: 'séria', desc: 'Logs, custos, observabilidade, fallback humano. Tudo o que vai pra produção precisa.' },
-  { I: Layers, title: 'Implementação', em: 'guiada', desc: 'Sessões de pareamento durante a turma. Você sai com pelo menos um agente vivo.' },
+  { I: Layers, title: 'Implementação', em: 'guiada', desc: 'Trilha de onboarding, formações práticas e soluções prontas pra colocar IA em operação.' },
 ];
 
 export default function FeatureGrid() {

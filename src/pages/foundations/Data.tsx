@@ -93,8 +93,8 @@ function TeseSection() {
    2 · Espécime 1 — a tabela canônica
    --------------------------------------------------------------
    Receita reconhecida, 1º semestre 2026. Confere:
-     anual 2.184 + trimestral    756 = mentoria      2.940
-     mentoria 2.940 + comunidade 612 = recorrente    3.552
+     pro 2.184 + starter         756 = planos        2.940
+     planos 2.940 + enterprise   612 = recorrente    3.552
      lote1 288 + lote2 426           = ingressos       714
      ingressos 714 + patrocínio 372  = leaders       1.086
      leaders 1.086 + workshops 396   = pontual       1.482
@@ -119,11 +119,11 @@ type Linha = LinhaDado | LinhaGrupo;
 const isGrupo = (l: Linha): l is LinhaGrupo => 'grupo' in l;
 
 const receita: Linha[] = [
-  { key: 'g1', grupo: 'Recorrente · assinatura e mentoria' },
-  { key: 'mentoria',   label: 'Mentoria Viver de IA', nivel: 0, real: '2.940.000', meta: '2.800.000', ating: '105,0%', delta: '+10,5%', dir: 'up' },
-  { key: 'anual',      label: 'Plano anual',          nivel: 1, real: '2.184.000', meta: '2.000.000', ating: '109,2%', delta: '+20,0%', dir: 'up' },
-  { key: 'trimestral', label: 'Plano trimestral',     nivel: 1, real: '756.000',   meta: '800.000',   ating: '94,5%',  delta: '-10,0%', dir: 'down' },
-  { key: 'comunidade', label: 'Comunidade VIA',       nivel: 0, real: '612.000',   meta: '640.000',   ating: '95,6%',  delta: '+25,9%', dir: 'up' },
+  { key: 'g1', grupo: 'Recorrente · planos da plataforma' },
+  { key: 'mentoria',   label: 'Planos Starter e Pro', nivel: 0, real: '2.940.000', meta: '2.800.000', ating: '105,0%', delta: '+10,5%', dir: 'up' },
+  { key: 'anual',      label: 'Plano Pro',            nivel: 1, real: '2.184.000', meta: '2.000.000', ating: '109,2%', delta: '+20,0%', dir: 'up' },
+  { key: 'trimestral', label: 'Plano Starter',        nivel: 1, real: '756.000',   meta: '800.000',   ating: '94,5%',  delta: '-10,0%', dir: 'down' },
+  { key: 'comunidade', label: 'Plano Enterprise',     nivel: 0, real: '612.000',   meta: '640.000',   ating: '95,6%',  delta: '+25,9%', dir: 'up' },
   { key: 'sub1', label: 'Subtotal · recorrente', nivel: 0, real: '3.552.000', meta: '3.440.000', ating: '103,3%', delta: '+12,9%', dir: 'up', total: true },
 
   { key: 'g2', grupo: 'Pontual · evento e in-company' },
@@ -154,11 +154,11 @@ const SNIPPET_CANONICO = `<div class="via-table-wrap">
     <tbody>
       <!-- cabeçalho de grupo: rótulo, não dado -->
       <tr class="via-row-group">
-        <td colspan="5">Recorrente · assinatura e mentoria</td>
+        <td colspan="5">Recorrente · planos da plataforma</td>
       </tr>
 
       <tr>
-        <td>Mentoria Viver de IA</td>
+        <td>Planos Starter e Pro</td>
         <td class="via-num">2.940.000</td>
         <td class="via-num">2.800.000</td>
         <td class="via-num">105,0%</td>
@@ -167,7 +167,7 @@ const SNIPPET_CANONICO = `<div class="via-table-wrap">
 
       <!-- sub-linha: INDENTAÇÃO, nunca cor de fundo -->
       <tr>
-        <td class="via-cell-sub">Plano anual</td>
+        <td class="via-cell-sub">Plano Pro</td>
         <td class="via-num">2.184.000</td>
         <td class="via-num">2.000.000</td>
         <td class="via-num">109,2%</td>
@@ -202,7 +202,7 @@ function EspecimeCanonicoSection() {
       meta="grupo · sub-linha · total · variação"
     >
       <p className="vds-data-intro">
-        Receita reconhecida do 1º semestre de 2026 — três níveis de conta, dois subtotais e um
+        Receita reconhecida do 1º semestre (dados ilustrativos) — três níveis de conta, dois subtotais e um
         total. Nenhuma classe fora da camada global, nenhum estilo inline. Repare no que a tabela{' '}
         <em>não</em> faz: não pinta linha, não desenha barra lateral, não centraliza número e só
         deixa <strong>uma</strong> coluna carregar cor.
@@ -366,8 +366,8 @@ function EspecimeDensidadeSection() {
    4 · Espécime 3 — cards de métrica
    --------------------------------------------------------------
    Receita mensal (R$ mil): 762 + 786 + 818 + 856 + 892 + 920 = 5.034
-   Ticket médio mentoria: 2.940.000 ÷ 240 contratos = 12.250
-   Semestre anterior:     2.660.000 ÷ 200 contratos = 13.300  (-7,9%)
+   Ticket médio planos:   2.940.000 ÷ 150 contratos = 19.600
+   Semestre anterior:     2.660.000 ÷ 125 contratos = 21.280  (-7,9%)
    ============================================================== */
 const receitaMensal = [762, 786, 818, 856, 892, 920];
 const projecaoJulho = [920, 968];
@@ -425,7 +425,7 @@ function Spark({
 
 function EspecimeMetricasSection() {
   return (
-    <Section title="Espécime 3 · cards de métrica" meta="aqui o vidro é bem-vindo">
+    <Section title="Espécime 3 · cards de métrica" meta="aqui o vidro é bem-vindo · dados ilustrativos">
       <p className="vds-data-intro">
         O KPI é o oposto da tabela: pouco dado, muito peso. Aqui o liquid glass funciona porque não
         há densidade para atrapalhar — e é ele que dá o contraste entre o resumo e a tabela sólida
@@ -464,13 +464,13 @@ function EspecimeMetricasSection() {
         </article>
 
         <article className="via-metric">
-          <span className="via-metric__label">Ticket médio · mentoria</span>
+          <span className="via-metric__label">Ticket médio · planos</span>
           <span className="via-metric__value">
-            <small>R$</small>12.250
+            <small>R$</small>19.600
           </span>
           <span className="via-metric__foot">
             <span className="via-delta via-delta--down">-7,9%</span>
-            240 contratos · +20,0% em volume
+            150 contratos · +20,0% em volume
           </span>
         </article>
       </div>

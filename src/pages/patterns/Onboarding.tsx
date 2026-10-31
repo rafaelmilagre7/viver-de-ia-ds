@@ -40,7 +40,7 @@ export default function Onboarding() {
             <p className="vds-eyebrow">Passo 3 de 4 · objetivos</p>
             <h2>O que você quer <em>de verdade</em> resolver?</h2>
             <p className="lede">
-              Não precisa estar bonito. Quanto mais específico, mais a turma se ajusta para o seu cenário.
+              Não precisa estar bonito. Quanto mais específico, mais a trilha se ajusta para o seu cenário.
             </p>
 
             <div className="ob-options">
@@ -96,10 +96,10 @@ function WizardPremiumSection() {
               Onboarding · 3 de 4
             </span>
             <h3>
-              Calibramos a turma <em>pra você</em>.
+              Calibramos a trilha <em>pra você</em>.
             </h3>
             <p>
-              Quanto mais a gente entende seu cenário, melhor a Nina e os mentores conseguem te guiar. Suas respostas viram contexto — não viram formulário arquivado.
+              Quanto mais a gente entende seu cenário, melhor o Consultor IA e os mentores conseguem te guiar. Suas respostas viram contexto — não viram formulário arquivado.
             </p>
 
             <ol className="vds-wiz-steps">

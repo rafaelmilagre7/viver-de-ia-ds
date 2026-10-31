@@ -42,10 +42,10 @@ function ChangelogFeaturedSection() {
 
         <div className="vds-cl-featured-body">
           <h2>
-            Nina virou <em>multilíngue</em>.
+            Consultor IA virou <em>multilíngue</em>.
           </h2>
           <p className="vds-cl-lede">
-            Maior versão do trimestre — Nina agora atende em inglês e espanhol mantendo o tom da marca, novo modo "shadow" pra testar respostas sem publicar e o calendário de mentoria recebeu um redesenho completo. Tudo abaixo.
+            Maior versão do trimestre — o Consultor IA agora atende em inglês e espanhol mantendo o tom da marca, novo modo "shadow" pra testar respostas sem publicar e o calendário de mentoria recebeu um redesenho completo. Tudo abaixo.
           </p>
 
           <div className="vds-cl-highlights">
@@ -54,10 +54,10 @@ function ChangelogFeaturedSection() {
                 <Globe size={20} strokeWidth={1.75} />
               </div>
               <h3>
-                Nina <em>en español</em> y <em>in English</em>
+                Consultor IA <em>en español</em> y <em>in English</em>
               </h3>
               <p>
-                Detecção automática de idioma no canal e respostas mantendo a personalidade Nina — testado por 14 mentees nativos antes do release.
+                Detecção automática de idioma na conversa e respostas mantendo o tom da marca — testado por 14 membros nativos antes do release.
               </p>
               <a href="#" className="vds-cl-hl-link">
                 Ver demo da nova versão
@@ -79,7 +79,7 @@ function ChangelogFeaturedSection() {
                 <MessageCircle size={16} strokeWidth={1.75} />
               </div>
               <h4>Calendário redesenhado</h4>
-              <p>Mentoria 1:1 agora com vista semanal · reagendamento em 2 clicks.</p>
+              <p>Check-ins de mentoria com vista semanal · reagendamento em 2 clicks.</p>
               <a href="#">Ver detalhes →</a>
             </article>
           </div>
@@ -93,7 +93,7 @@ function ChangelogFeaturedSection() {
           <span className="vds-cl-stat-sep" />
           <div className="vds-cl-stat">
             <strong className="mono">14</strong>
-            <em>mentees testaram</em>
+            <em>membros testaram</em>
           </div>
           <span className="vds-cl-stat-sep" />
           <div className="vds-cl-stat">
@@ -120,7 +120,7 @@ function ChangelogTimelineSection() {
       date: '02 mai 2026',
       title: 'Mentoria com gravação automática',
       changes: [
-        { type: 'new', text: 'Sessão de mentoria 1:1 grava + transcreve automaticamente no Discord interno' },
+        { type: 'new', text: 'Check-in de mentoria em grupo grava + transcreve automaticamente na plataforma' },
         { type: 'new', text: 'Nota de continuidade · cada sessão sabe o que ficou de pendência da anterior' },
         { type: 'fix', text: 'Corrigido: tema escuro do calendário tinha contraste insuficiente em dois cards' },
       ],
@@ -140,7 +140,7 @@ function ChangelogTimelineSection() {
       v: 'v2.1',
       tag: 'minor',
       date: '28 mar 2026',
-      title: 'Painel de progresso do aluno',
+      title: 'Painel de progresso do membro',
       changes: [
         { type: 'new', text: 'Activity rings · 3 anéis (estudo, prática, comunidade) com gradient navy' },
         { type: 'new', text: 'Streak editorial · contagem de dias seguidos sem dependência de notificação irritante' },

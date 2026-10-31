@@ -35,9 +35,9 @@ export default function FormPower() {
    ============================================ */
 function MultiSelectSection() {
   const all = [
-    { id: 'mentoria', label: 'Mentoria 1:1', count: 12 },
-    { id: 'corporate', label: 'Plano Corporate', count: 3 },
-    { id: 'comunidade', label: 'Comunidade', count: 218 },
+    { id: 'mentoria', label: 'Mentoria em grupo', count: 12 },
+    { id: 'corporate', label: 'Plano Enterprise', count: 3 },
+    { id: 'comunidade', label: 'Comunidade', count: 96 },
     { id: 'newsletter', label: 'Newsletter semanal', count: 84 },
     { id: 'eventos', label: 'Eventos presenciais', count: 14 },
     { id: 'discord', label: 'Discord interno', count: 162 },

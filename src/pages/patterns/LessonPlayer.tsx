@@ -41,7 +41,7 @@ function PlayerSection() {
       <div className="vds-lesson-stage">
         {/* Breadcrumb */}
         <nav className="vds-lesson-breadcrumb">
-          <span>Construindo agentes IA na prática</span>
+          <span>Formação · Agentes de IA na operação real</span>
           <span className="sep">/</span>
           <span>Módulo 02 · Prompt como engenharia</span>
           <span className="sep">/</span>
@@ -59,7 +59,7 @@ function PlayerSection() {
                   <div className="vid-idle-copy">
                     <span className="eyebrow"><Headphones size={14} strokeWidth={1.75} /> Aula 02.02 · 13min 54s</span>
                     <h2>Few-shot · <em>quando incluir exemplos é decisivo</em>.</h2>
-                    <p className="lede">Caio Ribeiro · sessão gravada · transcript completo na lateral</p>
+                    <p className="lede">Caio Ribeiro · mentor · sessão gravada · transcript completo na lateral</p>
                   </div>
                   <button className="vid-play-big" onClick={() => setPlaying(true)} aria-label="Tocar">
                     <span className="ring">
@@ -126,7 +126,7 @@ function PlayerSection() {
                 <span className="av">CR</span>
                 <div>
                   <strong>Caio Ribeiro</strong>
-                  <em>Viver de IA · 17 mai 2026</em>
+                  <em>Mentor · 17 mai 2026</em>
                 </div>
               </div>
             </div>
@@ -177,7 +177,7 @@ function TranscriptPanel() {
     { t: '00:42', text: 'A pergunta não é "few-shot é bom?". É: nesse caso específico, descrever o formato em palavras vai ser mais barato que mostrar exemplos?', current: true },
     { t: '01:14', text: 'Casos onde few-shot é decisivo: quando a saída tem um formato muito específico, quando o vocabulário do domínio é raro, quando o modelo erra consistentemente o estilo.' },
     { t: '01:48', text: 'Casos onde few-shot é desperdício: tarefa óbvia (resumir, traduzir), formato livre, ou quando o modelo já acerta sem exemplo.' },
-    { t: '02:22', text: 'Mostra aqui o teste que fiz com a Nina, o agente da Viver de IA. Sem few-shot, 64% das respostas eram boas. Com 3 exemplos bem escolhidos, 89%.' },
+    { t: '02:22', text: 'Mostra aqui um teste com um agente SDR de qualificação. Sem few-shot, 64% das respostas eram boas. Com 3 exemplos bem escolhidos, 89%.' },
     { t: '02:58', text: 'O erro mais comum que vejo: incluir 12 exemplos. Diminui o desempenho. O modelo confunde, perde foco, e o custo de token sobe.' },
   ];
   return (
@@ -219,7 +219,7 @@ function NotesPanel() {
         </li>
         <li>
           <span className="ts">00:42</span>
-          <p>Pergunta que vou levar pro time: a Nina precisaria de few-shot pra qualificação? Testar.</p>
+          <p>Pergunta que vou levar pro time: o nosso SDR precisaria de few-shot pra qualificação? Testar.</p>
         </li>
       </ul>
     </div>
@@ -257,14 +257,14 @@ function DiscussionPanel() {
   return (
     <ul className="vds-discussion">
       <li>
-        <span className="av">ML</span>
+        <span className="av">LT</span>
         <div>
           <p className="vds-disc-meta">
-            <strong>Márisson Lage</strong>
-            <em>Efizi · 02 min atrás</em>
+            <strong>Larissa Tavares</strong>
+            <em>Plano Pro · 02 min atrás</em>
           </p>
           <p className="vds-disc-text">
-            Caio, no nosso caso da Efizi a Nina usa few-shot pra classificar urgência. Funcionou bem com 4 exemplos. Você acha que cabe testar zero-shot pra ver se sobreviveria?
+            Caio, no nosso caso o agente de atendimento usa few-shot pra classificar urgência. Funcionou bem com 4 exemplos. Você acha que cabe testar zero-shot pra ver se sobreviveria?
           </p>
           <div className="vds-disc-actions">
             <button>Responder</button>
@@ -278,7 +278,7 @@ function DiscussionPanel() {
         <div>
           <p className="vds-disc-meta">
             <strong>Caio Ribeiro</strong>
-            <em>Viver de IA · agora</em>
+            <em>Mentor · agora</em>
             <span className="vds-disc-pin">Resposta do mentor</span>
           </p>
           <p className="vds-disc-text">

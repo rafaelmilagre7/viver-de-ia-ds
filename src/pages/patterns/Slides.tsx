@@ -26,7 +26,7 @@ export default function Slides() {
 
 function DeckSection() {
   return (
-    <Section title="Deck · 6 slides canônicos" meta="16:9 · apresentação Leaders AI Conference 2026">
+    <Section title="Deck · 6 slides canônicos" meta="16:9 · apresentação Leaders AI Conference">
       <div className="vds-deck">
         {/* 01 · Title slide */}
         <article className="vds-slide title via-mesh-navy via-noise">
@@ -44,8 +44,8 @@ function DeckSection() {
 
             <footer className="vds-slide-foot">
               <span className="vds-slide-author">
-                <span className="av">CR</span>
-                <span>Caio Ribeiro <em>· Viver de IA</em></span>
+                <span className="av">RM</span>
+                <span>Rafael Milagre <em>· Viver de IA</em></span>
               </span>
               <span className="vds-slide-num">01 / 12</span>
             </footer>
@@ -81,21 +81,21 @@ function DeckSection() {
 
           <div className="vds-slide-canvas">
             <header className="vds-slide-top">
-              <span className="vds-slide-eyebrow">Implementação Efizi · 90 dias</span>
+              <span className="vds-slide-eyebrow">Case Trivia Studio · Agência</span>
             </header>
 
             <div className="vds-stat-body">
               <p className="vds-stat-number">
-                <span className="num">11.920</span>
-                <span className="vds-stat-unit">conversas analisadas</span>
+                <span className="num">120.000</span>
+                <span className="vds-stat-unit">reais de economia por ano</span>
               </p>
               <p className="vds-stat-meta">
-                do canal de vendas em 12 semanas — o que era invisível, virou base de decisão.
+                de processos manuais a produção de conteúdo em escala — case real publicado.
               </p>
             </div>
 
             <footer className="vds-slide-foot">
-              <span className="vds-slide-eyebrow-foot">Fonte · CRM Efizi + Nina IA</span>
+              <span className="vds-slide-eyebrow-foot">Fonte · viverdeia.ai/cases</span>
               <span className="vds-slide-num">04 / 12</span>
             </footer>
           </div>
@@ -115,10 +115,10 @@ function DeckSection() {
 
             <footer className="vds-slide-foot light">
               <span className="vds-slide-author">
-                <span className="av light">ML</span>
+                <span className="av light">NM</span>
                 <span>
-                  <strong>Márisson Lage</strong>
-                  <em>CEO · Efizi Soluções</em>
+                  <strong>[Nome]</strong>
+                  <em>[cargo] · [empresa]</em>
                 </span>
               </span>
               <span className="vds-slide-num">07 / 12</span>
@@ -183,16 +183,16 @@ function DeckSection() {
                 Pronto pra começar <em>seu próximo capítulo?</em>
               </h3>
               <p className="vds-slide-lede">
-                Mentoria 1:1, comunidade de operadores e o playbook que está sendo escrito enquanto você lê isso.
+                Soluções prontas, formações práticas, mentoria em grupo ao vivo e comunidade de empresários e líderes.
               </p>
             </div>
 
             <footer className="vds-slide-foot transparent">
               <a className="vds-slide-cta" href="#">
-                viverdeia.ai/comecar
+                viverdeia.ai/planos
                 <ArrowRight size={16} strokeWidth={1.75} />
               </a>
-              <span className="vds-slide-eyebrow-foot">Caio Ribeiro · 17 mai 2026</span>
+              <span className="vds-slide-eyebrow-foot">Rafael Milagre · [data]</span>
             </footer>
           </div>
         </article>

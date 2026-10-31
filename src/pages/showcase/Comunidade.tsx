@@ -21,19 +21,19 @@ const categorias = [
 
 const posts = [
   {
-    av: 'CR', nome: 'Caio Ribeiro', papel: 'Fundador', t: 'há 18 min',
+    av: 'CR', nome: 'Caio Ribeiro', papel: 'Mentor', t: 'há 18 min',
     pinned: true, cat: 'Wins da semana',
-    txt: 'Turma 2026.3 — nessa semana 9 de vocês colocaram o primeiro agente em produção. Postem aqui o que construíram. Quero ver os números reais, não a demo bonita.',
+    txt: 'Check-in da semana — 9 empresas daqui colocaram a primeira solução em operação. Postem aqui o que implementaram. Quero ver os números reais, não a demo bonita.',
     likes: 47, comments: 23,
   },
   {
-    av: 'ML', nome: 'Márisson Lage', papel: 'CEO · Efizi', t: 'há 1h',
+    av: 'ML', nome: 'Mariana Leal', papel: 'CEO · membro Pro', t: 'há 1h',
     cat: 'Mostre seu agente',
-    txt: 'Agente de qualificação rodando há 3 dias. 340 conversas processadas, 28% viraram lead qualificado. O pulo do gato foi o few-shot do módulo 02 — antes eu fazia zero-shot e ele alucinava critério.',
+    txt: 'Agente de qualificação rodando há 3 dias. 340 conversas processadas, 28% viraram lead qualificado. O pulo do gato foi o few-shot da formação de agentes — antes eu fazia zero-shot e ele alucinava critério.',
     likes: 31, comments: 12, code: true,
   },
   {
-    av: 'LA', nome: 'Larissa Alves', papel: 'Operadora · turma 2026.3', t: 'há 3h',
+    av: 'LA', nome: 'Larissa Alves', papel: 'Operadora · Plano Pro', t: 'há 3h',
     cat: 'Dúvidas técnicas',
     txt: 'Alguém já lidou com rate limit da API em produção? Meu agente bate o teto em horário de pico e os clientes ficam sem resposta. Pensando em fila com retry, mas não sei se é overkill.',
     likes: 8, comments: 17,
@@ -42,15 +42,15 @@ const posts = [
 
 const membros = [
   { av: 'DM', nome: 'Diego Martins', status: 'online' },
-  { av: 'DP', nome: 'Daniel Pinheiro', status: 'online' },
-  { av: 'CM', nome: 'Camila Moraes', status: 'online' },
+  { av: 'DP', nome: 'Davi Prado', status: 'online' },
+  { av: 'CM', nome: 'Clara Mendes', status: 'online' },
   { av: 'RF', nome: 'Rafael Fortes', status: 'away' },
 ];
 
 const ranking = [
-  { pos: 1, av: 'ML', nome: 'Márisson Lage', pts: '2.840' },
+  { pos: 1, av: 'ML', nome: 'Mariana Leal', pts: '2.840' },
   { pos: 2, av: 'DM', nome: 'Diego Martins', pts: '2.310' },
-  { pos: 3, av: 'CM', nome: 'Camila Moraes', pts: '1.920' },
+  { pos: 3, av: 'CM', nome: 'Clara Mendes', pts: '1.920' },
 ];
 
 export default function ShowcaseComunidade() {
@@ -61,7 +61,7 @@ export default function ShowcaseComunidade() {
         <BrandLogo variant="auto" size="md" />
         <nav>
           <a>Painel</a>
-          <a>Curso</a>
+          <a>Formações</a>
           <a>Mentoria</a>
           <a className="active">Comunidade</a>
         </nav>
@@ -144,7 +144,7 @@ export default function ShowcaseComunidade() {
                   <strong>{m.nome}</strong>
                 </li>
               ))}
-              <li className="cmu-members-more">+244 operadores conectados</li>
+              <li className="cmu-members-more">+244 membros conectados</li>
             </ul>
           </article>
 

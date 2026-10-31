@@ -51,14 +51,14 @@ function HeroLiveSection() {
         <div className="vds-live-body">
           <span className="vds-live-eyebrow">
             <Radio size={14} strokeWidth={1.75} />
-            Mentoria · turma 2026.2
+            Mentoria em grupo · Plano Pro
           </span>
           <h1>
             Auditoria de 3 prompts<br />
             <em>reais do grupo</em>.
           </h1>
           <p className="vds-live-lede">
-            Caio revisando ao vivo os prompts da Efizi, Mantra e Pivot. Próximos 42 min · sem corte de transmissão.
+            Caio revisando ao vivo os prompts de 3 empresas do grupo. Próximos 42 min · sem corte de transmissão.
           </p>
 
           {/* Hosts */}
@@ -67,15 +67,15 @@ function HeroLiveSection() {
               <span className="av">CR</span>
               <div>
                 <strong>Caio Ribeiro</strong>
-                <em>Conduz a sessão</em>
+                <em>Mentor · conduz a sessão</em>
               </div>
             </div>
             <span className="vds-live-host-sep">+</span>
             <div className="vds-live-host">
-              <span className="av guest">ML</span>
+              <span className="av guest">LT</span>
               <div>
-                <strong>Márisson Lage</strong>
-                <em>Convidado · Efizi</em>
+                <strong>Larissa Tavares</strong>
+                <em>Convidada · membro Pro</em>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ function UpcomingLiveSection() {
         <div className="vds-live-next-l">
           <span className="vds-live-eyebrow">
             <Calendar size={14} strokeWidth={1.75} />
-            Próxima sessão · turma 2026.2
+            Próximo check-in · Plano Pro
           </span>
           <h3>
             Construindo o primeiro <em>agente em produção</em>.
@@ -195,11 +195,11 @@ function PastLivesSection() {
   const past = [
     { date: '15 mai', title: 'Few-shot · quando 3 exemplos valem mais que 12', host: 'Caio', duration: '1h 42min', views: 248, em: 'mais que 12' },
     { date: '08 mai', title: 'Memory: curta, média e persistente — quando cada uma serve', host: 'Caio + Diego', duration: '2h 06min', views: 312, em: 'cada uma serve' },
-    { date: '01 mai', title: 'Auditoria · 3 agentes do grupo na operação real', host: 'Caio + alunos', duration: '1h 58min', views: 196, em: 'na operação real' },
+    { date: '01 mai', title: 'Auditoria · 3 agentes do grupo na operação real', host: 'Caio + membros', duration: '1h 58min', views: 196, em: 'na operação real' },
   ];
 
   return (
-    <Section title="Lives gravadas · arquivo da turma" meta="cada uma com transcript + chat capturado">
+    <Section title="Lives gravadas · arquivo das mentorias" meta="cada uma com transcript + chat capturado">
       <div className="vds-live-past">
         {past.map((p) => (
           <article key={p.date} className="vds-live-past-card">

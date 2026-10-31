@@ -42,7 +42,7 @@ function PrimaryMatchSection() {
             Match recomendado · 1 de 3
           </span>
           <span className="vds-mm-stamp">
-            Análise feita há 2 min · turma 2026.2
+            Análise feita há 2 min · Plano Enterprise
           </span>
         </header>
 
@@ -149,7 +149,7 @@ function PrimaryMatchSection() {
               <div className="vds-mm-mentor-av">CR</div>
               <div>
                 <strong>Caio Ribeiro</strong>
-                <em>Fundador · Viver de IA · 220 mentorados</em>
+                <em>Mentor · agentes de IA · 38 mentorados</em>
               </div>
             </div>
 
@@ -163,8 +163,8 @@ function PrimaryMatchSection() {
                 <em>resposta</em>
               </div>
               <div>
-                <strong>R$ 1,8M</strong>
-                <em>destravado</em>
+                <strong>62</strong>
+                <em>soluções no ar</em>
               </div>
             </div>
           </div>
@@ -173,29 +173,29 @@ function PrimaryMatchSection() {
           <div className="vds-mm-r">
             <span className="vds-mm-r-eyebrow">Por que esse match</span>
             <h3>
-              Caio construiu agentes <em>nas mesmas condições</em> que você está vivendo na Efizi.
+              Caio construiu agentes <em>nas mesmas condições</em> que você está vivendo na sua operação.
             </h3>
 
             <ul className="vds-mm-reasons">
               <li>
                 <span className="vds-mm-reason-num">01</span>
                 <div>
-                  <strong>Construiu a Nina · agente em produção</strong>
-                  <em>11.920 conversas/mês · mesma stack que você quer usar</em>
+                  <strong>Implantou agente SDR em produção</strong>
+                  <em>WhatsApp + CRM · mesma stack que você quer usar</em>
                 </div>
               </li>
               <li>
                 <span className="vds-mm-reason-num">02</span>
                 <div>
-                  <strong>Mentora 220 operadores em SaaS</strong>
-                  <em>5 deles com ticket entre R$ 8K e R$ 80K · seu range</em>
+                  <strong>Mentora 38 empresas de SaaS</strong>
+                  <em>5 delas com ticket entre R$ 8K e R$ 80K · seu range</em>
                 </div>
               </li>
               <li>
                 <span className="vds-mm-reason-num">03</span>
                 <div>
                   <strong>Lê e responde em até 14h</strong>
-                  <em>Crítico pra você que tem turma 2026.2 com janela apertada</em>
+                  <em>Crítico pra quem tem 3 soluções pra implantar em 90 dias</em>
                 </div>
               </li>
             </ul>
@@ -228,17 +228,17 @@ function AlternativesSection() {
       tags: ['VPS', 'observability', 'edge functions'],
     },
     {
-      av: 'CM',
-      name: 'Camila Moraes',
-      role: 'Head IA · Mantra Tech',
+      av: 'BC',
+      name: 'Bruna Costa',
+      role: 'Mentora · fintech e B2B',
       score: 72,
       reason: 'Trilhou o mesmo caminho — primeiro agente em produção há 7 meses.',
       tags: ['fintech', 'agentes B2B', 'compliance'],
     },
     {
-      av: 'DP',
-      name: 'Daniel Pinheiro',
-      role: 'Founder · Pivot Studio',
+      av: 'TR',
+      name: 'Thiago Reis',
+      role: 'Mentor · produto e UX',
       score: 65,
       reason: 'Operação menor, mas tem visão de produto sólida. Boa pra brainstorm.',
       tags: ['UX em IA', 'product-led', 'startup'],

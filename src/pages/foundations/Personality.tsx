@@ -109,8 +109,8 @@ const traits: Trait[] = [
       </>
     ),
     summary:
-      '"+11.920 conversas/mês" vence "muita gente já fez". O específico convence; o genérico esfria.',
-    behavior: '"11.920 conversas/mês", "+R$ 1,8M destravado", "220 mentorados desde 2024".',
+      '"521 cases reais de implementação" vence "muita gente já fez". O específico convence; o genérico esfria.',
+    behavior: '"521 cases reais", "157 soluções prontas", "R$ 120.000 de economia anual · Trivia Studio".',
     avoid: '"Centenas de alunos", "muita gente já fez", "resultados impressionantes".',
   },
 ];
@@ -127,15 +127,15 @@ const axes = [
 const quiz: Array<{ a: string; b: string; right: 'a' | 'b'; why: string }> = [
   {
     a: '"Aprenda IA do zero e transforme sua carreira em 30 dias!"',
-    b: '"Construa seu primeiro agente em produção em 90 dias. Sem squad. Sem código mágico."',
+    b: '"Aumento de receita ou redução de custos em 90 dias. Ou 100% do investimento de volta."',
     right: 'b',
     why: 'Promessa específica + condição realista. Sem exclamação. Sem "transformação".',
   },
   {
     a: '"Junte-se a centenas de profissionais que já estão usando IA pra revolucionar o trabalho."',
-    b: '"220 operadores formados em 2 anos. R$ 1,8M destravado. 14h de resposta média da Nina."',
+    b: '"521 cases reais de implementação de IA. 157 soluções prontas. 29 setores."',
     right: 'b',
-    why: 'Número específico + período + métrica de operação. Não "centenas" genérico.',
+    why: 'Número específico + fonte checável + escopo claro. Não "centenas" genérico.',
   },
   {
     a: '"✨ A revolução da IA chegou! Não fique pra trás."',

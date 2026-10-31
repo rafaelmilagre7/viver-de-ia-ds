@@ -29,9 +29,9 @@ function CancellationFlowSection() {
   const [step, setStep] = useState<number>(2);
 
   const reasons = [
-    { id: 'price', label: 'Achei o plano caro pro meu momento', context: 'pode ser bom passar pra plano comunidade' },
+    { id: 'price', label: 'Achei o plano caro pro meu momento', context: 'pode ser bom passar pro plano Starter' },
     { id: 'time', label: 'Não estou conseguindo dar atenção', context: 'pause em vez de cancelar?' },
-    { id: 'value', label: 'Não consegui aplicar o que aprendi', context: 'que tal uma mentoria com Caio?' },
+    { id: 'value', label: 'Não consegui aplicar o que aprendi', context: 'que tal um check-in de mentoria?' },
     { id: 'finished', label: 'Já consegui o que precisava — obrigado', context: 'isso é a melhor versão' },
     { id: 'other', label: 'Outra razão', context: 'me conta na próxima tela' },
   ];
@@ -117,7 +117,7 @@ function CancellationFlowSection() {
                 Pausa de <em>3 meses</em> · zero custo
               </h3>
               <p>
-                Sua conta fica congelada · você não paga, a gente guarda seu progresso, mentorias e o lugar na turma. Quando voltar, recupera tudo onde parou.
+                Sua conta fica congelada · você não paga, a gente guarda seu progresso, mentorias e a trilha de onboarding. Quando voltar, recupera tudo onde parou.
               </p>
               <ul className="vds-cnx-offer-meta">
                 <li><Check size={14} strokeWidth={1.75} /> Conta pausada por até 90 dias</li>
@@ -137,8 +137,8 @@ function CancellationFlowSection() {
                   <TrendingDown size={16} strokeWidth={1.75} />
                 </div>
                 <div className="vds-cnx-alt-body">
-                  <h4>Mudar pro plano Comunidade</h4>
-                  <p>R$ 197/mês em vez de R$ 6K/tri · mantém Discord, aulas e Nina compartilhada.</p>
+                  <h4>Mudar pro plano Starter</h4>
+                  <p>R$ 2.580/mês em vez de R$ 3.780 · mantém soluções, formações e comunidade.</p>
                 </div>
                 <button className="vds-cnx-alt-cta">
                   Mudar plano
@@ -151,8 +151,8 @@ function CancellationFlowSection() {
                   <MessageCircle size={16} strokeWidth={1.75} />
                 </div>
                 <div className="vds-cnx-alt-body">
-                  <h4>Sessão 1:1 com Caio · gratuita</h4>
-                  <p>30min pra entender o que travou. Sem compromisso de voltar — pra ajudar mesmo.</p>
+                  <h4>Conversa com um mentor · 30min</h4>
+                  <p>Pra entender o que travou. Sem compromisso de voltar — pra ajudar mesmo.</p>
                 </div>
                 <button className="vds-cnx-alt-cta">
                   Agendar sessão
@@ -165,8 +165,8 @@ function CancellationFlowSection() {
                   <Gift size={16} strokeWidth={1.75} />
                 </div>
                 <div className="vds-cnx-alt-body">
-                  <h4>Desconto Founders · −R$ 800/mês</h4>
-                  <p>Por já ser aluno de longa data, libero esse desconto nas próximas 3 parcelas.</p>
+                  <h4>Desconto de retenção · −R$ [valor]/mês</h4>
+                  <p>Por já ser membro de longa data, libero esse desconto nas próximas [N] parcelas.</p>
                 </div>
                 <button className="vds-cnx-alt-cta accent">
                   Aceitar desconto
@@ -203,7 +203,7 @@ function CancellationFlowSection() {
               </div>
               <div>
                 <h4>Antes de você ir, queremos te agradecer.</h4>
-                <p>3 anos de jornada · 47 aulas completadas · 18 mentorias 1:1 · 8 quotes suas no nosso Discord. Foi parte da história da Viver de IA.</p>
+                <p>3 anos de jornada · 47 aulas concluídas · 18 check-ins de mentoria · 8 soluções no ar. Foi parte da história da Viver de IA.</p>
               </div>
             </div>
 

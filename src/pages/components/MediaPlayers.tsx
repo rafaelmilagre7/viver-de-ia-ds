@@ -41,7 +41,7 @@ function MiniAudioSection() {
           </div>
           <div className="vds-mini-meta">
             <p className="ep">Episódio 042</p>
-            <h3>Quando a IA vira receita: lições da Efizi</h3>
+            <h3>De 6h para cliques: o case Viva Nexo</h3>
             <div className="vds-mini-track">
               <span className="bar"><span style={{ width: `${pos * 100}%` }} /></span>
               <span className="time">17:32 / 42:18</span>
@@ -81,20 +81,20 @@ function FullEpisodeSection() {
             </div>
             <div className="ep-meta">
               <p className="eyebrow"><Headphones size={14} strokeWidth={1.75} /> Episódio 042 · 42min</p>
-              <h2>Quando a IA vira receita,<br /><em>lições da Efizi</em>.</h2>
+              <h2>De 6h para cliques,<br /><em>o case Viva Nexo</em>.</h2>
               <p className="lede">
-                Caio conversa com Márisson sobre os 90 dias de implementação na Efizi — o que travou, o que destravou, e como passou a medir +11.920 conversas analisadas no canal.
+                Episódio sobre o case Viva Nexo, publicado em viverdeia.ai/cases: de um relatório de 6 horas para poucos cliques, com R$ 162.000 de economia.
               </p>
               <div className="ep-attrs">
                 <span className="ep-attr">
-                  <span className="av">CR</span>
-                  Caio Ribeiro
+                  <span className="av">AP</span>
+                  [Apresentador]
                 </span>
                 <span className="ep-attr">
-                  <span className="av">ML</span>
-                  Márisson Lage
+                  <span className="av">CV</span>
+                  [Convidado]
                 </span>
-                <span className="ep-date">17 mai 2026</span>
+                <span className="ep-date">[data]</span>
               </div>
             </div>
           </header>

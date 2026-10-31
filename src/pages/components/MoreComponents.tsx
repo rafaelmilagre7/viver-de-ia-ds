@@ -36,11 +36,11 @@ function BannerSection() {
         <div className="vds-ann-banner">
           <span className="vds-ann-pill"><Award size={14} strokeWidth={1.75} /> Novo</span>
           <p>
-            <strong>Turma 2026.2 com 8 vagas restantes.</strong>
-            <span className="muted"> Encerra em 12 dias — inscrição direta no painel.</span>
+            <strong>Imersão presencial na sede · [data].</strong>
+            <span className="muted"> Inclusa em todos os planos — confirme presença no painel.</span>
           </p>
           <div className="vds-ann-actions">
-            <a className="vds-ann-cta">Garantir vaga <ArrowRight size={14} strokeWidth={1.75} /></a>
+            <a className="vds-ann-cta">Ver detalhes <ArrowRight size={14} strokeWidth={1.75} /></a>
             <button className="vds-ann-close" onClick={() => setClosed(true)} aria-label="Fechar">
               <X size={14} strokeWidth={1.75} />
             </button>
@@ -106,7 +106,7 @@ function NotificationSection() {
               <span className="ico ok"><Check size={16} strokeWidth={1.75} /></span>
               <div>
                 <strong>Caio aprovou seu case</strong>
-                <span>"Efizi: +11.920 conversas" foi publicado.</span>
+                <span>"Triagem de leads com IA" foi publicado.</span>
                 <span className="time">4 min</span>
               </div>
             </li>
@@ -144,10 +144,10 @@ function NotificationSection() {
 /* ---- Activity feed ---- */
 function ActivitySection() {
   const items = [
-    { kind: 'success', who: 'Caio Ribeiro', what: 'aprovou case', ref: 'Efizi · E-commerce', when: '4 min', stat: '+11.920 conversas' },
+    { kind: 'success', who: 'Caio Ribeiro', what: 'aprovou case', ref: 'Case · triagem de leads', when: '4 min', stat: '−35% no tempo de resposta' },
     { kind: 'info', who: 'Larissa Tavares', what: 'comentou em', ref: 'Thread de integração', when: '38 min' },
     { kind: 'pub', who: 'Sistema', what: 'publicou métrica', ref: 'Receita influenciada', when: '2h', stat: 'R$ 248k em 2026' },
-    { kind: 'deploy', who: 'Guilherme Delorenzo', what: 'subiu agente em produção', ref: 'Efizi · WhatsApp', when: '4h', stat: '100% automatizado' },
+    { kind: 'deploy', who: 'Gustavo Dantas', what: 'subiu agente em produção', ref: 'Atendimento · WhatsApp', when: '4h', stat: '100% automatizado' },
     { kind: 'info', who: 'Equipe VIA', what: 'agendou', ref: 'Workshop · publicando deploy', when: 'ontem' },
   ];
 
@@ -219,7 +219,7 @@ function AvatarGroupSection() {
               <span className={`vds-avgroup-dot ${p.status}`} />
             </span>
             <div>
-              <strong>{p.ini === 'CR' ? 'Caio Ribeiro' : p.ini === 'GD' ? 'Guilherme Delorenzo' : p.ini === 'ML' ? 'Márisson Lage' : 'Larissa Tavares'}</strong>
+              <strong>{p.ini === 'CR' ? 'Caio Ribeiro' : p.ini === 'GD' ? 'Gustavo Dantas' : p.ini === 'ML' ? 'Mariana Leal' : 'Larissa Tavares'}</strong>
               <span>{p.status === 'live' ? 'Ao vivo' : p.status === 'idle' ? 'Ocioso há 12 min' : 'Offline · saiu às 18:42'}</span>
             </div>
             <a className="link">Mensagem <ArrowUpRight size={14} strokeWidth={1.75} /></a>

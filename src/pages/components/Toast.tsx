@@ -27,7 +27,7 @@ export default function Toast() {
             <span className="ico"><Check size={16} strokeWidth={1.75} /></span>
             <div className="body">
               <div className="title">Case publicado com sucesso</div>
-              <div className="desc">O case da Efizi foi aprovado e publicado no diretório.</div>
+              <div className="desc">Seu case foi aprovado e publicado no diretório.</div>
             </div>
             <span className="close"><X size={14} strokeWidth={1.75} /></span>
           </div>
@@ -35,8 +35,8 @@ export default function Toast() {
           <div className="via-toast warning">
             <span className="ico"><AlertTriangle size={16} strokeWidth={1.75} /></span>
             <div className="body">
-              <div className="title">Inscrições fecham em 3 dias</div>
-              <div className="desc">A turma 2026.2 encerra inscrições em 30 de junho.</div>
+              <div className="title">Trilha de onboarding pendente</div>
+              <div className="desc">Faltam 2 etapas da trilha de onboarding pra liberar a garantia.</div>
             </div>
           </div>
 

@@ -16,8 +16,8 @@ export default function Voice() {
           consegue depois — receita, margem, autonomia. A stack é meio, nunca fim.
         </p>
         <p>
-          <em>Toda afirmação carrega número ou citação.</em> "+11.920 conversas", "R$ 4.600/mês",
-          "100% automatizado". Sem isso é blog, não é cases.
+          <em>Toda afirmação carrega número ou citação.</em> "521 cases reais", "R$ 42.000 por ano",
+          "de 6h para cliques". Sem isso é blog, não é cases.
         </p>
         <p>
           <em>Pontos finais, não exclamações.</em> A marca é confiante sem ser estridente.
@@ -41,17 +41,17 @@ export default function Voice() {
             <tr>
               <td className="tok">Operacional direto</td>
               <td className="val">Botão, label, alerta</td>
-              <td className="use">"Entrar na turma" · "Inscrições fecham em 3 dias"</td>
+              <td className="use">"Ver os planos" · "Sua fatura vence em 3 dias"</td>
             </tr>
             <tr>
               <td className="tok">Atribuído humano</td>
               <td className="val">Depoimentos, citações</td>
-              <td className="use"><em>"Sem saber nada. Em pouquíssimas horas."</em> — Márisson</td>
+              <td className="use"><em>"[Frase do cliente, em primeira pessoa.]"</em> — [Nome]</td>
             </tr>
             <tr>
               <td className="tok">Métrica seca</td>
               <td className="val">Stat card, KPI, headline de case</td>
-              <td className="use">"+11.920 conversas analisadas em 90 dias"</td>
+              <td className="use">"R$ 120.000 de economia anual · Trivia Studio"</td>
             </tr>
           </tbody>
         </table>

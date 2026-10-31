@@ -366,12 +366,12 @@ function RuleVoiceSection() {
           </article>
           <article className="vds-phil-voice good">
             <span className="vds-phil-voice-tag">Métrica seca</span>
-            <p className="quote">"+11.920 conversas analisadas em 90 dias"</p>
-            <em>Stat card · número + período + ação</em>
+            <p className="quote">"521 cases reais de implementação de IA"</p>
+            <em>Stat card · número + substantivo + fonte</em>
           </article>
           <article className="vds-phil-voice good">
             <span className="vds-phil-voice-tag">Atribuída</span>
-            <p className="quote">"Ela fez isso com pouquíssimas horas. Sem saber nada." — Márisson Lage</p>
+            <p className="quote">"[Frase do cliente, em primeira pessoa.]" — [Nome] · [empresa]</p>
             <em>Depoimento · primeira pessoa · nome</em>
           </article>
           <article className="vds-phil-voice bad">

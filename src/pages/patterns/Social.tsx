@@ -32,12 +32,12 @@ export default function Social() {
             <div className="vds-ig-post via-mesh-navy via-noise">
               <div className="ig-content">
                 <BrandLogo variant="white" size="sm" />
-                <p className="eyebrow">Case · Efizi</p>
+                <p className="eyebrow">Case · Place Dreams</p>
                 <h2>
-                  +11.920<br /><em>conversas analisadas</em>
+                  R$ 42.000<br /><em>de economia por ano</em>
                 </h2>
                 <p className="lede">
-                  Em 90 dias. Sem mais ninguém precisar olhar planilha de WhatsApp.
+                  Em 30 dias. Gestão manual virou eficiência digital.
                 </p>
                 <span className="tag">Cases publicados · Viver de IA</span>
               </div>
@@ -73,10 +73,10 @@ export default function Social() {
                   Aqui eu consigo<br /><em>ver rapidamente</em><br />onde estou perdendo venda.
                 </h2>
                 <div className="ig-attr">
-                  <span className="ig-attr-av">GD</span>
+                  <span className="ig-attr-av">NM</span>
                   <div>
-                    <strong>Guilherme Delorenzo</strong>
-                    <span>Founder · Efizi</span>
+                    <strong>[Nome]</strong>
+                    <span>[cargo] · [empresa]</span>
                   </div>
                 </div>
               </div>
@@ -112,12 +112,12 @@ export default function Social() {
               <span>2min</span>
             </header>
             <div className="story-content via-mesh-navy via-noise">
-              <p className="eyebrow">Turma 2026.2</p>
-              <h2>8 vagas restantes.<br /><em>12 dias.</em></h2>
+              <p className="eyebrow">Plano Pro</p>
+              <h2>10 check-ins<br /><em>por mês.</em></h2>
               <p className="lede">
-                Mentoria de operadores. Sessões ao vivo, acompanhamento individual, 206 cases publicados.
+                Mentoria em grupo ao vivo, formações práticas, 157 soluções prontas e 521 cases reais.
               </p>
-              <button className="story-cta">Garantir vaga</button>
+              <button className="story-cta">Ver planos</button>
             </div>
             <footer className="story-f">
               <input placeholder="Envie uma mensagem…" />
@@ -135,21 +135,21 @@ export default function Social() {
               <span className="li-av"><img src={monogramWhite} alt="" /></span>
               <div>
                 <strong>Viver de IA</strong>
-                <span>Mentoria + comunidade · São Paulo, SP</span>
+                <span>Plataforma B2B de IA para empresas</span>
                 <span className="li-time">2h · 🌐</span>
               </div>
               <button className="li-follow">+ Seguir</button>
             </header>
             <p className="li-text">
-              206 cases publicados. Cada um com métrica validada com o operador. Hoje publicamos o 207 — <strong>Balzani &amp; Zimbel: R$ 4.600/mês em economia recorrente com CRM próprio.</strong> Link no primeiro comentário.
+              521 cases reais publicados. Cada um com desafio, solução e resultado. Esse é da Trivia Studio — <strong>de processos manuais a R$ 120.000 de economia anual.</strong> Link no primeiro comentário.
             </p>
             <div className="vds-li-post via-mesh-navy via-noise">
               <div className="li-content">
                 <BrandLogo variant="white" size="sm" />
-                <p className="eyebrow">Case · Balzani &amp; Zimbel</p>
-                <h2>R$ 4.600<em>/mês</em></h2>
+                <p className="eyebrow">Case · Trivia Studio</p>
+                <h2>R$ 120 mil<em>/ano</em></h2>
                 <p className="lede">
-                  Economia recorrente. CRM próprio, 6 ferramentas internalizadas.
+                  Economia anual. De processos manuais a conteúdo em escala.
                 </p>
               </div>
             </div>

@@ -4,9 +4,9 @@ import ComponentDoc from '../../components/docs/ComponentDoc';
 import { Select as meta } from './props.generated.json';
 
 const PLANOS = [
-  { value: 'free', label: 'Free · 0 sessões' },
-  { value: 'pro', label: 'Pro · R$ 290/mês · 4 sessões' },
-  { value: 'team', label: 'Team · R$ 890/mês · ilimitado' },
+  { value: 'starter', label: 'Starter · R$ 2.580/mês' },
+  { value: 'pro', label: 'Pro · R$ 3.780/mês · mentoria em grupo' },
+  { value: 'enterprise', label: 'Enterprise · R$ 6.180/mês' },
 ];
 
 function SelectDemo() {
@@ -73,9 +73,9 @@ export default function ApiSelect() {
   value={plan}
   onValueChange={setPlan}
   options={[
-    { value: 'free',  label: 'Free' },
-    { value: 'pro',   label: 'Pro · R$ 290/mês' },
-    { value: 'team',  label: 'Team · R$ 890/mês' },
+    { value: 'starter',    label: 'Starter' },
+    { value: 'pro',        label: 'Pro · R$ 3.780/mês' },
+    { value: 'enterprise', label: 'Enterprise · R$ 6.180/mês' },
   ]}
 />`,
         },

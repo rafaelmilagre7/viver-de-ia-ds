@@ -17,12 +17,12 @@ export default function Modal() {
           <span className="stage-label">Modal · glass over scrim</span>
           <div className="vds-modal-demo">
             <header>
-              <h3>Confirmar inscrição?</h3>
+              <h3>Confirmar adesão?</h3>
               <button className="close" aria-label="Fechar"><X size={14} strokeWidth={1.75} /></button>
             </header>
             <p>
-              Sua inscrição na turma 2026.2 será confirmada. O pagamento de
-              R$&nbsp;4.800 será cobrado no método cadastrado.
+              Sua adesão ao plano Pro, em contratação anual, será confirmada.
+              O valor de R$&nbsp;3.780/mês será cobrado no método cadastrado.
             </p>
             <footer>
               <button className="btn-ghost">Cancelar</button>

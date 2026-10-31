@@ -403,7 +403,7 @@ export default function VarianceWaterfall() {
           <span>
             <strong>Leitura ·</strong> o mês vendeu mais e ganhou menos. Marketing e aquisição sozinho estourou{' '}
             {money(impactoDe('des-mkt'))} — mais do que todo o avanço da receita. E esse avanço não veio do recorrente:
-            implementação e squads entregou {money(impactoDe('rec-impl'))} acima do plano, enquanto o ganho da mentoria (
+            implementação e squads entregou {money(impactoDe('rec-impl'))} acima do plano, enquanto o ganho das assinaturas (
             {money(impactoDe('rec-mentoria'))}) foi quase todo anulado por comunidade e conferência,{' '}
             {money(impactoDe('rec-comunidade') + impactoDe('rec-conf'))} somadas. Infraestrutura e modelos de IA é o
             maior desvio percentual do lado do custo, {pctSigned(PORT_ID.get('cus-infra')?.desvio ?? 0)} sobre o

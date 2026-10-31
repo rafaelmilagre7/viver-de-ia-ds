@@ -14,13 +14,14 @@ import './checkout.css';
 type Step = 1 | 2 | 3;
 
 const planos = [
-  { id: '12x', t: '12× sem juros', sub: 'R$ 480/mês', total: 'R$ 5.760 total', rec: false },
-  { id: 'vista', t: 'À vista', sub: 'R$ 4.800', total: 'economize R$ 960', rec: true },
+  { id: 'starter', t: 'Starter', sub: 'R$ 2.580/mês', total: 'R$ 30.960/ano', rec: false },
+  { id: 'pro', t: 'Pro', sub: 'R$ 3.780/mês', total: 'R$ 45.360/ano', rec: true },
+  { id: 'enterprise', t: 'Enterprise', sub: 'R$ 6.180/mês', total: 'R$ 74.160/ano', rec: false },
 ];
 
 export default function ShowcaseCheckout() {
   const [step, setStep] = useState<Step>(1);
-  const [plano, setPlano] = useState('vista');
+  const [plano, setPlano] = useState('pro');
   const [pgto, setPgto] = useState<'cartao' | 'pix'>('cartao');
 
   const planoSel = planos.find((p) => p.id === plano)!;
@@ -53,8 +54,8 @@ export default function ShowcaseCheckout() {
           {/* STEP 1 · Plano */}
           {step === 1 && (
             <div className="ckt-panel">
-              <h2>Escolha como pagar</h2>
-              <p className="ckt-panel-sub">Mesmo acesso completo. Escolha o que cabe no seu fluxo.</p>
+              <h2>Escolha seu plano</h2>
+              <p className="ckt-panel-sub">Contratação anual · upgrade a qualquer momento, pela diferença de valor.</p>
               <div className="ckt-planos">
                 {planos.map((p) => (
                   <button
@@ -176,7 +177,7 @@ export default function ShowcaseCheckout() {
                 </button>
                 <button className="ckt-confirm">
                   <Lock size={16} strokeWidth={1.75} />
-                  Finalizar · {planoSel.id === 'vista' ? 'R$ 4.800' : '12× R$ 480'}
+                  Finalizar · {planoSel.sub}
                 </button>
               </div>
             </div>
@@ -188,28 +189,28 @@ export default function ShowcaseCheckout() {
           <span className="ckt-summary-eyebrow">resumo do pedido</span>
           <div className="ckt-summary-item">
             <div>
-              <strong>Programa Viver de IA</strong>
-              <em>Turma 2026.3 · 4 meses</em>
+              <strong>Plataforma Viver de IA</strong>
+              <em>Plano {planoSel.t} · contratação anual</em>
             </div>
           </div>
 
           <ul className="ckt-summary-incl">
-            <li><Check size={14} strokeWidth={1.75} /> Mentoria 1:1 individual</li>
-            <li><Check size={14} strokeWidth={1.75} /> Comunidade de 220 operadores</li>
-            <li><Check size={14} strokeWidth={1.75} /> Acesso vitalício ao material</li>
-            <li><Check size={14} strokeWidth={1.75} /> Certificado de conclusão</li>
+            <li><Check size={14} strokeWidth={1.75} /> Todas as soluções Plug-and-Play</li>
+            <li><Check size={14} strokeWidth={1.75} /> Comunidade de empresários e líderes</li>
+            <li><Check size={14} strokeWidth={1.75} /> Formações práticas e Consultor IA</li>
+            <li><Check size={14} strokeWidth={1.75} /> Imersão presencial na sede</li>
           </ul>
 
           <div className="ckt-summary-total">
             <span>Total</span>
-            <strong>{planoSel.id === 'vista' ? 'R$ 4.800' : '12× R$ 480'}</strong>
+            <strong>{planoSel.total}</strong>
           </div>
 
           <div className="ckt-summary-guarantee">
             <Shield size={16} strokeWidth={1.75} />
             <div>
-              <strong>7 dias de garantia</strong>
-              <p>Não era pra você? Devolvemos 100%. Sem perguntas.</p>
+              <strong>Garantia de 90 dias</strong>
+              <p>Sem aumento de receita nem redução de custos? 100% de volta, cumpridos os requisitos da cláusula 7.</p>
             </div>
           </div>
         </aside>

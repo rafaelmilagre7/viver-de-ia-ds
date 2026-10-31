@@ -32,7 +32,7 @@ function BentoSection() {
           <span className="vds-bento-glow" />
 
           <header>
-            <span className="vds-bento-eyebrow">Edição 2026 · turma aberta</span>
+            <span className="vds-bento-eyebrow">Plataforma B2B · 2026</span>
             <img src={monogramWhite} alt="" className="vds-bento-mark" />
           </header>
 
@@ -42,12 +42,12 @@ function BentoSection() {
           </h1>
 
           <p className="vds-bento-lede">
-            Mentoria de operadores que estão colocando IA em produção — não cursinho de prompt. 90 dias pra primeira receita.
+            Soluções prontas, formações e mentorias pra tirar a IA do discurso e colocar em operação — não cursinho de prompt.
           </p>
 
           <div className="vds-bento-cta-row">
             <a className="vds-bento-cta primary" href="#">
-              Entrar na turma
+              Ver planos
               <ArrowRight size={16} strokeWidth={1.75} />
             </a>
             <a className="vds-bento-cta ghost" href="#">Ver método</a>
@@ -56,30 +56,30 @@ function BentoSection() {
 
         {/* Tile 2 — Big stat */}
         <article className="vds-bento-card stat">
-          <span className="vds-bento-eyebrow alt">Receita em produção</span>
+          <span className="vds-bento-eyebrow alt">Cases reais de implementação</span>
           <p className="vds-bento-num">
-            R$ 5,13M
-            <em>acumulado 2026</em>
+            521
+            <em>em empresas brasileiras</em>
           </p>
           <div className="vds-bento-delta">
             <TrendingUp size={16} strokeWidth={1.75} />
-            <strong>+293%</strong>
-            <span>vs jan</span>
+            <strong>29</strong>
+            <span>setores</span>
           </div>
         </article>
 
         {/* Tile 3 — Spark */}
         <article className="vds-bento-card spark">
           <div className="vds-bento-spark-row">
-            <span className="vds-bento-eyebrow alt">Operadores ativos</span>
+            <span className="vds-bento-eyebrow alt">Soluções prontas</span>
             <span className="vds-bento-tag-now">
               <span className="vds-bento-dot" />
-              em produção
+              na plataforma
             </span>
           </div>
           <p className="vds-bento-num small">
-            4.940
-            <em>em 38 empresas</em>
+            157
+            <em>soluções Plug-and-Play</em>
           </p>
           <svg viewBox="0 0 200 40" className="vds-bento-spark-svg" preserveAspectRatio="none">
             <defs>
@@ -95,15 +95,15 @@ function BentoSection() {
 
         {/* Tile 4 — Quote */}
         <article className="vds-bento-card quote">
-          <span className="vds-bento-quote-mark">Operador · Efizi</span>
+          <span className="vds-bento-quote-mark">Case real · Saúde</span>
           <blockquote>
-            Saí de "experimentando IA" pra <em>11.920 conversas por mês em produção</em>. Em 90 dias.
+            De 6h para cliques: a Viva Nexo <em>economiza R$ 162.000</em> com IA.
           </blockquote>
           <footer>
-            <span className="av">ML</span>
+            <span className="av">VN</span>
             <div>
-              <strong>Márisson Lage</strong>
-              <em>CEO · Efizi Soluções</em>
+              <strong>Viva Nexo</strong>
+              <em>viverdeia.ai/cases</em>
             </div>
           </footer>
         </article>
@@ -122,11 +122,11 @@ function BentoSection() {
           </header>
           <p className="vds-bento-live-eyebrow">
             <Headphones size={14} strokeWidth={1.75} />
-            Mentoria · 2026.2
+            Mentoria em grupo · Pro
           </p>
           <h4>Auditoria de 3 prompts</h4>
           <p className="vds-bento-live-meta">
-            Caio + Márisson · 42 min restantes
+            Caio + convidados · 42 min restantes
           </p>
           <a href="#" className="vds-bento-live-cta">
             Entrar agora
@@ -145,8 +145,8 @@ function BentoSection() {
           <div className="vds-bento-confirmed">
             <span className="vds-bento-avs">
               <span className="av">CR</span>
-              <span className="av">ML</span>
-              <span className="av">CR</span>
+              <span className="av">LT</span>
+              <span className="av">TR</span>
               <span className="av more">+22</span>
             </span>
             <em>22 confirmados</em>

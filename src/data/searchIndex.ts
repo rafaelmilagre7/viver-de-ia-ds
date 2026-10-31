@@ -122,7 +122,7 @@ const KEYWORD_OVERLAYS: Record<string, Pick<SearchEntry, 'description' | 'keywor
   '/patterns/editorial': { description: 'Hero · logo wall · timeline · FAQ · comparativo', keywords: ['editorial blocks', 'hero', 'logo wall', 'timeline', 'faq', 'comparison'] },
   '/patterns/people': { description: 'Card de mentor · time · membros · popover', keywords: ['people', 'mentor card', 'team grid', 'member list', 'user popover', 'pessoas'] },
   '/patterns/admin': { description: 'Configurações · chaves de API · cobrança · auditoria', keywords: ['admin', 'settings', 'api keys', 'billing', 'audit log'] },
-  '/patterns/achievement': { description: 'Anéis · sequência · certificado · turma', keywords: ['achievement', 'rings', 'streak', 'certificate', 'certificado', 'cohort'] },
+  '/patterns/achievement': { description: 'Anéis · sequência · certificado · trilha', keywords: ['achievement', 'rings', 'streak', 'certificate', 'certificado', 'trilha'] },
   '/patterns/live': { description: 'Ao vivo · contagem · arquivo', keywords: ['live class', 'ao vivo', 'live', 'countdown', 'arquivo'] },
   '/patterns/bento': { description: 'Grade modular · 7 blocos', keywords: ['bento hero', 'bento', 'grid modular', 'tiles'] },
   '/patterns/course-player': { description: 'Playlist permanente + notas + capítulos', keywords: ['course player', 'playlist', 'notas', 'capítulos'] },
@@ -140,7 +140,7 @@ const KEYWORD_OVERLAYS: Record<string, Pick<SearchEntry, 'description' | 'keywor
 
   // Páginas-modelo
   '/showcase/marketing': { description: 'Site viverdeia.ai', keywords: ['marketing', 'site', 'landing', 'viverdeia.ai'] },
-  '/showcase/lancamento': { description: 'Página de lançamento clonável', keywords: ['lançamento', 'turma', 'clonável', 'launch'] },
+  '/showcase/lancamento': { description: 'Página de lançamento clonável', keywords: ['lançamento', 'plano', 'clonável', 'launch'] },
   '/showcase/checkout': { description: 'Checkout em 3 etapas', keywords: ['checkout', 'pagamento', 'compra'] },
   '/showcase/leaders-ai': { description: 'Leaders AI Conference', keywords: ['leaders ai', 'conference', 'evento'] },
   '/showcase/login': { description: 'Login e autenticação', keywords: ['login', 'autenticação', 'auth', 'entrar'] },

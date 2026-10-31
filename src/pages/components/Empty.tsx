@@ -39,7 +39,7 @@ export default function Empty() {
         <div className="vds-empty">
           <EditorialMark />
           <h3>Nenhum case com esse filtro.</h3>
-          <p>Tente outro setor, remova um filtro, ou veja os 206 cases publicados sem filtro.</p>
+          <p>Tente outro setor, remova um filtro, ou veja os 521 cases reais sem filtro.</p>
           <button className="cta">
             Ver todos os cases
             <ArrowRight size={16} strokeWidth={1.75} />

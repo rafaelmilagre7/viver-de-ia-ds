@@ -42,24 +42,24 @@ function MissionSection() {
           Tornar IA <em>operativa</em> pra quem não tem cargo de IA.
         </h2>
         <p>
-          Pegamos o operador real — fundador, head, gerente, autônomo que toca o próprio
-          negócio — e damos a ele a capacidade de construir, manter e melhorar agentes IA que
-          rodam em produção sem precisar de squad de ML, sem precisar virar engenheiro,
-          sem depender de fornecedor terceiro. O resultado é mensurável em receita destravada,
-          horas devolvidas, e processos que param de quebrar.
+          Pegamos a empresa real — fundador, head, gerente, time que toca a operação — e
+          damos a ela soluções prontas, formações práticas e mentoria pra colocar IA em
+          operação sem precisar de squad de ML, sem precisar virar engenheiro, sem depender
+          de fornecedor terceiro. O resultado é medido em aumento de receita, redução de
+          custos, e processos que param de quebrar.
         </p>
         <ul className="vds-bs-proof">
           <li>
-            <strong className="mono">+220</strong>
-            <em>operadores formados desde 2024</em>
+            <strong className="mono">521</strong>
+            <em>cases reais de implementação de IA</em>
           </li>
           <li>
-            <strong className="mono">R$ 1,8M</strong>
-            <em>destravado por alunos em 12 meses</em>
+            <strong className="mono">157</strong>
+            <em>soluções de IA prontas para usar</em>
           </li>
           <li>
-            <strong className="mono">11.920</strong>
-            <em>conversas/mês rodando em produção via Nina</em>
+            <strong className="mono">29</strong>
+            <em>setores já transformados com IA</em>
           </li>
         </ul>
       </article>
@@ -75,9 +75,9 @@ function MissionSection() {
         </p>
         <p>
           Viver de IA ocupa esse meio. Não somos curso de iniciante. Não somos consultoria
-          enterprise. Somos a formação técnico-operativa pra quem opera e quer adicionar IA
-          como ferramenta de receita ou eficiência, mantendo responsabilidade total pelo que
-          construiu.
+          tradicional. Somos a plataforma B2B de implementação pra quem opera e quer IA
+          como ferramenta de receita ou eficiência, com soluções prontas, formação e
+          mentoria ao vivo.
         </p>
       </div>
     </Section>
@@ -99,10 +99,10 @@ function VisionSection() {
         <span className="vds-bs-eyebrow alt">Visão · 2031</span>
         <h2>
           Toda operação de pequeno e médio porte com pelo menos <em>1 agente IA dedicado</em>,
-          construído, mantido e medido por um operador interno formado por nós.
+          implementado, mantido e medido por um time interno alfabetizado em IA.
         </h2>
         <p className="vds-bs-statement-lede">
-          A vitória não é o número de alunos. É o número de operações onde IA virou
+          A vitória não é o número de acessos. É o número de operações onde IA virou
           infraestrutura silenciosa — fazendo o trabalho que precisa ser feito enquanto
           o operador foca no que só humano pode fazer. Estratégia, relacionamento, julgamento.
         </p>
@@ -115,14 +115,14 @@ function VisionSection() {
             <span className="vds-bs-year mono">2024</span>
             <div>
               <strong>Validação</strong>
-              <em>Primeiras 50 turmas · prova de que operador comum constrói agente útil em 90 dias</em>
+              <em>Primeiros cases de implementação · método testado dentro de operações reais</em>
             </div>
           </li>
           <li className="now">
             <span className="vds-bs-year mono">2026</span>
             <div>
               <strong>Escala consciente</strong>
-              <em>220 operadores ativos · 2 produtos próprios (Nina, Iris) · método codificado</em>
+              <em>521 cases reais · 157 soluções prontas · 29 setores com implementação</em>
             </div>
             <span className="vds-bs-pin">Você está aqui</span>
           </li>
@@ -130,14 +130,14 @@ function VisionSection() {
             <span className="vds-bs-year mono">2028</span>
             <div>
               <strong>Ecossistema</strong>
-              <em>1.000+ operadores · marketplace de mentores · certificação reconhecida pelo mercado</em>
+              <em>Meta pública: R$ 1 bilhão em receita e economia para empresas com IA</em>
             </div>
           </li>
           <li>
             <span className="vds-bs-year mono">2031</span>
             <div>
               <strong>Infraestrutura cultural</strong>
-              <em>"Operador de IA" virou cargo padrão em PMEs brasileiras · Viver de IA é a referência de formação</em>
+              <em>IA operando em silêncio nas PMEs brasileiras · Viver de IA como referência de implementação</em>
             </div>
           </li>
         </ol>
@@ -165,7 +165,7 @@ function ValuesSection() {
       n: '03',
       title: 'Honestidade editorial',
       body:
-        'Não inflamos números, não promete dinheiro fácil, não usamos clichês de transformação. Quando algo não funciona, dizemos. Quando o caminho é difícil, dizemos. Quando o aluno não tem perfil, dizemos antes da matrícula.',
+        'Não inflamos números, não promete dinheiro fácil, não usamos clichês de transformação. Quando algo não funciona, dizemos. Quando o caminho é difícil, dizemos. Quando a empresa não tem perfil, dizemos antes da adesão.',
     },
     {
       n: '04',
@@ -183,7 +183,7 @@ function ValuesSection() {
       n: '06',
       title: 'Comunidade como alavanca, não vitrine',
       body:
-        'A turma não está aqui pra postar prints. Está aqui pra construir junto, trocar problemas reais, e levar uns aos outros adiante. Quem entra, é cobrado. Quem permanece, é porque está operando.',
+        'A comunidade não está aqui pra postar prints. Está aqui pra construir junto, trocar problemas reais, e levar uns aos outros adiante. Quem entra, é cobrado. Quem permanece, é porque está operando.',
     },
     {
       n: '07',
@@ -230,8 +230,8 @@ function PositioningSection() {
             Pra <em>operadores de PME brasileira</em> que precisam fazer IA gerar resultado
             agora,
             <br />
-            <strong>Viver de IA</strong> é a formação técnico-operativa que entrega capacidade
-            real de construção e manutenção,
+            <strong>Viver de IA</strong> é a plataforma de implementação que entrega soluções
+            prontas, formação prática e mentoria,
             <br />
             ao contrário dos cursos de IA atuais que ou são teóricos demais (acadêmicos) ou
             superficiais demais (gurus).
@@ -242,11 +242,11 @@ function PositioningSection() {
           <article>
             <span className="vds-bs-positioning-tag is">Somos</span>
             <ul>
-              <li>Técnico-operativo · stack real, código real, produção real</li>
+              <li>Plataforma B2B · soluções prontas, formação prática, operação real</li>
               <li>Editorial · voz adulta, sem urgência fabricada</li>
-              <li>Comunidade exigente · operadores que comparam casos</li>
+              <li>Comunidade exigente · empresários e líderes que comparam casos</li>
               <li>Brasileiro · contexto PME brasileira, não case de Silicon Valley</li>
-              <li>Pragmático · resultado em 90 dias ou menos</li>
+              <li>Pragmático · garantia de 90 dias com requisitos claros</li>
             </ul>
           </article>
           <article>
@@ -254,7 +254,7 @@ function PositioningSection() {
             <ul>
               <li>Curso de "prompt engineering" superficial</li>
               <li>Bootcamp acadêmico de ML / data science</li>
-              <li>Consultoria pra enterprise · não atendemos Fortune 500</li>
+              <li>Consultoria tradicional · relatório que fica na gaveta</li>
               <li>Marketplace de freelancer de IA</li>
               <li>Conteúdo de YouTube com promessa de "viralizar"</li>
             </ul>
@@ -269,8 +269,8 @@ function PositioningSection() {
 function PromiseSection() {
   return (
     <Section
-      title="Promessa · o que o operador leva ao terminar"
-      meta="o contrato editorial com o aluno"
+      title="Promessa · o que a empresa leva em 90 dias"
+      meta="o contrato editorial com o cliente"
     >
       <article className="vds-bs-promise">
         <span className="vds-bs-promise-aura" />
@@ -279,31 +279,31 @@ function PromiseSection() {
         </div>
         <span className="vds-bs-promise-eyebrow">Promessa</span>
         <h2>
-          Em <em>90 dias</em>, você sai daqui com pelo menos <em>1 agente IA em produção</em>{' '}
-          dentro da sua operação, construído por você, mantido por você, gerando resultado
-          mensurável.
+          Em <em>90 dias</em>, sua empresa tem <em>aumento de receita ou redução de custos</em>{' '}
+          com IA na operação — ou devolvemos 100% do investimento, cumpridos os 3
+          requisitos da garantia.
         </h2>
         <p className="vds-bs-promise-lede">
-          Não saímos com diploma. Saímos com agente rodando. Esse é o critério único de
-          formatura — e quem não chega lá, fica no programa até chegar. Sem mensalidade
-          extra, sem turma de segunda chance, sem culpa.
+          Os 3 requisitos, no mesmo prazo: concluir a trilha de onboarding, concluir 3
+          formações e implementar as 3 soluções escolhidas na adesão. Condições completas
+          na cláusula 7 dos termos de uso.
         </p>
         <div className="vds-bs-promise-grid">
           <div>
             <strong>O que está incluído</strong>
             <ul>
-              <li>18 aulas estruturadas · 4 lives ao vivo · 2 estudos de caso entregues</li>
-              <li>Mentoria 1:1 com operadores que já fizeram</li>
-              <li>Acesso vitalício à plataforma + atualizações</li>
-              <li>Comunidade fechada de turma · Discord curado</li>
-              <li>Templates, prompts, código-base reutilizável</li>
+              <li>Todas as soluções Plug-and-Play · formações práticas</li>
+              <li>Mentoria em grupo ao vivo · 10 check-ins/mês no Pro</li>
+              <li>Consultor IA dentro da plataforma</li>
+              <li>Comunidade de empresários e líderes</li>
+              <li>Imersão presencial de implementação na sede</li>
             </ul>
           </div>
           <div>
             <strong>O que não está incluído</strong>
             <ul>
-              <li>Agente pronto entregue · você que constrói</li>
-              <li>API tokens e infraestrutura cloud · custo do operador</li>
+              <li>Solução sob medida · só no Enterprise, com AI Builder</li>
+              <li>Garantia sem aplicação · exige os 3 requisitos</li>
               <li>Promessa de R$ X mil em receita · cada caso é caso</li>
               <li>Atalho pra "aprender em 7 dias"</li>
             </ul>

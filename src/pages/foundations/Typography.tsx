@@ -11,15 +11,15 @@ import '../pages.css';
 const sizes = [
   { lbl: 'Hero', tok: '--via-fs-hero', sample: 'Viver de IA', size: 80, weight: 500, ls: 'var(--via-ls-tighter)', meta: '5rem · Geist 500 · −0.025em' },
   { lbl: 'Display', tok: '--via-fs-display', sample: 'Não de prompt.', size: 56, weight: 500, ls: 'var(--via-ls-tighter)', meta: '3.5rem · Geist 500 · −0.025em' },
-  { lbl: 'H1', tok: '--via-fs-h1', sample: 'Mentoria 2026.2', size: 40, weight: 500, ls: 'var(--via-ls-tighter)', meta: '2.5rem · Geist 500 · −0.025em' },
+  { lbl: 'H1', tok: '--via-fs-h1', sample: 'Soluções prontas', size: 40, weight: 500, ls: 'var(--via-ls-tighter)', meta: '2.5rem · Geist 500 · −0.025em' },
   { lbl: 'H2', tok: '--via-fs-h2', sample: 'Cases publicados', size: 32, weight: 500, ls: 'var(--via-ls-tighter)', meta: '2rem · Geist 500 · −0.025em' },
   { lbl: 'H3', tok: '--via-fs-h3', sample: 'Comparar Seguro', size: 24, weight: 600, ls: 'var(--via-ls-tight)', meta: '1.5rem · Geist 600 · −0.015em' },
   { lbl: 'H4', tok: '--via-fs-h4', sample: 'Centralizar operação', size: 18, weight: 600, ls: 'normal', meta: '1.125rem · Geist 600' },
-  { lbl: 'Body', tok: '--via-fs-body', sample: 'Mentoria, comunidade e ferramentas.', size: 16, weight: 400, ls: 'normal', meta: '1rem · Geist 400 · 1.65 lh' },
-  { lbl: 'Small', tok: '--via-fs-sm', sample: 'Inscrições abertas', size: 14, weight: 400, ls: 'normal', meta: '0.875rem · Geist 400' },
+  { lbl: 'Body', tok: '--via-fs-body', sample: 'Soluções, formações e comunidade.', size: 16, weight: 400, ls: 'normal', meta: '1rem · Geist 400 · 1.65 lh' },
+  { lbl: 'Small', tok: '--via-fs-sm', sample: 'Contratação anual', size: 14, weight: 400, ls: 'normal', meta: '0.875rem · Geist 400' },
   { lbl: 'Caption', tok: '--via-fs-caption', sample: 'Salvar alterações', size: 13, weight: 500, ls: '-0.008em', meta: '0.8125rem · Geist 500 · botão md' },
   { lbl: 'XS', tok: '--via-fs-xs', sample: 'Código inline · tag', size: 12, weight: 400, ls: 'normal', meta: '0.75rem · Geist 400 · botão sm' },
-  { lbl: 'Label', tok: '--via-fs-label', sample: 'Turma 2026.2 · Brasil', size: 11, weight: 600, ls: 'var(--via-ls-label)', caps: true, meta: '0.6875rem · Geist 600 · uppercase · 0.18em' },
+  { lbl: 'Label', tok: '--via-fs-label', sample: 'Plano Pro · Brasil', size: 11, weight: 600, ls: 'var(--via-ls-label)', caps: true, meta: '0.6875rem · Geist 600 · uppercase · 0.18em' },
   { lbl: 'Micro', tok: '--via-fs-micro', sample: 'Pill sm · kbd · contador', size: 10, weight: 500, ls: 'normal', meta: '0.625rem · Geist 500' },
 ];
 
@@ -139,12 +139,12 @@ export default function Typography() {
         </p>
         <div style={{ display: 'flex', gap: 40, marginTop: 24, alignItems: 'baseline', flexWrap: 'wrap' }}>
           <div>
-            <p className="vds-eyebrow">Economia recorrente</p>
-            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 'clamp(40px, 10vw, 64px)', fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>R$ 4.600</div>
+            <p className="vds-eyebrow">Economia anual</p>
+            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 'clamp(40px, 10vw, 64px)', fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>R$ 42.000</div>
           </div>
           <div>
-            <p className="vds-eyebrow">Conversas analisadas</p>
-            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 'clamp(40px, 10vw, 64px)', fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>+11.920</div>
+            <p className="vds-eyebrow">Cases reais</p>
+            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 'clamp(40px, 10vw, 64px)', fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>521</div>
           </div>
           <div>
             <p className="vds-eyebrow">Operação financeira</p>
@@ -168,7 +168,7 @@ export default function Typography() {
             <tr>
               <td className="tok">Sentence case</td>
               <td className="val">Body, headline, botão, pill</td>
-              <td className="use">"Mentoria, comunidade e ferramentas." · "Salvar alterações"</td>
+              <td className="use">"Soluções, formações e comunidade." · "Salvar alterações"</td>
             </tr>
             <tr>
               <td className="tok">UPPERCASE</td>

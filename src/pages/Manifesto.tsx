@@ -21,7 +21,7 @@ const principles = [
     I: Type,
     title: 'Resultado vem com número',
     body:
-      'Toda afirmação carrega uma métrica ou uma citação. +11.920 conversas, R$ 4.600/mês em economia, 100% automatizado. Números são tipografia de primeira classe — Geist 500, tabular, navy.',
+      'Toda afirmação carrega uma métrica ou uma citação. 521 cases reais, R$ 42.000 por ano em economia, de 6h para cliques. Números são tipografia de primeira classe — Geist 500, tabular, navy.',
   },
   {
     n: '04',

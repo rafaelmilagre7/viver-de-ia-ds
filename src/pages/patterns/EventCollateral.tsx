@@ -122,7 +122,7 @@ function PiecesSection() {
     {
       icon: Users,
       name: 'Badge físico',
-      use: 'credencial do participante · 4 dias no pescoço',
+      use: 'credencial do participante · todos os dias do evento',
       brief: 'Front: nome (44pt) + role (16pt) + empresa (14pt) + QR code de check-in. Verso: agenda condensada do dia + emergency contacts. Material polipropileno reciclado · cordão navy.',
       mock: 'CR80 paisagem 105×64mm · 2 lados · QR canto inferior direito',
     },

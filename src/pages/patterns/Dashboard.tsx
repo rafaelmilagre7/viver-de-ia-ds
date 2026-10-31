@@ -8,30 +8,30 @@ import './dashboard.css';
  *
  * Usa a camada de dados canônica (src/styles/data.css):
  * · .via-metric-grid + .via-metric   KPI em vidro — o vidro fica AQUI
- * · .via-table-wrap + .via-table     progresso da turma em tabela, sem vidro
+ * · .via-table-wrap + .via-table     progresso dos membros em tabela, sem vidro
  * · .via-num / .via-bar              número tabular à direita + micro-barra
  */
 
 const kpis = [
-  { lbl: 'Alunos ativos', num: '312', d: '+24', ref: 'vs. 30 dias', I: Users },
-  { lbl: 'Conversas', num: '11.920', d: '+18%', ref: 'vs. 30 dias', I: MessageCircle },
+  { lbl: 'Membros ativos', num: '312', d: '+24', ref: 'vs. 30 dias', I: Users },
+  { lbl: 'Consultas IA', num: '4.380', d: '+18%', ref: 'vs. 30 dias', I: MessageCircle },
   { lbl: 'Implementações', num: '48', d: '+12', ref: 'em produção', I: Target },
   { lbl: 'NPS', num: '84', d: '+6', ref: '212 respostas', I: Activity },
 ];
 
 const etapas = [
   { n: 'Diagnóstico', v: 100 },
-  { n: 'Stack escolhida', v: 92 },
-  { n: 'Agente em homologação', v: 68 },
-  { n: 'Agente em produção', v: 32 },
-  { n: 'Métrica publicada', v: 12 },
+  { n: 'Trilha de onboarding', v: 92 },
+  { n: '3 formações concluídas', v: 68 },
+  { n: '3 soluções no ar', v: 32 },
+  { n: 'Resultado medido', v: 12 },
 ];
 
 const activity = [
-  { t: 'Caio Ribeiro', a: 'aprovou case', what: 'Efizi · E-commerce', when: '4 min' },
-  { t: 'Larissa Tavares', a: 'agendou sessão', what: 'Mentoria 1-a-1 com Márisson', when: '38 min' },
+  { t: 'Caio Ribeiro', a: 'aprovou case', what: 'E-commerce · atendimento', when: '4 min' },
+  { t: 'Larissa Tavares', a: 'agendou sessão', what: 'Check-in de mentoria em grupo', when: '38 min' },
   { t: 'Sistema', a: 'publicou métrica', what: 'Receita influenciada bate R$ 248k', when: '2h' },
-  { t: 'Guilherme Delorenzo', a: 'enviou depoimento', what: '5× mais rápida em decisão comercial', when: '4h' },
+  { t: 'Gustavo Dantas', a: 'enviou depoimento', what: 'Solução de vendas · em revisão', when: '4h' },
 ];
 
 export default function Dashboard() {
@@ -40,7 +40,7 @@ export default function Dashboard() {
       <DocsHeader
         eyebrow="Padrões · dashboard"
         title={<>Header denso, <em>4 KPIs</em>, atividade ao lado.</>}
-        lede="Layout de dashboard de operação sobre a camada de dados canônica. KPI em vidro (.via-metric), progresso da turma em tabela sem vidro (.via-table + .via-bar) e atividade em hairline ao lado. O vidro fica no card de métrica; a tabela fica na superfície limpa."
+        lede="Layout de dashboard de operação sobre a camada de dados canônica. KPI em vidro (.via-metric), progresso dos membros em tabela sem vidro (.via-table + .via-bar) e atividade em hairline ao lado. O vidro fica no card de métrica; a tabela fica na superfície limpa."
       />
 
       <Section title="Layout completo" meta="header + KPI row + tabela + side">
@@ -48,7 +48,7 @@ export default function Dashboard() {
           <header className="dash-h">
             <div>
               <span className="vds-eyebrow">Operação · maio 2026</span>
-              <h2>Painel da mentoria</h2>
+              <h2>Painel da plataforma</h2>
             </div>
             <div className="filters">
               <span className="filt active">Últimos 30 dias</span>
@@ -79,19 +79,19 @@ export default function Dashboard() {
           <div className="main-row">
             <section className="main">
               <header>
-                <span className="vds-eyebrow">Progresso · turma 2026.2</span>
+                <span className="vds-eyebrow">Progresso · Plano Pro</span>
                 <button aria-label="Mais opções" className="more"><MoreHorizontal size={16} strokeWidth={1.75} /></button>
               </header>
 
-              <div className="via-table-wrap" tabIndex={0} role="region" aria-label="Progresso da turma por etapa, rolável">
+              <div className="via-table-wrap" tabIndex={0} role="region" aria-label="Progresso dos membros por etapa, rolável">
                 <table className="via-table via-table--compact">
                   <caption className="dash-sr">
-                    Percentual da turma 2026.2 que concluiu cada etapa da jornada.
+                    Percentual dos membros Pro que concluiu cada etapa da jornada.
                   </caption>
                   <thead>
                     <tr>
                       <th scope="col">Etapa</th>
-                      <th scope="col">Avanço da turma</th>
+                      <th scope="col">Avanço dos membros</th>
                       <th scope="col" className="via-num">Concluiu</th>
                     </tr>
                   </thead>

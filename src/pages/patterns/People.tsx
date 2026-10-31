@@ -17,7 +17,7 @@ export default function People() {
             Cards de pessoa, <em>cada um na sua escala</em>.
           </>
         }
-        lede="Quatro intensidades pra mostrar gente — mentor profile (peso editorial), team grid (carteira do time), member list (operadores), user popover (preview rápido). Toda foto/avatar carregada, toda métrica honesta, sem 'expert badge' falso."
+        lede="Quatro intensidades pra mostrar gente — mentor profile (peso editorial), team grid (carteira do time), member list (membros), user popover (preview rápido). Toda foto/avatar carregada, toda métrica honesta, sem 'expert badge' falso."
       />
 
       <MentorProfileSection />
@@ -35,7 +35,7 @@ function MentorProfileSection() {
       <article className="vds-mentor-card">
         <div className="vds-mentor-cover via-mesh-navy via-noise">
           <img src={monogramWhite} alt="" className="vds-mentor-mark" />
-          <span className="vds-mentor-tag">Mentor head · Viver de IA</span>
+          <span className="vds-mentor-tag">Mentor · Viver de IA</span>
         </div>
 
         <div className="vds-mentor-body">
@@ -43,10 +43,10 @@ function MentorProfileSection() {
             <div className="vds-mentor-avatar">CR</div>
             <h3>Caio Ribeiro</h3>
             <p className="vds-mentor-role">
-              Fundador · operador de IA aplicada desde 2022
+              Mentor · operador de IA aplicada desde 2022
             </p>
             <p className="vds-mentor-bio">
-              Antes da Viver de IA, fundou duas empresas SaaS — uma com saída em 2018, outra ativa. Hoje mentora 220 operadores diretamente e escreve o playbook que está reorganizando como times de produto pensam IA no Brasil.
+              Antes da Viver de IA, fundou duas empresas SaaS — uma com saída em 2018, outra ativa. Hoje conduz check-ins de mentoria em grupo e sessões individuais do Enterprise, e escreve playbooks de implementação.
             </p>
 
             <ul className="vds-mentor-meta">
@@ -65,8 +65,8 @@ function MentorProfileSection() {
           <div className="vds-mentor-r">
             <div className="vds-mentor-stats">
               <div>
-                <strong>220</strong>
-                <em>mentorados ativos</em>
+                <strong>38</strong>
+                <em>empresas acompanhadas</em>
               </div>
               <div>
                 <strong>4,9</strong>
@@ -81,7 +81,7 @@ function MentorProfileSection() {
             <div className="vds-mentor-actions">
               <button className="vds-mentor-btn primary">
                 <Calendar size={16} strokeWidth={1.75} />
-                Agendar sessão · 1:1
+                Agendar sessão · individual
               </button>
               <button className="vds-mentor-btn ghost">
                 <MessageCircle size={16} strokeWidth={1.75} />
@@ -105,12 +105,12 @@ function MentorProfileSection() {
 /* ---------- Team grid ---------- */
 function TeamGridSection() {
   const team = [
-    { name: 'Caio Ribeiro', role: 'Fundador · mentor head', av: 'CR', tag: 'mentoria', metaL: '220', metaR: 'mentorados ativos' },
-    { name: 'Diego Martins', role: 'Tech lead · plataforma', av: 'DM', tag: 'plataforma', metaL: '12', metaR: 'serviços · infra' },
-    { name: 'Mateus Silva', role: 'Comunidade · operações', av: 'MS', tag: 'comunidade', metaL: '4.9K', metaR: 'membros no Discord' },
-    { name: 'Luiza Ramos', role: 'Curadora · editorial', av: 'LR', tag: 'conteúdo', metaL: '142', metaR: 'pgs · playbook' },
-    { name: 'Rafael Milagre', role: 'CEO · ecosystem', av: 'RM', tag: 'liderança', metaL: '38', metaR: 'contas corporate' },
-    { name: 'Camila Esteves', role: 'Customer success', av: 'CE', tag: 'sucesso', metaL: '92%', metaR: 'taxa de retenção' },
+    { name: 'Rafael Milagre', role: 'Fundador · Viver de IA', av: 'RM', tag: 'liderança', metaL: '521', metaR: 'cases reais' },
+    { name: 'Yago Martins', role: 'Co-fundador', av: 'YM', tag: 'liderança', metaL: '157', metaR: 'soluções prontas' },
+    { name: 'Luccas Riedo', role: 'CEO', av: 'LR', tag: 'liderança', metaL: '29', metaR: 'setores' },
+    { name: '[Nome 4]', role: '[cargo] · plataforma', av: 'N4', tag: 'plataforma', metaL: '[N]', metaR: 'serviços · infra' },
+    { name: '[Nome 5]', role: '[cargo] · comunidade', av: 'N5', tag: 'comunidade', metaL: '[N]', metaR: 'membros na comunidade' },
+    { name: '[Nome 6]', role: '[cargo] · sucesso', av: 'N6', tag: 'sucesso', metaL: '90d', metaR: 'janela da garantia' },
   ];
 
   return (
@@ -156,26 +156,26 @@ function TeamGridSection() {
 /* ---------- Member list ---------- */
 function MemberListSection() {
   const members = [
-    { name: 'Márisson Lage', role: 'CEO · Efizi Soluções', av: 'ML', plan: 'Mentoria', last: 'há 4 min', streak: 14, status: 'online' },
-    { name: 'Daniel Pinheiro', role: 'Founder · Pivot Studio', av: 'DP', plan: 'Mentoria', last: 'há 22 min', streak: 7, status: 'online' },
-    { name: 'Camila Moraes', role: 'Head IA · Mantra Tech', av: 'CM', plan: 'Corporate', last: 'ontem', streak: 21, status: 'offline' },
-    { name: 'Pedro Sousa', role: 'Indep · operador IA', av: 'PS', plan: 'Comunidade', last: 'há 3h', streak: 3, status: 'away' },
-    { name: 'Bruna Carvalho', role: 'Product · Lumin Saúde', av: 'BC', plan: 'Mentoria', last: 'há 28 min', streak: 18, status: 'online' },
-    { name: 'Felipe Andrade', role: 'CTO · Olara Bank', av: 'FA', plan: 'Corporate', last: 'há 1h', streak: 11, status: 'busy' },
+    { name: 'Larissa Tavares', role: 'CEO · e-commerce', av: 'LT', plan: 'Pro', tone: 'mentoria', last: 'há 4 min', streak: 14, status: 'online' },
+    { name: 'Thiago Reis', role: 'Founder · estúdio digital', av: 'TR', plan: 'Pro', tone: 'mentoria', last: 'há 22 min', streak: 7, status: 'online' },
+    { name: 'Renata Costa', role: 'Head IA · fintech', av: 'RC', plan: 'Enterprise', tone: 'corporate', last: 'ontem', streak: 21, status: 'offline' },
+    { name: 'Pedro Sousa', role: 'Indep · operador IA', av: 'PS', plan: 'Starter', tone: 'comunidade', last: 'há 3h', streak: 3, status: 'away' },
+    { name: 'Bruna Carvalho', role: 'Product · Lumin Saúde', av: 'BC', plan: 'Pro', tone: 'mentoria', last: 'há 28 min', streak: 18, status: 'online' },
+    { name: 'Felipe Andrade', role: 'CTO · Olara Bank', av: 'FA', plan: 'Enterprise', tone: 'corporate', last: 'há 1h', streak: 11, status: 'busy' },
   ];
 
   return (
-    <Section title="Member list · alunos com status" meta="admin · diretório de operadores · turma">
+    <Section title="Member list · membros com status" meta="admin · diretório de membros · plano">
       <div className="vds-member-list">
         <header>
           <div>
-            <h3>Operadores · plano Mentoria + Corporate</h3>
+            <h3>Membros · planos Pro + Enterprise</h3>
             <p>248 ativos · 6 mostrados</p>
           </div>
           <div className="vds-member-actions">
             <div className="vds-member-search">
               <Search size={14} strokeWidth={1.75} />
-              <input placeholder="Buscar operador" />
+              <input placeholder="Buscar membro" />
             </div>
             <button className="vds-member-btn">
               <Filter size={14} strokeWidth={1.75} />
@@ -188,7 +188,7 @@ function MemberListSection() {
           <table className="via-table vds-member-table">
             <thead>
               <tr>
-                <th scope="col">Operador</th>
+                <th scope="col">Membro</th>
                 <th scope="col">Plano</th>
                 <th scope="col" className="via-num">Streak</th>
                 <th scope="col">Última atividade</th>
@@ -210,7 +210,7 @@ function MemberListSection() {
                     </div>
                   </td>
                   <td>
-                    <span className={`vds-member-plan ${m.plan.toLowerCase()}`}>{m.plan}</span>
+                    <span className={`vds-member-plan ${m.tone}`}>{m.plan}</span>
                   </td>
                   <td className="via-num">
                     <span className="vds-member-streak">
@@ -236,13 +236,13 @@ function UserPopoverSection() {
       <div className="vds-userpop-row">
         <div className="vds-userpop-card">
           <header>
-            <span className="av big">ML</span>
-            <span className="vds-userpop-plan">Mentoria · 7 meses</span>
+            <span className="av big">LT</span>
+            <span className="vds-userpop-plan">Plano Pro · 7 meses</span>
           </header>
-          <h4>Márisson Lage</h4>
-          <p className="vds-userpop-role">CEO · Efizi Soluções</p>
+          <h4>Larissa Tavares</h4>
+          <p className="vds-userpop-role">CEO · e-commerce</p>
           <p className="vds-userpop-bio">
-            Implementou a Nina como SDR · 11.920 conversas/mês em produção. Está no módulo 03 do curso.
+            Implementou um agente SDR no WhatsApp · 3 soluções no ar. Está no módulo 03 da formação.
           </p>
           <div className="vds-userpop-stats">
             <span><strong>14</strong> aulas</span>
@@ -266,17 +266,17 @@ function UserPopoverSection() {
         <div className="vds-userpop-card mentor">
           <header>
             <span className="av big nav">CR</span>
-            <span className="vds-userpop-plan mentor-pill">★ Mentor head</span>
+            <span className="vds-userpop-plan mentor-pill">★ Mentor</span>
           </header>
           <h4>Caio Ribeiro</h4>
-          <p className="vds-userpop-role">Fundador · Viver de IA</p>
+          <p className="vds-userpop-role">Mentor · Viver de IA</p>
           <p className="vds-userpop-bio">
-            220 mentorados ativos · responde em até 14h · mentoria 1:1 + lives.
+            38 empresas acompanhadas · responde em até 14h · mentoria em grupo.
           </p>
           <div className="vds-userpop-stats">
             <span><Star size={14} strokeWidth={1.75} style={{ fill: 'var(--via-text-primary)', stroke: 'var(--via-text-primary)' }} /> <strong>4,9</strong></span>
             <span>·</span>
-            <span><Users size={14} strokeWidth={1.75} /> <strong>220</strong></span>
+            <span><Users size={14} strokeWidth={1.75} /> <strong>38</strong></span>
             <span>·</span>
             <span>resp. 14h</span>
           </div>
@@ -294,13 +294,13 @@ function UserPopoverSection() {
 
         <div className="vds-userpop-card minimal">
           <header>
-            <span className="av big">CR</span>
-            <span className="vds-userpop-plan corp">Corporate · admin</span>
+            <span className="av big">RC</span>
+            <span className="vds-userpop-plan corp">Enterprise · admin</span>
           </header>
-          <h4>Camila Moraes</h4>
-          <p className="vds-userpop-role">Head IA · Mantra Tech</p>
+          <h4>Renata Costa</h4>
+          <p className="vds-userpop-role">Head IA · fintech</p>
           <p className="vds-userpop-bio">
-            Admin do plano Corporate da Mantra · gerencia 12 lugares · onboarding ativo.
+            Admin do plano Enterprise · gerencia 12 lugares · trilha de onboarding ativa.
           </p>
           <div className="vds-userpop-stats">
             <span><Users size={14} strokeWidth={1.75} /> <strong>12</strong> no time</span>

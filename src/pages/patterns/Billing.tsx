@@ -63,9 +63,9 @@ function BillingFlowDemo() {
   const [cycle, setCycle] = useState<Cycle>('annual');
   const [card, setCard] = useState({ name: '', number: '', exp: '', cvc: '' });
 
-  const planPrice = plan === 'pro' ? (cycle === 'annual' ? 2900 : 290) : cycle === 'annual' ? 8900 : 890;
+  const planPrice = plan === 'pro' ? (cycle === 'annual' ? 45360 : 3780) : cycle === 'annual' ? 74160 : 6180;
   const monthly = cycle === 'annual' ? Math.round(planPrice / 12) : planPrice;
-  const planName = plan === 'pro' ? 'Pro' : 'Team';
+  const planName = plan === 'pro' ? 'Pro' : 'Enterprise';
 
   return (
     <div className="vds-billing-grid">
@@ -91,25 +91,25 @@ function BillingFlowDemo() {
           {step === 0 && (
             <>
               <h3>Escolha o plano</h3>
-              <p className="lede">Pode mudar depois sem multa · upgrade ou downgrade prorrateado.</p>
+              <p className="lede">Upgrade a qualquer momento, pela diferença de valor.</p>
               <div className="vds-billing-plans" role="radiogroup" aria-label="Plano">
                 <PlanRadio
                   selected={plan === 'pro'}
                   onSelect={() => setPlan('pro')}
                   name="Pro"
-                  price="R$ 290"
+                  price="R$ 3.780"
                   per="/mês"
-                  desc="4 sessões 1:1 · biblioteca completa · suporte prioritário"
+                  desc="Soluções · formações · Consultor IA · 10 check-ins/mês de mentoria em grupo"
                   badge={null}
                 />
                 <PlanRadio
                   selected={plan === 'team'}
                   onSelect={() => setPlan('team')}
-                  name="Team"
-                  price="R$ 890"
+                  name="Enterprise"
+                  price="R$ 6.180"
                   per="/mês"
-                  desc="8 sessões · mentor dedicado · concierge no WhatsApp · onboarding white-glove"
-                  badge="popular"
+                  desc="Tudo do Pro · 1 hora/mês de mentoria individual · arquiteto de soluções AI Builder"
+                  badge="corporativo"
                 />
               </div>
             </>
@@ -118,25 +118,25 @@ function BillingFlowDemo() {
           {step === 1 && (
             <>
               <h3>Ciclo de cobrança</h3>
-              <p className="lede">Anual sai 2 meses grátis em qualquer plano · sem fidelidade depois.</p>
+              <p className="lede">Todo plano é em contratação anual · escolha como pagar o contrato.</p>
               <div className="vds-billing-plans" role="radiogroup" aria-label="Ciclo">
                 <PlanRadio
                   selected={cycle === 'monthly'}
                   onSelect={() => setCycle('monthly')}
                   name="Mensal"
-                  price={`R$ ${plan === 'pro' ? '290' : '890'}`}
+                  price={`R$ ${plan === 'pro' ? '3.780' : '6.180'}`}
                   per="/mês"
-                  desc="Cancele quando quiser · sem fidelidade · sem multa."
+                  desc="Contrato anual · cobrança mês a mês no cartão."
                   badge={null}
                 />
                 <PlanRadio
                   selected={cycle === 'annual'}
                   onSelect={() => setCycle('annual')}
                   name="Anual"
-                  price={`R$ ${Math.round((plan === 'pro' ? 2900 : 8900) / 12)}`}
+                  price={`R$ ${plan === 'pro' ? '3.780' : '6.180'}`}
                   per="/mês equivalente"
-                  desc="Cobrança única anual · 2 meses grátis incluídos."
-                  badge="economia 17%"
+                  desc="Contrato anual · cobrança única · [condições]."
+                  badge="à vista"
                 />
               </div>
             </>
@@ -181,15 +181,15 @@ function BillingFlowDemo() {
           {step === 3 && (
             <>
               <h3>Revisar antes de confirmar</h3>
-              <p className="lede">Última etapa · vai cobrar agora e iniciar o acesso · garantia editorial de 14 dias.</p>
+              <p className="lede">Última etapa · vai cobrar agora e iniciar o acesso · garantia de 90 dias.</p>
               <div className="vds-billing-review">
                 <ReviewLine label="Plano" value={`${planName} · ${cycle === 'annual' ? 'anual' : 'mensal'}`} />
                 <ReviewLine label="Cobrança hoje" value={`R$ ${planPrice.toLocaleString('pt-BR')}`} emph />
                 <ReviewLine label="Próxima cobrança" value={cycle === 'annual' ? 'em 12 meses' : 'em 30 dias'} />
                 <ReviewLine label="Cartão" value={card.number ? `•••• ${card.number.slice(-4) || '0000'}` : 'pendente'} />
               </div>
-              <Alert tone="info" title="Garantia editorial · 14 dias">
-                Se não fizer sentido até a 2ª semana, devolvemos · sem perguntas, sem fricção.
+              <Alert tone="info" title="Garantia · 90 dias">
+                100% do investimento de volta se, em 90 dias, não houver aumento de receita nem redução de custos · requisitos na cláusula 7 dos termos de uso.
               </Alert>
             </>
           )}
@@ -237,8 +237,8 @@ function BillingFlowDemo() {
           </div>
           <p className="vds-billing-summary__total-hint">
             {cycle === 'annual'
-              ? 'Cobrança única anual · 2 meses grátis incluídos.'
-              : 'Cobrança mensal · cancele quando quiser.'}
+              ? 'Contrato anual · cobrança única.'
+              : 'Contrato anual · cobrança mês a mês.'}
           </p>
         </div>
 

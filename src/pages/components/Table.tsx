@@ -77,11 +77,11 @@ function FullTableSection() {
     {
       id: 'OP-2026-0482',
       av: 'ML',
-      name: 'Márisson Lage',
-      role: 'CEO · Efizi',
-      plan: 'Mentoria',
+      name: 'Mariana Leal',
+      role: 'CEO · Norte Varejo',
+      plan: 'Pro',
       planType: 'mentoria',
-      mrr: 1840,
+      mrr: 3780,
       progress: 78,
       delta: 14.2,
       status: 'ok',
@@ -91,11 +91,11 @@ function FullTableSection() {
     {
       id: 'OP-2026-0481',
       av: 'CM',
-      name: 'Camila Moraes',
+      name: 'Clara Mendes',
       role: 'Head IA · Mantra',
-      plan: 'Corporate',
+      plan: 'Enterprise',
       planType: 'corporate',
-      mrr: 4200,
+      mrr: 6180,
       progress: 92,
       delta: 28.4,
       status: 'ok',
@@ -105,11 +105,11 @@ function FullTableSection() {
     {
       id: 'OP-2026-0476',
       av: 'DP',
-      name: 'Daniel Pinheiro',
+      name: 'Davi Prado',
       role: 'Founder · Pivot',
-      plan: 'Mentoria',
+      plan: 'Pro',
       planType: 'mentoria',
-      mrr: 1840,
+      mrr: 3780,
       progress: 42,
       delta: 6.8,
       status: 'attention',
@@ -121,9 +121,9 @@ function FullTableSection() {
       av: 'BC',
       name: 'Bruna Carvalho',
       role: 'Product · Lumin',
-      plan: 'Mentoria',
+      plan: 'Pro',
       planType: 'mentoria',
-      mrr: 1840,
+      mrr: 3780,
       progress: 64,
       delta: 11.7,
       status: 'ok',
@@ -135,9 +135,9 @@ function FullTableSection() {
       av: 'FA',
       name: 'Felipe Andrade',
       role: 'CTO · Olara Bank',
-      plan: 'Corporate',
+      plan: 'Enterprise',
       planType: 'corporate',
-      mrr: 4200,
+      mrr: 6180,
       progress: 18,
       delta: -3.2,
       status: 'churn',
@@ -149,9 +149,9 @@ function FullTableSection() {
       av: 'PS',
       name: 'Pedro Sousa',
       role: 'Indep · operador IA',
-      plan: 'Comunidade',
+      plan: 'Starter',
       planType: 'comunidade',
-      mrr: 197,
+      mrr: 2580,
       progress: 88,
       delta: 4.1,
       status: 'ok',
@@ -167,7 +167,7 @@ function FullTableSection() {
   const someSelected = selected.length > 0;
 
   return (
-    <Section title="Tabela completa · 8 cell types coexistindo" meta="operadores ativos · 248 total · sortável · selecionável">
+    <Section title="Tabela completa · 8 cell types coexistindo" meta="membros ativos · 248 total · sortável · selecionável">
       <article className="vds-tbl-wrap">
         {/* Header bar — search + filter + density */}
         <header className="vds-tbl-toolbar">
@@ -368,7 +368,7 @@ function CompactTableSection() {
   const tasks = [
     { id: 'T-481', task: 'Renovar token de API · production', who: 'Diego', priority: 'alta', due: 'hoje · 18h' },
     { id: 'T-480', task: 'Auditoria semanal · custo Anthropic', who: 'Caio', priority: 'média', due: 'sex · 12h' },
-    { id: 'T-479', task: 'Onboarding · 3 novos da turma 2026.2', who: 'Mateus', priority: 'baixa', due: 'seg · 14h' },
+    { id: 'T-479', task: 'Onboarding · 3 novos do plano Pro', who: 'Mateus', priority: 'baixa', due: 'seg · 14h' },
     { id: 'T-478', task: 'Calibrar few-shot · classifier v2', who: 'Diego', priority: 'média', due: 'ter · 10h' },
   ];
 

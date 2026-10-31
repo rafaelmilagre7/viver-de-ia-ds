@@ -26,7 +26,7 @@ export type Period = {
   despesas: Leaf[];
 };
 
-/* Dados de exemplo · operação de mentoria/educação em IA.
+/* Dados de exemplo · operação de plataforma/educação em IA.
    Valores em BRL, sem centavos (fechamento contábil arredondado). */
 export const PERIODOS: Period[] = [
   {
@@ -35,7 +35,7 @@ export const PERIODOS: Period[] = [
     label: 'Maio 2026',
     status: 'fechado',
     receita: [
-      { id: 'rec-mentoria', label: 'Mentoria Viver de IA · assinaturas', real: 1_746_000, plan: 1_730_000 },
+      { id: 'rec-mentoria', label: 'Planos da plataforma · assinaturas', real: 1_746_000, plan: 1_730_000 },
       { id: 'rec-comunidade', label: 'Comunidade e plataforma', real: 472_400, plan: 512_000 },
       { id: 'rec-conf', label: 'Leaders AI Conference', real: 388_000, plan: 400_000 },
       { id: 'rec-impl', label: 'Implementação e squads', real: 208_900, plan: 205_000 },
@@ -59,7 +59,7 @@ export const PERIODOS: Period[] = [
     label: 'Junho 2026',
     status: 'fechado',
     receita: [
-      { id: 'rec-mentoria', label: 'Mentoria Viver de IA · assinaturas', real: 1_842_000, plan: 1_780_000 },
+      { id: 'rec-mentoria', label: 'Planos da plataforma · assinaturas', real: 1_842_000, plan: 1_780_000 },
       { id: 'rec-comunidade', label: 'Comunidade e plataforma', real: 486_500, plan: 520_000 },
       { id: 'rec-conf', label: 'Leaders AI Conference', real: 612_000, plan: 640_000 },
       { id: 'rec-impl', label: 'Implementação e squads', real: 243_500, plan: 210_000 },
@@ -83,7 +83,7 @@ export const PERIODOS: Period[] = [
     label: '2º trimestre 2026',
     status: 'fechado',
     receita: [
-      { id: 'rec-mentoria', label: 'Mentoria Viver de IA · assinaturas', real: 5_318_000, plan: 5_240_000 },
+      { id: 'rec-mentoria', label: 'Planos da plataforma · assinaturas', real: 5_318_000, plan: 5_240_000 },
       { id: 'rec-comunidade', label: 'Comunidade e plataforma', real: 1_427_900, plan: 1_545_000 },
       { id: 'rec-conf', label: 'Leaders AI Conference', real: 1_386_000, plan: 1_420_000 },
       { id: 'rec-impl', label: 'Implementação e squads', real: 664_300, plan: 620_000 },

@@ -357,7 +357,7 @@ function ApiKeySection() {
       <div className="vds-apikeys">
         <header>
           <div>
-            <h3>Chaves de API · plano Mentoria</h3>
+            <h3>Chaves de API · plano Enterprise</h3>
             <p>Você pode criar até 3 chaves simultâneas. Cada uma tem permissões e logs de uso separados.</p>
           </div>
           <button className="vds-apikeys-new">
@@ -462,23 +462,23 @@ function BillingSection() {
             <span className="vds-billing-eyebrow">Plano atual</span>
             <h3>
               <Crown size={16} strokeWidth={1.75} />
-              Mentoria · trimestral
+              Plano Pro · anual
             </h3>
-            <p>R$ 1.840 / trimestre · próxima cobrança em <strong>17 ago 2026</strong></p>
+            <p>R$ 3.780 / mês · contratação anual · próxima cobrança em <strong>17 jun 2026</strong></p>
           </header>
 
           <div className="vds-billing-meta">
             <div>
-              <strong>R$ 1.840</strong>
+              <strong>R$ 3.780</strong>
               <em>próxima cobrança</em>
             </div>
             <div>
-              <strong>17 ago</strong>
+              <strong>17 jun</strong>
               <em>data prevista</em>
             </div>
             <div>
-              <strong>4 / 12</strong>
-              <em>sessões neste tri</em>
+              <strong>4 / 10</strong>
+              <em>check-ins neste mês</em>
             </div>
           </div>
 
@@ -488,7 +488,7 @@ function BillingSection() {
               Alterar método
             </button>
             <button className="vds-billing-btn ghost">
-              Mudar pra anual <span>(2 meses grátis)</span>
+              Upgrade pro Enterprise <span>(pela diferença)</span>
               <ChevronRight size={14} strokeWidth={1.75} />
             </button>
           </div>
@@ -515,29 +515,29 @@ function BillingSection() {
           <ul>
             <li>
               <span className="d">17 mai 2026</span>
-              <span className="desc">Mentoria · trimestre · renovação</span>
-              <span className="amt">R$ 1.840,00</span>
+              <span className="desc">Plano Pro · mensalidade</span>
+              <span className="amt">R$ 3.780,00</span>
+              <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
+              <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
+            </li>
+            <li>
+              <span className="d">17 abr 2026</span>
+              <span className="desc">Plano Pro · mensalidade</span>
+              <span className="amt">R$ 3.780,00</span>
+              <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
+              <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
+            </li>
+            <li>
+              <span className="d">17 mar 2026</span>
+              <span className="desc">Plano Pro · mensalidade</span>
+              <span className="amt">R$ 3.780,00</span>
               <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
               <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
             <li>
               <span className="d">17 fev 2026</span>
-              <span className="desc">Mentoria · trimestre</span>
-              <span className="amt">R$ 1.840,00</span>
-              <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
-              <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
-            </li>
-            <li>
-              <span className="d">17 nov 2025</span>
-              <span className="desc">Mentoria · trimestre</span>
-              <span className="amt">R$ 1.840,00</span>
-              <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
-              <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
-            </li>
-            <li>
-              <span className="d">17 ago 2025</span>
-              <span className="desc">Mentoria · trimestre · primeira parcela</span>
-              <span className="amt">R$ 1.840,00</span>
+              <span className="desc">Plano Pro · adesão anual · primeira parcela</span>
+              <span className="amt">R$ 3.780,00</span>
               <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
               <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
@@ -553,8 +553,8 @@ function AuditLogSection() {
   const events = [
     { time: '14:32', day: 'Hoje', who: 'Rafael Milagre', action: 'rotacionou chave', detail: 'nina-classifier · production', icon: KeyRound, type: 'security' },
     { time: '11:18', day: 'Hoje', who: 'Diego Martins', action: 'criou nova API key', detail: 'staging · escopo read', icon: Key, type: 'create' },
-    { time: '09:42', day: 'Hoje', who: 'Sistema', action: 'cobrança processada', detail: 'R$ 1.840,00 · método VISA •••• 4821', icon: CreditCard, type: 'system' },
-    { time: '23:08', day: 'ontem', who: 'Mateus Silva', action: 'adicionou 3 alunos ao plano Corporate', detail: 'Mantra Tech · convites enviados', icon: UserPlus, type: 'team' },
+    { time: '09:42', day: 'Hoje', who: 'Sistema', action: 'cobrança processada', detail: 'R$ 3.780,00 · método VISA •••• 4821', icon: CreditCard, type: 'system' },
+    { time: '23:08', day: 'ontem', who: 'Mateus Silva', action: 'adicionou 3 membros ao plano Enterprise', detail: 'time comercial · convites enviados', icon: UserPlus, type: 'team' },
     { time: '17:42', day: 'ontem', who: 'Rafael Milagre', action: 'editou as configurações de notificação', detail: 'desligou "comentários nas suas notas"', icon: FileEdit, type: 'change' },
     { time: '14:00', day: 'ontem', who: 'Rafael Milagre', action: 'login pela primeira vez de São Paulo', detail: 'IP 203.0.113.22 · macOS Safari', icon: LogIn, type: 'security' },
     { time: '09:30', day: '14 mai', who: 'Sistema', action: 'detectou tentativa de login suspeita', detail: 'IP 198.51.100.7 · bloqueado · usuário não afetado', icon: Shield, type: 'security-warn' },

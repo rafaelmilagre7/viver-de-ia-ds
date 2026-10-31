@@ -185,10 +185,10 @@ function DatePickerSection() {
   ];
   // Dias com eventos (mentoria, live, etc) — mostra ocupação
   const events: Record<number, { label: string; tone: 'navy' | 'accent' }[]> = {
-    7: [{ label: 'Mentoria 1:1', tone: 'navy' }],
+    7: [{ label: 'Check-in em grupo', tone: 'navy' }],
     12: [{ label: 'Live · auditoria', tone: 'navy' }],
     14: [{ label: 'Aula 02.02', tone: 'navy' }],
-    17: [{ label: 'Renovação', tone: 'accent' }, { label: 'Sessão 1:1', tone: 'navy' }],
+    17: [{ label: 'Renovação', tone: 'accent' }, { label: 'Sessão individual', tone: 'navy' }],
     19: [{ label: 'Hoje · 2 tarefas', tone: 'navy' }],
     22: [{ label: 'Live coletiva', tone: 'accent' }],
     28: [{ label: 'Encerra mês', tone: 'navy' }],

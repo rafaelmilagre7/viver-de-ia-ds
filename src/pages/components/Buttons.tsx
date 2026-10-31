@@ -19,7 +19,7 @@ export default function Buttons() {
 
       <Section title="Primary" meta="default · navy">
         <div className="vds-buttons-row">
-          <button className="via-btn primary md">Entrar na turma <ArrowRight size={16} strokeWidth={1.75} /></button>
+          <button className="via-btn primary md">Assinar o plano <ArrowRight size={16} strokeWidth={1.75} /></button>
           <button className="via-btn primary md is-hover">Hover</button>
           <button className="via-btn primary md is-pressed">Pressed</button>
           <button className="via-btn primary md" disabled>Disabled</button>
@@ -69,7 +69,7 @@ export default function Buttons() {
 
       <Section title="Código" meta="HTML + CSS">
         <CodeBlock>{`<button className="via-btn primary md">
-  Entrar na turma
+  Assinar o plano
   <ArrowRight size={16} strokeWidth={1.75} />
 </button>`}</CodeBlock>
       </Section>

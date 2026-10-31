@@ -4,16 +4,16 @@ import ComponentDoc from '../../components/docs/ComponentDoc';
 import { RadioGroup as meta } from './props.generated.json';
 
 function RadioDemo() {
-  const [plan, setPlan] = useState('anual');
+  const [plan, setPlan] = useState('pro');
   return (
     <RadioGroup
       ariaLabel="Plano"
       value={plan}
       onValueChange={setPlan}
       options={[
-        { value: 'mensal', label: 'Mensal', description: 'R$ 290/mês · cancela quando quiser' },
-        { value: 'anual', label: 'Anual · 2 meses grátis', description: 'R$ 2.900/ano · equivale a R$ 242/mês' },
-        { value: 'time', label: 'Time · 5+ assentos', description: 'Sob proposta · concierge 1:1' },
+        { value: 'starter', label: 'Starter', description: 'R$ 2.580/mês · contratação anual' },
+        { value: 'pro', label: 'Pro', description: 'R$ 3.780/mês · 10 check-ins de mentoria em grupo' },
+        { value: 'enterprise', label: 'Enterprise', description: 'R$ 6.180/mês · 1h/mês de mentoria individual' },
       ]}
     />
   );
@@ -50,12 +50,12 @@ export default function ApiRadioGroup() {
           preview: <RadioDemo />,
           code: `<RadioGroup
   ariaLabel="Plano"
-  defaultValue="anual"
+  defaultValue="pro"
   onValueChange={(v) => console.log(v)}
   options={[
-    { value: 'mensal', label: 'Mensal', description: 'R$ 290/mês' },
-    { value: 'anual',  label: 'Anual · 2 meses grátis', description: 'R$ 2.900/ano' },
-    { value: 'time',   label: 'Time · 5+ assentos', description: 'Sob proposta' },
+    { value: 'starter',    label: 'Starter',    description: 'R$ 2.580/mês' },
+    { value: 'pro',        label: 'Pro',        description: 'R$ 3.780/mês' },
+    { value: 'enterprise', label: 'Enterprise', description: 'R$ 6.180/mês' },
   ]}
 />`,
         },
@@ -66,8 +66,8 @@ export default function ApiRadioGroup() {
           dont: { title: 'Não use pra 6+ opções', description: 'Use Select/Combobox · radio vira muralha visual.' },
         },
         {
-          do: { title: 'Description ajuda decisão', description: '"R$ 290/mês · cancela quando quiser" · contexto pra escolher.' },
-          dont: { title: 'Não duplique label na description', description: '"Plano Anual" + "Plano anual" · redundância.' },
+          do: { title: 'Description ajuda decisão', description: '"R$ 3.780/mês · 10 check-ins de mentoria" · contexto pra escolher.' },
+          dont: { title: 'Não duplique label na description', description: '"Plano Pro" + "Plano pro" · redundância.' },
         },
       ]}
       a11y={[

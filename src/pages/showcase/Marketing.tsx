@@ -4,16 +4,16 @@ import { useScrollEdge } from '../../layout/useScrollEdge';
 import './marketing.css';
 
 const cases = [
-  { c: 'Efizi', s: 'E-commerce', h: '+11.920 conversas analisadas', m: '+11.920', l: 'conversas' },
-  { c: 'Balzani & Zimbel', s: 'Construção', h: 'R$ 4.600/mês em economia recorrente', m: 'R$ 4.600', l: '/mês' },
-  { c: 'Comparar Seguro', s: 'Seguros', h: 'Atendimento 24/7 para vendas e operação', m: '24/7', l: 'operação' },
-  { c: 'Conferir Engenharia', s: 'Engenharia', h: 'Operação financeira 100% automatizada', m: '100%', l: 'automatizado' },
+  { c: 'Place Dreams', s: 'Tecnologia', h: 'Economiza R$ 42.000 por ano em 30 dias', m: 'R$ 42.000', l: '/ano' },
+  { c: 'Trivia Studio', s: 'Agência', h: 'De processos manuais a R$ 120.000 de economia anual', m: 'R$ 120.000', l: '/ano' },
+  { c: 'Viva Nexo', s: 'Saúde', h: 'De 6h para cliques · economiza R$ 162.000', m: 'R$ 162.000', l: 'economia' },
+  { c: 'Pasetti Viagens', s: 'Turismo', h: 'Atendimento 24h com IA no turismo', m: '24h', l: 'atendimento' },
 ];
 
 const feats = [
   { I: Clock, t: 'Operação', em: '24/7', d: 'Agentes que respondem dia e noite sem dependência humana.' },
   { I: Zap, t: 'Resultado', em: 'mensurável', d: 'Cada implementação tem KPI próprio. Sem demo bonita.' },
-  { I: Users, t: 'Pequenos', em: 'grupos', d: 'Turmas de até 24 com acompanhamento individual.' },
+  { I: Users, t: 'Mentoria', em: 'em grupo', d: '10 check-ins por mês no Pro, ao vivo, no seu contexto.' },
 ];
 
 export default function ShowcaseMarketing() {
@@ -23,12 +23,12 @@ export default function ShowcaseMarketing() {
       <header ref={navEdgeRef} className="mk-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
-          <a className="active" href="#mentoria">Mentoria</a>
+          <a className="active" href="#mentoria">Plataforma</a>
           <a href="#cases">Cases</a>
           <a href="#manifesto">Manifesto</a>
           <a href="#imprensa">Imprensa</a>
         </nav>
-        <button>Entrar na turma</button>
+        <button>Ver os planos</button>
       </header>
 
       <section className="mk-hero">
@@ -37,35 +37,35 @@ export default function ShowcaseMarketing() {
           <div>
             <span className="pill">
               <span className="pill-dot" />
-              Turma 2026.2 · inscrições abertas
+              Plano Pro · mentoria em grupo ao vivo
             </span>
             <h1>Viver de <em>IA</em>,<br />não de <em>prompt</em>.</h1>
             <p className="lede">
-              Mentoria, comunidade e ferramentas para operadores que precisam transformar
-              inteligência artificial em resultado mensurável — receita, margem,
+              Soluções prontas, formações, mentoria e comunidade para empresas que precisam
+              transformar inteligência artificial em resultado mensurável — receita, margem,
               autonomia. Não em demo bonita.
             </p>
             <div className="actions">
-              <button className="btn primary">Entrar na turma <ArrowRight size={16} strokeWidth={1.75} /></button>
-              <button className="btn ghost">Ver cases · 206 publicados <ArrowUpRight size={16} strokeWidth={1.75} /></button>
+              <button className="btn primary">Ver os planos <ArrowRight size={16} strokeWidth={1.75} /></button>
+              <button className="btn ghost">Ver cases · 521 reais <ArrowUpRight size={16} strokeWidth={1.75} /></button>
             </div>
           </div>
 
           <aside className="glass-stack">
             <div className="g-card" style={{ animation: 'mkFloat 7s ease-in-out infinite' }}>
-              <span className="g-lbl">Conversas analisadas</span>
-              <div className="g-num">+11.920</div>
-              <p className="g-sub"><em>Efizi</em> · análise de WhatsApp em 90 dias</p>
+              <span className="g-lbl">Economia anual</span>
+              <div className="g-num">R$ 120.000</div>
+              <p className="g-sub"><em>Trivia Studio</em> · produção de conteúdo</p>
             </div>
             <div className="g-card" style={{ transform: 'translateX(-24px)', animation: 'mkFloat 8s ease-in-out infinite 1s' }}>
-              <span className="g-lbl">Economia recorrente</span>
-              <div className="g-num">R$ 4.600<span className="g-suffix">/mês</span></div>
-              <p className="g-sub"><em>Balzani & Zimbel</em> · CRM próprio</p>
+              <span className="g-lbl">Economia gerada</span>
+              <div className="g-num">R$ 42.000<span className="g-suffix">/ano</span></div>
+              <p className="g-sub"><em>Place Dreams</em> · em 30 dias</p>
             </div>
             <div className="g-card" style={{ transform: 'translateX(-8px)', animation: 'mkFloat 9s ease-in-out infinite 2s' }}>
-              <span className="g-lbl">Operação financeira</span>
-              <div className="g-num">100%<span className="g-suffix">Automatizada</span></div>
-              <p className="g-sub"><em>Conferir Engenharia</em> · zero manual</p>
+              <span className="g-lbl">Atendimento</span>
+              <div className="g-num">24h<span className="g-suffix">com IA</span></div>
+              <p className="g-sub"><em>Pasetti Viagens</em> · turismo</p>
             </div>
           </aside>
         </div>
@@ -74,7 +74,7 @@ export default function ShowcaseMarketing() {
       <section className="mk-section">
         <header className="mk-section-h">
           <span className="vds-eyebrow">Por que Viver de IA</span>
-          <h2>Da hipótese ao agente <em>em produção</em>.</h2>
+          <h2>Do discurso à IA <em>em operação</em>.</h2>
         </header>
         <div className="mk-feat-grid">
           {feats.map((f) => (
@@ -90,7 +90,7 @@ export default function ShowcaseMarketing() {
       <section className="mk-section">
         <header className="mk-section-h">
           <span className="vds-eyebrow">Cases</span>
-          <h2>206 implementações publicadas. <em>4 delas aqui.</em></h2>
+          <h2>521 cases reais de implementação. <em>4 deles aqui.</em></h2>
         </header>
         <div className="mk-cases">
           {cases.map((c) => (
@@ -113,16 +113,16 @@ export default function ShowcaseMarketing() {
       <section className="mk-cta">
         <div className="mk-cta-atmos" />
         <div className="mk-cta-inner">
-          <span className="vds-eyebrow" style={{ color: 'rgba(255,255,255,0.55)' }}>Mentoria · turma 2026.2</span>
-          <h2>16 semanas com Caio. <em>Saída com agente vivo.</em></h2>
-          <p>Sessões ao vivo + acompanhamento individual de implementação. Você sai com pelo menos um Superagente em produção, medido em receita ou economia.</p>
-          <button className="btn light">Entrar na turma <ArrowRight size={16} strokeWidth={1.75} /></button>
+          <span className="vds-eyebrow" style={{ color: 'rgba(255,255,255,0.55)' }}>Plano Pro · R$ 3.780/mês</span>
+          <h2>Mentoria em grupo ao vivo. <em>Solução rodando na operação.</em></h2>
+          <p>10 check-ins por mês de mentoria em grupo, soluções Plug-and-Play e Consultor IA. Garantia de 90 dias: aumento de receita ou redução de custos, cláusula 7.</p>
+          <button className="btn light">Ver os planos <ArrowRight size={16} strokeWidth={1.75} /></button>
         </div>
       </section>
 
       <footer className="mk-footer">
         <span className="wm">VIVER DE IA</span>
-        <span className="meta">São Paulo · Estabelecida 2023</span>
+        <span className="meta">Plataforma B2B · viverdeia.ai</span>
       </footer>
     </div>
   );

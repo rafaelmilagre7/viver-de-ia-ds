@@ -19,19 +19,19 @@ export default function Copy() {
           <div className="vds-do">
             <p className="vds-do-title">Faça</p>
             <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '4px 0', lineHeight: 1.55 }}>
-              "Efizi: +11.920 conversas analisadas para elevar performance comercial com IA"
+              "Trivia Studio: de processos manuais a R$ 120.000 de economia anual"
             </p>
             <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '8px 0 0', lineHeight: 1.55 }}>
-              "Balzani & Zimbel: R$ 4.600/mês em economia e 100% da operação centralizada"
+              "Place Dreams: R$ 42.000 de economia por ano, em 30 dias"
             </p>
           </div>
           <div className="vds-dont">
             <p className="vds-dont-title">Evite</p>
             <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '4px 0', lineHeight: 1.55 }}>
-              "Como a Efizi revolucionou as vendas com IA"
+              "Como a [empresa] revolucionou as vendas com IA"
             </p>
             <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '8px 0 0', lineHeight: 1.55 }}>
-              "Conheça o case incrível da Balzani"
+              "Conheça o case incrível da [empresa]"
             </p>
           </div>
         </div>
@@ -54,8 +54,8 @@ export default function Copy() {
           <div className="vds-do">
             <p className="vds-do-title">Faça</p>
             <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '4px 0', lineHeight: 1.55, fontStyle: 'normal' }}>
-              "Ela fez isso com pouquíssimas horas. Sem saber nada."<br />
-              <span style={{ fontStyle: 'normal', color: 'var(--via-text-muted)' }}>— Márisson Lage Gonçalves</span>
+              "[Frase curta, em primeira pessoa, do jeito que o cliente falou.]"<br />
+              <span style={{ fontStyle: 'normal', color: 'var(--via-text-muted)' }}>— [Nome] · [cargo] · [empresa]</span>
             </p>
           </div>
           <div className="vds-dont">
@@ -71,10 +71,10 @@ export default function Copy() {
         <table className="vds-token-table">
           <thead><tr><th>Caso</th><th>Formato</th><th>Exemplo</th></tr></thead>
           <tbody>
-            <tr><td className="tok">Reais</td><td className="val">R$ + espaço + ponto</td><td className="use">R$ 4.600 · R$ 2,5M · R$ 248k</td></tr>
+            <tr><td className="tok">Reais</td><td className="val">R$ + espaço + ponto</td><td className="use">R$ 3.780 · R$ 2,5M · R$ 248k</td></tr>
             <tr><td className="tok">Porcentagem</td><td className="val">sem espaço</td><td className="use">100% · +42%</td></tr>
-            <tr><td className="tok">Plus</td><td className="val">com sinal</td><td className="use">+11.920 · +24 alunos</td></tr>
-            <tr><td className="tok">Tempo</td><td className="val">sem espaço · slash</td><td className="use">24/7 · 16 semanas · 3 dias</td></tr>
+            <tr><td className="tok">Plus</td><td className="val">com sinal</td><td className="use">+1.240 · +24 membros</td></tr>
+            <tr><td className="tok">Tempo</td><td className="val">sem espaço · slash</td><td className="use">24/7 · 90 dias · 6h</td></tr>
           </tbody>
         </table>
       </Section>
@@ -83,9 +83,9 @@ export default function Copy() {
         <table className="vds-token-table">
           <thead><tr><th>Função</th><th>Padrão</th><th>Errado</th></tr></thead>
           <tbody>
-            <tr><td className="tok">Conversão</td><td className="val">Entrar na turma</td><td className="use">Saiba mais / Quero saber</td></tr>
+            <tr><td className="tok">Conversão</td><td className="val">Ver os planos</td><td className="use">Saiba mais / Quero saber</td></tr>
             <tr><td className="tok">Navegação</td><td className="val">Ver cases</td><td className="use">Clique aqui</td></tr>
-            <tr><td className="tok">Confirmação</td><td className="val">Confirmar inscrição</td><td className="use">OK / Sim</td></tr>
+            <tr><td className="tok">Confirmação</td><td className="val">Confirmar adesão</td><td className="use">OK / Sim</td></tr>
             <tr><td className="tok">Cancelamento</td><td className="val">Cancelar</td><td className="use">Voltar / Fechar (em ações)</td></tr>
           </tbody>
         </table>

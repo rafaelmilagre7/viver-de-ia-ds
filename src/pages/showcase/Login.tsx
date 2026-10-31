@@ -24,13 +24,13 @@ export default function Login() {
             Marca editorial,<br />engenharia <em>de precisão</em>.
           </h2>
           <p className="lede">
-            "Aqui eu consigo ver rapidamente onde estou perdendo venda, onde posso subir margem e onde preciso agir primeiro."
+            De 6h para cliques: a Viva Nexo economiza R$ 162.000 com IA aplicada à operação.
           </p>
           <div className="quote-attrib">
-            <span className="av">GD</span>
+            <span className="av">VN</span>
             <div>
-              <strong>Guilherme Delorenzo</strong>
-              <span>Founder · Efizi · E-commerce</span>
+              <strong>Viva Nexo</strong>
+              <span>Saúde · case real · viverdeia.ai/cases</span>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function Login() {
           </form>
 
           <p className="auth-foot">
-            Ainda não tem conta? <a className="auth-foot-link">Criar conta da turma 2026.2 →</a>
+            Ainda não tem conta? <a className="auth-foot-link">Conhecer os planos →</a>
           </p>
         </div>
       </div>

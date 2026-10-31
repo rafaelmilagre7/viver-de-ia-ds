@@ -148,7 +148,7 @@ const SEMANA: Metric[] = [
   {
     id: 'mentees',
     icon: Users,
-    label: 'Mentees ativos',
+    label: 'Time aplicando',
     value: '228',
     of: '/ 248',
     delta: '+14 vs. sem 19',
@@ -157,15 +157,15 @@ const SEMANA: Metric[] = [
   {
     id: 'mentoria',
     icon: Calendar,
-    label: 'Mentoria 1:1 · compareceu',
+    label: 'Mentoria em grupo · presença',
     value: '94%',
-    delta: '+6pp · maior da turma',
+    delta: '+6pp · maior do trimestre',
     spark: 'M0,18 L10,16 L20,19 L30,14 L40,12 L50,10 L60,11 L70,7 L80,5',
   },
   {
     id: 'conversas',
     icon: MessageCircle,
-    label: 'Conversas Nina / sem',
+    label: 'Conversas SDR de IA / sem',
     value: '1.842',
     delta: '+38% vs. sem 19',
     spark: 'M0,24 L10,22 L20,23 L30,20 L40,18 L50,12 L60,10 L70,6 L80,4',
@@ -175,7 +175,7 @@ const SEMANA: Metric[] = [
     icon: DollarSign,
     label: 'MRR',
     cur: 'R$',
-    value: '218K',
+    value: '184K',
     delta: '−R$ 4.2K · 2 churns',
     down: true,
     spark: 'M0,10 L10,8 L20,9 L30,7 L40,8 L50,11 L60,14 L70,16 L80,18',
@@ -308,13 +308,13 @@ function InsightsWeeklySection() {
             <span className="vds-ins-eyebrow">
               Semana 20 · 12 — 18 mai 2026
             </span>
-            <p className="vds-ins-by">Por Caio Ribeiro · publicado dom 17h, lido em 4 min</p>
+            <p className="vds-ins-by">Por Marina Costa · head de operações · lido em 4 min</p>
           </div>
           <h2>
-            A turma <em>encontrou seu ritmo</em>.
+            O time <em>encontrou seu ritmo</em>.
           </h2>
           <p className="vds-ins-lede">
-            Quarta semana do trimestre — 92% dos mentees ativos, mentoria 1:1 com taxa de comparecimento histórica e Nina respondendo 38% mais conversas no canal de vendas. Abaixo o que importa.
+            Quarta semana do trimestre — 92% do time aplicando, mentoria em grupo com presença recorde e o SDR de IA respondendo 38% mais conversas no canal de vendas. Abaixo o que importa.
           </p>
         </header>
 
@@ -329,7 +329,7 @@ function InsightsWeeklySection() {
         <div className="vds-ins-chart">
           <header>
             <div>
-              <h4>Atendimento Nina · últimas 8 semanas</h4>
+              <h4>Atendimento do SDR de IA · últimas 8 semanas</h4>
               <p>
                 Volume e taxa têm escalas diferentes — por isso são dois gráficos com um eixo cada, nunca um gráfico de eixo duplo.
               </p>
@@ -342,7 +342,7 @@ function InsightsWeeklySection() {
           </div>
 
           <p className="vds-ins-chart-note">
-            <strong>Insight ·</strong> a curva de resolução automática passou de 52% pra 84% — Nina aprendeu o jeito da casa. Próxima semana vamos testar redirecionamento ativo pra mentor quando ela detectar dor real.
+            <strong>Insight ·</strong> a curva de resolução automática passou de 52% pra 84% — o agente aprendeu o jeito da casa. Próxima semana vamos testar redirecionamento ativo pro vendedor quando ele detectar dor real.
           </p>
         </div>
 
@@ -350,31 +350,31 @@ function InsightsWeeklySection() {
         <div className="vds-ins-quotes">
           <header>
             <h4>O que ouvimos esta semana</h4>
-            <p>3 quotes representativas · selecionadas do Discord, mentoria e canal de vendas.</p>
+            <p>3 quotes representativas · selecionadas do canal interno, mentoria e vendas.</p>
           </header>
           <div className="vds-ins-quotes-grid">
             <blockquote className="vds-ins-quote">
               <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
-              <p>"Fiz minha primeira venda usando o agente Nina como copiloto na sexta — o cliente nem percebeu, e eu fechei 23% acima do meu ticket médio."</p>
+              <p>"Fiz minha primeira venda usando o SDR de IA como copiloto na sexta — o cliente nem percebeu, e eu fechei 23% acima do meu ticket médio."</p>
               <footer>
-                <strong>Camila Moraes</strong>
-                <em>Head IA · Mantra · mentee há 3 meses</em>
+                <strong>Ana Ribas</strong>
+                <em>Vendas · time comercial · aplicando há 3 meses</em>
               </footer>
             </blockquote>
             <blockquote className="vds-ins-quote">
               <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
-              <p>"A mentoria 1:1 dessa semana mudou meu approach inteiro — o Caio simplesmente desenhou o squad que eu precisava no quadro."</p>
+              <p>"O check-in de mentoria dessa semana mudou meu approach inteiro — saí com o fluxo que eu precisava desenhado no quadro."</p>
               <footer>
-                <strong>Daniel Pinheiro</strong>
-                <em>Founder · Pivot · mentee há 4 meses</em>
+                <strong>Bruno Tavares</strong>
+                <em>Operações · aplicando há 4 meses</em>
               </footer>
             </blockquote>
             <blockquote className="vds-ins-quote subtle">
               <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
-              <p>"Achei que o conteúdo seria muito raso e fui surpreendida — vocês entregam mais do que prometem. Mas o Discord ainda é confuso pra navegar."</p>
+              <p>"Achei que a trilha seria rasa e fui surpreendida — foi mais fundo do que eu esperava. Mas o canal interno ainda é confuso pra navegar."</p>
               <footer>
                 <strong>Bruna Carvalho</strong>
-                <em>Product · Lumin · feedback aberto · ação tomada</em>
+                <em>Produto · feedback aberto · ação tomada</em>
               </footer>
             </blockquote>
           </div>
@@ -390,21 +390,21 @@ function InsightsWeeklySection() {
                 <span className="num mono">01</span>
                 <div>
                   <strong>Reverter 2 churns recentes</strong>
-                  <em>conversa 1:1 com Felipe Andrade e Carlos Brito · agendar até qua</em>
+                  <em>conversa direta com Felipe Andrade e Carlos Brito · agendar até qua</em>
                 </div>
               </li>
               <li>
                 <span className="num mono">02</span>
                 <div>
-                  <strong>Lançar redirecionamento ativo da Nina</strong>
-                  <em>Caio + Diego · feature flag · canary 10% na sex</em>
+                  <strong>Lançar redirecionamento ativo do SDR</strong>
+                  <em>Marina + Diego · feature flag · canary 10% na sex</em>
                 </div>
               </li>
               <li>
                 <span className="num mono">03</span>
                 <div>
-                  <strong>Onboarding turma 2026.2</strong>
-                  <em>14 novos confirmados · sessão zero qua 19h · agenda do Caio bloqueada</em>
+                  <strong>Trilha de onboarding · novos</strong>
+                  <em>14 novos confirmados · sessão zero qua 19h · check-in de mentoria reservado</em>
                 </div>
               </li>
             </ol>
@@ -422,7 +422,7 @@ function InsightsWeeklySection() {
               <ArrowRight size={14} strokeWidth={1.75} />
             </a>
             <a href="#" className="vds-ins-foot-share">
-              Compartilhar com a turma →
+              Compartilhar com o time →
             </a>
           </aside>
         </footer>
@@ -433,10 +433,10 @@ function InsightsWeeklySection() {
 
 /* ---------- KPI tiles ---------- */
 const TILES: Metric[] = [
-  { id: 'mrr', label: 'Receita recorrente', cur: 'R$', value: '218K', delta: '−1,9%', down: true, foot: '92K → 218K · trimestre' },
+  { id: 'mrr', label: 'Receita recorrente', cur: 'R$', value: '184K', delta: '−1,9%', down: true, foot: '92K → 184K · trimestre' },
   { id: 'nps', label: 'NPS', value: '74', delta: '+8', foot: '53 respondentes · 28% promotores' },
   { id: 'aulas', label: 'Aulas concluídas', value: '1.418', delta: '+22%', foot: 'média 18min · 92% mobile' },
-  { id: 'discord', label: 'Tempo no Discord', value: '4h 12m', delta: '+9min', foot: 'mediana por mentee · semana' },
+  { id: 'discord', label: 'Tempo na plataforma', value: '4h 12m', delta: '+9min', foot: 'mediana por pessoa · semana' },
 ];
 
 function InsightsKpiTilesSection() {

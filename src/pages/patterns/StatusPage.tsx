@@ -76,9 +76,9 @@ function StatusServicesSection() {
       ],
     },
     {
-      group: 'Nina · agentes IA',
+      group: 'Consultor IA · agentes',
       items: [
-        { name: 'Inference da Nina (texto)', icon: MessageCircle, status: 'ok', uptime: 99.94, days: makeDays(1) },
+        { name: 'Inference do Consultor IA (texto)', icon: MessageCircle, status: 'ok', uptime: 99.94, days: makeDays(1) },
         { name: 'Transcrição de áudio', icon: Activity, status: 'ok', uptime: 99.88, days: makeDays(3) },
         { name: 'Geração de embeddings', icon: Database, status: 'degraded', uptime: 98.42, days: makeDays(12) },
       ],
@@ -148,11 +148,11 @@ function StatusIncidentsSection() {
     {
       date: '05 mai 2026',
       severity: 'maintenance',
-      title: 'Janela programada · atualização da Nina',
+      title: 'Janela programada · atualização do Consultor IA',
       status: 'resolved',
       duration: '1h 14min · planejado',
       updates: [
-        { time: '04h00', text: 'Início da janela · Nina pausada conforme avisado.' },
+        { time: '04h00', text: 'Início da janela · Consultor IA pausado conforme avisado.' },
         { time: '05h14', text: 'Deploy concluído · 100% do tráfego restaurado. Sem regressões reportadas.' },
       ],
     },

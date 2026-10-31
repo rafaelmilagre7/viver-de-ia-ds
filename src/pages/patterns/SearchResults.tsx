@@ -46,20 +46,20 @@ function SearchResultsSection() {
   const facets = [
     { id: 'all', label: 'Tudo', count: 84, icon: Search, active: true },
     { id: 'aula', label: 'Aulas', count: 32, icon: BookOpen },
-    { id: 'chat', label: 'Conversas Nina', count: 28, icon: MessageCircle },
+    { id: 'chat', label: 'Consultor IA', count: 28, icon: MessageCircle },
     { id: 'people', label: 'Pessoas', count: 14, icon: Users },
     { id: 'docs', label: 'Materiais', count: 10, icon: FileText },
   ];
 
-  const activeFilters = ['últimos 30 dias', 'plano Mentoria', 'em português'];
+  const activeFilters = ['últimos 30 dias', 'plano Pro', 'em português'];
 
   const results = [
     {
       type: 'Aula',
       typeColor: 'navy',
-      title: 'Few-shot tuning na prática · classifier v2 da Mantra',
-      snippet: 'Camila Moraes mostra como passou de 62% pra 91% de precisão usando few-shot tuning com 14 exemplos curados. Sessão prática · turma 2026.1 · 47min.',
-      meta: ['Módulo 04 · IA aplicada', 'Camila Moraes', '47 min'],
+      title: 'Few-shot tuning na prática · classifier v2 de uma fintech',
+      snippet: 'Renata Costa mostra como passou de 62% pra 91% de precisão usando few-shot tuning com 14 exemplos curados. Sessão prática · Formação: Agentes de IA · 47min.',
+      meta: ['Módulo 04 · IA aplicada', 'Renata Costa', '47 min'],
       time: 'há 6 dias',
       score: 98,
     },
@@ -73,11 +73,11 @@ function SearchResultsSection() {
       score: 92,
     },
     {
-      type: 'Conversa Nina',
+      type: 'Consultor IA',
       typeColor: 'accent',
       title: '"Qual a diferença entre few-shot tuning e fine-tuning real?"',
-      snippet: 'Nina explicou pro Daniel Pinheiro: few-shot tuning não muda o modelo, só adiciona exemplos no prompt. Fine-tuning real requer dataset e treino · custo 100x maior.',
-      meta: ['Daniel Pinheiro', 'canal #ajuda', '14 trocas'],
+      snippet: 'O Consultor IA explicou pro Thiago Reis: few-shot tuning não muda o modelo, só adiciona exemplos no prompt. Fine-tuning real requer dataset e treino · custo 100x maior.',
+      meta: ['Thiago Reis', 'Consultor IA', '14 trocas'],
       time: 'há 3 dias',
       score: 86,
     },
@@ -94,7 +94,7 @@ function SearchResultsSection() {
       type: 'Pessoa',
       typeColor: 'ink',
       title: 'Mateus Costa · Senior IA · Viver de IA',
-      snippet: 'Especialista em few-shot tuning e classification systems · 4 aulas no curso · disponível pra mentoria 1:1 às terças.',
+      snippet: 'Especialista em few-shot tuning e classification systems · 4 aulas na formação · conduz check-ins de mentoria em grupo às terças.',
       meta: ['Senior IA', '4 aulas · 12 mentorias'],
       time: 'desde 2024',
       score: 72,
@@ -154,9 +154,9 @@ function SearchResultsSection() {
 
             <p className="vds-sr-section-eyebrow" style={{ marginTop: 24 }}>Plano</p>
             <ul className="vds-sr-filter-list">
-              <li><label><input type="checkbox" /> <span>Comunidade</span></label></li>
-              <li><label><input type="checkbox" defaultChecked /> <span>Mentoria</span></label></li>
-              <li><label><input type="checkbox" /> <span>Corporate</span></label></li>
+              <li><label><input type="checkbox" /> <span>Starter</span></label></li>
+              <li><label><input type="checkbox" defaultChecked /> <span>Pro</span></label></li>
+              <li><label><input type="checkbox" /> <span>Enterprise</span></label></li>
             </ul>
           </aside>
 

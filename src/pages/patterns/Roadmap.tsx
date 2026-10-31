@@ -52,8 +52,8 @@ function RoadmapKanbanSection() {
       cards: [
         {
           tag: 'Plataforma',
-          title: 'Nina white-label · domínio próprio do cliente',
-          desc: 'Cliente Corporate consegue plugar nina.suaempresa.com com SSO e cores próprias preservando a inteligência da Nina.',
+          title: 'AI Builder · soluções sob medida no painel',
+          desc: 'Cliente Enterprise desenha solução sob medida com o arquiteto de soluções, direto no painel, com SSO e cores próprias.',
           progress: 72,
           owner: 'Diego + Caio',
           eta: 'jul/26',
@@ -62,15 +62,15 @@ function RoadmapKanbanSection() {
         },
         {
           tag: 'Mentoria',
-          title: 'Sessão 1:1 com gravação + transcript automático',
-          desc: 'Após cada mentoria, transcript vai pro Discord interno com pendências marcadas.',
+          title: 'Check-in em grupo com gravação + transcript',
+          desc: 'Após cada check-in de mentoria, transcript vai pra plataforma com pendências marcadas.',
           progress: 92,
           owner: 'Mateus',
           eta: 'jun/26',
           votes: 96,
         },
         {
-          tag: 'Aluno',
+          tag: 'Membro',
           title: 'Activity rings (estudo · prática · comunidade)',
           desc: 'Painel diário no estilo Apple Watch — 3 anéis fechando ao longo do dia, com streak protegido.',
           progress: 64,
@@ -88,17 +88,17 @@ function RoadmapKanbanSection() {
       cards: [
         {
           tag: 'Plataforma',
-          title: 'Multi-tenant pra times do plano Corporate',
-          desc: 'Cada empresa Corporate vira workspace isolado com seus próprios mentees, mentores e métricas.',
+          title: 'Multi-tenant pra times do plano Enterprise',
+          desc: 'Cada empresa Enterprise vira workspace isolado com seus próprios membros, mentores e métricas.',
           progress: 18,
           owner: 'Diego',
           eta: 'set/26',
           votes: 218,
         },
         {
-          tag: 'Aluno',
-          title: 'Plano de 90 dias gerado a partir do onboarding',
-          desc: 'Wizard que pergunta 4 perguntas e devolve roadmap personalizado de estudo + 1ª mentoria já marcada.',
+          tag: 'Membro',
+          title: 'Trilha personalizada gerada no onboarding',
+          desc: 'Wizard que faz 4 perguntas e devolve trilha personalizada de formações + 1º check-in de mentoria já marcado.',
           progress: 0,
           owner: 'Caio',
           eta: 'ago/26',
@@ -107,7 +107,7 @@ function RoadmapKanbanSection() {
         {
           tag: 'IA',
           title: 'Modo "shadow" pra calibrar prompts em produção',
-          desc: 'Mentor testa respostas da Nina em paralelo sem expor pro cliente — admin vê side-by-side.',
+          desc: 'Mentor testa respostas do Consultor IA em paralelo sem expor pro cliente — admin vê side-by-side.',
           progress: 32,
           owner: 'Mateus + Diego',
           eta: 'out/26',
@@ -132,7 +132,7 @@ function RoadmapKanbanSection() {
         {
           tag: 'Conteúdo',
           title: 'Tradução pra inglês e espanhol das aulas core',
-          desc: 'Começando pelas 20 aulas mais assistidas · co-produção com a turma 2026 da LATAM.',
+          desc: 'Começando pelas 20 aulas mais assistidas das formações · co-produção com membros da LATAM.',
           owner: 'a decidir',
           votes: 184,
           investigating: true,
@@ -140,7 +140,7 @@ function RoadmapKanbanSection() {
         {
           tag: 'IA',
           title: 'Agente de planejamento financeiro pessoal',
-          desc: 'Para alunos que querem aplicar IA no próprio dinheiro · privacidade-first, on-device.',
+          desc: 'Para membros que querem aplicar IA no próprio dinheiro · privacidade-first, on-device.',
           owner: 'a decidir',
           votes: 112,
           investigating: true,

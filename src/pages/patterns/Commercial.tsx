@@ -35,18 +35,18 @@ export default function Commercial() {
 /* ---------- Pitch deck · 12 slides Google Slides ---------- */
 function PitchDeckSection() {
   const slides = [
-    { n: '01', kind: 'capa', h: 'Viver de IA', sub: 'Formação técnico-operativa em IA · 2026', meta: 'capa · navy mesh + wordmark' },
-    { n: '02', kind: 'problema', h: 'O operador médio brasileiro não opera IA.', sub: 'opera Excel · opera ERP · opera Notion. Não opera agente IA.', meta: 'declaração do problema · sem foto literal' },
-    { n: '03', kind: 'mercado', h: '+220 operadores formados', sub: 'R$ 1,8M destravado · 12 meses · 92% chega ao agente em produção', meta: 'prova com número' },
-    { n: '04', kind: 'método', h: 'Método em 3 atos.', sub: 'estuda · constrói · opera · 90 dias até primeiro agente em produção', meta: 'método overview' },
-    { n: '05', kind: 'método-detalhe', h: 'Ato 1 · Estuda', sub: '18 aulas estruturadas · stack real (Claude SDK, OpenAI, open-source) · sem teoria de palestra', meta: 'detalhe ato 1' },
-    { n: '06', kind: 'método-detalhe', h: 'Ato 2 · Constrói', sub: '4 lives ao vivo auditando prompts · 2 estudos de caso entregues · mentoria 1:1 mensal', meta: 'detalhe ato 2' },
-    { n: '07', kind: 'método-detalhe', h: 'Ato 3 · Opera', sub: 'agente em produção · medido · responsabilidade do operador · plataforma + comunidade vitalícios', meta: 'detalhe ato 3' },
-    { n: '08', kind: 'caso', h: 'Caso · Caio Ribeiro', sub: 'construiu Nina · 11.920 conversas/mês · método dentro da própria operação', meta: 'caso real próprio' },
-    { n: '09', kind: 'caso', h: 'Caso · Camila Moraes', sub: 'agente proposta · 73% menos token · ROI em 2 meses', meta: 'caso real cliente' },
-    { n: '10', kind: 'preço', h: 'R$ 2.400/mês · 4 meses', sub: '18 aulas · 4 lives · mentoria 1:1 mensal · comunidade vitalícia · garantia 90 dias', meta: 'oferta + garantia' },
-    { n: '11', kind: 'proximo', h: 'Próximo passo', sub: '30min de call · sex 22/mai · audito teu caso, dimensiono fit, te conto se faz sentido', meta: 'CTA específico' },
-    { n: '12', kind: 'thank-you', h: 'Obrigado.', sub: 'viverdeia.ai · caio@viverdeia.ai · @caioribeiro', meta: 'contato + thank-you' },
+    { n: '01', kind: 'capa', h: 'Viver de IA', sub: 'Plataforma de implementação de IA · 2026', meta: 'capa · navy mesh + wordmark' },
+    { n: '02', kind: 'problema', h: 'A empresa brasileira fala de IA. Não opera IA.', sub: 'opera Excel · opera ERP · opera Notion. A IA fica no discurso.', meta: 'declaração do problema · sem foto literal' },
+    { n: '03', kind: 'mercado', h: '521 cases reais', sub: '521 cases reais de implementação de IA · 157 soluções prontas · 29 setores', meta: 'prova com número' },
+    { n: '04', kind: 'método', h: 'Método em 3 atos.', sub: 'alfabetiza · implementa · mede · trilha de onboarding até a primeira solução rodando', meta: 'método overview' },
+    { n: '05', kind: 'método-detalhe', h: 'Ato 1 · Alfabetiza', sub: 'formações práticas · trilha personalizada com IA · do CEO ao analista, sem teoria de palestra', meta: 'detalhe ato 1' },
+    { n: '06', kind: 'método-detalhe', h: 'Ato 2 · Implementa', sub: '157 soluções Plug-and-Play · Consultor IA dentro da plataforma · mentorias em grupo ao vivo', meta: 'detalhe ato 2' },
+    { n: '07', kind: 'método-detalhe', h: 'Ato 3 · Mede', sub: 'solução em operação · quem está aplicando, engajamento e ROI no dashboard · comunidade de líderes', meta: 'detalhe ato 3' },
+    { n: '08', kind: 'caso', h: 'Caso · Viva Nexo', sub: 'de 6h para cliques · economiza R$ 162.000 · case real em viverdeia.ai/cases', meta: 'caso real cliente' },
+    { n: '09', kind: 'caso', h: 'Caso · Trivia Studio', sub: 'de processos manuais a R$ 120.000 de economia anual', meta: 'caso real cliente' },
+    { n: '10', kind: 'preço', h: 'Pro · R$ 3.780/mês', sub: 'contratação anual · 10 check-ins/mês de mentoria em grupo · comunidade · garantia de 90 dias', meta: 'oferta + garantia' },
+    { n: '11', kind: 'proximo', h: 'Próximo passo', sub: '30min de call · [data] · entendo seu cenário, indico o plano, conto se faz sentido', meta: 'CTA específico' },
+    { n: '12', kind: 'thank-you', h: 'Obrigado.', sub: 'viverdeia.ai · viverdeia.ai/planos · viverdeia.ai/cases', meta: 'contato + thank-you' },
   ];
 
   return (
@@ -117,26 +117,26 @@ function OnePagerSection() {
         </header>
 
         <h2>
-          Operadores formando operadores.<br />
-          <em>Método codificado em 220 alunos.</em>
+          Da IA no discurso à IA na operação.<br />
+          <em>521 cases reais de implementação.</em>
         </h2>
 
         <div className="vds-com-onepager-stats">
           <div>
-            <strong className="mono">+220</strong>
-            <em>operadores formados</em>
+            <strong className="mono">521</strong>
+            <em>cases reais de implementação</em>
           </div>
           <div>
-            <strong className="mono">R$ 1,8M</strong>
-            <em>destravado em 12 meses</em>
+            <strong className="mono">157</strong>
+            <em>soluções de IA prontas</em>
           </div>
           <div>
-            <strong className="mono">92%</strong>
-            <em>chegam ao agente em prod</em>
+            <strong className="mono">29</strong>
+            <em>setores com implementação</em>
           </div>
           <div>
             <strong className="mono">90 dias</strong>
-            <em>até primeiro agente</em>
+            <em>de garantia com requisitos</em>
           </div>
         </div>
 
@@ -144,9 +144,9 @@ function OnePagerSection() {
           <article>
             <h3>Pra quem é</h3>
             <p>
-              Operador de PME brasileira (fundador, head, gerente, autônomo que toca o
-              próprio negócio) que precisa fazer IA gerar resultado mensurável dentro da
-              operação dele essa semana — sem squad de ML, sem virar engenheiro, sem
+              Empresário ou líder de empresa brasileira (fundador, CEO, head, gerente)
+              que precisa fazer a IA gerar resultado mensurável dentro da operação —
+              reduzir custo, aumentar receita — sem squad de ML, sem time técnico, sem
               depender de fornecedor terceiro.
             </p>
           </article>
@@ -154,32 +154,32 @@ function OnePagerSection() {
           <article>
             <h3>O que recebe</h3>
             <ul>
-              <li><Check size={14} strokeWidth={1.75} /> 18 aulas estruturadas</li>
-              <li><Check size={14} strokeWidth={1.75} /> 4 lives ao vivo · auditoria de prompts</li>
-              <li><Check size={14} strokeWidth={1.75} /> Mentoria 1:1 mensal</li>
-              <li><Check size={14} strokeWidth={1.75} /> Comunidade fechada vitalícia</li>
-              <li><Check size={14} strokeWidth={1.75} /> 2 estudos de caso entregues</li>
-              <li><Check size={14} strokeWidth={1.75} /> Templates · prompts · código-base</li>
+              <li><Check size={14} strokeWidth={1.75} /> Soluções Plug-and-Play</li>
+              <li><Check size={14} strokeWidth={1.75} /> Formações práticas</li>
+              <li><Check size={14} strokeWidth={1.75} /> Consultor IA na plataforma</li>
+              <li><Check size={14} strokeWidth={1.75} /> Comunidade de empresários e líderes</li>
+              <li><Check size={14} strokeWidth={1.75} /> Imersão presencial na sede</li>
+              <li><Check size={14} strokeWidth={1.75} /> Mentoria em grupo · 10 check-ins/mês (Pro)</li>
             </ul>
           </article>
 
           <article>
             <h3>Garantia</h3>
             <p>
-              <strong>90 dias até agente em produção · ou continua sem mensalidade extra
-              até chegar.</strong> Devolução total em 60 dias se não fizer sentido,
-              sem perguntas.
+              <strong>100% do investimento de volta se, em 90 dias, não houver aumento
+              de receita nem redução de custos.</strong> Exige 3 requisitos: trilha de
+              onboarding, 3 formações e 3 soluções · cláusula 7.
             </p>
           </article>
         </div>
 
         <footer>
           <div>
-            <strong>Próxima turma · 2026.3</strong>
-            <em>abre 22 mai 9h · 30 vagas · 4 meses · começa em jun</em>
+            <strong>Plano Pro · R$ 3.780/mês</strong>
+            <em>contratação anual · 10 check-ins/mês de mentoria em grupo</em>
           </div>
           <a href="#" className="vds-com-onepager-cta">
-            viverdeia.ai/turma
+            viverdeia.ai/planos
           </a>
         </footer>
       </article>
@@ -198,15 +198,15 @@ function CaseStudySection() {
         <header>
           <div className="vds-com-case-mark">
             <Layers size={14} strokeWidth={1.75} />
-            case study · turma 2025.3
+            case real · Saúde
           </div>
           <h2>
-            Camila Moraes reduziu o token<br />
-            do agente em <em>73%</em>.
+            Viva Nexo foi de 6h<br />
+            para <em>cliques</em>.
           </h2>
           <p>
-            CTO da Mantra Tech, fintech B2B, 12 pessoas no time. Agente de geração de
-            proposta tava consumindo 8.400 tokens/proposta no início de fev/2026.
+            Case real publicado em viverdeia.ai/cases · setor Saúde · economia de
+            R$ 162.000. Os blocos abaixo mostram o formato · [dado do case] entra no lugar.
           </p>
         </header>
 
@@ -214,47 +214,46 @@ function CaseStudySection() {
           <article>
             <span className="vds-com-case-eyebrow">contexto</span>
             <p>
-              Mantra Tech construiu primeiro agente em fev 2026 dentro da turma 2025.3.
-              Caso de uso: gerar proposta comercial customizada por lead, consumindo
-              contexto da call de descoberta + perfil da empresa + features cabíveis.
-              Funcionou. Custou 8.400 tokens por proposta · ~R$ 1,20/proposta · 800
-              propostas/mês = <strong>R$ 960/mês de API only</strong>.
+              [Empresa] · [setor] · [tamanho do time]. Processo manual antes da IA:
+              [o que o time fazia à mão, quantas horas por semana, quem fazia].
+              Caso de uso: [solução escolhida na adesão]. Custo de partida medido
+              na operação = <strong>R$ [valor]/mês</strong>.
             </p>
           </article>
 
           <article>
             <span className="vds-com-case-eyebrow">desafio</span>
             <p>
-              ROI ficou marginal · ela tava considerando matar o agente porque a margem
-              não justificava a complexidade. Trouxe pra mentoria 1:1 esperando ouvir
-              "muda o modelo pra mais barato". Mostrei que o problema não era o modelo —
-              era o contexto carregando coisa que não precisava.
+              [O que travava o resultado · em 2-3 frases, com o dado do case] ·
+              o que o time tentou antes, por que não funcionou e o que estava
+              em jogo se nada mudasse. Sem adjetivo, sem "revolucionou" —
+              só o problema como ele aparecia na operação.
             </p>
           </article>
 
           <article>
             <span className="vds-com-case-eyebrow">método aplicado</span>
             <ol>
-              <li>Auditoria do system prompt · cortou 40% do contexto repetido em cada call</li>
-              <li>Schema validation pra saída JSON · removeu retry loop que consumia tokens 2x</li>
-              <li>Contexto dinâmico por tipo de lead · só carrega o que aquela proposta precisa</li>
+              <li>[Solução 1] · o que foi implementado e onde entrou na operação</li>
+              <li>[Solução 2] · o que mudou no processo e quem passou a operar</li>
+              <li>[Medição] · como o resultado foi medido · fonte do número</li>
             </ol>
           </article>
 
           <article>
-            <span className="vds-com-case-eyebrow">resultado · mensurado contra mesma cohort</span>
+            <span className="vds-com-case-eyebrow">resultado · título público do case</span>
             <div className="vds-com-case-stats">
               <div>
-                <strong className="mono">8.400 → 2.260</strong>
-                <em>tokens/proposta · -73%</em>
+                <strong className="mono">6h → cliques</strong>
+                <em>tempo de relatório</em>
               </div>
               <div>
-                <strong className="mono">R$ 960 → R$ 261</strong>
-                <em>custo mensal API · -73%</em>
+                <strong className="mono">R$ 162.000</strong>
+                <em>economia gerada</em>
               </div>
               <div>
-                <strong className="mono">2 meses</strong>
-                <em>ROI do programa Viver de IA</em>
+                <strong className="mono">[prazo]</strong>
+                <em>até o resultado</em>
               </div>
             </div>
           </article>
@@ -262,12 +261,12 @@ function CaseStudySection() {
 
         <footer>
           <blockquote>
-            "Sem essa mentoria eu teria matado o agente. Hoje ele paga o programa.
-            Em julho ele vai estar pagando minha mensalidade pelos próximos 2 anos."
+            [Depoimento do cliente, nas palavras dele · só com autorização
+            por escrito e fonte registrada. Sem frase inventada.]
           </blockquote>
           <cite>
-            <strong>Camila Moraes</strong>
-            <em>CTO · Mantra Tech · turma 2025.3</em>
+            <strong>[Nome]</strong>
+            <em>[cargo] · [empresa] · case real</em>
           </cite>
         </footer>
       </article>
@@ -302,26 +301,25 @@ function ProposalSection() {
             Para
           </h3>
           <div className="vds-com-proposal-for">
-            <strong>Efizi Sistemas LTDA · CNPJ 18.524.872/0001-92</strong>
-            <em>R. Princesa Isabel 145 · São Paulo, SP · 04601-000</em>
-            <em>Att: Márisson Lage · CTO</em>
+            <strong>[Razão social] · CNPJ [00.000.000/0000-00]</strong>
+            <em>[Endereço] · [cidade, UF] · [CEP]</em>
+            <em>Att: [Nome] · [cargo]</em>
           </div>
         </section>
 
         <section>
           <h3>Escopo</h3>
           <p>
-            Formação técnico-operativa em IA para Márisson Lage e 1 operador interno da
-            Efizi Sistemas. Programa Viver de IA · turma 2026.3 · 4 meses · começa em
-            jun/2026.
+            Adesão à plataforma Viver de IA para o time da [empresa]. Plano Pro ·
+            contratação anual · trilha de onboarding começa na semana da adesão.
           </p>
           <ul className="vds-com-proposal-list">
-            <li><Check size={14} strokeWidth={1.75} /> 18 aulas estruturadas · stack real (Claude SDK / OpenAI)</li>
-            <li><Check size={14} strokeWidth={1.75} /> 4 lives ao vivo · auditoria de prompts (1×/mês)</li>
-            <li><Check size={14} strokeWidth={1.75} /> Mentoria 1:1 mensal · 60min cada (Caio · fundador)</li>
-            <li><Check size={14} strokeWidth={1.75} /> Comunidade fechada vitalícia (Discord curado)</li>
-            <li><Check size={14} strokeWidth={1.75} /> 2 estudos de caso entregues e auditados</li>
-            <li><Check size={14} strokeWidth={1.75} /> Garantia: 90 dias até agente em produção</li>
+            <li><Check size={14} strokeWidth={1.75} /> Todas as soluções Plug-and-Play · 157 soluções prontas</li>
+            <li><Check size={14} strokeWidth={1.75} /> Formações práticas · trilha personalizada com IA</li>
+            <li><Check size={14} strokeWidth={1.75} /> Mentoria em grupo ao vivo · 10 check-ins/mês</li>
+            <li><Check size={14} strokeWidth={1.75} /> Consultor IA dentro da plataforma</li>
+            <li><Check size={14} strokeWidth={1.75} /> Comunidade de empresários e líderes · imersão na sede</li>
+            <li><Check size={14} strokeWidth={1.75} /> Garantia de 90 dias · condições na cláusula 7</li>
           </ul>
         </section>
 
@@ -330,22 +328,22 @@ function ProposalSection() {
           <table>
             <tbody>
               <tr>
-                <td>Programa Viver de IA · turma 2026.3 · 2 vagas</td>
-                <td className="mono">R$ 4.800/mês</td>
+                <td>Plano Pro · contratação anual</td>
+                <td className="mono">R$ 3.780/mês</td>
               </tr>
               <tr>
-                <td>Período · 4 meses</td>
-                <td className="mono">×4</td>
+                <td>Período · 12 meses</td>
+                <td className="mono">×12</td>
               </tr>
               <tr className="vds-com-proposal-total">
                 <td><strong>Total</strong></td>
-                <td className="mono"><strong>R$ 19.200,00</strong></td>
+                <td className="mono"><strong>R$ 45.360,00</strong></td>
               </tr>
             </tbody>
           </table>
           <em className="vds-com-proposal-payment">
-            Pagamento mensal direto na fatura · cartão ou PIX · NF emitida no dia 1 de
-            cada mês.
+            Forma e condição de pagamento: [condições de pagamento] · NF conforme
+            contrato.
           </em>
         </section>
 
@@ -353,8 +351,8 @@ function ProposalSection() {
           <div>
             <strong>Próximo passo</strong>
             <em>
-              Aceite válido até <strong>27 mai 2026</strong>. Após aceite, mando link de
-              pagamento + dados de acesso à plataforma em 2h úteis.
+              Aceite válido até <strong>27 mai 2026</strong>. Após aceite, você recebe o
+              link de pagamento e o acesso à trilha de onboarding.
             </em>
           </div>
           <button className="vds-com-proposal-cta">
@@ -377,74 +375,74 @@ function ContractSection() {
         <header>
           <img src={wordmarkBlack} alt="Viver de IA" />
           <div>
-            <strong>Contrato de prestação de serviços educacionais</strong>
-            <em>Programa Viver de IA · turma 2026.3</em>
+            <strong>Contrato de adesão à plataforma Viver de IA</strong>
+            <em>Plano Pro · contratação anual</em>
           </div>
         </header>
 
         <section>
           <h3>1 · Partes</h3>
           <p>
-            <strong>Contratante:</strong> Efizi Sistemas LTDA · CNPJ 18.524.872/0001-92 ·
-            representada por Márisson Lage, CTO.
+            <strong>Contratante:</strong> [Razão social] · CNPJ [00.000.000/0000-00] ·
+            representada por [Nome], [cargo].
           </p>
           <p>
-            <strong>Contratada:</strong> Viver de IA Educação LTDA · CNPJ 47.392.184/0001-22 ·
-            representada por Caio Ribeiro, fundador.
+            <strong>Contratada:</strong> [Razão social da Viver de IA] · CNPJ [00.000.000/0000-00] ·
+            representada por [representante legal].
           </p>
         </section>
 
         <section>
           <h3>2 · Objeto</h3>
           <p>
-            Prestação de serviço educacional na modalidade EAD + mentoria síncrona, pelo
-            período de 4 meses contínuos a partir de <strong>3 jun 2026</strong>, conforme
-            escopo detalhado na proposta PRO-2026-00428.
+            Acesso à plataforma Viver de IA no plano Pro, com mentoria em grupo ao vivo,
+            em contratação anual a partir de <strong>[data]</strong>, conforme escopo
+            detalhado na proposta PRO-2026-00428.
           </p>
         </section>
 
         <section>
           <h3>3 · Garantia</h3>
           <p>
-            A Contratada garante que, ao término dos 4 meses, o Contratante terá pelo
-            menos 1 (um) agente IA em ambiente de produção dentro de sua própria operação,
-            construído pelo Contratante com suporte da Contratada. Caso isso não ocorra,
-            o Contratante mantém acesso ao programa sem custo adicional até atingir o
-            resultado.
+            A Contratada devolve 100% do investimento se, em 90 dias, a Contratante não
+            tiver nem aumento de receita nem redução de custos operacionais. Para ter
+            direito, a Contratante cumpre no mesmo prazo três requisitos: concluir a
+            trilha de onboarding, concluir 3 formações e implementar as 3 soluções
+            escolhidas na adesão.
           </p>
         </section>
 
         <section>
-          <h3>4 · Devolução</h3>
+          <h3>4 · Condições</h3>
           <p>
-            <strong>60 dias corridos</strong> a partir do início do programa para devolução
-            integral dos valores pagos, sem necessidade de justificativa.
+            <strong>Condições completas</strong> da garantia na cláusula 7 dos termos de
+            uso. A verificação é feita pelos registros da plataforma.
           </p>
         </section>
 
         <section>
           <h3>5 · Propriedade intelectual</h3>
           <p>
-            Todo conteúdo (aulas, materiais, código-base) permanece propriedade da
-            Contratada. O Contratante recebe licença vitalícia de uso pessoal e dentro
-            de sua própria operação. Vedada redistribuição.
+            Todo conteúdo (formações, materiais, soluções) permanece propriedade da
+            Contratada. A Contratante recebe licença de uso dentro da própria operação,
+            [prazo e condições conforme termos de uso]. Vedada redistribuição.
           </p>
         </section>
 
         <footer>
           <div className="vds-com-contract-sig">
             <span className="line" />
-            <strong>Márisson Lage</strong>
-            <em>Efizi Sistemas LTDA · Contratante</em>
+            <strong>[Nome]</strong>
+            <em>[Razão social] · Contratante</em>
           </div>
           <div className="vds-com-contract-sig">
             <span className="line" />
-            <strong>Caio Ribeiro</strong>
-            <em>Viver de IA Educação LTDA · Contratada</em>
+            <strong>[Representante legal]</strong>
+            <em>Viver de IA · Contratada</em>
           </div>
         </footer>
 
-        <p className="vds-com-contract-loc mono">São Paulo, 20 mai 2026 · 2 vias de igual teor · 1 testemunha presencial.</p>
+        <p className="vds-com-contract-loc mono">[cidade], [data] · 2 vias de igual teor · 1 testemunha presencial.</p>
       </article>
     </Section>
   );

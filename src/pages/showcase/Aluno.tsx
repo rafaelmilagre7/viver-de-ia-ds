@@ -11,7 +11,7 @@ const modules = [
 ];
 
 const next = [
-  { t: 'qua · 19:30', l: 'Sessão ao vivo · Modelagem do seu agente' },
+  { t: 'qua · 19:30', l: 'Check-in ao vivo · mentoria em grupo' },
   { t: 'sex · 14:00', l: 'Office hours com Caio' },
   { t: 'sáb · 10:00', l: 'Workshop · publicando o primeiro deploy' },
 ];
@@ -42,9 +42,9 @@ export default function ShowcaseAluno() {
       <div className="al-container">
         <section className="al-hero">
           <div>
-            <span className="vds-eyebrow">Painel · turma 2026.2</span>
+            <span className="vds-eyebrow">Painel · Plano Pro</span>
             <h1>Você está em <em>módulo 03</em>.</h1>
-            <p className="lede">Esta semana — modelar o primeiro agente. Sessão ao vivo na quarta. Caio revisa rascunhos na sexta.</p>
+            <p className="lede">Esta semana — modelar o primeiro agente. Check-in de mentoria na quarta. Caio revisa rascunhos na sexta.</p>
             <div className="al-cta-row">
               <button className="btn primary">Continuar módulo <ArrowRight size={16} strokeWidth={1.75} /></button>
               <button className="btn ghost">Ver cronograma</button>
@@ -63,7 +63,7 @@ export default function ShowcaseAluno() {
               </svg>
               <span className="pct">50<em>%</em></span>
             </div>
-            <p className="sub">5 semanas restantes · 16 ao total</p>
+            <p className="sub">Formação Agentes de IA · 5 módulos</p>
           </aside>
         </section>
 
@@ -71,7 +71,7 @@ export default function ShowcaseAluno() {
           <div className="al-modules">
             <header className="al-row-h">
               <span className="vds-eyebrow">Módulos</span>
-              <h2>Sua trilha de <em>16 semanas</em></h2>
+              <h2>Formação · <em>Agentes de IA</em></h2>
             </header>
             <ol>
               {modules.map((m) => (
@@ -122,8 +122,8 @@ export default function ShowcaseAluno() {
 
             <div className="card mini-cta">
               <BookOpen size={20} strokeWidth={1.75} />
-              <strong>206 cases publicados</strong>
-              <p>Explore o diretório e veja o que outros operadores estão fazendo.</p>
+              <strong>521 cases reais</strong>
+              <p>Explore o diretório e veja o que outras empresas estão implementando.</p>
               <button>Abrir <ArrowRight size={14} strokeWidth={1.75} /></button>
             </div>
           </aside>

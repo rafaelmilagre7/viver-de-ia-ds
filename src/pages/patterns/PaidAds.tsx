@@ -75,24 +75,24 @@ function MetaSingleSection() {
 
           <div className="vds-pa-meta-text">
             <p><strong>Em 2026, operador que não opera IA, não opera.</strong></p>
-            <p>220 operadores formados · próxima turma fecha em 9 dias.</p>
+            <p>521 cases reais de implementação de IA · 157 soluções prontas.</p>
           </div>
 
           <div className="vds-pa-meta-canvas vds-pa-light">
             <span className="vds-pa-aura" aria-hidden="true" />
-            <span className="vds-pa-meta-eyebrow">turma 2026.3 · 30 vagas · 4 meses</span>
+            <span className="vds-pa-meta-eyebrow">plano pro · 10 check-ins de mentoria/mês</span>
             <h2>
-              90 dias. <em>1 agente em produção</em>.
+              90 dias. <em>Receita sobe ou custo cai</em>.
             </h2>
-            <p>ou seu dinheiro de volta</p>
+            <p>ou 100% do investimento de volta</p>
             <img src={monogramNavy} alt="" className="vds-pa-meta-mono" />
           </div>
 
           <footer className="vds-pa-meta-footer">
             <div>
               <em className="vds-pa-meta-domain">VIVERDEIA.AI</em>
-              <strong>Ver programa</strong>
-              <em>Formação técnico-operativa em IA</em>
+              <strong>Ver planos</strong>
+              <em>Plataforma de implementação de IA</em>
             </div>
             <a href="#" className="vds-pa-meta-cta">Saiba mais</a>
           </footer>
@@ -109,7 +109,7 @@ function MetaSingleSection() {
           { k: 'Primary text', v: 'Hook + razão · até 125 chars antes do "Ver mais"' },
           { k: 'Image', v: '1080×1080 (1:1) · navy editorial · zero foto literal' },
           { k: 'CTA button', v: '"Saiba mais" · "Cadastre-se" · "Ver agora" · NÃO "Garanta já"' },
-          { k: 'Link description', v: 'Sub-headline · clarifica o programa em 1 linha' },
+          { k: 'Link description', v: 'Sub-headline · clarifica a oferta em 1 linha' },
         ]} />
       </div>
     </Section>
@@ -121,11 +121,11 @@ function MetaSingleSection() {
    ============================================================ */
 function MetaCarouselSection() {
   const cards = [
-    { n: 1, h: '+220', sub: 'operadores formados em 2 anos', type: 'hook' },
-    { n: 2, h: '90 dias', sub: 'até primeiro agente em produção', type: 'context' },
-    { n: 3, h: '4 meses', sub: 'mentoria 1:1 · comunidade · plataforma', type: 'context' },
-    { n: 4, h: 'R$ 1,8M', sub: 'destravado por alunos em 12 meses', type: 'result' },
-    { n: 5, h: 'Ver programa', sub: 'turma 2026.3 abre 22 mai', type: 'cta' },
+    { n: 1, h: '521', sub: 'cases reais de implementação de IA', type: 'hook' },
+    { n: 2, h: '157', sub: 'soluções de IA prontas pra usar', type: 'context' },
+    { n: 3, h: '29', sub: 'setores já transformados com IA', type: 'context' },
+    { n: 4, h: 'R$ 120 mil', sub: 'economia anual · case Trivia Studio', type: 'result' },
+    { n: 5, h: 'Ver planos', sub: 'Starter · Pro · Enterprise', type: 'cta' },
   ];
 
   return (
@@ -181,11 +181,11 @@ function MetaStorySection() {
           </header>
           <div className="vds-pa-story-canvas">
             <span className="vds-pa-aura" aria-hidden="true" />
-            <span className="vds-pa-story-eyebrow">turma 2026.3</span>
+            <span className="vds-pa-story-eyebrow">plano pro</span>
             <h2>
               90 dias.<br />
-              1 agente em produção.<br />
-              <em>ou seu dinheiro de volta</em>.
+              Receita sobe ou custo cai.<br />
+              <em>ou 100% de volta</em>.
             </h2>
             <a href="#" className="vds-pa-story-cta">
               <span>Saiba mais</span>
@@ -221,10 +221,10 @@ function MetaReelSection() {
         <article className="vds-pa-reel">
           <div className="vds-pa-reel-canvas vds-pa-light">
             <span className="vds-pa-aura" aria-hidden="true" />
-            <span className="vds-pa-reel-eyebrow">3 cicatrizes</span>
+            <span className="vds-pa-reel-eyebrow">3 erros comuns</span>
             <h2>
-              Construindo a Nina,<br />
-              <em>cometi 3 erros</em>.
+              Implantando IA,<br />
+              <em>evite 3 erros</em>.
             </h2>
             <p>todos custaram caro · vídeo de 90s</p>
             <img src={monogramNavy} alt="" className="vds-pa-reel-mono" />
@@ -260,7 +260,7 @@ function LinkedInSingleSection() {
               </span>
               <div>
                 <strong>Viver de IA</strong>
-                <em>4.832 seguidores</em>
+                <em>[N] seguidores</em>
                 <span className="vds-pa-li-promoted">Promoted</span>
               </div>
             </div>
@@ -269,27 +269,27 @@ function LinkedInSingleSection() {
 
           <div className="vds-pa-li-text">
             <p>
-              Operadores que estão construindo agentes em produção compartilham aqui o que aprenderam em 90 dias.
+              Empresários e líderes que colocaram IA na operação compartilham aqui o que mudou em 90 dias.
             </p>
             <p>
-              <strong>Turma 2026.3</strong> abre 22 mai. 30 vagas. <a href="#">Aplique-se →</a>
+              <strong>Plano Pro</strong> · 10 check-ins de mentoria por mês. <a href="#">Ver planos →</a>
             </p>
           </div>
 
           <div className="vds-pa-li-canvas vds-pa-light">
             <span className="vds-pa-aura" aria-hidden="true" />
-            <span className="vds-pa-li-eyebrow">programa técnico-operativo</span>
+            <span className="vds-pa-li-eyebrow">plataforma de implementação</span>
             <h2>
-              90 dias até <em>1 agente em produção</em>.
+              157 soluções de IA <em>prontas pra usar</em>.
             </h2>
-            <p>4 meses · mentoria 1:1 · comunidade de 220 operadores</p>
+            <p>formações · mentoria em grupo · comunidade de líderes</p>
             <img src={monogramNavy} alt="" className="vds-pa-li-mono" />
           </div>
 
           <footer className="vds-pa-li-footer">
             <div>
               <em>viverdeia.ai</em>
-              <strong>Ver programa</strong>
+              <strong>Ver planos</strong>
             </div>
             <a href="#" className="vds-pa-li-cta">
               Saiba mais
@@ -371,7 +371,7 @@ function GoogleSearchSection() {
         <article className="vds-pa-gs-ad">
           <div className="vds-pa-gs-search">
             <Search size={16} strokeWidth={1.75} />
-            <span>curso ia agentes em produção</span>
+            <span>soluções de ia para empresas</span>
           </div>
 
           <div className="vds-pa-gs-result">
@@ -380,33 +380,33 @@ function GoogleSearchSection() {
               <div className="vds-pa-gs-url">
                 <span className="vds-pa-gs-favicon"><img src={appIcon} alt="" /></span>
                 <em>https://viverdeia.ai</em>
-                <em>› programa</em>
+                <em>› planos</em>
               </div>
             </header>
 
             <h3 className="vds-pa-gs-headline">
-              Construa 1 Agente IA em 90 Dias · Viver de IA
+              IA na Operação da Sua Empresa · Viver de IA
             </h3>
 
             <p className="vds-pa-gs-desc">
-              Programa técnico-operativo de 4 meses. 220 operadores formados. R$ 1,8M destravado em 12 meses. Turma 2026.3 abre 22 mai · 30 vagas.
+              Plataforma B2B com 157 soluções de IA prontas e 521 cases reais. Planos a partir de R$ 2.580/mês, em contratação anual.
             </p>
 
             <ul className="vds-pa-gs-sitelinks">
-              <li><strong>Ver programa</strong><em>4 meses · estrutura completa</em></li>
-              <li><strong>Casos reais</strong><em>11.920 conversas/mês</em></li>
-              <li><strong>Mentores</strong><em>Caio Ribeiro + 4 ops</em></li>
-              <li><strong>Inscrição</strong><em>30 vagas · 22 mai</em></li>
+              <li><strong>Ver planos</strong><em>Starter · Pro · Enterprise</em></li>
+              <li><strong>Cases reais</strong><em>521 cases em 29 setores</em></li>
+              <li><strong>Mentoria</strong><em>10 check-ins/mês no Pro</em></li>
+              <li><strong>Garantia</strong><em>90 dias · cláusula 7</em></li>
             </ul>
 
             <div className="vds-pa-gs-callouts">
-              <span>Garantia 100%</span>
+              <span>Garantia de 90 dias</span>
               <span>·</span>
-              <span>4 meses</span>
+              <span>157 soluções</span>
               <span>·</span>
-              <span>30 vagas</span>
+              <span>Consultor IA</span>
               <span>·</span>
-              <span>Mentoria 1:1</span>
+              <span>Mentoria em grupo</span>
             </div>
           </div>
         </article>
@@ -414,7 +414,7 @@ function GoogleSearchSection() {
         <SpecBlock items={[
           { k: 'Headlines', v: '3 obrigatórias · ≤30 chars cada · Title Case · sem caps lock' },
           { k: 'Descriptions', v: '2 obrigatórias · ≤90 chars · frases completas · ponto final' },
-          { k: 'Display URL', v: 'Path 1 + Path 2 · ≤15 chars cada · ex: "programa/2026"' },
+          { k: 'Display URL', v: 'Path 1 + Path 2 · ≤15 chars cada · ex: "planos/pro"' },
           { k: 'Sitelinks', v: '4-6 extras · cada com headline 25 chars + 2 descriptions 35 chars' },
           { k: 'Callouts', v: '4-6 frases curtas · ≤25 chars · prova/benefícios não-vendíveis' },
           { k: 'Structured snippets', v: 'Lista de categorias · ex: "Módulos: Fundamentos · Prompt · Agentes"' },
@@ -456,11 +456,11 @@ function GoogleDisplaySection() {
                 <div className="vds-pa-gdn-text">
                   <h3>
                     <em>90 dias</em>.<br />
-                    1 agente em produção.
+                    Receita sobe ou custo cai.
                   </h3>
-                  <p>turma 2026.3 · 30 vagas</p>
+                  <p>ou 100% do investimento</p>
                 </div>
-                <a href="#" className="vds-pa-gdn-cta">Ver programa</a>
+                <a href="#" className="vds-pa-gdn-cta">Ver planos</a>
                 <img src={monogramNavy} alt="" />
               </div>
             </article>
@@ -470,7 +470,7 @@ function GoogleDisplaySection() {
         <SpecBlock items={[
           { k: 'Headline', v: 'Adaptativa · short (≤25 chars) · long (≤90 chars)' },
           { k: 'Logo', v: 'monogram_white canto inferior direito · sai no 320×100' },
-          { k: 'CTA', v: 'Button branco sólido · "Ver programa" · "Cadastre-se"' },
+          { k: 'CTA', v: 'Button branco sólido · "Ver planos" · "Cadastre-se"' },
           { k: 'Responsive', v: 'Mesma copy adaptada · prioridade pra short em sizes pequenos' },
           { k: 'Image safe area', v: '20% margin de cada lado · canvas central limpo' },
           { k: 'Animated', v: 'Opcional · fade entre 2 versões da headline máx 15s' },
@@ -497,7 +497,7 @@ function YouTubePreRollSection() {
               <div className="vds-pa-yt-text">
                 <span className="vds-pa-yt-eyebrow">90s de transparência</span>
                 <h2>
-                  Construindo a Nina, <em>cometi 3 erros</em> que custaram caro.
+                  Implantando IA na empresa, <em>3 erros</em> custam caro.
                 </h2>
               </div>
               <img src={monogramNavy} alt="" className="vds-pa-yt-mono" />
@@ -519,7 +519,7 @@ function YouTubePreRollSection() {
           <div className="vds-pa-yt-companion">
             <strong>Viver de IA · viverdeia.ai</strong>
             <p>Pré-roll · 15s · pulável após 5s</p>
-            <a href="#" className="vds-pa-yt-cta">Acessar programa</a>
+            <a href="#" className="vds-pa-yt-cta">Ver planos</a>
           </div>
         </article>
 
@@ -534,7 +534,7 @@ function YouTubePreRollSection() {
               <span className="vds-pa-yt-script-timer">0–3s</span>
               <div>
                 <strong>HOOK · não-skipável psicologicamente</strong>
-                <p>Frase forte + visual provocador. "Construindo a Nina, cometi 3 erros que custaram caro." Quem skipa, skipa. Quem fica, fica engajado.</p>
+                <p>Frase forte + visual provocador. "Implantando IA na empresa, 3 erros custam caro." Quem skipa, skipa. Quem fica, fica engajado.</p>
               </div>
             </li>
             <li>
@@ -548,7 +548,7 @@ function YouTubePreRollSection() {
               <span className="vds-pa-yt-script-timer">13–15s</span>
               <div>
                 <strong>CTA · curto e visual</strong>
-                <p>"Programa completo em viverdeia.ai. Turma 2026.3 abre 22 mai." Logo branco + URL legível.</p>
+                <p>"Planos e cases em viverdeia.ai. São 521 cases reais." Logo branco + URL legível.</p>
               </div>
             </li>
           </ol>
@@ -568,9 +568,9 @@ function AudienceMatrixSection() {
       name: 'Founder · operador-fundador',
       pain: 'Tá fazendo tudo. Receita não escala porque tempo dele não escala.',
       kpi: 'Receita destravada',
-      hook: 'Em 90 dias, você sai do "eu opero" pra "a Nina opera".',
+      hook: 'Em 90 dias, você sai do "eu opero" pra "a IA opera".',
       body: 'Operador-fundador que construiu o produto sozinho consegue manter por 1 ano. Depois disso, ou aparece IA, ou some.',
-      cta: 'Ver casos de founders',
+      cta: 'Ver cases reais',
     },
     {
       icon: Wrench,
@@ -578,7 +578,7 @@ function AudienceMatrixSection() {
       pain: 'Sabe que IA muda o jogo. Não sabe por onde começar sem ser cursinho de prompt.',
       kpi: 'Tempo poupado',
       hook: 'Pra quem já tentou prompt sozinho e travou no segundo agente.',
-      body: 'Não é teoria. 4 meses construindo 1 agente em produção com mentoria 1:1 e código aberto da comunidade.',
+      body: 'Não é teoria. Soluções prontas, formações práticas e mentoria em grupo ao vivo pra colocar IA na operação.',
       cta: 'Ver estrutura técnica',
     },
     {
@@ -586,8 +586,8 @@ function AudienceMatrixSection() {
       name: 'Exec corporativo',
       pain: 'Board pediu IA. Time tá perdido. Risco de erro caro é alto.',
       kpi: 'Risco mitigado',
-      hook: 'Antes de contratar consultoria de R$ 200K, formar 2 ops internos sai 8x mais barato.',
-      body: 'Programa estruturado · framework aplicável · suporte do conselho consultivo. Casos de Mantra Tech e Pivot Studio.',
+      hook: 'Antes de contratar consultoria, veja 521 cases reais de implementação de IA.',
+      body: 'Plataforma B2B · trilha de onboarding · arquiteto de soluções AI Builder no Enterprise. Cases em 29 setores.',
       cta: 'Falar com consultor',
     },
     {
@@ -595,9 +595,9 @@ function AudienceMatrixSection() {
       name: 'Investor / advisor',
       pain: 'Portfolio companies precisam acelerar IA. Não sabe quem indicar.',
       kpi: 'Múltiplo de portfolio',
-      hook: 'Indica 1 founder do seu portfolio. A gente forma. Você acompanha o ROI.',
-      body: 'Program parceiro pra fund managers · acompanhamento de progresso · 5 fundos já indicam.',
-      cta: 'Parceria com fund',
+      hook: 'Indica 1 empresa do seu portfolio. Você acompanha o ROI no dashboard.',
+      body: 'O dashboard mostra quem está aplicando, o engajamento e o ROI gerado · sem planilha paralela.',
+      cta: 'Indicar uma empresa',
     },
   ];
 
@@ -657,20 +657,20 @@ function ABVariantSection() {
       label: 'A · Hook editorial',
       what: 'frase provocadora · sem número',
       h: 'Em 2026, operador que não opera IA, não opera.',
-      sub: '220 operadores · turma 2026.3',
+      sub: '521 cases reais · plano Pro',
       hyp: 'CTR maior em audience cold',
     },
     {
       label: 'B · Hook numérico',
       what: 'prova com número grande',
-      h: 'R$ 1,8M destravado em 12 meses. 220 operadores.',
-      sub: '90 dias até 1 agente em produção',
+      h: '521 cases reais. 157 soluções prontas.',
+      sub: '29 setores · garantia de 90 dias',
       hyp: 'CTR maior em warm/lookalike',
     },
     {
-      label: 'C · Hook pessoal',
-      what: 'primeira pessoa · cicatriz',
-      h: 'Construindo a Nina, cometi 3 erros que custaram caro.',
+      label: 'C · Hook de erro',
+      what: 'cicatriz comum · sem número',
+      h: 'Implantando IA na empresa, 3 erros custam caro.',
       sub: 'cases reais · sem teoria',
       hyp: 'Engagement maior · CPC menor',
     },
@@ -746,7 +746,7 @@ function PreflightSection() {
       items: [
         { q: 'UTM source', a: 'meta · linkedin · google · youtube' },
         { q: 'UTM medium', a: 'paid · paid-social · paid-search · paid-video' },
-        { q: 'UTM campaign', a: 'turma-2026-3 · evento-leaders-ai · curso-fund' },
+        { q: 'UTM campaign', a: 'plano-pro · evento-leaders-ai · imersao-sede' },
         { q: 'Pixel/Tag', a: 'Meta Pixel · LinkedIn Insight · Google Ads · UA→GA4' },
       ],
     },
@@ -803,12 +803,12 @@ function HeadlineLibrarySection() {
     },
     {
       cat: 'Prova com número',
-      good: ['220 operadores. R$ 1,8M destravado. 90 dias.', '11.920 conversas/mês rodando. Eu te ensino como.'],
+      good: ['521 cases reais. 157 soluções prontas. 29 setores.', 'Viva Nexo foi de 6h pra cliques. Veja o case.'],
       bad: ['Centenas de profissionais já transformaram suas carreiras!', 'Milhões em resultados comprovados!'],
     },
     {
       cat: 'Convite direto',
-      good: ['Turma 2026.3 · 30 vagas · 4 meses', 'Próxima turma é em outubro. Ou agora.'],
+      good: ['Plano Pro · 10 check-ins de mentoria por mês', 'Starter, Pro ou Enterprise. Contratação anual.'],
       bad: ['ÚLTIMAS HORAS para garantir sua vaga!!!', 'Não perca essa oportunidade ÚNICA!'],
     },
     {
@@ -838,7 +838,7 @@ function BodyLibrarySection() {
     {
       cat: 'Abertura · primeira linha',
       good: [
-        '220 operadores formados. Próxima turma fecha em 9 dias.',
+        '521 cases reais de IA em empresas brasileiras.',
         'Operador que construiu 1 agente em produção fala diferente.',
       ],
       bad: [
@@ -849,8 +849,8 @@ function BodyLibrarySection() {
     {
       cat: 'Desenvolvimento · 2ª linha',
       good: [
-        'Programa técnico-operativo de 4 meses · mentoria 1:1 · comunidade ativa.',
-        'Você sai com 1 agente rodando em produção. Não com um diploma.',
+        'Soluções prontas · formações práticas · mentoria em grupo ao vivo.',
+        'Seu time sai com solução rodando na operação. Não com um diploma.',
       ],
       bad: [
         'Aulas exclusivas, conteúdo PREMIUM, bônus EXCLUSIVOS, suporte VIP!',
@@ -860,8 +860,8 @@ function BodyLibrarySection() {
     {
       cat: 'Convite editorial',
       good: [
-        'Turma 2026.3 abre 22 mai. 30 vagas. Aplicação até 9 jun.',
-        'Próximo ciclo é outubro. Esse fecha em 9 dias.',
+        'Plano Pro: R$ 3.780/mês, em contratação anual.',
+        'Garantia de 90 dias. Condições na cláusula 7.',
       ],
       bad: [
         'CORRA! Vagas LIMITADAS para essa oportunidade única!',
@@ -890,7 +890,7 @@ function CTALibrarySection() {
     {
       stage: 'Awareness',
       desc: 'descoberta · primeiro contato',
-      good: ['Saiba mais', 'Conheça o programa', 'Veja como funciona', 'Leia o artigo'],
+      good: ['Saiba mais', 'Conheça a plataforma', 'Veja como funciona', 'Leia o artigo'],
       bad: ['CLIQUE AGORA', 'Garanta JÁ!'],
     },
     {
@@ -902,13 +902,13 @@ function CTALibrarySection() {
     {
       stage: 'Conversion',
       desc: 'inscrição · compra',
-      good: ['Cadastre-se', 'Aplique-se à turma', 'Reserve seu lugar', 'Começar agora'],
+      good: ['Cadastre-se', 'Assine o plano', 'Reserve seu lugar', 'Começar agora'],
       bad: ['GARANTA JÁ COM 80% OFF', 'ÚLTIMAS HORAS'],
     },
     {
       stage: 'Retention',
       desc: 'reativação · cross-sell',
-      good: ['Voltar ao programa', 'Renovar acesso', 'Ver novidades', 'Próximo passo'],
+      good: ['Voltar à plataforma', 'Renovar acesso', 'Ver novidades', 'Próximo passo'],
       bad: ['NÃO PERCA SEU LUGAR!!!', 'Vamos te esperar até quando??'],
     },
   ];

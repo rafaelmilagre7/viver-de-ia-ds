@@ -8,12 +8,12 @@ export default function Form() {
   const [empresa, setEmpresa] = useState('');
   const [setor] = useState('E-commerce');
   const [email, setEmail] = useState('rafael@gmail');
-  const [plano] = useState('Mentoria avançada');
+  const [plano] = useState('Pro · contratação anual');
   const [bio, setBio] = useState('Operador de e-commerce há 6 anos. Estamos automatizando WhatsApp e CRM.');
-  const [valor, setValor] = useState('4800');
+  const [valor, setValor] = useState('3780');
   const [termo, setTermo] = useState(true);
   const [news, setNews] = useState(false);
-  const [turma, setTurma] = useState('2026.2');
+  const [planoNovo, setPlanoNovo] = useState('Pro');
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function Form() {
         <div className="vds-form-stage">
           <div className="vds-form-card">
             <header className="vds-form-h">
-              <p className="vds-eyebrow">Cadastro · turma 2026.2</p>
+              <p className="vds-eyebrow">Adesão · plano Pro</p>
               <h3>Dados da operação</h3>
             </header>
 
@@ -83,9 +83,9 @@ export default function Form() {
                 </div>
 
                 <div className="via-field">
-                  <label className="lbl">Turma desejada</label>
+                  <label className="lbl">Plano desejado</label>
                   <button className="val-select" type="button">
-                    <span>{turma}</span>
+                    <span>{planoNovo}</span>
                     <ChevronDown size={16} strokeWidth={1.75} />
                   </button>
                 </div>
@@ -110,7 +110,7 @@ export default function Form() {
       <Section title="Seletores" meta="checkbox · radio · toggle inline">
         <div className="vds-form-stage compact">
           <div className="vds-form-card">
-            <p className="vds-eyebrow" style={{ marginBottom: 18 }}>Preferências da turma</p>
+            <p className="vds-eyebrow" style={{ marginBottom: 18 }}>Preferências da conta</p>
             <div className="vds-form-selectors">
               <label className="via-check">
                 <input
@@ -124,7 +124,7 @@ export default function Form() {
                 </span>
                 <div>
                   <strong>Aceito os termos</strong>
-                  <span>Concordo com o contrato de mentoria e a política de uso.</span>
+                  <span>Concordo com os termos de uso e a política de privacidade.</span>
                 </div>
               </label>
 
@@ -140,27 +140,27 @@ export default function Form() {
                 </span>
                 <div>
                   <strong>Receber novidades</strong>
-                  <span>Cases recentes e turmas que abrirem no semestre.</span>
+                  <span>Cases recentes e novas soluções da plataforma.</span>
                 </div>
               </label>
 
               <div className="vds-form-radio-group">
-                <p className="vds-eyebrow">Turma</p>
+                <p className="vds-eyebrow">Plano</p>
                 <div className="vds-form-radios">
                   {[
-                    { v: '2026.2', l: 'Turma 2026.2', d: 'Início em agosto · inscrições abertas' },
-                    { v: '2027.1', l: 'Turma 2027.1', d: 'Início em fevereiro · lista de interesse' },
+                    { v: 'Pro', l: 'Plano Pro', d: 'R$ 3.780/mês · contratação anual' },
+                    { v: 'Enterprise', l: 'Plano Enterprise', d: 'R$ 6.180/mês · contratação anual' },
                   ].map((o) => (
-                    <label key={o.v} className={`via-radio ${turma === o.v ? 'on' : ''}`}>
+                    <label key={o.v} className={`via-radio ${planoNovo === o.v ? 'on' : ''}`}>
                       <input
                         className="hid"
                         type="radio"
-                        name="vds-turma"
+                        name="vds-plano"
                         value={o.v}
-                        checked={turma === o.v}
-                        onChange={() => setTurma(o.v)}
+                        checked={planoNovo === o.v}
+                        onChange={() => setPlanoNovo(o.v)}
                       />
-                      <span className={`ring ${turma === o.v ? 'checked' : ''}`} aria-hidden="true">
+                      <span className={`ring ${planoNovo === o.v ? 'checked' : ''}`} aria-hidden="true">
                         <span className="dot" />
                       </span>
                       <div>

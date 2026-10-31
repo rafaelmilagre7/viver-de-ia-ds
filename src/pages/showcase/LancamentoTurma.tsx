@@ -7,39 +7,37 @@ import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
 import './lancamento-turma.css';
 
 /* ============================================================
-   Landing de lançamento de turma · página-modelo clonável
+   Landing de lançamento de plano · página-modelo clonável
    Troque os textos em CONFIG e a landing está pronta pra subir.
+   Números da empresa só da ficha de fatos (public/fatos.md).
    ============================================================ */
 
 const CONFIG = {
-  turma: 'Turma 2026.3',
-  vagas: 30,
-  fecha: '9 dias',
-  inicio: '22 de maio',
-  duracao: '4 meses',
-  precoFull: 'R$ 4.800',
-  preco12x: 'R$ 480',
+  plano: 'Plano Pro',
+  mentoria: '10 check-ins de mentoria em grupo por mês',
+  contratacao: 'contratação anual',
+  preco: 'R$ 3.780',
 };
 
 const stats = [
-  { n: '220', l: 'operadores formados' },
-  { n: 'R$ 1,8M', l: 'destravado em 12 meses' },
-  { n: '11.920', l: 'conversas/mês em produção' },
-  { n: '90 dias', l: 'até primeiro agente no ar' },
+  { n: '521', l: 'cases reais de implementação' },
+  { n: '157', l: 'soluções de IA prontas' },
+  { n: '29', l: 'setores com implementação' },
+  { n: '90 dias', l: 'de garantia · cláusula 7' },
 ];
 
 const dores = [
-  'Você já tentou aprender IA por conta e travou no segundo prompt.',
-  'Assistiu 40 horas de YouTube e ainda não colocou nada em produção.',
+  'Sua empresa já tentou aplicar IA por conta e travou no segundo prompt.',
+  'O time assistiu 40 horas de YouTube e ainda não colocou nada em produção.',
   'Sabe que IA muda o jogo, mas não sabe por onde começar sem virar cursinho de prompt.',
-  'Tem ideia de agente, mas não tem método pra tirar do papel e fazer gerar receita.',
+  'Tem ideia de solução, mas não tem método pra tirar do papel e fazer gerar receita.',
 ];
 
 const pilares = [
-  { I: Layers, t: 'Método, não teoria', d: 'Você sai com 1 agente rodando em produção. Não com um diploma na parede.' },
-  { I: Users, t: 'Mentoria 1:1', d: 'Sessões individuais com quem já construiu agente que aguenta produção real.' },
-  { I: MessageCircle, t: 'Comunidade de operadores', d: '220 pessoas construindo junto · código aberto · troca real, sem guru-bro.' },
-  { I: Clock, t: 'Ritmo de quem opera', d: '4 meses, conteúdo denso, sem enrolação. Pra quem precisa de resultado essa semana.' },
+  { I: Layers, t: 'Soluções prontas', d: 'Soluções Plug-and-Play pra vendas, marketing, atendimento, RH e financeiro. Sem programação.' },
+  { I: Users, t: 'Mentoria em grupo', d: '10 check-ins por mês no Pro, ao vivo, pra adaptar as soluções ao contexto da sua empresa.' },
+  { I: MessageCircle, t: 'Comunidade de líderes', d: 'Empresários e líderes aplicando junto · benchmarking com empresas do seu setor.' },
+  { I: Clock, t: 'Consultor IA 24/7', d: 'Descreva seu cenário e receba o caminho específico pro seu caso, dentro da plataforma.' },
 ];
 
 const modulos = [
@@ -50,35 +48,35 @@ const modulos = [
 ];
 
 const mentores = [
-  { av: 'CR', nome: 'Caio Ribeiro', papel: 'Fundador · Viver de IA', bio: 'Construiu a Nina · 11.920 conversas/mês em produção. Mentora 220 operadores.' },
-  { av: 'DM', nome: 'Diego Martins', papel: 'Tech lead · plataforma', bio: 'Infraestrutura de agentes de IA. VPS, observability, edge functions.' },
+  { av: 'RM', nome: 'Rafael Milagre', papel: 'Fundador · Viver de IA', bio: 'Meta pública da empresa: gerar R$ 1 bilhão em receita e economia com IA.' },
+  { av: 'LR', nome: 'Luccas Riedo', papel: 'CEO · Viver de IA', bio: 'Plataforma B2B com 157 soluções prontas e 521 cases reais de implementação.' },
 ];
 
 const depoimentos = [
   {
-    q: 'A IA não substituiu meu time. Ela devolveu tempo pra eles fazerem o que só humanos fazem — escutar de verdade.',
-    nome: 'Márisson Lage', papel: 'CEO · Efizi Soluções', av: 'ML',
+    q: 'Transformou gestão manual em eficiência digital e economiza R$ 42.000 por ano em 30 dias.',
+    nome: 'Place Dreams', papel: 'Tecnologia · case real', av: 'PD',
   },
   {
-    q: 'Saí de "experimentando IA" pra 11.920 conversas por mês em produção. Em 90 dias.',
-    nome: 'Daniel Pinheiro', papel: 'Founder · Pivot Studio', av: 'DP',
+    q: 'De processos manuais a R$ 120.000 de economia anual, escalando a produção de conteúdo.',
+    nome: 'Trivia Studio', papel: 'Agência · case real', av: 'TS',
   },
 ];
 
 const incluso = [
-  '4 meses de programa estruturado · 9h+ de conteúdo denso',
-  'Mentoria 1:1 individual com Caio e equipe',
-  'Comunidade ativa de 220 operadores + código aberto',
-  'Lives semanais · office hours · workshops práticos',
-  'Certificado de conclusão · selo Viver de IA',
-  'Acesso vitalício ao material + atualizações',
+  'Todas as soluções Plug-and-Play · 157 soluções prontas',
+  '10 check-ins por mês de mentoria em grupo ao vivo',
+  'Comunidade de empresários e líderes',
+  'Formações práticas · do conceito ao deploy',
+  'Consultor IA dentro da plataforma',
+  'Imersão presencial de implementação na sede',
 ];
 
 const faq = [
-  { q: 'Preciso saber programar?', a: 'Ajuda, mas não é obrigatório. O programa parte do operador que entende o negócio. A parte técnica a gente constrói junto, com mentoria.' },
-  { q: 'Quanto tempo por semana preciso dedicar?', a: 'Em média 4-6 horas. Conteúdo denso, sem enrolação. Quem dedica mais, avança mais rápido — mas o ritmo é seu.' },
-  { q: 'E se eu não conseguir acompanhar?', a: 'Acesso vitalício ao material. A turma tem janela definida, mas o conteúdo fica com você pra sempre. Mentoria roda durante os 4 meses.' },
-  { q: 'Tem garantia?', a: 'Sim. 7 dias de garantia incondicional. Entrou, não era pra você, devolvemos 100%. Sem perguntas.' },
+  { q: 'Preciso saber programar?', a: 'Não. As soluções são plug and play, sem programação. A trilha personalizada com IA adapta o conteúdo ao nível de cada pessoa, do CEO ao analista.' },
+  { q: 'Quanto tempo até ver resultado?', a: 'As equipes começam a implementar soluções já na primeira semana. A trilha de onboarding mostra o próximo passo, no ritmo da sua empresa.' },
+  { q: 'Qual a diferença entre os planos?', a: 'Starter dá acesso à plataforma e à comunidade. Pro adiciona 10 check-ins por mês de mentoria em grupo. Enterprise inclui 1 hora por mês de mentoria individual e o arquiteto de soluções AI Builder.' },
+  { q: 'Tem garantia?', a: 'Sim. Devolvemos 100% do investimento se, em 90 dias, sua empresa não tiver nem aumento de receita nem redução de custos operacionais, cumpridos os 3 requisitos da cláusula 7 dos termos de uso.' },
 ];
 
 export default function ShowcaseLancamentoTurma() {
@@ -89,11 +87,11 @@ export default function ShowcaseLancamentoTurma() {
         <BrandLogo variant="auto" size="md" />
         <nav>
           <a href="#metodo">Método</a>
-          <a href="#curriculo">Currículo</a>
-          <a href="#mentores">Mentores</a>
+          <a href="#curriculo">Formações</a>
+          <a href="#mentores">Liderança</a>
           <a href="#oferta">Investimento</a>
         </nav>
-        <a href="#oferta" className="lt-nav-cta">Garantir vaga</a>
+        <a href="#oferta" className="lt-nav-cta">Assinar o Pro</a>
       </header>
 
       {/* HERO */}
@@ -105,20 +103,20 @@ export default function ShowcaseLancamentoTurma() {
         <div className="lt-hero-inner">
           <span className="lt-hero-pill">
             <span className="lt-hero-pill-dot" />
-            {CONFIG.turma} · {CONFIG.vagas} vagas · fecha em {CONFIG.fecha}
+            {CONFIG.plano} · {CONFIG.mentoria}
           </span>
 
           <h1 className="lt-hero-h1">
-            90 dias até seu primeiro agente <em>em produção</em>.
+            Tire a IA do discurso e coloque <em>em operação</em>.
           </h1>
 
           <p className="lt-hero-lede">
-            Formação técnico-operativa pra quem quer parar de "experimentar IA" e começar a operar. Mentoria 1:1, comunidade de 220 operadores, e um método que termina com agente rodando — não com diploma.
+            Plataforma B2B pra empresa que quer parar de "experimentar IA" e começar a operar. Soluções prontas, formações práticas, mentoria em grupo ao vivo e Consultor IA — com retorno medido.
           </p>
 
           <div className="lt-hero-cta-row">
             <a href="#oferta" className="lt-cta-primary">
-              Garantir minha vaga
+              Assinar o Plano Pro
               <ArrowRight size={16} strokeWidth={1.75} />
             </a>
             <a href="#metodo" className="lt-cta-ghost">Ver o método</a>
@@ -126,12 +124,12 @@ export default function ShowcaseLancamentoTurma() {
 
           <div className="lt-hero-proof">
             <span className="lt-hero-proof-avs">
-              <span className="av">CR</span>
-              <span className="av">ML</span>
-              <span className="av">DP</span>
-              <span className="av more">+217</span>
+              <span className="av">PD</span>
+              <span className="av">TS</span>
+              <span className="av">VN</span>
+              <span className="av more">+518</span>
             </span>
-            <span className="lt-hero-proof-txt">220 operadores já passaram pela formação</span>
+            <span className="lt-hero-proof-txt">521 cases reais de implementação de IA</span>
           </div>
         </div>
       </section>
@@ -169,7 +167,7 @@ export default function ShowcaseLancamentoTurma() {
       <section className="lt-section" id="metodo">
         <div className="lt-section-head">
           <span className="lt-eyebrow">como funciona</span>
-          <h2>4 pilares que tiram a IA <em>do hype pra produção</em>.</h2>
+          <h2>4 pilares que tiram a IA <em>do discurso pra operação</em>.</h2>
         </div>
         <div className="lt-pilares">
           {pilares.map((p) => {
@@ -188,8 +186,8 @@ export default function ShowcaseLancamentoTurma() {
       {/* CURRÍCULO */}
       <section className="lt-section" id="curriculo">
         <div className="lt-section-head">
-          <span className="lt-eyebrow">o que você vai construir</span>
-          <h2>Currículo · <em>{CONFIG.duracao} densos</em>.</h2>
+          <span className="lt-eyebrow">formações práticas</span>
+          <h2>Formação · <em>Agentes de IA</em>.</h2>
         </div>
         <div className="lt-modulos">
           {modulos.map((m) => (
@@ -208,8 +206,8 @@ export default function ShowcaseLancamentoTurma() {
       {/* MENTORES */}
       <section className="lt-section" id="mentores">
         <div className="lt-section-head">
-          <span className="lt-eyebrow">quem ensina</span>
-          <h2>Mentores que <em>construíram em produção</em>.</h2>
+          <span className="lt-eyebrow">quem lidera</span>
+          <h2>Quem está por trás <em>da Viver de IA</em>.</h2>
         </div>
         <div className="lt-mentores">
           {mentores.map((m) => (
@@ -228,7 +226,7 @@ export default function ShowcaseLancamentoTurma() {
       {/* DEPOIMENTOS */}
       <section className="lt-section">
         <div className="lt-section-head">
-          <span className="lt-eyebrow">quem já passou</span>
+          <span className="lt-eyebrow">cases reais · viverdeia.ai/cases</span>
           <h2>Não é promessa. <em>É operação rodando</em>.</h2>
         </div>
         <div className="lt-depoimentos">
@@ -254,9 +252,9 @@ export default function ShowcaseLancamentoTurma() {
         <div className="lt-oferta-inner">
           <div className="lt-oferta-l">
             <span className="lt-eyebrow on-dark">o investimento</span>
-            <h2>{CONFIG.turma} · {CONFIG.vagas} vagas.</h2>
+            <h2>{CONFIG.plano} · {CONFIG.contratacao}.</h2>
             <p className="lt-oferta-lede">
-              Começa {CONFIG.inicio}. Aplicação fecha em {CONFIG.fecha}. Não tem turma todo mês — o próximo ciclo é só no segundo semestre.
+              Acesso à plataforma no dia da adesão. Trilha de onboarding na primeira semana. Upgrade pro Enterprise a qualquer momento, pela diferença de valor.
             </p>
             <ul className="lt-incluso">
               {incluso.map((i) => (
@@ -269,23 +267,23 @@ export default function ShowcaseLancamentoTurma() {
           </div>
 
           <aside className="lt-oferta-card">
-            <span className="lt-oferta-card-eyebrow">acesso completo</span>
+            <span className="lt-oferta-card-eyebrow">plano pro</span>
             <div className="lt-oferta-price">
-              <span className="lt-oferta-price-from">à vista {CONFIG.precoFull}</span>
-              <strong>12× {CONFIG.preco12x}</strong>
-              <em>ou {CONFIG.precoFull} à vista</em>
+              <span className="lt-oferta-price-from">{CONFIG.contratacao}</span>
+              <strong>{CONFIG.preco}/mês</strong>
+              <em>{CONFIG.mentoria}</em>
             </div>
             <a href="#" className="lt-oferta-cta">
-              Garantir minha vaga
+              Assinar o Plano Pro
               <ArrowRight size={16} strokeWidth={1.75} />
             </a>
             <p className="lt-oferta-guarantee">
               <Shield size={14} strokeWidth={1.75} />
-              7 dias de garantia incondicional · devolução 100%
+              Garantia de 90 dias · 100% de volta · cláusula 7
             </p>
             <div className="lt-oferta-meta">
-              <span><Calendar size={14} strokeWidth={1.75} /> Início {CONFIG.inicio}</span>
-              <span><Users size={14} strokeWidth={1.75} /> {CONFIG.vagas} vagas</span>
+              <span><Calendar size={14} strokeWidth={1.75} /> Imersão presencial na sede</span>
+              <span><Users size={14} strokeWidth={1.75} /> Comunidade de líderes</span>
             </div>
           </aside>
         </div>
@@ -315,9 +313,9 @@ export default function ShowcaseLancamentoTurma() {
         <span className="lt-final-aura" aria-hidden="true" />
         <div className="lt-final-inner">
           <h2>Em 2026, operador que não opera IA, <em>não opera</em>.</h2>
-          <p>{CONFIG.turma} fecha em {CONFIG.fecha}. {CONFIG.vagas} vagas. Próximo ciclo só no segundo semestre.</p>
+          <p>{CONFIG.plano} · {CONFIG.preco} por mês em {CONFIG.contratacao}. Garantia de 90 dias, cláusula 7.</p>
           <a href="#" className="lt-cta-primary lg">
-            Garantir minha vaga agora
+            Assinar o Plano Pro agora
             <ArrowRight size={16} strokeWidth={1.75} />
           </a>
         </div>
@@ -326,7 +324,7 @@ export default function ShowcaseLancamentoTurma() {
       {/* FOOTER */}
       <footer className="lt-footer">
         <BrandLogo variant="auto" size="sm" />
-        <p>Formação técnico-operativa em IA · viverdeia.ai</p>
+        <p>Plataforma de implementação de IA · viverdeia.ai</p>
         <span>© 2026 Viver de IA</span>
       </footer>
     </div>

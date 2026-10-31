@@ -29,7 +29,7 @@ const conversation: Bubble[] = [
     kind: 'assistant',
     time: '15:43',
     text:
-      'Faz total sentido. Tenho 14 cases publicados de ecommerce que reduziram time de resposta em 60% mantendo conversion. Te mando o case da Efizi primeiro — +11.920 conversas analisadas em 90 dias.',
+      'Faz sentido. A Viver de IA reúne 521 cases reais de implementação de IA. Te mando primeiro o da Pasetti Viagens & AGX, case de atendimento 24h com IA no turismo.',
   },
   { kind: 'typing' },
 ];

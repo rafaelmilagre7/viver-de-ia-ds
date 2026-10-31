@@ -18,7 +18,7 @@ export default function ApiCard() {
       ]}
       meta={meta}
       playground={{
-        initial: { children: 'Mentoria 1:1 · 4 sessões por mês' },
+        initial: { children: 'Plano Pro · 10 check-ins de mentoria por mês' },
         render: (v) => <Card {...(v as CardProps)} style={{ maxWidth: 360 }} />,
       }}
       descriptions={{
@@ -41,13 +41,13 @@ export default function ApiCard() {
           title: 'Card default · listagem padrão',
           preview: (
             <Card>
-              <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-text-primary)' }}>Mentoria · turma 2026.2</h3>
-              <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--via-ink-2)' }}>16 semanas com Caio · começa em 17 fev.</p>
+              <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-text-primary)' }}>Plano Pro · mentoria em grupo</h3>
+              <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--via-ink-2)' }}>10 check-ins por mês · contratação anual.</p>
             </Card>
           ),
           code: `<Card>
-  <h3>Mentoria · turma 2026.2</h3>
-  <p>16 semanas com Caio · começa em 17 fev.</p>
+  <h3>Plano Pro · mentoria em grupo</h3>
+  <p>10 check-ins por mês · contratação anual.</p>
 </Card>`,
         },
         {
@@ -55,13 +55,13 @@ export default function ApiCard() {
           description: 'Adiciona lift + reflexo que segue o ponteiro no hover. Combine com `as="a"` pra card-link inteiro.',
           preview: (
             <Card hoverable>
-              <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-text-primary)' }}>Caso · Efizi</h3>
-              <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--via-ink-2)' }}>R$ 1.8M destravado em 6 meses.</p>
+              <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-text-primary)' }}>Caso · Trivia Studio</h3>
+              <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--via-ink-2)' }}>R$ 120.000 de economia anual.</p>
             </Card>
           ),
-          code: `<Card hoverable as="a" href="/casos/efizi">
-  <h3>Caso · Efizi</h3>
-  <p>R$ 1.8M destravado em 6 meses.</p>
+          code: `<Card hoverable as="a" href="/casos/trivia-studio">
+  <h3>Caso · Trivia Studio</h3>
+  <p>R$ 120.000 de economia anual.</p>
 </Card>`,
         },
       ]}

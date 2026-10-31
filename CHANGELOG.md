@@ -6,6 +6,12 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Exemplos com a oferta e os números de hoje (30/out)
+
+- 97 páginas de exemplo trocam a oferta antiga (turma de 4 meses, 18 aulas, vagas, 1:1 como produto, preços antigos) pela atual da ficha de fatos (planos Starter/Pro/Enterprise com preço real, soluções prontas, formações, mentoria em grupo, imersão, garantia de 90 dias da cláusula 7) e os números da empresa pelos da ficha (521 cases, 157 soluções, 29 setores).
+- Casos com nome e número sem fonte (11.920 "da Nina", Márisson, Camila Moraes, Daniel Pinheiro…) viram casos reais publicados em viverdeia.ai/cases (só o resultado do título: Viva Nexo, Trivia Studio, Place Dreams, Pasetti, Assessoria MAP — R$ 2.000/mês, conferido na página do case) ou depoimento marcado como exemplo. Leaders AI: data, local e palestrantes viram placeholder. Mockups de produto mantêm personas fictícias, sem a oferta antiga.
+- Achado: o 11.920 é da Efizi ("11.920 conversas analisadas com IA", + R$ 5 mil em vendas influenciadas) — nunca foi volume mensal da Nina.
+
 ### Design · rodada 4 — chrome do site (30/out)
 
 - **Sidebar legível**: os 120 rótulos viraram nomes de 1 a 3 palavras em PT-BR, sem parêntese ("Form power (multi-select · drag-drop…)" → "Campos especiais"); o detalhe foi pra descrição e palavras-chave do ⌘K, então a busca pelo nome antigo continua achando. O link ativo tem um indicador só (preenchimento + peso) — saiu a barrinha lateral de 2px; o preenchimento segue deslizando na troca de rota. Footer com os mesmos nomes.

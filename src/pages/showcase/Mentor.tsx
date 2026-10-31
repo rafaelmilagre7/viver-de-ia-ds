@@ -11,9 +11,9 @@ import './mentor.css';
 
 const stats = [
   { n: '4.9', l: 'NPS médio' },
-  { n: '220', l: 'mentorados' },
+  { n: '38', l: 'mentorados' },
   { n: '14h', l: 'resposta média' },
-  { n: 'R$ 1,8M', l: 'destravado' },
+  { n: '126', l: 'check-ins' },
 ];
 
 const expertise = [
@@ -22,14 +22,14 @@ const expertise = [
 ];
 
 const cases = [
-  { c: 'Efizi', r: '11.920 conversas/mês em produção', d: 'Agente de qualificação SDR · 28% conversão em lead' },
-  { c: 'Pivot Studio', r: 'Primeiro agente em 90 dias', d: 'De zero a produção · stack moderna' },
-  { c: 'Mantra Tech', r: 'R$ 80K/ano economizados', d: 'Automação de atendimento financeiro' },
+  { c: 'Vendas', r: 'SDR de IA no WhatsApp', d: 'Qualificação de lead · solução Plug-and-Play' },
+  { c: 'Atendimento', r: 'Atendimento 24h com IA', d: 'Triagem e resposta · no tom da sua empresa' },
+  { c: 'Financeiro', r: 'Conciliação automatizada', d: 'Rotina financeira sem planilha manual' },
 ];
 
 const depoimentos = [
-  { q: 'O Caio não te dá resposta pronta. Ele te faz construir certo. Saí com agente rodando, não com anotação.', nome: 'Daniel Pinheiro', papel: 'Founder · Pivot' },
-  { q: 'Mentoria direta, sem rodeio. Em 1 sessão resolvi um bug de memória que eu travava há 3 semanas.', nome: 'Camila Moraes', papel: 'Head IA · Mantra' },
+  { q: '[Depoimento de mentorado · 1 a 2 frases, com o resultado concreto que a empresa teve.]', nome: '[Nome 1]', papel: '[cargo] · [empresa]' },
+  { q: '[Depoimento de mentorado · o que mudou na operação depois da mentoria, com número real.]', nome: '[Nome 2]', papel: '[cargo] · [empresa]' },
 ];
 
 const horarios = ['ter · 14h', 'qua · 10h', 'qui · 16h', 'sex · 11h'];
@@ -59,13 +59,13 @@ export default function ShowcaseMentor() {
             <span className="mtr-hero-ring" />
           </div>
           <div className="mtr-hero-info">
-            <span className="mtr-hero-eyebrow">mentor · fundador</span>
+            <span className="mtr-hero-eyebrow">mentor · plano pro</span>
             <h1>Caio Ribeiro</h1>
-            <p>Construiu a Nina · 11.920 conversas/mês em produção. Mentora operadores que estão colocando IA pra rodar de verdade — não experimentando.</p>
+            <p>Conduz check-ins de mentoria em grupo do Plano Pro. Acompanha empresas que estão colocando IA pra rodar de verdade — não experimentando.</p>
             <div className="mtr-hero-cta-row">
               <button className="mtr-cta-primary">
                 <Calendar size={16} strokeWidth={1.75} />
-                Agendar sessão
+                Agendar check-in
               </button>
               <button className="mtr-cta-ghost">
                 <MessageCircle size={16} strokeWidth={1.75} />
@@ -92,7 +92,7 @@ export default function ShowcaseMentor() {
             <span className="mtr-eyebrow">sobre</span>
             <h2>Operador antes de mentor.</h2>
             <p>
-              Não ensino teoria de IA. Ensino a construir o agente que aguenta cliente real, pico de tráfego e custo de token sob controle. A Nina — meu próprio agente — processa quase 12 mil conversas por mês. Tudo que mostro, eu rodo.
+              Não ensino teoria de IA. Ensino a colocar a solução pra rodar com cliente real, pico de demanda e custo de token sob controle. Antes de mostrar qualquer coisa na mentoria, eu rodo na minha operação. Tudo que mostro, eu rodo.
             </p>
             <p>
               Mentoria é direta: você traz o problema real, a gente resolve junto na sessão. Sem resposta pronta, sem "depois você vê na aula". Construção ao vivo.
@@ -111,7 +111,7 @@ export default function ShowcaseMentor() {
 
           {/* Cases */}
           <article className="mtr-block">
-            <span className="mtr-eyebrow">resultados destravados</span>
+            <span className="mtr-eyebrow">soluções que acompanha</span>
             <div className="mtr-cases">
               {cases.map((c) => (
                 <div key={c.c} className="mtr-case">
@@ -144,8 +144,8 @@ export default function ShowcaseMentor() {
         {/* Sidebar · agendar */}
         <aside className="mtr-schedule">
           <span className="mtr-schedule-eyebrow">próximas janelas</span>
-          <h3>Agende uma sessão 1:1</h3>
-          <p>30 minutos · foco no seu problema real · construção ao vivo.</p>
+          <h3>Agende sua mentoria individual</h3>
+          <p>Plano Enterprise · 1 hora por mês · foco no problema real da sua empresa.</p>
 
           <div className="mtr-slots">
             {horarios.map((h, i) => (
@@ -160,7 +160,7 @@ export default function ShowcaseMentor() {
 
           <ul className="mtr-schedule-meta">
             <li><Clock size={14} strokeWidth={1.75} /> Responde em até 14h</li>
-            <li><Check size={14} strokeWidth={1.75} /> 220 sessões realizadas</li>
+            <li><Check size={14} strokeWidth={1.75} /> 126 check-ins realizados</li>
             <li><Star size={16} strokeWidth={1.75} /> 4.9 NPS médio</li>
           </ul>
         </aside>

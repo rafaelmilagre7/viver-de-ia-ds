@@ -51,7 +51,7 @@ function LoadersSection() {
         <div className="vds-loader-card inline">
           <div className="vds-loader-inline">
             <span className="vds-loader-bar" />
-            <p>Sincronizando com a Nina · <strong>3 conversas restando</strong></p>
+            <p>Sincronizando com o Consultor IA · <strong>3 conversas restando</strong></p>
           </div>
 
           <div className="vds-loader-inline alt">
@@ -120,22 +120,22 @@ function ErrorPagesSection() {
           </div>
           <span className="vds-error-code">Acesso restrito</span>
           <h3>
-            Essa área é <em>do plano Mentoria</em>.
+            Essa área é <em>do plano Pro</em>.
           </h3>
           <p>
-            Os recursos avançados — auditoria, agente próprio, lives privadas — ficam disponíveis a partir do plano Mentoria. Você está no <strong>plano Comunidade</strong> hoje.
+            A mentoria em grupo ao vivo — 10 check-ins por mês — fica disponível a partir do plano Pro. Você está no <strong>plano Starter</strong> hoje.
           </p>
           <div className="vds-error-plans">
             <div className="vds-error-plan current">
               <span className="lbl">Hoje</span>
-              <strong>Comunidade</strong>
-              <em>R$ 197/mês</em>
+              <strong>Starter</strong>
+              <em>R$ 2.580/mês</em>
             </div>
             <span className="vds-error-plans-arrow">→</span>
             <div className="vds-error-plan target">
               <span className="lbl">Para destravar</span>
-              <strong>Mentoria</strong>
-              <em>R$ 6K/tri</em>
+              <strong>Pro</strong>
+              <em>R$ 3.780/mês</em>
             </div>
           </div>
           <div className="vds-error-actions">
@@ -157,7 +157,7 @@ function ErrorPagesSection() {
             Em manutenção
           </span>
           <h3>
-            Estamos atualizando o motor da Nina.
+            Estamos atualizando o Consultor IA.
           </h3>
           <p>
             Janela programada de 30 minutos. Tudo deve voltar ao normal por volta de <strong>14:30 BRT</strong>. Aulas e materiais offline continuam funcionando.
@@ -224,7 +224,7 @@ function EmptyStatesSection() {
             <Lock size={20} strokeWidth={1.75} />
           </div>
           <h4>Você ainda não tem acesso</h4>
-          <p>Essa área é dos administradores do plano Corporate. Se você acha que deveria ter acesso, fala com seu admin ou com o time da Viver de IA.</p>
+          <p>Essa área é dos administradores do plano Enterprise. Se você acha que deveria ter acesso, fala com seu admin ou com o time da Viver de IA.</p>
           <a href="#" className="vds-empty-btn">Solicitar acesso</a>
         </article>
 
@@ -261,7 +261,7 @@ function EmptyPremiumSection() {
               Seu painel <em>começa aqui</em>.
             </h3>
             <p>
-              Em até 3 passos seu dashboard ganha vida — progresso real, próximos compromissos e Nina ouvindo o canal de vendas. Comece pelo primeiro.
+              Em até 3 passos seu dashboard ganha vida — progresso real, próximos compromissos e as 3 soluções escolhidas na adesão. Comece pelo primeiro.
             </p>
             <ol className="vds-empty-prem-steps">
               <li className="done">
@@ -274,15 +274,15 @@ function EmptyPremiumSection() {
               <li className="current">
                 <span className="bullet">2</span>
                 <div>
-                  <strong>Conectar Nina ao seu WhatsApp Business</strong>
-                  <em>5min · liga o canal e o histórico</em>
+                  <strong>Escolher as 3 soluções da adesão</strong>
+                  <em>5min · entram na trilha de onboarding</em>
                 </div>
               </li>
               <li>
                 <span className="bullet">3</span>
                 <div>
-                  <strong>Marcar a primeira aula no calendário</strong>
-                  <em>3min · garante ritmo da turma</em>
+                  <strong>Começar a primeira formação</strong>
+                  <em>3min · garante o ritmo do time</em>
                 </div>
               </li>
             </ol>
@@ -354,13 +354,13 @@ function EmptyPremiumSection() {
             </button>
             <button className="vds-empty-prem-chip">
               <span className="x">×</span>
-              Plano Corporate
+              Plano Enterprise
               <em>4 → 38</em>
             </button>
             <button className="vds-empty-prem-chip">
               <span className="x">×</span>
               Ativo nos últimos 7d
-              <em>112 → 220</em>
+              <em>112 → 236</em>
             </button>
           </div>
           <button className="vds-empty-prem-btn ghost">Limpar todos os filtros</button>
@@ -436,10 +436,10 @@ function SuccessStatesSection() {
           </div>
           <span className="vds-success-eyebrow">Pagamento aprovado</span>
           <h3>
-            Bem-vindo ao plano <em>Mentoria</em>.
+            Bem-vindo ao plano <em>Pro</em>.
           </h3>
           <p>
-            Seu acesso já está liberado. Em até 2 horas você recebe um e-mail com o link da primeira sessão e o convite pro Discord interno. Bom começo.
+            Seu acesso já está liberado. Em até 2 horas você recebe um e-mail com a trilha de onboarding e o link do primeiro check-in em grupo. Bom começo.
           </p>
           <div className="vds-success-actions">
             <button className="vds-success-btn primary">

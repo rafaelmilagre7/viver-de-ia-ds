@@ -5,20 +5,20 @@ import './case-card.css';
 
 const cases = [
   {
-    company: 'Efizi',
-    sector: 'E-commerce',
-    headline: '+11.920 conversas analisadas para elevar performance comercial',
-    stat: { v: '+11.920', l: 'conversas' },
-    quote: '"Ela fez isso com pouquíssimas horas. Sem saber nada."',
-    author: 'Márisson Lage Gonçalves',
+    company: 'Viva Nexo',
+    sector: 'Saúde',
+    headline: 'De 6h para cliques: Viva Nexo economiza R$ 162.000 com IA',
+    stat: { v: 'R$ 162.000', l: 'economia' },
+    quote: '"[Trecho do depoimento, nas palavras do cliente]"',
+    author: '[Nome] · [cargo]',
   },
   {
-    company: 'Balzani & Zimbel',
-    sector: 'Construção',
-    headline: 'R$ 4.600/mês em economia e 100% da operação centralizada',
-    stat: { v: 'R$ 4.600', l: '/mês' },
-    quote: '"A operação já dá conta de duplicar."',
-    author: 'Guilherme Delorenzo',
+    company: 'Trivia Studio',
+    sector: 'Agência',
+    headline: 'De processos manuais a R$ 120.000 de economia anual',
+    stat: { v: 'R$ 120.000', l: '/ano' },
+    quote: '"[Frase curta do cliente sobre o resultado]"',
+    author: '[Nome] · [cargo]',
   },
 ];
 

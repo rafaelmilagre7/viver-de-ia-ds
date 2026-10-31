@@ -70,7 +70,7 @@ function EmailFooter({ unsubscribe = true }: { unsubscribe?: boolean }) {
     <footer className="vds-ec-em-foot">
       <img src={monogram} alt="" className="mono" />
       <p>
-        <strong>Viver de IA</strong> · operadores formando operadores · São Paulo, BR
+        <strong>Viver de IA</strong> · tirar a IA do discurso e colocar em operação
       </p>
       {unsubscribe && (
         <p className="vds-ec-em-foot-links">
@@ -140,12 +140,12 @@ function TransactionalSection() {
           category="Transacional · welcome"
           from="Rafael · Viver de IA"
           subject="Bem-vindo. Próximos passos em 3 atos."
-          preview="sua turma 2026.2 começa em 14 dias. antes disso, faz isso aqui pra entrar no ritmo."
+          preview="sua adesão ao plano Pro tá confirmada. antes do primeiro check-in, faz isso aqui pra entrar no ritmo."
           time="hoje · 09:14"
           notes={{
             when: 'Imediatamente após confirmação de pagamento',
             voice: 'caloroso, mas factual · "você" infinitivo · primeira frase entrega o assunto',
-            vars: ['{aluno_first_name}', '{turma_codename}', '{turma_start_date}'],
+            vars: ['{membro_first_name}', '{plano_nome}', '{onboarding_start_date}'],
           }}
         >
           <EmailHeader />
@@ -154,9 +154,9 @@ function TransactionalSection() {
               Oi <strong>Rafael</strong>,
             </p>
             <p>
-              sua vaga na turma 2026.2 tá confirmada. começa em <strong>14 dias</strong>, e tem
-              3 coisas que se você fizer essa semana, entra no ritmo da turma sem perder a
-              primeira aula.
+              sua adesão ao plano Pro tá confirmada. a trilha de onboarding já tá liberada, e
+              tem <strong>3 coisas</strong> que se você fizer essa semana, entra no ritmo sem
+              perder o primeiro check-in.
             </p>
 
             <ol className="vds-ec-em-steps">
@@ -164,10 +164,10 @@ function TransactionalSection() {
                 <strong>Acessa a plataforma</strong> <em className="mono">app.viverdeia.ai</em> · login com esse email · senha temporária <em className="mono">enviada em separado</em>
               </li>
               <li>
-                <strong>Assiste o intro de 12min</strong> · contextualiza o método e o que vais construir nos próximos 90 dias
+                <strong>Começa a trilha de onboarding</strong> · contextualiza o método e as 3 soluções que você vai implementar
               </li>
               <li>
-                <strong>Marca a primeira mentoria 1:1</strong> · 30min pra alinhar caso real seu e dimensionar o que faz sentido construir
+                <strong>Reserva o primeiro check-in em grupo</strong> · mentoria ao vivo pra alinhar seu caso real e escolher por onde começar
               </li>
             </ol>
 
@@ -184,7 +184,7 @@ function TransactionalSection() {
             <p className="vds-ec-em-sign">
               <strong>Rafael Milagre</strong> · fundador
               <br />
-              <em>responde direto · 14h média</em>
+              <em>responde direto esse email</em>
             </p>
           </div>
           <EmailFooter />
@@ -198,8 +198,8 @@ function TransactionalSection() {
         <EmailFrame
           category="Transacional · billing"
           from="Viver de IA · cobrança"
-          subject="Cobrança em 2 dias · R$ 2.400 · mentoria mensal"
-          preview="renovação da sua mentoria entra na fatura sex 23/mai. reduz pra lite em 1 clique se preferir."
+          subject="Cobrança em 2 dias · R$ 3.780 · plano Pro"
+          preview="a mensalidade do plano Pro entra na fatura sex 23/mai. upgrade pro Enterprise em 1 clique se preferir."
           time="qua · 18:22"
           notes={{
             when: '48h antes da cobrança · uma vez só · sem follow-up agressivo',
@@ -212,8 +212,8 @@ function TransactionalSection() {
             <div className="vds-ec-em-billing-plate">
               <div>
                 <span className="lbl">Próxima cobrança</span>
-                <strong className="val">R$ 2.400,00</strong>
-                <em>sex · 23 mai · mentoria mensal</em>
+                <strong className="val">R$ 3.780,00</strong>
+                <em>sex · 23 mai · plano Pro</em>
               </div>
               <div>
                 <span className="lbl">Cartão</span>
@@ -223,19 +223,19 @@ function TransactionalSection() {
             </div>
 
             <p>
-              Rafael, a renovação da sua mentoria entra na fatura <strong>sex 23/mai</strong>.
-              Se quiser <strong>reduzir pra plano lite</strong> (R$ 980/mês · mantém comunidade
-              + plataforma, sem mentoria 1:1), troca aqui:
+              Rafael, a mensalidade do plano Pro entra na fatura <strong>sex 23/mai</strong>.
+              Se quiser <strong>subir pro Enterprise</strong> (R$ 6.180/mês · soma 1 hora/mês
+              de mentoria individual + arquiteto AI Builder), troca aqui:
             </p>
 
             <div className="vds-ec-em-actions">
-              <a href="#" className="vds-ec-em-cta secondary">Reduzir pra lite</a>
-              <a href="#" className="vds-ec-em-cta">Manter mentoria</a>
+              <a href="#" className="vds-ec-em-cta secondary">Ver o Enterprise</a>
+              <a href="#" className="vds-ec-em-cta">Manter o Pro</a>
             </div>
 
             <p className="vds-ec-em-fine">
-              Trocar plano até <strong>qui 22/mai 23:59</strong> · depois disso, a cobrança
-              cheia já entrou no ciclo e a troca vale pro mês seguinte.
+              Valor mensal em <strong>contratação anual</strong> · prazos e condições de troca
+              de plano seguem os termos de uso.
             </p>
           </div>
           <EmailFooter />
@@ -250,7 +250,7 @@ function TransactionalSection() {
           category="Transacional · billing"
           from="Viver de IA · cobrança"
           subject="Pagamento não passou · 3 ações em 1 clique"
-          preview="cobrança de R$ 2.400 retornou 'fundos insuficientes'. nada cancelado ainda, tem 5 dias pra resolver."
+          preview="cobrança de R$ 3.780 retornou 'fundos insuficientes'. nada cancelado ainda, dá pra resolver em 1 clique."
           time="hoje · 06:48"
           notes={{
             when: 'Imediatamente após retry falhar · NÃO no momento da primeira tentativa',
@@ -265,14 +265,14 @@ function TransactionalSection() {
                 <AlertCircle size={16} strokeWidth={1.75} />
               </span>
               <div>
-                <strong>Cobrança não passou · R$ 2.400</strong>
+                <strong>Cobrança não passou · R$ 3.780</strong>
                 <em>motivo do banco: "fundos insuficientes" · cartão Visa •••• 4521</em>
               </div>
             </div>
 
             <p>
-              Rafael, a cobrança de hoje retornou erro. <strong>Nada foi cancelado</strong> — a
-              mentoria continua ativa pelos próximos 5 dias. 3 caminhos:
+              Rafael, a cobrança de hoje retornou erro. <strong>Nada foi cancelado</strong> — o
+              plano Pro continua ativo enquanto você resolve. 3 caminhos:
             </p>
 
             <ol className="vds-ec-em-steps">
@@ -283,7 +283,7 @@ function TransactionalSection() {
                 <strong>Trocar pro outro cartão</strong> · cadastrar agora · cobra na hora
               </li>
               <li>
-                <strong>Reduzir pra plano lite (R$ 980)</strong> · mantém acesso, sem mentoria 1:1
+                <strong>Falar com o time</strong> · ajusta a forma de pagamento com a gente
               </li>
             </ol>
 
@@ -293,8 +293,8 @@ function TransactionalSection() {
             </a>
 
             <p className="vds-ec-em-fine">
-              Se não resolver até <strong>seg 27/mai</strong>, o acesso entra em pausa
-              automática (sem custo) e você pode voltar quando quiser.
+              Se não resolver até <strong>[data]</strong>, vale o que está nos termos de uso ·
+              qualquer dúvida, responde esse email.
             </p>
           </div>
           <EmailFooter />
@@ -314,14 +314,14 @@ function EditorialSection() {
       >
         <EmailFrame
           category="Editorial · newsletter"
-          from="Caio · operador da semana"
-          subject="A Nina passou de 11k pra 13k conversas · 2 detalhes mudaram tudo"
-          preview="semana 18 da Nina. fui parar 3 dias pra entender porque ela tava perdendo no primeiro turno. anotei aqui o que mudei."
+          from="Rafael · Viver de IA"
+          subject="Viva Nexo saiu de 6h pra cliques · o que dá pra copiar daí"
+          preview="semana 18. separei um case real da plataforma e o que ele ensina pra quem ainda monta relatório na mão. anotei aqui."
           time="dom · 19:42"
           notes={{
             when: 'Domingo 19h · semanal · uma única edição por semana',
-            voice: 'crônica-pessoal de operador · começa com case real próprio · sem curadoria "5 dicas"',
-            vars: ['{aluno_first_name}', '{semana_numero}', '{operacao_referencia}'],
+            voice: 'crônica de operador · começa com case real publicado · sem curadoria "5 dicas"',
+            vars: ['{membro_first_name}', '{semana_numero}', '{case_referencia}'],
           }}
         >
           <EmailHeader />
@@ -329,54 +329,53 @@ function EditorialSection() {
             <div className="vds-ec-em-hero-plate">
               <span className="vds-ec-em-hero-eyebrow">Semana 18 · 2026</span>
               <h2>
-                A Nina passou de <em>11k pra 13k</em> conversas.
-                <br />2 detalhes mudaram tudo.
+                Viva Nexo foi de <em>6h pra cliques</em>.
+                <br />E economiza R$ 162.000.
               </h2>
               <p className="vds-ec-em-hero-meta">
-                operação Viver de IA · 7 dias · medido contra a mesma cohort
+                case real · Saúde · publicado em viverdeia.ai/cases
               </p>
             </div>
 
             <p>
-              tava acontecendo de a Nina perder ~40% das conversas no primeiro turno. lead
-              entrava, ela respondia, e o lead simplesmente não voltava. eu ficava olhando o
-              gráfico pensando "deve ser prompt".
+              o título do case resume: um relatório que levava 6 horas virou alguns cliques.
+              não é o tipo de ganho que aparece em demo · aparece na rotina de quem fecha o
+              mês e não aguenta mais montar planilha na mão.
             </p>
             <p>
-              <strong>Não era prompt.</strong> Era 2 coisas: (1) latência da resposta — a Nina
-              tava demorando 28s no primeiro turno, no segundo já era 14s. lead estranha 28s,
-              acha que é robô e abandona. (2) o tom da Nina no primeiro turno tava
-              consultivo demais quando o lead só queria saber preço.
+              <strong>Não começa por prompt.</strong> Começa por achar a tarefa que se repete
+              toda semana, tem formato fixo e consome horas de alguém caro. relatório é o caso
+              clássico: entrada previsível, saída previsível, ninguém gosta de fazer. é ali que
+              a IA paga a conta primeiro.
             </p>
             <p>
-              Mudei os dois: cache do contexto inicial pra dropar latência pra 4s · e o prompt
-              do primeiro turno virou "leitor de intent" antes de "vendedor". <strong>2k
-              conversas adicionais em 7 dias.</strong>
+              a história completa (desafio, solução, resultado) tá no case publicado. <strong>São
+              521 cases reais de implementação</strong> como esse, separados por setor.
             </p>
 
             <div className="vds-ec-em-pull">
-              <strong className="mono">+18% conversão · 4s vs 28s latência primeiro turno</strong>
+              <strong className="mono">6h → cliques · R$ 162.000 de economia · Viva Nexo</strong>
             </div>
 
             <h3>O que vale anotar pra sua operação</h3>
             <p>
-              latência percebida no primeiro turno é o número que mais subestima impacto. mede
-              o seu agora. se passa de 8s, o lead já tá indo embora antes da resposta.
+              lista as tarefas da sua operação que levam mais de 2h por semana e têm formato
+              fixo. a primeira da lista é candidata a solução pronta antes de virar projeto.
             </p>
             <p>
-              segundo: cuidado com agente "consultivo" no turno 1. o lead chega com intent
-              específico, mesmo que vago. <em>responder a intent</em> antes de qualquer
-              consultoria educa o ritmo e ele volta pra segunda pergunta.
+              segundo: antes de construir do zero, procura no catálogo. são 157 soluções de IA
+              prontas · <em>implementar o que já existe</em> costuma ser mais rápido e libera o
+              time pro que é específico do seu negócio.
             </p>
 
             <a href="#" className="vds-ec-em-link-arrow">
-              ver o código que reduziu a latência <ArrowRight size={14} strokeWidth={1.75} />
+              ler o case completo da Viva Nexo <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-sign">
               até domingo,
               <br />
-              <strong>Caio</strong>
+              <strong>Rafael</strong>
             </p>
           </div>
           <EmailFooter />
@@ -398,7 +397,7 @@ function EditorialSection() {
           category="Editorial · recap"
           from="Rafael · Viver de IA"
           subject="O que rolou na live de ontem · 3 prompts auditados ao vivo"
-          preview="ontem auditamos 3 prompts da turma na live. quem não foi, vai aqui o resumo + os 3 prints que mais geraram pergunta."
+          preview="ontem auditamos 3 prompts de membros no check-in ao vivo. quem não foi, vai aqui o resumo + os 3 prints que mais geraram pergunta."
           time="ter · 11:14"
           notes={{
             when: '12-24h após o evento · enquanto memória ainda quente',
@@ -413,7 +412,7 @@ function EditorialSection() {
             </h2>
 
             <p>
-              live de 90min · 47 alunos presentes · 3 prompts da turma postados antes,
+              check-in de 90min · [N] membros presentes · 3 prompts postados antes,
               auditados ao vivo. quem não viu (ou quer rever), gravação tá completa na
               plataforma · timestamps pros 3 cases abaixo.
             </p>
@@ -429,15 +428,15 @@ function EditorialSection() {
               <li>
                 <span className="t mono">34:51</span>
                 <div>
-                  <strong>Prompt da Camila · automação de proposta</strong>
+                  <strong>Prompt da Ana · automação de proposta</strong>
                   <em>"saída JSON quebrada · adicionei schema validation no system prompt · rodou primeira tentativa"</em>
                 </div>
               </li>
               <li>
                 <span className="t mono">58:22</span>
                 <div>
-                  <strong>Prompt do Daniel · onboarding de cliente</strong>
-                  <em>"contexto longo demais consumindo tokens · reorganizei pra carregar só o necessário · ficou 73% mais barato"</em>
+                  <strong>Prompt do Bruno · onboarding de cliente</strong>
+                  <em>"contexto longo demais consumindo tokens · reorganizei pra carregar só o necessário · custo por conversa caiu"</em>
                 </div>
               </li>
             </ol>
@@ -448,9 +447,9 @@ function EditorialSection() {
             </a>
 
             <p>
-              próxima live é <strong>sex 23/mai · 14h</strong> · vamos fazer review do agente
-              "build do mês" da turma. quem quer ser auditado, posta link no Discord até
-              quarta.
+              próximo check-in é <strong>sex 23/mai · 14h</strong> · vamos fazer review da
+              solução que mais gente implementou no mês. quem quer ser auditado, posta o link
+              na comunidade até quarta.
             </p>
 
             <p className="vds-ec-em-sign">
@@ -469,37 +468,37 @@ function DripSequence() {
     {
       n: 1,
       delay: 'D+3 (3 dias após optin)',
-      subject: 'O agente que paga a mentoria',
+      subject: 'A solução que paga o plano',
       lead:
-        'maioria dos alunos chega achando que vai aprender "prompt engineering". o que ensinamos é diferente · constrói um agente que opera todo dia.',
+        'maioria das empresas chega achando que vai aprender "prompt engineering". o foco é outro · colocar uma solução pronta pra operar todo dia.',
     },
     {
       n: 2,
       delay: 'D+7 (4 dias depois)',
-      subject: '3 alunos que viraram operadores em 90 dias',
+      subject: '3 cases reais que saíram do discurso pra operação',
       lead:
-        'João: SDR automatizado · 4h economizadas/semana. Camila: proposta auto-gerada · 73% menos token. Daniel: onboarding agente · 2h → 20min por cliente.',
+        'Place Dreams: economiza R$ 42.000 por ano em 30 dias. Trivia Studio: R$ 120.000 de economia anual. Viva Nexo: de 6h para cliques. Todos em viverdeia.ai/cases.',
     },
     {
       n: 3,
       delay: 'D+12 (5 dias depois)',
-      subject: 'Por que tem mentoria 1:1 (e por que não é call em grupo)',
+      subject: 'Por que a mentoria é em grupo (e por que isso acelera)',
       lead:
-        'curso online não chega a operação. mentoria 1:1 chega. mostro o que rola dentro de uma sessão real · case do Diego.',
+        'curso avulso ensina teoria e para por aí. mentoria ao vivo chega na operação. no Pro são 10 check-ins por mês · mostro o que rola dentro de um.',
     },
     {
       n: 4,
       delay: 'D+19 (7 dias depois)',
       subject: 'O que não te contam sobre construir agente em produção',
       lead:
-        '3 cicatrizes pessoais minhas construindo a Nina. nenhum dos 3 vc lê em curso porque acontece só quando o agente tá em produção real, com cliente real.',
+        '3 erros que mais vejo em quem coloca agente em produção. nenhum dos 3 vc lê em curso porque acontece só quando o agente tá em produção real, com cliente real.',
     },
     {
       n: 5,
       delay: 'D+29 (10 dias depois) · final',
-      subject: 'Última semana da turma 2026.2 · ou a próxima em 4 meses',
+      subject: 'A garantia de 90 dias, explicada sem letra miúda',
       lead:
-        '4 dias até fechar a turma. depois disso, só em outubro. sem urgência fabricada · é fato. se faz sentido pra ti agora, entra; se não, ok também.',
+        '100% do investimento de volta se, em 90 dias, não houver aumento de receita nem redução de custos · cumprindo 3 requisitos. se faz sentido agora, entra; se não, ok também.',
     },
   ];
 
@@ -517,7 +516,7 @@ function DripSequence() {
       ))}
       <p className="vds-ec-drip-notes">
         <strong>Princípio:</strong> cada email da série é stand-alone (lê fora de ordem e faz
-        sentido) · sem &ldquo;como prometi no email anterior&rdquo; · sem &ldquo;última chance&rdquo; até o touch 5
+        sentido) · sem &ldquo;como prometi no email anterior&rdquo; · sem &ldquo;última chance&rdquo; em nenhum touch
         · cada um termina com 1 ação concreta, não obrigatória.
       </p>
     </div>
@@ -534,7 +533,7 @@ function ConciergeSection() {
       >
         <EmailFrame
           category="Concierge · ops internas"
-          from="Nina · alerta"
+          from="Plataforma · alerta"
           subject="Webhook timeout · 504 desde 14:08 · provider embedding"
           preview="failover automático já rodou. tráfego 100% restaurado. relatório completo abaixo + janela impactada."
           time="hoje · 14:42"
@@ -589,7 +588,7 @@ function ConciergeSection() {
             </a>
 
             <p className="vds-ec-em-sign">
-              <strong>Nina</strong> · alerta automático
+              <strong>Monitor da plataforma</strong> · alerta automático
               <br />
               <em>checagem manual: <a href="#">/status</a></em>
             </p>
@@ -605,22 +604,22 @@ function ConciergeSection() {
         <EmailFrame
           category="Concierge · feedback"
           from="Rafael · Viver de IA"
-          subject="Como tá indo a mentoria? 1 pergunta direta"
-          preview="você entrou na turma 2026.2 há 45 dias. quero saber se o ritmo tá ajudando ou atrapalhando."
+          subject="Como tá indo a plataforma? 1 pergunta direta"
+          preview="você aderiu ao plano Pro há 45 dias. quero saber se o ritmo tá ajudando ou atrapalhando."
           time="qua · 10:08"
           notes={{
-            when: 'D+45 da entrada na turma · uma única vez · sem follow-up se não responder',
+            when: 'D+45 da adesão ao plano · uma única vez · sem follow-up se não responder',
             voice: 'pessoal, sem template corporate · pergunta específica, não escala 1-10 genérica',
-            vars: ['{aluno_first_name}', '{dias_na_turma}', '{turma_codename}'],
+            vars: ['{membro_first_name}', '{dias_desde_adesao}', '{plano_nome}'],
           }}
         >
           <EmailHeader />
           <div className="vds-ec-em-body">
             <p>
-              Rafael, você tá há <strong>45 dias</strong> na turma 2026.2. metade do caminho.
+              Rafael, você tá há <strong>45 dias</strong> no plano Pro. metade da janela da garantia.
             </p>
             <p>
-              quero saber 1 coisa só: <strong>o ritmo das aulas + mentoria 1:1 tá ajudando ou
+              quero saber 1 coisa só: <strong>o ritmo das formações + check-ins tá ajudando ou
               atrapalhando?</strong>
             </p>
             <p>
@@ -670,7 +669,7 @@ function CommercialSection() {
           category="Comercial · evento"
           from="Rafael · Viver de IA"
           subject="Sex 14h · auditoria de 3 prompts ao vivo"
-          preview="3 alunos vão postar prompts antes da live. audito ao vivo, expondo o que mudaria + por quê. 47 vagas, primeiro vem."
+          preview="3 membros vão postar prompts antes da live. audito ao vivo, expondo o que mudaria + por quê. [N] vagas, primeiro vem."
           time="seg · 16:22"
           notes={{
             when: '7 dias antes do evento · reforço 24h antes',
@@ -689,13 +688,13 @@ function CommercialSection() {
                 Auditoria de <em>3 prompts ao vivo</em>.
               </h2>
               <p>
-                47 vagas · primeiro que confirma, primeiro entra · gravação fica disponível
-                pra inscritos
+                [N] vagas · primeiro que confirma, primeiro entra · gravação fica disponível
+                na plataforma
               </p>
             </div>
 
             <p>
-              3 alunos postaram prompts antes da live. cada um conta o problema que tá tentando
+              3 membros postaram prompts antes da live. cada um conta o problema que tá tentando
               resolver e a versão atual do agente. <strong>eu audito ao vivo</strong>,
               expondo o que mudaria + por quê — sem softening, mas sem trucidar também.
             </p>
@@ -707,7 +706,7 @@ function CommercialSection() {
             </p>
 
             <a href="#" className="vds-ec-em-cta">
-              Confirmar presença · 47 vagas
+              Confirmar presença · [N] vagas
               <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
@@ -731,66 +730,66 @@ function CommercialSection() {
         <EmailFrame
           category="Comercial · lançamento"
           from="Rafael · Viver de IA"
-          subject="Turma 2026.3 abre amanhã 9h · 30 vagas · 4 meses"
-          preview="próxima turma sai em outubro · entre agora ou daqui 4 meses. não tem turma intermediária."
+          subject="Plano Pro · 10 check-ins de mentoria em grupo por mês"
+          preview="plataforma + mentoria ao vivo · R$ 3.780/mês em contratação anual · garantia de 90 dias."
           time="ter · 17:08"
           notes={{
-            when: 'D-1 do lançamento · um email só · sem 3 emails seguidos "ÚLTIMAS HORAS"',
+            when: 'Dia do lançamento · um email só · sem 3 emails seguidos "ÚLTIMAS HORAS"',
             voice: 'fato + condição + razão pra entrar agora · não é "JÁ ABRE!!!"',
-            vars: ['{turma_codename}', '{turma_data_abertura}', '{turma_vagas}', '{turma_duracao}'],
+            vars: ['{plano_nome}', '{plano_preco}', '{plano_mentoria}', '{plano_contratacao}'],
           }}
         >
           <EmailHeader />
           <div className="vds-ec-em-body">
             <div className="vds-ec-em-launch-plate via-mesh-navy via-noise">
-              <span className="vds-ec-em-launch-eyebrow">Turma 2026.3 · 4 meses</span>
+              <span className="vds-ec-em-launch-eyebrow">Plano Pro · contratação anual</span>
               <h2>
-                Próxima vez é <em>outubro</em>.
-                <br />Amanhã 9h abre 30 vagas.
+                Mentoria em grupo <em>ao vivo</em>.
+                <br />10 check-ins por mês.
               </h2>
               <p className="vds-ec-em-launch-meta">
-                método consolidado em 220 operadores · 1 agente em produção em 90 dias ou seu
-                dinheiro de volta
+                521 cases reais de implementação de IA · garantia de 90 dias, condições na
+                cláusula 7
               </p>
             </div>
 
             <p>
-              tô abrindo a próxima turma <strong>amanhã, qua 22/mai, 9h00 BRT</strong>. 30 vagas
-              · 4 meses · começa primeira semana de junho.
+              o plano Pro soma <strong>10 check-ins por mês de mentoria em grupo</strong> ao que
+              todo plano já tem. R$ 3.780/mês · contratação anual.
             </p>
 
-            <h3 className="vds-ec-em-h3">Por que entrar agora e não esperar</h3>
+            <h3 className="vds-ec-em-h3">Por que o Pro e não o Starter</h3>
             <ol className="vds-ec-em-steps">
               <li>
-                Próxima turma só em <strong>outubro 2026</strong> · não tem entre essas
+                Mentoria em grupo ao vivo · <strong>10 check-ins por mês</strong> pra destravar
               </li>
               <li>
-                Mentoria 1:1 fica trancada em <strong>15 alunos por turma</strong> · primeiro
-                que entra, primeiro escolhe o slot
+                Garantia de <strong>90 dias</strong> · 100% de volta sem aumento de receita nem
+                redução de custos, cumprindo 3 requisitos
               </li>
               <li>
-                Preço sobe na próxima turma · <strong>R$ 2.400 → R$ 2.900</strong> (mantemos pra
-                quem entra agora)
+                Comunidade de <strong>empresários e líderes</strong> + imersão presencial de
+                implementação na sede
               </li>
             </ol>
 
             <h3 className="vds-ec-em-h3">O que você recebe</h3>
             <ul className="vds-ec-em-checklist">
-              <li><Check /> 18 aulas estruturadas + 4 lives ao vivo + 2 estudos de caso</li>
-              <li><Check /> Mentoria 1:1 mensal (4 sessões 60min)</li>
-              <li><Check /> Comunidade fechada Discord · acesso vitalício</li>
-              <li><Check /> Acesso plataforma + atualizações por tempo indeterminado</li>
-              <li><Check /> Templates, prompts, código-base reutilizável</li>
+              <li><Check /> Todas as soluções Plug-and-Play · 157 soluções de IA prontas</li>
+              <li><Check /> 10 check-ins/mês de mentoria em grupo</li>
+              <li><Check /> Comunidade de empresários e líderes</li>
+              <li><Check /> Formações práticas + Consultor IA dentro da plataforma</li>
+              <li><Check /> Imersão presencial de implementação na sede</li>
             </ul>
 
             <a href="#" className="vds-ec-em-cta">
-              Ver programa completo
+              Ver os planos
               <ArrowRight size={14} strokeWidth={1.75} />
             </a>
 
             <p className="vds-ec-em-fine">
-              Amanhã 9h00 o link de inscrição abre · mando ele direto pra esse email assim que
-              estiver no ar.
+              Valor mensal em contratação anual · condições completas da garantia na cláusula 7
+              dos termos de uso.
             </p>
 
             <p className="vds-ec-em-sign">
@@ -809,7 +808,7 @@ function CommercialSection() {
           category="Comercial · oferta"
           from="Rafael · Viver de IA"
           subject="Pelo que vi no seu agente, faria sentido conversar"
-          preview="vi sua entrega do módulo 3 · operação tem padrão pra 2-3 agentes paralelos · tem plano cohort que cabe melhor."
+          preview="vi sua entrega do módulo 3 · operação tem padrão pra 2-3 agentes paralelos · o Enterprise talvez caiba melhor."
           time="qui · 09:42"
           notes={{
             when: 'Quando aluno demonstra perfil pra upgrade · análise manual, não automatizada',
@@ -833,10 +832,10 @@ function CommercialSection() {
             </ol>
 
             <p>
-              tem um plano que normalmente não menciono no funil padrão chamado <strong>cohort
-              avançado</strong> · 6 meses · 3 mentorias por mês · acesso direto ao código-base
-              completo (não só os snippets dos módulos). custa mais, mas faz sentido pra quem
-              vai construir 3+ agentes em sequência.
+              tem o plano <strong>Enterprise</strong> · soma 1 hora por mês de mentoria
+              individual e o arquiteto de soluções AI Builder. custa mais (R$ 6.180/mês,
+              contratação anual), mas faz sentido pra quem vai implementar 3+ soluções em
+              sequência.
             </p>
 
             <p>
@@ -846,8 +845,8 @@ function CommercialSection() {
             </p>
 
             <p>
-              se não fizer sentido, ignora esse email <strong>sem culpa</strong> · a turma
-              2026.2 já cobre o que você precisa.
+              se não fizer sentido, ignora esse email <strong>sem culpa</strong> · o plano
+              Pro já cobre o que você precisa.
             </p>
 
             <p className="vds-ec-em-sign">
@@ -873,7 +872,7 @@ function LifecycleSection() {
           category="Lifecycle · churn"
           from="Rafael · Viver de IA"
           subject="Você sumiu há 19 dias · tô curioso, o que rolou"
-          preview="vi que você não entra na plataforma há 19 dias. não tô cobrando · só curioso se foi algo que aconteceu (no curso ou na vida)."
+          preview="vi que você não entra na plataforma há 19 dias. não tô cobrando · só curioso se foi algo que aconteceu (na operação ou na vida)."
           time="seg · 11:14"
           notes={{
             when: 'D+14 da última atividade · uma única vez · não escala em sequência',
@@ -897,18 +896,18 @@ function LifecycleSection() {
             <ol className="vds-ec-em-steps">
               <li>
                 <strong>Vida atravessou.</strong> Operação ficou em crise, projeto novo
-                explodiu, família precisou. ok, <strong>tem botão de pausa</strong> (1 mês ou
-                3) que congela o ciclo sem cobrar e você volta quando puder.
+                explodiu, família precisou. ok, <strong>me conta no reply</strong> e a gente
+                ajusta o ritmo da trilha pra você voltar quando puder.
               </li>
               <li>
-                <strong>O curso travou em algum lugar.</strong> Módulo difícil, prompt que não
+                <strong>A formação travou em algum lugar.</strong> Módulo difícil, prompt que não
                 quis funcionar, dúvida que não respondeu. me conta o que travou no reply desse
                 email · resolvo em 24h.
               </li>
               <li>
                 <strong>Não tá fazendo sentido.</strong> Acontece. Aluno entra achando que era
-                X e na real era Y. nesse caso, devolução parcial até 60 dias da entrada · sem
-                drama.
+                X e na real era Y. nesse caso, vale olhar a garantia de 90 dias · condições na
+                cláusula 7 dos termos de uso.
               </li>
             </ol>
 
@@ -932,7 +931,7 @@ function LifecycleSection() {
           category="Lifecycle · win-back"
           from="Rafael · Viver de IA"
           subject="3 coisas mudaram desde que você saiu · acho que faz sentido voltar"
-          preview="cancelou mentoria em fev. desde então: mentoria virou 1:1 toda semana · plataforma ganhou laboratório de prompt · turma fechou em 25, não 50."
+          preview="cancelou em fev. desde então: mentoria em grupo ao vivo no Pro · Consultor IA na plataforma · 157 soluções prontas."
           time="qua · 14:42"
           notes={{
             when: 'D+90 do churn · uma única vez · sem follow-up se não responder',
@@ -946,29 +945,28 @@ function LifecycleSection() {
               Rafael,
             </p>
             <p>
-              você saiu da mentoria em <strong>fev 2026</strong> — 3 meses já. te escrevo porque
+              você saiu da plataforma em <strong>fev 2026</strong> — 3 meses já. te escrevo porque
               3 coisas mudaram desde então que talvez te interessem:
             </p>
 
             <ol className="vds-ec-em-steps">
               <li>
-                <strong>Mentoria 1:1 virou semanal</strong> (era mensal). Quem tava reclamando
-                que o ritmo era lento tinha razão · hoje são 4 sessões/mês.
+                <strong>Mentoria em grupo ao vivo</strong> no plano Pro · são 10 check-ins por
+                mês pra destravar a implementação com gente do seu nível.
               </li>
               <li>
-                <strong>Plataforma ganhou laboratório de prompt</strong>. dá pra testar
-                variações dos seus prompts contra dataset real, A/B side-by-side, antes de
-                subir pra produção.
+                <strong>Consultor IA dentro da plataforma</strong>. você descreve o seu cenário
+                e recebe o caminho específico pro seu caso, a qualquer hora do dia.
               </li>
               <li>
-                <strong>Turma fechou em 25, não 50</strong>. menos gente, mais densidade.
-                comunidade ficou melhor — todo mundo conhece todo mundo.
+                <strong>157 soluções de IA prontas</strong>. dá pra implementar o que já existe
+                em vez de construir do zero · o time aplica sem programar.
               </li>
             </ol>
 
             <p>
-              não tô oferecendo nada · só te contando. se quiser voltar pra próxima turma
-              (junho), me responde que eu reservo. se não, ok também — sem follow-up.
+              não tô oferecendo nada · só te contando. se quiser voltar, me responde que eu
+              te mostro o plano que cabe. se não, ok também — sem follow-up.
             </p>
 
             <a href="#" className="vds-ec-em-cta secondary">

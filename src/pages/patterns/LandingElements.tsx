@@ -37,7 +37,7 @@ export default function LandingElements() {
 
 /* ---------- Hero variants · 5 contextos ----------
    Cinco composições de verdade (não cinco cores do mesmo painel):
-   split com cartão da turma · manifesto centrado com prova · cartaz de evento ·
+   split com cartão da formação · manifesto centrado com prova · cartaz de evento ·
    captura inline com capa do material · confirmação com os próximos atos.
    Todas em papel claro — o navy é a tinta. */
 const ARROW = <ArrowRight size={16} strokeWidth={1.75} />;
@@ -61,27 +61,27 @@ function HeroVariantsSection() {
       meta="cada landing escolhe o hero certo pelo contexto"
     >
       <div className="vds-le-heros">
-        <HeroFrame name="Lançamento" context="D-X até D+0 · turma abre amanhã / hoje">
+        <HeroFrame name="Lançamento" context="D-X até D+0 · formação abre amanhã / hoje">
           <div className="vds-le-hero vds-le-hero--launch">
             <div className="vds-le-hero-copy">
-              <span className="vds-le-kicker"><span className="vds-le-live" aria-hidden="true" />Inscrições abrem 22 mai · 9h</span>
-              <h2>Operador que opera IA, <em>em 90 dias</em>.</h2>
-              <p>Em 4 meses você sai daqui com 1 agente em produção — ou seu dinheiro de volta.</p>
+              <span className="vds-le-kicker"><span className="vds-le-live" aria-hidden="true" />Nova formação · abre [data] · 9h</span>
+              <h2>Agentes de IA na operação, <em>em 90 dias</em>.</h2>
+              <p>Nova formação prática na plataforma, inclusa em todos os planos, com solução pronta pra implementar.</p>
               <div className="vds-le-hero-actions">
-                <Button size="lg" iconRight={ARROW}>Ver programa</Button>
+                <Button size="lg" iconRight={ARROW}>Ver formação</Button>
                 <Button size="lg" variant="ghost">Baixar a ementa</Button>
               </div>
             </div>
-            <aside className="vds-le-launch-card" aria-label="Turma 2026.3">
-              <span className="vds-le-launch-title">Turma 2026.3</span>
+            <aside className="vds-le-launch-card" aria-label="Formação: Agentes de IA">
+              <span className="vds-le-launch-title">Formação: Agentes de IA</span>
               <dl>
-                <div><dt>Início</dt><dd>22 mai</dd></div>
-                <div><dt>Duração</dt><dd>16 semanas</dd></div>
-                <div><dt>Formato</dt><dd>Ao vivo + gravado</dd></div>
-                <div><dt>Turma</dt><dd>25 operadores</dd></div>
+                <div><dt>Início</dt><dd>[data]</dd></div>
+                <div><dt>Ritmo</dt><dd>No seu tempo</dd></div>
+                <div><dt>Formato</dt><dd>Prática + mentoria</dd></div>
+                <div><dt>Planos</dt><dd>Todos</dd></div>
               </dl>
               <div className="vds-le-launch-meter">
-                <span><strong>18</strong> de 25 vagas preenchidas</span>
+                <span><strong>[N]</strong> de [N] lugares na live de estreia</span>
                 <span className="vds-le-launch-bar" aria-hidden="true"><span style={{ width: '72%' }} /></span>
               </div>
             </aside>
@@ -90,32 +90,32 @@ function HeroVariantsSection() {
 
         <HeroFrame name="Evergreen sales" context="landing principal · sempre no ar">
           <div className="vds-le-hero vds-le-hero--evergreen">
-            <span className="vds-le-kicker">Formação técnico-operativa em IA</span>
+            <span className="vds-le-kicker">Plataforma de implementação de IA</span>
             <h2>Viver de IA, <em>não de prompt</em>.</h2>
-            <p>O método codificado que leva operador de negócio a colocar agente pra rodar — com mentoria, comunidade e código-base.</p>
+            <p>Soluções prontas, formações práticas e mentorias ao vivo pra tirar a IA do discurso e colocar na operação.</p>
             <div className="vds-le-hero-actions">
-              <Button size="lg" iconRight={ARROW}>Conhecer o método</Button>
-              <Button size="lg" variant="secondary">Falar com mentor</Button>
+              <Button size="lg" iconRight={ARROW}>Conhecer a plataforma</Button>
+              <Button size="lg" variant="secondary">Falar com especialista</Button>
             </div>
             <dl className="vds-le-proof">
-              <div><dt>operadores formados</dt><dd>220</dd></div>
-              <div><dt>destravado em 12 meses</dt><dd>R$ 1,8M</dd></div>
-              <div><dt>aulas no método</dt><dd>18</dd></div>
+              <div><dt>cases reais de implementação</dt><dd>521</dd></div>
+              <div><dt>soluções de IA prontas</dt><dd>157</dd></div>
+              <div><dt>setores com implementação</dt><dd>29</dd></div>
             </dl>
           </div>
         </HeroFrame>
 
-        <HeroFrame name="Evento" context="Leaders AI Conference · live · mentoria coletiva">
+        <HeroFrame name="Evento" context="Leaders AI Conference · evento presencial da marca">
           <div className="vds-le-hero vds-le-hero--event">
-            <div className="vds-le-event-date" aria-label="18 a 20 de junho, São Paulo">
-              <strong>18–20</strong>
-              <span>junho 2026</span>
-              <span>São Paulo</span>
+            <div className="vds-le-event-date" aria-label="[data], [local]">
+              <strong>[data]</strong>
+              <span>[mês e ano]</span>
+              <span>[local]</span>
             </div>
             <div className="vds-le-hero-copy">
               <span className="vds-le-kicker">Leaders AI Conference</span>
-              <h2>3 dias. 47 cases reais. <em>0 teoria.</em></h2>
-              <p>Operadores que já têm agente em produção contam o que mudou — sem palestrante de palco que nunca rodou nada.</p>
+              <h2>[N] dias. Cases reais. <em>0 teoria.</em></h2>
+              <p>Empresas que já têm IA na operação contam o que mudou — sem palestrante de palco que nunca rodou nada.</p>
               <div className="vds-le-hero-actions">
                 <Button size="lg" iconRight={ARROW}>Garantir ingresso</Button>
                 <Button size="lg" variant="ghost">Ver programação</Button>
@@ -158,15 +158,15 @@ function HeroVariantsSection() {
           </div>
         </HeroFrame>
 
-        <HeroFrame name="Thank-you · pós-conversão" context="depois que pagou / inscreveu · sem pressão">
+        <HeroFrame name="Thank-you · pós-conversão" context="depois que assinou · sem pressão">
           <div className="vds-le-hero vds-le-hero--thanks">
             <span className="vds-le-thanks-check" aria-hidden="true"><Check size={24} strokeWidth={1.75} /></span>
             <h2>Confirmado. <em>Próximo passo em 3 atos.</em></h2>
-            <p>A turma 2026.3 começa em 14 dias. Enquanto isso, três coisas pra entrar no ritmo:</p>
+            <p>Seu plano Pro está ativo. Três passos pra começar a trilha de onboarding:</p>
             <ol className="vds-le-acts">
-              <li><span>1</span><strong>Acessar a plataforma</strong>Aula zero e o mapa das 16 semanas.</li>
-              <li><span>2</span><strong>Entrar na comunidade</strong>Sua turma já está se apresentando.</li>
-              <li><span>3</span><strong>Agendar o diagnóstico</strong>30 min com mentor pra escolher o primeiro agente.</li>
+              <li><span>1</span><strong>Acessar a plataforma</strong>Trilha de onboarding e as soluções prontas.</li>
+              <li><span>2</span><strong>Entrar na comunidade</strong>Empresários e líderes já estão se apresentando.</li>
+              <li><span>3</span><strong>Escolher as 3 soluções</strong>As que você implementa nos primeiros 90 dias.</li>
             </ol>
             <Button size="lg" iconRight={ARROW}>Acessar plataforma</Button>
           </div>
@@ -179,9 +179,9 @@ function HeroVariantsSection() {
 /* ---------- CTA variants · 8 contextos ---------- */
 function CTAVariantsSection() {
   const ctas = [
-    { label: 'Ver programa', context: 'navegação · descoberta', kind: 'primary' },
-    { label: 'Entrar na turma', context: 'conversão · decisão', kind: 'accent' },
-    { label: 'Falar com mentor', context: 'consultoria · alto ticket', kind: 'primary' },
+    { label: 'Ver planos', context: 'navegação · descoberta', kind: 'primary' },
+    { label: 'Assinar o plano', context: 'conversão · decisão', kind: 'accent' },
+    { label: 'Falar com especialista', context: 'consultoria · alto ticket', kind: 'primary' },
     { label: 'Baixar guia gratuito', context: 'lead magnet · email capture', kind: 'primary' },
     { label: 'Confirmar presença', context: 'evento · live', kind: 'primary' },
     { label: 'Conversar antes', context: 'objection handling · secundário', kind: 'secondary' },
@@ -211,7 +211,7 @@ function CTAVariantsSection() {
       <article className="vds-le-cta-rules">
         <h4>Regras canônicas pra CTA</h4>
         <ul>
-          <li><strong>Verbo no infinitivo</strong> · "Ver programa" · não "PROGRAMA"</li>
+          <li><strong>Verbo no infinitivo</strong> · "Ver planos" · não "PLANOS"</li>
           <li><strong>2-4 palavras</strong> · longo demais confunde, curto demais é vago</li>
           <li><strong>Sentence-case</strong> · não caps lock alérgico</li>
           <li><strong>Sem urgência fabricada</strong> · não "CLIQUE AQUI AGORA!!!"</li>
@@ -234,32 +234,32 @@ function TrustSignalsAdvancedSection() {
         <article className="vds-le-trust-numbers">
           <span className="vds-le-trust-eyebrow">prova com número</span>
           <ul>
-            <li><strong className="mono">+220</strong><em>operadores formados desde 2024</em></li>
-            <li><strong className="mono">R$ 1,8M</strong><em>destravado por alunos em 12 meses</em></li>
-            <li><strong className="mono">11.920</strong><em>conversas/mês rodando via Nina</em></li>
-            <li><strong className="mono">90 dias</strong><em>até primeiro agente em produção</em></li>
+            <li><strong className="mono">521</strong><em>cases reais de implementação de IA</em></li>
+            <li><strong className="mono">157</strong><em>soluções de IA prontas pra usar</em></li>
+            <li><strong className="mono">29</strong><em>setores com implementação</em></li>
+            <li><strong className="mono">90 dias</strong><em>de garantia · 3 requisitos</em></li>
           </ul>
         </article>
 
         <article className="vds-le-trust-quote">
           <span className="vds-le-trust-eyebrow">prova atribuída</span>
-          <blockquote>"Ela fez isso com pouquíssimas horas. Sem saber nada."</blockquote>
+          <blockquote>[Depoimento do cliente · frase real, com autorização.]</blockquote>
           <footer>
-            <div className="av">ML</div>
+            <div className="av">N</div>
             <div>
-              <strong>Márisson Lage</strong>
-              <em>CTO · Efizi · turma 2025.3</em>
+              <strong>[Nome]</strong>
+              <em>[cargo] · [empresa] · plano Pro</em>
             </div>
           </footer>
         </article>
 
         <article className="vds-le-trust-cases">
-          <span className="vds-le-trust-eyebrow">casos reais nominais</span>
+          <span className="vds-le-trust-eyebrow">cases reais · viverdeia.ai/cases</span>
           <ul>
-            <li><strong>Caio Ribeiro</strong><em>construiu a Nina · 11.920 conversas/mês</em></li>
-            <li><strong>Camila Moraes</strong><em>agente proposta · 73% menos token</em></li>
-            <li><strong>Daniel Pinheiro</strong><em>onboarding agente · 2h → 20min</em></li>
-            <li><strong>Diego Martins</strong><em>SDR automatizado · 4h/sem economizadas</em></li>
+            <li><strong>Place Dreams</strong><em>economiza R$ 42.000/ano em 30 dias</em></li>
+            <li><strong>Trivia Studio</strong><em>R$ 120.000 de economia anual</em></li>
+            <li><strong>Viva Nexo</strong><em>de 6h para cliques · R$ 162.000</em></li>
+            <li><strong>Assessoria MAP</strong><em>economiza R$ 2.000 por mês</em></li>
           </ul>
         </article>
       </div>
@@ -270,12 +270,12 @@ function TrustSignalsAdvancedSection() {
 /* ---------- FAQ avançado ---------- */
 function FAQAdvancedSection() {
   const faqs = [
-    { cat: 'Pré-requisito', q: 'Preciso saber programar pra entrar?', a: 'Não. Mas precisa estar disposto a ler código (não a escrever do zero), entender lógica de prompts e copy/paste de snippets que a gente fornece. Operador que não toca código nenhum não vai conseguir.' },
-    { cat: 'Tempo', q: 'Quantas horas por semana isso pede?', a: 'Médio 6-8h/semana — 2h em aula gravada · 1h em live ao vivo · 3h em prática própria. Pode comprimir em 1 final de semana se a operação tá apertada na semana.' },
-    { cat: 'Garantia', q: 'E se eu não chegar no agente em produção em 90 dias?', a: 'Você fica no programa sem mensalidade extra até chegar. Não cobramos turma de segunda chance · sem culpa. Mais de 92% chegam no prazo, mas o contrato é com o resultado.' },
-    { cat: 'Devolução', q: 'Tem garantia de devolução?', a: '60 dias · devolução total · sem perguntas. Aluno entra achando que era X e na real era Y, devolve · sem drama.' },
-    { cat: 'Mentoria', q: 'A mentoria 1:1 é com quem?', a: 'Operadores que já construíram agente em produção. Caio (fundador) faz a maioria das mentorias da turma. Outros mentores são alunos veteranos que viraram parceiros.' },
-    { cat: 'Operação', q: 'E se minha operação for muito específica?', a: 'O método é genérico — agente IA é agente IA. O caso de uso muda. Já formamos operadores em SaaS, fintech, e-commerce, educação, advocacia, marketing, RH, healthcare. Se seu negócio gera texto ou conversa, cabe.' },
+    { cat: 'Pré-requisito', q: 'Meu time precisa saber programar?', a: 'Não. As soluções são plug and play, sem necessidade de programação. A trilha personalizada com IA adapta o conteúdo ao nível de cada colaborador, do CEO ao analista. Alfabetizamos antes de automatizar.' },
+    { cat: 'Tempo', q: 'Quanto tempo até a primeira solução rodando?', a: 'As equipes começam a implementar soluções já na primeira semana. A trilha de onboarding indica o ritmo de cada pessoa do time, sem parar a operação.' },
+    { cat: 'Garantia', q: 'E se não tiver resultado em 90 dias?', a: 'Devolvemos 100% do investimento se, em 90 dias, sua empresa não tiver nem aumento de receita nem redução de custos operacionais. Para ter direito: concluir a trilha de onboarding, concluir 3 formações e implementar as 3 soluções escolhidas na adesão.' },
+    { cat: 'Condições', q: 'Onde estão as condições da garantia?', a: 'Na cláusula 7 dos termos de uso. A verificação dos três requisitos é feita pelos registros da plataforma.' },
+    { cat: 'Mentoria', q: 'Como funciona a mentoria?', a: 'Ao vivo e em grupo: 10 check-ins por mês no plano Pro. No Enterprise entra também 1 hora por mês de mentoria individual e o arquiteto de soluções AI Builder.' },
+    { cat: 'Operação', q: 'E se minha operação for muito específica?', a: 'São 521 cases reais de implementação de IA em 29 setores. As soluções cobrem vendas, marketing, atendimento, RH e financeiro, e as mentorias adaptam a solução ao seu contexto.' },
   ];
 
   return (
@@ -344,12 +344,12 @@ function CountdownSection() {
   return (
     <Section
       title="Countdown editorial · sem urgência fabricada"
-      meta="só mostra quando urgência é REAL (turma fecha, evento começa)"
+      meta="só mostra quando urgência é REAL (inscrição fecha, evento começa)"
     >
       <article className="vds-le-countdown via-mesh-navy via-noise">
         <span className="vds-le-countdown-eyebrow">
           <Calendar size={16} strokeWidth={1.75} />
-          Turma 2026.3 fecha em
+          Imersão presencial começa em
         </span>
         <div className="vds-le-countdown-grid">
           <div><strong className="mono">09</strong><em>dias</em></div>
@@ -358,16 +358,16 @@ function CountdownSection() {
           <span className="vds-le-countdown-sep">:</span>
           <div><strong className="mono">22</strong><em>min</em></div>
         </div>
-        <p>Depois disso, próxima turma só em <strong>outubro 2026</strong>. Sem turma intermediária.</p>
+        <p>Imersão de implementação na sede · <strong>[data]</strong> · inclusa em todos os planos.</p>
         <Button variant="secondary" size="lg" iconRight={<ArrowRight size={16} strokeWidth={1.75} />}>
-          Ver programa
+          Ver programação
         </Button>
       </article>
 
       <p className="vds-le-countdown-rule">
-        <strong>Regra:</strong> só mostra countdown se a urgência é real (turma realmente fecha,
+        <strong>Regra:</strong> só mostra countdown se a urgência é real (inscrição realmente fecha,
         evento realmente começa, preço realmente sobe). Nunca "criar urgência" inventando
-        deadline. Se a turma sempre abre, não mostra countdown.
+        deadline. Se a oferta está sempre aberta, não mostra countdown.
       </p>
     </Section>
   );
@@ -376,13 +376,13 @@ function CountdownSection() {
 /* ---------- Comparativo concorrente ---------- */
 function CompetitorComparisonSection() {
   const rows = [
-    { feature: 'Foco', us: 'Operador construindo agente em produção', them: 'Aprender "prompt engineering" geral' },
-    { feature: 'Método', us: '4 meses · 18 aulas + mentoria 1:1 mensal', them: '20-40h gravado · sem mentoria 1:1' },
-    { feature: 'Stack', us: 'Real · Claude SDK / OpenAI / open-source', them: 'Genérico · "use ChatGPT melhor"' },
-    { feature: 'Garantia', us: '90 dias até agente em produção · ou devolve', them: 'Sem garantia de resultado' },
-    { feature: 'Comunidade', us: '25 operadores por turma · Discord fechado', them: 'Grupo aberto de 10k pessoas' },
-    { feature: 'Quem ensina', us: 'Caio · construiu agente em produção (Nina)', them: 'Influencer que viu 100 vídeos' },
-    { feature: 'Preço', us: 'R$ 2.400/mês · 4 meses · alto-ticket', them: 'R$ 297-997 · low-ticket genérico' },
+    { feature: 'Foco', us: 'IA na operação da empresa, com resultado medido', them: 'Aprender "prompt engineering" geral' },
+    { feature: 'Método', us: 'Soluções prontas + formações + mentoria em grupo', them: '20-40h gravado · sem mentoria ao vivo' },
+    { feature: 'Stack', us: '157 soluções Plug-and-Play · sem programar', them: 'Genérico · "use ChatGPT melhor"' },
+    { feature: 'Garantia', us: '100% de volta em 90 dias · com 3 requisitos', them: 'Sem garantia de resultado' },
+    { feature: 'Comunidade', us: 'Empresários e líderes · imersão na sede', them: 'Grupo aberto de 10k pessoas' },
+    { feature: 'Prova', us: '521 cases reais de implementação de IA', them: 'Print de influencer · sem case' },
+    { feature: 'Preço', us: 'A partir de R$ 2.580/mês · contratação anual', them: 'R$ 297-997 · low-ticket genérico' },
   ];
 
   return (
@@ -395,7 +395,7 @@ function CompetitorComparisonSection() {
           <div className="cell empty"></div>
           <div className="cell us">
             <strong>Viver de IA</strong>
-            <em>técnico-operativo</em>
+            <em>plataforma B2B</em>
           </div>
           <div className="cell them">
             <strong>Curso "prompt eng"</strong>

@@ -63,7 +63,7 @@ export default function Settings() {
                 <div className="vds-set-card">
                   <header>
                     <p className="vds-eyebrow">Perfil público</p>
-                    <h2>Como você aparece pra turma e nos cases.</h2>
+                    <h2>Como você aparece pra comunidade e nos cases.</h2>
                   </header>
                   <div className="vds-set-avatar-row">
                     <span className="vds-set-avatar">RM<button aria-label="Tirar foto" className="cam"><Camera size={14} strokeWidth={1.75} /></button></span>
@@ -84,7 +84,7 @@ export default function Settings() {
                   </div>
                   <div className="via-field">
                     <label className="lbl">Bio profissional</label>
-                    <textarea className="val" aria-label="Bio profissional" rows={3} defaultValue="Construo a Viver de IA. Antes disso, operador de e-commerce e mentor de operadores que estão indo pra IA agora." />
+                    <textarea className="val" aria-label="Bio profissional" rows={3} defaultValue="Fundador da Viver de IA. Meta pública: gerar R$ 1 bilhão em receita e economia para empresas com IA." />
                   </div>
                 </div>
 
@@ -115,7 +115,7 @@ export default function Settings() {
                 </header>
                 <div className="vds-set-toggles">
                   {[
-                    { v: emailNotif, set: setEmailNotif, t: 'E-mail transactional', d: 'Confirmações de inscrição, comprovantes, links de sessão.' },
+                    { v: emailNotif, set: setEmailNotif, t: 'E-mail transactional', d: 'Confirmações de adesão, comprovantes, links de check-in.' },
                     { v: whatsapp, set: setWhatsapp, t: 'WhatsApp · lembretes', d: 'Lembrete 1h antes de cada sessão ao vivo.' },
                     { v: weekly, set: setWeekly, t: 'Newsletter quinzenal', d: '3 cases curados a cada 15 dias, sextas pela manhã.' },
                   ].map((o) => (

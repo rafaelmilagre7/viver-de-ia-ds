@@ -81,7 +81,7 @@ function LocationVenueSection() {
             <g transform="translate(200, 110)">
               <rect x="-80" y="-22" width="160" height="22" rx="4" fill="var(--via-white)" stroke="var(--via-navy-16)" />
               <text x="0" y="-7" textAnchor="middle" fontSize="11" fontFamily="var(--via-mono)" style={{ fill: "var(--via-navy)" }} letterSpacing="0.02em">
-                Centro de Eventos Frei
+                [local do evento]
               </text>
             </g>
           </svg>
@@ -92,11 +92,11 @@ function LocationVenueSection() {
         {/* Right column — venue info */}
         <div className="vds-loc-body">
           <header>
-            <span className="vds-loc-eyebrow">Leaders AI Conference · 2026</span>
-            <h3>Centro de Eventos Frei Caneca</h3>
+            <span className="vds-loc-eyebrow">Leaders AI Conference · [ano]</span>
+            <h3>[Local do evento]</h3>
             <p className="vds-loc-address">
-              Rua Frei Caneca, 569 · 4º andar<br />
-              Consolação · São Paulo · SP · 01307-001
+              [Endereço] · [andar]<br />
+              [Bairro] · [cidade] · [UF] · [CEP]
             </p>
           </header>
 
@@ -107,8 +107,8 @@ function LocationVenueSection() {
                 <Calendar size={14} strokeWidth={1.75} />
               </div>
               <div>
-                <strong>18 · 19 · 20 jun 2026</strong>
-                <em>quinta a sábado</em>
+                <strong>[data]</strong>
+                <em>[dias da semana]</em>
               </div>
             </article>
             <article>
@@ -116,8 +116,8 @@ function LocationVenueSection() {
                 <Clock size={14} strokeWidth={1.75} />
               </div>
               <div>
-                <strong>08h30 — 18h00</strong>
-                <em>credenciamento abre 08h00</em>
+                <strong>[horário]</strong>
+                <em>credenciamento abre [hora]</em>
               </div>
             </article>
           </div>
@@ -129,22 +129,22 @@ function LocationVenueSection() {
               <li>
                 <span className="vds-loc-access-icon"><Train size={14} strokeWidth={1.75} /></span>
                 <div>
-                  <strong>Metrô · Estação Higienópolis-Mackenzie</strong>
-                  <em>linha amarela · 6 min caminhando</em>
+                  <strong>Metrô · [estação mais próxima]</strong>
+                  <em>[linha] · [N] min caminhando</em>
                 </div>
               </li>
               <li>
                 <span className="vds-loc-access-icon"><Car size={14} strokeWidth={1.75} /></span>
                 <div>
                   <strong>Estacionamento conveniado</strong>
-                  <em>R$ 25 / dia · vagas limitadas · validação no check-in</em>
+                  <em>R$ [valor] / dia · validação no check-in</em>
                 </div>
               </li>
               <li>
                 <span className="vds-loc-access-icon"><Building2 size={14} strokeWidth={1.75} /></span>
                 <div>
-                  <strong>Hotéis parceiros · 4 opções</strong>
-                  <em>desconto 15% com código LEADERS26</em>
+                  <strong>Hotéis parceiros · [N] opções</strong>
+                  <em>desconto [N]% com código [CÓDIGO]</em>
                 </div>
               </li>
             </ul>
@@ -168,7 +168,7 @@ function LocationVenueSection() {
             <div>
               <span className="vds-loc-contact-lbl">
                 <Phone size={14} strokeWidth={1.75} />
-                +55 11 4040-1820
+                [telefone]
               </span>
               <span className="vds-loc-contact-lbl">
                 <Mail size={14} strokeWidth={1.75} />
@@ -211,8 +211,8 @@ function LocationCompactSection() {
           </div>
           <div className="vds-loc-compact-body">
             <span className="vds-loc-eyebrow">Sede Viver de IA</span>
-            <h4>Av. Paulista, 1842 · cj. 1602</h4>
-            <p>Bela Vista · São Paulo · SP · CEP 01310-200</p>
+            <h4>[Endereço da sede]</h4>
+            <p>[Bairro] · [cidade] · [UF] · CEP [00000-000]</p>
             <button className="vds-loc-compact-cta">
               Ver no mapa
               <ArrowUpRight size={14} strokeWidth={1.75} />
@@ -238,9 +238,9 @@ function LocationCompactSection() {
             </svg>
           </div>
           <div className="vds-loc-compact-body dark">
-            <span className="vds-loc-eyebrow accent">Sala de mentoria · Pinheiros</span>
-            <h4>Rua dos Pinheiros, 870 · cj. 32</h4>
-            <p>Pinheiros · São Paulo · SP · CEP 05422-001</p>
+            <span className="vds-loc-eyebrow accent">Imersão presencial · sede</span>
+            <h4>[Sala da imersão] · [andar]</h4>
+            <p>[Bairro] · [cidade] · [UF] · CEP [00000-000]</p>
             <button className="vds-loc-compact-cta dark">
               Ver no mapa
               <ArrowUpRight size={14} strokeWidth={1.75} />

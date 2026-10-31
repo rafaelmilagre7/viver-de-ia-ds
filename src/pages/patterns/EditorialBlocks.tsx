@@ -52,7 +52,7 @@ function HeroVariantsSection() {
         {/* Hero 2 — split com card */}
         <article className="vds-hero-card split">
           <div className="vds-hero-l">
-            <span className="vds-hero-pill">Plano 90 dias</span>
+            <span className="vds-hero-pill">Garantia de 90 dias</span>
             <h3>
               Coloque sua primeira <em>IA em produção</em> sem virar refém de fornecedor.
             </h3>
@@ -61,31 +61,31 @@ function HeroVariantsSection() {
             </p>
             <div className="vds-hero-stats">
               <div>
-                <strong>4.940</strong>
-                <em>operadores ativos</em>
+                <strong>521</strong>
+                <em>cases reais</em>
               </div>
               <div>
-                <strong>72%</strong>
-                <em>MRR recorrente</em>
+                <strong>157</strong>
+                <em>soluções prontas</em>
               </div>
               <div>
-                <strong>11.920</strong>
-                <em>conversas analisadas</em>
+                <strong>29</strong>
+                <em>setores atendidos</em>
               </div>
             </div>
             <a className="vds-hero-cta primary" href="#">Conhecer o plano <ArrowRight size={16} strokeWidth={1.75} /></a>
           </div>
           <div className="vds-hero-r">
             <div className="vds-hero-mock via-mesh-navy via-noise">
-              <span className="mock-tag">Dashboard · em produção</span>
+              <span className="mock-tag">Dashboard · ROI da empresa</span>
               <div className="mock-row">
                 <div className="mock-kpi">
-                  <em>MRR mês</em>
-                  <strong>R$ 1,84M</strong>
+                  <em>Economia · mês</em>
+                  <strong>R$ 38,4K</strong>
                 </div>
                 <div className="mock-kpi alt">
-                  <em>NPS · 30d</em>
-                  <strong>74</strong>
+                  <em>Time aplicando</em>
+                  <strong>74%</strong>
                 </div>
               </div>
               <div className="mock-spark">
@@ -125,14 +125,14 @@ function HeroVariantsSection() {
 
 /* ---------- Logo wall ---------- */
 function LogoWallSection() {
-  const clients = ['Efizi', 'Brando', 'Lumin', 'Norte', 'Olara', 'Pivot', 'Vector', 'Carto', 'Mantra', 'Asca', 'Foco', 'Garagem'];
+  const clients = ['Place Dreams', 'Trivia Studio', 'Assessoria MAP', 'Viva Nexo', 'Pasetti Viagens', 'Jt Telecom', 'H10 Esportes', 'TaxTek', 'Prevensul', 'BSSP', 'Orbit', 'Lognos'];
   return (
     <Section title="Logo wall · clientes que confiam na marca" meta="social proof bar · grid editorial">
       <div className="vds-logowall-card">
         <header>
-          <p className="eyebrow">Quem está construindo com a gente</p>
+          <p className="eyebrow">Empresas com case publicado</p>
           <h3>
-            <em>+220 operadores</em> rodando IA em produção · 38 empresas no plano corporate.
+            <em>521 cases reais</em> de implementação de IA em empresas brasileiras · 29 setores.
           </h3>
         </header>
 
@@ -160,11 +160,11 @@ function LogoWallSection() {
 /* ---------- Timeline ---------- */
 function TimelineSection() {
   const steps = [
-    { year: '2022', title: 'Primeira mentoria 1:1', body: 'Caio Ribeiro começa a mentorar 6 fundadores fora do mercado de cursos online. Era uma planilha. Virou método.', tag: 'origem' },
-    { year: '2023', title: 'Comunidade Viver de IA', body: 'Discord interno + encontros mensais. 240 operadores no primeiro ano — todos pagantes, todos selecionados.', tag: 'estrutura' },
-    { year: '2024', title: 'Leaders AI Conference', body: 'Primeiro evento presencial em São Paulo · 380 ingressos esgotados em 9 dias. Provou que existe demanda por conversa adulta sobre IA.', tag: 'evento' },
-    { year: '2025', title: 'Playbook publicado', body: 'O método vira documento público — 142 páginas, gratuito, mais baixado que qualquer ebook de IA em PT-BR.', tag: 'método' },
-    { year: '2026', title: 'Nina · agente próprio', body: 'Lançamento da Nina, agente de qualificação que processa 11.920 conversas/mês. Marca a virada — Viver de IA também constrói.', tag: 'produto', current: true },
+    { year: '[ano 1]', title: 'Fundação', body: 'Rafael Milagre funda a Viver de IA. [Como começou · marco e data vindos do time, com fonte.]', tag: 'origem' },
+    { year: '[ano 2]', title: 'Comunidade Viver de IA', body: 'Comunidade de empresários e líderes. [Marco do capítulo · número só com fonte.]', tag: 'estrutura' },
+    { year: '[ano 3]', title: 'Leaders AI Conference', body: 'Evento presencial da marca · [local] · [N] participantes. [O que o evento provou, com dado.]', tag: 'evento' },
+    { year: '[ano 4]', title: 'Plataforma', body: '157 soluções de IA prontas, formações práticas, mentorias ao vivo e Consultor IA na mesma plataforma.', tag: 'produto' },
+    { year: 'Hoje', title: 'Meta pública', body: 'Gerar R$ 1 bilhão em receita e economia para empresas com IA — é meta, não resultado. 521 cases reais até aqui.', tag: 'meta', current: true },
   ];
 
   return (
@@ -196,10 +196,10 @@ function TimelineSection() {
 /* ---------- Process steps ---------- */
 function ProcessSection() {
   const steps = [
-    { n: '01', title: 'Audita', body: 'Mapeamento de onde IA realmente entrega — ou trava — no seu negócio. 2 sessões.', icon: Compass },
-    { n: '02', title: 'Estrutura', body: 'Decidir o que vai pra produção, o que vai pro arquivo, e qual a métrica de receita.', icon: Layers },
-    { n: '03', title: 'Constrói', body: 'Primeiro agente rodando em 30 dias. Não MVP — em produção, com observabilidade.', icon: Target },
-    { n: '04', title: 'Escala', body: 'Time treinado pra operar sem você. Métrica clara. Próximo capítulo aberto.', icon: Award },
+    { n: '01', title: 'Alfabetiza', body: 'Trilha de onboarding e formações práticas · do CEO ao analista, cada um no seu nível.', icon: Compass },
+    { n: '02', title: 'Escolhe', body: 'As 3 soluções da adesão · onde a IA reduz custo ou aumenta receita no seu negócio.', icon: Layers },
+    { n: '03', title: 'Implementa', body: 'Soluções Plug-and-Play rodando na operação · sem programar, com mentoria ao vivo.', icon: Target },
+    { n: '04', title: 'Mede', body: 'Dashboard com quem está aplicando, engajamento e ROI. Próximo capítulo aberto.', icon: Award },
   ];
 
   return (
@@ -228,53 +228,53 @@ function ProcessSection() {
 function ComparisonSection() {
   const plans = [
     {
-      name: 'Comunidade',
-      price: 'R$ 197',
-      unit: '/ mês',
-      lede: 'Pra quem está começando a operar com IA.',
+      name: 'Starter',
+      price: 'R$ 2.580',
+      unit: '/ mês · anual',
+      lede: 'Plataforma, soluções prontas, formações e comunidade.',
       hero: false,
       features: [
-        { l: 'Acesso à comunidade Discord', v: true },
-        { l: 'Encontros mensais ao vivo', v: true },
-        { l: 'Playbook completo', v: true },
-        { l: 'Mentoria 1:1 mensal', v: false },
-        { l: 'Auditoria da operação', v: false },
-        { l: 'Construção de agente próprio', v: false },
-        { l: 'Lives privadas com time interno', v: false },
+        { l: 'Todas as soluções Plug-and-Play', v: true },
+        { l: 'Formações práticas', v: true },
+        { l: 'Consultor IA na plataforma', v: true },
+        { l: 'Comunidade e imersão presencial', v: true },
+        { l: 'Mentoria em grupo ao vivo', v: false },
+        { l: 'Mentoria individual', v: false },
+        { l: 'Arquiteto de soluções AI Builder', v: false },
       ],
-      cta: 'Entrar na comunidade',
+      cta: 'Assinar Starter',
     },
     {
-      name: 'Mentoria',
-      price: 'R$ 6.000',
-      unit: '/ trimestre',
-      lede: 'Operadores que estão pra colocar IA em produção.',
+      name: 'Pro',
+      price: 'R$ 3.780',
+      unit: '/ mês · anual',
+      lede: 'Plano completo com mentoria em grupo ao vivo.',
       hero: true,
       features: [
-        { l: 'Acesso à comunidade Discord', v: true },
-        { l: 'Encontros mensais ao vivo', v: true },
-        { l: 'Playbook completo', v: true },
-        { l: 'Mentoria 1:1 mensal', v: '4 sessões / mês' },
-        { l: 'Auditoria da operação', v: true },
-        { l: 'Construção de agente próprio', v: false },
-        { l: 'Lives privadas com time interno', v: true },
+        { l: 'Todas as soluções Plug-and-Play', v: true },
+        { l: 'Formações práticas', v: true },
+        { l: 'Consultor IA na plataforma', v: true },
+        { l: 'Comunidade e imersão presencial', v: true },
+        { l: 'Mentoria em grupo ao vivo', v: '10 check-ins/mês' },
+        { l: 'Mentoria individual', v: false },
+        { l: 'Arquiteto de soluções AI Builder', v: false },
       ],
-      cta: 'Começar agora',
+      cta: 'Assinar Pro',
     },
     {
-      name: 'Corporate',
-      price: 'Sob consulta',
-      unit: '· squad inteiro',
-      lede: 'Time de até 12 pessoas operando com IA junto.',
+      name: 'Enterprise',
+      price: 'R$ 6.180',
+      unit: '/ mês · anual',
+      lede: 'Implementação assistida e soluções sob medida.',
       hero: false,
       features: [
-        { l: 'Acesso à comunidade Discord', v: 'até 12 lugares' },
-        { l: 'Encontros mensais ao vivo', v: true },
-        { l: 'Playbook completo', v: true },
-        { l: 'Mentoria 1:1 mensal', v: 'time inteiro' },
-        { l: 'Auditoria da operação', v: 'trimestral' },
-        { l: 'Construção de agente próprio', v: true },
-        { l: 'Lives privadas com time interno', v: true },
+        { l: 'Todas as soluções Plug-and-Play', v: true },
+        { l: 'Formações práticas', v: true },
+        { l: 'Consultor IA na plataforma', v: true },
+        { l: 'Comunidade e imersão presencial', v: true },
+        { l: 'Mentoria em grupo ao vivo', v: true },
+        { l: 'Mentoria individual', v: '1 hora/mês' },
+        { l: 'Arquiteto de soluções AI Builder', v: true },
       ],
       cta: 'Falar com o time',
     },
@@ -286,7 +286,7 @@ function ComparisonSection() {
         {plans.map((p) => (
           <article key={p.name} className={`vds-comparison-col ${p.hero ? 'hero' : ''}`}>
             <header>
-              {p.hero && <span className="vds-comparison-badge"><Crown size={14} strokeWidth={1.75} /> Mais popular</span>}
+              {p.hero && <span className="vds-comparison-badge"><Crown size={14} strokeWidth={1.75} /> Recomendado</span>}
               <h4>{p.name}</h4>
               <p className="vds-comparison-price">
                 {p.price}
@@ -323,23 +323,23 @@ function FaqSection() {
   const faqs = [
     {
       q: 'Em quanto tempo eu vejo resultado?',
-      a: 'O primeiro destravo costuma vir em 30 dias — geralmente é uma decisão sobre arquitetura ou prompt que já estava te custando tempo. Resultado financeiro mensurável: 90 dias. Mas o ritmo depende mais de quantas decisões você consegue executar entre as sessões do que de qualquer mágica do método.',
+      a: 'As equipes começam a implementar soluções já na primeira semana. A garantia de 90 dias devolve 100% do investimento se não houver aumento de receita nem redução de custos operacionais, cumpridos os requisitos da cláusula 7 dos termos de uso. O ritmo depende de quanto o time aplica entre as mentorias.',
     },
     {
       q: 'Funciona pra quem não programa?',
-      a: 'Funciona pra quem opera negócio. Você precisa entender o que precisa ser feito — não escrever o código. Vários operadores que passaram pelo programa terceirizam a parte técnica, mas dirigem a estratégia. O que não funciona é quem quer aprender IA "por curiosidade" sem uma operação pra aplicar.',
+      a: 'Funciona. As soluções são plug and play, sem necessidade de programação, e a trilha personalizada com IA adapta o conteúdo ao nível de cada colaborador, do CEO ao analista. O que não funciona é quem quer aprender IA "por curiosidade" sem uma operação pra aplicar.',
     },
     {
-      q: 'Posso pagar trimestralmente?',
-      a: 'Sim. Mentoria é trimestral por padrão. Comunidade tem opção mensal e anual (com 2 meses de desconto). Corporate é semestral. Pagamentos em real, via PIX ou cartão de crédito até 12x.',
+      q: 'Como funciona a contratação?',
+      a: 'Os três planos têm valor mensal em reais e contratação anual: Starter R$ 2.580, Pro R$ 3.780 e Enterprise R$ 6.180 por mês. O upgrade de plano pode ser feito a qualquer momento, mediante a diferença de valor.',
     },
     {
       q: 'Vocês mexem no meu produto?',
-      a: 'Não. O método é de mentoria, não de consultoria. Você sai com decisões claras e direção técnica — quem executa é você ou seu time. Para empresas que querem execução conosco, oferecemos um plano Corporate Implementação, sob consulta.',
+      a: 'Não diretamente. No Starter e no Pro, quem implementa é o seu time, com soluções prontas, formações e mentoria em grupo. O Enterprise inclui implementação assistida, o arquiteto de soluções AI Builder e 1 hora por mês de mentoria individual.',
     },
     {
       q: 'O que diferencia da concorrência?',
-      a: 'A maioria dos cursos de IA é teórico. A maioria das consultorias de IA é cara e genérica. O que fazemos é mentoria de operadores: você traz seu negócio, a gente discute decisão por decisão. É lento de propósito — e por isso entrega.',
+      a: 'Curso avulso ensina teoria e para por aí. A Viver de IA é uma plataforma de alfabetização e aplicação: sua equipe aprende e implementa soluções reais, com retorno medido. São 521 cases reais de implementação de IA.',
     },
   ];
   return (
