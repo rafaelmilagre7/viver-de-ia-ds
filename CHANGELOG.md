@@ -6,6 +6,28 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Design · rodada 6 — páginas-modelo recompostas (31/out)
+
+- **Lançamento** (`/showcase/lancamento`): hero claro e assimétrico com a ficha do Plano Pro em vidro ao lado; dores em lista tipográfica; bento com prévia real da biblioteca de soluções (157), mentoria (10 check-ins), Consultor IA e setores (29); linha do tempo dos 90 dias até a frase oficial da garantia; 521 em numeral gigante com 2 cases reais; planos lado a lado; navy só no fechamento (no escuro ele sobe um degrau e continua se destacando). Layout responde à largura da coluna, não da janela.
+- **Leaders AI** (`/showcase/leaders-ai`): era 100% navy; agora é clara com o hero como único palco escuro (brilho sem corte), botão de ingresso em 4 pontos, agenda por dia como programa impresso (trilhas lado a lado, plenárias de ponta a ponta), palestrantes sem card órfão, ingressos Essencial/Completo/VIP e placeholders desenhados como campo a preencher.
+- **Foto da marca**: receita `.via-photo` em `surfaces.css` (fio interno, proporção, enquadramento, `--duotone` navy, `--scrim` + legenda) e o retrato do fundador otimizado em `public/fotos/` (webp 12 KB + jpg), em uso no lançamento e no evento.
+
+### Design · rodada 5 — correções de qualidade (31/out · plugin 1.13.0)
+
+- **Botões**: o reflexo que segue o ponteiro apagava o rótulo do botão cheio (2,6:1); novo `--via-specular-on-fill` (12%) em primary/accent/destructive → 11,7:1; hover do destrutivo em `--via-coral-deep`. A página de botões passou a mostrar o `<Button>` real com os 5 estados congelados a partir do próprio CSS da lib (saiu a cópia que vazava pra outras rotas).
+- **Foco de teclado na lib**: tokens `--via-focus-color/-color-on-dark/-width/-offset` e uma regra `:focus-visible` única em `tokens.css` (que a lib já entrega) — apps que usam a lib deixam de ver o anel padrão do navegador; Tabs e Breadcrumb com raio.
+- **Apertar**: `--via-press-scale` (0,98) e `--via-press-scale-sm` (0,94, controle pequeno) em 13 componentes (eram 0,90–0,99); `motion-drift` barra escala solta em `:active`.
+- **Títulos sem palavra sozinha**: `text-wrap-style: balance` em títulos e `pretty` em texto corrido (órfãs em 390: 27 → 4).
+- **Números pt-BR**: `formatNumber/formatCurrency/formatCompact/formatPercent/formatDelta` na lib (R$ com espaço inseparável, mil/mi/bi, vírgula decimal, menos tipográfico); aplicado nos gráficos, KPI, painel, insights, FP&A, admin e status; 179 "R$ valor" do site colados com espaço inseparável; K/M/k viraram mil/mi.
+- **Variação neutra por padrão**: chip navy + seta + sinal (`.via-delta--neutral` no `data.css`); verde/coral só contra meta/orçado (FP&A).
+- **DRE do FP&A**: cabe inteira em 1440; em largura média rola com a conta fixa e sombra/esmaecimento indicando rolagem; no celular cada linha vira um bloco legível.
+- **Estados de gráfico**: carregando (eixo fantasma + esqueleto), sem dados (frase canônica do microcopy) e erro (tentar de novo ali mesmo).
+- **Telas de estado claras**: carregador de página, 500, primeiro acesso e estados vazios deixam de ser laje navy; textos vêm do microcopy canônico; 404 do site com endereço pedido e busca.
+- **Emails**: cabeçalho claro e quieto é o padrão (faixa navy só em lançamento e convite de evento); urgência no eyebrow de alerta, sem painel coral; regra de celular (respiro 20px, chave–valor empilhado, botão largo); logo protegido no escuro forçado do Gmail/Outlook.
+- **Celular**: área do aluno sem rolagem lateral e com o cartão "continue de onde parou" mostrando o quadro da aula; stepper do onboarding sem corte; menu móvel nas páginas-modelo; mentor com agendamento logo abaixo do hero; login com formulário antes do slogan; comparação de planos rotulada por plano.
+- **Conteúdo**: rótulos em inglês viraram PT-BR; "Bem-vindo" → "Boas-vindas"; ~176 aspas retas → curvas; saíram "Estabelecida 2023", "+518", números de concorrente, prazos prometidos fora da garantia e o halo do avatar do mentor; NPS "4.9" (escala errada) virou placeholder; plano Pro × Enterprise alinhado à ficha.
+- **Testes**: lançamento, área do aluno, comunidade, mentor, checkout, páginas de erro e comparação de planos entram na regressão visual e no a11y.
+
 ### Exemplos com a oferta e os números de hoje (30/out)
 
 - 97 páginas de exemplo trocam a oferta antiga (turma de 4 meses, 18 aulas, vagas, 1:1 como produto, preços antigos) pela atual da ficha de fatos (planos Starter/Pro/Enterprise com preço real, soluções prontas, formações, mentoria em grupo, imersão, garantia de 90 dias da cláusula 7) e os números da empresa pelos da ficha (521 cases, 157 soluções, 29 setores).

@@ -135,6 +135,8 @@ export const routes: Route[] = [
   { path: '/patterns/cancellation' },
   { path: '/patterns/search-results' },
   { path: '/patterns/auth-flow' },
+  { path: '/patterns/errors' },
+  { path: '/patterns/pricing-comparison' },
 
   // Showcase
   { path: '/showcase/marketing', settleMs: 200 },
@@ -142,6 +144,11 @@ export const routes: Route[] = [
   { path: '/showcase/aluno', settleMs: 200 },
   { path: '/showcase/login' },
   { path: '/showcase/settings' },
+  { path: '/showcase/lancamento', settleMs: 200 },
+  { path: '/showcase/dashboard-aluno', settleMs: 200 },
+  { path: '/showcase/comunidade', settleMs: 200 },
+  { path: '/showcase/mentor', settleMs: 200 },
+  { path: '/showcase/checkout' },
 
   // Guidelines
   { path: '/guidelines/voice' },

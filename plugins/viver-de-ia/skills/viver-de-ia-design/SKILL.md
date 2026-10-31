@@ -322,7 +322,7 @@ Paleta de série própria (navy puro não sustenta 2+ séries — vira cinza): *
 Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz duas folhas prontas — importe junto com `colors_and_type.css` (no kit ZIP: `tokens/surfaces.css` + `tokens/data.css` junto com `tokens/tokens.css`):
 
 - **`data.css`** (tabelas/números/finanças): `.via-table-wrap` + `.via-table` (variações `--sticky/--compact/--roomy`) · `.via-num` (tabular, alinhado à direita) · `.via-row-total` / `.via-row-group` · `.via-cell-sub` · `.via-delta--neutral` (padrão) · `.via-delta--up/down/flat` (só contra meta) · `.via-bar` · `.via-metric` (+`--atmos`) · `.via-metric-grid` · `.via-spark` (+`--down/--projected`). Regra: **tabela densa SEM vidro; vidro nos cards de métrica ao redor**.
-- **`surfaces.css`** (controles/acabamento): `.via-pill-link` (+`--solid/--on-dark`) · `.via-row-card` · `.via-tile` (+`--atmos/--lift`) · `.via-meta-chip` (+`--mono`) · `.via-bar-glass`. Todo controle tem `:hover/:active/:focus-visible` prontos.
+- **`surfaces.css`** (controles/acabamento): `.via-pill-link` (+`--solid/--on-dark`) · `.via-row-card` · `.via-tile` (+`--atmos/--lift`) · `.via-meta-chip` (+`--mono`) · `.via-bar-glass` · `.via-photo` (foto da marca: fio interno, raio, proporção 4:5/`--square`/`--wide`, `--duotone` navy, `--scrim` + `__caption` pra texto sobre a foto · sem anel). Todo controle tem `:hover/:active/:focus-visible` prontos.
 
 ### 12. Fluidez e material (doutrina Apple/WWDC adotada 29/Jul)
 
