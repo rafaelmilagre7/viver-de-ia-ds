@@ -7,8 +7,8 @@ export default function ApiAvatar() {
     <ComponentDoc
       eyebrow="api · avatar"
       name="Avatar"
-      headline="a pessoa, em iniciais e presença."
-      description="Iniciais editorial · ring branco · status com pulse. Avatar circular com iniciais Geist (foto opcional) sobre fundo navy gradient com inset highlight + drop shadow. Status dot com gradient + pulse breathing em online. 5 sizes proporcionais ao texto."
+      headline="a pessoa, em foto, iniciais e presença."
+      description="Foto recortada no círculo, sem anel nem halo · iniciais quando não há foto ou ela falha · status com pulse. Avatar circular: com foto, ela cobre o círculo; sem foto, iniciais Geist sobre navy. Status dot com pulse em online. 5 tamanhos proporcionais ao texto."
       importLine={`import { Avatar, type AvatarProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-avatar', description: 'Container circular · gradient navy + inset highlight + drop shadow' },
@@ -18,11 +18,11 @@ export default function ApiAvatar() {
       ]}
       meta={meta}
       playground={{
-        initial: { alt: 'Caio Ribeiro', size: 'lg' },
+        initial: { src: '/fotos/rafael-milagre.jpg', alt: 'Rafael Milagre', size: 'lg' },
         render: (v) => <Avatar {...(v as AvatarProps)} />,
       }}
       descriptions={{
-        src: 'URL da imagem · se ausente, mostra iniciais',
+        src: 'URL da foto · se ausente ou se falhar ao carregar, mostra as iniciais',
         alt: 'Nome completo · usado pra derivar iniciais ("Caio Ribeiro" → "CR") e ARIA label',
         initials: 'Iniciais explícitas · têm prioridade sobre as derivadas do alt',
         size: '20 / 28 / 36 / 52 / 80 px',
@@ -37,6 +37,31 @@ export default function ApiAvatar() {
         { name: 'xl · 80px', label: 'Perfil hero', description: 'Página de perfil, settings, editor profile' },
       ]}
       examples={[
+        {
+          title: 'Com foto',
+          description: 'Com src, a foto cobre o círculo inteiro. O alt com o nome completo vira o nome lido pelo leitor de tela.',
+          preview: (
+            <>
+              <Avatar src="/fotos/rafael-milagre.jpg" alt="Rafael Milagre" size="sm" />
+              <Avatar src="/fotos/rafael-milagre.jpg" alt="Rafael Milagre" size="md" />
+              <Avatar src="/fotos/rafael-milagre.jpg" alt="Rafael Milagre" size="lg" />
+              <Avatar src="/fotos/rafael-milagre.jpg" alt="Rafael Milagre" size="xl" />
+            </>
+          ),
+          code: `<Avatar src="/fotos/rafael-milagre.jpg" alt="Rafael Milagre" size="lg" />`,
+        },
+        {
+          title: 'Foto que falha',
+          description: 'Se a imagem não carrega, o avatar cai sozinho pras iniciais do alt. Trocar o src tenta de novo.',
+          preview: (
+            <>
+              <Avatar src="/fotos/rafael-milagre.jpg" alt="Rafael Milagre" size="lg" />
+              <Avatar src="data:image/png;base64,AAAA" alt="Rafael Milagre" size="lg" />
+            </>
+          ),
+          code: `// src quebrado → mostra "RM"
+<Avatar src={pessoa.foto} alt="Rafael Milagre" size="lg" />`,
+        },
         {
           title: 'Iniciais (sem foto)',
           description: 'Default · gradient navy + iniciais derivadas do `alt`.',
@@ -83,7 +108,7 @@ export default function ApiAvatar() {
         <>Iniciais geradas via JS · só visual · texto real fica no aria-label</>,
         <>Status dot tem aria-label descritivo ("status: online")</>,
         <>Pulse animation respeita prefers-reduced-motion (desativa quando solicitado)</>,
-        <>Border 2-3px branco garante contraste sobre qualquer surface</>,
+        <>Sem anel: um recorte de 1,5px na cor da superfície separa avatares sobrepostos</>,
       ]}
       related={[
         { name: 'Pill', description: 'Avatar + nome formam chip de usuário', href: '/api/pill' },

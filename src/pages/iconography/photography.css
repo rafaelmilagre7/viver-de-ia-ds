@@ -1,0 +1,326 @@
+/* ==============================================================
+   /iconography/photography · demonstração da receita .via-photo
+   (surfaces.css). Aqui só mora o layout da página: grade, rótulos,
+   painéis de tema. A foto em si é 100% receita.
+   ============================================================== */
+
+.vds-ph-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3_5);
+  min-width: 0;
+}
+
+/* Rótulo embaixo da foto · título + nome da classe + uma linha de uso */
+.vds-ph-label { display: flex; flex-direction: column; gap: var(--via-space-1); }
+.vds-ph-label-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--via-space-2);
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-tight);
+  color: var(--via-text-primary);
+}
+.vds-ph-label-title code,
+.vds-ph-verdict code,
+.vds-ph-recipe code {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-regular);
+  letter-spacing: 0;
+  color: var(--via-text-soft);
+}
+:where(.vds-section-body) .vds-ph-label-text {
+  margin: 0;
+  max-width: 34ch;
+  font-size: var(--via-fs-caption);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
+}
+
+/* ---- Natural · duotone · com legenda ---- */
+.vds-ph-trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--via-space-6);
+}
+
+/* ---- Proporções · larguras na razão do recorte = mesma altura ---- */
+.vds-ph-ratios {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1.778fr;
+  gap: var(--via-space-5);
+  align-items: start;
+}
+
+/* ---- Enquadramento ---- */
+.vds-ph-focus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--via-space-5);
+  margin-top: var(--via-space-6);
+}
+/* guia dos terços · só no exemplo certo */
+.vds-ph-thirds {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.vds-ph-thirds::before,
+.vds-ph-thirds::after {
+  content: '';
+  position: absolute;
+  border: 0 solid rgba(255, 255, 255, 0.4);
+}
+.vds-ph-thirds::before { inset: 0 33.333%; border-left-width: 1px; border-right-width: 1px; }
+.vds-ph-thirds::after  { inset: 33.333% 0; border-top-width: 1px; border-bottom-width: 1px; }
+
+.vds-ph-verdict {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--via-space-1) var(--via-space-2);
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-bold);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
+}
+/* traço tipográfico (mesmo do par Faça/Evite), não bolinha de semáforo */
+.vds-ph-verdict::before {
+  content: '';
+  width: 14px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: currentColor;
+  align-self: center;
+}
+.vds-ph-verdict--do { color: var(--via-text-primary); }
+.vds-ph-verdict--dont { color: var(--via-coral-dark); }
+.vds-ph-verdict span {
+  flex-basis: 100%;
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-regular);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--via-text-muted);
+}
+
+/* ---- Foto sob vidro ---- */
+.vds-ph-glass {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--via-space-5);
+  margin-top: var(--via-space-6);
+}
+.vds-ph-glass-card {
+  position: absolute;
+  inset: auto var(--via-space-4) var(--via-space-4);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-0_5);
+  padding: var(--via-space-4) var(--via-space-5);
+  /* canto concêntrico: raio da foto − recuo do cartão */
+  border-radius: calc(var(--via-radius-xl) - var(--via-space-4));
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  line-height: var(--via-lh-snug);
+  color: var(--via-text-body);
+}
+.vds-ph-glass-card strong {
+  font-size: var(--via-fs-h4);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-tight);
+  color: var(--via-text-primary);
+}
+.vds-ph-glass-eyebrow {
+  margin-bottom: var(--via-space-1);
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-bold);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+/* vidro escuro é fixo nos 2 temas → texto fixo também */
+.via-glass-dark.vds-ph-glass-card { color: var(--via-gray-200); }
+.via-glass-dark.vds-ph-glass-card strong { color: var(--via-white); }
+.via-glass-dark.vds-ph-glass-card .vds-ph-glass-eyebrow { color: var(--via-gray-300); }
+
+/* ---- Claro e escuro · painéis com cor FIXA (não herdam o tema) ---- */
+.vds-ph-themes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--via-space-4);
+  margin-top: var(--via-space-6);
+}
+.vds-ph-theme {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-5);
+  padding: var(--via-space-6);
+  border-radius: var(--via-radius-xl);
+  font-family: var(--via-font);
+}
+.vds-ph-theme--light {
+  background: var(--via-white);
+  border: 1px solid var(--via-gray-200);
+}
+.vds-ph-theme--dark {
+  background: var(--via-navy-deep);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.vds-ph-theme-name {
+  font-size: var(--via-fs-micro);
+  font-weight: var(--via-fw-bold);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
+}
+.vds-ph-theme--light .vds-ph-theme-name { color: var(--via-gray-600); }
+.vds-ph-theme--dark .vds-ph-theme-name { color: var(--via-gray-300); }
+.vds-ph-theme-row {
+  display: grid;
+  grid-template-columns: clamp(96px, 38%, 168px) 1fr;
+  align-items: center;
+  gap: var(--via-space-5);
+}
+.vds-ph-theme-row .via-photo { border-radius: var(--via-radius-lg); }
+.vds-ph-theme-row div { display: flex; flex-direction: column; gap: var(--via-space-1); }
+.vds-ph-theme-row strong {
+  font-size: var(--via-fs-h4);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-tight);
+}
+.vds-ph-theme-row span { font-size: var(--via-fs-caption); }
+.vds-ph-theme--light strong { color: var(--via-navy); }
+.vds-ph-theme--light .vds-ph-theme-row span { color: var(--via-gray-600); }
+.vds-ph-theme--dark strong { color: var(--via-white); }
+.vds-ph-theme--dark .vds-ph-theme-row span { color: var(--via-gray-300); }
+
+/* ---- Sem foto ainda ---- */
+.vds-ph-team {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--via-space-4);
+  margin-top: var(--via-space-6);
+}
+
+/* ---- Faça e evite · listas ---- */
+.vds-ph-rules ul {
+  margin: 0;
+  padding-left: var(--via-space-4_5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2_5);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-body);
+}
+.vds-ph-rules li::marker { color: var(--via-text-soft); }
+
+/* ---- Lista de produção ---- */
+.vds-ph-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--via-border-hairline);
+}
+.vds-ph-list li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  gap: var(--via-space-5);
+  align-items: baseline;
+  padding: var(--via-space-5) 0;
+  border-top: 1px solid var(--via-border-hairline);
+  font-family: var(--via-font);
+}
+.vds-ph-list-n {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-soft);
+}
+.vds-ph-list strong {
+  display: block;
+  margin-bottom: var(--via-space-1);
+  font-size: var(--via-fs-body);
+  font-weight: var(--via-fw-semibold);
+  letter-spacing: var(--via-ls-tight);
+  color: var(--via-text-primary);
+}
+:where(.vds-section-body) .vds-ph-list p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: var(--via-fs-sm);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-body);
+}
+.vds-ph-list-fmt {
+  padding: var(--via-space-1) var(--via-space-2_5);
+  border-radius: var(--via-radius-pill);
+  border: 1px solid var(--via-border);
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  color: var(--via-text-muted);
+  white-space: nowrap;
+}
+:where(.vds-section-body) .vds-ph-send {
+  margin: var(--via-space-5) 0 0;
+  font-size: var(--via-fs-sm);
+  color: var(--via-text-muted);
+}
+.vds-ph-send strong { color: var(--via-text-primary); font-weight: var(--via-fw-semibold); }
+
+/* ---- Código + receita ---- */
+.vds-ph-code { display: flex; flex-direction: column; gap: var(--via-space-4); }
+.vds-ph-recipe {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: var(--via-space-6) 0 0;
+  border-top: 1px solid var(--via-border-hairline);
+  font-family: var(--via-font);
+}
+.vds-ph-recipe > div {
+  display: grid;
+  align-items: baseline;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: var(--via-space-5);
+  padding: var(--via-space-3) 0;
+  border-bottom: 1px solid var(--via-border-hairline);
+}
+.vds-ph-recipe dt { margin: 0; }
+.vds-ph-recipe dt code { color: var(--via-text-primary); }
+.vds-ph-recipe dd {
+  margin: 0;
+  font-size: var(--via-fs-sm);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-body);
+}
+
+/* ---- Celular ---- */
+@media (max-width: 720px) {
+  .vds-ph-trio,
+  .vds-ph-ratios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--via-space-4);
+  }
+  .vds-ph-item--wide-sm,
+  .vds-ph-item--wide { grid-column: 1 / -1; }
+  .vds-ph-item--wide-sm .via-photo { --via-photo-ratio: 1 / 1; }
+  .vds-ph-focus,
+  .vds-ph-glass,
+  .vds-ph-themes,
+  .vds-do-dont.vds-ph-rules { grid-template-columns: minmax(0, 1fr); }
+  .vds-ph-team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--via-space-3); }
+  .vds-ph-team > :first-child { grid-column: 1 / -1; --via-photo-ratio: 1 / 1; }
+  .vds-ph-theme { padding: var(--via-space-5); }
+  .vds-ph-list li { grid-template-columns: 32px minmax(0, 1fr); gap: var(--via-space-1) var(--via-space-3); }
+  .vds-ph-list-fmt { grid-column: 2; justify-self: start; margin-top: var(--via-space-2); }
+  .vds-ph-recipe > div { grid-template-columns: minmax(0, 1fr); gap: var(--via-space-1); }
+}
