@@ -35,7 +35,7 @@ export const routes: Route[] = [
   { path: '/foundations/radii' },
   { path: '/foundations/shadows' },
   { path: '/foundations/motion' },
-  { path: '/foundations/dados' },
+  { path: '/foundations/dados', settleMs: 300 }, // página longa: no CI chegou a fotografar antes de montar
   { path: '/foundations/philosophy' },
   // /foundations/library FORA da regressão visual de propósito: é uma galeria
   // agregada de ~19000px com os 46 componentes vivos — pixel-instável entre
@@ -48,7 +48,7 @@ export const routes: Route[] = [
   { path: '/glass/in-context' },
 
   // Iconography
-  { path: '/iconography/marks' },
+  { path: '/iconography/marks', maxDiffPixelRatio: 0.02 }, // título com empate no text-wrap balance: a quebra vira entre máquinas (~1% de pixel)
   { path: '/iconography/icons' },
   { path: '/iconography/photography' },
 
@@ -57,14 +57,14 @@ export const routes: Route[] = [
   { path: '/components/tags' },
   { path: '/components/badges' },
   { path: '/components/cards' },
-  { path: '/components/form' },
+  { path: '/components/form', maxDiffPixelRatio: 0.02 }, // título com empate no text-wrap balance: a quebra vira entre máquinas (~1% de pixel)
   { path: '/components/modal' },
   { path: '/components/table' },
   { path: '/components/tabs' },
   { path: '/components/toast' },
   { path: '/components/tooltip' },
-  { path: '/components/accordion' },
-  { path: '/components/stepper' },
+  { path: '/components/accordion', maxDiffPixelRatio: 0.02 }, // título com empate no text-wrap balance: a quebra vira entre máquinas (~1% de pixel)
+  { path: '/components/stepper', maxDiffPixelRatio: 0.02 }, // título com empate no text-wrap balance: a quebra vira entre máquinas (~1% de pixel)
   { path: '/components/empty' },
   { path: '/components/avatar' },
   { path: '/components/breadcrumb' },
