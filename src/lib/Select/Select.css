@@ -46,7 +46,7 @@
 }
 
 .via-select__trigger:active:not(:disabled) {
-  transform: scale(0.99);
+  transform: scale(var(--via-press-scale));
   transition-duration: var(--via-dur-press);
 }
 
@@ -64,8 +64,8 @@
 }
 
 .via-select__trigger:focus-visible {
-  outline: 2px solid var(--via-navy-60);
-  outline-offset: 2px;
+  outline: var(--via-focus-width) solid var(--via-focus-color);
+  outline-offset: var(--via-focus-offset);
 }
 
 .via-select__trigger.is-open {

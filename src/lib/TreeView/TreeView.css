@@ -43,8 +43,8 @@
   outline: none;
 }
 .via-tv [role="treeitem"]:focus-visible > .via-tv__row {
-  outline: 2px solid var(--via-navy-60);
-  outline-offset: -2px;
+  outline: var(--via-focus-width) solid var(--via-focus-color);
+  outline-offset: calc(-1 * var(--via-focus-width));
 }
 
 .via-tv__row:hover {

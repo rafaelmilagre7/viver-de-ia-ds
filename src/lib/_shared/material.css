@@ -50,7 +50,9 @@
    mouse, fora de reduced-motion. A camada anda por TRANSFORM e acende por
    OPACITY — nada de animar left/background (o brilho antigo varria `left`
    em 650-800ms a cada hover e repintava o vidro inteiro).
-   O host define o tamanho em --via-spec-size; a camada é o ::before. */
+   O host define o tamanho em --via-spec-size e, se o fundo dele for um
+   preenchimento escuro com rótulo branco, a luz em --via-spec-light
+   (--via-specular-on-fill); a camada é o ::before. */
 :is(.via-btn, .via-card--hoverable)::before {
   content: '';
   position: absolute;
@@ -59,7 +61,7 @@
   width: var(--via-spec-size, 240px);
   height: var(--via-spec-size, 240px);
   border-radius: var(--via-radius-pill);
-  background: var(--via-specular);
+  background: var(--via-spec-light, var(--via-specular));
   transform: translate(
     calc(var(--via-mx, -9999px) - var(--via-spec-size, 240px) / 2),
     calc(var(--via-my, -9999px) - var(--via-spec-size, 240px) / 2)

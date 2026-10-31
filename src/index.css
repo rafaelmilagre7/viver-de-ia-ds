@@ -63,30 +63,8 @@ input, textarea { font-family: inherit; }
 
 html { scroll-behavior: smooth; }
 
-/* ============================================
-   Anel de foco · só teclado (:focus-visible)
-   É OUTLINE, não box-shadow: segue o raio do elemento, não é cortado pela
-   sombra do componente e sobrevive ao alto contraste do sistema
-   (forced-colors troca a cor, mas mantém o contorno). O offset deixa o
-   fundo respirar entre a peça e o anel.
-   ============================================ */
-*:focus { outline: none; }
-
-*:focus-visible {
-  outline: 2px solid var(--via-navy-60);
-  outline-offset: 2px;
-}
-
-/* Sobre superfície navy (nos 2 temas) o anel acende em branco */
-.via-mesh-navy *:focus-visible,
-.via-on-dark *:focus-visible,
-[data-on-dark] *:focus-visible {
-  outline-color: var(--via-white);
-}
-
-@media (forced-colors: active) {
-  *:focus-visible { outline-color: CanvasText; }
-}
+/* Anel de foco: regra única em tokens.css (tokens --via-focus-*), a mesma
+   que a lib entrega pros apps. */
 
 /* ============================================
    Reduced motion respect

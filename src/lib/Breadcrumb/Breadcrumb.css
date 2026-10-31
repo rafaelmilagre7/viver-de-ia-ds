@@ -32,6 +32,8 @@
   background: none;
   border: none;
   padding: 0;
+  /* só pro anel de foco arredondar como o resto da lib */
+  border-radius: var(--via-radius-xs);
   font-family: inherit;
   font-size: inherit;
   letter-spacing: inherit;

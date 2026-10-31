@@ -225,6 +225,18 @@ export const tokensList: readonly Token[] = [
     "category": "color"
   },
   {
+    "name": "via-focus-color",
+    "css": "--via-focus-color",
+    "value": "var(--via-navy-60)",
+    "category": "color"
+  },
+  {
+    "name": "via-focus-color-on-dark",
+    "css": "--via-focus-color-on-dark",
+    "value": "var(--via-white)",
+    "category": "color"
+  },
+  {
     "name": "via-glass-bar",
     "css": "--via-glass-bar",
     "value": "var(--via-material-chrome-fill)",
@@ -747,6 +759,18 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-focus-offset",
+    "css": "--via-focus-offset",
+    "value": "2px",
+    "category": "other"
+  },
+  {
+    "name": "via-focus-width",
+    "css": "--via-focus-width",
+    "value": "2px",
+    "category": "other"
+  },
+  {
     "name": "via-fs-body",
     "css": "--via-fs-body",
     "value": "1rem",
@@ -1047,6 +1071,18 @@ export const tokensList: readonly Token[] = [
     "category": "other"
   },
   {
+    "name": "via-press-scale",
+    "css": "--via-press-scale",
+    "value": "0.98",
+    "category": "other"
+  },
+  {
+    "name": "via-press-scale-sm",
+    "css": "--via-press-scale-sm",
+    "value": "0.94",
+    "category": "other"
+  },
+  {
     "name": "via-rim-mask",
     "css": "--via-rim-mask",
     "value": "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
@@ -1068,6 +1104,12 @@ export const tokensList: readonly Token[] = [
     "name": "via-specular",
     "css": "--via-specular",
     "value": "radial-gradient(closest-side, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0))",
+    "category": "other"
+  },
+  {
+    "name": "via-specular-on-fill",
+    "css": "--via-specular-on-fill",
+    "value": "radial-gradient(closest-side, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0))",
     "category": "other"
   },
   {
@@ -1522,6 +1564,8 @@ export type TokenName =
   | 'via-dur'
   | 'via-edge-hi'
   | 'via-edge-lo'
+  | 'via-focus-color'
+  | 'via-focus-color-on-dark'
   | 'via-glass-bar'
   | 'via-glass-blur'
   | 'via-glass-blur-bar'
@@ -1609,6 +1653,8 @@ export type TokenName =
   | 'via-dur-quick'
   | 'via-enter-scale'
   | 'via-enter-shift'
+  | 'via-focus-offset'
+  | 'via-focus-width'
   | 'via-fs-body'
   | 'via-fs-caption'
   | 'via-fs-h1'
@@ -1659,10 +1705,13 @@ export type TokenName =
   | 'via-material-thick-rim'
   | 'via-material-thick-ring'
   | 'via-narrow'
+  | 'via-press-scale'
+  | 'via-press-scale-sm'
   | 'via-rim-mask'
   | 'via-scrim'
   | 'via-scrim-blur'
   | 'via-specular'
+  | 'via-specular-on-fill'
   | 'via-spring-bounce'
   | 'via-spring-smooth'
   | 'via-surface-onnavy'

@@ -91,7 +91,7 @@
 }
 
 .via-card--hoverable:active {
-  transform: translateY(-1px) scale(0.99);
+  transform: translateY(-1px) scale(var(--via-press-scale));
   transition-duration: var(--via-dur-press);
 }
 

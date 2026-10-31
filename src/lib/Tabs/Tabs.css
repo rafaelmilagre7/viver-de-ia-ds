@@ -24,6 +24,8 @@
   letter-spacing: -0.008em;
   cursor: pointer;
   position: relative;
+  /* o anel de foco segue o raio · sem ele era o único anel quadrado da lib */
+  border-radius: var(--via-radius-xs);
   transition:
     color var(--via-dur-quick) var(--via-ease-snap),
     background var(--via-dur-quick) var(--via-ease-snap),
@@ -31,7 +33,7 @@
 }
 
 .via-tabs__tab:active:not(:disabled) {
-  transform: scale(0.97);
+  transform: scale(var(--via-press-scale));
   transition-duration: var(--via-dur-press);
 }
 
@@ -82,6 +84,11 @@
     transform var(--via-dur-panel) var(--via-ease-enter),
     opacity var(--via-dur-base) var(--via-ease-snap);
   opacity: 0;
+}
+
+/* anel por dentro: por fora ele cortava o filete da lista e o sublinhado */
+.via-tabs--underline .via-tabs__tab:focus-visible {
+  outline-offset: calc(-1 * var(--via-focus-width));
 }
 
 .via-tabs--underline .via-tabs__tab:hover {

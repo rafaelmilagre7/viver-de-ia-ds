@@ -115,8 +115,8 @@
   cursor: pointer;
 }
 .via-dt tbody tr.is-clickable:focus-visible {
-  outline: 2px solid var(--via-navy-40, rgba(10,31,59,0.40));
-  outline-offset: -2px;
+  outline: var(--via-focus-width) solid var(--via-focus-color);
+  outline-offset: calc(-1 * var(--via-focus-width));
 }
 
 .via-dt__empty {
