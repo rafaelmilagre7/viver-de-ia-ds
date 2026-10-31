@@ -7,6 +7,7 @@ import {
 import { useState } from 'react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import { formatNumber, formatPercent } from '../../lib/format';
 import './admin.css';
 
 export default function Admin() {
@@ -69,7 +70,7 @@ function WebhooksSection() {
                 ativo
               </span>
               <span className="vds-wh-rate mono">
-                <strong>99.8%</strong>
+                <strong>{formatPercent(99.8)}</strong>
                 <em>últimos 30d</em>
               </span>
               <button className="vds-wh-row-more" aria-label="Mais opções">
@@ -98,7 +99,7 @@ function WebhooksSection() {
                 degradado
               </span>
               <span className="vds-wh-rate mono">
-                <strong>78.4%</strong>
+                <strong>{formatPercent(78.4)}</strong>
                 <em>últimos 30d</em>
               </span>
               <button className="vds-wh-row-more" aria-label="Mais opções">
@@ -127,7 +128,7 @@ function WebhooksSection() {
                 ativo
               </span>
               <span className="vds-wh-rate mono">
-                <strong>100%</strong>
+                <strong>{formatPercent(100)}</strong>
                 <em>últimos 30d</em>
               </span>
               <button className="vds-wh-row-more" aria-label="Mais opções">
@@ -190,7 +191,7 @@ function PermissionsMatrixSection() {
   ];
 
   return (
-    <Section title="Permissions matrix · 5 papéis · 8 capacidades" meta="grid escalável · linhas filtráveis · células interativas">
+    <Section title="Matriz de permissões · 5 papéis · 8 capacidades" meta="grid escalável · linhas filtráveis · células interativas">
       <article className="vds-perm">
         <header className="vds-perm-head">
           <div>
@@ -257,7 +258,7 @@ function PermissionsMatrixSection() {
 /* ---------- Settings sections ---------- */
 function SettingsSection() {
   return (
-    <Section title="Settings · seções editoriais" meta="cada bloco com título + explicação + controle">
+    <Section title="Configurações · seções editoriais" meta="cada bloco com título + explicação + controle">
       <div className="vds-settings">
         <article className="vds-settings-row">
           <div className="vds-settings-l">
@@ -353,7 +354,7 @@ function ApiKeySection() {
   const masked = '••••••••••••••••••••••••••••••' + fullKey.slice(-6);
 
   return (
-    <Section title="API keys · gerenciamento" meta="rotação · revoke · uso recente · copiar com confirmação">
+    <Section title="Chaves de API · gerenciamento" meta="rotação · revoke · uso recente · copiar com confirmação">
       <div className="vds-apikeys">
         <header>
           <div>
@@ -391,9 +392,9 @@ function ApiKeySection() {
 
           <div className="vds-apikey-bottom">
             <div className="vds-apikey-meta">
-              <span><strong>2.4K</strong> requisições nas últimas 24h</span>
+              <span><strong>{formatNumber(2_400)}</strong> requisições nas últimas 24h</span>
               <span>·</span>
-              <span><strong>98,7%</strong> taxa de sucesso</span>
+              <span><strong>{formatPercent(98.7)}</strong> taxa de sucesso</span>
               <span>·</span>
               <span>último uso há 32s</span>
             </div>
@@ -455,7 +456,7 @@ function ApiKeySection() {
 /* ---------- Plan / billing ---------- */
 function BillingSection() {
   return (
-    <Section title="Plan & billing overview · plano corrente + histórico" meta="próxima cobrança · método de pagamento · recibos">
+    <Section title="Plano e cobrança · plano atual e histórico" meta="próxima cobrança · método de pagamento · recibos">
       <div className="vds-billing">
         <div className="vds-billing-current">
           <header>
@@ -561,7 +562,7 @@ function AuditLogSection() {
   ];
 
   return (
-    <Section title="Audit log · histórico de ações sensíveis" meta="quem · quando · o que mudou · sempre filtrável">
+    <Section title="Registro de auditoria · histórico de ações sensíveis" meta="quem · quando · o que mudou · sempre filtrável">
       <div className="vds-audit">
         <header>
           <h3>Histórico de operações</h3>

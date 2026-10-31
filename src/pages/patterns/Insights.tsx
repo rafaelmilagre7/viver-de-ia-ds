@@ -1,20 +1,25 @@
 import type { ReactNode } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import {
-  TrendingUp, TrendingDown, ArrowRight, Quote, MessageCircle, Calendar,
+  ArrowUpRight, ArrowDownRight, ArrowRight, Quote, MessageCircle, Calendar,
   Users, DollarSign, Activity, AlertCircle,
 } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import { formatCompact, formatCurrency, formatDelta, formatNumber, formatPercent } from '../../lib/format';
 import './insights.css';
 
 /**
  * Insights semanais.
  *
  * Os dois blocos de número desta página vêm da CAMADA DE DADOS
- * (src/styles/data.css): .via-metric-grid + .via-metric (o vidro certo),
- * .via-delta --up/--down (cor só como semântica) e .via-spark --down.
- * Nada de card de métrica feito à mão.
+ * (src/styles/data.css): .via-metric-grid + .via-metric (o vidro certo)
+ * e .via-spark. Nada de card de métrica feito à mão.
+ *
+ * Variação é NEUTRA (.via-meta-chip + .via-delta: chip navy, seta e
+ * sinal). Semana contra semana não tem meta — subir não é "bom" por si,
+ * cair não é "ruim". Verde/coral ficam pra comparação contra meta ou
+ * orçado (FP&A). O alerta do MRR mora no "Ponto de atenção", em texto.
  */
 
 /* ---------- geometria dos gráficos · SMALL MULTIPLES -----------
@@ -83,7 +88,7 @@ function MetricCard({ m, className = '', children }: {
   children?: ReactNode;
 }) {
   const Icon = m.icon;
-  const Trend = m.down ? TrendingDown : TrendingUp;
+  const Seta = m.down ? ArrowDownRight : ArrowUpRight;
   return (
     <article className={`via-metric via-metric--atmos ${className}`.trim()}>
       <span className="via-metric__label">
@@ -96,17 +101,13 @@ function MetricCard({ m, className = '', children }: {
         {m.of && <span className="of">{m.of}</span>}
       </p>
       <span className="via-metric__foot">
-        <span className={`via-delta ${m.down ? 'via-delta--down' : 'via-delta--up'}`}>
-          <Trend size={14} strokeWidth={1.75} aria-hidden="true" />
+        <span className="via-meta-chip via-delta">
+          <Seta size={14} strokeWidth={1.75} aria-hidden="true" />
           {m.delta}
         </span>
         {m.foot && <span className="via-mono metric-foot-note">{m.foot}</span>}
         {m.spark && (
-          <svg
-            viewBox="0 0 80 32"
-            className={`via-spark${m.down ? ' via-spark--down' : ''}`}
-            aria-hidden="true"
-          >
+          <svg viewBox="0 0 80 32" className="via-spark" aria-hidden="true">
             <path className="via-spark__area" d={`${m.spark} L80,32 L0,32 Z`} />
             <path d={m.spark} />
             {/* Ponto do valor corrente · marcador ≥8px, lido do próprio
@@ -149,25 +150,25 @@ const SEMANA: Metric[] = [
     id: 'mentees',
     icon: Users,
     label: 'Time aplicando',
-    value: '228',
-    of: '/ 248',
-    delta: '+14 vs. sem 19',
+    value: formatNumber(228),
+    of: `/ ${formatNumber(248)}`,
+    delta: `${formatDelta(14)} vs. sem 19`,
     spark: 'M0,22 L10,20 L20,21 L30,18 L40,17 L50,14 L60,12 L70,8 L80,6',
   },
   {
     id: 'mentoria',
     icon: Calendar,
     label: 'Mentoria em grupo · presença',
-    value: '94%',
-    delta: '+6pp · maior do trimestre',
+    value: formatPercent(94),
+    delta: `${formatDelta(6, { unit: 'points', decimals: 0 })} · maior do trimestre`,
     spark: 'M0,18 L10,16 L20,19 L30,14 L40,12 L50,10 L60,11 L70,7 L80,5',
   },
   {
     id: 'conversas',
     icon: MessageCircle,
     label: 'Conversas SDR de IA / sem',
-    value: '1.842',
-    delta: '+38% vs. sem 19',
+    value: formatNumber(1_842),
+    delta: `${formatDelta(38, { unit: 'percent' })} vs. sem 19`,
     spark: 'M0,24 L10,22 L20,23 L30,20 L40,18 L50,12 L60,10 L70,6 L80,4',
   },
   {
@@ -175,8 +176,8 @@ const SEMANA: Metric[] = [
     icon: DollarSign,
     label: 'MRR',
     cur: 'R$',
-    value: '184K',
-    delta: '−R$ 4.2K · 2 churns',
+    value: formatCompact(184_000),
+    delta: `${formatDelta(-4_200, { unit: 'currency' })} · 2 churns`,
     down: true,
     spark: 'M0,10 L10,8 L20,9 L30,7 L40,8 L50,11 L60,14 L70,16 L80,18',
   },
@@ -321,7 +322,7 @@ function InsightsWeeklySection() {
         {/* 4 KPIs com delta + sparkline · camada de dados */}
         <div className="via-metric-grid vds-ins-kpis">
           {SEMANA.map((m) => (
-            <MetricCard key={m.id} m={m} className={`vds-ins-kpi${m.down ? ' down' : ''}`} />
+            <MetricCard key={m.id} m={m} className="vds-ins-kpi" />
           ))}
         </div>
 
@@ -355,7 +356,7 @@ function InsightsWeeklySection() {
           <div className="vds-ins-quotes-grid">
             <blockquote className="vds-ins-quote">
               <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
-              <p>"Fiz minha primeira venda usando o SDR de IA como copiloto na sexta — o cliente nem percebeu, e eu fechei 23% acima do meu ticket médio."</p>
+              <p>“Fiz minha primeira venda usando o SDR de IA como copiloto na sexta — o cliente nem percebeu, e eu fechei 23% acima do meu ticket médio.”</p>
               <footer>
                 <strong>Ana Ribas</strong>
                 <em>Vendas · time comercial · aplicando há 3 meses</em>
@@ -363,7 +364,7 @@ function InsightsWeeklySection() {
             </blockquote>
             <blockquote className="vds-ins-quote">
               <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
-              <p>"O check-in de mentoria dessa semana mudou meu approach inteiro — saí com o fluxo que eu precisava desenhado no quadro."</p>
+              <p>“O check-in de mentoria dessa semana mudou meu approach inteiro — saí com o fluxo que eu precisava desenhado no quadro.”</p>
               <footer>
                 <strong>Bruno Tavares</strong>
                 <em>Operações · aplicando há 4 meses</em>
@@ -371,7 +372,7 @@ function InsightsWeeklySection() {
             </blockquote>
             <blockquote className="vds-ins-quote subtle">
               <Quote size={16} strokeWidth={1.75} className="vds-ins-quote-mark" />
-              <p>"Achei que a trilha seria rasa e fui surpreendida — foi mais fundo do que eu esperava. Mas o canal interno ainda é confuso pra navegar."</p>
+              <p>“Achei que a trilha seria rasa e fui surpreendida — foi mais fundo do que eu esperava. Mas o canal interno ainda é confuso pra navegar.”</p>
               <footer>
                 <strong>Bruna Carvalho</strong>
                 <em>Produto · feedback aberto · ação tomada</em>
@@ -433,18 +434,32 @@ function InsightsWeeklySection() {
 
 /* ---------- KPI tiles ---------- */
 const TILES: Metric[] = [
-  { id: 'mrr', label: 'Receita recorrente', cur: 'R$', value: '184K', delta: '−1,9%', down: true, foot: '92K → 184K · trimestre' },
-  { id: 'nps', label: 'NPS', value: '74', delta: '+8', foot: '53 respondentes · 28% promotores' },
-  { id: 'aulas', label: 'Aulas concluídas', value: '1.418', delta: '+22%', foot: 'média 18min · 92% mobile' },
-  { id: 'discord', label: 'Tempo na plataforma', value: '4h 12m', delta: '+9min', foot: 'mediana por pessoa · semana' },
+  {
+    id: 'mrr',
+    label: 'Receita recorrente',
+    cur: 'R$',
+    value: formatCompact(184_000),
+    delta: formatDelta(-1.9, { unit: 'percent' }),
+    down: true,
+    foot: `${formatCurrency(92_000, { compact: true })} → ${formatCurrency(184_000, { compact: true })} · trimestre`,
+  },
+  { id: 'nps', label: 'NPS', value: formatNumber(74), delta: formatDelta(8), foot: `53 respondentes · ${formatPercent(28)} promotores` },
+  {
+    id: 'aulas',
+    label: 'Aulas concluídas',
+    value: formatNumber(1_418),
+    delta: formatDelta(22, { unit: 'percent' }),
+    foot: `média 18 min · ${formatPercent(92)} mobile`,
+  },
+  { id: 'discord', label: 'Tempo na plataforma', value: '4h 12m', delta: `${formatDelta(9)} min`, foot: 'mediana por pessoa · semana' },
 ];
 
 function InsightsKpiTilesSection() {
   return (
-    <Section title="KPI tiles compactos · grid pra dashboard" meta="ideal pra dashboards executivos · .via-metric-grid">
+    <Section title="Cartões de KPI compactos · grade pra painel" meta="painéis executivos · .via-metric-grid">
       <div className="via-metric-grid vds-ins-tiles">
         {TILES.map((t) => (
-          <MetricCard key={t.id} m={t} className={`vds-ins-tile${t.down ? ' down' : ''}`}>
+          <MetricCard key={t.id} m={t} className="vds-ins-tile">
             <Activity size={42} strokeWidth={1.75} className="vds-ins-tile-ghost" aria-hidden="true" />
           </MetricCard>
         ))}

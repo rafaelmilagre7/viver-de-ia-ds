@@ -45,12 +45,15 @@
   transform: translateY(-2px);
   box-shadow: var(--via-glass-shadow-lift);
 }
-.vds-kpi-tile .via-delta {
-  display: inline-flex;
-  align-items: center;
+/* Variação NEUTRA · chip navy + seta + sinal. Subir não é "bom" por si:
+   verde/coral só quando há meta/orçado e o bom/ruim é real (FP&A). */
+.vds-kpi-tile .via-delta.via-meta-chip {
   gap: var(--via-space-1);
+  padding: 3px var(--via-space-2) 3px var(--via-space-1_5);
+  color: var(--via-text-primary);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
 }
-.vds-kpi-tile .meta { }
 
 /* A sparkline fecha o card — encosta na base sem margem morta */
 .vds-kpi-tile .via-spark { height: 40px; margin-top: var(--via-space-0_5); }
@@ -66,6 +69,35 @@
 }
 /* a área continua só preenchimento — não herda o stroke da regra acima */
 .vds-kpi-tile .via-spark .via-spark__area { stroke: none; }
+
+/* ---- estados · o tile segura o lugar enquanto o número não vem ---- */
+.vds-kpi-live { display: grid; }
+.vds-kpi-nil { color: var(--via-text-faint); }
+.vds-kpi-tile.is-state .vds-cstate { margin-top: auto; }
+
+.vds-kpi-note {
+  margin: var(--via-space-4) var(--via-space-0_5) 0;
+  max-width: 720px;
+  font-size: var(--via-fs-xs);
+  line-height: var(--via-lh-loose);
+  color: var(--via-text-soft);
+}
+.vds-kpi-reset {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.vds-kpi-reset:focus-visible {
+  outline: none;
+  border-radius: var(--via-radius-xs);
+  box-shadow: var(--via-shadow-focus);
+}
 
 @media (prefers-reduced-motion: reduce) {
   .vds-kpi-tile.via-metric { transition: none; }
