@@ -348,14 +348,17 @@
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-1);
+  /* variação NEUTRA · chip navy + seta + sinal. Sem meta, a direção não é
+     boa nem ruim por si — cor de status fica pro medidor (contra meta). */
+  padding: 3px var(--via-space-2) 3px var(--via-space-1_5);
+  border-radius: var(--via-radius-pill);
+  background: var(--via-navy-06);
+  color: var(--via-text-primary);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-
-.vds-sk-delta.bom { color: var(--tone-bom); }
-.vds-sk-delta.ruim { color: var(--tone-critico); }
 
 .vds-sk-plot {
   flex: 0 1 148px;

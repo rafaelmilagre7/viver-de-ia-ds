@@ -66,6 +66,20 @@ export { ColorPicker, type ColorPickerProps, type ColorSwatch } from './ColorPic
 /* Vidro líquido · lente opt-in (só Chromium; fora dele, blur normal) */
 export { enableGlassLens, disableGlassLens, supportsGlassLens } from './_shared/lens';
 
+/* Número pt-BR · moeda, compacto (mil/mi/bi), percentual e variação com menos tipográfico */
+export {
+  formatNumber,
+  formatCurrency,
+  formatCompact,
+  formatPercent,
+  formatDelta,
+  MINUS,
+  type FormatOptions,
+  type CurrencyOptions,
+  type DeltaOptions,
+  type DeltaUnit,
+} from './format';
+
 /* Tokens · runtime + types · auto-generated from tokens.css */
 export { tokens, tokensList, cssVar, type Token, type TokenName } from './tokens';
 

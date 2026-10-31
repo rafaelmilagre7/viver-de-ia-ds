@@ -93,7 +93,7 @@ const KEYWORD_OVERLAYS: Record<string, Pick<SearchEntry, 'description' | 'keywor
   '/components/more': { description: 'Banner · skeleton · notificações · feed · avatar group', keywords: ['banner', 'announcement', 'skeleton', 'notification', 'notif', 'activity feed', 'avatar group', 'presence'] },
   '/components/more-2': { description: 'Cookie · newsletter · comentários · arquivos · calendário', keywords: ['cookie', 'lgpd', 'newsletter', 'comments', 'comentários', 'file card', 'arquivo', 'calendar'] },
   '/components/media': { description: 'Player de áudio e de vídeo', keywords: ['media players', 'player', 'áudio', 'audio', 'vídeo', 'video'] },
-  '/components/charts': { description: 'Área · barra · donut · funil', keywords: ['charts', 'chart', 'gráfico', 'area', 'bar', 'donut', 'funil', 'funnel'] },
+  '/components/charts': { description: 'Área · barra · donut · funil · carregando, vazio e erro', keywords: ['charts', 'chart', 'gráfico', 'area', 'bar', 'donut', 'funil', 'funnel', 'carregando', 'loading', 'skeleton', 'sem dados', 'vazio', 'erro', 'tentar de novo'] },
   '/components/code': { description: 'Código · terminal · diff · UI técnica', keywords: ['code', 'terminal', 'diff', 'snippet', 'ui técnica'] },
   '/components/form-advanced': { description: 'Data · combo · tag · range · nota · cor', keywords: ['form avançado', 'date', 'combo', 'tag', 'range', 'rating', 'cor', 'color'] },
   '/components/data-viz-extra': { description: 'Heatmap · sparklines · gauge', keywords: ['data viz extra', 'dataviz', 'heatmap', 'sparkline', 'gauge'] },
@@ -216,7 +216,7 @@ const KEYWORD_OVERLAYS: Record<string, Pick<SearchEntry, 'description' | 'keywor
   // Guidelines
   '/guidelines/voice': { description: 'Voz editorial · do/dont', keywords: ['voz & tom', 'voice', 'tom', 'copy', 'writing'] },
   '/guidelines/copy': { description: 'Microcopy · CTAs · errors', keywords: ['copy patterns', 'padrões', 'copy', 'microcopy', 'cta', 'wording'] },
-  '/guidelines/microcopy': { description: 'Textos canônicos de interface · erro · vazio · confirmação · toast · botão', keywords: ['microcopy de produto', 'microcopy', 'ux writing', 'erro', 'error', 'empty state', 'vazio', 'toast', 'confirmação', 'botão', 'placeholder', 'helper text', 'você'] },
+  '/guidelines/microcopy': { description: 'Textos canônicos de interface · erro · vazio · confirmação · toast · botão', keywords: ['microcopy de produto', 'microcopy', 'ux writing', 'erro', 'error', 'empty state', 'vazio', 'toast', 'confirmação', 'botão', 'placeholder', 'helper text', 'você', 'números', 'moeda', 'percentual', 'formatador', 'formatCurrency', 'mil', 'mi'] },
   '/guidelines/dos-donts': { description: 'O que fazer · o que evitar', keywords: ["do's & don'ts", 'dos', 'donts', 'faça', 'evite', 'rules', 'guidelines', 'principles'] },
 };
 

@@ -4,12 +4,56 @@ import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
 import { Input } from '../../lib/Input/Input';
 import { microcopy, MICROCOPY_GROUPS, type MicrocopyGroupId } from '../../content/microcopy';
+import { formatCompact, formatCurrency, formatDelta, formatNumber, formatPercent } from '../../lib/format';
 import './microcopy.css';
 
 const fold = (s: string) => s.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
 
 // A própria página usa a biblioteca no estado vazio.
 const SEM_RESULTADO = microcopy.find((m) => m.id === 'vazio-sem-resultados')?.texto ?? '';
+
+// Números · os exemplos saem do próprio formatador da lib, então a guia não descola do código.
+const NUMEROS: { o: string; regra: string; ex: string[]; nao: string; fn: string }[] = [
+  {
+    o: 'Moeda',
+    regra: 'R$, espaço que não quebra e o número. Ponto no milhar; em painel, sem centavos.',
+    ex: [formatCurrency(1_325_000), formatCurrency(1_250, { decimals: 2 })],
+    nao: 'R$1.325.000 · R$ 1325000',
+    fn: 'formatCurrency(v)',
+  },
+  {
+    o: 'Milhar e decimal',
+    regra: 'Ponto separa o milhar, vírgula separa o decimal.',
+    ex: [formatNumber(1_240), formatNumber(3.9)],
+    nao: '1,240 · 3.9',
+    fn: 'formatNumber(v)',
+  },
+  {
+    o: 'Percentual',
+    regra: 'Vírgula decimal, % colado no número.',
+    ex: [formatPercent(99.8), formatPercent(94)],
+    nao: '99.8% · 94 %',
+    fn: 'formatPercent(v)',
+  },
+  {
+    o: 'Compacto',
+    regra: 'mil, mi e bi, com três algarismos. Abaixo de 10 mil, o número vai inteiro.',
+    ex: [formatCurrency(1_325_000, { compact: true }), formatCompact(184_000), formatCurrency(4_200, { compact: true })],
+    nao: 'R$ 1.325K · 184k · 1,3M',
+    fn: 'formatCurrency(v, { compact: true }) · formatCompact(v)',
+  },
+  {
+    o: 'Variação',
+    regra: 'Sinal sempre, + ou −. O menos é tipográfico, nunca hífen. Diferença entre percentuais é p.p.',
+    ex: [
+      formatDelta(8.2, { unit: 'percent' }),
+      formatDelta(-1.2, { unit: 'points' }),
+      formatDelta(-4_200, { unit: 'currency' }),
+    ],
+    nao: '8,2% (sem sinal) · -1,2pp',
+    fn: "formatDelta(v, { unit: 'percent' | 'points' | 'currency' })",
+  },
+];
 
 const FILTERS: { id: MicrocopyGroupId | 'todos'; label: string; n: number }[] = [
   { id: 'todos', label: 'Todos', n: microcopy.length },
@@ -60,6 +104,33 @@ export default function Microcopy() {
           <li><strong>Números no formato brasileiro.</strong> R$ 1.200,00 · 14,2 MB · 1.240 · 12/06/2026 · 14h32.</li>
           <li><strong>Erro não culpa a pessoa.</strong> Diz o que aconteceu, de quem é a falha e o próximo passo.</li>
           <li><strong>As IAs leem a mesma lista.</strong> A skill da marca traz o espelho em <code>microcopy.md</code>; quem gera interface reusa o texto canônico.</li>
+        </ul>
+      </Section>
+
+      <Section id="mc-numeros" title="Números" meta="moeda · milhar · percentual · compacto · variação">
+        <p className="vds-mc-group-rule">
+          Todo número da interface passa pelo formatador da biblioteca (<code>formatCurrency</code>,{' '}
+          <code>formatNumber</code>, <code>formatPercent</code>, <code>formatCompact</code> e{' '}
+          <code>formatDelta</code>, em <code>@viverdeia/design-system</code>). Os exemplos abaixo saem dele, na hora.
+        </p>
+        <ul className="vds-mc-nums">
+          {NUMEROS.map((n) => (
+            <li key={n.o} className="vds-mc-num">
+              <div className="vds-mc-num-head">
+                <h3>{n.o}</h3>
+                <code className="vds-mc-id">{n.fn}</code>
+              </div>
+              <p className="vds-mc-num-rule">{n.regra}</p>
+              <div className="vds-mc-num-ex">
+                {n.ex.map((e) => (
+                  <span key={e} className="vds-mc-num-chip">{e}</span>
+                ))}
+              </div>
+              <p className="vds-mc-num-dont">
+                <span>Não escreva</span> <s>{n.nao}</s>
+              </p>
+            </li>
+          ))}
         </ul>
       </Section>
 

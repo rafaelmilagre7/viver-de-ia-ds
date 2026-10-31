@@ -1,7 +1,8 @@
 import { useMemo, useRef, useState } from 'react';
-import { TrendingUp, TrendingDown } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import { formatCurrency, formatDelta, formatNumber, formatPercent } from '../../lib/format';
 import './data-viz-extra.css';
 
 /* =========================================================
@@ -155,7 +156,7 @@ function HeatmapSection() {
 
   return (
     <Section
-      title="Heatmap · 12 meses de atividade"
+      title="Mapa de calor · 12 meses de atividade"
       meta="sequencial · 1 matiz claro→escuro · cortes por quartil · zero neutro fora da rampa"
     >
       <div className="vds-hm-card">
@@ -163,7 +164,7 @@ function HeatmapSection() {
           <div>
             <p className="vds-hm-eyebrow">Atividade Viver de IA · jun/2025 a mai/2026</p>
             <h3 className="vds-hm-value">
-              {total.toLocaleString('pt-BR')}
+              {formatNumber(total)}
               <span className="unit"> ações no período</span>
             </h3>
             <p className="vds-hm-lede">
@@ -173,12 +174,11 @@ function HeatmapSection() {
           </div>
           <div className="vds-hm-pill">
             {delta30 >= 0 ? (
-              <TrendingUp size={16} strokeWidth={1.75} aria-hidden="true" />
+              <ArrowUpRight size={14} strokeWidth={1.75} aria-hidden="true" />
             ) : (
-              <TrendingDown size={14} strokeWidth={1.75} aria-hidden="true" />
+              <ArrowDownRight size={14} strokeWidth={1.75} aria-hidden="true" />
             )}
-            {delta30 >= 0 ? '+' : '−'}
-            {Math.abs(delta30)}% nos últimos 30 dias
+            {formatDelta(delta30, { unit: 'percent' })} nos últimos 30 dias
           </div>
         </header>
 
@@ -206,7 +206,7 @@ function HeatmapSection() {
             <div
               className="vds-hm-grid"
               role="img"
-              aria-label={`Mapa de calor de atividade diária. ${total.toLocaleString('pt-BR')} ações em ${ativos} dias ativos, entre junho de 2025 e maio de 2026.`}
+              aria-label={`Mapa de calor de atividade diária. ${formatNumber(total)} ações em ${ativos} dias ativos, entre junho de 2025 e maio de 2026.`}
               onMouseLeave={() => setTip(null)}
             >
               {Array.from({ length: 52 }).map((_, w) => (
@@ -285,7 +285,6 @@ type Kpi = {
   projDe?: number;
   delta: string;
   dir: 'up' | 'down';
-  bom: boolean;
   nota: string;
   fmt: (v: number) => string;
 };
@@ -451,11 +450,11 @@ function SparkCard({ kpi }: { kpi: Kpi }) {
       <div className="vds-sk-row">
         <div className="vds-sk-num">
           <p className="vds-sk-value">{kpi.fmt(kpi.data[kpi.projDe ?? kpi.data.length - 1])}</p>
-          <p className={`vds-sk-delta ${kpi.bom ? 'bom' : 'ruim'}`}>
+          <p className="vds-sk-delta">
             {kpi.dir === 'up' ? (
-              <TrendingUp size={16} strokeWidth={1.75} aria-hidden="true" />
+              <ArrowUpRight size={14} strokeWidth={1.75} aria-hidden="true" />
             ) : (
-              <TrendingDown size={14} strokeWidth={1.75} aria-hidden="true" />
+              <ArrowDownRight size={14} strokeWidth={1.75} aria-hidden="true" />
             )}
             {kpi.delta}
           </p>
@@ -509,11 +508,10 @@ function SparklinesSection() {
         rotulos: rotulosMes(14, 2026, 6),
         kind: 'area',
         projDe: 11,
-        delta: '+13,2% no trimestre',
+        delta: `${formatDelta(13.2, { unit: 'percent' })} no trimestre`,
         dir: 'up',
-        bom: true,
         nota: '14 meses',
-        fmt: (v) => `R$ ${(v / 1000).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}M`,
+        fmt: (v) => formatCurrency(v * 1000, { compact: true }),
       },
       {
         id: 'nps',
@@ -521,9 +519,8 @@ function SparklinesSection() {
         data: [71, 73, 74, 76, 77, 78, 77, 76, 75, 74, 73, 71],
         rotulos: rotulosMes(12, 2026, 4),
         kind: 'line',
-        delta: '−7 pt desde o pico',
+        delta: `${formatDelta(-7)} pontos desde o pico`,
         dir: 'down',
-        bom: false,
         nota: '12 meses',
         fmt: (v) => `${v}`,
       },
@@ -533,11 +530,10 @@ function SparklinesSection() {
         data: [0.34, 0.31, 0.36, 0.38, 0.4, 0.39, 0.41, 0.42, 0.43, 0.44, 0.44, 0.44],
         rotulos: rotulosMes(12, 2026, 4),
         kind: 'step',
-        delta: '+0,10 pp em 12 meses',
+        delta: `${formatDelta(0.1, { unit: 'points', decimals: 2 })} em 12 meses`,
         dir: 'up',
-        bom: true,
         nota: '12 meses',
-        fmt: (v) => `${v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`,
+        fmt: (v) => formatPercent(v, { decimals: 2 }),
       },
       {
         id: 'canc',
@@ -545,9 +541,8 @@ function SparklinesSection() {
         data: [28, 26, 24, 25, 22, 20, 21, 19, 18, 17, 17, 17],
         rotulos: rotulosMes(12, 2026, 4),
         kind: 'bar',
-        delta: '−39% em 12 meses',
+        delta: `${formatDelta(-39, { unit: 'percent' })} em 12 meses`,
         dir: 'down',
-        bom: true,
         nota: '12 meses',
         fmt: (v) => `${v}`,
       },
@@ -557,7 +552,7 @@ function SparklinesSection() {
 
   return (
     <Section
-      title="Sparklines · small multiples de KPI"
+      title="Minigráficos · um painel por KPI"
       meta="1 série por tile · escala própria · sem eixo duplo · barra ancorada no zero"
     >
       <div className="vds-sk-grid">
@@ -569,9 +564,10 @@ function SparklinesSection() {
       <p className="vds-sk-rule">
         Quatro medidas em escalas incompatíveis — reais, pontos, porcentagem e contagem. Empilhar isso
         num gráfico só exigiria dois eixos y, o erro mais comum de dashboard. A saída correta é esta:
-        um gráfico pequeno por medida, cada um com a própria escala e o próprio rótulo. Verde e coral
-        aqui são <strong>status</strong> (a direção é boa ou ruim), nunca identidade de série — a seta
-        repete o sinal pra quem não distingue as duas cores.
+        um gráfico pequeno por medida, cada um com a própria escala e o próprio rótulo. A variação é
+        <strong> neutra</strong> — chip com seta e sinal — porque nenhum desses números está contra uma
+        meta: cancelamento caindo é bom, NPS caindo é ruim, e quem diz isso é o texto, não a cor. Contra
+        meta, o veredito ganha cor de status (veja o medidor abaixo).
       </p>
     </Section>
   );
@@ -726,7 +722,7 @@ function GaugeCard({
 function GaugesSection() {
   return (
     <Section
-      title="Gauge · arco radial contra meta"
+      title="Medidor · arco radial contra meta"
       meta="valor único · âncoras 0 e máximo · marcador de meta · status separado da série"
     >
       <div className="vds-gz-grid">

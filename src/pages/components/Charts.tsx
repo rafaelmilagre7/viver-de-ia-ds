@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   TrendingUp,
   BarChart3,
@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import { formatCurrency, formatDelta, formatNumber, formatPercent } from '../../lib/format';
+import ChartState from './ChartState';
 import './charts.css';
 
 /* ============================================================
@@ -22,18 +24,20 @@ import './charts.css';
    E o inegociável: UM eixo. Duas escalas viram dois painéis.
    ============================================================ */
 
-/* ---------- formatadores (pt-BR, tabular) ---------- */
-const nf = (n: number, d = 0) =>
-  n.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+/* ---------- formatação · formatador único da lib (pt-BR, mil/mi, menos tipográfico) ---------- */
+const nf = (n: number, d = 0) => formatNumber(n, { decimals: d });
+const pct = (n: number, d = 0) => formatPercent(n, { decimals: d });
 
-/** 280 → "280K" · 1200 → "1,2M" */
-const fmtMil = (v: number) => (v >= 1000 ? `${nf(v / 1000, 1)}M` : `${nf(v)}K`);
+/** Valores em R$ mil → moeda compacta: 280 → "R$ 280 mil" · 1200 → "R$ 1,2 mi" */
+const brlMil = (v: number) => formatCurrency(v * 1000, { compact: true });
+/** Rótulo de eixo sem o R$ (a unidade está no rodapé): 300 → "300 mil" · 1500 → "1,5 mi" */
+const eixoMil = (v: number) => brlMil(v).replace('R$\u00A0', '');
 
 export default function Charts() {
   return (
     <>
       <DocsHeader
-        eyebrow="Componentes · charts"
+        eyebrow="Componentes · gráficos"
         title={
           <>
             Gráficos editoriais, <em>navy & glass</em>.
@@ -50,6 +54,7 @@ export default function Charts() {
       <SmallMultiplesSection />
       <DonutSection />
       <FunnelSection />
+      <StatesSection />
     </>
   );
 }
@@ -191,20 +196,32 @@ function KPISection() {
   const kpis = [
     {
       label: 'MRR',
-      value: 'R$ 1,84M',
-      delta: '+8,2%',
+      value: formatCurrency(1_840_000, { compact: true }),
+      delta: formatDelta(8.2, { unit: 'percent' }),
       up: true,
       data: [120, 128, 126, 138, 150, 162, 170, 184],
     },
     {
       label: 'Churn',
-      value: '3,0%',
-      delta: '−1,2pp',
+      value: pct(3, 1),
+      delta: formatDelta(-1.2, { unit: 'points' }),
       up: false,
       data: [52, 49, 47, 44, 42, 40, 38, 30],
     },
-    { label: 'CAC', value: 'R$ 184', delta: '−6%', up: false, data: [240, 232, 228, 214, 206, 198, 192, 184] },
-    { label: 'LTV', value: 'R$ 7,2K', delta: '+12%', up: true, data: [58, 60, 59, 63, 66, 69, 70, 72] },
+    {
+      label: 'CAC',
+      value: formatCurrency(184),
+      delta: formatDelta(-6, { unit: 'percent' }),
+      up: false,
+      data: [240, 232, 228, 214, 206, 198, 192, 184],
+    },
+    {
+      label: 'LTV',
+      value: formatCurrency(7_200, { compact: true }),
+      delta: formatDelta(12, { unit: 'percent' }),
+      up: true,
+      data: [58, 60, 59, 63, 66, 69, 70, 72],
+    },
   ];
 
   return (
@@ -359,7 +376,8 @@ function AreaSection() {
               <TrendingUp size={16} strokeWidth={1.75} /> Receita · dados ilustrativos
             </p>
             <h3>
-              R$ 5,09M<span className="unit"> realizado</span>
+              {brlMil(AREA_REAL.reduce((t, d) => t + d.v, 0))}
+              <span className="unit"> realizado</span>
             </h3>
             <p className="lede">
               Oito meses fechados. Set e out são <em>projeção</em> — e por isso aparecem tracejados, em opacidade
@@ -368,7 +386,11 @@ function AreaSection() {
           </div>
           <div className="vds-chart-delta up">
             <ArrowUpRight size={16} strokeWidth={1.75} />
-            +293% vs jan
+            {formatDelta(((AREA_REAL[lastReal].v - AREA_REAL[0].v) / AREA_REAL[0].v) * 100, {
+              unit: 'percent',
+              decimals: 0,
+            })}{' '}
+            vs jan
           </div>
         </header>
 
@@ -421,7 +443,7 @@ function AreaSection() {
                 <g key={g}>
                   {g > 0 && <line x1={PAD_L} x2={W - PAD_R} y1={y} y2={y} className="grid" />}
                   <text x={PAD_L - 14} y={y + 4} className="axis-label" textAnchor="end">
-                    {g === 0 ? '0' : fmtMil(g)}
+                    {g === 0 ? '0' : eixoMil(g)}
                   </text>
                 </g>
               );
@@ -479,7 +501,7 @@ function AreaSection() {
                   style={{ cursor: 'pointer' }}
                   tabIndex={0}
                   role="button"
-                  aria-label={`${p.m}: R$ ${fmtMil(p.v)}${p.proj ? ' (projeção)' : ''}`}
+                  aria-label={`${p.m}: ${brlMil(p.v)}${p.proj ? ' (projeção)' : ''}`}
                 />
                 <circle
                   cx={p.x}
@@ -498,13 +520,13 @@ function AreaSection() {
               minX={PAD_L}
               maxX={W - PAD_R}
               title={`${active.m} · 2026${active.proj ? ' · projeção' : ''}`}
-              rows={[{ label: 'Receita', value: `R$ ${fmtMil(active.v)}` }]}
+              rows={[{ label: 'Receita', value: brlMil(active.v) }]}
             />
           </svg>
         </div>
 
         <footer className="vds-chart-foot">
-          <span>Valores em reais · escala 0 – R$ 1,5M</span>
+          <span>Valores em reais · escala 0 – {brlMil(MAX)}</span>
           <span className="sep">·</span>
           <span>Fonte: faturamento consolidado · atualizado 17 mai 2026</span>
         </footer>
@@ -718,7 +740,10 @@ function IndexedSection() {
         <footer className="vds-chart-foot">
           <span>Índice · jan/2026 = 100 · escala única 0 – 450</span>
           <span className="sep">·</span>
-          <span>Receita R$ 280K → 1,1M · leads 3.180 → 5.620</span>
+          <span>
+            Receita {brlMil(receita[0])} → {brlMil(receita[receita.length - 1])} · leads {nf(leads[0])} →{' '}
+            {nf(leads[leads.length - 1])}
+          </span>
         </footer>
       </div>
     </Section>
@@ -762,7 +787,7 @@ function BarSection() {
           </div>
           <div className="vds-chart-delta up">
             <ArrowUpRight size={16} strokeWidth={1.75} />
-            +24% vs ago
+            {formatDelta(24, { unit: 'percent' })} vs ago
           </div>
         </header>
 
@@ -777,7 +802,7 @@ function BarSection() {
               onBlur={() => setHover(null)}
               role="group"
               tabIndex={0}
-              aria-label={`${c.ch}: ${nf(c.v)} leads, ${nf((c.v / total) * 100, 1)}% do total`}
+              aria-label={`${c.ch}: ${nf(c.v)} leads, ${pct((c.v / total) * 100, 1)} do total`}
             >
               <span className="vds-bar-label">
                 {c.ch}
@@ -790,13 +815,13 @@ function BarSection() {
                 <span className="vds-bar-fill" style={{ width: `${(c.v / SCALE) * 100}%` }} />
                 {hover === c.ch && (
                   <span className="vds-bar-tip" style={{ left: `${(c.v / SCALE) * 100}%` }}>
-                    {nf(c.v)} de {nf(total)} · {nf((c.v / total) * 100, 1)}%
+                    {nf(c.v)} de {nf(total)} · {pct((c.v / total) * 100, 1)}
                   </span>
                 )}
               </div>
               <span className="vds-bar-value">
                 {nf(c.v)}
-                <em>{nf((c.v / total) * 100, 0)}%</em>
+                <em>{pct((c.v / total) * 100)}</em>
               </span>
             </div>
           ))}
@@ -922,9 +947,14 @@ function SmallMultiplesSection() {
     { name: 'Enterprise', data: [42, 58, 50, 74, 63, 88, 79, 104] },
   ];
   const MAX = 320;
+  const somaAgo = series.reduce((t, x) => t + x.data[x.data.length - 1], 0);
+  const somaJan = series.reduce((t, x) => t + x.data[0], 0);
 
   return (
-    <Section title="Small multiples · três planos" meta="MRR por plano · dados ilustrativos · escala 0 – 320K">
+    <Section
+      title="Small multiples · três planos"
+      meta={`MRR por plano · dados ilustrativos · escala 0 – ${brlMil(MAX)}`}
+    >
       <div className="vds-chart-card">
         <header className="vds-chart-head">
           <div>
@@ -932,7 +962,8 @@ function SmallMultiplesSection() {
               <Grid2X2 size={14} strokeWidth={1.75} /> Três séries, três painéis
             </p>
             <h3>
-              R$ 563K<span className="unit"> MRR somado · ago</span>
+              {brlMil(somaAgo)}
+              <span className="unit"> MRR somado · ago</span>
             </h3>
             <p className="lede">
               Três séries não cabem em três cores nesta paleta. Cabem em <em>três painéis</em> com a mesma escala:
@@ -941,7 +972,7 @@ function SmallMultiplesSection() {
           </div>
           <div className="vds-chart-delta up">
             <ArrowUpRight size={16} strokeWidth={1.75} />
-            +77% vs jan
+            {formatDelta((somaAgo / somaJan - 1) * 100, { unit: 'percent', decimals: 0 })} vs jan
           </div>
         </header>
 
@@ -955,8 +986,8 @@ function SmallMultiplesSection() {
                 <div className="vds-sm-head">
                   <h4>{s.name}</h4>
                   <span className="vds-sm-value">
-                    R$ {nf(last)}K
-                    <em>+{nf(growth)}%</em>
+                    {brlMil(last)}
+                    <em>{formatDelta(growth, { unit: 'percent', decimals: 0 })}</em>
                   </span>
                 </div>
                 <MiniColumns data={s.data} labels={labels} max={MAX} showAxis={i === 0} name={s.name} />
@@ -966,7 +997,7 @@ function SmallMultiplesSection() {
         </div>
 
         <footer className="vds-chart-foot">
-          <span>Escala idêntica nos três painéis · 0 – R$ 320K · jan → ago</span>
+          <span>Escala idêntica nos três painéis · 0 – {brlMil(MAX)} · jan → ago</span>
           <span className="sep">·</span>
           <span>Sem legenda: cada painel é nomeado no próprio título</span>
         </footer>
@@ -1031,7 +1062,8 @@ function DonutSection() {
               <PieIcon size={14} strokeWidth={1.75} /> Composição MRR
             </p>
             <h3>
-              R$ 1,84M<span className="unit"> recorrente + novo</span>
+              {brlMil(TOTAL_MRR)}
+              <span className="unit"> recorrente + novo</span>
             </h3>
             <p className="lede">
               Parte-do-todo com <em>duas</em> fatias — cor sólida e textura hachurada, nunca duas cores próximas. A
@@ -1040,7 +1072,7 @@ function DonutSection() {
           </div>
           <div className="vds-chart-delta up">
             <ArrowUpRight size={16} strokeWidth={1.75} />
-            recorrente +4pp vs ago
+            recorrente {formatDelta(4, { unit: 'points', decimals: 0 })} vs ago
           </div>
         </header>
 
@@ -1055,7 +1087,7 @@ function DonutSection() {
               onClick={() => setActive(i)}
             >
               <span className={`vds-legend-swatch ${p.fill === 'hatch' ? 'hatch' : 'solid'}`} />
-              {p.label} · {p.value}%
+              {p.label} · {pct(p.value)}
             </button>
           ))}
         </div>
@@ -1096,7 +1128,7 @@ function DonutSection() {
               {cur.label}
             </text>
             <text x={CX} y={CY + 44} className="donut-money" textAnchor="middle">
-              R$ {nf((TOTAL_MRR * cur.value) / 100)}K
+              {brlMil((TOTAL_MRR * cur.value) / 100)}
             </text>
           </svg>
 
@@ -1111,7 +1143,8 @@ function DonutSection() {
                 <article className="vds-tail-card" key={t.label}>
                   <p className="vds-tail-label">{t.label}</p>
                   <p className="vds-tail-value">
-                    {t.value}%<em>R$ {nf((TOTAL_MRR * t.value) / 100)}K</em>
+                    {pct(t.value)}
+                    <em>{brlMil((TOTAL_MRR * t.value) / 100)}</em>
                   </p>
                   <div className="vds-tail-track">
                     <span className="vds-tail-fill" style={{ width: `${(t.value / TAIL_MAX) * 100}%` }} />
@@ -1123,7 +1156,7 @@ function DonutSection() {
         </div>
 
         <footer className="vds-chart-foot">
-          <span>Base: R$ 1,84M de MRR em set/2026</span>
+          <span>Base: {brlMil(TOTAL_MRR)} de MRR em set/2026</span>
           <span className="sep">·</span>
           <span>Fatias com 2px de respiro · textura como 2º canal</span>
         </footer>
@@ -1144,12 +1177,15 @@ function FunnelSection() {
     { stage: 'Fechado', count: 213, rate: 29.6 },
   ];
   const top = stages[0].count;
+  const RECEITA_FUNIL = 642; // R$ mil
   const [hover, setHover] = useState<string | null>(null);
 
   return (
     <Section
       title="Funil · volume e conversão lado a lado"
-      meta="set/2026 · receita R$ 642K · ticket médio R$ 3,01K"
+      meta={`set/2026 · receita ${brlMil(RECEITA_FUNIL)} · ticket médio ${formatCurrency(
+        (RECEITA_FUNIL * 1000) / stages[stages.length - 1].count,
+      )}`}
     >
       <div className="vds-chart-card">
         <header className="vds-chart-head">
@@ -1158,7 +1194,8 @@ function FunnelSection() {
               <Filter size={14} strokeWidth={1.75} /> Funil · 30 dias
             </p>
             <h3>
-              0,44%<span className="unit"> taxa fim-a-fim</span>
+              {pct((stages[stages.length - 1].count / top) * 100, 2)}
+              <span className="unit"> taxa fim-a-fim</span>
             </h3>
             <p className="lede">
               48.200 visitas → 213 vendas. Volume e taxa têm escalas incompatíveis, então ocupam{' '}
@@ -1168,7 +1205,7 @@ function FunnelSection() {
           </div>
           <div className="vds-chart-delta up">
             <ArrowUpRight size={16} strokeWidth={1.75} />
-            +18% receita vs ago
+            {formatDelta(18, { unit: 'percent' })} receita vs ago
           </div>
         </header>
 
@@ -1191,7 +1228,7 @@ function FunnelSection() {
                 onBlur={() => setHover(null)}
                 role="group"
                 tabIndex={0}
-                aria-label={`${s.stage}: ${nf(s.count)} ${s.rate === null ? '· entrada do funil' : `· ${nf(s.rate, 1)}% da etapa anterior`}`}
+                aria-label={`${s.stage}: ${nf(s.count)} ${s.rate === null ? '· entrada do funil' : `· ${pct(s.rate, 1)} da etapa anterior`}`}
               >
                 <span className="vds-funnel-stage">
                   <span className="num">{(i + 1).toString().padStart(2, '0')}</span>
@@ -1213,7 +1250,7 @@ function FunnelSection() {
                     {s.rate !== null && <span className="vds-funnel-bar" style={{ width: `${s.rate}%` }} />}
                   </div>
                   <span className={`vds-funnel-num ${s.rate === null ? 'is-empty' : ''}`}>
-                    {s.rate === null ? 'entrada' : `${nf(s.rate, 1)}%`}
+                    {s.rate === null ? 'entrada' : pct(s.rate, 1)}
                   </span>
                 </div>
               </div>
@@ -1221,10 +1258,14 @@ function FunnelSection() {
           })}
         </div>
 
+        {/* o texto vai num span: no flex, cada nó de texto e o <strong> viravam
+            itens separados e o gap abria buraco no meio da frase */}
         <p className="vds-note is-inline">
-          <Ban size={14} strokeWidth={1.75} />
-          Duas medidas em escalas diferentes: <strong>dois painéis</strong>, cada um ancorado no próprio zero.
-          Empilhar as duas num eixo duplo é o erro nº 1 de gráfico.
+          <Ban size={14} strokeWidth={1.75} aria-hidden="true" />
+          <span>
+            Duas medidas em escalas diferentes: <strong>dois painéis</strong>, cada um ancorado no próprio zero.
+            Empilhar as duas num eixo duplo é o erro nº 1 de gráfico.
+          </span>
         </p>
 
         <footer className="vds-chart-foot">
@@ -1233,6 +1274,112 @@ function FunnelSection() {
           <span>Conversão medida sobre a etapa imediatamente anterior</span>
         </footer>
       </div>
+    </Section>
+  );
+}
+
+/* ============================================================
+   Estados · carregando, sem dados, erro
+   Os três ocupam a área do plot que substituem (ChartState).
+   O card de erro é vivo: Tentar de novo → carregando → gráfico.
+   ============================================================ */
+const STATE_H = 200;
+
+function MiniArea() {
+  const x = (i: number) => 48 + (i * (592 - 48)) / (AREA_REAL.length - 1);
+  const y = (v: number) => 150 - (v / 1500) * (150 - 24);
+  const line = smoothPath(AREA_REAL.map((d, i) => ({ x: x(i), y: y(d.v) })));
+  const last = AREA_REAL[AREA_REAL.length - 1];
+  return (
+    <svg
+      viewBox="0 0 600 200"
+      preserveAspectRatio="none"
+      className="vds-plot vds-state-plot"
+      role="img"
+      aria-label={`Receita mensal de 2026: de ${brlMil(AREA_REAL[0].v)} em janeiro a ${brlMil(last.v)} em agosto.`}
+    >
+      <defs>
+        <linearGradient id="vds-state-area" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" className="gs-1-35" />
+          <stop offset="100%" className="gs-1-00" />
+        </linearGradient>
+      </defs>
+      {[24, 66, 108].map((g) => (
+        <line key={g} x1="48" x2="600" y1={g} y2={g} className="grid" />
+      ))}
+      <line x1="48" x2="600" y1="150" y2="150" className="axis" />
+      <path d={`${line} L 592 150 L 48 150 Z`} fill="url(#vds-state-area)" />
+      <path d={line} className="line s1" fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function StatesSection() {
+  const [demo, setDemo] = useState<'error' | 'loading' | 'ok'>('error');
+  const timer = useRef<number | undefined>(undefined);
+  useEffect(() => () => window.clearTimeout(timer.current), []);
+
+  const tentar = () => {
+    setDemo('loading');
+    window.clearTimeout(timer.current);
+    timer.current = window.setTimeout(() => setDemo('ok'), 1400);
+  };
+  const tagDemo = { error: 'Erro', loading: 'Carregando', ok: 'Carregado' }[demo];
+
+  return (
+    <Section title="Estados · carregando, sem dados, erro" meta="mesma área do plot · texto da biblioteca de microcopy">
+      <div className="vds-states-grid">
+        <article className="vds-chart-card vds-state-card">
+          <header className="vds-state-head">
+            <span className="vds-state-tag">Carregando</span>
+            <h4>Receita mensal · 2026</h4>
+          </header>
+          <ChartState state="loading" label="o gráfico de receita mensal" height={STATE_H} />
+          <p className="vds-state-rule">
+            Eixo fantasma e linha-base em esqueleto. O gráfico entra no mesmo lugar, sem empurrar a página.
+          </p>
+        </article>
+
+        <article className="vds-chart-card vds-state-card">
+          <header className="vds-state-head">
+            <span className="vds-state-tag">Sem dados</span>
+            <h4>Conversas por semana</h4>
+          </header>
+          <ChartState state="empty" label="o gráfico de conversas por semana" height={STATE_H} />
+          <p className="vds-state-rule">
+            Texto canônico da biblioteca: por que está vazio e quando o dado chega. Nada de zero desenhado como se
+            fosse dado.
+          </p>
+        </article>
+
+        <article className="vds-chart-card vds-state-card">
+          <header className="vds-state-head">
+            <span className="vds-state-tag">{tagDemo}</span>
+            <h4>Receita mensal · 2026</h4>
+          </header>
+          <div aria-live="polite">
+            {demo === 'ok' ? (
+              <MiniArea />
+            ) : (
+              <ChartState state={demo} label="o gráfico de receita mensal" onRetry={tentar} height={STATE_H} />
+            )}
+          </div>
+          <p className="vds-state-rule">
+            Mensagem curta e Tentar de novo ali mesmo, sem trocar de tela. Experimente: erro, carregando, gráfico.{' '}
+            {demo === 'ok' && (
+              <button type="button" className="vds-state-reset" onClick={() => setDemo('error')}>
+                Ver o erro de novo
+              </button>
+            )}
+          </p>
+        </article>
+      </div>
+
+      <p className="vds-note">
+        Os três estados ocupam <strong>a altura do gráfico</strong> que substituem e mantêm a grade por trás. Cor só
+        no erro, e só no ícone. Os textos vêm da biblioteca de microcopy (vazio-dados-insuficientes, erro-rede e
+        botao-tentar-de-novo), nunca reescritos no componente.
+      </p>
     </Section>
   );
 }
