@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Layout } from './components/Layout';
-import { Lede, Para, Strong, CTA, SubLink, Signature } from './components/ui';
+import { Lede, Para, Strong, Callout, CTA, SubLink, Signature } from './components/ui';
 import { color } from './theme';
 
 export const meta = {
@@ -27,9 +27,9 @@ export default function OfertaEmail({ firstName, observation, talkUrl, detailsUr
       <Lede>
         Não é mensagem de robô disparada pra mil pessoas. É sobre algo concreto que <Strong>você</Strong> fez:
       </Lede>
-      <Para style={{ borderLeft: `2px solid ${color.navy}`, paddingLeft: '16px', color: color.ink, margin: '0 0 18px' }}>
-        {observation}
-      </Para>
+      <Callout>
+        <Para style={{ color: color.ink, margin: '12px 0' }}>{observation}</Para>
+      </Callout>
       <Para>
         Quem chega nesse ponto sozinho normalmente trava no mesmo lugar depois — e é exatamente aí
         que a mentoria encurta meses pra semanas. Não tô te empurrando nada: se fizer sentido, a
@@ -47,7 +47,7 @@ export default function OfertaEmail({ firstName, observation, talkUrl, detailsUr
 OfertaEmail.PreviewProps = {
   firstName: 'Marina',
   observation:
-    '"Você montou um agente de WhatsApp que já responde sozinho — mas ainda mede sucesso no olho, sem número de receita ou economia atrelado."',
+    '“Você montou um agente de WhatsApp que já responde sozinho — mas ainda mede sucesso no olho, sem número de receita ou economia atrelado.”',
   talkUrl: 'https://app.viverdeia.ai/conversar',
   detailsUrl: 'https://viverdeia.ai/turma',
 } satisfies OfertaEmailProps;

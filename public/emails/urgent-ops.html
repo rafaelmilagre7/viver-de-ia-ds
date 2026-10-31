@@ -16,6 +16,19 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;display=swap"
       rel="stylesheet" />
+    <style>
+      @media only screen and (max-width:480px){
+      .via-shell{padding-left:12px!important;padding-right:12px!important}
+      .via-pad{padding-left:20px!important;padding-right:20px!important}
+      .via-pad-logo{padding-left:12px!important;padding-right:12px!important}
+      .via-title{font-size:22px!important}
+      .via-callout{padding:6px 16px!important}
+      .via-kv-label,.via-kv-value{display:block!important;width:100%!important;text-align:left!important}
+      .via-kv-label{padding:12px 0 2px!important}
+      .via-kv-value{padding:0 0 12px!important}
+      .via-btn{display:block!important;text-align:center!important}
+      }
+    </style>
   </head>
   <body style="background-color:#EDF0F4;margin:0;padding:0">
     <!--$--><!--html--><!--head-->
@@ -42,35 +55,15 @@
             <table
               align="center"
               width="100%"
+              class="via-shell"
               border="0"
               cellpadding="0"
               cellspacing="0"
               role="presentation"
-              style="max-width:600px;margin:0 auto;padding:0 16px">
+              style="max-width:600px;margin:0 auto;padding:24px 16px 0">
               <tbody>
                 <tr style="width:100%">
                   <td>
-                    <table
-                      align="center"
-                      width="100%"
-                      border="0"
-                      cellpadding="0"
-                      cellspacing="0"
-                      role="presentation"
-                      style="padding:24px 4px 14px">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <img
-                              alt="Viver de IA"
-                              height="24"
-                              src="https://viver-de-ia-ds.vercel.app/logos/lockup-navy.png"
-                              style="display:block;outline:none;border:0;text-decoration:none"
-                              width="190" />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
                     <table
                       align="center"
                       width="100%"
@@ -89,16 +82,55 @@
                               cellpadding="0"
                               cellspacing="0"
                               role="presentation"
-                              style="background-color:#0A1F3B;background-image:radial-gradient(130% 130% at 100% 0%, rgba(255,255,255,0.12), rgba(255,255,255,0) 55%), linear-gradient(140deg, #0A1F3B 0%, #02162A 70%, #010B1A 100%);border-top-left-radius:16px;border-top-right-radius:16px;border-top:1px solid rgba(255,255,255,0.16);padding:32px 36px 28px">
+                              class="via-pad-logo"
+                              style="padding:28px 28px 0">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <table
+                                      role="presentation"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      border="0">
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="background-color:#FFFFFF;background-image:linear-gradient(#FFFFFF, #FFFFFF);border-radius:8px;padding:6px 8px">
+                                            <img
+                                              alt="Viver de IA"
+                                              height="18"
+                                              src="https://viver-de-ia-ds.vercel.app/logos/lockup-navy.png"
+                                              style="display:block;outline:none;border:0;text-decoration:none"
+                                              width="142" />
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table
+                              align="center"
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              class="via-pad"
+                              style="padding:22px 36px 0">
                               <tbody>
                                 <tr>
                                   <td>
                                     <p
-                                      style="font-size:11px;line-height:24px;margin:0 0 11px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.70);margin-top:0;margin-right:0;margin-bottom:11px;margin-left:0">
-                                      Ação necessária
+                                      style="font-size:11px;line-height:1.4;margin:0 0 10px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#8F3F3F;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0">
+                                      <span
+                                        style="display:inline-block;width:6px;height:6px;border-radius:999px;background-color:#B85C5C;vertical-align:middle;margin:0 8px 2px 0"></span
+                                      >Ação necessária
                                     </p>
                                     <h1
-                                      style="margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-size:24px;line-height:1.24;font-weight:600;letter-spacing:-0.021em;color:#FFFFFF">
+                                      class="via-title"
+                                      style="margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-size:24px;line-height:1.24;font-weight:600;letter-spacing:-0.021em;color:#0A1F3B">
                                       Webhook timeout · HTTP 504<!-- -->.
                                     </h1>
                                   </td>
@@ -112,7 +144,8 @@
                               cellpadding="0"
                               cellspacing="0"
                               role="presentation"
-                              style="background-color:#FFFFFF;padding:30px 36px 34px">
+                              class="via-pad"
+                              style="background-color:#FFFFFF;padding:22px 36px 34px">
                               <tbody>
                                 <tr>
                                   <td>
@@ -129,7 +162,8 @@
                                       cellpadding="0"
                                       cellspacing="0"
                                       role="presentation"
-                                      style="background-color:#FBF3F3;background-image:linear-gradient(180deg, #FFFFFF 0%, #F2F5F9 100%);border:1px solid #EBD3D3;border-top:1px solid #FFFFFF;border-radius:12px;padding:20px 22px;margin:0 0 22px">
+                                      class="via-callout"
+                                      style="background-color:#F7F9FB;border:1px solid #E6E9EF;border-radius:12px;padding:8px 22px;margin:0 0 22px">
                                       <tbody>
                                         <tr>
                                           <td>
@@ -144,18 +178,52 @@
                                               <tbody style="width:100%">
                                                 <tr style="width:100%">
                                                   <td
+                                                    class="via-kv-label"
                                                     data-id="__react-email-column"
-                                                    style="padding:11px 0">
+                                                    style="padding:11px 16px 11px 0;vertical-align:top">
                                                     <p
-                                                      style="font-size:14px;line-height:1.4;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#667085;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
+                                                      style="font-size:14px;line-height:1.45;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#667085;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
+                                                      Impacto
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    class="via-kv-value"
+                                                    data-id="__react-email-column"
+                                                    style="padding:11px 0;text-align:right;vertical-align:top">
+                                                    <p
+                                                      style="font-size:14px;line-height:1.45;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:600;color:#0A1F3B;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
+                                                      Mensagens da Nina em fila
+                                                      (não perdidas)
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <table
+                                              align="center"
+                                              width="100%"
+                                              border="0"
+                                              cellpadding="0"
+                                              cellspacing="0"
+                                              role="presentation"
+                                              style="border-bottom:1px solid #EFF1F5">
+                                              <tbody style="width:100%">
+                                                <tr style="width:100%">
+                                                  <td
+                                                    class="via-kv-label"
+                                                    data-id="__react-email-column"
+                                                    style="padding:11px 16px 11px 0;vertical-align:top">
+                                                    <p
+                                                      style="font-size:14px;line-height:1.45;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#667085;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
                                                       Evento
                                                     </p>
                                                   </td>
                                                   <td
+                                                    class="via-kv-value"
                                                     data-id="__react-email-column"
-                                                    style="padding:11px 0;text-align:right">
+                                                    style="padding:11px 0;text-align:right;vertical-align:top">
                                                     <p
-                                                      style="font-size:14px;line-height:1.4;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:500;color:#0A1F3B;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
+                                                      style="font-size:14px;line-height:1.45;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:500;color:#0A1F3B;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
                                                       Webhook timeout · HTTP 504
                                                     </p>
                                                   </td>
@@ -173,48 +241,21 @@
                                               <tbody style="width:100%">
                                                 <tr style="width:100%">
                                                   <td
+                                                    class="via-kv-label"
                                                     data-id="__react-email-column"
-                                                    style="padding:11px 0">
+                                                    style="padding:11px 16px 11px 0;vertical-align:top">
                                                     <p
-                                                      style="font-size:14px;line-height:1.4;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#667085;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
+                                                      style="font-size:14px;line-height:1.45;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#667085;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
                                                       Desde
                                                     </p>
                                                   </td>
                                                   <td
+                                                    class="via-kv-value"
                                                     data-id="__react-email-column"
-                                                    style="padding:11px 0;text-align:right">
+                                                    style="padding:11px 0;text-align:right;vertical-align:top">
                                                     <p
-                                                      style="font-size:14px;line-height:1.4;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:500;color:#0A1F3B;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
+                                                      style="font-size:14px;line-height:1.45;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:500;color:#0A1F3B;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
                                                       hoje 14:08
-                                                    </p>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                            <table
-                                              align="center"
-                                              width="100%"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              role="presentation"
-                                              style="border-bottom:1px solid #EFF1F5">
-                                              <tbody style="width:100%">
-                                                <tr style="width:100%">
-                                                  <td
-                                                    data-id="__react-email-column"
-                                                    style="padding:11px 0">
-                                                    <p
-                                                      style="font-size:14px;line-height:1.4;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#667085;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
-                                                      Componente
-                                                    </p>
-                                                  </td>
-                                                  <td
-                                                    data-id="__react-email-column"
-                                                    style="padding:11px 0;text-align:right">
-                                                    <p
-                                                      style="font-size:14px;line-height:1.4;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:500;color:#0A1F3B;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
-                                                      provider de embeddings
                                                     </p>
                                                   </td>
                                                 </tr>
@@ -231,20 +272,21 @@
                                               <tbody style="width:100%">
                                                 <tr style="width:100%">
                                                   <td
+                                                    class="via-kv-label"
                                                     data-id="__react-email-column"
-                                                    style="padding:11px 0">
+                                                    style="padding:11px 16px 11px 0;vertical-align:top">
                                                     <p
-                                                      style="font-size:14px;line-height:1.4;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#667085;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
-                                                      Impacto
+                                                      style="font-size:14px;line-height:1.45;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#667085;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
+                                                      Componente
                                                     </p>
                                                   </td>
                                                   <td
+                                                    class="via-kv-value"
                                                     data-id="__react-email-column"
-                                                    style="padding:11px 0;text-align:right">
+                                                    style="padding:11px 0;text-align:right;vertical-align:top">
                                                     <p
-                                                      style="font-size:16px;line-height:1.4;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:600;color:#0A1F3B;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
-                                                      Mensagens da Nina em fila
-                                                      (não perdidas)
+                                                      style="font-size:14px;line-height:1.45;margin:0;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-weight:500;color:#0A1F3B;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0">
+                                                      provider de embeddings
                                                     </p>
                                                   </td>
                                                 </tr>
@@ -274,6 +316,7 @@
                                           <td>
                                             <a
                                               href="https://app.viverdeia.ai/status"
+                                              class="via-btn"
                                               style="line-height:100%;text-decoration:none;display:inline-block;max-width:100%;mso-padding-alt:0px;background-color:#0A1F3B;background-image:linear-gradient(180deg, #16335C 0%, #0A1F3B 58%);color:#FFFFFF;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;font-size:15px;font-weight:500;letter-spacing:-0.01em;border-radius:999px;padding:13px 26px;border:1px solid #02162A;padding-top:13px;padding-right:26px;padding-bottom:13px;padding-left:26px"
                                               target="_blank"
                                               ><span
@@ -310,46 +353,90 @@
                       cellpadding="0"
                       cellspacing="0"
                       role="presentation"
-                      style="padding:22px 6px 36px">
+                      style="padding:22px 0 36px">
                       <tbody>
                         <tr>
                           <td>
-                            <img
-                              alt="Viver de IA"
-                              height="14"
-                              src="https://viver-de-ia-ds.vercel.app/logos/monogram-navy.png"
-                              style="display:block;outline:none;border:0;text-decoration:none;margin-bottom:12px"
-                              width="26" />
-                            <p
-                              style="font-size:13px;line-height:1.6;margin:0 0 6px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#4F596B;margin-top:0;margin-right:0;margin-bottom:6px;margin-left:0">
-                              Você recebeu este alerta porque é responsável
-                              técnico nesta conta.
-                            </p>
-                            <p
-                              style="font-size:13px;line-height:1.6;margin:0 0 6px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#4F596B;margin-top:0;margin-right:0;margin-bottom:6px;margin-left:0">
-                              <a
-                                href="https://app.viverdeia.ai/preferencias"
-                                style="color:#0A1F3B;text-decoration-line:none;text-decoration:underline"
-                                target="_blank"
-                                >Gerenciar preferências</a
-                              >
-                              ·
-                              <a
-                                href="https://app.viverdeia.ai/descadastrar"
-                                style="color:#0A1F3B;text-decoration-line:none;text-decoration:underline"
-                                target="_blank"
-                                >Descadastrar</a
-                              >
-                            </p>
-                            <p
-                              style="font-size:12px;line-height:1.6;margin:0 0 4px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#636D80;margin-top:0;margin-right:0;margin-bottom:4px;margin-left:0">
-                              Viver de IA · mentoria + comunidade + Leaders AI
-                              Conference
-                            </p>
-                            <p
-                              style="font-size:12px;line-height:1.6;margin:0 0 4px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#636D80;margin-top:0;margin-right:0;margin-bottom:4px;margin-left:0">
-                              © Viver de IA. Todos os direitos reservados.
-                            </p>
+                            <table
+                              align="center"
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              style="padding:0 0 6px">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <table
+                                      role="presentation"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      border="0">
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="background-color:#EDF0F4;background-image:linear-gradient(#EDF0F4, #EDF0F4);border-radius:8px;padding:6px">
+                                            <img
+                                              alt="Viver de IA"
+                                              height="14"
+                                              src="https://viver-de-ia-ds.vercel.app/logos/monogram-navy.png"
+                                              style="display:block;outline:none;border:0;text-decoration:none"
+                                              width="26" />
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table
+                              align="center"
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              style="padding:0 6px">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <p
+                                      style="font-size:13px;line-height:1.6;margin:0 0 6px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#4F596B;margin-top:0;margin-right:0;margin-bottom:6px;margin-left:0">
+                                      Você recebeu este alerta porque é
+                                      responsável técnico nesta conta.
+                                    </p>
+                                    <p
+                                      style="font-size:13px;line-height:1.6;margin:0 0 6px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#4F596B;margin-top:0;margin-right:0;margin-bottom:6px;margin-left:0">
+                                      <a
+                                        href="https://app.viverdeia.ai/preferencias"
+                                        style="color:#0A1F3B;text-decoration-line:none;text-decoration:underline"
+                                        target="_blank"
+                                        >Gerenciar preferências</a
+                                      >
+                                      ·
+                                      <a
+                                        href="https://app.viverdeia.ai/descadastrar"
+                                        style="color:#0A1F3B;text-decoration-line:none;text-decoration:underline"
+                                        target="_blank"
+                                        >Descadastrar</a
+                                      >
+                                    </p>
+                                    <p
+                                      style="font-size:12px;line-height:1.6;margin:0 0 4px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#636D80;margin-top:0;margin-right:0;margin-bottom:4px;margin-left:0">
+                                      Viver de IA · mentoria + comunidade +
+                                      Leaders AI Conference
+                                    </p>
+                                    <p
+                                      style="font-size:12px;line-height:1.6;margin:0 0 4px;font-family:&#x27;Geist&#x27;,&#x27;Inter&#x27;,-apple-system,BlinkMacSystemFont,&#x27;Segoe UI&#x27;,Roboto,Helvetica,Arial,sans-serif;color:#636D80;margin-top:0;margin-right:0;margin-bottom:4px;margin-left:0">
+                                      © Viver de IA. Todos os direitos
+                                      reservados.
+                                    </p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </td>
                         </tr>
                       </tbody>

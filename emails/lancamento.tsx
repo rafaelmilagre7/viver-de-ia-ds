@@ -24,6 +24,7 @@ export default function LancamentoEmail({ firstName, turma, opensAt, spots, dura
   return (
     <Layout
       preview={`${turma} abre ${opensAt}. ${spots}. Sem lista de espera depois que fecha.`}
+      variant="brand"
       reason="Você recebeu este email porque pediu pra saber quando a próxima turma abrisse."
       hero={{ eyebrow: 'Inscrições', title: <>A {turma} abre {opensAt}.</> }}
     >

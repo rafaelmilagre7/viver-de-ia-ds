@@ -24,6 +24,7 @@ export default function EventInviteEmail({ firstName, title, date, format, spots
   return (
     <Layout
       preview={`${title} · ${date}. Vaga limitada, sem replay.`}
+      variant="brand"
       reason="Você recebeu este convite porque faz parte da comunidade Viver de IA."
       hero={{ eyebrow: 'Convite · ao vivo', title: <>{title}</> }}
     >
