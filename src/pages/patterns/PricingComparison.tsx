@@ -24,7 +24,7 @@ interface FeatureRow {
 const TIERS: Tier[] = [
   { id: 'starter', name: 'Starter', amount: 'R$ 2.580', per: '/mês', description: 'Plataforma, soluções e comunidade', cta: 'Assinar Starter' },
   { id: 'pro', name: 'Pro', amount: 'R$ 3.780', per: '/mês', description: 'Com 10 check-ins de mentoria em grupo por mês', recommended: true, cta: 'Assinar Pro' },
-  { id: 'enterprise', name: 'Enterprise', amount: 'R$ 6.180', per: '/mês', description: 'Com 1 hora por mês de mentoria individual', cta: 'Falar com vendas' },
+  { id: 'enterprise', name: 'Enterprise', amount: 'R$ 6.180', per: '/mês', description: 'Mentoria individual, implementação assistida e AI Builder', cta: 'Falar com vendas' },
 ];
 
 const ROWS: FeatureRow[] = [
@@ -33,11 +33,13 @@ const ROWS: FeatureRow[] = [
   { group: 'Mentoria', feature: 'Mentoria em grupo ao vivo', values: [false, '10 por mês', true] },
   { group: 'Mentoria', feature: 'Mentoria individual', values: [false, false, '1h por mês'] },
   { group: 'Mentoria', feature: 'Implementação assistida', values: [false, false, true] },
+  { group: 'Mentoria', feature: 'Arquiteto de soluções AI Builder', values: [false, false, true] },
   { group: 'Conteúdo', feature: 'Soluções Plug-and-Play', values: [true, true, true] },
   { group: 'Conteúdo', feature: 'Formações práticas', values: [true, true, true] },
   { group: 'Conteúdo', feature: 'Soluções premium', values: [false, true, true] },
   { group: 'Suporte', feature: 'Consultor IA na plataforma · 24/7', values: [true, true, true] },
   { group: 'Suporte', feature: 'Suporte prioritário', values: [false, true, true] },
+  { group: 'Suporte', feature: 'SLA dedicado', values: [false, false, true] },
 ];
 
 const PRINCIPLES = [
@@ -56,7 +58,7 @@ export default function PricingComparison() {
         lede="Tabela de comparação de planos com os recursos agrupados. Mostra check/X explícito · valor numérico quando faz diferença (10 por mês). O plano recomendado eleva o card e intensifica a atmosfera navy — sem cor gritante. CTA por coluna."
       />
 
-      <Section meta="comparação completa" title="3 planos · 10 recursos agrupados">
+      <Section meta="comparação completa" title="3 planos · 12 recursos agrupados">
         <p style={{ margin: '0 0 32px', fontSize: 13.5, color: 'var(--via-text-muted)', lineHeight: 1.65 }}>
           Starter · Pro · Enterprise, em contratação anual. Cada recurso é binário (check/X) ou tem valor (10 por mês, 1h por mês). Grupos visuais separam Comunidade · Mentoria · Conteúdo · Suporte.
         </p>

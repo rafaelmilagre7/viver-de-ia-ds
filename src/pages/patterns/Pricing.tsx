@@ -76,7 +76,7 @@ function ComparisonTableSection() {
   const plans = [
     { name: 'Starter', price: '2.580', period: '/mês', desc: 'Plataforma, soluções, formações e comunidade' },
     { name: 'Pro', price: '3.780', period: '/mês', desc: 'Starter + mentoria em grupo ao vivo', highlight: true },
-    { name: 'Enterprise', price: '6.180', period: '/mês', desc: 'Pro + 1 hora por mês de mentoria individual' },
+    { name: 'Enterprise', price: '6.180', period: '/mês', desc: 'Pro + 1 hora por mês de mentoria individual + AI Builder' },
   ];
 
   const groups = [
@@ -95,6 +95,7 @@ function ComparisonTableSection() {
         { feat: 'Mentoria em grupo ao vivo', vals: [false, '10 / mês', true] },
         { feat: 'Mentoria individual', vals: [false, false, '1h / mês'] },
         { feat: 'Implementação assistida', vals: [false, false, true] },
+        { feat: 'Arquiteto de soluções AI Builder', vals: [false, false, true] },
       ],
     },
     {
@@ -110,12 +111,13 @@ function ComparisonTableSection() {
       rows: [
         { feat: 'Soluções premium', vals: [false, true, true] },
         { feat: 'Suporte prioritário', vals: [false, true, true] },
+        { feat: 'SLA dedicado', vals: [false, false, true] },
       ],
     },
   ];
 
   return (
-    <Section title="Comparação completa · 3 planos lado a lado" meta="12 recursos agrupados · plano destacado em navy">
+    <Section title="Comparação completa · 3 planos lado a lado" meta="14 recursos agrupados · plano destacado em navy">
       <div className="vds-cmp">
         {/* Sticky header com plans */}
         <header className="vds-cmp-head">
@@ -187,7 +189,7 @@ function ComparisonTableSection() {
         {/* Footer note */}
         <footer className="vds-cmp-foot">
           <p>
-            Todos os planos em contratação anual · upgrade a qualquer momento, mediante a diferença de valor.
+            Todos os planos em contratação anual · upgrade a qualquer momento, mediante a diferença de valor. Enterprise inclui SLA dedicado e implementação assistida.
           </p>
         </footer>
       </div>

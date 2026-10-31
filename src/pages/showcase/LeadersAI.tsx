@@ -77,9 +77,10 @@ const days: { n: number; date: string; note: string; slots: Slot[] }[] = [
 type Speaker = { name: string; role: string; talk: string; initials?: string; photo?: string; lead?: boolean };
 
 /* Destaque + 4 = grade fechada em qualquer largura (sem card órfão).
-   Com foto: preencha `photo` e o retrato troca as iniciais pela imagem. */
+   Com foto: preencha `photo` (caminho sem extensão · .webp + .jpg em public/fotos)
+   e o retrato troca as iniciais pela imagem, com o duotone da marca. */
 const speakers: Speaker[] = [
-  { name: 'Rafael Milagre', role: 'Fundador · Viver de IA', talk: 'Abertura do dia 1 e encerramento do dia 2', initials: 'RM', lead: true },
+  { name: 'Rafael Milagre', role: 'Fundador · Viver de IA', talk: 'Abertura do dia 1 e encerramento do dia 2', initials: 'RM', photo: '/fotos/rafael-milagre', lead: true },
   { name: '[Palestrante 2]', role: '[cargo] · [empresa]', talk: 'Palestra principal · O fim da era do prompt' },
   { name: '[Palestrante 3]', role: '[cargo] · [empresa]', talk: 'Painel · Casos reais com receita atrelada' },
   { name: '[Palestrante 4]', role: '[cargo] · [empresa]', talk: 'Workshop · Métricas que importam' },
@@ -248,9 +249,12 @@ export default function ShowcaseLeadersAI() {
           <ul className="la-people">
             {speakers.map((s) => (
               <li key={s.name} className={`la-person${s.lead ? ' is-lead' : ''}`}>
-                <div className="la-portrait">
+                <div className={`la-portrait${s.photo ? ' via-photo via-photo--duotone' : ''}`}>
                   {s.photo ? (
-                    <img src={s.photo} alt="" />
+                    <picture>
+                      <source srcSet={`${s.photo}.webp`} type="image/webp" />
+                      <img src={`${s.photo}.jpg`} alt={`Retrato de ${s.name}`} width={512} height={512} loading="lazy" decoding="async" />
+                    </picture>
                   ) : s.initials ? (
                     <span className="la-initials" aria-hidden="true">{s.initials}</span>
                   ) : (

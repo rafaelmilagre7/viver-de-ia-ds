@@ -10,6 +10,7 @@ import './lancamento-turma.css';
    Troque os textos em CONFIG e a landing está pronta pra subir.
    Números do negócio SÓ da ficha de fatos (public/fatos.md):
    o que não estiver lá vira placeholder ([N], R$ [valor], [data]).
+   Cases citados: números da página de cada case em viverdeia.ai/cases.
    ============================================================ */
 
 const CONFIG = {
@@ -56,8 +57,8 @@ const passos = [
 
 /* Cases do site oficial · o valor de cada case não está na ficha → placeholder */
 const cases = [
-  { q: 'Transformou gestão manual em eficiência digital e economiza R$ [valor] por ano.', nome: 'Place Dreams', setor: 'Tecnologia' },
-  { q: 'De processos manuais a R$ [valor] de economia anual, escalando a produção de conteúdo.', nome: 'Trivia Studio', setor: 'Agência' },
+  { q: 'Transformou gestão manual em eficiência digital e economiza R$ 42.000 por ano em 30 dias.', nome: 'Place Dreams', setor: 'Tecnologia' },
+  { q: 'De processos manuais a R$ 120.000 de economia anual, escalando a produção de conteúdo.', nome: 'Trivia Studio', setor: 'Agência' },
 ];
 
 const lideres = [
