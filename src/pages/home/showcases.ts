@@ -20,7 +20,7 @@ export const SHOWCASES: ShowcaseTile[] = [
   {
     slug: 'leaders-ai',
     alt: 'Prévia do site da Leaders AI Conference: hero com o título do evento.',
-    blurb: 'Conferência com agenda, speakers e ingressos.',
+    blurb: 'Conferência com agenda, palestrantes e ingressos.',
   },
   {
     slug: 'aluno',

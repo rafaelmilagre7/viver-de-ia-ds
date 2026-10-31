@@ -1030,15 +1030,19 @@ a:hover { text-decoration: underline; }
   border-radius: var(--via-radius-md);
 }
 
-.via-card {
-  background: var(--via-white);
+/* :where() = especificidade zero: o utilitário serve HTML cru, mas nunca vence a
+   variante do <Card> da lib (antes, conforme a ordem de carga, pintava o
+   variant="glass" de branco — laje branca no escuro). Superfície semântica
+   pra o escuro se resolver sozinho. */
+:where(.via-card) {
+  background: var(--via-surface);
   border: var(--via-border-fine);
   border-radius: var(--via-radius-lg);
   box-shadow: var(--via-shadow-sm);
   padding: var(--via-space-6);
 }
 
-.via-card-dark {
+:where(.via-card-dark) {
   background: var(--via-navy);
   border-radius: var(--via-radius-lg);
   padding: var(--via-space-6);

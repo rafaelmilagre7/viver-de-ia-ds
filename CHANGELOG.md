@@ -6,6 +6,15 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Design · rodada 7 — home, institucional e fotografia (31/out · plugin 1.14.0)
+
+- **Home**: hero claro com peças vivas da library (gráfico de uma série, preferências com o switch que troca o tema de verdade, progresso); números do sistema calculados da navegação e da busca (nenhum fixo — rodapé também); mosaico das 7 páginas-modelo com miniaturas reais nos dois temas (`scripts/home-thumbs.mjs` refaz); bento das camadas do sistema com um detalhe visual próprio em cada peça; bloco "Usar com IA" (guia, kit, `llms.txt`, ficha de fatos, plugin).
+- **Site institucional** (`/showcase/marketing`): hero preservado; a empresa, como funciona (4 passos + prévia da plataforma), 521 em numeral gigante com 157 e 29, os 4 cases reais (Viva Nexo em destaque), quem está por trás com a foto do fundador, planos só com dados da ficha e a garantia na frase oficial; navy só no fechamento.
+- **Fotografia** (`/iconography/photography`): sai a página de placeholders; entra a referência real — natural × duotone, proporções, enquadramento certo e errado, foto sob vidro, claro e escuro, monograma quando não há foto (`.via-photo--monogram` + `__initials`), faça/evite e a lista de fotos que a marca precisa.
+- **Avatar** com foto e queda pras iniciais quando a foto falha; a página parou de redefinir `.via-avatar` globalmente. **Pessoas**: perfil, grade do time e prévia com foto ou monograma, sem números inventados.
+- **Correções da integração**: o utilitário `.via-card` do `tokens.css` passou a `:where()` (especificidade zero) com superfície semântica — não pinta mais o `<Card variant="glass">` de branco no escuro; `Progress` ganhou rampa própria no escuro (navy sobre o fundo escuro sumia); menu móvel das vitrines com toque de 44px; "R$ R$" duplicado no preço do lançamento (o corte do prefixo procurava espaço comum) e régua do controle deslizante em pt-BR.
+- **Instruções das IAs**: seção de fotografia, variação neutra, números pt-BR, foco e apertar por token.
+
 ### Design · rodada 6 — páginas-modelo recompostas (31/out)
 
 - **Lançamento** (`/showcase/lancamento`): hero claro e assimétrico com a ficha do Plano Pro em vidro ao lado; dores em lista tipográfica; bento com prévia real da biblioteca de soluções (157), mentoria (10 check-ins), Consultor IA e setores (29); linha do tempo dos 90 dias até a frase oficial da garantia; 521 em numeral gigante com 2 cases reais; planos lado a lado; navy só no fechamento (no escuro ele sobe um degrau e continua se destacando). Layout responde à largura da coluna, não da janela.

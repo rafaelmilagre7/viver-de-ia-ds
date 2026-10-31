@@ -103,6 +103,23 @@
     0 0 10px -2px rgba(184, 92, 92, 0.32);
 }
 
+/* ===== Escuro · rampa clara própria (passo de dado do dark, não flip) =====
+   Navy sobre o canvas escuro sumia: trilho em navy-10 e barra navy→blue
+   davam ~1,2:1 contra o fundo. No escuro o trilho vira um filete claro e a
+   barra usa os degraus de dado do tema escuro. */
+[data-theme="dark"] .via-progress__track {
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 1px 2px var(--via-shadow-ink-20);
+}
+[data-theme="dark"] .via-progress--navy .via-progress__fill {
+  background: linear-gradient(90deg, var(--via-data-1-dark), var(--via-data-2));
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+}
+[data-theme="dark"] .via-progress--accent .via-progress__fill {
+  background: linear-gradient(90deg, var(--via-data-1), var(--via-data-1-dark));
+  box-shadow: inset 0 1px 0 var(--via-edge-hi);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .via-progress__fill::after { animation: none !important; }
   .via-progress__fill { transition: transform var(--via-dur-quick) var(--via-ease-snap) !important; }

@@ -15,7 +15,7 @@ const SITE_URL = 'https://viver-de-ia-ds.vercel.app';
 const SITE_NAME = 'Viver de IA Design System';
 const HOME_TITLE = 'Viver de IA · Design System';
 const HOME_DESCRIPTION =
-  'Design System Viver de IA — marca editorial, navy profundo, vidro líquido e tipografia Geist. Mais de 100 páginas vivas, 46 componentes React e 14 emails de produção.';
+  'Design System Viver de IA — marca editorial, navy profundo, vidro líquido e tipografia Geist. Mais de 100 páginas vivas, 47 componentes React e 14 emails de produção.';
 
 // Rótulos da nav que não funcionam como título de aba
 const TITLE_OVERRIDES: Record<string, string> = {

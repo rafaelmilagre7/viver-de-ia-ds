@@ -30,7 +30,7 @@ export default function Library() {
         lede={
           <>
             A library <code className="vds-code-inline">src/lib/</code> é a fundação de produção do
-            design system — 46 componentes de UI + ThemeProvider, todos com TypeScript types,
+            design system — 47 componentes de UI + ThemeProvider, todos com TypeScript types,
             variants e CSS encapsulado. Esta página demonstra os 31 componentes core; os outros 15
             têm página de API própria. Importe em qualquer projeto Viver de IA: Nina, Íris,
             ExecSeats, plataforma. Mesmo visual, zero copy-paste.

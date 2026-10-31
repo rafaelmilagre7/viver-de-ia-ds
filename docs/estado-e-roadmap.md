@@ -115,6 +115,38 @@ operadores", "R$ 1,8M", "turma 2026"); 86 classes de botão próprias (já pílu
 páginas; `top: 64px` fixo nos navs das vitrines; MultiSelect demora ~180ms pra fechar; mola só conferida
 em Chromium headless.
 
+## Próximo nível (31/out) — rodadas 5 a 7
+
+Pedido do Rafael: "continue dando o upgrade visual… levar para o próximo nível". Duas auditorias novas
+(páginas-vitrine e detalhes), depois 10 frentes em paralelo (worktrees), cada uma com antes/depois em
+1440/390 × claro/escuro, integradas e verificadas no main (lint, unit, a11y 164 rotas, visual 234 telas).
+5. **Correções de qualidade** (7f8e2fe): reflexo do botão cheio legível (2,6 → 11,7:1), foco e apertar
+   por token na lib, títulos sem órfã, números pt-BR (`format.ts` + 179 R$ colados), variação neutra,
+   DRE legível em toda largura, estados de gráfico, telas de estado claras, emails com cabeçalho claro e
+   regra de celular, celular das vitrines, conteúdo sem afirmação sem fonte.
+6. **Vitrines recompostas** (7f8e2fe): lançamento (hero claro assimétrico, bento, linha do tempo dos 90
+   dias, 521 gigante) e Leaders AI (claro com um palco escuro, agenda editorial, ingressos); receita
+   `.via-photo` e foto do fundador.
+7. **Institucional, fotografia e home**: /showcase/marketing conta a história da empresa; página de
+   fotografia real (receita, enquadramento, foto sob vidro, monograma, lista de fotos que a marca precisa);
+   avatar com foto; pessoas com foto/monograma; home recomposta.
+
+Lição: `--update-snapshots` sem `=all` só reescreve o que estoura a tolerância (0,5%) — um "R$ R$" no
+preço passou pela régua visual. Na integração, regravar com `=all` e commitar só as telas cujo pixel mudou. O conserto de texto em massa (espaço inseparável) quebrou um
+`.replace('R$ ', '')`; varredura de todas as rotas por prefixo duplicado agora faz parte da integração.
+
+Em aberto depois desta rodada:
+- **Fotos reais** (decisão/entrega do Rafael): só existe o retrato do fundador (512px — suave em retina;
+  ideal 1024px+). Lista do que a marca precisa em /iconography/photography.
+- Avatar da lib sem foto ainda cai num círculo navy (a receita de monograma é clara); status do avatar
+  é `aria-hidden` (não é anunciado).
+- `ContextMenu`, `DatePicker`, raiz do `Carousel` e `Splitter` ainda com foco por box-shadow.
+- `surfaces.css` (pill-link, row-card, tile) com apertar/foco próprios — alinhar a `--via-press-scale`/`--via-focus-*`.
+- Motion-drift ainda só na lib (214 transições com ms cru nas páginas).
+- Ficha de fatos não captura a lista de recursos dos planos (AI Builder, SLA dedicado estão em
+  viverdeia.ai/planos) — hoje entram por conferência manual.
+- Login das vitrines ainda em fundo navy; emails de produção ainda falam em turma/vagas (oferta antiga).
+
 ## IA criando na marca (30/out) — logo em vetor + prova real com IAs
 
 Pedido do Rafael: o marketing não desenha à mão; o foco é a IA criar as peças já na marca.

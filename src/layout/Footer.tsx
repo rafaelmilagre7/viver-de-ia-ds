@@ -1,4 +1,8 @@
 import BrandLogo from '../components/BrandLogo';
+import { buildSearchIndex } from '../data/searchIndex';
+
+/* contado da busca (mesma fonte da home) · número fixo envelhecia */
+const PAGINAS = buildSearchIndex().length;
 
 export default function Footer() {
   return (
@@ -49,7 +53,7 @@ export default function Footer() {
       <div className="vds-footer-bottom">
         <span>Versão 0.6 · em evolução</span>
         <span className="vds-footer-bottom-dot">·</span>
-        <span>166 páginas vivas</span>
+        <span>{PAGINAS} páginas vivas</span>
         <span className="vds-footer-bottom-dot">·</span>
         <span>Geist (Vercel) + Liquid Glass</span>
         <span className="vds-footer-bottom-meta">São Paulo</span>
