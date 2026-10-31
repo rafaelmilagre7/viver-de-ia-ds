@@ -139,12 +139,12 @@ function TransactionalSection() {
         <EmailFrame
           category="Transacional · welcome"
           from="Rafael · Viver de IA"
-          subject="Bem-vindo. Próximos passos em 3 atos."
+          subject="Boas-vindas. Próximos passos em 3 atos."
           preview="sua adesão ao plano Pro tá confirmada. antes do primeiro check-in, faz isso aqui pra entrar no ritmo."
           time="hoje · 09:14"
           notes={{
             when: 'Imediatamente após confirmação de pagamento',
-            voice: 'caloroso, mas factual · "você" infinitivo · primeira frase entrega o assunto',
+            voice: 'caloroso, mas factual · “você” infinitivo · primeira frase entrega o assunto',
             vars: ['{membro_first_name}', '{plano_nome}', '{onboarding_start_date}'],
           }}
         >
@@ -203,7 +203,7 @@ function TransactionalSection() {
           time="qua · 18:22"
           notes={{
             when: '48h antes da cobrança · uma vez só · sem follow-up agressivo',
-            voice: 'concierge-direto · primeira frase = fato + valor + label · sem "esperamos que esteja bem"',
+            voice: 'concierge-direto · primeira frase = fato + valor + label · sem “esperamos que esteja bem”',
             vars: ['{cobranca_data}', '{cobranca_valor}', '{plano_atual}', '{aluno_first_name}'],
           }}
         >
@@ -266,7 +266,7 @@ function TransactionalSection() {
               </span>
               <div>
                 <strong>Cobrança não passou · R$ 3.780</strong>
-                <em>motivo do banco: "fundos insuficientes" · cartão Visa •••• 4521</em>
+                <em>motivo do banco: “fundos insuficientes” · cartão Visa •••• 4521</em>
               </div>
             </div>
 
@@ -320,7 +320,7 @@ function EditorialSection() {
           time="dom · 19:42"
           notes={{
             when: 'Domingo 19h · semanal · uma única edição por semana',
-            voice: 'crônica de operador · começa com case real publicado · sem curadoria "5 dicas"',
+            voice: 'crônica de operador · começa com case real publicado · sem curadoria “5 dicas”',
             vars: ['{membro_first_name}', '{semana_numero}', '{case_referencia}'],
           }}
         >
@@ -401,7 +401,7 @@ function EditorialSection() {
           time="ter · 11:14"
           notes={{
             when: '12-24h após o evento · enquanto memória ainda quente',
-            voice: 'crônica curta · case + 2-3 highlights + link pra gravação · sem "obrigado por participar"',
+            voice: 'crônica curta · case + 2-3 highlights + link pra gravação · sem “obrigado por participar”',
             vars: ['{evento_nome}', '{evento_data}', '{recap_link}', '{proximo_evento}'],
           }}
         >
@@ -422,21 +422,21 @@ function EditorialSection() {
                 <span className="t mono">12:08</span>
                 <div>
                   <strong>Prompt do João · SDR de fintech</strong>
-                  <em>"agente respondia 'eu sou IA' quando perguntavam quem era. fix em 3 linhas — antes/depois lado a lado"</em>
+                  <em>“agente respondia 'eu sou IA' quando perguntavam quem era. fix em 3 linhas — antes/depois lado a lado”</em>
                 </div>
               </li>
               <li>
                 <span className="t mono">34:51</span>
                 <div>
                   <strong>Prompt da Ana · automação de proposta</strong>
-                  <em>"saída JSON quebrada · adicionei schema validation no system prompt · rodou primeira tentativa"</em>
+                  <em>“saída JSON quebrada · adicionei schema validation no system prompt · rodou primeira tentativa”</em>
                 </div>
               </li>
               <li>
                 <span className="t mono">58:22</span>
                 <div>
                   <strong>Prompt do Bruno · onboarding de cliente</strong>
-                  <em>"contexto longo demais consumindo tokens · reorganizei pra carregar só o necessário · custo por conversa caiu"</em>
+                  <em>“contexto longo demais consumindo tokens · reorganizei pra carregar só o necessário · custo por conversa caiu”</em>
                 </div>
               </li>
             </ol>
@@ -470,7 +470,7 @@ function DripSequence() {
       delay: 'D+3 (3 dias após optin)',
       subject: 'A solução que paga o plano',
       lead:
-        'maioria das empresas chega achando que vai aprender "prompt engineering". o foco é outro · colocar uma solução pronta pra operar todo dia.',
+        'maioria das empresas chega achando que vai aprender “prompt engineering”. o foco é outro · colocar uma solução pronta pra operar todo dia.',
     },
     {
       n: 2,
@@ -734,8 +734,8 @@ function CommercialSection() {
           preview="plataforma + mentoria ao vivo · R$ 3.780/mês em contratação anual · garantia de 90 dias."
           time="ter · 17:08"
           notes={{
-            when: 'Dia do lançamento · um email só · sem 3 emails seguidos "ÚLTIMAS HORAS"',
-            voice: 'fato + condição + razão pra entrar agora · não é "JÁ ABRE!!!"',
+            when: 'Dia do lançamento · um email só · sem 3 emails seguidos “ÚLTIMAS HORAS”',
+            voice: 'fato + condição + razão pra entrar agora · não é “JÁ ABRE!!!”',
             vars: ['{plano_nome}', '{plano_preco}', '{plano_mentoria}', '{plano_contratacao}'],
           }}
         >
@@ -812,7 +812,7 @@ function CommercialSection() {
           time="qui · 09:42"
           notes={{
             when: 'Quando aluno demonstra perfil pra upgrade · análise manual, não automatizada',
-            voice: 'observacional · começa pelo que viu no aluno · sem "oferta especial"',
+            voice: 'observacional · começa pelo que viu no aluno · sem “oferta especial”',
             vars: ['{aluno_first_name}', '{modulo_concluido}', '{evidencia_perfil}'],
           }}
         >
@@ -876,7 +876,7 @@ function LifecycleSection() {
           time="seg · 11:14"
           notes={{
             when: 'D+14 da última atividade · uma única vez · não escala em sequência',
-            voice: 'curioso-humano · NÃO comercial · pergunta sem cobrar · oferece "pausa" se necessário',
+            voice: 'curioso-humano · NÃO comercial · pergunta sem cobrar · oferece “pausa” se necessário',
             vars: ['{aluno_first_name}', '{dias_inativo}', '{ultima_atividade}'],
           }}
         >

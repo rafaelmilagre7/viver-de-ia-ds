@@ -13,7 +13,7 @@ export default function Stats() {
   return (
     <>
       <DocsHeader
-        eyebrow="Componentes · stats"
+        eyebrow="Componentes · estatísticas"
         title={<>Número <em>grande</em>, contexto pequeno.</>}
         lede="Stats são tipografia de primeira classe — Geist semibold em tabular-nums, navy. O eyebrow uppercase em cima nomeia. A linha abaixo dá o contexto humano ('Assessoria MAP'). Sem barras, sem gráficos — o número fala."
       />

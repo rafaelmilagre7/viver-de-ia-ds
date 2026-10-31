@@ -106,7 +106,7 @@ function FullTableSection() {
       id: 'OP-2026-0476',
       av: 'DP',
       name: 'Davi Prado',
-      role: 'Founder · Pivot',
+      role: 'Fundador · Pivot',
       plan: 'Pro',
       planType: 'mentoria',
       mrr: 3780,

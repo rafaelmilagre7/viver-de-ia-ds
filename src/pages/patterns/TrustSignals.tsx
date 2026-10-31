@@ -10,7 +10,7 @@ export default function TrustSignals() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · trust signals"
+        eyebrow="Padrões · prova social"
         title={
           <>
             Os sinais de credibilidade — <em>tratados com peso de marca</em>.
@@ -34,7 +34,7 @@ function TrustStripSection() {
   ];
 
   return (
-    <Section title="Strip de clientes · logo wall editorial" meta="lista mono com separadores · sem grid de logos cinzas">
+    <Section title="Faixa de clientes · parede de logos editorial" meta="lista mono com separadores · sem grade de logos cinzas">
       <article className="vds-trust-strip">
         <header>
           <span className="vds-trust-eyebrow">Empresas com case publicado</span>
@@ -74,7 +74,7 @@ function TrustStatsSection() {
   ];
 
   return (
-    <Section title="Stats grid · números editoriais" meta="cada bloco com display Geist + microcopy contextual">
+    <Section title="Grade de números · editorial" meta="cada bloco com display Geist + microcopy contextual">
       <div className="vds-trust-stats">
         {stats.map((s) => (
           <article key={s.v} className="vds-trust-stat">
@@ -192,7 +192,7 @@ function TrustAwardsSection() {
   ];
 
   return (
-    <Section title="Reconhecimentos · awards + certificações" meta="ícones Lucide · grid 4 colunas · footer com fonte/ano">
+    <Section title="Reconhecimentos · prêmios + certificações" meta="ícones Lucide · grade de 4 colunas · rodapé com fonte e ano">
       <div className="vds-trust-awards">
         {awards.map((a, i) => {
           const Icon = a.ico;

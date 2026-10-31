@@ -14,7 +14,7 @@ export default function Commercial() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · commercial / sales"
+        eyebrow="Padrões · material comercial"
         title={
           <>
             Material comercial com <em>peso editorial</em>.
@@ -226,7 +226,7 @@ function CaseStudySection() {
             <p>
               [O que travava o resultado · em 2-3 frases, com o dado do case] ·
               o que o time tentou antes, por que não funcionou e o que estava
-              em jogo se nada mudasse. Sem adjetivo, sem "revolucionou" —
+              em jogo se nada mudasse. Sem adjetivo, sem “revolucionou” —
               só o problema como ele aparecia na operação.
             </p>
           </article>

@@ -135,7 +135,7 @@ export default function Typography() {
           Stat cards usam <em style={{ fontStyle: 'normal', fontWeight: 500, color: 'var(--via-text-primary)' }}>Geist 500</em> com <code className="vds-code-inline">font-variant-numeric: tabular-nums</code> e{' '}
           <code className="vds-code-inline">letter-spacing: -0.04em</code> — o número grande é o
           único lugar que aperta mais que <code className="vds-code-inline">--via-ls-tighter</code>.
-          A moeda é "R$" com espaço, separador de milhar com ponto.
+          A moeda é “R$” com espaço, separador de milhar com ponto.
         </p>
         <div style={{ display: 'flex', gap: 40, marginTop: 24, alignItems: 'baseline', flexWrap: 'wrap' }}>
           <div>
@@ -168,17 +168,17 @@ export default function Typography() {
             <tr>
               <td className="tok">Sentence case</td>
               <td className="val">Body, headline, botão, pill</td>
-              <td className="use">"Soluções, formações e comunidade." · "Salvar alterações"</td>
+              <td className="use">“Soluções, formações e comunidade.” · “Salvar alterações”</td>
             </tr>
             <tr>
               <td className="tok">UPPERCASE</td>
               <td className="val">Wordmark, eyebrow, label de seção, header de tabela</td>
-              <td className="use">"TURMA 2026.2 · BRASIL"</td>
+              <td className="use">“TURMA 2026.2 · BRASIL”</td>
             </tr>
             <tr>
               <td className="tok">Title Case</td>
               <td className="val">Raro · evite</td>
-              <td className="use">"Living From AI" (off-brand em PT)</td>
+              <td className="use">“Living From AI” (off-brand em PT)</td>
             </tr>
           </tbody>
         </table>

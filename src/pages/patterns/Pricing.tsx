@@ -34,7 +34,7 @@ export default function Pricing() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · pricing"
+        eyebrow="Padrões · preços"
         title={<>Três tiers, <em>um destaque</em>.</>}
         lede="Pricing canônico — 3 tiers, o do meio em navy sólido marcado 'Mais escolhido'. R$ menor em Geist, número grande tabular, lista com check Lucide stroke. Botão é o da library: pílula navy nos laterais; branca no destaque."
       />
@@ -76,7 +76,7 @@ function ComparisonTableSection() {
   const plans = [
     { name: 'Starter', price: '2.580', period: '/mês', desc: 'Plataforma, soluções, formações e comunidade' },
     { name: 'Pro', price: '3.780', period: '/mês', desc: 'Starter + mentoria em grupo ao vivo', highlight: true },
-    { name: 'Enterprise', price: '6.180', period: '/mês', desc: 'Pro + mentoria individual + AI Builder' },
+    { name: 'Enterprise', price: '6.180', period: '/mês', desc: 'Pro + 1 hora por mês de mentoria individual' },
   ];
 
   const groups = [
@@ -94,7 +94,6 @@ function ComparisonTableSection() {
       rows: [
         { feat: 'Mentoria em grupo ao vivo', vals: [false, '10 / mês', true] },
         { feat: 'Mentoria individual', vals: [false, false, '1h / mês'] },
-        { feat: 'Arquiteto de soluções AI Builder', vals: [false, false, true] },
         { feat: 'Implementação assistida', vals: [false, false, true] },
       ],
     },
@@ -111,13 +110,12 @@ function ComparisonTableSection() {
       rows: [
         { feat: 'Soluções premium', vals: [false, true, true] },
         { feat: 'Suporte prioritário', vals: [false, true, true] },
-        { feat: 'SLA dedicado', vals: [false, false, true] },
       ],
     },
   ];
 
   return (
-    <Section title="Comparação completa · 3 planos side-by-side" meta="14 features agrupadas · plano destacado em navy">
+    <Section title="Comparação completa · 3 planos lado a lado" meta="12 recursos agrupados · plano destacado em navy">
       <div className="vds-cmp">
         {/* Sticky header com plans */}
         <header className="vds-cmp-head">
@@ -189,7 +187,7 @@ function ComparisonTableSection() {
         {/* Footer note */}
         <footer className="vds-cmp-foot">
           <p>
-            Todos os planos em contratação anual · upgrade a qualquer momento, mediante a diferença de valor. Enterprise inclui SLA dedicado e implementação assistida.
+            Todos os planos em contratação anual · upgrade a qualquer momento, mediante a diferença de valor.
           </p>
         </footer>
       </div>

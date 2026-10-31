@@ -34,7 +34,7 @@ const modules: Module[] = [
       { n: '01.01', title: 'O que mudou de 2022 pra cá (e o que não mudou)', duration: '12:42', type: 'video', state: 'done' },
       { n: '01.02', title: 'Modelos generativos · LLMs, difusão, multimodal', duration: '18:24', type: 'video', state: 'done' },
       { n: '01.03', title: 'Exercício · classificar 10 cases reais', duration: '20min', type: 'exercise', state: 'done' },
-      { n: '01.04', title: 'Leitura · paper "Sparks of AGI" (resumo VIA)', duration: '14min', type: 'reading', state: 'done' },
+      { n: '01.04', title: 'Leitura · paper “Sparks of AGI” (resumo VIA)', duration: '14min', type: 'reading', state: 'done' },
     ],
   },
   {
@@ -55,7 +55,7 @@ const modules: Module[] = [
     title: 'Construindo agentes que aguentam produção',
     lede: 'Tools · memory · roteamento · loops controlados · observabilidade. O sistema, não só o protótipo.',
     lessons: [
-      { n: '03.01', title: 'Por que "agente" virou palavra suja em 2024', duration: '18:42', type: 'video', state: 'locked' },
+      { n: '03.01', title: 'Por que “agente” virou palavra suja em 2024', duration: '18:42', type: 'video', state: 'locked' },
       { n: '03.02', title: 'Tools · contrato, validação, fallback', duration: '24:12', type: 'video', state: 'locked' },
       { n: '03.03', title: 'Memória · curta, média, persistente', duration: '20:36', type: 'video', state: 'locked' },
       { n: '03.04', title: 'Roteamento entre modelos (custo × latência × qualidade)', duration: '17:48', type: 'video', state: 'locked' },

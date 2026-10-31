@@ -24,7 +24,7 @@ export default function Login() {
             Marca editorial,<br />engenharia <em>de precisão</em>.
           </h2>
           <p className="lede">
-            De 6h para cliques: a Viva Nexo economiza R$ 162.000 com IA aplicada à operação.
+            De 6h para cliques: a Viva Nexo economiza R$&nbsp;162.000 com IA aplicada à operação.
           </p>
           <div className="quote-attrib">
             <span className="av">VN</span>
@@ -40,7 +40,7 @@ export default function Login() {
         <div className="auth-card">
           <header>
             <p className="vds-eyebrow">Painel do aluno</p>
-            <h1>Bem-vindo de volta.</h1>
+            <h1>Boas-vindas de volta.</h1>
             <p className="lede">Entre com seu e-mail. Vamos te enviar um link mágico ou aceitar sua senha.</p>
           </header>
 

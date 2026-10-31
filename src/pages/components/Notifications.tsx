@@ -10,7 +10,7 @@ export default function Notifications() {
   return (
     <>
       <DocsHeader
-        eyebrow="Componentes · notification & status"
+        eyebrow="Componentes · notificações e status"
         title={
           <>
             Atenção <em>dosada e editorial</em>.
@@ -62,7 +62,7 @@ function PanelSection() {
               </span>
               <div className="vds-notif-body">
                 <p>
-                  Você bateu uma <strong>streak de 14 dias</strong> — mais que 87% dos alunos
+                  Você chegou a <strong>14 dias seguidos</strong> — mais que 87% dos alunos
                 </p>
                 <span className="vds-notif-meta">Hoje · automático</span>
               </div>
@@ -274,10 +274,10 @@ function StatusSection() {
 function InboxSection() {
   const items = [
     { type: 'mention', who: 'Caio Ribeiro', what: 'respondeu sua pergunta sobre few-shot', where: 'Aula 02.02', when: 'há 4 min', unread: true, star: false },
-    { type: 'achievement', who: 'Sistema Viver de IA', what: 'streak de 14 dias atingida — mais que 87% dos alunos', where: 'Métricas', when: 'hoje · auto', unread: true, star: true },
+    { type: 'achievement', who: 'Sistema Viver de IA', what: '14 dias seguidos — mais que 87% dos alunos', where: 'Métricas', when: 'hoje · auto', unread: true, star: true },
     { type: 'live', who: 'Calendário', what: 'live agendada · sex 22 mai · 14h · auditoria de prompts', where: 'Comunidade', when: 'há 2h', unread: true, star: false },
     { type: 'mention', who: 'Mariana Leal', what: 'curtiu sua nota da aula 02.01 sobre estrutura de prompts', where: 'Aula 02.01', when: 'há 8h', unread: false, star: false },
-    { type: 'discussion', who: 'Discord interno', what: 'nova discussão em "Roteamento entre modelos"', where: 'Módulo 03', when: 'ontem · 18:42', unread: false, star: false },
+    { type: 'discussion', who: 'Discord interno', what: 'nova discussão em “Roteamento entre modelos”', where: 'Módulo 03', when: 'ontem · 18:42', unread: false, star: false },
     { type: 'payment', who: 'Financeiro', what: 'mensalidade do plano Pro confirmada · próxima 17 ago', where: 'Pagamentos', when: '14 mai', unread: false, star: false },
     { type: 'mention', who: 'Caio Ribeiro', what: 'mencionou você no canal #estudos-de-caso', where: 'Discord', when: '12 mai', unread: false, star: false },
   ];

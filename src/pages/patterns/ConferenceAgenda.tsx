@@ -100,7 +100,7 @@ function AgendaSection() {
   ];
 
   return (
-    <Section title="Agenda · dia 1 · [data]" meta="3 trilhas paralelas · [N] sessões · [N] keynotes · day selector + grid">
+    <Section title="Agenda · dia 1 · [data]" meta="3 trilhas paralelas · [N] sessões · [N] palestras principais · seletor de dia + grade">
       <article className="vds-cf">
         {/* Day selector */}
         <header className="vds-cf-head">
@@ -230,7 +230,7 @@ function AgendaSpeakerStripSection() {
   ];
 
   return (
-    <Section title="Speakers · grid premium do line-up" meta="strip horizontal com avatar editorial · clica pra ver bio + sessões">
+    <Section title="Palestrantes · grade do line-up" meta="faixa horizontal com avatar editorial · clique pra ver bio e sessões">
       <div className="vds-cf-speakers">
         {speakers.map((s) => (
           <article key={s.name} className={`vds-cf-spk ${s.tag === 'Keynote' ? 'keynote' : ''}`}>

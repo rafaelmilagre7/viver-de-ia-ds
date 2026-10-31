@@ -370,7 +370,9 @@
 
 @media (max-width: 920px) {
   .vds-wiz {
-    grid-template-columns: 1fr;
+    /* minmax(0,…): com 1fr puro o min-content dos cards de opção esticava a
+       coluna além da tela e o overflow:hidden cortava a direita no celular */
+    grid-template-columns: minmax(0, 1fr);
     min-height: auto;
   }
 }
@@ -923,4 +925,36 @@
   outline: none;
   border-radius: var(--via-radius-xs);
   box-shadow: var(--via-shadow-focus);
+}
+
+/* ============================================
+   Celular · nada cortado à direita
+   ============================================ */
+@media (max-width: 640px) {
+  /* stepper horizontal: só os círculos ligados pelas linhas (o rótulo do
+     passo atual já está no eyebrow logo abaixo). Rótulos ficam pra leitor
+     de tela. Antes: 4 rótulos nowrap estouravam e o card cortava em "Cenár". */
+  .vds-ob { padding: var(--via-space-6) var(--via-space-5); }
+  .vds-ob .ob-stepper { margin-bottom: var(--via-space-7); padding-bottom: var(--via-space-5); }
+  .vds-ob .ob-step:last-child { flex: 0 0 auto; }
+  .vds-ob .ob-step .t {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .vds-ob .ob-step .line { margin: 0 var(--via-space-2); min-width: 12px; }
+  .vds-ob h2 { font-size: var(--via-fs-h2); }
+  .vds-ob .ob-actions { justify-content: stretch; }
+  .vds-ob .ob-actions .btn { flex: 1; justify-content: center; }
+
+  .vds-wiz-aside { padding: var(--via-space-6) var(--via-space-5); }
+  .vds-wiz-aside header { margin-bottom: var(--via-space-6); }
+  .vds-wiz-main { padding: var(--via-space-7) var(--via-space-5) var(--via-space-6); }
+  .vds-wiz-main footer { flex-wrap: wrap; }
+  .vds-wiz-count { flex-basis: 100%; }
+  .vds-wiz-actions { flex: 1; }
+  .vds-wiz-actions .vds-wiz-btn { flex: 1; justify-content: center; }
 }

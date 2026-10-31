@@ -10,7 +10,7 @@ export default function StickyCTA() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · sticky CTA bar"
+        eyebrow="Padrões · CTA fixo"
         title={
           <>
             A barra que <em>aparece quando precisa</em> — sem agressão.
@@ -146,7 +146,7 @@ function StickyNotifySection() {
               <BookOpen size={16} strokeWidth={1.75} />
             </span>
             <div>
-              <strong>Case em destaque · "De 6h para cliques"</strong>
+              <strong>Case em destaque · “De 6h para cliques”</strong>
               <span>Como a Viva Nexo economiza R$ 162.000 com IA na operação · setor Saúde.</span>
             </div>
           </div>

@@ -18,7 +18,7 @@ export default function PaidAds() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · paid ads"
+        eyebrow="Padrões · anúncios pagos"
         title={
           <>
             Anúncio pago com <em>peso editorial</em>.
@@ -106,9 +106,9 @@ function MetaSingleSection() {
 
         <SpecBlock items={[
           { k: 'Headline', v: 'Frase única · ≤40 chars · afirmação não pergunta' },
-          { k: 'Primary text', v: 'Hook + razão · até 125 chars antes do "Ver mais"' },
+          { k: 'Primary text', v: 'Hook + razão · até 125 chars antes do “Ver mais”' },
           { k: 'Image', v: '1080×1080 (1:1) · navy editorial · zero foto literal' },
-          { k: 'CTA button', v: '"Saiba mais" · "Cadastre-se" · "Ver agora" · NÃO "Garanta já"' },
+          { k: 'CTA button', v: '“Saiba mais” · “Cadastre-se” · “Ver agora” · NÃO “Garanta já”' },
           { k: 'Link description', v: 'Sub-headline · clarifica a oferta em 1 linha' },
         ]} />
       </div>
@@ -305,10 +305,10 @@ function LinkedInSingleSection() {
 
         <SpecBlock items={[
           { k: 'Dimensões', v: '1200×627 (1.91:1) · arquivo PNG/JPG' },
-          { k: 'Intro text', v: '≤150 chars antes do "see more" · tom B2B sóbrio' },
+          { k: 'Intro text', v: '≤150 chars antes do “see more” · tom B2B sóbrio' },
           { k: 'Headline', v: '≤70 chars · clareza > criatividade · evita superlativos' },
-          { k: 'CTA options', v: '"Aplique-se" · "Saiba mais" · "Inscreva-se" · "Baixe agora"' },
-          { k: 'Persona-alvo', v: 'Founder · CTO · Head IA · Líder de operações' },
+          { k: 'CTA options', v: '“Aplique-se” · “Saiba mais” · “Inscreva-se” · “Baixe agora”' },
+          { k: 'Persona-alvo', v: 'Fundador · CTO · Head de IA · Líder de operações' },
         ]} />
       </div>
     </Section>
@@ -414,10 +414,10 @@ function GoogleSearchSection() {
         <SpecBlock items={[
           { k: 'Headlines', v: '3 obrigatórias · ≤30 chars cada · Title Case · sem caps lock' },
           { k: 'Descriptions', v: '2 obrigatórias · ≤90 chars · frases completas · ponto final' },
-          { k: 'Display URL', v: 'Path 1 + Path 2 · ≤15 chars cada · ex: "planos/pro"' },
+          { k: 'Display URL', v: 'Path 1 + Path 2 · ≤15 chars cada · ex: “planos/pro”' },
           { k: 'Sitelinks', v: '4-6 extras · cada com headline 25 chars + 2 descriptions 35 chars' },
           { k: 'Callouts', v: '4-6 frases curtas · ≤25 chars · prova/benefícios não-vendíveis' },
-          { k: 'Structured snippets', v: 'Lista de categorias · ex: "Módulos: Fundamentos · Prompt · Agentes"' },
+          { k: 'Structured snippets', v: 'Lista de categorias · ex: “Módulos: Fundamentos · Prompt · Agentes”' },
         ]} />
       </div>
     </Section>
@@ -470,7 +470,7 @@ function GoogleDisplaySection() {
         <SpecBlock items={[
           { k: 'Headline', v: 'Adaptativa · short (≤25 chars) · long (≤90 chars)' },
           { k: 'Logo', v: 'monogram_white canto inferior direito · sai no 320×100' },
-          { k: 'CTA', v: 'Button branco sólido · "Ver planos" · "Cadastre-se"' },
+          { k: 'CTA', v: 'Button branco sólido · “Ver planos” · “Cadastre-se”' },
           { k: 'Responsive', v: 'Mesma copy adaptada · prioridade pra short em sizes pequenos' },
           { k: 'Image safe area', v: '20% margin de cada lado · canvas central limpo' },
           { k: 'Animated', v: 'Opcional · fade entre 2 versões da headline máx 15s' },
@@ -534,7 +534,7 @@ function YouTubePreRollSection() {
               <span className="vds-pa-yt-script-timer">0–3s</span>
               <div>
                 <strong>HOOK · não-skipável psicologicamente</strong>
-                <p>Frase forte + visual provocador. "Implantando IA na empresa, 3 erros custam caro." Quem skipa, skipa. Quem fica, fica engajado.</p>
+                <p>Frase forte + visual provocador. “Implantando IA na empresa, 3 erros custam caro.” Quem skipa, skipa. Quem fica, fica engajado.</p>
               </div>
             </li>
             <li>
@@ -548,7 +548,7 @@ function YouTubePreRollSection() {
               <span className="vds-pa-yt-script-timer">13–15s</span>
               <div>
                 <strong>CTA · curto e visual</strong>
-                <p>"Planos e cases em viverdeia.ai. São 521 cases reais." Logo branco + URL legível.</p>
+                <p>“Planos e cases em viverdeia.ai. São 521 cases reais.” Logo branco + URL legível.</p>
               </div>
             </li>
           </ol>
@@ -565,10 +565,10 @@ function AudienceMatrixSection() {
   const personas = [
     {
       icon: Briefcase,
-      name: 'Founder · operador-fundador',
+      name: 'Fundador · opera tudo sozinho',
       pain: 'Tá fazendo tudo. Receita não escala porque tempo dele não escala.',
       kpi: 'Receita destravada',
-      hook: 'Em 90 dias, você sai do "eu opero" pra "a IA opera".',
+      hook: 'Você sai do “eu opero” pra “a IA opera”.',
       body: 'Operador-fundador que construiu o produto sozinho consegue manter por 1 ano. Depois disso, ou aparece IA, ou some.',
       cta: 'Ver cases reais',
     },
@@ -678,7 +678,7 @@ function ABVariantSection() {
 
   return (
     <Section
-      title="A/B test · 3 variants da mesma oferta"
+      title="Teste A/B · 3 variações da mesma oferta"
       meta="mesma audience · diferente hook · medir CTR + CPC + CPA por 7 dias"
     >
       <div className="vds-pa-stage">
@@ -726,9 +726,9 @@ function PreflightSection() {
     {
       group: '02 · audience',
       items: [
-        { q: 'Persona-alvo', a: 'founder · operador · exec · investor' },
+        { q: 'Persona-alvo', a: 'fundador · operador · executivo · investidor' },
         { q: 'Lookalike base', a: 'NPS 9+ · trial 7d · paying 90d+' },
-        { q: 'Interest stacks', a: 'IA · automação · founders · ops' },
+        { q: 'Interesses combinados', a: 'IA · automação · fundadores · operações' },
         { q: 'Exclude', a: 'já cliente · time interno · funcionários' },
       ],
     },
@@ -737,7 +737,7 @@ function PreflightSection() {
       items: [
         { q: 'Hook escolhido', a: 'da headline library categoria X' },
         { q: 'Body', a: '2 frases · hook + razão · ≤125 chars' },
-        { q: 'CTA verbo', a: 'infinitivo · da CTA library · não "garanta já"' },
+        { q: 'CTA verbo', a: 'infinitivo · da CTA library · não “garanta já”' },
         { q: 'Formato', a: 'single · carousel · story · reel · video' },
       ],
     },
@@ -783,7 +783,7 @@ function PreflightSection() {
           <footer className="vds-pa-preflight-rule">
             <Target size={16} strokeWidth={1.75} />
             <strong>Kill-switch:</strong> se KPI primário não bate threshold em 72h, pausa.
-            Não reaquece com mais budget esperando "começar a render".
+            Não reaquece com mais budget esperando “começar a render”.
           </footer>
         </article>
       </div>

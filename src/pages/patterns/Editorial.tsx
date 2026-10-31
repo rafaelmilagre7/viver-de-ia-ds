@@ -14,7 +14,7 @@ export default function Editorial() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · editorial / content"
+        eyebrow="Padrões · conteúdo editorial"
         title={
           <>
             Conteúdo editorial <em>com peso de carta</em>.
@@ -60,7 +60,7 @@ function NewsletterSection() {
             <p>
               tava acontecendo de o agente perder [N]% das conversas no primeiro turno. lead
               entrava, ele respondia, e o lead simplesmente não voltava. o time ficava olhando
-              o gráfico pensando "deve ser prompt".
+              o gráfico pensando “deve ser prompt”.
             </p>
             <p>
               <strong>Não era prompt.</strong> Era 2 coisas: latência da resposta — o agente
@@ -73,7 +73,7 @@ function NewsletterSection() {
             <span className="vds-ed-nl-section-eyebrow">o que mudei</span>
             <p>
               cache do contexto inicial pra derrubar a latência · e o prompt do primeiro
-              turno virou "leitor de intent" antes de "vendedor". <strong>[N] conversas
+              turno virou “leitor de intent” antes de “vendedor”. <strong>[N] conversas
               adicionais em 7 dias.</strong>
             </p>
             <div className="vds-ed-nl-pull">
@@ -88,7 +88,7 @@ function NewsletterSection() {
               mede o teu agora. se passa de 8s, o lead já tá indo embora antes da resposta.
             </p>
             <p>
-              segundo: cuidado com agente "consultivo" no turno 1. responde a intent antes de
+              segundo: cuidado com agente “consultivo” no turno 1. responde a intent antes de
               consultoria · educa o ritmo e ele volta pra segunda pergunta.
             </p>
           </article>
@@ -415,7 +415,7 @@ function TutorialSection() {
           <h2>O que você vai fazer</h2>
           <ol className="vds-ed-tutorial-toc">
             <li>Extrair os logs do último mês</li>
-            <li>Calcular delta entre "lead enviou" e "agente respondeu"</li>
+            <li>Calcular delta entre “lead enviou” e “agente respondeu”</li>
             <li>Filtrar só primeiros turnos (não conversas inteiras)</li>
             <li>Comparar média + p95 contra o benchmark</li>
             <li>Plotar timeline pra ver tendência</li>

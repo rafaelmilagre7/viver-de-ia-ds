@@ -14,7 +14,7 @@ export default function Achievement() {
             Reconhecimento <em>com peso editorial</em>.
           </>
         }
-        lede="Conquistas, streaks e progressão não-bobas. Sem confete, sem badge gamer. Cada milestone tratada como uma peça editorial — atmosphere navy, peso tipográfico, contraste editorial. O aluno sente que avançou, não que ganhou um sticker."
+        lede="Conquistas, sequências e progressão sem infantilizar. Sem confete, sem selo de videogame. Cada marco tratado como peça editorial — atmosfera navy, peso tipográfico, contraste editorial. O aluno sente que avançou, não que ganhou um adesivo."
       />
 
       <ActivityRingsSection />
@@ -127,7 +127,7 @@ function StreakSection() {
   });
 
   return (
-    <Section title="Streak grid · 28 dias de continuidade" meta="cada bloco é um dia · padrão visível, não escondido">
+    <Section title="Sequência · 28 dias de continuidade" meta="cada bloco é um dia · padrão visível, não escondido">
       <article className="vds-streak-card">
         <div className="vds-streak-stage via-mesh-navy via-noise">
           <span className="vds-streak-aura" />
@@ -135,13 +135,13 @@ function StreakSection() {
           <header>
             <span className="vds-streak-eyebrow">
               <Flame size={14} strokeWidth={1.75} />
-              Streak corrente
+              Sequência atual
             </span>
             <h3>
               <em>14</em> dias seguidos
             </h3>
             <p>
-              Maior streak da carreira até agora · mais que 87% dos operadores do mês. Próximo marco: <strong>21 dias</strong>.
+              Maior sequência até agora · mais que 87% dos operadores do mês. Próximo marco: <strong>21 dias</strong>.
             </p>
 
             <div className="vds-streak-grid">
@@ -228,7 +228,7 @@ function CertificateSection() {
               <span className="vds-cert-stats-sep" aria-hidden="true" />
               <div>
                 <strong>14<sup>d</sup></strong>
-                <em>maior streak</em>
+                <em>maior sequência</em>
               </div>
               <span className="vds-cert-stats-sep" aria-hidden="true" />
               <div>

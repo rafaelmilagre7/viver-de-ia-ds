@@ -1,23 +1,33 @@
 import {
-  Calendar, MessageCircle, ArrowRight, Quote, Check, Clock, Star,
+  Calendar, MessageCircle, ArrowRight, Quote, Check, Clock, User,
 } from 'lucide-react';
 import BrandLogo from '../../components/BrandLogo';
 import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
+import ShowcaseMenu from './ShowcaseMenu';
 import './mentor.css';
+
+const navItems = [
+  { label: 'Painel' },
+  { label: 'Mentoria', active: true },
+  { label: 'Comunidade' },
+  { label: 'Cases' },
+];
 
 /* ============================================================
    Perfil do mentor · página-modelo
    ============================================================ */
 
+/* Números de exemplo do perfil (mentor fictício). A nota é de 0 a 5 — não é
+   NPS (que vai de −100 a 100) — e fica como lacuna até vir o dado real. */
 const stats = [
-  { n: '4.9', l: 'NPS médio' },
+  { n: '[N]/5', l: 'nota dos check-ins' },
   { n: '38', l: 'mentorados' },
   { n: '14h', l: 'resposta média' },
   { n: '126', l: 'check-ins' },
 ];
 
 const expertise = [
-  'Agentes em produção', 'Few-shot engineering', 'RAG', 'Observabilidade',
+  'Agentes em produção', 'Engenharia de prompt', 'RAG', 'Observabilidade',
   'Custo de token', 'SaaS B2B', 'Edge functions', 'Memória persistente',
 ];
 
@@ -41,11 +51,11 @@ export default function ShowcaseMentor() {
       <header className="mtr-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
-          <a>Painel</a>
-          <a className="active">Mentoria</a>
-          <a>Comunidade</a>
-          <a>Cases</a>
+          {navItems.map((n) => (
+            <a key={n.label} className={n.active ? 'is-link active' : 'is-link'}>{n.label}</a>
+          ))}
         </nav>
+        <ShowcaseMenu items={navItems} />
         <span className="mtr-nav-av">RM</span>
       </header>
 
@@ -54,10 +64,7 @@ export default function ShowcaseMentor() {
         <span className="mtr-hero-aura" aria-hidden="true" />
         <img src={monogramWhite} alt="" className="mtr-hero-mono" />
         <div className="mtr-hero-inner">
-          <div className="mtr-hero-av">
-            CR
-            <span className="mtr-hero-ring" />
-          </div>
+          <div className="mtr-hero-av">CR</div>
           <div className="mtr-hero-info">
             <span className="mtr-hero-eyebrow">mentor · plano pro</span>
             <h1>Caio Ribeiro</h1>
@@ -86,6 +93,31 @@ export default function ShowcaseMentor() {
       </section>
 
       <div className="mtr-body">
+        {/* Agendar · vem ANTES do conteúdo no DOM: no celular fica logo abaixo
+            do hero (antes ia pro fim da página). No desktop o grid põe na coluna da direita. */}
+        <aside className="mtr-schedule">
+          <span className="mtr-schedule-eyebrow">próximos check-ins</span>
+          <h3>Reserve seu lugar no check-in em grupo</h3>
+          <p>Plano Pro · 10 check-ins de mentoria em grupo por mês. Traga o problema real da sua empresa.</p>
+
+          <div className="mtr-slots">
+            {horarios.map((h, i) => (
+              <button key={h} className={`mtr-slot ${i === 0 ? 'active' : ''}`}>{h}</button>
+            ))}
+          </div>
+
+          <button className="mtr-schedule-cta">
+            Confirmar presença
+            <ArrowRight size={16} strokeWidth={1.75} />
+          </button>
+
+          <ul className="mtr-schedule-meta">
+            <li><Clock size={14} strokeWidth={1.75} /> Responde em até 14h</li>
+            <li><Check size={14} strokeWidth={1.75} /> 126 check-ins conduzidos</li>
+            <li><User size={14} strokeWidth={1.75} /> Mentoria individual: 1 hora por mês, no plano Enterprise</li>
+          </ul>
+        </aside>
+
         <main className="mtr-main">
           {/* Sobre */}
           <article className="mtr-block">
@@ -95,7 +127,7 @@ export default function ShowcaseMentor() {
               Não ensino teoria de IA. Ensino a colocar a solução pra rodar com cliente real, pico de demanda e custo de token sob controle. Antes de mostrar qualquer coisa na mentoria, eu rodo na minha operação. Tudo que mostro, eu rodo.
             </p>
             <p>
-              Mentoria é direta: você traz o problema real, a gente resolve junto na sessão. Sem resposta pronta, sem "depois você vê na aula". Construção ao vivo.
+              Mentoria é direta: você traz o problema real, a gente resolve junto na sessão. Sem resposta pronta, sem “depois você vê na aula”. Construção ao vivo.
             </p>
           </article>
 
@@ -140,30 +172,6 @@ export default function ShowcaseMentor() {
             </div>
           </article>
         </main>
-
-        {/* Sidebar · agendar */}
-        <aside className="mtr-schedule">
-          <span className="mtr-schedule-eyebrow">próximas janelas</span>
-          <h3>Agende sua mentoria individual</h3>
-          <p>Plano Enterprise · 1 hora por mês · foco no problema real da sua empresa.</p>
-
-          <div className="mtr-slots">
-            {horarios.map((h, i) => (
-              <button key={h} className={`mtr-slot ${i === 0 ? 'active' : ''}`}>{h}</button>
-            ))}
-          </div>
-
-          <button className="mtr-schedule-cta">
-            Confirmar agendamento
-            <ArrowRight size={16} strokeWidth={1.75} />
-          </button>
-
-          <ul className="mtr-schedule-meta">
-            <li><Clock size={14} strokeWidth={1.75} /> Responde em até 14h</li>
-            <li><Check size={14} strokeWidth={1.75} /> 126 check-ins realizados</li>
-            <li><Star size={16} strokeWidth={1.75} /> 4.9 NPS médio</li>
-          </ul>
-        </aside>
       </div>
     </div>
   );

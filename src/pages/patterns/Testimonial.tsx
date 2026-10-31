@@ -30,7 +30,7 @@ export default function Testimonial() {
         lede="Depoimento canônico: aspas decorativas em Geist Display gigantes e cinza claro no canto. Frase em primeira pessoa, destaque de cor numa expressão. Atribuição com avatar de iniciais. Outcome numérico encosta na direita, dividido por hairline."
       />
 
-      <Section title="Card · com outcome" meta="formato editorial">
+      <Section title="Card · com resultado" meta="formato editorial">
         <div className="vds-testi-stack">
           {testis.map((t) => (
             <div key={t.who} className="vds-testi">

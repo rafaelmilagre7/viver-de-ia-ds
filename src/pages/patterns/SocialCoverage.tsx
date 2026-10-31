@@ -30,7 +30,7 @@ export default function SocialCoverage() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · social coverage"
+        eyebrow="Padrões · canais sociais"
         title={
           <>
             18 templates de social <em>cobrindo todo canal</em>.
@@ -166,7 +166,7 @@ function InstagramSection() {
               { k: 'Safe bottom', v: '250px reservada · reply + nav bar' },
               { k: 'Conteúdo central', v: '~1420px de altura usável' },
               { k: 'Logo', v: 'monogram_white centralizado fim · 40px' },
-              { k: 'CTA', v: 'sticker "arrasta pra cima" só se for link real' },
+              { k: 'CTA', v: 'sticker “arrasta pra cima” só se for link real' },
             ]}
           />
         </div>
@@ -625,7 +625,8 @@ function TikTokSection() {
           <article className="vds-sc-tiktok-overlay-demo via-mesh-navy via-noise">
             <span className="overlay-pos center">
               90 dias.<br />
-              Receita sobe ou custo cai.
+              Receita sobe ou custo cai.<br />
+              Ou 100% de volta.
             </span>
           </article>
           <article className="vds-sc-tiktok-overlay-demo via-mesh-navy via-noise">
@@ -669,7 +670,7 @@ function PodcastSection() {
               { k: 'Tipografia', v: 'Geist Display · peso 500 · 220-280px' },
               { k: 'Cor', v: 'mesh-navy · sem foto literal' },
               { k: 'Logo', v: 'monogram_white canto inferior direito 200px' },
-              { k: 'Episode count', v: 'eyebrow superior · "ep 12" mono' },
+              { k: 'Episode count', v: 'eyebrow superior · “ep 12” mono' },
             ]}
           />
         </div>

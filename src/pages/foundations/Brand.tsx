@@ -45,7 +45,7 @@ export default function Brand() {
         <p>
           Use o <em>wordmark completo</em> sempre que houver espaço para respirar. Quando
           o espaço apertar, recuar para o <em>monograma VIA</em>. O <em>app icon</em> é
-          reservado para superfícies onde a marca precisa "parecer um produto" — favicons,
+          reservado para superfícies onde a marca precisa “parecer um produto” — favicons,
           ícones de app, avatars sistêmicos.
         </p>
         <div className="vds-brand-grid" style={{ marginTop: 24 }}>
@@ -86,7 +86,7 @@ export default function Brand() {
       <Section title="Clearance" meta="Respiração mínima">
         <p>
           A marca precisa de respiração. Mantenha um espaço mínimo equivalente à
-          <em> altura do "V"</em> em volta de qualquer marca. Nada — texto, ícone, borda — entra
+          <em> altura do “V”</em> em volta de qualquer marca. Nada — texto, ícone, borda — entra
           dentro dessa zona.
         </p>
         <div className="vds-brand-clearance">
@@ -97,7 +97,7 @@ export default function Brand() {
         </div>
       </Section>
 
-      <Section title="Não faça" meta="Do's & Don'ts">
+      <Section title="Não faça" meta="faça e evite">
         <div className="vds-do-dont">
           <div className="vds-do">
             <p className="vds-do-title">Faça</p>

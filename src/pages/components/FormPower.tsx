@@ -429,7 +429,7 @@ Próximo passo · validar com [dados de produção](https://nina.viverdeia.ai/au
               <li>custo aumentou apenas 8%</li>
             </ul>
             <blockquote>
-              "Funciona quando os exemplos cobrem os edge cases reais."<br />
+              “Funciona quando os exemplos cobrem os edge cases reais.”<br />
               <em>— Caio Ribeiro, em mentoria</em>
             </blockquote>
             <p>

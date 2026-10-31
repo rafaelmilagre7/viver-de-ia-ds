@@ -99,7 +99,7 @@ export default function Color() {
       <Section title="O que não usar" meta="off-brand">
         <p>
           A paleta é intencionalmente austera. Não tem light blues, cyan, roxo, magenta, neon.
-          Se você sentiu vontade de adicionar uma cor "pra dar vida", recue.
+          Se você sentiu vontade de adicionar uma cor “pra dar vida”, recue.
         </p>
         <div className="vds-swatch-grid" style={{ marginTop: 24, opacity: 0.5 }}>
           {noGo.map((c) => (

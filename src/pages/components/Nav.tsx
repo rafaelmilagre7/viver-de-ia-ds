@@ -34,7 +34,7 @@ export default function Nav() {
             <img src={wordmarkWhite} alt="Viver de IA" />
             <nav>
               <a className="active">Agenda</a>
-              <a>Speakers</a>
+              <a>Palestrantes</a>
               <a>Ingressos</a>
               <a>Parceiros</a>
             </nav>

@@ -92,7 +92,7 @@ function MentorProfileSection() {
             <div className="vds-mentor-quote">
               <span>Frase canônica · Caio</span>
               <p>
-                Não vendo "transformação digital". Vendo decisão por decisão.
+                Não vendo “transformação digital”. Vendo decisão por decisão.
               </p>
             </div>
           </div>
@@ -114,7 +114,7 @@ function TeamGridSection() {
   ];
 
   return (
-    <Section title="Team grid · time interno em carteira" meta="página /sobre · about us · team page">
+    <Section title="Grade do time · time interno em carteira" meta="página /sobre · quem somos · time">
       <div className="vds-team-grid">
         {team.map((m, i) => (
           <article key={m.name} className={`vds-team-card ${i === 0 ? 'lead' : ''}`}>

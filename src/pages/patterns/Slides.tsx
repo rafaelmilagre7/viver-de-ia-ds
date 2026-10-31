@@ -209,7 +209,7 @@ function SlideContentSection() {
           <span className="vds-anatomy-num">01</span>
           <div>
             <p className="vds-anatomy-name">Title slide</p>
-            <p className="vds-anatomy-desc">Mesh navy + monogram watermark · pergunta editorial que abre o tema · autoria + slide number embaixo. Único slide com peso "manchete".</p>
+            <p className="vds-anatomy-desc">Mesh navy + monogram watermark · pergunta editorial que abre o tema · autoria + slide number embaixo. Único slide com peso “manchete”.</p>
           </div>
         </div>
         <div className="vds-anatomy-row">

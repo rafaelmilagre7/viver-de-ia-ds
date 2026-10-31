@@ -1,0 +1,75 @@
+/* ============================================
+   Menu móvel das páginas-modelo · ver ShowcaseMenu.tsx
+   Escondido por padrão; cada página liga no media query da própria nav.
+   ============================================ */
+
+.vds-scm-trigger {
+  display: none;
+  align-items: center;
+  gap: var(--via-space-1_5);
+  min-height: 40px;
+  padding: 0 var(--via-space-3_5) 0 var(--via-space-4);
+  margin-left: auto;
+  border-radius: var(--via-radius-pill);
+  background: var(--via-material-control-fill);
+  -webkit-backdrop-filter: var(--via-material-control-blur);
+  backdrop-filter: var(--via-material-control-blur);
+  border: var(--via-material-control-ring);
+  box-shadow: var(--via-material-control-shadow);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-semibold);
+  color: var(--via-text-primary);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform var(--via-dur-press) var(--via-ease-snap),
+    box-shadow var(--via-dur-quick) var(--via-ease-snap);
+}
+
+.vds-scm-trigger svg { color: var(--via-text-muted); }
+.vds-scm-trigger:hover { box-shadow: var(--via-material-control-lift); }
+.vds-scm-trigger:active { transform: scale(0.97); }
+.vds-scm-trigger:focus-visible {
+  outline: none;
+  box-shadow: var(--via-material-control-shadow), var(--via-shadow-focus);
+}
+
+/* Lista dentro do Sheet · linhas altas (alvo de toque confortável) */
+.vds-scm-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-1);
+}
+
+.vds-scm-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 var(--via-space-4);
+  border: 0;
+  border-radius: var(--via-radius-md);
+  background: transparent;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-body);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-body);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--via-dur-quick) var(--via-ease-snap);
+}
+
+.vds-scm-link:hover { background: var(--via-navy-04); }
+.vds-scm-link:focus-visible { outline: none; box-shadow: var(--via-shadow-focus); }
+
+.vds-scm-link[aria-current='page'] {
+  background: var(--via-navy-05);
+  color: var(--via-text-primary);
+  font-weight: var(--via-fw-semibold);
+}

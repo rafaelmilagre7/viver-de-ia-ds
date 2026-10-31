@@ -50,7 +50,7 @@ export default function CoursePlayer() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · course player premium"
+        eyebrow="Padrões · player de curso"
         title={
           <>
             Playlist permanente, <em>fluxo cinematográfico</em>.

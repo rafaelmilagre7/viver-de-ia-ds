@@ -3,6 +3,14 @@ import { User, Bell, Lock, CreditCard, Globe, MessageCircle, ChevronRight, Camer
 import BrandLogo from '../../components/BrandLogo';
 import './aluno.css';   // .al-nav header (área-logada) usado também aqui
 import './settings.css';
+import ShowcaseMenu, { type ShowcaseMenuItem } from './ShowcaseMenu';
+
+const navItems: ShowcaseMenuItem[] = [
+  { label: 'Painel' },
+  { label: 'Mentoria' },
+  { label: 'Comunidade' },
+  { label: 'Cases' },
+];
 
 const tabs = [
   { v: 'profile', l: 'Perfil', I: User },
@@ -24,13 +32,13 @@ export default function Settings() {
       <header className="al-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
-          <a>Painel</a>
-          <a>Mentoria</a>
-          <a>Comunidade</a>
-          <a>Cases</a>
+          {navItems.map((n) => (
+            <a key={n.label} className={n.active ? 'is-link active' : 'is-link'}>{n.label}</a>
+          ))}
         </nav>
+        <ShowcaseMenu items={navItems} />
         <div className="user">
-          <span className="hi"><strong>Rafael</strong> · Founder</span>
+          <span className="hi"><strong>Rafael</strong> · Fundador</span>
           <span className="av">RM</span>
         </div>
       </header>
@@ -69,7 +77,7 @@ export default function Settings() {
                     <span className="vds-set-avatar">RM<button aria-label="Tirar foto" className="cam"><Camera size={14} strokeWidth={1.75} /></button></span>
                     <div>
                       <strong>Rafael Milagre</strong>
-                      <span>Founder · Viver de IA</span>
+                      <span>Fundador · Viver de IA</span>
                     </div>
                   </div>
                   <div className="vds-set-cols">
@@ -79,7 +87,7 @@ export default function Settings() {
                     </div>
                     <div className="via-field">
                       <label className="lbl">Papel</label>
-                      <input className="val" aria-label="Papel profissional" defaultValue="Founder · Viver de IA" />
+                      <input className="val" aria-label="Papel profissional" defaultValue="Fundador · Viver de IA" />
                     </div>
                   </div>
                   <div className="via-field">

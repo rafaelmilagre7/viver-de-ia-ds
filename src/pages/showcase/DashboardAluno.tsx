@@ -3,12 +3,21 @@ import {
   TrendingUp, Award, Clock, ChevronRight,
 } from 'lucide-react';
 import BrandLogo from '../../components/BrandLogo';
+import { Button } from '../../lib/Button/Button';
+import ShowcaseMenu from './ShowcaseMenu';
 import './dashboard-aluno.css';
 
 /* ============================================================
    Dashboard do aluno · página-modelo
    App logado · visão geral do progresso + próximos passos
    ============================================================ */
+
+const navItems = [
+  { label: 'Painel', active: true },
+  { label: 'Formações' },
+  { label: 'Mentoria' },
+  { label: 'Comunidade' },
+];
 
 const modulos = [
   { n: '01', t: 'Fundamentos · do hype ao que entrega', pct: 100, state: 'done' },
@@ -19,14 +28,14 @@ const modulos = [
 
 const agenda = [
   { d: 'qua', dia: '22', h: '19:30', t: 'Check-in · mentoria em grupo', tag: 'ao vivo' },
-  { d: 'sex', dia: '24', h: '14:00', t: 'Office hours com Caio', tag: 'mentoria' },
+  { d: 'sex', dia: '24', h: '14:00', t: 'Plantão de dúvidas com Caio', tag: 'mentoria' },
   { d: 'sáb', dia: '25', h: '10:00', t: 'Workshop · publicando seu primeiro deploy', tag: 'workshop' },
 ];
 
 const atividade = [
   { av: 'CR', who: 'Caio Ribeiro', txt: 'aprovou seu rascunho de stack', t: 'há 12 min' },
   { av: 'VIA', who: 'Equipe VIA', txt: 'publicou material da semana 03', t: 'há 2h' },
-  { av: 'LA', who: 'Larissa Alves', txt: 'comentou no seu thread sobre integração', t: 'há 5h' },
+  { av: 'LA', who: 'Larissa Alves', txt: 'comentou na sua discussão sobre integração', t: 'há 5h' },
 ];
 
 export default function ShowcaseDashboardAluno() {
@@ -36,11 +45,11 @@ export default function ShowcaseDashboardAluno() {
       <header className="dba-nav">
         <BrandLogo variant="auto" size="md" />
         <nav>
-          <a className="active">Painel</a>
-          <a>Formações</a>
-          <a>Mentoria</a>
-          <a>Comunidade</a>
+          {navItems.map((n) => (
+            <a key={n.label} className={n.active ? 'is-link active' : 'is-link'}>{n.label}</a>
+          ))}
         </nav>
+        <ShowcaseMenu items={navItems} />
         <div className="dba-user">
           <span className="dba-streak"><Flame size={14} strokeWidth={1.75} /> 14 dias</span>
           <span className="dba-av">RM</span>
@@ -81,17 +90,50 @@ export default function ShowcaseDashboardAluno() {
 
         {/* Grid */}
         <div className="dba-grid">
-          {/* Continuar de onde parou */}
-          <article className="dba-card dba-continue via-mesh-navy via-noise">
-            <span className="dba-continue-aura" aria-hidden="true" />
-            <span className="dba-continue-eyebrow">continue de onde parou</span>
-            <h2>02.04 · System prompts em escala</h2>
-            <p>Você parou em 05:51 de 22:18. Faltam 16 minutos pra fechar a aula.</p>
-            <div className="dba-continue-bar"><span style={{ width: '26%' }} /></div>
-            <button className="dba-continue-cta">
-              <Play size={16} strokeWidth={0} style={{ fill: 'var(--via-navy)' }} />
-              Continuar aula
-            </button>
+          {/* Continuar de onde parou · quadro da aula (moldura do player) + texto.
+              Era uma laje navy com ~400px de vazio em cima do texto no celular
+              (a aura decorativa entrava no fluxo). Agora o card é claro como os
+              outros e o navy fica só dentro do quadro — que é conteúdo. */}
+          <article className="dba-card dba-continue">
+            <div className="dba-frame" aria-hidden="true">
+              <div className="dba-frame-slide">
+                <span className="dba-frame-kicker">Aula 02.04</span>
+                <strong className="dba-frame-title">System prompts<br />em escala</strong>
+                <span className="dba-frame-lines"><i /><i /><i /></span>
+              </div>
+              <span className="dba-frame-play">
+                <Play size={18} strokeWidth={0} />
+              </span>
+              <div className="dba-frame-controls">
+                <div className="dba-frame-scrub">
+                  <span className="dba-frame-fill" style={{ width: '26%' }} />
+                  {[22, 48, 74].map((c) => (
+                    <span key={c} className="dba-frame-tick" style={{ left: `${c}%` }} />
+                  ))}
+                  <span className="dba-frame-thumb" style={{ left: '26%' }} />
+                </div>
+                <div className="dba-frame-meta">
+                  <span>05:51 / 22:18</span>
+                  <span>Capítulo 2 · Versionar o prompt</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="dba-continue-body">
+              <span className="dba-card-eyebrow"><Play size={14} strokeWidth={1.75} /> Continue de onde parou</span>
+              <h2>System prompts em escala</h2>
+              <p className="dba-continue-meta">Módulo 02 · aula 4 de 6 · capítulo 2 de 4</p>
+              <div className="dba-continue-progress">
+                <div className="dba-modulo-bar"><span style={{ width: '26%' }} /></div>
+                <span>Faltam 16 min</span>
+              </div>
+              <div className="dba-continue-actions">
+                <Button size="md" iconLeft={<Play size={14} strokeWidth={0} style={{ fill: 'currentColor' }} />}>
+                  Continuar aula
+                </Button>
+                <Button size="md" variant="ghost">Ver módulo</Button>
+              </div>
+            </div>
           </article>
 
           {/* Próxima agenda */}
@@ -107,9 +149,8 @@ export default function ShowcaseDashboardAluno() {
                     <strong>{a.dia}</strong>
                   </span>
                   <div className="dba-agenda-info">
-                    <span className="dba-agenda-tag">{a.tag}</span>
                     <strong>{a.t}</strong>
-                    <em>{a.h}</em>
+                    <em>{a.h} · {a.tag}</em>
                   </div>
                 </li>
               ))}
@@ -157,11 +198,11 @@ export default function ShowcaseDashboardAluno() {
             </ul>
           </article>
 
-          {/* Conquista / streak */}
+          {/* Conquista / sequência */}
           <article className="dba-card dba-achievement">
             <span className="dba-achievement-medal"><Award size={20} strokeWidth={1.75} /></span>
             <div>
-              <strong>14 dias de streak</strong>
+              <strong>14 dias seguidos</strong>
               <p>Maior sequência do seu time · mais que 87% dos membros do mês.</p>
             </div>
           </article>

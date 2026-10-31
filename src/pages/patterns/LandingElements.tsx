@@ -15,13 +15,13 @@ export default function LandingElements() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · landing elements"
+        eyebrow="Padrões · blocos de landing"
         title={
           <>
             Elementos pra landings <em>sem reinventar a roda</em>.
           </>
         }
-        lede="Hero variants (5), CTAs por contexto, trust signals avançados, FAQ editorial expandido, lead magnet inline, countdown editorial, comparativo concorrente. Papel claro por padrão; o navy fica pro momento de fechamento. Cada elemento independente — combina o que precisa pra cada landing nova."
+        lede="Cinco variações de hero, CTAs por contexto, prova social avançada, FAQ editorial expandido, material gratuito no meio da página, contagem regressiva editorial, comparativo com a concorrência. Papel claro por padrão; o navy fica pro momento de fechamento. Cada elemento independente — combina o que precisa pra cada landing nova."
       />
 
       <HeroVariantsSection />
@@ -57,7 +57,7 @@ function HeroFrame({ name, context, children }: { name: string; context: string;
 function HeroVariantsSection() {
   return (
     <Section
-      title="Hero variants · 5 contextos"
+      title="Variações de hero · 5 contextos"
       meta="cada landing escolhe o hero certo pelo contexto"
     >
       <div className="vds-le-heros">
@@ -65,7 +65,7 @@ function HeroVariantsSection() {
           <div className="vds-le-hero vds-le-hero--launch">
             <div className="vds-le-hero-copy">
               <span className="vds-le-kicker"><span className="vds-le-live" aria-hidden="true" />Nova formação · abre [data] · 9h</span>
-              <h2>Agentes de IA na operação, <em>em 90 dias</em>.</h2>
+              <h2>Agentes de IA <em>rodando na sua operação</em>.</h2>
               <p>Nova formação prática na plataforma, inclusa em todos os planos, com solução pronta pra implementar.</p>
               <div className="vds-le-hero-actions">
                 <Button size="lg" iconRight={ARROW}>Ver formação</Button>
@@ -88,7 +88,7 @@ function HeroVariantsSection() {
           </div>
         </HeroFrame>
 
-        <HeroFrame name="Evergreen sales" context="landing principal · sempre no ar">
+        <HeroFrame name="Venda contínua" context="landing principal · sempre no ar">
           <div className="vds-le-hero vds-le-hero--evergreen">
             <span className="vds-le-kicker">Plataforma de implementação de IA</span>
             <h2>Viver de IA, <em>não de prompt</em>.</h2>
@@ -114,7 +114,7 @@ function HeroVariantsSection() {
             </div>
             <div className="vds-le-hero-copy">
               <span className="vds-le-kicker">Leaders AI Conference</span>
-              <h2>[N] dias. Cases reais. <em>0 teoria.</em></h2>
+              <h2>[N] dias. Cases reais. <em>Zero teoria.</em></h2>
               <p>Empresas que já têm IA na operação contam o que mudou — sem palestrante de palco que nunca rodou nada.</p>
               <div className="vds-le-hero-actions">
                 <Button size="lg" iconRight={ARROW}>Garantir ingresso</Button>
@@ -129,7 +129,7 @@ function HeroVariantsSection() {
           </div>
         </HeroFrame>
 
-        <HeroFrame name="Opt-in · lead magnet" context="baixar ebook / webinar · captura email">
+        <HeroFrame name="Captura · material gratuito" context="baixar e-book ou webinar · captura de e-mail">
           <div className="vds-le-hero vds-le-hero--optin">
             <div className="vds-le-hero-copy">
               <span className="vds-le-kicker">Guia gratuito · 42 páginas</span>
@@ -191,7 +191,7 @@ function CTAVariantsSection() {
 
   return (
     <Section
-      title="CTA variants · 8 contextos · sentence-case sempre"
+      title="Variações de CTA · 8 contextos · só a inicial maiúscula"
       meta="verbo no infinitivo · 2-4 palavras · sem 'CLIQUE AQUI'"
     >
       <div className="vds-le-ctas">
@@ -211,11 +211,11 @@ function CTAVariantsSection() {
       <article className="vds-le-cta-rules">
         <h4>Regras canônicas pra CTA</h4>
         <ul>
-          <li><strong>Verbo no infinitivo</strong> · "Ver planos" · não "PLANOS"</li>
+          <li><strong>Verbo no infinitivo</strong> · “Ver planos” · não “PLANOS”</li>
           <li><strong>2-4 palavras</strong> · longo demais confunde, curto demais é vago</li>
           <li><strong>Sentence-case</strong> · não caps lock alérgico</li>
-          <li><strong>Sem urgência fabricada</strong> · não "CLIQUE AQUI AGORA!!!"</li>
-          <li><strong>Ação concreta</strong> · "Confirmar presença" diz o que vai acontecer</li>
+          <li><strong>Sem urgência fabricada</strong> · não “CLIQUE AQUI AGORA!!!”</li>
+          <li><strong>Ação concreta</strong> · “Confirmar presença” diz o que vai acontecer</li>
           <li><strong>Variant accent só pra CTA principal</strong> · 1 por hero, não 5</li>
         </ul>
       </article>
@@ -227,7 +227,7 @@ function CTAVariantsSection() {
 function TrustSignalsAdvancedSection() {
   return (
     <Section
-      title="Trust signals · 3 padrões avançados"
+      title="Prova social · 3 padrões avançados"
       meta="números editoriais · provas atribuídas · sem 'avaliado por especialistas'"
     >
       <div className="vds-le-trust-grid">
@@ -305,7 +305,7 @@ function FAQAdvancedSection() {
 function LeadMagnetSection() {
   return (
     <Section
-      title="Lead magnet inline · captura de email"
+      title="Material gratuito no meio da página · captura de e-mail"
       meta="oferta direta · sem 'cadastre-se na newsletter pra ficar por dentro'"
     >
       <article className="vds-le-lead-magnet">
@@ -366,7 +366,7 @@ function CountdownSection() {
 
       <p className="vds-le-countdown-rule">
         <strong>Regra:</strong> só mostra countdown se a urgência é real (inscrição realmente fecha,
-        evento realmente começa, preço realmente sobe). Nunca "criar urgência" inventando
+        evento realmente começa, preço realmente sobe). Nunca “criar urgência” inventando
         deadline. Se a oferta está sempre aberta, não mostra countdown.
       </p>
     </Section>
@@ -376,18 +376,18 @@ function CountdownSection() {
 /* ---------- Comparativo concorrente ---------- */
 function CompetitorComparisonSection() {
   const rows = [
-    { feature: 'Foco', us: 'IA na operação da empresa, com resultado medido', them: 'Aprender "prompt engineering" geral' },
-    { feature: 'Método', us: 'Soluções prontas + formações + mentoria em grupo', them: '20-40h gravado · sem mentoria ao vivo' },
-    { feature: 'Stack', us: '157 soluções Plug-and-Play · sem programar', them: 'Genérico · "use ChatGPT melhor"' },
+    { feature: 'Foco', us: 'IA na operação da empresa, com resultado medido', them: 'Aprender “engenharia de prompt” genérica' },
+    { feature: 'Método', us: 'Soluções prontas + formações + mentoria em grupo', them: 'Aula gravada · sem mentoria ao vivo' },
+    { feature: 'Stack', us: '157 soluções Plug-and-Play · sem programar', them: 'Genérico · “use o ChatGPT melhor”' },
     { feature: 'Garantia', us: '100% de volta em 90 dias · com 3 requisitos', them: 'Sem garantia de resultado' },
-    { feature: 'Comunidade', us: 'Empresários e líderes · imersão na sede', them: 'Grupo aberto de 10k pessoas' },
+    { feature: 'Comunidade', us: 'Empresários e líderes · imersão na sede', them: 'Grupo aberto, sem curadoria' },
     { feature: 'Prova', us: '521 cases reais de implementação de IA', them: 'Print de influencer · sem case' },
-    { feature: 'Preço', us: 'A partir de R$ 2.580/mês · contratação anual', them: 'R$ 297-997 · low-ticket genérico' },
+    { feature: 'Preço', us: 'A partir de R$ 2.580/mês · contratação anual', them: 'Ticket baixo · conteúdo genérico' },
   ];
 
   return (
     <Section
-      title="Comparativo concorrente · honesto"
+      title="Comparativo com a concorrência · honesto"
       meta="mostra a diferença sem trash-talk · número como evidência"
     >
       <article className="vds-le-compare">
@@ -398,7 +398,7 @@ function CompetitorComparisonSection() {
             <em>plataforma B2B</em>
           </div>
           <div className="cell them">
-            <strong>Curso "prompt eng"</strong>
+            <strong>Curso “prompt eng”</strong>
             <em>genérico médio</em>
           </div>
         </header>
@@ -415,8 +415,8 @@ function CompetitorComparisonSection() {
       </article>
 
       <p className="vds-le-compare-rule">
-        <strong>Regra editorial:</strong> nunca cita concorrente direto pelo nome. "Curso de
-        prompt engineering genérico" descreve a categoria. Honestidade competitiva é mostrar
+        <strong>Regra editorial:</strong> nunca cita concorrente direto pelo nome. “Curso de
+        prompt engineering genérico” descreve a categoria. Honestidade competitiva é mostrar
         diferença real, não atacar pessoa.
       </p>
     </Section>

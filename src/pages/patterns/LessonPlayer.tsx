@@ -15,7 +15,7 @@ export default function LessonPlayer() {
   return (
     <>
       <DocsHeader
-        eyebrow="Padrões · lesson player"
+        eyebrow="Padrões · player de aula"
         title={
           <>
             Player de aula <em>completo</em>.
@@ -174,7 +174,7 @@ function TranscriptPanel() {
   const lines = [
     { t: '00:00', text: 'Hoje a gente vai falar sobre uma decisão que parece pequena, mas separa prompt de produção de prompt de demo: quando incluir exemplos.' },
     { t: '00:18', text: 'Few-shot prompting é incluir 2, 3, às vezes 5 exemplos de pares input-output dentro do próprio prompt antes do problema real.' },
-    { t: '00:42', text: 'A pergunta não é "few-shot é bom?". É: nesse caso específico, descrever o formato em palavras vai ser mais barato que mostrar exemplos?', current: true },
+    { t: '00:42', text: 'A pergunta não é “few-shot é bom?”. É: nesse caso específico, descrever o formato em palavras vai ser mais barato que mostrar exemplos?', current: true },
     { t: '01:14', text: 'Casos onde few-shot é decisivo: quando a saída tem um formato muito específico, quando o vocabulário do domínio é raro, quando o modelo erra consistentemente o estilo.' },
     { t: '01:48', text: 'Casos onde few-shot é desperdício: tarefa óbvia (resumir, traduzir), formato livre, ou quando o modelo já acerta sem exemplo.' },
     { t: '02:22', text: 'Mostra aqui um teste com um agente SDR de qualificação. Sem few-shot, 64% das respostas eram boas. Com 3 exemplos bem escolhidos, 89%.' },
@@ -231,7 +231,7 @@ function MaterialPanel() {
     { name: 'Slides · few-shot decision tree', size: 'PDF · 1.2 MB' },
     { name: 'Template canônico VIA · few-shot', size: 'TXT · 4 KB' },
     { name: 'Notebook companion · benchmark few-shot vs zero-shot', size: 'IPYNB · 86 KB' },
-    { name: 'Paper de referência · "In-context learning"', size: 'PDF · 2.4 MB' },
+    { name: 'Paper de referência · “In-context learning”', size: 'PDF · 2.4 MB' },
   ];
   return (
     <ul className="vds-material">
@@ -339,7 +339,7 @@ function QuizSection() {
           <div className={`vds-quiz-feedback ${picked === correct ? 'ok' : 'bad'}`}>
             <strong>{picked === correct ? 'Exato.' : 'Não é essa.'}</strong>
             {picked === correct ? (
-              <span> Few-shot é decisivo quando o FORMATO da saída é difícil de descrever — não basta pedir "responda em JSON", às vezes precisa mostrar.</span>
+              <span> Few-shot é decisivo quando o FORMATO da saída é difícil de descrever — não basta pedir “responda em JSON”, às vezes precisa mostrar.</span>
             ) : (
               <span> A resposta certa é B — few-shot é decisivo quando o formato é difícil de descrever. Veja de novo o trecho a partir de 01:14.</span>
             )}

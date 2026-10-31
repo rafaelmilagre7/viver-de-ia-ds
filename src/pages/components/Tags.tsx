@@ -38,7 +38,7 @@ export default function Tags() {
         </div>
       </Section>
 
-      <Section title="Tools — com adicionar" meta="dashed glass variant">
+      <Section title="Ferramentas — com adicionar" meta="variante de vidro tracejada">
         <div className="via-tag-stage">
           <div className="via-tag-row">
             {['Base44', 'Lovable', 'Superagente'].map((t) => {
