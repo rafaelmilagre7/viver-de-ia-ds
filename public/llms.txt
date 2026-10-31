@@ -434,7 +434,9 @@ Email ≠ web. Clientes (Gmail, Outlook, Apple Mail) descartam CSS moderno. Regr
 - **Estrutura em tabela + estilo inline**, ~600px de largura, peça `<102KB` (Gmail corta acima).
 - **PROIBIDO** em email: flex, grid, `backdrop-filter` (vidro real), `position`, variáveis CSS, media query como dependência.
 - **CTA navy SÓLIDO** (`background-color: #0A1F3B`). Degradê puro de fundo **some no Outlook** → botão invisível.
-- **Liquid glass simulado é permitido** (hero navy, painéis frosted, CTA glossy) MAS **todo `background-image: linear/radial-gradient` precisa de um `background-color` sólido na MESMA regra** (fallback). Outlook mostra o sólido; Apple Mail/Gmail mostram o brilho.
+- **Cabeçalho claro é o padrão** (logo + eyebrow + título dentro do cartão branco, sem faixa): transacional e operacional parecem Linear/Stripe, não campanha. **Faixa navy só em momento de marca** (lançamento, convite de evento). Urgência (alerta, fatura em atraso) vem no eyebrow em tom de alerta, nunca em painel ou fundo coral.
+- **Vidro simulado é permitido** (painéis frosted, CTA glossy) MAS **todo `background-image: linear/radial-gradient` precisa de um `background-color` sólido na MESMA regra** (fallback). Outlook mostra o sólido; Apple Mail/Gmail mostram o brilho.
+- **Celular:** o layout inline já precisa ficar aceitável em 375px (o Gmail app ignora parte do `<style>`); `@media (max-width: 480px)` só refina — respiro 20px, chave–valor empilhado, botão em largura total.
 - **Logo = `lockup-navy.png`** (monograma + wordmark · ~18px alt · PNG, nunca SVG — o Gmail não renderiza SVG) em **URL absoluta hospedada** (não relativa): `https://viver-de-ia-ds.vercel.app/logos/lockup-navy.png`. Trava em claro: `<meta name="color-scheme" content="light only">`. Sempre um **preheader** (texto de preview escondido).
 - Cor de texto sobre navy = branco sólido. Coral só pra urgência real (atraso/erro).
 - Stack canônica: **react-email + Resend**. A IA escreve só o editorial (assunto, headline, corpo); o motor renderiza o HTML. 14 templates de produção vivos em `/patterns/email`.

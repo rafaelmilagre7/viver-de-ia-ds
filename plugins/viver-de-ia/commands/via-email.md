@@ -13,7 +13,9 @@ description: Gera email Viver de IA — produção à prova de bala (react-email
 
 - **Tabela + estilo inline**, ~600px, `<102KB`. NUNCA flex/grid/`backdrop-filter`/`position`/CSS vars em email.
 - **CTA navy SÓLIDO** (`background-color`). Degradê puro de fundo SOME no Outlook → botão invisível.
-- **Liquid glass simulado OK** (hero navy, painéis frosted, CTA glossy) MAS todo `background-image: gradient` precisa de `background-color` sólido de fallback na mesma regra.
+- **Cabeçalho claro é o padrão** (logo + eyebrow + título no cartão branco, sem faixa). **Faixa navy só em lançamento e convite de evento** (`<Layout variant="brand">`). Urgência = eyebrow de alerta (`hero.tone: 'alert'`), nunca painel/fundo coral.
+- **Vidro simulado OK** (painéis frosted, CTA glossy) MAS todo `background-image: gradient` precisa de `background-color` sólido de fallback na mesma regra.
+- **Celular:** layout inline aceitável em 375px por si só; `@media (max-width: 480px)` só refina (respiro 20px, chave–valor empilhado, botão largura total).
 - **Logo = `lockup-navy.png`** (monograma + wordmark · ~18px de altura · PNG porque o Gmail não renderiza SVG) em URL absoluta (`https://viver-de-ia-ds.vercel.app/logos/lockup-navy.png`). Trava em claro (`color-scheme: light only`). Preheader sempre.
 - A IA escreve só o editorial; o motor renderiza. Pra enviar: `render(<WelcomeEmail .../>)` → `resend.emails.send({ from, to, subject, html })`.
 

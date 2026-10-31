@@ -439,12 +439,14 @@ const css = createThemeOverride({ '--via-navy': '#0F2A4E' }, { scope: 'light' })
 
 Emails de verdade que **não quebram no inbox** (Gmail, Outlook, Apple Mail). Vivem em `emails/` (react-email), renderizam pra `public/emails/*.html` via `bun run build:emails`, e aparecem ao vivo em `/patterns/email`. Distinto da galeria editorial de mockups — estes são os **enviáveis**.
 
-**14 templates de produção:** `welcome` · `welcome-plataforma` (primeiro acesso à plataforma) · `enrollment` (confirmação de turma) · `billing` (fatura · coral só em atraso) · `nps` · `digest` (resumo semanal) · `event-invite` · `recap` (pós-evento) · `drip` (nurture) · `lancamento` · `oferta` · `churn` (sumiço) · `winback` (recuperação) · `urgent-ops` (alerta de sistema). Voz por contexto, sem dark pattern.
+**14 templates de produção:** `welcome` · `welcome-plataforma` (primeiro acesso à plataforma) · `enrollment` (confirmação de turma) · `billing` (fatura · eyebrow de alerta só em atraso) · `nps` · `digest` (resumo semanal) · `event-invite` · `recap` (pós-evento) · `drip` (nurture) · `lancamento` · `oferta` · `churn` (sumiço) · `winback` (recuperação) · `urgent-ops` (alerta de sistema). Voz por contexto, sem dark pattern.
 
 **Regras invioláveis de email (≠ web):**
 - **Tabela + estilo inline**, ~600px, `<102KB`. Zero flex/grid/`backdrop-filter` (clientes descartam).
 - **CTA navy SÓLIDO** (`background-color`) — degradê puro some no Outlook.
-- **Liquid glass simulado** OK (hero navy + painéis frosted + CTA glossy), mas **todo `background-image: gradient` precisa de `background-color` sólido de fallback** na mesma regra → Outlook mostra sólido, Apple Mail/Gmail mostram o brilho.
+- **Cabeçalho claro é o padrão** (logo + eyebrow + título dentro do cartão branco, sem faixa) — transacional e operacional parecem Linear/Stripe, não campanha. **Faixa navy só em momento de marca** (`<Layout variant="brand">`: lançamento e convite de evento). Urgência (alerta de sistema, fatura em atraso) vem no **eyebrow de alerta** (`hero.tone: 'alert'`, coral escuro + ponto), nunca em painel ou fundo coral; o painel de detalhes é sempre neutro.
+- **Vidro simulado** OK (painéis frosted + CTA glossy), mas **todo `background-image: gradient` precisa de `background-color` sólido de fallback** na mesma regra → Outlook mostra sólido, Apple Mail/Gmail mostram o brilho.
+- **Celular:** o layout inline já precisa ficar aceitável em 375px (o Gmail app ignora parte do `<style>`); a regra `@media (max-width: 480px)` só refina — respiro lateral 20px, linhas chave–valor empilhadas, botão em largura total.
 - **Logo = `lockup-navy.png`** (~18px de altura · PNG porque o Gmail não renderiza SVG) em URL absoluta (`https://viver-de-ia-ds.vercel.app/logos/lockup-navy.png`). Trava modo claro (`color-scheme: light only`). Preheader sempre.
 - A IA escreve só o **editorial** (assunto, headline, corpo); o motor renderiza o HTML.
 
