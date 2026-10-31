@@ -3,6 +3,7 @@ import {
   Wallet, Flame, Hourglass, Repeat, TrendingDown, TrendingUp, AlertCircle, Info,
 } from 'lucide-react';
 import Section from '../../../components/docs/Section';
+import { formatCurrency, formatDelta, formatNumber } from '../../../lib/format';
 import './BurnRunway.css';
 
 /* ==============================================================
@@ -79,13 +80,12 @@ const QUEDA_BURN_MES = (PRIMEIRO.burn - ULTIMO.burn) / (LINHAS.length - 1);     
 const MESES_ATE_BURN_ZERO = ULTIMO.burn / QUEDA_BURN_MES;                        // 17,4
 
 /* ---------- formato BR ---------- */
-const nfInt = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
-const nf1 = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+/* formatador único da lib · R$ com espaço fixo, menos tipográfico */
 
-const num = (v: number): string => nfInt.format(Math.round(v));
-const brl = (v: number): string => `R$ ${num(v)}`;
-const dec = (v: number): string => nf1.format(v);
-const pct = (v: number): string => `${v > 0 ? '+' : v < 0 ? '−' : ''}${nf1.format(Math.abs(v))}%`;
+const num = (v: number): string => formatNumber(Math.round(v));
+const brl = (v: number): string => formatCurrency(Math.round(v));
+const dec = (v: number): string => formatNumber(v, { decimals: 1 });
+const pct = (v: number): string => formatDelta(v, { unit: 'percent', decimals: 1 });
 const mes = (v: number): string => (Math.abs(v) >= 2 ? 'meses' : 'mês');
 
 const MESES_ABREV = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'] as const;

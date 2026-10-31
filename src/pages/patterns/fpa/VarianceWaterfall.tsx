@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowDownRight, ArrowUpRight, Calculator, ChevronRight, Info } from 'lucide-react';
 import { acharPeriodo, derivarPeriodo, impactoDoBloco, impactosDoPeriodo } from './data';
 import type { ImpactoConta } from './data';
+import { formatCurrency, formatDelta, formatNumber, formatPercent } from '../../../lib/format';
 import './VarianceWaterfall.css';
 
 /* ==============================================================
@@ -23,15 +24,13 @@ const T = derivarPeriodo(PERIODO);
 const CONTAS = impactosDoPeriodo(PERIODO);
 
 /* ---------- formatação BR ---------- */
-const MENOS = '−';
-const nf0 = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
-const nf1 = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+/* formatador único da lib · R$ com espaço fixo, menos tipográfico, sinal explícito na variação */
 
-const money = (v: number): string => `R$ ${nf0.format(Math.abs(v))}`;
-const moneySigned = (v: number): string => `${v < 0 ? MENOS : '+'}R$ ${nf0.format(Math.abs(v))}`;
-const pctOf = (r: number): string => `${nf1.format(r * 100)}%`;
-const pctSigned = (r: number): string => `${r < 0 ? MENOS : '+'}${nf1.format(Math.abs(r) * 100)}%`;
-const ppSigned = (d: number): string => `${d < 0 ? MENOS : '+'}${nf1.format(Math.abs(d) * 100)} p.p.`;
+const money = (v: number): string => formatCurrency(Math.abs(v));
+const moneySigned = (v: number): string => formatDelta(v, { unit: 'currency' });
+const pctOf = (r: number): string => formatPercent(r * 100, { decimals: 1 });
+const pctSigned = (r: number): string => formatDelta(r * 100, { unit: 'percent', decimals: 1 });
+const ppSigned = (d: number): string => formatDelta(d * 100, { unit: 'points', decimals: 1 });
 
 /* ---------- agregados do mês · todos derivados ---------- */
 const impReceita = impactoDoBloco(CONTAS, 'receita');
@@ -331,7 +330,7 @@ export default function VarianceWaterfall() {
                   strokeWidth="1"
                 />
                 <text className="vds-fpa-var-tick" x={PAD_L - 14} y={yDeValor(t) + 3.5} textAnchor="end">
-                  {t === 0 ? '0' : nf0.format(t / 1000)}
+                  {t === 0 ? '0' : formatNumber(t / 1000, { decimals: 0 })}
                 </text>
               </g>
             ))}

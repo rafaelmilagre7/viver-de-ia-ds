@@ -198,7 +198,21 @@
 
 /* ============================================
    TABELA · superfície LIMPA (sem vidro, sem zebra)
+   --------------------------------------------
+   Três leituras, decididas pela largura da PRÓPRIA seção
+   (container query), não da janela — com menu lateral, 1440
+   de janela dá ~1030px de seção, e 900 sem menu dá ~860:
+   · ≥ 920px  tabela inteira, com a micro-barra de desempenho
+   · 601–919  sem a barra; se ainda não couber, rola com a conta
+              fixa à esquerda e esmaecimento na borda que esconde número
+   · ≤ 600    cada linha vira um bloco (celular)
    ============================================ */
+.vds-fpa-dre { container: dre / inline-size; }
+
+.vds-fpa-dre-frame {
+  position: relative;
+}
+
 .vds-fpa-dre-scroll {
   position: relative;
   /* alto o bastante pro DRE inteiro caber; o cabeçalho sticky assume
@@ -216,9 +230,26 @@
   box-shadow: var(--via-shadow-focus);
 }
 
+/* Pista de rolagem · esmaece a borda direita enquanto houver número
+   escondido (data-depois vem do componente, medido no scroll) */
+.vds-fpa-dre-frame::after {
+  content: '';
+  position: absolute;
+  z-index: 4;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  width: var(--via-space-12);
+  border-radius: 0 calc(var(--via-radius-lg) - 1px) calc(var(--via-radius-lg) - 1px) 0;
+  background: linear-gradient(90deg, transparent, var(--via-surface) 88%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--via-dur-quick) var(--via-ease-snap);
+}
+.vds-fpa-dre-frame[data-depois='true']::after { opacity: 1; }
+
 .vds-fpa-dre-table {
   width: 100%;
-  min-width: 980px;
   border-collapse: separate;
   border-spacing: 0;
   font-family: var(--via-font);
@@ -226,10 +257,10 @@
   font-variant-numeric: tabular-nums;
 }
 
-.vds-fpa-dre-col-acct { width: auto; min-width: 360px; }
-.vds-fpa-dre-col-num  { width: 132px; }
-.vds-fpa-dre-col-pct  { width: 104px; }
-.vds-fpa-dre-col-perf { width: 116px; }
+/* números encolhem até o próprio conteúdo · a conta fica com o resto */
+.vds-fpa-dre-col-num,
+.vds-fpa-dre-col-pct,
+.vds-fpa-dre-col-perf { width: 1%; }
 
 /* ---- cabeçalho de coluna sticky ---- */
 .vds-fpa-dre-table thead th {
@@ -249,37 +280,63 @@
   text-transform: uppercase;
 }
 .vds-fpa-dre-table thead th:first-child { text-align: left; }
+.vds-fpa-dre-unit {
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-soft);
+}
 
-/* ---- corpo ---- */
+/* ---- corpo ----
+   Fundo de linha = tinta translúcida SOBRE a superfície opaca: a conta
+   fica fixa na rolagem lateral, então nenhuma célula pode ser vazada. */
+.vds-fpa-dre-row { --dre-tint: transparent; }
+.vds-fpa-dre-row.is-group { --dre-tint: var(--via-navy-02); }
+.vds-fpa-dre-row.is-result { --dre-tint: var(--via-navy-05); }
+.vds-fpa-dre-table tbody tr:hover { --dre-tint: var(--via-navy-03); }
+.vds-fpa-dre-table tbody tr.is-group:hover { --dre-tint: var(--via-navy-05); }
+.vds-fpa-dre-table tbody tr.is-result:hover { --dre-tint: var(--via-navy-06); }
+
 .vds-fpa-dre-table tbody th,
 .vds-fpa-dre-table tbody td {
   padding: var(--via-space-2_5) var(--via-space-4);
-  background: var(--via-surface);
+  background: linear-gradient(var(--dre-tint), var(--dre-tint)), var(--via-surface);
   border-bottom: 1px solid var(--via-border-hairline);
   vertical-align: baseline;
-  transition: background-color var(--via-dur) var(--via-ease-snap);
 }
 .vds-fpa-dre-table tbody tr:last-child > * { border-bottom: 0; }
 
-/* hover de linha · discreto, sem zebra pesada */
-.vds-fpa-dre-table tbody tr:hover > * { background: var(--via-navy-03); }
+/* ---- conta fixa na rolagem lateral ---- */
+.vds-fpa-dre-table :is(thead, tbody) th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+.vds-fpa-dre-table thead th:first-child { z-index: 3; }
+/* rolou pra direita: a coluna fixa ganha borda + sombra de ink do lado
+   que esconde número, pra não parecer que a tabela começa ali */
+.vds-fpa-dre-frame[data-antes='true'] .vds-fpa-dre-table tbody th:first-child {
+  box-shadow:
+    1px 0 0 var(--via-border-soft),
+    12px 0 14px -12px var(--via-shadow-ink-20);
+}
+.vds-fpa-dre-frame[data-antes='true'] .vds-fpa-dre-table thead th:first-child {
+  box-shadow:
+    inset 0 -1px 0 var(--via-navy-14),
+    1px 0 0 var(--via-border-soft),
+    12px 0 14px -12px var(--via-shadow-ink-20);
+}
 
 /* ---- linha de sub-conta (hierarquia por indentação + peso) ----
-   Gutter da conta-mãe: 16 (padding) + 14 (chevron) + 6 + 20 (operador) + 6
-   = nome em 62px. A sub-conta entra 16px depois disso. */
+   Gutter da conta-mãe: 16 (padding) + 14 (chevron) + 8 + 20 (operador) + 8
+   = nome em 66px, igual no total de bloco (botão) e no resultado (sem
+   botão). A sub-conta entra 16px depois disso. */
 .vds-fpa-dre-row.is-line > * { font-weight: var(--via-fw-regular); }
-.vds-fpa-dre-row.is-line .vds-fpa-dre-acct { padding-left: 86px; }
+.vds-fpa-dre-row.is-line .vds-fpa-dre-acct { padding-left: 82px; }
 
 /* ---- linha de TOTAL de bloco ---- */
-.vds-fpa-dre-row.is-group > * {
-  background: var(--via-navy-02);
-  font-weight: var(--via-fw-semibold);
-}
-.vds-fpa-dre-table tbody tr.is-group:hover > * { background: var(--via-navy-05); }
+.vds-fpa-dre-row.is-group > * { font-weight: var(--via-fw-semibold); }
 
 /* ---- linha de RESULTADO (= margem bruta, = EBITDA) ---- */
 .vds-fpa-dre-row.is-result > * {
-  background: var(--via-navy-05);
   font-weight: var(--via-fw-semibold);
   /* resultado pesa mais que total de bloco por TAMANHO + peso, nunca por cor */
   font-size: var(--via-fs-sm);
@@ -290,10 +347,10 @@
 .vds-fpa-dre-row.is-result .vds-fpa-dre-acct-note { font-size: var(--via-fs-xs); }
 /* evita linha dupla: quem vem antes de um resultado abre mão da borda inferior */
 .vds-fpa-dre-table tbody tr:has(+ tr.is-result) > * { border-bottom: 0; }
-.vds-fpa-dre-table tbody tr.is-result:hover > * { background: var(--via-navy-06); }
 
 /* ---- célula de conta ---- */
 .vds-fpa-dre-acct {
+  min-width: 280px;
   text-align: left;
   font-weight: inherit;
 }
@@ -301,7 +358,7 @@
 .vds-fpa-dre-acct-lead {
   display: inline-flex;
   align-items: center;
-  gap: var(--via-space-1_5);
+  gap: var(--via-space-2);   /* mesmo gap do botão · nome alinha em grupo e resultado */
 }
 .vds-fpa-dre-acct-chev {
   display: inline-flex;
@@ -328,7 +385,7 @@
 .vds-fpa-dre-acct-note {
   display: block;
   margin-top: 3px;
-  margin-left: 46px;   /* alinha com o nome da conta, não com o chevron */
+  margin-left: 50px;   /* 14 chevron + 8 + 20 operador + 8 · alinha com o nome, não com o chevron */
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-regular);
   color: var(--via-text-soft);   /* faint (gray-400) dava 2,5:1 no fundo da tabela */
@@ -382,6 +439,9 @@
 .vds-fpa-dre-num.is-flat { color: var(--via-text-primary); }
 .vds-fpa-dre-num.is-bad  { color: var(--via-coral-dark); }
 .vds-fpa-dre-num.is-goal { color: var(--via-success-text); }
+
+/* rótulo "orçado" só existe no bloco de celular */
+.vds-fpa-dre-k { display: none; }
 
 /* ---- micro-barra de desempenho ---- */
 .vds-fpa-dre-perf { text-align: right; }
@@ -525,9 +585,141 @@
   .vds-fpa-dre-cards { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 560px) {
+  .vds-fpa-dre { padding: var(--via-space-5) var(--via-space-4) var(--via-space-5); }
+}
+
+/* ---- médio · sem a micro-barra; a conta fica fixa se ainda rolar ---- */
+@container dre (max-width: 919px) {
+  .vds-fpa-dre-col-perf,
+  .vds-fpa-dre-perf { display: none; }
+}
+@container dre (min-width: 601px) and (max-width: 919px) {
+  .vds-fpa-dre-acct { min-width: 260px; }
+  .vds-fpa-dre-table :is(thead th, tbody td):not(:first-child) {
+    padding-left: var(--via-space-3);
+    padding-right: var(--via-space-3);
+  }
+}
+
+/* ---- celular · cada linha vira um bloco legível ----
+   [conta ........................................]
+   [realizado                          variação R$]
+   [orçado 1.780.000                   variação % ]
+   Hierarquia continua por indentação + peso + tinta da linha. */
+@container dre (max-width: 600px) {
+  .vds-fpa-dre-frame::after { display: none; }
+  .vds-fpa-dre-scroll {
+    max-height: none;
+    overflow: visible;
+  }
+  .vds-fpa-dre-table,
+  .vds-fpa-dre-table thead,
+  .vds-fpa-dre-table tbody { display: block; }
+  .vds-fpa-dre-table colgroup { display: none; }
+
+  /* cabeçalho vira a chave das duas colunas do bloco */
+  .vds-fpa-dre-table thead tr {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--via-space-3) var(--via-space-3_5) var(--via-space-2_5);
+    box-shadow: inset 0 -1px 0 var(--via-navy-14);
+  }
+  .vds-fpa-dre-table thead th {
+    position: static;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .vds-fpa-dre-frame[data-antes='true'] .vds-fpa-dre-table thead th:first-child { box-shadow: none; }
+  .vds-fpa-dre-table thead th:not(.is-real, .is-var) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Coluna de texto única: chevron e operador ficam pendurados num
+     gutter à esquerda, e nome + números do bloco alinham na mesma linha
+     vertical. Gutter = 14 chevron + 6 + 16 operador + 6 = 42px. */
+  .vds-fpa-dre-table { --dre-gutter: 42px; --dre-pad: var(--via-space-3); }
+  .vds-fpa-dre-table thead tr { padding-left: calc(var(--dre-pad) + var(--dre-gutter)); padding-right: var(--dre-pad); }
+
+  .vds-fpa-dre-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'acct acct'
+      'real var'
+      'plan pct';
+    column-gap: var(--via-space-4);
+    row-gap: var(--via-space-0_5);
+    align-items: baseline;
+    padding: var(--via-space-3) var(--dre-pad) var(--via-space-3) calc(var(--dre-pad) + var(--dre-gutter));
+    background: linear-gradient(var(--dre-tint), var(--dre-tint)), var(--via-surface);
+    border-bottom: 1px solid var(--via-border-hairline);
+  }
+  .vds-fpa-dre-table tbody tr:last-child { border-bottom: 0; }
+  .vds-fpa-dre-table tbody tr:has(+ tr.is-result) { border-bottom: 0; }
+  .vds-fpa-dre-table tbody .vds-fpa-dre-row > * {
+    position: static;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .vds-fpa-dre-frame[data-antes='true'] .vds-fpa-dre-table tbody th:first-child { box-shadow: none; }
+
+  .vds-fpa-dre-acct {
+    grid-area: acct;
+    min-width: 0;
+    margin: 0 0 var(--via-space-1_5) calc(var(--dre-gutter) * -1);
+  }
+  .vds-fpa-dre-acct-lead,
+  .vds-fpa-dre-toggle { gap: var(--via-space-1_5); }
+  .vds-fpa-dre-toggle { margin-left: calc(var(--via-space-1_5) * -1); padding-left: var(--via-space-1_5); }
+  .vds-fpa-dre-acct-prefix { width: 16px; }
+  .vds-fpa-dre-acct-note { margin-left: var(--dre-gutter); }
+
+  .vds-fpa-dre-num.is-real { grid-area: real; text-align: left; font-size: var(--via-fs-sm); }
+  .vds-fpa-dre-num.is-plan {
+    grid-area: plan;
+    text-align: left;
+    font-size: var(--via-fs-xs);
+    font-weight: var(--via-fw-regular);
+  }
+  .vds-fpa-dre-num.is-var  { grid-area: var; font-size: var(--via-fs-sm); }
+  .vds-fpa-dre-num.is-pct  { grid-area: pct; font-size: var(--via-fs-xs); }
+  .vds-fpa-dre-perf { display: none; }
+  .vds-fpa-dre-k { display: inline; }
+
+  /* sub-conta: sem chevron nem operador, entra 16px além do nome do total */
+  .vds-fpa-dre-row.is-line { padding-left: calc(var(--dre-pad) + var(--dre-gutter) + var(--via-space-4)); }
+  .vds-fpa-dre-row.is-line {
+    padding-top: var(--via-space-2_5);
+    padding-bottom: var(--via-space-2_5);
+  }
+  .vds-fpa-dre-row.is-line .vds-fpa-dre-acct { margin: 0 0 var(--via-space-1); padding-left: 0; }
+  .vds-fpa-dre-row.is-line .vds-fpa-dre-acct-name { font-size: var(--via-fs-caption); }
+
+  /* total de bloco · nome e números em semibold */
+  .vds-fpa-dre-row.is-group .vds-fpa-dre-acct-name { font-size: var(--via-fs-sm); }
+
+  /* resultado · pesa por tamanho, não por cor */
+  .vds-fpa-dre-row.is-result {
+    border-top: 1px solid var(--via-navy-18);
+    padding-top: var(--via-space-3_5);
+    padding-bottom: var(--via-space-3_5);
+  }
+  .vds-fpa-dre-row.is-result .vds-fpa-dre-acct-name { font-size: var(--via-fs-sm); }
+  .vds-fpa-dre-row.is-result .vds-fpa-dre-num.is-real { font-size: var(--via-fs-h4); letter-spacing: var(--via-ls-tight); }
+  .vds-fpa-dre-row.is-result .vds-fpa-dre-num.is-var { font-size: var(--via-fs-sm); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .vds-fpa-dre-table tbody th,
-  .vds-fpa-dre-table tbody td,
+  .vds-fpa-dre-frame::after,
   .vds-fpa-dre-toggle,
   .vds-fpa-dre-bar-fill {
     transition: none;

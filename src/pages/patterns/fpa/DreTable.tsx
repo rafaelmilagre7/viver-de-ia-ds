@@ -1,5 +1,6 @@
-import { useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { ArrowDownRight, ArrowUpRight, ChevronDown, ChevronRight, CircleCheck } from 'lucide-react';
+import { formatCurrency, formatDelta, formatNumber, formatPercent } from '../../../lib/format';
 import { PERIODOS, acharPeriodo, somaBloco } from './data';
 import type { Leaf, Period } from './data';
 import './DreTable.css';
@@ -17,19 +18,12 @@ import './DreTable.css';
    outra porque não existe segunda cópia dos números.
    ============================================================= */
 
-/* ---------- formatação BR ---------- */
-const fInt = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
-const fIntSigned = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0, signDisplay: 'exceptZero' });
-const fDec = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-const fDecSigned = new Intl.NumberFormat('pt-BR', {
-  minimumFractionDigits: 1,
-  maximumFractionDigits: 1,
-  signDisplay: 'exceptZero',
-});
-
-const money = (v: number) => `R$ ${fInt.format(v)}`;
-const pct = (v: number) => `${fDec.format(v)}%`;
-const pctSigned = (v: number) => `${fDecSigned.format(v)}%`;
+/* ---------- formatação BR · formatador único da lib (menos tipográfico, R$ com espaço fixo) ---------- */
+const int = (v: number) => formatNumber(v, { decimals: 0 });
+const intSigned = (v: number) => formatDelta(v, { decimals: 0 });
+const money = (v: number) => formatCurrency(v);
+const pct = (v: number) => formatPercent(v, { decimals: 1 });
+const pctSigned = (v: number) => formatDelta(v, { unit: 'percent', decimals: 1 });
 
 /* ---------- modelo de linha ---------- */
 type RowKind = 'group' | 'line' | 'result';
@@ -178,6 +172,28 @@ export default function DreTable() {
   const rumo = (v: number) => (v >= 0 ? 'acima' : 'abaixo');
   const absMoney = (v: number) => money(Math.abs(v));
 
+  /* Pista de rolagem: a moldura sabe se ainda há tabela à esquerda/direita.
+     Escreve direto no DOM (data-*) pra rolar sem re-renderizar a tabela. */
+  const molduraRef = useRef<HTMLDivElement>(null);
+  const rolagemRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const moldura = molduraRef.current;
+    const rolagem = rolagemRef.current;
+    if (!moldura || !rolagem) return;
+    const medir = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = rolagem;
+      moldura.dataset.antes = String(scrollLeft > 1);
+      moldura.dataset.depois = String(scrollLeft + clientWidth < scrollWidth - 1);
+    };
+    const ro = new ResizeObserver(medir);
+    ro.observe(rolagem);
+    rolagem.addEventListener('scroll', medir, { passive: true });
+    return () => {
+      ro.disconnect();
+      rolagem.removeEventListener('scroll', medir);
+    };
+  }, []);
+
   return (
     <section className="vds-fpa-dre" aria-labelledby={tituloId}>
       {/* ---------- cabeçalho da seção ---------- */}
@@ -224,7 +240,7 @@ export default function DreTable() {
               <span className="vds-fpa-dre-card-lbl">{row.label}</span>
               <p className="vds-fpa-dre-card-val">
                 <span className="cur">R$</span>
-                <span className="num">{fInt.format(row.real)}</span>
+                <span className="num">{int(row.real)}</span>
               </p>
               <div className="vds-fpa-dre-card-meta">
                 <span className={`vds-fpa-dre-card-delta is-${tone}`}>
@@ -235,111 +251,132 @@ export default function DreTable() {
                   ) : (
                     <ArrowDownRight size={14} strokeWidth={1.75} aria-hidden="true" />
                   )}
-                  {fIntSigned.format(v)} · {pctSigned((v / row.plan) * 100)}
+                  {intSigned(v)} · {pctSigned((v / row.plan) * 100)}
                 </span>
-                <span className="via-meta-chip via-meta-chip--mono">orçado {fInt.format(row.plan)}</span>
+                <span className="via-meta-chip via-meta-chip--mono">orçado {int(row.plan)}</span>
               </div>
             </article>
           );
         })}
       </div>
 
-      {/* ---------- tabela · superfície limpa, sem vidro ---------- */}
-      <div className="vds-fpa-dre-scroll" tabIndex={0} role="region" aria-label="Tabela do DRE, rolável">
-        <table className="vds-fpa-dre-table">
-          <caption className="vds-fpa-dre-sr">
-            Demonstração de resultado de {periodo.label}, comparando realizado e orçado por conta.
-          </caption>
-          <colgroup>
-            <col className="vds-fpa-dre-col-acct" />
-            <col className="vds-fpa-dre-col-num" />
-            <col className="vds-fpa-dre-col-num" />
-            <col className="vds-fpa-dre-col-num" />
-            <col className="vds-fpa-dre-col-pct" />
-            <col className="vds-fpa-dre-col-perf" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th scope="col">Conta</th>
-              <th scope="col">Realizado (R$)</th>
-              <th scope="col">Orçado (R$)</th>
-              <th scope="col">Variação (R$)</th>
-              <th scope="col">Variação (%)</th>
-              <th scope="col">Desempenho</th>
-            </tr>
-          </thead>
-          <tbody>
-            {visiveis.map((row) => {
-              const v = row.real - row.plan;
-              const vPct = (v / row.plan) * 100;
-              const tone = tomDaVariacao(row);
-              const grupo = row.kind === 'group';
-              const aberto = grupo ? abertos[row.id] : false;
-              const atingimento = (row.real / row.plan) * 100;
+      {/* ---------- tabela · superfície limpa, sem vidro ----------
+          Três leituras do mesmo markup (container query no CSS):
+          · largo: tabela inteira, com a micro-barra de desempenho
+          · médio: sem a barra; se ainda não couber, rola com a conta fixa
+            à esquerda e esmaecimento na borda que ainda tem número
+          · celular: cada linha vira um bloco (conta · realizado · orçado ·
+            variação). Os roles explícitos seguram a semântica de tabela
+            quando o display muda. */}
+      <div className="vds-fpa-dre-frame" ref={molduraRef}>
+        <div
+          className="vds-fpa-dre-scroll"
+          ref={rolagemRef}
+          tabIndex={0}
+          role="region"
+          aria-label="Tabela do DRE, rolável"
+        >
+          <table className="vds-fpa-dre-table" role="table">
+            <caption className="vds-fpa-dre-sr">
+              Demonstração de resultado de {periodo.label}, comparando realizado e orçado por conta.
+            </caption>
+            <colgroup>
+              <col className="vds-fpa-dre-col-acct" />
+              <col className="vds-fpa-dre-col-num" />
+              <col className="vds-fpa-dre-col-num" />
+              <col className="vds-fpa-dre-col-num" />
+              <col className="vds-fpa-dre-col-pct" />
+              <col className="vds-fpa-dre-col-perf" />
+            </colgroup>
+            <thead role="rowgroup">
+              <tr role="row">
+                <th role="columnheader" scope="col">
+                  Conta <span className="vds-fpa-dre-unit">· em R$</span>
+                </th>
+                <th role="columnheader" scope="col" className="is-real">Realizado</th>
+                <th role="columnheader" scope="col" className="is-plan">Orçado</th>
+                <th role="columnheader" scope="col" className="is-var">Variação</th>
+                <th role="columnheader" scope="col" className="is-pct">Variação %</th>
+                <th role="columnheader" scope="col" className="vds-fpa-dre-perf">Desempenho</th>
+              </tr>
+            </thead>
+            <tbody role="rowgroup">
+              {visiveis.map((row) => {
+                const v = row.real - row.plan;
+                const vPct = (v / row.plan) * 100;
+                const tone = tomDaVariacao(row);
+                const grupo = row.kind === 'group';
+                const aberto = grupo ? abertos[row.id] : false;
+                const atingimento = (row.real / row.plan) * 100;
 
-              return (
-                <tr key={row.id} className={`vds-fpa-dre-row is-${row.kind}`}>
-                  <th scope="row" className="vds-fpa-dre-acct">
-                    {grupo ? (
-                      <button
-                        type="button"
-                        className="vds-fpa-dre-toggle"
-                        aria-expanded={aberto}
-                        onClick={() =>
-                          setAbertos((prev) => ({ ...prev, [row.id]: !prev[row.id] }))
-                        }
-                      >
-                        <span className="vds-fpa-dre-acct-chev">
-                          {aberto ? (
-                            <ChevronDown size={16} strokeWidth={1.75} aria-hidden="true" />
-                          ) : (
-                            <ChevronRight size={16} strokeWidth={1.75} aria-hidden="true" />
-                          )}
-                        </span>
-                        <span className="vds-fpa-dre-acct-prefix">{row.prefix ?? ''}</span>
-                        <span className="vds-fpa-dre-acct-name">{row.label}</span>
-                        <span className="vds-fpa-dre-sr">
-                          {aberto ? ' — recolher sub-contas' : ' — expandir sub-contas'}
-                        </span>
-                      </button>
-                    ) : (
-                      <span className="vds-fpa-dre-acct-lead">
-                        {row.kind === 'result' && <span className="vds-fpa-dre-acct-chev" aria-hidden="true" />}
-                        {row.kind === 'result' && (
+                return (
+                  <tr key={row.id} role="row" className={`vds-fpa-dre-row is-${row.kind}`}>
+                    <th role="rowheader" scope="row" className="vds-fpa-dre-acct">
+                      {grupo ? (
+                        <button
+                          type="button"
+                          className="vds-fpa-dre-toggle"
+                          aria-expanded={aberto}
+                          onClick={() =>
+                            setAbertos((prev) => ({ ...prev, [row.id]: !prev[row.id] }))
+                          }
+                        >
+                          <span className="vds-fpa-dre-acct-chev">
+                            {aberto ? (
+                              <ChevronDown size={16} strokeWidth={1.75} aria-hidden="true" />
+                            ) : (
+                              <ChevronRight size={16} strokeWidth={1.75} aria-hidden="true" />
+                            )}
+                          </span>
                           <span className="vds-fpa-dre-acct-prefix">{row.prefix ?? ''}</span>
-                        )}
-                        <span className="vds-fpa-dre-acct-name">{row.label}</span>
-                      </span>
-                    )}
-                    {row.note && <span className="vds-fpa-dre-acct-note">{row.note}</span>}
-                  </th>
+                          <span className="vds-fpa-dre-acct-name">{row.label}</span>
+                          <span className="vds-fpa-dre-sr">
+                            {aberto ? ' — recolher sub-contas' : ' — expandir sub-contas'}
+                          </span>
+                        </button>
+                      ) : (
+                        <span className="vds-fpa-dre-acct-lead">
+                          {row.kind === 'result' && <span className="vds-fpa-dre-acct-chev" aria-hidden="true" />}
+                          {row.kind === 'result' && (
+                            <span className="vds-fpa-dre-acct-prefix">{row.prefix ?? ''}</span>
+                          )}
+                          <span className="vds-fpa-dre-acct-name">{row.label}</span>
+                        </span>
+                      )}
+                      {row.note && <span className="vds-fpa-dre-acct-note">{row.note}</span>}
+                    </th>
 
-                  <td className="vds-fpa-dre-num">{fInt.format(row.real)}</td>
-                  <td className="vds-fpa-dre-num is-plan">{fInt.format(row.plan)}</td>
-                  <td className={`vds-fpa-dre-num is-${tone}`}>{fIntSigned.format(v)}</td>
-                  <td className={`vds-fpa-dre-num is-${tone}`}>{pctSigned(vPct)}</td>
+                    <td role="cell" className="vds-fpa-dre-num is-real">{int(row.real)}</td>
+                    <td role="cell" className="vds-fpa-dre-num is-plan">
+                      {/* rótulo só do bloco de celular · o leitor de tela já ouve o cabeçalho */}
+                      <span className="vds-fpa-dre-k" aria-hidden="true">orçado </span>
+                      {int(row.plan)}
+                    </td>
+                    <td role="cell" className={`vds-fpa-dre-num is-var is-${tone}`}>{intSigned(v)}</td>
+                    <td role="cell" className={`vds-fpa-dre-num is-pct is-${tone}`}>{pctSigned(vPct)}</td>
 
-                  <td className="vds-fpa-dre-perf">
-                    <span
-                      className={`vds-fpa-dre-bar is-${tone}`}
-                      role="img"
-                      aria-label={`Realizado em ${pct(atingimento)} do orçado`}
-                      title={`Realizado em ${pct(atingimento)} do orçado`}
-                    >
-                      <span className="vds-fpa-dre-bar-track">
-                        <span
-                          className="vds-fpa-dre-bar-fill"
-                          style={{ width: `${preenchimento(row.real, row.plan)}%` }}
-                        />
+                    <td role="cell" className="vds-fpa-dre-perf">
+                      <span
+                        className={`vds-fpa-dre-bar is-${tone}`}
+                        role="img"
+                        aria-label={`Realizado em ${pct(atingimento)} do orçado`}
+                        title={`Realizado em ${pct(atingimento)} do orçado`}
+                      >
+                        <span className="vds-fpa-dre-bar-track">
+                          <span
+                            className="vds-fpa-dre-bar-fill"
+                            style={{ width: `${preenchimento(row.real, row.plan)}%` }}
+                          />
+                        </span>
+                        <span className="vds-fpa-dre-bar-tick" aria-hidden="true" />
                       </span>
-                      <span className="vds-fpa-dre-bar-tick" aria-hidden="true" />
-                    </span>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* ---------- rodapé · legenda + leitura do período ---------- */}
