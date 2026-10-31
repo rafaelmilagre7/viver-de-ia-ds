@@ -1,4 +1,4 @@
-import { Inbox, Search, Calendar } from 'lucide-react';
+import { Inbox, Search, Compass } from 'lucide-react';
 import { EmptyState } from './EmptyState';
 import { Button } from '../Button/Button';
 
@@ -6,31 +6,34 @@ export default {
   title: 'EmptyState',
 };
 
+// Padrão · claro, sem fundo
 export const Default = () => (
   <EmptyState
     icon={<Inbox size={20} strokeWidth={1.8} />}
     title="Nenhuma mentoria agendada"
-    description="Sua próxima sessão aparece aqui assim que o mentor confirmar."
+    description="Sua próxima sessão aparece aqui assim que a mentoria confirmar."
     action={<Button variant="primary">Agendar agora</Button>}
     secondary={<Button variant="ghost">Ver disponibilidades</Button>}
   />
 );
 
+// Texto canônico do microcopy (vazio-sem-resultados)
 export const Soft = () => (
   <EmptyState
     variant="soft"
     icon={<Search size={20} strokeWidth={1.8} />}
-    title="Sem resultados pra 'navy gradient'"
-    description="Tente termos mais gerais como 'mesh' ou 'glass'."
+    title="Nada encontrado pra “navy gradient”."
+    description="Tente um termo mais curto ou confira a grafia."
   />
 );
 
-export const Navy = () => (
+// Opt-in · só em momento de marca, sempre com conteúdo e ação
+export const NavyMomentoDeMarca = () => (
   <EmptyState
     variant="navy"
-    icon={<Calendar size={20} strokeWidth={1.8} />}
-    title="Sua agenda está limpa"
-    description="Bom momento pra revisar transcrições e marcar a próxima sessão."
-    action={<Button variant="accent">Ver oportunidades</Button>}
+    icon={<Compass size={20} strokeWidth={1.8} />}
+    title="Seu painel começa aqui"
+    description="Faltam 2 passos pra liberar a trilha completa."
+    action={<Button variant="secondary">Continuar pelo passo 2</Button>}
   />
 );

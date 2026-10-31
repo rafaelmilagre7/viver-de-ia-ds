@@ -1,7 +1,18 @@
 import { ArrowRight } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
+import { microcopy } from '../../content/microcopy';
 import './empty.css';
+
+/** Texto canônico (src/content/microcopy.ts) pelo id. */
+const mc = (id: string) => microcopy.find((m) => m.id === id)!.texto;
+
+/** Frase canônica em dois tempos: a 1ª frase vira título, o resto vira texto. */
+function frase(id: string): [string, string] {
+  const t = mc(id);
+  const i = t.indexOf('. ');
+  return i < 0 ? [t, ''] : [t.slice(0, i + 1), t.slice(i + 2)];
+}
 
 function EditorialMark() {
   return (
@@ -27,33 +38,35 @@ function EditorialMark() {
 }
 
 export default function Empty() {
+  const [filtroTitulo, filtroTexto] = frase('vazio-filtros');
+  const [inicioTitulo, inicioTexto] = frase('vazio-primeiro-uso');
   return (
     <>
       <DocsHeader
-        eyebrow="Componentes · empty state"
+        eyebrow="Componentes · estado vazio"
         title={<>Vazio também é <em>resposta</em>.</>}
-        lede="Empty states ocupam o espaço inteiro do componente. Uma marca editorial geométrica navy, headline em Geist, descrição em Inter, e um CTA pílula. Sem ilustração desenhada, sem mascote — só geometria precisa da marca."
+        lede="O estado vazio ocupa o espaço inteiro do componente, no fundo claro da tela. Marca geométrica navy, título e descrição em Geist, uma ação em pílula — sem ilustração, sem mascote. Os textos vêm da biblioteca de microcopy."
       />
 
-      <Section title="Padrão · feedback" meta="marca geométrica · headline · cta">
+      <Section title="Padrão · filtro sem resultado" meta="marca geométrica · título · ação">
         <div className="vds-empty">
           <EditorialMark />
-          <h3>Nenhum case com esse filtro.</h3>
-          <p>Tente outro setor, remova um filtro, ou veja os 521 cases reais sem filtro.</p>
+          <h3>{filtroTitulo}</h3>
+          <p>{filtroTexto}</p>
           <button className="cta">
-            Ver todos os cases
+            Limpar filtros
             <ArrowRight size={16} strokeWidth={1.75} />
           </button>
         </div>
       </Section>
 
-      <Section title="Sem dados ainda" meta="cenário inicial">
+      <Section title="Sem dados ainda" meta="primeiro uso">
         <div className="vds-empty soft">
           <EditorialMark />
-          <h3>Você ainda não publicou um case.</h3>
-          <p>Quando publicar o primeiro, ele aparece aqui. Dura ~10 minutos: empresa, setor, headline com métrica e quote do operador.</p>
+          <h3>{inicioTitulo}</h3>
+          <p>{inicioTexto}</p>
           <button className="cta">
-            Publicar primeiro case
+            {mc('botao-criar')}
             <ArrowRight size={16} strokeWidth={1.75} />
           </button>
         </div>

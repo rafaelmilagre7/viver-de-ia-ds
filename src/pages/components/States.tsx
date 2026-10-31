@@ -5,20 +5,31 @@ import {
 } from 'lucide-react';
 import DocsHeader from '../../components/docs/DocsHeader';
 import Section from '../../components/docs/Section';
-import monogramWhite from '../../assets/logos/VIA_monogram_hq_white.png';
+import { BrandLogo } from '../../lib/BrandLogo/BrandLogo';
+import { microcopy } from '../../content/microcopy';
 import './states.css';
+
+/** Texto canônico (src/content/microcopy.ts) pelo id. */
+const mc = (id: string) => microcopy.find((m) => m.id === id)!.texto;
+
+/** Frase canônica em dois tempos: a 1ª frase vira título, o resto vira texto. */
+function frase(id: string): [string, string] {
+  const t = mc(id);
+  const i = t.indexOf('. ');
+  return i < 0 ? [t, ''] : [t.slice(0, i + 1), t.slice(i + 2)];
+}
 
 export default function States() {
   return (
     <>
       <DocsHeader
-        eyebrow="Componentes · system states"
+        eyebrow="Componentes · estados do sistema"
         title={
           <>
-            Loading, erro, vazio, sucesso — <em>cada estado tratado</em>.
+            Carregando, erro, vazio, sucesso — <em>cada estado tratado</em>.
           </>
         }
-        lede="O sistema vive em estados: esperando, falhando, vazio, completo. Cada um tem que parecer parte da marca, não uma página esquecida pelo time. Estes são os 4 grupos que sempre cobrem."
+        lede="O sistema vive em estados: esperando, falhando, vazio, completo. Cada um tem que parecer parte da marca, não uma página esquecida pelo time. Todos nascem no fundo claro, como o resto do produto."
       />
 
       <LoadersSection />
@@ -33,16 +44,18 @@ export default function States() {
 /* ---------- Loaders ---------- */
 function LoadersSection() {
   return (
-    <Section title="Loading states · 3 grãos" meta="full page · inline · skeleton block">
+    <Section title="Carregamento · 3 escalas" meta="página inteira · em linha · skeleton">
       <div className="vds-loaders-row">
-        {/* Full page cinematic */}
-        <div className="vds-loader-card full via-mesh-navy via-noise">
-          <img src={monogramWhite} alt="" className="vds-loader-mono" />
+        {/* Página inteira · claro, pra não piscar escuro entre telas claras */}
+        <div className="vds-loader-card full">
+          <span className="vds-loader-mono" aria-hidden="true">
+            <BrandLogo monoOnly variant="auto" size={40} />
+          </span>
           <div className="vds-loader-ring">
             <span />
           </div>
           <p className="vds-loader-msg">
-            Preparando sua sessão · <em>buscando aulas, notas e mentor</em>
+            Preparando sua sessão · <em>buscando aulas, notas e mentoria</em>
           </p>
           <p className="vds-loader-sub">Costuma levar menos de 2s</p>
         </div>
@@ -56,7 +69,7 @@ function LoadersSection() {
 
           <div className="vds-loader-inline alt">
             <Loader2 size={16} strokeWidth={1.75} className="spin" />
-            <p>Carregando transcript da aula 02.02…</p>
+            <p>Carregando a transcrição da aula 02.02…</p>
           </div>
 
           <div className="vds-loader-skel">
@@ -79,12 +92,13 @@ function LoadersSection() {
 
 /* ---------- Error pages ---------- */
 function ErrorPagesSection() {
+  const [servidorTitulo, servidorTexto] = frase('erro-servidor');
   return (
-    <Section title="Páginas de erro · 500 · 403 · manutenção" meta="cada uma com tom editorial · não 'oops!'">
+    <Section title="Páginas de erro · 500 · 403 · manutenção" meta="tom editorial, sem “oops”">
       <div className="vds-errors">
-        {/* 500 server error — navy atmosphere + incident ID terminal */}
-        <article className="vds-error-card e500 via-mesh-navy via-noise">
-          <span className="vds-error-orbit">
+        {/* 500 · claro e calmo: assume a falha, ID do incidente, tentar de novo */}
+        <article className="vds-error-card e500">
+          <span className="vds-error-orbit" aria-hidden="true">
             <span className="vds-error-orbit-dot" />
           </span>
           <div className="vds-error-head">
@@ -94,18 +108,16 @@ function ErrorPagesSection() {
             </span>
             <span className="vds-error-code mono">500</span>
           </div>
-          <h3>
-            Algo travou <em>do nosso lado</em>.
-          </h3>
+          <h3>{servidorTitulo}</h3>
           <p>
-            Nosso time já foi alertado — não precisa reportar. Tentar de novo em 1-2 minutos geralmente resolve, e estamos checando se foi caso isolado ou tendência.
+            {servidorTexto} O time já foi avisado, não precisa reportar.
           </p>
           <div className="vds-error-actions">
-            <button className="vds-error-btn primary on-dark">
+            <button className="vds-error-btn primary">
               <RefreshCw size={14} strokeWidth={1.75} />
-              Tentar de novo
+              {mc('botao-tentar-de-novo')}
             </button>
-            <a href="#" className="vds-error-btn ghost on-dark">Voltar ao começo</a>
+            <a href="#" className="vds-error-btn ghost">Voltar pro início</a>
           </div>
           <p className="vds-error-id mono">
             <span>incidente</span>
@@ -138,6 +150,7 @@ function ErrorPagesSection() {
               <em>R$ 3.780/mês</em>
             </div>
           </div>
+          <p className="vds-error-plans-note">Valores por mês, em contratação anual.</p>
           <div className="vds-error-actions">
             <button className="vds-error-btn primary">
               Ver opções do plano
@@ -160,16 +173,18 @@ function ErrorPagesSection() {
             Estamos atualizando o Consultor IA.
           </h3>
           <p>
-            Janela programada de 30 minutos. Tudo deve voltar ao normal por volta de <strong>14:30 BRT</strong>. Aulas e materiais offline continuam funcionando.
+            Janela programada de 30 minutos. Tudo deve voltar ao normal por volta de <strong>14h30 BRT</strong>. Aulas e materiais offline continuam funcionando.
           </p>
           <div className="vds-error-progress">
             <div className="vds-error-progress-row">
-              <span>14:00 BRT</span>
               <span className="mid">~ 18 min restantes</span>
-              <span>14:30 BRT</span>
             </div>
             <div className="vds-error-progress-bar">
               <span style={{ width: '42%' }} />
+            </div>
+            <div className="vds-error-progress-row">
+              <span>14h BRT</span>
+              <span>14h30 BRT</span>
             </div>
           </div>
           <div className="vds-error-actions">
@@ -190,16 +205,19 @@ function ErrorPagesSection() {
 
 /* ---------- Empty states ---------- */
 function EmptyStatesSection() {
+  const [buscaTitulo, buscaTexto] = frase('vazio-sem-resultados');
+  const [acessoTitulo, acessoTexto] = frase('erro-sem-permissao');
+  const [lidoTitulo, lidoTexto] = frase('vazio-tudo-lido');
   return (
-    <Section title="Empty states · 4 cenas" meta="sem resultados · sem dados ainda · sem acesso · tudo feito">
+    <Section title="Estados vazios · 4 cenas" meta="sem resultados · primeiro acesso · sem acesso · tudo lido">
       <div className="vds-empties">
         {/* No results */}
         <article className="vds-empty-card">
           <div className="vds-empty-glyph">
             <Search size={20} strokeWidth={1.75} />
           </div>
-          <h4>Nenhuma aula com "few-shot tuning"</h4>
-          <p>Tente um termo mais geral, ou veja as 3 aulas em <em>"prompt engineering"</em> — costuma cobrir o que você procura.</p>
+          <h4>{buscaTitulo.replace('{termo}', 'few-shot tuning')}</h4>
+          <p>{buscaTexto} Ou veja as 3 aulas de <em>“prompt engineering”</em>.</p>
           <button className="vds-empty-btn">
             Limpar busca
           </button>
@@ -210,7 +228,7 @@ function EmptyStatesSection() {
           <div className="vds-empty-glyph">
             <Compass size={20} strokeWidth={1.75} />
           </div>
-          <h4>Bem-vindo · seu primeiro dashboard</h4>
+          <h4>Boas-vindas ao seu primeiro painel</h4>
           <p>Quando você completar a primeira aula, esse painel mostra progresso, próximos passos e métricas da sua trilha. Começa em <strong>01.01 · O que mudou de 2022 pra cá</strong>.</p>
           <button className="vds-empty-btn primary">
             Começar primeira aula
@@ -223,8 +241,8 @@ function EmptyStatesSection() {
           <div className="vds-empty-glyph">
             <Lock size={20} strokeWidth={1.75} />
           </div>
-          <h4>Você ainda não tem acesso</h4>
-          <p>Essa área é dos administradores do plano Enterprise. Se você acha que deveria ter acesso, fala com seu admin ou com o time da Viver de IA.</p>
+          <h4>{acessoTitulo}</h4>
+          <p>{acessoTexto}</p>
           <a href="#" className="vds-empty-btn">Solicitar acesso</a>
         </article>
 
@@ -233,8 +251,8 @@ function EmptyStatesSection() {
           <div className="vds-empty-glyph done">
             <ListChecks size={20} strokeWidth={1.75} />
           </div>
-          <h4>Sua caixa de entrada está limpa</h4>
-          <p>Todas as 8 notificações desta semana já foram respondidas — boa. A próxima chega quando alguém te marcar no Discord ou tiver atualização da sua mentoria.</p>
+          <h4>{lidoTitulo}</h4>
+          <p>{lidoTexto}</p>
           <button className="vds-empty-btn ghost">Ver histórico</button>
         </article>
       </div>
@@ -244,12 +262,14 @@ function EmptyStatesSection() {
 
 /* ---------- Empty states · premium ---------- */
 function EmptyPremiumSection() {
+  const [offlineTitulo, offlineTexto] = frase('erro-sem-conexao');
+  const [filtroTitulo, filtroTexto] = frase('vazio-filtros');
   return (
-    <Section title="Empty states · premium · atmosféricos" meta="cold start · sem conexão · sem notif · filtros · inbox zen · calendário">
+    <Section title="Estados vazios · com contexto" meta="primeiro acesso · sem conexão · sem notificações · filtros · caixa zerada · agenda">
       <div className="vds-empty-prem-grid">
-        {/* Cold start dashboard — large featured, dark atmospheric, onboarding */}
-        <article className="vds-empty-prem cold via-mesh-navy via-noise">
-          <div className="vds-empty-prem-orbit">
+        {/* Primeiro acesso · destaque claro, com passos e saída */}
+        <article className="vds-empty-prem cold">
+          <div className="vds-empty-prem-orbit" aria-hidden="true">
             <span className="vds-empty-prem-orbit-dot" />
             <span className="vds-empty-prem-orbit-ring" />
           </div>
@@ -261,7 +281,7 @@ function EmptyPremiumSection() {
               Seu painel <em>começa aqui</em>.
             </h3>
             <p>
-              Em até 3 passos seu dashboard ganha vida — progresso real, próximos compromissos e as 3 soluções escolhidas na adesão. Comece pelo primeiro.
+              {mc('onboarding-progresso').replace('{n}', '2')} Depois deles, este painel mostra seu progresso, os próximos compromissos e as 3 soluções escolhidas na adesão.
             </p>
             <ol className="vds-empty-prem-steps">
               <li className="done">
@@ -287,12 +307,13 @@ function EmptyPremiumSection() {
               </li>
             </ol>
             <div className="vds-empty-prem-actions">
-              <button className="vds-empty-prem-btn primary on-dark">
+              <button className="vds-empty-prem-btn primary">
                 Continuar pelo passo 2
                 <ArrowRight size={14} strokeWidth={1.75} />
               </button>
-              <a href="#" className="vds-empty-prem-btn ghost on-dark">Faço depois</a>
+              <a href="#" className="vds-empty-prem-btn ghost">Pular por agora</a>
             </div>
+            <p className="vds-empty-prem-hint">{mc('onboarding-pular')}</p>
           </div>
         </article>
 
@@ -302,13 +323,11 @@ function EmptyPremiumSection() {
             <WifiOff size={20} strokeWidth={1.75} />
           </div>
           <span className="vds-empty-prem-eyebrow soft">
-            Sem conexão · tentando voltar
+            Tentando reconectar
           </span>
-          <h4>
-            A internet caiu por um instante.
-          </h4>
+          <h4>{offlineTitulo}</h4>
           <p>
-            Estamos tentando religar de 4 em 4 segundos. As últimas <strong>3 aulas que você abriu</strong> seguem disponíveis offline — pode continuar.
+            {offlineTexto} As <strong>3 últimas aulas</strong> que você abriu continuam disponíveis.
           </p>
           <div className="vds-empty-prem-trail">
             <div className="vds-empty-prem-trail-dots">
@@ -340,11 +359,9 @@ function EmptyPremiumSection() {
           <div className="vds-empty-prem-icon">
             <Filter size={20} strokeWidth={1.75} />
           </div>
-          <h4>
-            Nenhum operador casa com esses <em>3 filtros</em>.
-          </h4>
+          <h4>{filtroTitulo}</h4>
           <p>
-            Tente afrouxar um deles — geralmente <strong>"MRR &gt; R$ 4K"</strong> é o que mais restringe. Sugestões automáticas abaixo.
+            {filtroTexto} O que mais restringe costuma ser <strong>“MRR &gt; R$ 4K”</strong>.
           </p>
           <div className="vds-empty-prem-chips">
             <button className="vds-empty-prem-chip">
@@ -363,7 +380,7 @@ function EmptyPremiumSection() {
               <em>112 → 236</em>
             </button>
           </div>
-          <button className="vds-empty-prem-btn ghost">Limpar todos os filtros</button>
+          <button className="vds-empty-prem-btn ghost">Limpar filtros</button>
         </article>
 
         {/* Inbox zen — domingo */}
@@ -401,7 +418,7 @@ function EmptyPremiumSection() {
             Sua semana está <em>limpa</em>.
           </h4>
           <p>
-            Nenhuma sessão marcada — bom espaço pra deep work ou pra marcar o próximo encontro de mentoria.
+            Nenhuma sessão marcada — bom espaço pra trabalho focado ou pra marcar o próximo encontro de mentoria.
           </p>
           <div className="vds-empty-prem-week">
             <div className="vds-empty-prem-week-row">
@@ -427,19 +444,19 @@ function EmptyPremiumSection() {
 /* ---------- Success states ---------- */
 function SuccessStatesSection() {
   return (
-    <Section title="Success states · confirmação de ação" meta="pagamento aprovado · aula concluída">
+    <Section title="Sucesso · confirmação de ação" meta="pagamento confirmado · aula concluída">
       <div className="vds-success-row">
         <article className="vds-success-card">
           <div className="vds-success-mark">
             <Check size={32} strokeWidth={1.75} />
             <span className="vds-success-pulse" />
           </div>
-          <span className="vds-success-eyebrow">Pagamento aprovado</span>
+          <span className="vds-success-eyebrow">Pagamento confirmado</span>
           <h3>
-            Bem-vindo ao plano <em>Pro</em>.
+            Boas-vindas ao plano <em>Pro</em>.
           </h3>
           <p>
-            Seu acesso já está liberado. Em até 2 horas você recebe um e-mail com a trilha de onboarding e o link do primeiro check-in em grupo. Bom começo.
+            Seu acesso já está liberado. A trilha de onboarding e o link do primeiro check-in em grupo chegam no seu email.
           </p>
           <div className="vds-success-actions">
             <button className="vds-success-btn primary">
@@ -458,7 +475,7 @@ function SuccessStatesSection() {
           <h3>
             02.02 marcada como <em>finalizada</em>.
           </h3>
-          <p>+8 minutos pra sua streak · próxima aula em 02.03.</p>
+          <p>+8 minutos pra sua sequência · próxima aula: 02.03.</p>
           <div className="vds-success-actions">
             <button className="vds-success-btn primary">
               Ir pra próxima aula

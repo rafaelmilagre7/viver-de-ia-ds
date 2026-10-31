@@ -27,40 +27,33 @@
   isolation: isolate;
 }
 
-/* o utilitário .via-mesh-navy tem a mesma especificidade do base e perde na ordem
-   do bundle — o card pinta a própria atmosfera pra não virar retângulo branco */
+/* Página inteira · CLARO (light-first): entre duas telas claras, um carregador
+   navy piscava escuro. Atmosfera navy só como luz de fundo; tudo em token
+   semântico, então o escuro se resolve sozinho. */
 .vds-loader-card.full {
   min-height: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--via-mesh-navy);
-  color: var(--via-white);
+  background:
+    radial-gradient(520px 260px at 50% 0%, var(--via-navy-05), transparent 70%),
+    var(--via-glass-card);
+  color: var(--via-text-primary);
   padding: var(--via-space-12) var(--via-space-8);
   text-align: center;
-  border-color: transparent;
-  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
-}
-
-.vds-loader-card.full > * {
-  position: relative;
-  z-index: 1;
 }
 
 .vds-loader-mono {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
+  display: inline-flex;
   margin-bottom: var(--via-space-8);
-  opacity: 0.92;
 }
 
 .vds-loader-ring {
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   position: relative;
-  margin-bottom: var(--via-space-8);
+  margin-bottom: var(--via-space-6);
 }
 
 .vds-loader-ring::before {
@@ -68,17 +61,17 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.12);
+  border: 2px solid var(--via-navy-08);
 }
 
-/* spinner sobre atmosfera navy · navy sobre navy sumiria */
+/* arco em tinta que adapta · navy no claro, quase-branco no escuro */
 .vds-loader-ring span {
   position: absolute;
   inset: 0;
   border-radius: 50%;
   border: 2px solid transparent;
-  border-top-color: var(--via-white);
-  border-right-color: rgba(255, 255, 255, 0.34);
+  border-top-color: var(--via-text-primary);
+  border-right-color: var(--via-navy-25);
   animation: vds-spin 1s linear infinite;
 }
 
@@ -90,7 +83,7 @@
   margin: 0 0 var(--via-space-1_5);
   font-size: var(--via-fs-body);
   font-weight: var(--via-fw-medium);
-  color: var(--via-white);
+  color: var(--via-text-primary);
   letter-spacing: var(--via-ls-tight);
   max-width: 380px;
   line-height: var(--via-lh-normal);
@@ -98,14 +91,14 @@
 
 .vds-loader-msg em {
   font-style: normal;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--via-text-muted);
   font-weight: var(--via-fw-regular);
 }
 
 .vds-loader-sub {
   margin: 0;
   font-size: var(--via-fs-xs);
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--via-text-soft);
 }
 
 /* Inline */
@@ -169,7 +162,8 @@
   position: absolute;
   inset: 0;
   width: 40%;
-  background: linear-gradient(90deg, var(--via-navy), var(--via-blue));
+  /* tinta que adapta · o degradê navy→blue fixo sumia no escuro */
+  background: var(--via-text-primary);
   border-radius: var(--via-radius-pill);
   animation: vds-slide 1.5s ease-in-out infinite;
 }
@@ -279,13 +273,15 @@
 }
 
 /* ---------- 500 · server error ---------- */
-/* shorthand completo: `background-color` sozinho deixava o gradiente branco do
-   glass do base pintando POR CIMA do navy (card lavado, texto branco ilegível) */
-.vds-error-card.e500 {
-  background: var(--via-mesh-navy);
-  color: var(--via-white);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
+/* CLARO e calmo (light-first): era laje navy. Agora é o mesmo papel/vidro
+   dos irmãos, com a órbita em traço fino de tinta que adapta ao tema. */
+.vds-error-card.e500::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(420px 240px at 100% 0%, var(--via-navy-05), transparent 60%);
+  z-index: -1;
 }
 
 .vds-error-card.e500 > * {
@@ -300,7 +296,12 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--via-navy-08);
+  z-index: 0;
+}
+
+.vds-error-card.e500 > .vds-error-orbit {
+  position: absolute;
   z-index: 0;
 }
 
@@ -309,7 +310,7 @@
   position: absolute;
   inset: 24px;
   border-radius: 50%;
-  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border: 1px dashed var(--via-navy-10);
   animation: vds-orbit 18s linear infinite;
 }
 
@@ -321,8 +322,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.18);
+  background: var(--via-text-primary);
+  opacity: 0.5;
   animation: vds-orbit 18s linear infinite;
   transform-origin: 0 76px;
 }
@@ -338,17 +339,18 @@
   gap: var(--via-space-3);
 }
 
+/* pílula de status em tinta que adapta (mesma receita da manutenção) */
 .vds-error-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--via-space-2);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-medium);
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--via-text-primary);
   padding: 5px var(--via-space-2_5) 5px var(--via-space-2);
   border-radius: var(--via-radius-pill);
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--via-navy-05);
+  border: 1px solid var(--via-navy-12);
   white-space: nowrap;
   line-height: var(--via-lh-normal);
 }
@@ -359,7 +361,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--via-text-primary);
 }
 
 .vds-error-pulse::after {
@@ -367,7 +369,7 @@
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.32);
+  background: var(--via-navy-20);
   animation: vds-err-pulse 1.6s ease-out infinite;
 }
 
@@ -376,45 +378,23 @@
   100% { transform: scale(2.4); opacity: 0; }
 }
 
+/* o "500" é o grande da peça, mas em peso médio · informa sem gritar */
 .vds-error-card.e500 .vds-error-code {
   background: transparent;
   border-color: transparent;
+  padding: 0;
   font-family: var(--via-font-mono);
   font-size: var(--via-fs-display);
-  font-weight: var(--via-fw-semibold);
-  color: var(--via-white);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-primary);
   letter-spacing: -0.04em;
   line-height: var(--via-lh-tight);
   margin: 0;
   font-feature-settings: 'tnum' 1;
-  text-shadow: 0 4px 24px rgba(10, 31, 59, 0.15);
 }
 
 .vds-error-card.e500 h3 {
   margin: var(--via-space-1) 0 0;
-  color: var(--via-white);
-}
-
-.vds-error-card.e500 h3 em {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.vds-error-card.e500 p {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.vds-error-card.e500 p strong {
-  color: var(--via-white);
-}
-
-.vds-error-card.e500 .vds-error-id {
-  color: rgba(255, 255, 255, 0.55);
-  border-top-color: rgba(255, 255, 255, 0.1);
-}
-
-.vds-error-card.e500 .vds-error-id span {
-  color: rgba(255, 255, 255, 0.92);
-  background: rgba(255, 255, 255, 0.12);
 }
 
 /* ---------- 403 · forbidden / plan gating ---------- */
@@ -474,6 +454,13 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-soft);
   font-feature-settings: 'tnum' 1;
+}
+
+/* condição comercial junto do preço (public/fatos.md: valores mensais no anual) */
+.vds-error-card p.vds-error-plans-note {
+  margin: calc(-1 * var(--via-space-1_5)) 0 0;
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-soft);
 }
 
 .vds-error-plans-arrow {
@@ -558,6 +545,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--via-space-2);
+  white-space: nowrap;
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
   letter-spacing: 0.04em;
@@ -730,20 +719,6 @@
   box-shadow: 0 4px 10px -4px var(--via-shadow-ink-40);
 }
 
-/* o card 500 é navy FIXO nos 2 temas → o botão-líder também FIXA branco.
-   var(--via-surface)/text-primary flipavam no dark e ele virava outline
-   escuro, idêntico ao ghost do lado (hierarquia sumia). */
-.vds-error-btn.primary.on-dark {
-  background: var(--via-surface-onnavy);
-  border-color: var(--via-white);
-  color: var(--via-navy);
-}
-
-.vds-error-btn.primary.on-dark:hover {
-  /* literal claro de propósito · gray-50 adapta e apagava o botão no dark */
-  background: linear-gradient(180deg, #F5F7FA 0%, #EDF0F5 100%);
-}
-
 .vds-error-btn.ghost {
   background: var(--via-glass-card);
   -webkit-backdrop-filter: var(--via-glass-blur);
@@ -762,28 +737,6 @@
     inset 0 1px 0 var(--via-edge-hi),
     0 8px 20px -10px var(--via-shadow-ink-20),
     0 2px 6px -3px var(--via-shadow-ink-10);
-}
-
-/* sobre fundo navy · vidro claro translúcido (o vidro branco sumiria) */
-.vds-error-btn.ghost.on-dark {
-  background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(255, 255, 255, 0.20);
-  color: var(--via-white);
-  -webkit-backdrop-filter: var(--via-material-control-blur);
-  backdrop-filter: var(--via-material-control-blur);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
-}
-
-.vds-error-btn.ghost.on-dark:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.34);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
-}
-
-.vds-error-btn.ghost.on-dark:focus-visible {
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 0 0 3px rgba(255, 255, 255, 0.28);
 }
 
 .vds-error-id {
@@ -1237,18 +1190,14 @@
   z-index: -1;
 }
 
-/* Span large for cold start */
-/* o utilitário .via-mesh-navy perde pra .vds-empty-prem.cold (0-2-0) —
-   `transparent` deixava o card branco e sumia com todo o texto branco */
+/* Primeiro acesso · destaque grande e CLARO (light-first · era laje navy).
+   A atmosfera é a mesma dos irmãos, só mais presente no canto da órbita. */
 .vds-empty-prem.cold {
   grid-column: span 4;
   grid-row: span 2;
-  color: var(--via-white);
-  background: var(--via-mesh-navy);
-  border-color: transparent;
+  color: var(--via-text-primary);
   padding: var(--via-space-8) var(--via-space-7) var(--via-space-7);
   min-height: 380px;
-  box-shadow: 0 24px 56px -22px var(--via-shadow-ink-40);
 }
 
 @media (max-width: 1180px) {
@@ -1265,7 +1214,9 @@
 }
 
 .vds-empty-prem.cold::after {
-  display: none;
+  background:
+    radial-gradient(520px 320px at 100% 0%, var(--via-navy-06), transparent 60%),
+    radial-gradient(360px 220px at 0% 100%, var(--via-navy-04), transparent 60%);
 }
 
 .vds-empty-prem.cold > * {
@@ -1273,8 +1224,8 @@
   z-index: 1;
 }
 
-/* Cold orbit */
-.vds-empty-prem-orbit {
+/* Órbita do primeiro acesso · traço fino em tinta que adapta ao tema */
+.vds-empty-prem.cold > .vds-empty-prem-orbit {
   position: absolute;
   top: -60px;
   right: -60px;
@@ -1284,12 +1235,11 @@
   z-index: 0;
 }
 
-/* órbita vive sobre a atmosfera navy do cold start · traço em luz branca */
 .vds-empty-prem-orbit-ring {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid var(--via-navy-08);
   animation: vds-empty-orbit 28s linear infinite;
 }
 
@@ -1298,11 +1248,11 @@
   content: '';
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--via-navy-06);
 }
 
 .vds-empty-prem-orbit-ring::before { inset: 16px; }
-.vds-empty-prem-orbit-ring::after { inset: 40px; border-color: rgba(255, 255, 255, 0.06); }
+.vds-empty-prem-orbit-ring::after { inset: 40px; border-color: var(--via-navy-04); }
 
 .vds-empty-prem-orbit-dot {
   position: absolute;
@@ -1311,8 +1261,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.22);
+  background: var(--via-text-primary);
+  opacity: 0.5;
   animation: vds-empty-orbit-pulse 2.6s ease-in-out infinite;
 }
 
@@ -1348,10 +1298,6 @@
   color: rgba(10, 31, 59, 0.55);
 }
 
-/* cold start é sempre atmosfera navy · eyebrow em luz branca nos dois temas */
-.vds-empty-prem.cold .vds-empty-prem-eyebrow {
-  color: rgba(255, 255, 255, 0.78);
-}
 /* dark: navy/navy-alpha viram texto claro (eram invisíveis no escuro) */
 [data-theme="dark"] .vds-empty-prem-eyebrow.soft { color: var(--via-text-muted); }
 
@@ -1375,16 +1321,14 @@
   font-weight: var(--via-fw-medium);
   letter-spacing: var(--via-ls-tighter);
   line-height: var(--via-lh-snug);
-  color: inherit;
+  color: var(--via-text-primary);
 }
 
+/* ênfase em título = cor mais suave (não gradiente) */
 .vds-empty-prem h3 em {
   font-style: normal;
-  font-weight: var(--via-fw-medium);
-  background: linear-gradient(135deg, var(--via-accent) 0%, var(--via-accent-warm) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-soft);
 }
 
 .vds-empty-prem h4 {
@@ -1411,7 +1355,7 @@
 }
 
 .vds-empty-prem.cold p {
-  color: rgba(255, 255, 255, 0.74);
+  color: var(--via-text-body);
   font-size: var(--via-fs-sm);
   max-width: 480px;
 }
@@ -1421,8 +1365,11 @@
   font-weight: var(--via-fw-semibold);
 }
 
-.vds-empty-prem.cold p strong {
-  color: rgba(255, 255, 255, 0.94);
+/* ajuda abaixo do "Pular por agora" · tira o medo de perder a etapa */
+.vds-empty-prem.cold .vds-empty-prem-hint {
+  margin: var(--via-space-3) 0 0;
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-soft);
 }
 
 .vds-empty-prem p em {
@@ -1448,27 +1395,32 @@
   align-items: center;
   padding: var(--via-space-3) var(--via-space-3_5);
   border-radius: var(--via-radius-md);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: background .22s ease, border-color .22s ease;
+  background: var(--via-navy-02);
+  border: 1px solid var(--via-border-soft);
+  transition:
+    background var(--via-dur-quick) var(--via-ease-snap),
+    border-color var(--via-dur-quick) var(--via-ease-snap);
 }
 
-/* passo atual sobe na hierarquia com MAIS luz (navy sobre navy afundava) */
+/* passo atual sobe na hierarquia: papel inteiro + aro mais firme */
 .vds-empty-prem-steps li.current {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.16);
+  background: var(--via-surface);
+  border-color: var(--via-navy-14);
+  box-shadow:
+    inset 0 1px 0 var(--via-edge-hi),
+    0 8px 20px -14px var(--via-shadow-ink-20);
 }
 
-.vds-empty-prem-steps li.done strong { color: rgba(255, 255, 255, 0.66); }
+.vds-empty-prem-steps li.done strong { color: var(--via-text-muted); }
 /* done: cue via bullet (✓) · texto fica mutado mas AA — sem opacity no texto */
 
 .vds-empty-prem-steps .bullet {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.66);
+  background: transparent;
+  border: 1px solid var(--via-navy-16);
+  color: var(--via-text-muted);
   font-family: var(--via-mono);
   font-size: var(--via-fs-xs);
   font-weight: var(--via-fw-semibold);
@@ -1479,16 +1431,17 @@
 }
 
 .vds-empty-prem-steps li.done .bullet {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.94);
+  background: var(--via-navy-08);
+  border-color: transparent;
+  color: var(--via-text-primary);
 }
 
+/* bolinha do passo atual = tinta cheia que inverte com o tema
+   (navy com número branco no claro · quase-branco com número escuro no escuro) */
 .vds-empty-prem-steps li.current .bullet {
-  background: var(--via-white);
+  background: var(--via-text-primary);
   border-color: transparent;
-  color: var(--via-navy);
-  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.45);
+  color: var(--via-bg);
 }
 
 .vds-empty-prem-steps li > div {
@@ -1498,11 +1451,10 @@
   min-width: 0;
 }
 
-/* a lista só existe dentro do cold start (superfície navy) — texto em branco */
 .vds-empty-prem-steps strong {
   font-size: var(--via-fs-caption);
   font-weight: var(--via-fw-medium);
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--via-text-primary);
   letter-spacing: var(--via-ls-tight);
 }
 
@@ -1510,7 +1462,7 @@
   font-style: normal;
   font-family: var(--via-mono);
   font-size: var(--via-fs-xs);
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--via-text-soft);
 }
 
 /* Generic icon for premium empties */
@@ -1858,55 +1810,12 @@
     var(--via-shadow-focus);
 }
 
-/* sobre fundo navy · vidro claro translúcido */
-.vds-empty-prem-btn.on-dark {
-  border-color: rgba(255, 255, 255, 0.20);
-  background: rgba(255, 255, 255, 0.10);
-  color: rgba(255, 255, 255, 0.94);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
-}
-
-.vds-empty-prem-btn.on-dark:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.34);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
-}
-
-.vds-empty-prem-btn.on-dark:focus-visible {
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 0 0 3px rgba(255, 255, 255, 0.28);
-}
-
-/* primária sobre navy = superfície clara (navy sobre navy não lidera) ·
-   mesmo tratamento do card 500 */
-.vds-empty-prem-btn.primary.on-dark {
-  /* cold start é navy FIXO nos 2 temas → botão-líder FIXA branco
-     (surface/text-primary flipavam no dark e ele virava outline escuro) */
-  background: var(--via-surface-onnavy);
-  border-color: var(--via-white);
-  color: var(--via-navy);
-  box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.45);
-}
-
-.vds-empty-prem-btn.primary.on-dark:hover {
-  /* literal claro de propósito · gray-50 adapta e apagava o botão no dark */
-  background: linear-gradient(180deg, #F5F7FA 0%, #EDF0F5 100%);
-  border-color: var(--via-white);
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
-}
-
 .vds-empty-prem-btn.ghost {
   background: transparent;
   border-color: transparent;
   color: var(--via-ink-2);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
-  box-shadow: none;
-}
-
-.vds-empty-prem-btn.ghost.on-dark {
-  color: rgba(255, 255, 255, 0.7);
   box-shadow: none;
 }
 
@@ -1921,9 +1830,13 @@
     0 2px 6px -3px var(--via-shadow-ink-10);
 }
 
-.vds-empty-prem-btn.ghost.on-dark:hover {
-  color: rgba(255, 255, 255, 0.94);
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.24);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+/* Primária no escuro · invertida (branco com texto navy), igual ao <Button>
+   da lib — navy sobre o palco escuro perdia a liderança da peça */
+[data-theme='dark'] .vds-error-btn.primary,
+[data-theme='dark'] .vds-empty-btn.primary,
+[data-theme='dark'] .vds-empty-prem-btn.primary,
+[data-theme='dark'] .vds-success-btn.primary {
+  background: linear-gradient(180deg, var(--via-white), #E6ECF4);
+  border-color: rgba(255, 255, 255, 0.9);
+  color: var(--via-navy);
 }

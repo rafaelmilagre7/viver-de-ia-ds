@@ -16,6 +16,10 @@ export interface EmptyStateProps {
 /**
  * EmptyState · placeholder editorial pra listas/queries vazias
  *
+ * Nasce claro (light-first): `default` sem fundo, `soft` em vidro tracejado.
+ * `navy` é opt-in só pra momento de marca (primeiro acesso, conquista) e
+ * sempre com conteúdo e ação — nunca como laje vazia nem como fundo padrão.
+ *
  * @example
  * <EmptyState
  *   icon={<Inbox size={20} strokeWidth={1.8} />}
