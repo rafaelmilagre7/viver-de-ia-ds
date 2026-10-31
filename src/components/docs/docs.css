@@ -196,10 +196,13 @@
 .vds-token-table th,
 .vds-token-table td {
   text-align: left;
-  padding: var(--via-space-3_5) 0;
+  /* respiro entre colunas: no celular o nome do token encostava no valor */
+  padding: var(--via-space-3_5) var(--via-space-4) var(--via-space-3_5) 0;
   border-bottom: 0.5px solid var(--via-navy-08);
   font-family: var(--via-font);
+  vertical-align: top;
 }
+.vds-token-table :is(th, td):last-child { padding-right: 0; }
 .vds-token-table th {
   font-size: var(--via-fs-micro);
   font-weight: var(--via-fw-bold);
@@ -213,6 +216,7 @@
   font-size: var(--via-fs-xs);
   color: var(--via-text-primary);
   width: 35%;
+  overflow-wrap: anywhere;
 }
 .vds-token-table td.val {
   font-family: var(--via-font-mono);

@@ -121,7 +121,7 @@ Checklist obrigatório antes de marcar tela como pronta.
 
 ### Hover signatures (assinatura comportamental do DS)
 
-✅ **O elemento sobe e a luz aumenta** em hover (rows, cards, lessons, articles, audit log, billing, member list): lift `translateY(-1px/-2px/-3px)` + sombra/luz mais presente (`var(--via-material-regular-lift)`, reflexo que segue o ponteiro só por transform/opacity — nunca varredura animando `left`) · `:active` com `scale(0.97)` no apertar (`--via-dur-press`) · gap animation em text links com chevron · aba com indicador ÚNICO que desliza na mola entre as abas
+✅ **O elemento sobe e a luz aumenta** em hover (rows, cards, lessons, articles, audit log, billing, member list): lift `translateY(-1px/-2px/-3px)` + sombra/luz mais presente (`var(--via-material-regular-lift)`, reflexo que segue o ponteiro só por transform/opacity — nunca varredura animando `left`) · `:active` com `scale(var(--via-press-scale))` no apertar (`--via-dur-press`) · gap animation em text links com chevron · aba com indicador ÚNICO que desliza na mola entre as abas
 ❌ **Barra lateral em hover** (banida nos 3 mecanismos: `border-left` colorido, `::before` fino à esquerda, `box-shadow inset` horizontal) · spring bouncy · parallax · partículas · ripple · autoplay infinito · zoom-em-hover gritante
 
 ### Fotografia
@@ -259,7 +259,7 @@ Existem classes utilitárias globais (`src/styles/surfaces.css`, importado no `i
 | `.via-bar-glass` | barra/chrome flutuante (nav sticky, toolbar) · material chrome |
 | `.via-glass` · `.via-glass-strong` · `.via-liquid` | (no `tokens.css`) regular · thick · control, já com aro especular |
 
-**Todo controle precisa dos 3 estados** — `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (`var(--via-shadow-focus)`, com `outline:none`). Controle sem hover é design morto. **Elemento decorativo (rótulo, badge não-clicável) NÃO leva hover** — não invente interação onde não há ação.
+**Todo controle precisa dos 3 estados** — `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (anel único do `tokens.css`: outline com `--via-focus-*`; não escreva outro nem use `outline:none`). Controle sem hover é design morto. **Elemento decorativo (rótulo, badge não-clicável) NÃO leva hover** — não invente interação onde não há ação.
 **Controle sobre foto ou vidro:** material control (`<Button variant="secondary">`, `.via-pill-link`, `.via-liquid`) — branco no claro, controle escuro no escuro (nunca laje branca fixa). **Momento navy fixo** (escuro nos 2 temas): `.via-pill-link--on-dark` ou `rgba(255,255,255,0.10)` + borda `0.20` (hover `.16`/`.34`).
 
 ### Liquid glass — 4 materiais (use o material INTEIRO, não só o fundo)

@@ -9,7 +9,7 @@ export default function ApiButton() {
       eyebrow="api · button"
       name="Button"
       headline="a ação principal, sempre em pílula."
-      description="Pill 999 · sentence-case · reflexo que segue o ponteiro. CTA primário do sistema. Pill com gradient navy primary, secondary no material control do vidro (claro no claro, controle escuro no escuro), fantasma ghost, coral destrutivo e accent editorial singular. Loading state com spinner currentColor · ícones iconLeft/iconRight com spacing automático · reflexo que segue o ponteiro no hover (só transform/opacity) · press scale 0.985."
+      description="Pill 999 · sentence-case · reflexo que segue o ponteiro. CTA primário do sistema. Pill com gradient navy primary, secondary no material control do vidro (claro no claro, controle escuro no escuro), fantasma ghost, coral destrutivo e accent editorial singular. Loading state com spinner currentColor · ícones iconLeft/iconRight com spacing automático · reflexo que segue o ponteiro no hover (só transform/opacity) · apertar com --via-press-scale (0,98)."
       importLine={`import { Button, type ButtonProps } from '@viverdeia/design-system';`}
       anatomy={[
         { part: 'via-btn', description: 'Container base · pill 999 · padding por size · overflow:hidden pra confinar o reflexo' },

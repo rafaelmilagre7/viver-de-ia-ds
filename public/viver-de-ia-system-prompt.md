@@ -359,13 +359,13 @@ PROIBIDO: 3D/gloss/sombra em barra · gradiente numa serie unica (cor que varia 
 
 REGRA: **tabela densa NUNCA leva vidro** (mata a leitura) — o vidro fica nos cards de metrica ao redor. Hierarquia por indentacao+peso, nunca por cor de fundo. Sem zebra pesada, sem barra lateral.
 
-**Todo controle precisa dos 3 estados**: `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (`var(--via-shadow-focus)` + `outline:none`). Controle sem hover é design morto. Elemento decorativo (rótulo/badge não-clicável) NÃO leva hover.
+**Todo controle precisa dos 3 estados**: `:hover` (sobe 1px + sombra + borda mais presente), `:active` (volta a 0), `:focus-visible` (anel único do `tokens.css`: `outline` com `--via-focus-color/-width/-offset` — não escreva outro, não use `outline:none`; sobre fundo escuro ele troca sozinho em `.via-on-dark`/`[data-on-dark]`). Controle sem hover é design morto. Elemento decorativo (rótulo/badge não-clicável) NÃO leva hover.
 **Controle sobre foto ou vidro:** material control (botão secundário, `.via-pill-link`, `.via-liquid`) — branco no claro, controle escuro no escuro, nunca laje branca fixa. **Momento navy fixo** (escuro nos 2 temas): `rgba(255,255,255,0.10)` + borda `0.20` (hover `.16`/`.34`) ou `.via-pill-link--on-dark`.
 
 **PROIBIDO — barra/canto de cor em card** (`border-left: 2–4px solid navy/coral` em callout, do/don't, "comportamento vs evita"): estilo bootstrap/alert, tem CARA DE IA. Do/don't = card glass limpo igual aos outros, diferenciado por tipografia/ênfase (label, peso), NUNCA por uma barra colorida no canto.
 
 **Fluidez e material (doutrina Apple/WWDC):**
-- Feedback no APERTAR, não no soltar — todo interativo tem `:active` instantâneo (`scale(0.97)` ou tom mais fundo).
+- Feedback no APERTAR, não no soltar — todo interativo tem `:active` instantâneo (`scale(var(--via-press-scale))` · 0,98; controle pequeno — check, radio, switch, seta — `--via-press-scale-sm` · 0,94; ou tom mais fundo).
 - Vidro claro NUNCA empilha sobre vidro claro (legibilidade colapsa) — card interno vira superfície sólida.
 - Texto sobre vidro pede um passo a mais de contraste/peso do que sobre superfície sólida; cor de destaque mora em camada sólida, nunca solta no vidro.
 - Vidro que entra em cena (modal/popover) chega por escala + opacidade — "materializa", não é fade seco. NUNCA anime `backdrop-filter` (repinta o blur da tela inteira) nem `left`/`top`/`width`.
@@ -382,7 +382,7 @@ Hover = **o elemento sobe e a luz aumenta** — nunca uma barra colorida na late
 ```css
 .row-card { transition: transform var(--via-dur-base) var(--via-ease-snap), box-shadow var(--via-dur-base) var(--via-ease-snap), border-color var(--via-dur-quick) var(--via-ease-snap); }
 .row-card:hover  { transform: translateY(-1px); box-shadow: 0 1px 0 var(--via-edge-hi) inset, 0 12px 28px -18px var(--via-shadow-ink-20); }
-.row-card:active { transform: scale(0.97); }     /* resposta no APERTAR */
+.row-card:active { transform: scale(var(--via-press-scale)); }     /* resposta no APERTAR */
 ```
 Em HTML cru, `.via-row-card` / `.via-tile--lift` (do `surfaces.css`) já entregam isso.
 

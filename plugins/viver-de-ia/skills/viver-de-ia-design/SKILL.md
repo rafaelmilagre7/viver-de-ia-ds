@@ -326,7 +326,7 @@ Pra artefato HTML sem React (Lovable, protótipo, relatório), esta skill traz d
 
 ### 12. Fluidez e material (doutrina Apple/WWDC adotada 29/Jul)
 
-- **Feedback no apertar, não no soltar** — todo interativo tem `:active` instantâneo (`transform: scale(0.97)` ou tom mais fundo). Esperar o clique completar pra reagir = interface morta.
+- **Feedback no apertar, não no soltar** — todo interativo tem `:active` instantâneo (`transform: scale(var(--via-press-scale))` · 0,98; controle pequeno `--via-press-scale-sm` · 0,94; ou tom mais fundo). **Foco de teclado** = anel único do `tokens.css` (`outline` com `--via-focus-color/-width/-offset`, troca sozinho sobre fundo escuro) — não escreva outro nem use `outline:none`. Esperar o clique completar pra reagir = interface morta.
 - **Vidro claro NUNCA empilha sobre vidro claro** — legibilidade colapsa. Card de vidro dentro de painel de vidro: o de dentro vira superfície sólida (`--via-surface`) ou tinta rasa.
 - **Vibrancy: texto sobre vidro pede mais contraste** — peso um passo acima e token de texto mais forte do que usaria em superfície sólida; cor de destaque mora em camada sólida (pill/botão), nunca solta no vidro.
 - **Materializar, não só aparecer** — vidro que entra em cena (modal, popover) chega por **escala + opacidade** (o material "chega"), não fade seco. **Nunca anime `backdrop-filter`** (repinta o blur da tela inteira a cada quadro) nem `left`/`top`: só `transform` e `opacity`.
