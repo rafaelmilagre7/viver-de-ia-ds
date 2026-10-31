@@ -137,7 +137,7 @@ function LocationVenueSection() {
                 <span className="vds-loc-access-icon"><Car size={14} strokeWidth={1.75} /></span>
                 <div>
                   <strong>Estacionamento conveniado</strong>
-                  <em>R$ [valor] / dia · validação no check-in</em>
+                  <em>R$&nbsp;[valor] / dia · validação no check-in</em>
                 </div>
               </li>
               <li>

@@ -95,7 +95,7 @@ function CommentThreadSection() {
   const comments = [
     {
       who: 'Caio Ribeiro', avatar: 'CR', when: '2h',
-      text: 'Esse case da Place Dreams é dos mais diretos que publicamos: gestão manual virando digital e R$ 42.000 por ano de economia em 30 dias.',
+      text: 'Esse case da Place Dreams é dos mais diretos que publicamos: gestão manual virando digital e R$\u00A042.000 por ano de economia em 30 dias.',
       likes: 24, replies: 3,
     },
     {
@@ -150,7 +150,7 @@ function CommentThreadSection() {
 /* ---- File card ---- */
 function FileCardSection() {
   const files = [
-    { ext: 'PDF', name: 'Case Place Dreams · R$ 42.000 por ano', size: '2.4 MB', who: 'Caio Ribeiro', when: 'há 4 dias' },
+    { ext: 'PDF', name: 'Case Place Dreams · R$\u00A042.000 por ano', size: '2.4 MB', who: 'Caio Ribeiro', when: 'há 4 dias' },
     { ext: 'PDF', name: 'Manifesto Viver de IA · v3', size: '0.9 MB', who: 'Equipe VIA', when: 'há 12 dias' },
     { ext: 'ZIP', name: 'Templates de Email · light + dark', size: '14 MB', who: 'Design System', when: 'hoje' },
   ];

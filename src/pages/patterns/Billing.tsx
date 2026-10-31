@@ -97,7 +97,7 @@ function BillingFlowDemo() {
                   selected={plan === 'pro'}
                   onSelect={() => setPlan('pro')}
                   name="Pro"
-                  price="R$ 3.780"
+                  price="R$&nbsp;3.780"
                   per="/mês"
                   desc="Soluções · formações · Consultor IA · 10 check-ins/mês de mentoria em grupo"
                   badge={null}
@@ -106,7 +106,7 @@ function BillingFlowDemo() {
                   selected={plan === 'team'}
                   onSelect={() => setPlan('team')}
                   name="Enterprise"
-                  price="R$ 6.180"
+                  price="R$&nbsp;6.180"
                   per="/mês"
                   desc="Tudo do Pro · 1 hora/mês de mentoria individual · arquiteto de soluções AI Builder"
                   badge="corporativo"
@@ -124,7 +124,7 @@ function BillingFlowDemo() {
                   selected={cycle === 'monthly'}
                   onSelect={() => setCycle('monthly')}
                   name="Mensal"
-                  price={`R$ ${plan === 'pro' ? '3.780' : '6.180'}`}
+                  price={`R$\u00A0${plan === 'pro' ? '3.780' : '6.180'}`}
                   per="/mês"
                   desc="Contrato anual · cobrança mês a mês no cartão."
                   badge={null}
@@ -133,7 +133,7 @@ function BillingFlowDemo() {
                   selected={cycle === 'annual'}
                   onSelect={() => setCycle('annual')}
                   name="Anual"
-                  price={`R$ ${plan === 'pro' ? '3.780' : '6.180'}`}
+                  price={`R$\u00A0${plan === 'pro' ? '3.780' : '6.180'}`}
                   per="/mês equivalente"
                   desc="Contrato anual · cobrança única · [condições]."
                   badge="à vista"
@@ -184,7 +184,7 @@ function BillingFlowDemo() {
               <p className="lede">Última etapa · vai cobrar agora e iniciar o acesso · garantia de 90 dias.</p>
               <div className="vds-billing-review">
                 <ReviewLine label="Plano" value={`${planName} · ${cycle === 'annual' ? 'anual' : 'mensal'}`} />
-                <ReviewLine label="Cobrança hoje" value={`R$ ${planPrice.toLocaleString('pt-BR')}`} emph />
+                <ReviewLine label="Cobrança hoje" value={`R$\u00A0${planPrice.toLocaleString('pt-BR')}`} emph />
                 <ReviewLine label="Próxima cobrança" value={cycle === 'annual' ? 'em 12 meses' : 'em 30 dias'} />
                 <ReviewLine label="Cartão" value={card.number ? `•••• ${card.number.slice(-4) || '0000'}` : 'pendente'} />
               </div>
@@ -211,7 +211,7 @@ function BillingFlowDemo() {
             </Button>
           ) : (
             <Button iconLeft={<Lock size={14} />}>
-              Confirmar · R$ {planPrice.toLocaleString('pt-BR')}
+              Confirmar · R$&nbsp;{planPrice.toLocaleString('pt-BR')}
             </Button>
           )}
         </div>
@@ -227,13 +227,13 @@ function BillingFlowDemo() {
         <div className="vds-billing-review">
           <ReviewLine label="Plano" value={planName} />
           <ReviewLine label="Ciclo" value={cycle === 'annual' ? 'Anual' : 'Mensal'} />
-          <ReviewLine label="Equivalente · mês" value={`R$ ${monthly.toLocaleString('pt-BR')}`} />
+          <ReviewLine label="Equivalente · mês" value={`R$\u00A0${monthly.toLocaleString('pt-BR')}`} />
         </div>
 
         <div className="vds-billing-summary__total">
           <div className="vds-billing-summary__total-row">
             <span className="vds-billing-summary__total-lbl">Total hoje</span>
-            <span className="vds-billing-summary__total-val via-num">R$ {planPrice.toLocaleString('pt-BR')}</span>
+            <span className="vds-billing-summary__total-val via-num">R$&nbsp;{planPrice.toLocaleString('pt-BR')}</span>
           </div>
           <p className="vds-billing-summary__total-hint">
             {cycle === 'annual'

@@ -97,7 +97,7 @@ function BentoSection() {
         <article className="vds-bento-card quote">
           <span className="vds-bento-quote-mark">Case real · Saúde</span>
           <blockquote>
-            De 6h para cliques: a Viva Nexo <em>economiza R$ 162.000</em> com IA.
+            De 6h para cliques: a Viva Nexo <em>economiza R$&nbsp;162.000</em> com IA.
           </blockquote>
           <footer>
             <span className="av">VN</span>

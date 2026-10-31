@@ -198,7 +198,7 @@ function TransactionalSection() {
         <EmailFrame
           category="Transacional · billing"
           from="Viver de IA · cobrança"
-          subject="Cobrança em 2 dias · R$ 3.780 · plano Pro"
+          subject="Cobrança em 2 dias · R$&nbsp;3.780 · plano Pro"
           preview="a mensalidade do plano Pro entra na fatura sex 23/mai. upgrade pro Enterprise em 1 clique se preferir."
           time="qua · 18:22"
           notes={{
@@ -212,7 +212,7 @@ function TransactionalSection() {
             <div className="vds-ec-em-billing-plate">
               <div>
                 <span className="lbl">Próxima cobrança</span>
-                <strong className="val">R$ 3.780,00</strong>
+                <strong className="val">R$&nbsp;3.780,00</strong>
                 <em>sex · 23 mai · plano Pro</em>
               </div>
               <div>
@@ -224,7 +224,7 @@ function TransactionalSection() {
 
             <p>
               Rafael, a mensalidade do plano Pro entra na fatura <strong>sex 23/mai</strong>.
-              Se quiser <strong>subir pro Enterprise</strong> (R$ 6.180/mês · soma 1 hora/mês
+              Se quiser <strong>subir pro Enterprise</strong> (R$&nbsp;6.180/mês · soma 1 hora/mês
               de mentoria individual + arquiteto AI Builder), troca aqui:
             </p>
 
@@ -250,7 +250,7 @@ function TransactionalSection() {
           category="Transacional · billing"
           from="Viver de IA · cobrança"
           subject="Pagamento não passou · 3 ações em 1 clique"
-          preview="cobrança de R$ 3.780 retornou 'fundos insuficientes'. nada cancelado ainda, dá pra resolver em 1 clique."
+          preview="cobrança de R$&nbsp;3.780 retornou 'fundos insuficientes'. nada cancelado ainda, dá pra resolver em 1 clique."
           time="hoje · 06:48"
           notes={{
             when: 'Imediatamente após retry falhar · NÃO no momento da primeira tentativa',
@@ -265,7 +265,7 @@ function TransactionalSection() {
                 <AlertCircle size={16} strokeWidth={1.75} />
               </span>
               <div>
-                <strong>Cobrança não passou · R$ 3.780</strong>
+                <strong>Cobrança não passou · R$&nbsp;3.780</strong>
                 <em>motivo do banco: “fundos insuficientes” · cartão Visa •••• 4521</em>
               </div>
             </div>
@@ -330,7 +330,7 @@ function EditorialSection() {
               <span className="vds-ec-em-hero-eyebrow">Semana 18 · 2026</span>
               <h2>
                 Viva Nexo foi de <em>6h pra cliques</em>.
-                <br />E economiza R$ 162.000.
+                <br />E economiza R$&nbsp;162.000.
               </h2>
               <p className="vds-ec-em-hero-meta">
                 case real · Saúde · publicado em viverdeia.ai/cases
@@ -354,7 +354,7 @@ function EditorialSection() {
             </p>
 
             <div className="vds-ec-em-pull">
-              <strong className="mono">6h → cliques · R$ 162.000 de economia · Viva Nexo</strong>
+              <strong className="mono">6h → cliques · R$&nbsp;162.000 de economia · Viva Nexo</strong>
             </div>
 
             <h3>O que vale anotar pra sua operação</h3>
@@ -477,7 +477,7 @@ function DripSequence() {
       delay: 'D+7 (4 dias depois)',
       subject: '3 cases reais que saíram do discurso pra operação',
       lead:
-        'Place Dreams: economiza R$ 42.000 por ano em 30 dias. Trivia Studio: R$ 120.000 de economia anual. Viva Nexo: de 6h para cliques. Todos em viverdeia.ai/cases.',
+        'Place Dreams: economiza R$\u00A042.000 por ano em 30 dias. Trivia Studio: R$\u00A0120.000 de economia anual. Viva Nexo: de 6h para cliques. Todos em viverdeia.ai/cases.',
     },
     {
       n: 3,
@@ -731,7 +731,7 @@ function CommercialSection() {
           category="Comercial · lançamento"
           from="Rafael · Viver de IA"
           subject="Plano Pro · 10 check-ins de mentoria em grupo por mês"
-          preview="plataforma + mentoria ao vivo · R$ 3.780/mês em contratação anual · garantia de 90 dias."
+          preview="plataforma + mentoria ao vivo · R$&nbsp;3.780/mês em contratação anual · garantia de 90 dias."
           time="ter · 17:08"
           notes={{
             when: 'Dia do lançamento · um email só · sem 3 emails seguidos “ÚLTIMAS HORAS”',
@@ -755,7 +755,7 @@ function CommercialSection() {
 
             <p>
               o plano Pro soma <strong>10 check-ins por mês de mentoria em grupo</strong> ao que
-              todo plano já tem. R$ 3.780/mês · contratação anual.
+              todo plano já tem. R$&nbsp;3.780/mês · contratação anual.
             </p>
 
             <h3 className="vds-ec-em-h3">Por que o Pro e não o Starter</h3>
@@ -833,7 +833,7 @@ function CommercialSection() {
 
             <p>
               tem o plano <strong>Enterprise</strong> · soma 1 hora por mês de mentoria
-              individual e o arquiteto de soluções AI Builder. custa mais (R$ 6.180/mês,
+              individual e o arquiteto de soluções AI Builder. custa mais (R$&nbsp;6.180/mês,
               contratação anual), mas faz sentido pra quem vai implementar 3+ soluções em
               sequência.
             </p>

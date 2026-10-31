@@ -35,7 +35,7 @@ export default function Breadcrumb() {
             <span className="current">Place Dreams</span>
           </nav>
           <h2 style={{ marginTop: 16, fontFamily: 'var(--via-font-display)', fontWeight: 500, fontSize: 36, letterSpacing: '-0.025em', color: 'var(--via-text-primary)' }}>
-            Place Dreams: <em style={{ color: 'var(--via-text-muted)' }}>R$ 42.000/ano</em> em economia
+            Place Dreams: <em style={{ color: 'var(--via-text-muted)' }}>R$&nbsp;42.000/ano</em> em economia
           </h2>
         </div>
       </Section>

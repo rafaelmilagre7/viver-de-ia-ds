@@ -18,7 +18,7 @@ const NUMEROS: { o: string; regra: string; ex: string[]; nao: string; fn: string
     o: 'Moeda',
     regra: 'R$, espaço que não quebra e o número. Ponto no milhar; em painel, sem centavos.',
     ex: [formatCurrency(1_325_000), formatCurrency(1_250, { decimals: 2 })],
-    nao: 'R$1.325.000 · R$ 1325000',
+    nao: 'R$1.325.000 · R$\u00A01325000',
     fn: 'formatCurrency(v)',
   },
   {
@@ -39,7 +39,7 @@ const NUMEROS: { o: string; regra: string; ex: string[]; nao: string; fn: string
     o: 'Compacto',
     regra: 'mil, mi e bi, com três algarismos. Abaixo de 10 mil, o número vai inteiro.',
     ex: [formatCurrency(1_325_000, { compact: true }), formatCompact(184_000), formatCurrency(4_200, { compact: true })],
-    nao: 'R$ 1.325K · 184k · 1,3M',
+    nao: 'R$\u00A01.325K · 184k · 1,3M',
     fn: 'formatCurrency(v, { compact: true }) · formatCompact(v)',
   },
   {
@@ -101,7 +101,7 @@ export default function Microcopy() {
         <ul className="vds-mc-rules">
           <li><strong>“Você”, nunca tu, teu, tua ou contigo.</strong> Mensagem no imperativo de você (confira, tente, envie); botão no infinitivo (Salvar alterações).</li>
           <li><strong>Sem exclamação, emoji, itálico ou caps lock.</strong> Sentence case em tudo.</li>
-          <li><strong>Números no formato brasileiro.</strong> R$ 1.200,00 · 14,2 MB · 1.240 · 12/06/2026 · 14h32.</li>
+          <li><strong>Números no formato brasileiro.</strong> R$&nbsp;1.200,00 · 14,2 MB · 1.240 · 12/06/2026 · 14h32.</li>
           <li><strong>Erro não culpa a pessoa.</strong> Diz o que aconteceu, de quem é a falha e o próximo passo.</li>
           <li><strong>As IAs leem a mesma lista.</strong> A skill da marca traz o espelho em <code>microcopy.md</code>; quem gera interface reusa o texto canônico.</li>
         </ul>

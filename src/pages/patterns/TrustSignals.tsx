@@ -70,7 +70,7 @@ function TrustStatsSection() {
     { v: '521', l: 'cases reais de implementação', s: 'empresas brasileiras · viverdeia.ai/cases' },
     { v: '157', l: 'soluções de IA prontas', s: 'Plug-and-Play · em todos os planos' },
     { v: '29', l: 'setores com implementação', s: 'de saúde a turismo' },
-    { v: 'R$ 1 bi', l: 'meta em receita e economia', s: 'meta pública · não é resultado' },
+    { v: 'R$\u00A01 bi', l: 'meta em receita e economia', s: 'meta pública · não é resultado' },
   ];
 
   return (

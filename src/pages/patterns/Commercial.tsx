@@ -42,9 +42,9 @@ function PitchDeckSection() {
     { n: '05', kind: 'método-detalhe', h: 'Ato 1 · Alfabetiza', sub: 'formações práticas · trilha personalizada com IA · do CEO ao analista, sem teoria de palestra', meta: 'detalhe ato 1' },
     { n: '06', kind: 'método-detalhe', h: 'Ato 2 · Implementa', sub: '157 soluções Plug-and-Play · Consultor IA dentro da plataforma · mentorias em grupo ao vivo', meta: 'detalhe ato 2' },
     { n: '07', kind: 'método-detalhe', h: 'Ato 3 · Mede', sub: 'solução em operação · quem está aplicando, engajamento e ROI no dashboard · comunidade de líderes', meta: 'detalhe ato 3' },
-    { n: '08', kind: 'caso', h: 'Caso · Viva Nexo', sub: 'de 6h para cliques · economiza R$ 162.000 · case real em viverdeia.ai/cases', meta: 'caso real cliente' },
-    { n: '09', kind: 'caso', h: 'Caso · Trivia Studio', sub: 'de processos manuais a R$ 120.000 de economia anual', meta: 'caso real cliente' },
-    { n: '10', kind: 'preço', h: 'Pro · R$ 3.780/mês', sub: 'contratação anual · 10 check-ins/mês de mentoria em grupo · comunidade · garantia de 90 dias', meta: 'oferta + garantia' },
+    { n: '08', kind: 'caso', h: 'Caso · Viva Nexo', sub: 'de 6h para cliques · economiza R$\u00A0162.000 · case real em viverdeia.ai/cases', meta: 'caso real cliente' },
+    { n: '09', kind: 'caso', h: 'Caso · Trivia Studio', sub: 'de processos manuais a R$\u00A0120.000 de economia anual', meta: 'caso real cliente' },
+    { n: '10', kind: 'preço', h: 'Pro · R$\u00A03.780/mês', sub: 'contratação anual · 10 check-ins/mês de mentoria em grupo · comunidade · garantia de 90 dias', meta: 'oferta + garantia' },
     { n: '11', kind: 'proximo', h: 'Próximo passo', sub: '30min de call · [data] · entendo seu cenário, indico o plano, conto se faz sentido', meta: 'CTA específico' },
     { n: '12', kind: 'thank-you', h: 'Obrigado.', sub: 'viverdeia.ai · viverdeia.ai/planos · viverdeia.ai/cases', meta: 'contato + thank-you' },
   ];
@@ -175,7 +175,7 @@ function OnePagerSection() {
 
         <footer>
           <div>
-            <strong>Plano Pro · R$ 3.780/mês</strong>
+            <strong>Plano Pro · R$&nbsp;3.780/mês</strong>
             <em>contratação anual · 10 check-ins/mês de mentoria em grupo</em>
           </div>
           <a href="#" className="vds-com-onepager-cta">
@@ -206,7 +206,7 @@ function CaseStudySection() {
           </h2>
           <p>
             Case real publicado em viverdeia.ai/cases · setor Saúde · economia de
-            R$ 162.000. Os blocos abaixo mostram o formato · [dado do case] entra no lugar.
+            R$&nbsp;162.000. Os blocos abaixo mostram o formato · [dado do case] entra no lugar.
           </p>
         </header>
 
@@ -217,7 +217,7 @@ function CaseStudySection() {
               [Empresa] · [setor] · [tamanho do time]. Processo manual antes da IA:
               [o que o time fazia à mão, quantas horas por semana, quem fazia].
               Caso de uso: [solução escolhida na adesão]. Custo de partida medido
-              na operação = <strong>R$ [valor]/mês</strong>.
+              na operação = <strong>R$&nbsp;[valor]/mês</strong>.
             </p>
           </article>
 
@@ -248,7 +248,7 @@ function CaseStudySection() {
                 <em>tempo de relatório</em>
               </div>
               <div>
-                <strong className="mono">R$ 162.000</strong>
+                <strong className="mono">R$&nbsp;162.000</strong>
                 <em>economia gerada</em>
               </div>
               <div>
@@ -329,7 +329,7 @@ function ProposalSection() {
             <tbody>
               <tr>
                 <td>Plano Pro · contratação anual</td>
-                <td className="mono">R$ 3.780/mês</td>
+                <td className="mono">R$&nbsp;3.780/mês</td>
               </tr>
               <tr>
                 <td>Período · 12 meses</td>
@@ -337,7 +337,7 @@ function ProposalSection() {
               </tr>
               <tr className="vds-com-proposal-total">
                 <td><strong>Total</strong></td>
-                <td className="mono"><strong>R$ 45.360,00</strong></td>
+                <td className="mono"><strong>R$&nbsp;45.360,00</strong></td>
               </tr>
             </tbody>
           </table>

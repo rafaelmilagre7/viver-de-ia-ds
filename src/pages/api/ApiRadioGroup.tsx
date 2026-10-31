@@ -11,9 +11,9 @@ function RadioDemo() {
       value={plan}
       onValueChange={setPlan}
       options={[
-        { value: 'starter', label: 'Starter', description: 'R$ 2.580/mês · contratação anual' },
-        { value: 'pro', label: 'Pro', description: 'R$ 3.780/mês · 10 check-ins de mentoria em grupo' },
-        { value: 'enterprise', label: 'Enterprise', description: 'R$ 6.180/mês · 1h/mês de mentoria individual' },
+        { value: 'starter', label: 'Starter', description: 'R$\u00A02.580/mês · contratação anual' },
+        { value: 'pro', label: 'Pro', description: 'R$\u00A03.780/mês · 10 check-ins de mentoria em grupo' },
+        { value: 'enterprise', label: 'Enterprise', description: 'R$\u00A06.180/mês · 1h/mês de mentoria individual' },
       ]}
     />
   );
@@ -53,9 +53,9 @@ export default function ApiRadioGroup() {
   defaultValue="pro"
   onValueChange={(v) => console.log(v)}
   options={[
-    { value: 'starter',    label: 'Starter',    description: 'R$ 2.580/mês' },
-    { value: 'pro',        label: 'Pro',        description: 'R$ 3.780/mês' },
-    { value: 'enterprise', label: 'Enterprise', description: 'R$ 6.180/mês' },
+    { value: 'starter',    label: 'Starter',    description: 'R$\u00A02.580/mês' },
+    { value: 'pro',        label: 'Pro',        description: 'R$\u00A03.780/mês' },
+    { value: 'enterprise', label: 'Enterprise', description: 'R$\u00A06.180/mês' },
   ]}
 />`,
         },
@@ -66,7 +66,7 @@ export default function ApiRadioGroup() {
           dont: { title: 'Não use pra 6+ opções', description: 'Use Select/Combobox · radio vira muralha visual.' },
         },
         {
-          do: { title: 'Description ajuda decisão', description: '"R$ 3.780/mês · 10 check-ins de mentoria" · contexto pra escolher.' },
+          do: { title: 'Description ajuda decisão', description: '"R$\u00A03.780/mês · 10 check-ins de mentoria" · contexto pra escolher.' },
           dont: { title: 'Não duplique label na description', description: '"Plano Pro" + "Plano pro" · redundância.' },
         },
       ]}

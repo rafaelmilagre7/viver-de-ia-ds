@@ -22,9 +22,9 @@ interface FeatureRow {
 }
 
 const TIERS: Tier[] = [
-  { id: 'starter', name: 'Starter', amount: 'R$ 2.580', per: '/mês', description: 'Plataforma, soluções e comunidade', cta: 'Assinar Starter' },
-  { id: 'pro', name: 'Pro', amount: 'R$ 3.780', per: '/mês', description: 'Com 10 check-ins de mentoria em grupo por mês', recommended: true, cta: 'Assinar Pro' },
-  { id: 'enterprise', name: 'Enterprise', amount: 'R$ 6.180', per: '/mês', description: 'Mentoria individual, implementação assistida e AI Builder', cta: 'Falar com vendas' },
+  { id: 'starter', name: 'Starter', amount: 'R$\u00A02.580', per: '/mês', description: 'Plataforma, soluções e comunidade', cta: 'Assinar Starter' },
+  { id: 'pro', name: 'Pro', amount: 'R$\u00A03.780', per: '/mês', description: 'Com 10 check-ins de mentoria em grupo por mês', recommended: true, cta: 'Assinar Pro' },
+  { id: 'enterprise', name: 'Enterprise', amount: 'R$\u00A06.180', per: '/mês', description: 'Mentoria individual, implementação assistida e AI Builder', cta: 'Falar com vendas' },
 ];
 
 const ROWS: FeatureRow[] = [

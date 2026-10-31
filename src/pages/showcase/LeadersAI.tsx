@@ -157,7 +157,7 @@ export default function ShowcaseLeadersAI() {
               <div><dt>Cidade</dt><dd>{fill('[cidade]')}</dd></div>
               <div><dt>Local</dt><dd>{fill('[local]')}</dd></div>
               <div><dt>Formato</dt><dd>2 dias · 2 trilhas em paralelo</dd></div>
-              <div><dt>Ingressos</dt><dd>A partir de R$ {fill('[valor]')}</dd></div>
+              <div><dt>Ingressos</dt><dd>A partir de R$&nbsp;{fill('[valor]')}</dd></div>
             </dl>
           </aside>
         </div>

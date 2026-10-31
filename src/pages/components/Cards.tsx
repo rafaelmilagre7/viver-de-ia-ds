@@ -22,7 +22,7 @@ export default function Cards() {
           </article>
           <article className="via-card">
             <p className="vds-eyebrow">Case · Trivia Studio</p>
-            <h3>R$ 120.000 de economia anual</h3>
+            <h3>R$&nbsp;120.000 de economia anual</h3>
             <p className="body">De processos manuais à produção de conteúdo em escala. Case real publicado em viverdeia.ai/cases.</p>
             <a className="link">Ler case <ArrowUpRight size={16} strokeWidth={1.75} /></a>
           </article>
@@ -48,7 +48,7 @@ export default function Cards() {
           <div className="via-card-stat">
             <TrendingUp size={16} strokeWidth={1.75} style={{ color: 'var(--via-text-muted)' }} />
             <p className="vds-eyebrow">Economia recorrente</p>
-            <div className="num">R$ 2.000<span className="suffix">/mês</span></div>
+            <div className="num">R$&nbsp;2.000<span className="suffix">/mês</span></div>
             <p className="sub"><em>Assessoria MAP</em></p>
           </div>
         </div>

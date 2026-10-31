@@ -19,10 +19,10 @@ export default function Copy() {
           <div className="vds-do">
             <p className="vds-do-title">Faça</p>
             <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '4px 0', lineHeight: 1.55 }}>
-              "Trivia Studio: de processos manuais a R$ 120.000 de economia anual"
+              "Trivia Studio: de processos manuais a R$&nbsp;120.000 de economia anual"
             </p>
             <p style={{ fontSize: 13, color: 'var(--via-text-body)', margin: '8px 0 0', lineHeight: 1.55 }}>
-              "Place Dreams: R$ 42.000 de economia por ano, em 30 dias"
+              "Place Dreams: R$&nbsp;42.000 de economia por ano, em 30 dias"
             </p>
           </div>
           <div className="vds-dont">
@@ -71,9 +71,9 @@ export default function Copy() {
         <table className="vds-token-table">
           <thead><tr><th>Caso</th><th>Formato</th><th>Exemplo</th></tr></thead>
           <tbody>
-            <tr><td className="tok">Reais</td><td className="val">R$ + espaço + ponto</td><td className="use">R$ 3.780 · R$ 2,5M · R$ 248k</td></tr>
+            <tr><td className="tok">Reais</td><td className="val">R$ + espaço inseparável + ponto · compacto em mil/mi</td><td className="use">R$&nbsp;3.780 · R$&nbsp;2,5 mi · R$&nbsp;248 mil</td></tr>
             <tr><td className="tok">Porcentagem</td><td className="val">sem espaço</td><td className="use">100% · +42%</td></tr>
-            <tr><td className="tok">Plus</td><td className="val">com sinal</td><td className="use">+1.240 · +24 membros</td></tr>
+            <tr><td className="tok">Variação</td><td className="val">sempre com sinal · menos tipográfico</td><td className="use">+1.240 · −3,2% · +24 membros</td></tr>
             <tr><td className="tok">Tempo</td><td className="val">sem espaço · slash</td><td className="use">24/7 · 90 dias · 6h</td></tr>
           </tbody>
         </table>

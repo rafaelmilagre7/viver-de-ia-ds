@@ -188,7 +188,7 @@ function PrimaryMatchSection() {
                 <span className="vds-mm-reason-num">02</span>
                 <div>
                   <strong>Mentora 38 empresas de SaaS</strong>
-                  <em>5 delas com ticket entre R$ 8K e R$ 80K · seu range</em>
+                  <em>5 delas com ticket entre R$&nbsp;8 mil e R$&nbsp;80 mil · seu range</em>
                 </div>
               </li>
               <li>

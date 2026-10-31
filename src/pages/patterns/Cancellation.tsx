@@ -138,7 +138,7 @@ function CancellationFlowSection() {
                 </div>
                 <div className="vds-cnx-alt-body">
                   <h4>Mudar pro plano Starter</h4>
-                  <p>R$ 2.580/mês em vez de R$ 3.780 · mantém soluções, formações e comunidade.</p>
+                  <p>R$&nbsp;2.580/mês em vez de R$&nbsp;3.780 · mantém soluções, formações e comunidade.</p>
                 </div>
                 <button className="vds-cnx-alt-cta">
                   Mudar plano
@@ -165,7 +165,7 @@ function CancellationFlowSection() {
                   <Gift size={16} strokeWidth={1.75} />
                 </div>
                 <div className="vds-cnx-alt-body">
-                  <h4>Desconto de retenção · −R$ [valor]/mês</h4>
+                  <h4>Desconto de retenção · −R$&nbsp;[valor]/mês</h4>
                   <p>Por já ser membro de longa data, libero esse desconto nas próximas [N] parcelas.</p>
                 </div>
                 <button className="vds-cnx-alt-cta accent">

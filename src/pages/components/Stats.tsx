@@ -3,8 +3,8 @@ import Section from '../../components/docs/Section';
 import './stats.css';
 
 const stats = [
-  { num: 'R$ 162.000', lbl: 'Economia gerada', sub: 'Viva Nexo · saúde' },
-  { num: 'R$ 2.000', suffix: '/mês', lbl: 'Economia recorrente', sub: 'Assessoria MAP' },
+  { num: 'R$\u00A0162.000', lbl: 'Economia gerada', sub: 'Viva Nexo · saúde' },
+  { num: 'R$\u00A02.000', suffix: '/mês', lbl: 'Economia recorrente', sub: 'Assessoria MAP' },
   { num: '24h', lbl: 'Atendimento com IA', sub: 'Pasetti Viagens & AGX' },
   { num: '521', lbl: 'Cases reais', sub: 'Implementação de IA' },
 ];

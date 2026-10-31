@@ -465,12 +465,12 @@ function BillingSection() {
               <Crown size={16} strokeWidth={1.75} />
               Plano Pro · anual
             </h3>
-            <p>R$ 3.780 / mês · contratação anual · próxima cobrança em <strong>17 jun 2026</strong></p>
+            <p>R$&nbsp;3.780 / mês · contratação anual · próxima cobrança em <strong>17 jun 2026</strong></p>
           </header>
 
           <div className="vds-billing-meta">
             <div>
-              <strong>R$ 3.780</strong>
+              <strong>R$&nbsp;3.780</strong>
               <em>próxima cobrança</em>
             </div>
             <div>
@@ -517,28 +517,28 @@ function BillingSection() {
             <li>
               <span className="d">17 mai 2026</span>
               <span className="desc">Plano Pro · mensalidade</span>
-              <span className="amt">R$ 3.780,00</span>
+              <span className="amt">R$&nbsp;3.780,00</span>
               <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
               <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
             <li>
               <span className="d">17 abr 2026</span>
               <span className="desc">Plano Pro · mensalidade</span>
-              <span className="amt">R$ 3.780,00</span>
+              <span className="amt">R$&nbsp;3.780,00</span>
               <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
               <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
             <li>
               <span className="d">17 mar 2026</span>
               <span className="desc">Plano Pro · mensalidade</span>
-              <span className="amt">R$ 3.780,00</span>
+              <span className="amt">R$&nbsp;3.780,00</span>
               <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
               <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
             <li>
               <span className="d">17 fev 2026</span>
               <span className="desc">Plano Pro · adesão anual · primeira parcela</span>
-              <span className="amt">R$ 3.780,00</span>
+              <span className="amt">R$&nbsp;3.780,00</span>
               <span className="st ok"><CheckCircle2 size={14} strokeWidth={1.75} /> pago</span>
               <button aria-label="Baixar"><Download size={14} strokeWidth={1.75} /></button>
             </li>
@@ -554,7 +554,7 @@ function AuditLogSection() {
   const events = [
     { time: '14:32', day: 'Hoje', who: 'Rafael Milagre', action: 'rotacionou chave', detail: 'nina-classifier · production', icon: KeyRound, type: 'security' },
     { time: '11:18', day: 'Hoje', who: 'Diego Martins', action: 'criou nova API key', detail: 'staging · escopo read', icon: Key, type: 'create' },
-    { time: '09:42', day: 'Hoje', who: 'Sistema', action: 'cobrança processada', detail: 'R$ 3.780,00 · método VISA •••• 4821', icon: CreditCard, type: 'system' },
+    { time: '09:42', day: 'Hoje', who: 'Sistema', action: 'cobrança processada', detail: 'R$\u00A03.780,00 · método VISA •••• 4821', icon: CreditCard, type: 'system' },
     { time: '23:08', day: 'ontem', who: 'Mateus Silva', action: 'adicionou 3 membros ao plano Enterprise', detail: 'time comercial · convites enviados', icon: UserPlus, type: 'team' },
     { time: '17:42', day: 'ontem', who: 'Rafael Milagre', action: 'editou as configurações de notificação', detail: 'desligou "comentários nas suas notas"', icon: FileEdit, type: 'change' },
     { time: '14:00', day: 'ontem', who: 'Rafael Milagre', action: 'login pela primeira vez de São Paulo', detail: 'IP 203.0.113.22 · macOS Safari', icon: LogIn, type: 'security' },

@@ -81,7 +81,7 @@ function HeroVariantsSection() {
               <div className="mock-row">
                 <div className="mock-kpi">
                   <em>Economia · mês</em>
-                  <strong>R$ 38,4K</strong>
+                  <strong>R$&nbsp;38,4 mil</strong>
                 </div>
                 <div className="mock-kpi alt">
                   <em>Time aplicando</em>
@@ -164,7 +164,7 @@ function TimelineSection() {
     { year: '[ano 2]', title: 'Comunidade Viver de IA', body: 'Comunidade de empresários e líderes. [Marco do capítulo · número só com fonte.]', tag: 'estrutura' },
     { year: '[ano 3]', title: 'Leaders AI Conference', body: 'Evento presencial da marca · [local] · [N] participantes. [O que o evento provou, com dado.]', tag: 'evento' },
     { year: '[ano 4]', title: 'Plataforma', body: '157 soluções de IA prontas, formações práticas, mentorias ao vivo e Consultor IA na mesma plataforma.', tag: 'produto' },
-    { year: 'Hoje', title: 'Meta pública', body: 'Gerar R$ 1 bilhão em receita e economia para empresas com IA — é meta, não resultado. 521 cases reais até aqui.', tag: 'meta', current: true },
+    { year: 'Hoje', title: 'Meta pública', body: 'Gerar R$\u00A01 bilhão em receita e economia para empresas com IA — é meta, não resultado. 521 cases reais até aqui.', tag: 'meta', current: true },
   ];
 
   return (
@@ -229,7 +229,7 @@ function ComparisonSection() {
   const plans = [
     {
       name: 'Starter',
-      price: 'R$ 2.580',
+      price: 'R$\u00A02.580',
       unit: '/ mês · anual',
       lede: 'Plataforma, soluções prontas, formações e comunidade.',
       hero: false,
@@ -246,7 +246,7 @@ function ComparisonSection() {
     },
     {
       name: 'Pro',
-      price: 'R$ 3.780',
+      price: 'R$\u00A03.780',
       unit: '/ mês · anual',
       lede: 'Plano completo com mentoria em grupo ao vivo.',
       hero: true,
@@ -263,7 +263,7 @@ function ComparisonSection() {
     },
     {
       name: 'Enterprise',
-      price: 'R$ 6.180',
+      price: 'R$\u00A06.180',
       unit: '/ mês · anual',
       lede: 'Implementação assistida e soluções sob medida.',
       hero: false,
@@ -331,7 +331,7 @@ function FaqSection() {
     },
     {
       q: 'Como funciona a contratação?',
-      a: 'Os três planos têm valor mensal em reais e contratação anual: Starter R$ 2.580, Pro R$ 3.780 e Enterprise R$ 6.180 por mês. O upgrade de plano pode ser feito a qualquer momento, mediante a diferença de valor.',
+      a: 'Os três planos têm valor mensal em reais e contratação anual: Starter R$\u00A02.580, Pro R$\u00A03.780 e Enterprise R$\u00A06.180 por mês. O upgrade de plano pode ser feito a qualquer momento, mediante a diferença de valor.',
     },
     {
       q: 'Vocês mexem no meu produto?',

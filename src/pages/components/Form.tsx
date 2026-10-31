@@ -148,8 +148,8 @@ export default function Form() {
                 <p className="vds-eyebrow">Plano</p>
                 <div className="vds-form-radios">
                   {[
-                    { v: 'Pro', l: 'Plano Pro', d: 'R$ 3.780/mês · contratação anual' },
-                    { v: 'Enterprise', l: 'Plano Enterprise', d: 'R$ 6.180/mês · contratação anual' },
+                    { v: 'Pro', l: 'Plano Pro', d: 'R$\u00A03.780/mês · contratação anual' },
+                    { v: 'Enterprise', l: 'Plano Enterprise', d: 'R$\u00A06.180/mês · contratação anual' },
                   ].map((o) => (
                     <label key={o.v} className={`via-radio ${planoNovo === o.v ? 'on' : ''}`}>
                       <input

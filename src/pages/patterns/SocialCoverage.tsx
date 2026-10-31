@@ -264,7 +264,7 @@ function LinkedInSection() {
               abrir mais um projeto de IA do zero — link nos comentários.
             </p>
             <p>
-              <em>6h → cliques. R$ 162.000 de economia.</em>
+              <em>6h → cliques. R$&nbsp;162.000 de economia.</em>
             </p>
           </div>
 
@@ -363,7 +363,7 @@ function LinkedInSection() {
             { n: 4, type: 'reveal', h: 'O que pesa de verdade', sub: 'escolher a tarefa certa pra começar' },
             { n: 5, type: 'fix', h: 'Passo 1', sub: 'listar o que se repete e tem formato fixo' },
             { n: 6, type: 'fix', h: 'Passo 2', sub: 'procurar solução pronta antes de construir' },
-            { n: 7, type: 'result', h: 'R$ 162 mil', sub: 'de economia · case Viva Nexo' },
+            { n: 7, type: 'result', h: 'R$\u00A0162 mil', sub: 'de economia · case Viva Nexo' },
             { n: 8, type: 'learn', h: 'O que vale anotar', sub: 'comece pela tarefa mais repetitiva' },
             { n: 9, type: 'learn', h: 'Segunda lição', sub: 'meça antes e depois, em horas e reais' },
             {
@@ -554,7 +554,7 @@ function XSection() {
           <div className="vds-sc-x-card via-mesh-navy via-noise">
             <span className="vds-sc-x-card-eyebrow">case · Place Dreams</span>
             <h3>
-              <em>R$ 42 mil</em> por ano · em 30 dias
+              <em>R$&nbsp;42 mil</em> por ano · em 30 dias
             </h3>
             <p>gestão manual virou eficiência digital · case real em viverdeia.ai/cases</p>
             <img src={monogramWhite} alt="" />
@@ -596,18 +596,18 @@ function TikTokSection() {
               <span className="plus">+</span>
             </div>
             <button aria-label="Curtir"><Heart size={24} strokeWidth={1.75} /></button>
-            <em className="mono">12.4k</em>
+            <em className="mono">12,4 mil</em>
             <button aria-label="Comentar"><MessageCircle size={24} strokeWidth={1.75} /></button>
             <em className="mono">218</em>
             <button aria-label="Salvar"><Bookmark size={24} strokeWidth={1.75} /></button>
-            <em className="mono">1.8k</em>
+            <em className="mono">1,8 mil</em>
             <button aria-label="Compartilhar"><Share2 size={24} strokeWidth={1.75} /></button>
             <em className="mono">442</em>
           </aside>
           <div className="vds-sc-tiktok-bottom">
             <strong>@viverdeia.ai</strong>
             <p>3 erros comuns com agente em produção · pt 1</p>
-            <em>♪ som original · 1.2k usando</em>
+            <em>♪ som original · 1,2 mil usando</em>
           </div>
         </article>
       </Section>

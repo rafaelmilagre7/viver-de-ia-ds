@@ -124,7 +124,7 @@ function MetaCarouselSection() {
     { n: 1, h: '521', sub: 'cases reais de implementação de IA', type: 'hook' },
     { n: 2, h: '157', sub: 'soluções de IA prontas pra usar', type: 'context' },
     { n: 3, h: '29', sub: 'setores já transformados com IA', type: 'context' },
-    { n: 4, h: 'R$ 120 mil', sub: 'economia anual · case Trivia Studio', type: 'result' },
+    { n: 4, h: 'R$\u00A0120 mil', sub: 'economia anual · case Trivia Studio', type: 'result' },
     { n: 5, h: 'Ver planos', sub: 'Starter · Pro · Enterprise', type: 'cta' },
   ];
 
@@ -389,7 +389,7 @@ function GoogleSearchSection() {
             </h3>
 
             <p className="vds-pa-gs-desc">
-              Plataforma B2B com 157 soluções de IA prontas e 521 cases reais. Planos a partir de R$ 2.580/mês, em contratação anual.
+              Plataforma B2B com 157 soluções de IA prontas e 521 cases reais. Planos a partir de R$&nbsp;2.580/mês, em contratação anual.
             </p>
 
             <ul className="vds-pa-gs-sitelinks">
@@ -720,7 +720,7 @@ function PreflightSection() {
         { q: 'Estágio do funil', a: 'cold · warm · hot · retargeting' },
         { q: 'Objetivo Meta/Google', a: 'awareness · traffic · engagement · leads · sales' },
         { q: 'KPI primário', a: 'CTR · CPC · CPL · CPA · ROAS' },
-        { q: 'KPI guardrail', a: 'frequência <2.5 · CPC <R$3 · CTR >1.2%' },
+        { q: 'KPI guardrail', a: 'frequência <2,5 · CPC <R$\u00A03 · CTR >1,2%' },
       ],
     },
     {
@@ -860,7 +860,7 @@ function BodyLibrarySection() {
     {
       cat: 'Convite editorial',
       good: [
-        'Plano Pro: R$ 3.780/mês, em contratação anual.',
+        'Plano Pro: R$\u00A03.780/mês, em contratação anual.',
         'Garantia de 90 dias. Condições na cláusula 7.',
       ],
       bad: [

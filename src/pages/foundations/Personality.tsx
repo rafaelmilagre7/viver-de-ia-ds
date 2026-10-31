@@ -110,7 +110,7 @@ const traits: Trait[] = [
     ),
     summary:
       '“521 cases reais de implementação” vence “muita gente já fez”. O específico convence; o genérico esfria.',
-    behavior: '“521 cases reais”, “157 soluções prontas”, “R$ 120.000 de economia anual · Trivia Studio”.',
+    behavior: '“521 cases reais”, “157 soluções prontas”, “R$\u00A0120.000 de economia anual · Trivia Studio”.',
     avoid: '“Centenas de alunos”, “muita gente já fez”, “resultados impressionantes”.',
   },
 ];

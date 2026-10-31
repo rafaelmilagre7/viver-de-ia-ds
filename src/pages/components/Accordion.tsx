@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Como funciona o pagamento?',
-    a: 'Valor mensal em reais, em contratação anual: Starter R$ 2.580, Pro R$ 3.780 e Enterprise R$ 6.180 por mês.',
+    a: 'Valor mensal em reais, em contratação anual: Starter R$\u00A02.580, Pro R$\u00A03.780 e Enterprise R$\u00A06.180 por mês.',
   },
 ];
 

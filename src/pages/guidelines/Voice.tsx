@@ -16,7 +16,7 @@ export default function Voice() {
           consegue depois — receita, margem, autonomia. A stack é meio, nunca fim.
         </p>
         <p>
-          <em>Toda afirmação carrega número ou citação.</em> "521 cases reais", "R$ 42.000 por ano",
+          <em>Toda afirmação carrega número ou citação.</em> "521 cases reais", "R$&nbsp;42.000 por ano",
           "de 6h para cliques". Sem isso é blog, não é cases.
         </p>
         <p>
@@ -51,7 +51,7 @@ export default function Voice() {
             <tr>
               <td className="tok">Métrica seca</td>
               <td className="val">Stat card, KPI, headline de case</td>
-              <td className="use">"R$ 120.000 de economia anual · Trivia Studio"</td>
+              <td className="use">"R$&nbsp;120.000 de economia anual · Trivia Studio"</td>
             </tr>
           </tbody>
         </table>

@@ -92,7 +92,7 @@ export default function Settings() {
                   </div>
                   <div className="via-field">
                     <label className="lbl">Bio profissional</label>
-                    <textarea className="val" aria-label="Bio profissional" rows={3} defaultValue="Fundador da Viver de IA. Meta pública: gerar R$ 1 bilhão em receita e economia para empresas com IA." />
+                    <textarea className="val" aria-label="Bio profissional" rows={3} defaultValue="Fundador da Viver de IA. Meta pública: gerar R$&nbsp;1 bilhão em receita e economia para empresas com IA." />
                   </div>
                 </div>
 

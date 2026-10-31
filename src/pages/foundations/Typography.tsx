@@ -140,7 +140,7 @@ export default function Typography() {
         <div style={{ display: 'flex', gap: 40, marginTop: 24, alignItems: 'baseline', flexWrap: 'wrap' }}>
           <div>
             <p className="vds-eyebrow">Economia anual</p>
-            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 'clamp(40px, 10vw, 64px)', fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>R$ 42.000</div>
+            <div style={{ fontFamily: 'var(--via-font-display)', fontSize: 'clamp(40px, 10vw, 64px)', fontWeight: 500, letterSpacing: '-0.04em', color: 'var(--via-text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>R$&nbsp;42.000</div>
           </div>
           <div>
             <p className="vds-eyebrow">Cases reais</p>

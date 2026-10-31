@@ -56,12 +56,12 @@ export default function ApiCard() {
           preview: (
             <Card hoverable>
               <h3 style={{ margin: 0, fontSize: 18, color: 'var(--via-text-primary)' }}>Caso · Trivia Studio</h3>
-              <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--via-ink-2)' }}>R$ 120.000 de economia anual.</p>
+              <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--via-ink-2)' }}>R$&nbsp;120.000 de economia anual.</p>
             </Card>
           ),
           code: `<Card hoverable as="a" href="/casos/trivia-studio">
   <h3>Caso · Trivia Studio</h3>
-  <p>R$ 120.000 de economia anual.</p>
+  <p>R$\u00A0120.000 de economia anual.</p>
 </Card>`,
         },
       ]}

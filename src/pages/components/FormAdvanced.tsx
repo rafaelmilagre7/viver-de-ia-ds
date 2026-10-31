@@ -302,11 +302,11 @@ function ComboboxSection() {
   const [open, setOpen] = useState(true);
   const [val, setVal] = useState('');
   const options = [
-    { v: 'BR-SP', label: 'São Paulo', meta: 'SP · capital · 12M habitantes', icon: '🏛' },
-    { v: 'BR-RJ', label: 'Rio de Janeiro', meta: 'RJ · capital · 6M habitantes', icon: '🏖' },
-    { v: 'BR-BH', label: 'Belo Horizonte', meta: 'MG · capital · 2,7M', icon: '⛰' },
-    { v: 'BR-FLN', label: 'Florianópolis', meta: 'SC · capital · 600K', icon: '🌊' },
-    { v: 'BR-JOI', label: 'Joinville', meta: 'SC · industrial · 600K', icon: '⚙️' },
+    { v: 'BR-SP', label: 'São Paulo', meta: 'SP · capital · 12 mi habitantes' },
+    { v: 'BR-RJ', label: 'Rio de Janeiro', meta: 'RJ · capital · 6 mi habitantes' },
+    { v: 'BR-BH', label: 'Belo Horizonte', meta: 'MG · capital · 2,7 mi habitantes' },
+    { v: 'BR-FLN', label: 'Florianópolis', meta: 'SC · capital · 600 mil habitantes' },
+    { v: 'BR-JOI', label: 'Joinville', meta: 'SC · industrial · 600 mil habitantes' },
   ];
   const filtered = val ? options.filter((o) => o.label.toLowerCase().includes(val.toLowerCase())) : options;
   const [picked, setPicked] = useState('BR-SP');
@@ -488,7 +488,7 @@ function RangeDoubleSection() {
               {ticks.map((t) => (
                 <span key={t}>
                   <span className="tick" />
-                  <em>R$ {t >= 1000 ? `${t / 1000}K` : t}</em>
+                  <em>R$&nbsp;{t >= 1000 ? `${t / 1000}K` : t}</em>
                 </span>
               ))}
             </div>
@@ -497,16 +497,16 @@ function RangeDoubleSection() {
           <div className="vds-range-summary">
             <div>
               <span className="vds-range-eyebrow">Mínimo</span>
-              <strong>R$ {lo.toLocaleString('pt-BR')}</strong>
+              <strong>R$&nbsp;{lo.toLocaleString('pt-BR')}</strong>
             </div>
             <div className="span">
               <span className="vds-range-eyebrow">Faixa</span>
-              <strong>R$ {span.toLocaleString('pt-BR')}</strong>
-              <em>mediana R$ {median.toLocaleString('pt-BR')}</em>
+              <strong>R$&nbsp;{span.toLocaleString('pt-BR')}</strong>
+              <em>mediana R$&nbsp;{median.toLocaleString('pt-BR')}</em>
             </div>
             <div>
               <span className="vds-range-eyebrow">Máximo</span>
-              <strong>R$ {hi.toLocaleString('pt-BR')}</strong>
+              <strong>R$&nbsp;{hi.toLocaleString('pt-BR')}</strong>
             </div>
           </div>
         </div>

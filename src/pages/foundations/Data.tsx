@@ -449,8 +449,8 @@ function EspecimeMetricasSection() {
           <span className="via-metric__label">Atingimento da meta</span>
           <span className="via-metric__value">100,7%</span>
           <span className="via-metric__foot">
-            <span className="via-delta via-delta--up">+R$ 34.000</span>
-            sobre a meta de R$ 5.000.000
+            <span className="via-delta via-delta--up">+R$&nbsp;34.000</span>
+            sobre a meta de R$&nbsp;5.000.000
           </span>
         </article>
 

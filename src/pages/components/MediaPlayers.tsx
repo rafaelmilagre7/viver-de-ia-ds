@@ -83,7 +83,7 @@ function FullEpisodeSection() {
               <p className="eyebrow"><Headphones size={14} strokeWidth={1.75} /> Episódio 042 · 42min</p>
               <h2>De 6h para cliques,<br /><em>o case Viva Nexo</em>.</h2>
               <p className="lede">
-                Episódio sobre o case Viva Nexo, publicado em viverdeia.ai/cases: de um relatório de 6 horas para poucos cliques, com R$ 162.000 de economia.
+                Episódio sobre o case Viva Nexo, publicado em viverdeia.ai/cases: de um relatório de 6 horas para poucos cliques, com R$&nbsp;162.000 de economia.
               </p>
               <div className="ep-attrs">
                 <span className="ep-attr">

@@ -18,7 +18,7 @@ export default function Slider() {
         <div className="via-slider-card">
           <div className="hdr">
             <span className="lbl">Orçamento mensal</span>
-            <span className="val">R$ {budget.toLocaleString('pt-BR')}</span>
+            <span className="val">R$&nbsp;{budget.toLocaleString('pt-BR')}</span>
           </div>
           <input
             type="range"
@@ -32,8 +32,8 @@ export default function Slider() {
             style={{ '--p': `${((budget - 1000) / 19000) * 100}%` } as React.CSSProperties}
           />
           <div className="ends">
-            <span>R$ 1.000</span>
-            <span>R$ 20.000</span>
+            <span>R$&nbsp;1.000</span>
+            <span>R$&nbsp;20.000</span>
           </div>
         </div>
       </Section>

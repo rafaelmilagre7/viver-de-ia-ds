@@ -15,7 +15,7 @@ const contexts = [
     sample_bad:  '“Junte-se a centenas de profissionais que já transformaram suas carreiras com IA!”',
     rules: [
       'Promessa específica + condição realista (não “vai mudar sua vida”)',
-      'Sempre número com período (“R$ 120.000 de economia anual”, não “milhares”)',
+      'Sempre número com período (“R$\u00A0120.000 de economia anual”, não “milhares”)',
       'CTA imperativo curto (“ver os planos”, não “garanta sua vaga AGORA!!!”)',
       'Sem exclamação · sem caps-lock · sem emoji decorativo',
     ],
@@ -27,7 +27,7 @@ const contexts = [
     register: 'concierge-direto',
     person: '“você” · neutro, factual',
     rhythm: 'assunto = fato · primeira frase = resumo · resto = detalhe',
-    sample_good: 'Subject: “Cobrança em 2 dias · R$ 3.780”\nBody: “A mensalidade do seu Plano Pro entra na fatura sex 23/mai. O detalhe está no seu painel, em 1 clique.”',
+    sample_good: 'Subject: “Cobrança em 2 dias · R$\u00A03.780”\nBody: “A mensalidade do seu Plano Pro entra na fatura sex 23/mai. O detalhe está no seu painel, em 1 clique.”',
     sample_bad:  'Subject: “🚨 ATENÇÃO Rafael! Sua fatura está chegando 💰”\nBody: “Olá Rafael, esperamos que você esteja bem! Gostaríamos de informar que...”',
     rules: [
       'Subject = frase de amigo, sem “Olá”, sem emoji, sem urgência fabricada',
@@ -128,7 +128,7 @@ const contexts = [
     rules: [
       'Sempre começar pelo custo atual do cliente, não pela apresentação da empresa',
       'Métrica específica que se possa medir depois (“89% menos”, não “muito mais eficiente”)',
-      'Case real + análogo · “a Place Dreams economiza R$ 42.000 por ano com IA”',
+      'Case real + análogo · “a Place Dreams economiza R$\u00A042.000 por ano com IA”',
       'Próximo passo concreto · “15 min de call sex” não “ficamos à disposição”',
     ],
   },

@@ -122,7 +122,7 @@ function NotificationSection() {
               <span className="ico stat"><TrendingUp size={16} strokeWidth={1.75} /></span>
               <div>
                 <strong>Métrica publicada</strong>
-                <span>Receita influenciada cruzou R$ 248k em 2026.</span>
+                <span>Receita influenciada cruzou R$&nbsp;248 mil em 2026.</span>
                 <span className="time">2h</span>
               </div>
             </li>
@@ -146,7 +146,7 @@ function ActivitySection() {
   const items = [
     { kind: 'success', who: 'Caio Ribeiro', what: 'aprovou case', ref: 'Case · triagem de leads', when: '4 min', stat: '−35% no tempo de resposta' },
     { kind: 'info', who: 'Larissa Tavares', what: 'comentou em', ref: 'Thread de integração', when: '38 min' },
-    { kind: 'pub', who: 'Sistema', what: 'publicou métrica', ref: 'Receita influenciada', when: '2h', stat: 'R$ 248k em 2026' },
+    { kind: 'pub', who: 'Sistema', what: 'publicou métrica', ref: 'Receita influenciada', when: '2h', stat: 'R$\u00A0248 mil em 2026' },
     { kind: 'deploy', who: 'Gustavo Dantas', what: 'subiu agente em produção', ref: 'Atendimento · WhatsApp', when: '4h', stat: '100% automatizado' },
     { kind: 'info', who: 'Equipe VIA', what: 'agendou', ref: 'Workshop · publicando deploy', when: 'ontem' },
   ];

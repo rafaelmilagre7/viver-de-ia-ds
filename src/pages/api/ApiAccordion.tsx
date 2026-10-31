@@ -22,7 +22,7 @@ function AccordionDemo() {
             title: 'Como funciona a contratação?',
             content: (
               <p style={{ margin: 0, color: 'var(--via-text-body)', fontSize: 13.5, lineHeight: 1.65 }}>
-                Valor mensal em contratação anual · Starter R$ 2.580 · Pro R$ 3.780 · Enterprise R$ 6.180.
+                Valor mensal em contratação anual · Starter R$&nbsp;2.580 · Pro R$&nbsp;3.780 · Enterprise R$&nbsp;6.180.
               </p>
             ),
           },

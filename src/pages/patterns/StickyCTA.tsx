@@ -56,7 +56,7 @@ function StickyEnrollSection() {
               <span>check-ins de mentoria</span>
             </div>
             <div className="vds-sticky-page__stat">
-              <strong>R$ 3.780</strong>
+              <strong>R$&nbsp;3.780</strong>
               <span>por mês · anual</span>
             </div>
           </div>
@@ -147,7 +147,7 @@ function StickyNotifySection() {
             </span>
             <div>
               <strong>Case em destaque · “De 6h para cliques”</strong>
-              <span>Como a Viva Nexo economiza R$ 162.000 com IA na operação · setor Saúde.</span>
+              <span>Como a Viva Nexo economiza R$&nbsp;162.000 com IA na operação · setor Saúde.</span>
             </div>
           </div>
         </article>
@@ -198,13 +198,13 @@ function StickyExitSection() {
             Revisar antes de confirmar a adesão.
           </h2>
           <p className="vds-sticky-page__lede">
-            Plano Pro: <strong>R$ 3.780 por mês</strong>, em contratação anual · garantia de 90 dias
+            Plano Pro: <strong>R$&nbsp;3.780 por mês</strong>, em contratação anual · garantia de 90 dias
             com 3 requisitos · condições completas na cláusula 7 dos termos de uso.
           </p>
 
           <div className="vds-sticky-page__stats">
             <div className="vds-sticky-page__stat">
-              <strong>R$ 3.780</strong>
+              <strong>R$&nbsp;3.780</strong>
               <span>por mês · anual</span>
             </div>
             <div className="vds-sticky-page__stat">

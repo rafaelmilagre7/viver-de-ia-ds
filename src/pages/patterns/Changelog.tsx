@@ -102,7 +102,7 @@ function ChangelogFeaturedSection() {
           </div>
           <span className="vds-cl-stat-sep" />
           <div className="vds-cl-stat">
-            <strong className="mono">99.94%</strong>
+            <strong className="mono">99,94%</strong>
             <em>uptime no rollout</em>
           </div>
         </footer>

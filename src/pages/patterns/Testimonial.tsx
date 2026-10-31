@@ -9,7 +9,7 @@ const testis = [
     who: '[Nome]',
     role: '[cargo] · Place Dreams · Tecnologia',
     initials: 'N',
-    outcome: { k: 'Economia', v: 'R$ 42.000', em: '/ano' },
+    outcome: { k: 'Economia', v: 'R$\u00A042.000', em: '/ano' },
   },
   {
     quote: '[Frase curta dita pelo cliente, sem retoque.]',
@@ -17,7 +17,7 @@ const testis = [
     who: '[Nome do cliente]',
     role: '[cargo] · Trivia Studio · Agência',
     initials: 'N',
-    outcome: { k: 'Economia', v: 'R$ 120.000', em: '/ano' },
+    outcome: { k: 'Economia', v: 'R$\u00A0120.000', em: '/ano' },
   },
 ];
 

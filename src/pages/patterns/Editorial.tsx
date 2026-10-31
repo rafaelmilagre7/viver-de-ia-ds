@@ -133,7 +133,7 @@ function BlogPostSection() {
         <header>
           <span className="vds-ed-blog-cat">Cases · Agência</span>
           <h1>
-            Trivia Studio: de processos manuais a <em>R$ 120.000</em> de economia anual.
+            Trivia Studio: de processos manuais a <em>R$&nbsp;120.000</em> de economia anual.
           </h1>
           <p className="vds-ed-blog-lede">
             Case real publicado em viverdeia.ai/cases. Abaixo, a estrutura do post ·
@@ -184,7 +184,7 @@ function BlogPostSection() {
 
             <h2>Resultado publicado</h2>
             <p>
-              De processos manuais a <strong>R$ 120.000 de economia anual</strong>, segundo o
+              De processos manuais a <strong>R$&nbsp;120.000 de economia anual</strong>, segundo o
               case publicado em viverdeia.ai/cases. [Prazo e métrica de apoio, se houver.]
             </p>
 
@@ -298,7 +298,7 @@ function PodcastNotesSection() {
           <ul className="vds-ed-podcast-resources">
             <li>
               <span className="vds-ed-podcast-res-eyebrow">case</span>
-              <a href="#">Viva Nexo · de 6h para cliques · R$ 162.000</a>
+              <a href="#">Viva Nexo · de 6h para cliques · R$&nbsp;162.000</a>
             </li>
             <li>
               <span className="vds-ed-podcast-res-eyebrow">código</span>

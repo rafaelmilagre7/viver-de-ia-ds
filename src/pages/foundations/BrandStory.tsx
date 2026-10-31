@@ -130,7 +130,7 @@ function VisionSection() {
             <span className="vds-bs-year mono">2028</span>
             <div>
               <strong>Ecossistema</strong>
-              <em>Meta pública: R$ 1 bilhão em receita e economia para empresas com IA</em>
+              <em>Meta pública: R$&nbsp;1 bilhão em receita e economia para empresas com IA</em>
             </div>
           </li>
           <li>

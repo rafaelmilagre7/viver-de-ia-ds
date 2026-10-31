@@ -141,13 +141,13 @@ function ErrorPagesSection() {
             <div className="vds-error-plan current">
               <span className="lbl">Hoje</span>
               <strong>Starter</strong>
-              <em>R$ 2.580/mês</em>
+              <em>R$&nbsp;2.580/mês</em>
             </div>
             <span className="vds-error-plans-arrow">→</span>
             <div className="vds-error-plan target">
               <span className="lbl">Para destravar</span>
               <strong>Pro</strong>
-              <em>R$ 3.780/mês</em>
+              <em>R$&nbsp;3.780/mês</em>
             </div>
           </div>
           <p className="vds-error-plans-note">Valores por mês, em contratação anual.</p>
@@ -361,12 +361,12 @@ function EmptyPremiumSection() {
           </div>
           <h4>{filtroTitulo}</h4>
           <p>
-            {filtroTexto} O que mais restringe costuma ser <strong>“MRR &gt; R$ 4K”</strong>.
+            {filtroTexto} O que mais restringe costuma ser <strong>“MRR &gt; R$&nbsp;4 mil”</strong>.
           </p>
           <div className="vds-empty-prem-chips">
             <button className="vds-empty-prem-chip">
               <span className="x">×</span>
-              MRR &gt; R$ 4K
+              MRR &gt; R$&nbsp;4 mil
               <em>248 → 1.847</em>
             </button>
             <button className="vds-empty-prem-chip">

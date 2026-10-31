@@ -34,7 +34,7 @@ export default function Social() {
                 <BrandLogo variant="white" size="sm" />
                 <p className="eyebrow">Case · Place Dreams</p>
                 <h2>
-                  R$ 42.000<br /><em>de economia por ano</em>
+                  R$&nbsp;42.000<br /><em>de economia por ano</em>
                 </h2>
                 <p className="lede">
                   Em 30 dias. Gestão manual virou eficiência digital.
@@ -141,13 +141,13 @@ export default function Social() {
               <button className="li-follow">+ Seguir</button>
             </header>
             <p className="li-text">
-              521 cases reais publicados. Cada um com desafio, solução e resultado. Esse é da Trivia Studio — <strong>de processos manuais a R$ 120.000 de economia anual.</strong> Link no primeiro comentário.
+              521 cases reais publicados. Cada um com desafio, solução e resultado. Esse é da Trivia Studio — <strong>de processos manuais a R$&nbsp;120.000 de economia anual.</strong> Link no primeiro comentário.
             </p>
             <div className="vds-li-post via-mesh-navy via-noise">
               <div className="li-content">
                 <BrandLogo variant="white" size="sm" />
                 <p className="eyebrow">Case · Trivia Studio</p>
-                <h2>R$ 120 mil<em>/ano</em></h2>
+                <h2>R$&nbsp;120 mil<em>/ano</em></h2>
                 <p className="lede">
                   Economia anual. De processos manuais a conteúdo em escala.
                 </p>

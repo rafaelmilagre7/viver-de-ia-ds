@@ -238,7 +238,7 @@ function LibAlertSection() {
             Pausa programada de até 8 minutos · sem perda de dados.
           </Alert>
           <Alert tone="attn" title="Cobrança próxima · 18 mai" action={<a href="#">Ver detalhes</a>}>
-            Sua próxima fatura será de <strong>R$ 3.780</strong>. Confira o detalhe em 1 clique.
+            Sua próxima fatura será de <strong>R$&nbsp;3.780</strong>. Confira o detalhe em 1 clique.
           </Alert>
           {open && (
             <Alert tone="danger" title="Falha de sincronização · 4 mensagens" onDismiss={() => setOpen(false)}>
@@ -670,7 +670,7 @@ function LibModalSection() {
   open={open}
   onClose={() => setOpen(false)}
   title="Renovar Plano Pro"
-  description="Contratação anual · R$ 3.780 por mês"
+  description="Contratação anual · R$\u00A03.780 por mês"
   footer={
     <>
       <Button variant="ghost" onClick={() => setOpen(false)}>Cancelar</Button>
@@ -686,7 +686,7 @@ function LibModalSection() {
           onClose={() => setOpen(false)}
           size="md"
           title="Renovar Plano Pro"
-          description="Sua próxima cobrança seria 17 jun · R$ 3.780"
+          description="Sua próxima cobrança seria 17 jun · R$&nbsp;3.780"
           footer={
             <>
               <Button variant="ghost" onClick={() => setOpen(false)}>
@@ -700,7 +700,7 @@ function LibModalSection() {
         >
           <p>
             Você está prestes a renovar o <strong>Plano Pro · contratação anual</strong>.
-            O valor segue <strong>R$ 3.780 por mês</strong>, na mesma forma de pagamento que está hoje (cartão final 6411).
+            O valor segue <strong>R$&nbsp;3.780 por mês</strong>, na mesma forma de pagamento que está hoje (cartão final 6411).
           </p>
           <p>
             Condições completas nos termos de uso.
@@ -869,9 +869,9 @@ function LibRadioSection() {
             value={plan}
             onValueChange={setPlan}
             options={[
-              { value: 'starter', label: 'Starter', description: 'R$ 2.580/mês · contratação anual.' },
-              { value: 'pro', label: 'Pro · mentoria em grupo', description: 'R$ 3.780/mês · 10 check-ins/mês.' },
-              { value: 'enterprise', label: 'Enterprise', description: 'R$ 6.180/mês · AI Builder + 1h individual.' },
+              { value: 'starter', label: 'Starter', description: 'R$\u00A02.580/mês · contratação anual.' },
+              { value: 'pro', label: 'Pro · mentoria em grupo', description: 'R$\u00A03.780/mês · 10 check-ins/mês.' },
+              { value: 'enterprise', label: 'Enterprise', description: 'R$\u00A06.180/mês · AI Builder + 1h individual.' },
             ]}
           />
         </div>
@@ -881,8 +881,8 @@ function LibRadioSection() {
   value={plan}
   onValueChange={setPlan}
   options={[
-    { value: 'starter', label: 'Starter', description: 'R$ 2.580/mês' },
-    { value: 'pro',     label: 'Pro', description: 'R$ 3.780/mês' },
+    { value: 'starter', label: 'Starter', description: 'R$\u00A02.580/mês' },
+    { value: 'pro',     label: 'Pro', description: 'R$\u00A03.780/mês' },
   ]}
 />`}</pre>
       </div>

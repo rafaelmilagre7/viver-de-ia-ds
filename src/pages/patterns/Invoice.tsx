@@ -175,8 +175,8 @@ function ReceiptSection() {
                     <p className="vds-receipt-item-sub">{it.sub}</p>
                   </td>
                   <td className="col-qty via-num">{it.qty}</td>
-                  <td className="col-unit via-num">R$ {it.unit.toLocaleString('pt-BR')}</td>
-                  <td className="col-total via-num">R$ {(it.qty * it.unit).toLocaleString('pt-BR')}</td>
+                  <td className="col-unit via-num">R$&nbsp;{it.unit.toLocaleString('pt-BR')}</td>
+                  <td className="col-total via-num">R$&nbsp;{(it.qty * it.unit).toLocaleString('pt-BR')}</td>
                 </tr>
               ))}
             </tbody>
@@ -193,15 +193,15 @@ function ReceiptSection() {
             <div className="vds-receipt-totals-card">
               <div className="row">
                 <span>Subtotal</span>
-                <span className="via-num">R$ {subtotal.toLocaleString('pt-BR')},00</span>
+                <span className="via-num">R$&nbsp;{subtotal.toLocaleString('pt-BR')},00</span>
               </div>
               <div className="row">
                 <span>Desconto</span>
-                <span className="discount via-num">− R$ {discount.toLocaleString('pt-BR')},00</span>
+                <span className="discount via-num">− R$&nbsp;{discount.toLocaleString('pt-BR')},00</span>
               </div>
               <div className="row total">
                 <span>Total a pagar</span>
-                <span className="via-num">R$ {total.toLocaleString('pt-BR')},00</span>
+                <span className="via-num">R$&nbsp;{total.toLocaleString('pt-BR')},00</span>
               </div>
             </div>
           </section>
@@ -268,7 +268,7 @@ function CompactReceiptSection() {
           </header>
 
           <h3 className="vds-receipt-mini-amount">
-            R$ 3.780,00
+            R$&nbsp;3.780,00
             <span>· recebido em 17 mai</span>
           </h3>
 

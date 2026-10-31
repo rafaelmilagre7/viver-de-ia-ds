@@ -14,9 +14,9 @@ import './checkout.css';
 type Step = 1 | 2 | 3;
 
 const planos = [
-  { id: 'starter', t: 'Starter', sub: 'R$ 2.580/mês', total: 'R$ 30.960/ano', rec: false },
-  { id: 'pro', t: 'Pro', sub: 'R$ 3.780/mês', total: 'R$ 45.360/ano', rec: true },
-  { id: 'enterprise', t: 'Enterprise', sub: 'R$ 6.180/mês', total: 'R$ 74.160/ano', rec: false },
+  { id: 'starter', t: 'Starter', sub: 'R$\u00A02.580/mês', total: 'R$\u00A030.960/ano', rec: false },
+  { id: 'pro', t: 'Pro', sub: 'R$\u00A03.780/mês', total: 'R$\u00A045.360/ano', rec: true },
+  { id: 'enterprise', t: 'Enterprise', sub: 'R$\u00A06.180/mês', total: 'R$\u00A074.160/ano', rec: false },
 ];
 
 export default function ShowcaseCheckout() {

@@ -256,10 +256,10 @@ function TrustSignalsAdvancedSection() {
         <article className="vds-le-trust-cases">
           <span className="vds-le-trust-eyebrow">cases reais · viverdeia.ai/cases</span>
           <ul>
-            <li><strong>Place Dreams</strong><em>economiza R$ 42.000/ano em 30 dias</em></li>
-            <li><strong>Trivia Studio</strong><em>R$ 120.000 de economia anual</em></li>
-            <li><strong>Viva Nexo</strong><em>de 6h para cliques · R$ 162.000</em></li>
-            <li><strong>Assessoria MAP</strong><em>economiza R$ 2.000 por mês</em></li>
+            <li><strong>Place Dreams</strong><em>economiza R$&nbsp;42.000/ano em 30 dias</em></li>
+            <li><strong>Trivia Studio</strong><em>R$&nbsp;120.000 de economia anual</em></li>
+            <li><strong>Viva Nexo</strong><em>de 6h para cliques · R$&nbsp;162.000</em></li>
+            <li><strong>Assessoria MAP</strong><em>economiza R$&nbsp;2.000 por mês</em></li>
           </ul>
         </article>
       </div>
@@ -382,7 +382,7 @@ function CompetitorComparisonSection() {
     { feature: 'Garantia', us: '100% de volta em 90 dias · com 3 requisitos', them: 'Sem garantia de resultado' },
     { feature: 'Comunidade', us: 'Empresários e líderes · imersão na sede', them: 'Grupo aberto, sem curadoria' },
     { feature: 'Prova', us: '521 cases reais de implementação de IA', them: 'Print de influencer · sem case' },
-    { feature: 'Preço', us: 'A partir de R$ 2.580/mês · contratação anual', them: 'Ticket baixo · conteúdo genérico' },
+    { feature: 'Preço', us: 'A partir de R$\u00A02.580/mês · contratação anual', them: 'Ticket baixo · conteúdo genérico' },
   ];
 
   return (

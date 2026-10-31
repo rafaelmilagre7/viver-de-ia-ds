@@ -15,7 +15,7 @@ import './lancamento-turma.css';
 
 const CONFIG = {
   plano: 'Plano Pro',
-  preco: 'R$ 3.780',
+  preco: 'R$\u00A03.780',
   contratacao: 'contratação anual',
   mentoria: '10 check-ins por mês de mentoria em grupo',
 };
@@ -57,8 +57,8 @@ const passos = [
 
 /* Cases do site oficial · o valor de cada case não está na ficha → placeholder */
 const cases = [
-  { q: 'Transformou gestão manual em eficiência digital e economiza R$ 42.000 por ano em 30 dias.', nome: 'Place Dreams', setor: 'Tecnologia' },
-  { q: 'De processos manuais a R$ 120.000 de economia anual, escalando a produção de conteúdo.', nome: 'Trivia Studio', setor: 'Agência' },
+  { q: 'Transformou gestão manual em eficiência digital e economiza R$\u00A042.000 por ano em 30 dias.', nome: 'Place Dreams', setor: 'Tecnologia' },
+  { q: 'De processos manuais a R$\u00A0120.000 de economia anual, escalando a produção de conteúdo.', nome: 'Trivia Studio', setor: 'Agência' },
 ];
 
 const lideres = [
@@ -67,9 +67,9 @@ const lideres = [
 ];
 
 const planos = [
-  { id: 'starter', nome: 'Starter', preco: 'R$ 2.580', mentoria: 'Plataforma e comunidade', extra: 'Soluções prontas, formações e Consultor IA', cta: 'Assinar o Starter' },
-  { id: 'pro', nome: 'Pro', preco: 'R$ 3.780', mentoria: 'Mentoria em grupo · 10 check-ins por mês', extra: 'Tudo do Starter', cta: 'Assinar o Plano Pro', destaque: true },
-  { id: 'enterprise', nome: 'Enterprise', preco: 'R$ 6.180', mentoria: 'Mentoria individual · 1 hora por mês', extra: 'Arquiteto de soluções AI Builder', cta: 'Assinar o Enterprise' },
+  { id: 'starter', nome: 'Starter', preco: 'R$\u00A02.580', mentoria: 'Plataforma e comunidade', extra: 'Soluções prontas, formações e Consultor IA', cta: 'Assinar o Starter' },
+  { id: 'pro', nome: 'Pro', preco: 'R$\u00A03.780', mentoria: 'Mentoria em grupo · 10 check-ins por mês', extra: 'Tudo do Starter', cta: 'Assinar o Plano Pro', destaque: true },
+  { id: 'enterprise', nome: 'Enterprise', preco: 'R$\u00A06.180', mentoria: 'Mentoria individual · 1 hora por mês', extra: 'Arquiteto de soluções AI Builder', cta: 'Assinar o Enterprise' },
 ];
 
 const incluso = [
@@ -341,7 +341,7 @@ export default function ShowcaseLancamentoTurma() {
             <span className="lt-eyebrow">quem lidera</span>
             <h2 id="lt-lideranca">Quem está por trás da Viver de IA.</h2>
             <div className="lt-meta-goal">
-              <p className="lt-meta-goal-num">R$ 1 bilhão</p>
+              <p className="lt-meta-goal-num">R$&nbsp;1 bilhão</p>
               <p className="lt-meta-goal-txt">em receita e economia para empresas com IA.</p>
               <p className="lt-meta-goal-note">Meta pública da empresa. É meta, não resultado.</p>
             </div>

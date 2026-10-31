@@ -755,7 +755,7 @@ function GaugesSection() {
           destaque
           nota={
             <>
-              <strong>R$ 548 mil de R$ 940 mil.</strong> 3 pontos atrás do ritmo necessário, com 12
+              <strong>R$&nbsp;548 mil de R$&nbsp;940 mil.</strong> 3 pontos atrás do ritmo necessário, com 12
               dias pra fechar a diferença.
             </>
           }
