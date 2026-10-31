@@ -1,0 +1,923 @@
+/* ==============================================================
+   HOME · visão geral do DS
+   Light-first: papel claro, atmosfera navy sutil, navy é a tinta.
+   O único momento navy fixo é o bloco "Usar com IA", no fim.
+   ============================================================== */
+
+.vds-home {
+  /* atmosfera das cenas de vidro · luz que o vidro desfoca */
+  --home-orb-1: var(--via-navy-16);
+  --home-orb-2: var(--via-navy-25);
+  --home-orb-3: var(--via-navy-08);
+  --home-chart: var(--via-data-1);
+  --home-disk: linear-gradient(150deg, var(--via-blue) 0%, var(--via-navy) 70%);
+  --home-ring: var(--via-navy-20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-24);
+}
+[data-theme="dark"] .vds-home {
+  --home-orb-1: var(--via-data-1-dark);
+  --home-orb-2: var(--via-blue-soft);
+  --home-orb-3: var(--via-data-2-dark);
+  --home-chart: var(--via-data-1-dark);
+  --home-disk: linear-gradient(150deg, var(--via-data-2-dark) 0%, var(--via-blue-soft) 75%);
+  --home-ring: var(--via-navy-25);
+}
+
+.vds-home-eyebrow {
+  margin: 0;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-label);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: var(--via-ls-label);
+  text-transform: uppercase;
+  color: var(--via-text-muted);
+}
+
+/* ---------- HERO ---------- */
+.vds-home-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    'copy  stage'
+    'stats stats';
+  column-gap: var(--via-space-10);
+  row-gap: var(--via-space-14);
+  align-items: center;
+  padding-top: var(--via-space-4);
+}
+/* luz navy atrás do título · some antes da borda (sem caixa) */
+.vds-home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 30% 0;
+  z-index: -1;
+  /* closest-side: o degradê termina antes da borda mais próxima (sem quina) */
+  background: radial-gradient(closest-side at 30% 45%, var(--via-navy-06), transparent);
+  pointer-events: none;
+}
+.vds-home-hero-copy { grid-area: copy; min-width: 0; }
+
+.vds-home-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  padding: var(--via-space-1_5) var(--via-space-3_5) var(--via-space-1_5) var(--via-space-3);
+  margin-bottom: var(--via-space-7);
+  font-family: var(--via-font);
+  font-size: var(--via-fs-xs);
+  font-weight: var(--via-fw-medium);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
+  white-space: nowrap;
+}
+.vds-home-hero-pill svg { color: var(--via-text-primary); }
+
+.vds-home-hero-title {
+  margin: 0 0 var(--via-space-6);
+  font-family: var(--via-font-display);
+  font-size: clamp(40px, 4.3vw, 60px);
+  font-weight: var(--via-fw-medium);
+  line-height: 1.04;
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+  text-wrap: balance;
+}
+.vds-home-hero-title span {
+  font-weight: var(--via-fw-regular);
+  color: var(--via-text-soft);
+}
+.vds-home-hero-lede {
+  margin: 0 0 var(--via-space-9);
+  max-width: 480px;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-h4);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
+  text-wrap: pretty;
+}
+.vds-home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--via-space-3);
+}
+.vds-home-hero-actions .via-btn,
+.vds-home-stage .via-btn { text-decoration: none; }
+
+/* Números do sistema · calculados da navegação, nunca escritos à mão */
+.vds-home-stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--via-space-6);
+  margin: 0;
+  padding-top: var(--via-space-7);
+  border-top: var(--via-border-fine);
+}
+.vds-home-stats > div { display: flex; flex-direction: column; gap: var(--via-space-1); }
+.vds-home-stats dd {
+  order: -1;
+  margin: 0;
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h1);
+  font-weight: var(--via-fw-medium);
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  font-variant-numeric: tabular-nums;
+  color: var(--via-text-primary);
+}
+.vds-home-stats dt {
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  color: var(--via-text-muted);
+}
+
+/* ---------- PALCO DO HERO · peças reais da lib ---------- */
+.vds-home-stage {
+  grid-area: stage;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    'chart  chart'
+    'prefs  module';
+  gap: var(--via-space-3);
+  padding: var(--via-space-5);
+  border-radius: var(--via-radius-xl);
+  border: var(--via-border-fine);
+  background:
+    radial-gradient(ellipse 80% 60% at 100% 0%, var(--via-navy-04), transparent 70%),
+    var(--via-bg-2);
+  box-shadow: 0 1px 2px var(--via-shadow-ink-03), 0 40px 80px -48px var(--via-shadow-ink-30);
+  overflow: hidden;
+}
+[data-theme="dark"] .vds-home-stage {
+  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 40px 80px -40px var(--via-shadow-ink-60);
+}
+.vds-home-stage-atmos {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(var(--via-navy-12) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+/* Orbes · a luz que se move devagar atrás do vidro */
+.vds-home-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: vds-home-drift 26s ease-in-out infinite alternate;
+}
+.vds-home-orb--a {
+  width: 62%;
+  aspect-ratio: 1;
+  top: -14%;
+  left: -10%;
+  background: radial-gradient(circle, var(--home-orb-1) 0%, transparent 68%);
+}
+.vds-home-orb--b {
+  width: 54%;
+  aspect-ratio: 1;
+  bottom: -18%;
+  right: -12%;
+  background: radial-gradient(circle, var(--home-orb-2) 0%, transparent 66%);
+  opacity: 0.55;
+  animation-duration: 32s;
+  animation-direction: alternate-reverse;
+}
+.vds-home-orb--c {
+  width: 34%;
+  aspect-ratio: 1;
+  top: 38%;
+  left: 40%;
+  background: radial-gradient(circle, var(--home-orb-3) 0%, transparent 70%);
+  animation-duration: 21s;
+}
+/* Formas nítidas · o vidro cobre parte delas e a borda coberta sai borrada */
+.vds-home-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: vds-home-float 24s ease-in-out infinite alternate;
+}
+.vds-home-shape--disk {
+  aspect-ratio: 1;
+  background: var(--home-disk);
+}
+.vds-home-shape--ring {
+  aspect-ratio: 1;
+  border: 14px solid var(--home-ring);
+  animation-duration: 30s;
+  animation-direction: alternate-reverse;
+}
+@keyframes vds-home-float {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-18px, 22px, 0); }
+}
+@keyframes vds-home-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(14%, 10%, 0) scale(1.08); }
+  to   { transform: translate3d(-8%, 16%, 0) scale(0.96); }
+}
+
+/* O utilitário .via-card do tokens.css (HTML cru) carrega DEPOIS do Card.css
+   quando a home importa o Card no bundle inicial, e repinta o vidro de branco
+   (no escuro vira laje branca). Reafirma o material regular do <Card glass>. */
+.vds-home-stage .via-card--glass {
+  background: var(--via-material-regular-fill);
+  border: var(--via-material-regular-ring);
+  box-shadow: var(--via-material-regular-shadow);
+}
+.vds-home-stage-card.via-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-3);
+  padding: var(--via-space-5);
+  min-width: 0;
+  animation: vds-home-enter var(--via-dur-page) var(--via-ease-enter) both;
+}
+.vds-home-stage-card--chart  { grid-area: chart; }
+.vds-home-stage-card--prefs  { grid-area: prefs; animation-delay: 80ms; gap: 0; }
+.vds-home-stage-card--module { grid-area: module; animation-delay: 160ms; justify-content: space-between; }
+@keyframes vds-home-enter {
+  from { opacity: 0; transform: translateY(var(--via-space-3)) scale(var(--via-enter-scale)); }
+  to   { opacity: 1; transform: none; }
+}
+
+.vds-home-stage-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--via-space-3);
+}
+.vds-home-stage-label {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-caption);
+  font-weight: var(--via-fw-medium);
+  color: var(--via-text-muted);
+}
+.vds-home-stage-value {
+  margin: var(--via-space-1) 0 0;
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h1);
+  font-weight: var(--via-fw-medium);
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  font-variant-numeric: tabular-nums;
+  color: var(--via-text-primary);
+}
+.vds-home-stage-card--prefs .vds-home-stage-label { margin-bottom: var(--via-space-1); }
+/* linha inteira do switch é o alvo de toque (≥44px) */
+.vds-home-stage .via-switch {
+  align-items: center;
+  min-height: 44px;
+  width: 100%;
+}
+.vds-home-stage .via-switch + .via-switch { border-top: var(--via-border-fine); }
+.vds-home-stage-card--module .via-btn { align-self: flex-start; min-height: 44px; }
+
+/* Mini gráfico · 1 série, sem legenda (o título já diz o quê) */
+.vds-home-chart { display: flex; flex-direction: column; gap: var(--via-space-2); }
+.vds-home-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.vds-home-chart-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  color: var(--via-data-ink);
+}
+.vds-home-chart-grid { stroke: var(--via-data-grid); stroke-width: 1; }
+.vds-home-chart-axis { stroke: var(--via-data-axis); stroke-width: 1; }
+.vds-home-chart-area { fill: var(--home-chart); opacity: 0.12; }
+.vds-home-chart-line {
+  fill: none;
+  stroke: var(--home-chart);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: vds-home-draw calc(var(--via-dur-page) * 3) var(--via-ease-enter) 240ms both;
+}
+.vds-home-chart-dot {
+  fill: var(--via-surface);
+  stroke: var(--home-chart);
+  stroke-width: 2;
+  /* acende quando a linha termina de desenhar */
+  animation: vds-home-pop var(--via-dur-base) var(--via-ease-enter) calc(240ms + var(--via-dur-page) * 3) both;
+}
+@keyframes vds-home-draw { from { stroke-dashoffset: 1; } }
+@keyframes vds-home-pop  { from { opacity: 0; } }
+
+/* ---------- SEÇÕES ---------- */
+.vds-home-section { display: flex; flex-direction: column; gap: var(--via-space-8); scroll-margin-top: var(--via-space-24); }
+.vds-home-section-head { display: flex; flex-direction: column; gap: var(--via-space-3); max-width: 620px; }
+.vds-home-section-head h2 {
+  margin: 0;
+  font-family: var(--via-font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: var(--via-fw-medium);
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+  text-wrap: balance;
+}
+.vds-home-section-head > p:last-child {
+  margin: 0;
+  font-size: var(--via-fs-body);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
+}
+
+/* ---------- MOSAICO DAS PÁGINAS-MODELO ---------- */
+.vds-home-mosaic {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 236px;
+  gap: var(--via-space-4);
+  grid-template-areas:
+    'lancamento lancamento leaders-ai leaders-ai'
+    'lancamento lancamento aluno      marketing'
+    'mentor     comunidade checkout   checkout';
+}
+.vds-home-mosaic > li { min-width: 0; }
+.vds-home-shot--lancamento { grid-area: lancamento; }
+.vds-home-shot--leaders-ai { grid-area: leaders-ai; }
+.vds-home-shot--aluno      { grid-area: aluno; }
+.vds-home-shot--marketing  { grid-area: marketing; }
+.vds-home-shot--mentor     { grid-area: mentor; }
+.vds-home-shot--comunidade { grid-area: comunidade; }
+.vds-home-shot--checkout   { grid-area: checkout; }
+
+.vds-home-shot-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--via-space-2);
+  border-radius: var(--via-radius-lg);
+  background: var(--via-surface);
+  border: var(--via-border-fine);
+  box-shadow: 0 1px 2px var(--via-shadow-ink-03), 0 16px 36px -22px var(--via-shadow-ink-20);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform var(--via-dur-base) var(--via-ease-snap),
+    box-shadow var(--via-dur-base) var(--via-ease-snap);
+}
+.vds-home-shot-frame {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  /* canto concêntrico: raio do card − respiro */
+  border-radius: calc(var(--via-radius-lg) - var(--via-space-2));
+  background: var(--via-bg-2);
+}
+.vds-home-shot-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* âncora no canto de cima à esquerda: o logo e o começo do título ficam */
+  object-position: left top;
+  transition: transform var(--via-dur-panel) var(--via-ease-enter);
+}
+/* hairline por cima da foto · senão a borda branca da página some no branco */
+.vds-home-shot-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 0.5px var(--via-border-hairline);
+  pointer-events: none;
+}
+.vds-home-shot-copy {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--via-space-3);
+  padding: var(--via-space-3) var(--via-space-2) var(--via-space-1);
+}
+.vds-home-shot-text { min-width: 0; }
+.vds-home-shot-copy h3 {
+  margin: 0;
+  font-family: var(--via-font);
+  font-size: var(--via-fs-sm);
+  font-weight: var(--via-fw-semibold);
+  line-height: var(--via-lh-snug);
+  color: var(--via-text-primary);
+}
+.vds-home-shot-copy p {
+  margin: var(--via-space-0_5) 0 0;
+  font-size: var(--via-fs-caption);
+  line-height: var(--via-lh-snug);
+  color: var(--via-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vds-home-shot-copy svg {
+  flex: none;
+  color: var(--via-text-soft);
+  transition: transform var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
+}
+.vds-home-shot--lancamento .vds-home-shot-copy { padding-block: var(--via-space-4) var(--via-space-2); }
+.vds-home-shot--lancamento .vds-home-shot-copy h3 { font-size: var(--via-fs-h4); }
+.vds-home-shot--lancamento .vds-home-shot-copy p { font-size: var(--via-fs-sm); white-space: normal; }
+
+/* ---------- BENTO DAS CAMADAS ---------- */
+.vds-home-bento {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--via-space-4);
+  grid-template-areas:
+    'fund fund glass'
+    'comp icon glass'
+    'padr padr dire';
+}
+.vds-home-tile {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-6);
+  min-width: 0;
+  min-height: 248px;
+  padding: var(--via-space-6);
+  border-radius: var(--via-radius-lg);
+  background:
+    radial-gradient(520px 240px at 0% 0%, var(--via-navy-04), transparent 62%),
+    var(--via-surface);
+  border: var(--via-border-fine);
+  box-shadow: 0 1px 2px var(--via-shadow-ink-03), 0 16px 36px -22px var(--via-shadow-ink-20);
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    transform var(--via-dur-base) var(--via-ease-snap),
+    box-shadow var(--via-dur-base) var(--via-ease-snap);
+}
+.vds-home-tile--fund  { grid-area: fund; }
+.vds-home-tile--glass { grid-area: glass; }
+.vds-home-tile--comp  { grid-area: comp; }
+.vds-home-tile--icon  { grid-area: icon; }
+.vds-home-tile--padr  { grid-area: padr; }
+.vds-home-tile--dire  { grid-area: dire; }
+
+[data-theme="dark"] .vds-home-tile,
+[data-theme="dark"] .vds-home-shot-link {
+  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 20px 40px -24px var(--via-shadow-ink-60);
+}
+
+/* hover/press/foco compartilhados · feedback no apertar */
+.vds-home-tile:hover,
+.vds-home-shot-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1px 2px var(--via-shadow-ink-03), 0 28px 56px -26px var(--via-shadow-ink-30);
+}
+[data-theme="dark"] .vds-home-tile:hover,
+[data-theme="dark"] .vds-home-shot-link:hover {
+  box-shadow: inset 0 1px 0 var(--via-edge-hi), 0 28px 56px -24px var(--via-shadow-ink-60);
+}
+.vds-home-tile:active,
+.vds-home-shot-link:active {
+  transform: scale(0.99);
+  transition-duration: var(--via-dur-press);
+}
+/* cartão inteiro é link: nada de sublinhado herdado do a:hover global */
+.vds-home-tile:hover,
+.vds-home-shot-link:hover { text-decoration: none; }
+/* anel de foco nítido (o token de foco é 15% de navy: some no papel) · segue o raio */
+.vds-home-tile:focus-visible,
+.vds-home-shot-link:focus-visible {
+  outline: 2px solid var(--via-text-primary);
+  outline-offset: 3px;
+}
+.vds-home-shot-link:hover img { transform: scale(1.03); }
+.vds-home-shot-link:hover .vds-home-shot-copy svg,
+.vds-home-tile:hover .vds-home-tile-title svg { transform: translate(2px, -2px); color: var(--via-text-primary); }
+
+.vds-home-tile-visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 0;
+}
+.vds-home-tile-copy { display: flex; flex-direction: column; gap: var(--via-space-1_5); }
+.vds-home-tile-title {
+  display: flex;
+  align-items: center;
+  gap: var(--via-space-1_5);
+  margin: 0;
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h4);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: var(--via-ls-tight);
+  color: var(--via-text-primary);
+}
+.vds-home-tile-title svg {
+  color: var(--via-text-soft);
+  transition: transform var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
+}
+.vds-home-tile-body {
+  margin: 0;
+  max-width: 420px;
+  font-size: var(--via-fs-sm);
+  line-height: var(--via-lh-normal);
+  color: var(--via-text-muted);
+}
+.vds-home-tile-meta {
+  margin: var(--via-space-1) 0 0;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  color: var(--via-text-soft);
+}
+.vds-home-vis-mono {
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-micro);
+  color: var(--via-text-soft);
+}
+
+/* Fundamentos · tipo + paleta (cores DA MARCA: fixas nos 2 temas) */
+.vds-home-vis-fund {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--via-space-8);
+  width: 100%;
+}
+.vds-home-vis-type { display: flex; flex-direction: column; gap: var(--via-space-1); }
+.vds-home-vis-aa {
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-hero);
+  font-weight: var(--via-fw-medium);
+  line-height: 0.9;
+  letter-spacing: var(--via-ls-tighter);
+  color: var(--via-text-primary);
+}
+.vds-home-vis-swatches {
+  display: flex;
+  gap: var(--via-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.vds-home-vis-swatches li { display: flex; flex-direction: column; align-items: center; gap: var(--via-space-2); }
+.vds-home-swatch {
+  width: 44px;
+  height: 64px;
+  border-radius: var(--via-radius-pill);
+  box-shadow: inset 0 0 0 0.5px var(--via-navy-12), 0 6px 14px -8px var(--via-shadow-ink-30);
+}
+/* no escuro o navy encosta no fundo do cartão: aro claro desenha a amostra */
+[data-theme="dark"] .vds-home-swatch { box-shadow: inset 0 0 0 1px var(--via-navy-16), 0 6px 14px -8px var(--via-shadow-ink-60); }
+.vds-home-swatch--navy     { background: var(--via-navy); }
+.vds-home-swatch--blue     { background: var(--via-blue); }
+.vds-home-swatch--gray-500 { background: var(--via-gray-500); }
+.vds-home-swatch--gray-200 { background: var(--via-gray-200); }
+.vds-home-swatch--white    { background: var(--via-white); }
+
+/* Liquid Glass · recorte de vidro de verdade sobre luz em movimento */
+.vds-home-vis-glass {
+  position: relative;
+  isolation: isolate;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 220px;
+  border-radius: var(--via-radius-md);
+  background: var(--via-bg-2);
+  overflow: hidden;
+}
+.vds-home-vis-glass .vds-home-shape--disk { width: 148px; top: calc(50% - 116px); left: 8%; }
+.vds-home-vis-glass .vds-home-shape--ring { width: 108px; top: calc(50% + 4px); right: 6%; }
+.vds-home-vis-pane {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-1);
+  width: 64%;
+  padding: var(--via-space-5);
+  border-radius: var(--via-radius-md);
+  /* material chrome: o mais translúcido dos 4 · a forma atrás aparece borrada */
+  --via-rim: var(--via-material-chrome-rim);
+  background: var(--via-material-chrome-fill);
+  -webkit-backdrop-filter: var(--via-material-chrome-blur);
+  backdrop-filter: var(--via-material-chrome-blur);
+  border: var(--via-material-chrome-ring);
+  box-shadow: var(--via-material-chrome-shadow);
+}
+.vds-home-vis-pane::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--via-rim);
+  -webkit-mask: var(--via-rim-mask);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.vds-home-vis-pane strong {
+  font-family: var(--via-font-display);
+  font-size: var(--via-fs-h3);
+  font-weight: var(--via-fw-medium);
+  letter-spacing: var(--via-ls-tight);
+  color: var(--via-text-primary);
+}
+
+/* Componentes · réplicas estáticas (o cartão inteiro já é o link) */
+.vds-home-vis-comp { display: flex; flex-direction: column; gap: var(--via-space-4); width: 100%; }
+.vds-home-vis-comp-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--via-space-2); }
+.vds-home-vis-comp .via-progress { max-width: 220px; }
+.vds-home-vis-comp .via-btn { pointer-events: none; }
+
+/* Iconografia · monograma + Lucide em controle de vidro */
+.vds-home-vis-icons { display: grid; grid-template-columns: repeat(3, 44px); gap: var(--via-space-2); }
+.vds-home-vis-ico {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--via-radius-sm);
+  background: var(--via-material-control-fill);
+  border: var(--via-material-control-ring);
+  box-shadow: var(--via-material-control-shadow);
+  color: var(--via-text-primary);
+}
+.vds-home-vis-ico--mark {
+  background: linear-gradient(180deg, var(--via-navy), var(--via-navy-deep));
+  border-color: transparent;
+  color: var(--via-white);
+}
+
+/* Padrões · três esqueletos de página */
+.vds-home-vis-patterns { display: flex; gap: var(--via-space-3); width: 100%; }
+.vds-home-wire {
+  flex: 1;
+  display: grid;
+  gap: var(--via-space-1_5);
+  align-content: start;
+  height: 112px;
+  padding: var(--via-space-3);
+  border-radius: var(--via-radius-sm);
+  background: var(--via-bg-2);
+  box-shadow: inset 0 0 0 0.5px var(--via-border-hairline);
+}
+.vds-home-wire i { display: block; border-radius: var(--via-radius-xs); background: var(--via-navy-08); }
+.vds-home-wire--article i { height: 6px; }
+.vds-home-wire--article i:first-child { height: 14px; width: 70%; background: var(--via-navy-16); margin-bottom: var(--via-space-1); }
+.vds-home-wire--article i:last-child { width: 55%; }
+.vds-home-wire--pricing { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+.vds-home-wire--pricing i { height: 84px; }
+.vds-home-wire--pricing i:nth-child(2) { background: var(--via-navy-25); }
+.vds-home-wire--dash { grid-template-columns: repeat(3, 1fr); }
+.vds-home-wire--dash i { height: 22px; }
+.vds-home-wire--dash i:last-child {
+  grid-column: 1 / -1;
+  height: 54px;
+  background:
+    linear-gradient(to top, var(--via-navy-16) 0 40%, transparent 40%) 0 100% / 14% 100% no-repeat,
+    linear-gradient(to top, var(--via-navy-16) 0 65%, transparent 65%) 20% 100% / 14% 100% no-repeat,
+    linear-gradient(to top, var(--via-navy-16) 0 50%, transparent 50%) 40% 100% / 14% 100% no-repeat,
+    linear-gradient(to top, var(--via-navy-16) 0 80%, transparent 80%) 60% 100% / 14% 100% no-repeat,
+    linear-gradient(to top, var(--via-navy-25) 0 95%, transparent 95%) 80% 100% / 14% 100% no-repeat,
+    var(--via-navy-04);
+}
+
+/* Diretrizes · escreva × evite */
+.vds-home-vis-voice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--via-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+.vds-home-vis-voice li {
+  display: flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  padding: var(--via-space-2_5) var(--via-space-3);
+  border-radius: var(--via-radius-sm);
+  background: var(--via-bg-2);
+  font-size: var(--via-fs-caption);
+  line-height: var(--via-lh-snug);
+  color: var(--via-text-body);
+}
+.vds-home-vis-voice svg { flex: none; color: var(--via-text-primary); }
+.vds-home-vis-voice li.is-dont { color: var(--via-text-soft); text-decoration: line-through; text-decoration-color: var(--via-navy-25); }
+.vds-home-vis-voice li.is-dont svg { color: var(--via-text-soft); }
+
+/* ---------- USAR COM IA · o momento navy da página (fixo nos 2 temas) ---------- */
+.vds-home-ai {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--via-space-12);
+  align-items: center;
+  padding: var(--via-space-14);
+  border-radius: var(--via-radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10), 0 40px 80px -48px var(--via-shadow-ink-60);
+  overflow: hidden;
+}
+.vds-home-ai .vds-home-eyebrow { color: rgba(255, 255, 255, 0.72); }
+.vds-home-ai h2 {
+  margin: var(--via-space-3) 0 var(--via-space-4);
+  font-family: var(--via-font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: var(--via-fw-medium);
+  line-height: var(--via-lh-tight);
+  letter-spacing: var(--via-ls-tighter);
+  text-wrap: balance;
+}
+.vds-home-ai-lede {
+  margin: 0 0 var(--via-space-8);
+  max-width: 440px;
+  font-size: var(--via-fs-body);
+  line-height: var(--via-lh-normal);
+  color: rgba(255, 255, 255, 0.78);
+}
+.vds-home-ai-actions { display: flex; flex-wrap: wrap; gap: var(--via-space-3); }
+.vds-home-ai-actions .via-pill-link:hover { text-decoration: none; }
+.vds-home-ai-actions .via-pill-link {
+  min-height: 44px;
+  padding-inline: var(--via-space-5);
+  font-size: var(--via-fs-sm);
+}
+/* ação principal sobre navy · papel branco (fica branco também no escuro) */
+.vds-home-ai-actions .vds-home-ai-cta {
+  background: var(--via-surface-onnavy);
+  border-color: transparent;
+  color: var(--via-navy);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 24px -12px var(--via-shadow-ink-60);
+}
+.vds-home-ai-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--via-space-1) var(--via-space-5);
+  margin: var(--via-space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.vds-home-ai-file {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--via-space-1_5);
+  min-height: 44px;
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--via-dur-quick) var(--via-ease-snap), color var(--via-dur-quick) var(--via-ease-snap);
+}
+.vds-home-ai-file:hover { color: var(--via-white); text-decoration-color: rgba(255, 255, 255, 0.8); }
+.vds-home-ai-file:focus-visible { outline: 2px solid rgba(255, 255, 255, 0.8); outline-offset: 2px; border-radius: var(--via-radius-xs); }
+
+/* Terminal · mockup interno com cores próprias */
+.vds-home-term {
+  margin: 0;
+  min-width: 0;
+  border-radius: var(--via-radius-lg);
+  background: rgba(1, 11, 26, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 24px 48px -24px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+.vds-home-term figcaption {
+  display: flex;
+  align-items: center;
+  gap: var(--via-space-2);
+  padding: var(--via-space-3) var(--via-space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  color: rgba(255, 255, 255, 0.7);
+}
+.vds-home-term pre {
+  margin: 0;
+  padding: var(--via-space-5) var(--via-space-4) var(--via-space-6);
+  font-family: var(--via-font-mono);
+  font-size: var(--via-fs-xs);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: normal;
+}
+/* recuo pendurado: a continuação alinha depois do "> " */
+.vds-home-term .ln { display: block; padding-left: 2ch; text-indent: -2ch; }
+.vds-home-term .ln + .ln { margin-top: var(--via-space-1); }
+.vds-home-term .ln.c { margin-top: var(--via-space-4); }
+.vds-home-term .nw { white-space: nowrap; }
+.vds-home-term .p { color: rgba(255, 255, 255, 0.5); user-select: none; }
+.vds-home-term .c { color: rgba(255, 255, 255, 0.62); }
+
+/* ---------- RESPONSIVO ---------- */
+/* Abaixo de ~1380 a coluna do palco fica estreita pros cartões lado a lado:
+   o hero vira uma coluna e o palco deita (gráfico à esquerda, controles à direita) */
+@media (max-width: 1380px) {
+  .vds-home-hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'copy' 'stage' 'stats';
+    row-gap: var(--via-space-10);
+  }
+  .vds-home-hero-lede { max-width: 560px; }
+  .vds-home-stage {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    grid-template-areas:
+      'chart prefs'
+      'chart module';
+  }
+  .vds-home-stage-card--chart { justify-content: space-between; }
+}
+
+@media (max-width: 860px) {
+  .vds-home-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    grid-template-areas:
+      'lancamento lancamento'
+      'leaders-ai leaders-ai'
+      'aluno      marketing'
+      'mentor     comunidade'
+      'checkout   checkout';
+  }
+  .vds-home-shot-frame { flex: none; aspect-ratio: 16 / 10; }
+  .vds-home-bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      'fund  fund'
+      'glass glass'
+      'comp  icon'
+      'padr  padr'
+      'dire  dire';
+  }
+  .vds-home-ai { grid-template-columns: minmax(0, 1fr); padding: var(--via-space-10); }
+}
+
+@media (max-width: 560px) {
+  .vds-home { gap: var(--via-space-16); }
+  .vds-home-hero { padding-top: 0; row-gap: var(--via-space-8); }
+  .vds-home-hero-pill { margin-bottom: var(--via-space-5); }
+  .vds-home-hero-title { font-size: clamp(36px, 10.4vw, 44px); margin-bottom: var(--via-space-4); }
+  .vds-home-hero-lede { font-size: var(--via-fs-body); margin-bottom: var(--via-space-7); }
+  .vds-home-hero-actions { flex-direction: column; align-items: stretch; }
+  .vds-home-stage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'chart' 'prefs' 'module';
+    padding: var(--via-space-3);
+    border-radius: var(--via-radius-lg);
+    gap: var(--via-space-2_5);
+  }
+  .vds-home-stage-card.via-card { padding: var(--via-space-4); border-radius: var(--via-radius-md); }
+  .vds-home-stage-card--module { gap: var(--via-space-4); }
+  .vds-home-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--via-space-5); padding-top: var(--via-space-6); }
+  .vds-home-stats dd { font-size: var(--via-fs-h2); }
+
+  .vds-home-mosaic { gap: var(--via-space-3); }
+  .vds-home-shot-link { padding: var(--via-space-1_5); border-radius: var(--via-radius-md); }
+  .vds-home-shot-frame { border-radius: calc(var(--via-radius-md) - var(--via-space-1_5)); }
+  .vds-home-shot-copy { padding: var(--via-space-2_5) var(--via-space-1_5) var(--via-space-1); }
+  /* meia largura: só o nome · largura cheia mantém a linha de apoio */
+  .vds-home-shot--aluno p,
+  .vds-home-shot--marketing p,
+  .vds-home-shot--mentor p,
+  .vds-home-shot--comunidade p { display: none; }
+  .vds-home-shot-copy p { white-space: normal; }
+
+  .vds-home-bento { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'fund' 'glass' 'comp' 'icon' 'padr' 'dire'; gap: var(--via-space-3); }
+  .vds-home-tile { min-height: 0; padding: var(--via-space-5); }
+  .vds-home-vis-fund { flex-direction: column; align-items: flex-start; gap: var(--via-space-5); }
+  .vds-home-vis-swatches { gap: var(--via-space-2); }
+  .vds-home-swatch { width: 40px; height: 56px; }
+  .vds-home-vis-glass { min-height: 180px; }
+
+  .vds-home-ai { padding: var(--via-space-8) var(--via-space-5); border-radius: var(--via-radius-lg); gap: var(--via-space-8); }
+  .vds-home-ai-actions { flex-direction: column; align-items: stretch; }
+  .vds-home-ai-actions .via-pill-link { justify-content: center; }
+}
+
+/* Reduzir movimento: a luz para, o gráfico já nasce desenhado */
+@media (prefers-reduced-motion: reduce) {
+  .vds-home-orb,
+  .vds-home-shape,
+  .vds-home-chart-line,
+  .vds-home-chart-dot,
+  .vds-home-stage-card.via-card { animation: none; }
+}
