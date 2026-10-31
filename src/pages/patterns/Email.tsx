@@ -49,7 +49,7 @@ export default function Email() {
       <DocsHeader
         eyebrow="Padrões · email · produção"
         title={<>Email que não <em>quebra no inbox</em>.</>}
-        lede="Estes não são mockups — é o HTML REAL que cai no Gmail, no Outlook e no Apple Mail. Estrutura em tabela, estilo inline, CTA navy sólido (sobrevive ao Outlook), travado em modo claro. Gerado por react-email a partir dos tokens da marca: a IA escreve só o editorial (assunto, headline, corpo) e o motor renderiza o resto."
+        lede="Estes não são mockups — é o HTML REAL que cai no Gmail, no Outlook e no Apple Mail. Estrutura em tabela, estilo inline, CTA navy sólido (sobrevive ao Outlook), cabeçalho claro por padrão e faixa navy só em lançamento e evento. Gerado por react-email a partir dos tokens da marca: a IA escreve só o editorial (assunto, headline, corpo) e o motor renderiza o resto."
       />
 
       <Section title="Como funciona" meta="react-email + Resend">
@@ -57,12 +57,12 @@ export default function Email() {
           <article className="vds-mail-how-card">
             <span className="i"><Code2 size={16} strokeWidth={1.75} /></span>
             <h3>Token-driven</h3>
-            <p>A identidade destilada pro que email de verdade renderiza: navy, fios finos, tipografia editorial. Zero vidro, zero degradê de fundo.</p>
+            <p>A identidade destilada pro que email de verdade renderiza: papel claro, fios finos, tipografia editorial, navy no botão. Urgência vem no eyebrow, nunca num painel colorido.</p>
           </article>
           <article className="vds-mail-how-card">
             <span className="i"><ShieldCheck size={16} strokeWidth={1.75} /></span>
             <h3>À prova de bala</h3>
-            <p>Tabela + inline, abaixo de 102KB, botão navy sólido. Sem flex, sem grid, sem media query frágil — o que cada cliente honra.</p>
+            <p>Tabela + inline, abaixo de 102KB, botão navy sólido. Sem flex, sem grid. O layout base já cabe em 375px; a regra de celular só refina (respiro menor, linhas empilhadas, botão largo).</p>
           </article>
           <article className="vds-mail-how-card">
             <span className="i"><Inbox size={16} strokeWidth={1.75} /></span>
