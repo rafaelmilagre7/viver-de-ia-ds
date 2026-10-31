@@ -297,7 +297,7 @@ Reduzir movimento ≠ zero animação: deslocamento, escala e mola somem; **fica
 ### 9. PADRÕES BANIDOS (cara de IA — tolerância zero)
 
 1. **Barra/linha lateral colorida** em card/box/item — nos 3 mecanismos: `border-left` colorido, `::before` de 2-4px à esquerda, `box-shadow inset` horizontal. É o padrão que o Rafael mais odeia. A ênfase vem do vidro + tipografia, nunca de barrinha.
-2. **Anel/halo colorido em avatar** — status mora SÓ no dot (online = verde sóbrio `--via-success`, demais = navy; offline recua por opacidade), nunca em anel ao redor da foto.
+2. **Anel/halo colorido em avatar** — status mora SÓ no dot (online = verde sóbrio `--via-success`, demais = navy; offline recua por opacidade), nunca em anel ao redor da foto. **Fotografia:** só gente real com autorização (nunca banco genérico nem rosto gerado por IA como pessoa real), sempre pela receita `.via-photo` (4:5 padrão, `--duotone` navy, `--scrim` + legenda pra texto sobre foto); sem foto ainda → `.via-photo--monogram` com as iniciais na mesma moldura, nunca laje navy vazia. Referência: `/iconography/photography`.
 3. **Semáforo verde/vermelho genérico** em pills/badges que não são status real.
 4. **Bolinha decorativa** em pill que não é status.
 5. **CAPS LOCK + tracking largo em botão** (botão = sentence case peso 500).

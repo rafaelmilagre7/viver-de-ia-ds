@@ -403,6 +403,13 @@ Substituições por contexto:
 - Em vez de Star decorativo → use Award ou number editorial
 - Em vez de Rocket "launch" → use ArrowRight, Calendar, Target
 
+## 8.5. Fotografia · gente de verdade, luz fria
+
+- **Só pessoa real** (time, alunos, mentoria, evento) com autorização. Nunca banco de imagem genérico (aperto de mão, sorriso de escritório) nem rosto gerado por IA apresentado como pessoa real.
+- **Receita única** `.via-photo` (do `surfaces.css`): fio interno de 1px (sem anel/halo), raio, proporção 4:5 (padrão) · `--square` · `--wide` (16:9), enquadramento por `--via-photo-focus` (olhos no terço de cima; nunca cortar na boca ou nos olhos). Tratamento da marca: `--duotone` (cinza + navy). Texto sobre a foto só com `--scrim` + `.via-photo__caption`.
+- **Sem foto ainda** → `.via-photo--monogram` + `.via-photo__initials` na MESMA moldura (superfície clara que segue o tema). Nunca laje navy vazia nem ícone genérico de pessoa.
+- A foto não muda com o tema. Sempre `alt` descritivo ("Retrato de Rafael Milagre, sorrindo…"), `width`/`height` fixos e `loading="lazy"` abaixo da dobra. Exemplo vivo: https://viver-de-ia-ds.vercel.app/iconography/photography
+
 ## 9. Logo correta por contexto
 
 **REGRA INVIOLÁVEL — a logo é SEMPRE o lockup composto: monograma VIA + wordmark "VIVER DE IA" juntos.**

@@ -50,10 +50,10 @@ const mockSolucoes = [
 ];
 
 /* Os 4 cases · texto e número das páginas de case do site oficial */
-const destaque = { c: 'Viva Nexo', s: 'Saúde', h: 'De 6h para cliques.', m: 'R$ 162.000', l: 'de economia' };
+const destaque = { c: 'Viva Nexo', s: 'Saúde', h: 'De 6h para cliques.', m: 'R$\u00A0162.000', l: 'de economia' };
 const cases = [
-  { c: 'Trivia Studio', s: 'Agência', h: 'De processos manuais à produção de conteúdo em escala.', m: 'R$ 120.000', l: 'de economia anual' },
-  { c: 'Place Dreams', s: 'Tecnologia', h: 'Gestão manual transformada em eficiência digital em 30 dias.', m: 'R$ 42.000', l: 'de economia por ano' },
+  { c: 'Trivia Studio', s: 'Agência', h: 'De processos manuais à produção de conteúdo em escala.', m: 'R$\u00A0120.000', l: 'de economia anual' },
+  { c: 'Place Dreams', s: 'Tecnologia', h: 'Gestão manual transformada em eficiência digital em 30 dias.', m: 'R$\u00A042.000', l: 'de economia por ano' },
   { c: 'Pasetti Viagens', s: 'Turismo', h: 'Atendimento com IA no turismo.', m: '24h', l: 'de atendimento' },
 ];
 
@@ -110,12 +110,12 @@ export default function ShowcaseMarketing() {
           <aside className="mk-stack" aria-label="Resultados de cases reais">
             <div className="mk-g mk-g--1">
               <span className="mk-g-lbl">Economia anual</span>
-              <p className="mk-g-num">R$ 120.000</p>
+              <p className="mk-g-num">R$&nbsp;120.000</p>
               <p className="mk-g-sub"><strong>Trivia Studio</strong> · produção de conteúdo</p>
             </div>
             <div className="mk-g mk-g--2">
               <span className="mk-g-lbl">Economia gerada</span>
-              <p className="mk-g-num">R$ 42.000<span className="mk-g-suf">/ano</span></p>
+              <p className="mk-g-num">R$&nbsp;42.000<span className="mk-g-suf">/ano</span></p>
               <p className="mk-g-sub"><strong>Place Dreams</strong> · em 30 dias</p>
             </div>
             <div className="mk-g mk-g--3">
@@ -318,7 +318,7 @@ export default function ShowcaseMarketing() {
             </ul>
             <div className="mk-goal">
               <span className="mk-goal-tag">Meta pública</span>
-              <p className="mk-goal-num">R$ 1 bilhão</p>
+              <p className="mk-goal-num">R$&nbsp;1 bilhão</p>
               <p className="mk-goal-txt">em receita e economia para empresas com IA.</p>
               <p className="mk-goal-note">É meta, não resultado.</p>
             </div>
@@ -378,7 +378,7 @@ export default function ShowcaseMarketing() {
             <div className="mk-final-row">
               <p>
                 Soluções prontas, formações, mentoria e comunidade numa plataforma só.
-                <strong> Planos a partir de R$ 2.580 por mês</strong>, em contratação anual.
+                <strong> Planos a partir de R$&nbsp;2.580 por mês</strong>, em contratação anual.
               </p>
               <div className="mk-final-actions">
                 <a href="#planos" className="mk-btn mk-btn--on-dark">

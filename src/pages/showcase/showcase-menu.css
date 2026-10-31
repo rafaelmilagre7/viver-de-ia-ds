@@ -7,7 +7,7 @@
   display: none;
   align-items: center;
   gap: var(--via-space-1_5);
-  min-height: 40px;
+  min-height: 44px; /* área de toque mínima */
   padding: 0 var(--via-space-3_5) 0 var(--via-space-4);
   margin-left: auto;
   border-radius: var(--via-radius-pill);

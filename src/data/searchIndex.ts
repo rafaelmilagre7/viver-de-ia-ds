@@ -120,7 +120,7 @@ const KEYWORD_OVERLAYS: Record<string, Pick<SearchEntry, 'description' | 'keywor
   '/patterns/curriculum': { description: 'Curso · módulos e aulas', keywords: ['curriculum', 'curso', 'módulos', 'aulas'] },
   '/patterns/lesson': { description: 'Aula completa', keywords: ['lesson player', 'aula', 'player', 'vídeo'] },
   '/patterns/editorial': { description: 'Hero · logo wall · timeline · FAQ · comparativo', keywords: ['editorial blocks', 'hero', 'logo wall', 'timeline', 'faq', 'comparison'] },
-  '/patterns/people': { description: 'Card de mentor · time · membros · popover', keywords: ['people', 'mentor card', 'team grid', 'member list', 'user popover', 'pessoas'] },
+  '/patterns/people': { description: 'Perfil · grade do time · membros · prévia rápida · foto ou monograma', keywords: ['pessoas', 'perfil', 'time', 'equipe', 'membros', 'foto', 'monograma', 'iniciais', 'people', 'team grid'] },
   '/patterns/admin': { description: 'Configurações · chaves de API · cobrança · auditoria', keywords: ['admin', 'settings', 'api keys', 'billing', 'audit log'] },
   '/patterns/achievement': { description: 'Anéis · sequência · certificado · trilha', keywords: ['achievement', 'rings', 'streak', 'certificate', 'certificado', 'trilha'] },
   '/patterns/live': { description: 'Ao vivo · contagem · arquivo', keywords: ['live class', 'ao vivo', 'live', 'countdown', 'arquivo'] },

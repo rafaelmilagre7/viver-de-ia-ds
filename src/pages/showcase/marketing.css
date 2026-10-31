@@ -258,7 +258,7 @@
   .mk-nav { gap: var(--via-space-3); padding: var(--via-space-2) var(--via-space-5); }
   .mk-nav nav { display: none; }
   /* menu móvel · liga no mesmo corte em que a nav some; alvo de toque 44 */
-  .mk-nav .vds-scm-trigger { display: inline-flex; min-height: 44px; }
+  .mk-nav .vds-scm-trigger { display: inline-flex; }
 }
 
 /* ============================================
