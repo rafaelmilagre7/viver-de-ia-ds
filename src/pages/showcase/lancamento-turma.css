@@ -1034,6 +1034,15 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
+/* com foto · o mesmo bloco, a foto recortada dentro */
+.lt-mono--foto { overflow: hidden; }
+.lt-mono--foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
 @container lt (max-width: 860px) {
   .lt-lid-grid { grid-template-columns: 1fr; gap: var(--via-space-10); }
   .lt-lid-photo { max-width: 480px; --via-photo-ratio: 1 / 1; }

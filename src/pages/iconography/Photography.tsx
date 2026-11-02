@@ -4,24 +4,37 @@ import Section from '../../components/docs/Section';
 import CodeBlock from '../../components/docs/CodeBlock';
 import './photography.css';
 
-/* Única foto real da marca por enquanto (512×512). Toda demonstração usa ela;
-   o texto alternativo descreve o que aparece em CADA versão. */
-const FOTO = '/fotos/rafael-milagre';
+/* Acervo real da marca em public/fotos: cada foto em .webp + .jpg do mesmo
+   recorte. O texto alternativo descreve o que aparece em CADA versão. */
+const RETRATO = { src: '/fotos/rafael-milagre-retrato', w: 960, h: 1200 };
+const QUADRADO = { src: '/fotos/rafael-milagre', w: 800, h: 800 };
+const YAGO = { src: '/fotos/yago-martins', w: 800, h: 800 };
+const SOCIOS = { src: '/fotos/socios', w: 1600, h: 1067 };
+const PALCO = { src: '/fotos/evento-palco', w: 1600, h: 900 };
+const SALA = { src: '/fotos/evento-sala', w: 1600, h: 900 };
 
 type FotoProps = {
+  img?: typeof RETRATO;
   className?: string;
   alt: string;
   focus?: string;
+  ratio?: string;
   children?: ReactNode;
 };
 
-function Foto({ className = '', alt, focus, children }: FotoProps) {
-  const style = focus ? ({ '--via-photo-focus': focus } as CSSProperties) : undefined;
+function Foto({ img = RETRATO, className = '', alt, focus, ratio, children }: FotoProps) {
+  const style =
+    focus || ratio
+      ? ({
+          ...(focus && { '--via-photo-focus': focus }),
+          ...(ratio && { '--via-photo-ratio': ratio }),
+        } as CSSProperties)
+      : undefined;
   return (
     <figure className={`via-photo ${className}`.trim()} style={style}>
       <picture>
-        <source srcSet={`${FOTO}.webp`} type="image/webp" />
-        <img src={`${FOTO}.jpg`} alt={alt} width={512} height={512} loading="lazy" decoding="async" />
+        <source srcSet={`${img.src}.webp`} type="image/webp" />
+        <img src={`${img.src}.jpg`} alt={alt} width={img.w} height={img.h} loading="lazy" decoding="async" />
       </picture>
       {children}
     </figure>
@@ -41,10 +54,10 @@ function Legenda({ title, code, children }: { title: string; code: string; child
 
 const CODE_BASE = `<figure class="via-photo via-photo--duotone via-photo--scrim">
   <picture>
-    <source srcset="/fotos/rafael-milagre.webp" type="image/webp">
-    <img src="/fotos/rafael-milagre.jpg"
-         alt="Retrato de Rafael Milagre sorrindo, de camiseta clara"
-         width="512" height="512" loading="lazy" decoding="async">
+    <source srcset="/fotos/rafael-milagre-retrato.webp" type="image/webp">
+    <img src="/fotos/rafael-milagre-retrato.jpg"
+         alt="Retrato de Rafael Milagre sorrindo, de camiseta clara, sobre fundo escuro"
+         width="960" height="1200" loading="lazy" decoding="async">
   </picture>
   <figcaption class="via-photo__caption">
     <strong>Rafael Milagre</strong>
@@ -64,10 +77,10 @@ const CODE_VARIANTES = `<!-- proporção: 4:5 é o padrão · --square (1:1) · 
 
 <!-- sem foto ainda: monograma na mesma moldura -->
 <figure class="via-photo via-photo--monogram">
-  <span class="via-photo__initials" aria-hidden="true">YM</span>
+  <span class="via-photo__initials" aria-hidden="true">LR</span>
   <figcaption class="via-photo__caption">
-    <strong>Yago Martins</strong>
-    <span>Co-fundador</span>
+    <strong>Luccas Riedo</strong>
+    <span>CEO</span>
   </figcaption>
 </figure>`;
 
@@ -81,10 +94,19 @@ const RECEITA: [string, string][] = [
   ['--monogram', 'Sem foto: iniciais na mesma moldura, superfície clara do tema.'],
 ];
 
+const ACERVO: [string, string][] = [
+  ['rafael-milagre-retrato', 'Rafael Milagre, fundador · 4:5 · 960×1200. Retrato, palestrante, card de pessoa.'],
+  ['rafael-milagre', 'O mesmo retrato em 1:1 · 800×800. Avatar, perfil, grade.'],
+  ['yago-martins', 'Yago Martins, co-fundador · 1:1 · 800×800.'],
+  ['socios', 'Os dois sócios no escritório · 3:2 · 1600×1067.'],
+  ['evento-palco', 'Palco da Viver de IA Experience · 16:9 · 1600×900.'],
+  ['evento-sala', 'Sala da Experience vista do fundo · 16:9 · 1600×900.'],
+];
+
 const LISTA: { what: string; how: string; fmt: string }[] = [
   {
-    what: 'Retrato de cada pessoa do time',
-    how: 'Fundo liso e neutro, luz de janela de lado, da cintura pra cima com respiro em volta. Uma olhando pra câmera, outra olhando pro lado.',
+    what: 'Retrato do resto da liderança',
+    how: 'Os dois sócios já estão no acervo. Pro restante: fundo liso e neutro, luz de janela de lado, da cintura pra cima com respiro em volta. Uma olhando pra câmera, outra olhando pro lado.',
     fmt: 'vertical · 4:5',
   },
   {
@@ -94,7 +116,7 @@ const LISTA: { what: string; how: string; fmt: string }[] = [
   },
   {
     what: 'Evento',
-    how: 'Palco, plateia de perfil, conversa no intervalo. A pessoa no centro, não o logo do patrocinador.',
+    how: 'Palco e sala da Experience já estão no acervo. Falta conversa no intervalo e plateia de perfil, com autorização de quem aparece. A pessoa no centro, não o logo do patrocinador.',
     fmt: '16:9 e 4:5',
   },
   {
@@ -125,7 +147,7 @@ export default function IconographyPhotography() {
       <Section title="Natural e duotone" meta=".via-photo · --duotone · --scrim">
         <div className="vds-ph-trio">
           <div className="vds-ph-item">
-            <Foto alt="Retrato de Rafael Milagre sorrindo, de camiseta clara, com o escritório escuro ao fundo" />
+            <Foto alt="Retrato de Rafael Milagre sorrindo, de camiseta clara, sobre fundo escuro" />
             <Legenda title="Natural" code=".via-photo">
               Retrato sozinho na página, perfil, depoimento: a pessoa como ela é.
             </Legenda>
@@ -157,14 +179,14 @@ export default function IconographyPhotography() {
             <Legenda title="4:5" code="padrão">Retrato, card de pessoa, palestrante.</Legenda>
           </div>
           <div className="vds-ph-item">
-            <Foto className="via-photo--duotone via-photo--square" alt="Rafael Milagre em recorte quadrado" />
+            <Foto img={QUADRADO} className="via-photo--duotone via-photo--square" alt="Rafael Milagre em recorte quadrado" />
             <Legenda title="1:1" code="--square">Grade densa, post, perfil grande.</Legenda>
           </div>
           <div className="vds-ph-item vds-ph-item--wide">
             <Foto
+              img={PALCO}
               className="via-photo--duotone via-photo--wide"
-              focus="50% 45%"
-              alt="Rafael Milagre em recorte horizontal fechado, dos olhos ao queixo"
+              alt="Palestrante no palco da Viver de IA Experience, com a plateia em silhueta"
             />
             <Legenda title="16:9" code="--wide">Capa, banner, palco. Pede foto aberta, com respiro.</Legenda>
           </div>
@@ -180,6 +202,7 @@ export default function IconographyPhotography() {
         <div className="vds-ph-focus">
           <div className="vds-ph-item">
             <Foto
+              img={QUADRADO}
               className="via-photo--wide"
               focus="50% 45%"
               alt="Recorte largo com os olhos de Rafael Milagre perto do terço de cima"
@@ -192,14 +215,14 @@ export default function IconographyPhotography() {
             </p>
           </div>
           <div className="vds-ph-item">
-            <Foto className="via-photo--wide" focus="50% 0%" alt="Recorte largo que corta o rosto de Rafael Milagre na altura da boca" />
+            <Foto img={QUADRADO} className="via-photo--wide" focus="50% 0%" alt="Recorte largo que corta o rosto de Rafael Milagre na altura da boca" />
             <p className="vds-ph-verdict vds-ph-verdict--dont">
               Evite <code>50% 0%</code>
               <span>corta na boca</span>
             </p>
           </div>
           <div className="vds-ph-item">
-            <Foto className="via-photo--wide" focus="50% 100%" alt="Recorte largo que corta o rosto de Rafael Milagre na altura dos olhos" />
+            <Foto img={QUADRADO} className="via-photo--wide" focus="50% 100%" alt="Recorte largo que corta o rosto de Rafael Milagre na altura dos olhos" />
             <p className="vds-ph-verdict vds-ph-verdict--dont">
               Evite <code>50% 100%</code>
               <span>corta nos olhos</span>
@@ -216,6 +239,7 @@ export default function IconographyPhotography() {
         <div className="vds-ph-glass">
           <div className="vds-ph-item">
             <Foto
+              img={QUADRADO}
               className="via-photo--duotone via-photo--scrim via-photo--square"
               alt="Retrato de Rafael Milagre em duotone, com um painel de vidro na base"
             >
@@ -231,6 +255,7 @@ export default function IconographyPhotography() {
           </div>
           <div className="vds-ph-item">
             <Foto
+              img={QUADRADO}
               className="via-photo--duotone via-photo--scrim via-photo--square"
               alt="Retrato de Rafael Milagre em duotone, com um painel de vidro escuro na base"
             >
@@ -256,7 +281,7 @@ export default function IconographyPhotography() {
           <div className="vds-ph-theme vds-ph-theme--light">
             <span className="vds-ph-theme-name">Tema claro</span>
             <div className="vds-ph-theme-row">
-              <Foto className="via-photo--duotone via-photo--square" alt="Retrato de Rafael Milagre em duotone, sobre fundo claro" />
+              <Foto img={QUADRADO} className="via-photo--duotone via-photo--square" alt="Retrato de Rafael Milagre em duotone, sobre fundo claro" />
               <div>
                 <strong>Rafael Milagre</strong>
                 <span>Fundador · Viver de IA</span>
@@ -266,7 +291,7 @@ export default function IconographyPhotography() {
           <div className="vds-ph-theme vds-ph-theme--dark">
             <span className="vds-ph-theme-name">Tema escuro</span>
             <div className="vds-ph-theme-row">
-              <Foto className="via-photo--duotone via-photo--square" alt="Retrato de Rafael Milagre em duotone, sobre fundo escuro" />
+              <Foto img={QUADRADO} className="via-photo--duotone via-photo--square" alt="Retrato de Rafael Milagre em duotone, sobre fundo escuro" />
               <div>
                 <strong>Rafael Milagre</strong>
                 <span>Fundador · Viver de IA</span>
@@ -278,8 +303,8 @@ export default function IconographyPhotography() {
 
       <Section title="Sem foto ainda" meta="--monogram">
         <p>
-          Enquanto a foto não chega, as iniciais ocupam a mesma moldura e a grade não quebra. Nada de laje navy vazia,
-          silhueta genérica ou rosto gerado por IA no lugar.
+          Enquanto a foto não chega, as iniciais ocupam a mesma moldura e a grade não quebra: foto e monograma convivem
+          na mesma fileira. Nada de laje navy vazia, silhueta genérica ou rosto gerado por IA no lugar.
         </p>
         <div className="vds-ph-team">
           <Foto className="via-photo--duotone via-photo--scrim" alt="Retrato de Rafael Milagre sorrindo, em duotone">
@@ -288,13 +313,12 @@ export default function IconographyPhotography() {
               <span>Fundador</span>
             </figcaption>
           </Foto>
-          <figure className="via-photo via-photo--monogram">
-            <span className="via-photo__initials" aria-hidden="true">YM</span>
+          <Foto img={YAGO} className="via-photo--duotone via-photo--scrim" alt="Retrato de Yago Martins sorrindo, de óculos, em duotone">
             <figcaption className="via-photo__caption">
               <strong>Yago Martins</strong>
               <span>Co-fundador</span>
             </figcaption>
-          </figure>
+          </Foto>
           <figure className="via-photo via-photo--monogram">
             <span className="via-photo__initials" aria-hidden="true">LR</span>
             <figcaption className="via-photo__caption">
@@ -303,6 +327,37 @@ export default function IconographyPhotography() {
             </figcaption>
           </figure>
         </div>
+      </Section>
+
+      <Section title="Acervo" meta="fotos reais da marca, prontas pra usar">
+        <p>
+          Antes de pedir foto nova, comece pelo acervo. Cada foto vem em .webp e .jpg do mesmo recorte, já no tamanho
+          pra tela de alta densidade.
+        </p>
+        <div className="vds-ph-acervo">
+          <div className="vds-ph-item">
+            <Foto img={SOCIOS} ratio="3 / 2" alt="Rafael Milagre e Yago Martins lado a lado no escritório, com o time trabalhando ao fundo" />
+            <Legenda title="Sócios no escritório" code="socios · 3:2">
+              Quem somos, sobre, imprensa. O time ao fundo, desfocado, mostra a operação sem tirar o foco dos dois.
+            </Legenda>
+          </div>
+          <div className="vds-ph-item">
+            <Foto img={SALA} className="via-photo--wide" alt="Sala da Viver de IA Experience vista do fundo, com a plateia diante do palco" />
+            <Legenda title="Sala do evento" code="evento-sala · 16:9">
+              Capa de evento e convite. Plateia de costas, sem rosto em destaque.
+            </Legenda>
+          </div>
+        </div>
+        <dl className="vds-ph-recipe">
+          {ACERVO.map(([k, v]) => (
+            <div key={k}>
+              <dt>
+                <code>{k}</code>
+              </dt>
+              <dd>{v}</dd>
+            </div>
+          ))}
+        </dl>
       </Section>
 
       <Section title="Faça e evite" meta="regras de uso">

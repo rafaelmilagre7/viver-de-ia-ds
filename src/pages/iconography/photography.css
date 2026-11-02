@@ -211,6 +211,14 @@
   margin-top: var(--via-space-6);
 }
 
+/* ---- Acervo · 3:2 e 16:9 com a mesma altura ---- */
+.vds-ph-acervo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.185fr);
+  gap: var(--via-space-5);
+  margin: var(--via-space-6) 0;
+}
+
 /* ---- Faça e evite · listas ---- */
 .vds-ph-rules ul {
   margin: 0;
@@ -314,6 +322,7 @@
   .vds-ph-item--wide { grid-column: 1 / -1; }
   .vds-ph-item--wide-sm .via-photo { --via-photo-ratio: 1 / 1; }
   .vds-ph-focus,
+  .vds-ph-acervo,
   .vds-ph-glass,
   .vds-ph-themes,
   .vds-do-dont.vds-ph-rules { grid-template-columns: minmax(0, 1fr); }

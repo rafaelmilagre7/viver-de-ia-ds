@@ -1068,7 +1068,7 @@
   align-items: center;
 }
 
-.mk-team-photo { max-width: 420px; }
+.mk-team-photo { max-width: 560px; --via-photo-ratio: 4 / 3; }
 
 /* liderança sem foto · lista tipográfica, sem avatar nem anel */
 .mk-roster {

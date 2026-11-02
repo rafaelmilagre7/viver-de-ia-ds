@@ -6,6 +6,12 @@ Padrão: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versiona
 
 ## [Não lançado]
 
+### Design · acervo de fotos reais (02/nov)
+
+- **Fotos novas em `public/fotos/`** (webp + jpg do mesmo recorte, tamanho pra tela de alta densidade): retrato do fundador da sessão de dez/2025 em 4:5 (960×1200) e 1:1 (800×800, substitui o de 512), Yago Martins em 1:1, os dois sócios no escritório (3:2) e palco e sala da Viver de IA Experience (16:9).
+- **Fotografia**: exemplos com as fotos novas (16:9 com o palco de verdade), Yago com foto ao lado do monograma do Luccas, seção **Acervo** com cada arquivo, recorte e uso; a lista de fotos que faltam passou a dizer o que já existe.
+- **Institucional**: "quem está por trás" com os dois sócios (4:3; 1:1 no celular). **Lançamento**: retrato 4:5 e foto do Yago na lista da liderança. **Pessoas** e **Avatar**: Yago com foto; o exemplo "sem foto" passou pro Luccas.
+
 ### Design · rodada 7 — home, institucional e fotografia (31/out · plugin 1.14.0)
 
 - **Home**: hero claro com peças vivas da library (gráfico de uma série, preferências com o switch que troca o tema de verdade, progresso); números do sistema calculados da navegação e da busca (nenhum fixo — rodapé também); mosaico das 7 páginas-modelo com miniaturas reais nos dois temas (`scripts/home-thumbs.mjs` refaz); bento das camadas do sistema com um detalhe visual próprio em cada peça; bloco "Usar com IA" (guia, kit, `llms.txt`, ficha de fatos, plugin).

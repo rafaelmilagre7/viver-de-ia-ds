@@ -5,6 +5,7 @@ import { Avatar as Av } from '../../lib/Avatar/Avatar';
 import './avatar.css';
 
 const FOTO = '/fotos/rafael-milagre.jpg';
+const FOTO_YAGO = '/fotos/yago-martins.jpg';
 /* Imagem que não decodifica: simula a foto que falha (link quebrado, arquivo
    removido) sem gerar requisição 404 na página. */
 const FOTO_QUEBRADA = 'data:image/png;base64,AAAA';
@@ -19,7 +20,7 @@ const SIZES = [
 
 const LISTA = [
   { nome: 'Rafael Milagre', papel: 'Fundador', foto: FOTO },
-  { nome: 'Yago Martins', papel: 'Co-fundador' },
+  { nome: 'Yago Martins', papel: 'Co-fundador', foto: FOTO_YAGO },
   { nome: 'Luccas Riedo', papel: 'CEO' },
 ];
 
@@ -28,8 +29,8 @@ const CODE = `import { Avatar } from '@viverdeia/design-system';
 // com foto: o alt dá o nome pro leitor de tela
 <Avatar src="/fotos/rafael-milagre.jpg" alt="Rafael Milagre" size="lg" />
 
-// sem foto, ou foto que falha: as iniciais vêm do alt ("YM")
-<Avatar alt="Yago Martins" size="lg" />`;
+// sem foto, ou foto que falha: as iniciais vêm do alt ("LR")
+<Avatar alt="Luccas Riedo" size="lg" />`;
 
 export default function Avatar() {
   return (
@@ -81,7 +82,7 @@ export default function Avatar() {
             </figcaption>
           </figure>
           <figure className="vds-av-stage vds-av-case">
-            <Av alt="Yago Martins" size="xl" />
+            <Av alt="Luccas Riedo" size="xl" />
             <figcaption>
               <strong>Sem foto</strong>
               <span>sem src → iniciais</span>
@@ -94,7 +95,7 @@ export default function Avatar() {
         <div className="vds-av-stage vds-av-group-row">
           <div className="vds-av-stack" role="group" aria-label="Rafael Milagre, Yago Martins, Luccas Riedo e mais 2 pessoas">
             <Av src={FOTO} alt="Rafael Milagre" size="md" />
-            <Av alt="Yago Martins" size="md" />
+            <Av src={FOTO_YAGO} alt="Yago Martins" size="md" />
             <Av alt="Luccas Riedo" size="md" />
             <span className="vds-av-more" aria-hidden="true">
               +2

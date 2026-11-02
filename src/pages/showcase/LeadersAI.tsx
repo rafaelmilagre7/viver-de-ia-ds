@@ -253,7 +253,7 @@ export default function ShowcaseLeadersAI() {
                   {s.photo ? (
                     <picture>
                       <source srcSet={`${s.photo}.webp`} type="image/webp" />
-                      <img src={`${s.photo}.jpg`} alt={`Retrato de ${s.name}`} width={512} height={512} loading="lazy" decoding="async" />
+                      <img src={`${s.photo}.jpg`} alt={`Retrato de ${s.name}`} width={800} height={800} loading="lazy" decoding="async" />
                     </picture>
                   ) : s.initials ? (
                     <span className="la-initials" aria-hidden="true">{s.initials}</span>

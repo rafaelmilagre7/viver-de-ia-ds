@@ -8,11 +8,11 @@ import './people.css';
    à vista ([Aluno 1]…). Número só da ficha, com a fonte do lado. */
 const FOTO = '/fotos/rafael-milagre';
 
-function Retrato({ alt, className = '' }: { alt: string; className?: string }) {
+function Retrato({ alt, className = '', src = FOTO }: { alt: string; className?: string; src?: string }) {
   return (
     <picture>
-      <source srcSet={`${FOTO}.webp`} type="image/webp" />
-      <img className={className} src={`${FOTO}.jpg`} alt={alt} width={512} height={512} loading="lazy" decoding="async" />
+      <source srcSet={`${src}.webp`} type="image/webp" />
+      <img className={className} src={`${src}.jpg`} alt={alt} width={800} height={800} loading="lazy" decoding="async" />
     </picture>
   );
 }
@@ -61,7 +61,7 @@ function ProfileSection() {
     <Section title="Perfil · cabeçalho editorial" meta="página sobre · palestrante · mentor">
       <article className="vds-pf">
         <figure className="via-photo vds-pf-photo">
-          <Retrato alt="Retrato de Rafael Milagre sorrindo, de camiseta clara, com o escritório escuro ao fundo" />
+          <Retrato alt="Retrato de Rafael Milagre sorrindo, de camiseta clara, sobre fundo escuro" />
         </figure>
 
         <div className="vds-pf-body">
@@ -99,9 +99,9 @@ function ProfileSection() {
 }
 
 /* ---------- Grade do time ---------- */
-const TIME = [
-  { nome: 'Rafael Milagre', cargo: 'Fundador', ini: 'RM', foto: true },
-  { nome: 'Yago Martins', cargo: 'Co-fundador', ini: 'YM' },
+const TIME: { nome: string; cargo: string; ini: string; foto?: string }[] = [
+  { nome: 'Rafael Milagre', cargo: 'Fundador', ini: 'RM', foto: FOTO },
+  { nome: 'Yago Martins', cargo: 'Co-fundador', ini: 'YM', foto: '/fotos/yago-martins' },
   { nome: 'Luccas Riedo', cargo: 'CEO', ini: 'LR' },
 ];
 
@@ -113,7 +113,7 @@ function TeamGridSection() {
           <li key={p.nome}>
             {p.foto ? (
               <figure className="via-photo via-photo--duotone">
-                <Retrato alt={`Retrato de ${p.nome} sorrindo, em duotone`} />
+                <Retrato src={p.foto} alt={`Retrato de ${p.nome} sorrindo, em duotone`} />
               </figure>
             ) : (
               <figure className="via-photo via-photo--monogram" aria-hidden="true">

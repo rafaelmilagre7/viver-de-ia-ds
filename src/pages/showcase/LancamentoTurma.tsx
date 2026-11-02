@@ -61,8 +61,8 @@ const cases = [
   { q: 'De processos manuais a R$\u00A0120.000 de economia anual, escalando a produção de conteúdo.', nome: 'Trivia Studio', setor: 'Agência' },
 ];
 
-const lideres = [
-  { ini: 'YM', nome: 'Yago Martins', papel: 'Co-fundador' },
+const lideres: { ini: string; nome: string; papel: string; foto?: string }[] = [
+  { ini: 'YM', nome: 'Yago Martins', papel: 'Co-fundador', foto: '/fotos/yago-martins' },
   { ini: 'LR', nome: 'Luccas Riedo', papel: 'CEO' },
 ];
 
@@ -321,12 +321,12 @@ export default function ShowcaseLancamentoTurma() {
         <div className="lt-wrap lt-lid-grid">
           <figure className="via-photo via-photo--duotone via-photo--scrim lt-lid-photo">
             <picture>
-              <source srcSet="/fotos/rafael-milagre.webp" type="image/webp" />
+              <source srcSet="/fotos/rafael-milagre-retrato.webp" type="image/webp" />
               <img
-                src="/fotos/rafael-milagre.jpg"
+                src="/fotos/rafael-milagre-retrato.jpg"
                 alt="Retrato de Rafael Milagre, sorrindo, de camiseta clara"
-                width={512}
-                height={512}
+                width={960}
+                height={1200}
                 loading="lazy"
                 decoding="async"
               />
@@ -348,7 +348,14 @@ export default function ShowcaseLancamentoTurma() {
             <ul className="lt-lideres">
               {lideres.map((l) => (
                 <li key={l.nome}>
-                  <span className="lt-mono" aria-hidden="true">{l.ini}</span>
+                  {l.foto ? (
+                    <picture className="lt-mono lt-mono--foto">
+                      <source srcSet={`${l.foto}.webp`} type="image/webp" />
+                      <img src={`${l.foto}.jpg`} alt="" width={800} height={800} loading="lazy" decoding="async" />
+                    </picture>
+                  ) : (
+                    <span className="lt-mono" aria-hidden="true">{l.ini}</span>
+                  )}
                   <span><strong>{l.nome}</strong><em>{l.papel}</em></span>
                 </li>
               ))}

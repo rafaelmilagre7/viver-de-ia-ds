@@ -136,8 +136,8 @@ preço passou pela régua visual. Na integração, regravar com `=all` e commita
 `.replace('R$ ', '')`; varredura de todas as rotas por prefixo duplicado agora faz parte da integração.
 
 Em aberto depois desta rodada:
-- **Fotos reais** (decisão/entrega do Rafael): só existe o retrato do fundador (512px — suave em retina;
-  ideal 1024px+). Lista do que a marca precisa em /iconography/photography.
+- **Fotos reais** — resolvido em 02/nov com o acervo do Rafael (ver "Acervo de fotos" abaixo). Falta:
+  retrato do restante da liderança, bastidores de mentoria, telas em uso e alunos com autorização.
 - Avatar da lib sem foto ainda cai num círculo navy (a receita de monograma é clara); status do avatar
   é `aria-hidden` (não é anunciado).
 - `ContextMenu`, `DatePicker`, raiz do `Carousel` e `Splitter` ainda com foco por box-shadow.
@@ -146,6 +146,18 @@ Em aberto depois desta rodada:
 - Ficha de fatos não captura a lista de recursos dos planos (AI Builder, SLA dedicado estão em
   viverdeia.ai/planos) — hoje entram por conferência manual.
 - Login das vitrines ainda em fundo navy; emails de produção ainda falam em turma/vagas (oferta antiga).
+
+## Acervo de fotos (02/nov)
+
+Fonte (Mac do Rafael, iCloud): `Documents/FOTOS/` — 2.500+ fotos. Pastas úteis pra marca:
+`FOTOS - 3 Sessão` (Rafael, dez/2025, fundo preto e escritório · a mais recente), `Fotos profissionais -
+Segunda Sessão` (set/2024, fundo azul), `socios-viver-de-ia.jpg` (Rafael + Yago, 5712px),
+`VIVER DE IA Experience - 2 evento` (422 fotos, jun/2025, palco/sala/plateia/retratos no painel),
+`Fundo Transparente` (Rafael no palco, recortado). No Drive: "Fotos TIME" (dez/2025), "Fotos Rafa palco
+Viver de IA Day", "FOTOS - EVENTOS", "Fotos Oficiais 2026". Fora do uso de marca: família, casamento,
+viagens, amigos. Retratos de alunos e do time só com autorização de uso de imagem.
+Em `public/fotos/`: retrato 4:5 e 1:1 do Rafael, Yago 1:1, sócios 3:2, palco e sala 16:9 (página
+/iconography/photography, seção Acervo). Banco de conteúdo do marketing: pedido ao Ael no Slack em 02/nov.
 
 ## IA criando na marca (30/out) — logo em vetor + prova real com IAs
 

@@ -284,24 +284,24 @@ export default function ShowcaseMarketing() {
         </div>
       </section>
 
-      {/* QUEM ESTÁ POR TRÁS · foto do fundador + liderança */}
+      {/* QUEM ESTÁ POR TRÁS · os dois sócios + liderança */}
       <section className="mk-sec mk-sec--band" id="quem-somos" aria-labelledby="mk-quem">
         <div className="mk-wrap mk-team">
           <figure className="via-photo via-photo--duotone via-photo--scrim mk-team-photo">
             <picture>
-              <source srcSet="/fotos/rafael-milagre.webp" type="image/webp" />
+              <source srcSet="/fotos/socios.webp" type="image/webp" />
               <img
-                src="/fotos/rafael-milagre.jpg"
-                alt="Retrato de Rafael Milagre, fundador da Viver de IA, sorrindo, de camiseta clara"
-                width={512}
-                height={512}
+                src="/fotos/socios.jpg"
+                alt="Rafael Milagre e Yago Martins, fundador e co-fundador da Viver de IA, lado a lado no escritório"
+                width={1600}
+                height={1067}
                 loading="lazy"
                 decoding="async"
               />
             </picture>
             <figcaption className="via-photo__caption">
-              <strong>Rafael Milagre</strong>
-              <span>Fundador · Viver de IA</span>
+              <strong>Rafael Milagre e Yago Martins</strong>
+              <span>Fundador e co-fundador · Viver de IA</span>
             </figcaption>
           </figure>
 
